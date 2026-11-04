@@ -1,0 +1,203 @@
+{
+  "design_version": "0.1",
+  "date": "2026-11-04",
+  "status": "proposed_not_implemented",
+  "notice": "This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.",
+  "requirements_count": 90,
+  "source_elements_count": 37,
+  "acceptance_groups": [
+    "AT-01",
+    "AT-02",
+    "AT-03",
+    "AT-04",
+    "AT-05",
+    "AT-06",
+    "AT-07",
+    "AT-08",
+    "AT-09",
+    "AT-10",
+    "AT-11",
+    "AT-12",
+    "AT-13",
+    "AT-14",
+    "AT-15",
+    "AT-16",
+    "AT-17",
+    "AT-18"
+  ],
+  "subsystems": [
+    {
+      "id": "edge",
+      "deployment": "web-edge",
+      "primary_document_prefix": "01",
+      "related_document_prefix": "02",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "identity",
+      "deployment": "identity",
+      "primary_document_prefix": "04",
+      "related_document_prefix": "07",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "session-assessment",
+      "deployment": "core-api",
+      "primary_document_prefix": "02",
+      "related_document_prefix": "05",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "directory-content",
+      "deployment": "core-api",
+      "primary_document_prefix": "02",
+      "related_document_prefix": "06",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "plans-consent",
+      "deployment": "core-api",
+      "primary_document_prefix": "02",
+      "related_document_prefix": "05",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "queue-handoff",
+      "deployment": "core-api",
+      "primary_document_prefix": "02",
+      "related_document_prefix": "08",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "referral-followup",
+      "deployment": "core-api/core-jobs",
+      "primary_document_prefix": "05",
+      "related_document_prefix": "06",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "agent-tasks-reviews",
+      "deployment": "core-api/agent-runtime",
+      "primary_document_prefix": "03",
+      "related_document_prefix": "06",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "inference",
+      "deployment": "inference-gateway/host-LM-Studio",
+      "primary_document_prefix": "03",
+      "related_document_prefix": "07",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "policy-activation",
+      "deployment": "policy-control",
+      "primary_document_prefix": "04",
+      "related_document_prefix": "07",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "security-signals-containment",
+      "deployment": "policy-control/core-api",
+      "primary_document_prefix": "04",
+      "related_document_prefix": "08",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "data-audit-replay",
+      "deployment": "data-gateway/postgres",
+      "primary_document_prefix": "05",
+      "related_document_prefix": "08",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "analytics-evidence",
+      "deployment": "core-api/data-gateway",
+      "primary_document_prefix": "05",
+      "related_document_prefix": "09",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "simulators-training",
+      "deployment": "simulators",
+      "primary_document_prefix": "02",
+      "related_document_prefix": "06",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "help",
+      "deployment": "host-help-gateway",
+      "primary_document_prefix": "04",
+      "related_document_prefix": "07",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "fallback",
+      "deployment": "host-static-server",
+      "primary_document_prefix": "07",
+      "related_document_prefix": "08",
+      "status": "designed_not_implemented"
+    },
+    {
+      "id": "operations-release",
+      "deployment": "CI/operator/telemetry",
+      "primary_document_prefix": "07",
+      "related_document_prefix": "08",
+      "status": "designed_not_implemented"
+    }
+  ],
+  "requirements_inputs": [
+    {
+      "path": "doc/REQ/01-scope-and-sources.md",
+      "sha256": "2db48e9a5aca5478484a7d5d38c24c8f1afa8455dfe2a44711922c2fbd008510"
+    },
+    {
+      "path": "doc/REQ/02-actors-and-workflows.md",
+      "sha256": "8777854e5d222eabacd29c48342416875048636609438e96c185887716939d7f"
+    },
+    {
+      "path": "doc/REQ/03-architecture-and-interfaces.md",
+      "sha256": "ba2949f92718a13695ff67c3484a4d344ac353d604394d630f487daa973e19e1"
+    },
+    {
+      "path": "doc/REQ/04-data-security-governance.md",
+      "sha256": "3e6791fdafcc963c7ccea569d360bf75b19e55929c4497efd4b98b59e89ec6e0"
+    },
+    {
+      "path": "doc/REQ/05-deployment-and-operations.md",
+      "sha256": "41e962c0f007192891443f7d6b56c15c82d4e58c17ecbf2152fee80d51b8aae6"
+    },
+    {
+      "path": "doc/REQ/06-acceptance-and-delivery.md",
+      "sha256": "e4752d297e018371f9e9fc07a8c02b0adc73e73e52b30a6b75bed8c44e900b19"
+    },
+    {
+      "path": "doc/REQ/07-source-requirements.md",
+      "sha256": "3ab273e2644075d73f0a68ea0b9afe980a6b5df44cf2c099d887fbb501b5484b"
+    },
+    {
+      "path": "doc/REQ/08-open-decisions.md",
+      "sha256": "0385c270f2d993222034167ca2cb5f961a8b7caaef04a30c42fa66d53341c702"
+    },
+    {
+      "path": "doc/REQ/09-standards-and-runtime-controls.md",
+      "sha256": "0a4a4d656be1783f98d7dd5e92c50e2fc2d46003b2879fe4332410c1b5a3e7d0"
+    },
+    {
+      "path": "doc/REQ/10-agentic-ai-and-service-model.md",
+      "sha256": "0afe8875983914956166eb45d0ae7893f4b99cb341474607590855cf39ad9880"
+    },
+    {
+      "path": "doc/REQ/README.md",
+      "sha256": "94c5fdff75e650f8cb54cd1109ca91a9c806817dd3d61c9b84da729cd0e1d654"
+    },
+    {
+      "path": "doc/REQ/demo-parameters.json",
+      "sha256": "8a08a63b668c84e6a6c52bf776d40102f0b4e3d19bbd4c87a2572090de28c40c"
+    },
+    {
+      "path": "doc/REQ/source-snapshot.json",
+      "sha256": "fc24739526b7b6e556cf4610054beb85535d49e2bdbed82ae262cc59981df6ca"
+    }
+  ]
+}
