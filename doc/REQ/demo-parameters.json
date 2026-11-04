@@ -1,0 +1,315 @@
+{
+  "profile": {
+    "name": "ottawa-local-synthetic-demo",
+    "status": "proposed engineering defaults; not runtime configuration",
+    "effective_date": "2026-11-04",
+    "production_approved": false
+  },
+  "operator": {
+    "location": "Ottawa, Ontario, Canada",
+    "legal_entity_name": null,
+    "operating_model": "independent standalone project",
+    "police_affiliation": false,
+    "crisis_line_affiliation": false
+  },
+  "police": {
+    "affiliation": "none",
+    "integrations": "absent_by_design",
+    "recipient_role": "excluded",
+    "brief_sink": "excluded",
+    "data_sharing_agreements": [],
+    "autonomous_emergency_contact": "absent_by_design",
+    "mutable_at_runtime": false
+  },
+  "locale": {
+    "country": "CA",
+    "province": "ON",
+    "city": "Ottawa",
+    "timezone": "America/Toronto",
+    "languages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "demo_jurisdictions": [
+      "CA-XX",
+      "CA-YY"
+    ],
+    "service_jurisdiction_from_user": true,
+    "quebec_enabled": false
+  },
+  "deployment": {
+    "mode": "host-local",
+    "cloud_provider": null,
+    "multi_region": false,
+    "public_demo_access": false,
+    "fallback_publication": "separate-from-cluster",
+    "whole_host_failure_independence": false
+  },
+  "stack": {
+    "selection_status": "proposed_not_installed",
+    "ui": "React + TypeScript",
+    "api": "Python + FastAPI",
+    "database": "PostgreSQL",
+    "identity_provider": "Keycloak with OIDC and MFA",
+    "policy_engine": "OPA/Rego",
+    "bundle_signature": "Ed25519",
+    "kubernetes": "local single-node cluster with enforced default-deny CNI; distribution pending host inventory",
+    "service_transport": "mutual TLS; short-lived workload certificates",
+    "secrets": "mounted secret files; separate release-key custody",
+    "orchestration": "explicit bounded state machine"
+  },
+  "inference": {
+    "provider": "LM Studio",
+    "model_family": "Gemma 3 4B IT",
+    "model_digest": null,
+    "quantization": null,
+    "remote_fallback": false,
+    "access": "broker-mediated",
+    "prompt_logging": false,
+    "training_pipeline": false,
+    "context_tokens_initial_cap": 8192,
+    "max_output_tokens": 1024,
+    "temperature": 0,
+    "request_timeout_seconds": 30,
+    "max_proposal_attempts": 2,
+    "max_agent_steps_per_turn": 4,
+    "max_tools_per_turn": 3,
+    "capability_probe_required": true
+  },
+  "identity": {
+    "continuation_ttl_minutes": 10,
+    "continuation_one_use": true,
+    "privileged_idle_minutes": 15,
+    "step_up_max_age_minutes": 5,
+    "al3_cooling_off_minutes": 5,
+    "audit_content_grant_minutes": 15,
+    "revocation_effect": "next access and active-stream invalidation",
+    "assurance": {
+      "resume": "AL0",
+      "plan_view": "AL1",
+      "plan_edit": "AL2",
+      "referral_consent": "AL2",
+      "export": "AL3",
+      "delete": "AL3",
+      "identity_link": "AL3"
+    }
+  },
+  "consent": {
+    "referral_grant_ttl_minutes": 15,
+    "scope": "one recipient, purpose, session and field set",
+    "positive_decision_cache_seconds": 0,
+    "revocation_check": "transactional at execution authorization",
+    "expiry_rule": "now < expires_at",
+    "long_lived_plan_sharing": "separate grant, explicit expiry required"
+  },
+  "directory": {
+    "structural_ttl_hours": 720,
+    "operational_ttl_hours": 24,
+    "near_realtime_ttl_seconds": 300,
+    "event_specific": "revalidate before action",
+    "critical_suspend_seconds": 60,
+    "stale_state": "unknown_with_warning",
+    "runtime_sources": "synthetic_only"
+  },
+  "fallback": {
+    "owner_role": "implementor/content maintainer",
+    "independent_human_review_required": true,
+    "review_interval_days": 30,
+    "region": "Ottawa/Ontario",
+    "languages": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "content_verified": false
+  },
+  "queue": {
+    "normal_max_waiting": 2,
+    "elevated_max_waiting": 5,
+    "severe_min_waiting": 6,
+    "wait_status_update_seconds": 60,
+    "retriage_seconds": 120,
+    "wait_estimate_without_live_evidence": null,
+    "mutual_aid_partners": [],
+    "partner_state_overrides_load": true
+  },
+  "escalation": {
+    "minimum_fixture_tier": "T2",
+    "clinical_confidence_threshold": null,
+    "unknown_critical_field": true,
+    "age_uncertain": true,
+    "assessment_turn_limit": 10,
+    "active_assessment_minutes": 10,
+    "consecutive_invalid_proposals": 2,
+    "silence_is_risk_trigger": false,
+    "duration_ends_session": false
+  },
+  "youth": {
+    "production_rules_enabled": false,
+    "uncertain_age_requires_human": true,
+    "guardian_auto_access": false,
+    "private_help_every_flagged_turn": true
+  },
+  "legal": {
+    "phipa_role_determined": false,
+    "samd_classification": null,
+    "real_disclosure_automation": false,
+    "production_legal_review_required": true
+  },
+  "indigenous_governance": {
+    "population": "synthetic_only",
+    "infer_identity": false,
+    "framework_approval": null,
+    "real_community_data_enabled": false
+  },
+  "referral": {
+    "adapter": "internal_simulator",
+    "schema_version": "demo-referral-v1",
+    "real_partners": [],
+    "delivery_confirmation": "explicit_receipt_only"
+  },
+  "retention": {
+    "scope": "synthetic demo runtime only; not clinical/legal schedule",
+    "session_content_days": 7,
+    "synthetic_pid_carer_days": 7,
+    "plan_days": 30,
+    "referral_days": 7,
+    "consent_event_days": 30,
+    "replay_content_days": 7,
+    "security_logs_days": 30,
+    "audit_metadata_days": 90,
+    "aggregate_metrics_days": 90,
+    "backup_days": 7,
+    "active_delete_target_hours": 24,
+    "full_backup_expiry_target_days": 7,
+    "restore_tombstones_required": true,
+    "repository_fixtures": "versioned; no automatic expiry",
+    "approval_manifests": "retain in version control"
+  },
+  "operations": {
+    "kill_p95_seconds": 2,
+    "kill_max_seconds": 5,
+    "takeover_p95_seconds": 2,
+    "takeover_max_seconds": 5,
+    "security_event_dashboard_max_seconds": 5,
+    "critical_alert_max_seconds": 30,
+    "backup_interval_seconds": 60,
+    "restore_rto_target_seconds": 300,
+    "session_rpo_target_seconds": 60,
+    "incident_review_start_hours": 4
+  },
+  "audit": {
+    "checkpoint_seconds": 60,
+    "checkpoint_target": "separate local append-only target and credential",
+    "external_transparency": false
+  },
+  "content": {
+    "guidance_max_words": 25,
+    "silence_first_prompt_seconds": 120,
+    "silence_repeat_prompt_seconds": 300,
+    "silence_test_minutes": 30,
+    "silent_mode": true
+  },
+  "evaluation": {
+    "approved_scenario_pass_percent": 100,
+    "clinical_undertriage_target": null,
+    "clinical_disparity_threshold": null,
+    "synthetic_disparity_alert_percentage_points": 5,
+    "synthetic_disparity_min_cohort": 30,
+    "outcome_record_coverage_percent": 100,
+    "critical_summary_fact_accuracy_percent": 100,
+    "noncritical_required_summary_accuracy_percent": 95,
+    "critical_findings_allowed": 0
+  },
+  "capacity": {
+    "active_sessions": 10,
+    "concurrent_inference_jobs": 2,
+    "inference_queue_limit": 8,
+    "capacity_measured": false
+  },
+  "participants": {
+    "minimum_test_participant_age": 18,
+    "recruitment": "opt-in project collaborators",
+    "public_recruitment": false,
+    "default_compensation": "unpaid collaborator testing; public research compensation undecided",
+    "independent_review_required": true
+  },
+  "governance": {
+    "independent_human_approvals_min": 1,
+    "self_approval": false,
+    "high_risk_specialist_review": true,
+    "production_promotion": false
+  },
+  "triage": {
+    "mode": "deterministic_nonclinical_fixture",
+    "tier_set_version": "tierset-stub-0.1",
+    "fixture_tiers": [
+      "T0",
+      "T1",
+      "T2",
+      "T3",
+      "T4"
+    ],
+    "content_class": "stub",
+    "core_situation_factors": {},
+    "clinical_feature_contract_approved": false,
+    "fixture_selection_from_model": false
+  },
+  "runtime_governance": {
+    "status": "proposed demo acceptance targets; unmeasured",
+    "evaluation_p95_ms": 50,
+    "evaluation_timeout_ms": 200,
+    "authorization_timeout_ms": 1000,
+    "revocation_propagation_max_ms": 1000,
+    "decision_permit_ttl_ms": 1000,
+    "positive_decision_cache_ms": 0,
+    "require_current_epoch_at_execution": true,
+    "lagging_enforcer_behavior": "deny affected protected operations",
+    "activation_mode": "signed approved bundle; monotonic epoch; per-instance acknowledgement",
+    "rollback_preserves_revocations": true,
+    "monitoring_is_enforcement": false
+  },
+  "runtime_security": {
+    "status": "proposed unmeasured demo targets",
+    "security_decision_timeout_ms": 200,
+    "credential_revocation_propagation_max_ms": 1000,
+    "containment_after_validated_critical_event_max_ms": 1000,
+    "security_critical_drift_check_interval_seconds": 30,
+    "critical_dashboard_max_seconds": 5,
+    "critical_alert_max_seconds": 30,
+    "security_event_max_age_seconds": 60,
+    "allowed_event_clock_skew_seconds": 5,
+    "positive_permission_cache_ms": 0,
+    "lost_signal_behavior": "authoritative recheck; stale protected state denies",
+    "automatic_scope_expansion": false,
+    "exact_standard_identifier_mapping_status": "required before affected implementation acceptance"
+  },
+  "standards_baseline": {
+    "asvs": "5.0.0; tailored Level 2 verification target, not conformance claim",
+    "owasp_llm": "2025 pinned reference; assess 2026 edition delta before migration",
+    "owasp_agentic": "review official publication; exact edition/digest pending",
+    "mitre_atlas": "official dataset; revision pin and technique mappings pending",
+    "nist_ai_rmf": "1.0",
+    "nist_zero_trust": "SP 800-207",
+    "iso_ai_management": "ISO/IEC 42001:2023 public overview; no clause-level review",
+    "openid_ssf": "1.0 final; interoperability adoption conditional on provider support",
+    "openid_caep": "1.0 final; custom events separately scoped",
+    "oscal": "optional evidence export, not runtime engine",
+    "certified": false
+  },
+  "actor_assistance": {
+    "status": "proposed; task capability and usefulness unvalidated",
+    "default_mode": "read-only proposals and human-reviewed drafts",
+    "clinical_message_autosend": false,
+    "consequential_action_approval": "exact payload, scoped expiring human approval plus deterministic authorization",
+    "task_approval_ttl_seconds": 300,
+    "max_delegation_depth": 1,
+    "autonomous_agent_spawning": false,
+    "manual_workflows_with_ai_disabled": true,
+    "online_learning": false,
+    "task_capability_admission_required": true,
+    "critical_seeded_fact_errors_allowed": 0,
+    "unauthorized_effects_allowed": 0,
+    "usefulness_baseline": "actor-only matched synthetic scenarios; not yet measured",
+    "real_clinical_noninferiority_margin": null
+  }
+}
