@@ -1,0 +1,795 @@
+{
+  "analysis_date": "2026-11-04",
+  "status": "requirements_only_not_runtime_evidence",
+  "notice": "This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.",
+  "requirement_count": 114,
+  "question_count": 53,
+  "model_revision": "7ad3f8476b073a78dca7495b8b083946e3ef1359",
+  "historical_prod_revision": "6072d6eab33b0960e03bfdbb176bc5d432370c15",
+  "files": [
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link-workspace/requirements.md",
+      "sha256": "d315a76181d14a1584e59615357d9460b99494d904a97a0eb69c8751ef6568b5"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/README.md",
+      "sha256": "58e4dc3fe06b2d397a3fd29e96468fe6f697cdfddb6962b7f5e89a41a4bfa843"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/docs/source/FRS-v1.1.md",
+      "sha256": "aa33960f1641ffa4ef6721c583c57adf69fe74e059bf22ef982a78316b3866a2"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/docs/source/SAD-v0.1.md",
+      "sha256": "1ba272257f403fe43e8319cae334e27f2382f8e098af2c6bbf5bc4a489f23161"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/docs/source/HLD-P1-v0.1.md",
+      "sha256": "f331c63c215e0be88ad6b5e650779c5e889a7c84d05f56af96fe57ac581643e4"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-A1.json",
+      "sha256": "503942cd880f22d4809ff73223cba63e5dd5bc44607ee424193507f2b9ab35e8"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-A2.json",
+      "sha256": "baab68cb749f69c7721f2e670db61dd70ab5ac88e632b039c1111bc269135161"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-A3.json",
+      "sha256": "27088a36490141a7db38e1c8c16c7b0034092a791103c0f45f07b79d4244ecae"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-A4.json",
+      "sha256": "c1370ca8f3d2c62cc1bf7e163d7e5e4bd8ae06cf333ab4205d001c7f1529638b"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-A5.json",
+      "sha256": "97e05e5717aa2140bf94b84e36d315b8a721d89c798c1889b72acdf6c3f91df8"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-A6.json",
+      "sha256": "3d50a481e45e990a865ee8bee35cf7bdac6c60785380b0b7be1910a364fc20a8"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-A7.json",
+      "sha256": "e3c263da5e76bc6f93998328ee08db338cd8bb19258426c4a2b60826a4812e75"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-A8.json",
+      "sha256": "c3109db57e8c769ceaffae6bdbaa115fb44614f727b5432a74c350d3e1eea86e"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-B0.json",
+      "sha256": "3b832a0a9f6af44cf77664d80a7f280e87934bb61bd3bb9a1b229dd9ac6f0093"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-B1.json",
+      "sha256": "94b8a4c7ebdb2839f0a0d22ed4b66ada328691eb07420025cbad60b28a43a041"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-B2.json",
+      "sha256": "6acd98451e43a7cfbd315fcc594b650a49dc7d253f33c781b3d20b32a6713aaf"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-B3.json",
+      "sha256": "502ad0a29c3a1e6177bdf6a75251c63b6e4801c5372cf65b389eea159d2e3956"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-B4.json",
+      "sha256": "8e559bd08fad62dd0475b50e7272892e692f0aed1860a3bb269390638ab110be"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-B5.json",
+      "sha256": "8392be845c44c0f4f1a109b3e105681f0cc8c592db07fbf6e315570e62537045"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-B6.json",
+      "sha256": "c9bdc49cdfe7a1c45900ffa553af94d631043db3b5e45026fdfafad361f79824"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-B7.json",
+      "sha256": "72d79a5d4f6e638aef24356c2dae08c6d4d1d7d217988a97d25faac586c77662"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-B8.json",
+      "sha256": "25bff0b0c5e030118c9c6b5a198c37e97c90d87fcd551dc08bbea7578e6c36d7"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-C1.json",
+      "sha256": "befe4ff527ad697ef10c01e2120be9d69b9fa71f0303f41b0fd142d3375dc323"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-C2.json",
+      "sha256": "990a87a694ea05e07d8c9f7126d317d957c422402fb9714711b0c6a4400cc212"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-C2a.json",
+      "sha256": "e8c6467fb07e38a15b6e51f00760f172cb7e464ead7b5a93fd6398b150f197f1"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-C2b.json",
+      "sha256": "6ea9746fbf9678b27cab3906b046cec7a6e493a35de24c78533d1410feaf82a0"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-C3.json",
+      "sha256": "c37241ba96d0215bc6f2efda6b0a8dd3b06dcb90dd9388a8ec38fb9e7ccf5890"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-C4.json",
+      "sha256": "99cccc76dd16c18b7c929f8a16812a3f74bc57afdbf4394575fd469b5309cd4f"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-C5.json",
+      "sha256": "808373df0aaeb9dd16cb7920a81b2dccca2a3933d7ff3f8311c7dcaf7014f71f"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-C6.json",
+      "sha256": "43719f5cde31f63c34b62f90ef9883ad54d776de43f9c43b93ccecfd33a485a9"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-C7.json",
+      "sha256": "29282a634f20dd1aa1a50678cc0d02516fe68ff620d834474d7948c7764eea8a"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-C8.json",
+      "sha256": "1c7d438ce848710577e61138a91140b1a3b6a2e9dedb23d8e078124f211b8cbd"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-D1.json",
+      "sha256": "d5629c24c82ac1925e63276b5a61baf3a473f3e2d8b9d55a1558acd2e86067a1"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-D2.json",
+      "sha256": "f7c48ddc6adf81fde317efe29494b2580ec1c983a1d574ee0836d65d771e6119"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-D3.json",
+      "sha256": "c005934b2ce2327fcd090057c76ed1e4bfbb84081c9f62b1a502d03e007e47d2"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-D4.json",
+      "sha256": "b118d1e0a6eb9200b9543482d17ee0f9b3f076f26770d896272130a8264839d3"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-D5.json",
+      "sha256": "eb277ec2a759884ecc6c05545438e8c9d7ded6553d91e653fc9dc09d25c60160"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-D6.json",
+      "sha256": "730861a7379fedf18c684343cb87e36c11ace0429f8eae222f09cac957f3a639"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-D7.json",
+      "sha256": "812a01223277464f1f368a43598d2e6816b61f2cda8bcf629f781e2b234f9fa7"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-D8.json",
+      "sha256": "3e93b7da17243c864249c09b8280f59cdaf490b3948bfdf3d067d29a02683113"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-E1.json",
+      "sha256": "4ba82a7fc822733b2bf43f95b95f230a305fc530c562ab564eaa9ae9a68481f2"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-E2.json",
+      "sha256": "e7ad16a905989b2fbc972307b4d1b4499aec5581561eca1515a2900ff35c5122"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-E3.json",
+      "sha256": "4bd5776747bb4105f76837de2d85b38075f0a393cc658f925d64ba04c403b6f4"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-E4.json",
+      "sha256": "ddaec521e72f7a2660a7e969632066fd82edf3ebf5c9a68c88d0895024dc3999"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-E5.json",
+      "sha256": "4b3138a29b055e27aa621b616b90401b06abf3b34b455f0d063c1abcd158501c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-E6.json",
+      "sha256": "326d0f09241717c4c789a48e6a6391bf859bb5700921f7d653ce7bb856032dd3"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-E7.json",
+      "sha256": "2c4314bfda4397c9bd13183005606f6d16aebd20a0e8b4b25094fda9dc293057"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-E8.json",
+      "sha256": "5f5b45d57bd055d6390e4ba62ade9d6d64959cecb640d982077f73e0c9c52f27"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-F1.json",
+      "sha256": "c35cd787e1fa2e40d312f8f49c540eda1406f1b0f14d5550e0b623f55483a70c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-F2.json",
+      "sha256": "72f3b4f2e79c3bb08bd942f038f5c0bbcac76bf6ef671921ce5c493060c1dd5a"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-F3.json",
+      "sha256": "9af7fa272e22f99f92fc7e9f2d28f2543bf56c77a2f1732148ad0516ce52555d"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-F4.json",
+      "sha256": "575d65a17420ec7b1594d2da8e3c609ee5be55ad2a1c1b74cdf19858157cdda1"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-F5.json",
+      "sha256": "aa28175985f3c6201f8fab46d80574ee5286a8e040a7f891794554b1f124d37f"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-F6.json",
+      "sha256": "e9423a07de4acea758af6ff417262e8317a43849cd6ba07a8e8f36021eae639f"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-F7.json",
+      "sha256": "52370759f38c9a016b78ceba3c6ad219800853aea7c4aed8e7faec7790f66e70"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-F8.json",
+      "sha256": "6e22e3412d5690b1598d661eed9916666f50daeafd21151a61df9f2d1c3d2619"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-G1.json",
+      "sha256": "07d1015b6afb3e7fe3d79054e4ed412dcb57a3c73c0d035b7858c3174f7acc8c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-G2.json",
+      "sha256": "04714b263126928ad6240a8734ba6314f0ad7373014af27d9997387b5e99b2d4"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-G3.json",
+      "sha256": "cdaac64f9bcc0f6310512a9660e6b286017bb7c7a94e1fa061e21605eccaca2f"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-G4.json",
+      "sha256": "ea46303400a332df407d218e81ec650608cc70d7145409eaf9fb198b3b33e2ae"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-G5.json",
+      "sha256": "4c01c6f8581f9f753290f14a4b869ba6c680625378e4ed7c716de55c9460daac"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-G6.json",
+      "sha256": "d2363165612040dd0e8d99c1ecd266cdb07a4f52b2ffc400635cbfd17c6ca1c8"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-H1.json",
+      "sha256": "2ff4364d5a3d9287fd7401c6eb281c725dd157caf00f3bee26c8fae0f51420aa"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-H2.json",
+      "sha256": "12c1e4995c3fdbda07c2e6faeb8358316cbe8185dc2ede0973d392fe31e39a2d"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-H3.json",
+      "sha256": "355f567c261530c74bd6b3f901edf6077a17562fb97fb9cde1643815755ca270"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-H4.json",
+      "sha256": "8e6d96cee1fe61f39ae863fdde538a38b17932fd28c50c5b99cadbcdce10d851"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-H5.json",
+      "sha256": "6e9fab7d5e78f033cdb49b78ca55e5012b49a8257e747ad653a767d250b0dd10"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-H6.json",
+      "sha256": "aa25fdd928beef34de171603bfa4ae77ce9f272fb86db601251308c956302755"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-H7.json",
+      "sha256": "85d374a87df001f34a39ecce31fbcf41b56fce756744e5b858406d9d10f38588"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-I1.json",
+      "sha256": "9c15996240787371e1e1182bb1e8a65eb478f39810cb3b30e8fbe4020a7bec67"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-I2.json",
+      "sha256": "4d1f10f0e7e89aec9cb5853860b3dd97af994100597cf54c99619d32cffb1acc"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-I3.json",
+      "sha256": "715e8d097b7393a6005fd1740ac93419425e12691e26c660761d613a9e7ee1ea"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-I4.json",
+      "sha256": "af34fd9677302bd6a4ae972918202d244e3fa02e58625c51eac35e45e64d47a7"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-I5.json",
+      "sha256": "7405a02c8ec2b3c2562582f04097dc833cdf349081e6d5d4fc3750bbd39d38a0"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-J1.json",
+      "sha256": "5afb030b00a2922b2683863ad907161ad75b088c1fa3263f51258301ce854dbc"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-J2.json",
+      "sha256": "684575b853c8737089c90910d1153de789bb051cc8e53842e4aade007c2e917f"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-J3.json",
+      "sha256": "9cc89a740ae835fb447d80a18b920220caf6c0e1d9ee5651422ae9a8d48d9960"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-J4.json",
+      "sha256": "1e8f9e34a599a2fc9ddd3877dd4886a69369d92ae093ba3553281e921ac5c859"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-J5.json",
+      "sha256": "e7041388baa139e6af84f6e831cd2c4edb9214801d75164bdf89f90106c0c0bf"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-J6.json",
+      "sha256": "a06833df0d7fd2aef6b4291ce00872fdb0f0fd4eca71bce7b7c28199b07a6941"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-J7.json",
+      "sha256": "edba5bf870d558e140a9bd376500a8c294fa795cbefd06cd1e816155661cad1e"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-J8.json",
+      "sha256": "0c460c009beaaf32a9de73d2d444799c5ac29c2a99fb3fbf606f69b2cfe2c13e"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-K1.json",
+      "sha256": "c2192ede190db29b265ae177a023cb34a4f9bf6efd9ff1f8a067af3b97c981ef"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-K2.json",
+      "sha256": "e664782403c3ca69e461005c150ec4ca89b77dc1dbc592bcd9827ac95b0c2ead"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-K2a.json",
+      "sha256": "8da5866eb2583c05b79010918ea2c5bffb38a41bd5bd2fd0142e6f069a264618"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-K3.json",
+      "sha256": "d5baafa8eb8bffc91826bcdf0973c86c8c69ee8b65991dd0a8cfead3338a7a22"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-K4.json",
+      "sha256": "bcac96cf2ec4107ae94ab49575618d342b11b1643b9ad57544848da5e619eba9"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-K5.json",
+      "sha256": "3370ca7e5f33b94c11efe1e869646a751399150961b1eb9102e606d0d19a5076"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-K6.json",
+      "sha256": "7eed4542f3606e90e3c87253ac9460e2919888a3e0851c9b9f080492803f81dc"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-L1.json",
+      "sha256": "bfd13124cdb9c7ca4776c78018186d7d540aea5fe3fa961f0ab3c45a2cb99189"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-L2.json",
+      "sha256": "0e319cabd5bf043552d5f90240ddb6ade449a21a93090d1130f5bf1b11834b43"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-L3.json",
+      "sha256": "7365df2f17651e2809419ea0e13def02929c6720e9b0d32f322c9314f0ffd818"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-L4.json",
+      "sha256": "dd73ea6865f9d5e7cf1597985b823f8f55c6d800343ce8828262c589da0a45b0"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-L5.json",
+      "sha256": "da6e7922d24f1a81fc393bd71fc61161c0eee1b2e0b4f17dffb37baf15ee5025"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-L6.json",
+      "sha256": "c91040a7ef22bcd491f9a89f42499803d6bf3c9838fab1f1c16bdbdbf3339c20"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-L7.json",
+      "sha256": "270d3a06bc0e333a39ffdff2107cdeca4403a8797db9ad7dcb82b97e55d1ca9d"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/FR-L8.json",
+      "sha256": "50a52e3ac8670c8fd653159c56a376e2ebbaadeaaa7fec96544ffd0270cf6f90"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-1.json",
+      "sha256": "8a7fbba499447ec8c819344db261b13e87e8145b8dfde017e1213bfd49f18da7"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-10.json",
+      "sha256": "1c4e19bfe7d889c33cacc5250b14ee7a85303638ca18dee511123f4cf19963d4"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-11.json",
+      "sha256": "7c412865d5bc71e6e193c62220b405ab03438fce51c088d9f1407eea4c50e89f"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-12.json",
+      "sha256": "ff8ae0e3474ef6d6e95ec1ce6292cd876bda185f0627c578405bb5bcce65a347"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-13.json",
+      "sha256": "efdbbe67044c7a6fd74a20da56402fd4a75dfdf25035c87ea5f44152c3f043c4"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-14.json",
+      "sha256": "ac6e712c8491891eaaafa821506bd66409caf75cb3326f9b23d3d728e78ae94c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-15.json",
+      "sha256": "4d48ca192aefb61072172c83a787fcd48edbaeb8f44c7b3304ee27df6bec0f63"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-16.json",
+      "sha256": "4ea548f5f9192242041079c7cc8faa79c7ec59ac4b3eda10f09ff405692ef1e1"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-17.json",
+      "sha256": "fd441dda602fa42c386e731cf36550fa20f1f3eddda940691ede7c25168af205"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-17a.json",
+      "sha256": "c7efe8dd801aa8bdf3361e531d4512081eee66b52ddab7dc8ee21cdb53e0618b"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-17b.json",
+      "sha256": "db43a4eac04c0c1427d166fa6e43bfabda4feab4956989c0baf967029a570564"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-18.json",
+      "sha256": "1257274cb781fce2653e8fafe6d3b6f7e927151ec67b36a772e6f7eaf7235bbf"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-19.json",
+      "sha256": "956264a10ddd70f9b6e67a7951e7b0ce3c3bcce535d762034caf157ba2a5c9a6"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-2.json",
+      "sha256": "c3875d0302d2c91d083399dff8653856563d86d39552ea60cdfde87e6e19c794"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-20.json",
+      "sha256": "c6327f6c7c7a47da24bba8dacec93b902ab6d62c919c3421dd71555ca30c972a"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-3.json",
+      "sha256": "af9a0b2f8aac178a419fa956d043d68d8751f2fa4dd3aa884ac6d2f9a6bd1d8c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-4.json",
+      "sha256": "b59236f5563f951a22a5b8fe8455835edfe78355db09cd66719c84e21ca0a8f1"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-5.json",
+      "sha256": "6c926b80d6ea7c0ec1fb03648884ca7039c76628127dc3de1538c79ad2591db0"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-6.json",
+      "sha256": "4e0ef1fc2ffcedd2d2610635c607d42438a62f09677156e2352bd686fbc9c045"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-7.json",
+      "sha256": "656a506ba935555244f3f9e033e4427966852075b09dc19f70053913a1a384cd"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-8.json",
+      "sha256": "5469a1203ede719b39803841ece62bf6f2fdcc030c077a1809c7846fca6766e1"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/requirements/NFR-9.json",
+      "sha256": "9e5e9f7a7dbf491d36d212d086b8487d15b9c25fc6208219d705e74f546d8c55"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-1.json",
+      "sha256": "af3978102af9db49a9f39c8961ade407af334f312c46d3cf1f3eb4d856e714e1"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-10.json",
+      "sha256": "7805d61ebe388f0c27accc776321e10718e029d97aa2803f61edb950ee617e53"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-11.json",
+      "sha256": "36f59d17888af5776906333d6d194455fc556927e608332457b105882b63b9a4"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-12.json",
+      "sha256": "4ae5ffc14425c65701e1a06ba126295880c27be409beed47b49e31a151dcb426"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-13.json",
+      "sha256": "d97da4f6e440b9e005cdc6706b407362acbe51c213c0d7ba603c8f5a4035dc9e"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-14.json",
+      "sha256": "dc9460165fb59956e04664eb8e6d096458c559a8a05f8fe48865f163247f634c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-15.json",
+      "sha256": "f73d717340e30b5b065d233275c05f6fc0ce132907c3c1007922211a31f84d58"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-16.json",
+      "sha256": "673e0f7fd7c541d2ecc5f394c8b640772974fcd82df46476d771fdad49b28f4c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-2.json",
+      "sha256": "1fc72f0fdced99fd2845b7c1dc185b2a16fe92727566c6a54720fcb63f5fee16"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-3.json",
+      "sha256": "cad793792b641d36ef78f12856338d4d59e9edaf62b52c086ac646a58f25fc8b"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-4.json",
+      "sha256": "f41271cd0fa19758372a6dd80e6264267d5632d424d5dd3fa25ac8a9c7e10a68"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-5.json",
+      "sha256": "4d86be1913ae60698f51684074841f484da6744e1d02f45664c7e00149bf79a6"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-6.json",
+      "sha256": "476b150af60a3e354a29f0401442dd9b7c1d990b339612b98f50fed69cfbd917"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-7.json",
+      "sha256": "33136b05165931f608c6cb2aa3a7e36979a2217603a7cfb68baed1d752f35a10"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-8.json",
+      "sha256": "911a69adfa2c6bb004d3d6d58da86bce72d801c4d7394408560e618e8eaab36e"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/invariants/INV-9.json",
+      "sha256": "cf656d2eee08821902dc6ad45ddd65951e7e39785fb7be1168b6e4867d023d14"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-1.json",
+      "sha256": "8c528790ab3aaa0a2977e185c384bfe4e2ba2207bf0ebadb1048204a5d6c0d13"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-10.json",
+      "sha256": "5b0a6709362739d3b631cd84846d317d076e2c0b44449aa6d94191e8dcf380b4"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-11.json",
+      "sha256": "f35ef426e3979391ccf21a2d367897cea752198d8a0922b68c2c3efdc88a7b20"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-12.json",
+      "sha256": "74c81adf7f680532ceea5e01a0a4720a72ca0ffdd19e579fbfd4a916c6a0631b"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-13.json",
+      "sha256": "5281011308bbabcbdd3b49f26959694e7d8775d493d45a4723f04565ffaf8d0d"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-14.json",
+      "sha256": "fd3cd5250dc2b09dd898f0b5ef92836050797e3b88a8fb1528bf64375f3f3d2d"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-15.json",
+      "sha256": "424f3b67da985640b48b1420840dcab7c3af47bed52e9f0065ec80280a3e6b7c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-16.json",
+      "sha256": "e8d22d2fac7e07aae3df474fea25f34001ef28388008289acf6b6fc97067c783"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-17.json",
+      "sha256": "9f73164993150d47f197cffd632105191e9c869cd871e1f7a7863d6f3fd72c91"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-18.json",
+      "sha256": "001efa26269c289ced65a108d7697b9b55a5c305397bfebb8dc4456547650494"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-19.json",
+      "sha256": "02930555dd2fb9f736425f183b9c7853ac3230b7d60f40fbb83487db376647a5"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-2.json",
+      "sha256": "64af6b3393ec2889b50eecd1c39f43d7429c9a89288e0468d53a471d6f0cde95"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-20.json",
+      "sha256": "7daa9ce18cea12601d317e3542d208058197ac2f2a047377d0bc4360099429a8"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-21.json",
+      "sha256": "54338c0d8987720f0c0ee41ebc5a24ef3bdf3c67017109d8111100e21a134aea"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-22.json",
+      "sha256": "ff19bee742ce93002f13f323662a7d4e83342fb2b77b3e3ede3f3187d6d8e40c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-23.json",
+      "sha256": "6d7ee822fc3aa2255bbc39d1a699d3b7abcd67f4302c575cd50f5599d3ba8788"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-24.json",
+      "sha256": "a902e05845d168447ea3053af4264d12bf8f076f998d69ba77fa1d43acf8587c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-25.json",
+      "sha256": "cd7265d63f9986060213936e2272d5d9e82713540e47e20d192bdb8a7afdadd9"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-26.json",
+      "sha256": "828228db9e929d3bbeea0ee94226322eb87b1405d31fd86ea395afec7f458a12"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-27.json",
+      "sha256": "bd7d7b768f3266a9fa2f98f48c2dda30543cb8a49d71f550b035ae4e158dcd57"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-28.json",
+      "sha256": "4380762563b35912bea9e4e8ecc025725fd8972c347f081157de389329325cbc"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-29.json",
+      "sha256": "a5cbacf7f2f393ea8d9cd6a32fff31e025be52eba6e2b780af71fd88a9ae2cf0"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-3.json",
+      "sha256": "b1638a3eb8c3cb5ead8d6845ffccbb47740d5f42d2a983d97f9a3563b198de47"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-30.json",
+      "sha256": "25f7d96065336166faf1c7a3d1a0568b206d75d9ae948df05a15421fac9eea2d"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-31.json",
+      "sha256": "f9b22cd1dca8dfe9c7e92cc73c0815e1594153a239052db67f5cc804dd71c6f5"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-32.json",
+      "sha256": "55486b43962b0371e49462277b2b7e41ba722c8a8a2dddacb08df0f8ca0c1409"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-33.json",
+      "sha256": "40c829f41e6eca0393631a5bc758d168c1769dde175f7752e706cb51e4b2273b"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-34.json",
+      "sha256": "fae2dd4a03e4ef2e28130b7200ae3a9d7342dcbab2ccf2c0214ab01b20ba3d90"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-35.json",
+      "sha256": "19bb39e77c143f762fc38c6f7fbf089c6508d1d6fcaf48fa083d92142fd79ab9"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-36.json",
+      "sha256": "276e0d4042e15c357f36d2f2777157b46bac120e3f99bf68cba8b513124814fa"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-37.json",
+      "sha256": "47d9fd52ce5a932d61d1e6a3a961c667a9f97910a85ceb078265e1f8d620b514"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-38.json",
+      "sha256": "ba15625c136da0134a8438e7db332efab9dd6df49902b3f554f9803bc7ad4e8b"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-39.json",
+      "sha256": "98faa2b4cc365c1d08140193c4ff8e1a62bc549799c83065d4c23c05f9b6e0e1"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-4.json",
+      "sha256": "114db65d0de3d3995f22e63cdefba8c5e1cea63c2925ff3d5162d1b61d799488"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-40.json",
+      "sha256": "e4d2d4ccfec810463d3fbf7ee042b9038ba8000da7ddd08687fc5089eb325e64"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-41.json",
+      "sha256": "0dcc6903c30ead0be9e1cd3a34310421dd0fed3f66c2c2aa8ffdf6edbdf3a1d5"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-42.json",
+      "sha256": "6d2656dddd3353ae7c77d74917655079d9646d2d346a61ae93fd2015ad297e37"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-43.json",
+      "sha256": "f3003ce1f473adeb62aa015036111a72cf3a42e4951bae36d63fbfb6c0ecf757"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-44.json",
+      "sha256": "e62217b07919d0a14b1777cf17d376dcd567eefc18b96b6d95f365fd7eaf5e82"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-45.json",
+      "sha256": "44123dbb9527175fd3f8cd7d091ff4f0363f3371a1cbd7e26d29036c3444b816"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-46.json",
+      "sha256": "716f5b6f19c361f7ed4f65e95828017cc9ed8e9ad6faaaefaf28e279764f05d2"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-47.json",
+      "sha256": "f3f5b7a7c3ef9eb0316cc5d4f68d67dcd1c2485c9b2a99c0696341fb193b0019"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-48.json",
+      "sha256": "79642a264195e46113e4db686c38f0000220ed46ba3c732187f16bca6cbd21e5"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-49.json",
+      "sha256": "7e34fb822132892c9c0fc1a9a6ccf36038e444725e58cfb75fce0f9fa1cf031c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-5.json",
+      "sha256": "111c82721fae1a95f0a35ee2fc45fb67a73e4a540a9668732b14a1d5d0fb206b"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-50.json",
+      "sha256": "7b61fa6efb223b846efa6de525f3d7be62681e774d5d610b8ec963708a450d3f"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-51.json",
+      "sha256": "5f1862db085f4da9613f744b72412bd313f87c4294deea8ee2dd9175dcf7e079"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-52.json",
+      "sha256": "6613641666d5a6fa91a91414ce30e8889b34e672addbccc5e654669621c0e3c7"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-53.json",
+      "sha256": "f2de57dc3267ae114012eaaaa77aff4b72ed3ab218076475d5b101472e2a1e3c"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-6.json",
+      "sha256": "3442e8d52dd726a6e2a083500434bcafae12c735956e8d00703bf05c8f08477f"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-7.json",
+      "sha256": "cd8f499365aa4fb3e454dbe6c51bdf3f986a29ca07c1e18f9112986df4cfccdd"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-8.json",
+      "sha256": "ea6fecbabb4bf2d0424f3548ef6c4c55d717a365e44bcc4185303d7d574b2658"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/questions/AQ-9.json",
+      "sha256": "62331c04281fb785c9d8187cc2d867e2c91c90fd353da519da5fb28e5536fd80"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/contracts/audit_event.v1.json",
+      "sha256": "9e6ae81d2d73cd350c991a002a8873e4e2f3001cf355a605bdcd0b03c7a14e94"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/contracts/broker_decision.v1.json",
+      "sha256": "5437d91f0fce1f16a070d992c947852c0232fb96c573f90335f08e21a492a6e7"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/contracts/consent_record.v1.json",
+      "sha256": "c5c89d164c02136b5405fef6549c83a2e99e91ac8b147d83196a1db9dd6543fe"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/contracts/proposal_envelope.v1.json",
+      "sha256": "a3f5ef4b39bb5c63d6cc4bafbc02a9bcdaad28fade7b464f4cb64fcc0e99bc85"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/contracts/triage_features.v1.json",
+      "sha256": "cee68e79a7e3d0470da4612a29bcb49f4f28b1b349257f74493658d612ff0ead"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/model/contracts/turn_envelope.v1.json",
+      "sha256": "5fcefa1973329d8e2f5edf523ca7175373142b131ada256e8f4da8053c67bbef"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/decisions/ADR-13-propose-structural-model-completion.md",
+      "sha256": "62627ae4c1ab1b324beb1869c9fad8471d6575ae190923b9d834bebe30fa615e"
+    },
+    {
+      "path": "/Users/main/Workspace/projects/care-link/care-link/generated/assurance/README.md",
+      "sha256": "274c0519826fe65c9cf7ae4e34748d5ca8850f396963f9d528302bb6142d6800"
+    }
+  ]
+}
