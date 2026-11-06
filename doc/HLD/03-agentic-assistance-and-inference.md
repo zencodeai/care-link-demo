@@ -1,41 +1,45 @@
-# Agentic assistance and inference
+# Actor-support agentic AI architecture
 
-## Role-scoped bounded coordination
+## Architectural role and value
 
-The task coordinator is deterministic and durable in the core. The runtime is an untrusted stateless proposer whose only network destination is the broker. Runtime polls leased tasks, receives minimal labelled context, requests inference through the broker, validates shape locally as an optimization and submits proposals; the broker validates again before any execution. This avoids a direct inference exception in Z2. It is a proposed resolution to upstream D-02, not a source-model amendment.
+AI supports actors through a bounded cycle of goal, permitted context, proposed next step, authorized tool observation and revised task progress. This is more than one chatbot answer but less than an autonomous care provider. Grounded navigation, context preparation, editable documentation and handoff follow-through reduce avoidable worker burden and help clients make informed choices. A fluent model response alone does not establish a useful or safe workflow.
 
-| Assistant function | Inputs and permitted tools | Output / acceptance boundary |
+The deterministic core owns task scope, durable progress, budgets and human-review state. The isolated runtime proposes plans/content, holds no store/partner credentials and communicates only through the broker. The broker mediates inference and every tool step; the inference gateway is the only host model path. Agent specializations are task/prompt/tool profiles in one bounded runtime initially. Multiple autonomous agents or a new agent framework would add coordination and identity complexity without an established service benefit.
+
+## Assistance functions and authority
+
+| Assistant | Permitted context / useful result | Approval and boundary |
 |---|---|---|
-| Client/carer navigator | Own attributed needs, approved templates, permitted plan, directory query | Source-linked options/questions; client choice remains explicit |
-| Worker copilot | Assigned timeline, uncertainty/conflict markers, sourced protocols | Editable context pack, summary and response/referral draft; professional content requires worker review |
-| Handoff coordinator | Current task/queue/receipt state, allowed recipient IDs | Progress check, authorized receipt lookup, proposed alternative; cannot promise acceptance |
-| Planning/follow-up assistant | PID preferences and scoped sharing, separate contact consent | Draft plan and proposed follow-up; no unilateral grant/send |
-| Supervisor assistant | Scoped workload state and aggregated demand | Suggested reassignment/missing tasks; no autonomous clinical priority or exposure ranking |
-| Operations/security/governance assistant | Scoped digests, health, rules and evidence | Runbook/evidence/incident drafts; cannot sign approvals, access secrets or change live policy |
-| Training assistant | Fictional scenarios and rubric | Persona role-play and debrief proposal; instructor validates |
+| Client/PID navigator | Own needs/preferences, reviewed knowledge, permitted plan and directory options | Client retains choice and sharing; only reviewed template/source content reaches clients automatically |
+| Carer assistant | Own attributed reports and authorized shared facts, carer-directed services | Cannot create PID consent or disclose private youth content |
+| Worker copilot | Assigned timeline, missing/conflicting facts, sourced protocols | Editable summary/response/referral drafts; worker verifies clinical facts and accepts final professional communication |
+| Handoff coordinator | Authorized queue, referral and receipt observations | Tracks incomplete work and proposes recovery; acceptance/connection remains evidence from human/receiver |
+| Receiver/navigator assistant | Only consented receiving package and own service status | Completeness/clarification/logistical drafts; receiver confirms capacity, receipt and acceptance |
+| Planning/follow-up assistant | PID-authored wishes, scoped sharing and separate contact consent | Draft plan/follow-up proposals; no unilateral grant, reminder or transmission |
+| Supervisor assistant | Scoped service demand and aggregate operational context | Suggests review/reassignment, not autonomous clinical queue priority or individual surveillance |
+| Operations/security/governance/audit assistant | Authorized health/events/rules/evidence | Runbook/evidence/incident drafts; cannot approve, certify, access secrets or edit live policy |
+| Training assistant | Fictional personas/scenario controls and instructor rubric | Role-play/debrief proposals, instructor oversight; no clinical competence credential |
 
-No multi-agent orchestration platform is necessary. Specializations are task types with prompt/tool profiles and separately approved capability admission. Delegation is at most one level with equal-or-narrower scope; parent budgets cover subtasks. No autonomous spawning or trusted inter-agent channel.
+Read-only draft preparation may run automatically within an authorized goal. Narrow low-risk searches/status checks may execute under deterministic preauthorization. Consequential disclosure/transmission and professional communication require exact scoped human approval as well as current deterministic authorization. Deterministic hazard/human-help protocols never wait for the model or optional draft review.
 
-## Durable task record and state
+## Coordination, context and review
 
-Task holds ID, parent/correlation, initiating actor and workload, human owner, session/client, goal/purpose, input/source revisions, tool/field scope, approval mode, model/prompt digest, policy epoch, deadline/budgets, lease/fence and completion criteria. Step holds proposed operation, typed parameters/provenance, observation references and status. Neither stores hidden model reasoning. Drafts and human approvals are separate versioned records.
+Tasks are durable service objects with an initiating actor, responsible human, purpose/session, allowed data/tools, approved model/prompt and bounded completion conditions. Runtime process state is disposable. Observations/checkpoints permit safe resumption without rerunning a possibly completed effect. Cancellation, takeover, revocation or changed source/policy state invalidates affected pending work and output. Budgets apply across retries/delegation, not per endlessly restarted step. No dynamic tools, arbitrary browsing/code, cross-session memory or online self-modification.
 
-State machine: requested→scoped→planning→running/awaiting_authorization→awaiting_observation/awaiting_human→completed, failed or cancelled. A task resumes only from committed observations. Lost runtime lease causes a new lease generation, so an old runtime cannot publish a late step. Per-step idempotency prevents duplicate execution; total lifetime budgets prevent indefinite retry. Step/task completion does not mean successful client care.
+Context assembly labels instructions, approved sourced facts, structured state and untrusted reports/tool text. Facts are not instructions; model output cannot upgrade labels or supply authority. Critical unknown/conflict markers survive context selection, and an overlarge task is reduced/reviewed rather than silently dropping critical context. Directory recipients are resolved from authoritative stable IDs, not text-generated endpoints.
 
-Default modes are automatic scoped read-only draft preparation; bounded preauthorized directory/receipt reads; and human-reviewed consequential proposals. Approval binds exact payload digest, recipient, field set, source revisions and five-minute deadline. A one-second execution permit is separate from the longer human approval. Stale facts, edits, new consent revision, changed assignment or policy epoch force reauthorization; material payload change requires human review again.
+Review presents original attributed facts, source timestamps, suggested changes, uncertainty, recipient/purpose/fields and intended effect. Human can accept/edit/reject without pressure; material changes invalidate old review. Human acceptance does not replace consent, legal basis, current policy or model validity evaluation. Raw unchecked model tokens are never streamed as authoritative client guidance. Protected manual work remains possible when all AI suggestions are rejected or AI is disabled.
 
-## Inference path and admission
+## Local inference boundary
 
-Broker routes an approved inference request to `inference-gateway`; only that workload can reach the pinned host endpoint. Gateway selects exact loaded Gemma artifact/quantization/digest, verifies availability, enforces queue/context/output/token limits and deadline, and returns tainted output. Start with LM Studio’s OpenAI-compatible chat-completions interface, not an assumption that all SDK functions/tool grammar work. Probe model listing/identity, JSON behavior, cancellation, Unicode EN/FR, context accounting and output limits before admission. Do not enable LM Studio MCP, dynamic tool discovery, remote model links or embeddings.
+Use requested host LM Studio and Gemma 3 4B IT through a constrained authenticated inference gateway/host bridge. No runtime-to-host exception or remote fallback is permitted. Pin exact artifact origin/license/digest, loaded identifier, quantization, prompt/decoding and server capability before task admission. Supported structured output/tool behaviour and cancellation depend on the actual model/runtime, not an SDK label.
 
-Requested baseline: 8192 total context budget, 1024 output cap, temperature zero, 30-second generation deadline, two proposal attempts, four agent steps and three tools per turn. Input plus reserved output must fit the verified model context. Two concurrent jobs/eight queued are benchmark targets only; urgent deterministic paths never share that queue. Temperature zero is not a deterministic replay guarantee. Prompt construction selects purpose-relevant source-linked items, preserves critical unknown/conflict markers, and refuses overflow rather than silently dropping safety facts. Raw tokens are never streamed to client UI; validated output can be delivered as a committed event.
+Inference is asynchronous bounded work separated from human messaging/help and deterministic urgent processing. Shared parameter budgets constrain context/output, concurrency, queue and retries; they are unmeasured targets. A timeout does not prove GPU work stopped, so pending results are fenced and capacity recovery is verified. Temperature zero is not deterministic generation or clinical confidence.
 
-Invalid/oversized output, tool not allowed, unsourced claim, taint violation, model mismatch, overflow, timeout and cancellation produce typed failures with no partial action. Bounded repair does not postpone human help. Every function is admitted independently on matched synthetic cases for factual fidelity, usefulness, EN/FR, latency and adversarial resilience. Unsupported model capability remains manual/template-only; no remote fallback or silent model substitution.
+Malformed/unsourced/tainted proposals reject the whole affected proposal before partial tool effects. Model unavailable, overload, unsupported task, context overflow or uncertain output routes to reviewed template/manual assistance, not invented facts or replacement model. Each assistant function needs task-specific grounding, critical-fact, EN/FR, latency, multi-turn/adversarial and actor-usefulness evidence. Recorded model output supports deterministic service replay; regenerating identical text is not required.
 
-## Actor benefit and autonomy controls
+## Decision and limitation
 
-Review panels show original attributed facts, timestamps, changes, uncertainty, intended recipient/purpose and accept/edit/reject. Optional AI can be disabled without losing authorized manual work. No auto-sending of clinical free text; approved template navigation remains distinct from worker-authored professional communication. Client agency, useful verified options, reduced editing/administration and meaningful human connection are measured against actor-only baselines, not inferred from fluency or engagement.
-
-[Official LM Studio interface reference](https://lmstudio.ai/docs/developer/openai-compat) supports the proposed adapter choice; installed-version/model behavior still requires verification. No provider contact content or clinical data is sent outside the local approved boundary.
+Selected approach favours a small explicit coordinator with isolated model proposals over autonomous multi-agent services. It preserves useful planning/tool observation while reducing authority laundering and recovery complexity. Model task capability and source-owner approval of broker-mediated inference remain unresolved before affected integration. Refer to [requirements service research](../REQ/10-agentic-ai-and-service-model.md) for comparator evidence and its limits; it does not validate local Gemma for clinical use.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.

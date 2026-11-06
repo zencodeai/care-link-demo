@@ -1,54 +1,53 @@
-# Design decisions, dependencies and delivery
+# Architecture decisions, trade-offs and open issues
 
-## Proposed architectural decisions
+## Selected decisions and alternatives
 
-| ID | Decision / rationale | Consequence and alternative |
+All selections are proposed for this demonstrator until reviewed. They define how responsibilities interact; they are not installation, certification or clinical approval records.
+
+| ID | Decision and reason | Alternative / trade-off | Reconsider when |
+|---|---|---|---|
+| HLD-D01 | Modular deterministic core with explicit domain ownership | Service-per-element architecture adds credentials/distributed coordination; monolith containing untrusted runtime weakens isolation | Independent scaling/ownership or privilege evidence justifies extraction |
+| HLD-D02 | Bounded role-scoped assistants coordinated by durable core, one isolated proposal runtime initially | Autonomous multi-agent platform adds orchestration/authority laundering risk; simple text generator alone misses observed multi-step coordination | A measured actor task requires isolated specialists/concurrency beyond current coordinator |
+| HLD-D03 | Broker-mediated local LM Studio/Gemma and dedicated host inference gateway | Direct runtime inference conflicts with broker-only trust; remote inference conflicts with local requirement | Source-owner disposition or new explicitly reviewed deployment scope |
+| HLD-D04 | Scoped persistence gateway and co-located business/control/canonical-audit transaction boundary | Independent audit service provides stronger failure/credential separation but requires explicit consistent publication/recovery protocol | Trust/scale/regulatory needs outweigh local transaction simplicity |
+| HLD-D05 | Dedicated audit authority, append-only access and separate integrity checkpoints | Operational logs alone lack canonical integrity; same-host checkpoints remain vulnerable to root/disaster | Independent audit/failure domain becomes available/required |
+| HLD-D06 | Current deterministic policy with controlled version activation and future-effect revocation | Login-only or event-only checks preserve stale permission; all-local synchronous checks cost latency/availability | A verified distributed protocol can preserve semantics under scaling |
+| HLD-D07 | Direct independent host help/static entry and minimal spool | Core-only help is simpler but lost with edge/cluster; full duplicate platform is costly and still same-host | Real partner staffing or resilient independent hosting is authorized |
+| HLD-D08 | Distinct role-scoped OIDC/MFA identities and operation assurance | Role dropdown/shared account/metadata linkage undermines accountability; step-up adds interaction cost | Actual approved anonymous real-user entry changes perimeter requirements |
+| HLD-D09 | Versioned logical commands, durable push updates and reliable asynchronous effect reconciliation | Pure polling is simpler but less timely; unconstrained event bus broadens disclosure; neither guarantees exactly-once delivery | Load/network constraints require a measured transport change |
+| HLD-D10 | Private single-host Docker/Kubernetes plus isolated simulated partners | Multi-node/region hosting improves resilience but exceeds local demo scope; real integrations need agreements/staffing | Explicit deployment and real-user scope change |
+| HLD-D11 | Classified exact-artifact human review separated from proposal/signing/activation | Automation-only/self-approval provides no independent human oversight | No relaxation without an explicit governance change |
+| HLD-D12 | Offline reviewed task-specific evolution; no online training/self-modification | Continuous learning could change behaviour without evaluated evidence | Separate training consent, data, safety and change-control design exists |
+
+## Workload identity implementation decision
+
+The architectural requirement is automated attested workload identity, mutual endpoint authentication, identity-based deny rules, controlled rotation/revocation, host-bridge participation and bounded issuer-outage behaviour. Full service mesh and app/proxy-managed mTLS are alternative mechanisms, not equivalent guarantees by default. Compare actual local installation/operational cost, bypass surfaces, host integration and credential/connection revocation evidence before selecting a product. Until that selection passes review/probes, workload trust implementation is unresolved, not implicitly deployed.
+
+## Open issues and consequences
+
+| Issue / accountable responsibility | Effect on architecture or readiness | Work that can proceed |
 |---|---|---|
-| HLD-D01 | Modular core plus isolated runtime, inference and persistence boundaries | Useful vertical slices without dozens of microservices; core compromise remains a privileged risk, mitigated not eliminated |
-| HLD-D02 | Durable deterministic task coordinator; untrusted stateless role-specific proposal runtime | No general autonomous framework; specialist tasks share scoped tools/model with budgets |
-| HLD-D03 | Broker-mediated host LM Studio/Gemma only | Preserves broker-only Z2 egress; source-owner D-02 disposition required before adopting the authority change |
-| HLD-D04 | PostgreSQL command transaction across business/control/audit schemas | Atomic state/audit/outbox, no distributed-commit pretense; DB root/single-node failure remain residuals |
-| HLD-D05 | Dedicated non-login audit owner and restricted append procedures | App cannot rewrite chain; host/DB superuser requires separate custody and checkpoint residual disclosure |
-| HLD-D06 | OPA decisions plus central monotonic epoch/revision fencing | Local signed activation not instantly atomic across cluster; stale instances deny rather than fail open |
-| HLD-D07 | Separate durable minimal help host service and static content process | Help acceptance can survive core/cluster failure without exposing histories; host loss remains uncovered |
-| HLD-D08 | OIDC BFF sessions with operation assurance and separate actor accounts | Current entitlement/revocation checks needed beyond JWT validity; professional participant is not workforce |
-| HLD-D09 | Scoped JSON APIs, persisted SSE and transactional outbox | Duplicate delivery and unknown external outcomes are explicit; no end-to-end exactly-once claim |
-| HLD-D10 | Private local cluster, no cloud or police/emergency integration | Cannot meet production redundancy or source police-interface requirements; trace records exclusions |
-| HLD-D11 | Independent human artifact approval and classified review | Solo implementor can prepare but cannot self-approve; no fabricated clinical reviewers |
-| HLD-D12 | No automatic training, self-modification or unreviewed model change | Improvement through reviewed task-specific evaluation/shadow mode only |
+| Host resources, local cluster/CNI/host routing and trust plane — architecture/operations/security | Resource fit, route enforcement and protected deployment cannot be claimed | Logical interfaces, actor UX and deterministic design |
+| Exact software/image/model artifact/license and capability — engineering/security | Reproducibility and AI-function admission unresolved | Manual/template flows and isolated proposal evaluation |
+| Source-owner D-02 inference/youth/safe-mode disposition — source owner/architecture | Proposed local authority mapping does not establish upstream conformance | Document choices, tests and explicit source divergence |
+| Independent fallback content owner/reviewer and current verified bundle — safety/operations | No participant use without real reviewed public content | Publication design and fictional actor workflows |
+| Independent release/specialist reviewers — maintainer/governance | Candidate cannot become accepted baseline through self-approval | Prepare reviewable artifacts; synthetic design need not stop |
+| Help credential freshness/issuer-revocation model — security/operations | Offline/private acceptance must be bounded or disabled when current trust unavailable | Unconditional static information and normal core help design |
+| Retention anchor/dependency/hold schedule and real access-account metadata — privacy/product/security | Demo durations alone cannot define safe purge or prove erasure | Logical lifecycle, scoped rights and explicit pending/exception states |
+| Current recovery-history durability and serving promotion — recovery/security/governance | Missing latest authority leaves restore quarantined; same-host disaster remains uncovered | Restore workflow, evidence plan and protected recovery storage evaluation |
+| Exact standards versions/control identifiers and interoperability — security/governance | No certification or SSF/CAEP conformance inferred | Project-specific controls and threat/verification planning |
+| Clinical/consent/legal/PHIPA/SaMD/community/partner/staffing context — responsible future authorities | No real clinical/data/partner operation or production readiness | Closed non-clinical synthetic demonstrator |
 
-These choices refine the requirements, not formal upstream model decisions. None is a clinical authorization or installation record.
+These responsibilities identify needed accountability, not appointed or existing clinical/legal bodies. Missing clinical approval is not an obstacle to architectural design of a synthetic system. Residence does not establish legal entity, qualification, user location, data residency evidence or a blanket reporting exemption.
 
-## Admission dependencies and unresolved items
+## Architectural verification and delivery strategy
 
-| Blocker / required evidence | Affected capability | Can progress meanwhile |
-|---|---|---|
-| Actual host CPU/RAM/GPU/disk/ports, Docker/Kubernetes/CNI and host bridge validation | Any local deployment/capacity assertion | Contracts, UI, deterministic modules and fake inference tests |
-| Exact supported software versions/image digests and Gemma origin/license/quantization/digest | Model/function admission and reproducible release | Deterministic/manual actor flows; no claim of real-model integration |
-| Source-owner review for inference authority, youth mediation flattening and safe-mode help contract (D-02) | Affected integration/authority conformance | Draft interfaces/tests and isolated design demonstration; no claim source issue is closed |
-| Real verified fallback content, named maintainer and separate human content review | Participant use | Content bundle structure, tests and review workflow |
-| Independent human reviewer and appropriate specialist responsibility | Accepted baseline/high-risk release | Candidate PR preparation, not self-approval |
-| Identity provider signal/CAEP capability and workload certificate issuer design | Continuous-access interoperability | Local signed signal contract without claiming external conformance |
-| Exact ASVS/ATLAS version/IDs and risk applicability | Standards-traced acceptance of affected controls | Enforce project controls and develop threat scenarios, label mapping incomplete |
-| Key custody/recovery, control ledger persistence, tested backup/restore and deletion exceptions | Durable protected operation/recovery evidence | Migration/transaction test development |
-| Clinical tier/features, Ontario legal/consent/PHIPA status, SaMD determination and community governance | Any real clinical/user-data operation | Synthetic fixtures only; no parameter enables production |
-| Real service catchment/agreements/staffing, external resilient hosting | Real referrals, staffed care and production SLOs | Internal simulators and manual role-play |
+Deliver useful actor flows incrementally: separate logins/disclosure/manual human request and independent static help; then deterministic attributed intake, knowledge/consent and basic workforce coordination; then task-specific local AI drafts/tools with human review; then receiving-service handoff/receipts/follow-up and plan/rights lifecycle; finally complete operational/governance/audit/aggregate views and adverse-failure/recovery evidence. Keep an accepted usable path rather than deferring all service value behind a compliance framework.
 
-Do not treat implementor residence as user location, legal entity identity, clinical credential, blanket Canadian residency evidence or professional reporting exemption. Public-sector/federal obligations, if any, require an actual operator-context assessment.
+Each increment is evaluated against [requirements acceptance groups](../REQ/06-acceptance-and-delivery.md), including actor-only versus assisted usefulness, adversarial authority boundaries and dependency-loss behaviour. Review is based on behaviours and evidence, not feature counts. Versioned implementation schemas, database mechanisms, exact routes, credentials/manifests and operational commands are future implementation work; they are not generated by this HLD revision and the deleted LLD remains absent.
 
-## Incremental implementation sequence
+## Revision review disposition
 
-1. Contracts, host admission and usable foundation: role credentials/accessible UI, static fallback, independent help, minimal session/worker flow and atomic audit. Exit with AT-01/02/04/09/10/13 relevant cases.
-2. Deterministic intake/assertions/directory/consent and controlled stub rationale, with matched manual service baseline. Preserve current accepted path.
-3. Local model admission and bounded role-scoped worker assistance: source-linked draft, typed tools, lease/cancellation and review. AT-08/14/15/17/18 establish useful actor assistance, not only containment.
-4. Queue/handoff/supervisor and consented simulator referral with irreversible boundary, receipts and reconciliation; adverse race/timeout tests.
-5. Plans/sharing/continuation, follow-up, outcome, export/delete/retention and isolated restore.
-6. All remaining role consoles, governance/security/evidence/aggregate metrics, channels/training simulations, full failure drills and trace review. No deferred source clinical approval becomes a passing demo check.
-
-Every increment gets a reviewable PR describing concrete behavior, covered requirements, meaningful checks and rollback. This design task does not commit/push changes or amend the existing requirements PR. Review HLD before implementation and record implementation-specific decisions against its stable HLD-D IDs.
-
-## Low-level specifications still required
-
-Before each feature: full nested OpenAPI/JSON Schemas; table/foreign-key/index DDL and migration; policy rule inputs/outputs and exact reference IDs; PEP/transaction proof cases; human/workload credential bootstrap; signed activation/dispatch/receipt protocol; bounded UI states and accessibility fixtures; deployment resource/network manifests and measured host bridge; operator commands/runbooks. These are implementation deliverables under this HLD, not gaps that justify claiming unimplemented system readiness.
+This revision addresses specialist findings on scope/abstraction drift, normal actor journeys and missing receiver assistance, direct help entry and degraded modes, workload trust ownership, current-context/delegation boundaries, audit independence, lifecycle/continuation recovery and quarantine/promotion. The final integrated review and verification status are recorded in the design inventory. AI review is not the independent human approval required to accept changes. No commit, push, deployment or upstream model change follows from authoring this package.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.

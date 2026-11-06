@@ -1,6 +1,6 @@
 # Verification and traceability
 
-This is design coverage, not implementation/test evidence. Every local requirement definition is mapped below; source FR/NFR statements, their 16 invariants and the 53 decision dispositions remain in the linked requirements trace. Full source conformance is not claimed.
+Revision 2026-11-06. This is architectural design coverage, not implementation/test evidence. Every local requirement definition is mapped below; source FR/NFR statements, their 16 invariants and the 53 decision dispositions remain in the linked requirements trace. Full source conformance is not claimed.
 
 ## Local requirements → design → acceptance
 
@@ -129,7 +129,7 @@ Mapping preserves historical identities for trace only; local choices do not app
 | Source element | Local realization | Design | Disposition / constraint |
 |---|---|---|---|
 | EL-ASM | Core session/assessment module | [02](02-actors-and-service-workflows.md) | deterministic fixture only |
-| EL-AUDIT | Data gateway audit procedure/reader | [05](05-data-and-audit.md) | dedicated writer/reader privileges |
+| EL-AUDIT | Data gateway audit authority and scoped reader | [05](05-data-and-audit.md) | dedicated audit write/read authority |
 | EL-BIAS | Aggregate quality evaluation | [05](05-data-and-audit.md) | synthetic cohorts; no clinical equity claim |
 | EL-BROKER | Core broker PEP | [04](04-safety-security-and-governance.md) | all runtime requests mediated |
 | EL-CAPTOK | Core capability module | [04](04-safety-security-and-governance.md) | token never to Z2 |
@@ -150,7 +150,7 @@ Mapping preserves historical identities for trace only; local choices do not app
 | EL-LEGAL | Approved stub content registry | [02](02-actors-and-service-workflows.md) | no real legal determination |
 | EL-MESH | CNI plus mTLS identity boundary | [07](07-deployment-and-delivery.md) | exact issuer/CNI admission pending |
 | EL-METRICS | Scoped aggregate projection | [05](05-data-and-audit.md) | coupled measures |
-| EL-PDP | OPA policy evaluation and deterministic stub triage | [04](04-safety-security-and-governance.md) | empty clinical factor shape |
+| EL-PDP | OPA policy evaluation and deterministic stub triage | [04](04-safety-security-and-governance.md) | closed non-clinical feature boundary |
 | EL-PDP-CONSENT | Core current consent evaluation | [04](04-safety-security-and-governance.md) | separate from general authorization |
 | EL-PLAN | Core plan/sharing module | [02](02-actors-and-service-workflows.md) | attributed field scope |
 | EL-PRE | Deterministic fixture hazard preprocessor | [02](02-actors-and-service-workflows.md) | not validated clinical sensitivity |
@@ -161,10 +161,10 @@ Mapping preserves historical identities for trace only; local choices do not app
 | EL-RT | Untrusted agent runtime | [03](03-agentic-assistance-and-inference.md) | broker-only egress |
 | EL-SDIR | Core directory/source module | [02](02-actors-and-service-workflows.md) | freshness/suspension |
 | EL-STATIC | Independent host fallback | [07](07-deployment-and-delivery.md) | real verified content required |
-| EL-STORES | Data gateway/PostgreSQL | [05](05-data-and-audit.md) | scoped schema roles |
+| EL-STORES | Data gateway/PostgreSQL | [05](05-data-and-audit.md) | scoped persistence access |
 | EL-TRIAGE-SCHEMA | Closed versioned contract | [06](06-interfaces-and-integration.md) | no clinical fields |
 | EL-VER | Artifact/version registry | [04](04-safety-security-and-governance.md) | digest/approval/epoch |
-| EL-YOUTH | Broker-flattened youth mediation | [04](04-safety-security-and-governance.md) | source-owner D-02 review required |
+| EL-YOUTH | Broker-mediated youth privacy and escalation | [04](04-safety-security-and-governance.md) | source-owner D-02 review required |
 
 ## Source coverage and test layers
 
@@ -175,3 +175,17 @@ Verification layers: schema/unit properties; transactional repository/race tests
 Release review records actual commit/artifact/config/hardware versions, cases/counts/failures, latency distributions, evidence provenance and residuals. Missing evidence is not_assessed, failed safety-critical cases block affected functionality, and synthetic clinical limits remain visible. Exact approved scenarios and individual-control mappings are authored before implementation acceptance, not invented as passing results.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.
+
+## Architectural concerns and scenario evidence
+
+| Concern / requirements | Owning subsystem and interaction | Scenario / evidence needed |
+|---|---|---|
+| Useful actor-led service and AI assistance — TR-SCP-02, TR-AI-01…15 | Actor applications, core coordinator, scoped runtime, worker/receiver interfaces | Full client→worker→receiver→follow-up flow, source-linked edits/declines, matched actor-only/assisted evaluation |
+| Accountability and current access — TR-ACT-01…03, TR-SEC-01/05/09/10 | Identity, workload trust, service/repository PEPs | Distinct accounts and delegated workload/task purpose, revocation during active work, no hidden subject linking |
+| Consent and accurate effects — TR-WF-07/08, TR-DAT-03, TR-SEC-03 | Subject/consent, referral, data/audit and receiver | Changed grant/source before authorization, uncertain send/receipt reconciliation, no manufactured connection |
+| Realtime security/governance — TR-SEC-09…16, TR-GOV-06…14 | Trust/enforcement plane, approved policy/control and audit | Lost/replayed signals, stale enforcers, expired approval, malicious proposal and scope-fenced containment/recovery |
+| Manual continuity and truthful degradation — TR-WF-04…06, TR-OPS-08/09, TR-AI-09 | Workforce/core versus independent host help/static | Model-down manual messaging; policy/audit-down restricted service; edge/cluster-down direct host entry; trust stale→static only |
+| Lifecycle and recovery — TR-DAT-02/04, TR-OPS-10 | Rights/lifecycle, recovery history, quarantine/promotion authority | Parent/copy/hold/deletion scope; lost continuation response; stale snapshot cannot restore grants; missing head blocks serving |
+| Safe deployment and measurable operations — TR-OPS-01…13, TR-GOV-01…05 | Reviewed delivery, local topology, telemetry and incident/release owners | Actual host/network/mTLS/bridge probes, failed-candidate recovery, bounded workloads and independently reviewed restore |
+
+Walk these scenarios across documents before accepting architectural coherence. Schema-valid diagrams, hashes and mapping counts cannot establish that the design will work, meet clinical standards or attain measured availability. Logical interfaces in document 06 are the architectural links; physical implementation detail is intentionally deferred.
