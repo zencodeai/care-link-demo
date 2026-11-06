@@ -1,0 +1,62 @@
+{
+  "packet_id": "IMP-00-PLANNING-EXAMPLE",
+  "task_id": "IMP-00-A",
+  "stage_id": "IMP-00",
+  "mode": "planning",
+  "role": "imp_scope",
+  "goal": "Prepare a source-grounded proposal for the first read-only workstation feasibility stage; do not perform inventory or setup.",
+  "baseline_commit": "2701f50ac83e14531cb70e5a76200892e99b793a",
+  "inputs": [
+    {
+      "path": "doc/LLD/14-decisions-and-admission-gates.md",
+      "sha256": "096f67630d2ca4db2082c62535d369dcc1e935ab32bd8b16f42003e387570dbf"
+    }
+  ],
+  "read_paths": [
+    "doc/REQ/**",
+    "doc/HLD/**",
+    "doc/LLD/**",
+    "doc/IMP/**"
+  ],
+  "write_paths": [],
+  "dependencies": [],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "propose"
+  ],
+  "prohibited_actions": [
+    "installation",
+    "host/runtime mutation",
+    "model loading/download",
+    "credentials or private stories in reports",
+    "claiming inventory measurements",
+    "GitHub publication or stage self-approval"
+  ],
+  "authorization": {
+    "source_kind": "none",
+    "instruction_reference": null,
+    "scope": "Unexecuted planning example; no implementation/host action authorization."
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Read-only inventory/probe proposal with exact fields and redaction",
+    "Tool/version compatibility decision list",
+    "Unknowns and recommendation for the next scoped action"
+  ],
+  "positive_acceptance": [
+    "Every proposal traces to accepted target/model/LLD boundary"
+  ],
+  "adverse_acceptance": [
+    "Unavailable host/model evidence stays unknown; no substitution or silent startup"
+  ],
+  "reviewer": "primary coordinator, then actual human for G-00",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 30,
+  "stop_conditions": [
+    "Source drift",
+    "Missing essential authority",
+    "Request would leave read-only planning scope"
+  ],
+  "is_example": true
+}

@@ -1,0 +1,144 @@
+{
+  "status": "workflow_specification_not_actual_execution",
+  "states": [
+    "planned",
+    "authorized",
+    "in_progress",
+    "ready_for_demo",
+    "awaiting_human",
+    "accepted",
+    "rework",
+    "blocked",
+    "cancelled"
+  ],
+  "initial": "planned",
+  "terminal": [
+    "cancelled"
+  ],
+  "transitions": [
+    {
+      "event": "authorize",
+      "from": [
+        "planned"
+      ],
+      "to": "authorized",
+      "owner": "actual_user_instruction_recorded_by_coordinator",
+      "guard": "scope/action authorization and accepted predecessor gates current",
+      "effect": "record exact authority reference; no inferred installation/deployment permission"
+    },
+    {
+      "event": "begin",
+      "from": [
+        "authorized"
+      ],
+      "to": "in_progress",
+      "owner": "coordinator",
+      "guard": "ready WorkPackets, owners/resources/inputs valid",
+      "effect": "dispatch bounded tasks"
+    },
+    {
+      "event": "candidate_ready",
+      "from": [
+        "in_progress"
+      ],
+      "to": "ready_for_demo",
+      "owner": "coordinator",
+      "guard": "relevant checks/findings/evidence complete for declared scope",
+      "effect": "seal exact candidate binding and proposed demo"
+    },
+    {
+      "event": "request_decision",
+      "from": [
+        "ready_for_demo"
+      ],
+      "to": "awaiting_human",
+      "owner": "coordinator",
+      "guard": "reviewable demo packet and rollback exist",
+      "effect": "present actual behavior/evidence and concise decision"
+    },
+    {
+      "event": "human_accept",
+      "from": [
+        "awaiting_human"
+      ],
+      "to": "accepted",
+      "owner": "actual_human",
+      "guard": "actual attributable response, exact demonstrated candidate/packet and authority scope; no unresolved critical control defect",
+      "effect": "record scoped receipt; authorize no broader action by inference"
+    },
+    {
+      "event": "human_request_changes",
+      "from": [
+        "awaiting_human"
+      ],
+      "to": "rework",
+      "owner": "actual_human",
+      "guard": "actual response with requested changes",
+      "effect": "assign concrete revisions; preserve prior evidence history"
+    },
+    {
+      "event": "resume_rework",
+      "from": [
+        "rework"
+      ],
+      "to": "in_progress",
+      "owner": "coordinator",
+      "guard": "existing authorization still covers changes; dependencies/current baseline valid",
+      "effect": "recheck affected behavior"
+    },
+    {
+      "event": "material_change",
+      "from": [
+        "accepted",
+        "ready_for_demo",
+        "awaiting_human"
+      ],
+      "to": "rework",
+      "owner": "coordinator",
+      "guard": "changed candidate/contract/policy/environment affects reviewed scope",
+      "effect": "stale affected acceptance/evidence; require focused rerun and human decision"
+    },
+    {
+      "event": "block",
+      "from": [
+        "planned",
+        "authorized",
+        "in_progress",
+        "ready_for_demo",
+        "rework"
+      ],
+      "to": "blocked",
+      "owner": "coordinator",
+      "guard": "actual decision/resource/authority/defect blocker with evidence",
+      "effect": "record affected capability/options; continue independent authorized work"
+    },
+    {
+      "event": "resolve",
+      "from": [
+        "blocked"
+      ],
+      "to": "authorized",
+      "owner": "coordinator",
+      "guard": "blocker resolved and actual scoped authorization/current predecessor gates valid",
+      "effect": "resume bounded ready work"
+    },
+    {
+      "event": "cancel",
+      "from": [
+        "planned",
+        "authorized",
+        "in_progress",
+        "ready_for_demo",
+        "awaiting_human",
+        "rework",
+        "blocked"
+      ],
+      "to": "cancelled",
+      "owner": "actual_user",
+      "guard": "explicit cancellation",
+      "effect": "preserve evidence and reconcile uncertain effects; no destructive cleanup by inference"
+    }
+  ],
+  "defer_behavior": "actual human defer leaves awaiting_human with recorded reason; elapsed time is never acceptance",
+  "acceptance_check": "Software validates shape/digests and requires an attributable actual event; a generated receipt cannot prove human action."
+}
