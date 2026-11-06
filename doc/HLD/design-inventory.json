@@ -1,7 +1,7 @@
 {
-  "design_version": "0.2",
+  "design_version": "0.3",
   "date": "2026-11-06",
-  "status": "proposed_architectural_design_not_implemented",
+  "status": "local_DEC01_to_DEC05_choices_accepted_implementation_not_assessed",
   "notice": "This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.",
   "requirements_count": 90,
   "source_elements_count": 37,
@@ -177,7 +177,7 @@
     },
     {
       "path": "doc/REQ/08-open-decisions.md",
-      "sha256": "0385c270f2d993222034167ca2cb5f961a8b7caaef04a30c42fa66d53341c702"
+      "sha256": "b7bfd77f6137bccf466819d62f9676a36681dbd464d3b9f47dc1e943246a9307"
     },
     {
       "path": "doc/REQ/09-standards-and-runtime-controls.md",
@@ -193,7 +193,7 @@
     },
     {
       "path": "doc/REQ/demo-parameters.json",
-      "sha256": "8a08a63b668c84e6a6c52bf776d40102f0b4e3d19bbd4c87a2572090de28c40c"
+      "sha256": "25689e4d1792d1f65284e0416061e40ee70fd6d36833e0973c53e6064c832771"
     },
     {
       "path": "doc/REQ/source-snapshot.json",
@@ -217,14 +217,16 @@
       "fictional operating-envelope wording",
       "architectural persistence terminology"
     ],
-    "limitations": "AI architecture review only; independent human acceptance and runtime evidence remain outstanding."
+    "limitations": "AI architecture review only; independent implementation/release review and runtime evidence remain outstanding.",
+    "human_decision_acceptance": "DEC-01..05 approved by user for local design; independent implementation/release review not established",
+    "acceptance_integration_review": "read-only specialist review complete: no consequential conflicts; two minor date/scope clarifications addressed; AI review is not independent human approval"
   },
   "open_architecture_decisions": [
-    "workload identity/mesh implementation and actual local enforcement",
-    "help trust freshness and independent credential lifecycle",
-    "retention anchor and hold schedule approval",
-    "current recovery-history durability and serving-promotion mechanism",
-    "upstream inference/youth/safe-mode authority dispositions"
+    "exact workload identity/proxy/issuer products and verified host enforcement",
+    "current-authority private help protocol implementation/evidence; no offline exception selected",
+    "actual-account metadata periods and detailed lifecycle/hold/dependency implementation",
+    "current host recovery-head durability/recency/cutover evidence; no whole-host disaster guarantee",
+    "upstream inference/youth/safe-mode dispositions; local deltas accepted"
   ],
   "scope_exclusions": [
     "real-user/clinical deployment",
@@ -232,11 +234,51 @@
     "recreation of deleted LLD"
   ],
   "verification": {
-    "input_hashes": "unchanged requirements inputs verified",
+    "input_hashes": "intentional accepted-design REQ overlay/parameter semantics updates tracked with previous/new hashes; all other inputs unchanged",
     "runtime": "not_executed",
-    "diagram_rendering": "all four Mermaid diagrams rendered with local mermaid-cli 11.17.0 and visually inspected; temporary images only",
+    "diagram_rendering": "updated diagrams 01/07 rendered successfully with Mermaid CLI 11.17.0 and visually checked; other diagrams unchanged",
     "local_links": "pass",
     "traceability": "90 local requirements, 37 source elements and 18 acceptance groups mapped; design coverage only",
     "lld_directory": "absent"
-  }
+  },
+  "decision_brief": {
+    "path": "11-decision-requirements-and-options.md",
+    "date": "2026-11-06",
+    "status": "recommended_options_accepted_local_design",
+    "decision_ids": [
+      "DEC-01",
+      "DEC-02",
+      "DEC-03",
+      "DEC-04",
+      "DEC-05"
+    ]
+  },
+  "decision_acceptance": {
+    "record": "decisions/2026-11-06-local-design-baseline.md",
+    "date": "2026-11-06",
+    "approved_brief_sha256": "86b501346871f29694d6e62332b951174850862e244ff8cd2659236a1b6f7c09",
+    "accepted_options": {
+      "DEC-01": "B",
+      "DEC-02": "A",
+      "DEC-03": "B",
+      "DEC-04": "B",
+      "DEC-05": "A"
+    },
+    "upstream_disposition": "pending",
+    "independent_implementation_release_approval": false
+  },
+  "requirements_input_updates": [
+    {
+      "path": "doc/REQ/08-open-decisions.md",
+      "previous_sha256": "0385c270f2d993222034167ca2cb5f961a8b7caaef04a30c42fa66d53341c702",
+      "new_sha256": "b7bfd77f6137bccf466819d62f9676a36681dbd464d3b9f47dc1e943246a9307",
+      "reason": "user accepted DEC-01..05 local design options on 2026-11-06; inherited source history/numerical values preserved"
+    },
+    {
+      "path": "doc/REQ/demo-parameters.json",
+      "previous_sha256": "8a08a63b668c84e6a6c52bf776d40102f0b4e3d19bbd4c87a2572090de28c40c",
+      "new_sha256": "25689e4d1792d1f65284e0416061e40ee70fd6d36833e0973c53e6064c832771",
+      "reason": "user accepted DEC-01..05 local design options on 2026-11-06; inherited source history/numerical values preserved"
+    }
+  ]
 }

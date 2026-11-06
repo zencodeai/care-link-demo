@@ -43,6 +43,7 @@ flowchart TB
   C --> X
   C --> O
   H --> Q
+  H -. Current private-access authority .-> I
   F --> FS
   DB --> BK
 ```
@@ -55,7 +56,7 @@ Private ingress exposes role applications and identity to authorized project dev
 
 The runtime’s only application destination is the broker; it cannot reach the database, policy engine, host model, simulators, Kubernetes control plane or internet directly. The inference gateway alone reaches the admitted host bridge, which in turn reaches the pinned local model endpoint. No broad host-network exemption or automatic remote model fallback is acceptable. Identity and data services have only their dedicated persistence connections. Necessary name resolution and telemetry are explicitly scoped; network tools cannot silently add arbitrary egress.
 
-Workload attestation, mTLS, destination authorization and credential rotation are platform responsibilities described in document 04. Exact CNI/mesh/issuer choice, VM routing and host trust integration require local proof before deployment. The alternative is not an unauthenticated loopback assumption: host identity and bridge access remain controlled. Compromise of host/cluster root can affect several boundaries and is a residual requiring operational controls and honest evidence limits.
+Workload attestation, mTLS, destination authorization and credential rotation are platform responsibilities described in document 04. Accepted DEC-01/B selects standardized proxies with an automated attested issuer as the initial family; exact proxy/issuer/CNI versions, VM routing and host trust integration require local proof before deployment. DEC-02/A requires the direct host help entry to obtain current private-access authority; it does not imply private-help authentication survives complete cluster/identity loss. The alternative is not an unauthenticated loopback assumption: host identity and bridge access remain controlled. Compromise of host/cluster root can affect several boundaries and is a residual requiring operational controls and honest evidence limits.
 
 ## Technical choices and rationale
 

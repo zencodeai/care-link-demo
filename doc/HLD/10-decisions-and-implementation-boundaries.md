@@ -2,7 +2,7 @@
 
 ## Selected decisions and alternatives
 
-All selections are proposed for this demonstrator until reviewed. They define how responsibilities interact; they are not installation, certification or clinical approval records.
+DEC-01…05 recommendations were accepted by the user for local design on 2026-11-06; see the [acceptance record](decisions/2026-11-06-local-design-baseline.md). Other design selections retain their recorded review status; no blanket release or clinical approval is implied. They define how responsibilities interact; they are not installation, certification or clinical approval records.
 
 | ID | Decision and reason | Alternative / trade-off | Reconsider when |
 |---|---|---|---|
@@ -21,7 +21,11 @@ All selections are proposed for this demonstrator until reviewed. They define ho
 
 ## Workload identity implementation decision
 
-The architectural requirement is automated attested workload identity, mutual endpoint authentication, identity-based deny rules, controlled rotation/revocation, host-bridge participation and bounded issuer-outage behaviour. Full service mesh and app/proxy-managed mTLS are alternative mechanisms, not equivalent guarantees by default. Compare actual local installation/operational cost, bypass surfaces, host integration and credential/connection revocation evidence before selecting a product. Until that selection passes review/probes, workload trust implementation is unresolved, not implicitly deployed.
+The architectural requirement is automated attested workload identity, mutual endpoint authentication, identity-based deny rules, controlled rotation/revocation, host-bridge participation and bounded issuer-outage behaviour. DEC-01/B selects standardized proxies with automated attested workload identity as the initial local candidate. Full mesh and application-managed TLS remain comparison alternatives, not implicitly accepted substitutions. Exact products/versions, actual local cost, bypass prevention, host integration and credential/connection revocation evidence remain implementation work. A material family change needs an attributable decision update; no workload trust implementation is yet deployed.
+
+## Decision recommendations
+
+[Decision requirements and options](11-decision-requirements-and-options.md) preserves the five option comparisons. All five recommended options are now the accepted local design baseline, with their qualifications recorded in the [acceptance record](decisions/2026-11-06-local-design-baseline.md). The remaining work below is product/protocol/evidence or upstream disposition, not a request to approve the same local choices again.
 
 ## Open issues and consequences
 
@@ -29,12 +33,12 @@ The architectural requirement is automated attested workload identity, mutual en
 |---|---|---|
 | Host resources, local cluster/CNI/host routing and trust plane — architecture/operations/security | Resource fit, route enforcement and protected deployment cannot be claimed | Logical interfaces, actor UX and deterministic design |
 | Exact software/image/model artifact/license and capability — engineering/security | Reproducibility and AI-function admission unresolved | Manual/template flows and isolated proposal evaluation |
-| Source-owner D-02 inference/youth/safe-mode disposition — source owner/architecture | Proposed local authority mapping does not establish upstream conformance | Document choices, tests and explicit source divergence |
+| Upstream D-02 inference/youth/safe-mode disposition — source owner/architecture | DEC-05/A and its three local deltas accepted; upstream conformance remains a separate pending disposition | Document choices, tests and explicit source divergence |
 | Independent fallback content owner/reviewer and current verified bundle — safety/operations | No participant use without real reviewed public content | Publication design and fictional actor workflows |
 | Independent release/specialist reviewers — maintainer/governance | Candidate cannot become accepted baseline through self-approval | Prepare reviewable artifacts; synthetic design need not stop |
-| Help credential freshness/issuer-revocation model — security/operations | Offline/private acceptance must be bounded or disabled when current trust unavailable | Unconditional static information and normal core help design |
-| Retention anchor/dependency/hold schedule and real access-account metadata — privacy/product/security | Demo durations alone cannot define safe purge or prove erasure | Logical lifecycle, scoped rights and explicit pending/exception states |
-| Current recovery-history durability and serving promotion — recovery/security/governance | Missing latest authority leaves restore quarantined; same-host disaster remains uncovered | Restore workflow, evidence plan and protected recovery storage evaluation |
+| Fresh-authority help protocol — security/operations | DEC-02/A is accepted: no stale private acceptance; prove current request/status/worker authority or show static-only fallback | Unconditional static information and normal core help design |
+| Lifecycle implementation and actual access-account schedule — privacy/product/security | DEC-03/B anchors/dependency/hold model accepted; exact actual-account periods, copy/hold mechanics and purge evidence remain | Logical lifecycle, scoped rights and explicit pending/exception states |
+| Recovery journal/protocol verification — recovery/security/governance | DEC-04/B host journal plus separate serving approval accepted; missing trusted current head keeps restore quarantined and same-host disaster remains uncovered | Restore workflow, evidence plan and protected recovery storage evaluation |
 | Exact standards versions/control identifiers and interoperability — security/governance | No certification or SSF/CAEP conformance inferred | Project-specific controls and threat/verification planning |
 | Clinical/consent/legal/PHIPA/SaMD/community/partner/staffing context — responsible future authorities | No real clinical/data/partner operation or production readiness | Closed non-clinical synthetic demonstrator |
 

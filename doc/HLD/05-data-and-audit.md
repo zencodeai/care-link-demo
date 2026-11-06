@@ -39,17 +39,34 @@ External transmission occurs outside the local transaction. Reliable intent, sta
 
 ## Retention, rights and dependencies
 
-Lifecycle policy owns both duration and the authoritative event from which it is measured. Session/parent closure, grant expiry/revocation, plan retirement or explicit PID deletion, and backup/corpus capture are distinct candidate anchors; the exact per-class anchor schedule needs explicit review rather than a universal creation-time default. Shared demo durations remain proposed parameters, not legal retention approval. Real access-account metadata has a separate schedule.
+Lifecycle policy owns both duration and the authoritative event from which it is measured. DEC-03/B accepts the event-anchored per-purpose schedule in the table below for local synthetic design; it replaces an unspecified creation-time default. The actual-account metadata schedule remains a separate unresolved item. Shared demo durations remain proposed parameters, not legal retention approval. Real access-account metadata has a separate schedule.
 
 Records, purpose-bound copies, plan snapshots, replay data, temporary exports and backups form lifecycle dependencies. A longer-lived plan cannot silently depend on a purged short-lived session assertion: either retain a minimized independently justified attributed snapshot or make the source unavailable explicitly. Copying cannot evade deletion. Authenticated holds and releases apply to their documented scope/dependents; missing rules, unresolved anchors or contradictory authority block unsafe purge rather than infer approval.
 
 Rights processing distinguishes requested, eligible, held, active-content purged, backup pending, completed with explicit retained exceptions and failed/reconciliation needed. Eligibility or file unlink is not proof of physical erasure from WAL, snapshots or other copies. User export/deletion requires current operation assurance and own-data scope; output cannot include unrelated private reports. Retained minimal audit/control references and legal/demo exceptions are explained honestly.
 
+
+### Accepted local lifecycle anchors — DEC-03/B
+
+| Class | Accepted anchor / interpretation | Existing duration |
+|---|---|---|
+| Session-purpose content and person/carer records | Explicit session/last relevant parent closure; unresolved session stays anchor-pending | 7 days |
+| Referral/receipt | Later of session closure and terminal/reconciled delivery outcome | 7 days |
+| Plan and justified plan-purpose snapshot | Ordinary cleanup from explicit plan retirement; active plans do not expire merely from creation age. Verified PID deletion uses the faster rights target rather than an additional 30-day delay | 30 days |
+| Consent history | Later of relevant parent closure and effective expiry/revocation; preserve minimal dependent revocation/recovery evidence with reported exception | 30 days |
+| Replay | Capture time | 7 days |
+| Security / audit / aggregate metrics | Event time or closed reporting interval, with audit closure/pruning evidence | 30 / 90 / 90 days |
+| Backup | Immutable capture time; retry/restore does not renew expiry | 7 days |
+| Actual account metadata | Separate minimum-needed active-account/deprovision/recovery policy; exact periods not accepted by this decision | Unresolved |
+| Recovery restrictions/approval history | Cover every restorable copy and dependent grant/receipt; review retained linkability | Dependency-bound exception, not a new blanket TTL |
+
+The existing eligible active-deletion and backup-expiry targets remain unchanged. Scoped authenticated engineering holds/releases and all purpose copies are included; blocked rules/holds are reported, not treated as successful purge. This is a local engineering interpretation, not legal retention approval or an assertion of upstream lifecycle conformance.
+
 ## Recovery authority and serving promotion
 
-Backups preserve authorized state and provenance, not a licence to reactivate old access. Deletion/revocation recovery history must survive separately from point-in-time business restore. Cross-store publication uses an explicitly reconciled durable workflow; there is no fictional atomic file-and-database commit. If the latest required authority history is unavailable, restoration remains blocked from serving.
+Backups preserve authorized state and provenance, not a licence to reactivate old access. DEC-04/B selects a separately credentialled host recovery-control journal and checkpoints outside the restored business store and cluster-managed volume lifecycle. Current identity/consent/sharing restrictions, deletion/hold and relevant control history must survive separately from point-in-time business restore. Cross-store publication uses an explicitly reconciled durable workflow; there is no fictional atomic file-and-database commit. If the latest required authority history is unavailable, restoration remains blocked from serving.
 
-Restore lifecycle: isolated quarantine, validate inventory/integrity/version, reconcile current independently trusted authority/rights/holds and uncertain effects, validate scoped access, obtain separate human serving approval, then fence obsolete generation and promote the approved target. The restored snapshot cannot certify its own current consent/revocation state. A signed old head proves origin, not recency. Changed target/control state invalidates stale promotion evidence. Credentials/continuation tokens/queued approvals are not blindly restored. Detailed trust/cutover mechanisms and promotion tests are implementation work; operational stages are specified in document 08.
+Restore lifecycle: isolated quarantine, validate inventory/integrity/version, reconcile current independently trusted authority/rights/holds and uncertain effects, validate scoped access, obtain separate human serving approval, then fence obsolete generation and promote the approved target. The restored snapshot cannot certify its own current consent/revocation state. A signed old head proves origin, not recency. Changed target/control state invalidates stale promotion evidence. Credentials/continuation tokens/queued approvals are not blindly restored. The accepted design retains same-host loss/root-compromise limitations; it is not an off-host witness or disaster-recency guarantee. Detailed journal publication/recency, trust/cutover mechanisms and promotion tests are implementation work; operational stages are specified in document 08.
 
 ## Replay and analytical use
 

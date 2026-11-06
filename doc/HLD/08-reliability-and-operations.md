@@ -8,11 +8,11 @@ Continuity is defined by what the system can actually deliver, not a single gree
 |---|---|---|
 | Normal protected service with AI | Actor/worker transport, current identity and authority, core/data/audit, relevant directory/service state, admitted model task | Full authorized manual workflow plus optional grounded AI assistance |
 | Protected manual service, AI disabled | Same protected-service dependencies except model/runtime | Worker messaging/context/choice/consent/handoff continue within current rights; no forced acceptance of AI |
-| Independent minimal help request | Direct host client/workforce entry, own durable spool and sufficiently current narrow identity trust | Opaque request recorded and possibly accepted-unconnected by eligible role-player; no history access or connection/staffing guarantee |
+| Independent minimal help request | Direct host client/workforce entry, own durable spool and fresh authoritative validation for every private operation (DEC-02/A) | Opaque request recorded and possibly accepted-unconnected by eligible role-player; no history access or connection/staffing guarantee |
 | Static crisis information | Independent content host and reviewed bundle, reachable network/device | Verified public information, no account/policy/model/business-store dependency |
 | Offline/whole-host outage | Only public content already cached on device if available | No assured online service, stored request or staffed connection |
 
-Protected manual service cannot bypass authorization or audit during their outage. Cached identity evidence supports only its specifically admitted bounded scope; valid-but-unexpired credentials alone do not prove current revocation. The independent help trust contract must define allowable freshness and revocation reconciliation before nonpublic acceptance is enabled. If freshness is unavailable/stale, no workforce acceptance or protected history is allowed; static information remains. Fresh login/step-up cannot be invented during identity failure.
+Protected manual service cannot bypass authorization or audit during their outage. Cached identity evidence supports only its specifically admitted bounded scope; valid-but-unexpired credentials alone do not prove current revocation. Accepted DEC-02/A permits no stale-authority exception for private help. The detailed protocol must prove current authority and revoke/status ordering; otherwise private acceptance is unavailable. If freshness is unavailable/stale, no workforce acceptance or protected history is allowed; static information remains. Fresh login/step-up cannot be invented during identity failure.
 
 ## Failure and degradation architecture
 
@@ -26,7 +26,7 @@ Protected manual service cannot bypass authorization or audit during their outag
 | Directory stale/conflicting/poisoned | Mark unknown or quarantine, keep provenance and alternatives honest | Corrected reviewed source/version and current suspension state |
 | Receiver/transfer failure or uncertain receipt | Retain supported session, explicit unconfirmed/unknown state, human recovery choice | Matching authorized receipt/reconciliation before any repeat disclosure |
 | Worker disconnect or takeover | Preserve accountable case state, invalidate obsolete writer/agent output | Confirmed current owner and actual channel connection |
-| Main edge/cluster loss | Direct host help/static routes can survive if host/network/trust/spool survive | Cluster trust/current state recovered; reconcile help without duplicates |
+| Main edge/cluster loss | Direct host UI/spool and static service may survive. Private help works only if current authority is still available; full cluster/identity loss can reduce service to static information | Cluster trust/current state recovered; reconcile help without duplicates |
 | Host/network/storage failure | No whole-host availability claim; previously cached public information only where usable | Host/network/storage restoration plus protected serving validation |
 | Security compromise or real-data contamination | Scope-fenced deterministic containment, human incident review and safe mode as needed | Corrective evidence, current credentials/authority and authorized recovery |
 
@@ -50,7 +50,7 @@ Runbooks cover model/policy/audit/identity/workload trust loss, poisoned feed, c
 
 ## Backup, quarantine and serving recovery
 
-Backups include required business state/version evidence and integrity anchors, under dedicated access and encrypted storage. Recovery-critical consent/revocation/tombstone/hold history must be retained independently of an old business snapshot and long enough to govern every restorable copy. Separate host storage still shares disaster/root risks. Missing or stale current history is a real recovery limitation, not grounds to assume empty restrictions.
+Backups include required business state/version evidence and integrity anchors, under dedicated access and encrypted storage. Accepted DEC-04/B retains current recovery restrictions in a separately credentialled host journal/checkpoints outside the business restore and cluster-managed volume lifecycle; that history must be retained independently of an old business snapshot and long enough to govern every restorable copy. Separate host storage still shares disaster/root risks. Missing or stale current history is a real recovery limitation, not grounds to assume empty restrictions.
 
 Recovery proceeds through these architectural stages:
 
@@ -61,6 +61,6 @@ Recovery proceeds through these architectural stages:
 5. **Promote safely:** fence obsolete serving ownership, reconcile the final authority changes and switch only the validated target. Cutover interruption stays restricted until the serving authority is reconciled. Independent help/static stay available where their own host dependencies permit.
 6. **Resume by capability:** verify current identity/policy/manual smoke, reconcile queued work and admit AI functions separately. Only then show normal readiness.
 
-Detailed cutover/storage mechanisms require implementation tests rather than a fictional distributed atomic swap. Drills verify model-down manual service, main-cluster-down direct host fallback/help, kill without losing static content, restore that preserves revocations/deletions and uncertain-send reconciliation. Whole-host/disaster recovery remains an explicit separate environment decision.
+Detailed cutover/storage mechanisms require implementation tests rather than a fictional distributed atomic swap. Drills verify model-down manual service, main-cluster-down direct host entry/static information, with private-help success conditional on fresh authority, kill without losing static content, restore that preserves revocations/deletions and uncertain-send reconciliation. Whole-host/disaster recovery remains an explicit separate environment decision.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.

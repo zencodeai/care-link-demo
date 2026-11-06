@@ -26,10 +26,11 @@ flowchart TB
   C --> O[Operational telemetry]
   U --> H[Independent minimal help entry]
   H --> Q[Independent help request spool]
+  H -. Current private-access authority .-> I
   U --> F[Independent static crisis information]
 ```
 
-The direct client/workforce links to host help/static paths are intentional: they do not traverse the main edge, cluster, model or business store. This minimal channel can record an authenticated opaque help request when its own trust/storage are healthy; it does not replace protected conversation, guarantee a staffed worker or survive whole-host failure. Logical dependencies do not imply blanket network access; response traffic is implicit and every protected request is mediated.
+The direct client/workforce links to host help/static paths are intentional: they do not traverse the main edge, cluster, model or business store. Under accepted DEC-02/A this minimal channel requires current authoritative validation for private operations, so loss of the sole identity/control authority may disable it even while the host entry/spool survives. It can record an authenticated opaque help request when current authority and its own storage are healthy; it does not replace protected conversation, guarantee a staffed worker or survive whole-host failure. Logical dependencies do not imply blanket network access; response traffic is implicit and every protected request is mediated.
 
 ## Component responsibilities and authority
 
