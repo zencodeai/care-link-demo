@@ -1,0 +1,3774 @@
+{
+  "version": "care.demo.v1",
+  "status": "proposed_design_not_implemented",
+  "operations": [
+    {
+      "operation_id": "login_start",
+      "method": "POST",
+      "path": "/v1/auth/login",
+      "request": "LoginStart",
+      "response": "LoginIntent",
+      "roles": [
+        "protocol"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "identity",
+      "state_owner": "identity",
+      "query": false,
+      "idempotency": "browser_bound_login_intent",
+      "authorization_boundary": "login_intent"
+    },
+    {
+      "operation_id": "login_callback",
+      "method": "GET",
+      "path": "/v1/auth/callback",
+      "request": "LoginCallback",
+      "response": "BrowserSession",
+      "roles": [
+        "protocol"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "identity",
+      "state_owner": "identity",
+      "query": true,
+      "idempotency": "browser_bound_login_intent",
+      "authorization_boundary": "login_intent"
+    },
+    {
+      "operation_id": "browser_session",
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "request": null,
+      "response": "BrowserSession",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "identity",
+      "state_owner": "identity",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "logout",
+      "method": "POST",
+      "path": "/v1/auth/logout",
+      "request": "Empty",
+      "response": "CommandResult",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "identity",
+      "state_owner": "identity",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "stepup_start",
+      "method": "POST",
+      "path": "/v1/auth/step-up",
+      "request": "StepUpStart",
+      "response": "Ceremony",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "identity",
+      "state_owner": "identity",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "stepup_confirm",
+      "method": "POST",
+      "path": "/v1/auth/step-up/confirm",
+      "request": "CeremonyConfirm",
+      "response": "Ceremony",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "identity",
+      "state_owner": "identity",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "continuation_rotate",
+      "method": "POST",
+      "path": "/v1/continuations/rotate",
+      "request": "ContinuationRotate",
+      "response": "ContinuationIssued",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "continuation",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "continuation_recover",
+      "method": "POST",
+      "path": "/v1/continuations/recover",
+      "request": "ContinuationRecover",
+      "response": "ContinuationIssued",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "continuation",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "operation_status",
+      "method": "GET",
+      "path": "/v1/operations/{operation_id}",
+      "request": null,
+      "response": "OperationStatus",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "durable",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "session_create",
+      "method": "POST",
+      "path": "/v1/sessions",
+      "request": "SessionCreate",
+      "response": "SessionView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "session_read",
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}",
+      "request": null,
+      "response": "SessionView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "session",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "session_disclosure",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/disclosure",
+      "request": "DisclosureAck",
+      "response": "CommandResult",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "session_turns",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/turns",
+      "request": "TurnSubmit",
+      "response": "AssessmentView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "session_assertions",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/assertions",
+      "request": "AssertionCreate",
+      "response": "AssertionView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "session_choices",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/choices",
+      "request": "ChoiceCommand",
+      "response": "CommandResult",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "session_human_request",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/human-request",
+      "request": "HumanRequest",
+      "response": "QueueView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "session_end",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/end",
+      "request": "ReasonCommand",
+      "response": "CommandResult",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "session_events",
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/events",
+      "request": null,
+      "response": "EventView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "session",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "per_event_disclosure"
+    },
+    {
+      "operation_id": "messages_read",
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/messages",
+      "request": "PageQuery",
+      "response": "MessagePage",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "session",
+      "query": true,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "message_send",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/messages",
+      "request": "MessageSubmit",
+      "response": "MessageView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "queue_list",
+      "method": "GET",
+      "path": "/v1/workforce/queue",
+      "request": "PageQuery",
+      "response": "QueuePage",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "service_operations",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "workforce",
+      "query": true,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "workforce_reserve",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/workforce/reserve",
+      "request": "AssignmentCommand",
+      "response": "AssignmentView",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "service_operations",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "workforce_accept",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/workforce/accept",
+      "request": "RevisionCommand",
+      "response": "AssignmentView",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "service_operations",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "workforce_prepare_transfer",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/workforce/prepare-transfer",
+      "request": "RevisionCommand",
+      "response": "TransferPreparation",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "service_operations",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "workforce_confirm_transfer",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/workforce/confirm-transfer",
+      "request": "TransferConfirm",
+      "response": "SessionView",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "service_operations",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "workforce_transfer_failed",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/workforce/transfer-failed",
+      "request": "ReasonCommand",
+      "response": "QueueView",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "service_operations",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "workforce_observe",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/workforce/observe",
+      "request": "ObserveCommand",
+      "response": "CommandResult",
+      "roles": [
+        "supervisor"
+      ],
+      "purpose": "service_operations",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "workforce_takeover",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/workforce/takeover",
+      "request": "AssignmentCommand",
+      "response": "SessionView",
+      "roles": [
+        "supervisor"
+      ],
+      "purpose": "service_operations",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "plan_create",
+      "method": "POST",
+      "path": "/v1/plans",
+      "request": "PlanCreate",
+      "response": "PlanView",
+      "roles": [
+        "pid"
+      ],
+      "purpose": "plan",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "plan",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "plan_read",
+      "method": "GET",
+      "path": "/v1/plans/{plan_id}",
+      "request": null,
+      "response": "PlanView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "plan",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "plan",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "plan_field_append",
+      "method": "POST",
+      "path": "/v1/plans/{plan_id}/fields",
+      "request": "PlanFieldCreate",
+      "response": "PlanView",
+      "roles": [
+        "pid",
+        "worker"
+      ],
+      "purpose": "plan",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "plan",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "plan_retire",
+      "method": "POST",
+      "path": "/v1/plans/{plan_id}/retire",
+      "request": "RevisionCommand",
+      "response": "PlanView",
+      "roles": [
+        "pid"
+      ],
+      "purpose": "plan",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "plan",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "consent_grant",
+      "method": "POST",
+      "path": "/v1/consents",
+      "request": "ConsentGrant",
+      "response": "ConsentView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "consent",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "consent_read",
+      "method": "GET",
+      "path": "/v1/consents/{grant_id}",
+      "request": null,
+      "response": "ConsentView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "consent",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "consent_revoke",
+      "method": "POST",
+      "path": "/v1/consents/{grant_id}/revoke",
+      "request": "RevisionCommand",
+      "response": "CommandResult",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "consent",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "directory_search",
+      "method": "POST",
+      "path": "/v1/directory/search",
+      "request": "DirectoryQuery",
+      "response": "DirectoryPage",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "directory",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "directory_read",
+      "method": "GET",
+      "path": "/v1/directory/{service_id}",
+      "request": null,
+      "response": "DirectoryView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "directory",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "directory_ingest",
+      "method": "POST",
+      "path": "/v1/directory/ingest",
+      "request": "DirectoryIngest",
+      "response": "DirectoryView",
+      "roles": [
+        "operator",
+        "governance"
+      ],
+      "purpose": "governance",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "directory",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "directory_suspend",
+      "method": "POST",
+      "path": "/v1/directory/{service_id}/suspend",
+      "request": "ReasonCommand",
+      "response": "CommandResult",
+      "roles": [
+        "security",
+        "governance"
+      ],
+      "purpose": "security",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "directory",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "referral_draft",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/referrals",
+      "request": "ReferralDraftCreate",
+      "response": "ReferralView",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "referral",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "referral",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "referral_read",
+      "method": "GET",
+      "path": "/v1/referrals/{referral_id}",
+      "request": null,
+      "response": "ReferralView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "referral",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "referral",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "referral_review",
+      "method": "POST",
+      "path": "/v1/referrals/{referral_id}/review",
+      "request": "ReviewCommand",
+      "response": "ReviewView",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "referral",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "referral",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "referral_dispatch",
+      "method": "POST",
+      "path": "/v1/referrals/{referral_id}/dispatch",
+      "request": "DispatchRequest",
+      "response": "DispatchView",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "referral",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "referral",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "dispatch_read",
+      "method": "GET",
+      "path": "/v1/dispatches/{dispatch_id}",
+      "request": null,
+      "response": "DispatchView",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "referral",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "referral",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "receipt_read",
+      "method": "GET",
+      "path": "/v1/dispatches/{dispatch_id}/receipt",
+      "request": null,
+      "response": "ReceiptView",
+      "roles": [
+        "worker",
+        "supervisor",
+        "receiver"
+      ],
+      "purpose": "referral",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "referral",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "dispatch_reconcile",
+      "method": "POST",
+      "path": "/v1/dispatches/{dispatch_id}/reconcile",
+      "request": "RevisionCommand",
+      "response": "DispatchView",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "referral",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "referral",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "receiver_decide",
+      "method": "POST",
+      "path": "/v1/receiver/packages/{dispatch_id}/decision",
+      "request": "ReceiverDecision",
+      "response": "ReceiptView",
+      "roles": [
+        "receiver"
+      ],
+      "purpose": "referral",
+      "producer": "edge",
+      "consumer": "simulator",
+      "state_owner": "simulator",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "receiver_package",
+      "method": "GET",
+      "path": "/v1/receiver/packages/{dispatch_id}",
+      "request": null,
+      "response": "ReferralPayload",
+      "roles": [
+        "receiver"
+      ],
+      "purpose": "referral",
+      "producer": "edge",
+      "consumer": "simulator",
+      "state_owner": "simulator",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "followup_create",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/follow-ups",
+      "request": "FollowUpCreate",
+      "response": "FollowUpView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "follow_up",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "follow_up",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "followup_read",
+      "method": "GET",
+      "path": "/v1/follow-ups/{followup_id}",
+      "request": null,
+      "response": "FollowUpView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "follow_up",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "follow_up",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "followup_cancel",
+      "method": "POST",
+      "path": "/v1/follow-ups/{followup_id}/cancel",
+      "request": "RevisionCommand",
+      "response": "FollowUpView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "follow_up",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "follow_up",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "outcome_append",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/outcomes",
+      "request": "OutcomeCreate",
+      "response": "CommandResult",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "outcome",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "task_create",
+      "method": "POST",
+      "path": "/v1/tasks",
+      "request": "TaskCreate",
+      "response": "TaskView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "task_read",
+      "method": "GET",
+      "path": "/v1/tasks/{task_id}",
+      "request": null,
+      "response": "TaskView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "tasks",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "task_cancel",
+      "method": "POST",
+      "path": "/v1/tasks/{task_id}/cancel",
+      "request": "RevisionCommand",
+      "response": "TaskView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "task_revise",
+      "method": "POST",
+      "path": "/v1/tasks/{task_id}/revise",
+      "request": "TaskCreate",
+      "response": "TaskView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "draft_read",
+      "method": "GET",
+      "path": "/v1/drafts/{draft_id}",
+      "request": null,
+      "response": "DraftView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "tasks",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "draft_review",
+      "method": "POST",
+      "path": "/v1/drafts/{draft_id}/review",
+      "request": "ReviewCommand",
+      "response": "ReviewView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "artifact_register",
+      "method": "POST",
+      "path": "/v1/artifacts",
+      "request": "ArtifactRegister",
+      "response": "ArtifactView",
+      "roles": [
+        "operator"
+      ],
+      "purpose": "governance",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "artifact_review",
+      "method": "POST",
+      "path": "/v1/artifacts/reviews",
+      "request": "ArtifactReview",
+      "response": "CommandResult",
+      "roles": [
+        "governance",
+        "security"
+      ],
+      "purpose": "governance",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "activation_create",
+      "method": "POST",
+      "path": "/v1/activations",
+      "request": "ActivationCreate",
+      "response": "ActivationView",
+      "roles": [
+        "operator"
+      ],
+      "purpose": "governance",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "control_change",
+      "method": "POST",
+      "path": "/v1/operating-state",
+      "request": "ControlChange",
+      "response": "CommandResult",
+      "roles": [
+        "operator",
+        "security"
+      ],
+      "purpose": "service_operations",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "hold_create",
+      "method": "POST",
+      "path": "/v1/holds",
+      "request": "HoldCommand",
+      "response": "CommandResult",
+      "roles": [
+        "governance"
+      ],
+      "purpose": "rights",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "lifecycle",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "exception_create",
+      "method": "POST",
+      "path": "/v1/exceptions",
+      "request": "ExceptionCreate",
+      "response": "CommandResult",
+      "roles": [
+        "governance"
+      ],
+      "purpose": "governance",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "incident_create",
+      "method": "POST",
+      "path": "/v1/incidents",
+      "request": "IncidentCreate",
+      "response": "IncidentView",
+      "roles": [
+        "security",
+        "operator"
+      ],
+      "purpose": "security",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "rights_create",
+      "method": "POST",
+      "path": "/v1/rights",
+      "request": "RightsCreate",
+      "response": "RightsView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "rights",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "rights",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "activation_read",
+      "method": "GET",
+      "path": "/v1/activations/{activation_id}",
+      "request": null,
+      "response": "ActivationView",
+      "roles": [
+        "operator",
+        "governance",
+        "security"
+      ],
+      "purpose": "governance",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "activation_commit",
+      "method": "POST",
+      "path": "/v1/activations/{activation_id}/commit",
+      "request": "RevisionCommand",
+      "response": "ActivationView",
+      "roles": [
+        "operator"
+      ],
+      "purpose": "governance",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "hold_release",
+      "method": "POST",
+      "path": "/v1/holds/{hold_id}/release",
+      "request": "RevisionCommand",
+      "response": "CommandResult",
+      "roles": [
+        "governance"
+      ],
+      "purpose": "rights",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "lifecycle",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "incident_read",
+      "method": "GET",
+      "path": "/v1/incidents/{incident_id}",
+      "request": null,
+      "response": "IncidentView",
+      "roles": [
+        "operator",
+        "security",
+        "governance"
+      ],
+      "purpose": "security",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "rights_read",
+      "method": "GET",
+      "path": "/v1/rights/{rights_id}",
+      "request": null,
+      "response": "RightsView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "rights",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "rights",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "export_download",
+      "method": "GET",
+      "path": "/v1/rights/{rights_id}/download",
+      "request": null,
+      "response": "ExportView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "rights",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "rights",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "current_scoped_export_disclosure"
+    },
+    {
+      "operation_id": "audit_query",
+      "method": "POST",
+      "path": "/v1/audit/search",
+      "request": "AuditQuery",
+      "response": "AuditPage",
+      "roles": [
+        "auditor"
+      ],
+      "purpose": "audit",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "audit",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "metrics_query",
+      "method": "POST",
+      "path": "/v1/metrics/query",
+      "request": "MetricsQuery",
+      "response": "MetricsView",
+      "roles": [
+        "auditor",
+        "supervisor",
+        "governance"
+      ],
+      "purpose": "audit",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "quality",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "scenario_create",
+      "method": "POST",
+      "path": "/v1/training/scenarios",
+      "request": "ScenarioCreate",
+      "response": "CommandResult",
+      "roles": [
+        "trainer"
+      ],
+      "purpose": "training",
+      "producer": "edge",
+      "consumer": "simulator",
+      "state_owner": "simulator",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "replay_create",
+      "method": "POST",
+      "path": "/v1/evaluation/replays",
+      "request": "ReplayCreate",
+      "response": "EvaluationView",
+      "roles": [
+        "trainer",
+        "governance"
+      ],
+      "purpose": "training",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "quality",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "help_create",
+      "method": "POST",
+      "path": "/help/v1/requests",
+      "request": "HelpCreate",
+      "response": "HelpView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "help",
+      "state_owner": "help",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "fresh_help_authorization_then_local_spool"
+    },
+    {
+      "operation_id": "help_status",
+      "method": "GET",
+      "path": "/help/v1/requests/{help_id}",
+      "request": null,
+      "response": "HelpView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor",
+        "receiver",
+        "operator",
+        "governance",
+        "auditor",
+        "security",
+        "trainer"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "help",
+      "state_owner": "help",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "fresh_help_authorization_then_local_spool"
+    },
+    {
+      "operation_id": "help_accept",
+      "method": "POST",
+      "path": "/help/v1/requests/{help_id}/accept",
+      "request": "RevisionCommand",
+      "response": "HelpView",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "help",
+      "state_owner": "help",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "fresh_help_authorization_then_local_spool"
+    },
+    {
+      "operation_id": "help_cancel",
+      "method": "POST",
+      "path": "/help/v1/requests/{help_id}/cancel",
+      "request": "RevisionCommand",
+      "response": "HelpView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "help",
+      "state_owner": "help",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "fresh_help_authorization_then_local_spool"
+    },
+    {
+      "operation_id": "help_reconcile",
+      "method": "POST",
+      "path": "/internal/v1/help/reconcile",
+      "request": "HelpReconcile",
+      "response": "CommandResult",
+      "roles": [
+        "help"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "help",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "fresh_help_authorization_then_local_spool"
+    },
+    {
+      "operation_id": "signal_ingest",
+      "method": "POST",
+      "path": "/internal/v1/identity/signals",
+      "request": "Signal",
+      "response": "SignalAck",
+      "roles": [
+        "identity_provider"
+      ],
+      "purpose": "support",
+      "producer": "identity_provider",
+      "consumer": "identity",
+      "state_owner": "identity",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "step_lease",
+      "method": "POST",
+      "path": "/internal/v1/tasks/{task_id}/lease",
+      "request": "LeaseCommand",
+      "response": "LeaseView",
+      "roles": [
+        "runtime"
+      ],
+      "purpose": "support",
+      "producer": "runtime",
+      "consumer": "core",
+      "state_owner": "tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "step_renew",
+      "method": "POST",
+      "path": "/internal/v1/tasks/{task_id}/renew",
+      "request": "LeaseCommand",
+      "response": "LeaseView",
+      "roles": [
+        "runtime"
+      ],
+      "purpose": "support",
+      "producer": "runtime",
+      "consumer": "core",
+      "state_owner": "tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "proposal_submit",
+      "method": "POST",
+      "path": "/internal/v1/broker/proposals",
+      "request": "Proposal",
+      "response": "TaskView",
+      "roles": [
+        "runtime"
+      ],
+      "purpose": "support",
+      "producer": "runtime",
+      "consumer": "core",
+      "state_owner": "tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "tool_invoke",
+      "method": "POST",
+      "path": "/internal/v1/broker/tools",
+      "request": "ToolInvoke",
+      "response": "Observation",
+      "roles": [
+        "runtime"
+      ],
+      "purpose": "support",
+      "producer": "runtime",
+      "consumer": "core",
+      "state_owner": "tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "inference_request",
+      "method": "POST",
+      "path": "/internal/v1/broker/inference",
+      "request": "RuntimeInferenceRequest",
+      "response": "InferenceResult",
+      "roles": [
+        "runtime"
+      ],
+      "purpose": "support",
+      "producer": "runtime",
+      "consumer": "core",
+      "state_owner": "tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "inference_execute",
+      "method": "POST",
+      "path": "/internal/v1/inference/jobs",
+      "request": "InferenceRequest",
+      "response": "InferenceResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "inference",
+      "state_owner": "inference",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "policy_evaluate",
+      "method": "POST",
+      "path": "/internal/v1/policy/evaluate",
+      "request": "PolicyInput",
+      "response": "PolicyDecision",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "policy",
+      "state_owner": "policy",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "activation_ack",
+      "method": "POST",
+      "path": "/internal/v1/control/ack",
+      "request": "ActivationAck",
+      "response": "ActivationView",
+      "roles": [
+        "enforcer"
+      ],
+      "purpose": "support",
+      "producer": "enforcer",
+      "consumer": "control",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "simulator_send",
+      "method": "POST",
+      "path": "/internal/v1/simulator/packages",
+      "request": "SimulatorSend",
+      "response": "ReceiptView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "simulator",
+      "state_owner": "simulator",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "journal_append",
+      "method": "POST",
+      "path": "/internal/v1/journal/append",
+      "request": "JournalAppend",
+      "response": "JournalHead",
+      "roles": [
+        "control"
+      ],
+      "purpose": "support",
+      "producer": "control",
+      "consumer": "recovery-control",
+      "state_owner": "recovery",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "help_authorize",
+      "method": "POST",
+      "path": "/internal/v1/identity/help-authorize",
+      "request": "HelpAuthorityRequest",
+      "response": "FreshHelpAuthority",
+      "roles": [
+        "help"
+      ],
+      "purpose": "support",
+      "producer": "help",
+      "consumer": "identity",
+      "state_owner": "identity",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "verified_workload_and_delegated_scope"
+    },
+    {
+      "operation_id": "journal_head",
+      "method": "GET",
+      "path": "/internal/v1/journal/head",
+      "request": null,
+      "response": "JournalHead",
+      "roles": [
+        "data",
+        "control",
+        "recovery"
+      ],
+      "purpose": "recovery",
+      "producer": "data",
+      "consumer": "recovery-control",
+      "state_owner": "recovery",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "current_live_head"
+    },
+    {
+      "operation_id": "backup_capture",
+      "method": "POST",
+      "path": "/v1/recovery/backups",
+      "request": "Empty",
+      "response": "BackupView",
+      "roles": [
+        "operator"
+      ],
+      "purpose": "recovery",
+      "producer": "edge",
+      "consumer": "recovery-control",
+      "state_owner": "recovery",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "backup_read",
+      "method": "GET",
+      "path": "/v1/recovery/backups/{backup_id}",
+      "request": null,
+      "response": "BackupView",
+      "roles": [
+        "operator"
+      ],
+      "purpose": "recovery",
+      "producer": "edge",
+      "consumer": "recovery-control",
+      "state_owner": "recovery",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "restore_create",
+      "method": "POST",
+      "path": "/v1/recovery/targets",
+      "request": "RestoreCreate",
+      "response": "RestoreView",
+      "roles": [
+        "operator"
+      ],
+      "purpose": "recovery",
+      "producer": "edge",
+      "consumer": "recovery-control",
+      "state_owner": "recovery",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "restore_read",
+      "method": "GET",
+      "path": "/v1/recovery/targets/{target_id}",
+      "request": null,
+      "response": "RestoreView",
+      "roles": [
+        "operator",
+        "security"
+      ],
+      "purpose": "recovery",
+      "producer": "edge",
+      "consumer": "recovery-control",
+      "state_owner": "recovery",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "restore_validate",
+      "method": "POST",
+      "path": "/v1/recovery/targets/{target_id}/validate",
+      "request": "RevisionCommand",
+      "response": "RestoreView",
+      "roles": [
+        "operator"
+      ],
+      "purpose": "recovery",
+      "producer": "edge",
+      "consumer": "recovery-control",
+      "state_owner": "recovery",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "promotion_propose",
+      "method": "POST",
+      "path": "/v1/recovery/promotions/propose",
+      "request": "PromotionPropose",
+      "response": "CommandResult",
+      "roles": [
+        "operator"
+      ],
+      "purpose": "recovery",
+      "producer": "edge",
+      "consumer": "recovery-control",
+      "state_owner": "recovery",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "promotion_approve",
+      "method": "POST",
+      "path": "/v1/recovery/promotions/approve",
+      "request": "PromotionApprove",
+      "response": "CommandResult",
+      "roles": [
+        "governance",
+        "security"
+      ],
+      "purpose": "recovery",
+      "producer": "edge",
+      "consumer": "recovery-control",
+      "state_owner": "recovery",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "promotion_execute",
+      "method": "POST",
+      "path": "/v1/recovery/promotions/execute",
+      "request": "PromotionExecute",
+      "response": "CommandResult",
+      "roles": [
+        "operator"
+      ],
+      "purpose": "recovery",
+      "producer": "edge",
+      "consumer": "recovery-control",
+      "state_owner": "recovery",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "health_read",
+      "method": "GET",
+      "path": "/v1/operations/health",
+      "request": null,
+      "response": "HealthView",
+      "roles": [
+        "operator",
+        "security"
+      ],
+      "purpose": "service_operations",
+      "producer": "edge",
+      "consumer": "telemetry",
+      "state_owner": "operations",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "static_manifest",
+      "method": "GET",
+      "path": "/static/v1/manifest",
+      "request": null,
+      "response": "StaticManifest",
+      "roles": [
+        "public"
+      ],
+      "purpose": "support",
+      "producer": "browser",
+      "consumer": "static",
+      "state_owner": "static",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "public_content"
+    },
+    {
+      "operation_id": "authority_metadata",
+      "method": "POST",
+      "path": "/internal/v1/data/authority",
+      "request": "MetadataRequest",
+      "response": "MetadataResult",
+      "roles": [
+        "core",
+        "control"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "authorization",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "metadata_only_no_content"
+    },
+    {
+      "operation_id": "data_continuation_rotate",
+      "method": "POST",
+      "path": "/internal/v1/data/continuation_rotate",
+      "request": "Gateway_continuation_rotate",
+      "response": "ContinuationIssued",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.continuation",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_continuation_recover",
+      "method": "POST",
+      "path": "/internal/v1/data/continuation_recover",
+      "request": "Gateway_continuation_recover",
+      "response": "ContinuationIssued",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.continuation",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_operation_status",
+      "method": "POST",
+      "path": "/internal/v1/data/operation_status",
+      "request": "Gateway_operation_status",
+      "response": "OperationStatus",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.durable",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_session_create",
+      "method": "POST",
+      "path": "/internal/v1/data/session_create",
+      "request": "Gateway_session_create",
+      "response": "SessionView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_session_read",
+      "method": "POST",
+      "path": "/internal/v1/data/session_read",
+      "request": "Gateway_session_read",
+      "response": "SessionView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_session_disclosure",
+      "method": "POST",
+      "path": "/internal/v1/data/session_disclosure",
+      "request": "Gateway_session_disclosure",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_session_turns",
+      "method": "POST",
+      "path": "/internal/v1/data/session_turns",
+      "request": "Gateway_session_turns",
+      "response": "AssessmentView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_session_assertions",
+      "method": "POST",
+      "path": "/internal/v1/data/session_assertions",
+      "request": "Gateway_session_assertions",
+      "response": "AssertionView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_session_choices",
+      "method": "POST",
+      "path": "/internal/v1/data/session_choices",
+      "request": "Gateway_session_choices",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_session_human_request",
+      "method": "POST",
+      "path": "/internal/v1/data/session_human_request",
+      "request": "Gateway_session_human_request",
+      "response": "QueueView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_session_end",
+      "method": "POST",
+      "path": "/internal/v1/data/session_end",
+      "request": "Gateway_session_end",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_session_events",
+      "method": "POST",
+      "path": "/internal/v1/data/session_events",
+      "request": "Gateway_session_events",
+      "response": "EventView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_messages_read",
+      "method": "POST",
+      "path": "/internal/v1/data/messages_read",
+      "request": "Gateway_messages_read",
+      "response": "MessagePage",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_message_send",
+      "method": "POST",
+      "path": "/internal/v1/data/message_send",
+      "request": "Gateway_message_send",
+      "response": "MessageView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.session",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_queue_list",
+      "method": "POST",
+      "path": "/internal/v1/data/queue_list",
+      "request": "Gateway_queue_list",
+      "response": "QueuePage",
+      "roles": [
+        "core"
+      ],
+      "purpose": "service_operations",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_workforce_reserve",
+      "method": "POST",
+      "path": "/internal/v1/data/workforce_reserve",
+      "request": "Gateway_workforce_reserve",
+      "response": "AssignmentView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "service_operations",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_workforce_accept",
+      "method": "POST",
+      "path": "/internal/v1/data/workforce_accept",
+      "request": "Gateway_workforce_accept",
+      "response": "AssignmentView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "service_operations",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_workforce_prepare_transfer",
+      "method": "POST",
+      "path": "/internal/v1/data/workforce_prepare_transfer",
+      "request": "Gateway_workforce_prepare_transfer",
+      "response": "AssignmentView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "service_operations",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_workforce_confirm_transfer",
+      "method": "POST",
+      "path": "/internal/v1/data/workforce_confirm_transfer",
+      "request": "Gateway_workforce_confirm_transfer",
+      "response": "SessionView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "service_operations",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_workforce_transfer_failed",
+      "method": "POST",
+      "path": "/internal/v1/data/workforce_transfer_failed",
+      "request": "Gateway_workforce_transfer_failed",
+      "response": "QueueView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "service_operations",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_workforce_observe",
+      "method": "POST",
+      "path": "/internal/v1/data/workforce_observe",
+      "request": "Gateway_workforce_observe",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "service_operations",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_workforce_takeover",
+      "method": "POST",
+      "path": "/internal/v1/data/workforce_takeover",
+      "request": "Gateway_workforce_takeover",
+      "response": "SessionView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "service_operations",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_plan_create",
+      "method": "POST",
+      "path": "/internal/v1/data/plan_create",
+      "request": "Gateway_plan_create",
+      "response": "PlanView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "plan",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.plan",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_plan_read",
+      "method": "POST",
+      "path": "/internal/v1/data/plan_read",
+      "request": "Gateway_plan_read",
+      "response": "PlanView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "plan",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.plan",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_plan_field_append",
+      "method": "POST",
+      "path": "/internal/v1/data/plan_field_append",
+      "request": "Gateway_plan_field_append",
+      "response": "PlanView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "plan",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.plan",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_plan_retire",
+      "method": "POST",
+      "path": "/internal/v1/data/plan_retire",
+      "request": "Gateway_plan_retire",
+      "response": "PlanView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "plan",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.plan",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_consent_grant",
+      "method": "POST",
+      "path": "/internal/v1/data/consent_grant",
+      "request": "Gateway_consent_grant",
+      "response": "ConsentView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.consent",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_consent_read",
+      "method": "POST",
+      "path": "/internal/v1/data/consent_read",
+      "request": "Gateway_consent_read",
+      "response": "ConsentView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.consent",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_consent_revoke",
+      "method": "POST",
+      "path": "/internal/v1/data/consent_revoke",
+      "request": "Gateway_consent_revoke",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.consent",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_directory_search",
+      "method": "POST",
+      "path": "/internal/v1/data/directory_search",
+      "request": "Gateway_directory_search",
+      "response": "DirectoryPage",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.directory",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_directory_read",
+      "method": "POST",
+      "path": "/internal/v1/data/directory_read",
+      "request": "Gateway_directory_read",
+      "response": "DirectoryView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.directory",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_directory_ingest",
+      "method": "POST",
+      "path": "/internal/v1/data/directory_ingest",
+      "request": "Gateway_directory_ingest",
+      "response": "DirectoryView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "governance",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.directory",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_directory_suspend",
+      "method": "POST",
+      "path": "/internal/v1/data/directory_suspend",
+      "request": "Gateway_directory_suspend",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "security",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.directory",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_referral_draft",
+      "method": "POST",
+      "path": "/internal/v1/data/referral_draft",
+      "request": "Gateway_referral_draft",
+      "response": "ReferralView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "referral",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.referral",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_referral_read",
+      "method": "POST",
+      "path": "/internal/v1/data/referral_read",
+      "request": "Gateway_referral_read",
+      "response": "ReferralView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "referral",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.referral",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_referral_review",
+      "method": "POST",
+      "path": "/internal/v1/data/referral_review",
+      "request": "Gateway_referral_review",
+      "response": "ReviewView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "referral",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.referral",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_referral_dispatch",
+      "method": "POST",
+      "path": "/internal/v1/data/referral_dispatch",
+      "request": "Gateway_referral_dispatch",
+      "response": "DispatchView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "referral",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.referral",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_dispatch_read",
+      "method": "POST",
+      "path": "/internal/v1/data/dispatch_read",
+      "request": "Gateway_dispatch_read",
+      "response": "DispatchView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "referral",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.referral",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_receipt_read",
+      "method": "POST",
+      "path": "/internal/v1/data/receipt_read",
+      "request": "Gateway_receipt_read",
+      "response": "ReceiptView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "referral",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.referral",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_dispatch_reconcile",
+      "method": "POST",
+      "path": "/internal/v1/data/dispatch_reconcile",
+      "request": "Gateway_dispatch_reconcile",
+      "response": "DispatchView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "referral",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.referral",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_followup_create",
+      "method": "POST",
+      "path": "/internal/v1/data/followup_create",
+      "request": "Gateway_followup_create",
+      "response": "FollowUpView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "follow_up",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.follow_up",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_followup_read",
+      "method": "POST",
+      "path": "/internal/v1/data/followup_read",
+      "request": "Gateway_followup_read",
+      "response": "FollowUpView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "follow_up",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.follow_up",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_followup_cancel",
+      "method": "POST",
+      "path": "/internal/v1/data/followup_cancel",
+      "request": "Gateway_followup_cancel",
+      "response": "FollowUpView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "follow_up",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.follow_up",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_outcome_append",
+      "method": "POST",
+      "path": "/internal/v1/data/outcome_append",
+      "request": "Gateway_outcome_append",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.outcome",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_task_create",
+      "method": "POST",
+      "path": "/internal/v1/data/task_create",
+      "request": "Gateway_task_create",
+      "response": "TaskView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_task_read",
+      "method": "POST",
+      "path": "/internal/v1/data/task_read",
+      "request": "Gateway_task_read",
+      "response": "TaskView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_task_cancel",
+      "method": "POST",
+      "path": "/internal/v1/data/task_cancel",
+      "request": "Gateway_task_cancel",
+      "response": "TaskView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_task_revise",
+      "method": "POST",
+      "path": "/internal/v1/data/task_revise",
+      "request": "Gateway_task_revise",
+      "response": "TaskView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_draft_read",
+      "method": "POST",
+      "path": "/internal/v1/data/draft_read",
+      "request": "Gateway_draft_read",
+      "response": "DraftView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_draft_review",
+      "method": "POST",
+      "path": "/internal/v1/data/draft_review",
+      "request": "Gateway_draft_review",
+      "response": "ReviewView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.tasks",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_artifact_register",
+      "method": "POST",
+      "path": "/internal/v1/data/artifact_register",
+      "request": "Gateway_artifact_register",
+      "response": "ArtifactView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "governance",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_artifact_review",
+      "method": "POST",
+      "path": "/internal/v1/data/artifact_review",
+      "request": "Gateway_artifact_review",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "governance",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_activation_create",
+      "method": "POST",
+      "path": "/internal/v1/data/activation_create",
+      "request": "Gateway_activation_create",
+      "response": "ActivationView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "governance",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_control_change",
+      "method": "POST",
+      "path": "/internal/v1/data/control_change",
+      "request": "Gateway_control_change",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "service_operations",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_hold_create",
+      "method": "POST",
+      "path": "/internal/v1/data/hold_create",
+      "request": "Gateway_hold_create",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "rights",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.lifecycle",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_exception_create",
+      "method": "POST",
+      "path": "/internal/v1/data/exception_create",
+      "request": "Gateway_exception_create",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "governance",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_incident_create",
+      "method": "POST",
+      "path": "/internal/v1/data/incident_create",
+      "request": "Gateway_incident_create",
+      "response": "IncidentView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "security",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_rights_create",
+      "method": "POST",
+      "path": "/internal/v1/data/rights_create",
+      "request": "Gateway_rights_create",
+      "response": "RightsView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "rights",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.rights",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_activation_read",
+      "method": "POST",
+      "path": "/internal/v1/data/activation_read",
+      "request": "Gateway_activation_read",
+      "response": "ActivationView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "governance",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_activation_commit",
+      "method": "POST",
+      "path": "/internal/v1/data/activation_commit",
+      "request": "Gateway_activation_commit",
+      "response": "ActivationView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "governance",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_hold_release",
+      "method": "POST",
+      "path": "/internal/v1/data/hold_release",
+      "request": "Gateway_hold_release",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "rights",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.lifecycle",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_incident_read",
+      "method": "POST",
+      "path": "/internal/v1/data/incident_read",
+      "request": "Gateway_incident_read",
+      "response": "IncidentView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "security",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_rights_read",
+      "method": "POST",
+      "path": "/internal/v1/data/rights_read",
+      "request": "Gateway_rights_read",
+      "response": "RightsView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "rights",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.rights",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_export_download",
+      "method": "POST",
+      "path": "/internal/v1/data/export_download",
+      "request": "Gateway_export_download",
+      "response": "ExportView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "rights",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.rights",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_audit_query",
+      "method": "POST",
+      "path": "/internal/v1/data/audit_query",
+      "request": "Gateway_audit_query",
+      "response": "AuditPage",
+      "roles": [
+        "core"
+      ],
+      "purpose": "audit",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.audit",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_metrics_query",
+      "method": "POST",
+      "path": "/internal/v1/data/metrics_query",
+      "request": "Gateway_metrics_query",
+      "response": "MetricsView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "audit",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.quality",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_replay_create",
+      "method": "POST",
+      "path": "/internal/v1/data/replay_create",
+      "request": "Gateway_replay_create",
+      "response": "EvaluationView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "training",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.quality",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "post_crisis_record",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/post-crisis",
+      "request": "PostCrisisRecord",
+      "response": "PostCrisisView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "follow_up",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "follow_up",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "receiver_inbox",
+      "method": "GET",
+      "path": "/v1/receiver/packages",
+      "request": "ReceiverPackageQuery",
+      "response": "ReceiverPackagePage",
+      "roles": [
+        "receiver"
+      ],
+      "purpose": "referral",
+      "producer": "edge",
+      "consumer": "simulator",
+      "state_owner": "simulator",
+      "query": true,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "scoped_access_grant",
+      "method": "POST",
+      "path": "/v1/access/grants",
+      "request": "ScopeGrantCreate",
+      "response": "CommandResult",
+      "roles": [
+        "governance",
+        "security"
+      ],
+      "purpose": "governance",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "access",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "identity_link_request",
+      "method": "POST",
+      "path": "/v1/identity-links",
+      "request": "RightsCreate",
+      "response": "CommandResult",
+      "roles": [
+        "pid"
+      ],
+      "purpose": "rights",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "access",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "disabled_until_separate_link_ceremony_design"
+    },
+    {
+      "operation_id": "job_execute",
+      "method": "POST",
+      "path": "/internal/v1/jobs/execute",
+      "request": "DueJob",
+      "response": "CommandResult",
+      "roles": [
+        "jobs"
+      ],
+      "purpose": "support",
+      "producer": "jobs",
+      "consumer": "core",
+      "state_owner": "job_domain_owner",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "same_domain_handler_current_authority"
+    },
+    {
+      "operation_id": "promotion_read",
+      "method": "GET",
+      "path": "/v1/recovery/promotions/{proposal_id}",
+      "request": null,
+      "response": "PromotionView",
+      "roles": [
+        "operator",
+        "governance",
+        "security"
+      ],
+      "purpose": "recovery",
+      "producer": "edge",
+      "consumer": "recovery-control",
+      "state_owner": "recovery",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "participant_inbox",
+      "method": "GET",
+      "path": "/v1/inbox",
+      "request": "InboxQuery",
+      "response": "InboxPage",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "follow_up",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "follow_up",
+      "query": true,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "outcomes_read",
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/outcomes",
+      "request": "PageQuery",
+      "response": "OutcomePage",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "outcome",
+      "query": true,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "scenario_stop",
+      "method": "POST",
+      "path": "/v1/training/scenarios/{scenario_id}/stop",
+      "request": "RevisionCommand",
+      "response": "CommandResult",
+      "roles": [
+        "trainer"
+      ],
+      "purpose": "training",
+      "producer": "edge",
+      "consumer": "simulator",
+      "state_owner": "simulator",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "evaluation_read",
+      "method": "GET",
+      "path": "/v1/evaluation/replays/{evaluation_id}",
+      "request": null,
+      "response": "EvaluationView",
+      "roles": [
+        "trainer",
+        "governance"
+      ],
+      "purpose": "training",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "quality",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "scenario_read",
+      "method": "GET",
+      "path": "/v1/training/scenarios/{scenario_id}",
+      "request": null,
+      "response": "ScenarioView",
+      "roles": [
+        "trainer"
+      ],
+      "purpose": "training",
+      "producer": "edge",
+      "consumer": "simulator",
+      "state_owner": "simulator",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "incident_transition",
+      "method": "POST",
+      "path": "/v1/incidents/{incident_id}/transition",
+      "request": "IncidentTransition",
+      "response": "IncidentView",
+      "roles": [
+        "security",
+        "operator"
+      ],
+      "purpose": "security",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "evidence_export",
+      "method": "POST",
+      "path": "/v1/audit/exports",
+      "request": "AuditQuery",
+      "response": "CommandResult",
+      "roles": [
+        "auditor"
+      ],
+      "purpose": "audit",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "audit",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "identity_revoke",
+      "method": "POST",
+      "path": "/internal/v1/control/identity-revoke",
+      "request": "Signal",
+      "response": "CommandResult",
+      "roles": [
+        "identity"
+      ],
+      "purpose": "security",
+      "producer": "identity",
+      "consumer": "control",
+      "state_owner": "control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "lifecycle_due",
+      "method": "POST",
+      "path": "/internal/v1/lifecycle/due",
+      "request": "LifecycleDueRequest",
+      "response": "CommandResult",
+      "roles": [
+        "jobs"
+      ],
+      "purpose": "rights",
+      "producer": "jobs",
+      "consumer": "core",
+      "state_owner": "lifecycle",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "audit_export_read",
+      "method": "GET",
+      "path": "/v1/audit/exports/{export_id}",
+      "request": "AuditQuery",
+      "response": "AuditPage",
+      "roles": [
+        "auditor"
+      ],
+      "purpose": "audit",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "audit",
+      "query": true,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "static_publish",
+      "method": "POST",
+      "path": "/static-admin/v1/publications",
+      "request": "StaticPublish",
+      "response": "StaticManifest",
+      "roles": [
+        "operator"
+      ],
+      "purpose": "governance",
+      "producer": "operator",
+      "consumer": "static",
+      "state_owner": "static",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "independently_reviewed_exact_content_atomic_local_publication"
+    },
+    {
+      "operation_id": "followup_bind_anchor",
+      "method": "POST",
+      "path": "/v1/follow-ups/{followup_id}/anchor",
+      "request": "FollowUpBindAnchor",
+      "response": "FollowUpView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "follow_up",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "follow_up",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "inbox_message_read",
+      "method": "GET",
+      "path": "/v1/inbox/{message_id}",
+      "request": null,
+      "response": "InboxMessageView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant"
+      ],
+      "purpose": "follow_up",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "follow_up",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "channel_challenge_read",
+      "method": "GET",
+      "path": "/v1/sessions/{session_id}/workforce/challenge",
+      "request": null,
+      "response": "ChannelChallengeView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "workforce",
+      "query": false,
+      "idempotency": "none",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "channel_ack",
+      "method": "POST",
+      "path": "/v1/sessions/{session_id}/workforce/channel-acks",
+      "request": "ChannelAckSubmit",
+      "response": "ChannelAckView",
+      "roles": [
+        "pid",
+        "carer",
+        "professional_participant",
+        "worker",
+        "supervisor"
+      ],
+      "purpose": "support",
+      "producer": "edge",
+      "consumer": "core",
+      "state_owner": "workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "guarded_domain_commit"
+    },
+    {
+      "operation_id": "data_post_crisis_record",
+      "method": "POST",
+      "path": "/internal/v1/data/post_crisis_record",
+      "request": "Gateway_post_crisis_record",
+      "response": "PostCrisisView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "follow_up",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.follow_up",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_scoped_access_grant",
+      "method": "POST",
+      "path": "/internal/v1/data/scoped_access_grant",
+      "request": "Gateway_scoped_access_grant",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "governance",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.access",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_identity_link_request",
+      "method": "POST",
+      "path": "/internal/v1/data/identity_link_request",
+      "request": "Gateway_identity_link_request",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "rights",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.access",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_participant_inbox",
+      "method": "POST",
+      "path": "/internal/v1/data/participant_inbox",
+      "request": "Gateway_participant_inbox",
+      "response": "InboxPage",
+      "roles": [
+        "core"
+      ],
+      "purpose": "follow_up",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.follow_up",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_outcomes_read",
+      "method": "POST",
+      "path": "/internal/v1/data/outcomes_read",
+      "request": "Gateway_outcomes_read",
+      "response": "OutcomePage",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.outcome",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_evaluation_read",
+      "method": "POST",
+      "path": "/internal/v1/data/evaluation_read",
+      "request": "Gateway_evaluation_read",
+      "response": "EvaluationView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "training",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.quality",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_incident_transition",
+      "method": "POST",
+      "path": "/internal/v1/data/incident_transition",
+      "request": "Gateway_incident_transition",
+      "response": "IncidentView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "security",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.control",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_evidence_export",
+      "method": "POST",
+      "path": "/internal/v1/data/evidence_export",
+      "request": "Gateway_evidence_export",
+      "response": "CommandResult",
+      "roles": [
+        "core"
+      ],
+      "purpose": "audit",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.audit",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_audit_export_read",
+      "method": "POST",
+      "path": "/internal/v1/data/audit_export_read",
+      "request": "Gateway_audit_export_read",
+      "response": "AuditPage",
+      "roles": [
+        "core"
+      ],
+      "purpose": "audit",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.audit",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_followup_bind_anchor",
+      "method": "POST",
+      "path": "/internal/v1/data/followup_bind_anchor",
+      "request": "Gateway_followup_bind_anchor",
+      "response": "FollowUpView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "follow_up",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.follow_up",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_inbox_message_read",
+      "method": "POST",
+      "path": "/internal/v1/data/inbox_message_read",
+      "request": "Gateway_inbox_message_read",
+      "response": "InboxMessageView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "follow_up",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.follow_up",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_channel_challenge_read",
+      "method": "POST",
+      "path": "/internal/v1/data/channel_challenge_read",
+      "request": "Gateway_channel_challenge_read",
+      "response": "ChannelChallengeView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    },
+    {
+      "operation_id": "data_channel_ack",
+      "method": "POST",
+      "path": "/internal/v1/data/channel_ack",
+      "request": "Gateway_channel_ack",
+      "response": "ChannelAckView",
+      "roles": [
+        "core"
+      ],
+      "purpose": "support",
+      "producer": "core",
+      "consumer": "data",
+      "state_owner": "data.workforce",
+      "query": false,
+      "idempotency": "required",
+      "authorization_boundary": "final_guard_audit_transaction"
+    }
+  ]
+}

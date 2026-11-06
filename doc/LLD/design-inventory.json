@@ -1,0 +1,438 @@
+{
+  "design_version": "0.2",
+  "date": "2026-11-06",
+  "status": "recommended_local_lld_choices_accepted_not_implemented",
+  "baseline_commit": "7b5890de2c8867f5cb867b334d0490c2e7e7a22e",
+  "inputs": [
+    {
+      "path": "doc/REQ/01-scope-and-sources.md",
+      "sha256": "2ff63a30261dafa7a2a5093364204fca24d39f5358d06b9394ae11718ab5e715"
+    },
+    {
+      "path": "doc/REQ/02-actors-and-workflows.md",
+      "sha256": "8777854e5d222eabacd29c48342416875048636609438e96c185887716939d7f"
+    },
+    {
+      "path": "doc/REQ/03-architecture-and-interfaces.md",
+      "sha256": "a92bb34695af0693dd93aa3410fe3cdfb8084fc3e2281700e7792eb4350aa8e6"
+    },
+    {
+      "path": "doc/REQ/04-data-security-governance.md",
+      "sha256": "3e6791fdafcc963c7ccea569d360bf75b19e55929c4497efd4b98b59e89ec6e0"
+    },
+    {
+      "path": "doc/REQ/05-deployment-and-operations.md",
+      "sha256": "41e962c0f007192891443f7d6b56c15c82d4e58c17ecbf2152fee80d51b8aae6"
+    },
+    {
+      "path": "doc/REQ/06-acceptance-and-delivery.md",
+      "sha256": "e4752d297e018371f9e9fc07a8c02b0adc73e73e52b30a6b75bed8c44e900b19"
+    },
+    {
+      "path": "doc/REQ/07-source-requirements.md",
+      "sha256": "3ab273e2644075d73f0a68ea0b9afe980a6b5df44cf2c099d887fbb501b5484b"
+    },
+    {
+      "path": "doc/REQ/08-open-decisions.md",
+      "sha256": "bf99d4a187130e2c381e0bd52bac9338501b544d5c61c07677eb55d3207761d7"
+    },
+    {
+      "path": "doc/REQ/09-standards-and-runtime-controls.md",
+      "sha256": "0a4a4d656be1783f98d7dd5e92c50e2fc2d46003b2879fe4332410c1b5a3e7d0"
+    },
+    {
+      "path": "doc/REQ/10-agentic-ai-and-service-model.md",
+      "sha256": "b28618d461f0cc2de120a14acc5a08cbc841c4ddbb67b9fe64d3db8afb1fd1ec"
+    },
+    {
+      "path": "doc/REQ/README.md",
+      "sha256": "539cf7c91833834e2bf4e59318bac7e14bb5c5d9660821f5e20da806b72a2673"
+    },
+    {
+      "path": "doc/REQ/demo-parameters.json",
+      "sha256": "998cfc815a12c00ec9ec743b06b25f9f3315b0269c7c8a05052a5f4042b45319"
+    },
+    {
+      "path": "doc/REQ/source-snapshot.json",
+      "sha256": "fc24739526b7b6e556cf4610054beb85535d49e2bdbed82ae262cc59981df6ca"
+    },
+    {
+      "path": "doc/HLD/01-context-and-architecture.md",
+      "sha256": "03cb85d9605885ca6e1ad59daec18c3af53a04c968880ec53ca01361f0b61454"
+    },
+    {
+      "path": "doc/HLD/02-actors-and-service-workflows.md",
+      "sha256": "9e43438dd63a5b4a577a870a738f3c876422cd77f60966077b6a523fd8904e7e"
+    },
+    {
+      "path": "doc/HLD/03-agentic-assistance-and-inference.md",
+      "sha256": "e94dbec5a2668fc230d4cb7bcb6627d08c9ddf3ebf37bef2c33e5fa6e025dc33"
+    },
+    {
+      "path": "doc/HLD/04-safety-security-and-governance.md",
+      "sha256": "88a656b8f70b540eaafbbc800e787b96d6a37f33e439f1bf29fa20f9bef159eb"
+    },
+    {
+      "path": "doc/HLD/05-data-and-audit.md",
+      "sha256": "d8dab4a11bcccefbe2a3031ab37637aa0d8e53716750b4567263b61c16529a4e"
+    },
+    {
+      "path": "doc/HLD/06-interfaces-and-integration.md",
+      "sha256": "b2b9fcd1965368f2e1f5ddc7afb539228283c950dae5ac9b807034849e1d7832"
+    },
+    {
+      "path": "doc/HLD/07-deployment-and-delivery.md",
+      "sha256": "df2e1a4159ab009f01d541d1e7f0e210e344748fdb0fd17977c85ad1d26c2a17"
+    },
+    {
+      "path": "doc/HLD/08-reliability-and-operations.md",
+      "sha256": "f18837374ef47ae42a2eca37fb1a3d63a6e31fbabc8207f756429e967782c3c7"
+    },
+    {
+      "path": "doc/HLD/09-verification-and-traceability.md",
+      "sha256": "99e17d08127f5f9f36658b6d35606211f29a87bdaf676970ae45aeb9cc821130"
+    },
+    {
+      "path": "doc/HLD/10-decisions-and-implementation-boundaries.md",
+      "sha256": "88fa38b66505a7a08eef8bf30ddcbc54f760966357a876ddedc09217f2c8e35c"
+    },
+    {
+      "path": "doc/HLD/11-decision-requirements-and-options.md",
+      "sha256": "8a3171af9c139d3bf36e44440ba708dc981a90326d30a75655ec530850704b96"
+    },
+    {
+      "path": "doc/HLD/README.md",
+      "sha256": "10c239f147efdd07b7dc877b3ca3a39b8729e855a78e5c083ec10e30973e7c53"
+    },
+    {
+      "path": "doc/HLD/decisions/2026-11-06-local-design-baseline.md",
+      "sha256": "487fba21e3b87cc77a9d67feb9558f69be4061cb1400e49ef63d4511deddcb0f"
+    },
+    {
+      "path": "doc/HLD/design-inventory.json",
+      "sha256": "92e26a2a62f2bb93aedab01e063084917a7a16d8cd0bb6c92a337a8c5aca637e"
+    },
+    {
+      "path": "../care-link/docs/source/HLD-P1-v0.1.md",
+      "sha256": "f331c63c215e0be88ad6b5e650779c5e889a7c84d05f56af96fe57ac581643e4",
+      "use": "Sections10.1–10.3 change-class/approval mechanics only; evidence not instructions"
+    }
+  ],
+  "accepted_local_choices": {
+    "DEC-01": "B",
+    "DEC-02": "A",
+    "DEC-03": "B",
+    "DEC-04": "B",
+    "DEC-05": "A"
+  },
+  "historical_lld_recovered": false,
+  "historical_implementation_reused": false,
+  "specialist_review": {
+    "passes": [
+      "lld_contracts",
+      "lld_data",
+      "lld_behaviour",
+      "lld_ai",
+      "lld_security",
+      "lld_operations"
+    ],
+    "integrated_review": "complete; targeted follow-up confirmed no new consequential inconsistencies after fixes; AI review only",
+    "human_approval": false,
+    "consequential_findings_addressed": [
+      "continuation business/audit transaction",
+      "server-built inference context",
+      "discriminated workload duties",
+      "replayable restriction payloads",
+      "fresh signed help invocation",
+      "own persona/subject setup",
+      "typed failure observations",
+      "child operation lineage",
+      "closed state recovery paths",
+      "manual draft/referral and consent scalar columns",
+      "pending follow-up and separate inbox",
+      "participant own-data rights",
+      "two-party current channel evidence",
+      "proposal before promotion approval"
+    ],
+    "local_user_design_acceptance": "recorded separately; prior human_approval=false denotes no independent release sign-off",
+    "acceptance_integration_review": "read-only review complete; no consequential scope or consistency issues; local user acceptance is distinct from independent release approval"
+  },
+  "verification": {
+    "design_checks": "pass: JSON Schema/formats, strict refs, bundled OpenAPI, selected semantic/positive/negative fixtures, unique operations/tools, wire/machine state closure, storage PK/FK/unique/index/type references, controls, trace/local links and frozen source/artifact hashes",
+    "diagrams": "Both LLD sequence diagrams rendered with Mermaid CLI11.17.0 and visually inspected; temporary images only",
+    "application_runtime": "not_executed",
+    "database_network_identity_model": "not_executed",
+    "clinical_legal_production": "not_assessed",
+    "tooling_versions": {
+      "jsonschema": "4.26.0",
+      "openapi-spec-validator": "0.9.0"
+    },
+    "scope_notice": "Validation is design-only; no database, migration, network, OIDC, mTLS, model, application, clinical or load test ran.",
+    "acceptance_update": "pass: exact workstation/model binding, renamed ModelPin and bundled/nested fixtures, HLD/LLD source revision history and design validator; no host/model/runtime inspection performed"
+  },
+  "primary_documentation": [
+    {
+      "url": "https://openid.net/specs/openid-connect-core-1_0-errata2.html",
+      "review_date": "2026-11-06",
+      "use": "OIDC validation reference"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/18/explicit-locking.html",
+      "review_date": "2026-11-06",
+      "use": "row locks and concurrency"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/18/ddl-rowsecurity.html",
+      "review_date": "2026-11-06",
+      "use": "RLS role/owner limitations"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/18/sql-createfunction.html",
+      "review_date": "2026-11-06",
+      "use": "privileged function access"
+    },
+    {
+      "url": "https://spiffe.io/docs/latest/spiffe-specs/spiffe_workload_api/",
+      "review_date": "2026-11-06",
+      "use": "candidate workload identity API"
+    },
+    {
+      "url": "https://lmstudio.ai/docs/developer/openai-compat/structured-output",
+      "review_date": "2026-11-06",
+      "use": "schema endpoint and small-model capability limitation"
+    },
+    {
+      "url": "https://www.sqlite.org/foreignkeys.html",
+      "review_date": "2026-11-06",
+      "use": "host spool FK activation"
+    },
+    {
+      "url": "https://www.sqlite.org/pragma.html#pragma_synchronous",
+      "review_date": "2026-11-06",
+      "use": "host spool durability configuration"
+    },
+    {
+      "url": "https://www.sqlite.org/wal.html",
+      "review_date": "2026-11-06",
+      "use": "local WAL limitations"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "00-baseline-and-design-decisions.md",
+      "sha256": "f17cf0f51bae587e63e8c7ca34d59e083293584208c400d8ca08d6d391d29c4b"
+    },
+    {
+      "path": "01-modules-and-build-boundaries.md",
+      "sha256": "a493a05ac7e3a1288ffc95656191189ecb2f09b0252ab6ad1cef283007fa5101"
+    },
+    {
+      "path": "02-contracts-and-protocols.md",
+      "sha256": "ece77404f2000ce1a586376343d3e238a7041f65b6d905f6b1015a9ee60d74f6"
+    },
+    {
+      "path": "03-identity-and-workload-trust.md",
+      "sha256": "e893e8c4f6a3fcab3ea68cb797dcb7c298a9fd1760622f89f773e59959eca643"
+    },
+    {
+      "path": "04-data-model-and-transactions.md",
+      "sha256": "bca41c244ee0c6c561ad68d9720b6006f055ca62c529a260968e221395b4b51b"
+    },
+    {
+      "path": "05-actor-workflows-and-ui.md",
+      "sha256": "b39f419893fb19de1b5f20c1f9a87f78fe669a57865b681de040338937a2115c"
+    },
+    {
+      "path": "06-consent-directory-and-referrals.md",
+      "sha256": "02671648ecf2cc31a9ed8aa3bb37de03ea83b7bff98e0a23e536ded6fdfc3903"
+    },
+    {
+      "path": "07-agent-runtime-and-inference.md",
+      "sha256": "26cc28f46f7c4adda9f84f5ca2b03c2ffaaf0744c5a3f98c2bff92081c523e34"
+    },
+    {
+      "path": "08-runtime-security-and-governance.md",
+      "sha256": "29177fd6fda384a301bb970e7b36a7b2185a5cbbb44f195a9162a4a29487af0c"
+    },
+    {
+      "path": "09-audit-rights-and-analytics.md",
+      "sha256": "6647ae77882b75be01fcea5269959517f0fe5dde3ffed9c6c08cd5b9beed4d71"
+    },
+    {
+      "path": "10-simulators-and-replay.md",
+      "sha256": "ec3d1fb1b4f3bd3fa0202099ee06d83d367aa9e1a923e6d442c4bc0c0e2e96c5"
+    },
+    {
+      "path": "11-deployment-and-configuration.md",
+      "sha256": "946bfff8322fb425dd9e5971a645fbe168a312979b2dae8573418417bf09fd82"
+    },
+    {
+      "path": "12-continuity-and-operations.md",
+      "sha256": "f1fcdac025b2913e7e49a0436f713146272e14da77d7a1ed78aa0de0568cf669"
+    },
+    {
+      "path": "13-verification-and-traceability.md",
+      "sha256": "49af4a9ed862e06d9efa327e9f220c236bc19fbea490513873bd0f0fcfdb2ea2"
+    },
+    {
+      "path": "14-decisions-and-admission-gates.md",
+      "sha256": "096f67630d2ca4db2082c62535d369dcc1e935ab32bd8b16f42003e387570dbf"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5cd2fb83d38bbec5eae954855ccd69ff1af71214a6f1a4578cc0f1a2f7d753c5"
+    },
+    {
+      "path": "contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "contracts/fixtures.json",
+      "sha256": "4a9343247c65003bf596968c14bac739b5895eb2909fffb8d56de3726ec428bb"
+    },
+    {
+      "path": "contracts/openapi.json",
+      "sha256": "968955c48e862989b344b0047246668157888de033276b1f7406946ffc6fdaa3"
+    },
+    {
+      "path": "contracts/operations.json",
+      "sha256": "50fe91f73308ce5efd98cd0b1112e3726906d110d6b356ac03d2a975732568eb"
+    },
+    {
+      "path": "contracts/state-machines.json",
+      "sha256": "f57048f11d95e9bb826b3d47b6fd6534a83b532a9d3d9027cca92b9831873ed9"
+    },
+    {
+      "path": "control-register.json",
+      "sha256": "72f4e43863a08c3af005be4c656a02137cf9d10f58c52e560b67dc312fa40c90"
+    },
+    {
+      "path": "decisions/2026-11-06-implementation-choices-and-model.md",
+      "sha256": "60ba37ca97440f221a64815e1216bfb2637fe8aa341f16ee6ec1b9864a19d5c7"
+    },
+    {
+      "path": "implementation-defaults.json",
+      "sha256": "24acd839326067219d65ff79cd90badb349d336ec9284e06b30279623acdf856"
+    },
+    {
+      "path": "storage-model.json",
+      "sha256": "1d831fdeedf251cbd5536337643fa5522621f985db972a7509af2932e7ee32c6"
+    },
+    {
+      "path": "traceability.json",
+      "sha256": "34c89c33c25970296d04d402031fe2217c0fc6e72519c8070bdcb6789103b331"
+    },
+    {
+      "path": "validate_design.py",
+      "sha256": "148c99c4b546b1757ded1826c6637677a26acefb28d2ae40075a2966ebc7449f"
+    },
+    {
+      "path": "validation-requirements.txt",
+      "sha256": "ccc16568b004301780fda5a9a63f6f07eca45521fee26505e443636244bb48ca"
+    }
+  ],
+  "local_design_acceptance": {
+    "record": "decisions/2026-11-06-implementation-choices-and-model.md",
+    "date": "2026-11-06",
+    "implementation_decisions": [
+      "LLD-D01",
+      "LLD-D02",
+      "LLD-D03",
+      "LLD-D04",
+      "LLD-D05",
+      "LLD-D06",
+      "LLD-D07"
+    ],
+    "recommended_directions": [
+      "LD-01",
+      "LD-02",
+      "LD-03",
+      "LD-04",
+      "LD-05",
+      "LD-06",
+      "LD-07",
+      "LD-08",
+      "LD-09",
+      "LD-10",
+      "LD-11",
+      "LD-12",
+      "LD-13"
+    ],
+    "deployment_target": "this_workstation",
+    "model_identifier": "google/gemma-4-12b-qat",
+    "download_evidence": "user_reported",
+    "runtime_verified": false,
+    "independent_release_approval": false,
+    "preacceptance_input_hashes": {
+      "doc/LLD/00-baseline-and-design-decisions.md": "dc5f24daad608504a5ad6f6d7ef6f2044f6fc2408d17d330bf7305524aafc28d",
+      "doc/LLD/14-decisions-and-admission-gates.md": "5907cbbd49823b7ed75b099dfbbea296021bcd375c1c74c4610178e0e5277a95",
+      "doc/LLD/implementation-defaults.json": "743f795d7b16c4983a9e85c8a9c18a43a9485448459bd3feb8cca74dd17efc6c",
+      "doc/REQ/demo-parameters.json": "25689e4d1792d1f65284e0416061e40ee70fd6d36833e0973c53e6064c832771"
+    }
+  },
+  "input_updates": [
+    {
+      "path": "doc/REQ/01-scope-and-sources.md",
+      "previous_sha256": "2db48e9a5aca5478484a7d5d38c24c8f1afa8455dfe2a44711922c2fbd008510",
+      "new_sha256": "2ff63a30261dafa7a2a5093364204fca24d39f5358d06b9394ae11718ab5e715",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+      "reason": "explicit user-approved local LLD/workstation/model baseline reconciliation"
+    },
+    {
+      "path": "doc/REQ/03-architecture-and-interfaces.md",
+      "previous_sha256": "ba2949f92718a13695ff67c3484a4d344ac353d604394d630f487daa973e19e1",
+      "new_sha256": "a92bb34695af0693dd93aa3410fe3cdfb8084fc3e2281700e7792eb4350aa8e6",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+      "reason": "explicit user-approved local LLD/workstation/model baseline reconciliation"
+    },
+    {
+      "path": "doc/REQ/08-open-decisions.md",
+      "previous_sha256": "b7bfd77f6137bccf466819d62f9676a36681dbd464d3b9f47dc1e943246a9307",
+      "new_sha256": "bf99d4a187130e2c381e0bd52bac9338501b544d5c61c07677eb55d3207761d7",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+      "reason": "explicit user-approved local LLD/workstation/model baseline reconciliation"
+    },
+    {
+      "path": "doc/REQ/10-agentic-ai-and-service-model.md",
+      "previous_sha256": "0afe8875983914956166eb45d0ae7893f4b99cb341474607590855cf39ad9880",
+      "new_sha256": "b28618d461f0cc2de120a14acc5a08cbc841c4ddbb67b9fe64d3db8afb1fd1ec",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+      "reason": "explicit user-approved local LLD/workstation/model baseline reconciliation"
+    },
+    {
+      "path": "doc/REQ/README.md",
+      "previous_sha256": "94c5fdff75e650f8cb54cd1109ca91a9c806817dd3d61c9b84da729cd0e1d654",
+      "new_sha256": "539cf7c91833834e2bf4e59318bac7e14bb5c5d9660821f5e20da806b72a2673",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+      "reason": "explicit user-approved local LLD/workstation/model baseline reconciliation"
+    },
+    {
+      "path": "doc/REQ/demo-parameters.json",
+      "previous_sha256": "25689e4d1792d1f65284e0416061e40ee70fd6d36833e0973c53e6064c832771",
+      "new_sha256": "998cfc815a12c00ec9ec743b06b25f9f3315b0269c7c8a05052a5f4042b45319",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+      "reason": "explicit user-approved local LLD/workstation/model baseline reconciliation"
+    },
+    {
+      "path": "doc/HLD/03-agentic-assistance-and-inference.md",
+      "previous_sha256": "ceaebd524cc7194abe55b10142cbb23f1f1ae42cd56e418762773cf519ac01af",
+      "new_sha256": "e94dbec5a2668fc230d4cb7bcb6627d08c9ddf3ebf37bef2c33e5fa6e025dc33",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+      "reason": "explicit user-approved local LLD/workstation/model baseline reconciliation"
+    },
+    {
+      "path": "doc/HLD/README.md",
+      "previous_sha256": "5d4374fc199eb16b0915ea81c905e6ecf2bedc0accc726a01e91329e8acc4e33",
+      "new_sha256": "10c239f147efdd07b7dc877b3ca3a39b8729e855a78e5c083ec10e30973e7c53",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+      "reason": "explicit user-approved local LLD/workstation/model baseline reconciliation"
+    },
+    {
+      "path": "doc/HLD/design-inventory.json",
+      "previous_sha256": "25ca7004a9007e21a7b50392675a0c8e059209614180cc9788d1c6186f264e38",
+      "new_sha256": "92e26a2a62f2bb93aedab01e063084917a7a16d8cd0bb6c92a337a8c5aca637e",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+      "reason": "explicit user-approved local LLD/workstation/model baseline reconciliation"
+    }
+  ]
+}

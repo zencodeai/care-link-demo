@@ -1,5 +1,7 @@
 # Scope and source analysis
 
+> Current user clarification (2026-11-06): deploy on this workstation and use `google/gemma-4-12b-qat` in local LM Studio, reported already downloaded. This supersedes the earlier model choice reproduced in the historical source table below. See [LLD acceptance](../LLD/decisions/2026-11-06-implementation-choices-and-model.md); metadata/capacity/function verification remains pending.
+
 The intended product is a mission-critical, actor-led client-support service. Agentic AI supports service delivery through scoped context gathering, verified navigation, drafting, coordination and follow-through. The [service model](10-agentic-ai-and-service-model.md) establishes useful actor assistance as a primary requirement alongside realtime security/governance. Synthetic demo restrictions describe the current deployment/evidence boundary, not the entire product purpose.
 
 > Scope update (2026-11-04): [Decision answers](08-open-decisions.md) and [demo parameters](demo-parameters.json) establish Ottawa/Ontario context and exclude all police roles, brief sinks, connectors and partnerships from the proposed demo. Earlier police-specific descriptions below are retained only as historical source context and are superseded for implementation; they do not imply a police relationship. Source FR-C6 and AQ-9/AQ-26 are excluded by current user scope, not satisfied. Concrete defaults replace earlier open engineering choices; clinical/legal approvals and hardware-dependent checks remain unresolved.

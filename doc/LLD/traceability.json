@@ -1,0 +1,3116 @@
+{
+  "status": "design_mapping_not_conformance",
+  "requirements": [
+    {
+      "requirement": "TR-ACT-01",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "03-identity-and-workload-trust.md"
+      ],
+      "verification": [
+        "VT-01",
+        "VT-02",
+        "VT-03",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-ACT-02",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "03-identity-and-workload-trust.md"
+      ],
+      "verification": [
+        "VT-01",
+        "VT-02",
+        "VT-03",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-ACT-03",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "03-identity-and-workload-trust.md"
+      ],
+      "verification": [
+        "VT-01",
+        "VT-02",
+        "VT-03",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-01",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-02",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-03",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-04",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-05",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-06",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-07",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-08",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-09",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-10",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-11",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-12",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-13",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-14",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-AI-15",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-API-01",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "02-contracts-and-protocols.md"
+      ],
+      "verification": [
+        "VT-06",
+        "VT-07",
+        "VT-11"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-API-02",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "02-contracts-and-protocols.md"
+      ],
+      "verification": [
+        "VT-06",
+        "VT-07",
+        "VT-11"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-API-03",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "02-contracts-and-protocols.md"
+      ],
+      "verification": [
+        "VT-06",
+        "VT-07",
+        "VT-11"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-API-04",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "02-contracts-and-protocols.md"
+      ],
+      "verification": [
+        "VT-06",
+        "VT-07",
+        "VT-11"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-ARC-01",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md"
+      ],
+      "verification": [
+        "VT-09",
+        "VT-12",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-ARC-02",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md"
+      ],
+      "verification": [
+        "VT-09",
+        "VT-12",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-DAT-01",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "04-data-model-and-transactions.md"
+      ],
+      "verification": [
+        "VT-11",
+        "VT-13",
+        "VT-14",
+        "VT-15"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-DAT-02",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "04-data-model-and-transactions.md"
+      ],
+      "verification": [
+        "VT-11",
+        "VT-13",
+        "VT-14",
+        "VT-15"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-DAT-03",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "04-data-model-and-transactions.md"
+      ],
+      "verification": [
+        "VT-11",
+        "VT-13",
+        "VT-14",
+        "VT-15"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-DAT-04",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "04-data-model-and-transactions.md"
+      ],
+      "verification": [
+        "VT-11",
+        "VT-13",
+        "VT-14",
+        "VT-15"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-01",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-02",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-03",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-04",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-05",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-06",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-07",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-08",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-09",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-10",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-11",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-12",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-13",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-GOV-14",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-LLM-01",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-LLM-02",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-LLM-03",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-LLM-04",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-LLM-05",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-01",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-02",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-03",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-04",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-05",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-06",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-07",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-08",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-09",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-10",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-11",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-12",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-OPS-13",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SCP-01",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "00-baseline-and-design-decisions.md"
+      ],
+      "verification": [
+        "VT-01",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SCP-02",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "00-baseline-and-design-decisions.md"
+      ],
+      "verification": [
+        "VT-01",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SCP-03",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "00-baseline-and-design-decisions.md"
+      ],
+      "verification": [
+        "VT-01",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SCP-04",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "00-baseline-and-design-decisions.md"
+      ],
+      "verification": [
+        "VT-01",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SCP-05",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "00-baseline-and-design-decisions.md"
+      ],
+      "verification": [
+        "VT-01",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-01",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-02",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-03",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-04",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-05",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-06",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-07",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-08",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-09",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-10",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-11",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-12",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-13",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-14",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-15",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-SEC-16",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-WF-01",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-WF-02",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-WF-03",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-WF-04",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-WF-05",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-WF-06",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-WF-07",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-WF-08",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "TR-WF-09",
+      "hld_trace": "../HLD/09-verification-and-traceability.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    }
+  ],
+  "source_elements": [
+    {
+      "element": "EL-ASM",
+      "realization": "Core session/assessment module",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-AUDIT",
+      "realization": "Data gateway audit authority and scoped reader",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-BIAS",
+      "realization": "Aggregate quality evaluation",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-BROKER",
+      "realization": "Core broker PEP",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-CAPTOK",
+      "realization": "Core capability module",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-CONSOLE",
+      "realization": "Role web and core workforce APIs",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-CONT",
+      "realization": "Core continuation module",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-DIRFEED-SIM",
+      "realization": "Isolated feed simulator",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-EDGE-BFF",
+      "realization": "web-edge BFF",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-EDGE-CH",
+      "realization": "Internal channel simulators/edge adapters",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-EDGE-SGW",
+      "realization": "Core session gateway",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-EGRESS",
+      "realization": "CNI/host firewall and inference bridge",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-EMS-SIM",
+      "realization": "Denied test target",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-GATE",
+      "realization": "CI/release admission/controller",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-GUARD",
+      "realization": "Broker emergency prohibition",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-HANDOFF",
+      "realization": "Core human handoff",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-JCFG",
+      "realization": "Versioned registry/config",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-KILL",
+      "realization": "Control epoch/kill and independent help",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-LEDGER",
+      "realization": "Consent aggregate/projection",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-LEGAL",
+      "realization": "Approved stub content registry",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-MESH",
+      "realization": "CNI plus mTLS identity boundary",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-METRICS",
+      "realization": "Scoped aggregate projection",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-PDP",
+      "realization": "OPA policy evaluation and deterministic stub triage",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-PDP-CONSENT",
+      "realization": "Core current consent evaluation",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-PLAN",
+      "realization": "Core plan/sharing module",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-PRE",
+      "realization": "Deterministic fixture hazard preprocessor",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-QUEUE",
+      "realization": "Core queue/assignment",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-RAT",
+      "realization": "Controlled rationale assembler",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-REFER",
+      "realization": "Core referral plus outbox dispatch",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-REPLAY",
+      "realization": "Offline deterministic replay/evaluation",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-RT",
+      "realization": "Untrusted agent runtime",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-SDIR",
+      "realization": "Core directory/source module",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-STATIC",
+      "realization": "Independent host fallback",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-STORES",
+      "realization": "Data gateway/PostgreSQL",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-TRIAGE-SCHEMA",
+      "realization": "Closed versioned contract",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-VER",
+      "realization": "Artifact/version registry",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    },
+    {
+      "element": "EL-YOUTH",
+      "realization": "Broker-mediated youth privacy and escalation",
+      "lld_modules": "01-modules-and-build-boundaries.md",
+      "source_mapping": "../HLD/09-verification-and-traceability.md",
+      "status": "design_only"
+    }
+  ],
+  "source_requirements": [
+    {
+      "requirement": "FR-A1",
+      "title": "Multi-channel access with mid-session continuity",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "03-identity-and-workload-trust.md",
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "00-baseline-and-design-decisions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-A2",
+      "title": "Fully anonymous, account-free operation",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "03-identity-and-workload-trust.md",
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "00-baseline-and-design-decisions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-A3",
+      "title": "Jurisdiction determination before recommendation",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "03-identity-and-workload-trust.md",
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "00-baseline-and-design-decisions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-A4",
+      "title": "English/French parity plus interpretation coverage",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "03-identity-and-workload-trust.md",
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "00-baseline-and-design-decisions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-A5",
+      "title": "WCAG 2.2 AA and low-bandwidth accessibility",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "03-identity-and-workload-trust.md",
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "00-baseline-and-design-decisions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-A6",
+      "title": "Early role determination (PID / carer / professional)",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "03-identity-and-workload-trust.md",
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "00-baseline-and-design-decisions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-A7",
+      "title": "Upfront AI/limits-of-confidentiality disclosure",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "03-identity-and-workload-trust.md",
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "00-baseline-and-design-decisions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-A8",
+      "title": "Low-friction session/crisis-plan resume",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "03-identity-and-workload-trust.md",
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "00-baseline-and-design-decisions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-B0",
+      "title": "Immediate-hazard interrupt ahead of full assessment",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "02-contracts-and-protocols.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-B1",
+      "title": "Structured conversational risk assessment",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "02-contracts-and-protocols.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-B2",
+      "title": "Documented, versioned, clinician-authored tier set",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "02-contracts-and-protocols.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-B3",
+      "title": "Medical emergency vs. psychiatric distress routing",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "02-contracts-and-protocols.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-B4",
+      "title": "Controlled rationale with user correction/disagreement rights",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "02-contracts-and-protocols.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-B5",
+      "title": "Continuous re-assessment during a session",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "02-contracts-and-protocols.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-B6",
+      "title": "No tier/score presented as clinical determination",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "02-contracts-and-protocols.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-B7",
+      "title": "Escalate on low confidence rather than guess",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "02-contracts-and-protocols.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-B8",
+      "title": "Incorporate existing crisis plan into assessment",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "02-contracts-and-protocols.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-C1",
+      "title": "Jurisdiction-specific non-police service directory",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "02-contracts-and-protocols.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-C2",
+      "title": "Real operating envelope per service, no inferred availability",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "02-contracts-and-protocols.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-C2a",
+      "title": "Directory field provenance and freshness classes",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "02-contracts-and-protocols.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-C2b",
+      "title": "Directory operating states without invented availability",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "02-contracts-and-protocols.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-C3",
+      "title": "Never \"911 or nothing\"",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "02-contracts-and-protocols.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-C4",
+      "title": "Consent-gated structured referral to integrated intake",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "02-contracts-and-protocols.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-C5",
+      "title": "Warm transfer with confirmed handoff",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "02-contracts-and-protocols.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-C6",
+      "title": "Minimized de-escalation brief when police are unavoidable",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "02-contracts-and-protocols.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "excluded_current_scope",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-C7",
+      "title": "Pathway outcome recording for evaluation",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "02-contracts-and-protocols.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-C8",
+      "title": "Systemic service-gap reporting",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "02-contracts-and-protocols.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-D1",
+      "title": "Real-time de-escalation coaching",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-D2",
+      "title": "Continuous accompaniment through the event",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-D3",
+      "title": "Carer safety coaching",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-D4",
+      "title": "Consented per-PID crisis plan with attributed fields",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-D5",
+      "title": "Post-crisis follow-up within 24\u201372 hours",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-D6",
+      "title": "Non-crisis capability building and legal-rights education",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-D7",
+      "title": "Carer distress/burnout detection with first-class support",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-D8",
+      "title": "Designated multi-carer network with granular permissions",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-E1",
+      "title": "Optional identity/community preference disclosure",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-E2",
+      "title": "Indigenous-led service prioritization with distinct governance",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-E3",
+      "title": "Explicit police-involvement-risk statement per pathway",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-E4",
+      "title": "Recorded anti-police preference honoured where possible",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-E5",
+      "title": "Pre-deployment and ongoing bias audit with remediation",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-E6",
+      "title": "Binding co-design/review authority for affected communities",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-E7",
+      "title": "Exclusion of criminal-history/immigration/police-contact features",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-E8",
+      "title": "Culturally adapted content and guidance",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-F1",
+      "title": "Ungated \"get me a human\" command",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-F2",
+      "title": "Automatic escalation on defined trigger conditions",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-F3",
+      "title": "No system-initiated session termination while risk unresolved",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-F4",
+      "title": "No autonomous emergency-service contact",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-F5",
+      "title": "Supervisor observation with interrupt/take-over",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-F6",
+      "title": "Safe degradation to static pre-approved crisis contacts",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-F7",
+      "title": "Visible human-escalation state and expected wait",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-F8",
+      "title": "Documented operating states for human escalation",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-G1",
+      "title": "Absorb low-acuity contacts to protect staff capacity",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-G2",
+      "title": "Auto-generated session summaries and referral docs",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-G3",
+      "title": "Context pack on transfer so the caller need not retell",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-G4",
+      "title": "Queue management with periodic re-triage during wait",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-G5",
+      "title": "Per-worker exposure tracking, performance-use prohibited",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-G6",
+      "title": "On-shift reference material and debrief prompts",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-H1",
+      "title": "PIPEDA/provincial privacy law/OCAP\u00ae compliance",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "04-data-model-and-transactions.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-H2",
+      "title": "Granular revocable per-purpose consent, no silent linking",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "04-data-model-and-transactions.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-H3",
+      "title": "Canadian data residency, encryption, RBAC, access logging",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "04-data-model-and-transactions.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-H4",
+      "title": "No disclosure to police/employers/insurers/immigration/CP absent compulsion",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "04-data-model-and-transactions.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-H5",
+      "title": "User-initiated deletion and export",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "04-data-model-and-transactions.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-H6",
+      "title": "No training use of crisis content without explicit opt-in",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "04-data-model-and-transactions.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-H7",
+      "title": "Data minimization and class-based retention limits",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "04-data-model-and-transactions.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-I1",
+      "title": "Minor detection routed to youth safeguarding protocol",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-I2",
+      "title": "Discreet private-help path when a guardian may be the danger",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-I3",
+      "title": "Jurisdiction-configured, legally reviewed youth consent rules",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-I4",
+      "title": "Youth data minimization; no guardian access without basis",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-I5",
+      "title": "Youth-specific service directory fields",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-J1",
+      "title": "No diagnosis, prescription, or medication adjustment",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "07-agent-runtime-and-inference.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-J2",
+      "title": "No self-harm method/means-acquisition assistance",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "07-agent-runtime-and-inference.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-J3",
+      "title": "No claiming to be human; AI disclosure on request",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "07-agent-runtime-and-inference.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-J4",
+      "title": "No substituting for therapeutic/peer relationships",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "07-agent-runtime-and-inference.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-J5",
+      "title": "No engagement-maximizing / dependency-forming patterns",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "07-agent-runtime-and-inference.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-J6",
+      "title": "No involuntary-committal or apprehension influence",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "07-agent-runtime-and-inference.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-J7",
+      "title": "No profiling beyond own care; no law-enforcement analytics integration",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "07-agent-runtime-and-inference.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-J8",
+      "title": "No reinforcing harmful self-beliefs or self-directed contempt",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "07-agent-runtime-and-inference.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-K1",
+      "title": "Full session logging supporting independent audit",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-K2",
+      "title": "Core objective measures reported quarterly",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-K2a",
+      "title": "Police-avoidance metrics never reported in isolation",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-K3",
+      "title": "Under-/over-triage tracked against targets",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-K4",
+      "title": "Mandatory post-incident review for death/serious injury/police outcome",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-K5",
+      "title": "Public periodic performance and equity reporting",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-K6",
+      "title": "A/B and shadow evaluation without live high-acuity exposure",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "04-data-model-and-transactions.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-L1",
+      "title": "Model proposes; deterministic policy services hold final authority",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-L2",
+      "title": "Allow-listed, least-privileged, validated, auditable tools",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-L3",
+      "title": "Machine-verifiable consent record required, never inferred",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-L4",
+      "title": "Service/legal/protocol/emergency facts from approved sources only",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-L5",
+      "title": "Protection against injection, poisoning, exfiltration, cross-session leakage",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-L6",
+      "title": "Kill switch, rollback, and safe mode preserving the fallback",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-L7",
+      "title": "Explicit expiring continuation; no metadata-based identity linking",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "FR-L8",
+      "title": "Classified change control for high-risk changes",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md",
+        "07-agent-runtime-and-inference.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-1",
+      "title": "Monthly availability \u2265 99.95%, 24/7/365",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-10",
+      "title": "Stressed-condition usability validation",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-11",
+      "title": "Crisis path completable at Grade 6 reading level",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-12",
+      "title": "Usability testing includes P4 and lived-experience participants",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-13",
+      "title": "Annual third-party pentest and red-team",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-14",
+      "title": "SaMD classification assessment and compliance",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-15",
+      "title": "Treasury Board ADM Directive / AIA compliance (federal)",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-16",
+      "title": "Alignment with Canadian AI governance law",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-17",
+      "title": "Per-session version recording for forensic reconstruction",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-17a",
+      "title": "Safety case, hazard log, and threat models before pilot",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-17b",
+      "title": "Mandatory threat-model coverage list",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-18",
+      "title": "Per-jurisdiction configurability without code deploy",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-19",
+      "title": "Triage logic as versioned reviewable artefact",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-2",
+      "title": "Degraded-mode crisis path availability \u2265 99.99%",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-20",
+      "title": "Automated directory freshness checks and flagging",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-3",
+      "title": "No maintenance window removes the crisis path",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-4",
+      "title": "Session-state RTO \u2264 5 min / RPO \u2264 1 min",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-5",
+      "title": "First response \u2264 2 s p95",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-6",
+      "title": "Safety-step and hazard-recognition latency budgets",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-7",
+      "title": "Crisis-plan retrieval \u2264 10 s p99",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-8",
+      "title": "Human-escalation initiation \u2264 10 s p95",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "requirement": "NFR-9",
+      "title": "Peak concurrent load without degradation",
+      "source_trace": "../REQ/07-source-requirements.md",
+      "mechanisms": [
+        "12-continuity-and-operations.md",
+        "08-runtime-security-and-governance.md"
+      ],
+      "disposition": "demo_mechanism_with_inherited_deferred_real_world_obligations",
+      "evidence_status": "not_assessed"
+    }
+  ],
+  "invariants": [
+    {
+      "invariant": "INV-1",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-01",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-2",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-06",
+        "VT-13"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-3",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-04",
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-4",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-08",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-5",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-06",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-6",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-11"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-7",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-02",
+        "VT-06"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-8",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-16"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-9",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-05",
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-10",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-08",
+        "VT-12"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-11",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-10",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-12",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-01",
+        "VT-10"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-13",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-09",
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-14",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-16",
+        "VT-17"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-15",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-18"
+      ],
+      "evidence_status": "not_assessed"
+    },
+    {
+      "invariant": "INV-16",
+      "statement_source": "../REQ/07-source-requirements.md",
+      "verification": [
+        "VT-04",
+        "VT-06"
+      ],
+      "evidence_status": "not_assessed"
+    }
+  ],
+  "acceptance_groups": [
+    {
+      "id": "AT-01",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-02",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-03",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-04",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-05",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-06",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-07",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-08",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-09",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-10",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-11",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-12",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-13",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-14",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-15",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-16",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-17",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    },
+    {
+      "id": "AT-18",
+      "source": "../REQ/06-acceptance-and-delivery.md",
+      "evidence_status": "not_assessed"
+    }
+  ]
+}

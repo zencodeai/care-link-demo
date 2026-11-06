@@ -1,0 +1,5641 @@
+{
+  "status": "physical_design_dictionary_not_executable_DDL_or_tested_migration",
+  "nullability": "Explicit per column; no implicit SQL defaults except reviewed server timestamp/UUID allocation.",
+  "foreign_key_policy": "All listed FKs are same-database RESTRICT; authority references to other databases are verified opaque IDs, never implicit cross-DB FKs.",
+  "protected_content": "Authenticated encryption and separately protected volume/backups; JSONB classified content uses schema validation and approved storage/key policy.",
+  "records": [
+    {
+      "name": "control.guard",
+      "database": "business",
+      "columns": {
+        "key": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "bundle_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "serving_generation": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "mode": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "restriction_barrier": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "journal_tip_seen": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "key"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [
+        "singleton key=demo; precreated; mode normal/ai_disabled/restricted/quarantine"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "control.principal_guard",
+      "database": "business",
+      "columns": {
+        "principal_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "identity_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "role_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "revoked": {
+          "nullable": false,
+          "sql_type": "boolean"
+        },
+        "source_sequence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "principal_id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "core.subject_guard",
+      "database": "business",
+      "columns": {
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "authority_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "delete_state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        }
+      },
+      "primary_key": [
+        "subject_id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "core.session_guard",
+      "database": "business",
+      "columns": {
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "access_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "control_epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "next_event_seq": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "session_id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "core.persona",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "display_alias": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 128
+        },
+        "voluntary_preferences": {
+          "nullable": true,
+          "sql_type": "jsonb",
+          "contract": "AssertionValue"
+        },
+        "last_parent_closed_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [
+        "kind pid/carer/professional_participant; synthetic only",
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "core.session",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "persona_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "participant_kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "jurisdiction": {
+          "nullable": true,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "locale": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "service_phase": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "transport_state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "owner_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "fixture_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "tier": {
+          "nullable": true,
+          "sql_type": "text",
+          "max_characters": 4
+        },
+        "closed_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "persona_id,service_phase",
+        "subject_id,created_at"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "persona_id"
+          ],
+          "target": "core.persona",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        },
+        {
+          "columns": [
+            "subject_id"
+          ],
+          "target": "core.persona",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "closed enum SessionView for phase/transport/locale/tier; explicit user end record for ended",
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "core.session_acl",
+      "database": "business",
+      "columns": {
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "principal_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "purpose": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "fields": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "valid_until": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "revoked_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "session_id",
+        "principal_id",
+        "purpose"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "core.turn",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "client_turn_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "event_seq": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "author_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "content": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "authenticated encrypted object envelope; key_id/nonce/tag metadata, no inline secret key"
+        },
+        "locale": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "assessment_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "session_id",
+          "client_turn_id"
+        ],
+        [
+          "session_id",
+          "event_seq"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "decrypted text 1..8000 chars",
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "core.assertion",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "session_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "field_key": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 64
+        },
+        "value": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "AssertionValue"
+        },
+        "author_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "source": {
+          "nullable": true,
+          "sql_type": "jsonb",
+          "contract": "SourceRef"
+        },
+        "verification": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "dispute": {
+          "nullable": false,
+          "sql_type": "boolean"
+        },
+        "supersedes_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "effective_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "subject_id,field_key,created_at"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "subject_id"
+          ],
+          "target": "core.persona",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        },
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        },
+        {
+          "columns": [
+            "supersedes_id"
+          ],
+          "target": "core.assertion",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "core.assessment",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "fixture_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "fields": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "item_contract": "FieldState",
+          "max_items": 64
+        },
+        "tier_set_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "tier": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 4
+        },
+        "hazard_fixture": {
+          "nullable": false,
+          "sql_type": "boolean"
+        },
+        "human_trigger_reasons": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "core_situation_factors": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "Empty"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "session_id",
+          "revision"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "core.message",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "sender_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "author_kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "content": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "authenticated encrypted object envelope; key_id/nonce/tag metadata, no inline secret key"
+        },
+        "ai_draft_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "control_epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "disclosure_state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "session_id,created_at,id"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "decrypted MessageView content bounds; final release authorizes current epoch",
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "workforce.queue_entry",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "requested_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "mode": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "fixture_priority": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "next_review_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "status": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "status,next_review_at,fixture_priority"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "UNIQUE(session_id) WHERE status IN (pending,reserved); modes from QueueView",
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "workforce.assignment",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "worker_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "reservation_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "status": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "accepted_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "connected_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "control_epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "reservation_id"
+        ]
+      ],
+      "indexes": [
+        "worker_id,status"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "UNIQUE(session_id) WHERE status IN (reserved,accepted,connected)",
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "access_metadata_with_synthetic_resource_link",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "plans.plan",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "retired_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "subject_id,state"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "subject_id"
+          ],
+          "target": "core.persona",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "active iff retired_at IS NULL; retired requires retired_at",
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "plans.field",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "plan_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "field_key": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 64
+        },
+        "value_snapshot": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "AssertionValue"
+        },
+        "author_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "source_assertion_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "source": {
+          "nullable": true,
+          "sql_type": "jsonb",
+          "contract": "SourceRef"
+        },
+        "verification": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "dispute": {
+          "nullable": false,
+          "sql_type": "boolean"
+        },
+        "safety_relevant": {
+          "nullable": false,
+          "sql_type": "boolean"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "plan_id",
+          "field_key",
+          "revision"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "plan_id"
+          ],
+          "target": "plans.plan",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        },
+        {
+          "columns": [
+            "source_assertion_id"
+          ],
+          "target": "core.assertion",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "consent.event",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "grant_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "scope_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "grantor_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "recipient_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "purpose": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "fields": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "basis": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "assurance_ref": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "effective_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "sequence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "grant_id",
+          "sequence"
+        ]
+      ],
+      "indexes": [
+        "subject_id,recipient_id,purpose"
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "immutable grant/revoke/expire; explicit matching scope"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "consent.current_grant",
+      "database": "business",
+      "columns": {
+        "grant_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "recipient_kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "recipient_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "purpose": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "fields": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "effective_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "scope_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "scope": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "ConsentGrant"
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "revoked_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "grant_id"
+      ],
+      "unique": [],
+      "indexes": [
+        "subject_id,recipient_id,purpose"
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "typed scalar authority columns exactly match validated immutable scope; no independent caller edits"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "knowledge.service_version",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "service_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "source_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "facts": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "DirectoryFacts"
+        },
+        "provenance": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "item_contract": "SourceRef",
+          "max_items": 64
+        },
+        "verified_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "freshness_class": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "service_id",
+          "revision"
+        ]
+      ],
+      "indexes": [
+        "state,service_id"
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "knowledge.service_guard",
+      "database": "business",
+      "columns": {
+        "service_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "current_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "suspension_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "suspended": {
+          "nullable": false,
+          "sql_type": "boolean"
+        }
+      },
+      "primary_key": [
+        "service_id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "tasks.task",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "session_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "initiator_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "human_owner_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "function": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 64
+        },
+        "purpose": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "scope": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "Scope"
+        },
+        "binding": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "TaskBinding"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "deadline": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "policy_epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "control_epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "budgets": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "Budgets"
+        },
+        "steps_used": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "tools_used": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "proposal_attempts_used": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "completion": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "state,deadline"
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "tasks.step",
+      "database": "business",
+      "columns": {
+        "task_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "step_no": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "tool_name": {
+          "nullable": true,
+          "sql_type": "text",
+          "max_characters": 64
+        },
+        "input_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "observation_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "lease_owner": {
+          "nullable": true,
+          "sql_type": "text",
+          "max_characters": 128
+        },
+        "lease_until": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "fence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "attempt_count": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "task_id",
+        "step_no"
+      ],
+      "unique": [
+        [
+          "id"
+        ]
+      ],
+      "indexes": [
+        "state,lease_until"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "task_id"
+          ],
+          "target": "tasks.task",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "tasks.context_item",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "task_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "source": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "SourceRef"
+        },
+        "allowed_fields": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "taint": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "content_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "purpose_copy_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "task_id"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "task_id"
+          ],
+          "target": "tasks.task",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "tasks.draft",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "task_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "payload": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "DraftView"
+        },
+        "payload_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "source_revisions": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "RevisionVector"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "task_id,state"
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "tasks.review",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "draft_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "reviewer_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "human_identity_ref": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "decision": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "exact_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "source_revisions": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "RevisionVector"
+        },
+        "epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "edited_draft_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "draft_id,expires_at"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "draft_id"
+          ],
+          "target": "tasks.draft",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "access_metadata_and_review_provenance",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "tasks.observation",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "task_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "step_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "invocation_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "task_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "fence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "outcome": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "ObservationOutcome"
+        },
+        "sources": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "item_contract": "SourceRef",
+          "max_items": 64
+        },
+        "digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "invocation_id"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "task_id"
+          ],
+          "target": "tasks.task",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "tasks.inference_job",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "task_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "step_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "fence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "model_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "prompt_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "deadline": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "slot_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "request_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "result_ref": {
+          "nullable": true,
+          "sql_type": "uuid"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "state,deadline"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "task_id"
+          ],
+          "target": "tasks.task",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "compute states from compute state machine; active slot/job pairing unique"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "tasks.compute_slot",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "job_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "bridge_generation": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "job_id"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [
+        "unknown/running/quarantined slot not reusable until verified completion/stop"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "referral.referral",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "recipient_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "source_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "purpose": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "fields": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "payload_ref": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "draft_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "consent_grant_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "review_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "generation": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "session_id,state"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        },
+        {
+          "columns": [
+            "draft_id"
+          ],
+          "target": "tasks.draft",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        },
+        {
+          "columns": [
+            "review_id"
+          ],
+          "target": "tasks.review",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "payload is encrypted immutable ReferralPayload; new reviewed generation on edit",
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "referral.dispatch",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "referral_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "dispatch_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "authorization_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "authorized_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "consumed_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "control_epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "dispatch_id"
+        ],
+        [
+          "authorization_id"
+        ]
+      ],
+      "indexes": [
+        "state,created_at"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "referral_id"
+          ],
+          "target": "referral.referral",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "referral.attempt",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "dispatch_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "attempt_no": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "started_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "finished_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "result_digest": {
+          "nullable": true,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "safe_error": {
+          "nullable": true,
+          "sql_type": "text",
+          "max_characters": 96
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "dispatch_id",
+          "attempt_no"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "dispatch_id"
+          ],
+          "target": "referral.dispatch",
+          "target_columns": [
+            "dispatch_id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "referral.receipt",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "dispatch_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "recipient_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "receipt_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "status": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "accepted_fields": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "observed_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "recipient_id",
+          "receipt_id"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "dispatch_id"
+          ],
+          "target": "referral.dispatch",
+          "target_columns": [
+            "dispatch_id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "care.post_crisis_event",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "source_event_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "actor_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "occurred_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "care.follow_up",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "recipient_principal": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "contact_grant_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "post_crisis_event_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "due_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "inbox_message_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "inbox_message_id"
+        ]
+      ],
+      "indexes": [
+        "state,due_at"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "anchor_pending requires null anchor/due; scheduled requires explicit anchor/due/window and current separate contact consent",
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "care.outcome",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "pathway_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "observed_state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "reporter_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "observed_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "source": {
+          "nullable": true,
+          "sql_type": "jsonb",
+          "contract": "SourceRef"
+        },
+        "reason": {
+          "nullable": true,
+          "sql_type": "text",
+          "max_characters": 256
+        },
+        "carer_support": {
+          "nullable": false,
+          "sql_type": "boolean"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "session_id,observed_at"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "control.artifact",
+      "database": "business",
+      "columns": {
+        "digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "version": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 64
+        },
+        "manifest": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "ArtifactRegister"
+        },
+        "signature": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 2048
+        },
+        "signer": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 128
+        },
+        "source_revision": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 64
+        }
+      },
+      "primary_key": [
+        "digest"
+      ],
+      "unique": [
+        [
+          "id"
+        ],
+        [
+          "kind",
+          "version",
+          "digest"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "control.approval",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "artifact_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "change_class": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 4
+        },
+        "reviewer_identity": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "authority_class": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "decision": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "expires_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "evidence_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "artifact_digest"
+          ],
+          "target": "control.artifact",
+          "target_columns": [
+            "digest"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "access_metadata_and_approval",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "control.activation",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "artifact_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "required_instances": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "effective_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "previous_activation_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "epoch"
+        ]
+      ],
+      "indexes": [
+        "state,effective_at"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "artifact_digest"
+          ],
+          "target": "control.artifact",
+          "target_columns": [
+            "digest"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "control.enforcer_ack",
+      "database": "business",
+      "columns": {
+        "activation_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "instance_id": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 128
+        },
+        "digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "boot_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "observed_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "status": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        }
+      },
+      "primary_key": [
+        "activation_id",
+        "instance_id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "activation_id"
+          ],
+          "target": "control.activation",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "control.security_event",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "issuer": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 128
+        },
+        "jti": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "source_sequence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "event_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "received_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "issuer",
+          "jti"
+        ]
+      ],
+      "indexes": [
+        "state,received_at"
+      ],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "control.incident",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "scope": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "Scope"
+        },
+        "severity": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "owner_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "evidence_refs": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "review_due_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "resolution": {
+          "nullable": true,
+          "sql_type": "text",
+          "max_characters": 256
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "state,review_due_at"
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "control.exception",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "scope": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "Scope"
+        },
+        "rule_id": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 96
+        },
+        "artifact_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "approver_receipt_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "compensating_control_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "expires_at"
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "never overrides fixed exclusions; current exact scope/expiry at authorization",
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "durable.operation",
+      "database": "business",
+      "columns": {
+        "operation_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "principal_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "operation_name": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 96
+        },
+        "key": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "payload_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "safe_result_ref": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "canonical_audit_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "root_operation_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "parent_operation_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "phase": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "contract_version": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 64
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "operation_id"
+      ],
+      "unique": [
+        [
+          "environment",
+          "principal_id",
+          "operation_name",
+          "key"
+        ]
+      ],
+      "indexes": [
+        "state,created_at"
+      ],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "durable.outbox",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "operation_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "aggregate_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "reference_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "next_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "lease_owner": {
+          "nullable": true,
+          "sql_type": "text",
+          "max_characters": 128
+        },
+        "lease_until": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "fence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "operation_id",
+          "kind",
+          "aggregate_id"
+        ]
+      ],
+      "indexes": [
+        "state,next_at"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "operation_id"
+          ],
+          "target": "durable.operation",
+          "target_columns": [
+            "operation_id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "durable.event",
+      "database": "business",
+      "columns": {
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "sequence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "event_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "type": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "aggregate_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "aggregate_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "session_id",
+        "sequence"
+      ],
+      "unique": [
+        [
+          "event_id"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "audit.head",
+      "database": "business",
+      "columns": {
+        "stream_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "next_sequence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "retained_from_sequence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "stream_id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "audit_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "audit.event",
+      "database": "business",
+      "columns": {
+        "stream_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "sequence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "event_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "operation_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "canonical": {
+          "nullable": false,
+          "sql_type": "boolean"
+        },
+        "actor": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "VerifiedActor"
+        },
+        "action": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 96
+        },
+        "decision": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "reasons": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "input_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "output_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "versions": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "RevisionVector"
+        },
+        "previous_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "stream_id",
+        "sequence"
+      ],
+      "unique": [
+        [
+          "event_id"
+        ]
+      ],
+      "indexes": [
+        "created_at,action"
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "UNIQUE(operation_id) WHERE canonical=true; append only; minimized metadata"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "audit_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "rights.request",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "requester_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "requested_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "eligible_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "deadline": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "exception_refs": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "download_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "state,deadline"
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "lifecycle.copy",
+      "database": "business",
+      "columns": {
+        "copy_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "subject_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "aggregate_type": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 64
+        },
+        "aggregate_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "purpose": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "content_ref": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 256
+        },
+        "class": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "anchor_kind": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "anchor_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "byte_size": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "copy_id"
+      ],
+      "unique": [
+        [
+          "content_ref",
+          "purpose"
+        ]
+      ],
+      "indexes": [
+        "state,expires_at"
+      ],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "lifecycle.dependency",
+      "database": "business",
+      "columns": {
+        "parent_copy_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "child_copy_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "reason": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 96
+        },
+        "independently_justified": {
+          "nullable": false,
+          "sql_type": "boolean"
+        }
+      },
+      "primary_key": [
+        "parent_copy_id",
+        "child_copy_id",
+        "reason"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "parent_copy_id"
+          ],
+          "target": "lifecycle.copy",
+          "target_columns": [
+            "copy_id"
+          ],
+          "on_delete": "RESTRICT"
+        },
+        {
+          "columns": [
+            "child_copy_id"
+          ],
+          "target": "lifecycle.copy",
+          "target_columns": [
+            "copy_id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "acyclic graph, enforced by guarded traversal before insert"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "lifecycle.hold",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "scope": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "Scope"
+        },
+        "reason": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 96
+        },
+        "authority_ref": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "starts_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "released_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "release_authority": {
+          "nullable": true,
+          "sql_type": "uuid"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "expires_at"
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "recovery.command",
+      "database": "business",
+      "columns": {
+        "command_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "intent_seq": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "barrier_seq": {
+          "nullable": true,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "payload_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "db_operation_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        },
+        "applied_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "command_id"
+      ],
+      "unique": [
+        [
+          "intent_seq"
+        ]
+      ],
+      "indexes": [
+        "state"
+      ],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "recovery.backup",
+      "database": "business",
+      "columns": {
+        "backup_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "manifest_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "capture_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "expiry_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "schema_version": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 64
+        },
+        "db_position": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 128
+        },
+        "journal_barrier": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "audit_head": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        }
+      },
+      "primary_key": [
+        "backup_id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [
+        "capture/expiry immutable; backup retry or restore never renews expiry"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "recovery.target",
+      "database": "business",
+      "columns": {
+        "target_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "snapshot_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "inventory_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "head_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "restriction_barrier": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "validation_digest": {
+          "nullable": true,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "serving_generation": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "target_id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "quality.aggregate",
+      "database": "business",
+      "columns": {
+        "definition_version": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 64
+        },
+        "period": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "cohort_key": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "count": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "unknowns": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "measures": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "MetricsView"
+        },
+        "suppressed": {
+          "nullable": false,
+          "sql_type": "boolean"
+        }
+      },
+      "primary_key": [
+        "definition_version",
+        "period",
+        "cohort_key"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [
+        "no individual exposure key; suppression and coupled measures required"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "access.continuation_family",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "account_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "channel": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "generation": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "status": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "access.continuation_token",
+      "database": "business",
+      "columns": {
+        "family_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "generation": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "token_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "consumed_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "operation_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        }
+      },
+      "primary_key": [
+        "family_id",
+        "generation"
+      ],
+      "unique": [
+        [
+          "token_hash"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "family_id"
+          ],
+          "target": "access.continuation_family",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        },
+        {
+          "columns": [
+            "operation_id"
+          ],
+          "target": "durable.operation",
+          "target_columns": [
+            "operation_id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "access.scoped_grant",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "environment": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "population": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "updated_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "grantee_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "scope": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "Scope"
+        },
+        "fields": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "approval_receipt_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "revoked_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [
+        "grantee_id,expires_at"
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "environment=demo; population=synthetic; access reference columns retain real metadata classification"
+      ],
+      "classification": "access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "identity.account",
+      "database": "identity",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "issuer": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 256
+        },
+        "subject": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 256
+        },
+        "status": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "issuer",
+          "subject"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "identity_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "identity.browser_session",
+      "database": "identity",
+      "columns": {
+        "id_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "account_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "role": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "csrf_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "token_ciphertext": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "authenticated encrypted object envelope; key_id/nonce/tag metadata, no inline secret key"
+        },
+        "auth_time": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "idle_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "status": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        }
+      },
+      "primary_key": [
+        "id_hash"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "account_id"
+          ],
+          "target": "identity.account",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "identity_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "identity.login_intent",
+      "database": "identity",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "state_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "nonce_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "pkce_ciphertext": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "authenticated encrypted object envelope; key_id/nonce/tag metadata, no inline secret key"
+        },
+        "role": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "purpose": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "callback": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 256
+        },
+        "browser_binding_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "status": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "operation_id": {
+          "nullable": true,
+          "sql_type": "uuid"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "state_hash"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "identity_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "identity.assurance_ceremony",
+      "database": "identity",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "account_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "purpose": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "resource_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "payload_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "method": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 64
+        },
+        "verified_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "not_before": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "account_id"
+          ],
+          "target": "identity.account",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "identity_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "identity.signal_inbox",
+      "database": "identity",
+      "columns": {
+        "issuer": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 128
+        },
+        "jti": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "source_sequence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "previous_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "payload": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "Signal"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "received_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "issuer",
+        "jti"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "identity_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "help.request",
+      "database": "host_help",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "logical_type": "uuid",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "owner_account": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "logical_type": "uuid",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "logical_type": "timestamptz",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "status": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "max_characters": 32,
+          "logical_type": "text",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "accepted_by": {
+          "nullable": true,
+          "sql_type": "TEXT",
+          "logical_type": "uuid",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "INTEGER",
+          "check": "0..9223372036854775807; never wrap",
+          "logical_type": "bigint",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "authority_evidence_digest": {
+          "nullable": false,
+          "sql_type": "BLOB",
+          "check": "octet_length=32",
+          "logical_type": "bytea",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "access_metadata_minimal_help_no_business_content",
+      "owner": "help_os_service_identity",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "help.operation",
+      "database": "host_help",
+      "columns": {
+        "key": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "logical_type": "uuid",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "principal": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "logical_type": "uuid",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "digest": {
+          "nullable": false,
+          "sql_type": "BLOB",
+          "check": "octet_length=32",
+          "logical_type": "bytea",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "authority_nonce": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "logical_type": "uuid",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "status": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "max_characters": 32,
+          "logical_type": "text",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        }
+      },
+      "primary_key": [
+        "key",
+        "principal"
+      ],
+      "unique": [
+        [
+          "authority_nonce"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "help_os_service_identity",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "help.local_event",
+      "database": "host_help",
+      "columns": {
+        "sequence": {
+          "nullable": false,
+          "sql_type": "INTEGER",
+          "check": "0..9223372036854775807; never wrap",
+          "logical_type": "bigint",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "previous_hash": {
+          "nullable": false,
+          "sql_type": "BLOB",
+          "check": "octet_length=32",
+          "logical_type": "bytea",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "hash": {
+          "nullable": false,
+          "sql_type": "BLOB",
+          "check": "octet_length=32",
+          "logical_type": "bytea",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "action": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "max_characters": 32,
+          "logical_type": "text",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "reference_id": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "logical_type": "uuid",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "logical_type": "timestamptz",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        }
+      },
+      "primary_key": [
+        "sequence"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "help_os_service_identity",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "help.reconciliation",
+      "database": "host_help",
+      "columns": {
+        "help_id": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "logical_type": "uuid",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "core_operation_id": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "logical_type": "uuid",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "TEXT",
+          "max_characters": 32,
+          "logical_type": "text",
+          "native_check": "SQLite checked canonical encoding; boolean 0/1; JSON fields schema-validated before write; foreign_keys ON"
+        }
+      },
+      "primary_key": [
+        "help_id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "help_os_service_identity",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "sim.inbox",
+      "database": "simulator",
+      "columns": {
+        "recipient": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "dispatch_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "encrypted_package": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "authenticated encrypted object envelope; key_id/nonce/tag metadata, no inline secret key"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "recipient",
+        "dispatch_id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "synthetic_package_with_access_references",
+      "owner": "simulator_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "sim.receipt",
+      "database": "simulator",
+      "columns": {
+        "recipient": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "dispatch_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "fields": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "observed_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "recipient",
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "synthetic_package_with_access_references",
+      "owner": "simulator_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "sim.scenario",
+      "database": "simulator",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "version": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 64
+        },
+        "authorized_trainer": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "fixture_config": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "ScenarioCreate"
+        },
+        "clock": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "synthetic_scenario_with_access_references",
+      "owner": "simulator_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "sim.event",
+      "database": "simulator",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "scenario_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "sequence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "type": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "observed_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "payload_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "scenario_id",
+          "sequence"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [],
+      "classification": "synthetic_scenario_with_access_references",
+      "owner": "simulator_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "care.inbox_message",
+      "database": "business",
+      "columns": {
+        "recipient_principal": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "source_followup_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "source_session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "effect_key": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "content": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "authenticated encrypted object envelope; key_id/nonce/tag metadata, no inline secret key"
+        },
+        "template_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "read_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "lifecycle_copy_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "effect_key"
+        ],
+        [
+          "source_followup_id"
+        ]
+      ],
+      "indexes": [
+        "recipient_principal,created_at,id"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "source_followup_id"
+          ],
+          "target": "care.follow_up",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "scoped separate post-crisis inbox; never resurrect ended-session conversation"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "workforce.channel_challenge",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "assignment_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "control_epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "transport_generation": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "participant_nonce_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "worker_nonce_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "session_id"
+          ],
+          "target": "core.session",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        },
+        {
+          "columns": [
+            "assignment_id"
+          ],
+          "target": "workforce.assignment",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "workforce.channel_ack",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "challenge_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "party": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "principal_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "browser_session_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "transport_generation": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "acknowledged_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "challenge_id",
+          "party"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "challenge_id"
+          ],
+          "target": "workforce.channel_challenge",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "workforce.channel_evidence",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "session_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "assignment_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "control_epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "transport_generation": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "participant_ack_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "worker_ack_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "observed_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "status": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 16
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "participant_ack_id"
+          ],
+          "target": "workforce.channel_ack",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        },
+        {
+          "columns": [
+            "worker_ack_id"
+          ],
+          "target": "workforce.channel_ack",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "current distinct authenticated channel endpoints; never inferred from acceptance/model/caller UUID"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "lifecycle.tombstone",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "subject_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "rights_request_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "journal_sequence": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "subject_revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "effective_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "retention_dependency_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "rights_request_id"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "checks": [
+        "DB projection of durable external restriction, never its own current-authority head"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "recovery.promotion",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "proposer_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "target_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "binding": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "PromotionBinding"
+        },
+        "binding_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "state": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 32
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "created_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "expires_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "target_id"
+          ],
+          "target": "recovery.target",
+          "target_columns": [
+            "target_id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "promotion journal/gate lineage remains authoritative across business restore"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "recovery.promotion_review",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "proposal_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "approver_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "human_identity_ref": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "binding_digest": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "signature_key_id": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 128
+        },
+        "signature": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 2048
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "proposal_id"
+          ],
+          "target": "recovery.promotion",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [],
+      "classification": "access_metadata_and_approval",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    },
+    {
+      "name": "tasks.capability",
+      "database": "business",
+      "columns": {
+        "id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "task_id": {
+          "nullable": false,
+          "sql_type": "uuid"
+        },
+        "binding": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "TaskBinding"
+        },
+        "scope": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "Scope"
+        },
+        "allowed_tools": {
+          "nullable": false,
+          "sql_type": "text[]"
+        },
+        "budgets": {
+          "nullable": false,
+          "sql_type": "jsonb",
+          "contract": "Budgets"
+        },
+        "jurisdiction": {
+          "nullable": true,
+          "sql_type": "text",
+          "max_characters": 16
+        },
+        "tier_ceiling": {
+          "nullable": false,
+          "sql_type": "text",
+          "max_characters": 4
+        },
+        "expires_at": {
+          "nullable": false,
+          "sql_type": "timestamptz"
+        },
+        "policy_epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "control_epoch": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "revision": {
+          "nullable": false,
+          "sql_type": "bigint",
+          "check": "0..9223372036854775807; never wrap"
+        },
+        "token_hash": {
+          "nullable": false,
+          "sql_type": "bytea",
+          "check": "octet_length=32"
+        },
+        "revoked_at": {
+          "nullable": true,
+          "sql_type": "timestamptz"
+        }
+      },
+      "primary_key": [
+        "id"
+      ],
+      "unique": [
+        [
+          "token_hash"
+        ]
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "columns": [
+            "task_id"
+          ],
+          "target": "tasks.task",
+          "target_columns": [
+            "id"
+          ],
+          "on_delete": "RESTRICT"
+        }
+      ],
+      "checks": [
+        "no raw token to runtime/model/context; scope is an upper bound, never a cached permit"
+      ],
+      "classification": "mixed_synthetic_and_access_metadata",
+      "owner": "business_nologin_owner",
+      "runtime_access": "named scoped command/projection only; no edge/runtime/operator table privileges"
+    }
+  ]
+}

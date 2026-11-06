@@ -1,6 +1,6 @@
 # CARE-Link technical high-level design
 
-Version 0.3 · Revised 2026-11-06 · DEC-01…05 accepted for local design; implementation/release evidence remains pending.
+Version 0.4 · Revised 2026-11-06 · DEC-01…05 accepted for local design; implementation/release evidence remains pending.
 
 CARE-Link is an actor-led crisis-support service concept. Its architecture helps clients and carers express needs, supports workers with grounded AI assistance, and coordinates informed service choices and confirmed handoffs. The present implementation target is a closed synthetic demonstrator. Mission-critical service intent drives clear authority, inline enforcement and honest continuity; it is not a claim that a single-host prototype is clinically ready or continuously staffed.
 
@@ -37,3 +37,5 @@ The [requirements](../REQ/README.md), explicit later scope clarifications and [a
 This revision replaces implementation-level drift with architectural responsibilities and reconciles service, help-path and recovery descriptions. It is a reviewable design, not an assertion of completeness by document counts. No services were built/deployed or performance/clinical claims verified. AI specialist review supports authoring and is not independent human sign-off. The user’s explicit local decision acceptance is recorded separately and does not invent a second reviewer or approve the entire implementation/release.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.
+
+Later local design acceptance: [LLD recommendations, this workstation and `google/gemma-4-12b-qat`](../LLD/decisions/2026-11-06-implementation-choices-and-model.md). The explicit model choice supersedes earlier local selection; implementation evidence and upstream dispositions remain separate.

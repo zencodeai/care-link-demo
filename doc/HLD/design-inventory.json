@@ -1,5 +1,5 @@
 {
-  "design_version": "0.3",
+  "design_version": "0.4",
   "date": "2026-11-06",
   "status": "local_DEC01_to_DEC05_choices_accepted_implementation_not_assessed",
   "notice": "This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.",
@@ -149,7 +149,7 @@
   "requirements_inputs": [
     {
       "path": "doc/REQ/01-scope-and-sources.md",
-      "sha256": "2db48e9a5aca5478484a7d5d38c24c8f1afa8455dfe2a44711922c2fbd008510"
+      "sha256": "2ff63a30261dafa7a2a5093364204fca24d39f5358d06b9394ae11718ab5e715"
     },
     {
       "path": "doc/REQ/02-actors-and-workflows.md",
@@ -157,7 +157,7 @@
     },
     {
       "path": "doc/REQ/03-architecture-and-interfaces.md",
-      "sha256": "ba2949f92718a13695ff67c3484a4d344ac353d604394d630f487daa973e19e1"
+      "sha256": "a92bb34695af0693dd93aa3410fe3cdfb8084fc3e2281700e7792eb4350aa8e6"
     },
     {
       "path": "doc/REQ/04-data-security-governance.md",
@@ -177,7 +177,7 @@
     },
     {
       "path": "doc/REQ/08-open-decisions.md",
-      "sha256": "b7bfd77f6137bccf466819d62f9676a36681dbd464d3b9f47dc1e943246a9307"
+      "sha256": "bf99d4a187130e2c381e0bd52bac9338501b544d5c61c07677eb55d3207761d7"
     },
     {
       "path": "doc/REQ/09-standards-and-runtime-controls.md",
@@ -185,15 +185,15 @@
     },
     {
       "path": "doc/REQ/10-agentic-ai-and-service-model.md",
-      "sha256": "0afe8875983914956166eb45d0ae7893f4b99cb341474607590855cf39ad9880"
+      "sha256": "b28618d461f0cc2de120a14acc5a08cbc841c4ddbb67b9fe64d3db8afb1fd1ec"
     },
     {
       "path": "doc/REQ/README.md",
-      "sha256": "94c5fdff75e650f8cb54cd1109ca91a9c806817dd3d61c9b84da729cd0e1d654"
+      "sha256": "539cf7c91833834e2bf4e59318bac7e14bb5c5d9660821f5e20da806b72a2673"
     },
     {
       "path": "doc/REQ/demo-parameters.json",
-      "sha256": "25689e4d1792d1f65284e0416061e40ee70fd6d36833e0973c53e6064c832771"
+      "sha256": "998cfc815a12c00ec9ec743b06b25f9f3315b0269c7c8a05052a5f4042b45319"
     },
     {
       "path": "doc/REQ/source-snapshot.json",
@@ -234,7 +234,7 @@
     "recreation of deleted LLD"
   ],
   "verification": {
-    "input_hashes": "intentional accepted-design REQ overlay/parameter semantics updates tracked with previous/new hashes; all other inputs unchanged",
+    "input_hashes": "intentional changes recorded with previous/new hashes and acceptance references; current requirements inputs verified",
     "runtime": "not_executed",
     "diagram_rendering": "updated diagrams 01/07 rendered successfully with Mermaid CLI 11.17.0 and visually checked; other diagrams unchanged",
     "local_links": "pass",
@@ -279,6 +279,55 @@
       "previous_sha256": "8a08a63b668c84e6a6c52bf776d40102f0b4e3d19bbd4c87a2572090de28c40c",
       "new_sha256": "25689e4d1792d1f65284e0416061e40ee70fd6d36833e0973c53e6064c832771",
       "reason": "user accepted DEC-01..05 local design options on 2026-11-06; inherited source history/numerical values preserved"
+    },
+    {
+      "path": "doc/REQ/01-scope-and-sources.md",
+      "previous_sha256": "2db48e9a5aca5478484a7d5d38c24c8f1afa8455dfe2a44711922c2fbd008510",
+      "new_sha256": "2ff63a30261dafa7a2a5093364204fca24d39f5358d06b9394ae11718ab5e715",
+      "reason": "later user acceptance of LLD directions/workstation and explicit model override",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md"
+    },
+    {
+      "path": "doc/REQ/03-architecture-and-interfaces.md",
+      "previous_sha256": "ba2949f92718a13695ff67c3484a4d344ac353d604394d630f487daa973e19e1",
+      "new_sha256": "a92bb34695af0693dd93aa3410fe3cdfb8084fc3e2281700e7792eb4350aa8e6",
+      "reason": "later user acceptance of LLD directions/workstation and explicit model override",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md"
+    },
+    {
+      "path": "doc/REQ/08-open-decisions.md",
+      "previous_sha256": "b7bfd77f6137bccf466819d62f9676a36681dbd464d3b9f47dc1e943246a9307",
+      "new_sha256": "bf99d4a187130e2c381e0bd52bac9338501b544d5c61c07677eb55d3207761d7",
+      "reason": "later user acceptance of LLD directions/workstation and explicit model override",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md"
+    },
+    {
+      "path": "doc/REQ/10-agentic-ai-and-service-model.md",
+      "previous_sha256": "0afe8875983914956166eb45d0ae7893f4b99cb341474607590855cf39ad9880",
+      "new_sha256": "b28618d461f0cc2de120a14acc5a08cbc841c4ddbb67b9fe64d3db8afb1fd1ec",
+      "reason": "later user acceptance of LLD directions/workstation and explicit model override",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md"
+    },
+    {
+      "path": "doc/REQ/README.md",
+      "previous_sha256": "94c5fdff75e650f8cb54cd1109ca91a9c806817dd3d61c9b84da729cd0e1d654",
+      "new_sha256": "539cf7c91833834e2bf4e59318bac7e14bb5c5d9660821f5e20da806b72a2673",
+      "reason": "later user acceptance of LLD directions/workstation and explicit model override",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md"
+    },
+    {
+      "path": "doc/REQ/demo-parameters.json",
+      "previous_sha256": "25689e4d1792d1f65284e0416061e40ee70fd6d36833e0973c53e6064c832771",
+      "new_sha256": "998cfc815a12c00ec9ec743b06b25f9f3315b0269c7c8a05052a5f4042b45319",
+      "reason": "later user acceptance of LLD directions/workstation and explicit model override",
+      "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md"
     }
-  ]
+  ],
+  "later_lld_acceptance": {
+    "record": "../LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+    "date": "2026-11-06",
+    "workstation": "this_workstation",
+    "model_identifier": "google/gemma-4-12b-qat",
+    "runtime_verified": false
+  }
 }

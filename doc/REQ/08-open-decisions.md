@@ -1,5 +1,9 @@
 # Decision answers and system parameters
 
+## Later LLD/workstation/model acceptance — 2026-11-06
+
+The user accepted the recommended local LLD directions and selected this workstation plus `google/gemma-4-12b-qat` in LM Studio. Download availability is user-reported. See the [scoped acceptance record](../LLD/decisions/2026-11-06-implementation-choices-and-model.md). This later instruction supersedes earlier model-selection and proposed-choice wording only within that record’s scope; exact versions/periods and runtime evidence remain pending. Existing numeric values are unchanged.
+
 ## Local design acceptance — 2026-11-06
 
 The user approved all five recommendations in [HLD decision options](../HLD/11-decision-requirements-and-options.md). The [acceptance record](../HLD/decisions/2026-11-06-local-design-baseline.md) is authoritative for scope: proxy-managed automated attested workload identity (DEC-01/B), fresh-authority-only private help (DEC-02/A), the proposed event-anchored demo lifecycle (DEC-03/B), separate host recovery journal plus quarantine/independent serving promotion (DEC-04/B), and local inference/youth/safe-mode deltas with separately tracked upstream disposition (DEC-05/A).
@@ -28,7 +32,7 @@ Operational defaults apply while the host is running. A stopped laptop cannot me
 | D-02 | Broker-mediated LM Studio; flatten youth enforcement into broker mediation rather than introduce a forbidden authority edge; expose a narrow deterministic human-help path that survives kill. These are local design proposals requiring recorded source-owner disposition where upstream authority contracts conflict. |
 | D-03 | Keycloak/OIDC/MFA; distinct accounts and role routes; operation assurance/expiry as `identity`. Actual provider/version/provisioning must pass integration checks. |
 | D-04 | PostgreSQL with separate application/audit roles, dedicated audit writer, encrypted host storage/backups and service mTLS; mounted secrets and separate signing-key custody. No cloud KMS/region assurance claim. |
-| D-05 | React/TypeScript UI, Python/FastAPI services, OPA/Rego policy, explicit bounded state machine; LM Studio + Gemma 3 4B IT. Pin supported versions and artifact digest after verification. No general autonomous multi-agent framework. |
+| D-05 | React/TypeScript UI, Python/FastAPI services, OPA/Rego policy, explicit bounded state machine; LM Studio + `google/gemma-4-12b-qat`. Pin supported versions and artifact digest after verification. No general autonomous multi-agent framework. |
 | D-06 | First web participant/worker flows with EN/FR and accessibility; then internal SMS/voice/mobile/relay simulators. Ten active sessions is an initial benchmark, not validated throughput. |
 | D-07 | Implementor-maintained Ottawa/Ontario fallback, separately reviewed dated official content, separate process/publication outside cluster; full host independence remains unfulfilled. |
 | D-08 | Use the grouped, unit-labelled demo defaults in the parameter file; no clinical thresholds are authorized. |
@@ -311,7 +315,7 @@ Parameters: `demo-parameters.json` → `stack`. Original register: open; source 
 
 Inference provider, Canadian-region guarantee, retention and training terms
 
-**Disposition: Answered for demo.** Inference is local LM Studio with Gemma 3 4B IT on the Ottawa host, broker-mediated only. Disable prompt/content logging and remote telemetry where supported; prove behavior in acceptance tests. No remote inference fallback, no training pipeline. Exact model artifact digest and supported server features must be measured before acceptance.
+**Disposition: Answered for demo.** Inference is local LM Studio with `google/gemma-4-12b-qat` on the Ottawa host, broker-mediated only. Disable prompt/content logging and remote telemetry where supported; prove behavior in acceptance tests. No remote inference fallback, no training pipeline. Exact model artifact digest and supported server features must be measured before acceptance.
 
 Parameters: `demo-parameters.json` → `inference`. Original register: open; source owner: Procurement + Security; needed by: M2; blocks: ["M2"].
 
