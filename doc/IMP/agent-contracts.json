@@ -1,0 +1,149 @@
+{
+  "status": "proposed_development_agent_contracts_not_activated",
+  "coordinator": "primary session; sole plan writer and integration owner",
+  "max_parallel_specialists": 3,
+  "native_permissions": "inherited from parent; instructions are not a sandbox",
+  "roles": [
+    {
+      "name": "imp_scope",
+      "description": "Plan decomposition and source/decision trace",
+      "focus": [
+        "scope boundaries",
+        "operation-to-task allocation",
+        "options and unresolved decisions"
+      ],
+      "write_policy": "planning_only",
+      "candidate_implementation_paths": [],
+      "planning_write_paths": [],
+      "result_contract": "AgentResult",
+      "may_delegate": false,
+      "may_accept_human_gate": false,
+      "native_template": "codex/agents/imp_scope.toml"
+    },
+    {
+      "name": "imp_python",
+      "description": "Python application/domain and typed adapter specialist",
+      "focus": [
+        "uv/Ruff/Pyright",
+        "FastAPI/Pydantic contract parity",
+        "guarded PostgreSQL work and tests"
+      ],
+      "write_policy": "scoped_when_authorized",
+      "candidate_implementation_paths": [
+        "services/**",
+        "packages/domain/**",
+        "packages/contracts/python/**",
+        "tests/**"
+      ],
+      "planning_write_paths": [],
+      "result_contract": "AgentResult",
+      "may_delegate": false,
+      "may_accept_human_gate": false,
+      "native_template": "codex/agents/imp_python.toml"
+    },
+    {
+      "name": "imp_web",
+      "description": "React/TypeScript actor and accessibility specialist",
+      "focus": [
+        "strict TypeScript",
+        "role journeys and current server projections",
+        "source-linked human review/EN-FR/a11y"
+      ],
+      "write_policy": "scoped_when_authorized",
+      "candidate_implementation_paths": [
+        "apps/web/**",
+        "packages/contracts/typescript/**",
+        "tests/e2e/**"
+      ],
+      "planning_write_paths": [],
+      "result_contract": "AgentResult",
+      "may_delegate": false,
+      "may_accept_human_gate": false,
+      "native_template": "codex/agents/imp_web.toml"
+    },
+    {
+      "name": "imp_platform",
+      "description": "Platform/persistence/workstation and recovery specialist",
+      "focus": [
+        "isolated builds/migrations",
+        "attested proxy/CNI/host proof",
+        "journal/backup/generation gate"
+      ],
+      "write_policy": "scoped_when_authorized",
+      "candidate_implementation_paths": [
+        "services/data/**",
+        "services/identity/**",
+        "deploy/**",
+        "tools/**",
+        "tests/integration/**",
+        "tests/network/**",
+        "tests/recovery/**",
+        "host/**"
+      ],
+      "planning_write_paths": [],
+      "result_contract": "AgentResult",
+      "may_delegate": false,
+      "may_accept_human_gate": false,
+      "native_template": "codex/agents/imp_platform.toml"
+    },
+    {
+      "name": "imp_controls",
+      "description": "Identity/security/governance and adverse-control specialist",
+      "focus": [
+        "OIDC/assurance/continuation",
+        "PDP/PEP/consent/revocation",
+        "artifact review/activation and containment"
+      ],
+      "write_policy": "scoped_when_authorized",
+      "candidate_implementation_paths": [
+        "services/control/**",
+        "services/identity/**",
+        "packages/policy-input/**",
+        "tests/security/**"
+      ],
+      "planning_write_paths": [],
+      "result_contract": "AgentResult",
+      "may_delegate": false,
+      "may_accept_human_gate": false,
+      "native_template": "codex/agents/imp_controls.toml"
+    },
+    {
+      "name": "imp_verifier",
+      "description": "Independent behavioral verification and demonstration specialist",
+      "focus": [
+        "deterministic race/crash tests",
+        "separate-actor demos",
+        "actual evidence and missingness"
+      ],
+      "write_policy": "tests_evidence_only",
+      "candidate_implementation_paths": [
+        "tests/**",
+        "doc/IMP/evidence/**"
+      ],
+      "planning_write_paths": [],
+      "result_contract": "AgentResult",
+      "may_delegate": false,
+      "may_accept_human_gate": false,
+      "native_template": "codex/agents/imp_verifier.toml"
+    },
+    {
+      "name": "imp_review",
+      "description": "Integrated read-only implementation review",
+      "focus": [
+        "cross-module correctness",
+        "candidate/contract/evidence consistency",
+        "precise adverse findings"
+      ],
+      "write_policy": "always_read_only",
+      "candidate_implementation_paths": [],
+      "planning_write_paths": [],
+      "result_contract": "AgentResult",
+      "may_delegate": false,
+      "may_accept_human_gate": false,
+      "native_template": "codex/agents/imp_review.toml"
+    }
+  ],
+  "dispatch_schema": "contracts/planning.schema.json#/$defs/WorkPacket",
+  "return_schema": "contracts/planning.schema.json#/$defs/AgentResult",
+  "human_decision_schema": "contracts/planning.schema.json#/$defs/HumanDecision"
+}

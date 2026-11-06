@@ -1,0 +1,5448 @@
+{
+  "version": "0.1",
+  "date": "2026-11-06",
+  "status": "proposed_implementation_plan_not_execution_authorization",
+  "baseline_commit": "2701f50ac83e14531cb70e5a76200892e99b793a",
+  "deployment_target": "this_workstation",
+  "selected_model_identifier": "google/gemma-4-12b-qat",
+  "model_download_evidence": "user_reported_only",
+  "existing_limits_source": "../LLD/implementation-defaults.json",
+  "max_parallel_specialists": 3,
+  "stages": [
+    {
+      "id": "IMP-00",
+      "title": "Workstation feasibility and implementation decisions",
+      "state": "planned",
+      "depends_on": [],
+      "goal": "Make an actionable, reviewed environment/tool/model plan without claiming a deployment.",
+      "scope": [
+        "Read-only workstation inventory when this stage is authorized; redact serial numbers, private account details and unrelated paths.",
+        "Verify available Docker/Kubernetes/CNI/proxy/issuer candidates and current model metadata without automatically starting, loading or downloading a model.",
+        "Propose tested version pins, resource allocation, isolated names/ports and actual-account retention/reviewer arrangements."
+      ],
+      "demo_steps": [
+        "Show the redacted doctor report and explicit unknowns.",
+        "Show a reproducible decision/pin matrix for uv/Ruff/Python and Node/pnpm/frontend tooling.",
+        "Locate the user-selected google/gemma-4-12b-qat metadata if accessible; distinguish downloaded, loaded and function-admitted."
+      ],
+      "adverse_tests": [
+        "Unavailable listener/model metadata remains unknown; no automatic alternate model or server start.",
+        "Insufficient resources does not increase capacity limits or silently select remote hosting."
+      ],
+      "deliverables": [
+        "Redacted workstation inventory",
+        "Reviewed tool/version and installation-action proposal",
+        "Port/volume/namespace allocation",
+        "Model metadata/probe plan",
+        "Account-retention and reviewer decision packet"
+      ],
+      "verification": [
+        "VT-01",
+        "VT-09",
+        "VT-12",
+        "VT-17"
+      ],
+      "acceptance_groups": [
+        "AT-01",
+        "AT-10",
+        "AT-11"
+      ],
+      "specialists": [
+        "imp_scope",
+        "imp_platform",
+        "imp_controls"
+      ],
+      "critical_risks": [
+        "Unknown host fit and network enforcement",
+        "Unresolved actual-account retention",
+        "Model metadata and capability unverified"
+      ],
+      "gate_id": "G-00",
+      "human_decision": "Accept the concrete tool/version/environment proposal and scoped next-stage setup actions, or request changes. Existing workstation/model choices are not reopened.",
+      "rollback": "Read-only stage leaves host state unchanged; discard only generated redacted reports if explicitly requested.",
+      "completion_evidence": [],
+      "human_acceptance": null
+    },
+    {
+      "id": "IMP-01",
+      "title": "Repository foundation and contract walking skeleton",
+      "state": "planned",
+      "depends_on": [
+        "IMP-00"
+      ],
+      "goal": "Create a reproducible modular development loop with a visible contract demonstration.",
+      "scope": [
+        "Create uv and pnpm workspaces, typed package boundaries, locked dependencies and root command catalog.",
+        "Implement schema adapters/parity tests and isolated API/UI skeleton; no participant admission or fake business success.",
+        "Create CI fast checks and build minimal per-service images for an authorized disposable lab."
+      ],
+      "demo_steps": [
+        "From a clean checkout run the documented locked setup and checks.",
+        "Open the EN/FR developer shell and show a typed health/capability result.",
+        "Submit an unknown nested key and an overflowing revision; show both Python and TypeScript adapters reject the same inputs."
+      ],
+      "adverse_tests": [
+        "Lockfile/manifest mismatch fails instead of resolving silently.",
+        "A forbidden runtime-to-data import or a schema loosening fails the check.",
+        "Unimplemented operations return explicit capability-unavailable responses rather than synthetic success."
+      ],
+      "deliverables": [
+        "Workspace manifests/locks and package exports",
+        "Contract adapter/parity suite",
+        "Minimal role shell and typed capability UI",
+        "CI fast lane and clean-build evidence",
+        "Module dependency test"
+      ],
+      "verification": [
+        "VT-01",
+        "VT-08",
+        "VT-11",
+        "VT-17"
+      ],
+      "acceptance_groups": [
+        "AT-01",
+        "AT-08",
+        "AT-09",
+        "AT-10",
+        "AT-13"
+      ],
+      "specialists": [
+        "imp_python",
+        "imp_web",
+        "imp_verifier"
+      ],
+      "critical_risks": [
+        "Generated bindings may weaken closed schemas",
+        "Shared development environment mistaken for deployment isolation"
+      ],
+      "gate_id": "G-01",
+      "human_decision": "Accept the developer demonstration and reproducible command surface; no participant-use or deployment approval is inferred.",
+      "rollback": "Revert candidate files/locks together; retain the last verified development baseline and do not touch source repositories.",
+      "completion_evidence": [],
+      "human_acceptance": null
+    },
+    {
+      "id": "IMP-02",
+      "title": "Identity, workload trust and independent help/static paths",
+      "state": "planned",
+      "depends_on": [
+        "IMP-01"
+      ],
+      "goal": "Prove private access boundaries and an honest fallback on this workstation.",
+      "scope": [
+        "Implement OIDC/BFF/MFA and scoped role sessions; establish attested proxy identity and actual default-deny routes.",
+        "Implement host help/spool with fresh request-bound identity decisions and separate static publication.",
+        "Resolve account-retention scope and current independently reviewed fallback content before participant use.",
+        "Pin the applicable identity/network standard controls and local-control test mapping before accepting those implemented boundaries; full register completion remains IMP-08."
+      ],
+      "demo_steps": [
+        "Use separate browser profiles for participant and worker identities; direct unauthorized role/API access is denied.",
+        "Create an opaque help request, accept it and show accepted_unconnected.",
+        "Stop the main lab cluster: static survives; if identity is lost, private help becomes unavailable without cached permission."
+      ],
+      "adverse_tests": [
+        "Forged/replayed/expired login or help proof fails.",
+        "Direct backend/DB/model/internet/alternate host-port probes from runtime fail.",
+        "Expired workload credential and compromised open connection cannot retain permission.",
+        "Use a known-active isolated control listener and allowed caller; refusal from an absent server is not credited as denied-route proof."
+      ],
+      "deliverables": [
+        "Identity/assurance adapter and credential lifecycle tests",
+        "Proxy/issuer/CNI and host route proof",
+        "Independent help/static processes and publication evidence",
+        "Account metadata schedule/role provisioning evidence"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-03",
+        "VT-12",
+        "VT-16"
+      ],
+      "acceptance_groups": [
+        "AT-01",
+        "AT-02",
+        "AT-10",
+        "AT-13",
+        "AT-15"
+      ],
+      "specialists": [
+        "imp_platform",
+        "imp_controls",
+        "imp_web"
+      ],
+      "critical_risks": [
+        "Private help incorrectly claimed independent of identity",
+        "Loopback/sidecar mistaken for enforced peer identity",
+        "Real account metadata governed as synthetic"
+      ],
+      "gate_id": "G-02",
+      "human_decision": "Review login/help/fallback and denied-route demonstrations. Accept only the observed environment scope; unverified content or trust keeps participant admission disabled.",
+      "rollback": "Fence candidate private listeners/identities, retain reviewed static publication, remove only named disposable resources after explicit confirmation of target scope.",
+      "completion_evidence": [],
+      "human_acceptance": null
+    },
+    {
+      "id": "IMP-03",
+      "title": "Usable protected manual client-to-worker service",
+      "state": "planned",
+      "depends_on": [
+        "IMP-02"
+      ],
+      "goal": "Deliver the first complete useful actor journey without relying on AI.",
+      "scope": [
+        "Implement guarded business/control/audit transactions, current PDP checks, bootstrap signed policy and recovery-journal barrier from the first protected write.",
+        "Implement disclosure, synthetic persona/session, attributed turns, deterministic fixture escalation, queue/assignment and two-party handoff.",
+        "Implement owner fencing, SSE current projections, operation reconciliation and explicit continuation recovery.",
+        "Establish scoped encrypted backup/capture hooks for the first durable state; integrated trusted restore/serving proof remains IMP-09 and unproven protection is visible."
+      ],
+      "demo_steps": [
+        "Participant enters a fictional case, asks for a human and connects to a worker through current two-party confirmation.",
+        "Worker reads only assigned context and sends a manual message; supervisor takeover changes control epoch.",
+        "Disable AI, then lose a continuation replacement response and recover with fresh same-principal proof."
+      ],
+      "adverse_tests": [
+        "Race two worker accepts and pause old output during takeover: exactly one owner and no stale future output.",
+        "Audit/PDP/journal failure releases no protected success; independent help/static behavior remains truthful.",
+        "Silence/disconnect does not close unresolved support; lost DB acknowledgement reconciles one logical operation."
+      ],
+      "deliverables": [
+        "Real PostgreSQL migrations/roles/guarded commands",
+        "Canonical audit and current policy/journal foundations",
+        "Separate actor UIs and manual smoke scenario",
+        "Ownership/continuation/stream race evidence",
+        "Initial backup/capture and restore-to-quarantine harness; no serving-recovery claim yet"
+      ],
+      "verification": [
+        "VT-03",
+        "VT-04",
+        "VT-05",
+        "VT-10",
+        "VT-11",
+        "VT-14",
+        "VT-16"
+      ],
+      "acceptance_groups": [
+        "AT-02",
+        "AT-03",
+        "AT-04",
+        "AT-09",
+        "AT-14"
+      ],
+      "specialists": [
+        "imp_python",
+        "imp_web",
+        "imp_controls"
+      ],
+      "critical_risks": [
+        "Audit or journal deferred until later stage",
+        "Acceptance confused with connection",
+        "Authority checked only on login"
+      ],
+      "gate_id": "G-03",
+      "human_decision": "Demonstrate normal manual service and adverse ownership/audit behavior. Human acceptance establishes this bounded baseline, not full-demo or clinical readiness.",
+      "rollback": "Keep schema-compatible last-known-good manual path; restrict protected service if current authority cannot be established. Never rewind live rights or erase unresolved cases.",
+      "completion_evidence": [],
+      "human_acceptance": null
+    },
+    {
+      "id": "IMP-04",
+      "title": "Attributed plans, sourced options and granular consent",
+      "state": "planned",
+      "depends_on": [
+        "IMP-03"
+      ],
+      "goal": "Support client-led planning and service choice without leaking another actor\u2019s private context.",
+      "scope": [
+        "Implement PID/carer attribution, disputes, plan fields/retirement/sharing and current field filtering.",
+        "Implement all seven directory operating states plus source freshness/quarantine/suspension.",
+        "Implement purpose/recipient/field/time/assurance consent and journalled revocation."
+      ],
+      "demo_steps": [
+        "PID creates and shares selected plan fields; carer sees only those fields and own reports.",
+        "Exercise normal, closure, outage, holiday, weather, API failure and conflicting-source options with truthful alternatives/unknowns.",
+        "Revoke sharing while a stream/task is pending; later disclosure stops and the UI explains missing access."
+      ],
+      "adverse_tests": [
+        "Relationship/professional-participant role does not grant PID/workforce authority.",
+        "An absent-grant concurrent creation/revoke race uses the existing subject guard.",
+        "Expired/stale/conflicting directory information cannot imply availability or a new executable destination."
+      ],
+      "deliverables": [
+        "Plan/assertion/consent commands and screens",
+        "Directory provenance/operating-state UI",
+        "Consent/field filtering and revocation race evidence"
+      ],
+      "verification": [
+        "VT-04",
+        "VT-06",
+        "VT-13"
+      ],
+      "acceptance_groups": [
+        "AT-03",
+        "AT-05",
+        "AT-06",
+        "AT-07",
+        "AT-14"
+      ],
+      "specialists": [
+        "imp_python",
+        "imp_web",
+        "imp_controls"
+      ],
+      "critical_risks": [
+        "Guardian/carer authority laundering",
+        "Source admission confused with operating availability"
+      ],
+      "gate_id": "G-04",
+      "human_decision": "Review exact field-level views and revoke/unknown-state demonstrations using separate accounts; accept the scoped privacy behavior.",
+      "rollback": "Disable affected plan/share/option capability if filtering fails; retain current negative rights and the accepted manual service.",
+      "completion_evidence": [],
+      "human_acceptance": null
+    },
+    {
+      "id": "IMP-05",
+      "title": "Reviewed simulated referral and receiver reconciliation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-04"
+      ],
+      "goal": "Complete client\u2192worker\u2192receiving-service work with exact consent and honest delivery states.",
+      "scope": [
+        "Implement manual unsent drafts, exact payload review, immutable generations and current dispatch authorization.",
+        "Implement stable dispatch IDs, consumed authorization, outbox attempts/receipts and receiver-owned decisions.",
+        "Add receiver inbox and bounded scenario controls; no real contacts or external connectors."
+      ],
+      "demo_steps": [
+        "Client supplies exact consent; worker reviews fields/purpose/recipient/digest and sends to isolated receiver.",
+        "Receiver partially accepts or refuses; worker sees the actual receipt and keeps client support active.",
+        "Drop the response after receiver storage; reconcile by dispatch ID with no duplicate package."
+      ],
+      "adverse_tests": [
+        "Revoke/change policy/assignment/source between PDP evaluation and final authorization: stale send is absent.",
+        "Timeout, generic receipt unavailable and partial result never become accepted/connected by inference.",
+        "Changed payload under an existing key is rejected; machine emergency/police target remains absent/denied."
+      ],
+      "deliverables": [
+        "Referral/dispatch and receiver modules/UIs",
+        "Deterministic receiver failure scenarios",
+        "Consent-review-dispatch race/crash suite and evidence"
+      ],
+      "verification": [
+        "VT-06",
+        "VT-07",
+        "VT-11",
+        "VT-12"
+      ],
+      "acceptance_groups": [
+        "AT-05",
+        "AT-08",
+        "AT-09",
+        "AT-14",
+        "AT-15"
+      ],
+      "specialists": [
+        "imp_python",
+        "imp_web",
+        "imp_verifier"
+      ],
+      "critical_risks": [
+        "Enqueue-time permit reused for send",
+        "Unknown delivery retried as a new logical effect"
+      ],
+      "gate_id": "G-05",
+      "human_decision": "Demonstrate exact review, before/after-authorization revocation and dropped-reply reconciliation. Human acceptance concerns simulator behavior only.",
+      "rollback": "Fence unsent work; retain unknown in-flight attempts for reconciliation. Roll back only compatible code, never rewrite receipt/consent history.",
+      "completion_evidence": [],
+      "human_acceptance": null
+    },
+    {
+      "id": "IMP-06",
+      "title": "Useful bounded AI assistance on the selected local model",
+      "state": "planned",
+      "depends_on": [
+        "IMP-05"
+      ],
+      "goal": "Add optional source-linked assistance to an already usable manual workflow.",
+      "scope": [
+        "Implement task profiles/bindings, shared counters, step leases/fences, typed tools, server-built context and human draft review.",
+        "Integrate broker\u2192gateway\u2192host bridge\u2192LM Studio google/gemma-4-12b-qat with verified identity/token accounting and function-specific admission.",
+        "Keep timeout/cancel compute slots occupied until completion/stop is actually established; preserve manual capacity.",
+        "Verify pinned applicable OWASP/ATLAS identifiers and per-function threat/test mapping before affected AI function admission; do not defer this to the final console stage."
+      ],
+      "demo_steps": [
+        "Compare the same fictional case actor-only versus assisted; show retrieved sources, draft edits/rejection, bounded observations and receipt follow-through.",
+        "Reject every suggestion and complete the manual workflow.",
+        "Timeout generation while compute continues: stale output is fenced and manual service continues."
+      ],
+      "adverse_tests": [
+        "Prompt/tool/source injection cannot create authority, arbitrary network access or direct runtime inference.",
+        "Lease reclaim/restart does not reset step/tool/proposal budgets.",
+        "Changed sources/payload/epoch invalidate review; unsupported function stays disabled without swapping model."
+      ],
+      "deliverables": [
+        "Coordinator/broker/runtime modules and tool profiles",
+        "Fixed local inference adapter and model manifest",
+        "Per-function grounding/EN-FR/adversarial/latency evidence",
+        "Actor-only/assisted evaluation and rollback/disable controls"
+      ],
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "acceptance_groups": [
+        "AT-08",
+        "AT-17",
+        "AT-18"
+      ],
+      "specialists": [
+        "imp_python",
+        "imp_controls",
+        "imp_verifier"
+      ],
+      "critical_risks": [
+        "Downloaded model mistaken for capable/loaded model",
+        "Human review treated as proof of accuracy",
+        "Timeout mistaken for released compute"
+      ],
+      "gate_id": "G-06",
+      "human_decision": "Review actual source-linked usefulness, seeded errors and outage behavior. Admit only demonstrated functions; record unadmitted functions as explicit remaining scope.",
+      "rollback": "Disable AI functions/prompt/model bundle under current control epoch; preserve manual service, current rights and independently available fallback.",
+      "completion_evidence": [],
+      "human_acceptance": null
+    },
+    {
+      "id": "IMP-07",
+      "title": "Post-crisis inbox, lifecycle, exports and deletion",
+      "state": "planned",
+      "depends_on": [
+        "IMP-05"
+      ],
+      "goal": "Close the supported synthetic workflow with truthful follow-up and rights processing.",
+      "scope": [
+        "Implement explicit post-crisis anchor/pending state, separate contact consent, internal inbox, cancellation and attributed outcomes.",
+        "Implement copy inventory/anchors/dependencies/holds, guarded purge, current-authorized export and faster verified deletion targets.",
+        "Keep backup-dependent completion pending until recovery/expiry evidence in IMP-09; no false physical-erasure claim."
+      ],
+      "demo_steps": [
+        "Schedule a follow-up within the explicit 24\u201372h anchor window, then opt out before authorization and show no inbox delivery.",
+        "Show an active plan surviving session expiry under its own purpose, and a held dependent copy with an explicit exception.",
+        "Export only own permitted reports; delete eligible active content while backup status remains accurately pending."
+      ],
+      "adverse_tests": [
+        "Missing anchor/cyclic dependency/hold blocks unsafe purge; two tabs cannot bypass AL3 cooling and fresh proof.",
+        "Unknown inbox send requires durable absence plus old-sender fencing before reauthorization.",
+        "Carer own-data rights do not export/delete PID or other-author private content."
+      ],
+      "deliverables": [
+        "Follow-up/inbox/outcome screens and jobs",
+        "Lifecycle/hold/tombstone/export/delete modules",
+        "Rights/copy graph/race evidence and pending-backup reporting"
+      ],
+      "verification": [
+        "VT-06",
+        "VT-11",
+        "VT-13",
+        "VT-14"
+      ],
+      "acceptance_groups": [
+        "AT-06",
+        "AT-09",
+        "AT-11",
+        "AT-14"
+      ],
+      "specialists": [
+        "imp_python",
+        "imp_web",
+        "imp_verifier"
+      ],
+      "critical_risks": [
+        "Synthetic TTL applied to real account metadata",
+        "File unlink reported as physical erasure",
+        "Pending backup falsely reported complete"
+      ],
+      "gate_id": "G-07",
+      "human_decision": "Review cancellation, own-data export, active purge and retained-exception demos. Accept only the proven active-copy scope; backup erasure remains a later obligation.",
+      "rollback": "Stop purge/delivery jobs and preserve restrictions/holds. Never restore deleted content to simplify rollback; use quarantined recovery if necessary.",
+      "completion_evidence": [],
+      "human_acceptance": null
+    },
+    {
+      "id": "IMP-08",
+      "title": "Operational governance, security and accountable evidence consoles",
+      "state": "planned",
+      "depends_on": [
+        "IMP-03",
+        "IMP-05"
+      ],
+      "goal": "Expose and verify controlled live change, scoped containment and honest operational evidence.",
+      "scope": [
+        "Complete class-specific artifact/reviewer registry, signed activation/ACK/rollback, exceptions and incident controls on top of IMP-03 enforcement.",
+        "Implement operator/security/governance/auditor workspaces, current scoped evidence and coupled suppressed aggregate reports.",
+        "Add drift/resource/identity response drills; pin exact applicable standards identifiers from official artifacts."
+      ],
+      "demo_steps": [
+        "Propose a changed policy/artifact, show missing reviews, then activate exact approved bytes and current per-boot ACKs.",
+        "Introduce a restrictive update while an operation is paused and show the old permit cannot execute.",
+        "Show bounded containment, desired/current epochs, coupled metrics and no individual exposure export."
+      ],
+      "adverse_tests": [
+        "Two accounts for one human cannot self-approve; expired exception/old ACK/rollback cannot restore rights.",
+        "Missing audit/current state denies effects; telemetry or a classifier never grants permission.",
+        "Small cohort/differencing and isolated police-avoidance export are denied/suppressed."
+      ],
+      "deliverables": [
+        "Control/incident/evidence consoles",
+        "Live activation/ACK/rollback and drift tests",
+        "Pinned standards/control evidence map and aggregate disclosure tests"
+      ],
+      "verification": [
+        "VT-02",
+        "VT-10",
+        "VT-12",
+        "VT-18"
+      ],
+      "acceptance_groups": [
+        "AT-12",
+        "AT-14",
+        "AT-15",
+        "AT-16"
+      ],
+      "specialists": [
+        "imp_controls",
+        "imp_web",
+        "imp_verifier"
+      ],
+      "critical_risks": [
+        "Monitoring substituted for inline control",
+        "Agent review mistaken for human approval",
+        "Framework mapping mistaken for certification"
+      ],
+      "gate_id": "G-08",
+      "human_decision": "Review live restrictive/relaxing change, independent approval separation and containment/metrics demos; accept only the observed authorities and environment.",
+      "rollback": "Use a new controlled epoch selecting a compatible previous bundle; retain newest revokes/deletes/holds and independent serving ownership.",
+      "completion_evidence": [],
+      "human_acceptance": null
+    },
+    {
+      "id": "IMP-09",
+      "title": "Backup, current-authority restore and serving promotion",
+      "state": "planned",
+      "depends_on": [
+        "IMP-07",
+        "IMP-08"
+      ],
+      "goal": "Prove that old snapshots cannot resurrect revoked rights and that cutover cannot create two serving generations.",
+      "scope": [
+        "Implement encrypted backup inventory/checkpoints, immutable expiry and isolated restore targets.",
+        "Reconcile live host journal/rights/holds/unknown sends, seal target evidence and obtain distinct human serving approval.",
+        "Test maintenance/old-generation fence/router/target enable/smoke interruptions and measure full RPO/RTO."
+      ],
+      "demo_steps": [
+        "Restore an old snapshot containing revoked/deleted/shared data into quarantine; verify current restrictions before any serving.",
+        "Change the current head after approval; show promotion is rejected until revalidated/reviewed.",
+        "Crash during cutover and show both generations remain restricted until one current generation is established."
+      ],
+      "adverse_tests": [
+        "Missing/corrupt/suspect head cannot be replaced by an old signature/time/sequence.",
+        "No stale continuation/bearer/lease/review/dispatch authorization becomes active on restore.",
+        "Restoring a backup does not renew expiry; uncertain send reconciliation creates no duplicate effect."
+      ],
+      "deliverables": [
+        "Backup/restore/generation gate tooling and runbooks",
+        "Separate approver evidence bound to exact target/head",
+        "Crash matrix, deletion/retention restore proof and measured RPO/RTO"
+      ],
+      "verification": [
+        "VT-07",
+        "VT-13",
+        "VT-14",
+        "VT-15",
+        "VT-17"
+      ],
+      "acceptance_groups": [
+        "AT-09",
+        "AT-10",
+        "AT-11",
+        "AT-14",
+        "AT-15"
+      ],
+      "specialists": [
+        "imp_platform",
+        "imp_controls",
+        "imp_verifier"
+      ],
+      "critical_risks": [
+        "Old snapshot certifies its own current rights",
+        "Router switch mistaken for generation fencing",
+        "Same host claimed independent of root/disaster"
+      ],
+      "gate_id": "G-09",
+      "human_decision": "Review stale-head and interrupted-cutover demonstrations. A drill acceptance is not approval of future restores; each actual serving promotion retains its own exact human decision.",
+      "rollback": "Keep protected serving quarantined. Reconcile gate/router/DB under restriction and use a newly validated compatible target, never blind rewind.",
+      "completion_evidence": [],
+      "human_acceptance": null
+    },
+    {
+      "id": "IMP-10",
+      "title": "Integrated demonstrator acceptance and sustainable delivery",
+      "state": "planned",
+      "depends_on": [
+        "IMP-06",
+        "IMP-07",
+        "IMP-08",
+        "IMP-09"
+      ],
+      "goal": "Present a complete bounded demonstrator with reproducible evidence and remaining limitations.",
+      "scope": [
+        "Run all actor journeys/use cases, applicable invariant/adverse suites, EN/FR accessibility and internal channel/training scenarios.",
+        "Measure declared workstation load, failures/cold-warm model behavior and actor-only/assisted outcomes with raw missingness.",
+        "Reconcile every local/source requirement disposition, reproducibility, LKG, runbooks and independent human review."
+      ],
+      "demo_steps": [
+        "Run the full client\u2192worker\u2192receiver\u2192plan/follow-up/rights journey across separate profiles and show real observations.",
+        "Disable model/policy/audit/identity/cluster in turn and show only capabilities whose dependencies survive.",
+        "Have the human follow the published demo/runbook from a clean candidate with exact artifact/source/config pins."
+      ],
+      "adverse_tests": [
+        "No critical authorization bypass, false connection/outcome or concealed unmet obligation is acceptable.",
+        "Real channels/partners/clinical capability/production readiness remain excluded or deferred explicitly.",
+        "A changed candidate or environment invalidates stale acceptance."
+      ],
+      "deliverables": [
+        "Reproducible demo/runbooks and evidence index",
+        "Full requirement/control/source disposition matrix",
+        "Workstation performance and actor-evaluation results",
+        "Human acceptance/candidate release record and compatible rollback"
+      ],
+      "verification": [
+        "VT-01",
+        "VT-02",
+        "VT-03",
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-08",
+        "VT-09",
+        "VT-10",
+        "VT-11",
+        "VT-12",
+        "VT-13",
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17",
+        "VT-18"
+      ],
+      "acceptance_groups": [
+        "AT-01",
+        "AT-02",
+        "AT-03",
+        "AT-04",
+        "AT-05",
+        "AT-06",
+        "AT-07",
+        "AT-08",
+        "AT-09",
+        "AT-10",
+        "AT-11",
+        "AT-12",
+        "AT-13",
+        "AT-14",
+        "AT-15",
+        "AT-16",
+        "AT-17",
+        "AT-18"
+      ],
+      "specialists": [
+        "imp_scope",
+        "imp_controls",
+        "imp_verifier"
+      ],
+      "critical_risks": [
+        "Document/schema counts mistaken for implemented coverage",
+        "Synthetic evaluation promoted to clinical evidence"
+      ],
+      "gate_id": "G-10",
+      "human_decision": "Accept the exact synthetic-demo candidate, request rework or accept a clearly narrowed scope with recorded remaining obligations. Never infer production/clinical approval.",
+      "rollback": "Retain last verified accepted candidate if current and compatible; otherwise restrict private service and retain independent static information. Preserve all current rights.",
+      "completion_evidence": [],
+      "human_acceptance": null
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-00-A",
+      "stage_id": "IMP-00",
+      "title": "Propose redacted doctor/model/tool checks and decision packet",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [],
+      "write_policy": "read_only_probe_and_return_findings; coordinator records reports",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": []
+    },
+    {
+      "id": "IMP-00-B",
+      "stage_id": "IMP-00",
+      "title": "Collect authorized read-only feasibility evidence",
+      "role": "imp_platform",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-00-A"
+      ],
+      "write_policy": "read_only_probe_and_return_findings; coordinator records reports",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": []
+    },
+    {
+      "id": "IMP-00-C",
+      "stage_id": "IMP-00",
+      "title": "Prepare pin/setup/account-retention/reviewer options",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [
+        "IMP-00-A"
+      ],
+      "write_policy": "read_only_probe_and_return_findings; coordinator records reports",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": []
+    },
+    {
+      "id": "IMP-00-D",
+      "stage_id": "IMP-00",
+      "title": "Review unknowns, evidence and G-00 decision object",
+      "role": "imp_review",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-00-B",
+        "IMP-00-C"
+      ],
+      "write_policy": "read_only_probe_and_return_findings; coordinator records reports",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": []
+    },
+    {
+      "id": "IMP-01-A",
+      "stage_id": "IMP-01",
+      "title": "Freeze package/import/schema-parity boundaries",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [],
+      "write_policy": "none",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": []
+    },
+    {
+      "id": "IMP-01-B",
+      "stage_id": "IMP-01",
+      "title": "Build uv/Python contract and API test skeleton",
+      "role": "imp_python",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-01-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "packages/contracts/python/**",
+        "packages/domain/**",
+        "services/core/**",
+        "tests/contract/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": []
+    },
+    {
+      "id": "IMP-01-C",
+      "stage_id": "IMP-01",
+      "title": "Build pnpm/React developer shell and TS adapter tests",
+      "role": "imp_web",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-01-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "apps/web/**",
+        "packages/contracts/typescript/**",
+        "tests/web/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": []
+    },
+    {
+      "id": "IMP-01-D",
+      "stage_id": "IMP-01",
+      "title": "Verify clean setup/locks/type/parity and G-01 demo",
+      "role": "imp_verifier",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-01-B",
+        "IMP-01-C"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "tests/**",
+        "doc/IMP/evidence/IMP-01/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": []
+    },
+    {
+      "id": "IMP-02-A",
+      "stage_id": "IMP-02",
+      "title": "Specify identity/proxy/help trust and account/content admission tests",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [],
+      "write_policy": "none",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "login_start",
+        "login_callback",
+        "browser_session",
+        "logout",
+        "stepup_start",
+        "stepup_confirm",
+        "help_create",
+        "help_status",
+        "help_accept",
+        "help_cancel",
+        "signal_ingest",
+        "help_authorize",
+        "static_manifest",
+        "static_publish"
+      ]
+    },
+    {
+      "id": "IMP-02-B",
+      "stage_id": "IMP-02",
+      "title": "Build authorized identity/proxy/CNI/help/static lab slice",
+      "role": "imp_platform",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-02-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "services/identity/**",
+        "host/help/**",
+        "host/static/**",
+        "deploy/k8s/**",
+        "tests/network/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "login_start",
+        "login_callback",
+        "browser_session",
+        "logout",
+        "stepup_start",
+        "stepup_confirm",
+        "help_create",
+        "help_status",
+        "help_accept",
+        "help_cancel",
+        "signal_ingest",
+        "help_authorize",
+        "static_manifest",
+        "static_publish"
+      ]
+    },
+    {
+      "id": "IMP-02-C",
+      "stage_id": "IMP-02",
+      "title": "Build separate login/help/fallback actor surfaces",
+      "role": "imp_web",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-02-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "apps/web/**",
+        "tests/e2e/identity/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "login_start",
+        "login_callback",
+        "browser_session",
+        "logout",
+        "stepup_start",
+        "stepup_confirm",
+        "help_create",
+        "help_status",
+        "help_accept",
+        "help_cancel",
+        "signal_ingest",
+        "help_authorize",
+        "static_manifest",
+        "static_publish"
+      ]
+    },
+    {
+      "id": "IMP-02-D",
+      "stage_id": "IMP-02",
+      "title": "Prove forbidden paths, lost proof and G-02 outage demo",
+      "role": "imp_verifier",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-02-B",
+        "IMP-02-C"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "tests/**",
+        "doc/IMP/evidence/IMP-02/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "login_start",
+        "login_callback",
+        "browser_session",
+        "logout",
+        "stepup_start",
+        "stepup_confirm",
+        "help_create",
+        "help_status",
+        "help_accept",
+        "help_cancel",
+        "signal_ingest",
+        "help_authorize",
+        "static_manifest",
+        "static_publish"
+      ]
+    },
+    {
+      "id": "IMP-03-A",
+      "stage_id": "IMP-03",
+      "title": "Specify core guards/audit/queue/ownership/continuation transactions",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [],
+      "write_policy": "none",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "continuation_rotate",
+        "continuation_recover",
+        "operation_status",
+        "session_create",
+        "session_read",
+        "session_disclosure",
+        "session_turns",
+        "session_assertions",
+        "session_choices",
+        "session_human_request",
+        "session_end",
+        "session_events",
+        "messages_read",
+        "message_send",
+        "queue_list",
+        "workforce_reserve",
+        "workforce_accept",
+        "workforce_prepare_transfer",
+        "workforce_confirm_transfer",
+        "workforce_transfer_failed",
+        "workforce_observe",
+        "workforce_takeover",
+        "control_change",
+        "policy_evaluate",
+        "journal_append",
+        "journal_head",
+        "authority_metadata",
+        "data_continuation_rotate",
+        "data_continuation_recover",
+        "data_operation_status",
+        "data_session_create",
+        "data_session_read",
+        "data_session_disclosure",
+        "data_session_turns",
+        "data_session_assertions",
+        "data_session_choices",
+        "data_session_human_request",
+        "data_session_end",
+        "data_session_events",
+        "data_messages_read",
+        "data_message_send",
+        "data_queue_list",
+        "data_workforce_reserve",
+        "data_workforce_accept",
+        "data_workforce_prepare_transfer",
+        "data_workforce_confirm_transfer",
+        "data_workforce_transfer_failed",
+        "data_workforce_observe",
+        "data_workforce_takeover",
+        "data_control_change",
+        "job_execute",
+        "identity_revoke",
+        "channel_challenge_read",
+        "channel_ack",
+        "data_channel_challenge_read",
+        "data_channel_ack"
+      ]
+    },
+    {
+      "id": "IMP-03-B",
+      "stage_id": "IMP-03",
+      "title": "Implement real manual domain/data/journal foundations",
+      "role": "imp_python",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-03-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "services/core/**",
+        "services/data/**",
+        "host/recovery-control/**",
+        "tests/integration/manual/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "continuation_rotate",
+        "continuation_recover",
+        "operation_status",
+        "session_create",
+        "session_read",
+        "session_disclosure",
+        "session_turns",
+        "session_assertions",
+        "session_choices",
+        "session_human_request",
+        "session_end",
+        "session_events",
+        "messages_read",
+        "message_send",
+        "queue_list",
+        "workforce_reserve",
+        "workforce_accept",
+        "workforce_prepare_transfer",
+        "workforce_confirm_transfer",
+        "workforce_transfer_failed",
+        "workforce_observe",
+        "workforce_takeover",
+        "control_change",
+        "policy_evaluate",
+        "journal_append",
+        "journal_head",
+        "authority_metadata",
+        "data_continuation_rotate",
+        "data_continuation_recover",
+        "data_operation_status",
+        "data_session_create",
+        "data_session_read",
+        "data_session_disclosure",
+        "data_session_turns",
+        "data_session_assertions",
+        "data_session_choices",
+        "data_session_human_request",
+        "data_session_end",
+        "data_session_events",
+        "data_messages_read",
+        "data_message_send",
+        "data_queue_list",
+        "data_workforce_reserve",
+        "data_workforce_accept",
+        "data_workforce_prepare_transfer",
+        "data_workforce_confirm_transfer",
+        "data_workforce_transfer_failed",
+        "data_workforce_observe",
+        "data_workforce_takeover",
+        "data_control_change",
+        "job_execute",
+        "identity_revoke",
+        "channel_challenge_read",
+        "channel_ack",
+        "data_channel_challenge_read",
+        "data_channel_ack"
+      ]
+    },
+    {
+      "id": "IMP-03-C",
+      "stage_id": "IMP-03",
+      "title": "Build participant/worker/supervisor manual journey",
+      "role": "imp_web",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-03-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "apps/web/**",
+        "tests/e2e/manual/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "continuation_rotate",
+        "continuation_recover",
+        "operation_status",
+        "session_create",
+        "session_read",
+        "session_disclosure",
+        "session_turns",
+        "session_assertions",
+        "session_choices",
+        "session_human_request",
+        "session_end",
+        "session_events",
+        "messages_read",
+        "message_send",
+        "queue_list",
+        "workforce_reserve",
+        "workforce_accept",
+        "workforce_prepare_transfer",
+        "workforce_confirm_transfer",
+        "workforce_transfer_failed",
+        "workforce_observe",
+        "workforce_takeover",
+        "control_change",
+        "policy_evaluate",
+        "journal_append",
+        "journal_head",
+        "authority_metadata",
+        "data_continuation_rotate",
+        "data_continuation_recover",
+        "data_operation_status",
+        "data_session_create",
+        "data_session_read",
+        "data_session_disclosure",
+        "data_session_turns",
+        "data_session_assertions",
+        "data_session_choices",
+        "data_session_human_request",
+        "data_session_end",
+        "data_session_events",
+        "data_messages_read",
+        "data_message_send",
+        "data_queue_list",
+        "data_workforce_reserve",
+        "data_workforce_accept",
+        "data_workforce_prepare_transfer",
+        "data_workforce_confirm_transfer",
+        "data_workforce_transfer_failed",
+        "data_workforce_observe",
+        "data_workforce_takeover",
+        "data_control_change",
+        "job_execute",
+        "identity_revoke",
+        "channel_challenge_read",
+        "channel_ack",
+        "data_channel_challenge_read",
+        "data_channel_ack"
+      ]
+    },
+    {
+      "id": "IMP-03-D",
+      "stage_id": "IMP-03",
+      "title": "Run DB/ownership/audit/continuation races and G-03 demo",
+      "role": "imp_verifier",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-03-B",
+        "IMP-03-C"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "tests/**",
+        "doc/IMP/evidence/IMP-03/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "continuation_rotate",
+        "continuation_recover",
+        "operation_status",
+        "session_create",
+        "session_read",
+        "session_disclosure",
+        "session_turns",
+        "session_assertions",
+        "session_choices",
+        "session_human_request",
+        "session_end",
+        "session_events",
+        "messages_read",
+        "message_send",
+        "queue_list",
+        "workforce_reserve",
+        "workforce_accept",
+        "workforce_prepare_transfer",
+        "workforce_confirm_transfer",
+        "workforce_transfer_failed",
+        "workforce_observe",
+        "workforce_takeover",
+        "control_change",
+        "policy_evaluate",
+        "journal_append",
+        "journal_head",
+        "authority_metadata",
+        "data_continuation_rotate",
+        "data_continuation_recover",
+        "data_operation_status",
+        "data_session_create",
+        "data_session_read",
+        "data_session_disclosure",
+        "data_session_turns",
+        "data_session_assertions",
+        "data_session_choices",
+        "data_session_human_request",
+        "data_session_end",
+        "data_session_events",
+        "data_messages_read",
+        "data_message_send",
+        "data_queue_list",
+        "data_workforce_reserve",
+        "data_workforce_accept",
+        "data_workforce_prepare_transfer",
+        "data_workforce_confirm_transfer",
+        "data_workforce_transfer_failed",
+        "data_workforce_observe",
+        "data_workforce_takeover",
+        "data_control_change",
+        "job_execute",
+        "identity_revoke",
+        "channel_challenge_read",
+        "channel_ack",
+        "data_channel_challenge_read",
+        "data_channel_ack"
+      ]
+    },
+    {
+      "id": "IMP-04-A",
+      "stage_id": "IMP-04",
+      "title": "Specify attributed plan/consent/directory-state boundaries",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [],
+      "write_policy": "none",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "plan_create",
+        "plan_read",
+        "plan_field_append",
+        "plan_retire",
+        "consent_grant",
+        "consent_read",
+        "consent_revoke",
+        "directory_search",
+        "directory_read",
+        "directory_ingest",
+        "directory_suspend",
+        "data_plan_create",
+        "data_plan_read",
+        "data_plan_field_append",
+        "data_plan_retire",
+        "data_consent_grant",
+        "data_consent_read",
+        "data_consent_revoke",
+        "data_directory_search",
+        "data_directory_read",
+        "data_directory_ingest",
+        "data_directory_suspend"
+      ]
+    },
+    {
+      "id": "IMP-04-B",
+      "stage_id": "IMP-04",
+      "title": "Implement field-scope, grants, provenance and suspension",
+      "role": "imp_python",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-04-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "services/core/**",
+        "services/data/**",
+        "tests/integration/plans-consent/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "plan_create",
+        "plan_read",
+        "plan_field_append",
+        "plan_retire",
+        "consent_grant",
+        "consent_read",
+        "consent_revoke",
+        "directory_search",
+        "directory_read",
+        "directory_ingest",
+        "directory_suspend",
+        "data_plan_create",
+        "data_plan_read",
+        "data_plan_field_append",
+        "data_plan_retire",
+        "data_consent_grant",
+        "data_consent_read",
+        "data_consent_revoke",
+        "data_directory_search",
+        "data_directory_read",
+        "data_directory_ingest",
+        "data_directory_suspend"
+      ]
+    },
+    {
+      "id": "IMP-04-C",
+      "stage_id": "IMP-04",
+      "title": "Build PID/carer plan/options/revoke screens",
+      "role": "imp_web",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-04-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "apps/web/**",
+        "tests/e2e/plans-consent/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "plan_create",
+        "plan_read",
+        "plan_field_append",
+        "plan_retire",
+        "consent_grant",
+        "consent_read",
+        "consent_revoke",
+        "directory_search",
+        "directory_read",
+        "directory_ingest",
+        "directory_suspend",
+        "data_plan_create",
+        "data_plan_read",
+        "data_plan_field_append",
+        "data_plan_retire",
+        "data_consent_grant",
+        "data_consent_read",
+        "data_consent_revoke",
+        "data_directory_search",
+        "data_directory_read",
+        "data_directory_ingest",
+        "data_directory_suspend"
+      ]
+    },
+    {
+      "id": "IMP-04-D",
+      "stage_id": "IMP-04",
+      "title": "Run grant/missing-row/privacy negatives and G-04 demo",
+      "role": "imp_verifier",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-04-B",
+        "IMP-04-C"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "tests/**",
+        "doc/IMP/evidence/IMP-04/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "plan_create",
+        "plan_read",
+        "plan_field_append",
+        "plan_retire",
+        "consent_grant",
+        "consent_read",
+        "consent_revoke",
+        "directory_search",
+        "directory_read",
+        "directory_ingest",
+        "directory_suspend",
+        "data_plan_create",
+        "data_plan_read",
+        "data_plan_field_append",
+        "data_plan_retire",
+        "data_consent_grant",
+        "data_consent_read",
+        "data_consent_revoke",
+        "data_directory_search",
+        "data_directory_read",
+        "data_directory_ingest",
+        "data_directory_suspend"
+      ]
+    },
+    {
+      "id": "IMP-05-A",
+      "stage_id": "IMP-05",
+      "title": "Specify immutable payload/review/dispatch/receipt boundaries",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [],
+      "write_policy": "none",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "referral_draft",
+        "referral_read",
+        "referral_review",
+        "referral_dispatch",
+        "dispatch_read",
+        "receipt_read",
+        "dispatch_reconcile",
+        "receiver_decide",
+        "receiver_package",
+        "simulator_send",
+        "data_referral_draft",
+        "data_referral_read",
+        "data_referral_review",
+        "data_referral_dispatch",
+        "data_dispatch_read",
+        "data_receipt_read",
+        "data_dispatch_reconcile",
+        "receiver_inbox"
+      ]
+    },
+    {
+      "id": "IMP-05-B",
+      "stage_id": "IMP-05",
+      "title": "Implement simulator dispatch/outbox/dedup/reconciliation",
+      "role": "imp_python",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-05-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "services/core/**",
+        "services/simulators/**",
+        "tests/integration/referral/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "referral_draft",
+        "referral_read",
+        "referral_review",
+        "referral_dispatch",
+        "dispatch_read",
+        "receipt_read",
+        "dispatch_reconcile",
+        "receiver_decide",
+        "receiver_package",
+        "simulator_send",
+        "data_referral_draft",
+        "data_referral_read",
+        "data_referral_review",
+        "data_referral_dispatch",
+        "data_dispatch_read",
+        "data_receipt_read",
+        "data_dispatch_reconcile",
+        "receiver_inbox"
+      ]
+    },
+    {
+      "id": "IMP-05-C",
+      "stage_id": "IMP-05",
+      "title": "Build exact worker review and receiver decision screens",
+      "role": "imp_web",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-05-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "apps/web/**",
+        "tests/e2e/referral/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "referral_draft",
+        "referral_read",
+        "referral_review",
+        "referral_dispatch",
+        "dispatch_read",
+        "receipt_read",
+        "dispatch_reconcile",
+        "receiver_decide",
+        "receiver_package",
+        "simulator_send",
+        "data_referral_draft",
+        "data_referral_read",
+        "data_referral_review",
+        "data_referral_dispatch",
+        "data_dispatch_read",
+        "data_receipt_read",
+        "data_dispatch_reconcile",
+        "receiver_inbox"
+      ]
+    },
+    {
+      "id": "IMP-05-D",
+      "stage_id": "IMP-05",
+      "title": "Inject lost replies/revocation races and G-05 demo",
+      "role": "imp_verifier",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-05-B",
+        "IMP-05-C"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "tests/**",
+        "doc/IMP/evidence/IMP-05/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "referral_draft",
+        "referral_read",
+        "referral_review",
+        "referral_dispatch",
+        "dispatch_read",
+        "receipt_read",
+        "dispatch_reconcile",
+        "receiver_decide",
+        "receiver_package",
+        "simulator_send",
+        "data_referral_draft",
+        "data_referral_read",
+        "data_referral_review",
+        "data_referral_dispatch",
+        "data_dispatch_read",
+        "data_receipt_read",
+        "data_dispatch_reconcile",
+        "receiver_inbox"
+      ]
+    },
+    {
+      "id": "IMP-06-A",
+      "stage_id": "IMP-06",
+      "title": "Specify function admission, scope/budgets/leases and model manifest",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [],
+      "write_policy": "none",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "task_create",
+        "task_read",
+        "task_cancel",
+        "task_revise",
+        "draft_read",
+        "draft_review",
+        "step_lease",
+        "step_renew",
+        "proposal_submit",
+        "tool_invoke",
+        "inference_request",
+        "inference_execute",
+        "data_task_create",
+        "data_task_read",
+        "data_task_cancel",
+        "data_task_revise",
+        "data_draft_read",
+        "data_draft_review"
+      ]
+    },
+    {
+      "id": "IMP-06-B",
+      "stage_id": "IMP-06",
+      "title": "Implement bounded coordinator/broker/local model adapter",
+      "role": "imp_python",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-06-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "services/runtime/**",
+        "services/inference/**",
+        "services/core/**",
+        "host/inference-bridge/**",
+        "tests/evaluation/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "task_create",
+        "task_read",
+        "task_cancel",
+        "task_revise",
+        "draft_read",
+        "draft_review",
+        "step_lease",
+        "step_renew",
+        "proposal_submit",
+        "tool_invoke",
+        "inference_request",
+        "inference_execute",
+        "data_task_create",
+        "data_task_read",
+        "data_task_cancel",
+        "data_task_revise",
+        "data_draft_read",
+        "data_draft_review"
+      ]
+    },
+    {
+      "id": "IMP-06-C",
+      "stage_id": "IMP-06",
+      "title": "Build source-linked optional draft/review/cancel UI",
+      "role": "imp_web",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-06-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "apps/web/**",
+        "tests/e2e/assistance/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "task_create",
+        "task_read",
+        "task_cancel",
+        "task_revise",
+        "draft_read",
+        "draft_review",
+        "step_lease",
+        "step_renew",
+        "proposal_submit",
+        "tool_invoke",
+        "inference_request",
+        "inference_execute",
+        "data_task_create",
+        "data_task_read",
+        "data_task_cancel",
+        "data_task_revise",
+        "data_draft_read",
+        "data_draft_review"
+      ]
+    },
+    {
+      "id": "IMP-06-D",
+      "stage_id": "IMP-06",
+      "title": "Measure real model functions/compute uncertainty and G-06 demo",
+      "role": "imp_verifier",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-06-B",
+        "IMP-06-C"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "tests/**",
+        "doc/IMP/evidence/IMP-06/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "task_create",
+        "task_read",
+        "task_cancel",
+        "task_revise",
+        "draft_read",
+        "draft_review",
+        "step_lease",
+        "step_renew",
+        "proposal_submit",
+        "tool_invoke",
+        "inference_request",
+        "inference_execute",
+        "data_task_create",
+        "data_task_read",
+        "data_task_cancel",
+        "data_task_revise",
+        "data_draft_read",
+        "data_draft_review"
+      ]
+    },
+    {
+      "id": "IMP-07-A",
+      "stage_id": "IMP-07",
+      "title": "Specify anchors/copies/holds/rights/inbox state rules",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [],
+      "write_policy": "none",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "followup_create",
+        "followup_read",
+        "followup_cancel",
+        "outcome_append",
+        "hold_create",
+        "rights_create",
+        "hold_release",
+        "rights_read",
+        "export_download",
+        "data_followup_create",
+        "data_followup_read",
+        "data_followup_cancel",
+        "data_outcome_append",
+        "data_hold_create",
+        "data_rights_create",
+        "data_hold_release",
+        "data_rights_read",
+        "data_export_download",
+        "post_crisis_record",
+        "participant_inbox",
+        "outcomes_read",
+        "lifecycle_due",
+        "followup_bind_anchor",
+        "inbox_message_read",
+        "data_post_crisis_record",
+        "data_participant_inbox",
+        "data_outcomes_read",
+        "data_followup_bind_anchor",
+        "data_inbox_message_read"
+      ]
+    },
+    {
+      "id": "IMP-07-B",
+      "stage_id": "IMP-07",
+      "title": "Implement consented follow-up, own-data rights and lifecycle jobs",
+      "role": "imp_python",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-07-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "services/core/**",
+        "services/data/**",
+        "services/jobs/**",
+        "tests/integration/lifecycle/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "followup_create",
+        "followup_read",
+        "followup_cancel",
+        "outcome_append",
+        "hold_create",
+        "rights_create",
+        "hold_release",
+        "rights_read",
+        "export_download",
+        "data_followup_create",
+        "data_followup_read",
+        "data_followup_cancel",
+        "data_outcome_append",
+        "data_hold_create",
+        "data_rights_create",
+        "data_hold_release",
+        "data_rights_read",
+        "data_export_download",
+        "post_crisis_record",
+        "participant_inbox",
+        "outcomes_read",
+        "lifecycle_due",
+        "followup_bind_anchor",
+        "inbox_message_read",
+        "data_post_crisis_record",
+        "data_participant_inbox",
+        "data_outcomes_read",
+        "data_followup_bind_anchor",
+        "data_inbox_message_read"
+      ]
+    },
+    {
+      "id": "IMP-07-C",
+      "stage_id": "IMP-07",
+      "title": "Build follow-up/outcome/export/delete/exception views",
+      "role": "imp_web",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-07-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "apps/web/**",
+        "tests/e2e/rights-followup/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "followup_create",
+        "followup_read",
+        "followup_cancel",
+        "outcome_append",
+        "hold_create",
+        "rights_create",
+        "hold_release",
+        "rights_read",
+        "export_download",
+        "data_followup_create",
+        "data_followup_read",
+        "data_followup_cancel",
+        "data_outcome_append",
+        "data_hold_create",
+        "data_rights_create",
+        "data_hold_release",
+        "data_rights_read",
+        "data_export_download",
+        "post_crisis_record",
+        "participant_inbox",
+        "outcomes_read",
+        "lifecycle_due",
+        "followup_bind_anchor",
+        "inbox_message_read",
+        "data_post_crisis_record",
+        "data_participant_inbox",
+        "data_outcomes_read",
+        "data_followup_bind_anchor",
+        "data_inbox_message_read"
+      ]
+    },
+    {
+      "id": "IMP-07-D",
+      "stage_id": "IMP-07",
+      "title": "Prove opt-out/purge/own-data restrictions and G-07 demo",
+      "role": "imp_verifier",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-07-B",
+        "IMP-07-C"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "tests/**",
+        "doc/IMP/evidence/IMP-07/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "followup_create",
+        "followup_read",
+        "followup_cancel",
+        "outcome_append",
+        "hold_create",
+        "rights_create",
+        "hold_release",
+        "rights_read",
+        "export_download",
+        "data_followup_create",
+        "data_followup_read",
+        "data_followup_cancel",
+        "data_outcome_append",
+        "data_hold_create",
+        "data_rights_create",
+        "data_hold_release",
+        "data_rights_read",
+        "data_export_download",
+        "post_crisis_record",
+        "participant_inbox",
+        "outcomes_read",
+        "lifecycle_due",
+        "followup_bind_anchor",
+        "inbox_message_read",
+        "data_post_crisis_record",
+        "data_participant_inbox",
+        "data_outcomes_read",
+        "data_followup_bind_anchor",
+        "data_inbox_message_read"
+      ]
+    },
+    {
+      "id": "IMP-08-A",
+      "stage_id": "IMP-08",
+      "title": "Specify change-class/receipt/activation/exception/metric controls",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [],
+      "write_policy": "none",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "artifact_register",
+        "artifact_review",
+        "activation_create",
+        "exception_create",
+        "incident_create",
+        "activation_read",
+        "activation_commit",
+        "incident_read",
+        "audit_query",
+        "metrics_query",
+        "activation_ack",
+        "health_read",
+        "data_artifact_register",
+        "data_artifact_review",
+        "data_activation_create",
+        "data_exception_create",
+        "data_incident_create",
+        "data_activation_read",
+        "data_activation_commit",
+        "data_incident_read",
+        "data_audit_query",
+        "data_metrics_query",
+        "scoped_access_grant",
+        "incident_transition",
+        "evidence_export",
+        "audit_export_read",
+        "data_scoped_access_grant",
+        "data_incident_transition",
+        "data_evidence_export",
+        "data_audit_export_read"
+      ]
+    },
+    {
+      "id": "IMP-08-B",
+      "stage_id": "IMP-08",
+      "title": "Implement live control/security/evidence service paths",
+      "role": "imp_controls",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-08-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "services/control/**",
+        "services/telemetry/**",
+        "tests/security/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "artifact_register",
+        "artifact_review",
+        "activation_create",
+        "exception_create",
+        "incident_create",
+        "activation_read",
+        "activation_commit",
+        "incident_read",
+        "audit_query",
+        "metrics_query",
+        "activation_ack",
+        "health_read",
+        "data_artifact_register",
+        "data_artifact_review",
+        "data_activation_create",
+        "data_exception_create",
+        "data_incident_create",
+        "data_activation_read",
+        "data_activation_commit",
+        "data_incident_read",
+        "data_audit_query",
+        "data_metrics_query",
+        "scoped_access_grant",
+        "incident_transition",
+        "evidence_export",
+        "audit_export_read",
+        "data_scoped_access_grant",
+        "data_incident_transition",
+        "data_evidence_export",
+        "data_audit_export_read"
+      ]
+    },
+    {
+      "id": "IMP-08-C",
+      "stage_id": "IMP-08",
+      "title": "Build operator/security/governance/auditor workspaces",
+      "role": "imp_web",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-08-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "apps/web/**",
+        "tests/e2e/governance/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "artifact_register",
+        "artifact_review",
+        "activation_create",
+        "exception_create",
+        "incident_create",
+        "activation_read",
+        "activation_commit",
+        "incident_read",
+        "audit_query",
+        "metrics_query",
+        "activation_ack",
+        "health_read",
+        "data_artifact_register",
+        "data_artifact_review",
+        "data_activation_create",
+        "data_exception_create",
+        "data_incident_create",
+        "data_activation_read",
+        "data_activation_commit",
+        "data_incident_read",
+        "data_audit_query",
+        "data_metrics_query",
+        "scoped_access_grant",
+        "incident_transition",
+        "evidence_export",
+        "audit_export_read",
+        "data_scoped_access_grant",
+        "data_incident_transition",
+        "data_evidence_export",
+        "data_audit_export_read"
+      ]
+    },
+    {
+      "id": "IMP-08-D",
+      "stage_id": "IMP-08",
+      "title": "Run live epoch/approval/metrics negatives and G-08 demo",
+      "role": "imp_verifier",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-08-B",
+        "IMP-08-C"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "tests/**",
+        "doc/IMP/evidence/IMP-08/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "artifact_register",
+        "artifact_review",
+        "activation_create",
+        "exception_create",
+        "incident_create",
+        "activation_read",
+        "activation_commit",
+        "incident_read",
+        "audit_query",
+        "metrics_query",
+        "activation_ack",
+        "health_read",
+        "data_artifact_register",
+        "data_artifact_review",
+        "data_activation_create",
+        "data_exception_create",
+        "data_incident_create",
+        "data_activation_read",
+        "data_activation_commit",
+        "data_incident_read",
+        "data_audit_query",
+        "data_metrics_query",
+        "scoped_access_grant",
+        "incident_transition",
+        "evidence_export",
+        "audit_export_read",
+        "data_scoped_access_grant",
+        "data_incident_transition",
+        "data_evidence_export",
+        "data_audit_export_read"
+      ]
+    },
+    {
+      "id": "IMP-09-A",
+      "stage_id": "IMP-09",
+      "title": "Specify backup/current-head/generation-cutover crash matrix",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [],
+      "write_policy": "none",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "help_reconcile",
+        "backup_capture",
+        "backup_read",
+        "restore_create",
+        "restore_read",
+        "restore_validate",
+        "promotion_propose",
+        "promotion_approve",
+        "promotion_execute",
+        "promotion_read"
+      ]
+    },
+    {
+      "id": "IMP-09-B",
+      "stage_id": "IMP-09",
+      "title": "Implement authorized isolated restore/journal/generation tooling",
+      "role": "imp_platform",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-09-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "host/recovery-control/**",
+        "tools/recovery/**",
+        "tests/recovery/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "help_reconcile",
+        "backup_capture",
+        "backup_read",
+        "restore_create",
+        "restore_read",
+        "restore_validate",
+        "promotion_propose",
+        "promotion_approve",
+        "promotion_execute",
+        "promotion_read"
+      ]
+    },
+    {
+      "id": "IMP-09-C",
+      "stage_id": "IMP-09",
+      "title": "Prepare exact operator/approver promotion evidence surface",
+      "role": "imp_platform",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-09-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "apps/web/**",
+        "doc/IMP/evidence/IMP-09/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "help_reconcile",
+        "backup_capture",
+        "backup_read",
+        "restore_create",
+        "restore_read",
+        "restore_validate",
+        "promotion_propose",
+        "promotion_approve",
+        "promotion_execute",
+        "promotion_read"
+      ]
+    },
+    {
+      "id": "IMP-09-D",
+      "stage_id": "IMP-09",
+      "title": "Crash each cutover boundary, measure recovery and G-09 demo",
+      "role": "imp_verifier",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-09-B",
+        "IMP-09-C"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "tests/**",
+        "doc/IMP/evidence/IMP-09/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "help_reconcile",
+        "backup_capture",
+        "backup_read",
+        "restore_create",
+        "restore_read",
+        "restore_validate",
+        "promotion_propose",
+        "promotion_approve",
+        "promotion_execute",
+        "promotion_read"
+      ]
+    },
+    {
+      "id": "IMP-10-A",
+      "stage_id": "IMP-10",
+      "title": "Reconcile full requirements/source/control dispositions",
+      "role": "imp_scope",
+      "mode": "planning",
+      "state": "planned",
+      "depends_on": [],
+      "write_policy": "none",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "scenario_create",
+        "replay_create",
+        "data_replay_create",
+        "identity_link_request",
+        "scenario_stop",
+        "evaluation_read",
+        "scenario_read",
+        "data_identity_link_request",
+        "data_evaluation_read"
+      ]
+    },
+    {
+      "id": "IMP-10-B",
+      "stage_id": "IMP-10",
+      "title": "Close integrated runtime/channel/training/evaluation gaps",
+      "role": "imp_scope",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-10-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "services/simulators/**",
+        "tests/evaluation/**",
+        "tests/integration/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "scenario_create",
+        "replay_create",
+        "data_replay_create",
+        "identity_link_request",
+        "scenario_stop",
+        "evaluation_read",
+        "scenario_read",
+        "data_identity_link_request",
+        "data_evaluation_read"
+      ]
+    },
+    {
+      "id": "IMP-10-C",
+      "stage_id": "IMP-10",
+      "title": "Polish reviewed EN/FR/accessibility/demo/runbooks",
+      "role": "imp_web",
+      "mode": "implementation",
+      "state": "planned",
+      "depends_on": [
+        "IMP-10-A"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "apps/web/**",
+        "doc/runbooks/**",
+        "tests/e2e/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "scenario_create",
+        "replay_create",
+        "data_replay_create",
+        "identity_link_request",
+        "scenario_stop",
+        "evaluation_read",
+        "scenario_read",
+        "data_identity_link_request",
+        "data_evaluation_read"
+      ]
+    },
+    {
+      "id": "IMP-10-D",
+      "stage_id": "IMP-10",
+      "title": "Run complete adverse/load/actor evaluation and G-10 review",
+      "role": "imp_verifier",
+      "mode": "verification",
+      "state": "planned",
+      "depends_on": [
+        "IMP-10-B",
+        "IMP-10-C"
+      ],
+      "write_policy": "explicit_work_packet_paths_only",
+      "required_inputs": [
+        "accepted predecessor gates",
+        "current REQ/HLD/LLD hashes",
+        "stage scope and critical risks"
+      ],
+      "required_outputs": [
+        "scope-bound artifacts or findings",
+        "commands and actual results or not_run reasons",
+        "trace/evidence references",
+        "remaining risks and handoff"
+      ],
+      "acceptance": "stage-specific demo and adverse outcomes; no task self-acceptance of stage",
+      "candidate_write_paths": [
+        "tests/**",
+        "doc/IMP/evidence/IMP-10/**"
+      ],
+      "shared_files_policy": "Root manifests/locks, canonical schemas/generation and migration ordering are coordinator-owned; exact ownership transfer required before edits.",
+      "relevant_operations": [
+        "scenario_create",
+        "replay_create",
+        "data_replay_create",
+        "identity_link_request",
+        "scenario_stop",
+        "evaluation_read",
+        "scenario_read",
+        "data_identity_link_request",
+        "data_evaluation_read"
+      ]
+    }
+  ],
+  "operation_allocation": [
+    {
+      "operation_id": "login_start",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "login_callback",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "browser_session",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "logout",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "stepup_start",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "stepup_confirm",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "continuation_rotate",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "continuation_recover",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "operation_status",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "session_create",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "session_read",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "session_disclosure",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "session_turns",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "session_assertions",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "session_choices",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "session_human_request",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "session_end",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "session_events",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "messages_read",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "message_send",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "queue_list",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "workforce_reserve",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "workforce_accept",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "workforce_prepare_transfer",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "workforce_confirm_transfer",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "workforce_transfer_failed",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "workforce_observe",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "workforce_takeover",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "plan_create",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "plan_read",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "plan_field_append",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "plan_retire",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "consent_grant",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "consent_read",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "consent_revoke",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "directory_search",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "directory_read",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "directory_ingest",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "directory_suspend",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "referral_draft",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "referral_read",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "referral_review",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "referral_dispatch",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "dispatch_read",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "receipt_read",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "dispatch_reconcile",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "receiver_decide",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "receiver_package",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "followup_create",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "followup_read",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "followup_cancel",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "outcome_append",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "task_create",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "task_read",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "task_cancel",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "task_revise",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "draft_read",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "draft_review",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "artifact_register",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "artifact_review",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "activation_create",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "control_change",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "hold_create",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "exception_create",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "incident_create",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "rights_create",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "activation_read",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "activation_commit",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "hold_release",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "incident_read",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "rights_read",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "export_download",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "audit_query",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "metrics_query",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "scenario_create",
+      "completion_stage": "IMP-10",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "replay_create",
+      "completion_stage": "IMP-10",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "help_create",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "help_status",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "help_accept",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "help_cancel",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "help_reconcile",
+      "completion_stage": "IMP-09",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "signal_ingest",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "step_lease",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "step_renew",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "proposal_submit",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "tool_invoke",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "inference_request",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "inference_execute",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "policy_evaluate",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "activation_ack",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "simulator_send",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "journal_append",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "help_authorize",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "journal_head",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "backup_capture",
+      "completion_stage": "IMP-09",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "backup_read",
+      "completion_stage": "IMP-09",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "restore_create",
+      "completion_stage": "IMP-09",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "restore_read",
+      "completion_stage": "IMP-09",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "restore_validate",
+      "completion_stage": "IMP-09",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "promotion_propose",
+      "completion_stage": "IMP-09",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "promotion_approve",
+      "completion_stage": "IMP-09",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "promotion_execute",
+      "completion_stage": "IMP-09",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "health_read",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "static_manifest",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "authority_metadata",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_continuation_rotate",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_continuation_recover",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_operation_status",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_session_create",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_session_read",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_session_disclosure",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_session_turns",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_session_assertions",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_session_choices",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_session_human_request",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_session_end",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_session_events",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_messages_read",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_message_send",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_queue_list",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_workforce_reserve",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_workforce_accept",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_workforce_prepare_transfer",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_workforce_confirm_transfer",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_workforce_transfer_failed",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_workforce_observe",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_workforce_takeover",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_plan_create",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_plan_read",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_plan_field_append",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_plan_retire",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_consent_grant",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_consent_read",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_consent_revoke",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_directory_search",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_directory_read",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_directory_ingest",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_directory_suspend",
+      "completion_stage": "IMP-04",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_referral_draft",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_referral_read",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_referral_review",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_referral_dispatch",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_dispatch_read",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_receipt_read",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_dispatch_reconcile",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_followup_create",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_followup_read",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_followup_cancel",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_outcome_append",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_task_create",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_task_read",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_task_cancel",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_task_revise",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_draft_read",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_draft_review",
+      "completion_stage": "IMP-06",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_artifact_register",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_artifact_review",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_activation_create",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_control_change",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_hold_create",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_exception_create",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_incident_create",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_rights_create",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_activation_read",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_activation_commit",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_hold_release",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_incident_read",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_rights_read",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_export_download",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_audit_query",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_metrics_query",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_replay_create",
+      "completion_stage": "IMP-10",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "post_crisis_record",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "receiver_inbox",
+      "completion_stage": "IMP-05",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "scoped_access_grant",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "identity_link_request",
+      "completion_stage": "IMP-10",
+      "disposition": "disabled_scope_guard_only",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "job_execute",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "promotion_read",
+      "completion_stage": "IMP-09",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "participant_inbox",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "outcomes_read",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "scenario_stop",
+      "completion_stage": "IMP-10",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "evaluation_read",
+      "completion_stage": "IMP-10",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "scenario_read",
+      "completion_stage": "IMP-10",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "incident_transition",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "evidence_export",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "identity_revoke",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "lifecycle_due",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "audit_export_read",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "static_publish",
+      "completion_stage": "IMP-02",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "followup_bind_anchor",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "inbox_message_read",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "channel_challenge_read",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "channel_ack",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_post_crisis_record",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_scoped_access_grant",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_identity_link_request",
+      "completion_stage": "IMP-10",
+      "disposition": "disabled_scope_guard_only",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_participant_inbox",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_outcomes_read",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_evaluation_read",
+      "completion_stage": "IMP-10",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_incident_transition",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_evidence_export",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_audit_export_read",
+      "completion_stage": "IMP-08",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_followup_bind_anchor",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_inbox_message_read",
+      "completion_stage": "IMP-07",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_channel_challenge_read",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    },
+    {
+      "operation_id": "data_channel_ack",
+      "completion_stage": "IMP-03",
+      "disposition": "implemented",
+      "foundation_note": "Guards/identity/audit/journal policy apply before any protected effect; later completion does not defer enforcement."
+    }
+  ],
+  "requirement_allocation": [
+    {
+      "requirement": "TR-ACT-01",
+      "lead_stage": "IMP-02",
+      "verification": [
+        "VT-01",
+        "VT-02",
+        "VT-03",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "03-identity-and-workload-trust.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-ACT-02",
+      "lead_stage": "IMP-02",
+      "verification": [
+        "VT-01",
+        "VT-02",
+        "VT-03",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "03-identity-and-workload-trust.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-ACT-03",
+      "lead_stage": "IMP-02",
+      "verification": [
+        "VT-01",
+        "VT-02",
+        "VT-03",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "03-identity-and-workload-trust.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-01",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-02",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-03",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-04",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-05",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-06",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-07",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-08",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-09",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-10",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-11",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-12",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-13",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-14",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-AI-15",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-API-01",
+      "lead_stage": "IMP-01",
+      "verification": [
+        "VT-06",
+        "VT-07",
+        "VT-11"
+      ],
+      "mechanisms": [
+        "02-contracts-and-protocols.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-API-02",
+      "lead_stage": "IMP-01",
+      "verification": [
+        "VT-06",
+        "VT-07",
+        "VT-11"
+      ],
+      "mechanisms": [
+        "02-contracts-and-protocols.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-API-03",
+      "lead_stage": "IMP-01",
+      "verification": [
+        "VT-06",
+        "VT-07",
+        "VT-11"
+      ],
+      "mechanisms": [
+        "02-contracts-and-protocols.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-API-04",
+      "lead_stage": "IMP-01",
+      "verification": [
+        "VT-06",
+        "VT-07",
+        "VT-11"
+      ],
+      "mechanisms": [
+        "02-contracts-and-protocols.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-ARC-01",
+      "lead_stage": "IMP-01",
+      "verification": [
+        "VT-09",
+        "VT-12",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-ARC-02",
+      "lead_stage": "IMP-01",
+      "verification": [
+        "VT-09",
+        "VT-12",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "01-modules-and-build-boundaries.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-DAT-01",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-11",
+        "VT-13",
+        "VT-14",
+        "VT-15"
+      ],
+      "mechanisms": [
+        "04-data-model-and-transactions.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-DAT-02",
+      "lead_stage": "IMP-07",
+      "verification": [
+        "VT-11",
+        "VT-13",
+        "VT-14",
+        "VT-15"
+      ],
+      "mechanisms": [
+        "04-data-model-and-transactions.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-DAT-03",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-11",
+        "VT-13",
+        "VT-14",
+        "VT-15"
+      ],
+      "mechanisms": [
+        "04-data-model-and-transactions.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-DAT-04",
+      "lead_stage": "IMP-07",
+      "verification": [
+        "VT-11",
+        "VT-13",
+        "VT-14",
+        "VT-15"
+      ],
+      "mechanisms": [
+        "04-data-model-and-transactions.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-01",
+      "lead_stage": "IMP-01",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-02",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-03",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-04",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-05",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-06",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-07",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-08",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-09",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-10",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-11",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-12",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-13",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-GOV-14",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-10",
+        "VT-11",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-LLM-01",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-LLM-02",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-LLM-03",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-LLM-04",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-LLM-05",
+      "lead_stage": "IMP-06",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "07-agent-runtime-and-inference.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-01",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-02",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-03",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-04",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-05",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-06",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-07",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-08",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-09",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-10",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-11",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-12",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-OPS-13",
+      "lead_stage": "IMP-09",
+      "verification": [
+        "VT-14",
+        "VT-15",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "12-continuity-and-operations.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SCP-01",
+      "lead_stage": "IMP-10",
+      "verification": [
+        "VT-01",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "00-baseline-and-design-decisions.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SCP-02",
+      "lead_stage": "IMP-10",
+      "verification": [
+        "VT-01",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "00-baseline-and-design-decisions.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SCP-03",
+      "lead_stage": "IMP-10",
+      "verification": [
+        "VT-01",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "00-baseline-and-design-decisions.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SCP-04",
+      "lead_stage": "IMP-10",
+      "verification": [
+        "VT-01",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "00-baseline-and-design-decisions.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SCP-05",
+      "lead_stage": "IMP-10",
+      "verification": [
+        "VT-01",
+        "VT-16",
+        "VT-17"
+      ],
+      "mechanisms": [
+        "00-baseline-and-design-decisions.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-01",
+      "lead_stage": "IMP-02",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-02",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-03",
+      "lead_stage": "IMP-05",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-04",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-05",
+      "lead_stage": "IMP-02",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-06",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-07",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-08",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-09",
+      "lead_stage": "IMP-02",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-10",
+      "lead_stage": "IMP-02",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-11",
+      "lead_stage": "IMP-02",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-12",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-13",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-14",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-15",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-SEC-16",
+      "lead_stage": "IMP-08",
+      "verification": [
+        "VT-02",
+        "VT-06",
+        "VT-10",
+        "VT-12"
+      ],
+      "mechanisms": [
+        "08-runtime-security-and-governance.md",
+        "03-identity-and-workload-trust.md",
+        "09-audit-rights-and-analytics.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-WF-01",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-WF-02",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-WF-03",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-WF-04",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-WF-05",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-WF-06",
+      "lead_stage": "IMP-03",
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-WF-07",
+      "lead_stage": "IMP-05",
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-WF-08",
+      "lead_stage": "IMP-07",
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    },
+    {
+      "requirement": "TR-WF-09",
+      "lead_stage": "IMP-04",
+      "verification": [
+        "VT-04",
+        "VT-05",
+        "VT-06",
+        "VT-07",
+        "VT-18"
+      ],
+      "mechanisms": [
+        "05-actor-workflows-and-ui.md",
+        "06-consent-directory-and-referrals.md"
+      ],
+      "evidence_status": "not_implemented",
+      "completion_review_stage": "IMP-10"
+    }
+  ],
+  "source_dispositions": "../LLD/traceability.json",
+  "runtime_evidence": "not_run",
+  "human_decisions": []
+}

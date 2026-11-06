@@ -1,0 +1,4 @@
+# Dormant project fragment; merge only after explicit configuration authorization.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3

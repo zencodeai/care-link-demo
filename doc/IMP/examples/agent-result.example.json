@@ -1,0 +1,17 @@
+{
+  "packet_id": "IMP-00-PLANNING-EXAMPLE",
+  "task_id": "IMP-00-A",
+  "baseline_commit": "2701f50ac83e14531cb70e5a76200892e99b793a",
+  "role": "imp_scope",
+  "status": "not_started",
+  "changed_paths": [],
+  "output_refs": [],
+  "checks": [],
+  "findings": [],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Workstation/model identity/capacity not inspected"
+  ],
+  "handoff": "Example only; no specialist or inventory run has occurred.",
+  "is_example": true
+}

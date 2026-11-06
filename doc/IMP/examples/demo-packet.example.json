@@ -1,0 +1,42 @@
+{
+  "packet_id": "IMP-00-DEMO-EXAMPLE",
+  "stage_id": "IMP-00",
+  "gate_id": "G-00",
+  "candidate": {
+    "commit": "0000000000000000000000000000000000000000",
+    "diff_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "artifact_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "configuration_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "contract_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "environment_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "fixture_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "state": "draft",
+  "preconditions": [
+    "Actual authorized stage work and evidence have not occurred."
+  ],
+  "normal_steps": [
+    {
+      "action": "Show observed redacted feasibility report",
+      "expected": "Unknowns are explicit and recommendations have evidence",
+      "actual": null,
+      "evidence_refs": []
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Show unavailable model listener without automatic startup",
+      "expected": "Unavailable remains unknown; no substitute",
+      "actual": null,
+      "evidence_refs": []
+    }
+  ],
+  "checks": [],
+  "residuals": [
+    "Unexecuted example"
+  ],
+  "acceptance_scope": "No actual stage acceptance.",
+  "rollback": "Read-only planning; no host state changed.",
+  "human_decision_id": null,
+  "is_example": true
+}
