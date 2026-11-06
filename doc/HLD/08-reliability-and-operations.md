@@ -1,42 +1,66 @@
-# Reliability, capacity and operations
+# Reliability, service continuity and operations
 
-## Dependency-aware operation
+## Capability hierarchy
 
-Health distinguishes process alive, dependency ready, manual service ready and AI function admitted. Do not mark a whole session unusable merely because draft generation fails, or mark a referral ready when audit/consent is unavailable. No timeout closes unresolved support; transport loss persists state and reconnect token subject to current authorization. The static page is linked/cached as a content-only bundle in the private UI for connection loss, without caching protected session data in service workers.
+Continuity is defined by what the system can actually deliver, not a single green health indicator. Application/process readiness, dependency readiness, protected manual service and individual AI-function admission are distinct. A recorded request or static contact page is valuable fallback, but neither is a connected human conversation.
 
-| Failure | Containment and user behavior | Recovery condition |
+| Operating capability | Required dependencies | What actors can honestly expect |
 |---|---|---|
-| Runtime/LM Studio down, wrong model or saturation | Stop agent tasks, safe templates; worker manual messaging and help continue; no remote inference | Correct artifact/capability probe, bounded queue replay with current state |
-| Policy evaluator/registry unavailable | Deny affected protected actions; existing static bundle and minimal help path remain | Current verified bundle/epoch acknowledged before readiness |
-| Audit/data DB unavailable | No protected reads/writes or dispatch; no success acknowledgement; help spool/static information | Durable recovery, audit/epoch consistency, reconciliation before new work |
-| Identity down | No fresh login/step-up; current offline-valid bounded credentials only where separately permitted; static help available | IdP restored, current entitlement/revocation synchronization |
-| Lost/replayed identity/control signal | Event rejected/deduplicated; current-state checks still deny stale effects | Resume sequence/gap recovery; no permissive cache |
-| Directory poisoned/stale/unavailable | Quarantine or qualify unknown; do not invent service availability | Reviewed corrected snapshot, new version and audit |
-| Simulator/handoff fails or receipt missing | Stay active, show unconfirmed, worker chooses alternative; no duplicate blind send | Idempotent receipt query/reconciliation |
-| Worker disconnect/takeover race | Retain assignment pending deterministic protocol; fence generation on reassignment | Authorized worker accepts and confirms; no model continuation as human |
-| Cluster loss | Independent host fallback and minimal help request/spool work if host/listener survive | Restore cluster and safe control state; reconcile spool without duplicate requests |
-| Whole host/network loss | Cannot guarantee online service or contact; cached static content only if already available | Host/network recovery; full external redundancy is outside demo |
-| Disk full/help spool full | Reject unpersisted work honestly, preserve static content where readable | Free/restore capacity, validate audit/spool integrity |
-| Security breach/real-data contamination | Fence affected workflow, stop ingestion, quarantine scope and human incident review | Approved corrective action, privacy-safe purge and independent retest |
+| Normal protected service with AI | Actor/worker transport, current identity and authority, core/data/audit, relevant directory/service state, admitted model task | Full authorized manual workflow plus optional grounded AI assistance |
+| Protected manual service, AI disabled | Same protected-service dependencies except model/runtime | Worker messaging/context/choice/consent/handoff continue within current rights; no forced acceptance of AI |
+| Independent minimal help request | Direct host client/workforce entry, own durable spool and sufficiently current narrow identity trust | Opaque request recorded and possibly accepted-unconnected by eligible role-player; no history access or connection/staffing guarantee |
+| Static crisis information | Independent content host and reviewed bundle, reachable network/device | Verified public information, no account/policy/model/business-store dependency |
+| Offline/whole-host outage | Only public content already cached on device if available | No assured online service, stored request or staffed connection |
 
-## Performance and capacity design
+Protected manual service cannot bypass authorization or audit during their outage. Cached identity evidence supports only its specifically admitted bounded scope; valid-but-unexpired credentials alone do not prove current revocation. The independent help trust contract must define allowable freshness and revocation reconciliation before nonpublic acceptance is enabled. If freshness is unavailable/stale, no workforce acceptance or protected history is allowed; static information remains. Fresh login/step-up cannot be invented during identity failure.
 
-Ten active UI sessions, two concurrent inference requests/eight queued are initial acceptance envelope, not measured throughput. Validate active input rate, prompt sizes, EN/FR, warm/cold model, long streams, concurrent review/dispatch, storage latency and two-release memory contention. Resource requests/limits are set from measurements after host inventory; no fabricated RAM/GPU fit claim.
+## Failure and degradation architecture
 
-Reserve separate thread/process pools and request limits for human help, session commands, inference and background jobs. A 30-second generation cannot block urgent intake. First response ≤2 s p95; first actionable step/hazard ≤5 s; provisional fixture acuity ≤90 s where interaction permits; plan ≤10 s p99; escalation initiation ≤10 s p95. Acknowledgement is not an actionable step; queue insertion is not connected care. Kill/takeover ≤2 s p95/5 s max; authorization and revocation budgets are distinct. Instrument failed/time-out requests in denominators. Hard realtime scheduling is not claimed.
+| Failure / changed condition | Containment and service behaviour | Recovery evidence before restoring capability |
+|---|---|---|
+| Model/runtime unavailable, overload or wrong artifact | Disable affected tasks, fence late output, offer templates/manual service and human help | Approved model/task identity and capability evaluation, bounded queue reconciliation |
+| Policy evaluator/control state unavailable or stale | Deny affected protected actions, no permissive cache; independent help/static only if their own dependencies hold | Current verified effective state and healthy enforcers |
+| Canonical audit/data unavailable | No protected success/read/disclosure/dispatch; preserve supported state without claiming closure | Consistent durable recovery, audit integrity and current authority |
+| Identity/provider/issuer outage | No unsupported fresh identity or raised assurance; existing grants only within current validity/freshness bounds | Verified trust/key/identity reconciliation and revocation evidence |
+| Lost/replayed control or identity events | Reject/reconcile events and current-state-check every effect | Monotonic authority restored; notifications do not substitute for state |
+| Directory stale/conflicting/poisoned | Mark unknown or quarantine, keep provenance and alternatives honest | Corrected reviewed source/version and current suspension state |
+| Receiver/transfer failure or uncertain receipt | Retain supported session, explicit unconfirmed/unknown state, human recovery choice | Matching authorized receipt/reconciliation before any repeat disclosure |
+| Worker disconnect or takeover | Preserve accountable case state, invalidate obsolete writer/agent output | Confirmed current owner and actual channel connection |
+| Main edge/cluster loss | Direct host help/static routes can survive if host/network/trust/spool survive | Cluster trust/current state recovered; reconcile help without duplicates |
+| Host/network/storage failure | No whole-host availability claim; previously cached public information only where usable | Host/network/storage restoration plus protected serving validation |
+| Security compromise or real-data contamination | Scope-fenced deterministic containment, human incident review and safe mode as needed | Corrective evidence, current credentials/authority and authorized recovery |
 
-## Observability and incident control
+No timeout/silence-based automatic termination of unresolved T1+ support is introduced. Authentication may expire and transport may fail, but service state is not thereby resolved. Human handoff changes accountable control; ending the client session is separate from ending an automated segment.
 
-Use structured OpenTelemetry-compatible traces/logs plus a local collector, time-series store and role-scoped dashboards; select/pin implementation tooling during build. Correlate request/session/task/step/decision/action/attempt IDs without logging raw content, credentials or continuation tokens. Metrics labels exclude person/session IDs; trace evidence is access controlled. Retain operational diagnostics separately from canonical audit. Telemetry outage cannot authorize a protected effect; canonical audit outage denies it.
+## Performance, capacity and backpressure
 
-Dashboard panels: actor/task availability, manual versus AI readiness, inference latency/queue, handoff age/receipt, desired/actual policy epoch, enforcer lag, denials/quarantine, chain health/outbox backlog, DB/storage/backup lag, model/directory/content versions and fallback verification age. Security events reach dashboard ≤5 s, critical alert ≤30 s after validated event; containment target ≤1 s is measured separately from detection. Drift polling ≤30 s cannot be presented as instant detection. Notification means local console/operator delivery unless a reviewed external alert channel exists.
+Partition critical service/human-help operations from ordinary domain work and optional inference/background work. Slow or saturated generation must not occupy the only path for a human request, manual message or deterministic urgent fixture response. Bound admission and work queues; return explicit busy/manual options instead of spawning unbounded inference or switching remote models. Background processing must not turn a queued consent grant into indefinite permission.
 
-Operational runbooks specify trigger, affected capability, scoped containment, communications, preserving help, evidence, recovery gate and post-review for model failure, policy/audit down, credential compromise, poisoned feed, contaminated data, overload, partner failure, cluster/host loss, chain alarm, backup restore and incompatible release. Begin simulated serious-incident review within four hours; uncertain containment triggers restricted mode immediately. No automatic policy relaxation, model self-update or individual worker performance inference.
+The [parameter artifact](../REQ/demo-parameters.json) provides proposed capacity/latency/kill/takeover/control/alert budgets. Source first-response, actionable-step, plan retrieval and escalation-initiation objectives are measured separately from model completion. An acknowledgement is not an actionable safety step, and queue insertion is not connected care. Evaluate warm/cold inference, EN/FR/context size, concurrent actor review/dispatch and failure cases on actual host resources. Include failures/timeouts and missing outcomes in measurements. No numerical target in this HLD is an observed throughput, clinical sensitivity or hard realtime scheduling guarantee.
 
-## Backup/restore and lifecycle drills
+Single-host power/backup/maintenance constraints prevent claiming production availability, regional redundancy or independent whole-account/DNS fallback. The local RPO/RTO goals require restored evidence while the system is operated; a periodic backup check alone does not establish them. Capacity/resources and replica choices remain deployment evidence decisions.
 
-Base backups plus WAL archive target session RPO ≤60 s and RTO ≤300 s while running, subject to actual restored evidence. Test loss at known committed sequence, validate restored sequence/chain, replay latest control ledger/tombstones, reconcile in-flight simulator sends, prove revoked access remains blocked, and expose actual recovery time and lost-state count. Do not claim 60-second RPO from one-minute cron scheduling. Encrypt backups and restrict decryption credentials; same-host copy cannot prove disaster recovery. Seven-day backup expiry and audit retention exceptions remain visible.
+## Observability and accountable response
 
-Monthly scheduled fallback/kill drills from source intent become a demo runbook obligation while the project is operated; also execute before release and after relevant changes. Drill with Kubernetes stopped and inference/policy/database unavailable; verify content correctness and minimal help acknowledgements independently. A repeatable single-host demonstration does not satisfy source account/DNS/region independence or monthly production SLOs.
+Operational telemetry exposes service capability, task/queue/handoff progress, inference saturation, desired/effective policy state, workload trust/revocation lag, denied/quarantined effects, audit integrity, outbox uncertainty, storage/backup lag and fallback content freshness. Scoped dashboards serve operator/security/governance roles; they do not grant clinical transcript access or approval. Trace correlations link service/task/decision/effect without copying raw content or tokens into logs; aggregate metrics avoid person/session identifiers and individual workforce surveillance.
+
+Separate canonical audit truth from diagnostic logs. Diagnostic outage does not authorize work; audit failure prevents protected results. Detection, validated containment, propagation, user-visible state and operator alert clocks are distinct. Unknown health is not healthy, and an alert after a prohibited action is not prevention. Preapproved deterministic controls may deny/fence a known compromised scope; restoring access, relaxing policy or promoting recovered data needs accountable human authority and evidence. AI can draft incident/runbook context but cannot decide its own recovery permission.
+
+Runbooks cover model/policy/audit/identity/workload trust loss, poisoned feed, credential compromise, contaminated data, overload, handoff uncertainty, cluster/host loss, backup/restore and failed release. Each defines impact, containment, retained help path, truthful communication, evidence, recovery owner and post-review. Participant safeguarding takes precedence over continuing a fictional simulation.
+
+## Backup, quarantine and serving recovery
+
+Backups include required business state/version evidence and integrity anchors, under dedicated access and encrypted storage. Recovery-critical consent/revocation/tombstone/hold history must be retained independently of an old business snapshot and long enough to govern every restorable copy. Separate host storage still shares disaster/root risks. Missing or stale current history is a real recovery limitation, not grounds to assume empty restrictions.
+
+Recovery proceeds through these architectural stages:
+
+1. **Isolate:** restore into quarantine with no actor/runtime/dispatch reader or serving authority. Validate backup origin, scope, integrity, encryption/version compatibility and completeness.
+2. **Reconcile current truth:** obtain an independently trusted current control head, apply newest rights/holds/negative grants and reconcile uncertain external effects. The backup cannot attest that its own history is latest. Invalidate stale credentials, continuations, approvals and work ownership rather than resurrect them.
+3. **Validate:** demonstrate audit consistency, expected recovery point, retained/deleted scope, current access denials and no duplicate effect. Report real loss/unknowns and exceptions.
+4. **Approve serving:** a distinct authorized human reviews the exact recovered target/current authority evidence. Restore-worker success is not promotion permission; changed state invalidates stale approval.
+5. **Promote safely:** fence obsolete serving ownership, reconcile the final authority changes and switch only the validated target. Cutover interruption stays restricted until the serving authority is reconciled. Independent help/static stay available where their own host dependencies permit.
+6. **Resume by capability:** verify current identity/policy/manual smoke, reconcile queued work and admit AI functions separately. Only then show normal readiness.
+
+Detailed cutover/storage mechanisms require implementation tests rather than a fictional distributed atomic swap. Drills verify model-down manual service, main-cluster-down direct host fallback/help, kill without losing static content, restore that preserves revocations/deletions and uncertain-send reconciliation. Whole-host/disaster recovery remains an explicit separate environment decision.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.

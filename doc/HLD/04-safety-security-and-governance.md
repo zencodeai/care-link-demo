@@ -1,60 +1,73 @@
-# Safety, realtime security and governance
+# Safety, security and realtime governance architecture
 
-## Identity and trust
+## Authority and trust boundaries
 
-Browser authentication uses Keycloak OIDC authorization-code flow with PKCE mediated by the BFF. Keep tokens server-side; browser receives secure HttpOnly session cookie, CSRF protection and explicit origin policy. Separate role-scoped sessions and MFA are mandatory. Validate issuer, audience, signature, expiry and current revocation/entitlement revision. JWT lifetime alone is insufficient revocation. Public fallback requires no authentication. AL0 continuation is a business-session capability inside this perimeter; AL1 possession proof adds plan view, AL2 reauthentication allows plan edits/referral consent, AL3 step-up plus cooling-off enables export/delete/link. Hash single-use continuation secrets; redeem transactionally within ten minutes and rotate on use.
+Security authenticates identities, isolates workloads and protects integrity/confidentiality. Governance determines which approved actions, artifacts and human authorities may be used. They share enforcement infrastructure, but neither a security score nor a governance dashboard grants permission. Clinical/legal/community judgement that is not automatable remains explicitly human-owned; missing approval blocks the affected capability rather than being inferred by a model.
 
-mTLS workload identities are issued to individual deployments by a local trust bootstrap with short-lived certificate rotation; Kubernetes service-account authorization is separate from certificate identity. Runtime gets only broker scopes. CI can deploy verified artifacts but cannot read business stores or approve its own changes. Database/audit credentials never enter browser, runtime or prompts. Key storage is encrypted host custody plus read-only mounted secret files, with offline recovery material separate from application volumes. Exact certificate issuer/rotation implementation is an admission dependency, not an installed mesh claim.
+The identity service establishes account/MFA/revocation evidence. Domain services establish participant ownership, assignment, recipient and subject authority. Consent service records explicit purpose/field/recipient grants. Worker/client review supplies scoped human decisions. Policy services evaluate current deterministic rules; application and repository enforcement points prevent the effect. Network/workload controls reduce reachable capabilities independently. Audit records the actual decision and outcome. No layer is replaced by prompt instructions.
 
-## Inline authorization and policy state
+## Human authentication and continuation
 
-Every protected operation passes its PEP: edge admission; core broker/service boundary; data repository/command boundary; stream serializer; outbox dispatch; administrative activation. PEP builds authoritative identity, role/assurance, purpose, subject/session, requested fields, consent, assignment, source/artifact revisions, population/environment and governance epoch. OPA decides PERMIT/DENY/REQUIRE_HUMAN with obligations and digest; it cannot execute or approve. Missing/stale data, unknown decision or obligation failure denies effect.
+Private role applications use OIDC/MFA with server-mediated browser sessions; users do not share role credentials. Account identity is separate from synthetic subject identity. Assurance is operation-specific: continuation, plan viewing, editing/referral consent and export/delete/link require progressively stronger evidence according to the requirements. Metadata never increases assurance. A professional participant is not a workforce user, and two accounts for one person do not provide independent approval.
 
-Use a single authoritative policy/control database with monotonic epoch and revocation revisions. OPA evaluates an immutable bundle snapshot; authoritative state passed to evaluation is versioned. The command gateway locks/checks relevant rows including effective epoch before committing effect. A stale evaluator or PEP cannot reuse a prior permit. Positive permits are not cached across actions. Fields are filtered before retrieval/serialization, not after delivery to the model.
+Identity verification must cover trusted issuer/audience/key provenance, signature/time/nonce and login-intent binding, bounded key refresh and ambiguous login outcomes; exact protocol/library settings belong to implementation design. Provider claims alone cannot create assignment, PID consent or local governance roles. On compromised/revoked credentials, current entitlement checks fence new work and active disclosures; certificate/token expiry alone is not prompt revocation.
+
+Explicit one-use continuation is scoped to the participant/session/channel. Operation reconciliation can determine whether rotation committed but cannot recover a lost raw replacement token from a digest. Recovery requires fresh same-principal proof and new explicit authorization, never silent identity linkage or restoration of revoked access. If the identity/proof service is unavailable, static information remains accessible; private content is not disclosed to improve convenience.
+
+## Workload and mesh authentication
+
+The architecture includes a **workload trust plane**, owned operationally by the platform/security function: issuer and workload attestation, trust distribution, credential rotation/revocation, destination verification and compromised-workload containment. Each deployment has a distinct identity bound to its admitted namespace/service account or equivalent host identity. Mutual authentication proves both connection endpoints; no client-supplied identity header or intra-cluster address is sufficient.
+
+The enforcement/data plane authenticates service traffic and applies default-deny caller-to-destination policy. Browser/user identity remains separate and is passed only as verified delegated context. A valid workload credential does not authorize a business resource, purpose, consent or professional action. Repository filters, domain PEPs and fixed absent capabilities remain required even if the mesh is healthy.
+
+Two implementation families remain viable: a service mesh with automated workload identity/policy distribution, or application/proxy-managed mTLS with an automated issuer and explicit connection policy. Mesh reduces per-service credential handling but adds control-plane/sidecar/host integration complexity; app/proxy mTLS reduces platform footprint but increases integration/rotation responsibility and bypass risk. Select the smallest demonstrated approach that meets attestation, rotation, identity-based deny rules and compromise/outage tests on the actual local cluster. No product or certificate lifetime is selected merely by this HLD.
+
+Host inference bridge participates in authenticated trust with the designated inference gateway; host location is not an exemption. Independent help has separate narrowly scoped trust and static publication is content-only/public. During issuer failure, credentials are usable only within current validity and supported revocation/freshness bounds. No new untrusted identities or fail-open connection mode is allowed. Existing connections/queued work from a compromised identity must be fenced; rotation of future credentials alone is insufficient. Cluster/host root and shared trust bootstrap remain residual risks.
+
+## Inline runtime governance
+
+Every protected human, agent, service and scheduled operation has an enforcement point before read, write, disclosure or external effect. A narrow metadata-only authorization-context interface exposes required ownership/assignment/revision facts to authorized PEPs without first disclosing the protected business content being requested. Full content projections are released only after the decision; policy bootstrap is not a privileged transcript-read path. Policy inputs come from authoritative identity/assignment/consent/resource/source/control state. Delegated actions retain both workload identity and originating human/task/purpose with equal-or-narrower scope; a broad core credential cannot convert an agent proposal into worker authority. A proposed action is bound to exact purpose, subject, recipient, fields and reviewed content; materially changed state requires reevaluation. Outcomes are permit, deny or require human; review-required is not execution authority. Unknown inputs, timeout, unsupported obligation or unhealthy audit blocks the affected effect.
 
 ```mermaid
 sequenceDiagram
-  participant A as Actor or workload
-  participant P as Service PEP
-  participant O as OPA PDP
-  participant D as Command gateway
-  A->>P: Protected action
-  P->>D: Read authorized current revisions
-  P->>O: Evaluate exact context and bundle epoch
-  O-->>P: Decision plus obligations and digest
-  P->>D: Execute with permit and expected revisions
-  D->>D: Lock, recheck epoch/revocation/consent and payload
-  alt All current and allowed
-    D->>D: Atomic state, audit and outbox commit
-    D-->>A: Committed outcome
-  else Stale, denied or audit failure
-    D-->>A: No protected effect - typed failure
+  participant A as Actor or service
+  participant E as Enforcement service
+  participant P as Policy decision
+  participant D as State and audit
+  A->>E: Protected operation
+  E->>D: Obtain scoped current authority
+  E->>P: Evaluate action and obligations
+  P-->>E: Decision and applicable version
+  E->>D: Commit effect only if authority is still current
+  alt Current and permitted
+    D-->>E: Durable outcome and audit reference
+    E-->>A: Authorized result
+  else Changed denied or unavailable
+    D-->>E: No protected effect
+    E-->>A: Safe typed failure or human review
   end
 ```
 
-Data gateway accepts decision assertions only from authorized PEP identities and independently verifies active digest, exact request binding and revisions; callers cannot manufacture permits. A privileged core/PEP compromise remains a threat, mitigated by narrow endpoint privileges, source-independent hard prohibitions, repository field rules and audit evidence. There is no claim that a signature alone proves semantic correctness.
+Policy ownership, independent approval, signing, activation and enforcement are separate responsibilities. Rule owners define policy within their authority, appropriate independent human reviewers approve material changes, authorized release/control functions sign and activate exact artifacts, and PEPs enforce them. Signing alone proves neither clinical/legal authority nor policy correctness. Policy activation accepts only verified artifacts with independent appropriate human review, class-specific evidence and exact version binding. Staged evaluator readiness precedes relaxation; restrictive changes fence subsequent authorization at the authoritative boundary, while lagging/disconnected enforcement cannot continue with stale permission. Rollback is a new controlled activation retaining newest revocations/consent/deletion restrictions. Events accelerate propagation; execution checks preserve correctness if events are lost/replayed.
 
-## Activation, signals and kill
+Revocation orders against the defined disclosure/dispatch authorization boundary. It blocks future authorization, cancels stale queued work and suppresses later stream events, but cannot recall delivered bytes or guarantee reversal of an already authorized external send. Timing targets distinguish evaluation, propagation, detection and alerting and are not hard realtime guarantees.
 
-New policy/artifact bundle: proposed→classified→tested→independently approved exact digests→signature verified→staged on evaluators→readiness acknowledgement→activation epoch commit→PEP acknowledgement. Restrictive changes fence immediately at central command commit; lagging evaluators deny. Relaxation waits for required approvals and healthy instances. Rollback is a new epoch selecting an approved compatible bundle; revoked identities/consents remain revoked. Atomicity is per evaluator plus central epoch fencing, not magical simultaneous distributed switching.
+## Safe mode and enforcement failure
 
-Identity events validate issuer/audience/subject, signature, timestamp, five-second skew and sixty-second freshness, unique event ID, deduplication and gap recovery. Adopt SSF/CAEP if provider capability is proven; otherwise use a documented signed local identity-event adapter without claiming CAEP conformance. Custom consent/assignment/policy events use separate types. Notifications trigger cancellation quickly; current-state checks preserve correctness if a message is lost. Critical state is rechecked at every stream delivery/dispatch.
+Kill/safe mode disables affected AI/actions, cancels obsolete output and preserves healthy authorized manual operations. It does not shut down identity, human messaging or static publication indiscriminately. When policy/data/audit is unavailable, normal protected service cannot continue. Independent minimal help can only record/respond to its own narrow opaque requests while its own credential trust/freshness and durable spool are healthy; it has no business history, broad workforce rights or general policy bypass. If trust is stale, private help operations stop and static information remains. A recorded request does not imply a connected or available worker.
 
-Kill increments authoritative control state, blocks new agent/consequential work, invalidates leases/permits and fences pending model output; does not stop human messaging services, help gateway, identity or static fallback. Human-only core operations remain policy/audit mediated when healthy. A narrow help gateway uses independent durable local spool, fixed credential-verification rules and separate role access; it accepts opaque requests without business content. Existing signed sessions may be validated offline within expiry plus available local denylist; new sign-in is unavailable if IdP is down. Stale workforce assurance permits no sensitive disclosure. If help credentials cannot be trusted, show static information instead of bypassing authentication. A local spool acknowledgement means request recorded, never a connected worker.
+## Standards, attacks and accountability
 
-## Security controls and residuals
-
-| Threat/control | Enforcement and reaction |
+| Concern | Architectural control and failure response |
 |---|---|
-| Injection/poisoned context | Immutable labels, schema/provenance checks, broker tool allowlist, current sourced recipient; quarantine bad record |
-| Exfiltration/SSRF | No arbitrary URL tools, pinned gateway host, deny egress/DNS rebinding/redirect destinations, row/field filters |
-| Unsafe output | No executable model text; safe encoding/CSP; sourced templates and review; retain human evaluation of language risks |
-| Identity/privilege abuse | Current role/assignment/assurance, mTLS identity, replay-resistant signals, stream cancellation and scoped revocation |
-| Supply-chain/drift | Pinned images/dependencies/model, SBOM/signature evidence, activation verification, readiness and 30-second drift probe; fence affected workload |
-| Resource exhaustion | Input/parser/token/step/concurrency/queue budgets with separate human-help capacity; scoped throttling, not silence-based session termination |
-| Insider/audit tampering | Least privilege, no operator content access, dedicated audit writes, hash-chain and separate checkpoints; host root remains residual |
-| Governance bypass | Independent digest-bound approval, expiring exception, no self-approval, fixed demo/police/emergency limits |
+| Injection or poisoned knowledge | Server-owned labels, approved sources, typed allowlisted tools, quarantine and grounded output review |
+| Exfiltration or identity abuse | Workload network/mesh isolation, current object/field/purpose rights, scoped delegation and revocation |
+| Untrusted model output | No executable code/policy, controlled authoritative content, human-reviewed professional communications |
+| Supply-chain/config drift | Pinned verified artifacts, controlled activation and scope-fenced response |
+| Resource exhaustion | Bounded task/compute/work queues with reserved manual/help capacity and scoped throttling |
+| Insider or approval forgery | Separation of duties, actual human identity, least privilege and independent audit/checkpoints |
+| Audit/authority outage | Deny protected effects with explicit degraded status, not monitoring-only alert |
 
-Decision p95 50 ms, evaluation timeout 200 ms, authorization timeout 1000 ms, permit TTL/propagation 1000 ms are local targets. A transaction that cannot reauthorize in time aborts; no fail-open state. Metrics distinguish enforcement-before-effect from event detection/alerting. No standard prescribes these timings. [Requirements standards baseline](../REQ/09-standards-and-runtime-controls.md) governs OWASP/ATLAS reference pinning, NIST/ISO risk ownership and evidence; no certification is implied.
+[Standards baseline](../REQ/09-standards-and-runtime-controls.md) distinguishes OWASP verification, ATLAS threat coverage, governance frameworks and continuous-access architecture. Individual control identifiers, deployed crypto/network behaviour and certification are not established here. Threat tests and human evaluation of language/automation-bias residuals are required; structural validation alone cannot prove safe clinical interaction.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.

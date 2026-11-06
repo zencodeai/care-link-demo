@@ -1,7 +1,7 @@
 {
-  "design_version": "0.1",
-  "date": "2026-11-04",
-  "status": "proposed_not_implemented",
+  "design_version": "0.2",
+  "date": "2026-11-06",
+  "status": "proposed_architectural_design_not_implemented",
   "notice": "This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.",
   "requirements_count": 90,
   "source_elements_count": 37,
@@ -31,119 +31,119 @@
       "deployment": "web-edge",
       "primary_document_prefix": "01",
       "related_document_prefix": "02",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "identity",
       "deployment": "identity",
       "primary_document_prefix": "04",
       "related_document_prefix": "07",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "session-assessment",
       "deployment": "core-api",
       "primary_document_prefix": "02",
       "related_document_prefix": "05",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "directory-content",
       "deployment": "core-api",
       "primary_document_prefix": "02",
       "related_document_prefix": "06",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "plans-consent",
       "deployment": "core-api",
       "primary_document_prefix": "02",
       "related_document_prefix": "05",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "queue-handoff",
       "deployment": "core-api",
       "primary_document_prefix": "02",
       "related_document_prefix": "08",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "referral-followup",
       "deployment": "core-api/core-jobs",
       "primary_document_prefix": "05",
       "related_document_prefix": "06",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "agent-tasks-reviews",
       "deployment": "core-api/agent-runtime",
       "primary_document_prefix": "03",
       "related_document_prefix": "06",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "inference",
       "deployment": "inference-gateway/host-LM-Studio",
       "primary_document_prefix": "03",
       "related_document_prefix": "07",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "policy-activation",
       "deployment": "policy-control",
       "primary_document_prefix": "04",
       "related_document_prefix": "07",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "security-signals-containment",
-      "deployment": "policy-control/core-api",
+      "deployment": "workload-trust-and-policy-control-with-service-enforcement",
       "primary_document_prefix": "04",
       "related_document_prefix": "08",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "data-audit-replay",
       "deployment": "data-gateway/postgres",
       "primary_document_prefix": "05",
       "related_document_prefix": "08",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "analytics-evidence",
       "deployment": "core-api/data-gateway",
       "primary_document_prefix": "05",
       "related_document_prefix": "09",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "simulators-training",
       "deployment": "simulators",
       "primary_document_prefix": "02",
       "related_document_prefix": "06",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "help",
-      "deployment": "host-help-gateway",
+      "deployment": "independent-host-help-ui-gateway-and-spool",
       "primary_document_prefix": "04",
       "related_document_prefix": "07",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "fallback",
       "deployment": "host-static-server",
       "primary_document_prefix": "07",
       "related_document_prefix": "08",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     },
     {
       "id": "operations-release",
       "deployment": "CI/operator/telemetry",
       "primary_document_prefix": "07",
       "related_document_prefix": "08",
-      "status": "designed_not_implemented"
+      "status": "architecturally_described_not_implemented"
     }
   ],
   "requirements_inputs": [
@@ -199,5 +199,44 @@
       "path": "doc/REQ/source-snapshot.json",
       "sha256": "fc24739526b7b6e556cf4610054beb85535d49e2bdbed82ae262cc59981df6ca"
     }
-  ]
+  ],
+  "abstraction": "major responsibilities, authority, interactions, lifecycle, deployment and trade-offs; no LLD generated",
+  "review": {
+    "status": "integrated_ai_review_complete_minor_findings_addressed",
+    "specialist_passes": [
+      "requirements and evidence",
+      "actor service and AI",
+      "platform data and operations",
+      "security and governance assurance"
+    ],
+    "human_approval": false,
+    "note": "Specialists provided read-only findings; coordinating agent is sole writer. AI review is not human approval.",
+    "remaining_major_findings": 0,
+    "minor_findings_addressed": [
+      "explicit help reconciliation interface",
+      "fictional operating-envelope wording",
+      "architectural persistence terminology"
+    ],
+    "limitations": "AI architecture review only; independent human acceptance and runtime evidence remain outstanding."
+  },
+  "open_architecture_decisions": [
+    "workload identity/mesh implementation and actual local enforcement",
+    "help trust freshness and independent credential lifecycle",
+    "retention anchor and hold schedule approval",
+    "current recovery-history durability and serving-promotion mechanism",
+    "upstream inference/youth/safe-mode authority dispositions"
+  ],
+  "scope_exclusions": [
+    "real-user/clinical deployment",
+    "police integration and autonomous emergency contact",
+    "recreation of deleted LLD"
+  ],
+  "verification": {
+    "input_hashes": "unchanged requirements inputs verified",
+    "runtime": "not_executed",
+    "diagram_rendering": "all four Mermaid diagrams rendered with local mermaid-cli 11.17.0 and visually inspected; temporary images only",
+    "local_links": "pass",
+    "traceability": "90 local requirements, 37 source elements and 18 acceptance groups mapped; design coverage only",
+    "lld_directory": "absent"
+  }
 }

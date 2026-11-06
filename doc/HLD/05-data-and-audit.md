@@ -1,55 +1,58 @@
-# Data, transactions, audit and lifecycle
+# Information ownership, consistency and lifecycle
 
-## Ownership and schema boundaries
+## Information model and ownership
 
-PostgreSQL is the initial durable store. Separate identity database, business schemas, control schema and audit schema/login grants; no shared app superuser. `data-gateway` exposes scoped queries/commands; runtime, edge, jobs, core and operator do not hold arbitrary DB credentials. Tables carry opaque ID, demo/synthetic tags where applicable, purpose, owner/subject, revision, timestamps and artifact lineage. Migration history is versioned. Local storage encryption is a deployment property, not proof from database configuration.
+One scoped data/audit gateway mediates application persistence. Initial business, control and canonical audit storage share a PostgreSQL transactional boundary to support consistent accepted effects. Identity state uses a separate database/access boundary; if placed on the same instance/host this is privilege separation, not failure independence. Domain services own meaning and transitions; the gateway owns authorized projections and consistent durable commits. Runtime, edge, jobs and operator do not get arbitrary store access.
 
-| Aggregate / records | Owning module and relationships |
-|---|---|
-| Access identity / account-session / step-up | Identity/BFF; account ID maps explicitly to business session access, never inferred PID identity |
-| Session / ordered turn / message / assessment / tier history | Session module; session→many turns/events/assertions; conversation generation fences writers |
-| Person / carer relationship / assertion | Assertion module; relationship grants no automatic access; multiple disputed reports coexist |
-| Plan / field assertion / share grant | Plan module; field-level author, subject, verification, dispute and consent references |
-| Directory record / source-field version / suspension | Directory module; immutable snapshots and current effective pointer; separate freshness per field |
-| Consent event / current projection | Consent module; append-only grant/revoke; exact subject/purpose/recipient/session/field binding |
-| Queue item / assignment / handoff / help reference | Human operations; unique active owner, partner/transport state separate from service outcome |
-| Task / step / observation / lease / draft / approval | Task module; links input/source revisions and exact review payload to action |
-| Referral / transmission attempt / receipt / reconciliation | Referral module; immutable approved payload snapshot, recipient ID, dedup key; explicit unknown state |
-| Follow-up / contact consent / outcome / incident | Follow-up/quality modules; separate consent, dispatch cancellation, attributed outcomes and corrective actions |
-| Artifact / review / signature / activation / policy epoch / revocation | Control module; immutable reviews and monotonic effective revisions |
-| Audit event / chain head / checkpoint | Dedicated audit authority; canonical operation linkage and digest, no raw content by default |
-| Event stream / outbox / delivery dedup / deletion tombstone | Command infrastructure; transactional intent, ordered delivery and restore filtering |
+| Information aggregate | Meaning / owner | Principal relationships and access |
+|---|---|---|
+| Access principal and browser session | Identity/edge evidence for actual account | Explicit access to business personas, never inferred identity linking |
+| Session, assessment and messages | Session service owns ordered interaction, state and context | Participant and assigned workforce projections; connectivity separate from resolution |
+| Information assertion and relationship | Assertion service owns attributed report/history | Author/subject/source/verification/dispute preserved; relationship is not permission |
+| Crisis plan and field sharing | Plan service owns PID-led wishes and allowed sharing | Field/purpose/recipient grants with current authority and attribution |
+| Consent ledger | Consent service owns grant/revocation history and current effective scope | Subject/grantor/session/recipient/fields/purpose/time; independent from general role permission |
+| Directory and knowledge version | Source service owns provenance, freshness, verification and suspension | Versioned approved facts and fictional service operating envelope |
+| Queue, assignment and handoff | Workforce service owns request, accountable worker and confirmation | Single conversation owner, scoped context pack, explicit failure/unknown outcomes |
+| Task, draft, observation and review | Task coordinator owns bounded work and review provenance | Initiating actor, scope, source/version references and human decision |
+| Referral, attempt and receipt | Referral service owns approved package and transmission history | Recipient/consent/review evidence, separate authorization/attempt/receipt |
+| Follow-up, outcome and incident | Follow-up/quality services own schedules, observations and remediation | Separate contact consent, carer outcomes and unknown/missing evidence |
+| Artifact, activation and authority history | Governance control owns approved effective state | Exact digest/review lineage, revocations and immutable exclusions |
+| Canonical audit and checkpoints | Dedicated audit authority owns append-only record | Actor/action/purpose/decision/digests/versions; content minimized and read purpose-limited |
+| Rights, lifecycle and recovery metadata | Rights/recovery authority owns disposition and restoration restrictions | All purpose copies, backups, tombstones, holds and serving-promotion evidence |
+| Aggregate metrics and evaluation | Quality service owns versioned definitions/projections | Coupled safety/access/equity outcomes, no individual exposure or HR feed |
 
-Required indexes include session+sequence, aggregate+revision, task lease deadline, pending outbox available time, recipient+idempotency key, consent subject/purpose/recipient/session and queue state/priority/time. Uniqueness constraints enforce monotonic identities and one effective assignment. No physical ERD/schema migration is claimed; DDL must encode these relationships and validate unknown-field/foreign-key constraints before implementation acceptance.
+This is a logical information model. Physical columns, indexes, SQL roles and migration scripts are deferred. Every protected read/write carries current ownership/assignment/field/purpose scope; caller identity alone never authorizes a row or a disclosure.
 
-## Atomic command and audit design
+## Durable decisions and audit
 
-Avoid a distributed transaction between independent business/audit databases. Business/control/audit schemas reside on one PostgreSQL transactional instance initially. The command gateway invokes restricted stored procedures with no permission to directly alter the audit chain. A dedicated non-login audit owner controls an append function; no normal human/workload assumes that role. Append function is executable only within approved command procedures (use a dedicated procedure-owner chain with no direct app grant), pins schema search path and input validation. Read roles cannot invoke writes. Database superuser remains a privileged residual, not an immutable-store guarantee.
+An accepted local business/control transition, its canonical audit record and reliable downstream work intent commit consistently. The initial co-located transactional design avoids pretending that separate stores/network services commit atomically. Exact command/query mechanisms are implementation decisions subject to tests. Failure cannot publish a successful transition whose required audit did not durably commit. Protected disclosure also requires current authorization and an audited disclosure boundary before release.
 
-A protected command locks affected aggregate/current epoch/consent/assignment rows in fixed order; validates expected revisions, exact payload binding and expiry; allocates the canonical audit sequence/head under lock; writes state, hash-chained audit event, stream event and outbox intent; commits once. Failure rolls back all changes and returns no successful result. Canonical serialization/explicit timestamps and genesis convention are versioned before building the chain. No hash of raw guessable sensitive fields is advertised as anonymization.
+Audit records what was decided/authorized and what was observed separately. A send authorization is not evidence of receiver delivery; a receipt is not a human connection. Stable logical operation identity supports idempotent reconciliation after retry or lost acknowledgement. Retries cannot bypass current permission to reveal the result. Multiple attempt/security/receipt events may link to one canonical operation without duplicating its effect.
 
-Queries that disclose protected data commit a disclosure audit decision before returning permitted projection; enforce the same epoch/revision condition at materialization/serialization boundary. If control changes before delivery, suppress response and reevaluate; already sent bytes cannot be recalled. Log denied decisions if audit is healthy. When central audit fails, block protected operations and keep only narrow help/static fallback with honest local outage diagnostics.
+Dedicated write/read identities, append-only access, integrity chaining and independently stored checkpoints limit ordinary tampering. Plain PostgreSQL on a shared host is not immutable against root/owner compromise; separate checkpoints on the same host do not establish external transparency. Audit content is minimized to structured facts/digests and version references. Digests remain potentially sensitive, and metadata alone cannot reconstruct omitted content.
 
-Canonical audit event is unique on logical operation ID. Repeating identical idempotency key returns committed permitted outcome only after current read authorization; different payload yields conflict. Attempt, receipt, policy activation, security denial and access events are separate linked facts, not duplicates of the action event. Chain-head locking is acceptable for initial ten-session demo; measure contention before partitioning and never silently change chain semantics.
+## Side effects and concurrency semantics
 
-## Outbox and irreversible effects
+Current policy, identity, consent, assignment and source revisions are checked at the effect-authorization boundary. Changes ordered before it block stale work; concurrent ownership/approval has one current accepted outcome. The implementation must enforce this order without assuming a cached permit or a notification proves current authority.
 
-A core job leases an outbox entry with generation, retrieves exact authorized payload through core, and requests dispatch authorization immediately before send. Dispatcher holds the common authorization fence while recording one-use dispatch authorization and attempt in the atomic command. This commit defines the irreversible **authorization** ordering point. Network send is outside the transaction. Revocation ordered earlier blocks authorization; revocation ordered later cannot guarantee withdrawal of an already authorized send. Worker must attempt promptly within the permit deadline or reacquire; no replay of stale permits.
+External transmission occurs outside the local transaction. Reliable intent, stable recipient/action identity and receipt reconciliation prevent blind duplicate execution; end-to-end exactly-once delivery is not claimed. After an ambiguous send, status remains unknown until evidence resolves it. Revocation after dispatch authorization may be too late to recall content. Human owners see this distinction and choose an approved recovery path.
 
-After crash before/after network send, delivery is unknown until queried against simulator dedup/receipt. Never blindly resend when acceptance may have occurred. Receiver deduplicates stable action key and payload digest. External exactly-once delivery is not claimed. Generation, authorized dispatch, attempted channel, response and receipt are separately visible. Reconciliation also checks payload retention and revoked sharing before any new disclosure.
+## Retention, rights and dependencies
 
-## Retention, deletion and backups
+Lifecycle policy owns both duration and the authoritative event from which it is measured. Session/parent closure, grant expiry/revocation, plan retirement or explicit PID deletion, and backup/corpus capture are distinct candidate anchors; the exact per-class anchor schedule needs explicit review rather than a universal creation-time default. Shared demo durations remain proposed parameters, not legal retention approval. Real access-account metadata has a separate schedule.
 
-Use the requirements parameter schedule: runtime sessions/person/referral/replay seven days, plans thirty days, consent/security thirty days, audit/aggregate metadata ninety days, backups seven days. These are synthetic engineering defaults, not legal schedules. Source-controlled fixtures/manifests are separate. Redact/minimize identity references; actual login metadata has its own reviewed retention procedure before external participants.
+Records, purpose-bound copies, plan snapshots, replay data, temporary exports and backups form lifecycle dependencies. A longer-lived plan cannot silently depend on a purged short-lived session assertion: either retain a minimized independently justified attributed snapshot or make the source unavailable explicitly. Copying cannot evade deletion. Authenticated holds and releases apply to their documented scope/dependents; missing rules, unresolved anchors or contradictory authority block unsafe purge rather than infer approval.
 
-AL3 export/delete creates a scoped job. Export filters owned/authorized records, includes provenance/unknowns and a manifest, and exposes a short-lived authenticated download; format JSON with attachment references, no third-party private content. Deletion creates durable tombstone, revokes grants/continuations and cancels pending work before purging eligible active content within 24 hours. Explain retained audit exceptions. Backup expiry completes within seven days; restore must apply latest surviving tombstones/revocations before access. Preserve the control/tombstone recovery ledger separately from data snapshots so a pre-deletion backup cannot resurrect access.
+Rights processing distinguishes requested, eligible, held, active-content purged, backup pending, completed with explicit retained exceptions and failed/reconciliation needed. Eligibility or file unlink is not proof of physical erasure from WAL, snapshots or other copies. User export/deletion requires current operation assurance and own-data scope; output cannot include unrelated private reports. Retained minimal audit/control references and legal/demo exceptions are explained honestly.
 
-Backups combine reviewed base backups plus continuous WAL archival to encrypted separate host storage with measured lag. A sixty-second check schedule alone cannot establish a sixty-second RPO. Rebuild isolated restore target, validate timeline/schema/chain/manifest, apply current control ledger, reconcile unknown sends, then readiness. Full-host loss can lose local backup unless a separately approved recovery copy exists.
+## Recovery authority and serving promotion
 
-## Replay and aggregate analytics
+Backups preserve authorized state and provenance, not a licence to reactivate old access. Deletion/revocation recovery history must survive separately from point-in-time business restore. Cross-store publication uses an explicitly reconciled durable workflow; there is no fictional atomic file-and-database commit. If the latest required authority history is unavailable, restoration remains blocked from serving.
 
-Replay uses encrypted short-lived synthetic input snapshots, recorded model outputs and pinned deterministic artifact versions. Compare canonical deterministic outcomes; no expectation of bit-identical regenerated LLM text. Audit digests alone cannot reconstruct omitted content. Metrics projection reads approved outcome aggregates, always couples police-avoidance with safety/access/equity/unknown counts, and suppresses individual exposure and undersized groups. No identifiable HR feed, training pipeline or real community dataset exists.
+Restore lifecycle: isolated quarantine, validate inventory/integrity/version, reconcile current independently trusted authority/rights/holds and uncertain effects, validate scoped access, obtain separate human serving approval, then fence obsolete generation and promote the approved target. The restored snapshot cannot certify its own current consent/revocation state. A signed old head proves origin, not recency. Changed target/control state invalidates stale promotion evidence. Credentials/continuation tokens/queued approvals are not blindly restored. Detailed trust/cutover mechanisms and promotion tests are implementation work; operational stages are specified in document 08.
 
-[PostgreSQL continuous archiving documentation](https://www.postgresql.org/docs/current/continuous-archiving.html) is the reference for base-backup/WAL recovery; selected version and actual recovery timings remain to be verified.
+## Replay and analytical use
+
+Replay uses pinned deterministic components, approved synthetic input snapshots and recorded model observations. It compares deterministic service outcomes, not regenerated model text. Shadow evaluation has no live decision authority and cannot train the model automatically. Metrics distinguish observation/unknown from actual successful outcome, couple police-avoidance with safety/access/equity and suppress individual exposure and unsafe small-group inference. No secondary real-person training or policing analytics is introduced.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.

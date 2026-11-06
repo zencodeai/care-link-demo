@@ -1,49 +1,53 @@
-# Interfaces, contracts, events and simulators
+# Logical interfaces and integration architecture
 
-## Common contract rules
+## Interface principles
 
-Use `/api/v1` JSON command/query interfaces, OpenAPI and closed JSON Schemas with nested types, enums, lengths, size bounds, required provenance and unknown-field rejection. IDs are opaque UUIDs; timestamps UTC; client input cannot set actor, assurance, committed tier or governance epoch. Mutation requires request/correlation ID, idempotency key and expected aggregate revision. Reusing a key for different content is 409 conflict. Pagination and field projections are scoped. No arbitrary URLs/files accepted. Implement exact payload schemas before the related endpoint; these are HLD operation definitions, not executable OpenAPI.
+Interfaces expose bounded business capabilities, not unrestricted databases, policy admin proxies or generic agent execution. Producer/consumer identity, purpose, authority and evidence required are part of each interface. Messages are versioned and schema validated, but a valid shape is not consent or permission. Detailed paths, payload fields, transport errors and schemas belong to implementation design and are intentionally omitted here.
 
-All responses include request ID and version; protected successful mutations include committed state/event/audit references. Typed errors: 400 schema/unknown-field; 401 invalid identity; 403 forbidden/consent; 409 stale revision/idempotency; 413 size; 422 unsupported semantic action; 429 budget; 503 unavailable enforcement/audit/model. REQUIRE_HUMAN is a non-executed proposal/review state, never a successful side effect. Error text must not reveal other session existence or secret policy contents. Public help status is explicitly unconfirmed until workforce acceptance.
+Requests/results/events carry sufficient correlation, provenance, version and operation identity to reconstruct outcomes, detect stale state and reconcile retries without leaking unnecessary content. Client/model input cannot declare authoritative role, assurance, consent, tier, recipient endpoint or governance state. Unknown/incompatible contracts fail safely; reviewed interface version changes do not silently mutate upstream indicative source contracts.
 
-| Operation family / representative method-path | Caller, input and returned result | Enforcement / effects |
+## Component interface map
+
+| Interface | Producer → consumer | Information / result | Authority and failure behaviour |
+|---|---|---|---|
+| Actor access and command | Role app → edge → core | Disclosures, needs, corrections, messages and explicit actions | Verified actor/current resource scope; unavailable core is not false successful submission |
+| Identity and step-up | Edge/authorized control → identity | Authentication/assurance/revocation evidence | Trusted provider and bound login intent; unavailable proof does not raise assurance |
+| Authorized projection/event | Core/data → authorized actor app | Permitted context/state/update | Filter at disclosure boundary, current recipient rights, resumable delivery without cross-session leak |
+| Domain state and audit | Core/control → data/audit gateway | Scoped transition, disclosure decision and durable outcome | Consistent accepted state/audit/work intent; failure denies protected success |
+| Task and proposal | Coordinator ↔ runtime through broker | Scoped task/context, proposed steps/content and observations | Model data untrusted; no independent tool/store access; cancellation invalidates stale work |
+| Model inference | Broker → inference gateway → host bridge/model | Approved context and bounded generated proposal | Exact admitted local model/task, tainted result, no remote fallback |
+| Deterministic decision | PEP → policy service | Current authoritative context, permit/deny/review and obligations | Unknown/stale/unsatisfied obligation fails closed; no model decision authority |
+| Activation and revocation | Reviewed registry/control → enforcement instances/data | Exact approved version, current restrictions and acknowledgement | Restrictive state fences future effects; rollback retains current negative rights |
+| Background work | Durable work intent → jobs → core | Follow-up, reconciliation, expiry and authorized dispatch | Current scope rechecked at execution; enqueue-time approval is insufficient |
+| Receiving-service exchange | Core adapter ↔ simulator/receiver | Consented package, clarification, accept/reject/receipt | Recipient-owned confirmation; uncertain send remains unknown pending evidence |
+| Directory/content ingestion | Verified owner/feed simulator → knowledge service | Versioned source facts, freshness, correction/suspension | Poisoned/unverified content quarantined; no automatic replacement instructions |
+| Independent minimal help | Client/workforce host UI ↔ help service/spool | Opaque own request, recorded/accepted-unconnected state | Own bounded trust/durability, no history; not a staffed connection guarantee |
+| Help reconciliation after recovery | Host help/spool → restored core/workforce | Minimal request identity, correlation and observed status | Current authority, idempotent deduplication and accountable acceptance; no stale grant transfer or automatic connected-care status |
+| Static publication | Independent reviewed publication → static host → anyone | Verified public crisis information | No runtime/policy/auth/store request dependency; no private data |
+| Evidence and telemetry | Approved components → collector / audit/quality → scoped dashboards | Health, denials, traces, evidence and aggregate outcomes | Observation cannot authorize effects; content/identity minimization |
+| Backup and recovery | Persistence/control history → isolated restore authority → reviewed target | Snapshot/checkpoints, current authority reconciliation and serving evidence | Quarantine before independently approved promotion; missing current head blocks serving |
+
+## Event delivery and consistency
+
+A durable authoritative record, not a browser cache or model transcript, determines accepted state. Push updates provide timely actor coordination with explicit reconnect/resynchronization; delivery may duplicate or lag and therefore never establishes a new authorization by itself. Every protected event is projected for its current recipient; revoke/takeover cancels future stale output. Previously authorized bytes cannot be recalled. Closed sessions, transports and human ownership remain separate concepts.
+
+Reliable asynchronous work stores intent with the accepted domain transition and reconciles effect outcomes. Only idempotent safe operations may retry automatically without new consequential disclosure. A network timeout after send is not proof no receiver saw it. Version/ownership changes invalidate queued work and require fresh review when material content changes. Background jobs do not hold all actor privileges or public mutable endpoints.
+
+## Synthetic external-system boundary
+
+| Simulator / actor interface | Behaviour represented | What is not established |
 |---|---|---|
-| POST `/sessions`; POST `/sessions/{id}/turns` | Participant; disclosure/role/jurisdiction then text+revision; ordered state/event IDs | Admit demo/synthetic; ownership; hazard path before AI; audit state |
-| GET `/sessions/{id}`; GET `/sessions/{id}/events` | Authorized participant/assigned worker; SSE cursor | Projection/filter every event; reconnect after committed sequence only |
-| POST `/help/requests`; GET `/help/requests/{id}` | Scoped participant to independent help gateway; opaque session ref, language and reply token | Minimal fixed auth/limits, no history; durable local acknowledgement not connection |
-| POST `/queue/{id}/assignments`; POST `/handoffs/{id}/confirm`; POST `/sessions/{id}/takeover` | Worker/supervisor; expected revision/generation | Assigned scope, ownership compare-and-set, increment generation/fence output |
-| POST `/assertions`; PATCH `/plans/{id}/fields/{field}`; POST `/plans/{id}/shares` | Subject/scoped participant; attributed payload | Operation assurance, per-field authority, conflicts not overwritten |
-| POST `/consents`; POST `/consents/{id}/revocations` | Qualified grantor; purpose/recipient/fields/window | Ledger append plus current projection/revision; no model grant |
-| GET `/directory`; POST `/directory/{id}/suspensions` | Scoped participant/worker; maintenance/security for suspend | Jurisdiction/freshness/source filter, quarantine no deploy |
-| POST `/tasks`; GET `/tasks/{id}`; POST `/tasks/{id}/cancel` | Actor; bounded goal/context refs | Task-type permission, scope/budget, cancellation fence |
-| POST `/reviews/{id}/decisions` | Responsible human; accepted exact payload digest/revisions | Current assurance/ownership, expiry, edit requires new digest |
-| POST `/referrals`; POST `/referrals/{id}/dispatch`; GET `/referrals/{id}/receipt` | Worker/authorized jobs; approved draft/key | Separate generation/send; current consent, one-use dispatch and reconciliation |
-| POST `/followups`; POST `/followups/{id}/cancel`; POST `/outcomes`; POST `/incidents` | Scoped participant/worker/jobs | Separate contact consent, unknown outcomes and incident actions |
-| POST `/continuations/redeem`; POST `/rights/exports`; POST `/rights/deletions` | Participant with AL0/AL3 as appropriate | Single-use explicit link, cooling-off, scoped asynchronous rights job |
-| POST `/control/activations`; POST `/control/kill`; POST `/control/rollback-proposals` | Scoped governance/operator | Independent approved digests; new epoch, deny self-approval |
-| GET `/audit`; GET `/metrics`; GET `/evidence` | Auditor/reviewer under scope | Audited read; coupled/suppressed aggregate schemas |
+| MCRT/community navigator intake | Accept/reject/partial/schema rejection/delay and receipt lookup | Real partner agreement, staffed capacity, live dispatch or arrival |
+| Crisis-support handoff | Queue, refuse/drop, acceptance/connection confirmation | Actual telephone/carrier or contracted human service |
+| Generic summary receiver | Permitted package, optional receipt unavailable | Police-specific fields, recipient or data-sharing workflow |
+| Directory feed | Operating changes, holidays/weather/outage/conflict and poisoned record | Verified real local pathway coverage |
+| Internal channels/interpretation | Explicit cross-channel continuation and language/relay event flow | Real SMS/voice/mobile/relay/interpretation equivalence or deployment |
+| Training/denied emergency test target | Controlled fictional scenarios and guard/network denial evidence | An emergency connector, real endpoint or runtime-callable dispatch tool |
 
-Private broker operations: lease task, build context, request inference, submit proposal, execute permitted step and release lease. Each binds workload/task/lease generation and current scope; runtime cannot invoke generic core admin endpoints. Private data gateway query/command operations are allowlisted by module/workload and never accept arbitrary SQL. Simulator admin scenario controls are trainer-only, separated from receiving-service APIs.
+Scenario/training controls are isolated from ordinary service tasks and cannot change another session’s authority or feed live learning. Simulator observations reenter as untrusted content. Real integrations remain deferred and require new scoped agreements/evidence; police integration remains excluded rather than a dormant configurable adapter.
 
-## Contract catalogue
+## Contract-source relationship
 
-Retain six upstream indicative contracts as source references: turn envelope, proposal envelope, broker decision, consent record, audit event and closed empty triage features. Create reviewed local normative versions without silently tightening upstream v1. Domain-to-wire mappings explicitly cover consent actor/grantor and audit timestamp/occurred_at. Track exact consumer versions in release manifest. Fields for new local task/control contracts do not mutate authoritative model schemas.
-
-Additional local contracts: `task.v1`, `step_observation.v1`, `draft_review.v1`, `referral.v1`, `receipt.v1`, `help_request.v1`, `policy_request.v1`, `policy_decision.v1`, `activation.v1`, `enforcer_ack.v1`, `control_signal.v1`, `stream_event.v1`, `rights_job.v1`, `checkpoint.v1`. Each needs producer/consumer, schemas, scopes, allowed state transitions, timeout/idempotency and negative fixtures. Event envelope includes ID/type/version/time, subject/ref, correlation, producer identity, aggregate revision, policy epoch and payload reference/digest; protected content is fetched through scoped APIs, not broadcast in signals.
-
-SSE is selected for browser updates with normal HTTP commands. Persist events with sequence and Last-Event-ID recovery; duplicate notifications are allowed and deduplicated client-side. Retention gap returns typed resynchronization to a freshly authorized snapshot. No global cross-session feed. Revocation suppresses subsequent content even if socket remains open momentarily. Channel simulators map voice/SMS/relay events to the same session APIs; no live carrier traffic or transcript engine is assumed.
-
-## Simulator matrix
-
-| Simulator | Data/state and scenarios | Isolation |
-|---|---|---|
-| MCRT/navigator intake | Own service inbox, schema reject, accept/reject/partial, delay, timeout, idempotent receipt lookup | Synthetic sourced stable recipient IDs only |
-| Crisis-line handoff | Queue/accept/refuse/drop and confirmation | No real phone/SIP service; user connection is role-play |
-| Generic care-summary receiver | Consented export received/no receipt confirmation | No police-specific address, fields or workflow |
-| Directory feed | Structural/operational/availability changes, closure/holiday/weather/outage/conflict/poisoned records | Signed verification-owner ingestion; quarantine |
-| Channel/interpretation | Internal text, synthetic voice-event/relay representations, EN/FR and interpretation handoff | Demonstrates contract/state continuity, not real translation/telephony adequacy |
-| Denied EMS target | Known resolvable target for forbidden-destination tests | No business connector or network permission; no real contact |
-
-Simulator responses are untrusted on reentry; a poisoned service description cannot promote itself to instruction or recipient truth. Reset requires explicit demo namespace/population and preserves audit unless separately authorized. Real INT-1…INT-9 integrations remain deferred; police-specific source interface is excluded, not a future adapter toggle.
+Existing upstream turn/proposal/broker/consent/audit and closed triage-feature contracts guide logical boundaries. Their indicative nested shapes are not fully implemented normative payloads. Local task/review/control/recovery contracts require explicit versioned design and implementation review later; this HLD neither changes upstream schemas nor implies they already execute. Traceability links requirement concerns to these interfaces, not just to names of future files.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.
