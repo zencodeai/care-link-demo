@@ -2,7 +2,7 @@
 
 CARE-Link Demo is an independent, Ottawa-based project for demonstrating mental-health crisis-support workflows with synthetic data, simulated services, human oversight and deterministic controls around an LLM.
 
-The repository currently contains technical requirements and proposed system parameters. Application implementation, deployment and operational validation have not yet been established. It is not approved for real crisis use or production deployment.
+The repository contains technical requirements, HLD and LLD, with accepted local design choices and unmeasured engineering parameters. Application implementation, deployment and operational validation have not yet been established. It is not approved for real crisis use or production deployment.
 
 ## Project scope
 
@@ -21,9 +21,9 @@ See the [agentic service model and comparable-system research](doc/REQ/10-agenti
 
 ## Planned technical direction
 
-Local deployment uses Docker images and Kubernetes, with LM Studio running Gemma 3 4B IT on the host. The model proposes content and actions; deterministic services control authorization, consent, committed state and execution. Human help must remain accessible when inference is unavailable.
+The selected deployment target is this workstation, using Docker images and Kubernetes with local LM Studio and `google/gemma-4-12b-qat`. The user reports that the model is already downloaded; artifact metadata, loaded identity and task capability remain to be verified. The model proposes content and actions; deterministic services control authorization, consent, committed state and execution. Human help must remain accessible when inference is unavailable.
 
-The proposed stack includes React/TypeScript, Python/FastAPI, PostgreSQL, Keycloak/OIDC and OPA/Rego. These are design selections awaiting implementation checks. Exact versions, model artifacts, host capacity and network enforcement must be verified. Changes follow human-reviewed GitHub PRs, with independent approval for the accepted baseline.
+The accepted local stack direction includes React/TypeScript, Python/FastAPI, PostgreSQL, Keycloak/OIDC and OPA/Rego. These are design selections awaiting implementation checks. Exact versions, model artifacts, host capacity and network enforcement must be verified. Changes follow human-reviewed GitHub PRs, with independent approval for the accepted baseline.
 
 ## Requirements and decisions
 
@@ -50,3 +50,5 @@ No application startup or deployment commands are available yet. Begin with the 
 The sibling `care-link` repository supplies the source system model. The abandoned `care-link-prod` implementation is historical reference only; its credentials, deployment approvals and readiness claims are not inherited here.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.
+
+See the [LLD](doc/LLD/README.md) and [choice/workstation/model acceptance](doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md) for implementation detail and the scope of local approval.

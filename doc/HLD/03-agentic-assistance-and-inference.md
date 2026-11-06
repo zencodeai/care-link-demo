@@ -32,7 +32,7 @@ Review presents original attributed facts, source timestamps, suggested changes,
 
 ## Local inference boundary
 
-Use requested host LM Studio and Gemma 3 4B IT through a constrained authenticated inference gateway/host bridge. No runtime-to-host exception or remote fallback is permitted. Pin exact artifact origin/license/digest, loaded identifier, quantization, prompt/decoding and server capability before task admission. Supported structured output/tool behaviour and cancellation depend on the actual model/runtime, not an SDK label.
+Use requested host LM Studio and `google/gemma-4-12b-qat` through a constrained authenticated inference gateway/host bridge. No runtime-to-host exception or remote fallback is permitted. Pin exact artifact origin/license/digest, loaded identifier, quantization, prompt/decoding and server capability before task admission. Supported structured output/tool behaviour and cancellation depend on the actual model/runtime, not an SDK label.
 
 Inference is asynchronous bounded work separated from human messaging/help and deterministic urgent processing. Shared parameter budgets constrain context/output, concurrency, queue and retries; they are unmeasured targets. A timeout does not prove GPU work stopped, so pending results are fenced and capacity recovery is verified. Temperature zero is not deterministic generation or clinical confidence.
 
@@ -43,3 +43,5 @@ Malformed/unsourced/tainted proposals reject the whole affected proposal before 
 Selected approach favours a small explicit coordinator with isolated model proposals over autonomous multi-agent services. It preserves useful planning/tool observation while reducing authority laundering and recovery complexity. Model task capability and source-owner approval of broker-mediated inference remain unresolved before affected integration. Refer to [requirements service research](../REQ/10-agentic-ai-and-service-model.md) for comparator evidence and its limits; it does not validate local Gemma for clinical use.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.
+
+The user’s later [LLD/workstation/model acceptance](../LLD/decisions/2026-11-06-implementation-choices-and-model.md) selects this workstation and the exact model identifier above. Download is user-reported; no loaded model, artifact metadata or task capability has been verified by this documentation update. Prior fixed-size model assumptions are superseded; broker/host boundaries and existing budgets remain.

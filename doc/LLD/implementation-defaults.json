@@ -1,0 +1,52 @@
+{
+  "status": "accepted_local_starting_engineering_parameters_unmeasured_not_runtime_configuration",
+  "parameter_source": "../REQ/demo-parameters.json",
+  "limits": {
+    "request_bytes": 65536,
+    "json_max_depth": 16,
+    "sse_reference_queue": 32,
+    "list_page_max": 50,
+    "task_deadline_seconds": 120,
+    "step_lease_seconds": 10,
+    "step_renew_interval_seconds": 5,
+    "reservation_seconds": 60,
+    "channel_evidence_seconds": 30,
+    "shutdown_drain_seconds": 10,
+    "purge_batch_copies": 100,
+    "export_download_ttl_seconds": 900,
+    "promotion_approval_ttl_seconds": 300,
+    "manual_inflight": 16,
+    "urgent_inflight_reserved": 4,
+    "background_inflight": 4,
+    "gateway_pool_connections": 8,
+    "maintenance_pool_connections": 2,
+    "account_requests_per_minute": 30,
+    "account_burst": 10,
+    "turn_burst": 5,
+    "human_request_per_minute": 10,
+    "login_intent_seconds": 300,
+    "login_exchange_timeout_seconds": 10,
+    "jwks_cache_max_age_seconds": 300,
+    "broker_capability_ttl_seconds": 60,
+    "nonce_bits": 256
+  },
+  "unresolved": {
+    "svid_lifetime_seconds": null,
+    "host_resource_limits": null,
+    "software_version_pins": null,
+    "model_artifact_digest": null,
+    "account_retention_periods": null
+  },
+  "fixed": {
+    "positive_permission_cache": false,
+    "remote_inference": false,
+    "police_integration": false,
+    "autonomous_emergency_contact": false,
+    "real_business_data": false,
+    "production_promotion": false,
+    "whole_host_independence": false
+  },
+  "acceptance_record": "decisions/2026-11-06-implementation-choices-and-model.md",
+  "deployment_target": "this_workstation",
+  "selected_model_identifier": "google/gemma-4-12b-qat"
+}

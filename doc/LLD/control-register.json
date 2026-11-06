@@ -1,0 +1,218 @@
+{
+  "status": "proposed_local_control_register_not_certification",
+  "applicable_standard_control_denominator": null,
+  "certified": false,
+  "controls": [
+    {
+      "id": "LC-IDENTITY",
+      "mechanism": "03-identity-and-workload-trust.md",
+      "protected_boundary": "identity PEP and workload proxy",
+      "planned_policy_rule": "care.demo.identity",
+      "policy_artifact_digest": null,
+      "threat_family": "Identity abuse and stale sessions",
+      "verification": [
+        "VT-02",
+        "VT-03",
+        "VT-12"
+      ],
+      "responsible_role": "security",
+      "runtime_evidence": "not_assessed",
+      "residual": "Upstream revocation after proof is an in-flight race; host-root remains residual",
+      "framework_mapping": {
+        "reference": "../REQ/09-standards-and-runtime-controls.md",
+        "exact_identifiers": null,
+        "pin_status": "pending_official_artifact_extraction",
+        "applicability": "local control applies to the listed protected boundary; exact framework applicability/denominator requires independent review"
+      }
+    },
+    {
+      "id": "LC-SCOPE",
+      "mechanism": "04-data-model-and-transactions.md",
+      "protected_boundary": "gateway projection/command PEP",
+      "planned_policy_rule": "care.demo.scope",
+      "policy_artifact_digest": null,
+      "threat_family": "Object/field access and authority laundering",
+      "verification": [
+        "VT-01",
+        "VT-05",
+        "VT-06"
+      ],
+      "responsible_role": "privacy/security",
+      "runtime_evidence": "not_assessed",
+      "residual": "Gateway/root compromise residual; direct privileges require deployed probes",
+      "framework_mapping": {
+        "reference": "../REQ/09-standards-and-runtime-controls.md",
+        "exact_identifiers": null,
+        "pin_status": "pending_official_artifact_extraction",
+        "applicability": "local control applies to the listed protected boundary; exact framework applicability/denominator requires independent review"
+      }
+    },
+    {
+      "id": "LC-CONSENT",
+      "mechanism": "06-consent-directory-and-referrals.md",
+      "protected_boundary": "consent/dispatch final authorization",
+      "planned_policy_rule": "care.demo.consent",
+      "policy_artifact_digest": null,
+      "threat_family": "Disclosure without exact current consent",
+      "verification": [
+        "VT-06",
+        "VT-07"
+      ],
+      "responsible_role": "privacy",
+      "runtime_evidence": "not_assessed",
+      "residual": "Already-authorized transmission cannot be recalled",
+      "framework_mapping": {
+        "reference": "../REQ/09-standards-and-runtime-controls.md",
+        "exact_identifiers": null,
+        "pin_status": "pending_official_artifact_extraction",
+        "applicability": "local control applies to the listed protected boundary; exact framework applicability/denominator requires independent review"
+      }
+    },
+    {
+      "id": "LC-AGENT",
+      "mechanism": "07-agent-runtime-and-inference.md",
+      "protected_boundary": "broker/task/context/output PEP",
+      "planned_policy_rule": "care.demo.agent",
+      "policy_artifact_digest": null,
+      "threat_family": "Injection/excessive agency/unsafe output",
+      "verification": [
+        "VT-08",
+        "VT-09",
+        "VT-18"
+      ],
+      "responsible_role": "architecture/security",
+      "runtime_evidence": "not_assessed",
+      "residual": "Natural-language and automation-bias risks require human evaluation",
+      "framework_mapping": {
+        "reference": "../REQ/09-standards-and-runtime-controls.md",
+        "exact_identifiers": null,
+        "pin_status": "pending_official_artifact_extraction",
+        "applicability": "local control applies to the listed protected boundary; exact framework applicability/denominator requires independent review"
+      }
+    },
+    {
+      "id": "LC-NETWORK",
+      "mechanism": "11-deployment-and-configuration.md",
+      "protected_boundary": "proxy/CNI/host firewall",
+      "planned_policy_rule": "care.demo.network",
+      "policy_artifact_digest": null,
+      "threat_family": "SSRF/exfiltration/alternate-path bypass",
+      "verification": [
+        "VT-12"
+      ],
+      "responsible_role": "security/operations",
+      "runtime_evidence": "not_assessed",
+      "residual": "Actual host routes, DNS and address-family enforcement not tested",
+      "framework_mapping": {
+        "reference": "../REQ/09-standards-and-runtime-controls.md",
+        "exact_identifiers": null,
+        "pin_status": "pending_official_artifact_extraction",
+        "applicability": "local control applies to the listed protected boundary; exact framework applicability/denominator requires independent review"
+      }
+    },
+    {
+      "id": "LC-ARTIFACT",
+      "mechanism": "08-runtime-security-and-governance.md",
+      "protected_boundary": "registry/activation/drift controller",
+      "planned_policy_rule": "care.demo.artifact",
+      "policy_artifact_digest": null,
+      "threat_family": "Supply-chain substitution and unauthorized policy activation",
+      "verification": [
+        "VT-10",
+        "VT-17"
+      ],
+      "responsible_role": "governance/security",
+      "runtime_evidence": "not_assessed",
+      "residual": "Signatures do not prove correctness or proper human authority",
+      "framework_mapping": {
+        "reference": "../REQ/09-standards-and-runtime-controls.md",
+        "exact_identifiers": null,
+        "pin_status": "pending_official_artifact_extraction",
+        "applicability": "local control applies to the listed protected boundary; exact framework applicability/denominator requires independent review"
+      }
+    },
+    {
+      "id": "LC-AUDIT",
+      "mechanism": "09-audit-rights-and-analytics.md",
+      "protected_boundary": "canonical audit writer and disclosure gate",
+      "planned_policy_rule": "care.demo.audit",
+      "policy_artifact_digest": null,
+      "threat_family": "Unrecorded effects and tampering",
+      "verification": [
+        "VT-11"
+      ],
+      "responsible_role": "audit/security",
+      "runtime_evidence": "not_assessed",
+      "residual": "Same-host checkpoints do not defeat root/owner compromise",
+      "framework_mapping": {
+        "reference": "../REQ/09-standards-and-runtime-controls.md",
+        "exact_identifiers": null,
+        "pin_status": "pending_official_artifact_extraction",
+        "applicability": "local control applies to the listed protected boundary; exact framework applicability/denominator requires independent review"
+      }
+    },
+    {
+      "id": "LC-LIFECYCLE",
+      "mechanism": "09-audit-rights-and-analytics.md",
+      "protected_boundary": "rights/lifecycle command PEP",
+      "planned_policy_rule": "care.demo.lifecycle",
+      "policy_artifact_digest": null,
+      "threat_family": "Unbounded copies, false erasure or held-data purge",
+      "verification": [
+        "VT-13"
+      ],
+      "responsible_role": "privacy",
+      "runtime_evidence": "not_assessed",
+      "residual": "Account metadata periods and physical storage erasure unassessed",
+      "framework_mapping": {
+        "reference": "../REQ/09-standards-and-runtime-controls.md",
+        "exact_identifiers": null,
+        "pin_status": "pending_official_artifact_extraction",
+        "applicability": "local control applies to the listed protected boundary; exact framework applicability/denominator requires independent review"
+      }
+    },
+    {
+      "id": "LC-RECOVERY",
+      "mechanism": "12-continuity-and-operations.md",
+      "protected_boundary": "live journal and host generation gate",
+      "planned_policy_rule": "care.demo.recovery",
+      "policy_artifact_digest": null,
+      "threat_family": "Restored stale grants or dual serving generation",
+      "verification": [
+        "VT-14",
+        "VT-15"
+      ],
+      "responsible_role": "operations/security",
+      "runtime_evidence": "not_assessed",
+      "residual": "Current continuing host authority assumed; disaster recency not provided",
+      "framework_mapping": {
+        "reference": "../REQ/09-standards-and-runtime-controls.md",
+        "exact_identifiers": null,
+        "pin_status": "pending_official_artifact_extraction",
+        "applicability": "local control applies to the listed protected boundary; exact framework applicability/denominator requires independent review"
+      }
+    },
+    {
+      "id": "LC-OPERATIONS",
+      "mechanism": "12-continuity-and-operations.md",
+      "protected_boundary": "capability/readiness/abuse/help gates",
+      "planned_policy_rule": "care.demo.operations",
+      "policy_artifact_digest": null,
+      "threat_family": "Unusable human service, overload and false connection",
+      "verification": [
+        "VT-16",
+        "VT-17",
+        "VT-18"
+      ],
+      "responsible_role": "operations",
+      "runtime_evidence": "not_assessed",
+      "residual": "Single-host/staffing and soft timing targets unvalidated",
+      "framework_mapping": {
+        "reference": "../REQ/09-standards-and-runtime-controls.md",
+        "exact_identifiers": null,
+        "pin_status": "pending_official_artifact_extraction",
+        "applicability": "local control applies to the listed protected boundary; exact framework applicability/denominator requires independent review"
+      }
+    }
+  ]
+}

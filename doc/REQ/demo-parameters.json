@@ -1,7 +1,7 @@
 {
   "profile": {
     "name": "ottawa-local-synthetic-demo",
-    "status": "design specification only: accepted local DEC-01..05 meanings plus unmeasured demo defaults; not runtime configuration",
+    "status": "accepted local design directions and starting engineering defaults; unmeasured; not runtime configuration",
     "effective_date": "2026-11-04",
     "production_approved": false,
     "effective_date_basis": "Original demo profile date; local design option acceptance is dated separately in local_design_acceptance."
@@ -44,10 +44,13 @@
     "multi_region": false,
     "public_demo_access": false,
     "fallback_publication": "separate-from-cluster",
-    "whole_host_failure_independence": false
+    "whole_host_failure_independence": false,
+    "target": "this_workstation",
+    "target_status": "accepted_by_user",
+    "workstation_inventory_status": "not_assessed"
   },
   "stack": {
-    "selection_status": "proposed_not_installed",
+    "selection_status": "accepted_local_design_direction_not_installed_or_version_verified",
     "ui": "React + TypeScript",
     "api": "Python + FastAPI",
     "database": "PostgreSQL",
@@ -61,7 +64,7 @@
   },
   "inference": {
     "provider": "LM Studio",
-    "model_family": "Gemma 3 4B IT",
+    "model_family": null,
     "model_digest": null,
     "quantization": null,
     "remote_fallback": false,
@@ -75,7 +78,11 @@
     "max_proposal_attempts": 2,
     "max_agent_steps_per_turn": 4,
     "max_tools_per_turn": 3,
-    "capability_probe_required": true
+    "capability_probe_required": true,
+    "model_identifier": "google/gemma-4-12b-qat",
+    "model_metadata_status": "not_verified; exact user-selected identifier is authoritative",
+    "download_status": "reported_already_downloaded_by_user",
+    "loaded_model_id": null
   },
   "identity": {
     "continuation_ttl_minutes": 10,
@@ -380,5 +387,37 @@
     "upstream_D02_dispositions": "pending",
     "independent_release_review_satisfied": false,
     "runtime_activated": false
+  },
+  "local_lld_acceptance": {
+    "date": "2026-11-06",
+    "record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+    "implementation_decisions": [
+      "LLD-D01",
+      "LLD-D02",
+      "LLD-D03",
+      "LLD-D04",
+      "LLD-D05",
+      "LLD-D06",
+      "LLD-D07"
+    ],
+    "recommended_directions": [
+      "LD-01",
+      "LD-02",
+      "LD-03",
+      "LD-04",
+      "LD-05",
+      "LD-06",
+      "LD-07",
+      "LD-08",
+      "LD-09",
+      "LD-10",
+      "LD-11",
+      "LD-12",
+      "LD-13"
+    ],
+    "deployment_target": "this_workstation",
+    "model_identifier": "google/gemma-4-12b-qat",
+    "runtime_activated": false,
+    "independent_release_review_satisfied": false
   }
 }

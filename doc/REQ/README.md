@@ -32,3 +32,5 @@ Realtime governance is explicitly specified in [TR-GOV-06…12](04-data-security
 [Standards and runtime controls](09-standards-and-runtime-controls.md) maps OWASP, MITRE ATLAS, NIST AI RMF/Zero Trust, ISO/IEC 42001 and OpenID SSF/CAEP to realtime security/governance obligations and AT-15/16.
 
 [Actor-support agentic AI and service model](10-agentic-ai-and-service-model.md) explains the mission-critical service objectives, comparable systems/evidence, each actor’s assistant, bounded task lifecycle, human decision boundaries and usefulness/continuity acceptance (TR-AI-01…15; AT-17/18).
+
+The [LLD choice acceptance](../LLD/decisions/2026-11-06-implementation-choices-and-model.md) records the later user-selected workstation and `google/gemma-4-12b-qat` baseline; exact artifact/runtime evidence is separate.

@@ -1,0 +1,39 @@
+# Contracts, validation and protocol rules
+
+## Normative artifacts
+
+[definitions.schema.json](contracts/definitions.schema.json) defines closed nested types. [openapi.json](contracts/openapi.json) binds HTTP methods, paths, inputs, outputs and errors. [operations.json](contracts/operations.json) binds producer/consumer, required purpose/scope, state owner, idempotency and final authorization. Machine shapes and prose semantics apply together. Unknown keys, duplicate JSON keys, nonfinite numbers, invalid Unicode, noncanonical identifiers and incompatible versions are rejected before domain handling. No free-form authority or executable destination fields exist.
+
+IDs are opaque UUIDs, never a permission. Revisions, epochs, sequence numbers and fencing counters are nonnegative signed-64-bit values serialized as decimal strings; no leading zeros except `0`, maximum 9223372036854775807. Times are RFC3339 UTC instants with `Z`; timezone rendering is labelled America/Toronto. Clock-based expiry uses authoritative server time, `now < expires_at`; equality is expired. Local monotonic timers enforce request deadlines. Clock uncertainty greater than the configured skew fences time-sensitive capabilities.
+
+Population is `synthetic`; environment is `demo`. Jurisdiction is CA-XX, CA-YY or explicit unknown null. They are separate fields and cannot be inferred from a header/IP. Actual account metadata is classified separately even when referenced by a synthetic record.
+
+## HTTP boundary
+
+All protected requests use private TLS listeners. Browser BFF requests require Secure/HttpOnly/SameSite=Lax host-only cookies, validated exact Origin and CSRF proof for mutations; `Content-Type: application/json`, UTF-8, no request compression. Body cap 64 KiB (proposed), turn text 8000 characters, draft text 12000, field text 2000, strings normalized for comparison without rewriting submitted evidence. Reject URLs/HTML as executable inputs; render user text as encoded plain text. CORS denies other origins. CSP denies inline script, plugins, framing and external connections except pinned listeners. Tokens stay server-side. CSRF/OIDC exceptions are limited to exact protocol callback behavior and bound state, not broad route exemptions.
+
+Mutation body types include `expected_revision`; create bodies include explicit parent scope and baseline tags. `Idempotency-Key` is required for every domain mutation, UUID-shaped; `X-Request-ID` is optional correlation and never authorization. Stable key scope is `(environment, authenticated principal, operation_id, idempotency_key)` with canonical validated payload digest, path bindings and contract version. A key reused with different content returns `IDEMPOTENCY_CONFLICT`. Key retention covers live aggregate plus ambiguous work and recovery dependencies, with minimized digest/status after content purge.
+
+On retry, authenticate and authorize current result access first. A prior success never authorizes replay of an old transcript/export/token. An authorized operation-status query returns only operation ID, state and safe reason; detailed result is rebuilt under current rights. Lost DB commit acknowledgement yields `COMMIT_UNKNOWN`, not a new logical action. Retry same key or inspect operation status; handler queries durable dedup state before considering another effect. No blind new key on timeout.
+
+Error envelope contains code, request ID, retryable, safe message key, optional operation ID/retry-after and no sensitive details. HTTP map: 400 malformed, 401 authentication, 403 prohibited, 404 absent OR outside object scope, 409 stale/ownership/idempotency conflict, 410 expired continuation/resource disposition, 413 size, 422 valid JSON but invalid domain input, 429 bounded capacity, 503 authority/audit/dependency unavailable, 504 deadline/commit uncertainty. Do not reveal whether an inaccessible PID/session exists. Denied protected operations have canonical audit when available; audit failure returns safe dependency error and local diagnostic without claiming central commit.
+
+## Lists, streams and versioning
+
+Lists use opaque HMAC-authenticated cursors bound to principal, filters, sort and expiry; page size 1..50, stable `(created_at,id)` order. Cursor content grants no authority. No arbitrary sort/filter SQL. SSE uses monotonically increasing per-session event IDs, event type and aggregate reference/revision; the client fetches a typed current projection. The outbox stores references, not serialized private replay blobs. At every event delivery obtain fresh authority, filter fields, append disclosure audit, then write bytes. Revocation/takeover after authorization can no longer recall those bytes; later events recheck. Heartbeat carries no private data. A gap/expired cursor sends a no-content `resync_required` control event and closes; client fetches a new current view. Last-Event-ID is a position only. Slow consumer: cap 32 references/connection (proposed), close and resync; no unbounded private buffer.
+
+No raw LLM token stream is exposed. Wire `/v1` additive changes require compatibility tests with closed consumers; adding a field is not automatically compatible because unknown keys are rejected. New shapes use a new explicit contract/version and coordinated deployment. The upstream six indicative schemas remain source references. Local turn/proposal/decision/consent/audit adapters validate old source constraints, including empty `situation_factors`, but never advertise untested wire compatibility.
+
+## Internal calls and effect ordering
+
+Each call identifies authenticated workload, originating human/job, task if any, purpose and exact scope. Delegation is server-issued short-lived signed metadata bound to method, path, body digest, audience, request/nonce and current revisions. It contains no reusable broad user token. The receiver validates and resolves current state; headers from browsers are removed. Signed delegation is not a positive permission cache. PDP returns closed decisions and mandatory obligations; an unsupported obligation is denial.
+
+External simulator sends use an immutable reviewed payload digest, stable dispatch ID and one-use authorization. Attempt IDs differ from dispatch ID. Receiver deduplication is scoped to recipient and dispatch ID and rejects changed digests. No endpoint supplied by model/user is accepted. The final DB commit is the local authorization boundary, not a proof of network delivery; see [referrals](06-consent-directory-and-referrals.md).
+
+## Operation lineage and protocol exceptions
+
+Enqueue, final dispatch authorization, attempt, receipt and disclosure are distinct child operation IDs correlated to root command_id. Each child has its own canonical audit uniqueness; retries preserve that child ID. Never reuse the enqueue operation ID for a second canonical authorization. A rejected terminal logical operation remains rejected; a new deliberate action after changed authority may use a new key, while unknown outcomes must reconcile their existing key.
+
+Login-start/callback lack an authenticated principal: their idempotency scope is the server-issued browser-binding nonce/login-intent ID plus operation/key, and callbacks additionally consume exact state/code intent. Such protocol endpoints do not expose unauthenticated business data. Named internal data gateway operations retain exact per-operation argument/path types plus signed delegation and a PDP decision; they never accept SQL or an arbitrary operation/payload escape hatch.
+
+All 256-bit continuation/challenge nonces are canonical unpadded base64url: decode to exactly 32 bytes and require exact re-encoding match. Schema bounds include canonical final bits; lexical aliases are rejected. Human/duty evidence must match the discriminated actor kind, authenticated principal/workload registry identity, request digest, audience and action. A workload-duty proof cannot fill a human review slot.

@@ -23,7 +23,7 @@ Logical model elements need not each become a network service. Conversely, coloc
 
 ## LLM and bounded agent behavior
 
-**TR-LLM-01.** SHALL use local LM Studio with Gemma 3 4B IT as requested. Record exact model artifact origin/digest, quantization, loaded model identifier, LM Studio version, inference interface, prompt digest, decoding settings, context/output limits and applicable license review. “Gemma” in a UI label is insufficient identification. No model download or server configuration is authorized by this documentation task.
+**TR-LLM-01.** SHALL use local LM Studio with `google/gemma-4-12b-qat` as selected by the user on 2026-11-06, superseding the earlier Gemma 3 selection. Record exact model artifact origin/digest, quantization, loaded model identifier, LM Studio version, inference interface, prompt digest, decoding settings, context/output limits and applicable license review. “Gemma” in a UI label is insufficient identification. No model download or server configuration is authorized by this documentation task.
 
 **TR-LLM-02.** SHALL use the model only to propose conversational wording, assessment extraction candidates, summary drafts and allowed action candidates. It SHALL NOT determine committed tier, consent, legal basis, role, jurisdiction, recipient, identity link, or action permission. Controlled assessment rationale and service/legal/protocol facts SHALL be assembled from approved structured inputs and sourced templates. Never expose model hidden reasoning or stream unchecked tokens to participants.
 

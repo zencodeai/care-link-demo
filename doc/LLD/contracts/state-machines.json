@@ -1,0 +1,1062 @@
+{
+  "version": "care.demo.v1",
+  "machines": [
+    {
+      "name": "session",
+      "states": [
+        "active",
+        "human_requested",
+        "queued",
+        "worker_assigned",
+        "handoff_pending",
+        "human_controlled",
+        "ended"
+      ],
+      "initial": "active",
+      "terminal": [
+        "ended"
+      ],
+      "transitions": [
+        {
+          "event": "human_request",
+          "from": [
+            "active"
+          ],
+          "to": "human_requested",
+          "guard": "current participant or deterministic fixture trigger",
+          "effect": "dedup ticket; preserve mandatory reason"
+        },
+        {
+          "event": "enqueue",
+          "from": [
+            "human_requested"
+          ],
+          "to": "queued",
+          "guard": "durable ticket current",
+          "effect": "schedule fixture priority"
+        },
+        {
+          "event": "accept",
+          "from": [
+            "queued",
+            "human_requested"
+          ],
+          "to": "worker_assigned",
+          "guard": "one current eligible reservation and revision",
+          "effect": "accepted_unconnected"
+        },
+        {
+          "event": "prepare_transfer",
+          "from": [
+            "worker_assigned"
+          ],
+          "to": "handoff_pending",
+          "guard": "current assignment and context",
+          "effect": "record worker ACK"
+        },
+        {
+          "event": "confirm_transfer",
+          "from": [
+            "handoff_pending"
+          ],
+          "to": "human_controlled",
+          "guard": "current worker + two-party channel evidence + epoch",
+          "effect": "change owner and increment control_epoch"
+        },
+        {
+          "event": "transfer_failed",
+          "from": [
+            "worker_assigned",
+            "handoff_pending"
+          ],
+          "to": "queued",
+          "guard": "current assignment",
+          "effect": "release/requeue; retain support"
+        },
+        {
+          "event": "takeover_unconnected",
+          "from": [
+            "active",
+            "human_requested",
+            "queued",
+            "worker_assigned",
+            "handoff_pending",
+            "human_controlled"
+          ],
+          "to": "handoff_pending",
+          "guard": "supervisor scope; no live evidence",
+          "effect": "change owner; fence old epoch"
+        },
+        {
+          "event": "takeover_connected",
+          "from": [
+            "active",
+            "human_requested",
+            "queued",
+            "worker_assigned",
+            "handoff_pending",
+            "human_controlled"
+          ],
+          "to": "human_controlled",
+          "guard": "supervisor scope + current live evidence",
+          "effect": "change owner; fence old epoch"
+        },
+        {
+          "event": "user_end",
+          "from": [
+            "active",
+            "human_requested",
+            "queued",
+            "worker_assigned",
+            "handoff_pending",
+            "human_controlled"
+          ],
+          "to": "ended",
+          "guard": "explicit authorized user choice",
+          "effect": "record unresolved status; cancel optional work"
+        },
+        {
+          "event": "human_request",
+          "from": [
+            "human_requested"
+          ],
+          "to": "human_requested",
+          "guard": "current participant; existing active request/assignment",
+          "effect": "idempotent current-ticket status; preserve owner/phase and original request time"
+        },
+        {
+          "event": "human_request",
+          "from": [
+            "queued"
+          ],
+          "to": "queued",
+          "guard": "current participant; existing active request/assignment",
+          "effect": "idempotent current-ticket status; preserve owner/phase and original request time"
+        },
+        {
+          "event": "human_request",
+          "from": [
+            "worker_assigned"
+          ],
+          "to": "worker_assigned",
+          "guard": "current participant; existing active request/assignment",
+          "effect": "idempotent current-ticket status; preserve owner/phase and original request time"
+        },
+        {
+          "event": "human_request",
+          "from": [
+            "handoff_pending"
+          ],
+          "to": "handoff_pending",
+          "guard": "current participant; existing active request/assignment",
+          "effect": "idempotent current-ticket status; preserve owner/phase and original request time"
+        },
+        {
+          "event": "human_request",
+          "from": [
+            "human_controlled"
+          ],
+          "to": "human_controlled",
+          "guard": "current participant; existing active request/assignment",
+          "effect": "idempotent current-ticket status; preserve owner/phase and original request time"
+        }
+      ],
+      "unlisted_transition": "reject_without_effect",
+      "guard_failure": "typed_failure_preserve_state",
+      "timeout": "only_declared_timeout_event; no implicit success"
+    },
+    {
+      "name": "transport",
+      "states": [
+        "connected",
+        "reconnecting",
+        "disconnected"
+      ],
+      "initial": "connected",
+      "terminal": [],
+      "transitions": [
+        {
+          "event": "lost",
+          "from": [
+            "connected",
+            "reconnecting"
+          ],
+          "to": "disconnected",
+          "guard": "observed transport loss",
+          "effect": "preserve service phase/owner"
+        },
+        {
+          "event": "retry",
+          "from": [
+            "disconnected"
+          ],
+          "to": "reconnecting",
+          "guard": "explicit current access",
+          "effect": "request current snapshot"
+        },
+        {
+          "event": "reconnected",
+          "from": [
+            "reconnecting"
+          ],
+          "to": "connected",
+          "guard": "current authority/channel proof",
+          "effect": "resync permitted state"
+        }
+      ],
+      "unlisted_transition": "reject_without_effect",
+      "guard_failure": "typed_failure_preserve_state",
+      "timeout": "only_declared_timeout_event; no implicit success"
+    },
+    {
+      "name": "task",
+      "states": [
+        "requested",
+        "scoped",
+        "planning",
+        "awaiting_authorization",
+        "running",
+        "awaiting_observation",
+        "awaiting_human",
+        "completed",
+        "cancelled",
+        "failed"
+      ],
+      "initial": "requested",
+      "terminal": [
+        "completed",
+        "cancelled",
+        "failed"
+      ],
+      "transitions": [
+        {
+          "event": "scope",
+          "from": [
+            "requested"
+          ],
+          "to": "scoped",
+          "guard": "profile/binding/purpose/inputs admitted",
+          "effect": "persist narrowed scope and budgets"
+        },
+        {
+          "event": "plan",
+          "from": [
+            "scoped"
+          ],
+          "to": "planning",
+          "guard": "current lease/fence + budget + deadline",
+          "effect": "reserve proposal attempt"
+        },
+        {
+          "event": "tool_proposed",
+          "from": [
+            "planning"
+          ],
+          "to": "awaiting_authorization",
+          "guard": "closed allowed tool",
+          "effect": "no tool effect"
+        },
+        {
+          "event": "authorize",
+          "from": [
+            "awaiting_authorization"
+          ],
+          "to": "running",
+          "guard": "current broker capability+PDP+budget",
+          "effect": "reserve step/tool"
+        },
+        {
+          "event": "observe_wait",
+          "from": [
+            "running"
+          ],
+          "to": "awaiting_observation",
+          "guard": "invocation durable",
+          "effect": "persist invocation identity"
+        },
+        {
+          "event": "observation",
+          "from": [
+            "awaiting_observation"
+          ],
+          "to": "planning",
+          "guard": "matching durable success/failure observation, completed invocation, current task/fence; no unfinished tool",
+          "effect": "persist outcome before next step"
+        },
+        {
+          "event": "review",
+          "from": [
+            "planning",
+            "awaiting_authorization",
+            "awaiting_observation"
+          ],
+          "to": "awaiting_human",
+          "guard": "authorized review work",
+          "effect": "persist draft and suspend compute"
+        },
+        {
+          "event": "resume",
+          "from": [
+            "awaiting_human"
+          ],
+          "to": "scoped",
+          "guard": "fresh actor/domain event and revised scope/deadline",
+          "effect": "stale old lease/review as needed; retain counters"
+        },
+        {
+          "event": "complete",
+          "from": [
+            "planning",
+            "awaiting_observation",
+            "awaiting_human"
+          ],
+          "to": "completed",
+          "guard": "explicit completion predicate evidence",
+          "effect": "record task outcome not client benefit"
+        },
+        {
+          "event": "cancel",
+          "from": [
+            "requested",
+            "scoped",
+            "planning",
+            "awaiting_authorization",
+            "running",
+            "awaiting_observation",
+            "awaiting_human"
+          ],
+          "to": "cancelled",
+          "guard": "authorized cancel/takeover/revocation",
+          "effect": "increment fence; suppress late output"
+        },
+        {
+          "event": "fail",
+          "from": [
+            "requested",
+            "scoped",
+            "planning",
+            "awaiting_authorization",
+            "running",
+            "awaiting_observation",
+            "awaiting_human"
+          ],
+          "to": "failed",
+          "guard": "unrecoverable error/deadline/budget",
+          "effect": "typed reason + manual fallback"
+        }
+      ],
+      "unlisted_transition": "reject_without_effect",
+      "guard_failure": "typed_failure_preserve_state",
+      "timeout": "only_declared_timeout_event; no implicit success"
+    },
+    {
+      "name": "dispatch",
+      "states": [
+        "pending",
+        "authorized",
+        "attempted",
+        "unknown",
+        "received",
+        "partial",
+        "accepted",
+        "rejected",
+        "cancelled",
+        "reconciliation_needed"
+      ],
+      "initial": "pending",
+      "terminal": [
+        "accepted",
+        "rejected",
+        "cancelled"
+      ],
+      "transitions": [
+        {
+          "event": "authorize",
+          "from": [
+            "pending"
+          ],
+          "to": "authorized",
+          "guard": "fresh rights/consent/review/source/control",
+          "effect": "commit child authorization+audit"
+        },
+        {
+          "event": "consume",
+          "from": [
+            "authorized"
+          ],
+          "to": "attempted",
+          "guard": "one-use authorization CAS + current lease",
+          "effect": "record send attempt before network"
+        },
+        {
+          "event": "timeout",
+          "from": [
+            "attempted"
+          ],
+          "to": "unknown",
+          "guard": "ambiguous network outcome",
+          "effect": "no blind repeat"
+        },
+        {
+          "event": "receipt",
+          "from": [
+            "attempted",
+            "unknown",
+            "reconciliation_needed"
+          ],
+          "to": "received",
+          "guard": "verified matching receipt",
+          "effect": "record receiver observation"
+        },
+        {
+          "event": "partial",
+          "from": [
+            "received"
+          ],
+          "to": "partial",
+          "guard": "receiver-owned partial decision",
+          "effect": "record exact subset"
+        },
+        {
+          "event": "accept",
+          "from": [
+            "received",
+            "partial"
+          ],
+          "to": "accepted",
+          "guard": "receiver-owned decision",
+          "effect": "service acceptance only"
+        },
+        {
+          "event": "reject",
+          "from": [
+            "received",
+            "partial"
+          ],
+          "to": "rejected",
+          "guard": "receiver-owned decision",
+          "effect": "retain support/alternatives"
+        },
+        {
+          "event": "cancel",
+          "from": [
+            "pending",
+            "authorized"
+          ],
+          "to": "cancelled",
+          "guard": "not consumed; current restriction",
+          "effect": "fence unsent work"
+        },
+        {
+          "event": "reconcile",
+          "from": [
+            "unknown",
+            "partial"
+          ],
+          "to": "reconciliation_needed",
+          "guard": "authorized query or manual recovery",
+          "effect": "stable dispatch lookup; no new effect"
+        },
+        {
+          "event": "not_found_retry",
+          "from": [
+            "reconciliation_needed"
+          ],
+          "to": "pending",
+          "guard": "durable simulator dedup/not-found proof and new current authorization",
+          "effect": "same dispatch ID; new child attempt"
+        }
+      ],
+      "unlisted_transition": "reject_without_effect",
+      "guard_failure": "typed_failure_preserve_state",
+      "timeout": "only_declared_timeout_event; no implicit success"
+    },
+    {
+      "name": "follow_up",
+      "states": [
+        "anchor_pending",
+        "scheduled",
+        "claimed",
+        "authorized",
+        "sent",
+        "cancelled",
+        "expired",
+        "unknown",
+        "reconciliation_needed"
+      ],
+      "initial": "anchor_pending",
+      "terminal": [
+        "sent",
+        "cancelled",
+        "expired"
+      ],
+      "transitions": [
+        {
+          "event": "anchor",
+          "from": [
+            "anchor_pending"
+          ],
+          "to": "scheduled",
+          "guard": "explicit post-crisis event and24..72h due/contact grant",
+          "effect": "persist due"
+        },
+        {
+          "event": "claim",
+          "from": [
+            "scheduled"
+          ],
+          "to": "claimed",
+          "guard": "due + bounded lease",
+          "effect": "no send permission"
+        },
+        {
+          "event": "authorize",
+          "from": [
+            "claimed"
+          ],
+          "to": "authorized",
+          "guard": "current contact grant/owner/epoch + audit",
+          "effect": "child effect authorization"
+        },
+        {
+          "event": "send",
+          "from": [
+            "authorized"
+          ],
+          "to": "sent",
+          "guard": "stable internal inbox dedup",
+          "effect": "observed delivery"
+        },
+        {
+          "event": "timeout",
+          "from": [
+            "authorized"
+          ],
+          "to": "unknown",
+          "guard": "ambiguous delivery",
+          "effect": "query inbox key"
+        },
+        {
+          "event": "reconcile",
+          "from": [
+            "unknown"
+          ],
+          "to": "reconciliation_needed",
+          "guard": "current authority",
+          "effect": "inspect stable key"
+        },
+        {
+          "event": "found",
+          "from": [
+            "reconciliation_needed"
+          ],
+          "to": "sent",
+          "guard": "durable inbox proof",
+          "effect": "record observation"
+        },
+        {
+          "event": "cancel",
+          "from": [
+            "anchor_pending",
+            "scheduled",
+            "claimed"
+          ],
+          "to": "cancelled",
+          "guard": "optout before authorization",
+          "effect": "journal contact revocation"
+        },
+        {
+          "event": "expire",
+          "from": [
+            "scheduled",
+            "claimed"
+          ],
+          "to": "expired",
+          "guard": "real consent or business-window expiry before authorization",
+          "effect": "no delivery"
+        },
+        {
+          "event": "proven_absent",
+          "from": [
+            "reconciliation_needed"
+          ],
+          "to": "scheduled",
+          "guard": "durable inbox absent proof + previous sender/authorization fenced; valid contact consent and unexpired window",
+          "effect": "same logical inbox key; fresh child authorization"
+        },
+        {
+          "event": "absent_cancelled",
+          "from": [
+            "reconciliation_needed"
+          ],
+          "to": "cancelled",
+          "guard": "durable no-send proof + previous sender fenced + optout",
+          "effect": "record no delivery"
+        },
+        {
+          "event": "absent_expired",
+          "from": [
+            "reconciliation_needed"
+          ],
+          "to": "expired",
+          "guard": "durable no-send proof + previous sender fenced + window expired",
+          "effect": "record no delivery"
+        }
+      ],
+      "unlisted_transition": "reject_without_effect",
+      "guard_failure": "typed_failure_preserve_state",
+      "timeout": "only_declared_timeout_event; no implicit success"
+    },
+    {
+      "name": "help",
+      "states": [
+        "recorded",
+        "accepted_unconnected",
+        "cancelled",
+        "reconciled"
+      ],
+      "initial": "recorded",
+      "terminal": [
+        "cancelled",
+        "reconciled"
+      ],
+      "transitions": [
+        {
+          "event": "accept",
+          "from": [
+            "recorded"
+          ],
+          "to": "accepted_unconnected",
+          "guard": "fresh request-bound authority + spool CAS",
+          "effect": "no connection claim"
+        },
+        {
+          "event": "cancel",
+          "from": [
+            "recorded",
+            "accepted_unconnected"
+          ],
+          "to": "cancelled",
+          "guard": "fresh owner authority",
+          "effect": "local audit"
+        },
+        {
+          "event": "reconcile",
+          "from": [
+            "recorded",
+            "accepted_unconnected"
+          ],
+          "to": "reconciled",
+          "guard": "fresh authority and dedup core receipt",
+          "effect": "no assignment/grant transfer"
+        }
+      ],
+      "unlisted_transition": "reject_without_effect",
+      "guard_failure": "typed_failure_preserve_state",
+      "timeout": "only_declared_timeout_event; no implicit success"
+    },
+    {
+      "name": "activation",
+      "states": [
+        "proposed",
+        "staged",
+        "ready",
+        "active",
+        "rejected",
+        "superseded"
+      ],
+      "initial": "proposed",
+      "terminal": [
+        "rejected",
+        "superseded"
+      ],
+      "transitions": [
+        {
+          "event": "stage",
+          "from": [
+            "proposed"
+          ],
+          "to": "staged",
+          "guard": "valid signed exact artifact and required reviews",
+          "effect": "distribute candidate"
+        },
+        {
+          "event": "acks",
+          "from": [
+            "staged"
+          ],
+          "to": "ready",
+          "guard": "all required current boot ACKs",
+          "effect": "eligible relaxation"
+        },
+        {
+          "event": "commit",
+          "from": [
+            "ready"
+          ],
+          "to": "active",
+          "guard": "current guard and effective time",
+          "effect": "new epoch; no positive resurrection"
+        },
+        {
+          "event": "restrict_commit",
+          "from": [
+            "staged"
+          ],
+          "to": "active",
+          "guard": "approved restrictive fence committed",
+          "effect": "lagging PEP denies"
+        },
+        {
+          "event": "reject",
+          "from": [
+            "proposed",
+            "staged",
+            "ready"
+          ],
+          "to": "rejected",
+          "guard": "invalid evidence or operator cancellation",
+          "effect": "retain safe active bundle"
+        },
+        {
+          "event": "supersede",
+          "from": [
+            "active"
+          ],
+          "to": "superseded",
+          "guard": "new higher active epoch",
+          "effect": "never decrement epoch"
+        }
+      ],
+      "unlisted_transition": "reject_without_effect",
+      "guard_failure": "typed_failure_preserve_state",
+      "timeout": "only_declared_timeout_event; no implicit success"
+    },
+    {
+      "name": "rights",
+      "states": [
+        "requested",
+        "eligible",
+        "held",
+        "active_purged",
+        "backup_pending",
+        "completed",
+        "completed_with_exceptions",
+        "reconciliation_needed",
+        "failed"
+      ],
+      "initial": "requested",
+      "terminal": [
+        "completed",
+        "completed_with_exceptions"
+      ],
+      "transitions": [
+        {
+          "event": "eligible",
+          "from": [
+            "requested",
+            "held"
+          ],
+          "to": "eligible",
+          "guard": "current AL3/scope and no blocking hold",
+          "effect": "inventory dependency graph"
+        },
+        {
+          "event": "hold",
+          "from": [
+            "requested",
+            "eligible"
+          ],
+          "to": "held",
+          "guard": "current authenticated scoped hold",
+          "effect": "record exception/review"
+        },
+        {
+          "event": "purge",
+          "from": [
+            "eligible"
+          ],
+          "to": "active_purged",
+          "guard": "kind=delete; all eligible active copies accounted",
+          "effect": "record actual active disposition"
+        },
+        {
+          "event": "backup_wait",
+          "from": [
+            "active_purged"
+          ],
+          "to": "backup_pending",
+          "guard": "restorable old copy remains",
+          "effect": "preserve tombstone"
+        },
+        {
+          "event": "complete",
+          "from": [
+            "backup_pending"
+          ],
+          "to": "completed",
+          "guard": "all eligible copies expired/purged; no exceptions",
+          "effect": "report evidence"
+        },
+        {
+          "event": "exceptions",
+          "from": [
+            "backup_pending",
+            "held"
+          ],
+          "to": "completed_with_exceptions",
+          "guard": "justified retained scoped evidence",
+          "effect": "truthful partial completion"
+        },
+        {
+          "event": "uncertain",
+          "from": [
+            "requested",
+            "eligible",
+            "active_purged",
+            "backup_pending"
+          ],
+          "to": "reconciliation_needed",
+          "guard": "unknown graph/purge/storage result",
+          "effect": "no false erasure"
+        },
+        {
+          "event": "retry",
+          "from": [
+            "failed",
+            "reconciliation_needed"
+          ],
+          "to": "requested",
+          "guard": "same request current authorization",
+          "effect": "reinventory"
+        },
+        {
+          "event": "fail",
+          "from": [
+            "requested",
+            "eligible",
+            "held",
+            "active_purged",
+            "backup_pending",
+            "reconciliation_needed"
+          ],
+          "to": "failed",
+          "guard": "unrecoverable required step",
+          "effect": "report failure and restrictions"
+        },
+        {
+          "event": "export_materialized",
+          "from": [
+            "eligible"
+          ],
+          "to": "completed",
+          "guard": "kind=export; current scoped encrypted export ready and audited",
+          "effect": "download reference; no purge"
+        },
+        {
+          "event": "no_backup_remaining",
+          "from": [
+            "active_purged"
+          ],
+          "to": "completed",
+          "guard": "kind=delete; no restorable copy or retained exception remains",
+          "effect": "truthful completion evidence"
+        }
+      ],
+      "unlisted_transition": "reject_without_effect",
+      "guard_failure": "typed_failure_preserve_state",
+      "timeout": "only_declared_timeout_event; no implicit success"
+    },
+    {
+      "name": "restore",
+      "states": [
+        "requested",
+        "restoring",
+        "quarantined",
+        "reconciling",
+        "validated",
+        "promotion_pending",
+        "fenced",
+        "serving",
+        "failed"
+      ],
+      "initial": "requested",
+      "terminal": [
+        "serving",
+        "failed"
+      ],
+      "transitions": [
+        {
+          "event": "restore",
+          "from": [
+            "requested"
+          ],
+          "to": "restoring",
+          "guard": "authorized exact backup",
+          "effect": "network quarantine"
+        },
+        {
+          "event": "copied",
+          "from": [
+            "restoring"
+          ],
+          "to": "quarantined",
+          "guard": "integrity/schema/object checks",
+          "effect": "no serving"
+        },
+        {
+          "event": "reconcile",
+          "from": [
+            "quarantined"
+          ],
+          "to": "reconciling",
+          "guard": "trusted current host head",
+          "effect": "apply restrictions/unknown work"
+        },
+        {
+          "event": "validate",
+          "from": [
+            "reconciling"
+          ],
+          "to": "validated",
+          "guard": "current rights/audit/generation evidence",
+          "effect": "seal manifest"
+        },
+        {
+          "event": "propose",
+          "from": [
+            "validated"
+          ],
+          "to": "promotion_pending",
+          "guard": "exact current evidence and authorized operator proposal; no approval yet",
+          "effect": "expiry-bound binding"
+        },
+        {
+          "event": "fence",
+          "from": [
+            "promotion_pending"
+          ],
+          "to": "fenced",
+          "guard": "distinct human approval unexpired and exact binding, current head unchanged, maintenance gate",
+          "effect": "old generation blocked"
+        },
+        {
+          "event": "serve",
+          "from": [
+            "fenced"
+          ],
+          "to": "serving",
+          "guard": "target route/current gate/manual smoke",
+          "effect": "one serving generation"
+        },
+        {
+          "event": "changed",
+          "from": [
+            "validated",
+            "promotion_pending",
+            "fenced"
+          ],
+          "to": "quarantined",
+          "guard": "head/target/evidence changed",
+          "effect": "invalidate approval; restrict"
+        },
+        {
+          "event": "fail",
+          "from": [
+            "requested",
+            "restoring",
+            "quarantined",
+            "reconciling",
+            "validated",
+            "promotion_pending",
+            "fenced"
+          ],
+          "to": "failed",
+          "guard": "required integrity/authority failure",
+          "effect": "remain unserved"
+        }
+      ],
+      "unlisted_transition": "reject_without_effect",
+      "guard_failure": "typed_failure_preserve_state",
+      "timeout": "only_declared_timeout_event; no implicit success"
+    },
+    {
+      "name": "compute",
+      "states": [
+        "queued",
+        "running",
+        "compute_unknown",
+        "completed",
+        "cancelled_verified",
+        "quarantined"
+      ],
+      "initial": "queued",
+      "terminal": [
+        "completed",
+        "cancelled_verified"
+      ],
+      "transitions": [
+        {
+          "event": "start",
+          "from": [
+            "queued"
+          ],
+          "to": "running",
+          "guard": "available slot + admitted function",
+          "effect": "bind bridge generation"
+        },
+        {
+          "event": "complete",
+          "from": [
+            "running",
+            "compute_unknown"
+          ],
+          "to": "completed",
+          "guard": "provider completion observed",
+          "effect": "free slot; deliver only current task"
+        },
+        {
+          "event": "timeout",
+          "from": [
+            "running"
+          ],
+          "to": "compute_unknown",
+          "guard": "HTTP deadline/cancel not verified",
+          "effect": "fence output; retain occupied slot"
+        },
+        {
+          "event": "cancel_verified",
+          "from": [
+            "running",
+            "compute_unknown"
+          ],
+          "to": "cancelled_verified",
+          "guard": "verified provider stop",
+          "effect": "free slot"
+        },
+        {
+          "event": "quarantine",
+          "from": [
+            "running",
+            "compute_unknown"
+          ],
+          "to": "quarantined",
+          "guard": "backend status cannot be established",
+          "effect": "AI disabled"
+        },
+        {
+          "event": "recovered",
+          "from": [
+            "quarantined"
+          ],
+          "to": "cancelled_verified",
+          "guard": "controlled bridge recovery proves no old compute",
+          "effect": "new bridge generation"
+        }
+      ],
+      "unlisted_transition": "reject_without_effect",
+      "guard_failure": "typed_failure_preserve_state",
+      "timeout": "only_declared_timeout_event; no implicit success"
+    }
+  ]
+}
