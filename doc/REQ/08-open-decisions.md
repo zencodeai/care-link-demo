@@ -1,5 +1,11 @@
 # Decision answers and system parameters
 
+## Local design acceptance — 2026-11-06
+
+The user approved all five recommendations in [HLD decision options](../HLD/11-decision-requirements-and-options.md). The [acceptance record](../HLD/decisions/2026-11-06-local-design-baseline.md) is authoritative for scope: proxy-managed automated attested workload identity (DEC-01/B), fresh-authority-only private help (DEC-02/A), the proposed event-anchored demo lifecycle (DEC-03/B), separate host recovery journal plus quarantine/independent serving promotion (DEC-04/B), and local inference/youth/safe-mode deltas with separately tracked upstream disposition (DEC-05/A).
+
+This later local overlay supersedes “open/proposed” wording below only for those selected local choices. Original source statuses are preserved; no upstream question is formally closed, product selected, real-account retention period invented, runtime activated or clinical/release approval granted. Existing numerical demo durations and targets are unchanged. Detailed mechanisms and implementation evidence remain pending.
+
 Revision: 2026-11-04. These answers incorporate the user’s stated context: the implementor resides in Ottawa, Canada and has no police links whatsoever. The current system remains a closed synthetic-data demo.
 
 **Confirmed project constraints:** Ottawa-based implementor; no police affiliation or integration; local LM Studio/Gemma; Docker/Kubernetes; independent actor credentials and sessions; human PR review. An actual legal entity, professional qualification, partner contract or independent reviewer has not been identified.

@@ -1,9 +1,10 @@
 {
   "profile": {
     "name": "ottawa-local-synthetic-demo",
-    "status": "proposed engineering defaults; not runtime configuration",
+    "status": "design specification only: accepted local DEC-01..05 meanings plus unmeasured demo defaults; not runtime configuration",
     "effective_date": "2026-11-04",
-    "production_approved": false
+    "production_approved": false,
+    "effective_date_basis": "Original demo profile date; local design option acceptance is dated separately in local_design_acceptance."
   },
   "operator": {
     "location": "Ottawa, Ontario, Canada",
@@ -54,7 +55,7 @@
     "policy_engine": "OPA/Rego",
     "bundle_signature": "Ed25519",
     "kubernetes": "local single-node cluster with enforced default-deny CNI; distribution pending host inventory",
-    "service_transport": "mutual TLS; short-lived workload certificates",
+    "service_transport": "proxy-managed mutual TLS with automated attested workload identity (DEC-01/B); exact products/versions pending",
     "secrets": "mounted secret files; separate release-key custody",
     "orchestration": "explicit bounded state machine"
   },
@@ -183,7 +184,24 @@
     "full_backup_expiry_target_days": 7,
     "restore_tombstones_required": true,
     "repository_fixtures": "versioned; no automatic expiry",
-    "approval_manifests": "retain in version control"
+    "approval_manifests": "retain in version control",
+    "anchor_policy": {
+      "decision_id": "DEC-03",
+      "option": "B",
+      "status": "accepted_local_synthetic_design",
+      "session_and_session_purpose_person": "explicit closure of session or last relevant parent",
+      "referral": "later of session closure and terminal/reconciled delivery",
+      "plan": "explicit retirement for ordinary cleanup; active plans retained; verified PID deletion uses faster existing rights target",
+      "consent": "later of parent closure and effective expiry/revocation",
+      "replay": "capture_time",
+      "security_and_audit": "event_time",
+      "aggregate_metrics": "closed_reporting_interval",
+      "backup": "immutable_capture_time",
+      "actual_access_metadata_schedule": null,
+      "recovery_restrictions": "all restorable-copy and active-grant dependencies, with reported minimal retention exception",
+      "unknown_anchor_or_rule": "review_needed; never infer eligible",
+      "engineering_holds": "authenticated scoped hold/release, dependency-aware with reported rights exceptions"
+    }
   },
   "operations": {
     "kill_p95_seconds": 2,
@@ -311,5 +329,56 @@
     "unauthorized_effects_allowed": 0,
     "usefulness_baseline": "actor-only matched synthetic scenarios; not yet measured",
     "real_clinical_noninferiority_margin": null
+  },
+  "workload_identity": {
+    "decision_id": "DEC-01",
+    "option": "B",
+    "status": "accepted_local_design_not_implemented",
+    "family": "standardized service proxies with automated attested issuer",
+    "product_selection": null,
+    "candidates_only": [
+      "SPIFFE/SPIRE",
+      "Envoy"
+    ],
+    "full_mesh_selected": false,
+    "active_connection_and_pending_work_fencing_required": true,
+    "host_bridge_identity_required": true
+  },
+  "help_access": {
+    "decision_id": "DEC-02",
+    "option": "A",
+    "status": "accepted_local_design_not_implemented",
+    "private_request_status_and_worker_acceptance": "fresh authoritative validation on each operation",
+    "stale_authority_exception": false,
+    "offline_positive_authorization": false,
+    "independent_offline_help_authority_selected": false,
+    "authority_unavailable": "private operations disabled; unconditional static information only",
+    "host_entry_is_authentication_independence": false
+  },
+  "recovery": {
+    "decision_id": "DEC-04",
+    "option": "B",
+    "status": "accepted_local_design_not_implemented",
+    "current_authority": "separately credentialled host recovery-control journal and checkpoints outside business restore and cluster-managed volume lifecycle",
+    "restore_mode": "isolated quarantine then current-authority reconciliation and validation",
+    "serving_promotion": "distinct authorized human approves exact current target/evidence; fence obsolete serving ownership",
+    "current_head_untrusted_or_unavailable": "remain quarantined",
+    "independent_disaster_or_host_root_guarantee": false,
+    "protocol_and_durability_evidence": "pending"
+  },
+  "local_design_acceptance": {
+    "date": "2026-11-06",
+    "record": "doc/HLD/decisions/2026-11-06-local-design-baseline.md",
+    "accepted_options": {
+      "DEC-01": "B",
+      "DEC-02": "A",
+      "DEC-03": "B",
+      "DEC-04": "B",
+      "DEC-05": "A"
+    },
+    "scope": "local synthetic demo design with recommendation qualifications",
+    "upstream_D02_dispositions": "pending",
+    "independent_release_review_satisfied": false,
+    "runtime_activated": false
   }
 }
