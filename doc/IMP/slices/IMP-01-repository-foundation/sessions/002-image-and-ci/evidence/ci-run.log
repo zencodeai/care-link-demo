@@ -113,34 +113,34 @@ container	Build core with immutable image inputs	2026-11-07T18:55:44.0375121Z ^[
 container	Build core with immutable image inputs	2026-11-07T18:55:44.0396242Z shell: /usr/bin/bash -e {0}
 container	Build core with immutable image inputs	2026-11-07T18:55:44.0396948Z ##[endgroup]
 container	Build core with immutable image inputs	2026-11-07T18:55:44.8080939Z #0 building with "default" instance using docker driver
-container	Build core with immutable image inputs	2026-11-07T18:55:44.8081308Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:44.8081308Z
 container	Build core with immutable image inputs	2026-11-07T18:55:44.8081459Z #1 [internal] load build definition from Dockerfile
 container	Build core with immutable image inputs	2026-11-07T18:55:44.8081800Z #1 transferring dockerfile: 984B done
 container	Build core with immutable image inputs	2026-11-07T18:55:44.8082062Z #1 DONE 0.0s
-container	Build core with immutable image inputs	2026-11-07T18:55:44.8082194Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:44.8082194Z
 container	Build core with immutable image inputs	2026-11-07T18:55:44.8082567Z #2 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
 container	Build core with immutable image inputs	2026-11-07T18:55:45.0438256Z #2 ...
-container	Build core with immutable image inputs	2026-11-07T18:55:45.0446821Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.0446821Z
 container	Build core with immutable image inputs	2026-11-07T18:55:45.0447267Z #3 [auth] library/python:pull token for registry-1.docker.io
 container	Build core with immutable image inputs	2026-11-07T18:55:45.0447806Z #3 DONE 0.0s
-container	Build core with immutable image inputs	2026-11-07T18:55:45.1940461Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.1940461Z
 container	Build core with immutable image inputs	2026-11-07T18:55:45.1941891Z #4 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
 container	Build core with immutable image inputs	2026-11-07T18:55:45.4252362Z #4 ...
-container	Build core with immutable image inputs	2026-11-07T18:55:45.4252747Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.4252747Z
 container	Build core with immutable image inputs	2026-11-07T18:55:45.4253944Z #2 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
 container	Build core with immutable image inputs	2026-11-07T18:55:45.4264120Z #2 DONE 0.8s
-container	Build core with immutable image inputs	2026-11-07T18:55:45.5758021Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.5758021Z
 container	Build core with immutable image inputs	2026-11-07T18:55:45.5759139Z #4 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
 container	Build core with immutable image inputs	2026-11-07T18:55:45.6403633Z #4 DONE 1.0s
-container	Build core with immutable image inputs	2026-11-07T18:55:45.7575906Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7575906Z
 container	Build core with immutable image inputs	2026-11-07T18:55:45.7577914Z #5 [internal] load .dockerignore
 container	Build core with immutable image inputs	2026-11-07T18:55:45.7581721Z #5 transferring context: 354B done
 container	Build core with immutable image inputs	2026-11-07T18:55:45.7582247Z #5 DONE 0.0s
-container	Build core with immutable image inputs	2026-11-07T18:55:45.7582900Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7582900Z
 container	Build core with immutable image inputs	2026-11-07T18:55:45.7583573Z #6 [internal] load build context
 container	Build core with immutable image inputs	2026-11-07T18:55:45.7584188Z #6 transferring context: 84.44kB done
 container	Build core with immutable image inputs	2026-11-07T18:55:45.7585131Z #6 DONE 0.0s
-container	Build core with immutable image inputs	2026-11-07T18:55:45.7585526Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7585526Z
 container	Build core with immutable image inputs	2026-11-07T18:55:45.7586348Z #7 [build 1/7] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
 container	Build core with immutable image inputs	2026-11-07T18:55:45.7587602Z #7 resolve docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 done
 container	Build core with immutable image inputs	2026-11-07T18:55:45.7588590Z #7 sha256:998acd06f485adfd6890e3e15a4b542543e0cf22ff904310095da328a5e3e561 1.75kB / 1.75kB done
@@ -162,7 +162,7 @@ container	Build core with immutable image inputs	2026-11-07T18:55:48.4328712Z #7
 container	Build core with immutable image inputs	2026-11-07T18:55:49.6375193Z #7 extracting sha256:fae0687378166d85bd7a79c473f4e776ea39cda1597f6af0d0963bce09f03820 1.1s done
 container	Build core with immutable image inputs	2026-11-07T18:55:49.7910109Z #7 extracting sha256:e5c850752c51d87dbacfd0037c1582fa5940f3ffa241d22bd07bfd3d315bc902
 container	Build core with immutable image inputs	2026-11-07T18:55:49.9050634Z #7 ...
-container	Build core with immutable image inputs	2026-11-07T18:55:49.9058193Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9058193Z
 container	Build core with immutable image inputs	2026-11-07T18:55:49.9059198Z #8 [uv 1/1] FROM ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
 container	Build core with immutable image inputs	2026-11-07T18:55:49.9060037Z #8 resolve ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc done
 container	Build core with immutable image inputs	2026-11-07T18:55:49.9060732Z #8 sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc 2.20kB / 2.20kB done
@@ -173,31 +173,31 @@ container	Build core with immutable image inputs	2026-11-07T18:55:49.9063919Z #8
 container	Build core with immutable image inputs	2026-11-07T18:55:49.9064652Z #8 extracting sha256:c0e23073289ce84b0354f1ef327bc139e81436aa1a33880e206e32f63a13831a 0.4s done
 container	Build core with immutable image inputs	2026-11-07T18:55:49.9065378Z #8 extracting sha256:8f02ace339f3b629967ce63fce6a69668edf19373e340d7a4568cbe0bdde6b59 done
 container	Build core with immutable image inputs	2026-11-07T18:55:49.9065923Z #8 DONE 4.1s
-container	Build core with immutable image inputs	2026-11-07T18:55:49.9066067Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9066067Z
 container	Build core with immutable image inputs	2026-11-07T18:55:49.9066485Z #7 [build 1/7] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
 container	Build core with immutable image inputs	2026-11-07T18:55:50.4826318Z #7 extracting sha256:e5c850752c51d87dbacfd0037c1582fa5940f3ffa241d22bd07bfd3d315bc902 0.5s done
 container	Build core with immutable image inputs	2026-11-07T18:55:50.8329027Z #7 extracting sha256:1cb952ef300203f205062c860df00582c23c719ed6c0f578f962332d23c6a3ab
 container	Build core with immutable image inputs	2026-11-07T18:55:51.0272954Z #7 extracting sha256:1cb952ef300203f205062c860df00582c23c719ed6c0f578f962332d23c6a3ab done
 container	Build core with immutable image inputs	2026-11-07T18:55:51.0273577Z #7 DONE 5.2s
-container	Build core with immutable image inputs	2026-11-07T18:55:51.0273675Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.0273675Z
 container	Build core with immutable image inputs	2026-11-07T18:55:51.0273765Z #9 [runtime 2/3] WORKDIR /app
 container	Build core with immutable image inputs	2026-11-07T18:55:51.0273959Z #9 DONE 0.0s
-container	Build core with immutable image inputs	2026-11-07T18:55:51.0274045Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.0274045Z
 container	Build core with immutable image inputs	2026-11-07T18:55:51.0274230Z #10 [build 2/7] COPY --from=uv /uv /usr/local/bin/uv
 container	Build core with immutable image inputs	2026-11-07T18:55:51.4517240Z #10 DONE 0.6s
-container	Build core with immutable image inputs	2026-11-07T18:55:51.6502428Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6502428Z
 container	Build core with immutable image inputs	2026-11-07T18:55:51.6503086Z #11 [build 3/7] WORKDIR /app
 container	Build core with immutable image inputs	2026-11-07T18:55:51.6503615Z #11 DONE 0.0s
-container	Build core with immutable image inputs	2026-11-07T18:55:51.6503841Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6503841Z
 container	Build core with immutable image inputs	2026-11-07T18:55:51.6504054Z #12 [build 4/7] COPY pyproject.toml uv.lock .python-version ./
 container	Build core with immutable image inputs	2026-11-07T18:55:51.6504400Z #12 DONE 0.0s
-container	Build core with immutable image inputs	2026-11-07T18:55:51.6504561Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6504561Z
 container	Build core with immutable image inputs	2026-11-07T18:55:51.6504804Z #13 [build 5/7] COPY packages/contracts/python packages/contracts/python
 container	Build core with immutable image inputs	2026-11-07T18:55:51.6505159Z #13 DONE 0.0s
-container	Build core with immutable image inputs	2026-11-07T18:55:51.6505315Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6505315Z
 container	Build core with immutable image inputs	2026-11-07T18:55:51.6505492Z #14 [build 6/7] COPY services/core services/core
 container	Build core with immutable image inputs	2026-11-07T18:55:51.6505779Z #14 DONE 0.0s
-container	Build core with immutable image inputs	2026-11-07T18:55:51.6505923Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6505923Z
 container	Build core with immutable image inputs	2026-11-07T18:55:51.6506205Z #15 [build 7/7] RUN uv sync --locked --no-dev --no-editable --package care-link-core
 container	Build core with immutable image inputs	2026-11-07T18:55:51.8193431Z #15 0.319 Using CPython 3.14.7 interpreter at: /usr/local/bin/python3.14
 container	Build core with immutable image inputs	2026-11-07T18:55:52.0670205Z #15 0.319 Creating virtual environment at: .venv
@@ -244,10 +244,10 @@ container	Build core with immutable image inputs	2026-11-07T18:55:54.3674285Z #1
 container	Build core with immutable image inputs	2026-11-07T18:55:54.3674573Z #15 2.716  + uvicorn==0.38.0
 container	Build core with immutable image inputs	2026-11-07T18:55:54.3674816Z #15 2.716  + webcolors==25.10.0
 container	Build core with immutable image inputs	2026-11-07T18:55:54.7906058Z #15 DONE 3.3s
-container	Build core with immutable image inputs	2026-11-07T18:55:54.9285832Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:54.9285832Z
 container	Build core with immutable image inputs	2026-11-07T18:55:54.9286485Z #16 [runtime 3/3] COPY --from=build /app/.venv /app/.venv
 container	Build core with immutable image inputs	2026-11-07T18:55:55.4687589Z #16 DONE 0.5s
-container	Build core with immutable image inputs	2026-11-07T18:55:55.6207632Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:55.6207632Z
 container	Build core with immutable image inputs	2026-11-07T18:55:55.6208807Z #17 exporting to image
 container	Build core with immutable image inputs	2026-11-07T18:55:55.6209415Z #17 exporting layers
 container	Build core with immutable image inputs	2026-11-07T18:55:56.0157833Z #17 exporting layers 0.5s done
@@ -517,9 +517,9 @@ fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:54.
 fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:54.9019575Z env:
 fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:54.9019753Z   UV_PYTHON_DOWNLOADS: automatic
 fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:54.9019959Z ##[endgroup]
-fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9166254Z 
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9166254Z
 fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9167309Z added 1 package in 969ms
-fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9176927Z 
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9176927Z
 fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9177473Z 1 package is looking for funding
 fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9180637Z   run `npm fund` for details
 fast	Run uv sync --locked --all-packages --all-groups	﻿2026-11-07T18:55:55.9556248Z ##[group]Run uv sync --locked --all-packages --all-groups
@@ -599,7 +599,7 @@ fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:57.7011981Z +++++++++++
 fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:58.6854880Z Progress: resolved 208, reused 0, downloaded 124, added 116
 fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:59.6851172Z Progress: resolved 208, reused 0, downloaded 169, added 142
 fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.0325079Z Progress: resolved 208, reused 0, downloaded 208, added 208, done
-fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3878222Z 
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3878222Z
 fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3878992Z devDependencies:
 fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3880034Z + @eslint/js 10.0.1
 fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3885292Z + @testing-library/jest-dom 6.9.1
@@ -612,7 +612,7 @@ fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3888646Z + pyright 1
 fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3889062Z + typescript 5.9.3
 fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3889512Z + typescript-eslint 8.72.1
 fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3889952Z + vitest 5.1.0
-fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3890237Z 
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3890237Z
 fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3964424Z Done in 3.1s using pnpm v10.20.0
 fast	Run uv run --locked python tools/check.py	﻿2026-11-07T18:56:00.4359963Z ##[group]Run uv run --locked python tools/check.py
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.4360307Z ^[[36;1muv run --locked python tools/check.py^[[0m
@@ -636,25 +636,25 @@ fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:01.1055852Z 18 f
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:01.1072383Z + pnpm exec pyright --project pyrightconfig.json
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:02.8696369Z 0 errors, 0 warnings, 0 informations
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:02.8995723Z + pnpm typecheck
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.1060807Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.1060807Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.1061977Z > care-link-development@0.1.0 typecheck /home/runner/work/care-link-demo/care-link-demo
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.1062952Z > pnpm -r typecheck
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.1063296Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.1063296Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.3286017Z Scope: 2 of 3 workspace projects
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.3329118Z packages/contracts/typescript typecheck$ tsc --noEmit
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:04.8679536Z packages/contracts/typescript typecheck: Done
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:04.8691872Z apps/web typecheck$ tsc --noEmit
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.5184844Z apps/web typecheck: Done
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.5384889Z + pnpm lint
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.8334301Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.8334301Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.8344921Z > care-link-development@0.1.0 lint /home/runner/work/care-link-demo/care-link-demo
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.8364285Z > eslint apps/web packages/contracts/typescript --max-warnings 0
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.8383810Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.8383810Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.0984546Z + pnpm format:check
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3052732Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3052732Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3054085Z > care-link-development@0.1.0 format:check /home/runner/work/care-link-demo/care-link-demo
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3055812Z > prettier --check apps/web packages/contracts/typescript package.json pnpm-workspace.yaml pyrightconfig.json eslint.config.mjs vitest.config.ts
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3056703Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3056703Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3728286Z Checking formatting...
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.8275325Z All matched files use Prettier code style!
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.8502109Z + uv run --locked pytest
@@ -665,45 +665,45 @@ fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1961547Z conf
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1962245Z testpaths: packages/contracts/python/tests, services/core/tests, tests
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1962913Z plugins: anyio-4.16.0
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1963348Z collected 52 items
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1963828Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1963828Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.2051305Z packages/contracts/python/tests/test_validation.py ...............       [ 28%]
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.3881512Z services/core/tests/test_developer_api.py .............................. [ 86%]
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.3924357Z .                                                                        [ 88%]
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.3935925Z tests/contract/test_snapshot.py .                                        [ 90%]
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4461318Z tests/unit/test_boundaries.py .....                                      [100%]
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4461919Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4461919Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4462414Z =============================== warnings summary ===============================
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4463999Z .venv/lib/python3.14/site-packages/fastapi/testclient.py:1
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4465581Z   /home/runner/work/care-link-demo/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4466993Z     from starlette.testclient import TestClient as TestClient  # noqa
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4467467Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4467467Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4467936Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4468723Z ======================== 52 passed, 1 warning in 0.92s =========================
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.5398001Z + pnpm test
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.7495420Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.7495420Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.7496502Z > care-link-development@0.1.0 test /home/runner/work/care-link-demo/care-link-demo
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.7497239Z > vitest run
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.7497542Z 
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:15.0104209Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.7497542Z
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:15.0104209Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:15.0115204Z ^[[1m^[[30m^[[46m RUN ^[[49m^[[39m^[[22m ^[[36mv5.1.0 ^[[39m^[[90m/home/runner/work/care-link-demo/care-link-demo^[[39m
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:15.0115711Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:15.0115711Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:16.3612818Z  ^[[32m✓^[[39m apps/web/src/App.test.tsx ^[[2m(^[[22m^[[2m7 tests^[[22m^[[2m)^[[22m^[[33m 437^[[2mms^[[22m^[[39m
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:16.9882201Z  ^[[32m✓^[[39m packages/contracts/typescript/tests/contracts.test.ts ^[[2m(^[[22m^[[2m24 tests^[[22m^[[2m)^[[22m^[[32m 11^[[2mms^[[22m^[[39m
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3324772Z  ^[[32m✓^[[39m tests/contract/parity.test.ts ^[[2m(^[[22m^[[2m1 test^[[22m^[[2m)^[[22m^[[32m 128^[[2mms^[[22m^[[39m
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3384738Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3384738Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3385529Z ^[[2m Test Files ^[[22m ^[[1m^[[32m3 passed^[[39m^[[22m^[[90m (3)^[[39m
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3387457Z ^[[2m      Tests ^[[22m ^[[1m^[[32m32 passed^[[39m^[[22m^[[90m (32)^[[39m
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3388299Z ^[[2m   Start at ^[[22m 18:56:15
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3390387Z ^[[2m   Duration ^[[22m 2.32s^[[2m (environment 41%, tests 28%, import 23%, transform 8%, worker 1%)^[[22m
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3398473Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3398473Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3399473Z ^[[2m    Isolate ^[[22m ^[[33m3 workers spawned^[[39m^[[2m · ~357ms startup each (spawn + environment, per file)^[[22m
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3402172Z ^[[2m            ^[[22m ^[[2mat least ~715ms faster with ^[[22m^[[33misolate: false^[[39m^[[2m — reuses workers across files instead of one per file^[[22m
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3403043Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3403043Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3607431Z + pnpm build
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.5678279Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.5678279Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.5682470Z > care-link-development@0.1.0 build /home/runner/work/care-link-demo/care-link-demo
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.5683490Z > pnpm -r build
-fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.5684010Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.5684010Z
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.7869692Z Scope: 2 of 3 workspace projects
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.7913845Z apps/web build$ tsc --noEmit && vite build
 fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:19.6824798Z apps/web build: ^[[36mvite v7.3.7 ^[[32mbuilding client environment for production...^[[36m^[[39m

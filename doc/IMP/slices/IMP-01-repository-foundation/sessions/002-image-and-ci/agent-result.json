@@ -35,7 +35,7 @@
   "output_refs": [
     {
       "path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/candidate-manifest.json",
-      "sha256": "0ac406387820ba13ff066c652cc980ff612a30153e92506dac94ced46c227190"
+      "sha256": "c904f071eb15164d2788d750c3255c39f75c20a378b63662b0d779fc71f12b6d"
     },
     {
       "path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/handoff.md",

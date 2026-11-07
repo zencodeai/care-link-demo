@@ -313,7 +313,8 @@
   },
   "ci_logs": {
     "path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/evidence/ci-run.log",
-    "sha256": "b6509ab285c3a3e5241be3b06ad042658d10cdf868d06764319cf530c429c5e3"
+    "sha256": "67a14c639d5ce881b2286f74d01528f9ba7814c29f09ff1239643d6f6e11242a"
   },
-  "documentation_delta": "README and IMP evidence/status documentation updated after successful source run; application/build/CI source unchanged. Final evidence publication may create a later documentation-only commit."
+  "documentation_delta": "README and IMP evidence/status documentation updated after successful source run; application/build/CI source unchanged. Final evidence publication may create a later documentation-only commit.",
+  "ci_log_normalization": "ANSI console color codes and trailing whitespace removed; job labels, timestamps and message text retained."
 }
