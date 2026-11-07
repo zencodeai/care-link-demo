@@ -1,0 +1,20 @@
+{
+  "id": "sha256:97ac985ec9379107380121c053a3d98cfde289f1fb5bae615a5f3bff0d15b0c9",
+  "platform": "linux/arm64",
+  "user": "65532:65532",
+  "working_directory": "/app",
+  "command": [
+    "uvicorn",
+    "care_link_core.app:create_app",
+    "--factory",
+    "--host",
+    "0.0.0.0",
+    "--port",
+    "8011"
+  ],
+  "size_bytes": 244466251,
+  "repo_tags": [
+    "care-link-core:imp-01-002"
+  ],
+  "base_input_manifest": "services/core/image-inputs.json"
+}

@@ -47,8 +47,9 @@
     }
   ],
   "remaining": [
-    "Remote CI publication, successful run and final commit/evidence binding.",
-    "LLD validator dependencies and broader unmeasured feasibility properties remain outside the current item1/item2 assignment."
+    "No remaining item1/item2/item3 developer verification obligation.",
+    "Unchanged LLD validator and broader feasibility observations remain separate from the completed assignment.",
+    "No next slice, merge or deployment is activated automatically."
   ],
   "events": [
     {
@@ -73,12 +74,17 @@
       "instruction_reference": "Current chat 2026-11-07: “3 is done. Proceed with 1 and 2. The lab is the development workspation”",
       "scope": "Record user completion of browser/keyboard and independent EN/FR review. Build and smoke-test the core image using the current development workstation as the lab; publish the scoped candidate on a dedicated branch and run remote CI. No merge, production deployment, model loading or next-slice implementation."
     },
-    "state": "in_progress",
+    "state": "completed",
     "lab": "Current development workstation; Docker Desktop linux/arm64",
     "user_ui_review": "reported_complete",
     "image_build": "passed",
     "restricted_smoke": "passed",
     "startup_failure_cleanup": "passed",
-    "remote_ci": "pending_publication"
+    "remote_ci": "passed",
+    "ci_run_url": "https://github.com/zencodeai/care-link-demo/actions/runs/42403688794",
+    "verified_source_commit": "69a387302335a8bf800325bb0ccfb1e66f97fee7",
+    "branch": "feat/imp-01-foundation",
+    "checks_ref": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/checks.json",
+    "candidate_manifest": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/candidate-manifest.json"
   }
 }

@@ -1,0 +1,733 @@
+container	Set up job	﻿2026-11-07T18:55:41.9306791Z Current runner version: '2.338.2'
+container	Set up job	2026-11-07T18:55:41.9339796Z ##[group]Runner Image Provisioner
+container	Set up job	2026-11-07T18:55:41.9340955Z Hosted Compute Agent
+container	Set up job	2026-11-07T18:55:41.9341760Z Version: 20261028.624
+container	Set up job	2026-11-07T18:55:41.9342573Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+container	Set up job	2026-11-07T18:55:41.9343752Z Build Date: 2026-10-28T21:51:42Z
+container	Set up job	2026-11-07T18:55:41.9344703Z Worker ID: {b639f7c8-e482-4c8b-871d-9682d2be7546}
+container	Set up job	2026-11-07T18:55:41.9345578Z Region: westus2
+container	Set up job	2026-11-07T18:55:41.9346237Z Cloud: Azure
+container	Set up job	2026-11-07T18:55:41.9347116Z ##[endgroup]
+container	Set up job	2026-11-07T18:55:41.9349031Z ##[group]Operating System
+container	Set up job	2026-11-07T18:55:41.9349964Z Ubuntu
+container	Set up job	2026-11-07T18:55:41.9350602Z 24.04.5
+container	Set up job	2026-11-07T18:55:41.9351206Z LTS
+container	Set up job	2026-11-07T18:55:41.9351908Z ##[endgroup]
+container	Set up job	2026-11-07T18:55:41.9352626Z ##[group]Runner Image
+container	Set up job	2026-11-07T18:55:41.9353693Z Image: ubuntu-24.04
+container	Set up job	2026-11-07T18:55:41.9354447Z Version: 20261101.360.1
+container	Set up job	2026-11-07T18:55:41.9355817Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+container	Set up job	2026-11-07T18:55:41.9358226Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+container	Set up job	2026-11-07T18:55:41.9359517Z ##[endgroup]
+container	Set up job	2026-11-07T18:55:41.9360911Z ##[group]GITHUB_TOKEN Permissions
+container	Set up job	2026-11-07T18:55:41.9363636Z Contents: read
+container	Set up job	2026-11-07T18:55:41.9364498Z Metadata: read
+container	Set up job	2026-11-07T18:55:41.9365216Z ##[endgroup]
+container	Set up job	2026-11-07T18:55:41.9367788Z Secret source: Actions
+container	Set up job	2026-11-07T18:55:41.9369417Z Cache mode: write
+container	Set up job	2026-11-07T18:55:41.9370333Z Prepare workflow directory
+container	Set up job	2026-11-07T18:55:41.9853663Z Prepare all required actions
+container	Set up job	2026-11-07T18:55:41.9909674Z Getting action download info
+container	Set up job	2026-11-07T18:55:42.3333644Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+container	Set up job	2026-11-07T18:55:42.6480656Z Complete job name: container
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	﻿2026-11-07T18:55:42.7276292Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7277141Z with:
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7277536Z   persist-credentials: false
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7277981Z   repository: zencodeai/care-link-demo
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7281281Z   token: ***
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7281657Z   ssh-strict: true
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7282024Z   ssh-user: git
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7282375Z   clean: true
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7282747Z   sparse-checkout-cone-mode: true
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7283179Z   fetch-depth: 1
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7283687Z   fetch-tags: false
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7284071Z   show-progress: true
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7284445Z   lfs: false
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7284795Z   submodules: false
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7285173Z   set-safe-directory: true
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7285867Z ##[endgroup]
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.1827133Z Syncing repository: zencodeai/care-link-demo
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.1829060Z ##[group]Getting Git version info
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.1830012Z Working directory is '/home/runner/work/care-link-demo/care-link-demo'
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.1831391Z [command]/usr/bin/git version
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.1936416Z git version 2.56.0
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.1954951Z ##[endgroup]
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.1969291Z Temporarily overriding HOME='/home/runner/work/_temp/3be429da-f159-4a29-8ef2-a104ccbe6aaf' before making global git config changes
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.1972006Z Adding repository directory to the temporary git global config as a safe directory
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.1975562Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/care-link-demo/care-link-demo
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2045670Z Deleting the contents of '/home/runner/work/care-link-demo/care-link-demo'
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2054704Z ##[group]Initializing the repository
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2056370Z [command]/usr/bin/git init /home/runner/work/care-link-demo/care-link-demo
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2162752Z hint: Using 'master' as the name for the initial branch. This default branch name
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2164236Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2165059Z hint: to use in all of your new repositories, which will suppress this warning,
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2165922Z hint: call:
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2166262Z hint:
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2166699Z hint: 	git config --global init.defaultBranch <name>
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2167206Z hint:
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2167672Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2168405Z hint: 'development'. The just-created branch can be renamed via this command:
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2169009Z hint:
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2169354Z hint: 	git branch -m <name>
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2169735Z hint:
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2170231Z hint: Disable this message with "git config set advice.defaultBranchName false"
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2180640Z Initialized empty Git repository in /home/runner/work/care-link-demo/care-link-demo/.git/
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2190130Z [command]/usr/bin/git remote add origin https://github.com/zencodeai/care-link-demo
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2275636Z ##[endgroup]
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2276666Z ##[group]Disabling automatic garbage collection
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2277531Z [command]/usr/bin/git config --local gc.auto 0
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2315347Z ##[endgroup]
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2316760Z ##[group]Setting up auth
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2318234Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2354132Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2749665Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2779360Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.2993805Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.3033580Z ##[endgroup]
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.3034912Z ##[group]Fetching the repository
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.3045279Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +69a387302335a8bf800325bb0ccfb1e66f97fee7:refs/remotes/origin/feat/imp-01-foundation
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.8661927Z From https://github.com/zencodeai/care-link-demo
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.8664732Z  * [new ref]         69a387302335a8bf800325bb0ccfb1e66f97fee7 -> origin/feat/imp-01-foundation
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.8701806Z ##[endgroup]
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.8703145Z ##[group]Determining the checkout info
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.8705179Z ##[endgroup]
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.8706088Z [command]/usr/bin/git sparse-checkout disable
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.8754318Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.8809017Z ##[group]Checking out the ref
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.8811343Z [command]/usr/bin/git checkout --progress --force -B feat/imp-01-foundation refs/remotes/origin/feat/imp-01-foundation
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9004791Z Switched to a new branch 'feat/imp-01-foundation'
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9014405Z branch 'feat/imp-01-foundation' set up to track 'origin/feat/imp-01-foundation'.
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9017646Z ##[endgroup]
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9057636Z [command]/usr/bin/git log -1 --format=%H
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9094791Z 69a387302335a8bf800325bb0ccfb1e66f97fee7
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9102183Z ##[group]Removing auth
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9105877Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9137671Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9344485Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9369656Z http.https://github.com/.extraheader
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9376864Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9412074Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+container	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.9612422Z ##[endgroup]
+container	Build core with immutable image inputs	﻿2026-11-07T18:55:44.0374190Z ##[group]Run python3 tools/build_core_image.py
+container	Build core with immutable image inputs	2026-11-07T18:55:44.0375121Z ^[[36;1mpython3 tools/build_core_image.py^[[0m
+container	Build core with immutable image inputs	2026-11-07T18:55:44.0396242Z shell: /usr/bin/bash -e {0}
+container	Build core with immutable image inputs	2026-11-07T18:55:44.0396948Z ##[endgroup]
+container	Build core with immutable image inputs	2026-11-07T18:55:44.8080939Z #0 building with "default" instance using docker driver
+container	Build core with immutable image inputs	2026-11-07T18:55:44.8081308Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:44.8081459Z #1 [internal] load build definition from Dockerfile
+container	Build core with immutable image inputs	2026-11-07T18:55:44.8081800Z #1 transferring dockerfile: 984B done
+container	Build core with immutable image inputs	2026-11-07T18:55:44.8082062Z #1 DONE 0.0s
+container	Build core with immutable image inputs	2026-11-07T18:55:44.8082194Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:44.8082567Z #2 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+container	Build core with immutable image inputs	2026-11-07T18:55:45.0438256Z #2 ...
+container	Build core with immutable image inputs	2026-11-07T18:55:45.0446821Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.0447267Z #3 [auth] library/python:pull token for registry-1.docker.io
+container	Build core with immutable image inputs	2026-11-07T18:55:45.0447806Z #3 DONE 0.0s
+container	Build core with immutable image inputs	2026-11-07T18:55:45.1940461Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.1941891Z #4 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+container	Build core with immutable image inputs	2026-11-07T18:55:45.4252362Z #4 ...
+container	Build core with immutable image inputs	2026-11-07T18:55:45.4252747Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.4253944Z #2 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+container	Build core with immutable image inputs	2026-11-07T18:55:45.4264120Z #2 DONE 0.8s
+container	Build core with immutable image inputs	2026-11-07T18:55:45.5758021Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.5759139Z #4 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+container	Build core with immutable image inputs	2026-11-07T18:55:45.6403633Z #4 DONE 1.0s
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7575906Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7577914Z #5 [internal] load .dockerignore
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7581721Z #5 transferring context: 354B done
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7582247Z #5 DONE 0.0s
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7582900Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7583573Z #6 [internal] load build context
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7584188Z #6 transferring context: 84.44kB done
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7585131Z #6 DONE 0.0s
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7585526Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7586348Z #7 [build 1/7] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7587602Z #7 resolve docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 done
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7588590Z #7 sha256:998acd06f485adfd6890e3e15a4b542543e0cf22ff904310095da328a5e3e561 1.75kB / 1.75kB done
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7590072Z #7 sha256:2257b5221f82e75e6dc53c8bd26c29fcd62ec335d7e0fe08794c6bde4e482af8 4.96kB / 4.96kB done
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7590880Z #7 sha256:774043ccc8ccd0d0833a9ee0792142ab7ad93df971e59dd248fbf82db16d0150 0B / 28.24MB 0.1s
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7591718Z #7 sha256:fae0687378166d85bd7a79c473f4e776ea39cda1597f6af0d0963bce09f03820 0B / 3.53MB 0.1s
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7592480Z #7 sha256:e5c850752c51d87dbacfd0037c1582fa5940f3ffa241d22bd07bfd3d315bc902 0B / 13.04MB 0.1s
+container	Build core with immutable image inputs	2026-11-07T18:55:45.7593593Z #7 sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 6.54kB / 6.54kB done
+container	Build core with immutable image inputs	2026-11-07T18:55:45.9577344Z #7 sha256:774043ccc8ccd0d0833a9ee0792142ab7ad93df971e59dd248fbf82db16d0150 28.24MB / 28.24MB 0.3s
+container	Build core with immutable image inputs	2026-11-07T18:55:45.9578150Z #7 sha256:fae0687378166d85bd7a79c473f4e776ea39cda1597f6af0d0963bce09f03820 3.53MB / 3.53MB 0.3s
+container	Build core with immutable image inputs	2026-11-07T18:55:45.9578856Z #7 sha256:e5c850752c51d87dbacfd0037c1582fa5940f3ffa241d22bd07bfd3d315bc902 13.04MB / 13.04MB 0.3s
+container	Build core with immutable image inputs	2026-11-07T18:55:46.3575669Z #7 sha256:774043ccc8ccd0d0833a9ee0792142ab7ad93df971e59dd248fbf82db16d0150 28.24MB / 28.24MB 0.6s done
+container	Build core with immutable image inputs	2026-11-07T18:55:46.4587486Z #7 sha256:fae0687378166d85bd7a79c473f4e776ea39cda1597f6af0d0963bce09f03820 3.53MB / 3.53MB 0.7s done
+container	Build core with immutable image inputs	2026-11-07T18:55:46.4588831Z #7 sha256:e5c850752c51d87dbacfd0037c1582fa5940f3ffa241d22bd07bfd3d315bc902 13.04MB / 13.04MB 0.7s done
+container	Build core with immutable image inputs	2026-11-07T18:55:46.4589742Z #7 extracting sha256:774043ccc8ccd0d0833a9ee0792142ab7ad93df971e59dd248fbf82db16d0150
+container	Build core with immutable image inputs	2026-11-07T18:55:46.4590435Z #7 sha256:1cb952ef300203f205062c860df00582c23c719ed6c0f578f962332d23c6a3ab 250B / 250B 0.8s done
+container	Build core with immutable image inputs	2026-11-07T18:55:47.7499218Z #7 extracting sha256:774043ccc8ccd0d0833a9ee0792142ab7ad93df971e59dd248fbf82db16d0150 1.2s done
+container	Build core with immutable image inputs	2026-11-07T18:55:48.4328712Z #7 extracting sha256:fae0687378166d85bd7a79c473f4e776ea39cda1597f6af0d0963bce09f03820
+container	Build core with immutable image inputs	2026-11-07T18:55:49.6375193Z #7 extracting sha256:fae0687378166d85bd7a79c473f4e776ea39cda1597f6af0d0963bce09f03820 1.1s done
+container	Build core with immutable image inputs	2026-11-07T18:55:49.7910109Z #7 extracting sha256:e5c850752c51d87dbacfd0037c1582fa5940f3ffa241d22bd07bfd3d315bc902
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9050634Z #7 ...
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9058193Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9059198Z #8 [uv 1/1] FROM ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9060037Z #8 resolve ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc done
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9060732Z #8 sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc 2.20kB / 2.20kB done
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9061434Z #8 sha256:1194b357d63b7bea6c121d8eef5d08d29c26ffbcfc64ec5ebcefd642ea759edb 669B / 669B done
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9062186Z #8 sha256:cf8fcbe0943d81a20a96badf23ea16e54bf77b988558a311d7e7bd33ea05c1c1 1.30kB / 1.30kB done
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9062965Z #8 sha256:c0e23073289ce84b0354f1ef327bc139e81436aa1a33880e206e32f63a13831a 23.39MB / 23.39MB 1.1s done
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9063919Z #8 sha256:8f02ace339f3b629967ce63fce6a69668edf19373e340d7a4568cbe0bdde6b59 98B / 98B 0.8s done
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9064652Z #8 extracting sha256:c0e23073289ce84b0354f1ef327bc139e81436aa1a33880e206e32f63a13831a 0.4s done
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9065378Z #8 extracting sha256:8f02ace339f3b629967ce63fce6a69668edf19373e340d7a4568cbe0bdde6b59 done
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9065923Z #8 DONE 4.1s
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9066067Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:49.9066485Z #7 [build 1/7] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+container	Build core with immutable image inputs	2026-11-07T18:55:50.4826318Z #7 extracting sha256:e5c850752c51d87dbacfd0037c1582fa5940f3ffa241d22bd07bfd3d315bc902 0.5s done
+container	Build core with immutable image inputs	2026-11-07T18:55:50.8329027Z #7 extracting sha256:1cb952ef300203f205062c860df00582c23c719ed6c0f578f962332d23c6a3ab
+container	Build core with immutable image inputs	2026-11-07T18:55:51.0272954Z #7 extracting sha256:1cb952ef300203f205062c860df00582c23c719ed6c0f578f962332d23c6a3ab done
+container	Build core with immutable image inputs	2026-11-07T18:55:51.0273577Z #7 DONE 5.2s
+container	Build core with immutable image inputs	2026-11-07T18:55:51.0273675Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.0273765Z #9 [runtime 2/3] WORKDIR /app
+container	Build core with immutable image inputs	2026-11-07T18:55:51.0273959Z #9 DONE 0.0s
+container	Build core with immutable image inputs	2026-11-07T18:55:51.0274045Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.0274230Z #10 [build 2/7] COPY --from=uv /uv /usr/local/bin/uv
+container	Build core with immutable image inputs	2026-11-07T18:55:51.4517240Z #10 DONE 0.6s
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6502428Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6503086Z #11 [build 3/7] WORKDIR /app
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6503615Z #11 DONE 0.0s
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6503841Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6504054Z #12 [build 4/7] COPY pyproject.toml uv.lock .python-version ./
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6504400Z #12 DONE 0.0s
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6504561Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6504804Z #13 [build 5/7] COPY packages/contracts/python packages/contracts/python
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6505159Z #13 DONE 0.0s
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6505315Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6505492Z #14 [build 6/7] COPY services/core services/core
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6505779Z #14 DONE 0.0s
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6505923Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:51.6506205Z #15 [build 7/7] RUN uv sync --locked --no-dev --no-editable --package care-link-core
+container	Build core with immutable image inputs	2026-11-07T18:55:51.8193431Z #15 0.319 Using CPython 3.14.7 interpreter at: /usr/local/bin/python3.14
+container	Build core with immutable image inputs	2026-11-07T18:55:52.0670205Z #15 0.319 Creating virtual environment at: .venv
+container	Build core with immutable image inputs	2026-11-07T18:55:52.0670709Z #15 0.322 Resolved 44 packages in 1ms
+container	Build core with immutable image inputs	2026-11-07T18:55:52.0697817Z #15 0.332    Building care-link-core @ file:///app/services/core
+container	Build core with immutable image inputs	2026-11-07T18:55:52.0698879Z #15 0.333    Building care-link-contracts @ file:///app/packages/contracts/python
+container	Build core with immutable image inputs	2026-11-07T18:55:52.0699488Z #15 0.416 Downloading pydantic-core (2.2MiB)
+container	Build core with immutable image inputs	2026-11-07T18:55:52.0699733Z #15 0.570  Downloaded pydantic-core
+container	Build core with immutable image inputs	2026-11-07T18:55:52.9605263Z #15 1.460       Built care-link-core @ file:///app/services/core
+container	Build core with immutable image inputs	2026-11-07T18:55:53.1140088Z #15 1.461       Built care-link-contracts @ file:///app/packages/contracts/python
+container	Build core with immutable image inputs	2026-11-07T18:55:53.1141133Z #15 1.463 Prepared 32 packages in 1.14s
+container	Build core with immutable image inputs	2026-11-07T18:55:53.4184464Z #15 1.918 Installed 32 packages in 454ms
+container	Build core with immutable image inputs	2026-11-07T18:55:54.2146657Z #15 2.715 Bytecode compiled 522 files in 796ms
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3665206Z #15 2.715  + annotated-doc==0.0.5
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3665933Z #15 2.715  + annotated-types==0.8.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3666257Z #15 2.715  + anyio==4.16.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3666530Z #15 2.716  + arrow==1.4.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3666794Z #15 2.716  + attrs==26.1.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3667243Z #15 2.716  + care-link-contracts==0.1.0 (from file:///app/packages/contracts/python)
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3667880Z #15 2.716  + care-link-core==0.1.0 (from file:///app/services/core)
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3668286Z #15 2.716  + click==8.5.1
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3668559Z #15 2.716  + fastapi==0.162.2
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3668754Z #15 2.716  + fqdn==1.6.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3668934Z #15 2.716  + h11==0.16.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3669119Z #15 2.716  + idna==3.20
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3669312Z #15 2.716  + isoduration==20.11.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3669514Z #15 2.716  + jsonpointer==3.10
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3669705Z #15 2.716  + jsonschema==4.25.1
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3669920Z #15 2.716  + jsonschema-specifications==2025.9.1
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3670165Z #15 2.716  + opentelemetry-api==1.45.2
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3670374Z #15 2.716  + pydantic==2.14.3
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3670573Z #15 2.716  + pydantic-core==2.50.4
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3670777Z #15 2.716  + python-dateutil==4.0.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3671089Z #15 2.716  + referencing==0.37.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3671350Z #15 2.716  + rfc3339-validator==0.1.4
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3671634Z #15 2.716  + rfc3987==1.3.8
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3671887Z #15 2.716  + rpds-py==2026.9.1
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3672172Z #15 2.716  + six==1.17.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3672658Z #15 2.716  + starlette==1.10.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3673108Z #15 2.716  + typing-extensions==4.16.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3673683Z #15 2.716  + typing-inspection==0.4.5
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3673914Z #15 2.716  + tzdata==2026.6
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3674285Z #15 2.716  + uri-template==1.3.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3674573Z #15 2.716  + uvicorn==0.38.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.3674816Z #15 2.716  + webcolors==25.10.0
+container	Build core with immutable image inputs	2026-11-07T18:55:54.7906058Z #15 DONE 3.3s
+container	Build core with immutable image inputs	2026-11-07T18:55:54.9285832Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:54.9286485Z #16 [runtime 3/3] COPY --from=build /app/.venv /app/.venv
+container	Build core with immutable image inputs	2026-11-07T18:55:55.4687589Z #16 DONE 0.5s
+container	Build core with immutable image inputs	2026-11-07T18:55:55.6207632Z 
+container	Build core with immutable image inputs	2026-11-07T18:55:55.6208807Z #17 exporting to image
+container	Build core with immutable image inputs	2026-11-07T18:55:55.6209415Z #17 exporting layers
+container	Build core with immutable image inputs	2026-11-07T18:55:56.0157833Z #17 exporting layers 0.5s done
+container	Build core with immutable image inputs	2026-11-07T18:55:56.0477611Z #17 writing image sha256:cbc7cf40b1efcf65c2f45d86e59503f73dfdc5cb30fb228aa428def4d42407f8 done
+container	Build core with immutable image inputs	2026-11-07T18:55:56.0506242Z #17 naming to docker.io/library/care-link-core:imp-01 done
+container	Build core with immutable image inputs	2026-11-07T18:55:56.0513747Z #17 DONE 0.6s
+container	Verify restricted nonroot image and contract behavior	﻿2026-11-07T18:55:56.0642744Z ##[group]Run python3 tools/smoke_core_image.py
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:56.0643062Z ^[[36;1mpython3 tools/smoke_core_image.py^[[0m
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:56.0660877Z shell: /usr/bin/bash -e {0}
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:56.0661102Z ##[endgroup]
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:56.2583038Z 8fd1be5791dab700581c8b858922b77faa1cc7cb4eaa11dd7a7bd23635af20cb
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:56.2835246Z {"image_id": "sha256:cbc7cf40b1efcf65c2f45d86e59503f73dfdc5cb30fb228aa428def4d42407f8", "read_only": true, "network": "none", "ports": [], "mounts": [], "capabilities_dropped": ["ALL"], "security_options": ["no-new-privileges"]}
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0964598Z {
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0965102Z   "uid": 65532,
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0965688Z   "capability": {
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0966159Z     "contract_version": "dev-1",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0967023Z     "status": "developer_only",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0967433Z     "tags": {
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0967780Z       "environment": "demo",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0968196Z       "population": "synthetic"
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0968574Z     },
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0968997Z     "participant_admission": false,
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0969436Z     "business_operations": "unavailable",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0969880Z     "contract_validation": true
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0970259Z   },
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0970596Z   "installed_distributions": [
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0971005Z     "annotated-doc",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0971379Z     "annotated-types",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0971735Z     "anyio",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0972056Z     "arrow",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0972387Z     "attrs",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0972728Z     "care-link-contracts",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0973108Z     "care-link-core",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0973640Z     "click",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0973964Z     "fastapi",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0974302Z     "fqdn",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0974627Z     "h11",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0974939Z     "idna",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0975258Z     "isoduration",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0975599Z     "jsonpointer",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0975950Z     "jsonschema",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0976311Z     "jsonschema-specifications",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0976730Z     "opentelemetry-api",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0977096Z     "pydantic",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0977450Z     "pydantic_core",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0977801Z     "python-dateutil",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0978154Z     "referencing",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0978502Z     "rfc3339-validator",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0978855Z     "rfc3987",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0979183Z     "rpds-py",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0979511Z     "six",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0979838Z     "starlette",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0980198Z     "typing-inspection",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0980577Z     "typing_extensions",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0980934Z     "tzdata",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0981271Z     "uri-template",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0981609Z     "uvicorn",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0981938Z     "webcolors"
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0982258Z   ],
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0982575Z   "checks": [
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0982903Z     {
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0983409Z       "path": "/dev/contracts/RevisionCommand",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0983890Z       "status": 204
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0984265Z     },
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0984618Z     {
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0984991Z       "path": "/dev/contracts/RevisionCommand",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0985435Z       "status": 422
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0985789Z     },
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0986142Z     {
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0986520Z       "path": "/dev/contracts/RevisionCommand",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0986974Z       "status": 400
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0987323Z     },
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0987652Z     {
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0987997Z       "path": "/dev/contracts/SessionCreate",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0988434Z       "status": 204
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0988785Z     },
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0989107Z     {
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0989521Z       "path": "/dev/contracts/SessionCreate",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0990107Z       "status": 422
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0990591Z     },
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0990956Z     {
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0991296Z       "path": "/v1/sessions",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0991690Z       "status": 503
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0992042Z     },
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0992363Z     {
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0993123Z       "path": "/v1/sessions",
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0993730Z       "status": 503
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0994081Z     }
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0994402Z   ]
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.0994722Z }
+container	Verify restricted nonroot image and contract behavior	2026-11-07T18:55:58.3075211Z 8fd1be5791dab700581c8b858922b77faa1cc7cb4eaa11dd7a7bd23635af20cb
+container	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	﻿2026-11-07T18:55:58.3241333Z Post job cleanup.
+container	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:58.3976600Z [command]/usr/bin/git version
+container	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:58.4044992Z git version 2.56.0
+container	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:58.4076884Z Temporarily overriding HOME='/home/runner/work/_temp/c1c4b780-14c3-4eed-83a6-bc0c810054f4' before making global git config changes
+container	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:58.4078005Z Adding repository directory to the temporary git global config as a safe directory
+container	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:58.4082409Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/care-link-demo/care-link-demo
+container	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:58.4120030Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+container	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:58.4155860Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+container	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:58.4365716Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+container	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:58.4399204Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+container	Complete job	﻿2026-11-07T18:55:58.4748626Z Cleaning up orphan processes
+container	Complete job	2026-11-07T18:55:58.5048874Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+fast	Set up job	﻿2026-11-07T18:55:41.6748621Z Current runner version: '2.338.2'
+fast	Set up job	2026-11-07T18:55:41.6778205Z ##[group]Runner Image Provisioner
+fast	Set up job	2026-11-07T18:55:41.6779329Z Hosted Compute Agent
+fast	Set up job	2026-11-07T18:55:41.6780058Z Version: 20261028.624
+fast	Set up job	2026-11-07T18:55:41.6780891Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+fast	Set up job	2026-11-07T18:55:41.6781830Z Build Date: 2026-10-28T21:51:42Z
+fast	Set up job	2026-11-07T18:55:41.6782659Z Worker ID: {ac710f2b-2196-483c-b0ee-4f5a2b5061a5}
+fast	Set up job	2026-11-07T18:55:41.6783554Z Region: centralus
+fast	Set up job	2026-11-07T18:55:41.6785411Z Cloud: Azure
+fast	Set up job	2026-11-07T18:55:41.6786102Z ##[endgroup]
+fast	Set up job	2026-11-07T18:55:41.6787896Z ##[group]Operating System
+fast	Set up job	2026-11-07T18:55:41.6788677Z Ubuntu
+fast	Set up job	2026-11-07T18:55:41.6789323Z 24.04.5
+fast	Set up job	2026-11-07T18:55:41.6790029Z LTS
+fast	Set up job	2026-11-07T18:55:41.6790659Z ##[endgroup]
+fast	Set up job	2026-11-07T18:55:41.6791350Z ##[group]Runner Image
+fast	Set up job	2026-11-07T18:55:41.6792113Z Image: ubuntu-24.04
+fast	Set up job	2026-11-07T18:55:41.6792879Z Version: 20261101.360.1
+fast	Set up job	2026-11-07T18:55:41.6794601Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+fast	Set up job	2026-11-07T18:55:41.6796906Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+fast	Set up job	2026-11-07T18:55:41.6798210Z ##[endgroup]
+fast	Set up job	2026-11-07T18:55:41.6799686Z ##[group]GITHUB_TOKEN Permissions
+fast	Set up job	2026-11-07T18:55:41.6801765Z Contents: read
+fast	Set up job	2026-11-07T18:55:41.6802505Z Metadata: read
+fast	Set up job	2026-11-07T18:55:41.6804040Z ##[endgroup]
+fast	Set up job	2026-11-07T18:55:41.6806260Z Secret source: Actions
+fast	Set up job	2026-11-07T18:55:41.6807483Z Cache mode: write
+fast	Set up job	2026-11-07T18:55:41.6808392Z Prepare workflow directory
+fast	Set up job	2026-11-07T18:55:41.7245381Z Prepare all required actions
+fast	Set up job	2026-11-07T18:55:41.7299760Z Getting action download info
+fast	Set up job	2026-11-07T18:55:41.9950146Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+fast	Set up job	2026-11-07T18:55:42.1384233Z Download action repository 'actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+fast	Set up job	2026-11-07T18:55:42.3993306Z Complete job name: fast
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	﻿2026-11-07T18:55:42.4656498Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4657355Z with:
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4657723Z   persist-credentials: false
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4658171Z   repository: zencodeai/care-link-demo
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4661204Z   token: ***
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4661560Z   ssh-strict: true
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4661922Z   ssh-user: git
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4662266Z   clean: true
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4662630Z   sparse-checkout-cone-mode: true
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4663058Z   fetch-depth: 1
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4663406Z   fetch-tags: false
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4663914Z   show-progress: true
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4664291Z   lfs: false
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4664626Z   submodules: false
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4664991Z   set-safe-directory: true
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4665539Z env:
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4665887Z   UV_PYTHON_DOWNLOADS: automatic
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.4666310Z ##[endgroup]
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7456666Z Syncing repository: zencodeai/care-link-demo
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7459747Z ##[group]Getting Git version info
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7461046Z Working directory is '/home/runner/work/care-link-demo/care-link-demo'
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7462763Z [command]/usr/bin/git version
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7463491Z git version 2.56.0
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7466169Z ##[endgroup]
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7471188Z Temporarily overriding HOME='/home/runner/work/_temp/e26adb2e-9625-4807-a86b-f6174b2ea753' before making global git config changes
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7472988Z Adding repository directory to the temporary git global config as a safe directory
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7474590Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/care-link-demo/care-link-demo
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7476506Z Deleting the contents of '/home/runner/work/care-link-demo/care-link-demo'
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7477592Z ##[group]Initializing the repository
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7478337Z [command]/usr/bin/git init /home/runner/work/care-link-demo/care-link-demo
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7479182Z hint: Using 'master' as the name for the initial branch. This default branch name
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7480494Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7481446Z hint: to use in all of your new repositories, which will suppress this warning,
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7482146Z hint: call:
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7482565Z hint:
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7483216Z hint: 	git config --global init.defaultBranch <name>
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7484479Z hint:
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7485091Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7486147Z hint: 'development'. The just-created branch can be renamed via this command:
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7486766Z hint:
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7487117Z hint: 	git branch -m <name>
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7487578Z hint:
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7488281Z hint: Disable this message with "git config set advice.defaultBranchName false"
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7489113Z Initialized empty Git repository in /home/runner/work/care-link-demo/care-link-demo/.git/
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7490451Z [command]/usr/bin/git remote add origin https://github.com/zencodeai/care-link-demo
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7492260Z ##[endgroup]
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7493137Z ##[group]Disabling automatic garbage collection
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7494003Z [command]/usr/bin/git config --local gc.auto 0
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7495970Z ##[endgroup]
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7496716Z ##[group]Setting up auth
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7497462Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7499685Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7601328Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7636971Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7855350Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7888606Z ##[endgroup]
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7889427Z ##[group]Fetching the repository
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:42.7896790Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +69a387302335a8bf800325bb0ccfb1e66f97fee7:refs/remotes/origin/feat/imp-01-foundation
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4153130Z From https://github.com/zencodeai/care-link-demo
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4156082Z  * [new ref]         69a387302335a8bf800325bb0ccfb1e66f97fee7 -> origin/feat/imp-01-foundation
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4160637Z ##[endgroup]
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4161662Z ##[group]Determining the checkout info
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4163063Z ##[endgroup]
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4163921Z [command]/usr/bin/git sparse-checkout disable
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4231200Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4597037Z ##[group]Checking out the ref
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4599202Z [command]/usr/bin/git checkout --progress --force -B feat/imp-01-foundation refs/remotes/origin/feat/imp-01-foundation
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4986217Z Switched to a new branch 'feat/imp-01-foundation'
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4992642Z branch 'feat/imp-01-foundation' set up to track 'origin/feat/imp-01-foundation'.
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.4999344Z ##[endgroup]
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.5049977Z [command]/usr/bin/git log -1 --format=%H
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.5074059Z 69a387302335a8bf800325bb0ccfb1e66f97fee7
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.5092239Z ##[group]Removing auth
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.5093844Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.5114425Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.5315903Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.5343022Z http.https://github.com/.extraheader
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.5349763Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.5640742Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+fast	Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:55:43.5839541Z ##[endgroup]
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	﻿2026-11-07T18:55:43.6952028Z ##[group]Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.6952719Z with:
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.6953112Z   node-version-file: .node-version
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.6953712Z   always-auth: false
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.6954110Z   check-latest: false
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.6957285Z   token: ***
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.6957661Z env:
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.6958089Z   UV_PYTHON_DOWNLOADS: automatic
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.6958556Z ##[endgroup]
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.9366414Z Node version file is not JSON file
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.9368013Z Resolved .node-version as 22.14.0
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.9373899Z Attempting to download 22.14.0...
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.9477822Z (node:2031) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:43.9480940Z (Use `node --trace-deprecation ...` to show where the warning was created)
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:44.7259932Z Acquiring 22.14.0 - x64 from https://github.com/actions/node-versions/releases/download/22.14.0-13265982013/node-22.14.0-linux-x64.tar.gz
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:45.2410429Z Extracting ...
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:45.2534927Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/5f679c62-9031-4f1e-8633-af90891df12b -f /home/runner/work/_temp/e0aa062f-03e5-4639-a802-3df1ad16a6dd
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:46.3080351Z Adding to the cache ...
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:49.8775873Z ##[group]Environment details
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:50.0974788Z node: v22.14.0
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:50.0975309Z npm: 10.9.2
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:50.0975529Z yarn: 1.22.22
+fast	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:55:50.0975953Z ##[endgroup]
+fast	Bootstrap pinned uv in a temporary environment	﻿2026-11-07T18:55:50.1176650Z ##[group]Run python3 -m venv "$RUNNER_TEMP/care-link-uv"
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:50.1177096Z ^[[36;1mpython3 -m venv "$RUNNER_TEMP/care-link-uv"^[[0m
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:50.1177457Z ^[[36;1m"$RUNNER_TEMP/care-link-uv/bin/python" -m pip install uv==0.12.17^[[0m
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:50.1177821Z ^[[36;1mecho "$RUNNER_TEMP/care-link-uv/bin" >> "$GITHUB_PATH"^[[0m
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:50.1199859Z shell: /usr/bin/bash -e {0}
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:50.1200090Z env:
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:50.1200275Z   UV_PYTHON_DOWNLOADS: automatic
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:50.1200490Z ##[endgroup]
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:53.3876577Z Collecting uv==0.12.17
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:53.4344577Z   Downloading uv-0.12.17-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:53.4514292Z Downloading uv-0.12.17-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20.4 MB)
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:53.7961191Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.4/20.4 MB 38.7 MB/s eta 0:00:00
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:53.8205025Z Installing collected packages: uv
+fast	Bootstrap pinned uv in a temporary environment	2026-11-07T18:55:54.0184946Z Successfully installed uv-0.12.17
+fast	Run uv python install 3.14.7	﻿2026-11-07T18:55:54.0953513Z ##[group]Run uv python install 3.14.7
+fast	Run uv python install 3.14.7	2026-11-07T18:55:54.0954069Z ^[[36;1muv python install 3.14.7^[[0m
+fast	Run uv python install 3.14.7	2026-11-07T18:55:54.0972205Z shell: /usr/bin/bash -e {0}
+fast	Run uv python install 3.14.7	2026-11-07T18:55:54.0972419Z env:
+fast	Run uv python install 3.14.7	2026-11-07T18:55:54.0972591Z   UV_PYTHON_DOWNLOADS: automatic
+fast	Run uv python install 3.14.7	2026-11-07T18:55:54.0972795Z ##[endgroup]
+fast	Run uv python install 3.14.7	2026-11-07T18:55:54.2079739Z Downloading cpython-3.14.7-linux-x86_64-gnu (download) (34.3MiB)
+fast	Run uv python install 3.14.7	2026-11-07T18:55:54.8677920Z  Downloaded cpython-3.14.7-linux-x86_64-gnu (download)
+fast	Run uv python install 3.14.7	2026-11-07T18:55:54.8935762Z Installed Python 3.14.7 in 786ms
+fast	Run uv python install 3.14.7	2026-11-07T18:55:54.8936611Z  + cpython-3.14.7-linux-x86_64-gnu (python3.14)
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	﻿2026-11-07T18:55:54.9000652Z ##[group]Run npm install --global pnpm@10.20.0 --ignore-scripts
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:54.9001227Z ^[[36;1mnpm install --global pnpm@10.20.0 --ignore-scripts^[[0m
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:54.9019364Z shell: /usr/bin/bash -e {0}
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:54.9019575Z env:
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:54.9019753Z   UV_PYTHON_DOWNLOADS: automatic
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:54.9019959Z ##[endgroup]
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9166254Z 
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9167309Z added 1 package in 969ms
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9176927Z 
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9177473Z 1 package is looking for funding
+fast	Run npm install --global pnpm@10.20.0 --ignore-scripts	2026-11-07T18:55:55.9180637Z   run `npm fund` for details
+fast	Run uv sync --locked --all-packages --all-groups	﻿2026-11-07T18:55:55.9556248Z ##[group]Run uv sync --locked --all-packages --all-groups
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:55.9556629Z ^[[36;1muv sync --locked --all-packages --all-groups^[[0m
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:55.9574789Z shell: /usr/bin/bash -e {0}
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:55.9575006Z env:
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:55.9575188Z   UV_PYTHON_DOWNLOADS: automatic
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:55.9575402Z ##[endgroup]
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:56.1063885Z Using CPython 3.14.7
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:56.1064847Z Creating virtual environment at: .venv
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:56.1079042Z Resolved 44 packages in 0.93ms
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:56.1178341Z    Building care-link-core @ file:///home/runner/work/care-link-demo/care-link-demo/services/core
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:56.1209047Z    Building care-link-contracts @ file:///home/runner/work/care-link-demo/care-link-demo/packages/contracts/python
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:56.2188918Z Downloading pygments (1.2MiB)
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:56.2189513Z Downloading ruff (12.7MiB)
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:56.2194487Z Downloading pydantic-core (2.2MiB)
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:56.4764280Z  Downloaded pygments
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:56.5099784Z  Downloaded pydantic-core
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:56.6748053Z  Downloaded ruff
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.1944221Z       Built care-link-contracts @ file:///home/runner/work/care-link-demo/care-link-demo/packages/contracts/python
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.1945936Z       Built care-link-core @ file:///home/runner/work/care-link-demo/care-link-demo/services/core
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.1957273Z Prepared 42 packages in 1.08s
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2218685Z Installed 42 packages in 26ms
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2219435Z  + annotated-doc==0.0.5
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2219949Z  + annotated-types==0.8.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2238817Z  + anyio==4.16.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2239290Z  + arrow==1.4.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2239809Z  + attrs==26.1.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2240660Z  + care-link-contracts==0.1.0 (from file:///home/runner/work/care-link-demo/care-link-demo/packages/contracts/python)
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2246064Z  + care-link-core==0.1.0 (from file:///home/runner/work/care-link-demo/care-link-demo/services/core)
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2246843Z  + certifi==2026.10.23
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2247244Z  + click==8.5.1
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2247625Z  + fastapi==0.162.2
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2248037Z  + fqdn==1.6.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2248283Z  + h11==0.16.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2254083Z  + httpcore==1.0.9
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2254382Z  + httpx==0.28.1
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2254636Z  + idna==3.20
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2254885Z  + iniconfig==2.3.1
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2255151Z  + isoduration==20.11.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2255438Z  + jsonpointer==3.10
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2255719Z  + jsonschema==4.25.1
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2256037Z  + jsonschema-specifications==2025.9.1
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2256397Z  + opentelemetry-api==1.45.2
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2256698Z  + packaging==26.3
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2256950Z  + pluggy==1.7.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2257201Z  + pydantic==2.14.3
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2257464Z  + pydantic-core==2.50.4
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2257746Z  + pygments==2.21.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2258001Z  + pytest==9.2.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2258258Z  + python-dateutil==4.0.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2258582Z  + referencing==0.37.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2258860Z  + rfc3339-validator==0.1.4
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2259144Z  + rfc3987==1.3.8
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2259404Z  + rpds-py==2026.9.1
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2259658Z  + ruff==0.14.3
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2259918Z  + six==1.17.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2260165Z  + starlette==1.10.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2260481Z  + types-jsonschema==4.26.0.20261006
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2260818Z  + typing-extensions==4.16.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2261338Z  + typing-inspection==0.4.5
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2261619Z  + tzdata==2026.6
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2261869Z  + uri-template==1.3.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2262134Z  + uvicorn==0.38.0
+fast	Run uv sync --locked --all-packages --all-groups	2026-11-07T18:55:57.2262387Z  + webcolors==25.10.0
+fast	Run pnpm install --frozen-lockfile	﻿2026-11-07T18:55:57.2444197Z ##[group]Run pnpm install --frozen-lockfile
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:57.2444756Z ^[[36;1mpnpm install --frozen-lockfile^[[0m
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:57.2469082Z shell: /usr/bin/bash -e {0}
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:57.2469405Z env:
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:57.2469652Z   UV_PYTHON_DOWNLOADS: automatic
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:57.2469964Z ##[endgroup]
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:57.5730333Z Scope: all 3 workspace projects
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:57.6304636Z Lockfile is up to date, resolution step is skipped
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:57.6805574Z Progress: resolved 1, reused 0, downloaded 0, added 0
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:57.7011167Z Packages: +208
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:57.7011981Z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:58.6854880Z Progress: resolved 208, reused 0, downloaded 124, added 116
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:55:59.6851172Z Progress: resolved 208, reused 0, downloaded 169, added 142
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.0325079Z Progress: resolved 208, reused 0, downloaded 208, added 208, done
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3878222Z 
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3878992Z devDependencies:
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3880034Z + @eslint/js 10.0.1
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3885292Z + @testing-library/jest-dom 6.9.1
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3886197Z + @testing-library/react 16.3.0
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3886843Z + @types/node 22.19.1
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3887288Z + eslint 10.14.0
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3887799Z + jsdom 27.1.0
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3888265Z + prettier 3.6.2
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3888646Z + pyright 1.1.407
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3889062Z + typescript 5.9.3
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3889512Z + typescript-eslint 8.72.1
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3889952Z + vitest 5.1.0
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3890237Z 
+fast	Run pnpm install --frozen-lockfile	2026-11-07T18:56:00.3964424Z Done in 3.1s using pnpm v10.20.0
+fast	Run uv run --locked python tools/check.py	﻿2026-11-07T18:56:00.4359963Z ##[group]Run uv run --locked python tools/check.py
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.4360307Z ^[[36;1muv run --locked python tools/check.py^[[0m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.4377860Z shell: /usr/bin/bash -e {0}
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.4378059Z env:
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.4378235Z   UV_PYTHON_DOWNLOADS: automatic
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.4378448Z ##[endgroup]
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.5596670Z + uv lock --check
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.5700092Z Resolved 44 packages in 1ms
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.5722211Z + pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.8099049Z Scope: all 3 workspace projects
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.9555562Z Done in 367ms using pnpm v10.20.0
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:00.9637369Z + uv run --locked python tools/generate_contracts.py --check
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:01.0202250Z Contract snapshots match reviewed definitions.
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:01.0272607Z + uv run --locked python tools/check_boundaries.py
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:01.0598642Z Source dependency boundaries passed (source check, not runtime isolation).
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:01.0644372Z + uv run --locked ruff check .
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:01.0850230Z All checks passed!
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:01.0866858Z + uv run --locked ruff format --check .
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:01.1055852Z 18 files already formatted
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:01.1072383Z + pnpm exec pyright --project pyrightconfig.json
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:02.8696369Z 0 errors, 0 warnings, 0 informations
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:02.8995723Z + pnpm typecheck
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.1060807Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.1061977Z > care-link-development@0.1.0 typecheck /home/runner/work/care-link-demo/care-link-demo
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.1062952Z > pnpm -r typecheck
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.1063296Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.3286017Z Scope: 2 of 3 workspace projects
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:03.3329118Z packages/contracts/typescript typecheck$ tsc --noEmit
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:04.8679536Z packages/contracts/typescript typecheck: Done
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:04.8691872Z apps/web typecheck$ tsc --noEmit
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.5184844Z apps/web typecheck: Done
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.5384889Z + pnpm lint
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.8334301Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.8344921Z > care-link-development@0.1.0 lint /home/runner/work/care-link-demo/care-link-demo
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.8364285Z > eslint apps/web packages/contracts/typescript --max-warnings 0
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:07.8383810Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.0984546Z + pnpm format:check
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3052732Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3054085Z > care-link-development@0.1.0 format:check /home/runner/work/care-link-demo/care-link-demo
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3055812Z > prettier --check apps/web packages/contracts/typescript package.json pnpm-workspace.yaml pyrightconfig.json eslint.config.mjs vitest.config.ts
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3056703Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.3728286Z Checking formatting...
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.8275325Z All matched files use Prettier code style!
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:12.8502109Z + uv run --locked pytest
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1958128Z ============================= test session starts ==============================
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1959042Z platform linux -- Python 3.14.7, pytest-9.2.0, pluggy-1.7.0
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1960782Z rootdir: /home/runner/work/care-link-demo/care-link-demo
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1961547Z configfile: pyproject.toml
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1962245Z testpaths: packages/contracts/python/tests, services/core/tests, tests
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1962913Z plugins: anyio-4.16.0
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1963348Z collected 52 items
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.1963828Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.2051305Z packages/contracts/python/tests/test_validation.py ...............       [ 28%]
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.3881512Z services/core/tests/test_developer_api.py .............................. [ 86%]
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.3924357Z .                                                                        [ 88%]
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.3935925Z tests/contract/test_snapshot.py .                                        [ 90%]
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4461318Z tests/unit/test_boundaries.py .....                                      [100%]
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4461919Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4462414Z =============================== warnings summary ===============================
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4463999Z .venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4465581Z   /home/runner/work/care-link-demo/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4466993Z     from starlette.testclient import TestClient as TestClient  # noqa
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4467467Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4467936Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.4468723Z ======================== 52 passed, 1 warning in 0.92s =========================
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.5398001Z + pnpm test
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.7495420Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.7496502Z > care-link-development@0.1.0 test /home/runner/work/care-link-demo/care-link-demo
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.7497239Z > vitest run
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:14.7497542Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:15.0104209Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:15.0115204Z ^[[1m^[[30m^[[46m RUN ^[[49m^[[39m^[[22m ^[[36mv5.1.0 ^[[39m^[[90m/home/runner/work/care-link-demo/care-link-demo^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:15.0115711Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:16.3612818Z  ^[[32m✓^[[39m apps/web/src/App.test.tsx ^[[2m(^[[22m^[[2m7 tests^[[22m^[[2m)^[[22m^[[33m 437^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:16.9882201Z  ^[[32m✓^[[39m packages/contracts/typescript/tests/contracts.test.ts ^[[2m(^[[22m^[[2m24 tests^[[22m^[[2m)^[[22m^[[32m 11^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3324772Z  ^[[32m✓^[[39m tests/contract/parity.test.ts ^[[2m(^[[22m^[[2m1 test^[[22m^[[2m)^[[22m^[[32m 128^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3384738Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3385529Z ^[[2m Test Files ^[[22m ^[[1m^[[32m3 passed^[[39m^[[22m^[[90m (3)^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3387457Z ^[[2m      Tests ^[[22m ^[[1m^[[32m32 passed^[[39m^[[22m^[[90m (32)^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3388299Z ^[[2m   Start at ^[[22m 18:56:15
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3390387Z ^[[2m   Duration ^[[22m 2.32s^[[2m (environment 41%, tests 28%, import 23%, transform 8%, worker 1%)^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3398473Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3399473Z ^[[2m    Isolate ^[[22m ^[[33m3 workers spawned^[[39m^[[2m · ~357ms startup each (spawn + environment, per file)^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3402172Z ^[[2m            ^[[22m ^[[2mat least ~715ms faster with ^[[22m^[[33misolate: false^[[39m^[[2m — reuses workers across files instead of one per file^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3403043Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.3607431Z + pnpm build
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.5678279Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.5682470Z > care-link-development@0.1.0 build /home/runner/work/care-link-demo/care-link-demo
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.5683490Z > pnpm -r build
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.5684010Z 
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.7869692Z Scope: 2 of 3 workspace projects
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:17.7913845Z apps/web build$ tsc --noEmit && vite build
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:19.6824798Z apps/web build: ^[[36mvite v7.3.7 ^[[32mbuilding client environment for production...^[[36m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:19.7309459Z apps/web build: transforming...
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:21.0935410Z apps/web build: ^[[32m✓^[[39m 225 modules transformed.
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:21.2885083Z apps/web build: rendering chunks...
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:21.2954728Z apps/web build: computing gzip size...
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:21.3066025Z apps/web build: ^[[2mdist/^[[22m^[[32mindex.html                 ^[[39m^[[1m^[[2m  0.47 kB^[[22m^[[1m^[[22m^[[2m │ gzip:   0.30 kB^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:21.3069354Z apps/web build: ^[[2mdist/^[[22m^[[2massets/^[[22m^[[35mindex-8U9tlLpy.css  ^[[39m^[[1m^[[2m  1.50 kB^[[22m^[[1m^[[22m^[[2m │ gzip:   0.70 kB^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:21.3071002Z apps/web build: ^[[2mdist/^[[22m^[[2massets/^[[22m^[[36mindex-Du8zHAD4.js   ^[[39m^[[1m^[[2m366.69 kB^[[22m^[[1m^[[22m^[[2m │ gzip: 113.67 kB^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:21.3072106Z apps/web build: ^[[32m✓ built in 1.60s^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-07T18:56:21.3301020Z apps/web build: Done
+fast	Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	﻿2026-11-07T18:56:21.3627603Z Post job cleanup.
+fast	Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:56:21.4700310Z (node:2552) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+fast	Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-11-07T18:56:21.4701623Z (Use `node --trace-deprecation ...` to show where the warning was created)
+fast	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	﻿2026-11-07T18:56:21.4869721Z Post job cleanup.
+fast	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:56:21.5608807Z [command]/usr/bin/git version
+fast	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:56:21.5645356Z git version 2.56.0
+fast	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:56:21.5681479Z Temporarily overriding HOME='/home/runner/work/_temp/9230885f-11d8-4011-9404-7c08da052df6' before making global git config changes
+fast	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:56:21.5690948Z Adding repository directory to the temporary git global config as a safe directory
+fast	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:56:21.5692282Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/care-link-demo/care-link-demo
+fast	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:56:21.5720572Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+fast	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:56:21.5764467Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+fast	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:56:21.5966069Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+fast	Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683	2026-11-07T18:56:21.5998302Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+fast	Complete job	﻿2026-11-07T18:56:21.6348206Z Cleaning up orphan processes
+fast	Complete job	2026-11-07T18:56:21.6644386Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683, actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
