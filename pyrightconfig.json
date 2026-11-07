@@ -1,0 +1,7 @@
+{
+  "include": ["packages/contracts/python/src", "services/core/src"],
+  "pythonVersion": "3.14",
+  "venvPath": ".",
+  "venv": ".venv",
+  "typeCheckingMode": "strict"
+}

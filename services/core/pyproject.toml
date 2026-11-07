@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "care-link-core"
+version = "0.1.0"
+description = "CARE-Link isolated developer API"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+  "care-link-contracts",
+  "fastapi==0.162.2",
+  "uvicorn==0.38.0",
+]
+
+[project.scripts]
+care-link-core = "care_link_core.cli:main"
+
+[tool.uv.sources]
+care-link-contracts = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/care_link_core"]

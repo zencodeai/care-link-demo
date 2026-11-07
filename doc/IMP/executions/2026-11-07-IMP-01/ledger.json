@@ -1,0 +1,84 @@
+{
+  "run_id": "2026-11-07-IMP-01",
+  "stage_id": "IMP-01",
+  "state": "accepted",
+  "scope": "User accepted G-00/G-01 for the current local developer foundation; remaining verification obligations are retained.",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Current chat 2026-11-07: Implement sevice slice 01",
+    "scope": "IMP-01 developer source implementation and isolated verification. No predecessor or stage acceptance, host/lab setup, deployment, commit or push inferred."
+  },
+  "candidate_manifest": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/candidate-manifest-validated.json",
+  "tasks": [
+    {
+      "id": "IMP-01-A",
+      "state": "completed",
+      "result": "Selected package/contract boundaries frozen without business operations."
+    },
+    {
+      "id": "IMP-01-B",
+      "state": "completed",
+      "result": "Python contract/API source and local verification complete."
+    },
+    {
+      "id": "IMP-01-C",
+      "state": "completed",
+      "result": "TS/EN-FR shell source and local component verification complete; independent language/browser review pending."
+    },
+    {
+      "id": "IMP-01-D",
+      "state": "completed",
+      "result": "Clean setup/lock/type/parity/adverse evidence and specialist review complete; user validated current developer demonstration at G-01. Unperformed checks carried in remaining obligations."
+    }
+  ],
+  "checks_ref": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/checks.json",
+  "predecessor_acceptance": {
+    "path": "doc/IMP/executions/2026-11-07-IMP-01/decisions/G-00.json",
+    "sha256": "bfae1cc1b33ab4a5a3a4627f023e1c4a34347aa525b3ed00577a315111c04d0a"
+  },
+  "human_decisions": [
+    {
+      "path": "doc/IMP/executions/2026-11-07-IMP-01/decisions/G-00.json",
+      "sha256": "bfae1cc1b33ab4a5a3a4627f023e1c4a34347aa525b3ed00577a315111c04d0a"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-07-IMP-01/decisions/G-01.json",
+      "sha256": "40fc545684f7a3f8981cd1ab6a1808b641e67017ece3200514c6a77c3f064743"
+    }
+  ],
+  "remaining": [
+    "Remote CI publication, successful run and final commit/evidence binding.",
+    "LLD validator dependencies and broader unmeasured feasibility properties remain outside the current item1/item2 assignment."
+  ],
+  "events": [
+    {
+      "event": "human_validation_recorded",
+      "source": {
+        "path": "doc/IMP/executions/2026-11-07-IMP-01/decisions/user-validation.md",
+        "sha256": "d421317dffe9660a33a19c98c12d61cb15c257c6fef516f8a898fd66f960c5b8"
+      },
+      "recorded_at": "2026-11-07T18:40:54Z",
+      "gates": [
+        "G-00",
+        "G-01"
+      ],
+      "candidate_manifest": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/candidate-manifest-validated.json",
+      "effect": "Accept current developer scope; do not infer additional action authority."
+    }
+  ],
+  "follow_up": {
+    "session": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci",
+    "authorization": {
+      "source_kind": "user_message",
+      "instruction_reference": "Current chat 2026-11-07: “3 is done. Proceed with 1 and 2. The lab is the development workspation”",
+      "scope": "Record user completion of browser/keyboard and independent EN/FR review. Build and smoke-test the core image using the current development workstation as the lab; publish the scoped candidate on a dedicated branch and run remote CI. No merge, production deployment, model loading or next-slice implementation."
+    },
+    "state": "in_progress",
+    "lab": "Current development workstation; Docker Desktop linux/arm64",
+    "user_ui_review": "reported_complete",
+    "image_build": "passed",
+    "restricted_smoke": "passed",
+    "startup_failure_cleanup": "passed",
+    "remote_ci": "pending_publication"
+  }
+}

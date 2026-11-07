@@ -1,0 +1,3 @@
+# Read-only specialist review
+
+imp_review inspected the Docker context, core packaging, build helper and CI. No packaging/CI blocker was found. The updated smoke helper had a startup-failure cleanup gap: docker run can create a container and then fail before its ID is captured. Coordinator changed to docker create with --pull=never, captured the ID, then started within try/finally. Successful smoke and an actual deliberately broken-entrypoint startup check verify cleanup. Temporary uv bootstrap is isolated in RUNNER_TEMP to avoid modifying Ubuntu system Python. The reviewer did not execute Docker or GitHub operations.

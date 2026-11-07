@@ -1,0 +1,100 @@
+{
+  "packet_id": "IMP-01-002-INTEGRATION",
+  "task_id": "IMP-01-D",
+  "stage_id": "IMP-01",
+  "mode": "implementation",
+  "role": "imp_platform",
+  "goal": "Finish IMP-01 image and remote CI verification on the development workstation, with current user authorization for scoped lab execution and dedicated-branch CI publication.",
+  "baseline_commit": "af17b5f489ef3e7b9a403f12362ec9be72abb16d",
+  "inputs": [
+    {
+      "path": ".github/workflows/foundation.yml",
+      "sha256": "725c98d83d4b2102988b01f5522b5e5a4af6aa00051b4e18c72c20cc3b779440"
+    },
+    {
+      "path": "services/core/Dockerfile",
+      "sha256": "41a4f665077a6744d059901e6202bd88150cf27ae1b948c4b35d032a9c78178a"
+    },
+    {
+      "path": "tools/check.py",
+      "sha256": "c1ca3dc886c1687a6de0fc6403cd9272c578c3739c76f1e5568d2351de447968"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/IMP/**",
+    "services/core/**",
+    "packages/contracts/**",
+    "tools/**",
+    "tests/**",
+    ".github/**",
+    "pyproject.toml",
+    "uv.lock",
+    "package.json",
+    "pnpm-lock.yaml",
+    ".dockerignore"
+  ],
+  "write_paths": [
+    "services/core/Dockerfile",
+    "services/core/image-inputs.json",
+    "tools/build_core_image.py",
+    "tools/smoke_core_image.py",
+    ".github/workflows/foundation.yml",
+    "README.md",
+    "doc/IMP/slices/IMP-01-repository-foundation/README.md",
+    "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/**",
+    "doc/IMP/executions/2026-11-07-IMP-01/ledger.json"
+  ],
+  "dependencies": [
+    "IMP-01-A",
+    "IMP-01-B",
+    "IMP-01-C"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "mutate_named_lab",
+    "publish_pr"
+  ],
+  "prohibited_actions": [
+    "merge or main-branch update",
+    "production/participant deployment",
+    "cluster or model changes",
+    "sibling repository edits",
+    "deleting unrelated containers/images/volumes"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Current chat 2026-11-07: “3 is done. Proceed with 1 and 2. The lab is the development workspation”",
+    "scope": "Record user completion of browser/keyboard and independent EN/FR review. Build and smoke-test the core image using the current development workstation as the lab; publish the scoped candidate on a dedicated branch and run remote CI. No merge, production deployment, model loading or next-slice implementation."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP-01-002-docker",
+      "kind": "namespace",
+      "scope": "Docker Desktop: care-link-core:imp-01-002 image tags and uniquely named care-link-imp01-* smoke containers only; no ports or mounts",
+      "owner_task_id": "IMP-01-D",
+      "expires_at": "2026-11-08T04:59:59Z"
+    }
+  ],
+  "expected_outputs": [
+    "Immutable image inputs; build, restricted runtime and adverse cleanup evidence",
+    "Actual remote CI commit/run/job results and handoff"
+  ],
+  "positive_acceptance": [
+    "Locked fresh Linux CI and minimum nonroot service image are implementable"
+  ],
+  "adverse_acceptance": [
+    "No dev dependencies/business authority accidentally shipped; missing checks are not claimed passed"
+  ],
+  "reviewer": "primary integration owner",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Work would require edits or host mutation"
+  ],
+  "is_example": false
+}

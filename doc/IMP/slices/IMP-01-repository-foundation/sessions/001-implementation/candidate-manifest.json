@@ -1,0 +1,245 @@
+{
+  "candidate": {
+    "commit": "af17b5f489ef3e7b9a403f12362ec9be72abb16d",
+    "diff_digest": "bde8d05fd703c7732a022b1d9c6eb743582e7e9eca9318f22f539f74421fbf48",
+    "artifact_digest": "55169a21ff0d64dcacf4585ed0bad2cbc8ae5435ed2c25c21c51ec0602d3eb14",
+    "configuration_digest": "3e0696bf7a1e4dc39d7e133f244a316d3ae55c2e93f0fa28a9d97fff0182563b",
+    "contract_digest": "304e586311519397d317d9e705600a85118a1276c22a3cb4d340aee75e028223",
+    "environment_digest": "7d50a6a41d3f95a39c5f5f7607d067f5d4e6f635934b5103140d16d438239e15",
+    "fixture_digest": "97437574059c4fc4a6cc9a3eb32ba7d86a6c7f7208c5f19badecefca2f93e529"
+  },
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha256": "24c2e63f62ca8d7a9816d4e1a328bfa107fa90eaf07c2722770c0d1a1fa96f05"
+    },
+    {
+      "path": ".github/workflows/foundation.yml",
+      "sha256": "725c98d83d4b2102988b01f5522b5e5a4af6aa00051b4e18c72c20cc3b779440"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "be548f60239771e017a528a8cc9c975bd524a02386519f37d94fa45e8bcd73cb"
+    },
+    {
+      "path": ".node-version",
+      "sha256": "c989649ac5c541692f22f2e41f5fbc34927c02bf1644e5dcca46bb4c88281f87"
+    },
+    {
+      "path": ".npmrc",
+      "sha256": "562907da17e25b3bcf4f1c91f8875ed7b422cf3a2c5e8f3901919698578e3d7b"
+    },
+    {
+      "path": ".prettierignore",
+      "sha256": "a1c4c624de1c5a2d060821528d835986547f4fd930e7b31fb5de842fdbff8381"
+    },
+    {
+      "path": ".python-version",
+      "sha256": "922fe0c3de073b01988e23348ea184456161678c5e329e6f34be89be24383f93"
+    },
+    {
+      "path": "README.md",
+      "sha256": "161aa5e8b4b066a474e6001bfe56718b974b4e2c49434526e038c56d4bb0cb9b"
+    },
+    {
+      "path": "apps/web/index.html",
+      "sha256": "8891e04b4fb29739a5062c8f5f05ee6c1f2cfa1982756e80a0ade2853d85ef41"
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "76ee133327384cd04edc2097f431cb307678911ac14fb71624683df64a5b925e"
+    },
+    {
+      "path": "apps/web/src/App.test.tsx",
+      "sha256": "d1dff82f7d6eba206b49f83334f651655d410a326acd7bb34819e2ac85ebe7de"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "a9199fe41eebd2b7e393bc834668a80f1abecf1e7df56fd105421cc33920d128"
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "sha256": "6275d588486fd02505410d80640bf76fee532a8a30b65a1ec3b73b72b000cbfd"
+    },
+    {
+      "path": "apps/web/src/messages.ts",
+      "sha256": "5ef5eb7ccfe31ef2bcb878ebe3843520555e34f4f06ff2e6f95fc6450bed50ef"
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "sha256": "971dd4a3b34ac5b29b88d07032c5ca76803f006589637766c8dc3db9ccf16a2c"
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "sha256": "8695cde34b9993f9fa4fc78460bea6c4347491bc5114dea724ac482d436447c7"
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "sha256": "cf74a05b4fb306469b42e06b0f308b8d7671013bfb677ab16d7454ba1fa21afe"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "sha256": "4fed59df1052a7c95db40c8ac50e974c181a07593f06f66bc6d5397d4344c739"
+    },
+    {
+      "path": "package.json",
+      "sha256": "b34968b0140f61002e80feabb7c61d490d81b352dbc9c7b5ff62484dc83f85be"
+    },
+    {
+      "path": "packages/contracts/python/pyproject.toml",
+      "sha256": "abc216be266a8be4f1fd2068474fd985caa1568c19eea515c7b7e8d9f4c1f5d7"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/__init__.py",
+      "sha256": "3cd25223159c38dabfc80d00745e394aea05a42bc65fb7d57e4284da7b653559"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/schema.json",
+      "sha256": "7f644b15f1542b239ec348f0aa6b5ca5de9f3e31ed35dbf44e2ae49430a4f58d"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/types.py",
+      "sha256": "59845a4aa8361ab16808e41d5ad484fda62ef4df085f8ed2909e901ba692b5a2"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/validation.py",
+      "sha256": "25a4aa83653cf4c01fb48c2bf87ba434d54c348c691fd1875c1925e91cb1c713"
+    },
+    {
+      "path": "packages/contracts/python/tests/test_validation.py",
+      "sha256": "ce412e35ea97f2b9faffe6e22d5686fef8822eb18f448aa9892c54f00ab2859e"
+    },
+    {
+      "path": "packages/contracts/typescript/package.json",
+      "sha256": "50d7a5f75631873a0606858627c2784b47850743f5a4f53121590998b42a9cc8"
+    },
+    {
+      "path": "packages/contracts/typescript/src/index.ts",
+      "sha256": "79f367ec02ef3777e41967b0e464f925a7db6b33bf4c4933bddf066224050513"
+    },
+    {
+      "path": "packages/contracts/typescript/src/schema.json",
+      "sha256": "7f644b15f1542b239ec348f0aa6b5ca5de9f3e31ed35dbf44e2ae49430a4f58d"
+    },
+    {
+      "path": "packages/contracts/typescript/tests/contracts.test.ts",
+      "sha256": "a8730cda56b4596c6ece5371de9ec54982dfadda2fe25a54c15c6fd7c9d7e286"
+    },
+    {
+      "path": "packages/contracts/typescript/tsconfig.json",
+      "sha256": "be2ece53f5221bfdef4e6c77b51d9a29b15bb3827d60d84426f7fc7179c824d7"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "729246a6f9e4709b132d57c910e4da93c8eebf9af4357901e3ac6eb221d2da42"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "sha256": "dced6eafc0b0e000da4be177f7853de601b614253224a625067c08a94ba18a0b"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "ee6210576025ce473c968961737d486d89afe7622cf8cf716adb1eb5f9fcb493"
+    },
+    {
+      "path": "pyrightconfig.json",
+      "sha256": "961f5a7ffb23b2179cfc25e3a36135db1d13f9f3840f5f3bf3482ee9d97610c5"
+    },
+    {
+      "path": "services/core/Dockerfile",
+      "sha256": "41a4f665077a6744d059901e6202bd88150cf27ae1b948c4b35d032a9c78178a"
+    },
+    {
+      "path": "services/core/pyproject.toml",
+      "sha256": "8d31ad6199dcc36d3fcd166cecca5a2e9f5e6b67b35009b76318269b78032983"
+    },
+    {
+      "path": "services/core/src/care_link_core/__init__.py",
+      "sha256": "847290961e32f0a5a72e9271fcfe697813ae58318af14885f09d1d5a3b4cf8ce"
+    },
+    {
+      "path": "services/core/src/care_link_core/app.py",
+      "sha256": "f50ef45cfd35e89cf9370620505e2f894305affd54e20395e1d11465ef0d334c"
+    },
+    {
+      "path": "services/core/src/care_link_core/capabilities.py",
+      "sha256": "946271da54ad3cbc857512f4c028a6d29a34f8b64276075f641f085f4687d25e"
+    },
+    {
+      "path": "services/core/src/care_link_core/cli.py",
+      "sha256": "6038d316bd0e3a44a3fde0980f1489e06b50fc740ee445bc8909ce00e919d009"
+    },
+    {
+      "path": "services/core/src/care_link_core/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "services/core/tests/test_developer_api.py",
+      "sha256": "8c825fc4405d5802f8d980d550dff45ee81a368ffa628e1997e60e7e1a6d0a6c"
+    },
+    {
+      "path": "tests/contract/parity.test.ts",
+      "sha256": "351ce9cfef6e4d51cf1b73ad2b8ffe3b8621ce3c2f4532ba906057b74d567404"
+    },
+    {
+      "path": "tests/contract/test_snapshot.py",
+      "sha256": "9e90482b7608833dec68bc6a1764be05f2a0003618937ef69fdb415dc4c06512"
+    },
+    {
+      "path": "tests/unit/test_boundaries.py",
+      "sha256": "29f55f97d250ee740403ed8462e2e1b065d849391ed014e4784b284e45662338"
+    },
+    {
+      "path": "tools/build_core_image.py",
+      "sha256": "2bd58bdc5b706dd243b7e6026b94fb47b30e6ea52aaaef81b5702730dc9dae73"
+    },
+    {
+      "path": "tools/check.py",
+      "sha256": "c1ca3dc886c1687a6de0fc6403cd9272c578c3739c76f1e5568d2351de447968"
+    },
+    {
+      "path": "tools/check_boundaries.py",
+      "sha256": "b2d6eca8fad9b826155b16f5551b22ade1c846f96005abf5f86a38dab160213e"
+    },
+    {
+      "path": "tools/contract_probe.py",
+      "sha256": "f5d0674d4fb5f89ee341d36b547f41948245625f8f2d02fe45007e0c39de7c24"
+    },
+    {
+      "path": "tools/generate_contracts.py",
+      "sha256": "fb364809ec40ae8092ade4a1d7c536ef62b1a5035c6b199b77b964cd4063b70a"
+    },
+    {
+      "path": "tools/verify_clean.py",
+      "sha256": "b80816753ce2ca9d728456393250b5b1bf43acbd1ddecd09616d93caa361a6c9"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "6e309b9930678d54335442d2544077aa13c55d3d97e12afc9fa97cf127c6f55a"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "5b925f215a196e0fa40f5ab8c91b5ba5bc048e090f1a84cadd5c73d9b597b160"
+    }
+  ],
+  "artifact_digest_algorithm": "SHA256 of sorted compact JSON path/sha256 records; excludes IMP session records",
+  "diff_digest_algorithm": "git diff HEAD README.md followed by sorted untracked implementation file git diff --no-index /dev/null file bytes",
+  "source_bindings": [
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "doc/LLD/contracts/fixtures.json",
+      "sha256": "4a9343247c65003bf596968c14bac739b5895eb2909fffb8d56de3726ec428bb"
+    }
+  ]
+}

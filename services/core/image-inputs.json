@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "python": {
+    "source_tag": "docker.io/library/python:3.14.7-slim-bookworm",
+    "image": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+    "platform_manifests": {
+      "linux/arm64": "sha256:af1cafd27effb3b1c7c4ad8b459f118371b5d216d4659a3e68a7b5aae65b517f",
+      "linux/amd64": "sha256:998acd06f485adfd6890e3e15a4b542543e0cf22ff904310095da328a5e3e561"
+    }
+  },
+  "uv": {
+    "source_tag": "ghcr.io/astral-sh/uv:0.12.17",
+    "image": "ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc",
+    "platform_manifests": {
+      "linux/arm64": "sha256:93041623aae9443bddacaee1a13aa0dc96bde323e4159ba57d0e9a47a947e0f0",
+      "linux/amd64": "sha256:1194b357d63b7bea6c121d8eef5d08d29c26ffbcfc64ec5ebcefd642ea759edb"
+    }
+  },
+  "provenance": "Resolved 2026-11-07 using docker buildx imagetools inspect against the official Docker Python and Astral registries. Builds use immutable multi-platform index digests."
+}

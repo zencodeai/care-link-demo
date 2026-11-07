@@ -1,0 +1,5 @@
+{
+  "source_kind": "user_message",
+  "instruction_reference": "Current chat 2026-11-07: “3 is done. Proceed with 1 and 2. The lab is the development workspation”",
+  "scope": "Record user completion of browser/keyboard and independent EN/FR review. Build and smoke-test the core image using the current development workstation as the lab; publish the scoped candidate on a dedicated branch and run remote CI. No merge, production deployment, model loading or next-slice implementation."
+}

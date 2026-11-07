@@ -1,0 +1,16 @@
+9169ee1da2b77cef5700f46104f767ffcf04145269506c5dbe29186a508de488
+Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: "/care-link-deliberately-missing-executable": stat /care-link-deliberately-missing-executable: no such file or directory
+failed to start containers: 9169ee1da2b77cef5700f46104f767ffcf04145269506c5dbe29186a508de488
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/smoke_core_image.py", line 158, in <module>
+    main()
+    ~~~~^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/smoke_core_image.py", line 115, in main
+    subprocess.run([docker, "start", identifier], check=True)  # noqa: S603
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/usr/local/bin/docker', 'start', '9169ee1da2b77cef5700f46104f767ffcf04145269506c5dbe29186a508de488']' returned non-zero exit status 1.
+
+PASS: deliberate OCI startup failure returned nonzero and left no additional IMP-01 container.

@@ -1,0 +1,58 @@
+{
+  "packet_id": "IMP-00-DEMO-VALIDATION-001",
+  "stage_id": "IMP-00",
+  "gate_id": "G-00",
+  "candidate": {
+    "commit": "af17b5f489ef3e7b9a403f12362ec9be72abb16d",
+    "diff_digest": "ec8cbbee3f78dcb854dd364016f6e9da37d369625f62592bcfeb0bd66154255d",
+    "artifact_digest": "50227e325bc18449dcdf1c7cf94e3ec6f0d55c1f4621e570a83067e81cd5dc5e",
+    "configuration_digest": "3e0696bf7a1e4dc39d7e133f244a316d3ae55c2e93f0fa28a9d97fff0182563b",
+    "contract_digest": "304e586311519397d317d9e705600a85118a1276c22a3cb4d340aee75e028223",
+    "environment_digest": "7d50a6a41d3f95a39c5f5f7607d067f5d4e6f635934b5103140d16d438239e15",
+    "fixture_digest": "97437574059c4fc4a6cc9a3eb32ba7d86a6c7f7208c5f19badecefca2f93e529"
+  },
+  "state": "ready_for_review",
+  "preconditions": [
+    "Current workstation/model choices remain as previously selected.",
+    "Current user explicitly states G-00 and G-01 validated."
+  ],
+  "normal_steps": [
+    {
+      "action": "Review the developer tool/setup scope presented with IMP-01.",
+      "expected": "Accepted current workstation and observed developer pins with remaining unknowns visible.",
+      "actual": "User validated G-00. Tested pins: Python3.14.7, Node22.14.0, uv0.12.17, pnpm10.20.0; loopback development ports8011/5173. No full IMP-00 doctor/model/network/account-retention execution is claimed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/executions/2026-11-07-IMP-01/decisions/user-validation.md",
+          "sha256": "d421317dffe9660a33a19c98c12d61cb15c257c6fef516f8a898fd66f960c5b8"
+        },
+        {
+          "path": "README.md",
+          "sha256": "0422b69695c484061ccdef905d19a16e595794bf882181660440577762492929"
+        }
+      ]
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Retain unavailable measurements and setup actions as unverified.",
+      "expected": "No invented feasibility, attestation, model metadata or lab authority.",
+      "actual": "Those observations remain unknown/unperformed; no host setup or model load performed to record this decision.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/checks.json",
+          "sha256": "2b3c1d26f08fc94b9deac8c835d246ff79e1a0819a926301025f8f9d7fcbcee9"
+        }
+      ]
+    }
+  ],
+  "checks": [],
+  "residuals": [
+    "Full workstation/CNI/issuer/model metadata, capacity, actual-account retention and reviewer inventories were not executed in this chat.",
+    "Immutable image choices, lab action scope and affected-boundary proof remain outstanding."
+  ],
+  "acceptance_scope": "G-00 user validation for the observed local developer workstation/tool/setup decisions supporting IMP-01. This receipt does not claim completion of unexecuted feasibility tasks or authorize unspecified host/lab actions.",
+  "rollback": "Documentation-only receipt. Preserve evidence; no host state changed by recording it.",
+  "human_decision_id": "G-00-USER-2026-11-07",
+  "is_example": false
+}

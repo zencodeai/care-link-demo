@@ -1,0 +1,101 @@
+{
+  "packet_id": "IMP-01-INTEGRATION-001",
+  "task_id": "IMP-01-D",
+  "stage_id": "IMP-01",
+  "mode": "implementation",
+  "role": "imp_platform",
+  "goal": "Primary coordination: integrate IMP-01 workspaces, CI, contract generation, source boundaries and verification records.",
+  "baseline_commit": "af17b5f489ef3e7b9a403f12362ec9be72abb16d",
+  "inputs": [
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/IMP/**",
+    "doc/LLD/01-modules-and-build-boundaries.md",
+    "doc/LLD/02-contracts-and-protocols.md",
+    "packages/**",
+    "services/**",
+    "apps/**",
+    "tools/**"
+  ],
+  "write_paths": [
+    "README.md",
+    ".github/**",
+    ".dockerignore",
+    ".gitignore",
+    ".node-version",
+    ".python-version",
+    ".npmrc",
+    ".prettierignore",
+    "package.json",
+    "pnpm-workspace.yaml",
+    "pnpm-lock.yaml",
+    "pyproject.toml",
+    "uv.lock",
+    "pyrightconfig.json",
+    "eslint.config.mjs",
+    "vitest.config.ts",
+    "tools/**",
+    "tests/**",
+    "doc/IMP/slices/IMP-01-repository-foundation/**",
+    "doc/IMP/executions/2026-11-07-IMP-01/**",
+    "packages/**",
+    "services/core/**",
+    "apps/web/**"
+  ],
+  "dependencies": [
+    "IMP-01-A",
+    "IMP-01-B",
+    "IMP-01-C"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "install_named_tools"
+  ],
+  "prohibited_actions": [
+    "global installation or host setup",
+    "deployment, container execution or model loading",
+    "commit, push or sibling repository edits",
+    "stage self-acceptance or participant admission"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Current chat 2026-11-07: Implement sevice slice 01",
+    "scope": "IMP-01 source implementation and isolated project-local verification; no G-00 acceptance inferred."
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Assigned source and meaningful tests",
+    "Actual check results and remaining limitations"
+  ],
+  "positive_acceptance": [
+    "Closed schema validation and developer-only truthful capability result"
+  ],
+  "adverse_acceptance": [
+    "Unknown nested keys, revision overflow, duplicate keys, invalid Unicode and nonfinite JSON fail; business operations unavailable"
+  ],
+  "reviewer": "primary integration owner; actual human for G-01",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 120,
+  "stop_conditions": [
+    "Authority or architectural change required",
+    "Need to edit outside assigned paths"
+  ],
+  "is_example": false
+}
