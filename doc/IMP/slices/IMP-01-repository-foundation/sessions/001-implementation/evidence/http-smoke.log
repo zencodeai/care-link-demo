@@ -1,0 +1,8 @@
+Temporary local developer listeners: API 127.0.0.1:8011, Vite 127.0.0.1:5173.
+GET Vite /dev/health -> 200 DeveloperCapability, participant_admission=false.
+POST Vite /dev/contracts/RevisionCommand expected_revision=1 -> 204.
+POST Vite /dev/contracts/RevisionCommand expected_revision=9223372036854775808 -> 422 INVALID_REQUEST.
+POST Vite /dev/contracts/SessionCreate with tags.unknown=true -> 422 INVALID_REQUEST.
+GET API /v1/sessions -> 503 CAPABILITY_DISABLED.
+Both temporary processes stopped with SIGTERM after checks.
+Browser attempt: cua.createBrowserTab(iab,http://127.0.0.1:5173) -> browser access host unavailable. No screenshot/visual verification.

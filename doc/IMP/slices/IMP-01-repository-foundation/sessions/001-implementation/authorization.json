@@ -1,0 +1,5 @@
+{
+  "source_kind": "user_message",
+  "instruction_reference": "Current chat 2026-11-07: Implement sevice slice 01",
+  "scope": "IMP-01 developer source implementation and isolated verification. No predecessor or stage acceptance, host/lab setup, deployment, commit or push inferred."
+}

@@ -1,0 +1,78 @@
+{
+  "packet_id": "IMP-01-002-REVIEW",
+  "task_id": "IMP-01-D",
+  "stage_id": "IMP-01",
+  "mode": "review",
+  "role": "imp_review",
+  "goal": "Review existing foundation CI and core container build recipe for blockers to reproducible Linux CI and nonroot selected-package image verification; return focused findings only.",
+  "baseline_commit": "af17b5f489ef3e7b9a403f12362ec9be72abb16d",
+  "inputs": [
+    {
+      "path": ".github/workflows/foundation.yml",
+      "sha256": "725c98d83d4b2102988b01f5522b5e5a4af6aa00051b4e18c72c20cc3b779440"
+    },
+    {
+      "path": "services/core/Dockerfile",
+      "sha256": "41a4f665077a6744d059901e6202bd88150cf27ae1b948c4b35d032a9c78178a"
+    },
+    {
+      "path": "tools/check.py",
+      "sha256": "c1ca3dc886c1687a6de0fc6403cd9272c578c3739c76f1e5568d2351de447968"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/IMP/**",
+    "services/core/**",
+    "packages/contracts/**",
+    "tools/**",
+    "tests/**",
+    ".github/**",
+    "pyproject.toml",
+    "uv.lock",
+    "package.json",
+    "pnpm-lock.yaml",
+    ".dockerignore"
+  ],
+  "write_paths": [],
+  "dependencies": [
+    "IMP-01-A",
+    "IMP-01-B",
+    "IMP-01-C"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "propose"
+  ],
+  "prohibited_actions": [
+    "file edits",
+    "Docker operations",
+    "GitHub mutations or messaging",
+    "credential access",
+    "nested delegation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Current chat 2026-11-07: “3 is done. Proceed with 1 and 2. The lab is the development workspation”",
+    "scope": "Record user completion of browser/keyboard and independent EN/FR review. Build and smoke-test the core image using the current development workstation as the lab; publish the scoped candidate on a dedicated branch and run remote CI. No merge, production deployment, model loading or next-slice implementation."
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Focused correctness findings for image and remote CI candidate"
+  ],
+  "positive_acceptance": [
+    "Locked fresh Linux CI and minimum nonroot service image are implementable"
+  ],
+  "adverse_acceptance": [
+    "No dev dependencies/business authority accidentally shipped; missing checks are not claimed passed"
+  ],
+  "reviewer": "primary integration owner",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 30,
+  "stop_conditions": [
+    "Work would require edits or host mutation"
+  ],
+  "is_example": false
+}

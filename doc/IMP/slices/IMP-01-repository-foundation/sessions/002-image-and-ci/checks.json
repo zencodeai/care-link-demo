@@ -1,0 +1,68 @@
+[
+  {
+    "name": "User UI/keyboard and independent EN-FR review",
+    "command": null,
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Close the explicitly assigned IMP-01 developer image/CI verification item with attributable evidence.",
+    "actual": "User explicitly reports preceding item3 complete. No reviewer identity or agent browser execution is inferred.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/evidence/user-ui-review.md",
+    "evidence_digest": "cbdd61fb56c11eb541044387a7b1a30c6582cdeebc01de3b8587bd097b7dba7e",
+    "mock_used": false
+  },
+  {
+    "name": "Pinned core image build",
+    "command": "python3 tools/build_core_image.py --tag care-link-core:imp-01-002 --iid-file <session>/evidence/core-image-id.txt",
+    "tool_version": "Docker29.8.0",
+    "status": "passed",
+    "expected": "Close the explicitly assigned IMP-01 developer image/CI verification item with attributable evidence.",
+    "actual": "Workstation Docker Desktop linux/arm64 build passed using recorded immutable official Python/uv inputs.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/evidence/build.log",
+    "evidence_digest": "850b31503ca39f3087e821a2801697200d5e21603f77b21538031cf8a6812daf",
+    "mock_used": false
+  },
+  {
+    "name": "Restricted runtime smoke",
+    "command": "python3 tools/smoke_core_image.py --image care-link-core:imp-01-002",
+    "tool_version": "Python3.14.7",
+    "status": "passed",
+    "expected": "Close the explicitly assigned IMP-01 developer image/CI verification item with attributable evidence.",
+    "actual": "UID65532; read-only; capdropALL; no-new-privileges; no network/mounts/ports; selected runtime dependencies; valid204/invalid400-422/business503; test container removed.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/evidence/container-smoke.log",
+    "evidence_digest": "f6cfa1bf638b175f866dd82bc101105d31334382f9659023ed51b3f935389a62",
+    "mock_used": false
+  },
+  {
+    "name": "Startup-failure cleanup",
+    "command": "Build deliberately missing-entrypoint image; run smoke; compare labelled-container inventory before/after",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Close the explicitly assigned IMP-01 developer image/CI verification item with attributable evidence.",
+    "actual": "Expected nonzero OCI startup failure; no extra test container remained.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/evidence/startup-failure-cleanup.log",
+    "evidence_digest": "09daf5a2be7643b8a1e5533c24cf1e783bdf4ee7a1ab1b9c9a03988675639854",
+    "mock_used": false
+  },
+  {
+    "name": "Local fast checks",
+    "command": "UV_CACHE_DIR=/private/tmp/care-link-uv-cache UV_PYTHON_DOWNLOADS=never python3 tools/check.py",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Close the explicitly assigned IMP-01 developer image/CI verification item with attributable evidence.",
+    "actual": "All lint/format/strict type/contract/boundary checks, 52 Python and 32 TS/UI/parity tests and production web build passed.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/evidence/fast-check.log",
+    "evidence_digest": "ff7a79620c5439e58e7e275589550dc678a70042ab0b6e6fe548f089babcfd3c",
+    "mock_used": false
+  },
+  {
+    "name": "Remote Foundation CI",
+    "command": "git push --set-upstream origin feat/imp-01-foundation; gh run view 42403688794 --repo zencodeai/care-link-demo",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Close the explicitly assigned IMP-01 developer image/CI verification item with attributable evidence.",
+    "actual": "Actual run42403688794 on 69a387302335a8bf800325bb0ccfb1e66f97fee7 succeeded for both fast and container jobs. Logs retained; no merge/deployment.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/002-image-and-ci/evidence/ci-run.json",
+    "evidence_digest": "4f33f438dea0bc856f2839a15436d19a2823683d4f43c94dd263f3f1ea26e5ca",
+    "mock_used": false
+  }
+]

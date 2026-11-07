@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Clean offline locked setup and full fast lane",
+    "command": "python3 tools/verify_clean.py",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+    "actual": "Fresh temporary source copy: offline uv/pnpm sync, Ruff lint/format, strict Pyright/TypeScript, ESLint, Prettier, 52 Python tests, 32 TS/UI/parity tests, Vite production build. Python/pnpm manifest mismatch and schema loosening rejected.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/clean-verification.log",
+    "evidence_digest": "646e5b18eb81e894762e50c73311d4b247fab8f7448c6658669d196725a442f5",
+    "mock_used": true
+  },
+  {
+    "name": "Python dependency audit",
+    "command": "uv tool run --from pip-audit==2.10.0 pip-audit --path .venv/lib/python3.14/site-packages --format json",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+    "actual": "Zero known vulnerabilities after FastAPI/Starlette/pytest updates. Local workspace packages skipped by audit.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/python-audit.json",
+    "evidence_digest": "f44111c327fef3cb1839089736a853294cfd10d369006f4bf5c0da37d1a1c224",
+    "mock_used": false
+  },
+  {
+    "name": "Frontend dependency audit",
+    "command": "pnpm audit --json",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+    "actual": "Zero known vulnerabilities after AJV/Vite/Vitest/ESLint and minimatch override updates.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/npm-audit.json",
+    "evidence_digest": "b06f4bef29637649322334c6008fbfbfde838887c842329c3cc6009918bc0e5a",
+    "mock_used": false
+  },
+  {
+    "name": "Local HTTP smoke",
+    "command": "Python urllib requests through temporary Vite/API developer listeners",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+    "actual": "Typed capability, valid 204, overflow/nested-key 422, business 503; listeners stopped.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/http-smoke.log",
+    "evidence_digest": "632114488c4c3fc1ac2bedbcbb4178c7e8f27ec700fae544d51a97b71d3cb759",
+    "mock_used": false
+  },
+  {
+    "name": "Canonical plan validation",
+    "command": "uv run --locked python doc/IMP/validate_plan.py",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+    "actual": "11 gates, 44 tasks, 206 operation allocations, 7 TOML roles, handoff fixtures, links and frozen inputs pass. No canonical plan state changed.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/plan-validation.log",
+    "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+    "mock_used": false
+  },
+  {
+    "name": "LLD design validator",
+    "command": "uv run --locked python doc/LLD/validate_design.py",
+    "tool_version": null,
+    "status": "not_run",
+    "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+    "actual": "Validator entry attempted; missing openapi_spec_validator dependency. LLD files unchanged and canonical plan frozen-input check passed.",
+    "evidence_path": null,
+    "evidence_digest": null,
+    "mock_used": false
+  },
+  {
+    "name": "Browser visual, keyboard and independent language review",
+    "command": null,
+    "tool_version": null,
+    "status": "not_run",
+    "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+    "actual": "Browser host unavailable; component interactions/local HTTP checked. No visual or independent EN/FR claim.",
+    "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/http-smoke.log",
+    "evidence_digest": "632114488c4c3fc1ac2bedbcbb4178c7e8f27ec700fae544d51a97b71d3cb759",
+    "mock_used": true
+  },
+  {
+    "name": "Images and remote CI",
+    "command": null,
+    "tool_version": null,
+    "status": "not_run",
+    "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+    "actual": "Docker build recipe requires approved immutable Python/uv digests. G-00/lab approval absent; no image builds, containers, cluster, remote CI, deployment, model loading or participant admission.",
+    "evidence_path": null,
+    "evidence_digest": null,
+    "mock_used": false
+  }
+]

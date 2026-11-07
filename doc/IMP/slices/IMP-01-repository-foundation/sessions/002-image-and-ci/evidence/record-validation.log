@@ -1,0 +1,6 @@
+PASS schema and semantics work-packet-review.json
+PASS schema and semantics work-packet-integration.json
+PASS schema and semantics agent-result.json
+PASS current candidate hashes; application/build/CI source exactly matches successful remote commit
+PASS current README local links
+PASS check evidence digests

@@ -1,0 +1,8 @@
+PASS schema and semantics: doc/IMP/executions/2026-11-07-IMP-01/decisions/G-00-demo-packet.json
+PASS schema and semantics: doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/demo-packet.json
+PASS schema and semantics: doc/IMP/executions/2026-11-07-IMP-01/decisions/G-00.json
+PASS schema and semantics: doc/IMP/executions/2026-11-07-IMP-01/decisions/G-01.json
+PASS exact current candidate, receipt/demo digests and evidence hashes
+PASS README local links
+PASS accepted ledger; original not_run results retained
+No behavioral suites or previously unperformed tools were run to record gate acceptance.

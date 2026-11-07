@@ -1,0 +1,172 @@
+{
+  "packet_id": "IMP-01-INTEGRATION-001",
+  "task_id": "IMP-01-D",
+  "baseline_commit": "af17b5f489ef3e7b9a403f12362ec9be72abb16d",
+  "role": "imp_platform",
+  "status": "partial",
+  "changed_paths": [
+    ".dockerignore",
+    ".github/workflows/foundation.yml",
+    ".gitignore",
+    ".node-version",
+    ".npmrc",
+    ".prettierignore",
+    ".python-version",
+    "README.md",
+    "apps/web/index.html",
+    "apps/web/package.json",
+    "apps/web/src/App.test.tsx",
+    "apps/web/src/App.tsx",
+    "apps/web/src/main.tsx",
+    "apps/web/src/messages.ts",
+    "apps/web/src/styles.css",
+    "apps/web/tsconfig.json",
+    "apps/web/vite.config.ts",
+    "eslint.config.mjs",
+    "package.json",
+    "packages/contracts/python/pyproject.toml",
+    "packages/contracts/python/src/care_link_contracts/__init__.py",
+    "packages/contracts/python/src/care_link_contracts/py.typed",
+    "packages/contracts/python/src/care_link_contracts/schema.json",
+    "packages/contracts/python/src/care_link_contracts/types.py",
+    "packages/contracts/python/src/care_link_contracts/validation.py",
+    "packages/contracts/python/tests/test_validation.py",
+    "packages/contracts/typescript/package.json",
+    "packages/contracts/typescript/src/index.ts",
+    "packages/contracts/typescript/src/schema.json",
+    "packages/contracts/typescript/tests/contracts.test.ts",
+    "packages/contracts/typescript/tsconfig.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "pyproject.toml",
+    "pyrightconfig.json",
+    "services/core/Dockerfile",
+    "services/core/pyproject.toml",
+    "services/core/src/care_link_core/__init__.py",
+    "services/core/src/care_link_core/app.py",
+    "services/core/src/care_link_core/capabilities.py",
+    "services/core/src/care_link_core/cli.py",
+    "services/core/src/care_link_core/py.typed",
+    "services/core/tests/test_developer_api.py",
+    "tests/contract/parity.test.ts",
+    "tests/contract/test_snapshot.py",
+    "tests/unit/test_boundaries.py",
+    "tools/build_core_image.py",
+    "tools/check.py",
+    "tools/check_boundaries.py",
+    "tools/contract_probe.py",
+    "tools/generate_contracts.py",
+    "tools/verify_clean.py",
+    "uv.lock",
+    "vitest.config.ts"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/candidate-manifest.json",
+      "sha256": "e1e510f5e03b2f8b7d314c832c30fb174685e65593640378ce368ea14f3800ea"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/handoff.md",
+      "sha256": "a0d28d7b2d646c6de0d4cee6a92f0ded580f7f806df4561a04108ad0980b3373"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Clean offline locked setup and full fast lane",
+      "command": "python3 tools/verify_clean.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Fresh temporary source copy: offline uv/pnpm sync, Ruff lint/format, strict Pyright/TypeScript, ESLint, Prettier, 52 Python tests, 32 TS/UI/parity tests, Vite production build. Python/pnpm manifest mismatch and schema loosening rejected.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/clean-verification.log",
+      "evidence_digest": "646e5b18eb81e894762e50c73311d4b247fab8f7448c6658669d196725a442f5",
+      "mock_used": true
+    },
+    {
+      "name": "Python dependency audit",
+      "command": "uv tool run --from pip-audit==2.10.0 pip-audit --path .venv/lib/python3.14/site-packages --format json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Zero known vulnerabilities after FastAPI/Starlette/pytest updates. Local workspace packages skipped by audit.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/python-audit.json",
+      "evidence_digest": "f44111c327fef3cb1839089736a853294cfd10d369006f4bf5c0da37d1a1c224",
+      "mock_used": false
+    },
+    {
+      "name": "Frontend dependency audit",
+      "command": "pnpm audit --json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Zero known vulnerabilities after AJV/Vite/Vitest/ESLint and minimatch override updates.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/npm-audit.json",
+      "evidence_digest": "b06f4bef29637649322334c6008fbfbfde838887c842329c3cc6009918bc0e5a",
+      "mock_used": false
+    },
+    {
+      "name": "Local HTTP smoke",
+      "command": "Python urllib requests through temporary Vite/API developer listeners",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Typed capability, valid 204, overflow/nested-key 422, business 503; listeners stopped.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/http-smoke.log",
+      "evidence_digest": "632114488c4c3fc1ac2bedbcbb4178c7e8f27ec700fae544d51a97b71d3cb759",
+      "mock_used": false
+    },
+    {
+      "name": "Canonical plan validation",
+      "command": "uv run --locked python doc/IMP/validate_plan.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "11 gates, 44 tasks, 206 operation allocations, 7 TOML roles, handoff fixtures, links and frozen inputs pass. No canonical plan state changed.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/plan-validation.log",
+      "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+      "mock_used": false
+    },
+    {
+      "name": "LLD design validator",
+      "command": "uv run --locked python doc/LLD/validate_design.py",
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Validator entry attempted; missing openapi_spec_validator dependency. LLD files unchanged and canonical plan frozen-input check passed.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    },
+    {
+      "name": "Browser visual, keyboard and independent language review",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Browser host unavailable; component interactions/local HTTP checked. No visual or independent EN/FR claim.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/http-smoke.log",
+      "evidence_digest": "632114488c4c3fc1ac2bedbcbb4178c7e8f27ec700fae544d51a97b71d3cb759",
+      "mock_used": true
+    },
+    {
+      "name": "Images and remote CI",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Docker build recipe requires approved immutable Python/uv digests. G-00/lab approval absent; no image builds, containers, cluster, remote CI, deployment, model loading or participant admission.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [
+    "Selected unchanged LLD schemas plus explicitly developer-only DeveloperCapability/dev-1; no business operation enabled."
+  ],
+  "remaining_risks": [
+    "G-00/G-01 decisions absent; browser/image/remote CI/language evidence pending."
+  ],
+  "handoff": "See session handoff.md; new follow-up chat/session required. Primary integration result includes independent specialist findings resolved; no human acceptance.",
+  "is_example": false
+}

@@ -1,0 +1,159 @@
+{
+  "packet_id": "IMP-01-DEMO-001",
+  "stage_id": "IMP-01",
+  "gate_id": "G-01",
+  "candidate": {
+    "commit": "af17b5f489ef3e7b9a403f12362ec9be72abb16d",
+    "diff_digest": "bde8d05fd703c7732a022b1d9c6eb743582e7e9eca9318f22f539f74421fbf48",
+    "artifact_digest": "55169a21ff0d64dcacf4585ed0bad2cbc8ae5435ed2c25c21c51ec0602d3eb14",
+    "configuration_digest": "3e0696bf7a1e4dc39d7e133f244a316d3ae55c2e93f0fa28a9d97fff0182563b",
+    "contract_digest": "304e586311519397d317d9e705600a85118a1276c22a3cb4d340aee75e028223",
+    "environment_digest": "7d50a6a41d3f95a39c5f5f7607d067f5d4e6f635934b5103140d16d438239e15",
+    "fixture_digest": "97437574059c4fc4a6cc9a3eb32ba7d86a6c7f7208c5f19badecefca2f93e529"
+  },
+  "state": "draft",
+  "preconditions": [
+    "Current user authorized independent developer implementation; IMP-00/G-00 not accepted.",
+    "Use pinned local tools and locked project setup; synthetic sample inputs only."
+  ],
+  "normal_steps": [
+    {
+      "action": "Run tools/verify_clean.py with populated caches.",
+      "expected": "Locked setup/checks succeed from clean source copy.",
+      "actual": "Passed; 52 Python and 32 TS/UI/parity tests; web production build passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/clean-verification.log",
+          "sha256": "646e5b18eb81e894762e50c73311d4b247fab8f7448c6658669d196725a442f5"
+        }
+      ]
+    },
+    {
+      "action": "Open developer EN/FR shell and inspect capability.",
+      "expected": "Visible developer-only role preview; no participant admission.",
+      "actual": "Live proxy HTTP passed; browser access host unavailable, so visual demo remains pending.",
+      "evidence_refs": []
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Submit overflow/nested unknown keys and unavailable business call.",
+      "expected": "Adapters reject; API422/503; no business success.",
+      "actual": "Cross-language parity, Python/API/component tests and live HTTP smoke passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/http-smoke.log",
+          "sha256": "632114488c4c3fc1ac2bedbcbb4178c7e8f27ec700fae544d51a97b71d3cb759"
+        }
+      ]
+    },
+    {
+      "action": "Mutate Python/pnpm manifests and loosen schema in temporary copy.",
+      "expected": "Frozen checks reject changes.",
+      "actual": "Each negative check exited nonzero; source import adversarial regressions also passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/clean-verification.log",
+          "sha256": "646e5b18eb81e894762e50c73311d4b247fab8f7448c6658669d196725a442f5"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "Clean offline locked setup and full fast lane",
+      "command": "python3 tools/verify_clean.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Fresh temporary source copy: offline uv/pnpm sync, Ruff lint/format, strict Pyright/TypeScript, ESLint, Prettier, 52 Python tests, 32 TS/UI/parity tests, Vite production build. Python/pnpm manifest mismatch and schema loosening rejected.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/clean-verification.log",
+      "evidence_digest": "646e5b18eb81e894762e50c73311d4b247fab8f7448c6658669d196725a442f5",
+      "mock_used": true
+    },
+    {
+      "name": "Python dependency audit",
+      "command": "uv tool run --from pip-audit==2.10.0 pip-audit --path .venv/lib/python3.14/site-packages --format json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Zero known vulnerabilities after FastAPI/Starlette/pytest updates. Local workspace packages skipped by audit.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/python-audit.json",
+      "evidence_digest": "f44111c327fef3cb1839089736a853294cfd10d369006f4bf5c0da37d1a1c224",
+      "mock_used": false
+    },
+    {
+      "name": "Frontend dependency audit",
+      "command": "pnpm audit --json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Zero known vulnerabilities after AJV/Vite/Vitest/ESLint and minimatch override updates.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/npm-audit.json",
+      "evidence_digest": "b06f4bef29637649322334c6008fbfbfde838887c842329c3cc6009918bc0e5a",
+      "mock_used": false
+    },
+    {
+      "name": "Local HTTP smoke",
+      "command": "Python urllib requests through temporary Vite/API developer listeners",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Typed capability, valid 204, overflow/nested-key 422, business 503; listeners stopped.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/http-smoke.log",
+      "evidence_digest": "632114488c4c3fc1ac2bedbcbb4178c7e8f27ec700fae544d51a97b71d3cb759",
+      "mock_used": false
+    },
+    {
+      "name": "Canonical plan validation",
+      "command": "uv run --locked python doc/IMP/validate_plan.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "11 gates, 44 tasks, 206 operation allocations, 7 TOML roles, handoff fixtures, links and frozen inputs pass. No canonical plan state changed.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/plan-validation.log",
+      "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+      "mock_used": false
+    },
+    {
+      "name": "LLD design validator",
+      "command": "uv run --locked python doc/LLD/validate_design.py",
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Validator entry attempted; missing openapi_spec_validator dependency. LLD files unchanged and canonical plan frozen-input check passed.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    },
+    {
+      "name": "Browser visual, keyboard and independent language review",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Browser host unavailable; component interactions/local HTTP checked. No visual or independent EN/FR claim.",
+      "evidence_path": "doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/evidence/http-smoke.log",
+      "evidence_digest": "632114488c4c3fc1ac2bedbcbb4178c7e8f27ec700fae544d51a97b71d3cb759",
+      "mock_used": true
+    },
+    {
+      "name": "Images and remote CI",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Declared IMP-01 developer behavior and truthful verification scope.",
+      "actual": "Docker build recipe requires approved immutable Python/uv digests. G-00/lab approval absent; no image builds, containers, cluster, remote CI, deployment, model loading or participant admission.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "G-00 pending; images not built; remote CI not run; browser and independent EN/FR review pending."
+  ],
+  "acceptance_scope": "Developer foundation candidate only. Draft packet; no human G-01 decision or participant/deployment approval.",
+  "rollback": "Revert only candidate source and matching manifests/locks together; retain evidence and unrelated work.",
+  "human_decision_id": null,
+  "is_example": false
+}

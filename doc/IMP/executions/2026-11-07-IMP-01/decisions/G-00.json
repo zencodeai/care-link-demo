@@ -1,0 +1,34 @@
+{
+  "decision_id": "G-00-USER-2026-11-07",
+  "stage_id": "IMP-00",
+  "gate_id": "G-00",
+  "decision": "accept_stage",
+  "demo_packet_digest": "a74c92991e97af637c86ff83cdd5d0b86cc13e43aa8711805bfb7e3a44adbb9b",
+  "candidate": {
+    "commit": "af17b5f489ef3e7b9a403f12362ec9be72abb16d",
+    "diff_digest": "ec8cbbee3f78dcb854dd364016f6e9da37d369625f62592bcfeb0bd66154255d",
+    "artifact_digest": "50227e325bc18449dcdf1c7cf94e3ec6f0d55c1f4621e570a83067e81cd5dc5e",
+    "configuration_digest": "3e0696bf7a1e4dc39d7e133f244a316d3ae55c2e93f0fa28a9d97fff0182563b",
+    "contract_digest": "304e586311519397d317d9e705600a85118a1276c22a3cb4d340aee75e028223",
+    "environment_digest": "7d50a6a41d3f95a39c5f5f7607d067f5d4e6f635934b5103140d16d438239e15",
+    "fixture_digest": "97437574059c4fc4a6cc9a3eb32ba7d86a6c7f7208c5f19badecefca2f93e529"
+  },
+  "actual_human_attribution": "User of the current Codex chat; personal name and independent-review identity not provided.",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Current chat, 2026-11-07: “G-00 and G-01 validated”",
+    "scope": "Current workstation and observed developer tool/setup scope supporting the implemented foundation. Full feasibility measurements, image choices, model admission and host/lab actions are not established by this receipt."
+  },
+  "authority_scope": "Current workstation and observed developer tool/setup scope supporting the implemented foundation. Full feasibility measurements, image choices, model admission and host/lab actions are not established by this receipt.",
+  "reviewed_evidence": [
+    {
+      "path": "doc/IMP/executions/2026-11-07-IMP-01/decisions/user-validation.md",
+      "sha256": "d421317dffe9660a33a19c98c12d61cb15c257c6fef516f8a898fd66f960c5b8"
+    }
+  ],
+  "conditions": [
+    "Acceptance retains the disclosed unperformed checks and existing project authority boundaries."
+  ],
+  "decided_at": "2026-11-07T18:40:54Z",
+  "is_example": false
+}

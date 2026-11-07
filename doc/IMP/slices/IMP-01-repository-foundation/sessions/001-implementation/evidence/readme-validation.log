@@ -1,0 +1,35 @@
+PASS Three copyable JSON examples
+PASS JSON example 1: RevisionCommand, expected accepted
+PASS JSON example 2: SessionCreate, expected accepted
+PASS JSON example 3: SessionCreate, expected rejected
+PASS Revision table {"expected_revision": "9223372036854775807"}
+PASS Revision table {"expected_revision": "9223372036854775808"}
+PASS Revision table {"expected_revision": 1}
+PASS Revision table {"expected_revision": "01"}
+PASS Shell block 1 syntax
+PASS Shell block 2 syntax
+PASS Shell block 3 syntax
+PASS Shell block 4 syntax
+PASS Shell block 5 syntax
+PASS Shell block 6 syntax
+PASS Shell block 7 syntax
+PASS API example HTTP 204
+PASS API example HTTP 422
+PASS Business route HTTP503 CAPABILITY_DISABLED
+PASS Local link doc/REQ/10-agentic-ai-and-service-model.md
+PASS Local link doc/REQ/README.md
+PASS Local link doc/REQ/01-scope-and-sources.md
+PASS Local link doc/REQ/02-actors-and-workflows.md
+PASS Local link doc/REQ/03-architecture-and-interfaces.md
+PASS Local link doc/REQ/04-data-security-governance.md
+PASS Local link doc/REQ/05-deployment-and-operations.md
+PASS Local link doc/REQ/06-acceptance-and-delivery.md
+PASS Local link doc/REQ/07-source-requirements.md
+PASS Local link doc/REQ/08-open-decisions.md
+PASS Local link doc/REQ/demo-parameters.json
+PASS Local link doc/IMP/slices/IMP-01-repository-foundation/README.md
+PASS Local link doc/IMP/slices/IMP-01-repository-foundation/sessions/001-implementation/checks.json
+PASS Local link services/core/Dockerfile
+PASS Local link doc/LLD/README.md
+PASS Local link doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md
+Documentation-only check: API exercised in-process; shell commands syntax-checked, not executed. No browser review or stage acceptance inferred.

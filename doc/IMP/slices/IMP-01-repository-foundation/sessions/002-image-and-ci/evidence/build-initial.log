@@ -1,0 +1,147 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 777B done
+#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ${UV_IMAGE} results in empty or invalid base image name (line 4)
+#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ${PYTHON_IMAGE} results in empty or invalid base image name (line 5)
+#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ${PYTHON_IMAGE} results in empty or invalid base image name (line 13)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#2 ...
+
+#3 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#3 DONE 0.5s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#2 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 354B done
+#4 DONE 0.0s
+
+#5 [uv 1/1] FROM ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#5 resolve ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc done
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 154.83kB 0.0s done
+#6 DONE 0.0s
+
+#7 [build 1/7] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#7 resolve docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 done
+#7 sha256:cf532b88ab5135a618911d6b11610ffeb602c89c6f5cffcd75bc5604b085ddd9 249B / 249B 0.1s done
+#7 sha256:fe6cc2324fa446aa273085f06ad03a4afcd3084d02406991ebd8babea0d19f54 3.37MB / 3.37MB 0.3s done
+#7 sha256:ea40a15691b2243492a5912949e25d29f0a618a1226faa0e17861b237df27bfc 0B / 12.93MB 0.2s
+#7 sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9 0B / 28.12MB 0.2s
+#7 sha256:ea40a15691b2243492a5912949e25d29f0a618a1226faa0e17861b237df27bfc 4.19MB / 12.93MB 0.5s
+#7 sha256:ea40a15691b2243492a5912949e25d29f0a618a1226faa0e17861b237df27bfc 8.39MB / 12.93MB 0.6s
+#7 sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9 2.10MB / 28.12MB 0.5s
+#7 sha256:ea40a15691b2243492a5912949e25d29f0a618a1226faa0e17861b237df27bfc 12.93MB / 12.93MB 0.7s done
+#7 sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9 6.29MB / 28.12MB 0.8s
+#7 sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9 8.39MB / 28.12MB 0.9s
+#7 sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9 11.53MB / 28.12MB 1.1s
+#7 sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9 14.68MB / 28.12MB 1.2s
+#7 sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9 18.87MB / 28.12MB 1.4s
+#7 sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9 24.12MB / 28.12MB 1.5s
+#7 sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9 28.12MB / 28.12MB 1.6s done
+#7 extracting sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9
+#7 extracting sha256:333125b5cee9fb6718bdcb523fc93b4adc71b7c37ada6146a20c193430e549b9 0.4s done
+#7 DONE 2.1s
+
+#7 [build 1/7] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#7 extracting sha256:fe6cc2324fa446aa273085f06ad03a4afcd3084d02406991ebd8babea0d19f54 0.1s done
+#7 extracting sha256:ea40a15691b2243492a5912949e25d29f0a618a1226faa0e17861b237df27bfc
+#7 extracting sha256:ea40a15691b2243492a5912949e25d29f0a618a1226faa0e17861b237df27bfc 0.2s done
+#7 DONE 2.3s
+
+#7 [build 1/7] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#7 extracting sha256:cf532b88ab5135a618911d6b11610ffeb602c89c6f5cffcd75bc5604b085ddd9 done
+#7 DONE 2.3s
+
+#8 [runtime 2/3] WORKDIR /app
+#8 DONE 0.3s
+
+#9 [build 2/7] COPY --from=uv /uv /usr/local/bin/uv
+#9 DONE 0.3s
+
+#10 [build 3/7] WORKDIR /app
+#10 DONE 0.0s
+
+#11 [build 4/7] COPY pyproject.toml uv.lock .python-version ./
+#11 DONE 0.0s
+
+#12 [build 5/7] COPY packages/contracts/python packages/contracts/python
+#12 DONE 0.0s
+
+#13 [build 6/7] COPY services/core services/core
+#13 DONE 0.0s
+
+#14 [build 7/7] RUN uv sync --locked --no-dev --no-editable --package care-link-core
+#14 0.154 Using CPython 3.14.7 interpreter at: /usr/local/bin/python3.14
+#14 0.154 Creating virtual environment at: .venv
+#14 0.157 Resolved 44 packages in 0.78ms
+#14 0.166    Building care-link-core @ file:///app/services/core
+#14 0.167    Building care-link-contracts @ file:///app/packages/contracts/python
+#14 0.409 Downloading pydantic-core (2.0MiB)
+#14 0.596  Downloaded pydantic-core
+#14 1.001       Built care-link-core @ file:///app/services/core
+#14 1.001       Built care-link-contracts @ file:///app/packages/contracts/python
+#14 1.003 Prepared 32 packages in 845ms
+#14 1.049 Installed 32 packages in 45ms
+#14 1.152 Bytecode compiled 522 files in 102ms
+#14 1.152  + annotated-doc==0.0.5
+#14 1.152  + annotated-types==0.8.0
+#14 1.152  + anyio==4.16.0
+#14 1.152  + arrow==1.4.0
+#14 1.152  + attrs==26.1.0
+#14 1.152  + care-link-contracts==0.1.0 (from file:///app/packages/contracts/python)
+#14 1.152  + care-link-core==0.1.0 (from file:///app/services/core)
+#14 1.152  + click==8.5.1
+#14 1.152  + fastapi==0.162.2
+#14 1.152  + fqdn==1.6.0
+#14 1.152  + h11==0.16.0
+#14 1.152  + idna==3.20
+#14 1.152  + isoduration==20.11.0
+#14 1.152  + jsonpointer==3.10
+#14 1.152  + jsonschema==4.25.1
+#14 1.152  + jsonschema-specifications==2025.9.1
+#14 1.152  + opentelemetry-api==1.45.2
+#14 1.152  + pydantic==2.14.3
+#14 1.152  + pydantic-core==2.50.4
+#14 1.152  + python-dateutil==4.0.0
+#14 1.152  + referencing==0.37.0
+#14 1.152  + rfc3339-validator==0.1.4
+#14 1.152  + rfc3987==1.3.8
+#14 1.152  + rpds-py==2026.9.1
+#14 1.152  + six==1.17.0
+#14 1.152  + starlette==1.10.0
+#14 1.152  + typing-extensions==4.16.0
+#14 1.152  + typing-inspection==0.4.5
+#14 1.152  + tzdata==2026.6
+#14 1.153  + uri-template==1.3.0
+#14 1.153  + uvicorn==0.38.0
+#14 1.153  + webcolors==25.10.0
+#14 DONE 1.2s
+
+#15 [runtime 3/3] COPY --from=build /app/.venv /app/.venv
+#15 DONE 0.1s
+
+#16 exporting to image
+#16 exporting layers
+#16 exporting layers 0.4s done
+#16 exporting manifest sha256:da0ebf4e1995bfdaa0d7ec7c4616700e68d04ec526bd60a486f917fe8f6394d2 done
+#16 exporting config sha256:2228f9aa524fb91aa6e1284d5a17f37170149ceec9e33567f9d36a8b859e103b done
+#16 exporting attestation manifest sha256:87824b53aa4ee589bf775c0f7a86e46904632e3e29154509b1f47c834f0cfd55 done
+#16 exporting manifest list sha256:aa4e49583f29237e83c1d2d225fd0a59ad604fa0dc6d38632f4e99371537f624 done
+#16 naming to docker.io/library/care-link-core:imp-01-002 done
+#16 unpacking to docker.io/library/care-link-core:imp-01-002
+#16 unpacking to docker.io/library/care-link-core:imp-01-002 0.2s done
+#16 DONE 0.6s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - InvalidDefaultArgInFrom: Default value for ARG ${UV_IMAGE} results in empty or invalid base image name (line 4)
+ - InvalidDefaultArgInFrom: Default value for ARG ${PYTHON_IMAGE} results in empty or invalid base image name (line 5)
+ - InvalidDefaultArgInFrom: Default value for ARG ${PYTHON_IMAGE} results in empty or invalid base image name (line 13)
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/n3kprlhf1s3b5ee812dfozatj

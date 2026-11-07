@@ -1,0 +1,25 @@
+# Image/CI verification handoff — complete
+
+User completed item3 (browser/keyboard and independent EN/FR review) and instructed proceeding with image build and remote CI, naming the current development workstation as the lab. This is a continued explicit assignment in the existing chat; dedicated session002 preserves the new action scope separately from accepted session001. No new chat was launched automatically.
+
+Start: baseline af17b5f489ef3e7b9a403f12362ec9be72abb16d on chore/imp-slice-agent-workflow; original foundation remains uncommitted. User changes are preserved. Docker Desktop server29.8.0 linux/arm64 is running. GitHub connector returned404 for private repository zencodeai/care-link-demo; existing gh CLI login is valid outside the sandbox. Remote main and current branch are unchanged at initial probe. Coordinator alone owns Git publication, shared manifests/locks and Docker lab resources. Review specialist is read-only.
+
+Current user instruction authorizes the concrete local build/smoke and dedicated-branch CI publication needed for items1/2. No merge/main update, model, cluster, participant admission or production deployment is included. Final source candidate and evidence will be bound after actual checks.
+
+## Results
+
+Item3 is complete based on the user's explicit report. evidence/user-ui-review.md preserves the statement and its attribution; individual reviewer identities were not supplied. Historical agent browser not_run results were preserved.
+
+Item1 is complete on the authorized development workstation. Official Python3.14.7 slim-bookworm and uv0.12.17 immutable index/architecture manifests are recorded in services/core/image-inputs.json. The source Dockerfile and helper now have immutable defaults; the helper accepts a separate tag/iidfile and executes from the repository root. Image care-link-core:imp-01-002, linux/arm64, has identity sha256:97ac985ec9379107380121c053a3d98cfde289f1fb5bae615a5f3bff0d15b0c9. It is retained locally; base layers/build cache and a small deliberately broken-startup test tag also remain. No smoke containers remain.
+
+The smoke helper creates only a uniquely named, labelled container; uses UID/GID65532, read-only filesystem, no network attachment/host mounts/ports, all capabilities dropped, no-new-privileges and bounded compute; then checks capability/valid-revision/session inputs, revision overflow, duplicate/nested unknown keys, disabled business routes and absence of development dependencies. It removes only that container in finally. Independent read-only review found a startup-failure cleanup gap in the initial run-based helper. Coordinator fixed it with create/capture-ID/start; successful smoke and an actual broken-entrypoint check prove cleanup. These restrictions are a bounded image smoke configuration, not later-stage network/PDP/clinical proof.
+
+Item2 is complete. Source commit69a387302335a8bf800325bb0ccfb1e66f97fee7 was published to the existing private repository on new branch feat/imp-01-foundation. Foundation run42403688794 succeeded: container job128496716396 and fast job128496716484. The fast lane passed strict checks, 52 Python tests, 32 TS/UI/parity tests and production web build; the container job built and smoke-tested the selected core image on the Ubuntu runner. evidence/ci-run.json and ci-run.log retain the actual source/run/job binding and logs. The CI bootstrap installs pinned uv into a temporary environment instead of modifying Ubuntu system Python. Both checkout actions disable persisted credentials.
+
+GitHub connector returned404 for this private repository, so the working existing gh CLI authentication was used. No credentials were copied into project records. The main branch and prior configuration branch were not changed. A subsequent documentation-only evidence commit records these results; its CI result can be inspected on the same feature branch without treating generated records as new human acceptance.
+
+## Continuity and remaining scope
+
+G-00/G-01 receipts in session001 remain the historical human acceptance. This explicitly assigned follow-up closes the three listed developer-evidence items. checks.json, agent-result.json and candidate-manifest.json in session002 bind the current source delta and actual evidence; the run ledger references this completed verification. Historical candidate bindings are not silently rewritten.
+
+No IMP-02 implementation, merge, production/participant deployment, model/cluster action, data store or police integration was performed. The unchanged LLD validator still requires its separate validation dependencies, and broader feasibility observations remain outside this item1/item2 assignment. Next chat: inspect this handoff, feature-branch HEAD and latest workflow result; reconcile source hashes, then begin only the next explicitly assigned slice or review/merge scope. Local rollback is to remove only named project test tags/branch changes when requested; never prune unrelated Docker resources or rewrite main.

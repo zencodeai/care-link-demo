@@ -1,0 +1,37 @@
+{
+  "name": "care-link-development",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.20.0",
+  "engines": {
+    "node": "22.14.0",
+    "pnpm": "10.20.0"
+  },
+  "scripts": {
+    "check": "python3 tools/check.py",
+    "typecheck": "pnpm -r typecheck",
+    "build": "pnpm -r build",
+    "test": "vitest run",
+    "lint": "eslint apps/web packages/contracts/typescript --max-warnings 0",
+    "format:check": "prettier --check apps/web packages/contracts/typescript package.json pnpm-workspace.yaml pyrightconfig.json eslint.config.mjs vitest.config.ts",
+    "dev:web": "pnpm --filter @care-link/web dev"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.14.0",
+    "typescript-eslint": "8.72.1",
+    "prettier": "3.6.2",
+    "pyright": "1.1.407",
+    "typescript": "5.9.3",
+    "vitest": "5.1.0",
+    "jsdom": "27.1.0",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/jest-dom": "6.9.1",
+    "@types/node": "22.19.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "minimatch": "11.0.1"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+fd5d8904117e6c6db76f09ac8f0e56131b82c1621c73e7e63ee73327ccfc4996
+{"image_id": "sha256:97ac985ec9379107380121c053a3d98cfde289f1fb5bae615a5f3bff0d15b0c9", "read_only": true, "network": "none", "ports": [], "mounts": [], "capabilities_dropped": ["ALL"], "security_options": ["no-new-privileges"]}
+{
+  "uid": 65532,
+  "capability": {
+    "contract_version": "dev-1",
+    "status": "developer_only",
+    "tags": {
+      "environment": "demo",
+      "population": "synthetic"
+    },
+    "participant_admission": false,
+    "business_operations": "unavailable",
+    "contract_validation": true
+  },
+  "installed_distributions": [
+    "annotated-doc",
+    "annotated-types",
+    "anyio",
+    "arrow",
+    "attrs",
+    "care-link-contracts",
+    "care-link-core",
+    "click",
+    "fastapi",
+    "fqdn",
+    "h11",
+    "idna",
+    "isoduration",
+    "jsonpointer",
+    "jsonschema",
+    "jsonschema-specifications",
+    "opentelemetry-api",
+    "pydantic",
+    "pydantic_core",
+    "python-dateutil",
+    "referencing",
+    "rfc3339-validator",
+    "rfc3987",
+    "rpds-py",
+    "six",
+    "starlette",
+    "typing-inspection",
+    "typing_extensions",
+    "tzdata",
+    "uri-template",
+    "uvicorn",
+    "webcolors"
+  ],
+  "checks": [
+    {
+      "path": "/dev/contracts/RevisionCommand",
+      "status": 204
+    },
+    {
+      "path": "/dev/contracts/RevisionCommand",
+      "status": 422
+    },
+    {
+      "path": "/dev/contracts/RevisionCommand",
+      "status": 400
+    },
+    {
+      "path": "/dev/contracts/SessionCreate",
+      "status": 204
+    },
+    {
+      "path": "/dev/contracts/SessionCreate",
+      "status": 422
+    },
+    {
+      "path": "/v1/sessions",
+      "status": 503
+    },
+    {
+      "path": "/v1/sessions",
+      "status": 503
+    }
+  ]
+}
+fd5d8904117e6c6db76f09ac8f0e56131b82c1621c73e7e63ee73327ccfc4996

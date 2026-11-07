@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:care-link:developer:dev-1",
+  "$defs": {
+    "SessionCreate": {
+      "type": "object",
+      "properties": {
+        "tags": {
+          "$ref": "#/$defs/Tag"
+        },
+        "participant_kind": {
+          "type": "string",
+          "enum": [
+            "pid",
+            "carer",
+            "professional_participant"
+          ]
+        },
+        "jurisdiction": {
+          "$ref": "#/$defs/Jurisdiction"
+        },
+        "locale": {
+          "$ref": "#/$defs/Locale"
+        },
+        "channel": {
+          "type": "string",
+          "enum": [
+            "web",
+            "sms_sim",
+            "voice_sim",
+            "relay_sim"
+          ]
+        },
+        "persona_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fixture_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tags",
+        "participant_kind",
+        "jurisdiction",
+        "locale",
+        "channel",
+        "persona_id",
+        "fixture_id"
+      ],
+      "additionalProperties": false
+    },
+    "Tag": {
+      "type": "object",
+      "properties": {
+        "environment": {
+          "const": "demo"
+        },
+        "population": {
+          "const": "synthetic"
+        }
+      },
+      "required": [
+        "environment",
+        "population"
+      ],
+      "additionalProperties": false
+    },
+    "Jurisdiction": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "CA-XX",
+            "CA-YY"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Locale": {
+      "type": "string",
+      "enum": [
+        "en-CA",
+        "fr-CA"
+      ]
+    },
+    "RevisionCommand": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "expected_revision"
+      ],
+      "additionalProperties": false
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "INVALID_REQUEST",
+            "UNAUTHENTICATED",
+            "NOT_AUTHORIZED",
+            "NOT_FOUND",
+            "ASSURANCE_REQUIRED",
+            "REVISION_CONFLICT",
+            "IDEMPOTENCY_CONFLICT",
+            "REVIEW_REQUIRED",
+            "AUTHORITY_UNAVAILABLE",
+            "POLICY_UNAVAILABLE",
+            "AUDIT_UNAVAILABLE",
+            "DEPENDENCY_UNAVAILABLE",
+            "RATE_LIMITED",
+            "RESOURCE_BUSY",
+            "CONTEXT_STALE",
+            "DELIVERY_UNKNOWN",
+            "COMMIT_UNKNOWN",
+            "CURSOR_EXPIRED",
+            "CAPABILITY_DISABLED",
+            "TOKEN_EXPIRED",
+            "TOKEN_USED",
+            "REPLACEMENT_UNAVAILABLE",
+            "DEADLINE_EXCEEDED"
+          ]
+        },
+        "request_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "message_key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 96
+        },
+        "operation_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "retry_after_ms": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "code",
+        "request_id",
+        "retryable",
+        "message_key",
+        "operation_id",
+        "retry_after_ms"
+      ],
+      "additionalProperties": false
+    },
+    "DeveloperCapability": {
+      "type": "object",
+      "properties": {
+        "contract_version": {
+          "const": "dev-1"
+        },
+        "status": {
+          "const": "developer_only"
+        },
+        "tags": {
+          "$ref": "#/$defs/Tag"
+        },
+        "participant_admission": {
+          "const": false
+        },
+        "business_operations": {
+          "const": "unavailable"
+        },
+        "contract_validation": {
+          "const": true
+        }
+      },
+      "required": [
+        "contract_version",
+        "status",
+        "tags",
+        "participant_admission",
+        "business_operations",
+        "contract_validation"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
