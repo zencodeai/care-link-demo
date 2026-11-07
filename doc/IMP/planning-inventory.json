@@ -297,7 +297,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "1d488ca397c3427c176dd85cc63e3e892db304a1b1cf3fc879cd031b7113032e"
+      "sha256": "931b25d1fcc89f4ecd10416913e182a12b899c22a93b577da1e0b501283a84ae"
     },
     {
       "path": "agent-contracts.json",
@@ -389,5 +389,18 @@
     "method": "official documentation fetched; URLs recorded in tooling.json and sources guide",
     "openai_skill": "OpenAI Docs",
     "application_model_identifier_is_not_codex_model_setting": true
-  }
+  },
+  "configuration_updates": [
+    {
+      "date": "2026-11-07",
+      "reason": "User requested per-slice/follow-up chat and IMP subfolder workflow, modular source organization and agent configuration update. Installed IMP roles; no implementation or runtime discovery claimed.",
+      "artifact_changes": [
+        {
+          "path": "README.md",
+          "previous_sha256": "1d488ca397c3427c176dd85cc63e3e892db304a1b1cf3fc879cd031b7113032e",
+          "sha256": "931b25d1fcc89f4ecd10416913e182a12b899c22a93b577da1e0b501283a84ae"
+        }
+      ]
+    }
+  ]
 }
