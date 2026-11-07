@@ -23,3 +23,7 @@ Configuring LLD assistance does not authorize creating doc/LLD. The deleted LLD 
 - No deployment, global Codex settings change, GitHub mutation, commit or push follows from an authoring request alone. Follow explicit user authorization for those actions.
 
 For other work, apply relevant project constraints without forcing the HLD workflow on unrelated tasks.
+
+## Implementation slices and follow-ups
+
+For implementation planning, service-slice implementation or follow-up work, read `.codex/IMP_WORKFLOW.md` and the canonical IMP plan. Each slice implementation and each follow-up uses its own Codex chat, with durable records in `doc/IMP/slices/<IMP-NN>-<slice-slug>/sessions/<NNN>-<purpose>/`. Keep one slice README as the handoff index. Place application code in the modular source tree described by the workflow; keep the repository/workspace root uncluttered. The configured imp_* roles support bounded work with exclusive ownership and a shared limit of three concurrent specialists, no nested delegation. Current user instructions and actual human decisions control authority; configuration and handoffs do not activate a stage.
