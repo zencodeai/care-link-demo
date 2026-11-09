@@ -1,0 +1,23 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_provider_key_failure_cannot_reuse_expired_cache _____________
+
+    def test_provider_key_failure_cannot_reuse_expired_cache():
+        provider, data = jwt_fixture()
+        assert provider.exchange("code", "verifier", "nonce", False)
+        provider._keys_at = 0
+        data["keys"] = []
+>       with pytest.raises(IdentityError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE IdentityError
+
+services/identity/tests/test_provider.py:175: Failed
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/_pytest/config/__init__.py:1507
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/_pytest/config/__init__.py:1507: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; anyio
+    self._mark_plugins_for_rewrite(hook, disable_autoload)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/identity/tests/test_provider.py::test_provider_key_failure_cannot_reuse_expired_cache
+1 failed, 1 warning in 0.06s

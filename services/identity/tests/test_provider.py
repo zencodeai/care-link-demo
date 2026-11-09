@@ -2,6 +2,7 @@
 
 import json
 from datetime import UTC, datetime
+from types import SimpleNamespace
 
 import httpx
 import jwt
@@ -167,13 +168,20 @@ def test_access_audience_keeps_resource_and_introspecting_client_with_exact_azp(
         provider.exchange("code", "verifier", "nonce", True)
 
 
-def test_provider_key_failure_cannot_reuse_expired_cache():
+@pytest.mark.parametrize("started", [0.0, 30.0, 1000.0])
+def test_provider_key_failure_cannot_reuse_expired_cache(monkeypatch, started):
+    now = started
+    monkeypatch.setattr("care_link_identity.provider.time", SimpleNamespace(monotonic=lambda: now))
     provider, data = jwt_fixture()
     assert provider.exchange("code", "verifier", "nonce", False)
-    provider._keys_at = 0
     data["keys"] = []
-    with pytest.raises(IdentityError):
+    now = started + 299
+    assert provider.exchange("code", "verifier", "nonce", False)
+    assert data["key_requests"] == 1
+    now = started + 300
+    with pytest.raises(IdentityError, match="unknown_key"):
         provider.exchange("code", "verifier", "nonce", False)
+    assert data["key_requests"] == 2
 
 
 def test_exchange_timeout_is_uncertain():

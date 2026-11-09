@@ -6,6 +6,8 @@ The exact presented candidate/review/check records remain immutable; accepted vi
 
 Subsequent delivery request: the user authorized creating the IMP-02 pull request. See [session 003](sessions/003-pull-request/handoff.md) for the dedicated branch, fresh checks and delivery scope. Earlier no-commit/push statements remain historical; merge and IMP-03 activation are not authorized by this request.
 
+PR [#9](https://github.com/zencodeai/care-link-demo/pull/9) CI follow-up: [session 004](sessions/004-ci-fix/handoff.md) corrects a host-clock assumption in the cache-expiry test. Application/runtime behavior and accepted evidence are unchanged; the test-only delta is recorded separately.
+
 Verification:351Python+1platform skip,46TS/UI/parity; final-policy normal9 browser, real five-minute cooling/second MFA, main/whole-kind-node outage, same-TLS expired-workload denial, corrected issuer recovery, post-recovery CNI/IPv6/fencing, real controlled-time retention and native UID/TLS/process durability. The agent/help processes and issuer/registrations/fence survived corrected recovery; an explicit proxy-only channel reconnect was used.
 
 The first issuer failure/manual repair remains historical. The approved live infrastructure agent lifetime is one hour; workload credentials remain300seconds. Host/agent process loss, reboot, fully automatic channel restoration and outages beyond node expiry remain unqualified. Owner main holds all human roles; owner-demo publication makes no independent-review claim. Canonical independent manifest503 and owner manifest200 are intentional.
