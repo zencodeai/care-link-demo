@@ -1,0 +1,106 @@
+{
+  "format_version": "fallback-source-evidence-1",
+  "source_check_at": "2026-11-08T23:41:46Z",
+  "observation_method": "Assistant web source reading and connected Canadian hotline lookup; not independent human review.",
+  "scope": "First card only: federal immediate-danger guidance, Canadian 9-8-8, ConnexOntario navigation. No Ottawa-specific service entries.",
+  "sources": [
+    {
+      "id": "PHAC-EN",
+      "url": "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html",
+      "locale": "en-CA",
+      "observed": "retrieved",
+      "facts_used": [
+        "Federal guidance directs immediate-danger or urgent medical-help situations to 9-1-1."
+      ],
+      "card_section": "Immediate danger"
+    },
+    {
+      "id": "PHAC-FR",
+      "url": "https://www.canada.ca/fr/sante-publique/services/services-sante-mentale/sante-mentale-obtenir-aide.html",
+      "locale": "fr-CA",
+      "observed": "retrieved",
+      "facts_used": [
+        "French federal page gives equivalent immediate-danger/urgent medical guidance."
+      ],
+      "card_section": "Danger immédiat"
+    },
+    {
+      "id": "CANADA-HOTLINE",
+      "method": "Connected hotline lookup for Canada",
+      "lookup_receipt_ref": {
+        "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/evidence/first-card-hotline-source.txt",
+        "sha256": "270300a8ac25d64ebe39eff6e96bf28dd5c7abd11af3a4347ed1dc166b01fa7a"
+      },
+      "facts_used": [
+        "Canadian 9-8-8 supports phone/text, countrywide, English/French, all hours every day, for suicidal thoughts or concern for someone else."
+      ],
+      "contact_markup": {
+        "phone": "[988](tel:988?oai_link_source=model_response_hotline)",
+        "sms": "[988](sms:988?oai_link_source=model_response_hotline)",
+        "website": "[https://988.ca/](https://988.ca/?oai_link_source=model_response_hotline)"
+      },
+      "translation_status": "French draft translation by assistant; independent bilingual review pending."
+    },
+    {
+      "id": "CONNEX-EN",
+      "url": "https://connexontario.ca/our-services/",
+      "locale": "en-CA",
+      "observed": "retrieved",
+      "facts_used": [
+        "Ontario mental-health/addiction information and navigation; free information service around the clock; treatment eligibility may vary.",
+        "Operator displays phone 1-866-531-2600."
+      ],
+      "card_section": "ConnexOntario"
+    },
+    {
+      "id": "CONNEX-FR",
+      "url": "https://connexontario.ca/fr/nos-services/",
+      "locale": "fr-CA",
+      "observed": "retrieved",
+      "facts_used": [
+        "French operator page confirms the same navigation purpose, availability and telephone."
+      ],
+      "card_section": "ConnexOntario"
+    },
+    {
+      "id": "CARE-LINK-STATUS",
+      "method": "Existing project requirements and source candidate",
+      "paths": [
+        "doc/REQ/01-scope-and-sources.md",
+        "host/static/README.md",
+        "host/help/README.md"
+      ],
+      "facts_used": [
+        "Private demonstration; static page does not connect a worker; accepted_unconnected is not a staffed connection; no autonomous external contact."
+      ],
+      "qualification": "Draft wording is an assistant synthesis, not an observed live service or human content approval."
+    }
+  ],
+  "source_reuse": "Brief original summaries and factual contact details; no full third-party pages, logos, scripts, directory database or implied endorsement.",
+  "not_claimed": [
+    "Government approval",
+    "Live contact test or completed call",
+    "Guaranteed response time",
+    "Unqualified confidentiality/anonymity guarantee",
+    "Clinical advice",
+    "Completed independent bilingual/accessibility review"
+  ],
+  "human_review": {
+    "status": "pending",
+    "reviewer_id": null,
+    "receipt_id": null,
+    "verified_at": null,
+    "review_due_at": null,
+    "signature": null
+  },
+  "draft_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/card.en-CA.md",
+      "sha256": "de64570a11ba2cf125111dd0c7a6e769b4cf7fca8002882c35d2f3f32ec94793"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/card.fr-CA.md",
+      "sha256": "1bce0e10e6346769a9c75c12ab17159dc2a922df9a0dbddbeaae18cf9facab6b"
+    }
+  ]
+}

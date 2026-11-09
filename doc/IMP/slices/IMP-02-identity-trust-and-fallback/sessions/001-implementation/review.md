@@ -1,0 +1,17 @@
+# Independent source review and reconciliation
+
+The configured imp_review specialist ran read-only integrated review and rechecks; it edited no files and supplied no human acceptance. The primary reconciled fixes with exclusive owners. No unresolved high/medium source defect was reported at final review.
+
+Resolved findings and regressions:
+
+- Session authority is rechecked after slow provider calls, including expiry/idle/role/origin/revisions. Help decisions also retain their original proof/deadline budget.
+- Local CSRF metadata permits protective logout/relogin during provider loss; protected effects still require fresh current authority. Stale/missing browser bindings recover safely.
+- Successful login and step-up rotate the exact local bearer, retire the securely captured predecessor, preserve unrelated browser sessions, and renew both cookie lifetimes. A concurrent bootstrap rebind cannot preserve the captured old bearer. Step-up preserves exact ceremony/resource/purpose/cooling and one-use proof.
+- Authenticated stale/gapped account signals fence affected authority until recovery; unauthenticated input cannot fence an account. Workload-compromise events explicitly deny rather than mutate a coincident account.
+- Help uses a durable signed-authority create-intent key across lost replies, process restart and full provider navigation. Concurrent losers reauthorize the winning exact target. Language/jurisdiction changes conflict visibly rather than minting a duplicate.
+- Static publication persists exact operator/body/operation identity with the atomic reviewed publication. Lost responses reconcile without republishing old bytes. Corrupt/duplicate receipt records show503, while current valid content remains escaped text.
+- The workload listener obtains kernel UID, applies exact client certificate/SPIFFE/method/path rules and rereads the complete locked restriction chain on every operation. The protected Uvicorn adapter mints a backend scope capsule from an actual Unix connection; public headers/TCP cannot mint it. Backend/proxy identities must differ. Certificate expiry is checked after the fence read.
+
+The reviewer's final reported focused checks were 78 Python tests, 13 trust UI tests, strict Pyright and whitespace. The primary's final clean-copy run independently passed the entire 154 Python/45 TypeScript/UI/parity suite, strict checks and main build; separate help build and restricted core-image smoke also passed. Evidence references and exact commands are in checks.json. The native temporary Unix listener test initially hit sandbox EPERM; it subsequently ran with authorized native socket permission. This is a local wrong-UID denial test, not a real distinct-user positive Envoy path or deployed mTLS/CNI proof.
+
+Explicit remaining implementation/qualification: signed workload UUID→SPIFFE mapping and ordered signal/fence durable acknowledgement/reconciliation; cross-custodian fence read binding where needed; actual provider/PostgreSQL and Envoy/SPIRE product compatibility/rotation/outage; separate OS identities/socket/ledger custody and host crash durability; CNI/host/IPv6/direct-backend/alternate-port proof with active controls; actual account/linkage/reviewer metadata retention schedule and independently reviewed EN/FR public content; separate-account browser, keyboard/screenreader and independent language review. G-02 is unavailable until the bounded integrated lab and required decisions exist.

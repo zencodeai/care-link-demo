@@ -1,0 +1,45 @@
+{
+  "phase": "cooling",
+  "scope": "actual isolated lab origins/provider/store/workload route; owner main role-playing synthetic profiles",
+  "mock_used": false,
+  "participant_admission": false,
+  "stats": {
+    "startTime": "2026-11-09T17:02:31.384Z",
+    "duration": 330901.902,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "real provider: mandatory five-minute cooling and a second fresh MFA proof",
+      "outcome": "expected",
+      "expected_status": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 330323
+        }
+      ],
+      "annotations": [
+        {
+          "type": "cooling-clock-boundary",
+          "description": "{\"first_response_received_at\":\"2026-11-09T17:03:00.850Z\",\"signed_not_before\":\"2026-11-09T17:08:00.839Z\"}"
+        },
+        {
+          "type": "cooling-clock-completed",
+          "description": "{\"second_response_received_at\":\"2026-11-09T17:08:02.201Z\",\"elapsed_after_not_before_ms\":1362}"
+        },
+        {
+          "type": "assurance-scope",
+          "description": "Real-clock cooldown and second MFA verified the exact ceremony; no export executed and no ambient AL3 granted."
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Automated browser checks do not establish independent human/screen-reader/language acceptance.",
+    "Lost-reply case injects only client transport response loss after real upstream execution; no provider/authority mock."
+  ]
+}

@@ -1,0 +1,148 @@
++ /opt/homebrew/bin/uv sync --offline --locked --all-packages --all-groups
+Using CPython 3.14.7 interpreter at: /opt/homebrew/opt/python@3.14/bin/python3.14
+Creating virtual environment at: .venv
+Resolved 54 packages in 3ms
+   Building care-link-contracts @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/packages/contracts/python
+   Building care-link-core @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/services/core
+   Building care-link-help @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/host/help
+   Building care-link-identity @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/services/identity
+   Building care-link-static @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/host/static
+   Building care-link-workload-trust @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/packages/workload-trust
+      Built care-link-identity @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/services/identity
+      Built care-link-contracts @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/packages/contracts/python
+      Built care-link-workload-trust @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/packages/workload-trust
+      Built care-link-core @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/services/core
+      Built care-link-help @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/host/help
+      Built care-link-static @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/host/static
+Prepared 6 packages in 351ms
+Installed 52 packages in 62ms
+ + annotated-doc==0.0.5
+ + annotated-types==0.8.0
+ + anyio==4.16.0
+ + arrow==1.4.0
+ + attrs==26.1.0
+ + care-link-contracts==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/packages/contracts/python)
+ + care-link-core==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/services/core)
+ + care-link-help==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/host/help)
+ + care-link-identity==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/services/identity)
+ + care-link-static==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/host/static)
+ + care-link-workload-trust==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/packages/workload-trust)
+ + certifi==2026.10.23
+ + cffi==2.1.1
+ + click==8.5.1
+ + cryptography==50.0.2
+ + fastapi==0.162.2
+ + fqdn==1.6.0
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httpx==0.28.1
+ + idna==3.20
+ + iniconfig==2.3.1
+ + isoduration==20.11.0
+ + jsonpointer==3.10
+ + jsonschema==4.25.1
+ + jsonschema-specifications==2025.9.1
+ + opentelemetry-api==1.45.2
+ + packaging==26.3
+ + pluggy==1.7.0
+ + psycopg==3.2.12
+ + psycopg-binary==3.2.12
+ + pycparser==3.12
+ + pydantic==2.14.3
+ + pydantic-core==2.50.4
+ + pygments==2.21.0
+ + pyjwt==2.15.1
+ + pytest==9.2.0
+ + python-dateutil==4.0.0
+ + referencing==0.37.0
+ + rfc3339-validator==0.1.4
+ + rfc3987==1.3.8
+ + rpds-py==2026.9.1
+ + ruff==0.14.3
+ + six==1.17.0
+ + starlette==1.10.0
+ + types-jsonschema==4.26.0.20261006
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.5
+ + tzdata==2026.6
+ + uri-template==1.3.0
+ + uvicorn==0.38.0
+ + webcolors==25.10.0
++ /Users/main/.npm-global/bin/pnpm install --offline --frozen-lockfile --ignore-scripts --store-dir /private/tmp/care-link-pnpm-store
+Scope: all 3 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +213
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 213, reused 213, downloaded 0, added 212
+Progress: resolved 213, reused 213, downloaded 0, added 213, done
+
+devDependencies:
++ @axe-core/playwright 4.14.0
++ @eslint/js 10.0.1
++ @playwright/test 1.65.0
++ @testing-library/jest-dom 6.9.1
++ @testing-library/react 16.3.0
++ @types/node 22.19.1
++ eslint 10.14.0
++ jsdom 27.1.0
++ prettier 3.6.2
++ pyright 1.1.407
++ typescript 5.9.3
++ typescript-eslint 8.72.1
++ vitest 5.1.0
+
+Done in 1.2s using pnpm v10.20.0
++ /var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/.venv/bin/python tools/check.py
++ uv lock --check
+Resolved 54 packages in 3ms
++ pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts
+Scope: all 3 workspace projects
+Done in 136ms using pnpm v10.20.0
++ uv run --locked python tools/generate_contracts.py --check
+Contract snapshots match reviewed definitions.
++ uv run --locked python tools/check_boundaries.py
+Source dependency boundaries passed (source check, not runtime isolation).
++ uv run --locked python tools/check_imp02_admission.py
+IMP-02 source admission remains disabled; no live identity/network/content proof implied.
++ uv run --locked ruff check .
+All checks passed!
++ uv run --locked ruff format --check .
+122 files already formatted
++ pnpm exec pyright --project pyrightconfig.json
+0 errors, 0 warnings, 0 informations
++ pnpm typecheck
+
+> care-link-development@0.1.0 typecheck /private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04
+> pnpm -r typecheck
+
+Scope: 2 of 3 workspace projects
+packages/contracts/typescript typecheck$ tsc --noEmit
+packages/contracts/typescript typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
++ pnpm lint
+
+> care-link-development@0.1.0 lint /private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04
+> eslint apps/web packages/contracts/typescript --max-warnings 0
+
+
+Oops! Something went wrong! :(
+
+ESLint: 10.14.0
+
+Error: Error while loading rule '@typescript-eslint/await-thenable': You have used a rule which requires type information, but don't have parserOptions set to generate type information for this file. See https://tseslint.com/typed-linting for enabling linting with type information.
+Parser: typescript-eslint/parser
+Occurred while linting /private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/apps/web/dist-help/assets/index-_lxY6VdY.js
+    at throwError (/private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/node_modules/.pnpm/@typescript-eslint+utils@8.72.1_eslint@10.14.0_typescript@5.9.3/node_modules/@typescript-eslint/utils/dist/eslint-utils/getParserServices.js:40:11)
+    at getParserServices (/private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/node_modules/.pnpm/@typescript-eslint+utils@8.72.1_eslint@10.14.0_typescript@5.9.3/node_modules/@typescript-eslint/utils/dist/eslint-utils/getParserServices.js:29:9)
+    at create (/private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/node_modules/.pnpm/@typescript-eslint+eslint-plugin@8.72.1_@typescript-eslint+parser@8.72.1_eslint@10.14.0_b472f55a34b7a67a21ab0d57bcd8592a/node_modules/@typescript-eslint/eslint-plugin/dist/rules/await-thenable.js:75:55)
+    at Object.create (/private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/node_modules/.pnpm/@typescript-eslint+utils@8.72.1_eslint@10.14.0_typescript@5.9.3/node_modules/@typescript-eslint/utils/dist/eslint-utils/RuleCreator.js:39:20)
+    at createRuleListeners (/private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/node_modules/.pnpm/eslint@10.14.0/node_modules/eslint/lib/linter/linter.js:502:15)
+    at /private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/node_modules/.pnpm/eslint@10.14.0/node_modules/eslint/lib/linter/linter.js:628:7
+    at Array.forEach (<anonymous>)
+    at runRules (/private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/node_modules/.pnpm/eslint@10.14.0/node_modules/eslint/lib/linter/linter.js:562:31)
+    at #flatVerifyWithoutProcessors (/private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/node_modules/.pnpm/eslint@10.14.0/node_modules/eslint/lib/linter/linter.js:1297:4)
+    at Linter._verifyWithFlatConfigArrayAndWithoutProcessors (/private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-cbg1nj04/node_modules/.pnpm/eslint@10.14.0/node_modules/eslint/lib/linter/linter.js:1382:43)
+ ELIFECYCLE  Command failed with exit code 2.
+Unexpected exit 2

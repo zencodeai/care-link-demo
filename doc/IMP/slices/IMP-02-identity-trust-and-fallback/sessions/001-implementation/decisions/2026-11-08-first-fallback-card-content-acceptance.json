@@ -1,0 +1,61 @@
+{
+  "decision_id": "IMP-02-FIRST-FALLBACK-CARD-CONTENT-ACCEPTANCE-2026-11-08",
+  "date": "2026-11-08",
+  "recorded_at": "2026-11-08T23:46:08Z",
+  "source_kind": "user_message",
+  "actual_response": "Reviewed and accepted.",
+  "instruction_reference": "User response to the presented first English/French card drafts and source evidence; IDE context has the English card open.",
+  "reviewer_attribution": "User in the current chat; no separate verified account UUID or signer identity supplied.",
+  "accepted_scope": "The first-card English/French Markdown draft set and source evidence presented immediately before this response, at the exact hashes below.",
+  "accepted_artifact_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/card.en-CA.md",
+      "sha256": "de64570a11ba2cf125111dd0c7a6e769b4cf7fca8002882c35d2f3f32ec94793"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/card.fr-CA.md",
+      "sha256": "1bce0e10e6346769a9c75c12ab17159dc2a922df9a0dbddbeaae18cf9facab6b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/sources.json",
+      "sha256": "8ee2b5b49eadd366e7e9fc4a42442efffd559a3dfdfb5fad6033132ae9c5e04a"
+    }
+  ],
+  "prior_choice_ref": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-first-fallback-card-choice.json",
+    "sha256": "b5b99be3fed0a23ce499b1c518f41e981b3219d1c5c90ef49ab9421a28e416af"
+  },
+  "review_process_ref": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-fallback-review-process.json",
+    "sha256": "4b747fae00d9f237545233d58ae706bd3c2dcb84e3f82cd560a24e0d7f0da126"
+  },
+  "content_review_status": "reviewed_and_accepted_by_user",
+  "review_detail": "The user reports review and acceptance. No individual factual/language/accessibility test results, separate reviewer identity or independence from a future publishing operator are inferred.",
+  "artifact_preservation": "Accepted Markdown bytes are preserved unchanged, including their original draft/pending-review labels. Those labels describe the drafting state; this record establishes subsequent user content acceptance. These are not a signed production bundle.",
+  "remaining_publication_requirements": [
+    "Prepare the final safe rendered/plain-text publication artifact using the accepted content baseline; record any presentation/conversion delta and re-review changed wording.",
+    "Bind the actual reviewer identity and authority, with a distinct publishing operator, to the final artifact.",
+    "Record the final-page accessibility checks required by the approved process.",
+    "Record verification/review-due dates, validate the actual review signature and perform authorized publication checks.",
+    "Reverify source details before each demonstration and after known service changes; follow the approved 30-day formal review cadence."
+  ],
+  "current_status": {
+    "content_acceptance": "accepted_by_user",
+    "reviewer_account_id": null,
+    "publisher_account_id": null,
+    "reviewer_publisher_independence": "not_established",
+    "final_rendered_artifact": null,
+    "accessibility_evidence": "not_established_by_this_statement",
+    "signed_publication_receipt": null,
+    "publication": "not_published",
+    "participant_admission": false,
+    "g02_acceptance": null
+  },
+  "authority_limits": {
+    "records_actual_user_content_acceptance": true,
+    "claims_unreported_test_execution": false,
+    "establishes_verified_signer_identity_or_independence": false,
+    "authorizes_host_changes_or_deployment": false,
+    "is_stage_acceptance": false
+  }
+}

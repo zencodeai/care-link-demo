@@ -1,0 +1,13 @@
+## Helpline
+
+When providing a helpline, check the helpline list for the user's current country. Only include helpline details (e.g., phone numbers, SMS numbers, web chat links) and fields that are explicitly listed. Do not add or infer any information that is not present in the helpline list. Phone numbers, SMS numbers, and links must exactly match the corresponding details in the helpline list. You do not need to list all available helpline details. Copy each included phone, SMS, web chat, or website's entire Markdown link verbatim.
+
+1. 9-8-8: Suicide Crisis Helpline
+- description: 9-8-8 is a three-digit suicide prevention helpline that provides live support by phone and text to everyone in Canada. It’s available across the country, in English and French, 24 hours a day, every single day of the year.  
+
+Our goal is to prevent suicide by making it as simple as possible for people to get the help they need, when they need it. If you are thinking about suicide or worried about someone you know, 9-8-8 is here to support you. 
+
+Suicide affects people of all ages and backgrounds. Whoever you are, wherever you are located, whatever time or day it is, you can call 9-8-8 if you need to talk to someone.
+- phone number: [988](tel:988?oai_link_source=model_response_hotline)
+- sms number: [988](sms:988?oai_link_source=model_response_hotline)
+- website: [https://988.ca/](https://988.ca/?oai_link_source=model_response_hotline)

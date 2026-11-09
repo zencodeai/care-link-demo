@@ -1,0 +1,43 @@
+{
+  "stage_id": "IMP-02",
+  "gate_id": "G-02",
+  "state": "accepted",
+  "implementation_status": "completed",
+  "decision_ref": {
+    "path": "doc/IMP/executions/2026-11-08-IMP-02/decisions/G-02.json",
+    "sha256": "f3d49e1151a2ba4be33e8803231357f452eec1bb3f4a1fbc791112d2b38a2b5e"
+  },
+  "accepted_candidate": {
+    "commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+    "diff_digest": "dda6e105c4cf019b704ec972200c6e837a3c170407a9e29214a0fed106f6c45f",
+    "artifact_digest": "217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+    "configuration_digest": "98d0f35daccc81bd94a241f51c6fa189ca914c3d4ff77a8c1651d194c17c7901",
+    "contract_digest": "0e0e45f15b8c5f984d7ffe9cc8f7803b5ba01b36099cf32e05c64be7253b3a34",
+    "environment_digest": "74101b2b1d1876c6a4e309444432b40e87a3b957b583b78ffe2aafbb5026fa5d",
+    "fixture_digest": "6d271a32a9a9f922c06b2d967fb72b48c850d9374333dcd6f0a3994b83abac71"
+  },
+  "presented_demo_ref": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/demo-packet.json",
+    "sha256": "d7ca61e08b72acae5cc501cc6e44049e12d88f66f18dcafa341b550a882dd2cb"
+  },
+  "presented_review_ref": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/G-02-review.md",
+    "sha256": "d0158f2a503319aae9404d8eaa8af2da7e9dd3e50af8e31fa95bd7a946c3e7be"
+  },
+  "presented_checks_ref": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/checks.json",
+    "sha256": "58f4551d9e109b937235f263ff9c1df699b7a47b9395f0580074605e3d17edb0"
+  },
+  "accepted_demo_view_ref": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/accepted-demo-packet.json",
+    "sha256": "b83c9ee70c883e4ec49a55e8013deb0483ba71537895442a4d90a7452e334fde"
+  },
+  "accepted_checks_view_ref": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/accepted-checks.json",
+    "sha256": "bc7b12999264f7d2ee283ed8acf8f4b9001b158cb90add0f219b8b759d8e54b9"
+  },
+  "participant_admission": false,
+  "next_slice_activated": false,
+  "commit_push_authorized": false,
+  "presentation_records_preserved": true
+}

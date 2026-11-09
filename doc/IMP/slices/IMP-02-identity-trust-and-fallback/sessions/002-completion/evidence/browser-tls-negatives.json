@@ -1,0 +1,25 @@
+{
+  "scope": "actual main browser TLS listener only; not SPIFFE URI-SAN workload qualification",
+  "mock_used": false,
+  "results": [
+    {
+      "case": "positive_verified_origin",
+      "expected": "200",
+      "actual": "200",
+      "passed": true
+    },
+    {
+      "case": "unknown_ca",
+      "expected": "tls_verification_denied",
+      "actual": "tls_verification_denied",
+      "passed": true
+    },
+    {
+      "case": "wrong_dns_san",
+      "expected": "tls_verification_denied",
+      "actual": "tls_verification_denied",
+      "passed": true
+    }
+  ],
+  "status": "passed"
+}

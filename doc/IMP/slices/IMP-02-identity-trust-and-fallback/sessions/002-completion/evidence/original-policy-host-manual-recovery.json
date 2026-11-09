@@ -1,0 +1,13 @@
+{
+  "status": "manual_reenrollment_completed",
+  "scope": "restore existing lab under unchanged300secondagent/workload policy; not automatic fault recovery",
+  "security_lifetime_changed": false,
+  "expired_join_node_evicted": true,
+  "single_use_alias_bootstrap_rotated": true,
+  "same_logical_host_alias": "spiffe://care-link.demo/host/imp02-002",
+  "workload_registration_objects_unchanged": true,
+  "issuer_reset": false,
+  "fence_cleared": false,
+  "expired_agent_cache_archived_privately": true,
+  "new_join_token_disposed": true
+}

@@ -1,0 +1,8 @@
+{
+  "realm": "care-link-imp02",
+  "issuer": "https://id.localhost:20443/realms/care-link-imp02",
+  "account_count": 4,
+  "synthetic_owner_role_playing": true,
+  "auth_flow": "care-link-browser",
+  "amr_source": "completed password/OTP authenticator references, never hardcoded claims"
+}

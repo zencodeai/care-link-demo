@@ -1,0 +1,47 @@
+{
+  "format_version": "imp-02-admission-1",
+  "environment": "synthetic-demo",
+  "participant_admission": false,
+  "police_integration": false,
+  "autonomous_emergency_contact": false,
+  "deployment_status": "not_deployed",
+  "identity": {
+    "issuer": null,
+    "client_id": null,
+    "redirect_uri": null,
+    "provider_version": null,
+    "identity_store": "separate-postgresql",
+    "account_retention_schedule": null,
+    "positive_authority_cache": false,
+    "workforce_requires_local_entitlement_and_mfa": true
+  },
+  "workload": {
+    "trust_domain": "care-link.demo",
+    "selected_family": "SPIFFE-X509-SVID/SPIRE/Envoy",
+    "spire_version": null,
+    "envoy_version": null,
+    "cni_version": null,
+    "credential_lifetime_seconds": null,
+    "attestation_evidence": null,
+    "host_firewall_evidence": null,
+    "route_probe_evidence": null,
+    "require_current_fence_per_operation": true,
+    "direct_backend_allowed": false,
+    "untested_ipv6_allowed": false
+  },
+  "help": {
+    "separate_origin": null,
+    "spool": "sqlite-wal-full",
+    "authority_budget_ms": 1000,
+    "fresh_authority_each_operation": true,
+    "store_private_story": false,
+    "accept_state": "accepted_unconnected",
+    "connection_confirmed": false
+  },
+  "static": {
+    "separate_origin": null,
+    "public_content_review_receipt": null,
+    "public_content_status": "unavailable",
+    "request_time_identity_dependency": false
+  }
+}

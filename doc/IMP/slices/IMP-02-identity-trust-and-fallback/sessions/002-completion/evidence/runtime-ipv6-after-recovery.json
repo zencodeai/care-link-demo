@@ -1,0 +1,35 @@
+{
+  "kernel_ipv6_socket_support": true,
+  "interfaces": [
+    {
+      "interface": "erspan0",
+      "disable_ipv6": "1"
+    },
+    {
+      "interface": "eth0",
+      "disable_ipv6": "1"
+    },
+    {
+      "interface": "gretap0",
+      "disable_ipv6": "1"
+    },
+    {
+      "interface": "ip6_vti0",
+      "disable_ipv6": "1"
+    },
+    {
+      "interface": "ip6gre0",
+      "disable_ipv6": "1"
+    },
+    {
+      "interface": "ip6tnl0",
+      "disable_ipv6": "1"
+    },
+    {
+      "interface": "sit0",
+      "disable_ipv6": "1"
+    }
+  ],
+  "addresses": [],
+  "all_nonloopback_interfaces_disabled": true
+}

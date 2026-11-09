@@ -1,0 +1,24 @@
++ uv lock --check
+Resolved 53 packages in 1ms
++ pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts
+Scope: all 3 workspace projects
+Done in 138ms using pnpm v10.20.0
++ uv run --locked python tools/generate_contracts.py --check
+Contract snapshots match reviewed definitions.
++ uv run --locked python tools/check_boundaries.py
+Source dependency boundaries passed (source check, not runtime isolation).
++ uv run --locked python tools/check_imp02_admission.py
+IMP-02 source admission remains disabled; no live identity/network/content proof implied.
++ uv run --locked ruff check .
+S105 Possible hardcoded password assigned to: "token_endpoint"
+   --> services/identity/tests/test_provider.py:177:30
+    |
+175 |     provider, _data = jwt_fixture()
+176 |     data = dict(vars(provider.config))
+177 |     data["token_endpoint"] = "https://evil.test/token"
+    |                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+178 |     with pytest.raises(ValueError):
+179 |         OIDCConfig(**data)
+    |
+
+Found 1 error.

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "care-link-identity"
+version = "0.1.0"
+description = "CARE-Link private identity and browser-session authority"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+  "care-link-contracts",
+  "fastapi==0.162.2",
+  "uvicorn==0.38.0",
+  "httpx==0.28.1",
+  "PyJWT[crypto]==2.15.1",
+  "cryptography==50.0.2",
+  "psycopg[binary]==3.2.12",
+]
+
+[tool.uv.sources]
+care-link-contracts = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/care_link_identity"]

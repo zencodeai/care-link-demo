@@ -1,0 +1,132 @@
+{
+  "status": "passed",
+  "mock_used": false,
+  "scope": "custom signed local-source self restriction, not native SSF/CAEP",
+  "unknown": {
+    "jti": "d81f3ede-728d-4e2e-b416-1eddc2115eb5",
+    "denied": {
+      "status": 403,
+      "body": {
+        "message_key": "identity.workload_mapping_denied"
+      }
+    },
+    "sql_unchanged": true
+  },
+  "applied": {
+    "jti": "3919537a-28f0-4704-8bb5-8fc3eeeafd09",
+    "digest": "48f639b22b433fc8c2e4ac59d6b9e0f3e2a7ca7bdfb533bc6103b78107c8dc75",
+    "ack": {
+      "status": 200,
+      "body": {
+        "jti": "3919537a-28f0-4704-8bb5-8fc3eeeafd09",
+        "state": "applied",
+        "accepted_sequence": "1"
+      }
+    },
+    "sql": {
+      "signal": {
+        "state": "applied",
+        "digest": "48f639b22b433fc8c2e4ac59d6b9e0f3e2a7ca7bdfb533bc6103b78107c8dc75",
+        "event_type": "workload_compromised",
+        "operation_key": "workload:0e8fe98fb025fcde7bd274c8f6fd9f4c9888e8bc0d072cc2ca1998e6ebea080c"
+      },
+      "operation": {
+        "jti": "3919537a-28f0-4704-8bb5-8fc3eeeafd09",
+        "state": "completed",
+        "action": "workload_restrict",
+        "digest": "48f639b22b433fc8c2e4ac59d6b9e0f3e2a7ca7bdfb533bc6103b78107c8dc75",
+        "issuer": "care-link-imp02-local-signals",
+        "outcome": "applied",
+        "targets": [
+          "spiffe://care-link.demo/lab/identity_provider"
+        ],
+        "event_at": "2026-11-09T16:21:13.371Z",
+        "head_key": "6a0e98d373dd0d2274c0415f8adfc93b5ac40a5da36b44cc40b3ca6dde668860",
+        "signal_key": "0e8fe98fb025fcde7bd274c8f6fd9f4c9888e8bc0d072cc2ca1998e6ebea080c",
+        "subject_id": "34b07dc5-e61d-4d32-b88d-fd6d65368ef6",
+        "received_at": "2026-11-09T16:21:13.374Z",
+        "fence_receipts": [
+          {
+            "peer": "spiffe://care-link.demo/lab/identity_provider",
+            "command_id": "ce2dd723fb6677300f69b226fdf7a497dea913dc83c2c578a510fadff090599b",
+            "generation": 1
+          }
+        ],
+        "mapping_digest": "587c8eeae5698e68d5d7ac125292bf525430b0ab358c85e36237ff9ec3373237",
+        "expected_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "previous_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "source_sequence": "1",
+        "expected_sequence": "0"
+      },
+      "head": {
+        "digest": "48f639b22b433fc8c2e4ac59d6b9e0f3e2a7ca7bdfb533bc6103b78107c8dc75",
+        "event_at": "2026-11-09T16:21:13.371Z",
+        "sequence": "1",
+        "received_at": "2026-11-09T16:21:13.374Z"
+      },
+      "workload_state": {
+        "peer": "spiffe://care-link.demo/lab/identity_provider",
+        "blocked": true,
+        "subject_id": "34b07dc5-e61d-4d32-b88d-fd6d65368ef6",
+        "operation_key": "workload:0e8fe98fb025fcde7bd274c8f6fd9f4c9888e8bc0d072cc2ca1998e6ebea080c",
+        "recovery_required": false
+      },
+      "issuer": null
+    },
+    "custodian": {
+      "receipt": {
+        "command_id": "ce2dd723fb6677300f69b226fdf7a497dea913dc83c2c578a510fadff090599b",
+        "peer": "spiffe://care-link.demo/lab/identity_provider",
+        "generation": 1,
+        "durable": true
+      },
+      "denied": [
+        "spiffe://care-link.demo/lab/identity_provider"
+      ]
+    }
+  },
+  "repeat": {
+    "status": 403,
+    "body": {}
+  },
+  "same_existing_tls_connection": true,
+  "before": {
+    "loaded_certificates": [
+      {
+        "serial_number": "bf178a89410cfbb594410dc8a1192ee2",
+        "subject_alt_names": [
+          {
+            "uri": "spiffe://care-link.demo/lab/identity_provider"
+          }
+        ],
+        "valid_from": "2026-11-09T16:18:56Z",
+        "expiration_time": "2026-11-09T16:24:06Z"
+      }
+    ],
+    "upstream_connections": {
+      "cluster.identity_mesh.upstream_cx_active": 1,
+      "cluster.identity_mesh.upstream_cx_total": 1,
+      "cluster.identity_mesh.upstream_rq_total": 1
+    }
+  },
+  "after": {
+    "loaded_certificates": [
+      {
+        "serial_number": "bf178a89410cfbb594410dc8a1192ee2",
+        "subject_alt_names": [
+          {
+            "uri": "spiffe://care-link.demo/lab/identity_provider"
+          }
+        ],
+        "valid_from": "2026-11-09T16:18:56Z",
+        "expiration_time": "2026-11-09T16:24:06Z"
+      }
+    ],
+    "upstream_connections": {
+      "cluster.identity_mesh.upstream_cx_active": 1,
+      "cluster.identity_mesh.upstream_cx_total": 1,
+      "cluster.identity_mesh.upstream_rq_total": 3
+    }
+  },
+  "remaining_state": "identity_provider remains fenced; no unfence/reset is performed"
+}

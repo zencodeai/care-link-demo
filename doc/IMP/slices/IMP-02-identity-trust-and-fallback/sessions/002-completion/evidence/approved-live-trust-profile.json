@@ -1,0 +1,30 @@
+{
+  "scope": "actual explicitly approved named demo trust configuration",
+  "observed_at": "2026-11-09T18:53:13.861163+00:00",
+  "agent_ttl": "1h",
+  "default_x509_svid_ttl_seconds": 300,
+  "workload_entries": [
+    {
+      "spiffe_id": "spiffe://care-link.demo/lab/help",
+      "x509_svid_ttl_seconds": 300
+    },
+    {
+      "spiffe_id": "spiffe://care-link.demo/lab/identity",
+      "x509_svid_ttl_seconds": 300
+    },
+    {
+      "spiffe_id": "spiffe://care-link.demo/lab/identity_provider",
+      "x509_svid_ttl_seconds": 300
+    },
+    {
+      "spiffe_id": "spiffe://care-link.demo/lab/main",
+      "x509_svid_ttl_seconds": 300
+    }
+  ],
+  "live_server_conf_matches_source": true,
+  "live_server_conf_sha256": "1d5f4105ae0670112ec59434debc08f7914ce19ad265608c715dd3d87ad7bc6c",
+  "host_node_key_manager": "memory",
+  "workload_permission_fences": "fresh local checks; current generation1 retained",
+  "host_reboot_or_agent_process_loss_qualified": false,
+  "participant_admission": false
+}

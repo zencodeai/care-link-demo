@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tested_normal_cooling_retention_image": "docker.io/library/care-link-imp02-app@sha256:27368e531d07f54e5dcfe46b464f0644128af82cde22219e42c046dc61f587d5",
+  "final_image": "docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+  "identical_component_count": 73,
+  "component_digest": "a97c5f6d4d3e95b83cf8e42d7a26e1e0c747681007db2cc9ee8a2e93564f026b",
+  "changed_excluded_component": "provider_bootstrap.py administrator-only reconciliation helper; added scoped lifecycle profile and required kc-admin-api scope, live binding/idempotency verified",
+  "limits": "Earlier cooling/retention ran on273. Final-policy normal9, outage, corrected expiry and issuer recovery ran on217. All73 packaged runtime/asset components are identical; external approved SPIRE agent1h/workload300s policy was separately verified. Earlier runs were not relabelled as reruns."
+}

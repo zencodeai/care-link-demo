@@ -1,0 +1,16 @@
+{
+  "verified_at": "2026-11-09T18:58:43.086878+00:00",
+  "scope": "before final G-02 evidence presentation; accepted card facts unchanged",
+  "methods": [
+    "official federal mental-health help page",
+    "mandatory hotline connector Canada entry",
+    "official ConnexOntario EN/FR service pages"
+  ],
+  "sources": [
+    "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html",
+    "https://connexontario.ca/our-services/",
+    "https://connexontario.ca/fr/nos-services/"
+  ],
+  "result": "Accepted emergency-support, bilingual national service and Ontario service-availability facts remain supported; no card bytes changed.",
+  "human_independent_review_inferred": false
+}

@@ -12,6 +12,9 @@ ALLOWED = {
     "runtime": {"runtime", "contracts"},
     "data": {"data", "contracts", "domain", "policy_input"},
     "web": {"contracts"},
+    "identity": {"identity", "contracts"},
+    "help": {"help", "contracts"},
+    "static": {"static", "contracts"},
 }
 
 
@@ -50,7 +53,7 @@ def violations(owner: str, imports: list[str]) -> list[str]:
 
 def check(root: Path = ROOT) -> list[str]:
     failures: list[str] = []
-    for base in ("services", "packages", "apps"):
+    for base in ("services", "packages", "apps", "host"):
         for path in (root / base).rglob("*"):
             if set(path.parts) & {"node_modules", "dist", "tests", "__pycache__"}:
                 continue

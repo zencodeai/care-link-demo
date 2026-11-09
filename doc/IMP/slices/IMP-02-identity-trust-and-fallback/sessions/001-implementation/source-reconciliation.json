@@ -1,0 +1,231 @@
+{
+  "baseline_commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+  "inputs_unchanged": true,
+  "files": [
+    {
+      "path": "doc/HLD/01-context-and-architecture.md",
+      "sha256": "03cb85d9605885ca6e1ad59daec18c3af53a04c968880ec53ca01361f0b61454"
+    },
+    {
+      "path": "doc/HLD/02-actors-and-service-workflows.md",
+      "sha256": "9e43438dd63a5b4a577a870a738f3c876422cd77f60966077b6a523fd8904e7e"
+    },
+    {
+      "path": "doc/HLD/03-agentic-assistance-and-inference.md",
+      "sha256": "e94dbec5a2668fc230d4cb7bcb6627d08c9ddf3ebf37bef2c33e5fa6e025dc33"
+    },
+    {
+      "path": "doc/HLD/04-safety-security-and-governance.md",
+      "sha256": "88a656b8f70b540eaafbbc800e787b96d6a37f33e439f1bf29fa20f9bef159eb"
+    },
+    {
+      "path": "doc/HLD/05-data-and-audit.md",
+      "sha256": "d8dab4a11bcccefbe2a3031ab37637aa0d8e53716750b4567263b61c16529a4e"
+    },
+    {
+      "path": "doc/HLD/06-interfaces-and-integration.md",
+      "sha256": "b2b9fcd1965368f2e1f5ddc7afb539228283c950dae5ac9b807034849e1d7832"
+    },
+    {
+      "path": "doc/HLD/07-deployment-and-delivery.md",
+      "sha256": "df2e1a4159ab009f01d541d1e7f0e210e344748fdb0fd17977c85ad1d26c2a17"
+    },
+    {
+      "path": "doc/HLD/08-reliability-and-operations.md",
+      "sha256": "f18837374ef47ae42a2eca37fb1a3d63a6e31fbabc8207f756429e967782c3c7"
+    },
+    {
+      "path": "doc/HLD/09-verification-and-traceability.md",
+      "sha256": "99e17d08127f5f9f36658b6d35606211f29a87bdaf676970ae45aeb9cc821130"
+    },
+    {
+      "path": "doc/HLD/10-decisions-and-implementation-boundaries.md",
+      "sha256": "88fa38b66505a7a08eef8bf30ddcbc54f760966357a876ddedc09217f2c8e35c"
+    },
+    {
+      "path": "doc/HLD/11-decision-requirements-and-options.md",
+      "sha256": "8a3171af9c139d3bf36e44440ba708dc981a90326d30a75655ec530850704b96"
+    },
+    {
+      "path": "doc/HLD/README.md",
+      "sha256": "10c239f147efdd07b7dc877b3ca3a39b8729e855a78e5c083ec10e30973e7c53"
+    },
+    {
+      "path": "doc/HLD/decisions/2026-11-06-local-design-baseline.md",
+      "sha256": "487fba21e3b87cc77a9d67feb9558f69be4061cb1400e49ef63d4511deddcb0f"
+    },
+    {
+      "path": "doc/HLD/design-inventory.json",
+      "sha256": "92e26a2a62f2bb93aedab01e063084917a7a16d8cd0bb6c92a337a8c5aca637e"
+    },
+    {
+      "path": "doc/LLD/00-baseline-and-design-decisions.md",
+      "sha256": "f17cf0f51bae587e63e8c7ca34d59e083293584208c400d8ca08d6d391d29c4b"
+    },
+    {
+      "path": "doc/LLD/01-modules-and-build-boundaries.md",
+      "sha256": "a493a05ac7e3a1288ffc95656191189ecb2f09b0252ab6ad1cef283007fa5101"
+    },
+    {
+      "path": "doc/LLD/02-contracts-and-protocols.md",
+      "sha256": "ece77404f2000ce1a586376343d3e238a7041f65b6d905f6b1015a9ee60d74f6"
+    },
+    {
+      "path": "doc/LLD/03-identity-and-workload-trust.md",
+      "sha256": "e893e8c4f6a3fcab3ea68cb797dcb7c298a9fd1760622f89f773e59959eca643"
+    },
+    {
+      "path": "doc/LLD/04-data-model-and-transactions.md",
+      "sha256": "bca41c244ee0c6c561ad68d9720b6006f055ca62c529a260968e221395b4b51b"
+    },
+    {
+      "path": "doc/LLD/05-actor-workflows-and-ui.md",
+      "sha256": "b39f419893fb19de1b5f20c1f9a87f78fe669a57865b681de040338937a2115c"
+    },
+    {
+      "path": "doc/LLD/06-consent-directory-and-referrals.md",
+      "sha256": "02671648ecf2cc31a9ed8aa3bb37de03ea83b7bff98e0a23e536ded6fdfc3903"
+    },
+    {
+      "path": "doc/LLD/07-agent-runtime-and-inference.md",
+      "sha256": "26cc28f46f7c4adda9f84f5ca2b03c2ffaaf0744c5a3f98c2bff92081c523e34"
+    },
+    {
+      "path": "doc/LLD/08-runtime-security-and-governance.md",
+      "sha256": "29177fd6fda384a301bb970e7b36a7b2185a5cbbb44f195a9162a4a29487af0c"
+    },
+    {
+      "path": "doc/LLD/09-audit-rights-and-analytics.md",
+      "sha256": "6647ae77882b75be01fcea5269959517f0fe5dde3ffed9c6c08cd5b9beed4d71"
+    },
+    {
+      "path": "doc/LLD/10-simulators-and-replay.md",
+      "sha256": "ec3d1fb1b4f3bd3fa0202099ee06d83d367aa9e1a923e6d442c4bc0c0e2e96c5"
+    },
+    {
+      "path": "doc/LLD/11-deployment-and-configuration.md",
+      "sha256": "946bfff8322fb425dd9e5971a645fbe168a312979b2dae8573418417bf09fd82"
+    },
+    {
+      "path": "doc/LLD/12-continuity-and-operations.md",
+      "sha256": "f1fcdac025b2913e7e49a0436f713146272e14da77d7a1ed78aa0de0568cf669"
+    },
+    {
+      "path": "doc/LLD/13-verification-and-traceability.md",
+      "sha256": "49af4a9ed862e06d9efa327e9f220c236bc19fbea490513873bd0f0fcfdb2ea2"
+    },
+    {
+      "path": "doc/LLD/14-decisions-and-admission-gates.md",
+      "sha256": "096f67630d2ca4db2082c62535d369dcc1e935ab32bd8b16f42003e387570dbf"
+    },
+    {
+      "path": "doc/LLD/README.md",
+      "sha256": "5cd2fb83d38bbec5eae954855ccd69ff1af71214a6f1a4578cc0f1a2f7d753c5"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "doc/LLD/contracts/fixtures.json",
+      "sha256": "4a9343247c65003bf596968c14bac739b5895eb2909fffb8d56de3726ec428bb"
+    },
+    {
+      "path": "doc/LLD/contracts/openapi.json",
+      "sha256": "968955c48e862989b344b0047246668157888de033276b1f7406946ffc6fdaa3"
+    },
+    {
+      "path": "doc/LLD/contracts/operations.json",
+      "sha256": "50fe91f73308ce5efd98cd0b1112e3726906d110d6b356ac03d2a975732568eb"
+    },
+    {
+      "path": "doc/LLD/contracts/state-machines.json",
+      "sha256": "f57048f11d95e9bb826b3d47b6fd6534a83b532a9d3d9027cca92b9831873ed9"
+    },
+    {
+      "path": "doc/LLD/control-register.json",
+      "sha256": "72f4e43863a08c3af005be4c656a02137cf9d10f58c52e560b67dc312fa40c90"
+    },
+    {
+      "path": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
+      "sha256": "60ba37ca97440f221a64815e1216bfb2637fe8aa341f16ee6ec1b9864a19d5c7"
+    },
+    {
+      "path": "doc/LLD/design-inventory.json",
+      "sha256": "d8296c666132572bc8e4a511fbd1db933da146a485f3758445e8293cd1619240"
+    },
+    {
+      "path": "doc/LLD/implementation-defaults.json",
+      "sha256": "24acd839326067219d65ff79cd90badb349d336ec9284e06b30279623acdf856"
+    },
+    {
+      "path": "doc/LLD/storage-model.json",
+      "sha256": "1d831fdeedf251cbd5536337643fa5522621f985db972a7509af2932e7ee32c6"
+    },
+    {
+      "path": "doc/LLD/traceability.json",
+      "sha256": "34c89c33c25970296d04d402031fe2217c0fc6e72519c8070bdcb6789103b331"
+    },
+    {
+      "path": "doc/LLD/validate_design.py",
+      "sha256": "148c99c4b546b1757ded1826c6637677a26acefb28d2ae40075a2966ebc7449f"
+    },
+    {
+      "path": "doc/LLD/validation-requirements.txt",
+      "sha256": "ccc16568b004301780fda5a9a63f6f07eca45521fee26505e443636244bb48ca"
+    },
+    {
+      "path": "doc/REQ/01-scope-and-sources.md",
+      "sha256": "2ff63a30261dafa7a2a5093364204fca24d39f5358d06b9394ae11718ab5e715"
+    },
+    {
+      "path": "doc/REQ/02-actors-and-workflows.md",
+      "sha256": "8777854e5d222eabacd29c48342416875048636609438e96c185887716939d7f"
+    },
+    {
+      "path": "doc/REQ/03-architecture-and-interfaces.md",
+      "sha256": "a92bb34695af0693dd93aa3410fe3cdfb8084fc3e2281700e7792eb4350aa8e6"
+    },
+    {
+      "path": "doc/REQ/04-data-security-governance.md",
+      "sha256": "3e6791fdafcc963c7ccea569d360bf75b19e55929c4497efd4b98b59e89ec6e0"
+    },
+    {
+      "path": "doc/REQ/05-deployment-and-operations.md",
+      "sha256": "41e962c0f007192891443f7d6b56c15c82d4e58c17ecbf2152fee80d51b8aae6"
+    },
+    {
+      "path": "doc/REQ/06-acceptance-and-delivery.md",
+      "sha256": "e4752d297e018371f9e9fc07a8c02b0adc73e73e52b30a6b75bed8c44e900b19"
+    },
+    {
+      "path": "doc/REQ/07-source-requirements.md",
+      "sha256": "3ab273e2644075d73f0a68ea0b9afe980a6b5df44cf2c099d887fbb501b5484b"
+    },
+    {
+      "path": "doc/REQ/08-open-decisions.md",
+      "sha256": "bf99d4a187130e2c381e0bd52bac9338501b544d5c61c07677eb55d3207761d7"
+    },
+    {
+      "path": "doc/REQ/09-standards-and-runtime-controls.md",
+      "sha256": "0a4a4d656be1783f98d7dd5e92c50e2fc2d46003b2879fe4332410c1b5a3e7d0"
+    },
+    {
+      "path": "doc/REQ/10-agentic-ai-and-service-model.md",
+      "sha256": "b28618d461f0cc2de120a14acc5a08cbc841c4ddbb67b9fe64d3db8afb1fd1ec"
+    },
+    {
+      "path": "doc/REQ/README.md",
+      "sha256": "539cf7c91833834e2bf4e59318bac7e14bb5c5d9660821f5e20da806b72a2673"
+    },
+    {
+      "path": "doc/REQ/demo-parameters.json",
+      "sha256": "998cfc815a12c00ec9ec743b06b25f9f3315b0269c7c8a05052a5f4042b45319"
+    },
+    {
+      "path": "doc/REQ/source-snapshot.json",
+      "sha256": "fc24739526b7b6e556cf4610054beb85535d49e2bdbed82ae262cc59981df6ca"
+    }
+  ],
+  "evidence": "git diff --exit-code -- doc/REQ doc/HLD doc/LLD returned0; plan frozen-input validator passed"
+}

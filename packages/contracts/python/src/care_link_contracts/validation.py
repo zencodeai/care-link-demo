@@ -23,12 +23,57 @@ class _ValidatorFactories(Protocol):
     ) -> type[Validator]: ...
 
 
-ContractName = Literal["SessionCreate", "RevisionCommand", "Error", "DeveloperCapability"]
+ContractName = Literal[
+    "SessionCreate",
+    "RevisionCommand",
+    "Error",
+    "DeveloperCapability",
+    "BrowserCsrf",
+    "StepUpProof",
+    "HelpCreateIntent",
+    "LoginStart",
+    "LoginIntent",
+    "LoginCallback",
+    "BrowserSession",
+    "Empty",
+    "StepUpStart",
+    "Ceremony",
+    "CeremonyConfirm",
+    "HelpCreate",
+    "HelpView",
+    "HelpAuthorityRequest",
+    "FreshHelpAuthority",
+    "Signal",
+    "SignalAck",
+    "StaticManifest",
+    "StaticPublish",
+    "CommandResult",
+]
 CONTRACT_NAMES: tuple[ContractName, ...] = (
     "SessionCreate",
     "RevisionCommand",
     "Error",
     "DeveloperCapability",
+    "BrowserCsrf",
+    "StepUpProof",
+    "HelpCreateIntent",
+    "LoginStart",
+    "LoginIntent",
+    "LoginCallback",
+    "BrowserSession",
+    "Empty",
+    "StepUpStart",
+    "Ceremony",
+    "CeremonyConfirm",
+    "HelpCreate",
+    "HelpView",
+    "HelpAuthorityRequest",
+    "FreshHelpAuthority",
+    "Signal",
+    "SignalAck",
+    "StaticManifest",
+    "StaticPublish",
+    "CommandResult",
 )
 
 

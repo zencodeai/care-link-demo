@@ -1,0 +1,477 @@
+{
+  "packet_id": "IMP-02-002-G02-ACCEPTED-VIEW",
+  "stage_id": "IMP-02",
+  "gate_id": "G-02",
+  "candidate": {
+    "commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+    "diff_digest": "dda6e105c4cf019b704ec972200c6e837a3c170407a9e29214a0fed106f6c45f",
+    "artifact_digest": "217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+    "configuration_digest": "98d0f35daccc81bd94a241f51c6fa189ca914c3d4ff77a8c1651d194c17c7901",
+    "contract_digest": "0e0e45f15b8c5f984d7ffe9cc8f7803b5ba01b36099cf32e05c64be7253b3a34",
+    "environment_digest": "74101b2b1d1876c6a4e309444432b40e87a3b957b583b78ffe2aafbb5026fa5d",
+    "fixture_digest": "6d271a32a9a9f922c06b2d967fb72b48c850d9374333dcd6f0a3994b83abac71"
+  },
+  "state": "demonstrated",
+  "preconditions": [
+    "G-00/G-01 predecessor, exact reviewed candidate and demonstrated scope are retained.",
+    "User explicitly approved G-02; canonical HumanDecision binds original demo-packet.json bytes. This is a post-acceptance administrative view.",
+    "Participant admission remainsfalse; no next-slice, production or Git action follows."
+  ],
+  "normal_steps": [
+    {
+      "action": "Use separate actual participant/worker profiles and final same-origin surfaces.",
+      "expected": "Current MFA/roles/ownership and accepted_unconnected; cancel/logout and lost-response recovery.",
+      "actual": "All9 final-policy actual browser cases passed on image217; same owner role-plays separate synthetic accounts.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-final_policy.json",
+          "sha256": "16492a4a0a318c61923ab9509c31f003cde5e0f79bd9dde7af48b1c5258987d9"
+        }
+      ]
+    },
+    {
+      "action": "Perform real five-minute cooling and second fresh MFA.",
+      "expected": "No boundary/proof replay bypass or ambientAL3.",
+      "actual": "Full clock interval passed; second verification1362ms after boundary. No export. Earlier image273 with exact runtime-component continuity.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-cooling.json",
+          "sha256": "f88950da611bd6e3fef1b6bfc56a9bf20d77c36a881be8f4ba1760f3726f1ecd"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/runtime-component-equivalence.json",
+          "sha256": "52c7753e5b86916f4c590a2bab4e55065b670f406c844ebb1ddbb9448d2e6de9"
+        }
+      ]
+    },
+    {
+      "action": "Review retention and exact EN/FR public fallback.",
+      "expected": "Real cleanup and quarantine with honest clock/copy accounting; truthful owner publication.",
+      "actual": "Real provider/store/files passed labelled temporal fixtures; wording/source facts reverified, technical signature and automated QA only.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/retention-qualification.json",
+          "sha256": "6ec80c7da12233c22c4eeb2359b285b2d662d9f8e4f53bfc75689b9d387ab533"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/publication.json",
+          "sha256": "8225f21ca3e2a42811df2356126837b36b493a10be4e6eb9b2b408327feffa1f"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/fallback-source-reverification-final.json",
+          "sha256": "94380f1ce292659870c81014191b76220d095d509ca1527b3dac6f4269856c80"
+        }
+      ]
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Probe forbidden paths/current workload restrictions.",
+      "expected": "Known-live control reachable, runtimeforbidden routes deny; wrongUID/header/role and compromisedcaller losepermission.",
+      "actual": "Post-recoveryCNI6/IPv6 and signed durable sameTLSfence passed; fencedIDP403 persists.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/network-after-recovery.json",
+          "sha256": "039e317bfcbec8f4dea796f3eef172034c793cecd21bfecea40c1e16d78c5531"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/runtime-ipv6-after-recovery.json",
+          "sha256": "acc74ce9991e4b64edd01cc00f669ad07e538acdb2def9cbfc6518efd481b7ef"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/signed-signal-fence.json",
+          "sha256": "024455e802a81baf06220f7879809ed84857cde1cd8998176f9a7d565fc5dd85"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/post-recovery-fence-denial.json",
+          "sha256": "7216bf40c2e0b95335825c9e77f6ab2d3153b02d5466bf164fc7469560806f82"
+        }
+      ]
+    },
+    {
+      "action": "Kill/restart help process.",
+      "expected": "Durable real spool rows survive.",
+      "actual": "SIGKILL137 and identical logical row digest observed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/spool-crash-recovery.json",
+          "sha256": "80c3b22714946e7f9b2f7e9164cb85a8f0d5788fd89e056a615f379082e61af2"
+        }
+      ]
+    },
+    {
+      "action": "Stop main then whole named kind node and restore.",
+      "expected": "Static survives; privatehelp failsclosed whenidentitylost and recovers with current storedstate.",
+      "actual": "Approved actual outage1 passed; same-session cancellation after recovery.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-outage.json",
+          "sha256": "f47aa75b782828059ea3cee7472a94aff641fdb498f74be8e989e75daebf2f2b"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/outage-supervisor-approved-result.json",
+          "sha256": "86d1b0753e66c255901a56fa84e0238d55128e3c36855323188d1f64930b78b3"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/cluster-recovery.json",
+          "sha256": "d0ec6c8f3d26110a51d337a97f95e5dbe9bf54998c08b304ba1bbc17bff5b9fc"
+        }
+      ]
+    },
+    {
+      "action": "Expire workload on existing TLS and recover same issuer.",
+      "expected": "Expiredpeer403; current admission returns with preserved issuer/registrations/fence under approvedlifetimes.",
+      "actual": "First attempt failure/manualrepair retained. Approved node1h/workload300s repeat passed with sameagent/help processes and explicit proxy-only channel reconnect.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/workload-expiry-lifetime-repair.json",
+          "sha256": "a440989265f9b0f30bdf04e30042fe115aa578544a5eaf48a385361c5e78111a"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/approved-agent-renewal.json",
+          "sha256": "db362e39e382b60263c9f848f70bf948faac0c9457ecb742280f7db318185164"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/approved-issuer-recovery-summary.json",
+          "sha256": "43f5cd2f6da004069e9f03d3257a8ee327d42e06ea823559202bdf3670d3f708"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/issuer-recovery-failure.json",
+          "sha256": "b7d1f0e7db2ea8bc0a82a9f18e3557591818c69bc0d5573d1d06f02912b70594"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "Fresh locked offline verification",
+      "command": "CARE_LINK_PNPM_STORE=/private/tmp/care-link-pnpm-store UV_CACHE_DIR=/private/tmp/care-link-uv-cache UV_PYTHON_DOWNLOADS=never python3 tools/verify_clean.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "351Python passed,1platform skip,46TS/UI/parity passed on final source; strict types/lint/format/boundaries/admission/generation/build and adverse lock/schema guards passed. Live policy qualified separately.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/clean-verification-agent-ttl-proposal.log",
+      "evidence_digest": "30902ddb741bf03a44130a2691941f7c484144974abc93292450d98ac001979a",
+      "mock_used": true
+    },
+    {
+      "name": "Native Linux UID/socket enforcement",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "27 tests passed with actual Linux UIDs/socket custody. Certificate and authority payload fixtures do not establish live product mTLS by themselves.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/native-linux.log",
+      "evidence_digest": "ab7f975369346cfbac95ea5a2adb43734c2a21280e550c7ba1f527dab8e9eb4b",
+      "mock_used": true
+    },
+    {
+      "name": "Live PostgreSQL TLS/runtime privileges",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Real verified TLS/runtime DML; forbidden schema/public CREATE, temporary-table, superuser and other-database privileges denied.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/database-privileges.json",
+      "evidence_digest": "a33fb794f01610d8fc83c73450369c1310e26b5c9c69506d7fc427446660ef33",
+      "mock_used": false
+    },
+    {
+      "name": "Live CNI active-control denied routes",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "All6 known-live denied-route families passed again after cluster/issuer recovery; inert control listeners, not real model/external service admission.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/network-after-recovery.json",
+      "evidence_digest": "039e317bfcbec8f4dea796f3eef172034c793cecd21bfecea40c1e16d78c5531",
+      "mock_used": false
+    },
+    {
+      "name": "Runtime pod IPv6 boundary",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Actual recreated runtime-probe after recovery had disabled nonloopbackIPv6 and noIPv6addresses; no Mac-global firewall claim.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/runtime-ipv6-after-recovery.json",
+      "evidence_digest": "acc74ce9991e4b64edd01cc00f669ad07e538acdb2def9cbfc6518efd481b7ef",
+      "mock_used": false
+    },
+    {
+      "name": "Actual main certificate renewal",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Loaded Envoy main SVID changed serial and advanced expiry under the real issuer.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/main-certificate-renewal.json",
+      "evidence_digest": "4151a8f654b516d9ab73b04238ac507498628ddd58700f782443378b2b1a1a8a",
+      "mock_used": false
+    },
+    {
+      "name": "Actual outside-help certificate renewal",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Loaded outside-help Envoy SVID changed serial and advanced expiry; no host-agent restart claim.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/help-certificate-renewal.json",
+      "evidence_digest": "6e7fe7226b3a2af31f7e0b0c0c65dede508b44c9d3e85c19d723778857e47dc1",
+      "mock_used": false
+    },
+    {
+      "name": "Signed signal durable fence and existing TLS denial",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Unknown workload UUID403 before mutation; valid self-compromise durably fenced generation1 and next request denied403 on the same TLS connection before certificate expiry. IDP source remains fenced.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/signed-signal-fence.json",
+      "evidence_digest": "024455e802a81baf06220f7879809ed84857cde1cd8998176f9a7d565fc5dd85",
+      "mock_used": false
+    },
+    {
+      "name": "Actual private/public browser journeys",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "All9 passed on final217 image and explicitly approved live agent1h/workload300s policy: real MFA/roles/ownership/CSRF/cookie boundaries, accepted_unconnected, cancellation/logout, navigation/lost-response recovery and EN/FR automated accessibility.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-final_policy.json",
+      "evidence_digest": "16492a4a0a318c61923ab9509c31f003cde5e0f79bd9dde7af48b1c5258987d9",
+      "mock_used": false
+    },
+    {
+      "name": "Real five-minute cooling and second MFA",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "1 passed in330.902seconds. First confirm17:03:00.850Z, boundary17:08:00.839Z, second MFA verification17:08:02.201Z. Consumed proof replay403; ambientAL2, no export.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-cooling.json",
+      "evidence_digest": "f88950da611bd6e3fef1b6bfc56a9bf20d77c36a881be8f4ba1760f3726f1ecd",
+      "mock_used": false
+    },
+    {
+      "name": "Owner MFA and temporary credential disposal",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Actual main operator AL2/fresh OTP/session validated; post-qualification logout denied subsequent session; exported private cookie deleted.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/operator-mfa-qualification.json",
+      "evidence_digest": "9879021e2149c2eeb0c5e13c4e1224838aaa86947ffdca73b8df833ce97c4a74",
+      "mock_used": false
+    },
+    {
+      "name": "Real retention cleanup with controlled time boundaries",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Real provider/PostgreSQL/encrypted files: disable, delete/404, capture+7day boundary unlink, purged-subject restore quarantine and known-copy accounting passed. Seeded30/7day clock fixtures, not elapsed days or physical erasure.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/retention-qualification.json",
+      "evidence_digest": "6ec80c7da12233c22c4eeb2359b285b2d662d9f8e4f53bfc75689b9d387ab533",
+      "mock_used": true
+    },
+    {
+      "name": "Actual help process crash durability",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Actual SIGKILL exit137, restart, and identical SQLite logical-row digest/counts. This is process durability, not cluster recovery.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/spool-crash-recovery.json",
+      "evidence_digest": "80c3b22714946e7f9b2f7e9164cb85a8f0d5788fd89e056a615f379082e61af2",
+      "mock_used": false
+    },
+    {
+      "name": "Actual browser TLS rejection",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Successful same-listener verified control; unknown CA and wrong DNS SAN rejected. Browser listener scope, not SPIFFE URI-SAN qualification.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-tls-negatives.json",
+      "evidence_digest": "76101be2deb03cace2bfd8471438a778217451104d5df524b5a2f8a247c813ed",
+      "mock_used": false
+    },
+    {
+      "name": "Actual protected egress route/method/query denial",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Allowed real help mTLS route200; wrong context/method404 and unadmitted query403.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/deployed-route-methods.json",
+      "evidence_digest": "e69d923929be9bf7658c7767e660051e8aeff8a33a01cc2612e8ce29c7b0014d",
+      "mock_used": false
+    },
+    {
+      "name": "Actual wrong native UID denial",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Different actual native UID21012 could not use help UID21013 egress socket; PermissionError.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/deployed-wrong-uid.json",
+      "evidence_digest": "a50faee7f21251d37e65a9544ac0bb091836f993e0a622a7d9f7c646fb25db53",
+      "mock_used": false
+    },
+    {
+      "name": "Owner-demo exact public publication",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Accepted EN/FR wording mechanically converted and technically integrity-signed. Owner profile explicitly no independent review/human signature/admission. Canonical manifest503, owner manifest200; actual EN/FR automated QA and hashes bound.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/publication.json",
+      "evidence_digest": "8225f21ca3e2a42811df2356126837b36b493a10be4e6eb9b2b408327feffa1f",
+      "mock_used": false
+    },
+    {
+      "name": "Current no-fault application availability",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Final approved-policy main/help health+mesh bootstrap200; EN/FR fallback200, independent manifest503 and owner-demo manifest200 after qualification.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/final-availability-approved-policy.json",
+      "evidence_digest": "905f211cb315716ee22298341fc9fabaa7927ca83ea2a4a411c4f409f63f8af2",
+      "mock_used": false
+    },
+    {
+      "name": "Runtime component evidence continuity",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "Earlier273 cooling/retention components match73runtime/asset files in final217; final-policy normal9/outage/expiry/recovery evidence identifies actual image. No earlier runs relabelled.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/runtime-component-equivalence.json",
+      "evidence_digest": "52c7753e5b86916f4c590a2bab4e55065b670f406c844ebb1ddbb9448d2e6de9",
+      "mock_used": false
+    },
+    {
+      "name": "Canonical planning validation",
+      "command": ".venv/bin/python doc/IMP/validate_plan.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "11gates,44tasks,206operation allocations and frozen inputs/links validate. Link checker now recognizes tel/sms/mailto; its exact tool inventory hash refreshed; canonical implementation-plan/REQ/HLD/LLD unchanged.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/plan-validation-final.log",
+      "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+      "mock_used": false
+    },
+    {
+      "name": "Actual human G-02 acceptance",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "User explicitly stated I approve G-02. Acceptance is recorded against the exact presented DemoPacket digest and candidate for the bounded local synthetic owner-demo scope; participant admission remainsdisabled.",
+      "evidence_path": "doc/IMP/executions/2026-11-08-IMP-02/decisions/G-02.json",
+      "evidence_digest": "f3d49e1151a2ba4be33e8803231357f452eec1bb3f4a1fbc791112d2b38a2b5e",
+      "mock_used": false
+    },
+    {
+      "name": "Actual main and whole-node outage",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed bounded behavior matches the stated check.",
+      "actual": "Approved real browser test passed87.402s: main down help/static200; wholekindnode loss privatehelp unavailable/disabled and static available; same-node restore and same-session cancellation passed.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-outage.json",
+      "evidence_digest": "f47aa75b782828059ea3cee7472a94aff641fdb498f74be8e989e75daebf2f2b",
+      "mock_used": false
+    },
+    {
+      "name": "Expired peer denial on existing TLS",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed bounded behavior matches the stated check.",
+      "actual": "Actual workload certificate expired;403 observed on the same existing TLS connection without serial/connection replacement.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/workload-expiry-approved.json",
+      "evidence_digest": "e9372c7e6510700ac3d7d3675e93d25fcf97eca08fff8dedf18048e098a4fd63",
+      "mock_used": false
+    },
+    {
+      "name": "Approved bounded issuer recovery procedure",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Same issuer/registrations/fence retained; node-agent and help remain alive, fresh workload admission restored using the declared operator procedure.",
+      "actual": "Corrected repeat passed: sameagent/help container starts, freshworkloadcredentials+HTTP200, identicalPVC/CA/registrations/fence. Explicit proxy-only TLS channel reconnect; no fullyautomatic/processloss/beyond-node-expiry claim. First failure/manualrepair retained.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/approved-issuer-recovery-summary.json",
+      "evidence_digest": "43f5cd2f6da004069e9f03d3257a8ee327d42e06ea823559202bdf3670d3f708",
+      "mock_used": false
+    },
+    {
+      "name": "Original-policy manual recovery actor journey",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed bounded behavior matches the stated check.",
+      "actual": "Actual targeted participant/other/worker MFA, scope denials, accepted_unconnected, cancellation/logout allpassed after manualreenrollment. CA/PVC/workloadentries/spool/fence preserved; node/bootstrapalias changed.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-manual_restore.json",
+      "evidence_digest": "8a1ee13f29f67ac99b29982a70026c340600e464c9158f71ff409d608b477de2",
+      "mock_used": false
+    },
+    {
+      "name": "Approved agent lifetime applied and renewed",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Explicit approval; actual node renewal near one hour, unchanged300second workloads.",
+      "actual": "User approved exact risk/request. Only agent_ttl1h applied; both actual nodecredentials had3540/3593seconds remaining before drill. Workloadrequested300s,310s validity including backdate; all4 actual workloadentries300s.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/approved-agent-renewal.json",
+      "evidence_digest": "db362e39e382b60263c9f848f70bf948faac0c9457ecb742280f7db318185164",
+      "mock_used": false
+    },
+    {
+      "name": "Corrected-policy same-TLS expiry repeat",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed bounded outcome matches declared scope.",
+      "actual": "Expired workload received403 on the same observed TLS connection under approved one-hour node policy; root/agent/workload lifetimes not shortened.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/workload-expiry-lifetime-repair.json",
+      "evidence_digest": "a440989265f9b0f30bdf04e30042fe115aa578544a5eaf48a385361c5e78111a",
+      "mock_used": false
+    },
+    {
+      "name": "Post-recovery restrictive fence remains effective",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed bounded outcome matches declared scope.",
+      "actual": "Existing compromisedIDPworkload remained403 through its mTLS proxy after issuer recovery; no new event or reset/unfence.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/post-recovery-fence-denial.json",
+      "evidence_digest": "7216bf40c2e0b95335825c9e77f6ab2d3153b02d5466bf164fc7469560806f82",
+      "mock_used": false
+    },
+    {
+      "name": "Fallback facts reverified before G-02",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed bounded outcome matches declared scope.",
+      "actual": "Official federal, mandatory Canada hotline connector and ConnexOntario EN/FR sources rechecked; accepted words/artifact unchanged. No human independent review inferred.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/fallback-source-reverification-final.json",
+      "evidence_digest": "94380f1ce292659870c81014191b76220d095d509ca1527b3dac6f4269856c80",
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "Owner-only local engineering profile: no independent human review/signature or participant/clinical/production release. G-02 acceptance is limited to this reviewed stage.",
+    "Explicit proxy-only TLS channel reconnect is part of demonstrated recovery; fully automatic channel restoration is not claimed.",
+    "One-hour nodecredential permits eligible workload identity requests for longer if stolen; workload5minutes alone does not cap aggregate misuse. Workload fences remain effective.",
+    "No host reboot/agent process-loss or beyond-node-expiry outage guarantee; memory-key agent loss can require manual re-enrollment.",
+    "Retention uses controlled clock boundaries; no physical erasure. Network listeners were inert controls; no model/realpartner/police/autonomous-contact admission."
+  ],
+  "acceptance_scope": "Accept only the observed private synthetic workstation engineering candidate with owner_review_local_demo and the approved node1h/workload300s policy. Participant admission remainsfalse. No independent/clinical/production release, model/partner/police/autonomous contact or next-slice activation.",
+  "rollback": "Current exact named lab is restored/running under approved policy. Preserve static publication, persistent stores and restrictive fences; use only authorized named operator procedures for any regression. No unrelated cleanup, issuer reset or unfence. G-02 acceptance does not commit/push or activate IMP-03.",
+  "human_decision_id": "G-02-MAIN-2026-11-09",
+  "is_example": false
+}

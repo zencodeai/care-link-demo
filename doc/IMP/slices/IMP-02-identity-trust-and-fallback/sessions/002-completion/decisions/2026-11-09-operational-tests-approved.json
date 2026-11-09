@@ -1,0 +1,24 @@
+{
+  "decision_id": "IMP-02-OPERATIONAL-TESTS-APPROVED-2026-11-09",
+  "recorded_at": "2026-11-09T17:42:35.598395+00:00",
+  "source_kind": "user_message",
+  "user_statement": "Approved",
+  "approved_reference": "Immediately preceding explanation and operational-approval-request.md: three controlled lab shutdown-and-restore tests",
+  "scope": [
+    "Stop/restore deployment/main in care-link-imp02-002 and observe independent help/static",
+    "Stop/start only care-link-imp02-002-control-plane and observe fail-closed help/static survival/same-state recovery",
+    "Stop/restore deployment/spire-server in care-link-imp02-002-trust; observe expiry on one existing TLS connection and same-PVC/issuer/registration/fence recovery"
+  ],
+  "owner": "main",
+  "G02_accepted": false,
+  "participant_admission": false,
+  "excluded": [
+    "production/global workstation changes",
+    "issuer reset/re-registration/unfence to manufacture recovery",
+    "commit/push/model/police/partner/autonomous contact"
+  ],
+  "approved_request": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/operational-approval-request.md",
+    "sha256": "b103e330c5d06edc10139eb53bbfcd6be61f18aa4d24052cc3766ed00fafe9a3"
+  }
+}

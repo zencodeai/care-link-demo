@@ -1,0 +1,106 @@
+{
+  "stage_id": "IMP-02",
+  "mode": "implementation",
+  "baseline_commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+  "inputs": [
+    {
+      "path": "doc/LLD/03-identity-and-workload-trust.md",
+      "sha256": "e893e8c4f6a3fcab3ea68cb797dcb7c298a9fd1760622f89f773e59959eca643"
+    },
+    {
+      "path": "doc/LLD/12-continuity-and-operations.md",
+      "sha256": "f1fcdac025b2913e7e49a0436f713146272e14da77d7a1ed78aa0de0568cf669"
+    },
+    {
+      "path": "doc/LLD/11-deployment-and-configuration.md",
+      "sha256": "946bfff8322fb425dd9e5971a645fbe168a312979b2dae8573418417bf09fd82"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/REQ/**",
+    "doc/HLD/**",
+    "doc/LLD/**",
+    "doc/IMP/**",
+    "packages/contracts/**",
+    "services/**",
+    "host/**",
+    "apps/web/**",
+    "packages/workload-trust/**",
+    "tools/**",
+    "tests/**",
+    "config/demo/**",
+    "deploy/k8s/imp-02/**",
+    "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/**"
+  ],
+  "dependencies": [
+    "Recorded G-00/G-01 predecessor decisions",
+    "Session001 candidate and current user decisions; source starts dirty and must be preserved"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "read_only_host_probe"
+  ],
+  "prohibited_actions": [
+    "commit/push/GitHub mutation",
+    "global host firewall/service/account changes",
+    "model loading or real emergency/partner contact",
+    "invented human role/signature/stage acceptance",
+    "nested delegation",
+    "destruction of unrelated Docker/cluster resources"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "2026-11-09 user Approved after scoped agent-lifetime repair request; see agent-lifetime-repair-approved decision",
+    "scope": "Explicitly approved applying infrastructure agent_ttl1h in existing demo SPIRE ConfigMap and restart/renew/repeat bounded issuer drill while keeping workload300s, CA/PVC/workload bindings/fences. Primary alone performs live changes. No G-02 acceptance/participant release/global or production changes."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP02-002-PLATFORM-FILES",
+      "kind": "file_set",
+      "scope": "packages/workload-trust/**, deploy/k8s/imp-02/**, tools/imp02_lab/**, tests/integration/imp02_lab/**",
+      "owner_task_id": "IMP-02-B",
+      "expires_at": "2026-11-10T05:00:00Z"
+    }
+  ],
+  "expected_outputs": [
+    "Modular implementation/tests and source-grounded findings",
+    "Actual checks and unresolved live-evidence obligations"
+  ],
+  "positive_acceptance": [
+    "Typed declared behavior follows LLD trust boundaries"
+  ],
+  "adverse_acceptance": [
+    "Missing authority denies; no simulated enforcement claimed deployed"
+  ],
+  "reviewer": "primary integration owner",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 180,
+  "stop_conditions": [
+    "Authority/design expansion",
+    "Unowned shared file mutation"
+  ],
+  "is_example": false,
+  "packet_id": "IMP-02-002-PLATFORM",
+  "task_id": "IMP-02-B",
+  "role": "imp_platform",
+  "write_paths": [
+    "packages/workload-trust/**",
+    "deploy/k8s/imp-02/**",
+    "tools/imp02_lab/**",
+    "tests/integration/imp02_lab/**"
+  ],
+  "goal": "Deliver the declared modular IMP-02 implementation and actual bounded qualification, including the explicitly approved agent1h/workload300s repair and issuer recovery; provide exact candidate/evidence for separate human G-02 decision. Only primary mutates lab; no acceptance, participant admission, next-slice activation, commit/push or unrelated host action."
+}

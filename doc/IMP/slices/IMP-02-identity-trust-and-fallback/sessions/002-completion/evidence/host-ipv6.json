@@ -1,0 +1,80 @@
+{
+  "observed_at": "2026-11-09T15:27:47.927351+00:00",
+  "mock_used": false,
+  "interfaces_with_ipv6": [
+    {
+      "interface": "lo0",
+      "scope": "loopback"
+    },
+    {
+      "interface": "lo0",
+      "scope": "link_local"
+    },
+    {
+      "interface": "en0",
+      "scope": "link_local"
+    },
+    {
+      "interface": "en0",
+      "scope": "other"
+    },
+    {
+      "interface": "awdl0",
+      "scope": "link_local"
+    },
+    {
+      "interface": "llw0",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun0",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun1",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun2",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun3",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun4",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun5",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun6",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun7",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun8",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun9",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun10",
+      "scope": "link_local"
+    },
+    {
+      "interface": "utun11",
+      "scope": "link_local"
+    }
+  ],
+  "native_ipv6_configured": true,
+  "limits": "Observation only; does not assert host firewall denial or disable IPv6."
+}

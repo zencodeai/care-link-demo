@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-11-09T15:37:49.873498+00:00",
+  "runtime": {
+    "kernel_ipv6_socket_support": true,
+    "interfaces": [
+      {
+        "interface": "erspan0",
+        "disable_ipv6": "1"
+      },
+      {
+        "interface": "eth0",
+        "disable_ipv6": "1"
+      },
+      {
+        "interface": "gretap0",
+        "disable_ipv6": "1"
+      },
+      {
+        "interface": "ip6_vti0",
+        "disable_ipv6": "1"
+      },
+      {
+        "interface": "ip6gre0",
+        "disable_ipv6": "1"
+      },
+      {
+        "interface": "ip6tnl0",
+        "disable_ipv6": "1"
+      },
+      {
+        "interface": "sit0",
+        "disable_ipv6": "1"
+      }
+    ],
+    "addresses": [],
+    "all_nonloopback_interfaces_disabled": true
+  },
+  "mock_used": false,
+  "limits": "Kernel/interface observation only; no absent-listener denial claim."
+}

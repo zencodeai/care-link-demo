@@ -1,0 +1,107 @@
+{
+  "session": "imp02-002",
+  "observed_at": "2026-11-09T18:55:51.969335+00:00",
+  "allowed_runtime_broker": {
+    "result": "connected",
+    "seconds": 0.0001720830005069729
+  },
+  "routes": [
+    {
+      "family": "database",
+      "address": "192.168.252.200",
+      "port": 5432,
+      "control": {
+        "result": "connected",
+        "seconds": 0.00017808299890020862
+      },
+      "forbidden": {
+        "result": "timeout",
+        "seconds": 2.0038537930013263
+      },
+      "status": "passed",
+      "mock_used": false
+    },
+    {
+      "family": "direct_backend",
+      "address": "192.168.252.200",
+      "port": 8011,
+      "control": {
+        "result": "connected",
+        "seconds": 0.00014858299982734025
+      },
+      "forbidden": {
+        "result": "timeout",
+        "seconds": 2.0035645429998112
+      },
+      "status": "passed",
+      "mock_used": false
+    },
+    {
+      "family": "direct_model",
+      "address": "192.168.252.200",
+      "port": 1234,
+      "control": {
+        "result": "connected",
+        "seconds": 0.00014916700092726387
+      },
+      "forbidden": {
+        "result": "timeout",
+        "seconds": 2.002991208999447
+      },
+      "status": "passed",
+      "mock_used": false
+    },
+    {
+      "family": "isolated_external_control",
+      "address": "192.168.252.200",
+      "port": 8443,
+      "control": {
+        "result": "connected",
+        "seconds": 0.00012520900054369122
+      },
+      "forbidden": {
+        "result": "timeout",
+        "seconds": 2.003363083997101
+      },
+      "status": "passed",
+      "mock_used": false
+    },
+    {
+      "family": "alternate_pod_port",
+      "address": "192.168.252.200",
+      "port": 18443,
+      "control": {
+        "result": "connected",
+        "seconds": 0.00025099999766098335
+      },
+      "forbidden": {
+        "result": "timeout",
+        "seconds": 2.005693710001651
+      },
+      "status": "passed",
+      "mock_used": false
+    },
+    {
+      "family": "isolated_node_network_control",
+      "address": "172.20.0.3",
+      "port": 18443,
+      "control": {
+        "result": "connected",
+        "seconds": 0.000417709001339972
+      },
+      "forbidden": {
+        "result": "timeout",
+        "seconds": 2.0026471260025573
+      },
+      "status": "passed",
+      "mock_used": false
+    }
+  ],
+  "status": "passed",
+  "mock_used": false,
+  "limitations": [
+    "Isolated active test listeners; actual model admission remains IMP-06.",
+    "These observations do not alone prove workload certificate or browser isolation.",
+    "IPv6 and actual Mac-host interface restrictions require their own observation."
+  ]
+}

@@ -200,7 +200,7 @@ def main():
     errors = []
     for path in ROOT.rglob("*.md"):
         for target in re.findall(r"\]\(([^)]+)\)", path.read_text()):
-            if "://" in target or target.startswith("#"):
+            if "://" in target or target.startswith(("#", "tel:", "sms:", "mailto:")):
                 continue
             local = target.split("#")[0].strip("<>")
             if local and not (path.parent / local).exists():

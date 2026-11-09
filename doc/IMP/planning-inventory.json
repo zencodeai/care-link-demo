@@ -377,7 +377,7 @@
     },
     {
       "path": "validate_plan.py",
-      "sha256": "743407a4572d8120a92176619573494f9d5e2220348d86f4e92e33508340fedd"
+      "sha256": "5a75361ed33d5d12e05c95c837fb0bdff2d8e61f730dd6c4d7c76e7e83b4d9f9"
     },
     {
       "path": "validation-requirements.txt",

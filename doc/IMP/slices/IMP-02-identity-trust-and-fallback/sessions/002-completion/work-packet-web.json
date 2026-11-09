@@ -1,0 +1,117 @@
+{
+  "stage_id": "IMP-02",
+  "mode": "implementation",
+  "baseline_commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+  "inputs": [
+    {
+      "path": "doc/LLD/03-identity-and-workload-trust.md",
+      "sha256": "e893e8c4f6a3fcab3ea68cb797dcb7c298a9fd1760622f89f773e59959eca643"
+    },
+    {
+      "path": "doc/LLD/12-continuity-and-operations.md",
+      "sha256": "f1fcdac025b2913e7e49a0436f713146272e14da77d7a1ed78aa0de0568cf669"
+    },
+    {
+      "path": "doc/LLD/11-deployment-and-configuration.md",
+      "sha256": "946bfff8322fb425dd9e5971a645fbe168a312979b2dae8573418417bf09fd82"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/REQ/**",
+    "doc/HLD/**",
+    "doc/LLD/**",
+    "doc/IMP/**",
+    "packages/contracts/**",
+    "services/**",
+    "host/**",
+    "apps/web/**",
+    "packages/workload-trust/**",
+    "tools/**",
+    "tests/**",
+    "config/demo/**",
+    "deploy/k8s/imp-02/**",
+    "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/**"
+  ],
+  "dependencies": [
+    "Recorded G-00/G-01 predecessor decisions",
+    "Session001 candidate and current user decisions; source starts dirty and must be preserved"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "read_only_host_probe",
+    "mutate_named_lab"
+  ],
+  "prohibited_actions": [
+    "commit/push/GitHub mutation",
+    "global host firewall/service/account changes",
+    "model loading or real emergency/partner contact",
+    "invented human role/signature/stage acceptance",
+    "nested delegation",
+    "destruction of unrelated Docker/cluster resources"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "2026-11-09 user Approved immediately after explicit three-test operational clarification; see operational-tests-approved decision",
+    "scope": "Complete IMP-02 code, reproducible isolated workstation lab and bounded local verification. Carry forward accepted retention/card/process decisions. No production deployment, user-data admission, Git publication or self-acceptance. Exclusive static/helper ownership transferred by primary; source-only, no lab mutation. Explicitly approved main/whole-kind-node/SPIRE issuer shutdown-and-restore qualification; primary alone mutates lab, browser specialist drives actual actor/file-checkpoint observations. No G-02 acceptance or participant release."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP02-002-WEB-FILES",
+      "kind": "file_set",
+      "scope": "apps/web/**, tests/e2e/imp02/**, host/static/**, tools/prepare_fallback_card.py, packages/contracts/typescript/**, tools/generate_contracts.py, tools/generate_browser_validators.mjs",
+      "owner_task_id": "IMP-02-C",
+      "expires_at": "2026-11-10T05:00:00Z"
+    },
+    {
+      "id": "IMP02-002-BROWSER-PROTOCOL",
+      "kind": "test_database",
+      "scope": "Synthetic main/help browser protocol tests for participant/other/worker profiles only, through https://*.localhost lab origins; no host/container lifecycle changes or external contacts",
+      "owner_task_id": "IMP-02-D",
+      "expires_at": "2026-11-10T05:00:00Z"
+    }
+  ],
+  "expected_outputs": [
+    "Modular implementation/tests and source-grounded findings",
+    "Actual checks and unresolved live-evidence obligations"
+  ],
+  "positive_acceptance": [
+    "Typed declared behavior follows LLD trust boundaries"
+  ],
+  "adverse_acceptance": [
+    "Missing authority denies; no simulated enforcement claimed deployed"
+  ],
+  "reviewer": "primary integration owner",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 180,
+  "stop_conditions": [
+    "Authority/design expansion",
+    "Unowned shared file mutation"
+  ],
+  "is_example": false,
+  "packet_id": "IMP-02-002-WEB",
+  "task_id": "IMP-02-C",
+  "role": "imp_web",
+  "write_paths": [
+    "apps/web/**",
+    "tests/e2e/imp02/**",
+    "host/static/**",
+    "tools/prepare_fallback_card.py",
+    "packages/contracts/typescript/**",
+    "tools/generate_contracts.py",
+    "tools/generate_browser_validators.mjs"
+  ],
+  "goal": "Finish separate-role browser and accessibility automation for actual configurable lab origins, safe UI flows and reviewable evidence. No fake auth success. Coordinator explicitly transferred host/static/** and tools/prepare_fallback_card.py: implement safe semantic/responsive rendering and owner_review_local_demo profile with no independence claim; preserve default independent profile and accepted wording. Current coordinator transfer: generate pinned Ajv standalone validators offline; runtime imports only precompiled code under existing strict CSP. Schema/DTO bytes and semantic validation unchanged."
+}

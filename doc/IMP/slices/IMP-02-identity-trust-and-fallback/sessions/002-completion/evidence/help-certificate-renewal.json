@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "scope": "actual proxy SDS-loaded X.509 SVID renewal",
+  "before": {
+    "role": "help",
+    "observed_at": "2026-11-09T15:44:19.971871+00:00",
+    "spiffe_id": "spiffe://care-link.demo/lab/help",
+    "certificate": {
+      "serial_number": "61fb9ec8a7351c56d9336a19a3ea487d",
+      "subject_alt_names": [
+        {
+          "uri": "spiffe://care-link.demo/lab/help"
+        }
+      ],
+      "valid_from": "2026-11-09T15:43:12Z",
+      "expiration_time": "2026-11-09T15:48:22Z"
+    },
+    "upstream_connections": {
+      "cluster.identity_mesh.upstream_cx_active": 1,
+      "cluster.identity_mesh.upstream_cx_total": 1,
+      "cluster.identity_mesh.upstream_rq_total": 1
+    },
+    "mock_used": false,
+    "source": "Envoy admin UDS /certs, kernel owner UID21002; public fields only"
+  },
+  "after": {
+    "role": "help",
+    "observed_at": "2026-11-09T15:45:47.918403+00:00",
+    "spiffe_id": "spiffe://care-link.demo/lab/help",
+    "certificate": {
+      "serial_number": "87a934e3af672dfb0704d28ebb08d18e",
+      "subject_alt_names": [
+        {
+          "uri": "spiffe://care-link.demo/lab/help"
+        }
+      ],
+      "valid_from": "2026-11-09T15:45:32Z",
+      "expiration_time": "2026-11-09T15:50:42Z"
+    },
+    "upstream_connections": {
+      "cluster.identity_mesh.upstream_cx_active": 0,
+      "cluster.identity_mesh.upstream_cx_total": 1,
+      "cluster.identity_mesh.upstream_rq_total": 1
+    },
+    "mock_used": false,
+    "source": "Envoy admin UDS /certs, kernel owner UID21002; public fields only"
+  },
+  "sample_count": 5,
+  "mock_used": false,
+  "limits": "Does not alone prove old-peer expiry or open-connection fencing."
+}

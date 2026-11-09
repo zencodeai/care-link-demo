@@ -1,0 +1,25 @@
+# IMP-02 session002 review
+
+Read-only specialist review and coordinator integration review covered identity/provider, retention/backup lifecycle, host-help authority/spool, static publication/custody, workload fences, generated validators and application composition. Specialists made no live lab changes. Source findings listed below are closed; this record does not accept G-02 or grant participant admission.
+
+Closed findings with focused regressions: current caller and destination fences; authoritative provider/state rechecks; disabled/idle session credential disposal with stale-cookie re-login; maintenance credential restrictions; terminal encrypted-backup inventory minimization and returned-file denial; recent help-operation/audit event retention; static timestamp/dependency precision and legacy migration refusal; recognized signed factor evidence while retaining password-only recent authentication; exact per-client introspection audience and resource/azp validation.
+
+Actual separate-browser qualification exposed a high-severity composition defect that earlier source checks missed: a shared httpx client could inject an upstream cookie from another browser. The independent reviewer reproduced it. Explicit incoming-or-empty Cookie forwarding and a non-retaining mesh cookie policy close the path. Two-browser regressions and the real nine-test browser suite pass. The help adapter also preserves authoritative401/403 status semantics; unexpected/transport errors remain503, with stage/status-only diagnostics and unchanged one-second budgets.
+
+Browser test defects were corrected without weakening business assertions: preserve the original failure when cleanup also fails, close every context, and await the actual logout command before checking that the session is rejected. The final normal suite includes real OIDC password/OTP, separate actor profiles, current ownership/role/CSRF boundaries, accepted_unconnected, cancellation/logout, separate cookies, and actual upstream lost-response recovery.
+
+Checks: clean offline350Python tests passed,1platform skip;46TS/UI/parity tests passed; strict types/lint/format/boundaries/generation/admission/build and adverse lock/schema guards passed.27nativeLinux UID/socket tests passed earlier against unchanged native enforcement; actual wrong-UID egress denial additionally passed. Automated accessibility does not establish human screen-reader/language review.
+
+Actual cooling and retention passed. Outage/expiry/recovery were not run: automatic review rejected operational fault injection before execution, and explicit operational approval is pending. Human review of the exact final candidate remains required. No blanket standards, production, independent-review or physical-erasure claim.
+
+Latest authority review preserves these evidence limits and requested a current handoff rewrite; that rewrite and explicit not-run/rejection record are now delivered. The final bootstrap/lifecycle-role source had no new material finding.
+
+Final packet/reference audit validated23checks (20passed,1blocked,2not_run), current handoff/ledger and planning validation. Two minor cleanups were applied: precise main/cluster/issuer shutdown wording and removal of a stale monolithic planned path. Qualification disposition is unchanged.
+
+
+Approved fault execution update: outage1 and same-connection expired-workload403 passed, but automatic host-help recovery failed because node credential TTL inherited300seconds. Source agent_ttl1h separation has no blocking technical defect and7manifest/regression tests pass; clean351/46 passes. Applying it was rejected by automatic review as an unapproved persistent security-lifetime change. Original300secondpolicy was manually restored through expired-node/bootstrapalias reenrollment; workloadentries/CA/PVC/spool/fence/logicalalias retained. Targeted actual actor journey passed afterward. Automatic recovery remains OPEN. Review requires explicit stolen-agent credential risk and bounded-drill/process-loss limitations; the repair request now includes them. No live policy approval or G-02 acceptance inferred.
+
+
+Approved repair closure: pinned source and actual renewed node/workload lifetimes match the approved separation. Independent review found no material gap in the repeat: one existing TLS connection changed200→403 at expiry; fresh credentials restored admission after an explicit operator proxy-only reconnect; agent/help stayed alive; before/after issuer/registrations/fence matched, with fencedIDP403. Final-policy normal9 subsequently passed. The original failure/manual repair remains historical. No fully automatic channel, process/reboot or beyond-node-expiry recovery claim is made. Human G-02 is a separate pending decision.
+
+Final ready-packet audit: independent read-only review found no material inconsistency or unbounded claim. Candidate/Demo/check/AgentResult references matched;28checks passed and only actual humanG-02 remainednotrun. Ready-for-review and in-progress ledger states preserve nonacceptance. No live actions or human approval were asserted by the reviewer.

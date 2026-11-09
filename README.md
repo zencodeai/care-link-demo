@@ -47,6 +47,14 @@ The decision answers record the current Ottawa context and police exclusions. Hi
 
 IMP-01 provides an isolated developer API, EN/FR role preview shell, closed contract adapters and a locked local check loop. Business operations remain unavailable and participant admission is disabled. The user validated G-00 and G-01 on 2026-11-07 for the current developer foundation. See the [slice handoff](doc/IMP/slices/IMP-01-repository-foundation/README.md) for acceptance records, evidence and remaining verification work.
 
+### Slice 02 source candidate
+
+IMP-02 implements separate identity/BFF, opaque host-help, bounded workload trust and EN/FR owner-reviewed static fallback. The [slice index](doc/IMP/slices/IMP-02-identity-trust-and-fallback/README.md) records completed local source/browser/retention/outage/recovery qualification and the exact candidate awaiting human G-02 acceptance. G-02 is unaccepted; participant admission remains disabled.
+
+Read [identity composition](services/identity/README.md), [private help composition](host/help/README.md), [static publication](host/static/README.md), [workload trust composition](packages/workload-trust/README.md), and [separate UI builds](apps/web/README.md). No test-login endpoint, account/role auto-provisioning or permissive workload-verifier default is provided. The ordinary developer API continues to deny business service operations.
+
+The independent public placeholder can be run in another terminal with `uv run --locked care-link-static --port 8023`; open `http://127.0.0.1:8023/fallback`. Expect an explicit503 unavailability message until an exact independently reviewed publication is configured. It contains no invented crisis contacts. Private UI routes remain unconfigured until the separate TLS/BFF composition exists.
+
 ### Prepare the local tools
 
 Use Python `3.14.7`, Node `22.14.0`, uv `0.12.17` and pnpm `10.20.0`. These tested local developer pins are covered by the recorded G-00 validation. Further host/lab setup actions retain their own scope and authorization.

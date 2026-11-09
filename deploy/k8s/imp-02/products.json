@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "scope": "Private synthetic IMP-02 session002 lab; versions/digests are inputs, not acceptance.",
+  "platform": "linux/arm64",
+  "selected_versions": {
+    "kind": "0.33.0",
+    "kubernetes": "1.36.4",
+    "calico": "3.33.0",
+    "spire": "1.16.0",
+    "envoy": "1.40.2",
+    "keycloak": "26.8.2",
+    "postgres": "18.3-bookworm",
+    "spire_csi": "0.2.13",
+    "csi_registrar": "2.15.0"
+  },
+  "images": {
+    "spire_server": "ghcr.io/spiffe/spire-server@sha256:ff546f4c62dafc479a0cd79eae9a7b6df2975754d75efd31706098e0d7548837",
+    "spire_agent": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+    "envoy": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+    "keycloak": "quay.io/keycloak/keycloak@sha256:723b1d6e254c0fc96d5cffec860c7e0744d6a3277822b865bb538cf891575e41",
+    "postgres": "postgres@sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba",
+    "calico": "quay.io/calico/calico@sha256:4ebc20730127bc9e8bf1db5f5a2d8b58cf37fe0e891b3c7b5471992221d213e5",
+    "calico_plugins": "quay.io/calico/third-party-cni-plugins@sha256:0f32f48279484c0d6f0e0d0e767b2d0e1a6c6ca34cb3421a61b989d992f3df41",
+    "calico_node": "quay.io/calico/node@sha256:565d8db3200e443955557f8f28ff44ab8a4a456754bc74a19c4f2f3444af9b1c",
+    "spire_csi": "ghcr.io/spiffe/spiffe-csi-driver@sha256:6f1ba5d635ba9bf55ae69ba11d71bf169c8fa3e0139a5063738cbc227c8b5546",
+    "csi_registrar": "registry.k8s.io/sig-storage/csi-node-driver-registrar@sha256:11f199f6bec47403b03cb49c79a41f445884b213b382582a60710b8c6fdc316a",
+    "node": "kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+    "python": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+    "keycloak_runtime": "docker.io/library/care-link-imp02-keycloak@sha256:eb16e701be9e124e7d7a35ce00a8a86bef7d15ed63a262c7f3ec770cda846918"
+  },
+  "kind_sha256": "0c8c7dbe5e23594a198b786c4bc13dacc101fa6196b0cb0b23a1ca44e61f4b4f",
+  "calico_manifest_sha256": "2de8f47595fb9c41b3f47d7b767a1f8e72ecf84057af834738ff12689a234da5",
+  "primary_sources": {
+    "kind": "https://github.com/kubernetes-sigs/kind/releases/tag/v0.33.0",
+    "calico": "https://raw.githubusercontent.com/projectcalico/calico/v3.33.0/manifests/calico.yaml",
+    "spire": "https://github.com/spiffe/spire/releases/tag/v1.16.0",
+    "envoy": "https://github.com/envoyproxy/envoy/releases/tag/v1.40.2",
+    "keycloak": "https://github.com/keycloak/keycloak/releases/tag/26.8.2",
+    "postgres": "https://github.com/docker-library/postgres",
+    "csi": "https://github.com/spiffe/spiffe-csi/releases/tag/v0.2.13",
+    "registrar": "https://github.com/kubernetes-csi/node-driver-registrar/releases/tag/v2.15.0"
+  },
+  "resolution_evidence": [
+    "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/image-resolution.json",
+    "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/image-resolution-additional.json"
+  ],
+  "limits": [
+    "Official images were resolved by coordinator; local derived image build provenance is separate.",
+    "Product availability and configuration parsing do not establish runtime enforcement."
+  ]
+}

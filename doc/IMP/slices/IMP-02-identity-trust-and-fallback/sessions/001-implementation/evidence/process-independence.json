@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "core_health_before": 200,
+  "static_before_after": [
+    503,
+    503
+  ],
+  "core_process_stopped": true,
+  "static_process_still_alive": true,
+  "scope": "Independent local processes with unreviewed public placeholder; not a cluster outage, approved crisis publication or private-help proof",
+  "resources": "Temporary inherited loopback sockets; child processes stopped in finally"
+}

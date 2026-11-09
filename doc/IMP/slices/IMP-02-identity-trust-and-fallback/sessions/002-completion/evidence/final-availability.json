@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "scope": "read-only current availability; no fault injected",
+  "mock_used": false,
+  "participant_admission": false,
+  "results": [
+    {
+      "origin": "https://main.localhost:18443",
+      "path": "/dev/health",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "body_sha256": null
+    },
+    {
+      "origin": "https://help.localhost:19443",
+      "path": "/help/health",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "body_sha256": null
+    },
+    {
+      "origin": "https://static.localhost:21443",
+      "path": "/fallback?locale=en-CA",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "body_sha256": "f6f37a19fe2f2eeaaba2b1bf3924caa3f240472816fd692fec391e0711c32991"
+    },
+    {
+      "origin": "https://static.localhost:21443",
+      "path": "/fallback?locale=fr-CA",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "body_sha256": "d49b859e936199d135e6ea7ce6f2f3c53932280e7b3b6ea8841b7342dbdab09a"
+    },
+    {
+      "origin": "https://static.localhost:21443",
+      "path": "/static/v1/manifest",
+      "status": 503,
+      "expected": 503,
+      "passed": true,
+      "body_sha256": null
+    },
+    {
+      "origin": "https://static.localhost:21443",
+      "path": "/demo-static/v1/manifest",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "body_sha256": null
+    }
+  ]
+}

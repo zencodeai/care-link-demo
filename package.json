@@ -17,17 +17,19 @@
     "dev:web": "pnpm --filter @care-link/web dev"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
     "@eslint/js": "10.0.1",
+    "@playwright/test": "1.65.0",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.0",
+    "@types/node": "22.19.1",
     "eslint": "10.14.0",
-    "typescript-eslint": "8.72.1",
+    "jsdom": "27.1.0",
     "prettier": "3.6.2",
     "pyright": "1.1.407",
     "typescript": "5.9.3",
-    "vitest": "5.1.0",
-    "jsdom": "27.1.0",
-    "@testing-library/react": "16.3.0",
-    "@testing-library/jest-dom": "6.9.1",
-    "@types/node": "22.19.1"
+    "typescript-eslint": "8.72.1",
+    "vitest": "5.1.0"
   },
   "pnpm": {
     "overrides": {

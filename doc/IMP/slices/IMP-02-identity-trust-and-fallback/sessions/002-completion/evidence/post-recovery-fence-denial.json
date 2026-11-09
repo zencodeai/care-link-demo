@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "scope": "post-issuer-recovery fencedIDPworkload denied before malformedbody processing; no new event or restriction reset",
+  "http_status": 403,
+  "public_certificate_metadata": {
+    "loaded_certificates": [
+      {
+        "serial_number": "82799c5acbf98e0aff458d4a30420339",
+        "subject_alt_names": [
+          {
+            "uri": "spiffe://care-link.demo/lab/identity_provider"
+          }
+        ],
+        "valid_from": "2026-11-09T18:49:55Z",
+        "expiration_time": "2026-11-09T18:55:05Z"
+      }
+    ],
+    "upstream_connections": {
+      "cluster.identity_mesh.upstream_cx_active": 1,
+      "cluster.identity_mesh.upstream_cx_total": 1,
+      "cluster.identity_mesh.upstream_rq_total": 1
+    }
+  },
+  "mock_used": false
+}

@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "scope": "current final approved policy after expiry/recovery and final actor qualification",
+  "observed_at": "2026-11-09T18:58:43.085982+00:00",
+  "results": [
+    {
+      "origin": "https://main.localhost:18443",
+      "path": "/dev/health",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "http_body_sha256": null
+    },
+    {
+      "origin": "https://main.localhost:18443",
+      "path": "/v1/auth/csrf",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "http_body_sha256": null
+    },
+    {
+      "origin": "https://help.localhost:19443",
+      "path": "/help/health",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "http_body_sha256": null
+    },
+    {
+      "origin": "https://help.localhost:19443",
+      "path": "/v1/auth/csrf",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "http_body_sha256": null
+    },
+    {
+      "origin": "https://static.localhost:21443",
+      "path": "/fallback?locale=en-CA",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "http_body_sha256": "f6f37a19fe2f2eeaaba2b1bf3924caa3f240472816fd692fec391e0711c32991"
+    },
+    {
+      "origin": "https://static.localhost:21443",
+      "path": "/fallback?locale=fr-CA",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "http_body_sha256": "d49b859e936199d135e6ea7ce6f2f3c53932280e7b3b6ea8841b7342dbdab09a"
+    },
+    {
+      "origin": "https://static.localhost:21443",
+      "path": "/static/v1/manifest",
+      "status": 503,
+      "expected": 503,
+      "passed": true,
+      "http_body_sha256": null
+    },
+    {
+      "origin": "https://static.localhost:21443",
+      "path": "/demo-static/v1/manifest",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "http_body_sha256": null
+    }
+  ],
+  "participant_admission": false,
+  "mock_used": false
+}

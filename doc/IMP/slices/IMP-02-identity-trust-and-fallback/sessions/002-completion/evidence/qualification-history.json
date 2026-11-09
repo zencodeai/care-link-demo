@@ -1,0 +1,47 @@
+{
+  "scope": "observed isolated lab bring-up failures, preserved without credentials",
+  "resolved": [
+    {
+      "fault": "Browser startup blocked because Ajv generated code at runtime under strict CSP",
+      "fix": "Pinned build-time standalone validators; no unsafe-eval",
+      "proof": "Four live static/help accessibility checks pass"
+    },
+    {
+      "fault": "Provider UPDATE_PROFILE gate after password/OTP",
+      "fix": "Explicit synthetic unverified .invalid fields for four bound profiles; MFA/credentials/roles preserved",
+      "proof": "Real browser reached BFF callback"
+    },
+    {
+      "fault": "Access token missing required sub",
+      "fix": "Exact built-in oidc-sub-mapper for main/help bound clients",
+      "proof": "Next real callback advanced from identity.invalid_token to identity.exchange_rejected"
+    },
+    {
+      "fault": "Explicit empty scopes also omitted built-in authentication-time mapper",
+      "fix": "Exact observed built-in AUTH_TIME long mapper restored only for main/help",
+      "proof": "Provider returned successfully to app; session check reached fresh introspection"
+    },
+    {
+      "fault": "Fresh introspection returned HTTP200 activeFalse for otherwise valid lab access token",
+      "fix": "Explicit access-token introspection client audience, separate resource audience retained; Keycloak audience checks remain enabled",
+      "source": "https://www.keycloak.org/docs/26.8.1/server_admin/#_audience",
+      "proof": "Real sign-in role check passed and help request was created."
+    },
+    {
+      "fault": "Shared HTTP client could inject prior browser session cookie into a later browser request without Cookie",
+      "fix": "Explicit per-request cookie including empty; mesh client rejects cookie storage/reuse",
+      "proof": "Independent reproduction and two-browser regressions pass; live rerun pending"
+    },
+    {
+      "fault": "Help adapter converted authoritative401/403 into unavailable503",
+      "fix": "Preserve denial status semantics; retain503 for transport/unexpected failures; one-second budgets unchanged",
+      "proof": "45help tests including actual-shaped identity-adapter self-accept denial pass"
+    }
+  ],
+  "not_claimed": [
+    "Independent human acceptance",
+    "Successful private actor journey before rerun",
+    "Physical erasure",
+    "Production admission"
+  ]
+}

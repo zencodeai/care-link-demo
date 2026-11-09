@@ -1,0 +1,75 @@
+{
+  "scope": "private synthetic workstation engineering lab only",
+  "participant_admission": false,
+  "recorded_at": "2026-11-09T16:59:18.355917+00:00",
+  "baseline_commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+  "architecture": "linux/arm64 on existing Docker Desktop for macOS",
+  "versions": {
+    "DockerEngine": "29.8.0",
+    "DockerDesktop": "4.91.0",
+    "kind": "0.33.0",
+    "Kubernetes": "1.36.4",
+    "Calico": "3.33.0",
+    "Keycloak": "26.8.2",
+    "PostgreSQL": "18.3",
+    "SPIRE": "1.16.0",
+    "Envoy": "1.40.2",
+    "Python": "3.14.7",
+    "uv": "0.12.17",
+    "pnpm": "10.20.0",
+    "Playwright": "1.65.0",
+    "Chromium": "158.0.8127.18"
+  },
+  "images": {
+    "spire_server": "ghcr.io/spiffe/spire-server@sha256:ff546f4c62dafc479a0cd79eae9a7b6df2975754d75efd31706098e0d7548837",
+    "spire_agent": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+    "envoy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+    "keycloak": "quay.io/keycloak/keycloak@sha256:723b1d6e254c0fc96d5cffec860c7e0744d6a3277822b865bb538cf891575e41",
+    "postgres": "postgres@sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba",
+    "calico": "quay.io/calico/calico@sha256:4ebc20730127bc9e8bf1db5f5a2d8b58cf37fe0e891b3c7b5471992221d213e5",
+    "calico_plugins": "quay.io/calico/third-party-cni-plugins@sha256:0f32f48279484c0d6f0e0d0e767b2d0e1a6c6ca34cb3421a61b989d992f3df41",
+    "calico_node": "quay.io/calico/node@sha256:565d8db3200e443955557f8f28ff44ab8a4a456754bc74a19c4f2f3444af9b1c",
+    "spire_csi": "ghcr.io/spiffe/spiffe-csi-driver@sha256:6f1ba5d635ba9bf55ae69ba11d71bf169c8fa3e0139a5063738cbc227c8b5546",
+    "csi_registrar": "registry.k8s.io/sig-storage/csi-node-driver-registrar@sha256:11f199f6bec47403b03cb49c79a41f445884b213b382582a60710b8c6fdc316a",
+    "node": "kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+    "python": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+    "keycloak_runtime": "docker.io/library/care-link-imp02-keycloak@sha256:eb16e701be9e124e7d7a35ce00a8a86bef7d15ed63a262c7f3ec770cda846918",
+    "application": "docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c"
+  },
+  "origins": {
+    "main": "https://main.localhost:18443",
+    "help": "https://help.localhost:19443",
+    "provider": "https://id.localhost:20443",
+    "static": "https://static.localhost:21443"
+  },
+  "native_uids": {
+    "fence_custodian": 21000,
+    "proxy": 21002,
+    "authorization": 21003,
+    "identity": 21011,
+    "main": 21012,
+    "help": 21013,
+    "static": 21014
+  },
+  "persistent_stores": [
+    "postgres-data PVC",
+    "spire-server-data PVC",
+    "private help SQLite named volume",
+    "static publication/config read-only named volumes",
+    "separate socket/fence custody PVCs"
+  ],
+  "qualification_limits": [
+    "Docker Desktop/kind node and named Calico/SPIRE/CSI/seed infrastructure are trusted",
+    "Host-help attestation binds admitted immutable image by supervisor plus native UID in isolated shared PID namespace",
+    "Host SPIRE agent memory key manager does not establish restart/reboot recovery",
+    "Process-local browser DNS and explicit temporary-CA testing; no host-global trust/DNS/firewall edits",
+    "Owner main role-plays separate synthetic profiles; no independent-human claim",
+    "No model loaded, real partner/police integration or autonomous contact"
+  ],
+  "resource_lease_expires_at": "2026-11-10T05:00:00Z",
+  "live_agent_certificate_ttl": "1h",
+  "workload_certificate_ttl_seconds": 300,
+  "host_agent_manual_reenrollment_after_expiry": true,
+  "agent_lifetime_policy_applied_with_explicit_user_approval": true,
+  "last_updated_at": "2026-11-09T18:46:31.605573+00:00"
+}
