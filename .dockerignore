@@ -13,3 +13,13 @@
 !services/core/pyproject.toml
 !services/core/src/
 !services/core/src/**
+# Workspace metadata only; other service source stays outside this core context.
+!services/identity/
+!services/identity/pyproject.toml
+!host/
+!host/help/
+!host/help/pyproject.toml
+!host/static/
+!host/static/pyproject.toml
+!packages/workload-trust/
+!packages/workload-trust/pyproject.toml

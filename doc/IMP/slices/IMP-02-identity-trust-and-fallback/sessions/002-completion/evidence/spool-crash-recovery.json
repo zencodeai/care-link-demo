@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "scope": "actual SIGKILL/restart of named outside help process and real SQLite WAL durable rows",
+  "mock_used": false,
+  "exit_code": 137,
+  "before": {
+    "logical_digest": "618c4293da3a100501ad36f7fdd4fbe39092523bf4fadf1340cdb4711996eeb5",
+    "row_counts": {
+      "create_intent": 1,
+      "decision_nonce": 31,
+      "help_audit_checkpoint": 1,
+      "help_dependency_review": 0,
+      "help_managed_copy_cleanup": 1,
+      "help_retention_hold": 0,
+      "intent_lifecycle": 4,
+      "local_event": 31,
+      "nonce_lifecycle": 31,
+      "operation": 20,
+      "operation_lifecycle": 20,
+      "request": 4,
+      "request_lifecycle": 4,
+      "retired_help_key": 0
+    }
+  },
+  "after": {
+    "logical_digest": "618c4293da3a100501ad36f7fdd4fbe39092523bf4fadf1340cdb4711996eeb5",
+    "row_counts": {
+      "create_intent": 1,
+      "decision_nonce": 31,
+      "help_audit_checkpoint": 1,
+      "help_dependency_review": 0,
+      "help_managed_copy_cleanup": 1,
+      "help_retention_hold": 0,
+      "intent_lifecycle": 4,
+      "local_event": 31,
+      "nonce_lifecycle": 31,
+      "operation": 20,
+      "operation_lifecycle": 20,
+      "request": 4,
+      "request_lifecycle": 4,
+      "retired_help_key": 0
+    }
+  },
+  "same_logical_rows": true,
+  "physical_erasure_claim": false
+}

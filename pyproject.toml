@@ -5,7 +5,7 @@ requires-python = ">=3.14,<3.15"
 dependencies = []
 
 [tool.uv.workspace]
-members = ["packages/contracts/python", "services/core"]
+members = ["packages/contracts/python", "services/core", "services/identity", "host/help", "host/static", "packages/workload-trust"]
 
 [dependency-groups]
 dev = [
@@ -17,7 +17,7 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["packages/contracts/python/tests", "services/core/tests", "tests"]
+testpaths = ["packages/workload-trust/tests", "packages/contracts/python/tests", "services/core/tests", "services/identity/tests", "host/help/tests", "host/static/tests", "tests"]
 markers = ["unit: deterministic unit behavior", "contract: cross-language contract behavior"]
 addopts = "-ra"
 pythonpath = ["."]
@@ -25,7 +25,7 @@ pythonpath = ["."]
 [tool.ruff]
 target-version = "py314"
 line-length = 100
-include = ["packages/**/*.py", "services/**/*.py", "tools/**/*.py", "tests/**/*.py"]
+include = ["packages/**/*.py", "services/**/*.py", "host/**/*.py", "tools/**/*.py", "tests/**/*.py"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "ASYNC", "S"]

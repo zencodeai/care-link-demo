@@ -1,0 +1,56 @@
+{
+  "decision_id": "G-02-MAIN-2026-11-09",
+  "stage_id": "IMP-02",
+  "gate_id": "G-02",
+  "decision": "accept_stage",
+  "demo_packet_digest": "d7ca61e08b72acae5cc501cc6e44049e12d88f66f18dcafa341b550a882dd2cb",
+  "candidate": {
+    "commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+    "diff_digest": "dda6e105c4cf019b704ec972200c6e837a3c170407a9e29214a0fed106f6c45f",
+    "artifact_digest": "217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+    "configuration_digest": "98d0f35daccc81bd94a241f51c6fa189ca914c3d4ff77a8c1651d194c17c7901",
+    "contract_digest": "0e0e45f15b8c5f984d7ffe9cc8f7803b5ba01b36099cf32e05c64be7253b3a34",
+    "environment_digest": "74101b2b1d1876c6a4e309444432b40e87a3b957b583b78ffe2aafbb5026fa5d",
+    "fixture_digest": "6d271a32a9a9f922c06b2d967fb72b48c850d9374333dcd6f0a3994b83abac71"
+  },
+  "actual_human_attribution": "Project owner, account main as supplied in this chat; user explicitly said I approve G-02. All human roles are held by the same owner; no independent-review identity is claimed.",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "2026-11-09 current chat: I approve G-02",
+    "scope": "Accept the exact reviewed private synthetic workstation engineering candidate and owner_review_local_demo profile, with approved infrastructure agent1h/workload300s policy and explicit proxy-only TLS channel reconnect during recovery. Participant admission remainsdisabled. No independent human review, clinical/production release, next-slice activation, commit/push, model, real partner/police integration or autonomous contact is authorized."
+  },
+  "authority_scope": "Accept the exact reviewed private synthetic workstation engineering candidate and owner_review_local_demo profile, with approved infrastructure agent1h/workload300s policy and explicit proxy-only TLS channel reconnect during recovery. Participant admission remainsdisabled. No independent human review, clinical/production release, next-slice activation, commit/push, model, real partner/police integration or autonomous contact is authorized.",
+  "reviewed_evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/demo-packet.json",
+      "sha256": "d7ca61e08b72acae5cc501cc6e44049e12d88f66f18dcafa341b550a882dd2cb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/G-02-review.md",
+      "sha256": "d0158f2a503319aae9404d8eaa8af2da7e9dd3e50af8e31fa95bd7a946c3e7be"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/candidate-manifest.json",
+      "sha256": "1d185a2c0e46e70f9792425e37d17f1ba4ca285ed5b935eb0fa46b16c4d2d27b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/checks.json",
+      "sha256": "58f4551d9e109b937235f263ff9c1df699b7a47b9395f0580074605e3d17edb0"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/review.md",
+      "sha256": "359ad3cb1da24e056e5bc8c88c2769f1c16099fb4c4b8e3545fdc3c56222ff58"
+    }
+  ],
+  "conditions": [
+    "Owner-only local engineering profile: no independent human review/signature or participant/clinical/production release. G-02 acceptance is limited to this exact reviewed stage.",
+    "Explicit proxy-only TLS channel reconnect is part of demonstrated recovery; fully automatic channel restoration is not claimed.",
+    "One-hour nodecredential permits eligible workload identity requests for longer if stolen; workload5minutes alone does not cap aggregate misuse. Workload fences remain effective.",
+    "No host reboot/agent process-loss or beyond-node-expiry outage guarantee; memory-key agent loss can require manual re-enrollment.",
+    "Retention uses controlled clock boundaries; no physical erasure. Network listeners were inert controls; no model/realpartner/police/autonomous-contact admission.",
+    "The presented DemoPacket, checks, candidate and review remain byte-for-byte unchanged; acceptance views are separate administrative records.",
+    "IMP-03 requires a separate instruction/chat; no live resource change follows from this stage receipt."
+  ],
+  "decided_at": "2026-11-09T19:40:09Z",
+  "is_example": false
+}

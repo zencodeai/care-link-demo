@@ -1,0 +1,25 @@
+{
+  "scope": "main deployment stop followed by actual whole named kind-node loss; outside help/static retained",
+  "events": [
+    {
+      "phase": "main_down",
+      "target": "deployment/main",
+      "action": "scale0",
+      "mock_used": false
+    },
+    {
+      "phase": "identity_down",
+      "target": "care-link-imp02-002-control-plane",
+      "action": "actual_whole_kind_node_stopped",
+      "running": false,
+      "mock_used": false
+    },
+    {
+      "phase": "restored",
+      "target": "care-link-imp02-002-control-plane",
+      "action": "same_node_started_and_provider_mesh_ready",
+      "main_identity_replicas": 1,
+      "mock_used": false
+    }
+  ]
+}

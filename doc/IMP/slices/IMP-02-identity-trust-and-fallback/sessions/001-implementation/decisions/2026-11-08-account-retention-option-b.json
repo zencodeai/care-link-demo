@@ -1,0 +1,96 @@
+{
+  "decision_id": "IMP-02-ACCOUNT-RETENTION-OPTION-B-2026-11-08",
+  "date": "2026-11-08",
+  "source_kind": "user_message",
+  "instruction_reference": "Current chat: account-retention options and recommended Option B schedule",
+  "actual_response": "I choose option B",
+  "scope": "Selected engineering retention policy for actual account/linkage/reviewer metadata in the private synthetic demo; no clinical/statutory retention claim.",
+  "option": "B",
+  "title": "Reusable project accounts",
+  "selection_status": "selected_by_user",
+  "operational_status": "implementation_and_verification_pending",
+  "supersedes": {
+    "decision_ref": {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-retention-content-pending.json",
+      "sha256": "3ecc977e24027b4cbc5a3744301cc5857daa8e1c4b6156023e920141f96e17ac"
+    },
+    "scope": "Account-retention pending preference only. The independently reviewed EN/FR fallback-content item remains pending."
+  },
+  "schedule": [
+    {
+      "record_class": "account_profile_and_oidc_linkage",
+      "active_retention": "Minimum necessary fields while approved project access remains justified.",
+      "access_review_interval_days": 30,
+      "deletion_anchor": "deprovisioned_at",
+      "delete_identifying_fields_within_days": 30,
+      "exceptions": "Retain only documented minimal attribution/recovery dependencies; do not retain the whole profile by default."
+    },
+    {
+      "record_class": "access_and_credentials",
+      "deprovisioning_action": "Immediately disable access and revoke sessions.",
+      "secret_disposal": "Clear raw tokens/verifiers when consumed, revoked or expired; the profile retention window does not extend credential validity or justify secret retention."
+    },
+    {
+      "record_class": "security_logs",
+      "anchor": "event_at",
+      "retention_days": 30,
+      "minimization": "Exclude tokens, conversations and unnecessary identifiers."
+    },
+    {
+      "record_class": "minimal_audit_and_provisioning_history",
+      "anchor": "event_at",
+      "retention_days": 90,
+      "minimization": "Preserve necessary attribution without retaining the full account profile. Opaque IDs/hashes remain protected linkable metadata."
+    },
+    {
+      "record_class": "reviewer_and_approval_evidence",
+      "dependency_retention": "Retain while an artifact or recovery obligation depends on the evidence.",
+      "post_dependency_anchor": "last_dependency_ended_at",
+      "post_dependency_retention_days": 90,
+      "exceptions": "Document any necessary scoped extension."
+    },
+    {
+      "record_class": "separate_encrypted_identity_backups",
+      "anchor": "immutable_capture_at",
+      "maximum_retention_days": 7,
+      "restore_renews_expiry": false,
+      "restore_requires_current_deletions_and_revocations": true,
+      "restore_may_revive_sessions": false
+    },
+    {
+      "record_class": "deletion_revocation_markers_and_holds",
+      "retention": "Minimum restriction until dependent grants and restorable copies are accounted for.",
+      "required_exception_fields": [
+        "owner",
+        "reason",
+        "review_date"
+      ],
+      "release": "Reevaluate current dependencies and authorization before disposal; no indefinite unreviewed hold."
+    }
+  ],
+  "normal_profile_cleanup_path": {
+    "identifying_fields_active_copy_days_after_deprovisioning": 30,
+    "maximum_additional_backup_days": 7,
+    "normal_total_days_after_deprovisioning": 37,
+    "qualification": "Normal path without documented dependency/hold exceptions. This is not a universal bound on separately justified audit/review/restriction records or verified physical-erasure evidence."
+  },
+  "remaining_requirements": [
+    "Name accountable retention owner, purge operator and storage/backup custodians.",
+    "Inventory and classify real metadata across Keycloak, identity PostgreSQL, host help spool, publication/review records, exports/evidence and all copies/backups.",
+    "Implement bounded purge, immediate credential invalidation, dependency/hold exceptions and current restriction preservation.",
+    "Verify active-copy cleanup, copy/backup expiry and restoration without account/session/grant resurrection.",
+    "Bind actual implementation and evidence to the admission candidate before claiming retention acceptance."
+  ],
+  "current_admission": {
+    "independently_reviewed_en_fr_fallback_content": "pending",
+    "participant_admission": false,
+    "g02_acceptance": null
+  },
+  "authority_limits": {
+    "is_stage_acceptance": false,
+    "authorizes_runtime_activation": false,
+    "authorizes_host_changes_or_deployment": false,
+    "establishes_legal_or_clinical_compliance": false
+  },
+  "context_reference": "https://www.priv.gc.ca/en/privacy-topics/privacy-for-businesses/appropriate-handling-of-personal-information/gd_rd_201406/"
+}

@@ -1,5 +1,18 @@
 {
-  "include": ["packages/contracts/python/src", "services/core/src"],
+  "include": [
+    "packages/contracts/python/src",
+    "services/core/src",
+    "services/identity/src",
+    "host/help/src",
+    "host/static/src",
+    "packages/workload-trust/src",
+    "tools/imp02_application/mesh.py",
+    "tools/imp02_application/tls.py",
+    "tools/imp02_application/browser.py",
+    "tools/imp02_application/identity.py",
+    "tools/imp02_application/__main__.py",
+    "tools/imp02_application/maintenance.py"
+  ],
   "pythonVersion": "3.14",
   "venvPath": ".",
   "venv": ".venv",

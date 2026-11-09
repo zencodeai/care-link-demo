@@ -1,0 +1,14 @@
+{
+  "login_initiation": "real_bff_protocol_then_provider_ui",
+  "browser": "158.0.8127.18",
+  "role": "operator",
+  "assurance": "AL2",
+  "main_account_mapping_verified": true,
+  "provider_otp_submitted": true,
+  "server_mfa_assurance_verified": true,
+  "cookie_exported": true,
+  "ignore_https_errors": true,
+  "scope": "temporary local qualification; no independent human acceptance",
+  "post_qualification_logout_verified": true,
+  "private_cookie_disposed": true
+}

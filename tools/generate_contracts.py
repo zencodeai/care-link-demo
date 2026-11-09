@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -9,7 +10,28 @@ TARGETS = (
     ROOT / "packages/contracts/python/src/care_link_contracts/schema.json",
     ROOT / "packages/contracts/typescript/src/schema.json",
 )
-NAMES = ("SessionCreate", "RevisionCommand", "Error")
+NAMES = (
+    "SessionCreate",
+    "RevisionCommand",
+    "Error",
+    "LoginStart",
+    "LoginIntent",
+    "LoginCallback",
+    "BrowserSession",
+    "Empty",
+    "StepUpStart",
+    "Ceremony",
+    "CeremonyConfirm",
+    "HelpCreate",
+    "HelpView",
+    "HelpAuthorityRequest",
+    "FreshHelpAuthority",
+    "Signal",
+    "SignalAck",
+    "StaticManifest",
+    "StaticPublish",
+    "CommandResult",
+)
 
 
 def render() -> str:
@@ -34,6 +56,31 @@ def render() -> str:
 
     for name in NAMES:
         include(name)
+    # BFF transport metadata extensions; separate from reviewed LLD operations.
+    for name, field, shape in (
+        (
+            "BrowserCsrf",
+            "csrf_token",
+            {"type": "string", "minLength": 32, "maxLength": 512, "pattern": "^[A-Za-z0-9_-]+$"},
+        ),
+        (
+            "StepUpProof",
+            "proof_intent_id",
+            source["$defs"]["LoginIntent"]["properties"]["intent_id"],
+        ),
+    ):
+        selected[name] = {
+            "type": "object",
+            "properties": {field: shape},
+            "required": [field],
+            "additionalProperties": False,
+        }
+    selected["HelpCreateIntent"] = {
+        "type": "object",
+        "properties": {"operation_id": source["$defs"]["LoginIntent"]["properties"]["intent_id"]},
+        "required": ["operation_id"],
+        "additionalProperties": False,
+    }
     properties = {
         "contract_version": {"const": "dev-1"},
         "status": {"const": "developer_only"},
@@ -72,6 +119,10 @@ def main() -> None:
                 raise SystemExit(f"Contract snapshot drift: {target.relative_to(ROOT)}")
         else:
             target.write_text(expected)
+    command = ["node", str(ROOT / "tools/generate_browser_validators.mjs")]
+    if args.check:
+        command.append("--check")
+    subprocess.run(command, cwd=ROOT, check=True)  # noqa: S603
     print("Contract snapshots match reviewed definitions.")
 
 

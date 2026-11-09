@@ -1,0 +1,36 @@
+{
+  "profile": "owner_review_local_demo",
+  "human_acceptance_record": "IMP-02-FIRST-FALLBACK-CARD-CONTENT-ACCEPTANCE-2026-11-08",
+  "reviewed_at": "2026-11-08T23:46:08Z",
+  "review_due_at": "2026-12-08T23:46:08Z",
+  "source_reverified_at": "2026-11-09T09:38:35.249541-05:00",
+  "source_methods": [
+    "official federal mental-health page",
+    "hotline tool Canada entry",
+    "ConnexOntario service operator EN/FR pages"
+  ],
+  "source_urls": [
+    "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html",
+    "https://connexontario.ca/our-services/",
+    "https://connexontario.ca/fr/nos-services/"
+  ],
+  "technical_signature_only": true,
+  "human_signature_claim": false,
+  "independent_review_claim": false,
+  "participant_admission": false,
+  "operation_id": "f76006bd-4544-4a30-824d-a78863aa5880",
+  "publication_summary": {
+    "review_profile": "owner_review_local_demo",
+    "artifact_digest": "92cddff8424a994f357874e77abbcced8f6854d323956b25444b68e30b0aba85",
+    "receipt_id": "4bb2463e-4af2-5cea-8475-2fc91539457c",
+    "integrity_public_key": "/private/tmp/care-link-imp02-002/secrets/publication.public.pem",
+    "independent_review": false,
+    "human_signature_claim": false,
+    "participant_admission": false,
+    "canonical_independent_manifest": "unavailable",
+    "owner_manifest_path": "/demo-static/v1/manifest"
+  },
+  "presentation_delta_ref": "card-conversion.json",
+  "storage_format": "public-text-custody-2",
+  "prototype_legacy_directory_not_promoted": true
+}

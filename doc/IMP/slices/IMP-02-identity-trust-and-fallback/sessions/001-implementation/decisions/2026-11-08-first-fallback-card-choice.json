@@ -1,0 +1,52 @@
+{
+  "decision_id": "IMP-02-FIRST-FALLBACK-CARD-CHOICE-2026-11-08",
+  "date": "2026-11-08",
+  "source_kind": "user_message",
+  "actual_response": "I approve the choice of the first card.",
+  "instruction_reference": "Current chat recommendation: federal guidance, Canadian national crisis-support entry and ConnexOntario navigation; optional Ottawa-specific contacts deferred.",
+  "approval_scope": "First-card content scope/source selection, with draft preparation under the already approved review process. No exact draft wording was presented before this response.",
+  "content_scope": [
+    "Federal immediate-danger guidance",
+    "Canadian 9-8-8 public support entry",
+    "ConnexOntario information/navigation",
+    "Verified CARE-Link demonstration/connection status wording"
+  ],
+  "deferred_scope": [
+    "Ottawa-specific contact entries",
+    "Full service directory",
+    "Treatment advice"
+  ],
+  "review_process_ref": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-fallback-review-process.json",
+    "sha256": "4b747fae00d9f237545233d58ae706bd3c2dcb84e3f82cd560a24e0d7f0da126"
+  },
+  "current_status": {
+    "draft_prepared": true,
+    "draft_refs": [
+      {
+        "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/card.en-CA.md",
+        "sha256": "de64570a11ba2cf125111dd0c7a6e769b4cf7fca8002882c35d2f3f32ec94793"
+      },
+      {
+        "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/card.fr-CA.md",
+        "sha256": "1bce0e10e6346769a9c75c12ab17159dc2a922df9a0dbddbeaae18cf9facab6b"
+      }
+    ],
+    "source_evidence_ref": {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/sources.json",
+      "sha256": "8ee2b5b49eadd366e7e9fc4a42442efffd559a3dfdfb5fad6033132ae9c5e04a"
+    },
+    "independent_review": "pending",
+    "content_owner": null,
+    "independent_reviewer": null,
+    "signed_publication_receipt": null,
+    "participant_admission": false,
+    "g02_acceptance": null
+  },
+  "authority_limits": {
+    "approves_exact_draft_wording": false,
+    "establishes_completed_independent_review": false,
+    "authorizes_publication_or_deployment": false,
+    "is_stage_acceptance": false
+  }
+}

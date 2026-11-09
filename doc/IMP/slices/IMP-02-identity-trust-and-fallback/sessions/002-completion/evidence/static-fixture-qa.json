@@ -1,0 +1,35 @@
+{
+  "fixture_only": true,
+  "transport_mocked": true,
+  "signed_publication": false,
+  "provider_exercised": false,
+  "human_accessibility_review": false,
+  "browser_version": "158.0.8127.18",
+  "artifact_digest": "92cddff8424a994f357874e77abbcced8f6854d323956b25444b68e30b0aba85",
+  "pages": [
+    {
+      "locale": "en-CA",
+      "html_sha256": "f6f37a19fe2f2eeaaba2b1bf3924caa3f240472816fd692fec391e0711c32991",
+      "desktop_violations": [],
+      "mobile_violations": [],
+      "incomplete_checks": [],
+      "keyboard_focus_outline_px": 3,
+      "reflow_320px": true,
+      "text_font_px": 32,
+      "reflow_320px_200percent": true,
+      "console_errors": []
+    },
+    {
+      "locale": "fr-CA",
+      "html_sha256": "d49b859e936199d135e6ea7ce6f2f3c53932280e7b3b6ea8841b7342dbdab09a",
+      "desktop_violations": [],
+      "mobile_violations": [],
+      "incomplete_checks": [],
+      "keyboard_focus_outline_px": 3,
+      "reflow_320px": true,
+      "text_font_px": 32,
+      "reflow_320px_200percent": true,
+      "console_errors": []
+    }
+  ]
+}

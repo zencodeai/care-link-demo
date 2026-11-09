@@ -1,0 +1,137 @@
+{
+  "phase": "normal",
+  "scope": "actual isolated lab origins/provider/store/workload route; owner main role-playing synthetic profiles",
+  "mock_used": false,
+  "participant_admission": false,
+  "stats": {
+    "startTime": "2026-11-09T16:59:14.508Z",
+    "duration": 166531.385,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "actual static en-CA: axe, readable language and 320px text reflow",
+      "outcome": "expected",
+      "expected_status": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 709
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "title": "actual help en-CA: axe, keyboard focus and accessible language controls",
+      "outcome": "expected",
+      "expected_status": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 350
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "title": "actual static fr-CA: axe, readable language and 320px text reflow",
+      "outcome": "expected",
+      "expected_status": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 610
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "title": "actual help fr-CA: axe, keyboard focus and accessible language controls",
+      "outcome": "expected",
+      "expected_status": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 338
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "title": "real provider: separate role profiles, current private ownership and accepted-unconnected",
+      "outcome": "expected",
+      "expected_status": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 2897
+        }
+      ],
+      "annotations": [
+        {
+          "type": "actor-attribution",
+          "description": "Scoped role accounts are synthetic profiles role-played by the same project owner; no independent-human acceptance."
+        },
+        {
+          "type": "browser",
+          "description": "158.0.8127.18"
+        }
+      ]
+    },
+    {
+      "title": "real provider: main and help BFF cookies stay scoped to separate origins",
+      "outcome": "expected",
+      "expected_status": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 40490
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "title": "real provider: forged callback cannot establish a browser session",
+      "outcome": "expected",
+      "expected_status": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 31
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "title": "real provider: lost create-intent reply survives full page navigation with one help identity",
+      "outcome": "expected",
+      "expected_status": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 60216
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "title": "real provider: lost requests reply survives full page navigation with one help identity",
+      "outcome": "expected",
+      "expected_status": "passed",
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 60107
+        }
+      ],
+      "annotations": []
+    }
+  ],
+  "limits": [
+    "Automated browser checks do not establish independent human/screen-reader/language acceptance.",
+    "Lost-reply case injects only client transport response loss after real upstream execution; no provider/authority mock."
+  ]
+}

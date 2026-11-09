@@ -9,6 +9,11 @@ WORKDIR /app
 COPY pyproject.toml uv.lock .python-version ./
 COPY packages/contracts/python packages/contracts/python
 COPY services/core services/core
+# Resolve the workspace from all manifests without shipping unrelated service source.
+COPY services/identity/pyproject.toml services/identity/pyproject.toml
+COPY host/help/pyproject.toml host/help/pyproject.toml
+COPY host/static/pyproject.toml host/static/pyproject.toml
+COPY packages/workload-trust/pyproject.toml packages/workload-trust/pyproject.toml
 RUN uv sync --locked --no-dev --no-editable --package care-link-core
 FROM ${PYTHON_IMAGE} AS runtime
 WORKDIR /app

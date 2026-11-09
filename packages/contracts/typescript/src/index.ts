@@ -1,7 +1,5 @@
-import Ajv2020, { type ValidateFunction } from "ajv/dist/2020.js";
-import addFormats from "ajv-formats";
 import { visit } from "jsonc-parser";
-import schema from "./schema.json";
+import compiledValidators from "./validators.generated.cjs";
 
 export class ContractError extends Error {
   constructor() {
@@ -19,31 +17,10 @@ export interface DeveloperCapability {
   contract_validation: true;
 }
 
-const names = [
-  "SessionCreate",
-  "RevisionCommand",
-  "Error",
-  "DeveloperCapability",
-] as const;
-// The source's const-only Tag fields have no type annotation; no coercion,
-// default insertion, or removal of unknown keys is enabled.
-const ajv = new Ajv2020({ strict: true, strictTypes: false, allErrors: false });
-addFormats(ajv);
-ajv.addKeyword({
-  keyword: "x-decimalMaximum",
-  type: "string",
-  schemaType: "string",
-  validate: (maximum: string, value: string): boolean =>
-    /^(0|[1-9][0-9]{0,18})$(?![\s\S])/.test(value) &&
-    BigInt(value) <= BigInt(maximum),
-  errors: false,
-});
-ajv.addSchema(schema);
-const validators = new Map<string, ValidateFunction>(
-  names.map((name) => [
-    name,
-    ajv.compile({ $ref: `${schema.$id}#/$defs/${name}` }),
-  ]),
+// Compilation runs only in the offline generator. Runtime imports ordinary
+// standalone functions so strict script-src CSP never needs unsafe-eval.
+const validators = new Map<string, (value: unknown) => boolean>(
+  Object.entries(compiledValidators),
 );
 
 function checkString(value: string): void {

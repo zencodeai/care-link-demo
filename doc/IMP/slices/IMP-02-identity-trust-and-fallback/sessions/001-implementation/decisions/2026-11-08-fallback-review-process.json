@@ -1,0 +1,70 @@
+{
+  "decision_id": "IMP-02-FALLBACK-REVIEW-PROCESS-2026-11-08",
+  "date": "2026-11-08",
+  "source_kind": "user_message",
+  "instruction_reference": "Current chat: recommended EN/FR fallback-content review process",
+  "actual_response": "I approve recommended review process",
+  "approval_scope": "The review process and recommended cadence for the private demo fallback publication. This records no approval of an actual content artifact.",
+  "process_status": "approved_by_user",
+  "process": [
+    {
+      "step": 1,
+      "responsible_role": "content_owner",
+      "action": "Verify contact channels, operating hours, geographic coverage, eligibility and limitations against current authoritative Canadian service-operator information; retain English/French source evidence."
+    },
+    {
+      "step": 2,
+      "responsible_role": "independent_reviewer",
+      "action": "Review the exact English and French wording for equivalent meaning, clarity, appropriate Canadian French and accurate service/status distinctions. One suitably qualified bilingual reviewer may cover content and language; add translation expertise where needed. The publication reviewer must be distinct from the publishing operator."
+    },
+    {
+      "step": 3,
+      "responsible_role": "accessibility_reviewer",
+      "action": "Test keyboard navigation, screen-reader output, contrast, zoom and mobile layout; resolve findings in both languages before approving the artifact."
+    },
+    {
+      "step": 4,
+      "responsible_role": "publisher",
+      "action": "Bind the exact ordered EN/FR artifact digest, source-verification evidence, actual independent reviewer identity, verification date and review-due date to the signed review record before publication. Any changed published wording requires review of the changed exact artifact."
+    }
+  ],
+  "cadence": {
+    "verify_before_each_demonstration": true,
+    "formal_review_interval_days": 30,
+    "review_immediately_after_known_service_change": true,
+    "status": "Project policy; no statutory review interval is asserted."
+  },
+  "publication_conditions": [
+    "Prepare the actual bilingual information card and name its content owner and independent reviewer.",
+    "Complete attributable factual, language and accessibility review of the exact artifact.",
+    "Validate the review record and signature with the actual configured reviewer authority; synthetic fixture signatures do not establish human approval.",
+    "Publish only a currently valid reviewed artifact; retain explicit unavailable status if no such artifact exists."
+  ],
+  "current_status": {
+    "actual_en_fr_content": "preparation_and_independent_review_pending",
+    "content_owner": "not_named",
+    "independent_reviewer": "not_named",
+    "content_artifact_digest": null,
+    "content_review_receipt": null,
+    "publication": "not_authorized_by_this_process_approval",
+    "participant_admission": false,
+    "g02_acceptance": null
+  },
+  "authority_limits": {
+    "approves_specific_content": false,
+    "establishes_completed_independent_review": false,
+    "establishes_government_approval_or_legal_compliance": false,
+    "authorizes_host_changes_or_deployment": false,
+    "is_stage_acceptance": false
+  },
+  "historical_decision_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-retention-content-pending.json",
+      "sha256": "3ecc977e24027b4cbc5a3744301cc5857daa8e1c4b6156023e920141f96e17ac"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-account-retention-option-b.json",
+      "sha256": "6a57dbd938ac04cdac7a81ba2277873bc74e616821e8bcf09ef1e081db71c938"
+    }
+  ]
+}

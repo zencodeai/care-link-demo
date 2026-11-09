@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { parseCapability, parseContract } from "@care-link/contracts";
 import { messages } from "./messages";
+import { TrustAndHelp } from "./trust/TrustAndHelp";
 
 type Locale = keyof typeof messages;
 type Connection = "loading" | "unavailable" | "invalid" | "connected";
@@ -142,6 +143,12 @@ export function App() {
         <p>{text.previewNotice}</p>
         <p className="notice">{roleNotice}</p>
       </section>
+      <TrustAndHelp
+        locale={locale}
+        helpOrigin={import.meta.env.VITE_HELP_ORIGIN ?? null}
+        oidcOrigin={import.meta.env.VITE_OIDC_ORIGIN ?? null}
+        staticOrigin={import.meta.env.VITE_STATIC_ORIGIN ?? null}
+      />
       <section aria-labelledby="contracts-title">
         <h2 id="contracts-title">{text.contracts}</h2>
         <p>{text.privacy}</p>

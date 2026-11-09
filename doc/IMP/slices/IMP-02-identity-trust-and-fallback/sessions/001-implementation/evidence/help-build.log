@@ -1,0 +1,13 @@
+
+> @care-link/web@0.1.0 build /Users/main/Workspace/projects/care-link/care-link-demo/apps/web
+> tsc --noEmit && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 232 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.47 kB │ gzip:   0.30 kB
+dist/assets/index-B73LNoeA.css    1.86 kB │ gzip:   0.80 kB
+dist/assets/index-l-sG3lot.js   390.58 kB │ gzip: 118.67 kB
+✓ built in 520ms

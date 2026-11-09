@@ -1,0 +1,15 @@
+{
+  "status": "blocked",
+  "action": "Actual browser outage coordination that would scale main down and stop/restart the entire named kind node",
+  "source": "automatic approval review reported by imp_web before process creation",
+  "reported_reason_summary": "Implementation request was not explicit enough to authorize operational fault injection and multi-service disruption; no workaround or indirect execution.",
+  "browser_process_started": false,
+  "outage_request_created": false,
+  "outage_triggered": false,
+  "idle_supervisor_stopped": true,
+  "pending": [
+    "Main/whole-kind-node stop and restoration",
+    "SPIRE issuer stop, expired-peer denial on existing TLS connection and same-PVC recovery"
+  ],
+  "not_a_human_decision": true
+}

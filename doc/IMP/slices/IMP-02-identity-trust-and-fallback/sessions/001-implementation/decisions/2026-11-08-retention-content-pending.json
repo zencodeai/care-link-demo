@@ -1,0 +1,16 @@
+{
+  "decision_id": "IMP-02-ADMISSION-INPUTS-PENDING-2026-11-08",
+  "date": "2026-11-08",
+  "source_kind": "user_message",
+  "instruction_reference": "Current chat response to replayed account-retention/fallback-content choice",
+  "actual_response": "Keep both pending (Recommended) — no records to bind yet; participant admission stays disabled.",
+  "supersedes": "Earlier preference: Use existing approved records I’ll identify. No such records were provided or bound.",
+  "scope": {
+    "account_retention_schedule": "pending",
+    "independently_reviewed_en_fr_fallback_content": "pending",
+    "participant_admission": false
+  },
+  "effect": "Record both inputs as pending; preserve disabled admission and unresolved IMP-02 obligations.",
+  "is_stage_acceptance": false,
+  "authorizes_deployment": false
+}

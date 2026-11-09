@@ -1,0 +1,27 @@
+{
+  "status": "failed",
+  "scope": "automatic host-agent recovery after approved issuer outage",
+  "expired_peer_denial": "passed_on_same_open_TLS_connection",
+  "issuer_restored": true,
+  "cause": "agent_ttl omitted, inherited default_x509_svid_ttl300s; node credential expired while issuer unavailable",
+  "consequence": "join-token memory-key agent exited1; sharedPID namespace stopped help/proxy/signalproxy137",
+  "manual_restoration": "completed under unchanged300secondpolicy; not automatic recovery",
+  "workload_registration_objects_unchanged": true,
+  "issuer_CA_PVC_preserved": true,
+  "durable_generation1_fence_preserved": true,
+  "proposed_fix": {
+    "file": "tools/imp02_lab/spire.py",
+    "setting": "agent_ttl",
+    "value": "1h",
+    "workload_default_and_entries_seconds": 300,
+    "applied": false
+  },
+  "automatic_approval_review": {
+    "action": "apply one-hour agent credential lifetime and restart same issuer",
+    "outcome": "rejected_before_process_creation",
+    "reason_summary": "persistent security-control lifetime change was not explicitly approved with shutdown tests; do not work around"
+  },
+  "explicit_policy_approval_required": true,
+  "G02_accepted": false,
+  "participant_admission": false
+}

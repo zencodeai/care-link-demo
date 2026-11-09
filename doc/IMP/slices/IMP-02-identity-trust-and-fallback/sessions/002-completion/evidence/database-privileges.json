@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "transport": "PostgreSQL native TCP loopback inside isolated database pod with verify-full TLS; no kubectl port-forward dependency",
+  "observations": [
+    "{\"tls\" : \"TLSv1.3\", \"runtime_role\" : \"identity_runtime\", \"superuser\" : false, \"schema_create\" : false, \"public_create\" : false, \"temp\" : false, \"other_db_connect\" : false}",
+    "1"
+  ],
+  "runtime_ddl_denied": true,
+  "dml_probe_rolled_back": true,
+  "migrations_applied": [
+    "001_identity.sql",
+    "002_option_b_and_workload.sql"
+  ]
+}

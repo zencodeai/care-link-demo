@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "scope": "approved bounded issuer outage after actual node renewal; expired caller denied and current admission restored",
+  "same_issuer_and_restrictions": {
+    "pvc_uid": true,
+    "pv_name": true,
+    "root_fingerprints": true,
+    "registration_document_sha256": true,
+    "fence": true
+  },
+  "host_agent_same_container_start": true,
+  "help_same_container_start": true,
+  "operator_proxy_only_reconnect": true,
+  "host_agent_reenrolled_during_repeat": false,
+  "issuer_reset": false,
+  "registrations_recreated_during_repeat": false,
+  "fence_cleared": false,
+  "prior_failed_attempt_retained": "issuer-recovery-failure.json",
+  "manual_first_repair_retained": "original-policy-host-manual-recovery.json",
+  "limits": [
+    "Recovery includes explicit proxy-only TLS channel reconnect, not fully automatic channel restoration.",
+    "No host/agent process-loss or beyond-node-expiry outage guarantee."
+  ],
+  "mock_used": false
+}

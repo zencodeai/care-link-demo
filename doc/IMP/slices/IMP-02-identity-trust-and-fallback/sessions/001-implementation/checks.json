@@ -1,0 +1,123 @@
+[
+  {
+    "name": "Final clean offline locked verification",
+    "command": "CARE_LINK_PNPM_STORE=/private/tmp/care-link-pnpm-store UV_CACHE_DIR=/private/tmp/care-link-uv-cache UV_PYTHON_DOWNLOADS=never python3 tools/verify_clean.py",
+    "tool_version": "Python3.14.7/uv0.12.17/pnpm10.20.0",
+    "status": "passed",
+    "expected": "Fresh offline setup, full strict checks, behavior/parity tests, main build and adverse lock/schema guards.",
+    "actual": "Exit0.154 Python and45 TypeScript/UI/parity tests; strict Pyright/tsc, Ruff/ESLint/Prettier, schema/admission/import checks and main build passed. Negative stale manifest/lock and schema-loosening checks failed as expected. Native Unix denial test ran with local socket permission. Existing Starlette/httpx deprecation warning retained. Provider/store/network fixtures are explicitly mocked; real signatures/SQLite/kernel sockets used.",
+    "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/evidence/clean-verification.log",
+    "evidence_digest": "a65567fd4129e5bf7d0bd3425b9867a94234a5b652d353c612451ddfd6f90b5f",
+    "mock_used": true
+  },
+  {
+    "name": "Separate help production build",
+    "command": "VITE_SURFACE=help pnpm --filter @care-link/web build",
+    "tool_version": "Vite7.3.7",
+    "status": "passed",
+    "expected": "Separate same-origin help entry compiles.",
+    "actual": "Exit0; strict TypeScript and Vite help build passed; artifact not published.",
+    "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/evidence/help-build.log",
+    "evidence_digest": "3627b14375f982e6b4629e8b72f4f67280d16c64662b4bc92d717a210244039d",
+    "mock_used": false
+  },
+  {
+    "name": "Core workspace image regression build",
+    "command": "python3 tools/build_core_image.py --tag care-link-core:imp-02-source --iid-file /private/tmp/care-link-imp02-core-iid.txt",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Expanded workspace metadata preserves selected core runtime package build.",
+    "actual": "Exit0; immutable foundation inputs built final separately tagged Linux/ARM64 candidate. Image ID recorded; build cache/image retained.",
+    "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/evidence/core-build.log",
+    "evidence_digest": "877a5038f2d8001193ae7c9758ce61fb4b98838db0f4d9e8687a8e8550cb008d",
+    "mock_used": false
+  },
+  {
+    "name": "Final isolated core image smoke",
+    "command": "python3 tools/smoke_core_image.py --image care-link-core:imp-02-source",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Nonroot/read-only isolated container rejects business/invalid contracts and excludes unrelated packages.",
+    "actual": "Exit0; UID65532, networknone, no ports/mounts, capdropALL/no-new-privileges. No identity/help/static/workload/crypto/psycopg/development distributions. Valid/invalid/duplicate/unknown field/business-unavailable checks passed. Helper removed its temporary container.",
+    "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/evidence/core-smoke.log",
+    "evidence_digest": "b0e692020102f2bcd98b547b8531f26eac0840932407ae12880cd59c0430fb2c",
+    "mock_used": false
+  },
+  {
+    "name": "Independent public placeholder processes",
+    "command": "python3 tools/smoke_imp02_processes.py",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Public unavailable placeholder survives termination of separate temporary core process.",
+    "actual": "Exit0; static returned the same truthful503 before/after core termination, manifest unavailable; all temporary child processes/sockets closed. This is not cluster-loss, approved crisis content or private-help proof.",
+    "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/evidence/process-independence.json",
+    "evidence_digest": "35f06efedd1fd5f883bd87ab6c82adea1b51a96a20b266fee9d4021aadf2bc67",
+    "mock_used": false
+  },
+  {
+    "name": "Python dependency advisory metadata",
+    "command": "Query PyPI version metadata for registry packages from uv.lock",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Pin new dependencies without known listed PyPI advisories.",
+    "actual": "47 locked registry packages;0 nonwithdrawn advisories. Rejected cryptography46.0.3 and49.0.0 candidates; final50.0.2. Not an OS/image or full independent scanner result.",
+    "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/evidence/dependency-advisories.json",
+    "evidence_digest": "26c75ad3de4269157c95f38d869eb4dca4dde4d67c1e91764c26c4bcf3cdfb33",
+    "mock_used": false
+  },
+  {
+    "name": "Planning/source integrity",
+    "command": "uv run --locked python doc/IMP/validate_plan.py; git diff --exit-code -- doc/REQ doc/HLD doc/LLD",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Preserve canonical plan/frozen normative sources.",
+    "actual": "Exit0;11 gates/44 tasks/206 operation allocations validate. No REQ/HLD/LLD changes. Planning validation alone grants no runtime or stage acceptance.",
+    "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/evidence/plan-validation.log",
+    "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+    "mock_used": false
+  },
+  {
+    "name": "Live provider and identity PostgreSQL",
+    "command": null,
+    "tool_version": null,
+    "status": "not_run",
+    "expected": "Pinned real provider, distinct accounts/MFA, PostgreSQL migrations/privileges/durability.",
+    "actual": "No authorized named live setup was installed/provisioned. Deterministic provider/store fixtures do not discharge this qualification.",
+    "evidence_path": null,
+    "evidence_digest": null,
+    "mock_used": false
+  },
+  {
+    "name": "Deployed trust routes and certificate lifecycle",
+    "command": null,
+    "tool_version": null,
+    "status": "not_run",
+    "expected": "Actual SPIRE/Envoy/CNI/host/IPv6/direct-backend proof with active positive controls, distinct-user sockets, credential rotation and open-channel fencing.",
+    "actual": "Source enforcer/config builders and native local denial exist. Product pins/attestation/host bindings are null; no live proxy/CNI/host deployment or positive distinct-user path was tested.",
+    "evidence_path": null,
+    "evidence_digest": null,
+    "mock_used": false
+  },
+  {
+    "name": "Human account/content and actor review",
+    "command": null,
+    "tool_version": null,
+    "status": "not_run",
+    "expected": "Approved account/linkage/reviewer retention scope, actual independently reviewed EN/FR public content and separate-account browser/a11y/language review.",
+    "actual": "The user reviewed and accepted the exact first-card EN/FR Markdown draft set and source evidence. Final rendered artifact, actual signer identity/publisher separation, signature and final-page accessibility evidence remain pending. Retention implementation/verification and actor/browser checks remain pending; admission disabled.",
+    "evidence_path": null,
+    "evidence_digest": null,
+    "mock_used": false
+  },
+  {
+    "name": "User acceptance of first-card content",
+    "command": null,
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Record actual user review/acceptance against exact presented artifact hashes.",
+    "actual": "User statement: Reviewed and accepted. Exact English/French draft and source-evidence hashes recorded and preserved. No individual accessibility test, signer identity or publisher independence is inferred.",
+    "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-first-fallback-card-content-acceptance.json",
+    "evidence_digest": "be1bb7e3fc44dd3d0596db019375c091b89918aeb4ce5b696356cd743040694b",
+    "mock_used": false
+  }
+]

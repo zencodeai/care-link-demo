@@ -1,0 +1,11 @@
+{
+  "scope": "real PostgreSQL/Keycloak cleanup, encrypted files; controlled time fixture",
+  "deprovision": "local_fence_provider_confirmed",
+  "profile": "active_profile_removed_known_copies_accounted",
+  "restore": "quarantined/no bearer or current purged subject",
+  "backup_expiry": "immutable capture+7day boundary fixture; file fsync/unlink observed",
+  "expired_capture_count": 1,
+  "physical_erasure_claim": false,
+  "owner": "main",
+  "participant_admission": false
+}

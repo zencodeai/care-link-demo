@@ -1,0 +1,28 @@
+{
+  "format_version": "fallback-review-status-1",
+  "content_status": "reviewed_and_accepted_by_user",
+  "acceptance_ref": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-first-fallback-card-content-acceptance.json",
+    "sha256": "be1bb7e3fc44dd3d0596db019375c091b89918aeb4ce5b696356cd743040694b"
+  },
+  "accepted_artifact_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/card.en-CA.md",
+      "sha256": "de64570a11ba2cf125111dd0c7a6e769b4cf7fca8002882c35d2f3f32ec94793"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/card.fr-CA.md",
+      "sha256": "1bce0e10e6346769a9c75c12ab17159dc2a922df9a0dbddbeaae18cf9facab6b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/sources.json",
+      "sha256": "8ee2b5b49eadd366e7e9fc4a42442efffd559a3dfdfb5fad6033132ae9c5e04a"
+    }
+  ],
+  "authoring_labels": "Original accepted draft files remain unchanged for exact evidence binding.",
+  "publication_status": "not_published",
+  "final_page_accessibility_evidence": "pending",
+  "reviewer_signer_identity_and_publisher_separation": "pending",
+  "runtime_signature": null,
+  "participant_admission": false
+}

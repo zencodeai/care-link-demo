@@ -1,0 +1,100 @@
++ uv lock --check
+Resolved 53 packages in 1ms
++ pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts
+Scope: all 3 workspace projects
+Done in 136ms using pnpm v10.20.0
++ uv run --locked python tools/generate_contracts.py --check
+Contract snapshots match reviewed definitions.
++ uv run --locked python tools/check_boundaries.py
+Source dependency boundaries passed (source check, not runtime isolation).
++ uv run --locked python tools/check_imp02_admission.py
+IMP-02 source admission remains disabled; no live identity/network/content proof implied.
++ uv run --locked ruff check .
+All checks passed!
++ uv run --locked ruff format --check .
+50 files already formatted
++ pnpm exec pyright --project pyrightconfig.json
+0 errors, 0 warnings, 0 informations
++ pnpm typecheck
+
+> care-link-development@0.1.0 typecheck /Users/main/Workspace/projects/care-link/care-link-demo
+> pnpm -r typecheck
+
+Scope: 2 of 3 workspace projects
+packages/contracts/typescript typecheck$ tsc --noEmit
+packages/contracts/typescript typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
++ pnpm lint
+
+> care-link-development@0.1.0 lint /Users/main/Workspace/projects/care-link/care-link-demo
+> eslint apps/web packages/contracts/typescript --max-warnings 0
+
++ pnpm format:check
+
+> care-link-development@0.1.0 format:check /Users/main/Workspace/projects/care-link/care-link-demo
+> prettier --check apps/web packages/contracts/typescript package.json pnpm-workspace.yaml pyrightconfig.json eslint.config.mjs vitest.config.ts
+
+Checking formatting...
+All matched files use Prettier code style!
++ uv run --locked pytest
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/main/Workspace/projects/care-link/care-link-demo
+configfile: pyproject.toml
+testpaths: packages/contracts/python/tests, services/core/tests, services/identity/tests, host/help/tests, host/static/tests, tests
+plugins: anyio-4.16.0
+collected 124 items
+
+packages/contracts/python/tests/test_validation.py ...............       [ 12%]
+services/core/tests/test_developer_api.py .............................. [ 36%]
+.                                                                        [ 37%]
+services/identity/tests/test_identity.py ...................             [ 52%]
+services/identity/tests/test_provider.py ....................            [ 68%]
+services/identity/tests/test_signals.py .........                        [ 75%]
+host/help/tests/test_help.py .......                                     [ 81%]
+host/help/tests/test_identity_integration.py .                           [ 82%]
+host/static/tests/test_publication.py ..........                         [ 90%]
+tests/contract/test_snapshot.py .                                        [ 91%]
+tests/network/test_probe_evidence.py .....                               [ 95%]
+tests/unit/test_boundaries.py .....                                      [ 99%]
+tests/unit/test_imp02_admission.py .                                     [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 124 passed, 1 warning in 0.68s ========================
++ pnpm test
+
+> care-link-development@0.1.0 test /Users/main/Workspace/projects/care-link/care-link-demo
+> vitest run
+
+
+ RUN  v5.1.0 /Users/main/Workspace/projects/care-link/care-link-demo
+
+
+ Test Files  4 passed (4)
+      Tests  44 passed (44)
+   Start at  16:27:50
+   Duration  774ms (tests 40%, environment 36%, import 22%, transform 2%)
+
++ pnpm build
+
+> care-link-development@0.1.0 build /Users/main/Workspace/projects/care-link/care-link-demo
+> pnpm -r build
+
+Scope: 2 of 3 workspace projects
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v7.3.7 building client environment for production...
+apps/web build: transforming...
+apps/web build: ✓ 232 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                   0.47 kB │ gzip:   0.30 kB
+apps/web build: dist/assets/index-B73LNoeA.css    1.86 kB │ gzip:   0.80 kB
+apps/web build: dist/assets/index-Cxe8U9EL.js   396.16 kB │ gzip: 120.20 kB
+apps/web build: ✓ built in 485ms
+apps/web build: Done

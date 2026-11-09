@@ -1,0 +1,56 @@
+{
+  "packet_id": "IMP-02-002-WEB",
+  "task_id": "IMP-02-C",
+  "baseline_commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+  "role": "imp_web",
+  "status": "completed",
+  "changed_paths": [
+    "apps/web/**",
+    "tests/e2e/imp02/**",
+    "host/static/**",
+    "tools/prepare_fallback_card.py",
+    "packages/contracts/typescript/**",
+    "tools/generate_contracts.py",
+    "tools/generate_browser_validators.mjs"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/review.md",
+      "sha256": "359ad3cb1da24e056e5bc8c88c2769f1c16099fb4c4b8e3545fdc3c56222ff58"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/checks.json",
+      "sha256": "58f4551d9e109b937235f263ff9c1df699b7a47b9395f0580074605e3d17edb0"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/G-02-review.md",
+      "sha256": "d0158f2a503319aae9404d8eaa8af2da7e9dd3e50af8e31fa95bd7a946c3e7be"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Fresh locked offline verification",
+      "command": "CARE_LINK_PNPM_STORE=/private/tmp/care-link-pnpm-store UV_CACHE_DIR=/private/tmp/care-link-uv-cache UV_PYTHON_DOWNLOADS=never python3 tools/verify_clean.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observed behavior matches the declared bounded check.",
+      "actual": "351Python passed,1platform skip,46TS/UI/parity passed on final source; strict types/lint/format/boundaries/admission/generation/build and adverse lock/schema guards passed. Live policy qualified separately.",
+      "evidence_path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/clean-verification-agent-ttl-proposal.log",
+      "evidence_digest": "30902ddb741bf03a44130a2691941f7c484144974abc93292450d98ac001979a",
+      "mock_used": true
+    }
+  ],
+  "findings": [],
+  "contract_changes": [
+    "Session002 preserves the24canonical public contracts; standalone browser validators avoid runtime code generation."
+  ],
+  "remaining_risks": [
+    "Owner-only local engineering profile: no independent human review/signature, participant/clinical/production approval or G-02 acceptance yet.",
+    "Explicit proxy-only TLS channel reconnect is part of demonstrated recovery; fully automatic channel restoration is not claimed.",
+    "One-hour nodecredential permits eligible workload identity requests for longer if stolen; workload5minutes alone does not cap aggregate misuse. Workload fences remain effective.",
+    "No host reboot/agent process-loss or beyond-node-expiry outage guarantee; memory-key agent loss can require manual re-enrollment.",
+    "Retention uses controlled clock boundaries; no physical erasure. Network listeners were inert controls; no model/realpartner/police/autonomous-contact admission."
+  ],
+  "handoff": "Implementation and declared machine qualification complete. Exact G-02 packet ready for owner decision; no stage acceptance, participant admission or next-slice activation inferred. Initial failure/manualrepair and approved bounded recovery limits remain explicit.",
+  "is_example": false
+}

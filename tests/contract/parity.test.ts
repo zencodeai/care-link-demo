@@ -13,7 +13,28 @@ const source = JSON.parse(
 };
 const cases: Case[] = source.fixtures
   .filter((f) =>
-    ["SessionCreate", "RevisionCommand", "Error"].includes(f.schema),
+    [
+      "SessionCreate",
+      "RevisionCommand",
+      "Error",
+      "LoginStart",
+      "LoginIntent",
+      "LoginCallback",
+      "BrowserSession",
+      "Empty",
+      "StepUpStart",
+      "Ceremony",
+      "CeremonyConfirm",
+      "HelpCreate",
+      "HelpView",
+      "HelpAuthorityRequest",
+      "FreshHelpAuthority",
+      "Signal",
+      "SignalAck",
+      "StaticManifest",
+      "StaticPublish",
+      "CommandResult",
+    ].includes(f.schema),
   )
   .map((f) => ({ ...f, raw: JSON.stringify(f.value) }));
 for (const [id, raw, valid] of [
@@ -48,6 +69,35 @@ cases.push({
     tags: { environment: "demo", population: "synthetic", authority: true },
   }),
 });
+
+for (const [schema, value] of [
+  ["BrowserCsrf", { csrf_token: "a".repeat(32) }],
+  ["StepUpProof", { proof_intent_id: "00000000-0000-4000-8000-000000000001" }],
+  [
+    "HelpCreateIntent",
+    { operation_id: "00000000-0000-4000-8000-000000000002" },
+  ],
+] as const) {
+  cases.push({
+    id: `${schema}-valid`,
+    schema,
+    raw: JSON.stringify(value),
+    valid: true,
+  });
+  cases.push({
+    id: `${schema}-unknown`,
+    schema,
+    raw: JSON.stringify({ ...value, extra: true }),
+    valid: false,
+  });
+  const raw = JSON.stringify(value);
+  cases.push({
+    id: `${schema}-duplicate`,
+    schema,
+    raw: raw.slice(0, -1) + "," + raw.slice(1),
+    valid: false,
+  });
+}
 
 describe("Python / TypeScript wire parity against shared reviewed cases", () => {
   it("agrees on every expected verdict without coercion", () => {

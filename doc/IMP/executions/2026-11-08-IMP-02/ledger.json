@@ -1,0 +1,165 @@
+{
+  "run_id": "2026-11-08-IMP-02",
+  "stage_id": "IMP-02",
+  "state": "accepted",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "2026-11-08 current chat: Implement sevice slice 02",
+    "scope": "Implement IMP-02 source and bounded local verification; no deployment, commit, push, real participant/account admission or stage acceptance."
+  },
+  "predecessor_acceptance": [
+    {
+      "path": "doc/IMP/executions/2026-11-07-IMP-01/decisions/G-00.json",
+      "sha256": "bfae1cc1b33ab4a5a3a4627f023e1c4a34347aa525b3ed00577a315111c04d0a"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-07-IMP-01/decisions/G-01.json",
+      "sha256": "40fc545684f7a3f8981cd1ab6a1808b641e67017ece3200514c6a77c3f064743"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-02-A",
+      "state": "completed",
+      "result": "Current source/requirements/owner decisions and bounded lab scope reconciled."
+    },
+    {
+      "id": "IMP-02-B",
+      "state": "completed",
+      "result": "Authorized identity/proxy/CNI/help/static lab and approved agent/workload lifetime separation implemented and qualified."
+    },
+    {
+      "id": "IMP-02-C",
+      "state": "completed",
+      "result": "Final-policy normal9 browser and automated EN/FR accessibility passed; real cooling/secondMFA evidence retained."
+    },
+    {
+      "id": "IMP-02-D",
+      "state": "completed",
+      "result": "Required qualification completed and user explicitly accepted G-02 against the exact reviewed candidate; no participant or next-slice activation."
+    }
+  ],
+  "candidate_manifest": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/candidate-manifest.json",
+  "checks_ref": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/accepted-checks.json",
+  "demo_packet": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/accepted-demo-packet.json",
+  "human_decisions": [
+    {
+      "path": "doc/IMP/executions/2026-11-08-IMP-02/decisions/G-02.json",
+      "sha256": "f3d49e1151a2ba4be33e8803231357f452eec1bb3f4a1fbc791112d2b38a2b5e"
+    }
+  ],
+  "remaining": [],
+  "resources_retained": [
+    "Named lab remains running under approved infrastructure agent1h/workload300s policy; identity_provider remains fenced at generation1.",
+    "Private credentials/raw logs remain in owner-only temporary storage; consumed recovery/operator tokens were disposed and original failed-attempt evidence retained.",
+    "Existing lease ends2026-11-10T05:00:00Z; no automatic cleanup or host/process-reboot recovery claim."
+  ],
+  "admission_input_decisions": [
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-retention-content-pending.json",
+      "sha256": "3ecc977e24027b4cbc5a3744301cc5857daa8e1c4b6156023e920141f96e17ac"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-account-retention-option-b.json",
+      "sha256": "6a57dbd938ac04cdac7a81ba2277873bc74e616821e8bcf09ef1e081db71c938"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-fallback-review-process.json",
+      "sha256": "4b747fae00d9f237545233d58ae706bd3c2dcb84e3f82cd560a24e0d7f0da126"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-first-fallback-card-choice.json",
+      "sha256": "b5b99be3fed0a23ce499b1c518f41e981b3219d1c5c90ef49ab9421a28e416af"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-first-fallback-card-content-acceptance.json",
+      "sha256": "be1bb7e3fc44dd3d0596db019375c091b89918aeb4ce5b696356cd743040694b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/decisions/2026-11-09-owner-roles.json",
+      "sha256": "0f830f053d8a9487c00a2f849d515f269607ca5aa0f73d68f5994646ab4f08f5"
+    }
+  ],
+  "account_retention_policy": {
+    "option": "B",
+    "selection_status": "selected_by_user",
+    "operational_status": "implemented_real_provider_store_backup_qualified_with_controlled_time_boundaries",
+    "decision_ref": {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-account-retention-option-b.json",
+      "sha256": "6a57dbd938ac04cdac7a81ba2277873bc74e616821e8bcf09ef1e081db71c938"
+    },
+    "owner": "main"
+  },
+  "fallback_content_review_process": {
+    "process_status": "approved_by_user",
+    "actual_content_status": "accepted_wording_owner_demo_rendered_automated_EN_FR_QA_no_independent_review_claim",
+    "decision_ref": {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-fallback-review-process.json",
+      "sha256": "4b747fae00d9f237545233d58ae706bd3c2dcb84e3f82cd560a24e0d7f0da126"
+    }
+  },
+  "fallback_card": {
+    "selection_status": "approved_by_user",
+    "draft_status": "reviewed_and_accepted_by_user",
+    "publication_status": "published_owner_review_local_demo_integrity_signature_only",
+    "decision_ref": {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-first-fallback-card-choice.json",
+      "sha256": "b5b99be3fed0a23ce499b1c518f41e981b3219d1c5c90ef49ab9421a28e416af"
+    },
+    "draft_index": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/README.md",
+    "content_acceptance_ref": {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-first-fallback-card-content-acceptance.json",
+      "sha256": "be1bb7e3fc44dd3d0596db019375c091b89918aeb4ce5b696356cd743040694b"
+    },
+    "review_status_ref": {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/review-status.json",
+      "sha256": "1292a04b3faa0dc9ed977040865dea29e0175fc614c162f06a41f8409b1f58bc"
+    }
+  },
+  "current_session": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion",
+  "current_instruction": "I approve G-02",
+  "completion_authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "2026-11-09 Complete IMP-02; owner account main assumes all roles",
+    "scope": "Accept the exact reviewed private synthetic workstation engineering candidate and owner_review_local_demo profile, with approved infrastructure agent1h/workload300s policy and explicit proxy-only TLS channel reconnect during recovery. Participant admission remainsdisabled. No independent human review, clinical/production release, next-slice activation, commit/push, model, real partner/police integration or autonomous contact is authorized."
+  },
+  "operational_approval": {
+    "status": "three_shutdown_tests_approved_and_executed",
+    "decision_ref": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/decisions/2026-11-09-operational-tests-approved.json",
+    "outage_passed": true,
+    "same_TLS_expiry_denial_passed": true,
+    "automatic_host_help_recovery": "corrected_repeat_passed_with_operator_proxy_only_channel_reconnect",
+    "lab_restored": "approved agent1h/workload300s repeat passed with explicit proxy-only channel reconnect; prior manual original-policy repair remains historical"
+  },
+  "agent_lifetime_policy": {
+    "live": "1h",
+    "workload_seconds": 300,
+    "applied": true,
+    "actual_normal_agent_renewal_verified": true,
+    "decision_ref": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/decisions/2026-11-09-agent-lifetime-repair-approved.json",
+    "qualification": "approved bounded issuer drill passed; explicit proxy-only TLS channel reconnect; no host/agent process-loss or beyond-expiry guarantee"
+  },
+  "verification_status": "completed_and_accepted",
+  "gate_state": "accepted",
+  "implementation_status": "completed",
+  "accepted_at": "2026-11-09T19:40:09Z",
+  "accepted_candidate": {
+    "commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+    "diff_digest": "dda6e105c4cf019b704ec972200c6e837a3c170407a9e29214a0fed106f6c45f",
+    "artifact_digest": "217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+    "configuration_digest": "98d0f35daccc81bd94a241f51c6fa189ca914c3d4ff77a8c1651d194c17c7901",
+    "contract_digest": "0e0e45f15b8c5f984d7ffe9cc8f7803b5ba01b36099cf32e05c64be7253b3a34",
+    "environment_digest": "74101b2b1d1876c6a4e309444432b40e87a3b957b583b78ffe2aafbb5026fa5d",
+    "fixture_digest": "6d271a32a9a9f922c06b2d967fb72b48c850d9374333dcd6f0a3994b83abac71"
+  },
+  "presented_demo_packet": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/demo-packet.json",
+  "presented_checks_ref": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/checks.json",
+  "scope_limits": [
+    "Owner-only local engineering profile: no independent human review/signature or participant/clinical/production release. G-02 acceptance is limited to this reviewed stage.",
+    "Explicit proxy-only TLS channel reconnect is part of demonstrated recovery; fully automatic channel restoration is not claimed.",
+    "One-hour nodecredential permits eligible workload identity requests for longer if stolen; workload5minutes alone does not cap aggregate misuse. Workload fences remain effective.",
+    "No host reboot/agent process-loss or beyond-node-expiry outage guarantee; memory-key agent loss can require manual re-enrollment.",
+    "Retention uses controlled clock boundaries; no physical erasure. Network listeners were inert controls; no model/realpartner/police/autonomous-contact admission."
+  ],
+  "next_slice_activated": false
+}

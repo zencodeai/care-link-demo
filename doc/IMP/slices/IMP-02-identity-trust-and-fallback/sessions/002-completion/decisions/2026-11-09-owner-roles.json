@@ -1,0 +1,23 @@
+{
+  "decision_id": "IMP-02-002-OWNER-ROLES-2026-11-09",
+  "date": "2026-11-09",
+  "source_kind": "user_message",
+  "actual_response": "All roles are assumed by the project's owner. Account ID is main",
+  "scope": "Project ownership, local demo content review/publication and account-retention custody are assigned to owner account main.",
+  "interpretation": "Record same-owner review honestly. No different person or second account is invented to simulate independence.",
+  "roles": {
+    "project_owner": "main",
+    "content_reviewer": "main",
+    "publishing_operator": "main",
+    "account_retention_owner": "main"
+  },
+  "local_demo_review_profile": {
+    "profile": "owner_review_local_demo",
+    "participant_admission": false,
+    "independent_review_claim": false,
+    "applicability": "Owner-operated private engineering demonstrator only; separate default independent publication profile remains available."
+  },
+  "compatibility_delta": "The approved review process previously assumed a reviewer distinct from publisher. The latest explicit single-owner assignment supersedes that separation only for the local engineering-demo review profile; it cannot satisfy an independent-human slot in any later release/clinical/promotion claim.",
+  "is_stage_acceptance": false,
+  "authorizes_production_or_participant_release": false
+}

@@ -1,0 +1,1 @@
+{"scope": "actual outside-help protected egress and mTLS route allowlist", "mock_used": false, "results": [{"case": "live_allowed", "status": 200}, {"case": "wrong_context", "status": 404}, {"case": "wrong_method", "status": 404}, {"case": "unknown_query", "status": 403}]}

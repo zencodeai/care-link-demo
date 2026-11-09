@@ -1,0 +1,1683 @@
+{
+  "format_version": "imp-02-candidate-2",
+  "baseline_commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+  "branch": "feat/imp-01-foundation",
+  "candidate": {
+    "commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+    "diff_digest": "dda6e105c4cf019b704ec972200c6e837a3c170407a9e29214a0fed106f6c45f",
+    "artifact_digest": "217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+    "configuration_digest": "98d0f35daccc81bd94a241f51c6fa189ca914c3d4ff77a8c1651d194c17c7901",
+    "contract_digest": "0e0e45f15b8c5f984d7ffe9cc8f7803b5ba01b36099cf32e05c64be7253b3a34",
+    "environment_digest": "74101b2b1d1876c6a4e309444432b40e87a3b957b583b78ffe2aafbb5026fa5d",
+    "fixture_digest": "6d271a32a9a9f922c06b2d967fb72b48c850d9374333dcd6f0a3994b83abac71"
+  },
+  "artifact_scope": "actual final runtime manifest digest; all source files separately bound by source_refs",
+  "source_refs": [
+    {
+      "path": ".codex/HLD_WORKFLOW.md",
+      "sha256": "20076a2bf125da1e951618ba1c07fd286103b986f2ddf4c3e9183c0e4a1a6876"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": ".codex/LLD_WORKFLOW.md",
+      "sha256": "781dd07354b68710589270c1a09350c509c47fb5dad683a40291baa616c0671f"
+    },
+    {
+      "path": ".codex/README.md",
+      "sha256": "65ebb599518db504f40f0bb57ba30619714b92420e706327b6d61983d507876c"
+    },
+    {
+      "path": ".codex/agents/hld_assurance.toml",
+      "sha256": "5acbfce090e1dc5ca3d66fb3e136067b4167f73b05c89d18b4b57fbc190b3701"
+    },
+    {
+      "path": ".codex/agents/hld_platform.toml",
+      "sha256": "b3b90b668919c6b86cf7215d4f39ec58bf11735194d6be88fad309381eb58c90"
+    },
+    {
+      "path": ".codex/agents/hld_review.toml",
+      "sha256": "684d4e05d604da47f3bf486263759a333013f1b338cd11ede97a29164bef074b"
+    },
+    {
+      "path": ".codex/agents/hld_service.toml",
+      "sha256": "e289d8c98aad1c67d7ad2841f587ee2cac7406d853761e48ff4b3e8eece92018"
+    },
+    {
+      "path": ".codex/agents/hld_sources.toml",
+      "sha256": "ecd616671125d2396726df766f131b60c87eab831a8c826a9648bbacb5505d2c"
+    },
+    {
+      "path": ".codex/agents/imp_controls.toml",
+      "sha256": "982304e118e9537dbc3684da0d85f53981d14c72a74a15c332ff897a99c491d1"
+    },
+    {
+      "path": ".codex/agents/imp_platform.toml",
+      "sha256": "3daa9db57a360d70b0cecd80fcbaa44068ae44d1fdfbcfda8388c6112c71c358"
+    },
+    {
+      "path": ".codex/agents/imp_python.toml",
+      "sha256": "9862a4b6dfb9c51810fe1bc2f014b6676c870eb2890b86b32153892a0d71bb94"
+    },
+    {
+      "path": ".codex/agents/imp_review.toml",
+      "sha256": "7b79c6b37e1bb804ad08cc60a990a5d5f3bd95c11338f8c4d8102c84eed3e343"
+    },
+    {
+      "path": ".codex/agents/imp_scope.toml",
+      "sha256": "950bc5f8fdf369b04b0f64afde2914793f4c978fb87f8058fefe4e96188e8c05"
+    },
+    {
+      "path": ".codex/agents/imp_verifier.toml",
+      "sha256": "b8c3f3a7685a18784460700af9f97f81d075ac3b45b82c04b02213d291ec2525"
+    },
+    {
+      "path": ".codex/agents/imp_web.toml",
+      "sha256": "e6611bbefe2b3b28674de9dd031f4aa00a5f42575ffa944fe3f4903d385c25ed"
+    },
+    {
+      "path": ".codex/agents/lld_ai.toml",
+      "sha256": "e8df27ceb0fd49e1c79342dfe80c1e84d1623b8dd125a5e22f9daa7cd5494c11"
+    },
+    {
+      "path": ".codex/agents/lld_behaviour.toml",
+      "sha256": "69cd0a96ca1e49d77562e4d9a244b5fa679f16b777e5f31799eda9546021b25f"
+    },
+    {
+      "path": ".codex/agents/lld_contracts.toml",
+      "sha256": "a1480bb4da217470311de4f7cfd7ac23d5eb752ee4afd982c18a4ce204d99f89"
+    },
+    {
+      "path": ".codex/agents/lld_data.toml",
+      "sha256": "66893de5b8ad557062c9571137825e8f7021f932fe73b487fa277c40281a1388"
+    },
+    {
+      "path": ".codex/agents/lld_operations.toml",
+      "sha256": "30441fdc559646c78e1d5322f508a82054bb0485749765ad55b275eafffc2e0b"
+    },
+    {
+      "path": ".codex/agents/lld_review.toml",
+      "sha256": "761edefb3d0daa31edb75a9b99a64441c364852ca93caf80e9bee59baf8e9bbb"
+    },
+    {
+      "path": ".codex/agents/lld_security.toml",
+      "sha256": "8eebcb12b2209dfdefdbc6f0faa38f91b32cf111f6b8a713ef10095950414870"
+    },
+    {
+      "path": ".codex/config.toml",
+      "sha256": "962041f9dfb9f3334845f35b925fc76978c64c6b8fe109f603d52a4758750247"
+    },
+    {
+      "path": ".dockerignore",
+      "sha256": "f3a4714dc34c15fa197b47c47c07a7b3a402fc7c4e363152709ccf4fba2699fc"
+    },
+    {
+      "path": ".github/workflows/foundation.yml",
+      "sha256": "a3ab8cb9b751c13edbdc4fc6cd0a29bb173522c6dcddac59b83d94761f767773"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "41a395d120e7e4c09d3ddc79e77799584e103c4dc1d2d2c1e0064a0a2ec4dfe2"
+    },
+    {
+      "path": ".node-version",
+      "sha256": "c989649ac5c541692f22f2e41f5fbc34927c02bf1644e5dcca46bb4c88281f87"
+    },
+    {
+      "path": ".npmrc",
+      "sha256": "562907da17e25b3bcf4f1c91f8875ed7b422cf3a2c5e8f3901919698578e3d7b"
+    },
+    {
+      "path": ".prettierignore",
+      "sha256": "6e4c87c7d09d3e7ade8a6fdac4990f2f2fe18a9e499a91cc241f22b2286aa488"
+    },
+    {
+      "path": ".python-version",
+      "sha256": "922fe0c3de073b01988e23348ea184456161678c5e329e6f34be89be24383f93"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": "README.md",
+      "sha256": "fce97eca7bf1234d40a3e7ff73f8c4faf79d603f80e7bd80fd91584debaed3f1"
+    },
+    {
+      "path": "apps/web/README.md",
+      "sha256": "13e7cb9b8439ebac88656c43da7224b27340dca3553339a9091d9542ffa2c672"
+    },
+    {
+      "path": "apps/web/index.html",
+      "sha256": "8891e04b4fb29739a5062c8f5f05ee6c1f2cfa1982756e80a0ade2853d85ef41"
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "76ee133327384cd04edc2097f431cb307678911ac14fb71624683df64a5b925e"
+    },
+    {
+      "path": "apps/web/src/App.test.tsx",
+      "sha256": "d1dff82f7d6eba206b49f83334f651655d410a326acd7bb34819e2ac85ebe7de"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "e95c3ba1085b743bf5a8946a16998fde4281a73c41c7f441240b577fa4cd07f3"
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "sha256": "b48ecc236522f47785dd09eca128172747950d684b1105116a6314cfdbb13d28"
+    },
+    {
+      "path": "apps/web/src/messages.ts",
+      "sha256": "5ef5eb7ccfe31ef2bcb878ebe3843520555e34f4f06ff2e6f95fc6450bed50ef"
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "sha256": "aef3e7d0ac039f286853966efa0580150741a766721dbc33a232c0cba5b37324"
+    },
+    {
+      "path": "apps/web/src/trust/HelpApp.tsx",
+      "sha256": "af8c7c6e4522fd38a679e8ae9718514b5d7ae79230326912cd16612f6234238d"
+    },
+    {
+      "path": "apps/web/src/trust/HelpTools.tsx",
+      "sha256": "b8801a25369c96947cebb8df34a72452407d88cbeef0b7b70e40ba63f1286f6c"
+    },
+    {
+      "path": "apps/web/src/trust/IdentityPanel.tsx",
+      "sha256": "492ed3c66e9970ce56d72479d988b143412cb6c8c7bc4af5d905a54eb1fff03a"
+    },
+    {
+      "path": "apps/web/src/trust/TrustAndHelp.test.tsx",
+      "sha256": "afb6a1d94b4cb222d69fc649a57955e70ba6b0995ff337017d83e9ee17d3a05b"
+    },
+    {
+      "path": "apps/web/src/trust/TrustAndHelp.tsx",
+      "sha256": "f9ed7980154e3e97301f2d9135d82395f7ec633474a301db15dfdf409d934aba"
+    },
+    {
+      "path": "apps/web/src/trust/api.ts",
+      "sha256": "174bd6f9b58804794b157f607b3d2bf9887afefb3cf1bf661fa64b7178d6c47e"
+    },
+    {
+      "path": "apps/web/src/trust/channel.ts",
+      "sha256": "003083c13f6f379bba7dbec3c071f8a8b75eb7cf515b12055276475d1e7c3e7a"
+    },
+    {
+      "path": "apps/web/src/trust/messages.ts",
+      "sha256": "93d7be940458ab9bf35c38cb3a098477fe47b5dd6ff798ae638f9f348be068fc"
+    },
+    {
+      "path": "apps/web/src/vite-env.d.ts",
+      "sha256": "e84422a91898aafda86af4b48327393d195e17fa48035817754c30d0be317a91"
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "sha256": "8695cde34b9993f9fa4fc78460bea6c4347491bc5114dea724ac482d436447c7"
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "sha256": "4c708d4a87fedb12ef6f7dd0889ff0a00375947d6de21bc88fd5248f9a492290"
+    },
+    {
+      "path": "config/demo/imp-02-admission.json",
+      "sha256": "f5259658bacb4af7278538a9750c0bb793671fd5f50165bdef13cad89efc4e49"
+    },
+    {
+      "path": "config/demo/imp-02-controls.json",
+      "sha256": "21f2ef135120fb839df447cd927a61430bf6dceb3546cd6b0b45933eef9c8677"
+    },
+    {
+      "path": "deploy/images/imp02/Dockerfile",
+      "sha256": "aeb79ea120bd999ec78d346f30842978c1ff82cf99852c5044464fffee735dd5"
+    },
+    {
+      "path": "deploy/images/imp02/Dockerfile.dockerignore",
+      "sha256": "2a569b85061a4b18fd26d6aa87c1f24c24a8b27a4648748e7a2ea20faaf23b1e"
+    },
+    {
+      "path": "deploy/images/imp02/Keycloak.Dockerfile",
+      "sha256": "2f619d9f2bad470dc709c229bd5b718536e5c035eb9e3c604db5c40934ede346"
+    },
+    {
+      "path": "deploy/images/imp02/README.md",
+      "sha256": "43521d670b36b51707c618c625fb9b34fb90f9a6789d0f6bc015cf67615e201a"
+    },
+    {
+      "path": "deploy/k8s/imp-02/INFRASTRUCTURE-DELTA.md",
+      "sha256": "4835ddd61c82aa1e37c5ed59414043c302e6b5c0f26ff0cfb7dc88450b3a3a00"
+    },
+    {
+      "path": "deploy/k8s/imp-02/README.md",
+      "sha256": "8b0825404bcef58f69e808520e0924efb2d6b4b943ad23f4a68bd0f6360fa870"
+    },
+    {
+      "path": "deploy/k8s/imp-02/envoy/README.md",
+      "sha256": "f369c0386b9cc3cd45394db5928a8648d79064a8645639b14003a217147f2836"
+    },
+    {
+      "path": "deploy/k8s/imp-02/namespace-and-default-deny.yaml",
+      "sha256": "7e8cd7913bbd7803e492343e3b8b6c9a9fe74be1b909eca4eecc061b2447cacf"
+    },
+    {
+      "path": "deploy/k8s/imp-02/products.json",
+      "sha256": "30736191987ca1c764a73a9577470e55e4a2e4fa2e54e0c868a1856ad20c1303"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/IMP/planning-inventory.json",
+      "sha256": "c2535a9957469a57d791770e69dcc7fda8816b23828fb0510903244926cf5cd8"
+    },
+    {
+      "path": "doc/IMP/validate_plan.py",
+      "sha256": "5a75361ed33d5d12e05c95c837fb0bdff2d8e61f730dd6c4d7c76e7e83b4d9f9"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "sha256": "b4e7162441499b62652e5925b6b4c9f660053e2027d0b5789971a5cb64524b94"
+    },
+    {
+      "path": "host/help/README.md",
+      "sha256": "c8e2d11af43d622ab9a69cbe5351f0b66f26f53d587021a5273cce11350d6a65"
+    },
+    {
+      "path": "host/help/pyproject.toml",
+      "sha256": "cbd7c7bfa5d95b36b6641191e4962a960823fdf46efbd64b087076c52d6d4767"
+    },
+    {
+      "path": "host/help/src/care_link_help/__init__.py",
+      "sha256": "98db5116420ca050eb4df3060ffe1de2be813d0738121fc96a59c25c7a4f926d"
+    },
+    {
+      "path": "host/help/src/care_link_help/app.py",
+      "sha256": "d08d8a99d0c1e580eae62c2554cda0c7617fd596d92cd567f9ba1627b9f485c3"
+    },
+    {
+      "path": "host/help/src/care_link_help/audit.py",
+      "sha256": "cb1ec6f7c2de8d5473b3f5002a062ebfa71c2aa9e732155dec0abf0f8e16e157"
+    },
+    {
+      "path": "host/help/src/care_link_help/authority.py",
+      "sha256": "cef0e1a86b06c05e6ee72e442f22053009e728b84cda2f9befd62158f1212ac6"
+    },
+    {
+      "path": "host/help/src/care_link_help/intents.py",
+      "sha256": "b6300aee0fc9df4ee4c72329150625f16c65fd570b05525182802b8d5468995a"
+    },
+    {
+      "path": "host/help/src/care_link_help/lifecycle.py",
+      "sha256": "f26c310288e8878e6593f0df113e5a80d0aecc74ed75daac6404abd16a838d87"
+    },
+    {
+      "path": "host/help/src/care_link_help/lifecycle_schema.py",
+      "sha256": "8bcec8b1be37cf745b8e7f7ee3e406d02480dd2b6cf5f121dcb6577ce2da72d5"
+    },
+    {
+      "path": "host/help/src/care_link_help/managed_copies.py",
+      "sha256": "7f98a3393370883e53a16dc9917db15bed64bfb0af9114e28f564e30d9d6f116"
+    },
+    {
+      "path": "host/help/src/care_link_help/model.py",
+      "sha256": "f66e1a71c0ec27ff6f6eeecbb39ea3c8bcffe77ecc0397bccc838db409d4c2f7"
+    },
+    {
+      "path": "host/help/src/care_link_help/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "host/help/src/care_link_help/service.py",
+      "sha256": "5c198611db81a48ce9e0966ccd10bf5d0ddd14a831b816b67dd2ee6ec352e388"
+    },
+    {
+      "path": "host/help/src/care_link_help/spool.py",
+      "sha256": "fe7c1df7e26c16d3ddda2d634e07d36e978df32ce7ea80dc3f47a60a919a40fa"
+    },
+    {
+      "path": "host/help/tests/test_authority_http.py",
+      "sha256": "15447d7284e72ce0722fb16bfd09f9e35c29e5a41465a4568676c77f939b5e67"
+    },
+    {
+      "path": "host/help/tests/test_help.py",
+      "sha256": "ac148ba327c9965df9614ddcfdb46d6c6535fe8acbf6d1ece8c61b954b729b4b"
+    },
+    {
+      "path": "host/help/tests/test_identity_integration.py",
+      "sha256": "7ef7260c6e684792a9b949fa786d32f2d135159475706a6540e40a4be1848305"
+    },
+    {
+      "path": "host/help/tests/test_lifecycle.py",
+      "sha256": "212c8889d5761eb05454379a4a838e4209acce6c97fa67a4316c6dabe35a74dc"
+    },
+    {
+      "path": "host/static/README.md",
+      "sha256": "5ca5065f2b6220d40caae4e9c1d1f22fb4a15790d40dc54e0b29bcd37daffa50"
+    },
+    {
+      "path": "host/static/pyproject.toml",
+      "sha256": "e5990d5b23bd7b29c04aed1a6c26371f048e9ac449108b2708e02f572f73aebb"
+    },
+    {
+      "path": "host/static/src/care_link_static/__init__.py",
+      "sha256": "a7d500b8a45cfa6d0b51644d96187a26f5db8914879b8422b4c02709d99a4d2d"
+    },
+    {
+      "path": "host/static/src/care_link_static/app.py",
+      "sha256": "1c3f7a9821ddd637c584e14116b317da32505ff1b5233aabb443ad0600dddd71"
+    },
+    {
+      "path": "host/static/src/care_link_static/cli.py",
+      "sha256": "00b4163c0f3f5c93a19935cf39c9642cb243c5a8b82c1059cfebb1096a478d3d"
+    },
+    {
+      "path": "host/static/src/care_link_static/publication.py",
+      "sha256": "70c089251664fcabf246953d5c39330f9bd3331c1d46857ffcbc0b26602f3438"
+    },
+    {
+      "path": "host/static/src/care_link_static/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "host/static/src/care_link_static/rendering.py",
+      "sha256": "78f10bbc65be3ef40220445f02889453281d09cc4c0c0bd1b76f17a25a535056"
+    },
+    {
+      "path": "host/static/src/care_link_static/retention.py",
+      "sha256": "dcf0b4d3f15e563deaa3ff5d98bd5720a38aa0585ad4e690030e0bd9d521e19c"
+    },
+    {
+      "path": "host/static/tests/test_card_compiler.py",
+      "sha256": "8c066bdc50c7ce5cbfeb9f346ac768f3155e847870e80639c31e06bbfede82cb"
+    },
+    {
+      "path": "host/static/tests/test_owner_demo.py",
+      "sha256": "63a6e60598ebb0862d2229d93e3545a0c5df0e63473001625c76d10e9ac60548"
+    },
+    {
+      "path": "host/static/tests/test_publication.py",
+      "sha256": "7ca6d030f486db9bfeb44ca777412909c52e87734c33ecd77196ee312ccbca12"
+    },
+    {
+      "path": "host/static/tests/test_static_retention.py",
+      "sha256": "624ef4b5b0c5d1b46abebdb3f33d7375be89342c63fdfcb7417bc1b57cd1cd70"
+    },
+    {
+      "path": "package.json",
+      "sha256": "111bf9ba197f7ccfc39bcb636a1450836c57f3b54e17e31921ddef12db97fc75"
+    },
+    {
+      "path": "packages/contracts/python/pyproject.toml",
+      "sha256": "abc216be266a8be4f1fd2068474fd985caa1568c19eea515c7b7e8d9f4c1f5d7"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/__init__.py",
+      "sha256": "3cd25223159c38dabfc80d00745e394aea05a42bc65fb7d57e4284da7b653559"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/schema.json",
+      "sha256": "9f03e358487717f15680061c2eb738482616b303a4a0c318d5780184ea0a7128"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/types.py",
+      "sha256": "59845a4aa8361ab16808e41d5ad484fda62ef4df085f8ed2909e901ba692b5a2"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/validation.py",
+      "sha256": "f0773090b2349180ecd92cc41be26571d5011bb84cb26c5db28da3a04714fbde"
+    },
+    {
+      "path": "packages/contracts/python/tests/test_validation.py",
+      "sha256": "ce412e35ea97f2b9faffe6e22d5686fef8822eb18f448aa9892c54f00ab2859e"
+    },
+    {
+      "path": "packages/contracts/typescript/README.md",
+      "sha256": "5cfdad1421903b586a12b3996e42ad3d2382365718c2168a6cf00535f8bd99e4"
+    },
+    {
+      "path": "packages/contracts/typescript/package.json",
+      "sha256": "50d7a5f75631873a0606858627c2784b47850743f5a4f53121590998b42a9cc8"
+    },
+    {
+      "path": "packages/contracts/typescript/src/index.ts",
+      "sha256": "1e32deb4c950ed407303273ba95e16a801922dc0fd699a4f15d8e25292b66600"
+    },
+    {
+      "path": "packages/contracts/typescript/src/schema.json",
+      "sha256": "9f03e358487717f15680061c2eb738482616b303a4a0c318d5780184ea0a7128"
+    },
+    {
+      "path": "packages/contracts/typescript/src/validators.generated.cjs",
+      "sha256": "79eafd3243765505492522e147abbfcbf2220c9edc9fb2daab67674a608b34be"
+    },
+    {
+      "path": "packages/contracts/typescript/src/validators.generated.d.cts",
+      "sha256": "a0a5cdd34ac9997abccbeb203963fd828fc5fbf08def1bb86d5c6e9557ad6ef9"
+    },
+    {
+      "path": "packages/contracts/typescript/tests/contracts.test.ts",
+      "sha256": "a8730cda56b4596c6ece5371de9ec54982dfadda2fe25a54c15c6fd7c9d7e286"
+    },
+    {
+      "path": "packages/contracts/typescript/tests/generated.test.ts",
+      "sha256": "dac36331cec407cfa71e2f55f54afc68b46c413a908034c4034283a18a20c5fd"
+    },
+    {
+      "path": "packages/contracts/typescript/tsconfig.json",
+      "sha256": "be2ece53f5221bfdef4e6c77b51d9a29b15bb3827d60d84426f7fc7179c824d7"
+    },
+    {
+      "path": "packages/workload-trust/README.md",
+      "sha256": "b747814162eac9519a6209fc89ed5512d3f37a5fbe9342ec0aac6cf3f307d51b"
+    },
+    {
+      "path": "packages/workload-trust/pyproject.toml",
+      "sha256": "9ab25f99510ed0eccb025ffb01f3949d3bd4d0731c7fbc36be885fc5eb6f3f86"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/__init__.py",
+      "sha256": "c3a14e217d10075196e9a7e0b371f7aeee2b771fb6b6e8f6d8d2bec885dea7f3"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/backend.py",
+      "sha256": "519b939d8eb9af3de96241e9682bc6cef2b7ae4ed045aa128624c73386ca96dd"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/envoy.py",
+      "sha256": "f779ec560f20f555a057a7bf667008fa0202359ad120125518fda0c520a9cd9d"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/fence.py",
+      "sha256": "98375398a81a43c3af2dcbb636528d2f1e471df28e24aae7762054f75771010d"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/fence_client.py",
+      "sha256": "9d59154e901f98ade639c179d1304345971684480d95f000f8699830ad943b67"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/fence_protocol.py",
+      "sha256": "98b27373549d3684a9deef5e19d173d6347dc2f7585ef567c50a266b4c30d55d"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/fence_server.py",
+      "sha256": "73e599366344d838b4d9379cf4dd14cdb86ca2ba6d9eb3ffe74867793dccf8f3"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/listeners.py",
+      "sha256": "e4252f5433f364a5473c1b0f450b32cb76ca4afe444983cfd54c3f8bee9f732f"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/socket_custody.py",
+      "sha256": "67d6bdcc70b0af64e77c96fe63da86292f2b761c16b17d6e2da550522b56cf0e"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/unix_server.py",
+      "sha256": "dd8d6f32f4670e2cb99a28acf76cfd69290ad38cfe798a50013ff9cc84be9264"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/uvicorn_adapter.py",
+      "sha256": "e8ea0c4e3ef4ed1c82e4e31b8e23649e25ca575682889743e01fb348e2897588"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/verification.py",
+      "sha256": "8912ad21b25b53169de80cf6f8f93de4fd445ca1983a12a851bfdd738ccb4831"
+    },
+    {
+      "path": "packages/workload-trust/tests/test_fence_channel.py",
+      "sha256": "289e8d0211c58f0a648b316325244e66d715edb8800af4a3463cbaac384c5dbd"
+    },
+    {
+      "path": "packages/workload-trust/tests/test_socket_custody.py",
+      "sha256": "c8aec3f1cab1f766a1a2bbd40bae78c8a6e72e999cd6cc4991ea62cff503df85"
+    },
+    {
+      "path": "packages/workload-trust/tests/test_workload_trust.py",
+      "sha256": "f424a7a3c5937ae0025824e16cd2b49ab40cbcefa3e43a41f6deaf75985aef16"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "219bfd7858fc3e820131c19732c64bbccb30d1b755b7674127fcea89957aa585"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "sha256": "dced6eafc0b0e000da4be177f7853de601b614253224a625067c08a94ba18a0b"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "147b702aba950f729a0b881d908d51642e401727d41bc77e0068aca20eb9da1f"
+    },
+    {
+      "path": "pyrightconfig.json",
+      "sha256": "f24aa341140c82ffdfef6e510859e4bf8e511bdd00a22e5e0c5def97111d3c77"
+    },
+    {
+      "path": "services/core/Dockerfile",
+      "sha256": "6aa28c1051c6579ed55cabe6d75898c428cc5970304b3fc3047d74f79dcfcf06"
+    },
+    {
+      "path": "services/core/image-inputs.json",
+      "sha256": "147de61b39e836c5a9292fef23fe70a0796fa8d406d5d3785a59e0a8e0ce1d81"
+    },
+    {
+      "path": "services/core/pyproject.toml",
+      "sha256": "8d31ad6199dcc36d3fcd166cecca5a2e9f5e6b67b35009b76318269b78032983"
+    },
+    {
+      "path": "services/core/src/care_link_core/__init__.py",
+      "sha256": "847290961e32f0a5a72e9271fcfe697813ae58318af14885f09d1d5a3b4cf8ce"
+    },
+    {
+      "path": "services/core/src/care_link_core/app.py",
+      "sha256": "f50ef45cfd35e89cf9370620505e2f894305affd54e20395e1d11465ef0d334c"
+    },
+    {
+      "path": "services/core/src/care_link_core/capabilities.py",
+      "sha256": "946271da54ad3cbc857512f4c028a6d29a34f8b64276075f641f085f4687d25e"
+    },
+    {
+      "path": "services/core/src/care_link_core/cli.py",
+      "sha256": "6038d316bd0e3a44a3fde0980f1489e06b50fc740ee445bc8909ce00e919d009"
+    },
+    {
+      "path": "services/core/src/care_link_core/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "services/core/tests/test_developer_api.py",
+      "sha256": "8c825fc4405d5802f8d980d550dff45ee81a368ffa628e1997e60e7e1a6d0a6c"
+    },
+    {
+      "path": "services/identity/README.md",
+      "sha256": "e8dac69537e4eba58650ef0656323ecd61642554610d8c30b395750a4daeca5a"
+    },
+    {
+      "path": "services/identity/migrations/001_identity.sql",
+      "sha256": "fa77d31cb725261281fac94f0a60f5b34c3e0e1bf93bc531b0917d72f303ff79"
+    },
+    {
+      "path": "services/identity/migrations/002_option_b_and_workload.sql",
+      "sha256": "fa40c00c6b8c32e5f2a56791214d82bdfff1468c9690e5eee6362bd4ae084dbd"
+    },
+    {
+      "path": "services/identity/pyproject.toml",
+      "sha256": "7f92b6eeff80df39d2c2d6dd90e22587ff71531eaa2ac4962d7304cb848e23d6"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/__init__.py",
+      "sha256": "157a80e0951561dfe6eceecc8445b2d185c8173bd5a130a90760e292852e9ea4"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/app.py",
+      "sha256": "c159271f5268f65873290b6e1f290fdeaf74e96d1888b8abec885bf5cd121187"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/backups.py",
+      "sha256": "aa80fce0bc6bd171f48845002da2ff4af238cde1a99d87d1731c9c93990be43a"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/credential_disposal.py",
+      "sha256": "a5425c817a5fce6c9cd4003432be302e3f84542c60f0b6bc788a15183d396c97"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/crypto.py",
+      "sha256": "760c1ea8a3eae26085ead34731aef1ca642e33cb53dda788d43ce719d8a933f2"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/domain.py",
+      "sha256": "9e8709f0ba5f3c1e73839a56880234a03c8f9183804fbb456c87d5dba0a32b5d"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/owner_review.py",
+      "sha256": "8700045537bce9480ecd5c64bfbfe33afb0211a9adef62a33f79d568826467fa"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/provider.py",
+      "sha256": "cc06835a94be18da751226096776342d50922456a80553089555bb2c8df3c620"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/retention.py",
+      "sha256": "c54cf1073f99de1034e9d07eae1f40f4f80680666df99bd573800fc061664cd6"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/retention_adapters.py",
+      "sha256": "36784821c26202b80b7bd01087bdb9a0bffbd2a3cb261d5a66a2f302331b6080"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/retention_ports.py",
+      "sha256": "207f31f2a34737a61b9e05d032881a658397999dea3e517b6b7d0701c9abf4df"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/service.py",
+      "sha256": "6cda2a3698a2ebd26c8d71a19e4066f5b709a4d67c30a2c8cec9018965ef5cd9"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/signals.py",
+      "sha256": "d1973899266f1b481721a55a94d33f18dfb06355c4a539f6540831d8d9cc7d3a"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/stepup.py",
+      "sha256": "ca392dc0810fd10c189aa9ced32f03b5b3f306f78265c0a9b9ba4593e242bc27"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/store.py",
+      "sha256": "49e49d4bcaa43cd3864b1a0cea4349cc6fd5f6472fba2bd9c8de610d0963eb18"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/workload_signals.py",
+      "sha256": "48fa779f35804c15b1df3b4d4914f3a40afbae714b822c50131caec61e4e3c97"
+    },
+    {
+      "path": "services/identity/tests/conftest.py",
+      "sha256": "e01c78d468e099813e3062fed89c82aeee7e0c8674f51bc96ec922d672f6d4a6"
+    },
+    {
+      "path": "services/identity/tests/test_backups.py",
+      "sha256": "95c8006054962dcc06f65a88214d3315162dad66e1fa1640791fd9e1e49f45c0"
+    },
+    {
+      "path": "services/identity/tests/test_identity.py",
+      "sha256": "6f72036a3b0eb0312268ec78928174123f27fe1d3ade2586dd1b05fd7d77f4c6"
+    },
+    {
+      "path": "services/identity/tests/test_owner_review.py",
+      "sha256": "b7677a58ca783088537f4849f31279d308e7bbbd3ee66a474f63414b695680ee"
+    },
+    {
+      "path": "services/identity/tests/test_provider.py",
+      "sha256": "166ddb40515b8d87c6224266a77cac146c13fd33dbd12753770b32e88c5e939c"
+    },
+    {
+      "path": "services/identity/tests/test_retention.py",
+      "sha256": "03a409a13736f7c5b0a1fe016ff61b45d1554509b2ed8d4db0cc964210ce488c"
+    },
+    {
+      "path": "services/identity/tests/test_signals.py",
+      "sha256": "dc0a20cc330640f3117255cea66aab81f038b0785a166da5d252b3a468603e3d"
+    },
+    {
+      "path": "services/identity/tests/test_workload_signals.py",
+      "sha256": "f019bb7b00487efd2115c285686f7535b5534bf79edc72d8e0c0bed1c1f91977"
+    },
+    {
+      "path": "tests/contract/parity.test.ts",
+      "sha256": "79fc280636afa4210bece07a84f030ecebce6e21f8bd5e78f8436cbc1852bebd"
+    },
+    {
+      "path": "tests/contract/test_snapshot.py",
+      "sha256": "9e90482b7608833dec68bc6a1764be05f2a0003618937ef69fdb415dc4c06512"
+    },
+    {
+      "path": "tests/e2e/imp02/README.md",
+      "sha256": "d1a3fe714933d6257a659423c343d306b767bcc8514fa38f7a32b3246796cb05"
+    },
+    {
+      "path": "tests/e2e/imp02/accessibility.spec.ts",
+      "sha256": "5e30d340f388e9ac855568535f92e3192f5f6d0c9ee457106df724021faaffe0"
+    },
+    {
+      "path": "tests/e2e/imp02/browser.ts",
+      "sha256": "29b93f30a4ca30c56deb3a3ad8efccbe390e7cafd6108b50dd95d7ed776d3afb"
+    },
+    {
+      "path": "tests/e2e/imp02/cooling.spec.ts",
+      "sha256": "35208b07ae38ef388cb46a613307beba1ff61606b93875c8b2c4d95ce29d554f"
+    },
+    {
+      "path": "tests/e2e/imp02/journeys.spec.ts",
+      "sha256": "8efdd438ad0684fd5984602c22f3bf2cf7894f0b11b1cf2d2a25ae77efb07c39"
+    },
+    {
+      "path": "tests/e2e/imp02/lab.ts",
+      "sha256": "6f2cb3f48194ab4eed3c15d2a470d06c14f2f47b6c24653f66ea26a8d5879977"
+    },
+    {
+      "path": "tests/e2e/imp02/operator-session.ts",
+      "sha256": "eb82f1789a483b6524a612538032eb5946a83b211e379e13496dfc0a004dbd57"
+    },
+    {
+      "path": "tests/e2e/imp02/outage.spec.ts",
+      "sha256": "5d0861a32f4e4d738b6efe76653218622d0dc6bc9cced853f1a00bbe1a9c2918"
+    },
+    {
+      "path": "tests/e2e/imp02/playwright.config.ts",
+      "sha256": "744590e418077df119402ee8a8366e2d0741750b6d4dba91b48844e1dd472d7d"
+    },
+    {
+      "path": "tests/e2e/imp02/static-fixture.ts",
+      "sha256": "9c4c13b3dcd7b49d40bfa5f7b7a7771acfaa5a44b773a7ec789f943cf2e048d9"
+    },
+    {
+      "path": "tests/e2e/imp02/tsconfig.json",
+      "sha256": "f6fa9ff5161501f548c611889bca013142b3d7b6e818d01d6b220e769a3ad4c6"
+    },
+    {
+      "path": "tests/e2e/imp02/unknown.spec.ts",
+      "sha256": "ae93f8729622683976902189e41ddc46573f89db8f357b93f031dd4917f9809f"
+    },
+    {
+      "path": "tests/integration/imp02_lab/test_cni_ipv6.py",
+      "sha256": "db33bd1f881119d1b7114d553d130262b9cd0417eb4e42c88b0d4550adab9fc7"
+    },
+    {
+      "path": "tests/integration/imp02_lab/test_fence_users.py",
+      "sha256": "00529f65fb78deea21409502e8e5c58f1e9a1db4d1166df6367ba849ba1d46b0"
+    },
+    {
+      "path": "tests/integration/imp02_lab/test_manifests.py",
+      "sha256": "1eb94115cf75d31912b43c7fca9332419534475dbaae2689dad282f4edfeea65"
+    },
+    {
+      "path": "tests/integration/imp02_lab/test_signals_probe.py",
+      "sha256": "dd404fb8175e955ca0a76a1301d9859102ed1696111f8492c6f3e6d4a8da7f3c"
+    },
+    {
+      "path": "tests/network/test_probe_evidence.py",
+      "sha256": "a608e38e39afae56b27c66b2dca2b81fc2de96e6a3e71c5c81fcff8269a65234"
+    },
+    {
+      "path": "tests/unit/test_boundaries.py",
+      "sha256": "29f55f97d250ee740403ed8462e2e1b065d849391ed014e4784b284e45662338"
+    },
+    {
+      "path": "tests/unit/test_imp02_admission.py",
+      "sha256": "4c007ea926725a5e7c9d5fae64c800671cc730bee70bb94ac57f35fd8561ac6b"
+    },
+    {
+      "path": "tests/unit/test_imp02_application.py",
+      "sha256": "9861eeee8995f1ef10efc672ab25f4a432b98a7620a41d2dd4328be5d2097a5b"
+    },
+    {
+      "path": "tools/build_core_image.py",
+      "sha256": "29266b2e75b3a7a523b72b3f359fb8eeba6e230c84ac540b0cfed895eac259fe"
+    },
+    {
+      "path": "tools/check.py",
+      "sha256": "b2a0a7c8e79d5bb78da75b726e5aa3cf3be073eda40268ece25355e5fade174d"
+    },
+    {
+      "path": "tools/check_boundaries.py",
+      "sha256": "06b365c05f4198995a9e5554ef0192f288f18f6c0f4db949ecd4d4165bb7541e"
+    },
+    {
+      "path": "tools/check_imp02_admission.py",
+      "sha256": "fcbea7e5db9aaa5bff45737042975277f7462cdd8ceccd753e3cd436ddae5807"
+    },
+    {
+      "path": "tools/contract_probe.py",
+      "sha256": "f5d0674d4fb5f89ee341d36b547f41948245625f8f2d02fe45007e0c39de7c24"
+    },
+    {
+      "path": "tools/generate_browser_validators.mjs",
+      "sha256": "4659dab07a8b7d065b93e12ff371216397d86a226c990c038301a4ccb5727dc1"
+    },
+    {
+      "path": "tools/generate_contracts.py",
+      "sha256": "570eb46ac4e54bbc6b82b35114c665d756940cba93a48041e6e2567948af730a"
+    },
+    {
+      "path": "tools/imp02_application/README.md",
+      "sha256": "b5f5e1a97f1c6c8b1c4446ac5d195fd157d1181dd31d6d1e28bbe61154d97d6d"
+    },
+    {
+      "path": "tools/imp02_application/__init__.py",
+      "sha256": "d02e163a7c8e34a8c8967cca7f38e60af2c28c681e8df6baadd9688a19c12442"
+    },
+    {
+      "path": "tools/imp02_application/__main__.py",
+      "sha256": "1699596ada43ffe8c9c31fe8c3b3531b40db7e53086c7b85526c5ab6a50413c1"
+    },
+    {
+      "path": "tools/imp02_application/browser.py",
+      "sha256": "258cfbbd6091f1d2e6cf8aea691ba98f0a28de07ccf413977c640933e99dc439"
+    },
+    {
+      "path": "tools/imp02_application/config.py",
+      "sha256": "a4993467a02d723659fb198ca55427f637b6efc3677ceba25b3cff1cdef34d46"
+    },
+    {
+      "path": "tools/imp02_application/configure.py",
+      "sha256": "45eaa7cab00379b56d8297bdc8aa8ae75a9c6cb74d517535c4f199438a127a7f"
+    },
+    {
+      "path": "tools/imp02_application/database.py",
+      "sha256": "db68db44488f0ced300ae249e239b082f9942cdd86272142a23b71bae3f9e907"
+    },
+    {
+      "path": "tools/imp02_application/identity.py",
+      "sha256": "e995c206a96c15fcac040f1e0eb34f8cf390aebe88576273a5105c2d3bba3c60"
+    },
+    {
+      "path": "tools/imp02_application/identity_qualification.py",
+      "sha256": "fe914d6f07beadd439fdf44040a4964ee0355eb5e54228e806efe2aa40371bad"
+    },
+    {
+      "path": "tools/imp02_application/maintenance.py",
+      "sha256": "dec264c0ef6d2e9fa2f892e728dc9c13ad193584ad491f1e59c2ebc8072fe120"
+    },
+    {
+      "path": "tools/imp02_application/mesh.py",
+      "sha256": "a099bc25b973844ef47df4b35fd74a8f590201397de2c9848627ac2755605790"
+    },
+    {
+      "path": "tools/imp02_application/prepare.py",
+      "sha256": "8d0d1917981a3c6eaf2130440983969f1c41c0daa1744ae4d78cf9f4833d743c"
+    },
+    {
+      "path": "tools/imp02_application/provider_bootstrap.py",
+      "sha256": "67a4a85168b0c619d0ee067d39b7af22424098e0dbce95950117b10751c8b000"
+    },
+    {
+      "path": "tools/imp02_application/tls.py",
+      "sha256": "22dfbb32fc0e36780c309c4033361f443e444c206d6d3fce82569e5fe436e8d0"
+    },
+    {
+      "path": "tools/imp02_lab/__init__.py",
+      "sha256": "a57a0da9e808a79816038c8cbc72b5dde703aa2e71f3cb164cdcd1cbfa9ddffc"
+    },
+    {
+      "path": "tools/imp02_lab/__main__.py",
+      "sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279"
+    },
+    {
+      "path": "tools/imp02_lab/applications.py",
+      "sha256": "b37cb06f4a9dbf2f5a3bf5a9605681671a86dc9dfefd0c3882713523cd30a243"
+    },
+    {
+      "path": "tools/imp02_lab/certificates.py",
+      "sha256": "f0db205f03b72acddebdba27fcefa572dbc0b4cdcbb957f64aea02d7011a6779"
+    },
+    {
+      "path": "tools/imp02_lab/cli.py",
+      "sha256": "c433d6fe0749010af07ed7f4b3da880d9069d7f6a443a77fef7ed24e41732e6d"
+    },
+    {
+      "path": "tools/imp02_lab/cluster.py",
+      "sha256": "5cb0d02ccb5aeeb92537e79b02078509543ac02d8f7c7b2b80064631d56af12a"
+    },
+    {
+      "path": "tools/imp02_lab/commands.py",
+      "sha256": "2d723c30bf945f06e987f5ec8d7bf13edf00cd8568db911905d575d6a3ef3d38"
+    },
+    {
+      "path": "tools/imp02_lab/csi.py",
+      "sha256": "b08b36201c3c969671fa6db5716cdd2ba911542ac91e2438ac85ed0bf1c159bf"
+    },
+    {
+      "path": "tools/imp02_lab/dependencies.py",
+      "sha256": "97d5f55c248ab3c31328b4e652d15650535a9a0492ea73eb8d95eeae65e2b6f8"
+    },
+    {
+      "path": "tools/imp02_lab/expiry_probe.py",
+      "sha256": "33f562814cdb800f9a4f310739831dd39681bcd1b98a7525ec7ae26c08546269"
+    },
+    {
+      "path": "tools/imp02_lab/host_support.py",
+      "sha256": "e4b606a2b77e58ac80228e0143c618c5754e910cb084ed7a028aef6094400daa"
+    },
+    {
+      "path": "tools/imp02_lab/model.py",
+      "sha256": "130f783f593c2b701fea1e1a70b08cf5c533c6c8fd09323136c01dfc2cdeaa1a"
+    },
+    {
+      "path": "tools/imp02_lab/network.py",
+      "sha256": "489871dc4c9dba99346afa61ed66a6775cdf21890ea2c3703432261ce64bc7cf"
+    },
+    {
+      "path": "tools/imp02_lab/outage.py",
+      "sha256": "8e5db8764ef8b8ae7173e5f125f80b60443865611b7ed57152da6581a43c161f"
+    },
+    {
+      "path": "tools/imp02_lab/probes.py",
+      "sha256": "b69d6218aaecb6334b705c8d508fb4eea07ebbbaf4ae3963e4bbcfc00e1ae300"
+    },
+    {
+      "path": "tools/imp02_lab/proxy_config.py",
+      "sha256": "9425a2fe1fb9a5d77c16f3afb706bab2afc680031f86fb5ca2ae5b8e402c4b05"
+    },
+    {
+      "path": "tools/imp02_lab/routes.py",
+      "sha256": "a398900275eb456a3c6b440edaa72ca311f6feff30e1a997f6c0f6ddb2a41087"
+    },
+    {
+      "path": "tools/imp02_lab/signals_probe.py",
+      "sha256": "9e240d0096389cfdc9a6ce32d940be26465203446eb6602d8a54d9e5e39aae37"
+    },
+    {
+      "path": "tools/imp02_lab/spire.py",
+      "sha256": "fffbb464166ae6ed9c4414b652666ea7896f174d0a4d8229e6e792299cdb59cb"
+    },
+    {
+      "path": "tools/imp02_lab/spire_bootstrap.py",
+      "sha256": "1aa4cffc9564acc239e931d7b18e0e803f583cfa26008a0f27e1c6a26a917832"
+    },
+    {
+      "path": "tools/imp02_lab/trust_process.py",
+      "sha256": "e97d4e0c9ff14fe12f5d28270b1287c3a346bb402fbfc47b90b14408b31094c5"
+    },
+    {
+      "path": "tools/prepare_fallback_card.py",
+      "sha256": "d11f0135b9e3b07b3df39ad41d4877c37e84242db20a4d6dd14ac2d4c998805d"
+    },
+    {
+      "path": "tools/probe_trust_routes.py",
+      "sha256": "400f2e344e171770def641ca0b7741ce112f5568c7c8b49dbfe4ac50e7329a18"
+    },
+    {
+      "path": "tools/smoke_core_image.py",
+      "sha256": "902e2b9470ca87a77800a189fcc3fec6d67f6fd577c07d9dfca07071e15e7084"
+    },
+    {
+      "path": "tools/smoke_imp02_processes.py",
+      "sha256": "7422403db78250873233dbb92e5e7d3f751c3cd5d6f8b3aa8dba73a7e61d7bfb"
+    },
+    {
+      "path": "tools/verify_clean.py",
+      "sha256": "b80816753ce2ca9d728456393250b5b1bf43acbd1ddecd09616d93caa361a6c9"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "0fb5aa085de64d2c26d3e880c98ffe39b6c326abb6734130cef4eed071a42adb"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "5b925f215a196e0fa40f5ab8c91b5ba5bc048e090f1a84cadd5c73d9b597b160"
+    }
+  ],
+  "source_set_sha256": "41681fb9589e2ba5d8cb9393c72153017dd7e523a4b132a8964b1eebef13e72f",
+  "contract_refs": [
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "packages/contracts/python/pyproject.toml",
+      "sha256": "abc216be266a8be4f1fd2068474fd985caa1568c19eea515c7b7e8d9f4c1f5d7"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/__init__.py",
+      "sha256": "3cd25223159c38dabfc80d00745e394aea05a42bc65fb7d57e4284da7b653559"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/schema.json",
+      "sha256": "9f03e358487717f15680061c2eb738482616b303a4a0c318d5780184ea0a7128"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/types.py",
+      "sha256": "59845a4aa8361ab16808e41d5ad484fda62ef4df085f8ed2909e901ba692b5a2"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/validation.py",
+      "sha256": "f0773090b2349180ecd92cc41be26571d5011bb84cb26c5db28da3a04714fbde"
+    },
+    {
+      "path": "packages/contracts/python/tests/test_validation.py",
+      "sha256": "ce412e35ea97f2b9faffe6e22d5686fef8822eb18f448aa9892c54f00ab2859e"
+    },
+    {
+      "path": "packages/contracts/typescript/README.md",
+      "sha256": "5cfdad1421903b586a12b3996e42ad3d2382365718c2168a6cf00535f8bd99e4"
+    },
+    {
+      "path": "packages/contracts/typescript/package.json",
+      "sha256": "50d7a5f75631873a0606858627c2784b47850743f5a4f53121590998b42a9cc8"
+    },
+    {
+      "path": "packages/contracts/typescript/src/index.ts",
+      "sha256": "1e32deb4c950ed407303273ba95e16a801922dc0fd699a4f15d8e25292b66600"
+    },
+    {
+      "path": "packages/contracts/typescript/src/schema.json",
+      "sha256": "9f03e358487717f15680061c2eb738482616b303a4a0c318d5780184ea0a7128"
+    },
+    {
+      "path": "packages/contracts/typescript/src/validators.generated.cjs",
+      "sha256": "79eafd3243765505492522e147abbfcbf2220c9edc9fb2daab67674a608b34be"
+    },
+    {
+      "path": "packages/contracts/typescript/src/validators.generated.d.cts",
+      "sha256": "a0a5cdd34ac9997abccbeb203963fd828fc5fbf08def1bb86d5c6e9557ad6ef9"
+    },
+    {
+      "path": "packages/contracts/typescript/tests/contracts.test.ts",
+      "sha256": "a8730cda56b4596c6ece5371de9ec54982dfadda2fe25a54c15c6fd7c9d7e286"
+    },
+    {
+      "path": "packages/contracts/typescript/tests/generated.test.ts",
+      "sha256": "dac36331cec407cfa71e2f55f54afc68b46c413a908034c4034283a18a20c5fd"
+    },
+    {
+      "path": "packages/contracts/typescript/tsconfig.json",
+      "sha256": "be2ece53f5221bfdef4e6c77b51d9a29b15bb3827d60d84426f7fc7179c824d7"
+    }
+  ],
+  "configuration_refs": [
+    {
+      "path": "config/demo/imp-02-admission.json",
+      "sha256": "f5259658bacb4af7278538a9750c0bb793671fd5f50165bdef13cad89efc4e49"
+    },
+    {
+      "path": "config/demo/imp-02-controls.json",
+      "sha256": "21f2ef135120fb839df447cd927a61430bf6dceb3546cd6b0b45933eef9c8677"
+    },
+    {
+      "path": "deploy/images/imp02/Dockerfile",
+      "sha256": "aeb79ea120bd999ec78d346f30842978c1ff82cf99852c5044464fffee735dd5"
+    },
+    {
+      "path": "deploy/images/imp02/Dockerfile.dockerignore",
+      "sha256": "2a569b85061a4b18fd26d6aa87c1f24c24a8b27a4648748e7a2ea20faaf23b1e"
+    },
+    {
+      "path": "deploy/images/imp02/Keycloak.Dockerfile",
+      "sha256": "2f619d9f2bad470dc709c229bd5b718536e5c035eb9e3c604db5c40934ede346"
+    },
+    {
+      "path": "deploy/images/imp02/README.md",
+      "sha256": "43521d670b36b51707c618c625fb9b34fb90f9a6789d0f6bc015cf67615e201a"
+    },
+    {
+      "path": "deploy/k8s/imp-02/INFRASTRUCTURE-DELTA.md",
+      "sha256": "4835ddd61c82aa1e37c5ed59414043c302e6b5c0f26ff0cfb7dc88450b3a3a00"
+    },
+    {
+      "path": "deploy/k8s/imp-02/README.md",
+      "sha256": "8b0825404bcef58f69e808520e0924efb2d6b4b943ad23f4a68bd0f6360fa870"
+    },
+    {
+      "path": "deploy/k8s/imp-02/envoy/README.md",
+      "sha256": "f369c0386b9cc3cd45394db5928a8648d79064a8645639b14003a217147f2836"
+    },
+    {
+      "path": "deploy/k8s/imp-02/namespace-and-default-deny.yaml",
+      "sha256": "7e8cd7913bbd7803e492343e3b8b6c9a9fe74be1b909eca4eecc061b2447cacf"
+    },
+    {
+      "path": "deploy/k8s/imp-02/products.json",
+      "sha256": "30736191987ca1c764a73a9577470e55e4a2e4fa2e54e0c868a1856ad20c1303"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/envoy.py",
+      "sha256": "f779ec560f20f555a057a7bf667008fa0202359ad120125518fda0c520a9cd9d"
+    },
+    {
+      "path": "packages/workload-trust/src/care_link_workload_trust/listeners.py",
+      "sha256": "e4252f5433f364a5473c1b0f450b32cb76ca4afe444983cfd54c3f8bee9f732f"
+    },
+    {
+      "path": "tools/imp02_lab/host_support.py",
+      "sha256": "e4b606a2b77e58ac80228e0143c618c5754e910cb084ed7a028aef6094400daa"
+    },
+    {
+      "path": "tools/imp02_lab/network.py",
+      "sha256": "489871dc4c9dba99346afa61ed66a6775cdf21890ea2c3703432261ce64bc7cf"
+    },
+    {
+      "path": "tools/imp02_lab/proxy_config.py",
+      "sha256": "9425a2fe1fb9a5d77c16f3afb706bab2afc680031f86fb5ca2ae5b8e402c4b05"
+    },
+    {
+      "path": "tools/imp02_lab/spire.py",
+      "sha256": "fffbb464166ae6ed9c4414b652666ea7896f174d0a4d8229e6e792299cdb59cb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/approved-live-trust-profile.json",
+      "sha256": "d4cac6a54c4967c8d09d74fedb33c9dd7bb367051205414f4b0cb524a3d6eb8b"
+    }
+  ],
+  "fixture_refs": [
+    {
+      "path": "host/help/tests/test_authority_http.py",
+      "sha256": "15447d7284e72ce0722fb16bfd09f9e35c29e5a41465a4568676c77f939b5e67"
+    },
+    {
+      "path": "host/help/tests/test_help.py",
+      "sha256": "ac148ba327c9965df9614ddcfdb46d6c6535fe8acbf6d1ece8c61b954b729b4b"
+    },
+    {
+      "path": "host/help/tests/test_identity_integration.py",
+      "sha256": "7ef7260c6e684792a9b949fa786d32f2d135159475706a6540e40a4be1848305"
+    },
+    {
+      "path": "host/help/tests/test_lifecycle.py",
+      "sha256": "212c8889d5761eb05454379a4a838e4209acce6c97fa67a4316c6dabe35a74dc"
+    },
+    {
+      "path": "host/static/tests/test_card_compiler.py",
+      "sha256": "8c066bdc50c7ce5cbfeb9f346ac768f3155e847870e80639c31e06bbfede82cb"
+    },
+    {
+      "path": "host/static/tests/test_owner_demo.py",
+      "sha256": "63a6e60598ebb0862d2229d93e3545a0c5df0e63473001625c76d10e9ac60548"
+    },
+    {
+      "path": "host/static/tests/test_publication.py",
+      "sha256": "7ca6d030f486db9bfeb44ca777412909c52e87734c33ecd77196ee312ccbca12"
+    },
+    {
+      "path": "host/static/tests/test_static_retention.py",
+      "sha256": "624ef4b5b0c5d1b46abebdb3f33d7375be89342c63fdfcb7417bc1b57cd1cd70"
+    },
+    {
+      "path": "packages/contracts/python/tests/test_validation.py",
+      "sha256": "ce412e35ea97f2b9faffe6e22d5686fef8822eb18f448aa9892c54f00ab2859e"
+    },
+    {
+      "path": "packages/contracts/typescript/tests/contracts.test.ts",
+      "sha256": "a8730cda56b4596c6ece5371de9ec54982dfadda2fe25a54c15c6fd7c9d7e286"
+    },
+    {
+      "path": "packages/contracts/typescript/tests/generated.test.ts",
+      "sha256": "dac36331cec407cfa71e2f55f54afc68b46c413a908034c4034283a18a20c5fd"
+    },
+    {
+      "path": "packages/workload-trust/tests/test_fence_channel.py",
+      "sha256": "289e8d0211c58f0a648b316325244e66d715edb8800af4a3463cbaac384c5dbd"
+    },
+    {
+      "path": "packages/workload-trust/tests/test_socket_custody.py",
+      "sha256": "c8aec3f1cab1f766a1a2bbd40bae78c8a6e72e999cd6cc4991ea62cff503df85"
+    },
+    {
+      "path": "packages/workload-trust/tests/test_workload_trust.py",
+      "sha256": "f424a7a3c5937ae0025824e16cd2b49ab40cbcefa3e43a41f6deaf75985aef16"
+    },
+    {
+      "path": "services/core/tests/test_developer_api.py",
+      "sha256": "8c825fc4405d5802f8d980d550dff45ee81a368ffa628e1997e60e7e1a6d0a6c"
+    },
+    {
+      "path": "services/identity/tests/conftest.py",
+      "sha256": "e01c78d468e099813e3062fed89c82aeee7e0c8674f51bc96ec922d672f6d4a6"
+    },
+    {
+      "path": "services/identity/tests/test_backups.py",
+      "sha256": "95c8006054962dcc06f65a88214d3315162dad66e1fa1640791fd9e1e49f45c0"
+    },
+    {
+      "path": "services/identity/tests/test_identity.py",
+      "sha256": "6f72036a3b0eb0312268ec78928174123f27fe1d3ade2586dd1b05fd7d77f4c6"
+    },
+    {
+      "path": "services/identity/tests/test_owner_review.py",
+      "sha256": "b7677a58ca783088537f4849f31279d308e7bbbd3ee66a474f63414b695680ee"
+    },
+    {
+      "path": "services/identity/tests/test_provider.py",
+      "sha256": "166ddb40515b8d87c6224266a77cac146c13fd33dbd12753770b32e88c5e939c"
+    },
+    {
+      "path": "services/identity/tests/test_retention.py",
+      "sha256": "03a409a13736f7c5b0a1fe016ff61b45d1554509b2ed8d4db0cc964210ce488c"
+    },
+    {
+      "path": "services/identity/tests/test_signals.py",
+      "sha256": "dc0a20cc330640f3117255cea66aab81f038b0785a166da5d252b3a468603e3d"
+    },
+    {
+      "path": "services/identity/tests/test_workload_signals.py",
+      "sha256": "f019bb7b00487efd2115c285686f7535b5534bf79edc72d8e0c0bed1c1f91977"
+    },
+    {
+      "path": "tests/contract/parity.test.ts",
+      "sha256": "79fc280636afa4210bece07a84f030ecebce6e21f8bd5e78f8436cbc1852bebd"
+    },
+    {
+      "path": "tests/contract/test_snapshot.py",
+      "sha256": "9e90482b7608833dec68bc6a1764be05f2a0003618937ef69fdb415dc4c06512"
+    },
+    {
+      "path": "tests/e2e/imp02/README.md",
+      "sha256": "d1a3fe714933d6257a659423c343d306b767bcc8514fa38f7a32b3246796cb05"
+    },
+    {
+      "path": "tests/e2e/imp02/accessibility.spec.ts",
+      "sha256": "5e30d340f388e9ac855568535f92e3192f5f6d0c9ee457106df724021faaffe0"
+    },
+    {
+      "path": "tests/e2e/imp02/browser.ts",
+      "sha256": "29b93f30a4ca30c56deb3a3ad8efccbe390e7cafd6108b50dd95d7ed776d3afb"
+    },
+    {
+      "path": "tests/e2e/imp02/cooling.spec.ts",
+      "sha256": "35208b07ae38ef388cb46a613307beba1ff61606b93875c8b2c4d95ce29d554f"
+    },
+    {
+      "path": "tests/e2e/imp02/journeys.spec.ts",
+      "sha256": "8efdd438ad0684fd5984602c22f3bf2cf7894f0b11b1cf2d2a25ae77efb07c39"
+    },
+    {
+      "path": "tests/e2e/imp02/lab.ts",
+      "sha256": "6f2cb3f48194ab4eed3c15d2a470d06c14f2f47b6c24653f66ea26a8d5879977"
+    },
+    {
+      "path": "tests/e2e/imp02/operator-session.ts",
+      "sha256": "eb82f1789a483b6524a612538032eb5946a83b211e379e13496dfc0a004dbd57"
+    },
+    {
+      "path": "tests/e2e/imp02/outage.spec.ts",
+      "sha256": "5d0861a32f4e4d738b6efe76653218622d0dc6bc9cced853f1a00bbe1a9c2918"
+    },
+    {
+      "path": "tests/e2e/imp02/playwright.config.ts",
+      "sha256": "744590e418077df119402ee8a8366e2d0741750b6d4dba91b48844e1dd472d7d"
+    },
+    {
+      "path": "tests/e2e/imp02/static-fixture.ts",
+      "sha256": "9c4c13b3dcd7b49d40bfa5f7b7a7771acfaa5a44b773a7ec789f943cf2e048d9"
+    },
+    {
+      "path": "tests/e2e/imp02/tsconfig.json",
+      "sha256": "f6fa9ff5161501f548c611889bca013142b3d7b6e818d01d6b220e769a3ad4c6"
+    },
+    {
+      "path": "tests/e2e/imp02/unknown.spec.ts",
+      "sha256": "ae93f8729622683976902189e41ddc46573f89db8f357b93f031dd4917f9809f"
+    },
+    {
+      "path": "tests/integration/imp02_lab/test_cni_ipv6.py",
+      "sha256": "db33bd1f881119d1b7114d553d130262b9cd0417eb4e42c88b0d4550adab9fc7"
+    },
+    {
+      "path": "tests/integration/imp02_lab/test_fence_users.py",
+      "sha256": "00529f65fb78deea21409502e8e5c58f1e9a1db4d1166df6367ba849ba1d46b0"
+    },
+    {
+      "path": "tests/integration/imp02_lab/test_manifests.py",
+      "sha256": "1eb94115cf75d31912b43c7fca9332419534475dbaae2689dad282f4edfeea65"
+    },
+    {
+      "path": "tests/integration/imp02_lab/test_signals_probe.py",
+      "sha256": "dd404fb8175e955ca0a76a1301d9859102ed1696111f8492c6f3e6d4a8da7f3c"
+    },
+    {
+      "path": "tests/network/test_probe_evidence.py",
+      "sha256": "a608e38e39afae56b27c66b2dca2b81fc2de96e6a3e71c5c81fcff8269a65234"
+    },
+    {
+      "path": "tests/unit/test_boundaries.py",
+      "sha256": "29f55f97d250ee740403ed8462e2e1b065d849391ed014e4784b284e45662338"
+    },
+    {
+      "path": "tests/unit/test_imp02_admission.py",
+      "sha256": "4c007ea926725a5e7c9d5fae64c800671cc730bee70bb94ac57f35fd8561ac6b"
+    },
+    {
+      "path": "tests/unit/test_imp02_application.py",
+      "sha256": "9861eeee8995f1ef10efc672ab25f4a432b98a7620a41d2dd4328be5d2097a5b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-account-retention-option-b.json",
+      "sha256": "6a57dbd938ac04cdac7a81ba2277873bc74e616821e8bcf09ef1e081db71c938"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-fallback-review-process.json",
+      "sha256": "4b747fae00d9f237545233d58ae706bd3c2dcb84e3f82cd560a24e0d7f0da126"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-first-fallback-card-choice.json",
+      "sha256": "b5b99be3fed0a23ce499b1c518f41e981b3219d1c5c90ef49ab9421a28e416af"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-first-fallback-card-content-acceptance.json",
+      "sha256": "be1bb7e3fc44dd3d0596db019375c091b89918aeb4ce5b696356cd743040694b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/decisions/2026-11-08-retention-content-pending.json",
+      "sha256": "3ecc977e24027b4cbc5a3744301cc5857daa8e1c4b6156023e920141f96e17ac"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/README.md",
+      "sha256": "7989e96b406ebb0ae8a1cff45f603409f0c247a66e782865c9cb374c9d16d2f7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/card.en-CA.md",
+      "sha256": "de64570a11ba2cf125111dd0c7a6e769b4cf7fca8002882c35d2f3f32ec94793"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/card.fr-CA.md",
+      "sha256": "1bce0e10e6346769a9c75c12ab17159dc2a922df9a0dbddbeaae18cf9facab6b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/review-status.json",
+      "sha256": "1292a04b3faa0dc9ed977040865dea29e0175fc614c162f06a41f8409b1f58bc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/001-implementation/fallback/first-card/sources.json",
+      "sha256": "8ee2b5b49eadd366e7e9fc4a42442efffd559a3dfdfb5fad6033132ae9c5e04a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/decisions/2026-11-09-owner-roles.json",
+      "sha256": "0f830f053d8a9487c00a2f849d515f269607ca5aa0f73d68f5994646ab4f08f5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/decisions/2026-11-09-operational-tests-approved.json",
+      "sha256": "7e52ccea3e3bbf1f90e884b1d6d93ab1e07d25fe1aa5845026608950d09e399d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/decisions/2026-11-09-agent-lifetime-repair-approved.json",
+      "sha256": "c470ebf9653d7c5f3eb2b12230d97d3bc5e8138a9218dca363d52e82880731b2"
+    }
+  ],
+  "environment_ref": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/environment.json",
+    "sha256": "187b6aac7c11e18654964f6fa260a06fd90fad16c1bb27989c002c12fdc2741b"
+  },
+  "evidence_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/after-approved-outage.json",
+      "sha256": "149e52a9bfcd9127b4ec2f72bd265406a69e52f2050387c32762d91a99013adf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/after-lifetime-repair-repeat.json",
+      "sha256": "96e88fc199052a32764ee490c6750bd3cfac554acab3bdf5f6d97af756d477cf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/after-original-policy-manual-restore.json",
+      "sha256": "96e88fc199052a32764ee490c6750bd3cfac554acab3bdf5f6d97af756d477cf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/approved-agent-renewal.json",
+      "sha256": "db362e39e382b60263c9f848f70bf948faac0c9457ecb742280f7db318185164"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/approved-issuer-recovery-summary.json",
+      "sha256": "43f5cd2f6da004069e9f03d3257a8ee327d42e06ea823559202bdf3670d3f708"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/approved-live-trust-profile.json",
+      "sha256": "d4cac6a54c4967c8d09d74fedb33c9dd7bb367051205414f4b0cb524a3d6eb8b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/before-approved-outage.json",
+      "sha256": "149e52a9bfcd9127b4ec2f72bd265406a69e52f2050387c32762d91a99013adf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/before-lifetime-repair-repeat.json",
+      "sha256": "96e88fc199052a32764ee490c6750bd3cfac554acab3bdf5f6d97af756d477cf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-cooling.json",
+      "sha256": "f88950da611bd6e3fef1b6bfc56a9bf20d77c36a881be8f4ba1760f3726f1ecd"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-final_policy.json",
+      "sha256": "16492a4a0a318c61923ab9509c31f003cde5e0f79bd9dde7af48b1c5258987d9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-manual_restore.json",
+      "sha256": "8a1ee13f29f67ac99b29982a70026c340600e464c9158f71ff409d608b477de2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-normal.json",
+      "sha256": "0486247ffe8c23e69b33b6549995ebcbff06d16203b632dcec215aee1e827d02"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-outage.json",
+      "sha256": "f47aa75b782828059ea3cee7472a94aff641fdb498f74be8e989e75daebf2f2b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-tls-negatives.json",
+      "sha256": "76101be2deb03cace2bfd8471438a778217451104d5df524b5a2f8a247c813ed"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/card-conversion.json",
+      "sha256": "b5082f6d13177f8668e0479c17e8a77f787a0d72850bfa4c6059f5e29a258d37"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/clean-verification-agent-ttl-proposal.log",
+      "sha256": "30902ddb741bf03a44130a2691941f7c484144974abc93292450d98ac001979a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/clean-verification-attempt-01.log",
+      "sha256": "133481543f2232e21c5fdd13be4463852cebbface3d8c3afe1d7e6539856f7f8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/clean-verification-before-cookie-isolation.log",
+      "sha256": "2e1bfbe2da69275ba87b277fc65cef7c8cc8d36a4cb600b3d2ad15200f607377"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/clean-verification-before-csp-validator.log",
+      "sha256": "6b498a2783e9f7d9b80c437e348ccb6b69cd41d03800a53dba4f80da6e6b544b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/clean-verification-before-destination-fence.log",
+      "sha256": "0d653c593b807b9f417fac43ddca4bc001749e9ca1229691644b62cbdef7f4d7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/clean-verification-final.log",
+      "sha256": "fd0c56e850bd189ae053a945dcc194098bc9a2fc3bf64011f86bed2b37634d6f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/clean-verification.log",
+      "sha256": "b819ba31972b9b318d9f90d87dcb5409bb92dd84341ed1fe5075175792fdc8f4"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/cluster-recovery.json",
+      "sha256": "d0ec6c8f3d26110a51d337a97f95e5dbe9bf54998c08b304ba1bbc17bff5b9fc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/database-privileges.json",
+      "sha256": "a33fb794f01610d8fc83c73450369c1310e26b5c9c69506d7fc427446660ef33"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/deployed-route-methods.json",
+      "sha256": "e69d923929be9bf7658c7767e660051e8aeff8a33a01cc2612e8ce29c7b0014d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/deployed-wrong-uid.json",
+      "sha256": "a50faee7f21251d37e65a9544ac0bb091836f993e0a622a7d9f7c646fb25db53"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/environment.json",
+      "sha256": "187b6aac7c11e18654964f6fa260a06fd90fad16c1bb27989c002c12fdc2741b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/fallback-source-reverification-final.json",
+      "sha256": "94380f1ce292659870c81014191b76220d095d509ca1527b3dac6f4269856c80"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/final-availability-approved-policy.json",
+      "sha256": "905f211cb315716ee22298341fc9fabaa7927ca83ea2a4a411c4f409f63f8af2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/final-availability.json",
+      "sha256": "bb500e2f3f506e8220b1b72f2204bf22cc83a072967415c24beb6bd6bbb5874e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/help-certificate-renewal.json",
+      "sha256": "6e7fe7226b3a2af31f7e0b0c0c65dede508b44c9d3e85c19d723778857e47dc1"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/help-en-CA-axe-summary.json",
+      "sha256": "3bc35dda356e395abacb42d34b7dd75a93a0e73f72e7a34897a3dbbf81237a2e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/help-fr-CA-axe-summary.json",
+      "sha256": "3bc35dda356e395abacb42d34b7dd75a93a0e73f72e7a34897a3dbbf81237a2e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/host-ipv6.json",
+      "sha256": "66b14e418c4c2a96ed80171176a5b3aa280afd44a68fcdffa07ec628eecb37bd"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/image-resolution-additional.json",
+      "sha256": "0130263e375948ded1cd5168d74a934f72dfb3cec753a2b8b2f78c0c892fa7bd"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/image-resolution.json",
+      "sha256": "8dac26e2a24707ac9dc1278081468a811ea4cf008ffd601dcd8e2a14be08da2f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/issuer-mesh-recovery-lifetime-repair.json",
+      "sha256": "39419b8ded9387bcedac4aa2b70aa26967e6aa9cf07ead22397c33095f56e8f8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/issuer-recovery-failure.json",
+      "sha256": "b7d1f0e7db2ea8bc0a82a9f18e3557591818c69bc0d5573d1d06f02912b70594"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/kind-tool.json",
+      "sha256": "a59025e88148ec8cf5c42cf2c0638621620a12fc38228beecf6af4201ee6d1fc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/main-certificate-renewal.json",
+      "sha256": "4151a8f654b516d9ab73b04238ac507498628ddd58700f782443378b2b1a1a8a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/native-linux.log",
+      "sha256": "ab7f975369346cfbac95ea5a2adb43734c2a21280e550c7ba1f527dab8e9eb4b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/network-active-controls.json",
+      "sha256": "34b39202686f697d6111786cc4254045d5ffe9715bf26755e7cfa0f5bb602b1c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/network-after-recovery.json",
+      "sha256": "039e317bfcbec8f4dea796f3eef172034c793cecd21bfecea40c1e16d78c5531"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/network-final.json",
+      "sha256": "5ea2bbb089c9c74fd01e659cd7ef8c033002cb3e060a296e9bba3095e472564c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/operational-approval-block.json",
+      "sha256": "9c087b1804b62ac8fbcbfc0a556835de8ac62432fef7f33a7f70d88b7702e37b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/operator-mfa-qualification.json",
+      "sha256": "9879021e2149c2eeb0c5e13c4e1224838aaa86947ffdca73b8df833ce97c4a74"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/original-policy-host-manual-recovery.json",
+      "sha256": "c9ab9e1a04dc0ab6d96f0b1ed3501de642619a27d7a1a417726f22e25b972f16"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/original-policy-restored-availability.json",
+      "sha256": "1d5c3db30bf0341074b115e9abb7da4780ea057da8439c7d633c47a722a901a5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/outage-supervisor-approved-result.json",
+      "sha256": "86d1b0753e66c255901a56fa84e0238d55128e3c36855323188d1f64930b78b3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/plan-validation-final.log",
+      "sha256": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/post-recovery-fence-denial.json",
+      "sha256": "7216bf40c2e0b95335825c9e77f6ab2d3153b02d5466bf164fc7469560806f82"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/provider-bootstrap.json",
+      "sha256": "2abfeb5fe4c9695338c2bc025311a266e687221422f6419a096a1d83e6772663"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/publication.json",
+      "sha256": "8225f21ca3e2a42811df2356126837b36b493a10be4e6eb9b2b408327feffa1f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/qualification-history.json",
+      "sha256": "391b4900271cd1d33c21334c250386c15610bb30d4b922b12cbac84b636cbd9f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/retention-qualification.json",
+      "sha256": "6ec80c7da12233c22c4eeb2359b285b2d662d9f8e4f53bfc75689b9d387ab533"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/runtime-component-equivalence.json",
+      "sha256": "52c7753e5b86916f4c590a2bab4e55065b670f406c844ebb1ddbb9448d2e6de9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/runtime-ipv6-after-recovery.json",
+      "sha256": "acc74ce9991e4b64edd01cc00f669ad07e538acdb2def9cbfc6518efd481b7ef"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/runtime-ipv6-enforced.json",
+      "sha256": "a4f6ed70c09cc1d5ea91c0dac4c2955abeb5eaaf4f23a9fda0ace6ff7a00eb43"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/signed-signal-fence.json",
+      "sha256": "024455e802a81baf06220f7879809ed84857cde1cd8998176f9a7d565fc5dd85"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/spool-crash-recovery.json",
+      "sha256": "80c3b22714946e7f9b2f7e9164cb85a8f0d5788fd89e056a615f379082e61af2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/static-en-CA-320px-200percent-text.png",
+      "sha256": "dbcd82e58efc53f5c17b73c26b679361d033e8179383de557001979bcf08121e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/static-en-CA-320px-axe-summary.json",
+      "sha256": "dd373893ef38e6c4eb6fe16721008dde5fd95ca0399229a1ebc315b97f603eb0"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/static-en-CA-artifact-binding.json",
+      "sha256": "2a74c04dd8ba4e292633a15251c78738bf15ce760cf6a6fd8a6ccabcf3a19b1d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/static-en-CA-axe-summary.json",
+      "sha256": "050efd64b00a94ece92344e4660253c2064419ca972fee176734dbcddd3de9d7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/static-en-CA-desktop.png",
+      "sha256": "360e9b18512da47017bb444d90e4712cbb7445067e44acf38743655a3d053aeb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/static-fixture-qa.json",
+      "sha256": "443766e12d2088b815896d52d4cec32a56afd8603d0611f22600e649e97b5401"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/static-fr-CA-320px-200percent-text.png",
+      "sha256": "0b3309ff0269d5ad2d7b00c0cd2c075c5f4d59756fecd71b2c57a1d805ec39c2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/static-fr-CA-320px-axe-summary.json",
+      "sha256": "dd373893ef38e6c4eb6fe16721008dde5fd95ca0399229a1ebc315b97f603eb0"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/static-fr-CA-artifact-binding.json",
+      "sha256": "2bdd5a6ece99a76d6d3034b1eb4f712fbc436fbad6d2f2818020c618edcd6c03"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/static-fr-CA-axe-summary.json",
+      "sha256": "050efd64b00a94ece92344e4660253c2064419ca972fee176734dbcddd3de9d7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/static-fr-CA-desktop.png",
+      "sha256": "2eeb0d7001800da4e0f036ab4a4abfd0841b3bd0a1188636b6ad1039cfaba199"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/workload-expiry-approved.json",
+      "sha256": "e9372c7e6510700ac3d7d3675e93d25fcf97eca08fff8dedf18048e098a4fd63"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/workload-expiry-lifetime-repair.json",
+      "sha256": "a440989265f9b0f30bdf04e30042fe115aa578544a5eaf48a385361c5e78111a"
+    }
+  ],
+  "notes": [
+    "Uncommitted tracked and nonignored untracked source are included.",
+    "Current session generated packets/index/ledger are excluded to prevent recursive digests.",
+    "No approval or participant admission inferred."
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "scope": "public issuer/PVC/registration metadata and current durable restrictive fence",
+  "pvc_uid": "61dd890e-5cab-481d-888b-e82a62e04229",
+  "pv_name": "pvc-61dd890e-5cab-481d-888b-e82a62e04229",
+  "root_fingerprints": [
+    "13af9b8a5d513f56955005cbe2d44caa4b61a700e950e81f1967ef9c2c4f6df5"
+  ],
+  "registration_document_sha256": "b2568ee991d13b31da6d07334822645761c6b1c6ea5a76b12657b4afa0ead9f7",
+  "registrations": {
+    "entries": [
+      {
+        "admin": false,
+        "created_at": "1794236972",
+        "dns_names": [],
+        "downstream": false,
+        "expires_at": "0",
+        "federates_with": [],
+        "hint": "",
+        "id": "60d4dea1-73e6-45af-bb22-c5c7210a2ecf",
+        "jwt_svid_ttl": 0,
+        "parent_id": {
+          "path": "/spire/agent/join_token/34448101-15ae-42fb-8f91-ca2928658f83",
+          "trust_domain": "care-link.demo"
+        },
+        "revision_number": "0",
+        "selectors": [
+          {
+            "type": "spiffe_id",
+            "value": "spiffe://care-link.demo/spire/agent/join_token/34448101-15ae-42fb-8f91-ca2928658f83"
+          }
+        ],
+        "spiffe_id": {
+          "path": "/host/imp02-002",
+          "trust_domain": "care-link.demo"
+        },
+        "store_svid": false,
+        "wit_svid_ttl": 0,
+        "x509_svid_ttl": 0
+      },
+      {
+        "admin": false,
+        "created_at": "1794236972",
+        "dns_names": [],
+        "downstream": false,
+        "expires_at": "0",
+        "federates_with": [],
+        "hint": "",
+        "id": "811cae52-0d2c-461d-ad9e-17eb465850ef",
+        "jwt_svid_ttl": 0,
+        "parent_id": {
+          "path": "/host/imp02-002",
+          "trust_domain": "care-link.demo"
+        },
+        "revision_number": "0",
+        "selectors": [
+          {
+            "type": "unix",
+            "value": "uid:21002"
+          }
+        ],
+        "spiffe_id": {
+          "path": "/lab/help",
+          "trust_domain": "care-link.demo"
+        },
+        "store_svid": false,
+        "wit_svid_ttl": 0,
+        "x509_svid_ttl": 300
+      },
+      {
+        "admin": false,
+        "created_at": "1794236919",
+        "dns_names": [],
+        "downstream": false,
+        "expires_at": "0",
+        "federates_with": [],
+        "hint": "",
+        "id": "10f42534-0dd8-45b7-a718-442a71f92f0f",
+        "jwt_svid_ttl": 0,
+        "parent_id": {
+          "path": "/node/imp02-002",
+          "trust_domain": "care-link.demo"
+        },
+        "revision_number": "8",
+        "selectors": [
+          {
+            "type": "k8s",
+            "value": "container-image:docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+          },
+          {
+            "type": "k8s",
+            "value": "container-name:proxy"
+          },
+          {
+            "type": "k8s",
+            "value": "ns:care-link-imp02-002"
+          },
+          {
+            "type": "k8s",
+            "value": "pod-image:docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c"
+          },
+          {
+            "type": "k8s",
+            "value": "sa:identity"
+          }
+        ],
+        "spiffe_id": {
+          "path": "/lab/identity",
+          "trust_domain": "care-link.demo"
+        },
+        "store_svid": false,
+        "wit_svid_ttl": 0,
+        "x509_svid_ttl": 300
+      },
+      {
+        "admin": false,
+        "created_at": "1794240847",
+        "dns_names": [],
+        "downstream": false,
+        "expires_at": "0",
+        "federates_with": [],
+        "hint": "",
+        "id": "551fd699-8848-4e75-8cba-1c9b906e71fb",
+        "jwt_svid_ttl": 0,
+        "parent_id": {
+          "path": "/host/imp02-002",
+          "trust_domain": "care-link.demo"
+        },
+        "revision_number": "0",
+        "selectors": [
+          {
+            "type": "unix",
+            "value": "uid:21004"
+          }
+        ],
+        "spiffe_id": {
+          "path": "/lab/identity_provider",
+          "trust_domain": "care-link.demo"
+        },
+        "store_svid": false,
+        "wit_svid_ttl": 0,
+        "x509_svid_ttl": 300
+      },
+      {
+        "admin": false,
+        "created_at": "1794236919",
+        "dns_names": [],
+        "downstream": false,
+        "expires_at": "0",
+        "federates_with": [],
+        "hint": "",
+        "id": "01cd3948-a575-4269-b4f7-559c2bd717f3",
+        "jwt_svid_ttl": 0,
+        "parent_id": {
+          "path": "/node/imp02-002",
+          "trust_domain": "care-link.demo"
+        },
+        "revision_number": "8",
+        "selectors": [
+          {
+            "type": "k8s",
+            "value": "container-image:docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+          },
+          {
+            "type": "k8s",
+            "value": "container-name:proxy"
+          },
+          {
+            "type": "k8s",
+            "value": "ns:care-link-imp02-002"
+          },
+          {
+            "type": "k8s",
+            "value": "pod-image:docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c"
+          },
+          {
+            "type": "k8s",
+            "value": "sa:main"
+          }
+        ],
+        "spiffe_id": {
+          "path": "/lab/main",
+          "trust_domain": "care-link.demo"
+        },
+        "store_svid": false,
+        "wit_svid_ttl": 0,
+        "x509_svid_ttl": 300
+      },
+      {
+        "admin": false,
+        "created_at": "1794236790",
+        "dns_names": [],
+        "downstream": false,
+        "expires_at": "0",
+        "federates_with": [],
+        "hint": "",
+        "id": "324f20df-b748-436e-a3cc-e17961680b60",
+        "jwt_svid_ttl": 0,
+        "parent_id": {
+          "path": "/spire/server",
+          "trust_domain": "care-link.demo"
+        },
+        "revision_number": "0",
+        "selectors": [
+          {
+            "type": "k8s_psat",
+            "value": "agent_ns:care-link-imp02-002-trust"
+          },
+          {
+            "type": "k8s_psat",
+            "value": "agent_sa:spire-agent"
+          },
+          {
+            "type": "k8s_psat",
+            "value": "cluster:care-link-imp02-002"
+          }
+        ],
+        "spiffe_id": {
+          "path": "/node/imp02-002",
+          "trust_domain": "care-link.demo"
+        },
+        "store_svid": false,
+        "wit_svid_ttl": 0,
+        "x509_svid_ttl": 0
+      }
+    ],
+    "next_page_token": ""
+  },
+  "fence": {
+    "generation": 1,
+    "head": "1d5d1c8437c39412a5a3209bdd0edbeea7860e481b5b6b2697da025dfefd801e",
+    "denied": [
+      "spiffe://care-link.demo/lab/identity_provider"
+    ]
+  },
+  "mock_used": false
+}

@@ -1,0 +1,15 @@
+{
+  "decision_id": "IMP-02-AGENT-LIFETIME-REPAIR-APPROVED-2026-11-09",
+  "recorded_at": "2026-11-09T18:43:29.547626+00:00",
+  "source_kind": "user_message",
+  "user_statement": "Approved",
+  "approved_request": {
+    "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/agent-lifetime-repair-approval-request.md",
+    "sha256": "bf805fc13761d6aa68272fc5235bcc7b244672ec9a7525d611ce25345ebb6df0"
+  },
+  "scope": "Apply agent_ttl1h to existing named demo SPIRE infrastructure agents; retain workload defaults/helpers300s, wait actual node renewal, repeat bounded issuer-expiry/recovery with same CA/PVC/workload bindings/fence.",
+  "security_tradeoff_disclosed": "A stolen agent credential may request eligible workload identities during the longer validity window; workload5minutes does not bound aggregate misuse.",
+  "owner": "main",
+  "G02_accepted": false,
+  "participant_admission": false
+}

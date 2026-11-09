@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "scope": "actual whole named kind-node stop/start plus existing-session help cancellation recovery",
+  "mock_used": false,
+  "before_after_equal": {
+    "pvc_uid": true,
+    "pv_name": true,
+    "root_fingerprints": true,
+    "registration_document_sha256": true,
+    "fence": true
+  },
+  "issuer_reset": false,
+  "registrations_recreated": false,
+  "fence_cleared": false,
+  "observer_note": "RestartPolicyNever metadata-observer pods were recreated read-only after node loss; application/issuer stores and registrations were preserved."
+}

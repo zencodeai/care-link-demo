@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "care-link-help"
+version = "0.1.0"
+description = "Independent private opaque-help host service"
+requires-python = ">=3.12,<3.15"
+dependencies = ["care-link-contracts", "fastapi==0.162.2", "httpx==0.28.1", "cryptography==50.0.2"]
+
+[tool.uv.sources]
+care-link-contracts = { workspace = true }
+care-link-identity = { workspace = true }
+
+[dependency-groups]
+dev = ["care-link-identity"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/care_link_help"]

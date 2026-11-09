@@ -1,0 +1,77 @@
+{
+  "host_agent_same_container_start": true,
+  "help_same_container_start": true,
+  "status": "passed",
+  "scope": "same issuer deployment/PVC restored; real fresh SVID and current mesh admission",
+  "before": {
+    "role": "help",
+    "observed_at": "2026-11-09T18:46:06.545191+00:00",
+    "spiffe_id": "spiffe://care-link.demo/lab/help",
+    "certificate": {
+      "serial_number": "446fa2a6900f9cdc88fc16a9df378444",
+      "subject_alt_names": [
+        {
+          "uri": "spiffe://care-link.demo/lab/help"
+        }
+      ],
+      "valid_from": "2026-11-09T18:44:14Z",
+      "expiration_time": "2026-11-09T18:49:24Z"
+    },
+    "upstream_connections": {
+      "cluster.identity_mesh.upstream_cx_active": 0,
+      "cluster.identity_mesh.upstream_cx_total": 0,
+      "cluster.identity_mesh.upstream_rq_total": 0
+    },
+    "mock_used": false,
+    "source": "Envoy admin UDS /certs, kernel owner UID21002; public fields only"
+  },
+  "after_renewal": {
+    "role": "help",
+    "observed_at": "2026-11-09T18:50:08.150605+00:00",
+    "spiffe_id": "spiffe://care-link.demo/lab/help",
+    "certificate": {
+      "serial_number": "2319500e6244a15f8690bf546c2a8e8d",
+      "subject_alt_names": [
+        {
+          "uri": "spiffe://care-link.demo/lab/help"
+        }
+      ],
+      "valid_from": "2026-11-09T18:49:55Z",
+      "expiration_time": "2026-11-09T18:55:05Z"
+    },
+    "upstream_connections": {
+      "cluster.identity_mesh.upstream_cx_active": 1,
+      "cluster.identity_mesh.upstream_cx_total": 1,
+      "cluster.identity_mesh.upstream_rq_total": 190
+    },
+    "mock_used": false,
+    "source": "Envoy admin UDS /certs, kernel owner UID21002; public fields only"
+  },
+  "final": {
+    "role": "help",
+    "observed_at": "2026-11-09T18:50:11.550857+00:00",
+    "spiffe_id": "spiffe://care-link.demo/lab/help",
+    "certificate": {
+      "serial_number": "2319500e6244a15f8690bf546c2a8e8d",
+      "subject_alt_names": [
+        {
+          "uri": "spiffe://care-link.demo/lab/help"
+        }
+      ],
+      "valid_from": "2026-11-09T18:49:55Z",
+      "expiration_time": "2026-11-09T18:55:05Z"
+    },
+    "upstream_connections": {
+      "cluster.identity_mesh.upstream_cx_active": 1,
+      "cluster.identity_mesh.upstream_cx_total": 1,
+      "cluster.identity_mesh.upstream_rq_total": 1
+    },
+    "mock_used": false,
+    "source": "Envoy admin UDS /certs, kernel owner UID21002; public fields only"
+  },
+  "csrf_status": 200,
+  "operator_proxy_only_reconnect": true,
+  "host_agent_restarted": false,
+  "issuer_or_registrations_reset": false,
+  "mock_used": false
+}

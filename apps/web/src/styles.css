@@ -119,3 +119,31 @@ button:disabled {
     padding: 1rem;
   }
 }
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1rem 0;
+}
+input {
+  display: block;
+  font: inherit;
+  width: 100%;
+  max-width: 34rem;
+  padding: 0.5rem;
+  border: 1px solid #637d79;
+  border-radius: 0.25rem;
+  margin-bottom: 0.8rem;
+}
+input[aria-invalid="true"] {
+  border: 2px solid #9c3025;
+}
+.help-tools,
+.verification {
+  border-top: 1px solid #bfcfca;
+  margin-top: 1.5rem;
+  padding-top: 0.5rem;
+}
+a {
+  color: #174e70;
+}

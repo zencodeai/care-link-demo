@@ -1,0 +1,78 @@
++ /opt/homebrew/bin/uv sync --offline --locked --all-packages --all-groups
+Using CPython 3.14.7 interpreter at: /opt/homebrew/opt/python@3.14/bin/python3.14
+Creating virtual environment at: .venv
+Resolved 54 packages in 3ms
+   Building care-link-contracts @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/packages/contracts/python
+   Building care-link-core @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/services/core
+   Building care-link-help @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/host/help
+   Building care-link-identity @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/services/identity
+   Building care-link-static @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/host/static
+   Building care-link-workload-trust @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/packages/workload-trust
+      Built care-link-workload-trust @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/packages/workload-trust
+      Built care-link-core @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/services/core
+      Built care-link-identity @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/services/identity
+      Built care-link-static @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/host/static
+      Built care-link-help @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/host/help
+      Built care-link-contracts @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/packages/contracts/python
+Prepared 6 packages in 232ms
+Installed 52 packages in 92ms
+ + annotated-doc==0.0.5
+ + annotated-types==0.8.0
+ + anyio==4.16.0
+ + arrow==1.4.0
+ + attrs==26.1.0
+ + care-link-contracts==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/packages/contracts/python)
+ + care-link-core==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/services/core)
+ + care-link-help==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/host/help)
+ + care-link-identity==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/services/identity)
+ + care-link-static==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/host/static)
+ + care-link-workload-trust==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-4bp0eqbr/packages/workload-trust)
+ + certifi==2026.10.23
+ + cffi==2.1.1
+ + click==8.5.1
+ + cryptography==50.0.2
+ + fastapi==0.162.2
+ + fqdn==1.6.0
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httpx==0.28.1
+ + idna==3.20
+ + iniconfig==2.3.1
+ + isoduration==20.11.0
+ + jsonpointer==3.10
+ + jsonschema==4.25.1
+ + jsonschema-specifications==2025.9.1
+ + opentelemetry-api==1.45.2
+ + packaging==26.3
+ + pluggy==1.7.0
+ + psycopg==3.2.12
+ + psycopg-binary==3.2.12
+ + pycparser==3.12
+ + pydantic==2.14.3
+ + pydantic-core==2.50.4
+ + pygments==2.21.0
+ + pyjwt==2.15.1
+ + pytest==9.2.0
+ + python-dateutil==4.0.0
+ + referencing==0.37.0
+ + rfc3339-validator==0.1.4
+ + rfc3987==1.3.8
+ + rpds-py==2026.9.1
+ + ruff==0.14.3
+ + six==1.17.0
+ + starlette==1.10.0
+ + types-jsonschema==4.26.0.20261006
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.5
+ + tzdata==2026.6
+ + uri-template==1.3.0
+ + uvicorn==0.38.0
+ + webcolors==25.10.0
++ /Users/main/.npm-global/bin/pnpm install --offline --frozen-lockfile --ignore-scripts
+Scope: all 3 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +208
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ERR_PNPM_NO_OFFLINE_TARBALL  A package is missing from the store but cannot download it in offline mode. The missing package may be downloaded from https://registry.npmjs.org/react/-/react-19.2.0.tgz.
+Unexpected exit 1

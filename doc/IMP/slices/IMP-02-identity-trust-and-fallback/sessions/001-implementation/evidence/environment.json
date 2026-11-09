@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-11-08T21:47:00.590965+00:00",
+  "platform": "Darwin",
+  "machine": "arm64",
+  "python": "3.14.7",
+  "node": "v22.14.0",
+  "uv": "uv 0.12.17 (Homebrew 2026-09-18 aarch64-apple-darwin)",
+  "pnpm": "10.20.0",
+  "native_socket_tests": "Authorized local native permission; separate-process different-user positive transport not tested",
+  "python_cache": "/private/tmp/care-link-uv-cache",
+  "pnpm_cache": "/private/tmp/care-link-pnpm-store",
+  "container_image_id": "sha256:09e6f4c54535f1fcd6323b3a213af17b87d2b9a53152b9b0ecfd1e2268f600d8",
+  "model_access": "none",
+  "deployment": "none"
+}

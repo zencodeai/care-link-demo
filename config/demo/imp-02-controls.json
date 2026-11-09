@@ -1,0 +1,74 @@
+{
+  "format_version": "imp-02-controls-1",
+  "scope": "Identity/network/fallback subset; no blanket standards conformance claim",
+  "source_date": "2026-11-09",
+  "controls": [
+    {
+      "id": "ID-OIDC-CODE",
+      "source": "https://openid.net/specs/openid-connect-core-1_0-errata2.html",
+      "section": "3.1.3.7 ID Token Validation",
+      "mechanism": "Pinned issuer/client/redirect, PKCE S256, browser/state/nonce binding, asymmetric signature and claim checks",
+      "tests": "services/identity/tests",
+      "live_evidence": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-normal.json"
+    },
+    {
+      "id": "ID-OAUTH-PKCE",
+      "source": "https://www.rfc-editor.org/rfc/rfc7636",
+      "section": "4.2 S256 code challenge",
+      "mechanism": "Random verifier encrypted server-side, code challenge bound to one-use intent",
+      "tests": "services/identity/tests",
+      "live_evidence": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-normal.json"
+    },
+    {
+      "id": "WORKLOAD-X509-SVID",
+      "source": "https://github.com/spiffe/spiffe/blob/main/standards/X509-SVID.md",
+      "section": "SPIFFE ID and X.509 SVID validation",
+      "mechanism": "Deployment requires attested separate identities, pinned trust roots, exact SAN/route allowlist and current fence for each operation",
+      "tests": "tests/network",
+      "live_evidence": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/approved-issuer-recovery-summary.json",
+      "remaining": "Required bounded expiry/recovery qualified with an explicit proxy-only channel reconnect; no host reboot/process-loss/beyond-node-expiry claim."
+    },
+    {
+      "id": "NET-DEFAULT-DENY",
+      "source": "https://kubernetes.io/docs/concepts/services-networking/network-policies/",
+      "section": "Default deny all ingress and all egress traffic",
+      "mechanism": "Isolated namespace default deny candidate plus same-target positive-control route probe",
+      "tests": "tests/network/test_probe_evidence.py",
+      "live_evidence": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/network-final.json"
+    },
+    {
+      "id": "HELP-FRESH-AUTHORITY",
+      "source": "doc/LLD/12-continuity-and-operations.md",
+      "section": "DEC-02/A",
+      "mechanism": "Fresh <=1000ms exact signed receipt each operation, one-use nonce and local owner/worker CAS in durable spool",
+      "tests": "host/help/tests",
+      "live_evidence": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/browser-normal.json"
+    },
+    {
+      "id": "STATIC-EXACT-REVIEW",
+      "source": "doc/LLD/11-deployment-and-configuration.md",
+      "section": "Independent publication",
+      "mechanism": "Exact Ed25519 review receipt, distinct reviewer/operator identities, EN/FR bytes and dates, local atomic publication",
+      "tests": "host/static/tests",
+      "live_evidence": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/publication.json",
+      "remaining": "Default independent profile remains strict/unavailable; observed owner_review_local_demo has integrity signature only and admissionfalse."
+    },
+    {
+      "id": "KEYCLOAK-26-8-2-PROFILE",
+      "source": "https://www.keycloak.org/docs/26.8.2/upgrading/",
+      "section": "Token introspection audience validation and Admin API audience check",
+      "mechanism": "Explicit sub/auth_time/signedmethod mappers, resource+exactintrospectionclientaudiences and required kc-admin-api scope only on directly scoped lifecycle client; no compatibility bypass.",
+      "tests": "services/identity/tests and actual browser/retention qualification",
+      "live_evidence": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/retention-qualification.json"
+    },
+    {
+      "id": "SPIRE-NODE-WORKLOAD-LIFETIME-SEPARATION",
+      "source": "https://github.com/spiffe/spire/blob/v1.16.0/doc/spire_server.md",
+      "section": "agent_ttl inherits default_x509_svid_ttl when omitted",
+      "mechanism": "Explicitly approved/live agent_ttl1h with workload default and all four helpers300s; actual normal agent renewal verified.",
+      "tests": "tests/integration/imp02_lab/test_manifests.py",
+      "live_evidence": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/evidence/approved-live-trust-profile.json",
+      "status": "approved_applied_bounded_qualification_passed"
+    }
+  ]
+}

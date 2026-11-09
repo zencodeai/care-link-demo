@@ -1,0 +1,180 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.25kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#3 DONE 0.5s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 354B done
+#4 DONE 0.0s
+
+#5 [uv 1/1] FROM ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#5 resolve ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc done
+#5 DONE 0.0s
+
+#6 [build  1/10] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#6 resolve docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 135.31kB done
+#7 DONE 0.0s
+
+#8 [build  3/10] WORKDIR /app
+#8 CACHED
+
+#9 [build  6/10] COPY services/core services/core
+#9 CACHED
+
+#10 [build  7/10] COPY services/identity/pyproject.toml services/identity/pyproject.toml
+#10 CACHED
+
+#11 [build  5/10] COPY packages/contracts/python packages/contracts/python
+#11 CACHED
+
+#12 [build  2/10] COPY --from=uv /uv /usr/local/bin/uv
+#12 CACHED
+
+#13 [build  4/10] COPY pyproject.toml uv.lock .python-version ./
+#13 CACHED
+
+#14 [build  9/10] COPY host/static/pyproject.toml host/static/pyproject.toml
+#14 ERROR: failed to calculate checksum of ref kn0mh1640sjiob8n9f72yj57w::gm4jy1rkaa2o98nk40sfneore: "/host/static/pyproject.toml": not found
+
+#15 [build  8/10] COPY host/help/pyproject.toml host/help/pyproject.toml
+#15 ERROR: failed to calculate checksum of ref kn0mh1640sjiob8n9f72yj57w::gm4jy1rkaa2o98nk40sfneore: "/host/help/pyproject.toml": not found
+------
+ > [build  8/10] COPY host/help/pyproject.toml host/help/pyproject.toml:
+------
+------
+ > [build  9/10] COPY host/static/pyproject.toml host/static/pyproject.toml:
+------
+Dockerfile:15
+--------------------
+  13 |     COPY services/identity/pyproject.toml services/identity/pyproject.toml
+  14 |     COPY host/help/pyproject.toml host/help/pyproject.toml
+  15 | >>> COPY host/static/pyproject.toml host/static/pyproject.toml
+  16 |     RUN uv sync --locked --no-dev --no-editable --package care-link-core
+  17 |     FROM ${PYTHON_IMAGE} AS runtime
+--------------------
+ERROR: failed to build: failed to solve: failed to compute cache key: failed to calculate checksum of ref kn0mh1640sjiob8n9f72yj57w::gm4jy1rkaa2o98nk40sfneore: "/host/static/pyproject.toml": not found
+41156 v0.37.0 /Users/main/.docker/cli-plugins/docker-buildx buildx build --file services/core/Dockerfile --tag care-link-core:imp-02-source --progress=plain --build-arg PYTHON_IMAGE=docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 --build-arg UV_IMAGE=ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc --iidfile /private/tmp/care-link-imp02-core-iid.txt .
+github.com/docker/buildx/commands.runBuildWithOptions
+	github.com/docker/buildx/commands/build.go:506
+github.com/docker/buildx/commands.runBuild
+	github.com/docker/buildx/commands/build.go:421
+github.com/docker/buildx/commands.buildCmd.func1
+	github.com/docker/buildx/commands/build.go:542
+github.com/docker/cli/cli-plugins/plugin.RunPlugin.func1.1.2
+	github.com/docker/cli@v29.7.2+incompatible/cli-plugins/plugin/plugin.go:65
+github.com/spf13/cobra.(*Command).execute
+	github.com/spf13/cobra@v1.10.2/command.go:1015
+github.com/spf13/cobra.(*Command).ExecuteC
+	github.com/spf13/cobra@v1.10.2/command.go:1148
+github.com/spf13/cobra.(*Command).Execute
+	github.com/spf13/cobra@v1.10.2/command.go:1071
+github.com/docker/cli/cli-plugins/plugin.RunPlugin
+	github.com/docker/cli@v29.7.2+incompatible/cli-plugins/plugin/plugin.go:80
+main.runPlugin
+	github.com/docker/buildx/cmd/buildx/main.go:66
+main.run
+	github.com/docker/buildx/cmd/buildx/main.go:80
+main.main
+	github.com/docker/buildx/cmd/buildx/main.go:90
+runtime.main
+	runtime/proc.go:290
+runtime.goexit
+	runtime/asm_arm64.s:1447
+
+329  /usr/local/bin/dockerd --config-file /run/config/docker/daemon.json
+github.com/moby/buildkit/cache/contenthash.(*cacheContext).checksum
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/cache/contenthash/checksum.go:895
+github.com/moby/buildkit/cache/contenthash.(*cacheContext).scanChecksum
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/cache/contenthash/checksum.go:879
+github.com/moby/buildkit/cache/contenthash.(*cacheContext).lazyChecksum
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/cache/contenthash/checksum.go:842
+github.com/moby/buildkit/cache/contenthash.(*cacheContext).Checksum
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/cache/contenthash/checksum.go:430
+github.com/moby/buildkit/cache/contenthash.(*cacheManager).Checksum
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/cache/contenthash/checksum.go:121
+github.com/moby/buildkit/cache/contenthash.Checksum
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/cache/contenthash/checksum.go:68
+github.com/moby/buildkit/solver/llbsolver/ops.(*fileOp).CacheMap.NewContentHashFunc.func2.1
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/solver/llbsolver/ops/opsutils/contenthash.go:48
+golang.org/x/sync/errgroup.(*Group).Go.func1
+	/root/build-deb/engine/vendor/golang.org/x/sync/errgroup/errgroup.go:93
+runtime.goexit
+	/usr/local/go/src/runtime/asm_arm64.s:1447
+
+329  /usr/local/bin/dockerd --config-file /run/config/docker/daemon.json
+github.com/moby/buildkit/cache/contenthash.init
+	<autogenerated>:1
+runtime.doInit1
+	/usr/local/go/src/runtime/proc.go:8103
+runtime.doInit
+	/usr/local/go/src/runtime/proc.go:8070
+runtime.main
+	/usr/local/go/src/runtime/proc.go:258
+runtime.goexit
+	/usr/local/go/src/runtime/asm_arm64.s:1447
+
+41156 v0.37.0 /Users/main/.docker/cli-plugins/docker-buildx buildx build --file services/core/Dockerfile --tag care-link-core:imp-02-source --progress=plain --build-arg PYTHON_IMAGE=docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 --build-arg UV_IMAGE=ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc --iidfile /private/tmp/care-link-imp02-core-iid.txt .
+google.golang.org/grpc.(*ClientConn).Invoke
+	google.golang.org/grpc@v1.83.2/call.go:35
+github.com/moby/buildkit/api/services/control.(*controlClient).Solve
+	github.com/moby/buildkit@v0.33.0/api/services/control/control_grpc.pb.go:88
+github.com/moby/buildkit/client.(*Client).solve.func2
+	github.com/moby/buildkit@v0.33.0/client/solve.go:337
+golang.org/x/sync/errgroup.(*Group).Go.func1
+	golang.org/x/sync@v0.22.0/errgroup/errgroup.go:93
+runtime.goexit
+	runtime/asm_arm64.s:1447
+
+329  /usr/local/bin/dockerd --config-file /run/config/docker/daemon.json
+github.com/moby/buildkit/solver.(*edge).computeCacheKeyFromDep.func1
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/solver/edge.go:916
+github.com/moby/buildkit/solver/internal/pipe.NewWithFunction[...].func2
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/solver/internal/pipe/pipe.go:78
+runtime.goexit
+	/usr/local/go/src/runtime/asm_arm64.s:1447
+
+41156 v0.37.0 /Users/main/.docker/cli-plugins/docker-buildx buildx build --file services/core/Dockerfile --tag care-link-core:imp-02-source --progress=plain --build-arg PYTHON_IMAGE=docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 --build-arg UV_IMAGE=ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc --iidfile /private/tmp/care-link-imp02-core-iid.txt .
+github.com/moby/buildkit/client.(*Client).solve.func2
+	github.com/moby/buildkit@v0.33.0/client/solve.go:339
+golang.org/x/sync/errgroup.(*Group).Go.func1
+	golang.org/x/sync@v0.22.0/errgroup/errgroup.go:93
+
+329  /usr/local/bin/dockerd --config-file /run/config/docker/daemon.json
+github.com/moby/buildkit/solver/llbsolver/ops.(*fileOp).CacheMap.NewContentHashFunc.func2.1
+	/root/build-deb/engine/vendor/github.com/moby/buildkit/solver/llbsolver/ops/opsutils/contenthash.go:60
+golang.org/x/sync/errgroup.(*Group).Go.func1
+	/root/build-deb/engine/vendor/golang.org/x/sync/errgroup/errgroup.go:93
+
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/i3npsva3uqz0uvdx50o6tfuj1
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/build_core_image.py", line 54, in <module>
+    main()
+    ~~~~^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/build_core_image.py", line 46, in main
+    subprocess.run(  # noqa: S603
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+        command,
+        ^^^^^^^^
+        cwd=ROOT,
+        ^^^^^^^^^
+        check=True,
+        ^^^^^^^^^^^
+    )
+    ^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/usr/local/bin/docker', 'build', '--file', 'services/core/Dockerfile', '--tag', 'care-link-core:imp-02-source', '--progress=plain', '--build-arg', 'PYTHON_IMAGE=docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56', '--build-arg', 'UV_IMAGE=ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc', '--iidfile', '/private/tmp/care-link-imp02-core-iid.txt', '.']' returned non-zero exit status 1.
+

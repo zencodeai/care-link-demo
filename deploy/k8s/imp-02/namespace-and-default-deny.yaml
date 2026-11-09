@@ -1,0 +1,20 @@
+# Source candidate only. No workload or participant admission follows from applying this file.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: care-link-imp-02
+  labels:
+    pod-security.kubernetes.io/enforce: restricted
+    pod-security.kubernetes.io/audit: restricted
+    pod-security.kubernetes.io/warn: restricted
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny
+  namespace: care-link-imp-02
+spec:
+  podSelector: {}
+  policyTypes: [Ingress, Egress]
+  ingress: []
+  egress: []
