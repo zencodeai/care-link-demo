@@ -37,8 +37,8 @@ def test_application_wrapper_preserves_exit_or_reports_signal_convention(
 @pytest.fixture
 def tmp_path():
     # macOS sockaddr_un cannot hold the default long pytest temporary path.
-    with tempfile.TemporaryDirectory(prefix="imp03r-", dir="/private/tmp") as root:
-        yield Path(root)
+    with tempfile.TemporaryDirectory(prefix="imp03r-", dir="/tmp") as root:
+        yield Path(root).resolve()
 
 
 def socket_path(tmp_path: Path) -> Path:

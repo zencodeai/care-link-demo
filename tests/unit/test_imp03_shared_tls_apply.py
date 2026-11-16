@@ -2,12 +2,10 @@
 
 import base64
 import json
-import tempfile
 from pathlib import Path
 
 import pytest
 
-from tools.imp02_application.prepare import prepare as initial_pki
 from tools.imp03_shared import tls_apply, tls_renewal
 
 
@@ -185,23 +183,17 @@ class LabRunner:
 
 
 @pytest.fixture
-def proposal(monkeypatch):
-    with tempfile.TemporaryDirectory(
-        prefix="care-link-imp03-tls-unit-", dir="/private/tmp"
-    ) as temp:
-        directory = Path(temp)
-        root = directory / "lab"
-        root.mkdir(mode=0o700)
-        initial_pki(root / "secrets")
-        cluster = root / "cluster"
-        cluster.mkdir(mode=0o700)
-        save(cluster / "lease.json", {"session": "imp02-002", "cluster": tls_apply.CLUSTER})
-        save(cluster / "kubeconfig", {"fixture": True})
-        candidate = directory / "candidate"
-        tls_renewal.prepare(root, candidate)
-        monkeypatch.setattr(tls_apply, "ROOT", root)
-        monkeypatch.setattr(tls_apply, "_verify_tls", lambda run, candidate: {"fixture_only": True})
-        yield root, candidate, directory / "backup"
+def proposal(monkeypatch, private_lab):
+    root, candidate = private_lab
+    directory = root.parent
+    cluster = root / "cluster"
+    cluster.mkdir(mode=0o700)
+    save(cluster / "lease.json", {"session": "imp02-002", "cluster": tls_apply.CLUSTER})
+    save(cluster / "kubeconfig", {"fixture": True})
+    tls_renewal.prepare(root, candidate)
+    monkeypatch.setattr(tls_apply, "ROOT", root)
+    monkeypatch.setattr(tls_apply, "_verify_tls", lambda run, candidate: {"fixture_only": True})
+    return root, candidate, directory / "backup"
 
 
 def test_apply_only_changes_certificate_entries_and_exact_reload_targets(proposal):

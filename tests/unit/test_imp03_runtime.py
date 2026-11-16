@@ -314,8 +314,8 @@ def test_generated_fence_contract_passes_real_constructor_custody_validation(tmp
     assert config["uid"] != config["restrict_uid"]
     # Map only owner/group/socket paths to the available test custodian. Retain
     # generated restriction/read UID separation through the real constructor.
-    with tempfile.TemporaryDirectory(prefix="cl03-fence-", dir="/private/tmp") as name:
-        directory = Path(name)
+    with tempfile.TemporaryDirectory(prefix="cl03-fence-", dir="/tmp") as name:
+        directory = Path(name).resolve()
         ledger = directory / "ledger"
         ledger.mkdir(mode=0o700)
         socket_directory = directory / "socket"
