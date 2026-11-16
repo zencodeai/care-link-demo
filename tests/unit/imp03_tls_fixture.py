@@ -2,7 +2,6 @@
 
 from datetime import UTC, datetime, timedelta
 
-import pytest
 from cryptography import x509
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
@@ -26,8 +25,7 @@ def key_bytes(key):
     )
 
 
-@pytest.fixture
-def private_lab(tmp_path):
+def prepare_private_lab(tmp_path):
     root = tmp_path / "old-lab"
     root.mkdir(mode=0o700)
     source = root / "secrets"

@@ -8,6 +8,7 @@ import pytest
 from cryptography import x509
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
+from imp03_tls_fixture import prepare_private_lab
 
 from tools.imp03_shared import tls_renewal
 
@@ -31,6 +32,11 @@ def spki(key):
     return key.public_bytes(
         serialization.Encoding.DER, serialization.PublicFormat.SubjectPublicKeyInfo
     )
+
+
+@pytest.fixture
+def private_lab(tmp_path):
+    return prepare_private_lab(tmp_path)
 
 
 def test_expired_same_key_certificates_renew_without_modifying_inputs(private_lab):

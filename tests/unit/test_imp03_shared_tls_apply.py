@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 import pytest
+from imp03_tls_fixture import prepare_private_lab
 
 from tools.imp03_shared import tls_apply, tls_renewal
 
@@ -183,8 +184,8 @@ class LabRunner:
 
 
 @pytest.fixture
-def proposal(monkeypatch, private_lab):
-    root, candidate = private_lab
+def proposal(monkeypatch, tmp_path):
+    root, candidate = prepare_private_lab(tmp_path)
     directory = root.parent
     cluster = root / "cluster"
     cluster.mkdir(mode=0o700)
