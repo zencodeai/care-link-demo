@@ -53,13 +53,25 @@ def create_app(
             raise IdentityError("identity.unconfigured", 503)
         return service
 
-    async def identity_error(_request: Request, error: Exception) -> JSONResponse:
+    async def identity_error(_request: Request, error: Exception) -> Response:
         if isinstance(error, IdentityError):
             status, key = error.status, error.code
         elif isinstance(error, ContractError):
             status, key = 422, "identity.invalid_request"
         else:
             status, key = 503, "identity.store_unavailable"
+        if (
+            _request.url.path == "/v1/auth/callback"
+            and service is not None
+            and service.review_context is not None
+            and ui_return_url is not None
+        ):
+            separator = "&" if "?" in ui_return_url else "?"
+            return RedirectResponse(
+                ui_return_url + separator + "auth_error=sign_in_interrupted",
+                status_code=303,
+                headers={"Cache-Control": "no-store", "Referrer-Policy": "no-referrer"},
+            )
         code = (
             "AUTHORITY_UNAVAILABLE"
             if status >= 500
@@ -194,12 +206,26 @@ def create_app(
                             max_age=3600,
                         )
                     return response
+        existing_binding = request.cookies.get(BINDING_COOKIE, "")
+        if existing_binding and authority.review_context is not None:
+            with authority.store.transaction() as tx:
+                existing = tx.get("proof", "csrf:" + digest(existing_binding))
+                if (
+                    existing
+                    and existing.get("origin") == authority.origin
+                    and instant(existing["expires_at"]) > authority.clock()
+                ):
+                    return respond("BrowserCsrf", {"csrf_token": text(existing, "csrf")})
         binding, proof = token(), token()
         with authority.store.transaction() as tx:
             tx.put(
                 "proof",
                 "csrf:" + digest(binding),
-                {"csrf": proof, "expires_at": stamp(authority.clock() + timedelta(minutes=5))},
+                {
+                    "csrf": proof,
+                    "expires_at": stamp(authority.clock() + timedelta(minutes=5)),
+                    "origin": authority.origin,
+                },
             )
         response = respond("BrowserCsrf", {"csrf_token": proof})
         response.set_cookie(
@@ -384,6 +410,19 @@ def create_app(
         UUID(proof_id)
         return respond("StepUpProof", {"proof_intent_id": proof_id})
 
+    async def continuation_recovery(request: Request) -> JSONResponse:
+        from .manual import start_recovery
+
+        data = await body(request, "ContinuationRecoveryStart")
+        await run_in_threadpool(csrf, request)
+        binding = request.cookies.get(BINDING_COOKIE, "")
+        if not binding:
+            raise IdentityError("identity.browser_binding_required")
+        result = await run_in_threadpool(
+            start_recovery, configured(), raw_cookie(request), binding, data
+        )
+        return respond("Ceremony", result)
+
     async def help_authorize(request: Request) -> JSONResponse:
         internal(request, "help")
         data = await body(request, "HelpAuthorityRequest")
@@ -430,6 +469,7 @@ def create_app(
     app.add_api_route("/v1/auth/callback", callback, methods=["GET"])
     app.add_api_route("/v1/auth/session", session, methods=["GET"])
     app.add_api_route("/v1/auth/logout", logout, methods=["POST"])
+    app.add_api_route("/v1/auth/continuation-recovery", continuation_recovery, methods=["POST"])
     app.add_api_route("/v1/auth/step-up", stepup_start, methods=["POST"])
     app.add_api_route("/v1/auth/step-up/confirm", stepup_confirm, methods=["POST"])
     app.add_api_route("/v1/auth/step-up/proof", stepup_proof, methods=["GET"])

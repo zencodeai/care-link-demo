@@ -1,0 +1,86 @@
+{
+  "roles": [
+    {
+      "role": "identity",
+      "container_id": "d55020eb44e9d366dac94cabe6688b259bc09d2ccbccd89edc4ce06c66eecf97",
+      "image_id": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "network": "none",
+      "configuration": {
+        "sha256": "a9ef81ca3a9f8a3b286aa1903beff46a8f4e4a5c2df7767fd5a3d0db360cd790",
+        "mode": "0o600",
+        "uid": 22011,
+        "process_uid": 22011
+      },
+      "commit_fault_enabled": false
+    },
+    {
+      "role": "core",
+      "container_id": "ffa5ea85f0676692b6a20ac11825a140b0a5a929594f550184fb744fc01e04a5",
+      "image_id": "sha256:12ff46df89462611e2725c9ffa869dfc185d4879cc21d887de39802ffec6dd8d",
+      "network": "none",
+      "configuration": {
+        "sha256": "4724526dddc035eb2ca6bce7fb118d0c6b8317614fa7b3bb862c10232c5c37df",
+        "mode": "0o600",
+        "uid": 22012,
+        "process_uid": 22012
+      },
+      "commit_fault_enabled": false
+    },
+    {
+      "role": "data",
+      "container_id": "499f6e9878939a4073a3fdb796e71dfadc016b5c2c37223d4c9b5cda5fd810e6",
+      "image_id": "sha256:5495366cdf435a23405b150dfb75c01b802d0a4caa1eeaf551e0a48a07d9dd96",
+      "network": "none",
+      "configuration": {
+        "sha256": "d64f0df4ee344aa235c9981c5cdaaf9adff76b1e1e3ac902f122414b61775124",
+        "mode": "0o600",
+        "uid": 22013,
+        "process_uid": 22013
+      },
+      "commit_fault_enabled": false
+    },
+    {
+      "role": "pdp",
+      "container_id": "13e859347ef2d8985c2e5b6be63bfd23fd72360c746a6780ff579f77dd916706",
+      "image_id": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "network": "none",
+      "configuration": {
+        "sha256": "0f2ef7f9345c044c987935aa7f636b1d27a846cf1cd910f323cea7ff801b3052",
+        "mode": "0o600",
+        "uid": 22014,
+        "process_uid": 22014
+      },
+      "commit_fault_enabled": false
+    },
+    {
+      "role": "journal",
+      "container_id": "4db0bf0c7164905651b066ef213d477f786f1e227a12aca14fb81cd6f9e86a63",
+      "image_id": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "network": "none",
+      "configuration": {
+        "sha256": "c44c1373a0124631a7a2a03250b21447964e4d3f711ed4ede570c57198dc1a8d",
+        "mode": "0o600",
+        "uid": 22015,
+        "process_uid": 22015
+      },
+      "commit_fault_enabled": false
+    }
+  ],
+  "removed_bootstrap": [
+    {
+      "name": "care-link-imp03-003-cont1-seed",
+      "id": "e9106279145d808969c4f1a8b5a81a967333e7a8b35316623313703ff3451411"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-operator-seed",
+      "id": "4e09e85fde3b479c4f093cdfa0ef7a5e84f685bcbd70a05e878abd5f97f5406c"
+    }
+  ],
+  "browser_tls_profile": "isolated NSS roots; ignoreHTTPSErrors:false",
+  "original_core_fence": "generation1 retained",
+  "continuation_core_fence": "generation0; not restricted; usable for review",
+  "human_acceptance": false,
+  "inputs_json_sha256": "217ce1564fb842c34cbfa64e275686ad2fc29a33705ffce81a9126d929de03a8",
+  "browser_json_sha256": "512e0b10c1fa41e1c0f373a4022c3bed11c6664f25dafe5a55dc38925a987fe4",
+  "runtime-receipt_json_sha256": "0ce63342f6a6c38fa1348215e818c2de10a7bfe1b97d0241d17a509680049246"
+}

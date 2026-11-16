@@ -1,0 +1,47 @@
+{
+  "verified_at": "2026-11-13T15:41:58.895985+00:00",
+  "certificate_bindings_match": true,
+  "transport": {
+    "main": {
+      "status": 200,
+      "tls_version": "TLSv1.3",
+      "peer_fingerprint_sha256": "2152e42e8add583ec33ea70f0fd4a65cf69950c2ef2005d2c550af2431fa56f3",
+      "verify_full_hostname_and_ca": true
+    },
+    "keycloak": {
+      "status": 200,
+      "tls_version": "TLSv1.3",
+      "peer_fingerprint_sha256": "bc905c5ba1ccb064546c0653cdcee82a0aa589e03cb1f750bbae3206adc2de66",
+      "verify_full_hostname_and_ca": true
+    },
+    "help": {
+      "status": 200,
+      "tls_version": "TLSv1.3",
+      "peer_fingerprint_sha256": "ae4e18d994178848466b884041acc589718697d654b5fccd16220d58406d5964",
+      "verify_full_hostname_and_ca": true
+    },
+    "static": {
+      "status": 200,
+      "tls_version": "TLSv1.3",
+      "peer_fingerprint_sha256": "865bfa53550ad6eb4e34eb7a119fc44e10957abce90b128e759ebe526dfc1b9a",
+      "verify_full_hostname_and_ca": true
+    },
+    "postgres": {
+      "verify_full": true,
+      "negotiated_tls_version": "TLSv1.3"
+    }
+  },
+  "other_secret_entries_unchanged": true,
+  "postgres_process_preserved": true,
+  "host_agent_help_processes_preserved": true,
+  "candidate_profile": "imp03-option-b-transport-tls-renewal-proposal",
+  "certificate_digests": {
+    "ca.crt": "741190b97cba404ec983cb0f396d251f4aaba6249cbeb524e79bf4475dc6ec89",
+    "postgres.crt": "2cc5b4d8410fef2bf2ab96200d3600564654b6839b786fa7ff10fd02fc6fedfc",
+    "keycloak.crt": "6490a9468e48bdba7444bd41c64077db4b057cc0a486b77a259dd82cba08bed8",
+    "main.crt": "45a70e316925921d8eff30765afcfcb2524a4253a35847c173c6b7f4fdc649ca",
+    "help.crt": "3e029b3b3073ad7a886508cf317a29eef3a36fc785c96255763152d7d78e9ab4",
+    "static.crt": "a2af61f34c6ea3faf712c780407480198f99fd873000d75e0810ac2ade251262"
+  },
+  "limits": "Verified certificate/custody/process/TLS and discovery; actor regressions separate."
+}

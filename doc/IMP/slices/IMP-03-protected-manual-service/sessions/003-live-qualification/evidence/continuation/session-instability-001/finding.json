@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-11-14T19:56:41.944926+00:00",
+  "source": "user_message",
+  "response": "The paraticipant session is unstable. Conversation infomation dispeared from the UI and Open current conversation with the conversation ID does nothing.",
+  "status": "under_investigation",
+  "user_specific_root_cause": "not established",
+  "source_confirmed_defects": [
+    "An action that fails its access check before dispatch can leave pending set and disable Open after same-account reauthentication.",
+    "Stream/rights loss can race with refresh publication; the exact publication interleaving requires regression coverage.",
+    "Prior actor binding is lost on identity loss, allowing stale UI retry context across an actor switch; no server permission bypass demonstrated."
+  ],
+  "authority_boundary": "Preserve fail-closed revalidation, old conversations/state/fences, current operation identity and unknown sent-command reconciliation."
+}

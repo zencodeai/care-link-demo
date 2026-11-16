@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-11-10T19:10:41.359744Z",
+  "platform": "Darwin",
+  "architecture": "arm64",
+  "python": "3.14.7",
+  "uv": "uv 0.12.17 (Homebrew 2026-09-18 aarch64-apple-darwin)",
+  "pnpm": "10.20.0",
+  "node": "v22.14.0",
+  "target_live_mesh": "not_configured_or_executed",
+  "private_material_in_evidence": false,
+  "core_image": "sha256:69200f64d01057e4a8db170e3bbe190b45e2996ec5747b51ef3d4b03f79930dd",
+  "retained_imp02": "Read-only inventory matched seven running original named containers; no source/config/deployment changes."
+}

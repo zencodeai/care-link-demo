@@ -1,0 +1,16 @@
+{
+  "scope": "isolated verification only; no installed or admitted live deployment",
+  "opa": {
+    "version": "1.22.2",
+    "darwin_arm64_sha256": "c7767cb68c21c3ea9866a76a2d6703d132a25ddad3cd1c1213925e2802ed1dce",
+    "release": "https://github.com/open-policy-agent/opa/releases/tag/v1.22.2",
+    "policy_reference": "https://www.openpolicyagent.org/docs/policy-reference",
+    "linux_arm64_static_sha256": "8fc1c524f93b4369eb207961aba213d990604205fc49fe3ba923dfc125c8a422",
+    "linux_arm64_static_asset": "https://github.com/open-policy-agent/opa/releases/download/v1.22.2/opa_linux_arm64_static",
+    "linux_arm64_checksum_asset": "https://github.com/open-policy-agent/opa/releases/download/v1.22.2/opa_linux_arm64_static.sha256"
+  },
+  "postgres": {
+    "version": "18.3-bookworm",
+    "image": "postgres@sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba"
+  }
+}

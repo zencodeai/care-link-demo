@@ -1,0 +1,100 @@
+{
+  "recorded_at": "2026-11-14T20:32:12.679117+00:00",
+  "status": "corrections_deployed_and_affected_checks_passed",
+  "user_finding": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/finding.json",
+    "sha256": "87ffe5e4806af402ab74fdd8ecf9d3755a7365496db4bdb8f540f3b54bc32f1e"
+  },
+  "user_conversation_metadata": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/preserved-targets-and-conversation.json",
+    "sha256": "ca2131a68b8727b40849f265219da17ed74d8262457f8ef5984f78b105151302"
+  },
+  "old_ui_trap_reproduced": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/baseline-unsent-reproduction.json",
+    "sha256": "b9ccabc04dcb07f1de7292090f8fbfb6a4f845fbb9c25b8a6f1fc612360b1bcc"
+  },
+  "corrected_unsent_case": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/corrected-unsent-001-unsent-observations.json",
+    "sha256": "e5cf8e2839608884861b59cd5fc139138d78ee81b39b4687ca2dbf228478eec0"
+  },
+  "sustained_observation": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/corrected-stream-002-stability-observations.json",
+    "sha256": "d72c33d14c2e1bb03a35f15d49e3afefa9779db49948eea2ccb8719913d8691c"
+  },
+  "four_actor_regression": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-buffered-en-CA-session-stable-001-observations.json",
+    "sha256": "41fa9e32a2c8843bc1e9b4ec47b211cfecb6d2b50888e52558b6646d4f7b8288"
+  },
+  "source_checks": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/source-check-results.json",
+    "sha256": "a20492c6f48c85992c10e81e1b6d85d6ce51a074d581ea6a0d1ba06dc06ce658"
+  },
+  "specialist": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/ui-specialist-result.json",
+    "sha256": "f0e2123360de2b99189a3b684379c0850133252534f7ad8c7ab7b566ea31e6bd"
+  },
+  "current_public_trust_diagnosis": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/current-public-trust.json",
+    "sha256": "1bbc551094730c6c30fc0ffe72a0d1a5c1e376059737061ad92d3099bb81decb"
+  },
+  "public_bundle_refresh": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/second-authority-refresh.json",
+    "sha256": "9e31593c19a7a1e111e7c1956313f01daf6f3ffccc8a63e552697ace6565351e"
+  },
+  "pool_diagnosis": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/pooled-connection-restart-diagnosis.json",
+    "sha256": "187af4841a39983bf5da0b9859de5db4c49f2634534403ece2e7f1f8df0f3aaf"
+  },
+  "pool_configuration": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/bounded-proxy-pools.json",
+    "sha256": "ca066b662dc8396c4ec4352ea54ff9f4e37e93744e7a79d7edb91d4191848db3"
+  },
+  "review_maintenance": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/bounded-maintenance.json",
+    "sha256": "29d7b09bccbcb9d8311f4ea4e6319a1ff29434ae06e8e77cf4d6afc52a60cb28"
+  },
+  "core_redeployment": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/redeployment.json",
+    "sha256": "980104a2a99110d04de45303ae6218353133eab445bf56d3d95c491a3d1aeb97"
+  },
+  "final_audit_snapshot": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/final-database-snapshot.json",
+    "sha256": "642cac700cd94fb9099c0fbc83019c5ecc3f7e57c820d55c6775b59a33b48fba"
+  },
+  "review": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/review.md",
+    "sha256": "b8aad1bced0740699e20a53e3a13bfa1cf2a44c5bfca12030bebfed9063561d7"
+  },
+  "failed_baseline_attempts": [
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/baseline-unsent-002.json",
+      "sha256": "bfc46044fbbd8963b14571900e356de1dd4077ef5f3e5225a352f4fc65cda79b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/baseline-stream-001-stability-final.json",
+      "sha256": "00604c7c0bbcb88b748082e399fdf52592a70af2b036c7fe52b7521bcafa8186"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/baseline-unsent-003.json",
+      "sha256": "3c2e4491a15f86fadfa5728d9e7654a24de085042732ed66ce7bb7203ecbf736"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/baseline-unsent-004.json",
+      "sha256": "732997d11235fb1f8070b8426d8248b2984ed7a8715dddf90aa9e46bee01eba3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/baseline-stream-001.json",
+      "sha256": "2ebd0263175c5a5089dfa88d85a40d673e77b1addb39fadcb977ac1c8d99de76"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/baseline-unsent-001.json",
+      "sha256": "d612e7419b5f0d228bd43f82034f6fbb92e7618256eb59e828cc08ca79640f6e"
+    }
+  ],
+  "first_soak_harness_failure": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/first-soak-evaluation.json",
+    "sha256": "ebbdd1b11100ed027e5c8fbfb2102b182a00a8085c08d50edfa8de19fae6ebd0"
+  },
+  "human_confirmation": "awaiting_user_existing_conversation_retry",
+  "g03_acceptance": false
+}

@@ -9,6 +9,7 @@ description = "CARE-Link private identity and browser-session authority"
 requires-python = ">=3.14,<3.15"
 dependencies = [
   "care-link-contracts",
+  "care-link-domain",
   "fastapi==0.162.2",
   "uvicorn==0.38.0",
   "httpx==0.28.1",
@@ -19,6 +20,7 @@ dependencies = [
 
 [tool.uv.sources]
 care-link-contracts = { workspace = true }
+care-link-domain = { workspace = true }
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/care_link_identity"]

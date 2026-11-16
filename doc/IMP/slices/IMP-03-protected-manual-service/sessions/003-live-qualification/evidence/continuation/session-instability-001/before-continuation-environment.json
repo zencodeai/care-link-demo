@@ -1,0 +1,234 @@
+{
+  "recorded_at": "2026-11-14T14:14:16.891744+00:00",
+  "profile": "continuation-001; SPIRE/Keycloak shared, disposable PG process; Docker apps outside kind",
+  "runtime_protocol_session": "imp03-002",
+  "browser_image_id": "sha256:17c1fa95c00fbfa6991b7275ecdc003d84ef6cb6b967251353f247eaab4e3961",
+  "browser_tls": "NSS roots in dedicated browser-home volume; ignoreHTTPSErrors:false",
+  "public_ca_sha256": {
+    "ca.crt": "a40e36810f49dba74ab034987648b1df99ac85efa81cbf99073727ab80a4fae5",
+    "original-ca.crt": "741190b97cba404ec983cb0f396d251f4aaba6249cbeb524e79bf4475dc6ec89",
+    "continuation-ca.crt": "baab35a0a0f1b2298ff6e66ad3fc81433cc06a5038d3e24411b24e46ae7e2b95"
+  },
+  "retained_containers": [
+    {
+      "ID": "95a53bd9e52b",
+      "Image": "782c6bc237ce",
+      "Names": "care-link-imp03-003-cont1-core-app",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 12 minutes"
+    },
+    {
+      "ID": "499f6e987893",
+      "Image": "5495366cdf43",
+      "Names": "care-link-imp03-003-cont1-data-app",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 15 hours"
+    },
+    {
+      "ID": "2b44f1f187a9",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-ingress",
+      "Ports": "127.0.0.1:29443->29443/tcp",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "f316a0d1e444",
+      "Image": "8de97e654644",
+      "Names": "care-link-imp03-003-cont1-journal-proxy",
+      "Ports": "10000/tcp",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "4db0bf0c7164",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-journal-app",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 15 hours"
+    },
+    {
+      "ID": "43e8c8e94318",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-journal-authorization",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 4 minutes"
+    },
+    {
+      "ID": "98d13420b360",
+      "Image": "8de97e654644",
+      "Names": "care-link-imp03-003-cont1-pdp-proxy",
+      "Ports": "10000/tcp",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "13e859347ef2",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-pdp-app",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 15 hours"
+    },
+    {
+      "ID": "4fd399c0df9c",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-pdp-authorization",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 4 minutes"
+    },
+    {
+      "ID": "fd07ca32e5f2",
+      "Image": "8de97e654644",
+      "Names": "care-link-imp03-003-cont1-data-proxy",
+      "Ports": "10000/tcp",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "4bc729a3daa2",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-data-authorization",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 4 minutes"
+    },
+    {
+      "ID": "5c6d5b337413",
+      "Image": "8de97e654644",
+      "Names": "care-link-imp03-003-cont1-core-proxy",
+      "Ports": "10000/tcp",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "231a31d2d76b",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-core-authorization",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 5 minutes"
+    },
+    {
+      "ID": "65283d7fd306",
+      "Image": "8de97e654644",
+      "Names": "care-link-imp03-003-cont1-identity-proxy",
+      "Ports": "10000/tcp",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "d55020eb44e9",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-identity-app",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 15 hours"
+    },
+    {
+      "ID": "3a3f160e40b3",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-identity-authorization",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 5 minutes"
+    },
+    {
+      "ID": "dedf6deb4c65",
+      "Image": "care-link-imp03:browser-cont1",
+      "Names": "care-link-imp03-003-cont1-browser-ingress",
+      "Ports": "127.0.0.1:29900->29900/tcp",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "c7da3665a665",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-data-db-connector",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "325bbb32e8ce",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-identity-provider-connector",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "407331d4597d",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-identity-db-connector",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "c7db634a5066",
+      "Image": "80630f83606d",
+      "Names": "care-link-imp03-003-cont1-postgres-ingress",
+      "Ports": "127.0.0.1:25435->5432/tcp",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "0ad2a1d3259b",
+      "Image": "2051f02702da",
+      "Names": "care-link-imp03-003-cont1-fence",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "cc6d41cbe70f",
+      "Image": "ab3a8ce70435",
+      "Names": "care-link-imp03-003-cont1-journal-agent",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "54d5d9508dc4",
+      "Image": "ab3a8ce70435",
+      "Names": "care-link-imp03-003-cont1-pdp-agent",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "194f9581ae36",
+      "Image": "ab3a8ce70435",
+      "Names": "care-link-imp03-003-cont1-data-agent",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "2445b27106b6",
+      "Image": "ab3a8ce70435",
+      "Names": "care-link-imp03-003-cont1-core-agent",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 22 hours"
+    },
+    {
+      "ID": "7000d2617f89",
+      "Image": "ab3a8ce70435",
+      "Names": "care-link-imp03-003-cont1-identity-agent",
+      "Ports": "",
+      "State": "running",
+      "Status": "Up 22 hours"
+    }
+  ],
+  "private_root": "/private/tmp/care-link-imp03-003-cont1",
+  "global_trust_or_dns_changed": false,
+  "human_acceptance": false,
+  "authorization_bundle_maintenance": "Five continuation-only startup bundle copies refreshed from existing SPIRE authority; repeat after authority rotation; no continuous synchronization."
+}

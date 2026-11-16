@@ -1,0 +1,11 @@
+{
+  "command": ".venv/bin/python tools/check.py",
+  "environment": {
+    "UV_CACHE_DIR": "/private/tmp/care-link-uv-cache",
+    "UV_OFFLINE": "1",
+    "UV_NO_SYNC": "1",
+    "optional_fixture_variables": "removed"
+  },
+  "exit_code": 0,
+  "duration_seconds": 20.69
+}

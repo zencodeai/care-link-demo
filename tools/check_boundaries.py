@@ -8,11 +8,13 @@ ROOT = Path(__file__).resolve().parents[1]
 ALLOWED = {
     "contracts": {"contracts"},
     "domain": {"domain"},
+    "policy_input": {"policy_input", "contracts", "domain"},
+    "recovery_control": {"recovery_control", "contracts", "domain"},
     "core": {"core", "contracts", "domain", "policy_input", "rendering"},
     "runtime": {"runtime", "contracts"},
     "data": {"data", "contracts", "domain", "policy_input"},
     "web": {"contracts"},
-    "identity": {"identity", "contracts"},
+    "identity": {"identity", "contracts", "domain"},
     "help": {"help", "contracts"},
     "static": {"static", "contracts"},
 }

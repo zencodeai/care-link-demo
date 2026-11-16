@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "tls_client_certificate_rejected": true,
+  "tls_reason": "TLSV13_ALERT_CERTIFICATE_REQUIRED",
+  "status": null
+}

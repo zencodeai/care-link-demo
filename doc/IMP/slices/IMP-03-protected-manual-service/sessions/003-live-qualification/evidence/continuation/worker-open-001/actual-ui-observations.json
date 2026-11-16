@@ -1,0 +1,167 @@
+{
+  "status": "passed",
+  "browser_tls_verification": true,
+  "separate_actual_actors": true,
+  "accepted_worker_opened_before_preparation": true,
+  "worker_refresh_visible": true,
+  "preparation_reached_handoff_pending": true,
+  "participant_confirmation_visible": true,
+  "responses": [
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/workforce/queue",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{id}/workforce/reserve",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{id}/workforce/accept",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}/messages",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}/events",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}/messages",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}/messages",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}/messages",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}/messages",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/{id}/workforce/prepare-transfer",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/sessions/{id}/messages",
+      "status": 200
+    }
+  ],
+  "human_acceptance": false
+}

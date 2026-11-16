@@ -1,0 +1,47 @@
+{
+  "observed_at": "2026-11-13T14:00:33.352225+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "architecture": "arm64",
+  "tools": {
+    "python": {
+      "exit_code": 0,
+      "stdout": "Python 3.14.7",
+      "stderr": ""
+    },
+    "uv": {
+      "exit_code": 0,
+      "stdout": "uv 0.12.17 (Homebrew 2026-09-18 aarch64-apple-darwin)",
+      "stderr": ""
+    },
+    "node": {
+      "exit_code": 0,
+      "stdout": "v22.14.0",
+      "stderr": ""
+    },
+    "pnpm": {
+      "exit_code": 0,
+      "stdout": "10.20.0",
+      "stderr": ""
+    },
+    "docker": {
+      "exit_code": 0,
+      "stdout": "{\"Client\":{\"Version\":\"29.8.0\",\"ApiVersion\":\"1.56\",\"DefaultAPIVersion\":\"1.56\",\"GitCommit\":\"88096ef\",\"GoVersion\":\"go1.26.8\",\"Os\":\"darwin\",\"Arch\":\"arm64\",\"BuildTime\":\"Thu Sep  3 21:49:43 2026\",\"Context\":\"desktop-linux\"},\"Server\":{\"Platform\":{\"Name\":\"Docker Desktop 4.91.0 (239619)\"},\"Version\":\"29.8.0\",\"ApiVersion\":\"1.56\",\"MinAPIVersion\":\"1.40\",\"Os\":\"linux\",\"Arch\":\"arm64\",\"Components\":[{\"Name\":\"Engine\",\"Version\":\"29.8.0\",\"Details\":{\"ApiVersion\":\"1.56\",\"Arch\":\"arm64\",\"BuildTime\":\"Thu Sep  3 21:49:37 2026\",\"Experimental\":\"false\",\"GitCommit\":\"3ce5872\",\"GoVersion\":\"go1.26.8\",\"KernelVersion\":\"7.0.12-linuxkit\",\"MinAPIVersion\":\"1.40\",\"Module\":\"github.com/moby/moby/v2\",\"ModuleVersion\":\"v2.0.0+unknown\",\"Os\":\"linux\"}},{\"Name\":\"containerd\",\"Version\":\"v2.3.4\",\"Details\":{\"GitCommit\":\"db8809540e1a7a9da5d518876894933ff55692ab\"}},{\"Name\":\"runc\",\"Version\":\"1.4.3\",\"Details\":{\"GitCommit\":\"v1.4.3-0-gbb14dabe\"}},{\"Name\":\"docker-init\",\"Version\":\"0.19.0\",\"Details\":{\"GitCommit\":\"de40ad0\"}}],\"GitCommit\":\"3ce5872\",\"GoVersion\":\"go1.26.8\",\"KernelVersion\":\"7.0.12-linuxkit\",\"BuildTime\":\"2026-09-03T21:49:37.000000000+00:00\"}}",
+      "stderr": ""
+    },
+    "opa": {
+      "exit_code": 0,
+      "stdout": "Version: 1.22.2\nBuild Commit: 482d9e368c2ddfed67ced59259fa6a247bb5f1e5\nBuild Timestamp: 2026-11-05T23:07:41Z\nBuild Hostname: \nGo Version: go1.27.3\nPlatform: darwin/arm64\nRego Version: v1\nWebAssembly: available",
+      "stderr": ""
+    },
+    "playwright": {
+      "exit_code": 0,
+      "stdout": "Version 1.65.0",
+      "stderr": ""
+    }
+  },
+  "opa_sha256": "c7767cb68c21c3ea9866a76a2d6703d132a25ddad3cd1c1213925e2802ed1dce",
+  "default_browser_config_present": false,
+  "imp03_docker_targets": [],
+  "scope": "Local engineering host only; independent Linux target/issued actors not yet supplied",
+  "private_material_in_record": false
+}

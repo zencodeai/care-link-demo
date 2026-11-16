@@ -1,0 +1,88 @@
+{
+  "stage_id": "IMP-03",
+  "mode": "implementation",
+  "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/handoff.md",
+      "sha256": "bbe31ae9f50cf52684172ddc153e5e7af01b0ac082b5238cb9365a58c000c77e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/G-03-validation-guide.md",
+      "sha256": "50497e27523662d64caa50ad960176f7eb6324a4351dd5574da064c14c76d767"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/**",
+    "services/**",
+    "packages/**",
+    "host/**",
+    "apps/web/**",
+    "tools/**",
+    "tests/**",
+    "config/**"
+  ],
+  "dependencies": [
+    "G-02 explicitly accepted; historical scope preserved"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "read_only_host_probe"
+  ],
+  "prohibited_actions": [
+    "commit/push/GitHub mutation",
+    "deployment or existing lab mutation",
+    "global host/model changes",
+    "real personal data/partner/police integration/autonomous contact",
+    "invented human acceptance",
+    "nested delegation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "2026-11-10: Complete missing IMP-03 runtime composition and launcher, signed request envelopes and current identity/workload integration; preserve IMP-02; exact startup and executable live G-03 checks.",
+    "scope": "Source implementation and local verification; isolated IMP-03 resources only, no existing IMP-02 mutations, commit/push or human acceptance."
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Modular implementation/tests and source-grounded findings",
+    "Actual checks and unresolved live-evidence obligations"
+  ],
+  "positive_acceptance": [
+    "Durable manual journey with explicit two-party channel connection, current protected views, idempotent operations and truthful pending/unknown states"
+  ],
+  "adverse_acceptance": [
+    "Stale authority/owner/output, audit/PDP/journal failure and stale continuation cannot release protected success; silence never closes support"
+  ],
+  "reviewer": "primary integration owner",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 180,
+  "stop_conditions": [
+    "Authority/design expansion",
+    "Unowned shared file mutation"
+  ],
+  "is_example": false,
+  "packet_id": "IMP-03-002-CONTROLS",
+  "task_id": "IMP-03-B",
+  "role": "imp_controls",
+  "write_paths": [
+    "services/identity/src/care_link_identity/manual_runtime.py",
+    "services/identity/tests/test_manual_runtime.py",
+    "services/core/src/care_link_core/manual_identity.py",
+    "services/core/src/care_link_core/manual_envelopes.py",
+    "services/core/tests/test_manual_envelopes.py"
+  ],
+  "goal": "Implement remote request-bound identity evidence, current/recovery authority HTTP integration and signed envelope factory including genuine metadata/PDP preflight. Do not introduce permissive authority defaults."
+}

@@ -23,3 +23,14 @@
 !host/static/pyproject.toml
 !packages/workload-trust/
 !packages/workload-trust/pyproject.toml
+
+!packages/domain/
+!packages/domain/pyproject.toml
+!packages/domain/src/
+!packages/domain/src/**
+!packages/policy-input/
+!packages/policy-input/pyproject.toml
+!services/data/
+!services/data/pyproject.toml
+!host/recovery-control/
+!host/recovery-control/pyproject.toml

@@ -1,0 +1,3128 @@
+{
+  "observed_at": "2026-11-13T14:14:56.777311+00:00",
+  "scope": "Read-only IMP02 reuse assessment; selected public infrastructure metadata only",
+  "commands": [
+    {
+      "argv": [
+        "kubectl",
+        "--kubeconfig",
+        "/private/tmp/care-link-imp02-002/cluster/kubeconfig",
+        "--context",
+        "kind-care-link-imp02-002",
+        "--request-timeout=15s",
+        "get",
+        "nodes",
+        "-o",
+        "json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "kubectl",
+        "--kubeconfig",
+        "/private/tmp/care-link-imp02-002/cluster/kubeconfig",
+        "--context",
+        "kind-care-link-imp02-002",
+        "--request-timeout=15s",
+        "get",
+        "pods",
+        "-A",
+        "-o",
+        "json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "kubectl",
+        "--kubeconfig",
+        "/private/tmp/care-link-imp02-002/cluster/kubeconfig",
+        "--context",
+        "kind-care-link-imp02-002",
+        "--request-timeout=15s",
+        "get",
+        "svc",
+        "-A",
+        "-o",
+        "json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "kubectl",
+        "--kubeconfig",
+        "/private/tmp/care-link-imp02-002/cluster/kubeconfig",
+        "--context",
+        "kind-care-link-imp02-002",
+        "--request-timeout=15s",
+        "get",
+        "pvc",
+        "-A",
+        "-o",
+        "json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "kubectl",
+        "--kubeconfig",
+        "/private/tmp/care-link-imp02-002/cluster/kubeconfig",
+        "--context",
+        "kind-care-link-imp02-002",
+        "--request-timeout=15s",
+        "get",
+        "networkpolicy",
+        "-A",
+        "-o",
+        "json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "nodes": [
+    {
+      "name": "care-link-imp02-002-control-plane",
+      "ready": [
+        [
+          "Ready",
+          "True"
+        ]
+      ],
+      "capacity": {
+        "cpu": "14",
+        "ephemeral-storage": "955771324Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "hugepages-32Mi": "0",
+        "hugepages-64Ki": "0",
+        "memory": "8124000Ki",
+        "pods": "110"
+      },
+      "allocatable": {
+        "cpu": "14",
+        "ephemeral-storage": "955771324Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "hugepages-32Mi": "0",
+        "hugepages-64Ki": "0",
+        "memory": "8124000Ki",
+        "pods": "110"
+      }
+    }
+  ],
+  "pods": [
+    {
+      "namespace": "care-link-imp02-002-trust",
+      "name": "imp02-socket-seed-6pxbp",
+      "uid": "404e5a1a-daf1-4649-abeb-1791d7cb0fa4",
+      "phase": "Succeeded",
+      "containers": [
+        {
+          "name": "seed",
+          "image": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "resources": {},
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "add": [
+                "CHOWN",
+                "DAC_OVERRIDE",
+                "FOWNER"
+              ],
+              "drop": [
+                "ALL"
+              ]
+            },
+            "runAsUser": 0
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "seed",
+          "ready": false,
+          "restartCount": 0,
+          "imageID": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "state": [
+            "terminated"
+          ]
+        }
+      ],
+      "pod_security": {},
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "seed",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "source-0",
+          "type": [
+            "secret"
+          ]
+        },
+        {
+          "name": "source-1",
+          "type": [
+            "secret"
+          ]
+        },
+        {
+          "name": "source-2",
+          "type": [
+            "secret"
+          ]
+        },
+        {
+          "name": "source-3",
+          "type": [
+            "secret"
+          ]
+        },
+        {
+          "name": "source-4",
+          "type": [
+            "secret"
+          ]
+        },
+        {
+          "name": "source-5",
+          "type": [
+            "secret"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002-trust",
+      "name": "spiffe-csi-gswmj",
+      "uid": "1b171644-70b6-4e9c-8323-e6a68ee4d3a6",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "driver",
+          "image": "ghcr.io/spiffe/spiffe-csi-driver@sha256:6f1ba5d635ba9bf55ae69ba11d71bf169c8fa3e0139a5063738cbc227c8b5546",
+          "resources": {
+            "limits": {
+              "cpu": "250m",
+              "memory": "128Mi"
+            },
+            "requests": {
+              "cpu": "250m",
+              "memory": "128Mi"
+            }
+          },
+          "securityContext": {
+            "privileged": true,
+            "readOnlyRootFilesystem": true
+          }
+        },
+        {
+          "name": "registrar",
+          "image": "registry.k8s.io/sig-storage/csi-node-driver-registrar@sha256:11f199f6bec47403b03cb49c79a41f445884b213b382582a60710b8c6fdc316a",
+          "resources": {
+            "limits": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            },
+            "requests": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            }
+          },
+          "securityContext": {}
+        }
+      ],
+      "status": [
+        {
+          "name": "driver",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "ghcr.io/spiffe/spiffe-csi-driver@sha256:6f1ba5d635ba9bf55ae69ba11d71bf169c8fa3e0139a5063738cbc227c8b5546",
+          "state": [
+            "running"
+          ]
+        },
+        {
+          "name": "registrar",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "registry.k8s.io/sig-storage/csi-node-driver-registrar@sha256:11f199f6bec47403b03cb49c79a41f445884b213b382582a60710b8c6fdc316a",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {},
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "agent",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "plugin",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "pods",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "registration",
+          "type": [
+            "hostPath"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002-trust",
+      "name": "spire-agent-g8xkc",
+      "uid": "01efab80-942d-41e6-b8fb-ea275b30e3a0",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "spire-agent",
+          "image": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+          "resources": {
+            "limits": {
+              "cpu": "500m",
+              "memory": "256Mi"
+            },
+            "requests": {
+              "cpu": "500m",
+              "memory": "256Mi"
+            }
+          },
+          "securityContext": {}
+        }
+      ],
+      "status": [
+        {
+          "name": "spire-agent",
+          "ready": true,
+          "restartCount": 2,
+          "imageID": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {},
+      "hostNetwork": true,
+      "hostPID": true,
+      "volumes": [
+        {
+          "name": "config",
+          "type": [
+            "configMap"
+          ]
+        },
+        {
+          "name": "bundle",
+          "type": [
+            "configMap"
+          ]
+        },
+        {
+          "name": "socket",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "data",
+          "type": [
+            "emptyDir"
+          ]
+        },
+        {
+          "name": "token",
+          "type": [
+            "projected"
+          ]
+        },
+        {
+          "name": "kube-api-access-trxz9",
+          "type": [
+            "projected"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002-trust",
+      "name": "spire-server-687558c947-5jpzb",
+      "uid": "ab1a53fa-de79-4032-b4b7-89f5afe7a03b",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "spire-server",
+          "image": "ghcr.io/spiffe/spire-server@sha256:ff546f4c62dafc479a0cd79eae9a7b6df2975754d75efd31706098e0d7548837",
+          "resources": {
+            "limits": {
+              "cpu": "500m",
+              "memory": "256Mi"
+            },
+            "requests": {
+              "cpu": "500m",
+              "memory": "256Mi"
+            }
+          },
+          "securityContext": {}
+        }
+      ],
+      "status": [
+        {
+          "name": "spire-server",
+          "ready": true,
+          "restartCount": 0,
+          "imageID": "ghcr.io/spiffe/spire-server@sha256:ff546f4c62dafc479a0cd79eae9a7b6df2975754d75efd31706098e0d7548837",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "fsGroup": 1000,
+        "runAsGroup": 1000,
+        "runAsUser": 1000
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "config",
+          "type": [
+            "configMap"
+          ]
+        },
+        {
+          "name": "data",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "kube-api-access-p5hz2",
+          "type": [
+            "projected"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "allowed-probe",
+      "uid": "265a3c14-7afc-4b83-a666-749b794b0376",
+      "phase": "Succeeded",
+      "containers": [
+        {
+          "name": "probe",
+          "image": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "resources": {
+            "limits": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            },
+            "requests": {
+              "cpu": "10m",
+              "memory": "24Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "probe",
+          "ready": false,
+          "restartCount": 0,
+          "imageID": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "state": [
+            "terminated"
+          ]
+        }
+      ],
+      "pod_security": {
+        "runAsGroup": 65532,
+        "runAsNonRoot": true,
+        "runAsUser": 65532,
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": []
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "broker-fixture",
+      "uid": "dcaf865f-2032-4068-aa33-f87c4eb8b210",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "probe",
+          "image": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "resources": {
+            "limits": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            },
+            "requests": {
+              "cpu": "10m",
+              "memory": "24Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "probe",
+          "ready": true,
+          "restartCount": 0,
+          "imageID": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "runAsGroup": 65532,
+        "runAsNonRoot": true,
+        "runAsUser": 65532,
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": []
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "denied-fixture",
+      "uid": "89f47374-34ae-4278-95d5-ab30612480e2",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "probe",
+          "image": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "resources": {
+            "limits": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            },
+            "requests": {
+              "cpu": "10m",
+              "memory": "24Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "probe",
+          "ready": true,
+          "restartCount": 0,
+          "imageID": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "runAsGroup": 65532,
+        "runAsNonRoot": true,
+        "runAsUser": 65532,
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": []
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "fence-custodian-8fc79766c-6mfmj",
+      "uid": "e4ddb02c-2c8d-41ae-a115-11336dbdd44f",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "custodian",
+          "image": "docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+          "resources": {
+            "limits": {
+              "cpu": "1",
+              "memory": "256Mi"
+            },
+            "requests": {
+              "cpu": "50m",
+              "memory": "64Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true,
+            "runAsGroup": 21000,
+            "runAsNonRoot": true,
+            "runAsUser": 21000
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "custodian",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "runAsNonRoot": true,
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        },
+        "supplementalGroups": [
+          21999
+        ]
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "fence-channel",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "fence-ledger",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "fence-config",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "identity-67f794c5f9-tzfdb",
+      "uid": "62de23aa-b74d-4ff0-957c-e17cdb27e860",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "application",
+          "image": "docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+          "resources": {
+            "limits": {
+              "cpu": "1",
+              "memory": "256Mi"
+            },
+            "requests": {
+              "cpu": "50m",
+              "memory": "64Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true,
+            "runAsGroup": 21011,
+            "runAsNonRoot": true,
+            "runAsUser": 21011
+          }
+        },
+        {
+          "name": "proxy",
+          "image": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+          "resources": {
+            "limits": {
+              "cpu": "1",
+              "memory": "192Mi"
+            },
+            "requests": {
+              "cpu": "50m",
+              "memory": "48Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true,
+            "runAsGroup": 21002,
+            "runAsNonRoot": true,
+            "runAsUser": 21002
+          }
+        },
+        {
+          "name": "authorization",
+          "image": "docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+          "resources": {
+            "limits": {
+              "cpu": "1",
+              "memory": "256Mi"
+            },
+            "requests": {
+              "cpu": "50m",
+              "memory": "64Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true,
+            "runAsGroup": 21003,
+            "runAsNonRoot": true,
+            "runAsUser": 21003
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "application",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+          "state": [
+            "running"
+          ]
+        },
+        {
+          "name": "authorization",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+          "state": [
+            "running"
+          ]
+        },
+        {
+          "name": "proxy",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "runAsNonRoot": true,
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        },
+        "supplementalGroups": [
+          21002,
+          21011,
+          21999
+        ]
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "identity-backend",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "identity-outbound",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "identity-application-config",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "identity-proxy-config",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "identity-admin",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "identity-authorization",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "identity-authorization-config",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "fence-channel",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "spire",
+          "type": [
+            "csi"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "identity-cert-probe",
+      "uid": "bb40620e-2c86-4652-8cbb-5bcf70048010",
+      "phase": "Succeeded",
+      "containers": [
+        {
+          "name": "metadata",
+          "image": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "resources": {
+            "limits": {
+              "cpu": "100m",
+              "memory": "32Mi"
+            },
+            "requests": {
+              "cpu": "100m",
+              "memory": "32Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "metadata",
+          "ready": false,
+          "restartCount": 0,
+          "imageID": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "state": [
+            "terminated"
+          ]
+        }
+      ],
+      "pod_security": {
+        "runAsGroup": 21002,
+        "runAsNonRoot": true,
+        "runAsUser": 21002,
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "admin",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "keycloak-7979fc5bb9-bxfjg",
+      "uid": "ed847aa8-1dfc-45e5-b740-cbfbbfdb38d3",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "keycloak",
+          "image": "docker.io/library/care-link-imp02-keycloak@sha256:eb16e701be9e124e7d7a35ce00a8a86bef7d15ed63a262c7f3ec770cda846918",
+          "resources": {
+            "limits": {
+              "cpu": "2",
+              "memory": "1Gi"
+            },
+            "requests": {
+              "cpu": "250m",
+              "memory": "384Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "keycloak",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "docker.io/library/care-link-imp02-keycloak@sha256:eb16e701be9e124e7d7a35ce00a8a86bef7d15ed63a262c7f3ec770cda846918",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "fsGroup": 1000,
+        "runAsGroup": 1000,
+        "runAsNonRoot": true,
+        "runAsUser": 1000,
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "data",
+          "type": [
+            "emptyDir"
+          ]
+        },
+        {
+          "name": "tmp",
+          "type": [
+            "emptyDir"
+          ]
+        },
+        {
+          "name": "socket",
+          "type": [
+            "emptyDir"
+          ]
+        },
+        {
+          "name": "cert",
+          "type": [
+            "secret"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "main-794c74f587-79gc5",
+      "uid": "d262bd15-fdbb-4747-bc15-8d1a0ca3c4c3",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "application",
+          "image": "docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+          "resources": {
+            "limits": {
+              "cpu": "1",
+              "memory": "256Mi"
+            },
+            "requests": {
+              "cpu": "50m",
+              "memory": "64Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true,
+            "runAsGroup": 21012,
+            "runAsNonRoot": true,
+            "runAsUser": 21012
+          }
+        },
+        {
+          "name": "proxy",
+          "image": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+          "resources": {
+            "limits": {
+              "cpu": "1",
+              "memory": "192Mi"
+            },
+            "requests": {
+              "cpu": "50m",
+              "memory": "48Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true,
+            "runAsGroup": 21002,
+            "runAsNonRoot": true,
+            "runAsUser": 21002
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "application",
+          "ready": true,
+          "restartCount": 0,
+          "imageID": "docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+          "state": [
+            "running"
+          ]
+        },
+        {
+          "name": "proxy",
+          "ready": true,
+          "restartCount": 0,
+          "imageID": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "runAsNonRoot": true,
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        },
+        "supplementalGroups": [
+          21002,
+          21012,
+          21999
+        ]
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "main-backend",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "main-outbound",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "main-application-config",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "main-proxy-config",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "main-admin",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "fence-channel",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "spire",
+          "type": [
+            "csi"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "main-cert-probe",
+      "uid": "4f7729a1-c8bf-4bcc-a6c6-ab7ff04a606f",
+      "phase": "Succeeded",
+      "containers": [
+        {
+          "name": "metadata",
+          "image": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "resources": {
+            "limits": {
+              "cpu": "100m",
+              "memory": "32Mi"
+            },
+            "requests": {
+              "cpu": "100m",
+              "memory": "32Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "metadata",
+          "ready": false,
+          "restartCount": 0,
+          "imageID": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "state": [
+            "terminated"
+          ]
+        }
+      ],
+      "pod_security": {
+        "runAsGroup": 21002,
+        "runAsNonRoot": true,
+        "runAsUser": 21002,
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "admin",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "postgres-56d755594c-zbj7f",
+      "uid": "431483bc-7f8d-4645-a451-b97524b22ee0",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "postgres",
+          "image": "postgres@sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba",
+          "resources": {
+            "limits": {
+              "cpu": "1",
+              "memory": "512Mi"
+            },
+            "requests": {
+              "cpu": "100m",
+              "memory": "128Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "postgres",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "docker.io/library/postgres@sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "fsGroup": 999,
+        "runAsGroup": 999,
+        "runAsNonRoot": true,
+        "runAsUser": 999,
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "data",
+          "type": [
+            "persistentVolumeClaim"
+          ]
+        },
+        {
+          "name": "tmp",
+          "type": [
+            "emptyDir"
+          ]
+        },
+        {
+          "name": "socket",
+          "type": [
+            "emptyDir"
+          ]
+        },
+        {
+          "name": "cert",
+          "type": [
+            "secret"
+          ]
+        },
+        {
+          "name": "init",
+          "type": [
+            "secret"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "runtime-probe",
+      "uid": "76b23eeb-4a45-4ffe-861b-0998ceb333fc",
+      "phase": "Succeeded",
+      "containers": [
+        {
+          "name": "probe",
+          "image": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "resources": {
+            "limits": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            },
+            "requests": {
+              "cpu": "10m",
+              "memory": "24Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "probe",
+          "ready": false,
+          "restartCount": 0,
+          "imageID": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+          "state": [
+            "terminated"
+          ]
+        }
+      ],
+      "pod_security": {
+        "runAsGroup": 65532,
+        "runAsNonRoot": true,
+        "runAsUser": 65532,
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": []
+    },
+    {
+      "namespace": "kube-system",
+      "name": "calico-kube-controllers-d8955bcc7-c4wvh",
+      "uid": "bb637ba8-7be1-4d07-b093-bdea0493522f",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "calico-kube-controllers",
+          "image": "quay.io/calico/calico@sha256:4ebc20730127bc9e8bf1db5f5a2d8b58cf37fe0e891b3c7b5471992221d213e5",
+          "resources": {},
+          "securityContext": {
+            "runAsNonRoot": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "calico-kube-controllers",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "quay.io/calico/calico@sha256:4ebc20730127bc9e8bf1db5f5a2d8b58cf37fe0e891b3c7b5471992221d213e5",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "kube-api-access-b5lw6",
+          "type": [
+            "projected"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "calico-node-2t2sw",
+      "uid": "4daebd3d-c386-4e03-84b5-e9fa260088e9",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "calico-node",
+          "image": "quay.io/calico/node@sha256:565d8db3200e443955557f8f28ff44ab8a4a456754bc74a19c4f2f3444af9b1c",
+          "resources": {
+            "requests": {
+              "cpu": "250m"
+            }
+          },
+          "securityContext": {
+            "privileged": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "calico-node",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "quay.io/calico/node@sha256:565d8db3200e443955557f8f28ff44ab8a4a456754bc74a19c4f2f3444af9b1c",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": true,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "lib-modules",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "var-run-calico",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "var-lib-calico",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "xtables-lock",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "sys-fs",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "bpffs",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "sys-kernel-security",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "nodeproc",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "cni-bin-dir",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "cni-plugins-stage",
+          "type": [
+            "emptyDir"
+          ]
+        },
+        {
+          "name": "cni-net-dir",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "cni-log-dir",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "host-local-net-dir",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "policysync",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "kube-api-access-mhcbz",
+          "type": [
+            "projected"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "coredns-589f44dc88-sf6wm",
+      "uid": "8da5d8a3-63d0-48ca-8879-f2a029d4e4ab",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "coredns",
+          "image": "registry.k8s.io/coredns/coredns:v1.14.2",
+          "resources": {
+            "limits": {
+              "memory": "170Mi"
+            },
+            "requests": {
+              "cpu": "100m",
+              "memory": "70Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "add": [
+                "NET_BIND_SERVICE"
+              ],
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "coredns",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "sha256:fe81a497e85f174f8d7d5739d14f5184141f4e80596977ff8f838d7062fecf02",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {},
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "config-volume",
+          "type": [
+            "configMap"
+          ]
+        },
+        {
+          "name": "kube-api-access-mdr45",
+          "type": [
+            "projected"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "coredns-589f44dc88-t94rs",
+      "uid": "d79b3f50-4ba8-4d01-a292-5b1108b9570a",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "coredns",
+          "image": "registry.k8s.io/coredns/coredns:v1.14.2",
+          "resources": {
+            "limits": {
+              "memory": "170Mi"
+            },
+            "requests": {
+              "cpu": "100m",
+              "memory": "70Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "add": [
+                "NET_BIND_SERVICE"
+              ],
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "coredns",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "sha256:fe81a497e85f174f8d7d5739d14f5184141f4e80596977ff8f838d7062fecf02",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {},
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "config-volume",
+          "type": [
+            "configMap"
+          ]
+        },
+        {
+          "name": "kube-api-access-pbkzk",
+          "type": [
+            "projected"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "etcd-care-link-imp02-002-control-plane",
+      "uid": "d7610982-c01b-4883-9f0c-a21b3b905ff0",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "etcd",
+          "image": "registry.k8s.io/etcd:3.6.8-0",
+          "resources": {
+            "requests": {
+              "cpu": "100m",
+              "memory": "100Mi"
+            }
+          },
+          "securityContext": {}
+        }
+      ],
+      "status": [
+        {
+          "name": "etcd",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "sha256:6da6ea097b38456d060e6abd1a262e031a62a7fc7b8d8ea29ac2c76e49ac188b",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": true,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "etcd-certs",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "etcd-data",
+          "type": [
+            "hostPath"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "kube-apiserver-care-link-imp02-002-control-plane",
+      "uid": "1a77afa1-8c6e-46aa-ac34-9304dd69c33f",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "kube-apiserver",
+          "image": "registry.k8s.io/kube-apiserver:v1.36.4",
+          "resources": {
+            "requests": {
+              "cpu": "250m"
+            }
+          },
+          "securityContext": {}
+        }
+      ],
+      "status": [
+        {
+          "name": "kube-apiserver",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "docker.io/library/import-2026-08-26@sha256:1e705e152ef60f375a22cf792bc96e71942be0f43e2ef00e3cf0f57be144a68b",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": true,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "ca-certs",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "etc-ca-certificates",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "k8s-certs",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "usr-local-share-ca-certificates",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "usr-share-ca-certificates",
+          "type": [
+            "hostPath"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "kube-controller-manager-care-link-imp02-002-control-plane",
+      "uid": "a892aae2-0caf-4817-9a6b-8f986cb36dd9",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "kube-controller-manager",
+          "image": "registry.k8s.io/kube-controller-manager:v1.36.4",
+          "resources": {
+            "requests": {
+              "cpu": "200m"
+            }
+          },
+          "securityContext": {}
+        }
+      ],
+      "status": [
+        {
+          "name": "kube-controller-manager",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "docker.io/library/import-2026-08-26@sha256:e72d21824c5b3ff23376289a8a8cec63043de06a7902da482211aedf50c6775c",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": true,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "ca-certs",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "etc-ca-certificates",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "k8s-certs",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "kubeconfig",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "usr-local-share-ca-certificates",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "usr-share-ca-certificates",
+          "type": [
+            "hostPath"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "kube-proxy-5crrr",
+      "uid": "f9acc4e1-98e1-495b-b252-b546cfd98f9d",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "kube-proxy",
+          "image": "registry.k8s.io/kube-proxy:v1.36.4",
+          "resources": {},
+          "securityContext": {
+            "privileged": true
+          }
+        }
+      ],
+      "status": [
+        {
+          "name": "kube-proxy",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "docker.io/library/import-2026-08-26@sha256:d8e079fb2411010464dae6f0eea518414a1872af0161512c26c6bd793db07171",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {},
+      "hostNetwork": true,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "kube-proxy",
+          "type": [
+            "configMap"
+          ]
+        },
+        {
+          "name": "xtables-lock",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "lib-modules",
+          "type": [
+            "hostPath"
+          ]
+        },
+        {
+          "name": "kube-api-access-mg4vm",
+          "type": [
+            "projected"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "kube-scheduler-care-link-imp02-002-control-plane",
+      "uid": "4faea9dc-1c76-402b-a0fc-6b74e3a84664",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "kube-scheduler",
+          "image": "registry.k8s.io/kube-scheduler:v1.36.4",
+          "resources": {
+            "requests": {
+              "cpu": "100m"
+            }
+          },
+          "securityContext": {}
+        }
+      ],
+      "status": [
+        {
+          "name": "kube-scheduler",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "docker.io/library/import-2026-08-26@sha256:f719939bb026b62676a012cbb3046e055be22cbb6ff10d077a0c6b609824c98f",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {
+        "seccompProfile": {
+          "type": "RuntimeDefault"
+        }
+      },
+      "hostNetwork": true,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "kubeconfig",
+          "type": [
+            "hostPath"
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "local-path-storage",
+      "name": "local-path-provisioner-56c4685b7c-cfnk4",
+      "uid": "527bf51b-8590-4cef-8510-f515b33b3dae",
+      "phase": "Running",
+      "containers": [
+        {
+          "name": "local-path-provisioner",
+          "image": "docker.io/kindest/local-path-provisioner:v20260820-69b56db7",
+          "resources": {},
+          "securityContext": {}
+        }
+      ],
+      "status": [
+        {
+          "name": "local-path-provisioner",
+          "ready": true,
+          "restartCount": 1,
+          "imageID": "sha256:0771a8a05619f4bb6f4c8484f942f509b21a04ebe56ee26d17a3006e250bfd46",
+          "state": [
+            "running"
+          ]
+        }
+      ],
+      "pod_security": {},
+      "hostNetwork": false,
+      "hostPID": false,
+      "volumes": [
+        {
+          "name": "config-volume",
+          "type": [
+            "configMap"
+          ]
+        },
+        {
+          "name": "kube-api-access-8826h",
+          "type": [
+            "projected"
+          ]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "namespace": "care-link-imp02-002-trust",
+      "name": "spire-server",
+      "type": "NodePort",
+      "clusterIP": "10.96.188.180",
+      "ports": [
+        {
+          "name": "attestation",
+          "nodePort": 30881,
+          "port": 8081,
+          "protocol": "TCP",
+          "targetPort": 8081
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "identity",
+      "type": "NodePort",
+      "clusterIP": "10.96.33.47",
+      "ports": [
+        {
+          "name": "tls",
+          "nodePort": 30444,
+          "port": 8443,
+          "protocol": "TCP",
+          "targetPort": 8443
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "keycloak",
+      "type": "NodePort",
+      "clusterIP": "10.96.59.120",
+      "ports": [
+        {
+          "name": "tls",
+          "nodePort": 30443,
+          "port": 20443,
+          "protocol": "TCP",
+          "targetPort": 8443
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "main",
+      "type": "NodePort",
+      "clusterIP": "10.96.165.95",
+      "ports": [
+        {
+          "name": "tls",
+          "nodePort": 30441,
+          "port": 18443,
+          "protocol": "TCP",
+          "targetPort": 8444
+        }
+      ]
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "postgres",
+      "type": "ClusterIP",
+      "clusterIP": "10.96.6.10",
+      "ports": [
+        {
+          "name": "tls",
+          "port": 5432,
+          "protocol": "TCP",
+          "targetPort": 5432
+        }
+      ]
+    },
+    {
+      "namespace": "default",
+      "name": "kubernetes",
+      "type": "ClusterIP",
+      "clusterIP": "10.96.0.1",
+      "ports": [
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "TCP",
+          "targetPort": 6443
+        }
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "kube-dns",
+      "type": "ClusterIP",
+      "clusterIP": "10.96.0.10",
+      "ports": [
+        {
+          "name": "dns",
+          "port": 53,
+          "protocol": "UDP",
+          "targetPort": 53
+        },
+        {
+          "name": "dns-tcp",
+          "port": 53,
+          "protocol": "TCP",
+          "targetPort": 53
+        },
+        {
+          "name": "metrics",
+          "port": 9153,
+          "protocol": "TCP",
+          "targetPort": 9153
+        }
+      ]
+    }
+  ],
+  "pvcs": [
+    {
+      "namespace": "care-link-imp02-002-trust",
+      "name": "spire-server-data",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "1Gi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "fence-channel",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "fence-config",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "fence-ledger",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "identity-admin",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "identity-application-config",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "identity-authorization",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "identity-authorization-config",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "identity-backend",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "identity-outbound",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "identity-proxy-config",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "main-admin",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "main-application-config",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "main-backend",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "main-outbound",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "main-proxy-config",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "16Mi"
+        }
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "postgres-data",
+      "phase": "Bound",
+      "storage": {
+        "requests": {
+          "storage": "2Gi"
+        }
+      }
+    }
+  ],
+  "networkpolicies": [
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "allowed-probe-routes",
+      "spec": {
+        "egress": [
+          {
+            "ports": [
+              {
+                "port": 8443,
+                "protocol": "TCP"
+              },
+              {
+                "port": 5432,
+                "protocol": "TCP"
+              },
+              {
+                "port": 8011,
+                "protocol": "TCP"
+              },
+              {
+                "port": 1234,
+                "protocol": "TCP"
+              },
+              {
+                "port": 18443,
+                "protocol": "TCP"
+              }
+            ],
+            "to": [
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "broker-fixture"
+                  }
+                }
+              },
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "denied-fixture"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "ports": [
+              {
+                "port": 18443,
+                "protocol": "TCP"
+              }
+            ],
+            "to": [
+              {
+                "ipBlock": {
+                  "cidr": "172.20.0.3/32"
+                }
+              }
+            ]
+          }
+        ],
+        "podSelector": {
+          "matchLabels": {
+            "app": "allowed-probe"
+          }
+        },
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ]
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "broker-fixture-routes",
+      "spec": {
+        "ingress": [
+          {
+            "from": [
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "allowed-probe"
+                  }
+                }
+              },
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "runtime-probe"
+                  }
+                }
+              }
+            ],
+            "ports": [
+              {
+                "port": 8443,
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "podSelector": {
+          "matchLabels": {
+            "app": "broker-fixture"
+          }
+        },
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ]
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "default-deny",
+      "spec": {
+        "podSelector": {},
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ]
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "denied-fixture-routes",
+      "spec": {
+        "ingress": [
+          {
+            "from": [
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "allowed-probe"
+                  }
+                }
+              }
+            ],
+            "ports": [
+              {
+                "port": 8443,
+                "protocol": "TCP"
+              },
+              {
+                "port": 5432,
+                "protocol": "TCP"
+              },
+              {
+                "port": 8011,
+                "protocol": "TCP"
+              },
+              {
+                "port": 1234,
+                "protocol": "TCP"
+              },
+              {
+                "port": 18443,
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "podSelector": {
+          "matchLabels": {
+            "app": "denied-fixture"
+          }
+        },
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ]
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "identity-private-routes",
+      "spec": {
+        "egress": [
+          {
+            "ports": [
+              {
+                "port": 53,
+                "protocol": "UDP"
+              },
+              {
+                "port": 53,
+                "protocol": "TCP"
+              }
+            ],
+            "to": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "kubernetes.io/metadata.name": "kube-system"
+                  }
+                },
+                "podSelector": {
+                  "matchLabels": {
+                    "k8s-app": "kube-dns"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "ports": [
+              {
+                "port": 8443,
+                "protocol": "TCP"
+              },
+              {
+                "port": 20443,
+                "protocol": "TCP"
+              }
+            ],
+            "to": [
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "keycloak"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "ports": [
+              {
+                "port": 5432,
+                "protocol": "TCP"
+              }
+            ],
+            "to": [
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "postgres"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "ingress": [
+          {
+            "ports": [
+              {
+                "port": 8443,
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "podSelector": {
+          "matchLabels": {
+            "app": "identity"
+          }
+        },
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ]
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "keycloak-routes",
+      "spec": {
+        "egress": [
+          {
+            "ports": [
+              {
+                "port": 5432,
+                "protocol": "TCP"
+              }
+            ],
+            "to": [
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "postgres"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "ports": [
+              {
+                "port": 53,
+                "protocol": "UDP"
+              },
+              {
+                "port": 53,
+                "protocol": "TCP"
+              }
+            ],
+            "to": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "kubernetes.io/metadata.name": "kube-system"
+                  }
+                },
+                "podSelector": {
+                  "matchLabels": {
+                    "k8s-app": "kube-dns"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "ingress": [
+          {
+            "ports": [
+              {
+                "port": 8443,
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "podSelector": {
+          "matchLabels": {
+            "app": "keycloak"
+          }
+        },
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ]
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "main-private-routes",
+      "spec": {
+        "egress": [
+          {
+            "ports": [
+              {
+                "port": 53,
+                "protocol": "UDP"
+              },
+              {
+                "port": 53,
+                "protocol": "TCP"
+              }
+            ],
+            "to": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "kubernetes.io/metadata.name": "kube-system"
+                  }
+                },
+                "podSelector": {
+                  "matchLabels": {
+                    "k8s-app": "kube-dns"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "ports": [
+              {
+                "port": 8443,
+                "protocol": "TCP"
+              }
+            ],
+            "to": [
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "identity"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "ingress": [
+          {
+            "ports": [
+              {
+                "port": 8444,
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "podSelector": {
+          "matchLabels": {
+            "app": "main"
+          }
+        },
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ]
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "postgres-routes",
+      "spec": {
+        "ingress": [
+          {
+            "from": [
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "identity"
+                  }
+                }
+              },
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "keycloak"
+                  }
+                }
+              }
+            ],
+            "ports": [
+              {
+                "port": 5432,
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "podSelector": {
+          "matchLabels": {
+            "app": "postgres"
+          }
+        },
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ]
+      }
+    },
+    {
+      "namespace": "care-link-imp02-002",
+      "name": "runtime-probe-routes",
+      "spec": {
+        "egress": [
+          {
+            "ports": [
+              {
+                "port": 8443,
+                "protocol": "TCP"
+              }
+            ],
+            "to": [
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "broker-fixture"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "podSelector": {
+          "matchLabels": {
+            "app": "runtime-probe"
+          }
+        },
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ]
+      }
+    }
+  ],
+  "docker_containers": [
+    {
+      "Command": "\"/docker-entrypoint.\u2026\"",
+      "CreatedAt": "2026-11-09 13:50:08 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "5e33db687536",
+      "Image": "8de97e654644",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=3fe483e6fd9495b65d57c7f6a244f2d180c953c5fc9d20820a73669af0de128e,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:401cf6645d36f5e599dd26eec125a0a9d21c92267bc37b702d24c327b1ed889a,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/host-compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.replace=care-link-imp02-002-host-proxy,com.docker.compose.service=proxy,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/8444/tcp=127.0.0.1:19443,org.opencontainers.image.version=22.04",
+      "LocalVolumes": "5",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-proxy",
+      "Networks": "kind",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "127.0.0.1:19443->8444/tcp",
+      "RunningFor": "3 days ago",
+      "Size": "36.9kB (virtual 202MB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    },
+    {
+      "Command": "\"/docker-entrypoint.\u2026\"",
+      "CreatedAt": "2026-11-09 13:00:45 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "1cd1379ce63f",
+      "Image": "8de97e654644",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=495307635461d49930c5b575ee6022625d71a239c09e931c3c0029517cb1753b,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:401cf6645d36f5e599dd26eec125a0a9d21c92267bc37b702d24c327b1ed889a,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/signals/compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002/signals,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.replace=care-link-imp02-002-host-signal-proxy,com.docker.compose.service=signal-proxy,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2,org.opencontainers.image.version=22.04",
+      "LocalVolumes": "4",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-signal-proxy",
+      "Networks": "kind",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "10000/tcp",
+      "RunningFor": "3 days ago",
+      "Size": "32.8kB (virtual 202MB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    },
+    {
+      "Command": "\"python -m tools.imp\u2026\"",
+      "CreatedAt": "2026-11-09 13:00:45 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "b90df7e5a857",
+      "Image": "217f2b950768",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=68e8fc8c0d56bd02f7eb72b6195438bf74f0a42dd42dc5bbb5fbc63dc54a0bae,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:014b887efb9a0b19158618e965685ad4b124d53ddf95ef68a2e93278ec56464d,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/host-compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.replace=care-link-imp02-002-host-help,com.docker.compose.service=help,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "4",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-help",
+      "Networks": "none",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "28.7kB (virtual 231MB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    },
+    {
+      "Command": "\"/opt/spire/bin/spir\u2026\"",
+      "CreatedAt": "2026-11-09 13:00:41 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "0600cc321b06",
+      "Image": "ab3a8ce70435",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=dc8eae2e64f23d4b25512bf801ca2b7c5531c89656a2b2a431e7c2137a17fe76,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:095d14bfdcd81388d2ca443e7f7be3584a23b5cef09008b1872ac2645d9e0cbc,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/host-compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.replace=care-link-imp02-002-host-agent,com.docker.compose.service=agent,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "3",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-agent",
+      "Networks": "kind",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "28.7kB (virtual 73.6MB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    },
+    {
+      "Command": "\"python -m tools.imp\u2026\"",
+      "CreatedAt": "2026-11-09 12:17:42 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "4b541e318d99",
+      "Image": "care-link-imp02-app:002",
+      "Labels": "care-link.session=imp02-002,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/8444/tcp=127.0.0.1:21443",
+      "LocalVolumes": "2",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-static",
+      "Networks": "bridge",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "127.0.0.1:21443->8444/tcp",
+      "RunningFor": "3 days ago",
+      "Size": "12.3kB (virtual 231MB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    },
+    {
+      "Command": "\"python -c 'import t\u2026\"",
+      "CreatedAt": "2026-11-09 11:14:10 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "5a955c9c3bb2",
+      "Image": "82bc3c539b88",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=e331f3437ceb84e4c492e70edbe8cf0ce983be634e308a40cbe450bc4b55be3f,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:af1cafd27effb3b1c7c4ad8b459f118371b5d216d4659a3e68a7b5aae65b517f,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/signals/compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002/signals,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.service=signal-client,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "1",
+      "Mounts": "care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-signal-client",
+      "Networks": "none",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux",
+        "variant": "v8"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "16.4kB (virtual 164MB)",
+      "State": "exited",
+      "Status": "Exited (0) 2 days ago"
+    },
+    {
+      "Command": "\"python -c 'import t\u2026\"",
+      "CreatedAt": "2026-11-09 11:14:10 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "9001934b03e0",
+      "Image": "82bc3c539b88",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=98f3309490e7cb618f709e5a504ec4b2562c80afdad627acc10d7992805df54f,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:af1cafd27effb3b1c7c4ad8b459f118371b5d216d4659a3e68a7b5aae65b517f,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/signals/compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002/signals,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.service=signal-cert-probe,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "1",
+      "Mounts": "care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-signal-cert-probe",
+      "Networks": "none",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux",
+        "variant": "v8"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "8.19kB (virtual 164MB)",
+      "State": "exited",
+      "Status": "Exited (0) 2 days ago"
+    },
+    {
+      "Command": "\"python -c 'import t\u2026\"",
+      "CreatedAt": "2026-11-09 10:09:58 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "bce6c0885929",
+      "Image": "82bc3c539b88",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=971baddb8f030e663d9ec025ecb8469a044f756a99210c7410716c236385c93d,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:af1cafd27effb3b1c7c4ad8b459f118371b5d216d4659a3e68a7b5aae65b517f,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/host-compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.service=certificate-probe,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "1",
+      "Mounts": "care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-cert-probe",
+      "Networks": "none",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux",
+        "variant": "v8"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "8.19kB (virtual 164MB)",
+      "State": "exited",
+      "Status": "Exited (0) 2 days ago"
+    },
+    {
+      "Command": "\"python -c 'import t\u2026\"",
+      "CreatedAt": "2026-11-09 10:09:31 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "a6fc8abbee0e",
+      "Image": "82bc3c539b88",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=6fe48ab72d6ee014832e3d6b0ba43de2274b8a5abfa13a1e564258eae94ed4cf,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:af1cafd27effb3b1c7c4ad8b459f118371b5d216d4659a3e68a7b5aae65b517f,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/host-compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.service=seed,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "9",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-seed",
+      "Networks": "none",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux",
+        "variant": "v8"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "57.3kB (virtual 164MB)",
+      "State": "exited",
+      "Status": "Exited (137) 3 days ago"
+    },
+    {
+      "Command": "\"python -c 'import s\u2026\"",
+      "CreatedAt": "2026-11-09 09:39:18 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "0ba0befe5f02",
+      "Image": "82bc3c539b88",
+      "Labels": "care-link.session=imp02-002,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "0",
+      "Mounts": "",
+      "Names": "care-link-imp02-002-host-control",
+      "Networks": "kind",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux",
+        "variant": "v8"
+      },
+      "Ports": "",
+      "RunningFor": "4 days ago",
+      "Size": "4.1kB (virtual 164MB)",
+      "State": "running",
+      "Status": "Up 4 days"
+    },
+    {
+      "Command": "\"/usr/local/bin/entr\u2026\"",
+      "CreatedAt": "2026-11-09 09:18:29 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "1c1c907344c7",
+      "Image": "099e049362a1",
+      "Labels": "desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/30441/tcp=127.0.0.1:18443,desktop.docker.io/ports/30443/tcp=127.0.0.1:20443,desktop.docker.io/ports/6443/tcp=127.0.0.1:58537,io.x-k8s.kind.cluster=care-link-imp02-002,io.x-k8s.kind.role=control-plane",
+      "LocalVolumes": "1",
+      "Mounts": "06e6e7d710854f\u2026,/lib/modules",
+      "Names": "care-link-imp02-002-control-plane",
+      "Networks": "kind",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "127.0.0.1:58537->6443/tcp, 127.0.0.1:18443->30441/tcp, 127.0.0.1:20443->30443/tcp",
+      "RunningFor": "4 days ago",
+      "Size": "385MB (virtual 1.31GB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    }
+  ],
+  "docker_public_bindings": [
+    {
+      "name": "/care-link-imp02-002-host-proxy",
+      "id": "5e33db687536b53dbc17348c9c198dfce5d26d2fec77f7afd8e349c221ce4ec7",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "state": "running",
+      "started_at": "2026-11-09T18:50:08.547705301Z",
+      "restarts": 0,
+      "ports": {
+        "8444/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "19443"
+          }
+        ]
+      },
+      "networks": [
+        "kind"
+      ]
+    },
+    {
+      "name": "/care-link-imp02-002-host-signal-proxy",
+      "id": "1cd1379ce63f7c961404b29be0337b635c41570a5e47fceec41e8a371e69f5e9",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "state": "running",
+      "started_at": "2026-11-09T18:00:45.876983013Z",
+      "restarts": 0,
+      "ports": {
+        "10000/tcp": null
+      },
+      "networks": [
+        "kind"
+      ]
+    },
+    {
+      "name": "/care-link-imp02-002-host-help",
+      "id": "b90df7e5a857506522ed710dac86fefc805d1bfa3a472ddceb9296874e43b7b0",
+      "image": "sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+      "state": "running",
+      "started_at": "2026-11-09T18:00:45.559895888Z",
+      "restarts": 0,
+      "ports": {},
+      "networks": [
+        "none"
+      ]
+    },
+    {
+      "name": "/care-link-imp02-002-host-agent",
+      "id": "0600cc321b064f820b9a2ceabb547d5ae8be1f5bc2ede93a5a06f615e857e05e",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "state": "running",
+      "started_at": "2026-11-09T18:00:42.046596136Z",
+      "restarts": 0,
+      "ports": {},
+      "networks": [
+        "kind"
+      ]
+    },
+    {
+      "name": "/care-link-imp02-002-static",
+      "id": "4b541e318d997e62976dc81f9c42f58429b8f5aa0979b44729c375498cabfe13",
+      "image": "sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+      "state": "running",
+      "started_at": "2026-11-09T17:17:42.552785678Z",
+      "restarts": 0,
+      "ports": {
+        "8444/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "21443"
+          }
+        ]
+      },
+      "networks": [
+        "bridge"
+      ]
+    },
+    {
+      "name": "/care-link-imp02-002-host-signal-client",
+      "id": "5a955c9c3bb23690811bae5105926d8a6e5bc276e6f43ae7a5e1eb9bf6a68b8c",
+      "image": "sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+      "state": "exited",
+      "started_at": "2026-11-09T16:14:10.654125678Z",
+      "restarts": 0,
+      "ports": {},
+      "networks": [
+        "none"
+      ]
+    },
+    {
+      "name": "/care-link-imp02-002-host-signal-cert-probe",
+      "id": "9001934b03e0fa252946dc3a2c5c149be93eec4f072a9b564d85e290deac77bd",
+      "image": "sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+      "state": "exited",
+      "started_at": "2026-11-09T16:14:10.546618761Z",
+      "restarts": 0,
+      "ports": {},
+      "networks": [
+        "none"
+      ]
+    },
+    {
+      "name": "/care-link-imp02-002-host-cert-probe",
+      "id": "bce6c0885929bc8decdec6b72f6a2999490975e911e39d5382579b1f08c2c098",
+      "image": "sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+      "state": "exited",
+      "started_at": "2026-11-09T15:09:58.520209547Z",
+      "restarts": 0,
+      "ports": {},
+      "networks": [
+        "none"
+      ]
+    },
+    {
+      "name": "/care-link-imp02-002-host-seed",
+      "id": "a6fc8abbee0e2479cd7f91f71a5ded0c887839f85cbcb721448440a01660a88c",
+      "image": "sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+      "state": "exited",
+      "started_at": "2026-11-09T18:00:41.698164303Z",
+      "restarts": 0,
+      "ports": {},
+      "networks": [
+        "none"
+      ]
+    },
+    {
+      "name": "/care-link-imp02-002-host-control",
+      "id": "0ba0befe5f02bb2ad39e749d8ea83766ce49fe5e4344ab69eaf1829e127e8b19",
+      "image": "sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+      "state": "running",
+      "started_at": "2026-11-09T14:39:18.670700167Z",
+      "restarts": 0,
+      "ports": {},
+      "networks": [
+        "kind"
+      ]
+    },
+    {
+      "name": "/care-link-imp02-002-control-plane",
+      "id": "1c1c907344c74fb3e008f55a39e8ff8b7bc4385387beedca547dd7ce21d6b9c8",
+      "image": "sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "state": "running",
+      "started_at": "2026-11-09T17:43:35.217171216Z",
+      "restarts": 0,
+      "ports": {
+        "30441/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18443"
+          }
+        ],
+        "30443/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "20443"
+          }
+        ],
+        "6443/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "58537"
+          }
+        ]
+      },
+      "networks": [
+        "kind"
+      ]
+    }
+  ]
+}

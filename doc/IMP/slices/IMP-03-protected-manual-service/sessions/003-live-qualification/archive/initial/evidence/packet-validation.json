@@ -1,0 +1,16 @@
+{
+  "validated_at": "2026-11-13T14:08:22.290217+00:00",
+  "schemas": [
+    "WorkPacket",
+    "DemoPacket",
+    "AgentResult"
+  ],
+  "all_recorded_check_and_output_hashes_match": true,
+  "source_files_rehashed": 319,
+  "source_drift": [],
+  "session_markdown_links_exist": true,
+  "read_only_specialist_final_review": "no substantive corrections",
+  "private_material_scan": "current fixture password and PEM private-key blocks absent from session files; not a general secret-detector guarantee",
+  "human_acceptance": false,
+  "deployment_qualification": "not_run"
+}

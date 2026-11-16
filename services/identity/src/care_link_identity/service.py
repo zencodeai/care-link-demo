@@ -19,6 +19,8 @@ from .domain import (
     stamp,
     text,
 )
+from .provisioning import provision_account
+from .review_context import ReviewContext
 
 
 class IdentityService:
@@ -31,9 +33,14 @@ class IdentityService:
         issuer: str,
         origin: str,
         clock: Callable[[], datetime] = lambda: datetime.now(UTC),
+        *,
+        review_context: ReviewContext | None = None,
     ) -> None:
         self.store, self.provider, self.custody, self.signer = store, provider, custody, signer
         self.issuer, self.origin, self.clock = issuer, origin, clock
+        if review_context is not None and review_context.origin != origin:
+            raise ValueError("Review context must match configured service origin")
+        self.review_context = review_context
 
     def provision(self, subject: str, account_id: str, roles: list[str]) -> None:
         """Offline provisioning hook; no route automatically grants roles from claims.
@@ -41,28 +48,7 @@ class IdentityService:
         Caller must be a separately authorized provisioning tool. This method is
         deliberately absent from the browser/internal HTTP API.
         """
-        if not set(roles) <= PRIVILEGED_ROLES | PARTICIPANT_ROLES:
-            raise IdentityError("identity.invalid_role")
-        key = digest(self.issuer + "\0" + subject)
-        with self.store.transaction() as tx:
-            old = tx.get("account", key)
-            if old is not None:
-                raise IdentityError("identity.provision_conflict", 409)
-            tx.put(
-                "account",
-                key,
-                {
-                    "account_id": account_id,
-                    "subject": subject,
-                    "roles": roles,
-                    "created_at": stamp(self.clock()),
-                    "reviewed_at": stamp(self.clock()),
-                    "access_review_due_at": stamp(self.clock() + timedelta(days=30)),
-                    "enabled": True,
-                    "revision": "1",
-                    "role_revision": "1",
-                },
-            )
+        provision_account(self.store, self.issuer, subject, account_id, roles, clock=self.clock)
 
     def _account(self, tx: Transaction, subject: str, role: str) -> dict[str, object]:
         account = tx.get("account", digest(self.issuer + "\0" + subject))
@@ -78,6 +64,17 @@ class IdentityService:
             or (issuer and issuer.get("quarantined") is True)
             or not isinstance(account.get("roles"), list)
             or role not in cast(list[object], account["roles"])
+            or (
+                self.review_context is not None
+                and (
+                    account.get("account_id") != self.review_context.account_id
+                    or role != self.review_context.role
+                    or (
+                        self.review_context.provider_subject is not None
+                        and subject != self.review_context.provider_subject
+                    )
+                )
+            )
         ):
             raise IdentityError("identity.account_unavailable")
         return account
@@ -92,6 +89,8 @@ class IdentityService:
     ) -> tuple[dict[str, object], str]:
         if role not in PRIVILEGED_ROLES | PARTICIPANT_ROLES:
             raise IdentityError("identity.invalid_role")
+        if self.review_context is not None and role != self.review_context.role:
+            raise IdentityError("identity.review_actor_mismatch")
         now, state, nonce, verifier = self.clock(), token(), token(), token()
         intent_id = str(uuid4())
         record: dict[str, object] = {
@@ -106,7 +105,32 @@ class IdentityService:
             "ceremony_id": ceremony_id,
             "session_hash": session_hash,
         }
+        if self.review_context is not None:
+            record.update(self.review_context.binding())
+            record["provider_issuer"] = self.issuer
         with self.store.transaction() as tx:
+            if self.review_context is not None:
+                binding_key = "login-binding:" + digest(self.origin + "\0" + binding)
+                current_binding = tx.get("proof", binding_key)
+                if current_binding:
+                    current_intent = tx.get("intent", text(current_binding, "state_hash"))
+                    if (
+                        current_intent
+                        and current_intent.get("state") in {"pending", "redeeming"}
+                        and instant(current_intent["expires_at"]) > now
+                    ):
+                        # A new explicit Sign in supersedes an abandoned ceremony.
+                        # Its callback must still win the final current-intent guard.
+                        current_intent.update({"state": "superseded", "verifier": "", "nonce": ""})
+                        tx.put("intent", text(current_binding, "state_hash"), current_intent)
+                tx.put(
+                    "proof",
+                    binding_key,
+                    {
+                        "state_hash": digest(state),
+                        "expires_at": record["expires_at"],
+                    },
+                )
             if previous_raw_session is not None:
                 previous_hash = digest(previous_raw_session)
                 previous = tx.get("session", previous_hash)
@@ -119,7 +143,10 @@ class IdentityService:
             tx.put("intent", digest(state), record)
             tx.put("intent", intent_id, {"state_hash": digest(state)})
         url = self.provider.authorization_url(
-            state, nonce, verifier, bool(ceremony_id) or role in PRIVILEGED_ROLES
+            state,
+            nonce,
+            verifier,
+            self.review_context is not None or bool(ceremony_id) or role in PRIVILEGED_ROLES,
         )
         return {
             "intent_id": intent_id,
@@ -144,6 +171,13 @@ class IdentityService:
                 or not secrets.compare_digest(text(intent, "binding"), digest(binding))
                 or instant(intent["expires_at"]) <= now
                 or intent.get("state") != "pending"
+                or (
+                    self.review_context is not None and intent.get("provider_issuer") != self.issuer
+                )
+                or (
+                    self.review_context is not None
+                    and any(intent.get(k) != v for k, v in self.review_context.binding().items())
+                )
             ):
                 raise IdentityError("identity.invalid_login_intent")
             if returned_issuer is not None and returned_issuer != self.issuer:
@@ -160,17 +194,38 @@ class IdentityService:
                 failed = False
         if failed:
             raise IdentityError("identity.login_cancelled")
+        received_access: str | None = None
         try:
             principal = self.provider.exchange(
                 code,
                 self.custody.decrypt(text(intent, "verifier")),
                 text(intent, "nonce"),
-                bool(intent.get("ceremony_id")) or text(intent, "role") in PRIVILEGED_ROLES,
+                self.review_context is not None
+                or bool(intent.get("ceremony_id"))
+                or text(intent, "role") in PRIVILEGED_ROLES,
             )
-            if text(intent, "role") in PRIVILEGED_ROLES and not principal.mfa:
+            received_access = principal.access_token
+            if (
+                self.review_context is not None or text(intent, "role") in PRIVILEGED_ROLES
+            ) and not principal.mfa:
                 raise IdentityError("identity.mfa_required")
             now = self.clock()
             with self.store.transaction() as tx:
+                if self.review_context is not None:
+                    latest = tx.get("intent", key)
+                    binding_guard = tx.get(
+                        "proof", "login-binding:" + digest(self.origin + "\0" + binding)
+                    )
+                    if (
+                        latest is None
+                        or latest.get("state") != "redeeming"
+                        or binding_guard is None
+                        or binding_guard.get("state_hash") != key
+                        or any(latest.get(k) != v for k, v in self.review_context.binding().items())
+                    ):
+                        raise IdentityError("identity.login_superseded", 409)
+                    if principal.auth_time < instant(intent["created_at"]) - timedelta(seconds=5):
+                        raise IdentityError("identity.expired_login")
                 if instant(intent["expires_at"]) <= now or principal.expires_at <= now:
                     raise IdentityError("identity.expired_login")
                 account = self._account(tx, principal.subject, text(intent, "role"))
@@ -255,12 +310,22 @@ class IdentityService:
                         "access_token": self.custody.encrypt(principal.access_token),
                         "revoked": False,
                     }
+                    if self.review_context is not None:
+                        session.update(self.review_context.binding())
+                        session["provider_issuer"] = self.issuer
                     tx.put("session", digest(raw_session), session)
                 intent.update({"state": "completed", "verifier": "", "nonce": ""})
                 tx.put("intent", key, intent)
                 view = self._view(session)
             return view, raw_session, proof_id
         except IdentityError as error:
+            if self.review_context is not None and received_access:
+                # The exchange succeeded but the known-rolled-back app ceremony
+                # did not. Retire only that received token, never another slot.
+                try:
+                    self.provider.revoke(received_access)
+                except IdentityError:
+                    pass  # local session was never issued; no upstream success claim
             with self.store.transaction() as tx:
                 latest = tx.get("intent", key)
                 if latest and latest.get("state") == "redeeming":
@@ -277,7 +342,7 @@ class IdentityService:
             raise
 
     def _view(self, session: dict[str, object]) -> dict[str, object]:
-        return {
+        result: dict[str, object] = {
             "account_id": session["account_id"],
             "role": session["role"],
             "assurance": "AL2"
@@ -288,10 +353,19 @@ class IdentityService:
             "revision": session["revision"],
         }
 
+        if self.review_context is not None:
+            result.update(self.review_context.binding())
+        return result
+
     def _usable_session(self, session: dict[str, object], now: datetime) -> bool:
         return (
             session.get("revoked") is not True
             and session.get("origin") == self.origin
+            and (self.review_context is None or session.get("provider_issuer") == self.issuer)
+            and (
+                self.review_context is None
+                or all(session.get(k) == v for k, v in self.review_context.binding().items())
+            )
             and instant(session["expires_at"]) > now
             and (
                 session.get("role") not in PRIVILEGED_ROLES

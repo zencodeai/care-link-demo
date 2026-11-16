@@ -1,0 +1,237 @@
+{
+  "cases": [
+    {
+      "kind": "kernel_custody",
+      "role": "identity",
+      "uid": 22011,
+      "cases": [
+        {
+          "sibling": "core",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "core",
+          "kind": "egress_socket",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "data",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "data",
+          "kind": "egress_socket",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "pdp",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "journal",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        }
+      ],
+      "passed": true,
+      "scope": "Expanded read-only sibling mounts prove kernel custody; normal apps lack them."
+    },
+    {
+      "kind": "kernel_custody",
+      "role": "core",
+      "uid": 22012,
+      "cases": [
+        {
+          "sibling": "identity",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "data",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "data",
+          "kind": "egress_socket",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "pdp",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "journal",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        }
+      ],
+      "passed": true,
+      "scope": "Expanded read-only sibling mounts prove kernel custody; normal apps lack them."
+    },
+    {
+      "kind": "kernel_custody",
+      "role": "data",
+      "uid": 22013,
+      "cases": [
+        {
+          "sibling": "identity",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "core",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "core",
+          "kind": "egress_socket",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "pdp",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "journal",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        }
+      ],
+      "passed": true,
+      "scope": "Expanded read-only sibling mounts prove kernel custody; normal apps lack them."
+    },
+    {
+      "kind": "kernel_custody",
+      "role": "pdp",
+      "uid": 22014,
+      "cases": [
+        {
+          "sibling": "identity",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "core",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "core",
+          "kind": "egress_socket",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "data",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "data",
+          "kind": "egress_socket",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "journal",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        }
+      ],
+      "passed": true,
+      "scope": "Expanded read-only sibling mounts prove kernel custody; normal apps lack them."
+    },
+    {
+      "kind": "kernel_custody",
+      "role": "journal",
+      "uid": 22015,
+      "cases": [
+        {
+          "sibling": "identity",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "core",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "core",
+          "kind": "egress_socket",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "data",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "data",
+          "kind": "egress_socket",
+          "permission_denied": true,
+          "errno": 13
+        },
+        {
+          "sibling": "pdp",
+          "kind": "credential",
+          "permission_denied": true,
+          "errno": 13
+        }
+      ],
+      "passed": true,
+      "scope": "Expanded read-only sibling mounts prove kernel custody; normal apps lack them."
+    },
+    {
+      "kind": "role_egress_route",
+      "origin_role": "data",
+      "target_role": "identity",
+      "path": "/bff/main/v1/auth/session",
+      "spoofed_claim": "core",
+      "status": 404,
+      "passed": true,
+      "enforcement": "local_route_absent",
+      "scope": "Actual role-owned egress rejects forbidden path/header claims; no upstream TLS claim."
+    },
+    {
+      "kind": "database_source",
+      "passed": true,
+      "hba_rejected": true,
+      "sqlstate": null,
+      "source": "172.29.35.50",
+      "tls_profile": "verify-full; original certificate hostname retained"
+    }
+  ],
+  "passed": true
+}

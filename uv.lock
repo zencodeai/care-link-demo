@@ -6,9 +6,13 @@ requires-python = "==3.14.*"
 members = [
     "care-link-contracts",
     "care-link-core",
+    "care-link-data",
     "care-link-development",
+    "care-link-domain",
     "care-link-help",
     "care-link-identity",
+    "care-link-policy-input",
+    "care-link-recovery-control",
     "care-link-static",
     "care-link-workload-trust",
 ]
@@ -83,15 +87,42 @@ version = "0.1.0"
 source = { editable = "services/core" }
 dependencies = [
     { name = "care-link-contracts" },
+    { name = "care-link-domain" },
+    { name = "cryptography" },
     { name = "fastapi" },
+    { name = "httpx" },
     { name = "uvicorn" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "care-link-contracts", editable = "packages/contracts/python" },
+    { name = "care-link-domain", editable = "packages/domain" },
+    { name = "cryptography", specifier = "==50.0.2" },
     { name = "fastapi", specifier = "==0.162.2" },
+    { name = "httpx", specifier = "==0.28.1" },
     { name = "uvicorn", specifier = "==0.38.0" },
+]
+
+[[package]]
+name = "care-link-data"
+version = "0.1.0"
+source = { editable = "services/data" }
+dependencies = [
+    { name = "care-link-contracts" },
+    { name = "care-link-domain" },
+    { name = "cryptography" },
+    { name = "fastapi" },
+    { name = "psycopg", extra = ["binary"] },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "care-link-contracts", editable = "packages/contracts/python" },
+    { name = "care-link-domain", editable = "packages/domain" },
+    { name = "cryptography", specifier = "==50.0.2" },
+    { name = "fastapi", specifier = "==0.162.2" },
+    { name = "psycopg", extras = ["binary"], specifier = "==3.2.12" },
 ]
 
 [[package]]
@@ -118,6 +149,11 @@ dev = [
     { name = "ruff", specifier = "==0.14.3" },
     { name = "types-jsonschema", specifier = "==4.26.0.20261006" },
 ]
+
+[[package]]
+name = "care-link-domain"
+version = "0.1.0"
+source = { editable = "packages/domain" }
 
 [[package]]
 name = "care-link-help"
@@ -152,6 +188,7 @@ version = "0.1.0"
 source = { editable = "services/identity" }
 dependencies = [
     { name = "care-link-contracts" },
+    { name = "care-link-domain" },
     { name = "cryptography" },
     { name = "fastapi" },
     { name = "httpx" },
@@ -163,12 +200,47 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "care-link-contracts", editable = "packages/contracts/python" },
+    { name = "care-link-domain", editable = "packages/domain" },
     { name = "cryptography", specifier = "==50.0.2" },
     { name = "fastapi", specifier = "==0.162.2" },
     { name = "httpx", specifier = "==0.28.1" },
     { name = "psycopg", extras = ["binary"], specifier = "==3.2.12" },
     { name = "pyjwt", extras = ["crypto"], specifier = "==2.15.1" },
     { name = "uvicorn", specifier = "==0.38.0" },
+]
+
+[[package]]
+name = "care-link-policy-input"
+version = "0.1.0"
+source = { editable = "packages/policy-input" }
+dependencies = [
+    { name = "care-link-contracts" },
+    { name = "care-link-domain" },
+    { name = "cryptography" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "care-link-contracts", editable = "packages/contracts/python" },
+    { name = "care-link-domain", editable = "packages/domain" },
+    { name = "cryptography", specifier = "==50.0.2" },
+]
+
+[[package]]
+name = "care-link-recovery-control"
+version = "0.1.0"
+source = { editable = "host/recovery-control" }
+dependencies = [
+    { name = "care-link-contracts" },
+    { name = "care-link-domain" },
+    { name = "cryptography" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "care-link-contracts", editable = "packages/contracts/python" },
+    { name = "care-link-domain", editable = "packages/domain" },
+    { name = "cryptography", specifier = "==50.0.2" },
 ]
 
 [[package]]

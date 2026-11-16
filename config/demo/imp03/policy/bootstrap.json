@@ -1,0 +1,11 @@
+{
+  "format_version": "care.manual-bootstrap.v1",
+  "artifact_digest": "021a27997c1427ca33fc2e555ac2468cc72204968b8399eb1681ec064ed72803",
+  "source": "manual.rego",
+  "key_id": "imp03-review-recovery-local-engineering",
+  "public_key": "zWuCvFviI2anTnJ3FiwB7yLdcaPhzE+0cRDB4ZWh6mM=",
+  "signature": "MOSyTVtrSwTO5CmzrbHiGeLoiSm3CQsCpjNDzJ9/D/1G3z/xlcMMOcc8CVZnCB2Ib/9rM/Cg+j2eAZ9Eu4XECQ==",
+  "authority": "local_engineering_integrity_only",
+  "human_acceptance": null,
+  "participant_admission": false
+}

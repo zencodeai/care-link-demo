@@ -1,0 +1,188 @@
+{
+  "case": "operations",
+  "attempt": 1,
+  "human_acceptance": false,
+  "resource_before": [
+    {
+      "BlockIO": "20.8MB / 32.5MB",
+      "CPUPerc": "0.25%",
+      "Container": "care-link-imp03-003-cont1-identity-app",
+      "ID": "d55020eb44e9",
+      "MemPerc": "31.14%",
+      "MemUsage": "79.71MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-identity-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "5"
+    },
+    {
+      "BlockIO": "23.5MB / 42.3MB",
+      "CPUPerc": "0.22%",
+      "Container": "care-link-imp03-003-cont1-core-app",
+      "ID": "738f8f8f39dc",
+      "MemPerc": "38.19%",
+      "MemUsage": "97.76MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-core-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "5"
+    },
+    {
+      "BlockIO": "8.14MB / 4.1kB",
+      "CPUPerc": "0.17%",
+      "Container": "care-link-imp03-003-cont1-data-app",
+      "ID": "499f6e987893",
+      "MemPerc": "34.70%",
+      "MemUsage": "88.84MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-data-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "3"
+    },
+    {
+      "BlockIO": "92.4MB / 33.2MB",
+      "CPUPerc": "0.19%",
+      "Container": "care-link-imp03-003-cont1-pdp-app",
+      "ID": "13e859347ef2",
+      "MemPerc": "30.68%",
+      "MemUsage": "78.53MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-pdp-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "3"
+    },
+    {
+      "BlockIO": "17.8MB / 11.7MB",
+      "CPUPerc": "0.21%",
+      "Container": "care-link-imp03-003-cont1-journal-app",
+      "ID": "4db0bf0c7164",
+      "MemPerc": "28.38%",
+      "MemUsage": "72.66MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-journal-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "3"
+    }
+  ],
+  "resource_after_load": [
+    {
+      "BlockIO": "20.9MB / 32.5MB",
+      "CPUPerc": "16.63%",
+      "Container": "care-link-imp03-003-cont1-identity-app",
+      "ID": "d55020eb44e9",
+      "MemPerc": "31.91%",
+      "MemUsage": "81.69MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-identity-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "9"
+    },
+    {
+      "BlockIO": "23.8MB / 43.1MB",
+      "CPUPerc": "1.40%",
+      "Container": "care-link-imp03-003-cont1-core-app",
+      "ID": "738f8f8f39dc",
+      "MemPerc": "38.10%",
+      "MemUsage": "97.53MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-core-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "7"
+    },
+    {
+      "BlockIO": "8.52MB / 4.1kB",
+      "CPUPerc": "3.13%",
+      "Container": "care-link-imp03-003-cont1-data-app",
+      "ID": "499f6e987893",
+      "MemPerc": "41.24%",
+      "MemUsage": "105.6MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-data-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "8"
+    },
+    {
+      "BlockIO": "158MB / 33.6MB",
+      "CPUPerc": "9.20%",
+      "Container": "care-link-imp03-003-cont1-pdp-app",
+      "ID": "13e859347ef2",
+      "MemPerc": "40.74%",
+      "MemUsage": "104.3MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-pdp-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "11"
+    },
+    {
+      "BlockIO": "17.8MB / 11.7MB",
+      "CPUPerc": "0.27%",
+      "Container": "care-link-imp03-003-cont1-journal-app",
+      "ID": "4db0bf0c7164",
+      "MemPerc": "28.58%",
+      "MemUsage": "73.16MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-journal-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "3"
+    }
+  ],
+  "stop_exit_code": 137,
+  "stopped_backend": {
+    "process_receipt_present": true,
+    "backend_socket_entry_present": true,
+    "backend_accepts_connection": false,
+    "connect_errno": 111
+  },
+  "exit_code": 0,
+  "core_container_id_preserved": true,
+  "business_rows_preserved": true,
+  "audit_chain_valid": true,
+  "resource_after_restart": [
+    {
+      "BlockIO": "20.9MB / 32.5MB",
+      "CPUPerc": "0.12%",
+      "Container": "care-link-imp03-003-cont1-identity-app",
+      "ID": "d55020eb44e9",
+      "MemPerc": "31.54%",
+      "MemUsage": "80.73MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-identity-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "6"
+    },
+    {
+      "BlockIO": "20.1MB / 4.1kB",
+      "CPUPerc": "0.19%",
+      "Container": "care-link-imp03-003-cont1-core-app",
+      "ID": "738f8f8f39dc",
+      "MemPerc": "40.76%",
+      "MemUsage": "104.4MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-core-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "3"
+    },
+    {
+      "BlockIO": "8.52MB / 4.1kB",
+      "CPUPerc": "0.24%",
+      "Container": "care-link-imp03-003-cont1-data-app",
+      "ID": "499f6e987893",
+      "MemPerc": "39.95%",
+      "MemUsage": "102.3MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-data-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "4"
+    },
+    {
+      "BlockIO": "158MB / 33.6MB",
+      "CPUPerc": "0.10%",
+      "Container": "care-link-imp03-003-cont1-pdp-app",
+      "ID": "13e859347ef2",
+      "MemPerc": "38.28%",
+      "MemUsage": "98.01MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-pdp-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "3"
+    },
+    {
+      "BlockIO": "17.8MB / 11.7MB",
+      "CPUPerc": "0.18%",
+      "Container": "care-link-imp03-003-cont1-journal-app",
+      "ID": "4db0bf0c7164",
+      "MemPerc": "28.38%",
+      "MemUsage": "72.66MiB / 256MiB",
+      "Name": "care-link-imp03-003-cont1-journal-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "3"
+    }
+  ],
+  "duration_seconds": 45.763
+}

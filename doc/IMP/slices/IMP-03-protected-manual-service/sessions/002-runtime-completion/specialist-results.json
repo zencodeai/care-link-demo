@@ -1,0 +1,29 @@
+{
+  "specialists_actually_run": [
+    "imp_controls",
+    "imp_platform",
+    "imp_review"
+  ],
+  "max_concurrent": 3,
+  "nested_delegation": false,
+  "ownership": "Disjoint implementation files;primary shared integration/evidence;review read-only.",
+  "results": [
+    {
+      "role": "imp_controls",
+      "actual": "237 focused core/identity/delegation tests passed before integration;strict types/lint/boundaries passed.",
+      "scope": "Remote identity/evidence/recovery and signed preflight/final factory."
+    },
+    {
+      "role": "imp_platform",
+      "actual": "20 final focused platform tests passed;strict types/lint/format passed.",
+      "scope": "Role compositions,private binding/provision/mesh/trust/launcher/PID custody;no specialist host mutations."
+    },
+    {
+      "role": "imp_review",
+      "actual": "Read-only integrated findings and rechecks;no tests/host mutations claimed by reviewer.",
+      "scope": "Source review;primary additionally found/fixed actual fence-owner mismatch and proved native Linux constructor."
+    }
+  ],
+  "integrated_evidence": "checks.json",
+  "human_acceptance": false
+}

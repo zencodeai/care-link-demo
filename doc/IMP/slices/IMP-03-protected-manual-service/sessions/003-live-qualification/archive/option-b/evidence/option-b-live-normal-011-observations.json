@@ -1,0 +1,18 @@
+{
+  "session": "imp03-002",
+  "phase": "normal",
+  "status": "passed",
+  "observations": [
+    "three_current_provider_accounts",
+    "signed_remote_session_create",
+    "two_party_real_sse_handshake",
+    "manual_message",
+    "disconnect_truth",
+    "takeover_fences_previous_owner",
+    "committed_rotation_ack_dropped",
+    "original_key_reconciliation",
+    "fresh_provider_recovery"
+  ],
+  "barrier_requests": [],
+  "human_acceptance": false
+}

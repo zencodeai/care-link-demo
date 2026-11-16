@@ -1,0 +1,26 @@
+Started disposable IMP-03 TLS PostgreSQL fixture on loopback25433; no lab changes.
+Running full-check; sanitized log: /private/tmp/care-link-imp03-003-full-20261113-001/full-check.log
+
+> care-link-development@0.1.0 build /Users/main/Workspace/projects/care-link/care-link-demo
+> pnpm -r build
+
+Scope: 2 of 3 workspace projects
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v7.3.7 building client environment for production...
+apps/web build: transforming...
+apps/web build: ✓ 59 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                   0.47 kB │ gzip:   0.30 kB
+apps/web build: dist/assets/index-0NcQIAHS.css    2.43 kB │ gzip:   1.00 kB
+apps/web build: dist/assets/index-DCpDfvhn.js   585.00 kB │ gzip: 110.75 kB
+apps/web build: ✓ built in 509ms
+apps/web build: (!) Some chunks are larger than 500 kB after minification. Consider:
+apps/web build: - Using dynamic import() to code-split the application
+apps/web build: - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+apps/web build: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+apps/web build: Done
+Running provisioning; sanitized log: /private/tmp/care-link-imp03-003-full-20261113-001/provisioning.log
+.                                                                        [100%]
+1 passed in 0.50s
+Removed owned IMP-03 disposable database fixture.

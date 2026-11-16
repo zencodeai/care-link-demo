@@ -1,0 +1,25 @@
+{
+  "recorded_at": "2026-11-14T20:04:27.489146+00:00",
+  "read_only": true,
+  "no_message_content_read": true,
+  "conversation": {
+    "id": "0e66db99-e3a4-488c-a81b-a667e02bf0fe",
+    "service_phase": "queued",
+    "transport": "connected",
+    "owner_id": null,
+    "unresolved": true,
+    "disclosure_acknowledged": true,
+    "revision": 3,
+    "control_epoch": 0,
+    "created_at": "2026-11-14 19:45:59.250085+00:00",
+    "updated_at": "2026-11-14 19:46:59.125620+00:00"
+  },
+  "support_acl_metadata": [
+    {
+      "purpose": "support",
+      "revoked_at": null,
+      "valid_until": null,
+      "revision": 1
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "packet_id": "IMP-03-003-OPTION-B",
+  "task_id": "IMP-03-D",
+  "stage_id": "IMP-03",
+  "mode": "implementation",
+  "role": "imp_platform",
+  "goal": "Implement and execute authorized OptionB shared-infrastructure qualification: preserve IMP02 workloads/state; add fresh IMP03 realm/actors, DBs/logins, SPIRE identities, runtime custody/deployment and scoped ingress/network controls; fix Q01 and run actual available live checks. Fix observed pagination transport mismatch: omit absent cursor per existing PageQuery schema; consume optional fields with defaults. Existing contract and controls preserved.",
+  "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/G-03-validation-guide.md",
+      "sha256": "dd75bcda5e8f46cef222d7c4610310ce438ed73d12c310ef01a0a57168b16c7a"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-08-IMP-02/decisions/G-02.json",
+      "sha256": "f3d49e1151a2ba4be33e8803231357f452eec1bb3f4a1fbc791112d2b38a2b5e"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/**",
+    "apps/**",
+    "services/**",
+    "packages/**",
+    "host/**",
+    "tools/**",
+    "tests/**",
+    "config/**",
+    "pyproject.toml",
+    "uv.lock",
+    "pnpm-lock.yaml",
+    "deploy/**"
+  ],
+  "write_paths": [
+    "tools/imp03_shared/**",
+    "deploy/images/imp03/**",
+    "tests/unit/test_imp03_shared*.py",
+    "tests/e2e/imp03/**",
+    "tools/imp03_runtime/**",
+    "doc/IMP/slices/IMP-03-protected-manual-service/**",
+    "tests/contract/imp03-barrier.test.ts",
+    "config/demo/imp03/products.json",
+    "services/core/src/care_link_core/manual_http.py",
+    "services/data/src/care_link_data/app.py",
+    "services/core/tests/test_manual_envelopes.py",
+    "services/data/tests/test_runtime_composition.py"
+  ],
+  "dependencies": [
+    "G-02 accepted receipt G-02-MAIN-2026-11-09; immutable evidence retained"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "read_only_host_probe",
+    "mutate_named_lab",
+    "destroy_named_demo_resources",
+    "install_named_tools"
+  ],
+  "prohibited_actions": [
+    "IMP02 old realm/account/DB/workload/issuerpolicy/fence state mutation or shared-service disruption beyond approved tls-renewal-proposal",
+    "commit/push/merge or GitHub mutation",
+    "global trust/DNS/model change or sibling edit",
+    "real personal data, police integration, autonomous contact",
+    "invented acceptance or IMP04 activation",
+    "broad teardown, secret material in evidence, nested delegation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "2026-11-13 current chat: Proceed with Option B",
+    "scope": "Execute OptionB from infrastructure-reuse-assessment: shared running SPIRE/Keycloak/PostgreSQL on current workstation, fresh IMP03 workload/actor/database/state/custody and scoped network additions. Current authority supersedes independent-instance runbook restriction; no old state reset, shared outages, acceptance or next-slice activation."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP03-003-optionB",
+      "kind": "namespace",
+      "scope": "New care-link-imp03-003-* Docker/K8s resources; fresh IMP03 realm/actors, DBs/logins, SPIRE workloads/node aliases and network rules; private inputs/browser cache under /private/tmp/care-link-imp03-003-shared. Preserve old state.",
+      "owner_task_id": "IMP-03-D",
+      "expires_at": "2026-11-15T23:59:59Z"
+    },
+    {
+      "id": "IMP03-003-approved-tls-maintenance",
+      "kind": "namespace",
+      "scope": "Exact prepared tls-renewal-proposal and tls-renewal-authorization; existinglab certificateonlyupdate plus namedreload/restarts; all logicalstatekeys preserved",
+      "owner_task_id": "IMP-03-D",
+      "expires_at": "2026-11-15T23:59:59Z"
+    }
+  ],
+  "expected_outputs": [
+    "Concrete shared profile and exact resource bindings/rollback",
+    "Implemented bounded issuance/deployment and actual live observations or specific verified blockers",
+    "Updated candidate/evidence/session handoff without human acceptance"
+  ],
+  "positive_acceptance": [
+    "Available complete local checks pass against identifiable candidate; actual deployed observations remain separately bound"
+  ],
+  "adverse_acceptance": [
+    "Declared skips/failures retained; no fixtures represented as issued runtime identity or acceptance; IMP-02 preserved"
+  ],
+  "reviewer": "imp_review read-only findings, primary integration",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Unbound existing resource collision: preserve and inspect rather than adopt/reset",
+    "Critical isolation defect: fix within new scope; no weakening controls",
+    "Automatic review rejection: report exact action/reason and continue unaffected work"
+  ],
+  "is_example": false
+}

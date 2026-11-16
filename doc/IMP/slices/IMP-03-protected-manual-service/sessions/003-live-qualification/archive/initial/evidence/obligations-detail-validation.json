@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-11-13T16:03:01.284296+00:00",
+  "change": "Expanded remaining G03 obligations with existing evidence, missing observations, closure criteria, automation/human allocation and continuation order.",
+  "changed_product_code": false,
+  "live_operations_executed": false,
+  "source_and_deployed_candidate_changed": false,
+  "current_packet_reference_mismatches": [],
+  "local_broken_links": [],
+  "agent_result_schema": "passed",
+  "application_tests": "not run: documentation/reference refresh only"
+}

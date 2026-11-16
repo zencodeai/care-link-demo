@@ -1,0 +1,20 @@
+{
+  "resumed_after": "TLS1.3 alert read ordering diagnostic; no initial resources replayed",
+  "registration_id": "e4a1293c-e09b-41ed-b878-b0dfd895901e",
+  "no-svid": {
+    "passed": true,
+    "tls_client_certificate_rejected": true,
+    "tls_reason": "TLSV13_ALERT_CERTIFICATE_REQUIRED",
+    "status": null
+  },
+  "direct-role": {
+    "passed": true,
+    "status": 403,
+    "client_spiffe_id": "spiffe://care-link.demo/demo/data",
+    "server_spiffe_id": "spiffe://care-link.demo/demo/identity",
+    "leaf_sha256": "5865111699b6e32254898131862a08982330b3ad535f584e0979a530a8df6fab",
+    "scope": "Actual data SVID direct TLS; spoofed core headers deny at the core-only BFF route."
+  },
+  "temporary_workload_entry_removed": true,
+  "node_alias_registration_retained": "spiffe://care-link.demo/host/imp03-003-cont1-expiry"
+}

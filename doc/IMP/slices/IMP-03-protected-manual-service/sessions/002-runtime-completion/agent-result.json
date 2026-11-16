@@ -1,0 +1,138 @@
+{
+  "packet_id": "IMP-03-002-INTEGRATION",
+  "task_id": "IMP-03-D",
+  "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+  "role": "imp_platform",
+  "status": "completed",
+  "changed_paths": [
+    "tools/imp03_runtime",
+    "services/core/src/care_link_core/manual_envelopes.py",
+    "services/core/src/care_link_core/manual_identity.py",
+    "services/core/src/care_link_core/manual_http.py",
+    "services/core/tests/test_manual_envelopes.py",
+    "services/identity/src/care_link_identity/manual_runtime.py",
+    "services/identity/tests/test_manual_runtime.py",
+    "services/data/src/care_link_data/app.py",
+    "services/data/tests/test_runtime_composition.py",
+    "tests/e2e/imp03",
+    "tests/integration/imp03_runtime",
+    "tests/unit/test_imp03_runtime.py",
+    "tools/imp03_verification/live_barrier.py",
+    "tools/imp03_verification/audit_fault.py",
+    "tools/imp03_verification/run_checks.py",
+    "tools/generate_contracts.py",
+    "packages/contracts/python/src/care_link_contracts/schema.json",
+    "packages/contracts/typescript/src/schema.json",
+    "services/core/pyproject.toml",
+    "uv.lock",
+    "pyrightconfig.json",
+    "tools/check.py",
+    "tools/smoke_core_image.py",
+    "services/core/README.md",
+    "services/data/README.md",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/candidate-manifest.json",
+      "sha256": "81da7dd70f3f533cc6e3fe32bcc94f0036e0ad35ae1e7016d773c0cd0376befb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/demo-packet.json",
+      "sha256": "6bd193bf5007eb9abd52b03b22cb9130670da46169803ac3c8928a4e0aaeccc7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/handoff.md",
+      "sha256": "986e141be3128cfdd33fbb48cd542f196a5dc0f27d04313aa6d23f2a3783bbcf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/G-03-validation-guide.md",
+      "sha256": "dd75bcda5e8f46cef222d7c4610310ce438ed73d12c310ef01a0a57168b16c7a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/review.md",
+      "sha256": "713168f9c5eb9baaa6ae3c48d20e117516f5359480341da214e135bd0ff02610"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Final full source/PostgreSQL/OPA/journal/capture/adapter lane",
+      "command": "UV_CACHE_DIR=/private/tmp/care-link-uv-cache .venv/bin/python -m tools.imp03_verification.run_checks --output /private/tmp/care-link-imp03-002-final-check --opa /private/tmp/care-link-imp03-tools/opa",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared check succeeds without weakening controls.",
+      "actual": "505 Python passed;2 declared skips (Linux-only historical harness and separately invoked provisioning);56 TS/UI/parity passed. Locks/generation/admission/boundaries/types/lint/format/build passed. Identity/provider/workload callbacks in compatibility tests explicitly fixtures.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/full-check.log",
+      "evidence_digest": "157ddcd7b73d15eebdd7fd263e59bd09fc4cc1354e7b9ecb3f53145862263f29",
+      "mock_used": true
+    },
+    {
+      "name": "Fresh initial provisioning and reversible audit grant barrier",
+      "command": ".venv/bin/python -m pytest -q tests/integration/imp03_runtime/test_provisioning.py (explicit isolated provisioning TLS DSN supplied privately)",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared check succeeds without weakening controls.",
+      "actual": "1 passed;fresh DBs/logins/global roles/bootstrap/principal bindings;non-owning runtime grants,audit append revoke/restore and existing-target refusal verified;fixture removed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/provisioning.log",
+      "evidence_digest": "866432d567eb30f716ad0380ad29e9453b6fd80645780de4fbe94565dc3eab20",
+      "mock_used": false
+    },
+    {
+      "name": "Isolated core image build",
+      "command": ".venv/bin/python tools/build_core_image.py --tag care-link-core:imp03-runtime-002 --iid-file /private/tmp/care-link-imp03-002-core-iid.txt",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared check succeeds without weakening controls.",
+      "actual": "Built sha256:69200f64d01057e4a8db170e3bbe190b45e2996ec5747b51ef3d4b03f79930dd. Signing crypto explicit;default developer-only app.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/care-link-imp03-002-core-build.log",
+      "evidence_digest": "70d71d872b8c2dec30476eb50b8e5cd8332dd4eb4b1830f5f38b51be56ffafa1",
+      "mock_used": false
+    },
+    {
+      "name": "Restricted core image smoke",
+      "command": ".venv/bin/python tools/smoke_core_image.py --image care-link-core:imp03-runtime-002",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared check succeeds without weakening controls.",
+      "actual": "Passed nonroot/read-only/capability smoke;no business driver,identity,data,journal packages;temporary owned container removed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/care-link-imp03-002-core-smoke.log",
+      "evidence_digest": "1ecf77673da32a6d3b8849f9005c2fc6cfd3ca572326015027edfafd32120015",
+      "mock_used": false
+    },
+    {
+      "name": "Actual Linux fence custody/socket constructor",
+      "command": "docker run --rm --name care-link-imp03-002-fence-contract --network none --read-only --cap-drop ALL --user 22000:22999 (source workload-trust mount; exact FenceStore/FenceServer constructor probe)",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared check succeeds without weakening controls.",
+      "actual": "Real Linux UID22000 protected Unix bind/close passed with separate restriction UID22001;network disabled container auto-removed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/care-link-imp03-002-linux-fence.log",
+      "evidence_digest": "2a7ceecf6d7da90ae0e96d8ceba18af403869e57dc6296175d02d4040142c206",
+      "mock_used": false
+    },
+    {
+      "name": "Live issued-provider/SVID/browser/barrier qualification",
+      "command": "CARE_LINK_IMP03_E2E_CONFIG=PRIVATE CARE_LINK_IMP03_E2E_OUTPUT=FRESH CARE_LINK_IMP03_PHASE=normal pnpm exec playwright test --config tests/e2e/imp03/playwright.config.ts",
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Actual protected target and issued actors pass normal and real fault-barrier phases.",
+      "actual": "not_run: independently issued IMP-03 target/provider/accounts/private origins are not supplied/configured. Executable sources and exact commands exist;no live observations fabricated.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [
+    "Local internal Gateway_session_events.arguments requires last_event_id canonical revision,signed in body digest;browser SSE and frozen LLD unchanged.",
+    "Core explicitly depends on workspace-pinned cryptography50.0.2;isolated smoke inventory permits signing crypto and still excludes DB/identity packages."
+  ],
+  "remaining_risks": [
+    "Independent deployed SPIRE/Envoy/SVID renewal/certificate/fence and private-network boundaries remain not_run.",
+    "Live issued-provider/browser phases are executable but not_run;actual binding/provisioned accounts unavailable in this session.",
+    "Per-role deployment-image isolation,human EN-FR/keyboard/screen-reader review and resource/latency qualification remain not_run.",
+    "Existing Starlette/TestClient deprecations and585kB Vite chunk warning remain."
+  ],
+  "handoff": "Requested source runtime composition/launcher and executable checks delivered.Read session002 guide and bind independent issued infrastructure before live qualification.Keep G-03 draft;preserve IMP-02;no stage progression.",
+  "is_example": false
+}

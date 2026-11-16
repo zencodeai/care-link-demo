@@ -1,0 +1,17 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "care-link-recovery-control"
+version = "0.1.0"
+description = "CARE-Link host restriction journal and quarantined capture foundations"
+requires-python = ">=3.12,<3.15"
+dependencies = ["care-link-contracts", "care-link-domain", "cryptography==50.0.2"]
+
+[tool.uv.sources]
+care-link-contracts = { workspace = true }
+care-link-domain = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/care_link_recovery_control"]

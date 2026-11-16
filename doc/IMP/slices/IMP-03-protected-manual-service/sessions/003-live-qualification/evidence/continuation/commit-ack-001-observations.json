@@ -1,0 +1,17 @@
+{
+  "session": "imp03-002",
+  "suite": "database-ack-loss",
+  "status": "passed",
+  "actual_post_status": 503,
+  "original_key_state": "committed",
+  "replay_status": 200,
+  "browser_tls_verification": true,
+  "observations": [
+    "actual_driver_error_after_real_database_commit",
+    "original_key_reconciliation"
+  ],
+  "human_acceptance": false,
+  "limits": [
+    "Exact one-shot queue commit boundary; durable counts are separately verified by operator."
+  ]
+}

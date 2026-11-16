@@ -1,0 +1,13 @@
+# Core manual-service boundary
+
+`care_link_core.manual_app.create_manual_app(gateway, security, channels)` constructs the protected manual BFF. It has no permissive defaults and receives no business database credentials. Named `ManualGateway` methods are structural ports; `HttpManualGateway` calls only fixed HTTPS data endpoints with request-bound signed envelopes. `CookieSecurity` obtains fresh current identity and exact Origin/CSRF checks through its identity port. `ManualChannels` tracks server-observed app-channel liveness and fences each reconnect generation.
+
+Keep the existing developer-only application separate. Its image startup remains developer-only and `/v1` unavailable; building that image does not deploy/admit the manual service. A runtime composition must supply current identity/workload/fence adapters, signing custody, admitted policy/duty artifacts and qualified listeners. No browser header, selected UI role, queue acceptance or cached successful response creates authority.
+
+`SignedEnvelopeFactory` now signs exact method/path/key/arguments/resource/nonce and the earliest request deadline, obtains request-bound signed identity evidence, performs authenticated metadata preflight and evaluates a genuine preliminary PDP decision. `HttpManualIdentity` resolves current state remotely; data receives only short-lived opaque references with encrypted browser custody retained at identity. Final data authorization repeats current identity/policy/journal/audit/guard checks. Internal event requests carry `last_event_id` in signed arguments; an inconsistent cursor header denies.
+
+The five-process source composition, preparation/provisioning and protected workload launcher are in [tools/imp03_runtime](../../tools/imp03_runtime/README.md). Exact startup and [live browser checks](../../tests/e2e/imp03/README.md) require an independently issued external target. The source launcher currently uses the development workspace distribution; the isolated developer core image has its own package-isolation smoke check.
+
+The additive local continuation-issuance route is `POST /v1/sessions/{session_id}/continuations` with RevisionCommand. It returns ContinuationIssued once at AL0. Retry a lost response with the same key; HTTP409 REPLACEMENT_UNAVAILABLE means use current operation status and a fresh bound recovery ceremony, not a guessed token or a new automatic command.
+
+The IMP-03 session records exact source, checks and remaining operational qualification. All service data is fictional; no police integration, real partner connector or autonomous emergency contact is implemented.

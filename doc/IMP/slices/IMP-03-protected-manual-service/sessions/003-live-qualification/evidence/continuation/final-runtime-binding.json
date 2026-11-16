@@ -1,0 +1,192 @@
+{
+  "roles": [
+    {
+      "role": "identity",
+      "container_id": "d55020eb44e9d366dac94cabe6688b259bc09d2ccbccd89edc4ce06c66eecf97",
+      "image_id": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "network": "none",
+      "configuration": {
+        "sha256": "a9ef81ca3a9f8a3b286aa1903beff46a8f4e4a5c2df7767fd5a3d0db360cd790",
+        "mode": "0o600",
+        "uid": 22011,
+        "process_uid": 22011
+      },
+      "commit_fault_enabled": false
+    },
+    {
+      "role": "core",
+      "container_id": "a98cdc1a7181b7e1bbe424c59846619ce842fe505f04c7f9dc9699cfbdfa67a9",
+      "image_id": "sha256:0d87661654da00d5678c4816460e585bc3e6de25250acb8796594e1b43e902ab",
+      "network": "none",
+      "configuration": {
+        "sha256": "4724526dddc035eb2ca6bce7fb118d0c6b8317614fa7b3bb862c10232c5c37df",
+        "mode": "0o600",
+        "uid": 22012,
+        "process_uid": 22012
+      },
+      "commit_fault_enabled": false
+    },
+    {
+      "role": "data",
+      "container_id": "499f6e9878939a4073a3fdb796e71dfadc016b5c2c37223d4c9b5cda5fd810e6",
+      "image_id": "sha256:5495366cdf435a23405b150dfb75c01b802d0a4caa1eeaf551e0a48a07d9dd96",
+      "network": "none",
+      "configuration": {
+        "sha256": "d64f0df4ee344aa235c9981c5cdaaf9adff76b1e1e3ac902f122414b61775124",
+        "mode": "0o600",
+        "uid": 22013,
+        "process_uid": 22013
+      },
+      "commit_fault_enabled": false
+    },
+    {
+      "role": "pdp",
+      "container_id": "13e859347ef2d8985c2e5b6be63bfd23fd72360c746a6780ff579f77dd916706",
+      "image_id": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "network": "none",
+      "configuration": {
+        "sha256": "0f2ef7f9345c044c987935aa7f636b1d27a846cf1cd910f323cea7ff801b3052",
+        "mode": "0o600",
+        "uid": 22014,
+        "process_uid": 22014
+      },
+      "commit_fault_enabled": false
+    },
+    {
+      "role": "journal",
+      "container_id": "4db0bf0c7164905651b066ef213d477f786f1e227a12aca14fb81cd6f9e86a63",
+      "image_id": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "network": "none",
+      "configuration": {
+        "sha256": "c44c1373a0124631a7a2a03250b21447964e4d3f711ed4ede570c57198dc1a8d",
+        "mode": "0o600",
+        "uid": 22015,
+        "process_uid": 22015
+      },
+      "commit_fault_enabled": false
+    }
+  ],
+  "removed_bootstrap": [
+    {
+      "name": "care-link-imp03-003-cont1-seed",
+      "id": "e9106279145d808969c4f1a8b5a81a967333e7a8b35316623313703ff3451411"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-operator-seed",
+      "id": "4e09e85fde3b479c4f093cdfa0ef7a5e84f685bcbd70a05e878abd5f97f5406c"
+    }
+  ],
+  "browser_tls_profile": "isolated NSS roots; ignoreHTTPSErrors:false",
+  "original_core_fence": "generation1 retained",
+  "continuation_core_fence": "generation0; not restricted; usable for review",
+  "human_acceptance": false,
+  "inputs_json_sha256": "217ce1564fb842c34cbfa64e275686ad2fc29a33705ffce81a9126d929de03a8",
+  "browser_json_sha256": "512e0b10c1fa41e1c0f373a4022c3bed11c6664f25dafe5a55dc38925a987fe4",
+  "runtime-receipt_json_sha256": "0ce63342f6a6c38fa1348215e818c2de10a7bfe1b97d0241d17a509680049246",
+  "public_web_build_configuration": {
+    "profile": "continuation-001",
+    "main_origin": "https://qualification.localhost:29443",
+    "origins": {
+      "VITE_OIDC_ORIGIN": "https://id.localhost:20443",
+      "VITE_HELP_ORIGIN": "https://help.localhost:19443",
+      "VITE_STATIC_ORIGIN": "https://static.localhost:21443"
+    },
+    "scope": "Public build configuration only; no actor credentials or tokens"
+  },
+  "authorization_bundle_refresh": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/trust-bundle-refresh.json",
+    "sha256": "92816e2b306ef8fcb1789aed43fd6cd9db243374267fd6ecf68a544df9f2e72f"
+  },
+  "update_scope": "UI pending/publication/principal recovery fixes;60s upstream pool cap; current continuation-only public trust bundles with four-hour operator maintenance. No actor permissions, issuer policy or fence changes.",
+  "proxies": [
+    {
+      "role": "identity",
+      "container_id": "65283d7fd306d7cbffb9cbe56e2a4b2da833983af5568ddbc70a54905c1c9a3f",
+      "image_id": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "configuration": {
+        "sha256": "ecbd0b8b218d9ac032cb3d988f09fb1b0f2173f597e75811a71b67b033a11353",
+        "pool_bounds": {}
+      }
+    },
+    {
+      "role": "core",
+      "container_id": "5c6d5b3374131d3a4118d0e379e7e388ee0181c336d928f8853120d5c5c034e4",
+      "image_id": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "configuration": {
+        "sha256": "cbbfbb88e73bffc325e343d927f67fa8c4962f3a9c7d23d1cb71dc6c4d37d3e6",
+        "pool_bounds": {
+          "identity_mesh_identity": "60s",
+          "identity_mesh_data": "60s",
+          "identity_mesh_pdp": "60s"
+        }
+      }
+    },
+    {
+      "role": "data",
+      "container_id": "fd07ca32e5f2d065d8d813dee1c6d01954bce6b7043365382bf5f420092748ad",
+      "image_id": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "configuration": {
+        "sha256": "dedf6d67e40007d64bb942cde63d7407ff7db52b1af376165233d8f081196ce8",
+        "pool_bounds": {
+          "identity_mesh_identity": "60s",
+          "identity_mesh_core": "60s",
+          "identity_mesh_pdp": "60s",
+          "identity_mesh_journal": "60s"
+        }
+      }
+    },
+    {
+      "role": "pdp",
+      "container_id": "98d13420b360f27d6b754aeed5e0fe00077386ce993dce93b6b816f84eefa2c9",
+      "image_id": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "configuration": {
+        "sha256": "bc9ab135bdecced109e0f7b9cc21be05aeae5c60b6dc5fe95310000ec775182d",
+        "pool_bounds": {}
+      }
+    },
+    {
+      "role": "journal",
+      "container_id": "f316a0d1e444d059322f329b49939488f948912ba89f48780b6ced1352617d48",
+      "image_id": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "configuration": {
+        "sha256": "15766bd92eeecfb4326e24b5809411319e49baf1a0815f3768baefba6cd5be01",
+        "pool_bounds": {}
+      }
+    }
+  ],
+  "authorization_bundles": [
+    {
+      "role": "identity",
+      "sha256": "fb623a8ddc3345918a83445b38f751f2a6d4b08addcd6227aec6b55d6381c8e8"
+    },
+    {
+      "role": "core",
+      "sha256": "fb623a8ddc3345918a83445b38f751f2a6d4b08addcd6227aec6b55d6381c8e8"
+    },
+    {
+      "role": "data",
+      "sha256": "fb623a8ddc3345918a83445b38f751f2a6d4b08addcd6227aec6b55d6381c8e8"
+    },
+    {
+      "role": "pdp",
+      "sha256": "fb623a8ddc3345918a83445b38f751f2a6d4b08addcd6227aec6b55d6381c8e8"
+    },
+    {
+      "role": "journal",
+      "sha256": "fb623a8ddc3345918a83445b38f751f2a6d4b08addcd6227aec6b55d6381c8e8"
+    }
+  ],
+  "bounded_review_maintenance": {
+    "scope": "Continuation public bundles only; no new issuer policy, credentials or fence authority",
+    "started_at": "2026-11-14T20:01:31.936342+00:00",
+    "deadline_utc": "2026-11-15T00:01:31.936342+00:00",
+    "deadline_toronto": "2026-11-14T19:01:31.936342-05:00",
+    "duration_seconds": 14400,
+    "interval_seconds": 30,
+    "observed_checks": 43,
+    "last_status": "checked",
+    "refresh_unavailable_count": 0,
+    "private_receipt_and_log": "Owner-only private root; raw PID/commands not copied.",
+    "not_permanent_service": true
+  }
+}

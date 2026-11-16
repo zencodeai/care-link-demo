@@ -1,0 +1,91 @@
+{
+  "run_id": "2026-11-16-IMP-03",
+  "stage_id": "IMP-03",
+  "state": "accepted",
+  "gate_id": "G-03",
+  "gate_state": "accepted",
+  "closed": true,
+  "closed_at": "2026-11-16T16:41:20Z",
+  "record_timezone": "America/Toronto",
+  "implementation_status": "completed",
+  "verification_status": "completed_and_accepted",
+  "closure_authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Now close IMP-03",
+    "scope": "Administrative closeout of the accepted IMP-03 slice; preserve the candidate, evidence and running demo resources."
+  },
+  "planning_baseline": {
+    "path": "doc/IMP/implementation-plan.json",
+    "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+  },
+  "predecessor_acceptance": [
+    {
+      "path": "doc/IMP/executions/2026-11-08-IMP-02/decisions/G-02.json",
+      "sha256": "f3d49e1151a2ba4be33e8803231357f452eec1bb3f4a1fbc791112d2b38a2b5e"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-03-A",
+      "state": "completed",
+      "result": "Protected manual-service scope, contracts and approved bounded deployment reconciled."
+    },
+    {
+      "id": "IMP-03-B",
+      "state": "completed",
+      "result": "Guarded manual service, current identity/policy/audit controls and durable recovery implemented."
+    },
+    {
+      "id": "IMP-03-C",
+      "state": "completed",
+      "result": "Actor workflows, tab/session recovery and durable demo toolkit implemented and qualified."
+    },
+    {
+      "id": "IMP-03-D",
+      "state": "completed",
+      "result": "Automated qualification completed; user performed and approved G-03 human acceptance."
+    }
+  ],
+  "current_session": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/005-review-recovery-implementation",
+  "handoff": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/005-review-recovery-implementation/README.md",
+  "human_decisions": [
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/005-review-recovery-implementation/G-03-acceptance.json",
+      "sha256": "d0dd3d9c9afeeca6b03fc5a3509f85b12962652d1e3665049d7d3776182402b3"
+    }
+  ],
+  "checks_ref": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/005-review-recovery-implementation/results.json",
+    "sha256": "11f454cc875a26d3866f6c75778cba46395c4ea3b776456d064b81de2e0ee4c7"
+  },
+  "accepted_candidate": {
+    "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "application_image_id": "sha256:e854ff2799a235ac827439637ec06b7e5680b286561b1cc4fbbebc0580689de7",
+    "runtime_source_and_web_fingerprint": "a8ff4ca766255cb61b43cd38f518d1cead1bc06943d3cccfa64668dbe4b1f2b9",
+    "environment_id": "imp03-review",
+    "presented_review_run_id": "8135ccd8-427c-4b10-a950-9d316771e68d"
+  },
+  "remaining": [],
+  "resources_retained": [
+    "Shared lab, continuation services, demo state, credentials and conversations retained; no runtime teardown was performed.",
+    "Original and continuation fences preserved; closeout changes documentation only."
+  ],
+  "retained_limits": [
+    "Acceptance covers the reviewed private synthetic engineering candidate; existing qualification limits remain.",
+    "Continuation transport certificates expire 2026-11-20; check toolkit readiness before subsequent use."
+  ],
+  "participant_admission": false,
+  "next_slice_activated": false,
+  "commit_push_authorized": true,
+  "git_state_at_closeout": {
+    "commit_or_push_performed": false,
+    "observed_at": "2026-11-16T16:41:20Z"
+  },
+  "publication_authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Commit, push changes, create PR",
+    "scope": "Commit and push IMP-03 changes and create a pull request against main; no merge.",
+    "branch": "feat/imp-03-protected-manual-service",
+    "base_branch": "main"
+  }
+}

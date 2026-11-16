@@ -1,0 +1,18 @@
+[
+  {
+    "role": "core",
+    "old_id": "b8355e53fe26d254e4ec6a61888b4eb8c9c28052f9ebce9cc1843854951169be",
+    "new_id": "3dd4677bb3a18a06285251734f11189bcf741d2fea74218dfc8e7b6190919a4e",
+    "image": "sha256:2b34147b1ed12989a3485087631568a8c05b15dea0e70e4da5aa4495af7ac300",
+    "network": "none",
+    "durable_volumes_preserved": true
+  },
+  {
+    "role": "data",
+    "old_id": "48da227e8aa0c2d12cea4daadb252b1c86ea080a6302086c8c295ed90b67d993",
+    "new_id": "707ca047304c8598d72e3d1c477dc8460c5f6e66f69161d5e715764bdabed62b",
+    "image": "sha256:2b34147b1ed12989a3485087631568a8c05b15dea0e70e4da5aa4495af7ac300",
+    "network": "none",
+    "durable_volumes_preserved": true
+  }
+]

@@ -1,0 +1,73 @@
+{
+  "observed_at": "2026-11-13T14:16:33.388607+00:00",
+  "argv": [
+    "kubectl",
+    "--kubeconfig",
+    "/private/tmp/care-link-imp02-002/cluster/kubeconfig",
+    "--context",
+    "kind-care-link-imp02-002",
+    "--request-timeout=15s",
+    "-n",
+    "care-link-imp02-002",
+    "exec",
+    "deployment/postgres",
+    "--",
+    "psql",
+    "-X",
+    "-At",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-U",
+    "postgres",
+    "-d",
+    "postgres",
+    "-c",
+    "BEGIN READ ONLY; SELECT json_build_object('version',current_setting('server_version'),'ssl',current_setting('ssl'),'ssl_min_protocol_version',current_setting('ssl_min_protocol_version'),'databases',(SELECT json_agg(datname ORDER BY datname) FROM pg_database WHERE NOT datistemplate),'roles',(SELECT json_agg(json_build_object('name',rolname,'login',rolcanlogin,'superuser',rolsuper,'create_db',rolcreatedb,'create_role',rolcreaterole,'bypass_rls',rolbypassrls) ORDER BY rolname) FROM pg_roles WHERE rolname NOT LIKE 'pg_%')); COMMIT;"
+  ],
+  "exit_code": 0,
+  "scope": "Metadata SELECT in read-only transaction over pod-local admin socket; no actor rows/passwords/TLS session qualification",
+  "metadata": {
+    "version": "18.3 (Debian 18.3-1.pgdg12+1)",
+    "ssl": "on",
+    "ssl_min_protocol_version": "TLSv1.3",
+    "databases": [
+      "identity",
+      "keycloak",
+      "postgres"
+    ],
+    "roles": [
+      {
+        "name": "identity_migrator",
+        "login": true,
+        "superuser": false,
+        "create_db": false,
+        "create_role": false,
+        "bypass_rls": false
+      },
+      {
+        "name": "identity_runtime",
+        "login": true,
+        "superuser": false,
+        "create_db": false,
+        "create_role": false,
+        "bypass_rls": false
+      },
+      {
+        "name": "keycloak",
+        "login": true,
+        "superuser": false,
+        "create_db": false,
+        "create_role": false,
+        "bypass_rls": false
+      },
+      {
+        "name": "postgres",
+        "login": true,
+        "superuser": true,
+        "create_db": true,
+        "create_role": true,
+        "bypass_rls": true
+      }
+    ]
+  }
+}

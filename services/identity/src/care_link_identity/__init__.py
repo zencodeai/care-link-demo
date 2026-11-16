@@ -6,6 +6,7 @@ from .crypto import Custody, ReceiptSigner
 from .domain import ExchangeUncertain, IdentityError, Principal, Provider, Store, Transaction
 from .owner_review import OwnerAccessReview, OwnerReviewProof
 from .provider import OIDCConfig, OIDCProvider
+from .provisioning import provision_account
 from .retention import RetentionService
 from .retention_adapters import (
     KeycloakCleanup,
@@ -54,4 +55,5 @@ __all__ = [
     "Store",
     "Transaction",
     "create_app",
+    "provision_account",
 ]

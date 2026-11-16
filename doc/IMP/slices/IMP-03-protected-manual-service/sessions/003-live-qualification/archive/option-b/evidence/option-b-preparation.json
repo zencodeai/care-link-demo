@@ -1,0 +1,11 @@
+{
+  "prepared": true,
+  "roles": [
+    "identity",
+    "core",
+    "data",
+    "pdp",
+    "journal"
+  ],
+  "live_trust": "unchecked"
+}

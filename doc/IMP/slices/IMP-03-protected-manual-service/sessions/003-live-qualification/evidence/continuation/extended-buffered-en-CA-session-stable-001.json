@@ -1,0 +1,9 @@
+{
+  "case": "buffered",
+  "locale": "en-CA",
+  "attempt": "session-stable-001",
+  "exit_code": 0,
+  "duration_seconds": 24.799,
+  "private_output": "/private/tmp/care-link-imp03-003-cont1/extended-buffered-en-CA-session-stable-001",
+  "human_acceptance": false
+}

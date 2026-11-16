@@ -1,0 +1,9 @@
+{
+  "session": "imp03-002",
+  "lanes": {
+    "full-check": 0,
+    "provisioning": 0
+  },
+  "live_provider_workload_browser": "not_run",
+  "human_acceptance": false
+}

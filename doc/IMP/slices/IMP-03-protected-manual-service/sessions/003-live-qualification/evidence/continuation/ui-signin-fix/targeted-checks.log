@@ -1,0 +1,37 @@
+COMMAND ["pnpm", "--filter", "@care-link/web", "test"]
+
+> @care-link/web@0.1.0 test /Users/main/Workspace/projects/care-link/care-link-demo/apps/web
+> vitest run
+
+
+ RUN  v5.1.0 /Users/main/Workspace/projects/care-link/care-link-demo/apps/web
+
+
+ Test Files  3 passed (3)
+      Tests  29 passed (29)
+   Start at  09:02:44
+   Duration  964ms (tests 56%, environment 28%, import 13%, transform 2%)
+
+
+COMMAND ["pnpm", "exec", "tsc", "--noEmit", "--project", "tests/e2e/imp03-extended/tsconfig.json"]
+
+COMMAND ["pnpm", "exec", "eslint", "tests/e2e/imp03-extended/helpers.ts"]
+
+COMMAND ["pnpm", "exec", "prettier", "--check", "tests/e2e/imp03-extended/helpers.ts"]
+Checking formatting...
+All matched files use Prettier code style!
+
+COMMAND ["pnpm", "exec", "pyright", "--project", "pyrightconfig.json"]
+0 errors, 0 warnings, 0 informations
+
+COMMAND [".venv/bin/ruff", "check", "tools/imp03_shared/web.py"]
+All checks passed!
+
+COMMAND [".venv/bin/ruff", "format", "--check", "tools/imp03_shared/web.py"]
+1 file already formatted
+
+COMMAND [".venv/bin/python", "tools/check_boundaries.py"]
+Source dependency boundaries passed (source check, not runtime isolation).
+
+COMMAND ["git", "diff", "--check"]
+

@@ -1,0 +1,210 @@
++ uv lock --check
+Resolved 58 packages in 17ms
++ pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts
+Scope: all 3 workspace projects
+Done in 137ms using pnpm v10.20.0
++ uv run --locked python tools/generate_contracts.py --check
+Browser validators match the pinned schema (54 public contracts).
+Contract snapshots match reviewed definitions.
++ uv run --locked python tools/check_boundaries.py
+Source dependency boundaries passed (source check, not runtime isolation).
++ uv run --locked python tools/check_imp02_admission.py
+IMP-02 source admission remains disabled; no live identity/network/content proof implied.
++ uv run --locked ruff check .
+All checks passed!
++ uv run --locked ruff format --check .
+210 files already formatted
++ pnpm exec pyright --project pyrightconfig.json
+0 errors, 0 warnings, 0 informations
++ pnpm typecheck
+
+> care-link-development@0.1.0 typecheck /Users/main/Workspace/projects/care-link/care-link-demo
+> pnpm -r typecheck
+
+Scope: 2 of 3 workspace projects
+packages/contracts/typescript typecheck$ tsc --noEmit
+packages/contracts/typescript typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
++ pnpm lint
+
+> care-link-development@0.1.0 lint /Users/main/Workspace/projects/care-link/care-link-demo
+> eslint apps/web packages/contracts/typescript --max-warnings 0
+
++ pnpm format:check
+
+> care-link-development@0.1.0 format:check /Users/main/Workspace/projects/care-link/care-link-demo
+> prettier --check apps/web packages/contracts/typescript package.json pnpm-workspace.yaml pyrightconfig.json eslint.config.mjs vitest.config.ts
+
+Checking formatting...
+All matched files use Prettier code style!
++ uv run --locked pytest
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/main/Workspace/projects/care-link/care-link-demo
+configfile: pyproject.toml
+testpaths: packages/policy-input/tests, services/data/tests, host/recovery-control/tests, packages/workload-trust/tests, packages/contracts/python/tests, services/core/tests, services/identity/tests, host/help/tests, host/static/tests, tests
+plugins: anyio-4.16.0
+collected 592 items
+
+packages/policy-input/tests/test_delegation.py ........                  [  1%]
+packages/policy-input/tests/test_duty_registry.py .....                  [  2%]
+packages/policy-input/tests/test_opa.py ..sssssss                        [  3%]
+services/data/tests/test_composition.py sssssss                          [  4%]
+services/data/tests/test_duties.py ssssssssssss                          [  6%]
+services/data/tests/test_manual.py sssssssssssss.ssssssssssssss          [ 11%]
+services/data/tests/test_runtime_composition.py s                        [ 11%]
+host/recovery-control/tests/test_capture.py ..........                   [ 13%]
+host/recovery-control/tests/test_journal.py .....................        [ 17%]
+packages/workload-trust/tests/test_fence_channel.py ...                  [ 17%]
+packages/workload-trust/tests/test_socket_custody.py ..                  [ 17%]
+packages/workload-trust/tests/test_workload_trust.py ................... [ 21%]
+..                                                                       [ 21%]
+packages/contracts/python/tests/test_validation.py ...............       [ 23%]
+services/core/tests/test_developer_api.py .............................. [ 29%]
+.                                                                        [ 29%]
+services/core/tests/test_manual_envelopes.py ...............             [ 31%]
+services/core/tests/test_manual_transport.py ........                    [ 33%]
+services/identity/tests/test_backups.py ..........                       [ 34%]
+services/identity/tests/test_identity.py ............................... [ 40%]
+..                                                                       [ 40%]
+services/identity/tests/test_manual_recovery.py ..                       [ 40%]
+services/identity/tests/test_manual_runtime.py ..........                [ 42%]
+services/identity/tests/test_owner_review.py ................            [ 45%]
+services/identity/tests/test_provider.py ............................... [ 50%]
+...............................                                          [ 55%]
+services/identity/tests/test_retention.py .........................      [ 59%]
+services/identity/tests/test_signals.py ..........                       [ 61%]
+services/identity/tests/test_workload_signals.py ...........             [ 63%]
+host/help/tests/test_authority_http.py ..................                [ 66%]
+host/help/tests/test_help.py ..........                                  [ 68%]
+host/help/tests/test_identity_integration.py .                           [ 68%]
+host/help/tests/test_lifecycle.py ................                       [ 70%]
+host/static/tests/test_card_compiler.py ..                               [ 71%]
+host/static/tests/test_owner_demo.py ...........                         [ 73%]
+host/static/tests/test_publication.py .............                      [ 75%]
+host/static/tests/test_static_retention.py .........                     [ 76%]
+tests/contract/test_snapshot.py .                                        [ 77%]
+tests/integration/imp02_lab/test_cni_ipv6.py ..                          [ 77%]
+tests/integration/imp02_lab/test_fence_users.py s                        [ 77%]
+tests/integration/imp02_lab/test_manifests.py .......                    [ 78%]
+tests/integration/imp02_lab/test_signals_probe.py ........               [ 80%]
+tests/integration/imp03_runtime/test_provisioning.py s                   [ 80%]
+tests/network/test_probe_evidence.py .....                               [ 81%]
+tests/unit/test_boundaries.py .....                                      [ 81%]
+tests/unit/test_imp02_admission.py .                                     [ 82%]
+tests/unit/test_imp02_application.py .....                               [ 82%]
+tests/unit/test_imp03_runtime.py ....................                    [ 86%]
+tests/unit/test_imp03_shared_docker.py ................................. [ 91%]
+...                                                                      [ 92%]
+tests/unit/test_imp03_shared_provider.py ...............                 [ 94%]
+tests/unit/test_imp03_shared_relay.py ...........                        [ 96%]
+tests/unit/test_imp03_shared_tls.py .......                              [ 97%]
+tests/unit/test_imp03_shared_tls_apply.py ............                   [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/unit/test_imp03_runtime.py::test_journal_response_is_fresh_signed_nonce_bound_and_reports_serving_fence
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py:1144: StarletteDeprecationWarning: You should not use the 'timeout' argument with the TestClient. See https://github.com/Kludex/starlette/issues/1108 for more information.
+    return self.request(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [7] packages/policy-input/tests/test_opa.py:158: Pinned OPA fixture explicitly required for integration
+SKIPPED [1] services/data/tests/test_composition.py:77: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:196: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:238: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:271: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:310: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:332: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:376: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:120: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [3] services/data/tests/test_duties.py:152: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [2] services/data/tests/test_duties.py:176: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:225: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:245: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:261: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:298: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:322: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:342: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:91: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:116: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:138: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:149: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:191: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:231: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:265: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:311: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:331: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:361: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:375: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:409: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:429: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:462: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:485: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:517: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:553: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:564: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:595: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:611: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:654: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:673: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [4] services/data/tests/test_manual.py:715: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:785: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_runtime_composition.py:27: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] tests/integration/imp02_lab/test_fence_users.py:50: requires explicitly authorized disposable Linux container UID0/setuid test harness
+SKIPPED [1] tests/integration/imp03_runtime/test_provisioning.py:27: explicit isolated provisioning TLS fixture required; run separately
+================= 536 passed, 56 skipped, 2 warnings in 15.76s =================
++ pnpm exec tsc -p tests/e2e/imp02/tsconfig.json
++ pnpm exec eslint tests/e2e/imp02 --max-warnings 0
++ pnpm exec prettier --check tests/e2e/imp02
+Checking formatting...
+All matched files use Prettier code style!
++ pnpm exec tsc -p tests/e2e/imp03/tsconfig.json
++ pnpm exec eslint tests/e2e/imp03 --max-warnings 0
++ pnpm exec prettier --check tests/e2e/imp03
+Checking formatting...
+All matched files use Prettier code style!
++ pnpm exec tsc -p tests/contract/tsconfig.json
++ pnpm exec eslint tests/contract --max-warnings 0
++ pnpm exec prettier --check tests/contract
+Checking formatting...
+All matched files use Prettier code style!
++ pnpm test
+
+> care-link-development@0.1.0 test /Users/main/Workspace/projects/care-link/care-link-demo
+> vitest run
+
+
+ RUN  v5.1.0 /Users/main/Workspace/projects/care-link/care-link-demo
+
+
+ Test Files  8 passed (8)
+      Tests  59 passed (59)
+   Start at  10:44:35
+   Duration  1.10s (environment 46%, tests 40%, import 12%, transform 2%)
+
++ pnpm build
+
+> care-link-development@0.1.0 build /Users/main/Workspace/projects/care-link/care-link-demo
+> pnpm -r build
+
+Scope: 2 of 3 workspace projects
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v7.3.7 building client environment for production...
+apps/web build: transforming...
+apps/web build: ✓ 59 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                   0.47 kB │ gzip:   0.30 kB
+apps/web build: dist/assets/index-0NcQIAHS.css    2.43 kB │ gzip:   1.00 kB
+apps/web build: dist/assets/index-DCpDfvhn.js   585.00 kB │ gzip: 110.75 kB
+apps/web build: ✓ built in 510ms
+apps/web build: (!) Some chunks are larger than 500 kB after minification. Consider:
+apps/web build: - Using dynamic import() to code-split the application
+apps/web build: - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+apps/web build: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+apps/web build: Done

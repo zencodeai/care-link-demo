@@ -1,0 +1,28 @@
+{
+  "session": "imp03-002",
+  "mainOrigin": "https://manual.localhost:28443",
+  "oidcOrigin": "https://id.imp03.localhost:29443",
+  "helpOrigin": "https://help.imp03.localhost:30443",
+  "staticOrigin": "https://static.imp03.localhost:31443",
+  "ignoreHTTPSErrors": false,
+  "accounts": {
+    "pid": "03000000-0000-4000-8000-000000000001",
+    "worker": "03000000-0000-4000-8000-000000000002",
+    "supervisor": "03000000-0000-4000-8000-000000000003"
+  },
+  "participant": {
+    "username": "ISSUED_PARTICIPANT_USERNAME",
+    "password": "ISSUED_PARTICIPANT_PASSWORD",
+    "totpSecret": "ISSUED_PARTICIPANT_TOTP_BASE32"
+  },
+  "worker": {
+    "username": "ISSUED_WORKER_USERNAME",
+    "password": "ISSUED_WORKER_PASSWORD",
+    "totpSecret": "ISSUED_WORKER_TOTP_BASE32"
+  },
+  "supervisor": {
+    "username": "ISSUED_SUPERVISOR_USERNAME",
+    "password": "ISSUED_SUPERVISOR_PASSWORD",
+    "totpSecret": "ISSUED_SUPERVISOR_TOTP_BASE32"
+  }
+}

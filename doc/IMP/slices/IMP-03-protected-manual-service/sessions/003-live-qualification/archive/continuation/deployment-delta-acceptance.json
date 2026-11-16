@@ -1,0 +1,43 @@
+{
+  "decision_id": "IMP-03-003-DEPLOYMENT-DELTA-ACCEPTANCE",
+  "decision_kind": "deployment_profile_scope_acceptance",
+  "decision": "accepted",
+  "stage_id": "IMP-03",
+  "gate_id": "G-03",
+  "recorded_at": "2026-11-14T00:13:10.779172+00:00",
+  "timestamp_scope": "Record creation time; exact user-message timestamp not exposed.",
+  "attribution": "User in the current qualification conversation; no separate identity or reviewer role inferred.",
+  "source": {
+    "kind": "user_message",
+    "text": "1: Deployement deltas are reviewed and accepted"
+  },
+  "candidate": {
+    "commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "diff_digest": "f0ca38b3bf415c109c6ef9e385707dfb65eb4537e8d8fcafe5e66fa3f468bac8",
+    "artifact_digest": "1aae9fd61bc71b25734802afcdfe61fddfd367c05e5def1644ce658c2f7a34a0",
+    "configuration_digest": "45fa3c5acca2165fe725343544f3ae8f28ba71b73cbe4fc085aeccd1974b8d8b",
+    "contract_digest": "2c370575070ed2e2bde86b0280a20fb7b8449f472bac8bf3236234ae0b3fe7ff",
+    "environment_digest": "5bac5b40ce35c45e4a7f5ef37009dcad7f467b7eefcb767904a01d221e49fecc",
+    "fixture_digest": "8bbab9d81fb8cfc120c4f9a988b6a822b6d4972ddc97bbc4bb300c48b126b51f"
+  },
+  "reviewed_deployment_delta": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/deployment-review/reviewed-deployment-delta.md",
+    "sha256": "0de3224f3c89eb61f67052230015c77941ccca72c922c6ded83fca88bd170c5e"
+  },
+  "reviewed_demo_packet": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/deployment-review/reviewed-demo-packet.json",
+    "sha256": "c416aa1614a04b6ff6765f0e92619349183349f08af7fb6618f12a34f5632a6d"
+  },
+  "accepted_scope": [
+    "The documented bounded synthetic continuation deployment profile and its differences: shared SPIRE/Keycloak, fresh disposable PostgreSQL process, Docker application placement with protected relays, common workspace image variants, parent/UID workload selectors and isolated browser NSS trust.",
+    "Documented absence of normal Kubernetes/Calico application placement, per-role installed distributions and exact image selectors is accepted for this bounded qualification scope; these controls are not represented as implemented."
+  ],
+  "remaining_obligations": [
+    "Human usability/accessibility/content review and an explicit overall G-03 decision remain pending.",
+    "Historical reliability unknowns and scenario/evidence limits remain recorded."
+  ],
+  "stage_acceptance": false,
+  "participant_admission_authorized": false,
+  "imp04_activation_authorized": false,
+  "runtime_change_authorized_by_this_record": false
+}

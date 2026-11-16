@@ -1,0 +1,43 @@
++ pnpm exec prettier --check tests/e2e/imp03-extended
+Checking formatting...
+All matched files use Prettier code style!
++ pnpm exec tsc -p tests/contract/tsconfig.json
++ pnpm exec eslint tests/contract --max-warnings 0
++ pnpm exec prettier --check tests/contract
+Checking formatting...
+All matched files use Prettier code style!
++ pnpm test
+
+> care-link-development@0.1.0 test /Users/main/Workspace/projects/care-link/care-link-demo
+> vitest run
+
+
+ RUN  v5.1.0 /Users/main/Workspace/projects/care-link/care-link-demo
+
+
+ Test Files  8 passed (8)
+      Tests  67 passed (67)
+   Start at  15:19:36
+   Duration  1.43s (environment 43%, tests 43%, import 11%, transform 2%)
+
++ pnpm build
+
+> care-link-development@0.1.0 build /Users/main/Workspace/projects/care-link/care-link-demo
+> pnpm -r build
+
+Scope: 2 of 3 workspace projects
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v7.3.7 building client environment for production...
+apps/web build: transforming...
+apps/web build: ✓ 59 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                   0.47 kB │ gzip:   0.30 kB
+apps/web build: dist/assets/index-0NcQIAHS.css    2.43 kB │ gzip:   1.00 kB
+apps/web build: dist/assets/index-BGdrTDxV.js   586.24 kB │ gzip: 111.17 kB
+apps/web build: ✓ built in 524ms
+apps/web build: (!) Some chunks are larger than 500 kB after minification. Consider:
+apps/web build: - Using dynamic import() to code-split the application
+apps/web build: - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+apps/web build: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+apps/web build: Done

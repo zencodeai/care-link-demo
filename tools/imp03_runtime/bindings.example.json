@@ -1,0 +1,185 @@
+{
+  "session": "imp03-002",
+  "main_origin": "https://manual.localhost:28443",
+  "web_directory": "/app/apps/web/dist",
+  "actors": [
+    {
+      "account_id": "03000000-0000-4000-8000-000000000001",
+      "subject": "ISSUED_PROVIDER_SUBJECT_PID",
+      "roles": [
+        "pid"
+      ]
+    },
+    {
+      "account_id": "03000000-0000-4000-8000-000000000002",
+      "subject": "ISSUED_PROVIDER_SUBJECT_WORKER",
+      "roles": [
+        "worker"
+      ]
+    },
+    {
+      "account_id": "03000000-0000-4000-8000-000000000003",
+      "subject": "ISSUED_PROVIDER_SUBJECT_SUPERVISOR",
+      "roles": [
+        "supervisor"
+      ]
+    }
+  ],
+  "roles": {
+    "identity": {
+      "uid": 22011,
+      "proxy_uid": 22002,
+      "fence_uid": 22000,
+      "fence_socket": "/run/care-link-imp03-002/fence/fence.sock",
+      "backend_socket": "/run/care-link-imp03-002/identity/backend/app.sock",
+      "outbound": {}
+    },
+    "core": {
+      "uid": 22012,
+      "proxy_uid": 22002,
+      "fence_uid": 22000,
+      "fence_socket": "/run/care-link-imp03-002/fence/fence.sock",
+      "backend_socket": "/run/care-link-imp03-002/core/backend/app.sock",
+      "outbound": {
+        "identity": {
+          "socket": "/run/care-link-imp03-002/core/outbound/identity.sock",
+          "origin": "https://identity.imp03.mesh:8443"
+        },
+        "data": {
+          "socket": "/run/care-link-imp03-002/core/outbound/data.sock",
+          "origin": "https://data.imp03.mesh:8443"
+        },
+        "pdp": {
+          "socket": "/run/care-link-imp03-002/core/outbound/pdp.sock",
+          "origin": "https://pdp.imp03.mesh:8443"
+        }
+      }
+    },
+    "data": {
+      "uid": 22013,
+      "proxy_uid": 22002,
+      "fence_uid": 22000,
+      "fence_socket": "/run/care-link-imp03-002/fence/fence.sock",
+      "backend_socket": "/run/care-link-imp03-002/data/backend/app.sock",
+      "outbound": {
+        "identity": {
+          "socket": "/run/care-link-imp03-002/data/outbound/identity.sock",
+          "origin": "https://identity.imp03.mesh:8443"
+        },
+        "core": {
+          "socket": "/run/care-link-imp03-002/data/outbound/core.sock",
+          "origin": "https://core.imp03.mesh:8443"
+        },
+        "pdp": {
+          "socket": "/run/care-link-imp03-002/data/outbound/pdp.sock",
+          "origin": "https://pdp.imp03.mesh:8443"
+        },
+        "journal": {
+          "socket": "/run/care-link-imp03-002/data/outbound/journal.sock",
+          "origin": "https://journal.imp03.mesh:8443"
+        }
+      }
+    },
+    "pdp": {
+      "uid": 22014,
+      "proxy_uid": 22002,
+      "fence_uid": 22000,
+      "fence_socket": "/run/care-link-imp03-002/fence/fence.sock",
+      "backend_socket": "/run/care-link-imp03-002/pdp/backend/app.sock",
+      "outbound": {}
+    },
+    "journal": {
+      "uid": 22015,
+      "proxy_uid": 22002,
+      "fence_uid": 22000,
+      "fence_socket": "/run/care-link-imp03-002/fence/fence.sock",
+      "backend_socket": "/run/care-link-imp03-002/journal/backend/app.sock",
+      "outbound": {}
+    }
+  },
+  "identity": {
+    "store_dsn": "host=imp03-postgres port=5432 dbname=imp03_identity_002 user=imp03_identity_runtime_002 password=ISSUED_IDENTITY_DB_PASSWORD sslmode=verify-full sslrootcert=/config/imp03-db-ca.crt",
+    "provider_address": "172.31.3.20",
+    "provider_ca": "/config/imp03-provider-ca.crt",
+    "oidc": {
+      "issuer": "https://id.imp03.localhost:29443/realms/care-link-imp03",
+      "client_id": "care-link-imp03-browser",
+      "client_secret": "ISSUED_OIDC_CLIENT_SECRET",
+      "redirect_uri": "https://manual.localhost:28443/v1/auth/callback",
+      "authorization_endpoint": "https://id.imp03.localhost:29443/realms/care-link-imp03/protocol/openid-connect/auth",
+      "token_endpoint": "https://id.imp03.localhost:29443/realms/care-link-imp03/protocol/openid-connect/token",
+      "jwks_uri": "https://id.imp03.localhost:29443/realms/care-link-imp03/protocol/openid-connect/certs",
+      "introspection_endpoint": "https://id.imp03.localhost:29443/realms/care-link-imp03/protocol/openid-connect/token/introspect",
+      "revocation_endpoint": "https://id.imp03.localhost:29443/realms/care-link-imp03/protocol/openid-connect/revoke",
+      "resource_audience": "care-link-imp03-resource",
+      "mfa_acr": "urn:care-link:mfa"
+    }
+  },
+  "data": {
+    "store_dsn": "host=imp03-postgres port=5432 dbname=imp03_runtime_002 user=imp03_data_runtime_002 password=ISSUED_DATA_DB_PASSWORD sslmode=verify-full sslrootcert=/config/imp03-db-ca.crt"
+  },
+  "pdp": {
+    "executable": "/opt/opa",
+    "executable_digest": "ISSUED_LINUX_OPA_SHA256"
+  },
+  "mesh": {
+    "identity": {
+      "address": "172.31.3.11",
+      "port": 8443,
+      "authorization_socket": "/run/care-link-imp03-002/identity/authorization/authz.sock",
+      "spire_socket": "/run/care-link-imp03-002/identity/spire/agent.sock",
+      "proxy_config": "/run/care-link-imp03-002/identity/proxy/envoy.json",
+      "trust_bundle": "/config/imp03-spire-bundle.pem",
+      "authorization_uid": 22031
+    },
+    "core": {
+      "address": "172.31.3.12",
+      "port": 8443,
+      "authorization_socket": "/run/care-link-imp03-002/core/authorization/authz.sock",
+      "spire_socket": "/run/care-link-imp03-002/core/spire/agent.sock",
+      "proxy_config": "/run/care-link-imp03-002/core/proxy/envoy.json",
+      "trust_bundle": "/config/imp03-spire-bundle.pem",
+      "authorization_uid": 22032
+    },
+    "data": {
+      "address": "172.31.3.13",
+      "port": 8443,
+      "authorization_socket": "/run/care-link-imp03-002/data/authorization/authz.sock",
+      "spire_socket": "/run/care-link-imp03-002/data/spire/agent.sock",
+      "proxy_config": "/run/care-link-imp03-002/data/proxy/envoy.json",
+      "trust_bundle": "/config/imp03-spire-bundle.pem",
+      "authorization_uid": 22033
+    },
+    "pdp": {
+      "address": "172.31.3.14",
+      "port": 8443,
+      "authorization_socket": "/run/care-link-imp03-002/pdp/authorization/authz.sock",
+      "spire_socket": "/run/care-link-imp03-002/pdp/spire/agent.sock",
+      "proxy_config": "/run/care-link-imp03-002/pdp/proxy/envoy.json",
+      "trust_bundle": "/config/imp03-spire-bundle.pem",
+      "authorization_uid": 22034
+    },
+    "journal": {
+      "address": "172.31.3.15",
+      "port": 8443,
+      "authorization_socket": "/run/care-link-imp03-002/journal/authorization/authz.sock",
+      "spire_socket": "/run/care-link-imp03-002/journal/spire/agent.sock",
+      "proxy_config": "/run/care-link-imp03-002/journal/proxy/envoy.json",
+      "trust_bundle": "/config/imp03-spire-bundle.pem",
+      "authorization_uid": 22035
+    }
+  },
+  "browser_tls": {
+    "address": "172.31.3.12",
+    "port": 28443,
+    "certificate": "/config/imp03-browser.crt",
+    "private_key": "/config/imp03-browser.key"
+  },
+  "pins": {
+    "envoy_image": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+    "envoy_version": "1.40.2",
+    "spire_image": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+    "spire_version": "1.16.0",
+    "svid_ttl_seconds": 300
+  }
+}

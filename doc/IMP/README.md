@@ -2,6 +2,8 @@
 
 Version 0.1 · 2026-11-06 · Proposed plan for human review. No application implementation, tool installation, host change or deployment is performed by this package.
 
+Execution status: [IMP-03 closed; G-03 accepted](executions/2026-11-16-IMP-03/ledger.json). The planning baseline below remains separate from actual execution records.
+
 Implement the accepted LLD as small, demonstrable service slices. Use Codex specialists for bounded analysis and scoped work, preserve one accountable integration owner, and require explicit human decisions on exact stage candidates. Security/governance controls are built into the earliest relevant behavior, not deferred to a final audit.
 
 | Read | Purpose |

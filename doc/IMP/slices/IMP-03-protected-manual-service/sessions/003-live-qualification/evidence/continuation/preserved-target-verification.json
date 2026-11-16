@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-11-13T23:57:06.817284+00:00",
+  "read_only": true,
+  "original_imp02_entries": [
+    {
+      "entry_id": "7e0b1b06-2eb9-4978-9585-e0a8f2b2d2fa",
+      "unchanged": true,
+      "baseline_sha256": "70d7e8758e4e9f169aef0dd87384ca361ffe1176c08ce1030141429b42da701c"
+    },
+    {
+      "entry_id": "811cae52-0d2c-461d-ad9e-17eb465850ef",
+      "unchanged": true,
+      "baseline_sha256": "01a4dfe8155671e0986b75be8317aa56bc0554d929f8be7821ffc2fca36bbef9"
+    },
+    {
+      "entry_id": "10f42534-0dd8-45b7-a718-442a71f92f0f",
+      "unchanged": true,
+      "baseline_sha256": "b3185582c86ca5653ca4c4377585b1107924c5c04502ae646f813014d0601672"
+    },
+    {
+      "entry_id": "551fd699-8848-4e75-8cba-1c9b906e71fb",
+      "unchanged": true,
+      "baseline_sha256": "b616cccb0fbc55ef1f8dae72621c9e3ce670b1d5a5d43d728ee34f9ac9a7d634"
+    },
+    {
+      "entry_id": "01cd3948-a575-4269-b4f7-559c2bd717f3",
+      "unchanged": true,
+      "baseline_sha256": "ec61cd8f395b84023e6fe1408cf34eda3dc705275b4571c36f748110782a5af1"
+    },
+    {
+      "entry_id": "324f20df-b748-436e-a3cc-e17961680b60",
+      "unchanged": true,
+      "baseline_sha256": "e653e0e7185a0f3cc3cd5e6aa3e1105021d2dd06d3b6e211ccd927bc26fb23e9"
+    }
+  ],
+  "original_fence": {
+    "generation": 1,
+    "denied": [
+      "spiffe://care-link.demo/demo/core"
+    ],
+    "head": "b9093c3fe012cfe2eb6bda45a2e76bb8441d5f1238c7c3df4f9ad7bd3ebe8b65"
+  },
+  "continuation_fence": {
+    "generation": 0,
+    "denied": [],
+    "head": "f302c8c9ebf633e62e8455bc70d5e83105143ddad449952eb3f4ca910a4d65df"
+  }
+}

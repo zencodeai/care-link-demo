@@ -1,0 +1,8 @@
+{
+  "recorded_at": "2026-11-14T21:31:06.799781+00:00",
+  "schemas_passed": 3,
+  "current_references_checked": 559,
+  "source_files": 377,
+  "scope": "Worker Open fresh-flow test addition; no deployed artifact change. Historical snapshots retained.",
+  "human_acceptance": false
+}

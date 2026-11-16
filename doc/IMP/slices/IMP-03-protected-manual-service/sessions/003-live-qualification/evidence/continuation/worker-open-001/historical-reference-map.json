@@ -1,0 +1,93 @@
+{
+  "scope": "Earlier immutable packet references resolve by original path plus digest to archived bytes.",
+  "aliases": [
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/qualification-status.md",
+      "content_sha256": "fb1dc6fe28b9698d7339fd1b71b993e2fc88c7335e8559cc1737b26f5cb60d03",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/before-qualification-status.md",
+        "sha256": "fb1dc6fe28b9698d7339fd1b71b993e2fc88c7335e8559cc1737b26f5cb60d03"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/source-dirty.patch",
+      "content_sha256": "d60f422798ee8438d594a89586c5dd3b07ac5c07ff730093015d85f18ef5661b",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/before-source-dirty.patch",
+        "sha256": "d60f422798ee8438d594a89586c5dd3b07ac5c07ff730093015d85f18ef5661b"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-results.json",
+      "content_sha256": "c6bdbd5da6cd49763650fa8f93c35f28d73a803402b2b67cf41d60182978b022",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/before-continuation-results.json",
+        "sha256": "c6bdbd5da6cd49763650fa8f93c35f28d73a803402b2b67cf41d60182978b022"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-deployed-artifacts.json",
+      "content_sha256": "54015ec2da86b5d4ea14fb6c9c02e2a80b917fe4ad0e0606c73107454a253681",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/before-continuation-deployed-artifacts.json",
+        "sha256": "54015ec2da86b5d4ea14fb6c9c02e2a80b917fe4ad0e0606c73107454a253681"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-environment.json",
+      "content_sha256": "0897b6e50775abbf383159397576e53e5f34a86ad7f2ad22c15f97b20068f1b9",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/before-continuation-environment.json",
+        "sha256": "0897b6e50775abbf383159397576e53e5f34a86ad7f2ad22c15f97b20068f1b9"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-demo-packet.json",
+      "content_sha256": "1d3c95ea2cf6e693819d3fd336ac779e7ff8654ef76114cfeecfdce580663cd5",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/before-continuation-demo-packet.json",
+        "sha256": "1d3c95ea2cf6e693819d3fd336ac779e7ff8654ef76114cfeecfdce580663cd5"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-agent-result.json",
+      "content_sha256": "4816d02857740f9f6fe99052e53b19ba60e9c8a1a670f9221ece3610f0ea1fbf",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/before-continuation-agent-result.json",
+        "sha256": "4816d02857740f9f6fe99052e53b19ba60e9c8a1a670f9221ece3610f0ea1fbf"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/handoff.md",
+      "content_sha256": "a5faccaa015fbbd61f4efd517b5c2ebfac81850e68486f688bf2ae31e0b0a6dd",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/before-handoff.md",
+        "sha256": "a5faccaa015fbbd61f4efd517b5c2ebfac81850e68486f688bf2ae31e0b0a6dd"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/human-review-progress.json",
+      "content_sha256": "b22323f253ce8d18884d25879be321cb0c8227fa31ed182d5dea3f630d1bc213",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/before-human-review-progress.json",
+        "sha256": "b22323f253ce8d18884d25879be321cb0c8227fa31ed182d5dea3f630d1bc213"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/continuation-packet-validation.json",
+      "content_sha256": "4ef90ef2e12b6b9eea1227fc85823617b7534d51487b6a2ffdc747e38af5243c",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/before-continuation-packet-validation.json",
+        "sha256": "4ef90ef2e12b6b9eea1227fc85823617b7534d51487b6a2ffdc747e38af5243c"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-candidate-manifest.json",
+      "content_sha256": "d486c74faf81594c06e58099430645bd4cee2691a82b3fb263442730308806c2",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/before-continuation-candidate-manifest.json",
+        "sha256": "d486c74faf81594c06e58099430645bd4cee2691a82b3fb263442730308806c2"
+      }
+    }
+  ]
+}

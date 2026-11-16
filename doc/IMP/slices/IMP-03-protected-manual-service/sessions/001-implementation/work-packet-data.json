@@ -1,0 +1,108 @@
+{
+  "stage_id": "IMP-03",
+  "mode": "implementation",
+  "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/LLD/04-data-model-and-transactions.md",
+      "sha256": "bca41c244ee0c6c561ad68d9720b6006f055ca62c529a260968e221395b4b51b"
+    },
+    {
+      "path": "doc/LLD/05-actor-workflows-and-ui.md",
+      "sha256": "b39f419893fb19de1b5f20c1f9a87f78fe669a57865b681de040338937a2115c"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "doc/LLD/contracts/state-machines.json",
+      "sha256": "f57048f11d95e9bb826b3d47b6fd6534a83b532a9d3d9027cca92b9831873ed9"
+    },
+    {
+      "path": "doc/LLD/storage-model.json",
+      "sha256": "1d831fdeedf251cbd5536337643fa5522621f985db972a7509af2932e7ee32c6"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/**",
+    "services/**",
+    "packages/**",
+    "host/**",
+    "apps/web/**",
+    "tools/**",
+    "tests/**",
+    "config/**"
+  ],
+  "dependencies": [
+    "G-02 explicitly accepted; historical scope preserved"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "read_only_host_probe"
+  ],
+  "prohibited_actions": [
+    "commit/push/GitHub mutation",
+    "deployment or existing lab mutation",
+    "global host/model changes",
+    "real personal data/partner/police integration/autonomous contact",
+    "invented human acceptance",
+    "nested delegation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "2026-11-09: Implement service slice 03",
+    "scope": "Implement and locally verify IMP-03; no implicit predecessor approval transfer for host operations."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP03-DATA-FILES",
+      "kind": "file_set",
+      "scope": "services/data/** exclusively; includes migration ordering for this new service only",
+      "owner_task_id": "IMP-03-B",
+      "expires_at": "2026-11-10T05:00:00Z"
+    }
+  ],
+  "expected_outputs": [
+    "Modular implementation/tests and source-grounded findings",
+    "Actual checks and unresolved live-evidence obligations"
+  ],
+  "positive_acceptance": [
+    "Durable manual journey with explicit two-party channel connection, current protected views, idempotent operations and truthful pending/unknown states"
+  ],
+  "adverse_acceptance": [
+    "Stale authority/owner/output, audit/PDP/journal failure and stale continuation cannot release protected success; silence never closes support"
+  ],
+  "reviewer": "primary integration owner",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Authority/design expansion",
+    "Unowned shared file mutation"
+  ],
+  "is_example": false,
+  "packet_id": "IMP-03-001-DATA",
+  "task_id": "IMP-03-B",
+  "role": "imp_python",
+  "write_paths": [
+    "services/data/**"
+  ],
+  "goal": "Implement real PostgreSQL manual service, migrations, guarded named use cases, continuation/ownership/channel transactions and behavioral tests using existing LLD contracts; no success stubs. Use care_link_domain public ports. Coordinate any necessary interface addition."
+}

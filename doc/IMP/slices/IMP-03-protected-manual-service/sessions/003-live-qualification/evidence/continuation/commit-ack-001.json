@@ -1,0 +1,14 @@
+{
+  "case": "commit-ack",
+  "attempt": 1,
+  "human_acceptance": false,
+  "exit_code": 0,
+  "audit_valid": true,
+  "exactly_one_durable_effect": true,
+  "queue_operation_canonical_audit_counts": [
+    1,
+    1,
+    1
+  ],
+  "duration_seconds": 11.241
+}

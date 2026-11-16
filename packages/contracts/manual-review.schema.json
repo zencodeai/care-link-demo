@@ -1,0 +1,452 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:care-link:manual-review:1",
+  "$defs": {
+    "ReviewWorkspaceQuery": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": ["session_id"],
+      "additionalProperties": false
+    },
+    "ReviewDraftSave": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["intake", "message"]
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 8000
+        },
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": ["kind", "text", "expected_revision"],
+      "additionalProperties": false
+    },
+    "ReviewIntentPrepare": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["intake", "message"]
+        },
+        "draft_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "expected_control_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "locale": {
+          "type": "string",
+          "enum": ["en-CA", "fr-CA"]
+        }
+      },
+      "required": [
+        "kind",
+        "draft_revision",
+        "expected_revision",
+        "expected_control_epoch",
+        "locale"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewDraftView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["intake", "message"]
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 8000
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "session_id",
+        "kind",
+        "revision",
+        "text",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewIntentView": {
+      "type": "object",
+      "properties": {
+        "operation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["intake", "message"]
+        },
+        "draft_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "prepared",
+            "pending",
+            "committed",
+            "rejected",
+            "unknown",
+            "replacement_unavailable",
+            "cancelled"
+          ]
+        },
+        "action": {
+          "type": "string",
+          "enum": ["session_turns", "message_send"]
+        },
+        "payload": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TurnSubmit"
+            },
+            {
+              "$ref": "#/$defs/MessageSubmit"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "operation_id",
+        "session_id",
+        "kind",
+        "draft_revision",
+        "state",
+        "action",
+        "payload",
+        "created_at"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewHandshakeView": {
+      "type": "object",
+      "properties": {
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "challenge_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "assignment_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "participant_acknowledged": {
+          "type": "boolean"
+        },
+        "worker_acknowledged": {
+          "type": "boolean"
+        },
+        "evidence_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "worker_ack_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "expires_at",
+        "challenge_id",
+        "assignment_id",
+        "participant_acknowledged",
+        "worker_acknowledged",
+        "evidence_id",
+        "worker_ack_id"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewWorkspace": {
+      "type": "object",
+      "properties": {
+        "run_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "run_state": {
+          "type": ["string", "null"],
+          "enum": ["active", "closing", "closed", null]
+        },
+        "conversations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SessionView"
+          },
+          "maxItems": 50
+        },
+        "conversation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SessionView"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "assignment": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AssignmentView"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "drafts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReviewDraftView"
+          },
+          "maxItems": 2
+        },
+        "pending_intents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReviewIntentView"
+          },
+          "maxItems": 10
+        },
+        "handshake": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReviewHandshakeView"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "disclosure_acknowledged": {
+          "type": "boolean"
+        },
+        "intake_submitted": {
+          "type": "boolean"
+        },
+        "interrupt_expires_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "run_id",
+        "run_state",
+        "conversations",
+        "conversation",
+        "assignment",
+        "drafts",
+        "pending_intents",
+        "handshake",
+        "disclosure_acknowledged",
+        "intake_submitted",
+        "interrupt_expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_review_workspace": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReviewWorkspaceQuery"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": ["path_arguments", "arguments", "delegation", "decision"],
+      "additionalProperties": false
+    },
+    "Gateway_review_draft_save": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReviewDraftSave"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": ["path_arguments", "arguments", "delegation", "decision"],
+      "additionalProperties": false
+    },
+    "Gateway_review_intent_prepare": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReviewIntentPrepare"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": ["path_arguments", "arguments", "delegation", "decision"],
+      "additionalProperties": false
+    },
+    "ReviewIntentCancel": {
+      "type": "object",
+      "properties": {
+        "operation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": ["operation_id"],
+      "additionalProperties": false
+    },
+    "Gateway_review_intent_cancel": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReviewIntentCancel"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": ["path_arguments", "arguments", "delegation", "decision"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-11-14T00:02:27.624719+00:00",
+  "schema_validated": [
+    "work-packet-automation-continuation.json",
+    "continuation-demo-packet.json",
+    "continuation-agent-result.json"
+  ],
+  "current_reference_hashes_checked": 580,
+  "reference_hash_mismatches": 0,
+  "candidate_digest_formulas_verified": true,
+  "live_result_gates_verified": true,
+  "initial_sigkill_result_rejected": true,
+  "final_fault_capability_disabled": true,
+  "expiry_probe_source_hash_verified": true,
+  "current_markdown_links": "passed",
+  "git_diff_check": "passed",
+  "private_data_scan": {
+    "session_files": 264,
+    "known_private_values": 31,
+    "hits": 0,
+    "scope": "Exact known-value plus PEM private-key marker scan; not a universal secret detector."
+  },
+  "human_acceptance": false,
+  "packet": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-demo-packet.json",
+    "sha256": "1d3c95ea2cf6e693819d3fd336ac779e7ff8654ef76114cfeecfdce580663cd5"
+  },
+  "updated_at": "2026-11-14T20:34:42.608946+00:00",
+  "deployment_delta_acceptance": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/deployment-delta-acceptance.json",
+    "sha256": "80f0021bc5619e46e845c159805d60f81a8e97811f58ed5da1fff698cc0757bd"
+  },
+  "reviewed_candidate_unchanged": false,
+  "update_scope": "Current source585/67 and affected live stability evidence,60s pools and bounded public-bundle review maintenance. Human confirmation pending.",
+  "stage_acceptance": false,
+  "current_candidate_changed_since_deployment_scope_review": true,
+  "reviewed_candidate_note": "Immutable deployment-profile acceptance remains bound to its reviewed snapshot. Current candidate records the public-origin fix and public bundle refresh; overall G03 acceptance remains absent.",
+  "human_review_progress_updated_at": "2026-11-14T19:31:32.211848+00:00",
+  "latest_correction_validation": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/packet-validation.json",
+    "sha256": "aca6f07d2f0086772f873ff2d7446128d587d0b25c35dd4194e36b8aa056f009"
+  }
+}

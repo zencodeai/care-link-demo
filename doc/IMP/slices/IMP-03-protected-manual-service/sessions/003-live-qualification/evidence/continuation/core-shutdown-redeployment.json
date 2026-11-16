@@ -1,0 +1,8 @@
+{
+  "old_id": "738f8f8f39dc363dbce2b326a60d22567b5389a28c450b7e685a1377212ba42a",
+  "new_id": "ffa5ea85f0676692b6a20ac11825a140b0a5a929594f550184fb744fc01e04a5",
+  "old_image": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+  "new_image": "sha256:12ff46df89462611e2725c9ffa869dfc185d4879cc21d887de39802ffec6dd8d",
+  "state_reset": false,
+  "change": "3s graceful-shutdown bound and conventional signal exit status"
+}

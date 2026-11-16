@@ -1,0 +1,60 @@
+{
+  "scope": "All five owned continuation application roles stopped and restarted; proxies/agents/DB/fence not reset",
+  "roles": [
+    {
+      "role": "core",
+      "container_id": "ffa5ea85f0676692b6a20ac11825a140b0a5a929594f550184fb744fc01e04a5",
+      "stop_seconds": 0.272,
+      "exit_code": 143,
+      "oom_killed": false,
+      "running_after_stop": false
+    },
+    {
+      "role": "data",
+      "container_id": "499f6e9878939a4073a3fdb796e71dfadc016b5c2c37223d4c9b5cda5fd810e6",
+      "stop_seconds": 0.31,
+      "exit_code": 241,
+      "oom_killed": false,
+      "running_after_stop": false
+    },
+    {
+      "role": "identity",
+      "container_id": "d55020eb44e9d366dac94cabe6688b259bc09d2ccbccd89edc4ce06c66eecf97",
+      "stop_seconds": 0.297,
+      "exit_code": 241,
+      "oom_killed": false,
+      "running_after_stop": false
+    },
+    {
+      "role": "pdp",
+      "container_id": "13e859347ef2d8985c2e5b6be63bfd23fd72360c746a6780ff579f77dd916706",
+      "stop_seconds": 0.557,
+      "exit_code": 241,
+      "oom_killed": false,
+      "running_after_stop": false
+    },
+    {
+      "role": "journal",
+      "container_id": "4db0bf0c7164905651b066ef213d477f786f1e227a12aca14fb81cd6f9e86a63",
+      "stop_seconds": 0.386,
+      "exit_code": 241,
+      "oom_killed": false,
+      "running_after_stop": false
+    }
+  ],
+  "container_ids_preserved": true,
+  "database_comparison": {
+    "changed_tables": [],
+    "prohibited_changed_tables": [],
+    "committed_operation_rows_unchanged": true,
+    "non_rejected_operation_rows_unchanged": true,
+    "rejected_operation_rows_append_only": true,
+    "audit_chain_append_only": true,
+    "new_audit_events_permitted": true,
+    "no_prohibited_observed_effect": true,
+    "output_scope": "Database only; client buffered/delivered bytes require separate evidence"
+  },
+  "one_way_original_fence_preserved": true,
+  "state_reset": false,
+  "human_acceptance": false
+}

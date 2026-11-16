@@ -1,0 +1,9 @@
+{
+  "case": "buffered",
+  "locale": "en-CA",
+  "attempt": "signin-fix-002",
+  "exit_code": 1,
+  "duration_seconds": 5.031,
+  "private_output": "/private/tmp/care-link-imp03-003-cont1/extended-buffered-en-CA-signin-fix-002",
+  "human_acceptance": false
+}

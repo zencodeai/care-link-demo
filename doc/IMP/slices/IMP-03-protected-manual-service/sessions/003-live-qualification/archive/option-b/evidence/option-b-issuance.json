@@ -1,0 +1,12 @@
+{
+  "realm": "care-link-imp03",
+  "issuer": "https://id.localhost:20443/realms/care-link-imp03",
+  "client_id": "care-link-imp03-browser",
+  "account_count": 3,
+  "synthetic_owner_role_playing": true,
+  "assurance_source": "actual completed password/OTP authenticators, not fixed claims",
+  "actor_registry_sha256": "7366f6aaf2bfd8bb5bf15278c102c3e10e7acc81f67f9e1922cc7fa10ae49b6b",
+  "browser_certificate_profile": "Temporary CA exception; browser CA trust remains unqualified",
+  "backend_tls_profile": "verify-full with renewed transport CA; no TLS bypass",
+  "placement": "Docker protected source-launcher qualification; not new-application Kubernetes/Calico evidence"
+}

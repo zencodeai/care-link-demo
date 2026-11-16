@@ -1,0 +1,41 @@
+{
+  "decision_id": "G-02-MAIN-2026-11-09",
+  "decision": "accept_stage",
+  "reviewed_evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/demo-packet.json",
+      "sha256": "d7ca61e08b72acae5cc501cc6e44049e12d88f66f18dcafa341b550a882dd2cb",
+      "matches": true
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/G-02-review.md",
+      "sha256": "d0158f2a503319aae9404d8eaa8af2da7e9dd3e50af8e31fa95bd7a946c3e7be",
+      "matches": true
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/candidate-manifest.json",
+      "sha256": "1d185a2c0e46e70f9792425e37d17f1ba4ca285ed5b935eb0fa46b16c4d2d27b",
+      "matches": true
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/checks.json",
+      "sha256": "58f4551d9e109b937235f263ff9c1df699b7a47b9395f0580074605e3d17edb0",
+      "matches": true
+    },
+    {
+      "path": "doc/IMP/slices/IMP-02-identity-trust-and-fallback/sessions/002-completion/review.md",
+      "sha256": "359ad3cb1da24e056e5bc8c88c2769f1c16099fb4c4b8e3545fdc3c56222ff58",
+      "matches": true
+    }
+  ],
+  "receipt_candidate": {
+    "commit": "8b0951299927244dd8a44c9bac2fc25a0408b3b7",
+    "diff_digest": "dda6e105c4cf019b704ec972200c6e837a3c170407a9e29214a0fed106f6c45f",
+    "artifact_digest": "217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+    "configuration_digest": "98d0f35daccc81bd94a241f51c6fa189ca914c3d4ff77a8c1651d194c17c7901",
+    "contract_digest": "0e0e45f15b8c5f984d7ffe9cc8f7803b5ba01b36099cf32e05c64be7253b3a34",
+    "environment_digest": "74101b2b1d1876c6a4e309444432b40e87a3b957b583b78ffe2aafbb5026fa5d",
+    "fixture_digest": "6d271a32a9a9f922c06b2d967fb72b48c850d9374333dcd6f0a3994b83abac71"
+  },
+  "interpretation": "Inherited accepted G-02 dependency only; not acceptance of current IMP-03 delta or requalification of retained lab."
+}

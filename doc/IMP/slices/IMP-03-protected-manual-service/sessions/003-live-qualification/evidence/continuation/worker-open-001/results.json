@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-11-14T21:31:06.799781+00:00",
+  "status": "fresh_actual_ui_passed_user_retry_working",
+  "user_response": "Now it is working. I am in worker session in Safari",
+  "user_scope": "User reports worker Open working; no two-party confirmation or overall stage acceptance inferred.",
+  "automated_result": {
+    "exit_code": 0,
+    "duration_seconds": 22.678394,
+    "browser_tls_verification": true,
+    "observations": {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/worker-open-001/actual-ui-observations.json",
+      "sha256": "83af72a303a5c2a027489b218311b4483ea81eeb48b37bce7f51517c966ee8f2"
+    },
+    "source": {
+      "path": "tests/e2e/imp03-extended/handoff-ui.spec.ts",
+      "sha256": "b785793ef54857797ef02699669e3d1001f41e37f116ef75db81e453960893de"
+    },
+    "config": {
+      "path": "tests/e2e/imp03-extended/playwright.config.ts",
+      "sha256": "90d7fd3144cd64d098c1357701c190184f3a026af5e5f5a85c00f9b2b4d9d72f"
+    },
+    "strict_types": "pnpm exec tsc --noEmit --project tests/e2e/imp03-extended/tsconfig.json exited0",
+    "format": "pnpm exec prettier --write for both changed test files exited0; unchanged"
+  },
+  "diagnosis": "Original silent user-specific interleaving remains unproved. Actual fresh accepted worker metadata/messages GETs both200 before Prepare; preparation200 and participant Confirm visible. No product/runtime changes made.",
+  "open_finding": "Workforce accepted assignment is only local component state and is cleared across identity loss; reload cannot reconstruct it from current server authority. Worker preparation recovery is not qualified by the fresh-flow test. No guessed assignment revision, API bypass or state repair applied.",
+  "native_inspection": "Browser host unavailable; native Chrome inspection ambiguous then timed out. User identifies Safari; direct Safari inspection no longer needed for the reported resolved Open.",
+  "human_acceptance": false
+}

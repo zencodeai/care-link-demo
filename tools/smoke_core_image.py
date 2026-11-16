@@ -19,11 +19,12 @@ from care_link_contracts import parse_contract
 
 assert os.getuid() == 65532, "Expected nonroot image user"
 installed = {d.metadata["Name"].lower() for d in importlib.metadata.distributions()}
-assert {"care-link-core", "care-link-contracts", "uvicorn", "fastapi"} <= installed
-assert not installed & {"pytest", "ruff", "httpx", "hatchling", "types-jsonschema",
+assert {"care-link-core", "care-link-contracts", "uvicorn", "fastapi", "cryptography"} <= installed
+assert not installed & {"pytest", "ruff", "hatchling", "types-jsonschema",
                         "care-link-identity", "care-link-help", "care-link-static",
                         "care-link-workload-trust",
-                        "psycopg", "cryptography", "pyjwt"}
+                        "care-link-data", "care-link-policy-input", "care-link-recovery-control",
+                        "psycopg", "psycopg-binary", "pyjwt"}
 try:
     pathlib.Path("/app/forbidden-write").write_text("unexpected")
 except OSError:

@@ -1,0 +1,33 @@
+{
+  "session": "imp03-002",
+  "suite": "extended",
+  "mode": "revocation",
+  "locale": "en-CA",
+  "status": "passed",
+  "actual_provider_actors": [
+    "pid"
+  ],
+  "browser_tls_verification": true,
+  "observations": [
+    "exact_en-CA_disclosure_ui",
+    "server_intake_gate",
+    "fictional_ui_intake_with_participant_attribution",
+    "current_acl_revocation_denies_actual_read_and_post",
+    "existing_channel_and_fresh_page_revalidate"
+  ],
+  "details": {
+    "revocation": {
+      "method": "POST",
+      "path": "/v1/sessions/2c4bb8f9-f206-42f2-b926-e57d547fa7fa/human-request",
+      "read_status": 403,
+      "mutation_status": 403,
+      "scope": "Operator-applied exact participant/session support ACL revocation; existing cookie/channel and fresh-page reads revalidate. No broader identity-account revocation claim."
+    }
+  },
+  "human_acceptance": false,
+  "limits": [
+    "Selected automated UI actions and exact recorded races; human language/accessibility review absent.",
+    "Browser-transport held reply does not cover every serving/OS buffered-output interleaving.",
+    "Durable row/effect counts and audit-chain evidence require the separate operator observations."
+  ]
+}

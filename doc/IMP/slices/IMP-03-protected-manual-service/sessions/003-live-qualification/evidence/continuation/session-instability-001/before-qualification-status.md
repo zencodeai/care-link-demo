@@ -1,0 +1,49 @@
+# IMP-03 session003 qualification status
+
+2026-11-13. **The remaining automation for the bounded Docker qualification profile has executed. The deployment deltas are reviewed and accepted; overall G-03 acceptance remains pending human usability review and an explicit stage decision.** The original generation1 core fence remains intact. A separately scoped continuation target is running for review; its data fault capability is disabled and privileged bootstrap containers have been removed.
+
+Current records: [continuation results](continuation-results.json), [candidate](continuation-candidate-manifest.json), [draft DemoPacket](continuation-demo-packet.json), [deployment delta](deployment-delta-continuation.md), [review](continuation-review.md), [handoff](handoff.md). The earlier `option-b-*` packet/results and [prior checkpoint](qualification-status-prior-checkpoint.md) remain historical evidence for the preserved original target.
+
+| Obligation | Current executed evidence | Scope or remaining limit |
+|---|---|---|
+| Browser certificate trust | Isolated Linux Chromium rejects the untrusted root before import, then accepts all four HTTPS origins with `ignoreHTTPSErrors:false`; wrong hostname rejected | Roots trusted only in a dedicated NSS volume; no global trust/DNS change. |
+| Disclosure/intake UI | English and French exact template/digest acknowledgement, server pre-disclosure gate, fictional UI intake and participant attribution passed | Automated interaction/artifact evidence; human comprehension/accessibility review remains. |
+| Two workers, one owner | Separately issued workers raced; loser acceptance denied; one accepted assignment, accountable owner and two-party real SSE handshake passed | Exact observed contention; not every possible concurrency schedule. |
+| Buffered old output | Actual authorized old-owner GET held across takeover; real SSE authority loss observed; released reply never became newly visible | One browser-transport/UI interleaving. Previously delivered bytes cannot be recalled; every OS/server-buffer boundary is not claimed. |
+| Database acknowledgement loss | Actual transaction commits, then the injected driver boundary raises OperationalError; browser503 COMMIT_UNKNOWN; original-key reconcile/replay; queue/operation/canonical-audit counts exactly1/1/1 | Qualification-only one-shot connection wrapper, not wire-level COMMIT-packet loss. Capability disabled after the test. |
+| Current ACL revalidation | Exact operator-injected support-ACL restriction; existing session/stream, fresh page and actual prepared-CSRF POST deny; prior restriction also remains denied across restart | Current-source restriction fault, not a product BFF or journalled rights-administration workflow. Whole-account revocation not claimed. |
+| Audit and durable effects | PDP/identity/journal/audit loss all passed with 31 tables across all eight relevant schemas, non-rejected operation hashes, append-only rejection checks and canonical audit-chain/head verification | Client-byte observations remain separate. Pre-fault UI reads are drained within the one-second request deadline before the strict barrier baseline. |
+| Capture/import | Consistent exported-snapshot pg_dump encrypted under operator custody; fresh UUID quarantine DB import; matching audit checkpoint; principals/tokens disabled; runtime CONNECT denied; source unchanged | No serving promotion. Full trusted serving recovery remains IMP-09. |
+| Credential/socket isolation | All five actual app UIDs denied sibling credentials and egress sockets under expanded read-only probe mounts; missing files are not accepted as permission enforcement | Normal apps lack those sibling mounts. Docker/Unix custody, not Kubernetes/CNI evidence. |
+| Wrong/absent workload identity | Actual data SVID plus forged core headers denied403 at a core-only identity route; missing SVID rejected by TLS; forbidden local egress path404 | Local no-route denial and actual upstream mTLS denial are recorded separately. |
+| Unauthorized DB source | Actual runtime credentials and verified TLS from source172.29.35.50 rejected by pg_hba; allowed fixed connectors continue serving | Effective PostgreSQL source rule, not new-app Calico enforcement. |
+| Expired SVID/open channel | Real short-lived SPIRE core SVID admitted before expiry; exact TLS socket retained through expiry then403; saved expired credential rejected on a new TLS connection | Generic remote CERTIFICATE_UNKNOWN alert retained; no expiry-specific server diagnostic claimed. Final probe source hash bound. |
+| Active-channel shutdown | Initial137 forced kill exposed an operational defect. After a3s server drain bound, repeat passed with SIGTERM143, no accepting backend, UI unavailable/private content hidden, help/static200 and same state/rights after restart | Stale nonaccepting socket/receipt entries remain and are handled on restart; not complete cleanup or arbitrary crash recovery. |
+| Five-role lifecycle | All five owned apps stopped/restarted with IDs/volumes preserved, no SIGKILL/OOM, unchanged business/audit snapshot; real trusted UI path passed afterward | Agents/proxies/DB/fences were not reset. |
+| Protected measurements | Ten sequential plus four concurrent protected reads all200; repeat median about384ms; resource samples retained | Bounded observations, no capacity/performance threshold accepted. |
+| Final checks | **639 Python passed/two declared fixture skips, 59 TS passed; separate provisioning1. Source-only585 passed/56 declared skips, 59 TS passed.** Strict types/lint/format/boundaries/generation/build passed | Final narrow result-gate checks passed after review. Historical test failures/skips remain recorded. |
+
+## Human-review correction — 2026-11-14
+
+Opening-page navigation and English/French wording passed by actual user report ([progress](human-review-progress.json)). Participant sign-in then failed: the qualification bundle omitted approved public origins, and the previous live helper bypassed the visible Sign in control. The [correction review](evidence/continuation/ui-signin-fix/review.md) records the reproduced failure, explicit-origin build, continuation-only core replacement and revised actual-button tests. An additional stale public SPIRE authorizer-bundle denial was diagnosed and refreshed only within the continuation. Operator refresh is required after authority rotation; continuous bundle synchronization is not implemented.
+
+The pre-correction full639-Python/59-TS fixture result remains a historical baseline. Current affected checks and visible-control EN/four-actor and French UI repeats are bound in the updated results/packet. Previous scenario evidence remains bound to archived prior artifacts. Human participant sign-in is awaiting retry; the opening-page pass does not accept signed-in flows.
+
+## Accepted deployment scope
+
+**Item1 closed:** the user reviewed and accepted [the deployment deltas](deployment-delta-continuation.md). The [acceptance record](deployment-delta-acceptance.json) preserves the exact reviewed delta/packet and candidate. Docker/common-workspace/parent-UID deployment differences, shared SPIRE/Keycloak and the fresh PostgreSQL process are accepted for this bounded synthetic qualification scope. Normal Kubernetes/Calico placement, per-role distributions and exact image selectors remain absent; this is no longer a pending deployment-profile approval.
+
+## Remaining G-03 obligations
+
+2. **Human review:** participant/worker/supervisor English/French wording, keyboard/focus/error recovery, screen-reader announcements, unsent-text preservation and truthful states. Automation supports this review but supplies no human judgement.
+3. **Historical reliability finding:** prior original-target creation403/timeout remains unexplained. Read-only audit correlation found no diagnostic cause; missing historical response codes cannot be reconstructed. Current instrumented cases passed under documented readiness/OTP conditions. Do not label the old root cause resolved.
+4. **Scope decisions:** no claim of every buffer/race schedule, wire-level database packet loss, whole-account revocation, comprehensive capacity acceptance, arbitrary crash recovery or trusted serving recovery. Broader requirements need their own evidence; trusted serving recovery remains IMP-09.
+5. **Actual G-03 decision:** review the final candidate/packet and record `accept_stage`, `request_changes`, `defer` or `reject` with real attribution, time and exact binding. No human decision exists; participant admission and IMP-04 remain disabled/pending separate authority.
+
+## Retained target and continuation safety
+
+The original Option B target remains fenced at generation1; it was never unfenced/reset. The new `care-link-imp03-003-cont1-*` runtime has fresh databases, actors, keys, journal and fence and is usable for review at `https://qualification.localhost:29443`. Its protocol lease remains legacy `imp03-002`; evidence belongs to session003. Isolated browser server29900 and PostgreSQL25435 publish only on Mac loopback. Secrets, raw browser outputs, dumps and capture keys stay owner-only under `/private/tmp/care-link-imp03-003-cont1`.
+
+All reversible process/grant faults were restored. One-shot commit control was consumed and the explicit capability environment removed before operational tests. Bootstrap and attestation probe containers were removed; temporary expiry workload entries were deleted. Inactive node aliases/configuration volumes are inventoried. Do not replay initial-only provisioning, reset either fence, or restart memory-backed SPIRE agents using consumed join tokens.
+
+Synthetic demo only; no police integration/autonomous contact, production/clinical qualification, sibling changes, commit, push or stage acceptance occurred.

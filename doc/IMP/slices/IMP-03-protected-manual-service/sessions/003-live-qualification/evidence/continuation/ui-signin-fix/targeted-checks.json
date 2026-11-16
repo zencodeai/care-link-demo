@@ -1,0 +1,88 @@
+{
+  "recorded_at": "2026-11-14T14:02:49.450344+00:00",
+  "scope": "Affected web unit tests, extended E2E types/lint/format, strict Python types, new builder lint/format and boundaries/diff; no unrelated full-fixture rerun.",
+  "checks": [
+    {
+      "command": [
+        "pnpm",
+        "--filter",
+        "@care-link/web",
+        "test"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "pnpm",
+        "exec",
+        "tsc",
+        "--noEmit",
+        "--project",
+        "tests/e2e/imp03-extended/tsconfig.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "pnpm",
+        "exec",
+        "eslint",
+        "tests/e2e/imp03-extended/helpers.ts"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "pnpm",
+        "exec",
+        "prettier",
+        "--check",
+        "tests/e2e/imp03-extended/helpers.ts"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "pnpm",
+        "exec",
+        "pyright",
+        "--project",
+        "pyrightconfig.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "tools/imp03_shared/web.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "tools/imp03_shared/web.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "tools/check_boundaries.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "passed": true
+}

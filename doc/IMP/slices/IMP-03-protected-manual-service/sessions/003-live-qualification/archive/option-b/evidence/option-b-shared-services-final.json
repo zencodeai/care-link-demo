@@ -1,0 +1,26 @@
+{
+  "observed_at": "2026-11-13T15:50:18.235659+00:00",
+  "existing_spire_entries_preserved": true,
+  "original_entry_count": 6,
+  "current_entry_count": 16,
+  "new_entries": [
+    "15cd28e7-a505-41f5-b52f-eee2e3a234f4",
+    "1d8eb2b3-358d-4eed-9622-8c13e4e104ac",
+    "1f3326ae-b2ab-4de7-80fb-406c8839c459",
+    "374ac1d4-ffe8-40bf-9102-177b4c727cc6",
+    "3856cc07-5583-4464-8a7d-4fd09d6515d9",
+    "3eb59ef4-a34e-445b-afcf-7f8abac4671b",
+    "49b3ac7e-e814-4385-99b3-f98cea549d89",
+    "a38a5cf9-6076-4661-96e9-61cea2d5e4a6",
+    "d970974c-6e23-4940-8a96-48bf09fc4b32",
+    "fbce4385-04df-4882-b603-668429823f77"
+  ],
+  "scope": "Static registration records only; no old issuance/fence/realm reset",
+  "database_names": [
+    "identity",
+    "imp03_identity_002",
+    "imp03_runtime_002",
+    "keycloak",
+    "postgres"
+  ]
+}

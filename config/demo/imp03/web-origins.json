@@ -1,0 +1,5 @@
+{
+  "VITE_OIDC_ORIGIN": "https://id.localhost:20443",
+  "VITE_HELP_ORIGIN": "https://help.localhost:19443",
+  "VITE_STATIC_ORIGIN": "https://static.localhost:21443"
+}

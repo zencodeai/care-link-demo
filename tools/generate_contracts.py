@@ -31,6 +31,74 @@ NAMES = (
     "StaticManifest",
     "StaticPublish",
     "CommandResult",
+    "SessionView",
+    "DisclosureAck",
+    "TurnSubmit",
+    "AssessmentView",
+    "AssertionCreate",
+    "AssertionView",
+    "ChoiceCommand",
+    "HumanRequest",
+    "ReasonCommand",
+    "QueueView",
+    "QueuePage",
+    "AssignmentCommand",
+    "AssignmentView",
+    "TransferPreparation",
+    "TransferConfirm",
+    "ObserveCommand",
+    "MessageSubmit",
+    "MessageView",
+    "MessagePage",
+    "ContinuationRotate",
+    "ContinuationIssued",
+    "ContinuationRecover",
+    "OperationStatus",
+    "ControlChange",
+    "ChannelChallengeView",
+    "ChannelAckSubmit",
+    "ChannelAckView",
+    "EventView",
+    "PolicyInput",
+    "PolicyDecision",
+    "JournalAppend",
+    "JournalHead",
+    "JournalRecord",
+    "DutyDefinition",
+    "DutyEvidence",
+    "WorkloadActor",
+    "DueJob",
+    "Gateway_continuation_rotate",
+    "Gateway_continuation_recover",
+    "Gateway_operation_status",
+    "Gateway_session_create",
+    "Gateway_session_read",
+    "Gateway_session_disclosure",
+    "Gateway_session_turns",
+    "Gateway_session_assertions",
+    "Gateway_session_choices",
+    "Gateway_session_human_request",
+    "Gateway_session_end",
+    "Gateway_session_events",
+    "Gateway_messages_read",
+    "Gateway_message_send",
+    "Gateway_queue_list",
+    "Gateway_workforce_reserve",
+    "Gateway_workforce_accept",
+    "Gateway_workforce_prepare_transfer",
+    "Gateway_workforce_confirm_transfer",
+    "Gateway_workforce_transfer_failed",
+    "Gateway_workforce_observe",
+    "Gateway_workforce_takeover",
+    "Gateway_control_change",
+    "Gateway_channel_challenge_read",
+    "Gateway_channel_ack",
+    "MetadataRequest",
+    "MetadataResult",
+    "IdentityEvidence",
+    "SignedDelegation",
+    "PageQuery",
+    "BackupView",
 )
 
 
@@ -81,6 +149,41 @@ def render() -> str:
         "required": ["operation_id"],
         "additionalProperties": False,
     }
+    selected["Gateway_continuation_issue"] = {
+        "type": "object",
+        "properties": {
+            "path_arguments": source["$defs"]["Path_session_read"],
+            "arguments": source["$defs"]["RevisionCommand"],
+            "delegation": source["$defs"]["SignedDelegation"],
+            "decision": source["$defs"]["PolicyDecision"],
+        },
+        "required": ["path_arguments", "arguments", "delegation", "decision"],
+        "additionalProperties": False,
+    }
+    # Internal IMP-03 HTTP cursor is part of the signed request body. A free
+    # Last-Event-ID header must not alter the meaning of a signed delegation.
+    selected["Gateway_session_events"] = {
+        **selected["Gateway_session_events"],
+        "properties": {
+            **selected["Gateway_session_events"]["properties"],
+            "arguments": {
+                "type": "object",
+                "properties": {"last_event_id": source["$defs"]["Revision"]},
+                "required": ["last_event_id"],
+                "additionalProperties": False,
+            },
+        },
+    }
+    selected["ContinuationRecoveryStart"] = {
+        "type": "object",
+        "properties": {
+            "session_id": source["$defs"]["Id"],
+            "family_id": source["$defs"]["Id"],
+            "expected_revision": source["$defs"]["Revision"],
+        },
+        "required": ["session_id", "family_id", "expected_revision"],
+        "additionalProperties": False,
+    }
     properties = {
         "contract_version": {"const": "dev-1"},
         "status": {"const": "developer_only"},
@@ -94,6 +197,27 @@ def render() -> str:
         "properties": properties,
         "required": list(properties),
         "additionalProperties": False,
+    }
+    review = json.loads((ROOT / "packages/contracts/manual-review.schema.json").read_text())
+    selected.update(review["$defs"])
+    include("Id")
+    include("Revision")
+    for name in ("BrowserSession", "IdentityEvidence"):
+        selected[name] = {
+            **selected[name],
+            "properties": {
+                **selected[name]["properties"],
+                "review_run_id": {"$ref": "#/$defs/Id"},
+                "review_slot_id": {"enum": ["participant", "worker1", "worker2", "supervisor"]},
+                "review_origin": {"type": "string", "format": "uri", "pattern": "^https://"},
+            },
+        }
+    selected["RevisionVector"] = {
+        **selected["RevisionVector"],
+        "properties": {
+            **selected["RevisionVector"]["properties"],
+            "review_run": {"$ref": "#/$defs/Revision"},
+        },
     }
     return (
         json.dumps(

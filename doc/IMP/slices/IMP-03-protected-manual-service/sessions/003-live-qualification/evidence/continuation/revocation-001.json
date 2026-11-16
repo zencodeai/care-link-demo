@@ -1,0 +1,23 @@
+{
+  "case": "revocation",
+  "attempt": 1,
+  "human_acceptance": false,
+  "exit_code": 0,
+  "audit_valid": true,
+  "effect_comparison": {
+    "changed_tables": [
+      "audit.event",
+      "audit.head"
+    ],
+    "prohibited_changed_tables": [],
+    "committed_operation_rows_unchanged": true,
+    "non_rejected_operation_rows_unchanged": true,
+    "rejected_operation_rows_append_only": true,
+    "audit_chain_append_only": true,
+    "new_audit_events_permitted": true,
+    "no_prohibited_observed_effect": true,
+    "output_scope": "Database only; client buffered/delivered bytes require separate evidence"
+  },
+  "scope": "Injected exact current support ACL; retained; no product rights workflow claim",
+  "duration_seconds": 10.061
+}

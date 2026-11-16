@@ -1,0 +1,15 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "playwright",
+    "test",
+    "--config",
+    "tests/e2e/imp03/playwright.config.ts"
+  ],
+  "phase": "normal",
+  "exit_code": 1,
+  "duration_seconds": 0.79,
+  "private_output": "/private/tmp/care-link-imp03-003-shared/live-normal-001",
+  "browser_CA_trust": "temporary-CA exception; not qualified"
+}

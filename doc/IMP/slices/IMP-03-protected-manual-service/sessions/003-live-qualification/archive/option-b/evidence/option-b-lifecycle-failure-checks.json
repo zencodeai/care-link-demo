@@ -1,0 +1,10 @@
+{
+  "commands": [
+    ".venv/bin/pytest tests/unit/test_imp03_shared_qualification.py -q",
+    ".venv/bin/ruff check tools/imp03_shared/qualification.py tests/unit/test_imp03_shared_qualification.py",
+    "pnpm exec pyright --project pyrightconfig.json"
+  ],
+  "status": "passed",
+  "python_tests_passed": 2,
+  "scope": "mocked lost fault reply: reversible cleanup, one-way unknown state without invented confirmation; no live fault in these tests"
+}

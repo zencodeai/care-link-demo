@@ -1,0 +1,37 @@
+{
+  "decision_id": "IMP-03-G-03-ACCEPTANCE-2026-11-16",
+  "decision_kind": "human_stage_acceptance",
+  "stage_id": "IMP-03",
+  "gate_id": "G-03",
+  "decision": "accept_stage",
+  "state": "accepted",
+  "implementation_status": "completed",
+  "human_review": "performed_and_approved_as_reported_by_user",
+  "source": {
+    "kind": "user_message",
+    "text": "G-03 human acceptance performed, approved",
+    "attribution": "User in this conversation; no separate or independent reviewer identity inferred."
+  },
+  "decision_date": "2026-11-16",
+  "decision_timezone": "America/Toronto",
+  "recorded_at": "2026-11-16T16:38:35Z",
+  "timestamp_scope": "Record creation time; exact user-message timestamp is not exposed.",
+  "accepted_scope": "Reviewed IMP-03 protected manual service and session recovery/toolkit candidate in the bounded private synthetic continuation environment.",
+  "candidate": {
+    "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "application_image_id": "sha256:e854ff2799a235ac827439637ec06b7e5680b286561b1cc4fbbebc0580689de7",
+    "runtime_source_and_web_fingerprint": "a8ff4ca766255cb61b43cd38f518d1cead1bc06943d3cccfa64668dbe4b1f2b9",
+    "environment_id": "imp03-review",
+    "presented_review_run_id": "8135ccd8-427c-4b10-a950-9d316771e68d"
+  },
+  "presented_evidence": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/005-review-recovery-implementation/results.json",
+    "sha256": "11f454cc875a26d3866f6c75778cba46395c4ea3b776456d064b81de2e0ee4c7",
+    "role": "Pre-acceptance implementation and qualification summary; retained unchanged."
+  },
+  "scope_limits": [
+    "Acceptance is for this reviewed synthetic engineering candidate; it is not clinical or production release or real participant admission.",
+    "Existing technical qualification limits remain; this approval does not activate IMP-04 or authorize runtime changes, commit or push."
+  ],
+  "is_example": false
+}

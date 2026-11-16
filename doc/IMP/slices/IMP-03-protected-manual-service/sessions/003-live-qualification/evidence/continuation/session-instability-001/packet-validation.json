@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-11-14T20:34:42.608651+00:00",
+  "schemas_validated": 4,
+  "current_reference_hashes_checked": 580,
+  "candidate_digest_formulas_verified": true,
+  "source_files": 376,
+  "markdown_links": "passed",
+  "privacy_scan": {
+    "session_files": 264,
+    "known_private_values": 31,
+    "hits": 0,
+    "scope": "Exact known-value plus PEM private-key marker scan; not a universal secret detector."
+  },
+  "git_diff_check": "passed",
+  "corrected_live_cases": [
+    "unsent failure/reopen/draft",
+    "six-minute24 samples all200/all recovered/zero normal HTTP failures",
+    "four-actor visible login/ownership/SSE/takeover/held reply"
+  ],
+  "current_packet": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-demo-packet.json",
+    "sha256": "1d3c95ea2cf6e693819d3fd336ac779e7ff8654ef76114cfeecfdce580663cd5"
+  },
+  "current_candidate_changed_since_scope_review": true,
+  "deployment_profile_receipt_unchanged": true,
+  "human_stability_confirmation": "pending",
+  "stage_acceptance": false
+}

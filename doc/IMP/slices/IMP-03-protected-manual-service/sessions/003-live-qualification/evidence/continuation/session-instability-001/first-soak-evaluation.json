@@ -1,0 +1,22 @@
+{
+  "actual_exit_code": 1,
+  "source": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/corrected-stream-001.json",
+    "sha256": "d8939165e0e4779980286ba739b6af3e8c4e61330d2d514f6efdd3c33b995e02"
+  },
+  "sample_count": 24,
+  "all_observed_auth200": true,
+  "all_observed_projections_recovered": true,
+  "recorded_failures": [
+    {
+      "path": "/v1/sessions/{id}/turns",
+      "status": 409,
+      "reason": "manual.gateway_denied"
+    }
+  ],
+  "interpretation": "Failure counter included setup intake\u2019s deliberate pre-disclosure409. It was moved to begin after intake; raw failure retained. Final corrected-source repeat independently passes with zero normal-window failures.",
+  "final_repeat": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/corrected-stream-002.json",
+    "sha256": "15d11a3318bf2fc78a8b3eb2281b64a6bf64db75d8cc954e8692dd7ded448bdf"
+  }
+}

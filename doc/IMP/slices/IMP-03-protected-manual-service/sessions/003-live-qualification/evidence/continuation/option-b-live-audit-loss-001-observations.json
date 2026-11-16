@@ -1,0 +1,24 @@
+{
+  "session": "imp03-002",
+  "phase": "audit-loss",
+  "status": "passed",
+  "observations": [
+    "three_current_provider_accounts",
+    "signed_remote_session_create",
+    "audit-loss_denies_protected_read_and_mutation",
+    "independent_static_and_help_shell_available"
+  ],
+  "barrier_requests": [
+    {
+      "method": "GET",
+      "path": "/v1/sessions/906c2b8b-53c1-4ec9-b48c-d746dbd4d9e5",
+      "status": 503
+    },
+    {
+      "method": "POST",
+      "path": "/v1/sessions/906c2b8b-53c1-4ec9-b48c-d746dbd4d9e5/human-request",
+      "status": 503
+    }
+  ],
+  "human_acceptance": false
+}

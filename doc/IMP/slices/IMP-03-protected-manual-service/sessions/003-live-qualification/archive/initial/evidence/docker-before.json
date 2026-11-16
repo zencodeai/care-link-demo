@@ -1,0 +1,254 @@
+{
+  "observed_at": "2026-11-13T14:00:32.072741+00:00",
+  "listing": [
+    {
+      "Command": "\"/docker-entrypoint.\u2026\"",
+      "CreatedAt": "2026-11-09 13:50:08 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "5e33db687536",
+      "Image": "8de97e654644",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=3fe483e6fd9495b65d57c7f6a244f2d180c953c5fc9d20820a73669af0de128e,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:401cf6645d36f5e599dd26eec125a0a9d21c92267bc37b702d24c327b1ed889a,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/host-compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.replace=care-link-imp02-002-host-proxy,com.docker.compose.service=proxy,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/8444/tcp=127.0.0.1:19443,org.opencontainers.image.version=22.04",
+      "LocalVolumes": "5",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-proxy",
+      "Networks": "kind",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "127.0.0.1:19443->8444/tcp",
+      "RunningFor": "3 days ago",
+      "Size": "36.9kB (virtual 202MB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    },
+    {
+      "Command": "\"/docker-entrypoint.\u2026\"",
+      "CreatedAt": "2026-11-09 13:00:45 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "1cd1379ce63f",
+      "Image": "8de97e654644",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=495307635461d49930c5b575ee6022625d71a239c09e931c3c0029517cb1753b,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:401cf6645d36f5e599dd26eec125a0a9d21c92267bc37b702d24c327b1ed889a,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/signals/compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002/signals,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.replace=care-link-imp02-002-host-signal-proxy,com.docker.compose.service=signal-proxy,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2,org.opencontainers.image.version=22.04",
+      "LocalVolumes": "4",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-signal-proxy",
+      "Networks": "kind",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "10000/tcp",
+      "RunningFor": "3 days ago",
+      "Size": "32.8kB (virtual 202MB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    },
+    {
+      "Command": "\"python -m tools.imp\u2026\"",
+      "CreatedAt": "2026-11-09 13:00:45 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "b90df7e5a857",
+      "Image": "217f2b950768",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=68e8fc8c0d56bd02f7eb72b6195438bf74f0a42dd42dc5bbb5fbc63dc54a0bae,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:014b887efb9a0b19158618e965685ad4b124d53ddf95ef68a2e93278ec56464d,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/host-compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.replace=care-link-imp02-002-host-help,com.docker.compose.service=help,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "4",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-help",
+      "Networks": "none",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "28.7kB (virtual 231MB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    },
+    {
+      "Command": "\"/opt/spire/bin/spir\u2026\"",
+      "CreatedAt": "2026-11-09 13:00:41 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "0600cc321b06",
+      "Image": "ab3a8ce70435",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=dc8eae2e64f23d4b25512bf801ca2b7c5531c89656a2b2a431e7c2137a17fe76,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:095d14bfdcd81388d2ca443e7f7be3584a23b5cef09008b1872ac2645d9e0cbc,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/host-compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.replace=care-link-imp02-002-host-agent,com.docker.compose.service=agent,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "3",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-agent",
+      "Networks": "kind",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "28.7kB (virtual 73.6MB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    },
+    {
+      "Command": "\"python -m tools.imp\u2026\"",
+      "CreatedAt": "2026-11-09 12:17:42 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "4b541e318d99",
+      "Image": "care-link-imp02-app:002",
+      "Labels": "care-link.session=imp02-002,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/8444/tcp=127.0.0.1:21443",
+      "LocalVolumes": "2",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-static",
+      "Networks": "bridge",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "127.0.0.1:21443->8444/tcp",
+      "RunningFor": "3 days ago",
+      "Size": "12.3kB (virtual 231MB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    },
+    {
+      "Command": "\"python -c 'import t\u2026\"",
+      "CreatedAt": "2026-11-09 11:14:10 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "5a955c9c3bb2",
+      "Image": "82bc3c539b88",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=e331f3437ceb84e4c492e70edbe8cf0ce983be634e308a40cbe450bc4b55be3f,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:af1cafd27effb3b1c7c4ad8b459f118371b5d216d4659a3e68a7b5aae65b517f,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/signals/compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002/signals,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.service=signal-client,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "1",
+      "Mounts": "care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-signal-client",
+      "Networks": "none",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux",
+        "variant": "v8"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "16.4kB (virtual 164MB)",
+      "State": "exited",
+      "Status": "Exited (0) 2 days ago"
+    },
+    {
+      "Command": "\"python -c 'import t\u2026\"",
+      "CreatedAt": "2026-11-09 11:14:10 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "9001934b03e0",
+      "Image": "82bc3c539b88",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=98f3309490e7cb618f709e5a504ec4b2562c80afdad627acc10d7992805df54f,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:af1cafd27effb3b1c7c4ad8b459f118371b5d216d4659a3e68a7b5aae65b517f,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/signals/compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002/signals,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.service=signal-cert-probe,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "1",
+      "Mounts": "care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-signal-cert-probe",
+      "Networks": "none",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux",
+        "variant": "v8"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "8.19kB (virtual 164MB)",
+      "State": "exited",
+      "Status": "Exited (0) 2 days ago"
+    },
+    {
+      "Command": "\"python -c 'import t\u2026\"",
+      "CreatedAt": "2026-11-09 10:09:58 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "bce6c0885929",
+      "Image": "82bc3c539b88",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=971baddb8f030e663d9ec025ecb8469a044f756a99210c7410716c236385c93d,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:af1cafd27effb3b1c7c4ad8b459f118371b5d216d4659a3e68a7b5aae65b517f,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/host-compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.service=certificate-probe,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "1",
+      "Mounts": "care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-cert-probe",
+      "Networks": "none",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux",
+        "variant": "v8"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "8.19kB (virtual 164MB)",
+      "State": "exited",
+      "Status": "Exited (0) 2 days ago"
+    },
+    {
+      "Command": "\"python -c 'import t\u2026\"",
+      "CreatedAt": "2026-11-09 10:09:31 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "a6fc8abbee0e",
+      "Image": "82bc3c539b88",
+      "Labels": "care-link.session=imp02-002,com.docker.compose.config-hash=6fe48ab72d6ee014832e3d6b0ba43de2274b8a5abfa13a1e564258eae94ed4cf,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:af1cafd27effb3b1c7c4ad8b459f118371b5d216d4659a3e68a7b5aae65b517f,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/private/tmp/care-link-imp02-002/host-compose.json,com.docker.compose.project.working_dir=/private/tmp/care-link-imp02-002,com.docker.compose.project=care-link-imp02-002-host,com.docker.compose.service=seed,com.docker.compose.version=5.5.1,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "9",
+      "Mounts": "care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026,care-link-imp0\u2026",
+      "Names": "care-link-imp02-002-host-seed",
+      "Networks": "none",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux",
+        "variant": "v8"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "57.3kB (virtual 164MB)",
+      "State": "exited",
+      "Status": "Exited (137) 3 days ago"
+    },
+    {
+      "Command": "\"python -c 'import s\u2026\"",
+      "CreatedAt": "2026-11-09 09:39:18 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "0ba0befe5f02",
+      "Image": "82bc3c539b88",
+      "Labels": "care-link.session=imp02-002,desktop.docker.io/ports.scheme=v2",
+      "LocalVolumes": "0",
+      "Mounts": "",
+      "Names": "care-link-imp02-002-host-control",
+      "Networks": "kind",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux",
+        "variant": "v8"
+      },
+      "Ports": "",
+      "RunningFor": "3 days ago",
+      "Size": "4.1kB (virtual 164MB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    },
+    {
+      "Command": "\"/usr/local/bin/entr\u2026\"",
+      "CreatedAt": "2026-11-09 09:18:29 -0500 EST",
+      "HealthStatus": "none",
+      "ID": "1c1c907344c7",
+      "Image": "099e049362a1",
+      "Labels": "desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/30441/tcp=127.0.0.1:18443,desktop.docker.io/ports/30443/tcp=127.0.0.1:20443,desktop.docker.io/ports/6443/tcp=127.0.0.1:58537,io.x-k8s.kind.cluster=care-link-imp02-002,io.x-k8s.kind.role=control-plane",
+      "LocalVolumes": "1",
+      "Mounts": "06e6e7d710854f\u2026,/lib/modules",
+      "Names": "care-link-imp02-002-control-plane",
+      "Networks": "kind",
+      "Platform": {
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "Ports": "127.0.0.1:58537->6443/tcp, 127.0.0.1:18443->30441/tcp, 127.0.0.1:20443->30443/tcp",
+      "RunningFor": "4 days ago",
+      "Size": "385MB (virtual 1.31GB)",
+      "State": "running",
+      "Status": "Up 3 days"
+    }
+  ],
+  "imp02_identity_state": [
+    "\"5e33db687536b53dbc17348c9c198dfce5d26d2fec77f7afd8e349c221ce4ec7\" \"/care-link-imp02-002-host-proxy\" \"sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb\" \"running\" \"2026-11-09T18:50:08.547705301Z\" 0",
+    "\"1cd1379ce63f7c961404b29be0337b635c41570a5e47fceec41e8a371e69f5e9\" \"/care-link-imp02-002-host-signal-proxy\" \"sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb\" \"running\" \"2026-11-09T18:00:45.876983013Z\" 0",
+    "\"b90df7e5a857506522ed710dac86fefc805d1bfa3a472ddceb9296874e43b7b0\" \"/care-link-imp02-002-host-help\" \"sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c\" \"running\" \"2026-11-09T18:00:45.559895888Z\" 0",
+    "\"0600cc321b064f820b9a2ceabb547d5ae8be1f5bc2ede93a5a06f615e857e05e\" \"/care-link-imp02-002-host-agent\" \"sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6\" \"running\" \"2026-11-09T18:00:42.046596136Z\" 0",
+    "\"4b541e318d997e62976dc81f9c42f58429b8f5aa0979b44729c375498cabfe13\" \"/care-link-imp02-002-static\" \"sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c\" \"running\" \"2026-11-09T17:17:42.552785678Z\" 0",
+    "\"5a955c9c3bb23690811bae5105926d8a6e5bc276e6f43ae7a5e1eb9bf6a68b8c\" \"/care-link-imp02-002-host-signal-client\" \"sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56\" \"exited\" \"2026-11-09T16:14:10.654125678Z\" 0",
+    "\"9001934b03e0fa252946dc3a2c5c149be93eec4f072a9b564d85e290deac77bd\" \"/care-link-imp02-002-host-signal-cert-probe\" \"sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56\" \"exited\" \"2026-11-09T16:14:10.546618761Z\" 0",
+    "\"bce6c0885929bc8decdec6b72f6a2999490975e911e39d5382579b1f08c2c098\" \"/care-link-imp02-002-host-cert-probe\" \"sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56\" \"exited\" \"2026-11-09T15:09:58.520209547Z\" 0",
+    "\"a6fc8abbee0e2479cd7f91f71a5ded0c887839f85cbcb721448440a01660a88c\" \"/care-link-imp02-002-host-seed\" \"sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56\" \"exited\" \"2026-11-09T18:00:41.698164303Z\" 0",
+    "\"0ba0befe5f02bb2ad39e749d8ea83766ce49fe5e4344ab69eaf1829e127e8b19\" \"/care-link-imp02-002-host-control\" \"sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56\" \"running\" \"2026-11-09T14:39:18.670700167Z\" 0",
+    "\"1c1c907344c74fb3e008f55a39e8ff8b7bc4385387beedca547dd7ce21d6b9c8\" \"/care-link-imp02-002-control-plane\" \"sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed\" \"running\" \"2026-11-09T17:43:35.217171216Z\" 0"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "observed_at": "2026-11-13T15:43:46.175950+00:00",
+  "roles": [
+    {
+      "role": "identity",
+      "container_id": "7fcba48e3ca11215a61bd1fbfb9589d82cd2ac94266289aaa1b1536c73307943",
+      "image_id": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "config": {
+        "sha256": "ff8156df3d7ada365e80c2791076003f7743f741080770f00c5af595dd1abaf3",
+        "uid": 22011,
+        "mode": "0o600",
+        "process_uid": 22011
+      },
+      "network": "none"
+    },
+    {
+      "role": "core",
+      "container_id": "3dd4677bb3a18a06285251734f11189bcf741d2fea74218dfc8e7b6190919a4e",
+      "image_id": "sha256:2b34147b1ed12989a3485087631568a8c05b15dea0e70e4da5aa4495af7ac300",
+      "config": {
+        "sha256": "4724526dddc035eb2ca6bce7fb118d0c6b8317614fa7b3bb862c10232c5c37df",
+        "uid": 22012,
+        "mode": "0o600",
+        "process_uid": 22012
+      },
+      "network": "none"
+    },
+    {
+      "role": "data",
+      "container_id": "707ca047304c8598d72e3d1c477dc8460c5f6e66f69161d5e715764bdabed62b",
+      "image_id": "sha256:2b34147b1ed12989a3485087631568a8c05b15dea0e70e4da5aa4495af7ac300",
+      "config": {
+        "sha256": "46c3ef4f94c085ffee9adb3c172e1299f8a81a4c28e0b281dc9b1bed4e85377a",
+        "uid": 22013,
+        "mode": "0o600",
+        "process_uid": 22013
+      },
+      "network": "none"
+    },
+    {
+      "role": "pdp",
+      "container_id": "0df6e67a41f24e6a9d9bff6f12625a9ff457b2df762ff82d4738e991ea4cd670",
+      "image_id": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "config": {
+        "sha256": "0f2ef7f9345c044c987935aa7f636b1d27a846cf1cd910f323cea7ff801b3052",
+        "uid": 22014,
+        "mode": "0o600",
+        "process_uid": 22014
+      },
+      "network": "none"
+    },
+    {
+      "role": "journal",
+      "container_id": "8857e44ed82e0a1090fd42d1d4a7c3c8faff428e77ca1dd9fdff0b9d88e012e7",
+      "image_id": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "config": {
+        "sha256": "4f79035a7ffc695bae0c1d3499d3e3c06e30e4e141d3e175e3250ba01c003d8a",
+        "uid": 22015,
+        "mode": "0o600",
+        "process_uid": 22015
+      },
+      "network": "none"
+    }
+  ],
+  "removed_maintenance": [
+    {
+      "name": "care-link-imp03-003-seed",
+      "id": "253fa04b0e32485798248fe8177e5ff10f2411669bb78b9b1b34ca4afba8653d"
+    },
+    {
+      "name": "care-link-imp03-003-operator-seed",
+      "id": "fbfda10e9976d553e54909a8d53df64423cc64f1b097c2afbc00c3247f3867ba"
+    }
+  ],
+  "private_binding_sha256": "258d87add1d1a71a896b45830e119d2c7d1802baf16e7729e6fae461a27f3c6f",
+  "private_browser_input_sha256": "48a5358b9b9dbf9c586f359317f10be3ca42dcce1b265af5a3413b8701eae0dd",
+  "fence_state": "generation1; core permanently restricted; no reset performed"
+}

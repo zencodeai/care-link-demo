@@ -1,0 +1,16 @@
+{
+  "actual_exit_code": 1,
+  "progress": {
+    "stage": "ui_intake_complete_en-CA"
+  },
+  "sanitized_errors": [
+    "Error: A never-dispatched action does not lock conversation reopening",
+    "Expected: enabled",
+    "Received: disabled",
+    "Error: A never-dispatched action does not lock conversation reopening",
+    "Expected: enabled",
+    "Received: disabled"
+  ],
+  "raw_private_result_sha256": "d5735206f3257199fdb5a9700ab9f1728a297639dc2398c5e82ba4935855c443",
+  "scope": "Actual deployed old UI after trust and proxy pool repair; separate synthetic conversation; no user data touched."
+}

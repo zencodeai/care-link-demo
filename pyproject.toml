@@ -5,7 +5,7 @@ requires-python = ">=3.14,<3.15"
 dependencies = []
 
 [tool.uv.workspace]
-members = ["packages/contracts/python", "services/core", "services/identity", "host/help", "host/static", "packages/workload-trust"]
+members = ["packages/contracts/python", "services/core", "services/identity", "host/help", "host/static", "packages/workload-trust", "packages/domain", "packages/policy-input", "services/data", "host/recovery-control"]
 
 [dependency-groups]
 dev = [
@@ -17,7 +17,7 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["packages/workload-trust/tests", "packages/contracts/python/tests", "services/core/tests", "services/identity/tests", "host/help/tests", "host/static/tests", "tests"]
+testpaths = ["packages/policy-input/tests", "services/data/tests", "host/recovery-control/tests", "packages/workload-trust/tests", "packages/contracts/python/tests", "services/core/tests", "services/identity/tests", "host/help/tests", "host/static/tests", "tests"]
 markers = ["unit: deterministic unit behavior", "contract: cross-language contract behavior"]
 addopts = "-ra"
 pythonpath = ["."]

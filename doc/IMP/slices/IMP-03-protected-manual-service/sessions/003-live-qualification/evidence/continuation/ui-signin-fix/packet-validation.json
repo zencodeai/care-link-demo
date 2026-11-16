@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-11-14T14:16:07.126147+00:00",
+  "schemas_valid": true,
+  "reference_hashes_checked": 544,
+  "source_candidate_digests_valid": true,
+  "links_valid": true,
+  "private_values_scan_hits": 0,
+  "git_diff_check": "passed",
+  "ui_fix_results": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/results.json",
+    "sha256": "91c3fd99919a049f5ed8c5918bdd522875f2748f37ae5cbcb88677f88df7bd46"
+  },
+  "current_demo_packet": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-demo-packet.json",
+    "sha256": "d74dc5d96f5c0c5c6d83cb172ded292a7951bfa91d27a617bc5f2950e135276d"
+  },
+  "stage_acceptance": false,
+  "human_review_progress_updated_at": "2026-11-14T19:31:32.212107+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "client_spiffe_id": "spiffe://care-link.demo/demo/core",
+  "server_spiffe_id": "spiffe://care-link.demo/demo/data",
+  "not_after": "2026-11-13T23:45:38+00:00",
+  "leaf_sha256": "afa1fa6332a90ae858ae490fe1e0d63dea897f85ef2a287a1177ffa03de4f906",
+  "preexpiry_status": 400,
+  "preexpiry_error": {
+    "code": "INVALID_REQUEST",
+    "message_key": "manual.invalid_request"
+  },
+  "same_connection_preserved_until_expiry": true,
+  "same_connection_postexpiry_status": 403,
+  "same_connection_postexpiry_denied": true,
+  "new_connection_tls_reason": "SSLV3_ALERT_CERTIFICATE_UNKNOWN",
+  "expiry_specific_tls_alert": false,
+  "new_connection_tls_expiry_rejected": true,
+  "new_connection_scope": "Same saved credential admitted before expiry, now expired and rejected by a remote certificate alert; generic certificate alert does not identify the server's internal cause.",
+  "passed": true,
+  "probe_source_sha256": "06494726ad5b03e577ca3df99793dfb345c60addec62f69bb184b30f16cac9df"
+}

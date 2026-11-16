@@ -1,0 +1,76 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 3.80kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#3 DONE 0.0s
+
+#4 [uv 1/1] FROM ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#4 resolve ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc done
+#4 DONE 0.0s
+
+#5 [build  1/12] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#5 resolve docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 34.75kB 0.0s done
+#6 DONE 0.0s
+
+#7 [build  6/12] COPY services/ services/
+#7 CACHED
+
+#8 [build  2/12] COPY --from=uv /uv /usr/local/bin/uv
+#8 CACHED
+
+#9 [build  3/12] WORKDIR /app
+#9 CACHED
+
+#10 [build  5/12] COPY packages/ packages/
+#10 CACHED
+
+#11 [build  7/12] COPY host/ host/
+#11 CACHED
+
+#12 [build  4/12] COPY pyproject.toml uv.lock .python-version ./
+#12 CACHED
+
+#13 [build  8/12] RUN uv sync --locked --no-dev --all-packages
+#13 CACHED
+
+#14 [build  9/12] COPY tools/ tools/
+#14 DONE 0.0s
+
+#15 [build 10/12] COPY config/demo/imp03/ config/demo/imp03/
+#15 DONE 0.0s
+
+#16 [build 11/12] COPY apps/web/dist/ apps/web/dist/
+#16 DONE 0.0s
+
+#17 [build 12/12] RUN test -f /app/apps/web/dist/index.html && chmod -R a+rX /app/apps/web/dist
+#17 DONE 0.1s
+
+#18 [runtime 2/3] WORKDIR /app
+#18 CACHED
+
+#19 [runtime 3/3] COPY --from=build /app /app
+#19 DONE 0.3s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 1.0s done
+#20 exporting manifest sha256:acb2dddfb61206cc46df75d0a8a6a11ee28909e78ba89527aa85ec86044b31ca done
+#20 exporting config sha256:91d94be11251394e498994cda0949380ad576c6faa0925f5b412c77633b0b854 done
+#20 exporting attestation manifest sha256:fb437344ca45255cc441fd438a96a073332cb64a3637cf6b7b63255f4ad86b0d done
+#20 exporting manifest list sha256:1328e774470788d33afa49c39cbe7b98b40907addb376fcfe2ba0cbbf9d275a5 done
+#20 naming to docker.io/library/care-link-imp03:qualification-003 done
+#20 unpacking to docker.io/library/care-link-imp03:qualification-003
+#20 unpacking to docker.io/library/care-link-imp03:qualification-003 0.3s done
+#20 DONE 1.4s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/990qq83cadwtuvwwxq6moepjr

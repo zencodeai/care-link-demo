@@ -1,0 +1,11 @@
+{
+  "applications_started": [
+    "identity",
+    "core",
+    "data",
+    "pdp",
+    "journal"
+  ],
+  "browser_origin": "https://manual.localhost:28443",
+  "trust_qualification": "pending"
+}

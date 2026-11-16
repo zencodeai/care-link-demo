@@ -342,6 +342,22 @@
           "maxLength": 19,
           "x-decimalMaximum": "9223372036854775807",
           "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "review_run_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "review_slot_id": {
+          "enum": [
+            "participant",
+            "worker1",
+            "worker2",
+            "supervisor"
+          ]
+        },
+        "review_origin": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
         }
       },
       "required": [
@@ -915,6 +931,4618 @@
       ],
       "additionalProperties": false
     },
+    "SessionView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "tags": {
+          "$ref": "#/$defs/Tag"
+        },
+        "participant_kind": {
+          "type": "string",
+          "enum": [
+            "pid",
+            "carer",
+            "professional_participant"
+          ]
+        },
+        "jurisdiction": {
+          "$ref": "#/$defs/Jurisdiction"
+        },
+        "locale": {
+          "$ref": "#/$defs/Locale"
+        },
+        "service_phase": {
+          "type": "string",
+          "enum": [
+            "active",
+            "human_requested",
+            "queued",
+            "worker_assigned",
+            "handoff_pending",
+            "human_controlled",
+            "ended"
+          ]
+        },
+        "transport": {
+          "type": "string",
+          "enum": [
+            "connected",
+            "reconnecting",
+            "disconnected"
+          ]
+        },
+        "control_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "owner_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "degraded_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ai_unavailable",
+              "authority_unavailable",
+              "policy_unavailable",
+              "audit_unavailable",
+              "channel_disconnected",
+              "receiver_unavailable",
+              "restricted"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 7,
+          "uniqueItems": true
+        },
+        "tier": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "T0",
+                "T1",
+                "T2",
+                "T3",
+                "T4"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unresolved": {
+          "type": "boolean"
+        },
+        "persona_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "subject_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "tags",
+        "participant_kind",
+        "jurisdiction",
+        "locale",
+        "service_phase",
+        "transport",
+        "control_epoch",
+        "owner_id",
+        "degraded_reasons",
+        "tier",
+        "unresolved",
+        "persona_id",
+        "subject_id"
+      ],
+      "additionalProperties": false
+    },
+    "DisclosureAck": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "template_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "template_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "locale": {
+          "$ref": "#/$defs/Locale"
+        },
+        "acknowledged": {
+          "const": true
+        }
+      },
+      "required": [
+        "expected_revision",
+        "template_id",
+        "template_digest",
+        "locale",
+        "acknowledged"
+      ],
+      "additionalProperties": false
+    },
+    "TurnSubmit": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "client_turn_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8000
+        },
+        "locale": {
+          "$ref": "#/$defs/Locale"
+        }
+      },
+      "required": [
+        "expected_revision",
+        "client_turn_id",
+        "text",
+        "locale"
+      ],
+      "additionalProperties": false
+    },
+    "AssessmentView": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FieldState"
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "tier": {
+          "type": "string",
+          "enum": [
+            "T0",
+            "T1",
+            "T2",
+            "T3",
+            "T4"
+          ]
+        },
+        "tier_set_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "content_class": {
+          "const": "stub"
+        },
+        "situation_factors": {
+          "$ref": "#/$defs/Empty"
+        },
+        "human_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "requested",
+              "fixture_hazard",
+              "critical_unknown",
+              "age_uncertain",
+              "fixture_tier",
+              "assessment_limit",
+              "invalid_proposals"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 7,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "session_id",
+        "revision",
+        "fields",
+        "tier",
+        "tier_set_digest",
+        "content_class",
+        "situation_factors",
+        "human_reasons"
+      ],
+      "additionalProperties": false
+    },
+    "FieldState": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "type": "string",
+          "enum": [
+            "needs",
+            "preferences",
+            "observations",
+            "rationale",
+            "plan.warning_signs",
+            "plan.strategies",
+            "plan.responders",
+            "plan.medication_report",
+            "plan.advance_wishes",
+            "plan.contacts",
+            "plan.substitute_decision_maker",
+            "summary",
+            "outcome"
+          ]
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "captured",
+            "unknown",
+            "deferred"
+          ]
+        },
+        "assertion_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          },
+          "minItems": 0,
+          "maxItems": 16,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "field",
+        "state",
+        "assertion_ids"
+      ],
+      "additionalProperties": false
+    },
+    "AssertionCreate": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "subject_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "field": {
+          "type": "string",
+          "enum": [
+            "needs",
+            "preferences",
+            "observations",
+            "rationale",
+            "plan.warning_signs",
+            "plan.strategies",
+            "plan.responders",
+            "plan.medication_report",
+            "plan.advance_wishes",
+            "plan.contacts",
+            "plan.substitute_decision_maker",
+            "summary",
+            "outcome"
+          ]
+        },
+        "value": {
+          "$ref": "#/$defs/AssertionValue"
+        },
+        "supersedes_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "expected_revision",
+        "subject_id",
+        "field",
+        "value",
+        "supersedes_id",
+        "effective_at"
+      ],
+      "additionalProperties": false
+    },
+    "AssertionValue": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/TextValue"
+        },
+        {
+          "$ref": "#/$defs/ChoiceValue"
+        },
+        {
+          "$ref": "#/$defs/UnknownValue"
+        }
+      ]
+    },
+    "TextValue": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "text"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 2000
+        }
+      },
+      "required": [
+        "kind",
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "ChoiceValue": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "choice"
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 96
+        }
+      },
+      "required": [
+        "kind",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "UnknownValue": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "unknown"
+        },
+        "reason": {
+          "type": "string",
+          "enum": [
+            "not_known",
+            "declined",
+            "deferred"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "AssertionView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "subject_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "field": {
+          "type": "string",
+          "enum": [
+            "needs",
+            "preferences",
+            "observations",
+            "rationale",
+            "plan.warning_signs",
+            "plan.strategies",
+            "plan.responders",
+            "plan.medication_report",
+            "plan.advance_wishes",
+            "plan.contacts",
+            "plan.substitute_decision_maker",
+            "summary",
+            "outcome"
+          ]
+        },
+        "value": {
+          "$ref": "#/$defs/AssertionValue"
+        },
+        "author_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "verification": {
+          "type": "string",
+          "enum": [
+            "unverified",
+            "verified",
+            "disputed"
+          ]
+        },
+        "supersedes_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "subject_id",
+        "field",
+        "value",
+        "author_id",
+        "source",
+        "verification",
+        "supersedes_id",
+        "effective_at"
+      ],
+      "additionalProperties": false
+    },
+    "SourceRef": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "assertion",
+            "plan_field",
+            "directory",
+            "protocol",
+            "template",
+            "artifact",
+            "receipt",
+            "health",
+            "audit"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "verification": {
+          "type": "string",
+          "enum": [
+            "unverified",
+            "verified",
+            "disputed",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "id",
+        "revision",
+        "digest",
+        "observed_at",
+        "verification"
+      ],
+      "additionalProperties": false
+    },
+    "ChoiceCommand": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "disagree_rationale",
+            "decline_option",
+            "choose_alternative"
+          ]
+        },
+        "service_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rationale_version": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "expected_revision",
+        "action",
+        "service_id",
+        "rationale_version"
+      ],
+      "additionalProperties": false
+    },
+    "HumanRequest": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "reason": {
+          "type": "string",
+          "enum": [
+            "user_requested",
+            "fixture_escalation",
+            "private_youth_help"
+          ]
+        }
+      },
+      "required": [
+        "expected_revision",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "ReasonCommand": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "reason": {
+          "type": "string",
+          "enum": [
+            "user_choice",
+            "correction",
+            "disagreement",
+            "declined",
+            "no_capacity",
+            "technical_failure",
+            "security",
+            "expired",
+            "other_reviewed"
+          ]
+        }
+      },
+      "required": [
+        "expected_revision",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "QueueView": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "ticket_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "elevated",
+            "severe",
+            "partner_unavailable",
+            "regional_outage"
+          ]
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "reserved",
+            "accepted",
+            "cancelled"
+          ]
+        },
+        "requested_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "next_review_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "wait_estimate_seconds": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "connection_confirmed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "session_id",
+        "ticket_id",
+        "revision",
+        "mode",
+        "state",
+        "requested_at",
+        "next_review_at",
+        "wait_estimate_seconds",
+        "connection_confirmed"
+      ],
+      "additionalProperties": false
+    },
+    "QueuePage": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/QueueView"
+          },
+          "minItems": 0,
+          "maxItems": 50
+        },
+        "next_cursor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "items",
+        "next_cursor"
+      ],
+      "additionalProperties": false
+    },
+    "AssignmentCommand": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "worker_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "expected_revision",
+        "worker_id"
+      ],
+      "additionalProperties": false
+    },
+    "AssignmentView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "worker_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "reservation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "reserved",
+            "accepted",
+            "connected",
+            "released",
+            "expired"
+          ]
+        },
+        "control_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "id",
+        "session_id",
+        "worker_id",
+        "revision",
+        "reservation_id",
+        "expires_at",
+        "state",
+        "control_epoch"
+      ],
+      "additionalProperties": false
+    },
+    "TransferPreparation": {
+      "type": "object",
+      "properties": {
+        "assignment": {
+          "$ref": "#/$defs/AssignmentView"
+        },
+        "challenge_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "assignment",
+        "challenge_id",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "TransferConfirm": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "assignment_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "channel_evidence_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "worker_ack_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "expected_control_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "expected_revision",
+        "assignment_id",
+        "channel_evidence_id",
+        "worker_ack_id",
+        "expected_control_epoch"
+      ],
+      "additionalProperties": false
+    },
+    "ObserveCommand": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "scope": {
+          "type": "string",
+          "enum": [
+            "observe",
+            "interrupt"
+          ]
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "expected_revision",
+        "scope",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "MessageSubmit": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "expected_control_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8000
+        },
+        "accepted_draft_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "expected_revision",
+        "expected_control_epoch",
+        "text",
+        "accepted_draft_id"
+      ],
+      "additionalProperties": false
+    },
+    "MessageView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "sender_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "participant",
+            "human_authored",
+            "human_accepted_ai",
+            "approved_template"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "control_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "id",
+        "session_id",
+        "revision",
+        "sender_id",
+        "kind",
+        "text",
+        "sources",
+        "control_epoch",
+        "created_at"
+      ],
+      "additionalProperties": false
+    },
+    "MessagePage": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MessageView"
+          },
+          "minItems": 0,
+          "maxItems": 50
+        },
+        "next_cursor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "items",
+        "next_cursor"
+      ],
+      "additionalProperties": false
+    },
+    "ContinuationRotate": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "family_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "token": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]{42}[AEIMQUYcgkosw048]$"
+        },
+        "channel": {
+          "type": "string",
+          "enum": [
+            "web",
+            "sms_sim",
+            "voice_sim",
+            "relay_sim"
+          ]
+        },
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "session_id",
+        "family_id",
+        "token",
+        "channel",
+        "expected_revision"
+      ],
+      "additionalProperties": false
+    },
+    "ContinuationIssued": {
+      "type": "object",
+      "properties": {
+        "family_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "token": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]{42}[AEIMQUYcgkosw048]$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "assurance": {
+          "const": "AL0"
+        },
+        "operation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "family_id",
+        "generation",
+        "token",
+        "expires_at",
+        "assurance",
+        "operation_id"
+      ],
+      "additionalProperties": false
+    },
+    "ContinuationRecover": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "family_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "ceremony_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "channel": {
+          "type": "string",
+          "enum": [
+            "web",
+            "sms_sim",
+            "voice_sim",
+            "relay_sim"
+          ]
+        },
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "session_id",
+        "family_id",
+        "ceremony_id",
+        "channel",
+        "expected_revision"
+      ],
+      "additionalProperties": false
+    },
+    "OperationStatus": {
+      "type": "object",
+      "properties": {
+        "operation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "committed",
+            "rejected",
+            "unknown",
+            "replacement_unavailable"
+          ]
+        },
+        "safe_reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 96
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "operation_id",
+        "state",
+        "safe_reason"
+      ],
+      "additionalProperties": false
+    },
+    "ControlChange": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "ai_disabled",
+            "restricted"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "enum": [
+            "operator_request",
+            "validated_compromise",
+            "drift",
+            "dependency_failure",
+            "approved_recovery"
+          ]
+        },
+        "approval_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "expected_revision",
+        "mode",
+        "reason",
+        "approval_id"
+      ],
+      "additionalProperties": false
+    },
+    "ChannelChallengeView": {
+      "type": "object",
+      "properties": {
+        "challenge_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "assignment_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "party": {
+          "type": "string",
+          "enum": [
+            "participant",
+            "worker"
+          ]
+        },
+        "nonce": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]{42}[AEIMQUYcgkosw048]$"
+        },
+        "transport_generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "control_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "challenge_id",
+        "assignment_id",
+        "session_id",
+        "party",
+        "nonce",
+        "transport_generation",
+        "control_epoch",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "ChannelAckSubmit": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "challenge_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "nonce": {
+          "type": "string",
+          "minLength": 43,
+          "maxLength": 43,
+          "pattern": "^[A-Za-z0-9_-]{42}[AEIMQUYcgkosw048]$"
+        },
+        "transport_generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "expected_control_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "expected_revision",
+        "challenge_id",
+        "nonce",
+        "transport_generation",
+        "expected_control_epoch"
+      ],
+      "additionalProperties": false
+    },
+    "ChannelAckView": {
+      "type": "object",
+      "properties": {
+        "ack_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "challenge_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "evidence_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "one_party_acknowledged",
+            "two_party_confirmed"
+          ]
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "ack_id",
+        "challenge_id",
+        "evidence_id",
+        "state",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "EventView": {
+      "type": "object",
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "sequence": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "session_changed",
+            "message_available",
+            "queue_changed",
+            "task_changed",
+            "referral_changed",
+            "rights_changed",
+            "resync_required"
+          ]
+        },
+        "resource_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "resource_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "event_id",
+        "sequence",
+        "occurred_at",
+        "type",
+        "resource_id",
+        "resource_revision"
+      ],
+      "additionalProperties": false
+    },
+    "PolicyInput": {
+      "type": "object",
+      "properties": {
+        "operation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "actor": {
+          "$ref": "#/$defs/VerifiedActor"
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 96
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "tags": {
+          "$ref": "#/$defs/Tag"
+        },
+        "jurisdiction": {
+          "$ref": "#/$defs/Jurisdiction"
+        },
+        "versions": {
+          "$ref": "#/$defs/RevisionVector"
+        },
+        "payload_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "consent_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "review_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bundle_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "artifact_digests": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "minItems": 0,
+          "maxItems": 32,
+          "uniqueItems": true
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "ai_disabled",
+            "restricted",
+            "quarantine"
+          ]
+        },
+        "audit_ready": {
+          "type": "boolean"
+        },
+        "authority_complete": {
+          "type": "boolean"
+        },
+        "authority_facts": {
+          "$ref": "#/$defs/AuthorityFacts"
+        }
+      },
+      "required": [
+        "operation_id",
+        "actor",
+        "action",
+        "scope",
+        "tags",
+        "jurisdiction",
+        "versions",
+        "payload_digest",
+        "consent_id",
+        "review_id",
+        "bundle_digest",
+        "artifact_digests",
+        "mode",
+        "audit_ready",
+        "authority_complete",
+        "authority_facts"
+      ],
+      "additionalProperties": false
+    },
+    "VerifiedActor": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/HumanActor"
+        },
+        {
+          "$ref": "#/$defs/WorkloadActor"
+        }
+      ]
+    },
+    "HumanActor": {
+      "type": "object",
+      "properties": {
+        "principal_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "workload_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "pid",
+            "carer",
+            "professional_participant",
+            "worker",
+            "supervisor",
+            "receiver",
+            "operator",
+            "governance",
+            "auditor",
+            "security",
+            "trainer"
+          ]
+        },
+        "assurance": {
+          "type": "string",
+          "enum": [
+            "AL0",
+            "AL1",
+            "AL2",
+            "AL3"
+          ]
+        },
+        "identity_evidence_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "task_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "job_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "kind": {
+          "const": "human"
+        }
+      },
+      "required": [
+        "principal_id",
+        "workload_id",
+        "role",
+        "assurance",
+        "identity_evidence_id",
+        "task_id",
+        "job_id",
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "WorkloadActor": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "workload"
+        },
+        "actor_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "workload_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "duty_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "job_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "task_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "originating_human_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "actor_id",
+        "workload_id",
+        "duty_id",
+        "job_id",
+        "task_id",
+        "originating_human_id"
+      ],
+      "additionalProperties": false
+    },
+    "Scope": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "subject_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "purpose": {
+          "type": "string",
+          "enum": [
+            "support",
+            "plan",
+            "referral",
+            "follow_up",
+            "service_operations",
+            "security",
+            "governance",
+            "audit",
+            "training",
+            "rights",
+            "recovery"
+          ]
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "needs",
+              "preferences",
+              "observations",
+              "rationale",
+              "plan.warning_signs",
+              "plan.strategies",
+              "plan.responders",
+              "plan.medication_report",
+              "plan.advance_wishes",
+              "plan.contacts",
+              "plan.substitute_decision_maker",
+              "summary",
+              "outcome"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 32,
+          "uniqueItems": true
+        },
+        "recipient_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "session_id",
+        "subject_id",
+        "purpose",
+        "fields",
+        "recipient_id"
+      ],
+      "additionalProperties": false
+    },
+    "RevisionVector": {
+      "type": "object",
+      "properties": {
+        "identity": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "roles": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "subject": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "session_access": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "assignment": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "resource": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "directory": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "policy_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "control_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "serving_generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "restriction_barrier": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "review_run": {
+          "$ref": "#/$defs/Revision"
+        }
+      },
+      "required": [
+        "identity",
+        "roles",
+        "subject",
+        "session_access",
+        "assignment",
+        "resource",
+        "directory",
+        "policy_epoch",
+        "control_epoch",
+        "serving_generation",
+        "restriction_barrier"
+      ],
+      "additionalProperties": false
+    },
+    "AuthorityFacts": {
+      "type": "object",
+      "properties": {
+        "actor_role_allowed": {
+          "type": "boolean"
+        },
+        "resource_owned_or_assigned": {
+          "type": "boolean"
+        },
+        "field_scope_allowed": {
+          "type": "boolean"
+        },
+        "source_current": {
+          "type": "boolean"
+        },
+        "artifact_admitted": {
+          "type": "boolean"
+        },
+        "jurisdiction_allowed": {
+          "type": "boolean"
+        },
+        "workload_unfenced": {
+          "type": "boolean"
+        },
+        "consent": {
+          "$ref": "#/$defs/ConsentAuthority"
+        },
+        "review": {
+          "$ref": "#/$defs/ReviewAuthority"
+        },
+        "exception_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "exception_expires_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "actor_role_allowed",
+        "resource_owned_or_assigned",
+        "field_scope_allowed",
+        "source_current",
+        "artifact_admitted",
+        "jurisdiction_allowed",
+        "workload_unfenced",
+        "consent",
+        "review",
+        "exception_id",
+        "exception_expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "ConsentAuthority": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "valid": {
+          "type": "boolean"
+        },
+        "grant_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "subject_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "scope_digest": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effective_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expires_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recipient_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "needs",
+              "preferences",
+              "observations",
+              "rationale",
+              "plan.warning_signs",
+              "plan.strategies",
+              "plan.responders",
+              "plan.medication_report",
+              "plan.advance_wishes",
+              "plan.contacts",
+              "plan.substitute_decision_maker",
+              "summary",
+              "outcome"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 32,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "required",
+        "valid",
+        "grant_id",
+        "subject_revision",
+        "scope_digest",
+        "effective_at",
+        "expires_at",
+        "recipient_id",
+        "fields"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewAuthority": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "valid": {
+          "type": "boolean"
+        },
+        "review_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "payload_digest": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewer_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expires_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "required",
+        "valid",
+        "review_id",
+        "payload_digest",
+        "reviewer_id",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "PolicyDecision": {
+      "type": "object",
+      "properties": {
+        "decision_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "PERMIT",
+            "DENY",
+            "REQUIRE_HUMAN"
+          ]
+        },
+        "binding_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DecisionReason"
+          },
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true
+        },
+        "obligations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Obligation"
+          },
+          "minItems": 0,
+          "maxItems": 8
+        },
+        "versions": {
+          "$ref": "#/$defs/RevisionVector"
+        },
+        "bundle_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "decision_id",
+        "decision",
+        "binding_digest",
+        "reasons",
+        "obligations",
+        "versions",
+        "bundle_digest",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "DecisionReason": {
+      "type": "string",
+      "enum": [
+        "CURRENT_SCOPE",
+        "NOT_AUTHORIZED",
+        "ASSURANCE_REQUIRED",
+        "CONSENT_REQUIRED",
+        "CONSENT_REVOKED",
+        "SOURCE_STALE",
+        "SOURCE_SUSPENDED",
+        "REVIEW_REQUIRED",
+        "REVIEW_STALE",
+        "IDENTITY_REVOKED",
+        "WORKLOAD_FENCED",
+        "POLICY_STALE",
+        "MODE_RESTRICTED",
+        "BUDGET_EXHAUSTED",
+        "AUDIT_UNAVAILABLE",
+        "AUTHORITY_UNAVAILABLE",
+        "EXCEPTION_EXPIRED",
+        "FIXED_PROHIBITION",
+        "INVALID_SCOPE"
+      ]
+    },
+    "Obligation": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/AuditObligation"
+        },
+        {
+          "$ref": "#/$defs/FieldsObligation"
+        },
+        {
+          "$ref": "#/$defs/ReviewObligation"
+        },
+        {
+          "$ref": "#/$defs/TemplateObligation"
+        }
+      ]
+    },
+    "AuditObligation": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "audit_before_effect"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "FieldsObligation": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "project_fields"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "needs",
+              "preferences",
+              "observations",
+              "rationale",
+              "plan.warning_signs",
+              "plan.strategies",
+              "plan.responders",
+              "plan.medication_report",
+              "plan.advance_wishes",
+              "plan.contacts",
+              "plan.substitute_decision_maker",
+              "summary",
+              "outcome"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 32,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "kind",
+        "fields"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewObligation": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "exact_human_review"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "kind",
+        "digest"
+      ],
+      "additionalProperties": false
+    },
+    "TemplateObligation": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "approved_template"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "kind",
+        "digest"
+      ],
+      "additionalProperties": false
+    },
+    "JournalAppend": {
+      "type": "object",
+      "properties": {
+        "command_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "expected_tip": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "restrict_intent",
+            "relax_intent",
+            "db_commit_observed",
+            "checkpoint",
+            "serving_fence",
+            "serving_switch"
+          ]
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "restriction": {
+          "$ref": "#/$defs/RestrictionPayload"
+        },
+        "binding_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "db_operation_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "relaxation_evidence_digest": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "command_id",
+        "expected_tip",
+        "kind",
+        "scope",
+        "restriction",
+        "binding_digest",
+        "db_operation_id",
+        "relaxation_evidence_digest"
+      ],
+      "additionalProperties": false
+    },
+    "RestrictionPayload": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/Restriction_none"
+        },
+        {
+          "$ref": "#/$defs/Restriction_identity_revoke"
+        },
+        {
+          "$ref": "#/$defs/Restriction_role_revoke"
+        },
+        {
+          "$ref": "#/$defs/Restriction_workload_fence"
+        },
+        {
+          "$ref": "#/$defs/Restriction_consent_revoke"
+        },
+        {
+          "$ref": "#/$defs/Restriction_share_revoke"
+        },
+        {
+          "$ref": "#/$defs/Restriction_subject_delete"
+        },
+        {
+          "$ref": "#/$defs/Restriction_hold"
+        },
+        {
+          "$ref": "#/$defs/Restriction_kill"
+        },
+        {
+          "$ref": "#/$defs/Restriction_service_suspend"
+        },
+        {
+          "$ref": "#/$defs/Restriction_serving_fence"
+        }
+      ]
+    },
+    "Restriction_none": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "none"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "Restriction_identity_revoke": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "identity_revoke"
+        },
+        "principal_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "identity_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "disabled": {
+          "const": true
+        }
+      },
+      "required": [
+        "kind",
+        "principal_id",
+        "identity_revision",
+        "disabled"
+      ],
+      "additionalProperties": false
+    },
+    "Restriction_role_revoke": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "role_revoke"
+        },
+        "principal_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "role_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "pid",
+            "carer",
+            "professional_participant",
+            "worker",
+            "supervisor",
+            "receiver",
+            "operator",
+            "governance",
+            "auditor",
+            "security",
+            "trainer"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "principal_id",
+        "role_revision",
+        "role"
+      ],
+      "additionalProperties": false
+    },
+    "Restriction_workload_fence": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "workload_fence"
+        },
+        "workload_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "fence_generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "kind",
+        "workload_id",
+        "fence_generation"
+      ],
+      "additionalProperties": false
+    },
+    "Restriction_consent_revoke": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "consent_revoke"
+        },
+        "grant_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "subject_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "subject_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "kind",
+        "grant_id",
+        "subject_id",
+        "subject_revision",
+        "effective_at"
+      ],
+      "additionalProperties": false
+    },
+    "Restriction_share_revoke": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "share_revoke"
+        },
+        "grant_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "plan_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "subject_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "subject_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "kind",
+        "grant_id",
+        "plan_id",
+        "subject_id",
+        "subject_revision"
+      ],
+      "additionalProperties": false
+    },
+    "Restriction_subject_delete": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "subject_delete"
+        },
+        "subject_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "rights_request_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "subject_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "kind",
+        "subject_id",
+        "rights_request_id",
+        "subject_revision",
+        "effective_at"
+      ],
+      "additionalProperties": false
+    },
+    "Restriction_hold": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "hold"
+        },
+        "hold_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "authority_ref": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "starts_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expires_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "hold_id",
+        "scope",
+        "authority_ref",
+        "starts_at",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "Restriction_kill": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "kill"
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "ai_disabled",
+            "restricted",
+            "quarantine"
+          ]
+        },
+        "epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "bundle_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "kind",
+        "mode",
+        "epoch",
+        "bundle_digest"
+      ],
+      "additionalProperties": false
+    },
+    "Restriction_service_suspend": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "service_suspend"
+        },
+        "service_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "directory_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "suspended": {
+          "const": true
+        }
+      },
+      "required": [
+        "kind",
+        "service_id",
+        "directory_revision",
+        "suspended"
+      ],
+      "additionalProperties": false
+    },
+    "Restriction_serving_fence": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "serving_fence"
+        },
+        "generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "target_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "promotion_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "kind",
+        "generation",
+        "target_id",
+        "promotion_id"
+      ],
+      "additionalProperties": false
+    },
+    "JournalHead": {
+      "type": "object",
+      "properties": {
+        "journal_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "tip": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "tip_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "restriction_barrier": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "journal_id",
+        "generation",
+        "tip",
+        "tip_digest",
+        "restriction_barrier",
+        "signature",
+        "observed_at"
+      ],
+      "additionalProperties": false
+    },
+    "JournalRecord": {
+      "type": "object",
+      "properties": {
+        "format_version": {
+          "const": "care.journal.v1"
+        },
+        "journal_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "sequence": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "command": {
+          "$ref": "#/$defs/JournalAppend"
+        },
+        "previous_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "key_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "durable_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "format_version",
+        "journal_id",
+        "generation",
+        "sequence",
+        "command",
+        "previous_hash",
+        "hash",
+        "key_id",
+        "signature",
+        "durable_at"
+      ],
+      "additionalProperties": false
+    },
+    "DutyDefinition": {
+      "type": "object",
+      "properties": {
+        "duty_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "workload_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "operations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "lifecycle_due",
+              "job_execute",
+              "journal_head",
+              "journal_append",
+              "activation_ack",
+              "identity_revoke"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 6,
+          "uniqueItems": true
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "support",
+              "plan",
+              "referral",
+              "follow_up",
+              "service_operations",
+              "security",
+              "governance",
+              "audit",
+              "training",
+              "rights",
+              "recovery"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 4,
+          "uniqueItems": true
+        },
+        "resource_classes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "expired_copy",
+              "due_followup",
+              "pending_dispatch",
+              "unknown_receipt",
+              "expired_reservation",
+              "audit_checkpoint",
+              "identity_signal",
+              "validated_security_event"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 8,
+          "uniqueItems": true
+        },
+        "environment": {
+          "const": "demo"
+        },
+        "population": {
+          "const": "synthetic"
+        },
+        "per_run_limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "allow_content_projection": {
+          "const": false
+        },
+        "allow_human_approval": {
+          "const": false
+        },
+        "approval_receipt_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "duty_id",
+        "workload_id",
+        "operations",
+        "purposes",
+        "resource_classes",
+        "environment",
+        "population",
+        "per_run_limit",
+        "allow_content_projection",
+        "allow_human_approval",
+        "approval_receipt_id",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "DutyEvidence": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "workload_duty"
+        },
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "actor_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "duty_artifact_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 96
+        },
+        "request_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "nonce": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "duty_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "workload_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      },
+      "required": [
+        "kind",
+        "id",
+        "actor_id",
+        "duty_artifact_digest",
+        "scope",
+        "action",
+        "request_digest",
+        "nonce",
+        "issued_at",
+        "expires_at",
+        "signature",
+        "duty_id",
+        "workload_id"
+      ],
+      "additionalProperties": false
+    },
+    "DueJob": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "follow_up",
+            "dispatch",
+            "receipt_reconcile",
+            "retention",
+            "checkpoint",
+            "metrics",
+            "signal_reconcile",
+            "reservation_expiry"
+          ]
+        },
+        "aggregate_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "fence": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "original_operation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "job_id",
+        "kind",
+        "aggregate_id",
+        "expected_revision",
+        "fence",
+        "original_operation_id",
+        "deadline"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_continuation_rotate": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_continuation_rotate"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ContinuationRotate"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_continuation_rotate": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "SignedDelegation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "actor": {
+          "$ref": "#/$defs/VerifiedActor"
+        },
+        "evidence": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/IdentityEvidence"
+            },
+            {
+              "$ref": "#/$defs/DutyEvidence"
+            }
+          ]
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "audience": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "GET",
+            "POST"
+          ]
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "body_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "nonce": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        }
+      },
+      "required": [
+        "id",
+        "actor",
+        "evidence",
+        "scope",
+        "audience",
+        "method",
+        "path",
+        "body_digest",
+        "nonce",
+        "expires_at",
+        "signature"
+      ],
+      "additionalProperties": false
+    },
+    "IdentityEvidence": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "principal_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "pid",
+            "carer",
+            "professional_participant",
+            "worker",
+            "supervisor",
+            "receiver",
+            "operator",
+            "governance",
+            "auditor",
+            "security",
+            "trainer"
+          ]
+        },
+        "identity_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "role_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 96
+        },
+        "resource_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "request_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "nonce": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "verified_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "kind": {
+          "const": "human_identity"
+        },
+        "review_run_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "review_slot_id": {
+          "enum": [
+            "participant",
+            "worker1",
+            "worker2",
+            "supervisor"
+          ]
+        },
+        "review_origin": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        }
+      },
+      "required": [
+        "id",
+        "principal_id",
+        "role",
+        "identity_revision",
+        "role_revision",
+        "action",
+        "resource_id",
+        "request_digest",
+        "nonce",
+        "verified_at",
+        "expires_at",
+        "signature",
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_continuation_recover": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_continuation_recover"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ContinuationRecover"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_continuation_recover": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "Gateway_operation_status": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_operation_status"
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_operation_status": {
+      "type": "object",
+      "properties": {
+        "operation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "operation_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_session_create": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_create"
+        },
+        "arguments": {
+          "$ref": "#/$defs/SessionCreate"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_session_create": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "Gateway_session_read": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_session_read": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_session_disclosure": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_disclosure"
+        },
+        "arguments": {
+          "$ref": "#/$defs/DisclosureAck"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_session_disclosure": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_session_turns": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_turns"
+        },
+        "arguments": {
+          "$ref": "#/$defs/TurnSubmit"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_session_turns": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_session_assertions": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_assertions"
+        },
+        "arguments": {
+          "$ref": "#/$defs/AssertionCreate"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_session_assertions": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_session_choices": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_choices"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ChoiceCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_session_choices": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_session_human_request": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_human_request"
+        },
+        "arguments": {
+          "$ref": "#/$defs/HumanRequest"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_session_human_request": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_session_end": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_end"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReasonCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_session_end": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_session_events": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_events"
+        },
+        "arguments": {
+          "type": "object",
+          "properties": {
+            "last_event_id": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]{0,18})$",
+              "maxLength": 19,
+              "x-decimalMaximum": "9223372036854775807",
+              "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+            }
+          },
+          "required": [
+            "last_event_id"
+          ],
+          "additionalProperties": false
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_session_events": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_messages_read": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_messages_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/PageQuery"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_messages_read": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "PageQuery": {
+      "type": "object",
+      "properties": {
+        "cursor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "Gateway_message_send": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_message_send"
+        },
+        "arguments": {
+          "$ref": "#/$defs/MessageSubmit"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_message_send": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_queue_list": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_queue_list"
+        },
+        "arguments": {
+          "$ref": "#/$defs/PageQuery"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_queue_list": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "Gateway_workforce_reserve": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_workforce_reserve"
+        },
+        "arguments": {
+          "$ref": "#/$defs/AssignmentCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_workforce_reserve": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_workforce_accept": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_workforce_accept"
+        },
+        "arguments": {
+          "$ref": "#/$defs/RevisionCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_workforce_accept": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_workforce_prepare_transfer": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_workforce_prepare_transfer"
+        },
+        "arguments": {
+          "$ref": "#/$defs/RevisionCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_workforce_prepare_transfer": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_workforce_confirm_transfer": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_workforce_confirm_transfer"
+        },
+        "arguments": {
+          "$ref": "#/$defs/TransferConfirm"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_workforce_confirm_transfer": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_workforce_transfer_failed": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_workforce_transfer_failed"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReasonCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_workforce_transfer_failed": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_workforce_observe": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_workforce_observe"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ObserveCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_workforce_observe": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_workforce_takeover": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_workforce_takeover"
+        },
+        "arguments": {
+          "$ref": "#/$defs/AssignmentCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_workforce_takeover": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_control_change": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_control_change"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ControlChange"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_control_change": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "Gateway_channel_challenge_read": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_channel_challenge_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_channel_challenge_read": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_channel_ack": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_channel_ack"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ChannelAckSubmit"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_channel_ack": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "MetadataRequest": {
+      "type": "object",
+      "properties": {
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 96
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "payload_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "delegation",
+        "action",
+        "scope",
+        "payload_digest"
+      ],
+      "additionalProperties": false
+    },
+    "MetadataResult": {
+      "type": "object",
+      "properties": {
+        "versions": {
+          "$ref": "#/$defs/RevisionVector"
+        },
+        "authority_facts": {
+          "$ref": "#/$defs/AuthorityFacts"
+        },
+        "bundle_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "ai_disabled",
+            "restricted",
+            "quarantine"
+          ]
+        },
+        "complete": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "versions",
+        "authority_facts",
+        "bundle_digest",
+        "mode",
+        "complete"
+      ],
+      "additionalProperties": false
+    },
+    "BackupView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "manifest_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "capture_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "schema_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "journal_barrier": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "audit_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "capturing",
+            "verified",
+            "failed",
+            "expired"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "manifest_digest",
+        "capture_at",
+        "expires_at",
+        "schema_version",
+        "journal_barrier",
+        "audit_digest",
+        "state"
+      ],
+      "additionalProperties": false
+    },
     "BrowserCsrf": {
       "type": "object",
       "properties": {
@@ -958,6 +5586,214 @@
       ],
       "additionalProperties": false
     },
+    "Gateway_continuation_issue": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "type": "object",
+          "properties": {
+            "session_id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            }
+          },
+          "required": [
+            "session_id"
+          ],
+          "additionalProperties": false
+        },
+        "arguments": {
+          "type": "object",
+          "properties": {
+            "expected_revision": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]{0,18})$",
+              "maxLength": 19,
+              "x-decimalMaximum": "9223372036854775807",
+              "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+            }
+          },
+          "required": [
+            "expected_revision"
+          ],
+          "additionalProperties": false
+        },
+        "delegation": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            "actor": {
+              "$ref": "#/$defs/VerifiedActor"
+            },
+            "evidence": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/IdentityEvidence"
+                },
+                {
+                  "$ref": "#/$defs/DutyEvidence"
+                }
+              ]
+            },
+            "scope": {
+              "$ref": "#/$defs/Scope"
+            },
+            "audience": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "method": {
+              "type": "string",
+              "enum": [
+                "GET",
+                "POST"
+              ]
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "body_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "nonce": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "signature": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          },
+          "required": [
+            "id",
+            "actor",
+            "evidence",
+            "scope",
+            "audience",
+            "method",
+            "path",
+            "body_digest",
+            "nonce",
+            "expires_at",
+            "signature"
+          ],
+          "additionalProperties": false
+        },
+        "decision": {
+          "type": "object",
+          "properties": {
+            "decision_id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            "decision": {
+              "type": "string",
+              "enum": [
+                "PERMIT",
+                "DENY",
+                "REQUIRE_HUMAN"
+              ]
+            },
+            "binding_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "reasons": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/DecisionReason"
+              },
+              "minItems": 1,
+              "maxItems": 16,
+              "uniqueItems": true
+            },
+            "obligations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Obligation"
+              },
+              "minItems": 0,
+              "maxItems": 8
+            },
+            "versions": {
+              "$ref": "#/$defs/RevisionVector"
+            },
+            "bundle_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            }
+          },
+          "required": [
+            "decision_id",
+            "decision",
+            "binding_digest",
+            "reasons",
+            "obligations",
+            "versions",
+            "bundle_digest",
+            "expires_at"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "ContinuationRecoveryStart": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "family_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "session_id",
+        "family_id",
+        "expected_revision"
+      ],
+      "additionalProperties": false
+    },
     "DeveloperCapability": {
       "type": "object",
       "properties": {
@@ -989,6 +5825,518 @@
         "contract_validation"
       ],
       "additionalProperties": false
+    },
+    "ReviewWorkspaceQuery": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewDraftSave": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "intake",
+            "message"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 8000
+        },
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "kind",
+        "text",
+        "expected_revision"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewIntentPrepare": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "intake",
+            "message"
+          ]
+        },
+        "draft_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "expected_control_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "locale": {
+          "type": "string",
+          "enum": [
+            "en-CA",
+            "fr-CA"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "draft_revision",
+        "expected_revision",
+        "expected_control_epoch",
+        "locale"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewDraftView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "intake",
+            "message"
+          ]
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 8000
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "session_id",
+        "kind",
+        "revision",
+        "text",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewIntentView": {
+      "type": "object",
+      "properties": {
+        "operation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "intake",
+            "message"
+          ]
+        },
+        "draft_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "prepared",
+            "pending",
+            "committed",
+            "rejected",
+            "unknown",
+            "replacement_unavailable",
+            "cancelled"
+          ]
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "session_turns",
+            "message_send"
+          ]
+        },
+        "payload": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TurnSubmit"
+            },
+            {
+              "$ref": "#/$defs/MessageSubmit"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "operation_id",
+        "session_id",
+        "kind",
+        "draft_revision",
+        "state",
+        "action",
+        "payload",
+        "created_at"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewHandshakeView": {
+      "type": "object",
+      "properties": {
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "challenge_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "assignment_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "participant_acknowledged": {
+          "type": "boolean"
+        },
+        "worker_acknowledged": {
+          "type": "boolean"
+        },
+        "evidence_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "worker_ack_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "expires_at",
+        "challenge_id",
+        "assignment_id",
+        "participant_acknowledged",
+        "worker_acknowledged",
+        "evidence_id",
+        "worker_ack_id"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewWorkspace": {
+      "type": "object",
+      "properties": {
+        "run_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "run_state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "closing",
+            "closed",
+            null
+          ]
+        },
+        "conversations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SessionView"
+          },
+          "maxItems": 50
+        },
+        "conversation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SessionView"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "assignment": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AssignmentView"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "drafts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReviewDraftView"
+          },
+          "maxItems": 2
+        },
+        "pending_intents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReviewIntentView"
+          },
+          "maxItems": 10
+        },
+        "handshake": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReviewHandshakeView"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "disclosure_acknowledged": {
+          "type": "boolean"
+        },
+        "intake_submitted": {
+          "type": "boolean"
+        },
+        "interrupt_expires_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "run_id",
+        "run_state",
+        "conversations",
+        "conversation",
+        "assignment",
+        "drafts",
+        "pending_intents",
+        "handshake",
+        "disclosure_acknowledged",
+        "intake_submitted",
+        "interrupt_expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_review_workspace": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReviewWorkspaceQuery"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_review_draft_save": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReviewDraftSave"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_review_intent_prepare": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReviewIntentPrepare"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewIntentCancel": {
+      "type": "object",
+      "properties": {
+        "operation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "operation_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_review_intent_cancel": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReviewIntentCancel"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Id": {
+      "type": "string",
+      "format": "uuid",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "Revision": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]{0,18})$",
+      "maxLength": 19,
+      "x-decimalMaximum": "9223372036854775807",
+      "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
     }
   }
 }

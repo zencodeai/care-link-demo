@@ -1,0 +1,46 @@
+{
+  "session": "imp03-002",
+  "suite": "extended",
+  "mode": "buffered",
+  "locale": "en-CA",
+  "status": "passed",
+  "actual_provider_actors": [
+    "pid",
+    "worker",
+    "worker2",
+    "supervisor"
+  ],
+  "browser_tls_verification": true,
+  "observations": [
+    "exact_en-CA_disclosure_ui",
+    "server_intake_gate",
+    "fictional_ui_intake_with_participant_attribution",
+    "two_distinct_issued_workers_race",
+    "exactly_one_accepted_assignment",
+    "one_confirmed_accountable_owner",
+    "held_real_old_owner_reply_discarded_after_observed_authority_loss"
+  ],
+  "details": {
+    "reservation_statuses": [
+      {
+        "actor": "worker",
+        "status": 200
+      },
+      {
+        "actor": "worker2",
+        "status": 409
+      }
+    ],
+    "buffered": {
+      "response_fulfilled": true,
+      "client_cancelled": true,
+      "scope": "Real pre-takeover GET response held in browser transport; UI visibility after observed SSE authority loss. Not every server/OS-buffer race."
+    }
+  },
+  "human_acceptance": false,
+  "limits": [
+    "Selected automated UI actions and exact recorded races; human language/accessibility review absent.",
+    "Browser-transport held reply does not cover every serving/OS buffered-output interleaving.",
+    "Durable row/effect counts and audit-chain evidence require the separate operator observations."
+  ]
+}

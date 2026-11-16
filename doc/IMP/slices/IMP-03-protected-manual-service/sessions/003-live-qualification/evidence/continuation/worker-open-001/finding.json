@@ -1,0 +1,8 @@
+{
+  "recorded_at": "2026-11-14T21:25:07.111162+00:00",
+  "source": "user_message",
+  "response": "Open current conversation does not fail nor succeed",
+  "context": "After worker assignment pass, participant reauthentication, missing participant Confirm and worker Refresh controls.",
+  "read_only_metadata": "Accepted assignment revision2; session worker_assigned, owner null; no prepare_transfer mutation recorded. Accepted assignment expiry field is the former reservation expiry and is not by itself evidence of expiry.",
+  "diagnosis": "under investigation; no human connection pass or state changes inferred"
+}
