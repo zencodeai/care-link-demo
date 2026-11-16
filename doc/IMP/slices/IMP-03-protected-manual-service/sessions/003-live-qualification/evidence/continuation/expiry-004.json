@@ -1,0 +1,9 @@
+{
+  "client_spiffe_id": "spiffe://care-link.demo/demo/core",
+  "server_spiffe_id": "spiffe://care-link.demo/demo/data",
+  "not_after": "2026-11-13T23:28:43+00:00",
+  "leaf_sha256": "d4849795b6769603d3b45dc63dbae63bae1da363aa756812fab2517b5885ade3",
+  "preexpiry_status": 400,
+  "passed": false,
+  "reason": "Pre-expiry transport was not admitted; no expiry claim"
+}

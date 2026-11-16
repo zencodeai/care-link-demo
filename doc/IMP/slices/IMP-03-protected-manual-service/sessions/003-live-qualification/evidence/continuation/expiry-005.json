@@ -1,0 +1,17 @@
+{
+  "client_spiffe_id": "spiffe://care-link.demo/demo/core",
+  "server_spiffe_id": "spiffe://care-link.demo/demo/data",
+  "not_after": "2026-11-13T23:30:47+00:00",
+  "leaf_sha256": "6e86d774bbdd0e38e4c9aa38665583dd8beae242453af966415d17f3012deedf",
+  "preexpiry_status": 400,
+  "preexpiry_error": {
+    "code": "INVALID_REQUEST",
+    "message_key": "manual.invalid_request"
+  },
+  "same_connection_preserved_until_expiry": true,
+  "same_connection_postexpiry_status": 403,
+  "same_connection_postexpiry_denied": true,
+  "new_connection_tls_reason": "SSLV3_ALERT_CERTIFICATE_UNKNOWN",
+  "new_connection_tls_expiry_rejected": false,
+  "passed": false
+}

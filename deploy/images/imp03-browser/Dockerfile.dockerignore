@@ -1,0 +1,7 @@
+**
+!playwright-core/
+!playwright-core/**
+!ca/
+!ca/*.crt
+**/node_modules
+**/*.key

@@ -11,7 +11,16 @@
     "tools/imp02_application/browser.py",
     "tools/imp02_application/identity.py",
     "tools/imp02_application/__main__.py",
-    "tools/imp02_application/maintenance.py"
+    "tools/imp02_application/maintenance.py",
+    "packages/domain/src",
+    "packages/policy-input/src",
+    "services/data/src",
+    "host/recovery-control/src",
+    "tools/imp03_runtime",
+    "tools/demo",
+    "tools/imp03_shared/review_*.py",
+    "tools/imp03_verification/live_barrier.py",
+    "tools/imp03_verification/audit_fault.py"
   ],
   "pythonVersion": "3.14",
   "venvPath": ".",

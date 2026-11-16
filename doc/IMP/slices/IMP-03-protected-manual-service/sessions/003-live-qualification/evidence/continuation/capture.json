@@ -1,0 +1,39 @@
+{
+  "capture": {
+    "id": "6586b671-5309-4c4e-a266-e8efa580bc25",
+    "manifest_digest": "d48e15a2214d577d7c58ea2db416abd776c9faacad0e1308d2305532353c31ad",
+    "capture_at": "2026-11-13T22:56:26.188620Z",
+    "expires_at": "2026-11-20T22:56:26.188620Z",
+    "schema_version": "001_manual",
+    "journal_barrier": "0",
+    "audit_digest": "7f77a2d8a28a5e93bb1f1533b560d92c7084228a5974f34732de83b23244bdda",
+    "state": "verified"
+  },
+  "quarantine_import": {
+    "target_database": "imp03_cont1_quarantine_1af1c9dd6bfd428f8acaa333bae04ef2",
+    "state": "quarantined_unvalidated",
+    "serving_allowed": false,
+    "observed": {
+      "quarantine": true,
+      "principals_disabled": true,
+      "tokens_disabled": true,
+      "runtime_connect_denied": true
+    },
+    "audit_chain_valid": true,
+    "source_database": "imp03_runtime_002",
+    "source_reset": false
+  },
+  "source_unchanged": {
+    "changed_tables": [],
+    "prohibited_changed_tables": [],
+    "committed_operation_rows_unchanged": true,
+    "non_rejected_operation_rows_unchanged": true,
+    "rejected_operation_rows_append_only": true,
+    "audit_chain_append_only": true,
+    "new_audit_events_permitted": true,
+    "no_prohibited_observed_effect": true,
+    "output_scope": "Database only; client buffered/delivered bytes require separate evidence"
+  },
+  "serving_promotion": false,
+  "private_dump_and_keys": "owner-only operator custody; excluded from public evidence"
+}

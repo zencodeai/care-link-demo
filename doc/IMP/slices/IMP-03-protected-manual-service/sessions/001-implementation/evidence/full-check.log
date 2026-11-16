@@ -1,0 +1,70 @@
++ uv lock --check
+Resolved 58 packages in 17ms
++ pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts
+Scope: all 3 workspace projects
+Done in 130ms using pnpm v10.20.0
++ uv run --locked python tools/generate_contracts.py --check
+Browser validators match the pinned schema (54 public contracts).
+Contract snapshots match reviewed definitions.
++ uv run --locked python tools/check_boundaries.py
+Source dependency boundaries passed (source check, not runtime isolation).
++ uv run --locked python tools/check_imp02_admission.py
+IMP-02 source admission remains disabled; no live identity/network/content proof implied.
++ uv run --locked ruff check .
+All checks passed!
++ uv run --locked ruff format --check .
+166 files already formatted
++ pnpm exec pyright --project pyrightconfig.json
+0 errors, 0 warnings, 0 informations
++ pnpm typecheck
+
+> care-link-development@0.1.0 typecheck /Users/main/Workspace/projects/care-link/care-link-demo
+> pnpm -r typecheck
+
+Scope: 2 of 3 workspace projects
+packages/contracts/typescript typecheck$ tsc --noEmit
+packages/contracts/typescript typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
++ pnpm lint
+
+> care-link-development@0.1.0 lint /Users/main/Workspace/projects/care-link/care-link-demo
+> eslint apps/web packages/contracts/typescript --max-warnings 0
+
++ pnpm format:check
+
+> care-link-development@0.1.0 format:check /Users/main/Workspace/projects/care-link/care-link-demo
+> prettier --check apps/web packages/contracts/typescript package.json pnpm-workspace.yaml pyrightconfig.json eslint.config.mjs vitest.config.ts
+
+Checking formatting...
+All matched files use Prettier code style!
++ uv run --locked pytest
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/main/Workspace/projects/care-link/care-link-demo
+configfile: pyproject.toml
+testpaths: packages/domain/tests, packages/policy-input/tests, services/data/tests, host/recovery-control/tests, packages/workload-trust/tests, packages/contracts/python/tests, services/core/tests, services/identity/tests, host/help/tests, host/static/tests, tests
+plugins: anyio-4.16.0
+collected 440 items / 1 error
+
+==================================== ERRORS ====================================
+___________ ERROR collecting services/data/tests/test_composition.py ___________
+ImportError while importing test module '/Users/main/Workspace/projects/care-link/care-link-demo/services/data/tests/test_composition.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/tests/test_composition.py:19: in <module>
+    from conftest import ROOT
+E   ImportError: cannot import name 'ROOT' from 'conftest' (/Users/main/Workspace/projects/care-link/care-link-demo/services/identity/tests/conftest.py)
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR services/data/tests/test_composition.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+========================= 1 warning, 1 error in 0.16s ==========================

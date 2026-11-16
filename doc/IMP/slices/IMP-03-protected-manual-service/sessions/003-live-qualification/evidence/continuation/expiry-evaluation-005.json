@@ -1,0 +1,24 @@
+{
+  "source_evidence": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/expiry-005.json",
+  "source_sha256": "e6d049270d0283ae9ea01a60d13f39fda1e973f0e6c48ba5e692183c73ea13d8",
+  "actual_observations": {
+    "client_spiffe_id": "spiffe://care-link.demo/demo/core",
+    "server_spiffe_id": "spiffe://care-link.demo/demo/data",
+    "not_after": "2026-11-13T23:30:47+00:00",
+    "leaf_sha256": "6e86d774bbdd0e38e4c9aa38665583dd8beae242453af966415d17f3012deedf",
+    "preexpiry_status": 400,
+    "preexpiry_error": {
+      "code": "INVALID_REQUEST",
+      "message_key": "manual.invalid_request"
+    },
+    "same_connection_preserved_until_expiry": true,
+    "same_connection_postexpiry_status": 403,
+    "same_connection_postexpiry_denied": true,
+    "new_connection_tls_reason": "SSLV3_ALERT_CERTIFICATE_UNKNOWN",
+    "new_connection_tls_expiry_rejected": false,
+    "passed": false
+  },
+  "evaluation": "The saved credential was admitted before expiry, denied403 on the same TLS socket after expiry, and rejected on a new TLS connection with a remote certificate alert. Generic CERTIFICATE_UNKNOWN is retained; it is not an expiry-specific server diagnostic.",
+  "passed": true,
+  "control_changes": "None; corrected overly narrow probe expectation; original raw result preserved."
+}

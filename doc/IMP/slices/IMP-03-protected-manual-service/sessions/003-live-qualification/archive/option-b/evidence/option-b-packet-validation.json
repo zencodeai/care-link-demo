@@ -1,0 +1,25 @@
+{
+  "recorded_at": "2026-11-13T15:53:31.380078+00:00",
+  "schema_validation": [
+    {
+      "file": "work-packet-option-b.json",
+      "schema": "WorkPacket",
+      "errors": []
+    },
+    {
+      "file": "option-b-demo-packet.json",
+      "schema": "DemoPacket",
+      "errors": []
+    },
+    {
+      "file": "option-b-agent-result.json",
+      "schema": "AgentResult",
+      "errors": []
+    }
+  ],
+  "source_hash_drift": [],
+  "known_private_value_scan_leaks": [],
+  "local_broken_links": [],
+  "scope": "Known private credential values only; not an exhaustive secret detector. No credentials printed.",
+  "current_packet_reference_mismatches": []
+}

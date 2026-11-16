@@ -1,0 +1,292 @@
+{
+  "packet_id": "IMP-03-003-QUALIFICATION",
+  "task_id": "IMP-03-D",
+  "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+  "role": "imp_verifier",
+  "status": "partial",
+  "changed_paths": [
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/candidate-manifest.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/checks.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/demo-packet.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/environment.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/core-build.log",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/core-results.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/core-smoke.log",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/docker-after.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/docker-before.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/full-check.log",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/full-runner-result.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/full-runner.log",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/g02-dependency.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/git-status-end.txt",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/git-status-start.txt",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/linux-uid-result.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/linux-uid.log",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/provisioning.log",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/runner-results.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/source-check-result.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/source-check.log",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/source-dirty.patch",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/source-stability.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/handoff.md",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/qualification-status.md",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/review.md",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/specialist-results.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/work-packet.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/agent-result.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence-manifest.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/packet-validation.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/README.md"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/candidate-manifest.json",
+      "sha256": "1b12ab135460fcc69c9a1b5232d3ad2aa28e4d3a12c5d16b3a895ad364a7a55a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/checks.json",
+      "sha256": "dcd2f2d07f23506513c4c9749c0dc6ab581dfb6bb5e834999e2c8fcfb80f78d6"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/demo-packet.json",
+      "sha256": "974cfaebfcfb8e62d15907d641d84df2a7f15827ee95e5154c5944d4dbdc5287"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/environment.json",
+      "sha256": "a9e528f3ccfe1979ec11d2b4919813dd240efa2530be53d33fa9b18e4677eaa2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/core-build.log",
+      "sha256": "8e597a6a3a41d9c8ca27d7fdcb43ece904b34d1a33d53779e5089aba63f5b8de"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/core-results.json",
+      "sha256": "245555801b444f00b7b8ffb539d871e5cca828e7edf306ac29bf394f4e8adfa0"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/core-smoke.log",
+      "sha256": "3720d04db25413343c90c31dc924c2ada5324c804c138c77d71b8e5192acc682"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/docker-after.json",
+      "sha256": "55fc3884df8dd101e33636e723e9cda32012e206f39962ce6d202a6332c629ad"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/docker-before.json",
+      "sha256": "efef7fd2309103e9061bfc555fe9d6399598cd9564922e1587038e3f62e9693a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/full-check.log",
+      "sha256": "e42e24019c3e1bcdfb164e7228c11d3dcb46cd1f20ecadedb1ef56c2401357f9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/full-runner-result.json",
+      "sha256": "1aa3e8d0559f4716a5a5a83ebc7494ac5758f41f3983e371efdf0cc215864340"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/full-runner.log",
+      "sha256": "e91dd407d9f0bbf255876db647121cadc97486aaa7763b697db611f53ac5b833"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/g02-dependency.json",
+      "sha256": "da2423a0918052884267b300de35cbffde762546a3cfd3dbb8bd5d189d8f17cb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/git-status-end.txt",
+      "sha256": "c0e522366e982e763bf0a5342e42b637647c9874dcdf7ff70dc37ec449e138c7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/git-status-start.txt",
+      "sha256": "c0e522366e982e763bf0a5342e42b637647c9874dcdf7ff70dc37ec449e138c7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/linux-uid-result.json",
+      "sha256": "efe41198b0efd99e7fae80c5678dc082925088ab96519c026b42fa944ece06c2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/linux-uid.log",
+      "sha256": "99d161a645be50b349f708e7258256d26012e07682341df9edd3b5d8fc1da2cf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/provisioning.log",
+      "sha256": "7f20721722339faad833bedbd918bbce72ec5ee8917b82cf8b1a09bf4e47f2f3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/runner-results.json",
+      "sha256": "10f52ea2c7c40ddbb64a4a4510825108980e46a12220d33c5a6beba68539721b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/source-check-result.json",
+      "sha256": "beaae566c4316a04c66580cb1431932b1bc554774a3abb23db185525678458ac"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/source-check.log",
+      "sha256": "814158affbb61c04999160e886e16fa65d190125158260090762c3bc9095f8b2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/source-dirty.patch",
+      "sha256": "320d35d19e306d29f89f8a2db1a29379cfbcf0605baf1539a94254da75696f72"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/source-stability.json",
+      "sha256": "3366ae6d344eb358280297267de23555624abff0f03de2a53c7951f29d6d3642"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/handoff.md",
+      "sha256": "0398c7751f777318dd1c3fa8ea8b3e3a870f526a74ed7a34711abbb77c3d927c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/qualification-status.md",
+      "sha256": "13e68d3653bb67e4741d2ad0a9116cfa3597849c162cb1b922b159bb00a86f77"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/review.md",
+      "sha256": "5fc4a06bab1098a016640f8b619f7cfa8e617f9a178aed1bd6b99f9bb3fc3795"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/specialist-results.json",
+      "sha256": "1bdb936c1cbc3c05ace5af059f0e7d427129bd3e16bc77af039fae0475cc2232"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/work-packet.json",
+      "sha256": "ddf64158caf9d6e7fd3de3a069c68a99143183c772ba6213f82b319306d2ad37"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Candidate continuity and inherited G-02 dependency",
+      "command": "Rehash session002 manifest; verify all G-02 reviewed_evidence SHA256 values",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Current candidate behavior is verified within the declared local or live scope.",
+      "actual": "302/302 prior source files and 8/8 source inputs unchanged. All five G-02 evidence bindings match. Current manifest covers 319 source files; 17 extra paths were outside prior manifest scope. G-02 acceptance is inherited only.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/g02-dependency.json",
+      "evidence_digest": "da2423a0918052884267b300de35cbffde762546a3cfd3dbb8bd5d189d8f17cb",
+      "mock_used": false
+    },
+    {
+      "name": "Source-only complete checker",
+      "command": "UV_CACHE_DIR=/private/tmp/care-link-uv-cache UV_OFFLINE=1 UV_NO_SYNC=1 .venv/bin/python tools/check.py (optional fixture variables removed)",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Current candidate behavior is verified within the declared local or live scope.",
+      "actual": "451 Python passed, 56 declared optional/platform skips, 2 warnings; 56 TS/UI/parity tests passed. Lock/generation/admission/boundaries/types/lint/format/build passed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/source-check.log",
+      "evidence_digest": "814158affbb61c04999160e886e16fa65d190125158260090762c3bc9095f8b2",
+      "mock_used": true
+    },
+    {
+      "name": "Full PostgreSQL OPA signed-journal capture and adapter lane",
+      "command": "UV_CACHE_DIR=/private/tmp/care-link-uv-cache UV_OFFLINE=1 UV_NO_SYNC=1 .venv/bin/python -m tools.imp03_verification.run_checks --output /private/tmp/care-link-imp03-003-full-20261113-001 --opa /private/tmp/care-link-imp03-tools/opa",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Current candidate behavior is verified within the declared local or live scope.",
+      "actual": "505 Python passed, 2 declared skips, 3 warnings; 56 TS/UI/parity passed; all checker commands passed. Real PostgreSQL TLS1.3 and pinned OPA; provider/workload seams are fixtures. Both skips were executed separately below.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/full-check.log",
+      "evidence_digest": "e42e24019c3e1bcdfb164e7228c11d3dcb46cd1f20ecadedb1ef56c2401357f9",
+      "mock_used": true
+    },
+    {
+      "name": "Separate initial provisioning and reversible audit grant barrier",
+      "command": "Runner separate provisioning lane: .venv/bin/python -m pytest -q tests/integration/imp03_runtime/test_provisioning.py with private disposable fixture DSN",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Current candidate behavior is verified within the declared local or live scope.",
+      "actual": "1 passed. Fresh DBs/logins/migrations/bootstrap/runtime grants, audit grant revoke/restore, existing-target refusal. Actors/subjects are illustrative bindings; no OIDC issuance or live outage claim.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/provisioning.log",
+      "evidence_digest": "7f20721722339faad833bedbd918bbce72ec5ee8917b82cf8b1a09bf4e47f2f3",
+      "mock_used": true
+    },
+    {
+      "name": "Isolated developer core image build",
+      "command": ".venv/bin/python tools/build_core_image.py --tag care-link-core:imp03-qualification-003 --iid-file /private/tmp/care-link-imp03-003-core-iid.txt",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Current candidate behavior is verified within the declared local or live scope.",
+      "actual": "Built sha256:8bde1acf545611075a15020047e65423f9cefe5631530b428aa57830e97f7d94. Default app remains developer-only; no per-role serving artifact isolation claim.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/core-build.log",
+      "evidence_digest": "8e597a6a3a41d9c8ca27d7fdcb43ece904b34d1a33d53779e5089aba63f5b8de",
+      "mock_used": false
+    },
+    {
+      "name": "Restricted developer core smoke",
+      "command": ".venv/bin/python tools/smoke_core_image.py --image care-link-core:imp03-qualification-003",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Current candidate behavior is verified within the declared local or live scope.",
+      "actual": "Passed nonroot, read-only, no-network/no-mount/no-port, capability-disabled behavior and dependency exclusions. Exact created container removed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/core-smoke.log",
+      "evidence_digest": "3720d04db25413343c90c31dc924c2ada5324c804c138c77d71b8e5192acc682",
+      "mock_used": false
+    },
+    {
+      "name": "Actual Linux UID fence isolation",
+      "command": "Exact docker create/start/removal argv and cached image binding in evidence/linux-uid-result.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Current candidate behavior is verified within the declared local or live scope.",
+      "actual": "1 passed using current workload source/test mounted read-only in new Linux container. Real reader/writer/custodian UIDs, persistent channel fence observation, denied ledger access and wrong-server UID. No deployed attestation or IMP-03 per-role isolation claim.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/linux-uid.log",
+      "evidence_digest": "99d161a645be50b349f708e7258256d26012e07682341df9edd3b5d8fc1da2cf",
+      "mock_used": false
+    },
+    {
+      "name": "Source stability and fixture cleanup",
+      "command": "Post-check source SHA256 and public Docker identity/state comparison",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Current candidate behavior is verified within the declared local or live scope.",
+      "actual": "All 319 source hashes and HEAD unchanged. No IMP-03 container remains. Retained IMP-02 container identity/image/start time/restart count/state matches before. Private fixture files remain owner-only outside source.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/docker-after.json",
+      "evidence_digest": "55fc3884df8dd101e33636e723e9cda32012e206f39962ce6d202a6332c629ad",
+      "mock_used": false
+    },
+    {
+      "name": "Issued target normal and adverse browser phases",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Current candidate behavior is verified within the declared local or live scope.",
+      "actual": "not_run: no independent IMP-03 Docker target discovered and guide-default private browser config absent; no issued target/operator/account bindings supplied. No fabricated input or substituted IMP-02 target.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/environment.json",
+      "evidence_digest": "a9e528f3ccfe1979ec11d2b4919813dd240efa2530be53d33fa9b18e4677eaa2",
+      "mock_used": false
+    },
+    {
+      "name": "Human usability operational and G-03 decision",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Current candidate behavior is verified within the declared local or live scope.",
+      "actual": "not_run: no actual live target demonstration, human EN/FR keyboard/screen-reader review, deployment resource/latency/rollback observations or explicit G-03 decision. Local durations are check durations, not service latency.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "findings": [
+    {
+      "id": "Q-01",
+      "severity": "major",
+      "source_refs": [
+        "tests/e2e/imp03/live.spec.ts:33",
+        "tests/e2e/imp03/live.spec.ts:231"
+      ],
+      "affected_path_or_operation": "Live barrier protected mutation coverage",
+      "problem": "The helper can return failed CSRF bootstrap before sending the POST; a barrier phase may label bootstrap failure as mutation denial. Major here denotes a blocker to that qualification claim, not an observed runtime authorization bypass. Read-only specialist rated the bounded test-script defect medium.",
+      "recommendation": "Prefetch a valid CSRF proof before readiness, send and verify actual POST after fault, and inspect forbidden durable effects separately.",
+      "verification": "Source review confirmed the short circuit. No live phase executed; source remains unchanged and finding is unresolved."
+    }
+  ],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Independent Linux runtime, SPIRE/workload attestation, Envoy routes, independent PostgreSQL/OIDC realm/issued actors, browser TLS and help/static origins remain unbound and unqualified.",
+    "Live harness finding Q-01: request helper may return failed GET /v1/auth/csrf before POST, so barrier mutation denial is not proven. Prefetch valid CSRF before readiness and assert actual POST plus durable absence before relying on those observations.",
+    "Disclosure/intake/attribution, competing workers, stale buffered output across takeover, lost database acknowledgement, current identity/ACL revocation, audit integrity/forbidden-effect absence and quarantine recovery have local fixture evidence only or remaining deployed coverage.",
+    "Actual per-role image/credential/socket/network isolation, SVID renewal/expiry/fence, real Linux pidfd pause/resume, service resource/latency and scoped shutdown/rollback require live evidence.",
+    "Human EN/FR keyboard/screen-reader/usability observations and explicit G-03 acceptance are absent. Participant admission remains disabled. No IMP-04 activation.",
+    "Existing Starlette/TestClient httpx and timeout deprecations and 585 kB Vite chunk warning remain; no resource or latency acceptance threshold is inferred."
+  ],
+  "handoff": "Available local automation passed. Source-only451/56skip+56TS; full505/2skip+56TS; provisioning1 and Linux UID1 separately passed; developer image build/smoke passed. All319 source hashes unchanged; retained IMP02 public state unchanged; owned containers removed. Live target/accounts/TLS/SVID/boundaries/human/operational evidence absent; Q01 unresolved. Continue from guide step4 with actual independent resources, fix live mutation-barrier script and complete coverage before G03 decision. See session handoff and qualification-status.md.",
+  "is_example": false
+}

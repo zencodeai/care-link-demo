@@ -1,0 +1,6 @@
+
+Certificate Nickname                                         Trust Attributes
+                                                             SSL,S/MIME,JAR/XPI
+
+imp02-renewed-root                                           C,,  
+imp03-continuation-root                                      C,,  

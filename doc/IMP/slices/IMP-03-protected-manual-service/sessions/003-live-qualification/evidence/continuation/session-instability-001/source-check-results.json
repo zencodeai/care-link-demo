@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-11-14T20:23:10.719315+00:00",
+  "python_source": {
+    "passed": 585,
+    "declared_skips": 56
+  },
+  "typescript_total": {
+    "passed": 67,
+    "web": 37,
+    "new_web_regressions": 8
+  },
+  "runtime_mesh_unit_tests": {
+    "passed": 20,
+    "included_in_python_source": true
+  },
+  "full_fixture_suite": "Prior639-Python/59-TS baseline not rerun; current affected source checks and live observations separate.",
+  "execution_history": [
+    "Initial sandbox run:11 socket tests failed EPERM;574 passed,56 skipped.",
+    "Escalated run:585 passed,56 skipped; stopped later at README formatting.",
+    "Formatting corrected; resumed failed formatting command and all remaining source-lane commands passed, including67TS and build.",
+    "An exploratory pnpm -r test invocation used package cwd and failed an existing generated-validator path assumption; correct repository-root vitest passed67."
+  ],
+  "logs": [
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/source-check-sandboxed.log",
+      "sha256": "9197796dcb340c4a3274dda7a475bd337f77d0c54b1e92b8171193e31dfedb8c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/source-check-escalated.log",
+      "sha256": "c7fac5c3dbee887923cdfa49dd2d2d6b2707f31821caa9b283d3711289304003"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/source-check-resume.log",
+      "sha256": "9f6527d7b3807ab7785bf8ff7ac8d573ace342b3ca740018074874cfdebd17e8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/qualified-rebuild.log",
+      "sha256": "9fdf7c00d727aaecb29538749dbb8378915a19c33cf21cd11633d54716afa48e"
+    }
+  ]
+}

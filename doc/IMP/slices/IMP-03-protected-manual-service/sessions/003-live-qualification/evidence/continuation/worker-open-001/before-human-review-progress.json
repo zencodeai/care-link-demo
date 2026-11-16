@@ -1,0 +1,222 @@
+{
+  "recorded_at": "2026-11-14T13:51:59.215530+00:00",
+  "status": "in_progress",
+  "reviewer": "User in current qualification conversation; no separate identity inferred.",
+  "candidate": {
+    "commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "diff_digest": "f0ca38b3bf415c109c6ef9e385707dfb65eb4537e8d8fcafe5e66fa3f468bac8",
+    "artifact_digest": "1aae9fd61bc71b25734802afcdfe61fddfd367c05e5def1644ce658c2f7a34a0",
+    "configuration_digest": "45fa3c5acca2165fe725343544f3ae8f28ba71b73cbe4fc085aeccd1974b8d8b",
+    "contract_digest": "2c370575070ed2e2bde86b0280a20fb7b8449f472bac8bf3236234ae0b3fe7ff",
+    "environment_digest": "5bac5b40ce35c45e4a7f5ef37009dcad7f467b7eefcb767904a01d221e49fecc",
+    "fixture_digest": "8bbab9d81fb8cfc120c4f9a988b6a822b6d4972ddc97bbc4bb300c48b126b51f"
+  },
+  "packet_at_review_start": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-continuation-demo-packet.json",
+    "sha256": "eb42d06b1113d45e8cdb97dc48e73bdc8d8232aeaec738d0da174d49289a4fc3"
+  },
+  "checkpoints": [
+    {
+      "id": "navigation-and-wording",
+      "status": "passed",
+      "source": "user_message",
+      "response": "navigation and wording pass",
+      "observed_scope": [
+        "Keyboard Tab/Shift+Tab and visible focus on the opening page",
+        "Keyboard language selection English/French",
+        "Opening manual-support notices in both languages",
+        "No implied current human connection before sign-in"
+      ],
+      "limits": [
+        "Opening page only; participant/worker/supervisor signed-in flows not yet reviewed.",
+        "Screen-reader behavior, reauthentication/unsent text and overall G03 acceptance not established."
+      ]
+    },
+    {
+      "id": "participant-sign-in",
+      "status": "retry_required_after_correction",
+      "source": "user_message",
+      "response": "Cannot sign in: The approved identity-provider origin is not configured. Sign-in redirects are disabled.",
+      "resolution": "Explicit-origin frontend build and continuation-only core replacement; stale public SPIRE authorizer bundles refreshed. Actual UI automated retests recorded separately; user has not yet confirmed sign-in."
+    },
+    {
+      "id": "participant-sign-in-retry",
+      "status": "passed",
+      "recorded_at": "2026-11-14T19:31:32.209057+00:00",
+      "source": "user_message",
+      "response": "participant signed in",
+      "candidate": {
+        "commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+        "diff_digest": "16004d49dc6f624c2e9b1a4ee8ae1789cda511db9acb8dcb4f50e9f98550a22b",
+        "artifact_digest": "8f3c3b3f27a761e90dfb78b60a81f6456253ebc19b2a77b8ad4782ce4843ca50",
+        "configuration_digest": "b4c683a898fac638d960183ec20fd4c9176d6ef291bd11b3741e23f0c4e1f51a",
+        "contract_digest": "2c370575070ed2e2bde86b0280a20fb7b8449f472bac8bf3236234ae0b3fe7ff",
+        "environment_digest": "abfe871c373848875265ca03b277c0d50a7da8aed46f0fa14afb78876535187f",
+        "fixture_digest": "8bbab9d81fb8cfc120c4f9a988b6a822b6d4972ddc97bbc4bb300c48b126b51f"
+      },
+      "observed_scope": [
+        "User completed participant sign-in after the configuration correction."
+      ],
+      "limits": [
+        "Disclosure/intake, worker/supervisor flows, signed-in language/accessibility and recovery remain pending."
+      ]
+    },
+    {
+      "id": "participant-create-and-disclosure-wording",
+      "status": "partial_pass_with_blocker",
+      "recorded_at": "2026-11-14T19:44:20.571784+00:00",
+      "source": "user_message",
+      "response": "Went through 1 and 2 successfully. UI seems lock. Cannot sign in again. Check manual access returns The action was rejected. Refresh current state before making another choice.",
+      "observed_scope": [
+        "Started fictional conversation and retained/reviewed its identifier (step1).",
+        "Read/reviewed disclosure wording (step2)."
+      ],
+      "pending_scope": [
+        "Pre-acknowledgement submit gate, unsent draft across language change, acknowledgement/submission and displayed attribution remain unconfirmed."
+      ],
+      "blocker": "User reports reauthentication/current-access rejection; current anonymous bootstrap200 and anonymous session401 are healthy. User-specific cause not yet established."
+    },
+    {
+      "id": "participant-disclosure-intake-new-conversation",
+      "status": "passed_reported_steps",
+      "recorded_at": "2026-11-14T19:49:28.881814+00:00",
+      "source": "user_message",
+      "response": "I have been able to go through 1-6 with a new conversation.",
+      "candidate": {
+        "commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+        "diff_digest": "16004d49dc6f624c2e9b1a4ee8ae1789cda511db9acb8dcb4f50e9f98550a22b",
+        "artifact_digest": "8f3c3b3f27a761e90dfb78b60a81f6456253ebc19b2a77b8ad4782ce4843ca50",
+        "configuration_digest": "b4c683a898fac638d960183ec20fd4c9176d6ef291bd11b3741e23f0c4e1f51a",
+        "contract_digest": "2c370575070ed2e2bde86b0280a20fb7b8449f472bac8bf3236234ae0b3fe7ff",
+        "environment_digest": "abfe871c373848875265ca03b277c0d50a7da8aed46f0fa14afb78876535187f",
+        "fixture_digest": "8bbab9d81fb8cfc120c4f9a988b6a822b6d4972ddc97bbc4bb300c48b126b51f"
+      },
+      "observed_scope": [
+        "User reports completing new conversation creation and disclosure review (steps1\u20132).",
+        "User reports entering fictional intake, observing the pre-acknowledgement submit gate and retaining unsent text across English/French selection (steps3\u20135).",
+        "User reports acknowledgement and successful fictional intake submission (step6)."
+      ],
+      "limits": [
+        "Post-submission attribution, no-owner and no-confirmed-human state were requested as additional checks; not separately confirmed by this response.",
+        "New-conversation completion does not establish recovery/reopening of the earlier rejected conversation.",
+        "Earlier reauthentication/current-access rejection cause remains unconfirmed; no source/runtime change was made in response to that report.",
+        "Worker/supervisor, screen-reader and remaining recovery/error checks remain pending."
+      ]
+    },
+    {
+      "id": "participant-session-instability",
+      "status": "blocked_under_investigation",
+      "recorded_at": "2026-11-14T19:58:12.657540+00:00",
+      "source": "user_message",
+      "response": "The paraticipant session is unstable. Conversation infomation dispeared from the UI and Open current conversation with the conversation ID does nothing.",
+      "scope": "Do not infer a completed worker review or recovery acceptance. Investigate against the current serving artifact, preserve prior conversations and sent operation keys."
+    },
+    {
+      "id": "participant-instability-automated-correction",
+      "status": "awaiting_human_confirmation",
+      "recorded_at": "2026-11-14T20:27:18.197108+00:00",
+      "source": "executed_engineering_evidence",
+      "scope": "Never-dispatched failure/reopen test passed; six-minute actual observation passed24 access200 samples and same-conversation/draft reopening. User conversation metadata shows queued/unresolved and unrevoked support ACL. UI and scoped trust/pool corrections deployed.",
+      "limits": [
+        "Automated results do not establish a human stability/usability pass.",
+        "Exact user-specific interleaving remains unproved.",
+        "No full-navigation draft preservation, permanent trust-sync service or full serving/crash recovery claim."
+      ]
+    },
+    {
+      "id": "existing-participant-conversation-stability",
+      "status": "passed",
+      "recorded_at": "2026-11-14T20:45:03.758812+00:00",
+      "source": "user_message",
+      "response": "conversation stable",
+      "candidate": {
+        "commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+        "diff_digest": "1fad6054a322e5cabfc6be79b0a2ef8d8d71760271923b293821777b4d2cf4bc",
+        "artifact_digest": "54015ec2da86b5d4ea14fb6c9c02e2a80b917fe4ad0e0606c73107454a253681",
+        "configuration_digest": "63166bb3fdf05d7c560ba4dba68ecdce8c22ff7d3956c918c8f8629d39c7a340",
+        "contract_digest": "2c370575070ed2e2bde86b0280a20fb7b8449f472bac8bf3236234ae0b3fe7ff",
+        "environment_digest": "0897b6e50775abbf383159397576e53e5f34a86ad7f2ad22c15f97b20068f1b9",
+        "fixture_digest": "8bbab9d81fb8cfc120c4f9a988b6a822b6d4972ddc97bbc4bb300c48b126b51f"
+      },
+      "conversation_id": "0e66db99-e3a4-488c-a81b-a667e02bf0fe",
+      "observed_scope": [
+        "User reports the existing conversation stable after the corrected-UI reload/reopening and two-minute observation/refresh instructions."
+      ],
+      "limits": [
+        "This is the reported participant stability checkpoint, not a completed worker/supervisor/accessibility review or overall G03 decision.",
+        "No full-navigation draft preservation or general capacity/crash recovery acceptance inferred."
+      ]
+    },
+    {
+      "id": "worker-assignment",
+      "status": "passed",
+      "recorded_at": "2026-11-14T20:52:12.868286+00:00",
+      "source": "user_message",
+      "response": "worker assignment pass",
+      "candidate": {
+        "commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+        "diff_digest": "1fad6054a322e5cabfc6be79b0a2ef8d8d71760271923b293821777b4d2cf4bc",
+        "artifact_digest": "54015ec2da86b5d4ea14fb6c9c02e2a80b917fe4ad0e0606c73107454a253681",
+        "configuration_digest": "63166bb3fdf05d7c560ba4dba68ecdce8c22ff7d3956c918c8f8629d39c7a340",
+        "contract_digest": "2c370575070ed2e2bde86b0280a20fb7b8449f472bac8bf3236234ae0b3fe7ff",
+        "environment_digest": "0897b6e50775abbf383159397576e53e5f34a86ad7f2ad22c15f97b20068f1b9",
+        "fixture_digest": "8bbab9d81fb8cfc120c4f9a988b6a822b6d4972ddc97bbc4bb300c48b126b51f"
+      },
+      "conversation_id": "0e66db99-e3a4-488c-a81b-a667e02bf0fe",
+      "observed_scope": [
+        "Worker sign-in in a separate context, current worker role, exact conversation queue selection, reservation and acceptance completed per guidance.",
+        "User reports the assignment checkpoint passed, including acceptance distinguished from a confirmed two-party connection."
+      ],
+      "limits": [
+        "Two-party channel confirmation, manual message exchange, supervisor and remaining accessibility/recovery review are pending.",
+        "No overall G03 decision inferred."
+      ]
+    },
+    {
+      "id": "participant-channel-control-after-reauth",
+      "status": "needs_conversation_reopen_and_channel_preparation",
+      "recorded_at": "2026-11-14T21:04:53.753561+00:00",
+      "source": "user_message_and_read_only_metadata",
+      "response": "Do npt see Confirm my app channel on the partcipant side, but I had to login again",
+      "conversation_id": "0e66db99-e3a4-488c-a81b-a667e02bf0fe",
+      "observed_server_state": {
+        "service_phase": "worker_assigned",
+        "owner_id": null,
+        "control_epoch": 0,
+        "unresolved": true
+      },
+      "interpretation": "Confirmation control renders only for an opened handoff_pending conversation. Reopen participant after login and complete worker channel preparation before expecting the control. Exact prior worker UI actions are not inferred.",
+      "no_message_content_read": true,
+      "stage_acceptance": false
+    }
+  ],
+  "pending": [
+    "Two-party channel confirmation and attributed manual message exchange",
+    "Confirm post-intake attribution and unconnected/unassigned state",
+    "Supervisor observation/interruption/takeover",
+    "Signed-in accessibility/screen-reader behavior",
+    "Recovery/error/unsent-message behavior, including earlier access rejection",
+    "Overall G03 decision"
+  ],
+  "stage_acceptance": false,
+  "updated_at": "2026-11-14T21:04:53.753627+00:00",
+  "current_candidate": {
+    "commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "diff_digest": "1fad6054a322e5cabfc6be79b0a2ef8d8d71760271923b293821777b4d2cf4bc",
+    "artifact_digest": "54015ec2da86b5d4ea14fb6c9c02e2a80b917fe4ad0e0606c73107454a253681",
+    "configuration_digest": "63166bb3fdf05d7c560ba4dba68ecdce8c22ff7d3956c918c8f8629d39c7a340",
+    "contract_digest": "2c370575070ed2e2bde86b0280a20fb7b8449f472bac8bf3236234ae0b3fe7ff",
+    "environment_digest": "0897b6e50775abbf383159397576e53e5f34a86ad7f2ad22c15f97b20068f1b9",
+    "fixture_digest": "8bbab9d81fb8cfc120c4f9a988b6a822b6d4972ddc97bbc4bb300c48b126b51f"
+  },
+  "correction_evidence": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/results.json",
+    "sha256": "91c3fd99919a049f5ed8c5918bdd522875f2748f37ae5cbcb88677f88df7bd46"
+  },
+  "stability_correction_evidence": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/results.json",
+    "sha256": "99cf7035d7c63b303cc1a3cefee670dcd54b460b3a5f28c85f6dd0cb0cc7f3d3"
+  },
+  "current_human_stability_status": "passed",
+  "next_checkpoint": "Two-party app-channel confirmation and attributed manual message exchange."
+}

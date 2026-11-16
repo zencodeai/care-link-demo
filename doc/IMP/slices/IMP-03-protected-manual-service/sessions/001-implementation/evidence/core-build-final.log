@@ -1,0 +1,139 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.60kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#3 DONE 0.5s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 909B done
+#4 DONE 0.0s
+
+#5 [uv 1/1] FROM ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#5 resolve ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc done
+#5 DONE 0.0s
+
+#6 [build  1/15] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#6 resolve docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 261.82kB done
+#7 DONE 0.0s
+
+#8 [build  2/15] COPY --from=uv /uv /usr/local/bin/uv
+#8 CACHED
+
+#9 [build  3/15] WORKDIR /app
+#9 CACHED
+
+#10 [build  4/15] COPY pyproject.toml uv.lock .python-version ./
+#10 DONE 0.0s
+
+#11 [build  5/15] COPY packages/contracts/python packages/contracts/python
+#11 DONE 0.0s
+
+#12 [build  6/15] COPY services/core services/core
+#12 DONE 0.0s
+
+#13 [build  7/15] COPY packages/domain packages/domain
+#13 DONE 0.0s
+
+#14 [build  8/15] COPY packages/policy-input/pyproject.toml packages/policy-input/pyproject.toml
+#14 DONE 0.0s
+
+#15 [build  9/15] COPY services/data/pyproject.toml services/data/pyproject.toml
+#15 DONE 0.0s
+
+#16 [build 10/15] COPY host/recovery-control/pyproject.toml host/recovery-control/pyproject.toml
+#16 DONE 0.0s
+
+#17 [build 11/15] COPY services/identity/pyproject.toml services/identity/pyproject.toml
+#17 DONE 0.0s
+
+#18 [build 12/15] COPY host/help/pyproject.toml host/help/pyproject.toml
+#18 DONE 0.0s
+
+#19 [build 13/15] COPY host/static/pyproject.toml host/static/pyproject.toml
+#19 DONE 0.0s
+
+#20 [build 14/15] COPY packages/workload-trust/pyproject.toml packages/workload-trust/pyproject.toml
+#20 DONE 0.0s
+
+#21 [build 15/15] RUN uv sync --locked --no-dev --no-editable --package care-link-core
+#21 0.172 Using CPython 3.14.7 interpreter at: /usr/local/bin/python3.14
+#21 0.172 Creating virtual environment at: .venv
+#21 0.176 Resolved 58 packages in 1ms
+#21 0.187    Building care-link-contracts @ file:///app/packages/contracts/python
+#21 0.188    Building care-link-domain @ file:///app/packages/domain
+#21 0.188    Building care-link-core @ file:///app/services/core
+#21 0.412 Downloading pydantic-core (2.0MiB)
+#21 0.607  Downloaded pydantic-core
+#21 1.073       Built care-link-core @ file:///app/services/core
+#21 1.075       Built care-link-domain @ file:///app/packages/domain
+#21 1.075       Built care-link-contracts @ file:///app/packages/contracts/python
+#21 1.077 Prepared 36 packages in 900ms
+#21 1.145 Installed 36 packages in 67ms
+#21 1.263 Bytecode compiled 589 files in 117ms
+#21 1.263  + annotated-doc==0.0.5
+#21 1.263  + annotated-types==0.8.0
+#21 1.263  + anyio==4.16.0
+#21 1.263  + arrow==1.4.0
+#21 1.263  + attrs==26.1.0
+#21 1.263  + care-link-contracts==0.1.0 (from file:///app/packages/contracts/python)
+#21 1.263  + care-link-core==0.1.0 (from file:///app/services/core)
+#21 1.263  + care-link-domain==0.1.0 (from file:///app/packages/domain)
+#21 1.263  + certifi==2026.10.23
+#21 1.263  + click==8.5.1
+#21 1.263  + fastapi==0.162.2
+#21 1.263  + fqdn==1.6.0
+#21 1.263  + h11==0.16.0
+#21 1.263  + httpcore==1.0.9
+#21 1.263  + httpx==0.28.1
+#21 1.263  + idna==3.20
+#21 1.263  + isoduration==20.11.0
+#21 1.263  + jsonpointer==3.10
+#21 1.263  + jsonschema==4.25.1
+#21 1.263  + jsonschema-specifications==2025.9.1
+#21 1.263  + opentelemetry-api==1.45.2
+#21 1.263  + pydantic==2.14.3
+#21 1.263  + pydantic-core==2.50.4
+#21 1.263  + python-dateutil==4.0.0
+#21 1.263  + referencing==0.37.0
+#21 1.263  + rfc3339-validator==0.1.4
+#21 1.263  + rfc3987==1.3.8
+#21 1.263  + rpds-py==2026.9.1
+#21 1.263  + six==1.17.0
+#21 1.263  + starlette==1.10.0
+#21 1.263  + typing-extensions==4.16.0
+#21 1.263  + typing-inspection==0.4.5
+#21 1.263  + tzdata==2026.6
+#21 1.263  + uri-template==1.3.0
+#21 1.263  + uvicorn==0.38.0
+#21 1.263  + webcolors==25.10.0
+#21 DONE 1.3s
+
+#22 [runtime 2/3] WORKDIR /app
+#22 CACHED
+
+#23 [runtime 3/3] COPY --from=build /app/.venv /app/.venv
+#23 DONE 0.2s
+
+#24 exporting to image
+#24 exporting layers
+#24 exporting layers 0.5s done
+#24 exporting manifest sha256:dea939f3d0d5a098405f78e7a9fd207f5afe8a55a78cff46aac268bcd0932b2e done
+#24 exporting config sha256:6337a8010d8079fdc3201acb083b799a9a90503615b29b59ef48daf33e4d0b7d done
+#24 exporting attestation manifest sha256:83e848dd60d397e816a8bfd824032e736f5160eb2dc39e70da951959c7502d55 done
+#24 exporting manifest list sha256:cddbea55ca882ffb65075c46f22b4af174c24513eb117353bac189110a9f1ccb done
+#24 naming to docker.io/library/care-link-core:imp03-source-final done
+#24 unpacking to docker.io/library/care-link-core:imp03-source-final
+#24 unpacking to docker.io/library/care-link-core:imp03-source-final 0.2s done
+#24 DONE 0.7s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/taxrscc813sy47aifee4kmag8

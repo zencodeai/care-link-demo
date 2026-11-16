@@ -6,6 +6,7 @@ dist-help/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.vitest/
 .ruff_cache/
 .cache/
 *.tsbuildinfo

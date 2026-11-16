@@ -1,0 +1,17 @@
+{
+  "command": [
+    "docker",
+    "build",
+    "--file",
+    "deploy/images/imp03/Dockerfile",
+    "--tag",
+    "care-link-imp03:qualification-003",
+    "--iidfile",
+    "/private/tmp/care-link-imp03-003-shared/image-id.txt",
+    "--progress=plain",
+    "."
+  ],
+  "exit_code": 0,
+  "duration_seconds": 4.78,
+  "scope": "Locked workspace distribution; per-role image/package isolation not claimed"
+}

@@ -1,0 +1,131 @@
+{
+  "packet_id": "IMP-03-003-AUTOMATION-CONTINUATION",
+  "task_id": "IMP-03-D",
+  "stage_id": "IMP-03",
+  "mode": "implementation",
+  "role": "imp_platform",
+  "goal": "Execute user-authorized remaining automatable G03 obligations. Preserve fenced initial IMP03 and IMP02 state. Build a fresh continuation target on current Docker substrate, reuse shared SPIRE/Keycloak, use fresh disposable PG process to preserve fixed DB/global-role fresh-only invariants; isolated browser trust; extend live scenarios/audit/negative controls/capture/operations. No human acceptance or global trust changes.",
+  "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/G-03-validation-guide.md",
+      "sha256": "dd75bcda5e8f46cef222d7c4610310ce438ed73d12c310ef01a0a57168b16c7a"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-08-IMP-02/decisions/G-02.json",
+      "sha256": "f3d49e1151a2ba4be33e8803231357f452eec1bb3f4a1fbc791112d2b38a2b5e"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/**",
+    "apps/**",
+    "services/**",
+    "packages/**",
+    "host/**",
+    "tools/**",
+    "tests/**",
+    "config/**",
+    "pyproject.toml",
+    "uv.lock",
+    "pnpm-lock.yaml",
+    "deploy/**"
+  ],
+  "write_paths": [
+    "tools/imp03_shared/**",
+    "deploy/images/imp03/**",
+    "tests/unit/test_imp03_shared*.py",
+    "tests/e2e/imp03/**",
+    "tools/imp03_runtime/**",
+    "doc/IMP/slices/IMP-03-protected-manual-service/**",
+    "tests/contract/imp03-barrier.test.ts",
+    "config/demo/imp03/products.json",
+    "services/core/src/care_link_core/manual_http.py",
+    "services/data/src/care_link_data/app.py",
+    "services/core/tests/test_manual_envelopes.py",
+    "services/data/tests/test_runtime_composition.py",
+    "tests/e2e/imp03-extended/**",
+    "tools/imp03_verification/**",
+    "tests/unit/test_imp03_extended*.py",
+    "services/core/**",
+    "services/data/**",
+    "services/identity/**",
+    "deploy/images/imp03-browser/**",
+    "tools/check.py",
+    "config/demo/imp03/web-origins.json",
+    "apps/web/src/manual/useManual.ts",
+    "apps/web/src/manual/api.ts",
+    "apps/web/src/manual/ManualService.test.tsx"
+  ],
+  "dependencies": [
+    "G-02 accepted receipt G-02-MAIN-2026-11-09; immutable evidence retained"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "read_only_host_probe",
+    "mutate_named_lab",
+    "destroy_named_demo_resources",
+    "install_named_tools"
+  ],
+  "prohibited_actions": [
+    "IMP02 old realm/account/DB/workload/issuerpolicy/fence state mutation or shared-service disruption beyond approved tls-renewal-proposal",
+    "commit/push/merge or GitHub mutation",
+    "global trust/DNS/model change or sibling edit",
+    "real personal data, police integration, autonomous contact",
+    "invented acceptance or IMP04 activation",
+    "broad teardown, secret material in evidence, nested delegation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Current qualification chat: remaining automated tasks; guided human review; user-reported visible sign-in and participant-session instability",
+    "scope": "Continue remaining automated obligations in session003; create scoped fresh synthetic continuation target while preserving retained fenced target/evidence and shared IMP02 services."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP03-003-continuation",
+      "kind": "namespace",
+      "scope": "Fresh care-link-imp03-003-cont1-* Docker resources/expiry aliases; private /private/tmp/care-link-imp03-003-cont1; realm care-link-imp03-cont1; loopback25435/29443/29900; preserve old targets/fences and shared services.",
+      "owner_task_id": "IMP-03-D",
+      "expires_at": "2026-11-15T23:59:59Z"
+    }
+  ],
+  "expected_outputs": [
+    "Fresh usable continuation binding without reset of retained target",
+    "Available automated obligations executed with exact evidence and honest remaining limits",
+    "Updated current candidate, results, handoff; no human acceptance",
+    "Resolve the reported visible UI sign-in configuration defect within the continuation target; repeat actual UI login coverage and update current evidence binding.",
+    "Investigate and fix participant UI recoverability/stale-publication defects reported during human review; preserve sent-operation identity and current-authority enforcement.",
+    "Bound continuation upstream pool lifetime; four-hour public trust-bundle maintenance; prove existing conversation and pending-operation recovery without broadening permissions."
+  ],
+  "positive_acceptance": [
+    "Available complete local checks pass against identifiable candidate; actual deployed observations remain separately bound"
+  ],
+  "adverse_acceptance": [
+    "Declared skips/failures retained; no fixtures represented as issued runtime identity or acceptance; IMP-02 preserved"
+  ],
+  "reviewer": "imp_review read-only findings, primary integration",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Unbound existing resource collision: preserve and inspect rather than adopt/reset",
+    "Critical isolation defect: fix within new scope; no weakening controls",
+    "Automatic review rejection: report exact action/reason and continue unaffected work"
+  ],
+  "is_example": false
+}

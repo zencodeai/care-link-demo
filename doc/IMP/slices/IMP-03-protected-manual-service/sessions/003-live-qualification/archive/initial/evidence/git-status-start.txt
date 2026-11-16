@@ -1,0 +1,49 @@
+ M .dockerignore
+ M apps/web/src/App.tsx
+ M apps/web/src/styles.css
+ M packages/contracts/python/src/care_link_contracts/schema.json
+ M packages/contracts/python/src/care_link_contracts/validation.py
+ M packages/contracts/typescript/src/schema.json
+ M packages/contracts/typescript/src/validators.generated.cjs
+ M packages/contracts/typescript/src/validators.generated.d.cts
+ M pyproject.toml
+ M pyrightconfig.json
+ M services/core/Dockerfile
+ M services/core/pyproject.toml
+ M services/identity/pyproject.toml
+ M services/identity/src/care_link_identity/app.py
+ M tests/contract/parity.test.ts
+ M tools/check.py
+ M tools/check_boundaries.py
+ M tools/generate_browser_validators.mjs
+ M tools/generate_contracts.py
+ M tools/smoke_core_image.py
+ M uv.lock
+?? apps/web/src/manual/
+?? config/demo/imp03/
+?? doc/IMP/slices/IMP-03-protected-manual-service/
+?? host/recovery-control/
+?? packages/domain/
+?? packages/policy-input/
+?? services/core/README.md
+?? services/core/src/care_link_core/manual_app.py
+?? services/core/src/care_link_core/manual_channels.py
+?? services/core/src/care_link_core/manual_envelopes.py
+?? services/core/src/care_link_core/manual_http.py
+?? services/core/src/care_link_core/manual_identity.py
+?? services/core/src/care_link_core/manual_ports.py
+?? services/core/src/care_link_core/manual_security.py
+?? services/core/tests/test_manual_envelopes.py
+?? services/core/tests/test_manual_transport.py
+?? services/data/
+?? services/identity/src/care_link_identity/manual.py
+?? services/identity/src/care_link_identity/manual_runtime.py
+?? services/identity/tests/test_manual_recovery.py
+?? services/identity/tests/test_manual_runtime.py
+?? tests/contract/manual-artifacts.test.ts
+?? tests/contract/tsconfig.json
+?? tests/e2e/imp03/
+?? tests/integration/imp03_runtime/
+?? tests/unit/test_imp03_runtime.py
+?? tools/imp03_runtime/
+?? tools/imp03_verification/

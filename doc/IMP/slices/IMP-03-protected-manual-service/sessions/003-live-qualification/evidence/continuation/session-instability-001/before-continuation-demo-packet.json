@@ -1,0 +1,523 @@
+{
+  "packet_id": "IMP-03-003-CONTINUATION-DEMO",
+  "stage_id": "IMP-03",
+  "gate_id": "G-03",
+  "candidate": {
+    "commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "diff_digest": "16004d49dc6f624c2e9b1a4ee8ae1789cda511db9acb8dcb4f50e9f98550a22b",
+    "artifact_digest": "8f3c3b3f27a761e90dfb78b60a81f6456253ebc19b2a77b8ad4782ce4843ca50",
+    "configuration_digest": "b4c683a898fac638d960183ec20fd4c9176d6ef291bd11b3741e23f0c4e1f51a",
+    "contract_digest": "2c370575070ed2e2bde86b0280a20fb7b8449f472bac8bf3236234ae0b3fe7ff",
+    "environment_digest": "abfe871c373848875265ca03b277c0d50a7da8aed46f0fa14afb78876535187f",
+    "fixture_digest": "8bbab9d81fb8cfc120c4f9a988b6a822b6d4972ddc97bbc4bb300c48b126b51f"
+  },
+  "state": "draft",
+  "preconditions": [
+    "User selected Option B, approved scoped TLS renewal and requested remaining automatable tasks; synthetic data only.",
+    "Fresh continuation state/realm/keys/fence; existing SPIRE/Keycloak shared, disposable fresh PG process; original target preserved.",
+    "Actual four app actors with two workers; real password/TOTP provider sign-in; isolated browser CA validation without TLS bypass.",
+    "All faults restored or deliberately retained current ACL restriction; commit fault capability disabled; privileged bootstrap/probe containers removed.",
+    "User explicitly reviewed and accepted the deployment deltas; scoped receipt binds the exact reviewed delta/packet and unchanged runtime candidate.",
+    "Current UI-login correction and exact candidate supersede the archived pre-correction core. Deployment-profile acceptance receipt preserves its reviewed snapshot; the profile remains unchanged. Overall G03 decision and signed-in human review remain pending."
+  ],
+  "normal_steps": [
+    {
+      "action": "Use actual visible sign-in controls after human-reported failure",
+      "expected": "Configured public provider origin and actual MFA sign-in from the Main account UI",
+      "actual": "Corrected build; scoped public bundle refresh; four-actor EN protected journey and French UI passed. Human sign-in retry pending.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/results.json",
+          "sha256": "91c3fd99919a049f5ed8c5918bdd522875f2748f37ae5cbcb88677f88df7bd46"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-buffered-en-CA-signin-fix-003-observations.json",
+          "sha256": "f68a27eff6ed729f1f95d520aca8f68d59d7173965067b751a803a37f04148e3"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-ui-fr-CA-signin-fix-001-observations.json",
+          "sha256": "189ea54a9c05392a0d5f869cf6946c4e837d29f60538afbee6cfe3120d8a2542"
+        }
+      ]
+    },
+    {
+      "action": "Trust actual browser TLS",
+      "expected": "All four origins verify; wrong host denies",
+      "actual": "Passed dedicated NSS trust, no bypass.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/browser-trust.json",
+          "sha256": "3fe75e6131f1eabb4fa792a9f14dab91bd22f2f9e3859337983f0e457ae824e9"
+        }
+      ]
+    },
+    {
+      "action": "Exercise EN/FR UI and two-worker ownership",
+      "expected": "Current disclosure/intake, sole owner, attributed actual stream",
+      "actual": "Passed both locales and observed two-worker/SSE/takeover interleaving.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-ui-en-CA-001-observations.json",
+          "sha256": "794337f6eb35d3f626ab69d96b23035fd9da15054d7f4423546890658f83d7f1"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-ui-fr-CA-001-observations.json",
+          "sha256": "189ea54a9c05392a0d5f869cf6946c4e837d29f60538afbee6cfe3120d8a2542"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-buffered-en-CA-001-observations.json",
+          "sha256": "06df003cfa6e0583013671a2584637f7980fffefd09964e2fbea53579dcf00cd"
+        }
+      ]
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Observe real commit before driver error",
+      "expected": "Original-key reconciliation yields one logical effect",
+      "actual": "Counts1/1/1 and audit valid; fault capability disabled.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/commit-ack-001.json",
+          "sha256": "73d9e4c594d0434b9e022123baee0f91fc6e7f018b82cfab90057d9d56541ca7"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/final-runtime-binding.json",
+          "sha256": "b4c683a898fac638d960183ec20fd4c9176d6ef291bd11b3741e23f0c4e1f51a"
+        }
+      ]
+    },
+    {
+      "action": "Deny under current ACL and dependency/audit loss",
+      "expected": "Actual HTTP denial plus no prohibited measured effects",
+      "actual": "ACL restriction retained; four reversible barriers restored;31-table/eight-schema audit-aware comparisons passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/revocation-001.json",
+          "sha256": "a93f3a95d7723ed332fe0284227db95f9bdcf9836020aab1e35cde9062008749"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/option-b-live-pdp-loss-002.json",
+          "sha256": "761c07c9a43588277727830eaddf4627636aac87055c3fee0fbf499cd109e90c"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/option-b-live-identity-loss-001.json",
+          "sha256": "047528e2052dc7620ff09382d10b34e941b8c932753638aea3724fd6fbb3fb2f"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/option-b-live-journal-loss-001.json",
+          "sha256": "a18b07d7b260b98f9c646abf80d73ae735da2043c85cc3a23964ad37d6c58d95"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/option-b-live-audit-loss-001.json",
+          "sha256": "586d1b1d9b0f66e163c4543e15144948277ff1a3c49b7ad94869c37fffd7af91"
+        }
+      ]
+    },
+    {
+      "action": "Enforce workload/kernel/DB source boundaries",
+      "expected": "Wrong/absent/expired identity and unauthorized custody/source deny",
+      "actual": "Actual negative probes passed with bounded expiry interpretation.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/negative-basic-002.json",
+          "sha256": "683c50526f5fb4bfb9ae5d8997ef8202b0d1bc0da8bbcd839d947327ed4ec55a"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/no-svid-002.json",
+          "sha256": "c4b3058fc59e68ce93b1394d4f75e139b5de7eb21437b3542ee8dcad92fc8df4"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/direct-role-002.json",
+          "sha256": "c45e3e10d8d299bb22407aa30732801c3f9ec50b4bff15fd141675764d0bf1e9"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/expiry-006.json",
+          "sha256": "d928415bffc818b20db22401bafddcfa3410afe8b6f58b12e67de631dcac48d0"
+        }
+      ]
+    },
+    {
+      "action": "Capture only to quarantine and retain safe lifecycle",
+      "expected": "No serving promotion or rights rewind",
+      "actual": "Quarantine controls/audit/source valid; supervised repeat143 and five-role restart passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/capture.json",
+          "sha256": "a78e1781bcfa7be2d96f1f12b7fd47984fb3bdd9cb613778f56d132ab587959b"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/operations-002.json",
+          "sha256": "e0701a7dbe5707def61056239577e8a0632c745581762eb195f93e2cab904efb"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/five-role-stop-start.json",
+          "sha256": "480d1226459925b2704f45c07f432604703f2c5c96cbcc047f4beca699154678"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-ui-en-CA-restart-proof-observations.json",
+          "sha256": "794337f6eb35d3f626ab69d96b23035fd9da15054d7f4423546890658f83d7f1"
+        }
+      ]
+    },
+    {
+      "action": "Preserve original one-way fence",
+      "expected": "Original target remains restricted; continuation separately bound",
+      "actual": "Original generation1 and continuation0 verified read-only; historical fence observation remains original scope.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/preserved-target-verification.json",
+          "sha256": "9c9cb19e611573866d8daec926e3efadd7f944d2e61c18158b7d8c6efad479f7"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "Prior full fixture lane",
+      "command": "UV_CACHE_DIR=/private/tmp/care-link-uv-cache UV_OFFLINE=1 UV_NO_SYNC=1 .venv/bin/python -m tools.imp03_verification.run_checks --output /private/tmp/care-link-imp03-003-full-cont1-002 --opa /private/tmp/care-link-imp03-tools/opa",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: 639 Python passed/two declared skips;59 TS passed. Strict checks, build, real PostgreSQL TLS/OPA/journal/capture adapters passed. Provider/workload adapter cases include declared fixtures.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/final-full-full-check.log",
+      "evidence_digest": "498480c35078af100d1e46811c9a8405b4f57566a82867825aa8235f95692095",
+      "mock_used": false
+    },
+    {
+      "name": "Separate provisioning",
+      "command": "same run_checks invocation: separate provisioning lane",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: 1 passed on disposable fixture, separate from actual continuation initialization.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/final-full-provisioning.log",
+      "evidence_digest": "0cddb2f9522c5fc98e9503738cea759bed811b3ad3b391083a46a5d5f403e174",
+      "mock_used": false
+    },
+    {
+      "name": "Prior source lane",
+      "command": ".venv/bin/python tools/check.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: 585 Python passed/56 declared fixture skips;59 TS passed; strict types/lint/format/boundaries/generation/build passed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/final-source-check.log",
+      "evidence_digest": "97df41a8740eb2800362c842a908a84e2fc95f5220b4dffe17d22596d6f9b6e6",
+      "mock_used": false
+    },
+    {
+      "name": "Isolated browser CA trust",
+      "command": "Private scoped Chromium trust probe",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Before-import rejection, after-import four origins200, wrong hostname rejected; ignoreHTTPSErrors:false, dedicated NSS volume; no global trust change.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/browser-trust.json",
+      "evidence_digest": "3fe75e6131f1eabb4fa792a9f14dab91bd22f2f9e3859337983f0e457ae824e9",
+      "mock_used": false
+    },
+    {
+      "name": "Live disclosure/intake en-CA",
+      "command": "private run-extended.py ui en-CA 001",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Actual exact disclosure template/digest acknowledgement, server pre-disclosure gate, fictional UI turn and participant attribution. Human language/accessibility judgement remains pending.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-ui-en-CA-001-observations.json",
+      "evidence_digest": "794337f6eb35d3f626ab69d96b23035fd9da15054d7f4423546890658f83d7f1",
+      "mock_used": false
+    },
+    {
+      "name": "Live disclosure/intake fr-CA",
+      "command": "private run-extended.py ui fr-CA 001",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Actual exact disclosure template/digest acknowledgement, server pre-disclosure gate, fictional UI turn and participant attribution. Human language/accessibility judgement remains pending.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-ui-fr-CA-001-observations.json",
+      "evidence_digest": "189ea54a9c05392a0d5f869cf6946c4e837d29f60538afbee6cfe3120d8a2542",
+      "mock_used": false
+    },
+    {
+      "name": "Two issued workers and buffered takeover",
+      "command": "private run-extended.py buffered en-CA 001",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Two workers contend, sole owner/two-party SSE; actual old authorized GET held across takeover; stale undisplayed content never newly visible in the observed UI interleaving.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-buffered-en-CA-001-observations.json",
+      "evidence_digest": "06df003cfa6e0583013671a2584637f7980fffefd09964e2fbea53579dcf00cd",
+      "mock_used": false
+    },
+    {
+      "name": "Real commit then driver acknowledgement loss",
+      "command": "CARE_LINK_IMP03_PROFILE=continuation-001 .venv/bin/python -m tools.imp03_shared.continuation_browser commit-ack --attempt 1",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Browser503 COMMIT_UNKNOWN; original-key reconciliation/replay; real committed queue/operation/canonical-PERMIT-audit counts1/1/1; audit valid. Not wire packet loss. Capability disabled afterward.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/commit-ack-001.json",
+      "evidence_digest": "73d9e4c594d0434b9e022123baee0f91fc6e7f018b82cfab90057d9d56541ca7",
+      "mock_used": false
+    },
+    {
+      "name": "Current support ACL loss",
+      "command": "CARE_LINK_IMP03_PROFILE=continuation-001 .venv/bin/python -m tools.imp03_shared.continuation_browser revocation --attempt 1",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Existing stream/read, fresh page and prepared-CSRF POST deny under exact current-source SQL ACL restriction. Full snapshot comparison/audit valid. No journalled product rights workflow or whole-account revocation claim.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/revocation-001.json",
+      "evidence_digest": "a93f3a95d7723ed332fe0284227db95f9bdcf9836020aab1e35cde9062008749",
+      "mock_used": false
+    },
+    {
+      "name": "Full-effect live pdp-loss",
+      "command": "CARE_LINK_IMP03_PROFILE=continuation-001 .venv/bin/python -m tools.imp03_shared.continuation_browser pdp-loss --attempt 2",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Actual GET/POST denial;31 tables/eight schemas, non-rejected operations and canonical audit chain/head compared; no prohibited measured effect; exact barrier restored.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/option-b-live-pdp-loss-002.json",
+      "evidence_digest": "761c07c9a43588277727830eaddf4627636aac87055c3fee0fbf499cd109e90c",
+      "mock_used": false
+    },
+    {
+      "name": "Full-effect live identity-loss",
+      "command": "CARE_LINK_IMP03_PROFILE=continuation-001 .venv/bin/python -m tools.imp03_shared.continuation_browser identity-loss --attempt 1",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Actual GET/POST denial;31 tables/eight schemas, non-rejected operations and canonical audit chain/head compared; no prohibited measured effect; exact barrier restored.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/option-b-live-identity-loss-001.json",
+      "evidence_digest": "047528e2052dc7620ff09382d10b34e941b8c932753638aea3724fd6fbb3fb2f",
+      "mock_used": false
+    },
+    {
+      "name": "Full-effect live journal-loss",
+      "command": "CARE_LINK_IMP03_PROFILE=continuation-001 .venv/bin/python -m tools.imp03_shared.continuation_browser journal-loss --attempt 1",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Actual GET/POST denial;31 tables/eight schemas, non-rejected operations and canonical audit chain/head compared; no prohibited measured effect; exact barrier restored.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/option-b-live-journal-loss-001.json",
+      "evidence_digest": "a18b07d7b260b98f9c646abf80d73ae735da2043c85cc3a23964ad37d6c58d95",
+      "mock_used": false
+    },
+    {
+      "name": "Full-effect live audit-loss",
+      "command": "CARE_LINK_IMP03_PROFILE=continuation-001 .venv/bin/python -m tools.imp03_shared.continuation_browser audit-loss --attempt 1",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Actual GET/POST denial;31 tables/eight schemas, non-rejected operations and canonical audit chain/head compared; no prohibited measured effect; exact barrier restored.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/option-b-live-audit-loss-001.json",
+      "evidence_digest": "586d1b1d9b0f66e163c4543e15144948277ff1a3c49b7ad94869c37fffd7af91",
+      "mock_used": false
+    },
+    {
+      "name": "Consistent capture/import to quarantine",
+      "command": "CARE_LINK_IMP03_PROFILE=continuation-001 .venv/bin/python -m tools.imp03_shared.continuation_evidence capture",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Actual exported snapshot/pg_dump encrypted and imported to a fresh UUID database; audit checkpoint valid; principals/tokens disabled; runtime CONNECT denied; source unchanged and no serving promotion.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/capture.json",
+      "evidence_digest": "a78e1781bcfa7be2d96f1f12b7fd47984fb3bdd9cb613778f56d132ab587959b",
+      "mock_used": false
+    },
+    {
+      "name": "Kernel custody and wrong DB source",
+      "command": "Scoped tools.imp03_shared.negative probes",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Five actual app UIDs denied sibling credentials/egress sockets with EACCES under expanded mounts; forbidden local route404; actual runtime credentials/verify-full TLS from source172.29.35.50 rejected by pg_hba.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/negative-basic-002.json",
+      "evidence_digest": "683c50526f5fb4bfb9ae5d8997ef8202b0d1bc0da8bbcd839d947327ed4ec55a",
+      "mock_used": false
+    },
+    {
+      "name": "Absent workload identity",
+      "command": "Source-fed no-SVID probe",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Actual TLS certificate-required rejection; no manufactured browser claim.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/no-svid-002.json",
+      "evidence_digest": "c4b3058fc59e68ce93b1394d4f75e139b5de7eb21437b3542ee8dcad92fc8df4",
+      "mock_used": false
+    },
+    {
+      "name": "Wrong workload identity and forged core claim",
+      "command": "Source-fed direct-role probe",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Actual data SVID plus forged core headers denied403 by a core-only identity route.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/direct-role-002.json",
+      "evidence_digest": "c45e3e10d8d299bb22407aa30732801c3f9ec50b4bff15fd141675764d0bf1e9",
+      "mock_used": false
+    },
+    {
+      "name": "Expired SVID on exact retained TLS socket",
+      "command": "Private exact fresh expiry-final.py; source-fed tools.imp03_shared.negative",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Real short-lived SPIRE core leaf admitted400 INVALID_REQUEST before expiry; exact socket preserved then403 after expiry; saved expired leaf rejected on new TLS with generic CERTIFICATE_UNKNOWN; source hash bound.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/expiry-006.json",
+      "evidence_digest": "d928415bffc818b20db22401bafddcfa3410afe8b6f58b12e67de631dcac48d0",
+      "mock_used": false
+    },
+    {
+      "name": "Active-channel core stop/start",
+      "command": "CARE_LINK_IMP03_PROFILE=continuation-001 .venv/bin/python -m tools.imp03_shared.operations --attempt 2",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Repeat stop exits143; nonaccepting backend errno111, UI unavailable/private content hidden, help/static200, same container/business/audit/current rights; prior ACL denial remains. Ten sequential+four concurrent reads all200, median383.55ms.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/operations-002.json",
+      "evidence_digest": "e0701a7dbe5707def61056239577e8a0632c745581762eb195f93e2cab904efb",
+      "mock_used": false
+    },
+    {
+      "name": "Five-role lifecycle",
+      "command": "Exact owned five-role stop/start controller",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: All five apps stop/start, IDs and business/audit state preserved, no OOM/SIGKILL. Core143; older wrappers241 denote SIGTERM modulo256. No agent/proxy/DB/fence reset.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/five-role-stop-start.json",
+      "evidence_digest": "480d1226459925b2704f45c07f432604703f2c5c96cbcc047f4beca699154678",
+      "mock_used": false
+    },
+    {
+      "name": "Trusted post-restart UI path",
+      "command": "private run-extended.py ui en-CA restart-proof",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Actual trusted UI/data/PDP/journal/identity path passed after five-role restart.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-ui-en-CA-restart-proof-observations.json",
+      "evidence_digest": "794337f6eb35d3f626ab69d96b23035fd9da15054d7f4423546890658f83d7f1",
+      "mock_used": false
+    },
+    {
+      "name": "Preservation and retained capability state",
+      "command": "Read-only existing SPIRE entries and UnixFenceClient.current",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Six original IMP02 SPIRE entries unchanged; original core fence1 retained, continuation fence0. Separate final-runtime-binding proves all role commit flags false and privileged seed containers removed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/preserved-target-verification.json",
+      "evidence_digest": "9c9cb19e611573866d8daec926e3efadd7f944d2e61c18158b7d8c6efad479f7",
+      "mock_used": false
+    },
+    {
+      "name": "Historical failed attempt retention",
+      "command": "Read-only evidence assembly",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Pre-correction evidence: Failed/aborted attempts remain preserved, including overly strict negative expectations, PDP baseline overlap and initial shutdown137; corrections and passing repeats are recorded.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/failure-ledger.json",
+      "evidence_digest": "c508cadb38c91ec842896dbd3347d4b090a5420d7eca42fc546dc8143d003175",
+      "mock_used": false
+    },
+    {
+      "name": "Historical original-target readiness diagnosis",
+      "command": "Bounded read-only original audit correlation",
+      "tool_version": null,
+      "status": "unknown",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Prior original-target creation403/timeout root cause UNKNOWN after bounded read-only audit correlation. Current successful instrumentation does not explain missing historical response codes.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/historical-readiness-diagnosis.json",
+      "evidence_digest": "c745cd16204178c1565eca7c6eb7afb61f625194df980c72fd28a56916aa9cac",
+      "mock_used": false
+    },
+    {
+      "name": "Human review and G03 decision",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Actual bounded observation with its stated scope; no inferred human acceptance.",
+      "actual": "Not run: human EN/FR comprehension, keyboard/screen-reader/usability and attributed overall G03 decision on the exact candidate. Deployment-profile review is accepted separately.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    },
+    {
+      "name": "Human deployment-delta review",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Explicit user review and acceptance of the documented deployment profile, bound to the reviewed candidate.",
+      "actual": "User: 1: Deployement deltas are reviewed and accepted. Scoped deployment-profile review closed; overall G03 acceptance remains pending.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/deployment-delta-acceptance.json",
+      "evidence_digest": "80f0021bc5619e46e845c159805d60f81a8e97811f58ed5da1fff698cc0757bd",
+      "mock_used": false
+    },
+    {
+      "name": "Affected web and operator checks",
+      "command": "pnpm --filter @care-link/web test; scoped strict/type/lint/format/boundary checks",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual corrected visible sign-in and protected behavior without weakening authority or rewriting historical results.",
+      "actual": "29 web unit tests passed; extended TypeScript/lint/format, strict Python types, builder lint/format and boundaries passed. Final checks include trust-refresh tool; final-targeted-checks.json is retained alongside.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/targeted-checks.json",
+      "evidence_digest": "88253da83be09e070d29e1755b5a47806c017da9eea19d8a5be4cf473fa384b5",
+      "mock_used": false
+    },
+    {
+      "name": "Visible UI sign-in four-actor EN regression",
+      "command": "Private run-extended.py buffered en-CA signin-fix-003",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual corrected visible sign-in and protected behavior without weakening authority or rewriting historical results.",
+      "actual": "Participant, two workers and supervisor sign in through actual Main account controls and provider MFA; exact current roles, intake, contention/SSE/takeover/held reply pass with browser TLS verification.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-buffered-en-CA-signin-fix-003-observations.json",
+      "evidence_digest": "f68a27eff6ed729f1f95d520aca8f68d59d7173965067b751a803a37f04148e3",
+      "mock_used": false
+    },
+    {
+      "name": "Visible UI sign-in and French intake",
+      "command": "Private run-extended.py ui fr-CA signin-fix-001",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual corrected visible sign-in and protected behavior without weakening authority or rewriting historical results.",
+      "actual": "Actual visible participant sign-in and French disclosure/intake passed; human signed-in review remains awaiting retry.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-ui-fr-CA-signin-fix-001-observations.json",
+      "evidence_digest": "189ea54a9c05392a0d5f869cf6946c4e837d29f60538afbee6cfe3120d8a2542",
+      "mock_used": false
+    },
+    {
+      "name": "Continuation public authority bundle refresh",
+      "command": "CARE_LINK_IMP03_PROFILE=continuation-001 .venv/bin/python -m tools.imp03_shared.trust_refresh",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual corrected visible sign-in and protected behavior without weakening authority or rewriting historical results.",
+      "actual": "Five continuation-only authorizers refreshed from existing SPIRE; bootstrap200 and measured business/audit state unchanged. No issuer-policy/fence/shared-service change. Ongoing bundle synchronization remains manual.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/trust-bundle-refresh.json",
+      "evidence_digest": "92816e2b306ef8fcb1789aed43fd6cd9db243374267fd6ecf68a544df9f2e72f",
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "Normal Kubernetes/Calico app placement, per-role installed distributions and exact image selectors remain unimplemented/unqualified. The user reviewed and accepted the documented Docker/common-workspace/parent-UID deployment delta for this bounded synthetic qualification scope; deployment-profile approval is closed.",
+    "Human EN/FR comprehension, keyboard/focus/screen-reader/error recovery, unsent-text preservation and attributed G03 decision remain pending; participant admission disabled and IMP04 not activated.",
+    "Original-target pre-readiness creation403/timeout root cause remains UNKNOWN. Read-only correlation did not recover diagnostic response codes.",
+    "One buffered browser interleaving, driver-boundary acknowledgement loss and operator current-source ACL restriction do not prove every buffer schedule, wire-level packet loss or whole-account/journalled rights-administration workflow.",
+    "Supervised core stop/start and bounded protected-read/resource measurements do not establish arbitrary crash recovery, complete stale-artifact cleanup or capacity acceptance. Trusted serving recovery remains IMP09.",
+    "Expiry new-connection alert is generic CERTIFICATE_UNKNOWN, not an expiry-specific server diagnostic. Positive pre-expiry control and exact same-socket post-expiry403 are separately retained.",
+    "Three actual image variants differ from current host source; explicit inventories bind each. Host-only operator/probe/docs updates do not imply those files are deployed. Common packages remain; tests are excluded.",
+    "Continuation intentionally uses a fresh disposable PostgreSQL process to preserve fixed-name initial-only invariants. SPIRE/Keycloak remain shared failure/admin domains. Original target/fences unchanged.",
+    "Human-review sign-in correction updates core frontend assets and current trust-bundle configuration. Earlier full639-Python/59-TS results and scenarios remain pre-correction evidence. Current affected web29/strict checks and actual visible-control EN/four-actor plus French journeys passed. No signed-in human pass inferred.",
+    "Authorization services retain startup public SPIRE bundle snapshots; operator refresh after authority rotation is required. Continuous bundle synchronization is unimplemented. The observed new bootstrap403 was resolved by scoped refresh; historical original-target403/timeout remains unexplained."
+  ],
+  "acceptance_scope": "Executed engineering evidence for the bounded Docker synthetic profile. User reviewed and accepted the documented deployment deltas. Human usability review and the actual overall G03 decision remain pending; no production/clinical acceptance or next-stage authority.",
+  "rollback": "No reset/unfence or initial-provision replay. Four reversible barriers restored; one-shot commit capability removed; original generation1 fence and continuation ACL restrictions retained. Quarantine cannot serve. Ordinary runtime/private custody remain for review; exact IDs/leases must precede separately requested teardown. Memory-backed SPIRE agents cannot restart with consumed tokens.",
+  "human_decision_id": null,
+  "is_example": false
+}

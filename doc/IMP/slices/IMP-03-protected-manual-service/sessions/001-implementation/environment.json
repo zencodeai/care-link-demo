@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-09",
+  "client_timezone": "America/Toronto",
+  "platform": "Darwin arm64",
+  "python": "3.14.7",
+  "uv": "0.12.17",
+  "node": "22.14.0",
+  "pnpm": "10.20.0",
+  "pytest": "9.2.0",
+  "ruff": "0.14.3",
+  "psycopg": "3.2.12",
+  "cryptography": "50.0.2",
+  "fastapi": "0.162.2",
+  "opa": "1.22.2",
+  "opa_sha256": "c7767cb68c21c3ea9866a76a2d6703d132a25ddad3cd1c1213925e2802ed1dce",
+  "postgres_image": "postgres@sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba",
+  "core_image": "sha256:cddbea55ca882ffb65075c46f22b4af174c24513eb117353bac189110a9f1ccb",
+  "fixture": "care-link-imp03-001-postgres loopback25433 tmpfs; removed after verification",
+  "live_oidc_workload_composition_qualified": false,
+  "participant_admission": false,
+  "model_loaded_by_this_session": false,
+  "existing_imp02_lab_changed": false
+}

@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "status": 403,
+  "client_spiffe_id": "spiffe://care-link.demo/demo/data",
+  "server_spiffe_id": "spiffe://care-link.demo/demo/identity",
+  "leaf_sha256": "5865111699b6e32254898131862a08982330b3ad535f584e0979a530a8df6fab",
+  "scope": "Actual data SVID direct TLS; spoofed core headers deny at the core-only BFF route."
+}

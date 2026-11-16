@@ -1,0 +1,87 @@
+{
+  "packet_id": "IMP-03-003-INFRA-REUSE-REVIEW",
+  "task_id": "IMP-03-D",
+  "stage_id": "IMP-03",
+  "mode": "planning",
+  "role": "imp_platform",
+  "goal": "Read-only assessment of whether existing IMP02 infrastructure can support IMP03: distinguish physical substrate, running stateful services, reusable source/images and hardcoded tooling; identify isolated-additive and shared-service options and evidence impact.",
+  "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/G-03-validation-guide.md",
+      "sha256": "dd75bcda5e8f46cef222d7c4610310ce438ed73d12c310ef01a0a57168b16c7a"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-08-IMP-02/decisions/G-02.json",
+      "sha256": "f3d49e1151a2ba4be33e8803231357f452eec1bb3f4a1fbc791112d2b38a2b5e"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/**",
+    "apps/**",
+    "services/**",
+    "packages/**",
+    "host/**",
+    "tools/**",
+    "tests/**",
+    "config/**",
+    "pyproject.toml",
+    "uv.lock",
+    "pnpm-lock.yaml"
+  ],
+  "write_paths": [],
+  "dependencies": [
+    "G-02 accepted receipt G-02-MAIN-2026-11-09; immutable evidence retained"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "read_only_host_probe"
+  ],
+  "prohibited_actions": [
+    "IMP-02 resource or sibling repository mutation",
+    "commit/push/merge/publish",
+    "global host trust/DNS/model changes",
+    "real personal data, police integration or autonomous contact",
+    "invented human acceptance, participant admission or IMP-04 activation",
+    "unbound existing target mutation, broad teardown or dependency installation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "2026-11-13 current chat: there is no independent IMP-03 infrastructure. Check if existing IMP-02 infrastructure can be reused?",
+    "scope": "Read-only feasibility assessment and documentation; no live mutation, provisioning or transferred IMP02 authority."
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Focused source-grounded feasibility and adaptation findings; no edits or commands mutating infrastructure"
+  ],
+  "positive_acceptance": [
+    "Available complete local checks pass against identifiable candidate; actual deployed observations remain separately bound"
+  ],
+  "adverse_acceptance": [
+    "Declared skips/failures retained; no fixtures represented as issued runtime identity or acceptance; IMP-02 preserved"
+  ],
+  "reviewer": "primary integration owner",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Unknown target ownership or missing issued bindings for live operations",
+    "Unsafe fixture collision or critical control defect; preserve unaffected checks"
+  ],
+  "is_example": false
+}

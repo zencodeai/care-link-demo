@@ -1,0 +1,295 @@
+{
+  "phase": "fenced",
+  "attempt": 1,
+  "human_acceptance": false,
+  "exit_code": 0,
+  "before": {
+    "business": {
+      "access.continuation_family": {
+        "count": 2,
+        "sha256": "383e59cfe46b923b8f6ef6d5c7221142c4f41ad40359c23fa5ef53a3ecbc162e"
+      },
+      "access.continuation_token": {
+        "count": 3,
+        "sha256": "b9d840951d39f4d63bf0c321bdd1f307cb368508ee9b102a1b76b16bd27d2ad6"
+      },
+      "control.guard": {
+        "count": 1,
+        "sha256": "bba5d8e75819dc8f6681cc0094f6950580dd2fc3843a572c7e6d69efc4f179d2"
+      },
+      "control.principal_guard": {
+        "count": 3,
+        "sha256": "41bb61af931c0c26b97105e4aba772ed726bad246530142010ccf02662cf66ed"
+      },
+      "control.signal_head": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "control.signal_receipt": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "control.signal_source": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.assertion": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.assessment": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.choice": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.message": {
+        "count": 4,
+        "sha256": "23c84517534e8c19b6940cc7f8043b1972003edac796ad50003f73f91f27bfd3"
+      },
+      "core.persona": {
+        "count": 12,
+        "sha256": "c90303fa26fc62c4b34af11b6673c471c962ec2d7475225db021d22d1af46a87"
+      },
+      "core.session": {
+        "count": 12,
+        "sha256": "03c948b372213dd0fd36e640e9e0e4d957643a48d726affa5f70cb3b31c0c14f"
+      },
+      "core.session_acl": {
+        "count": 14,
+        "sha256": "bee550ec7077cb2fb92b7921819b657da81caa2150ae2b06db8350a32c936a79"
+      },
+      "core.session_guard": {
+        "count": 12,
+        "sha256": "359136a7a5f98f1c7498aa76c3d80075392d4b42fc01476e8e9ad2b9b3b1b2cc"
+      },
+      "core.subject_guard": {
+        "count": 12,
+        "sha256": "af4c5d19aae33055d29c200ce23021b4290a79418319ab3b644ed7b7d90d25ff"
+      },
+      "core.turn": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "lifecycle.copy": {
+        "count": 16,
+        "sha256": "bac672add344b21c3f80d4a0b19a6b6774ef01eb0f0316a20fa8248d93234915"
+      },
+      "lifecycle.dependency": {
+        "count": 4,
+        "sha256": "fa0aa12052540705b7cae2470ea78181fd9cf5eefd712f1c6d2a4e1bb5f029f7"
+      },
+      "workforce.assignment": {
+        "count": 8,
+        "sha256": "4148701b56670775a0980f2d59dd34bfc757747498b474b53ce5bbcdea168b25"
+      },
+      "workforce.channel_ack": {
+        "count": 8,
+        "sha256": "faa100988e83657d5f032a008c0ed9398dab1fc74f48e1a206d796e630ed8fb9"
+      },
+      "workforce.channel_challenge": {
+        "count": 4,
+        "sha256": "2d89bf51c078a8450031a9e99a6e3e266b4f01233828b54b079dae9e6cefe434"
+      },
+      "workforce.queue_entry": {
+        "count": 6,
+        "sha256": "81a3d5ce92850b03103cb15b46db6fcacf71ba251417467ab38b4258fa029d73"
+      }
+    },
+    "committed_operations": [
+      [
+        "channel_ack",
+        8
+      ],
+      [
+        "message_send",
+        4
+      ],
+      [
+        "session_create",
+        12
+      ],
+      [
+        "session_human_request",
+        6
+      ],
+      [
+        "workforce_accept",
+        6
+      ],
+      [
+        "workforce_confirm_transfer",
+        4
+      ],
+      [
+        "workforce_observe",
+        2
+      ],
+      [
+        "workforce_prepare_transfer",
+        4
+      ],
+      [
+        "workforce_reserve",
+        6
+      ],
+      [
+        "workforce_takeover",
+        2
+      ]
+    ],
+    "postgres_tls": [
+      true,
+      "TLSv1.3"
+    ]
+  },
+  "after": {
+    "business": {
+      "access.continuation_family": {
+        "count": 2,
+        "sha256": "383e59cfe46b923b8f6ef6d5c7221142c4f41ad40359c23fa5ef53a3ecbc162e"
+      },
+      "access.continuation_token": {
+        "count": 3,
+        "sha256": "b9d840951d39f4d63bf0c321bdd1f307cb368508ee9b102a1b76b16bd27d2ad6"
+      },
+      "control.guard": {
+        "count": 1,
+        "sha256": "bba5d8e75819dc8f6681cc0094f6950580dd2fc3843a572c7e6d69efc4f179d2"
+      },
+      "control.principal_guard": {
+        "count": 3,
+        "sha256": "41bb61af931c0c26b97105e4aba772ed726bad246530142010ccf02662cf66ed"
+      },
+      "control.signal_head": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "control.signal_receipt": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "control.signal_source": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.assertion": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.assessment": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.choice": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.message": {
+        "count": 4,
+        "sha256": "23c84517534e8c19b6940cc7f8043b1972003edac796ad50003f73f91f27bfd3"
+      },
+      "core.persona": {
+        "count": 12,
+        "sha256": "c90303fa26fc62c4b34af11b6673c471c962ec2d7475225db021d22d1af46a87"
+      },
+      "core.session": {
+        "count": 12,
+        "sha256": "03c948b372213dd0fd36e640e9e0e4d957643a48d726affa5f70cb3b31c0c14f"
+      },
+      "core.session_acl": {
+        "count": 14,
+        "sha256": "bee550ec7077cb2fb92b7921819b657da81caa2150ae2b06db8350a32c936a79"
+      },
+      "core.session_guard": {
+        "count": 12,
+        "sha256": "359136a7a5f98f1c7498aa76c3d80075392d4b42fc01476e8e9ad2b9b3b1b2cc"
+      },
+      "core.subject_guard": {
+        "count": 12,
+        "sha256": "af4c5d19aae33055d29c200ce23021b4290a79418319ab3b644ed7b7d90d25ff"
+      },
+      "core.turn": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "lifecycle.copy": {
+        "count": 16,
+        "sha256": "bac672add344b21c3f80d4a0b19a6b6774ef01eb0f0316a20fa8248d93234915"
+      },
+      "lifecycle.dependency": {
+        "count": 4,
+        "sha256": "fa0aa12052540705b7cae2470ea78181fd9cf5eefd712f1c6d2a4e1bb5f029f7"
+      },
+      "workforce.assignment": {
+        "count": 8,
+        "sha256": "4148701b56670775a0980f2d59dd34bfc757747498b474b53ce5bbcdea168b25"
+      },
+      "workforce.channel_ack": {
+        "count": 8,
+        "sha256": "faa100988e83657d5f032a008c0ed9398dab1fc74f48e1a206d796e630ed8fb9"
+      },
+      "workforce.channel_challenge": {
+        "count": 4,
+        "sha256": "2d89bf51c078a8450031a9e99a6e3e266b4f01233828b54b079dae9e6cefe434"
+      },
+      "workforce.queue_entry": {
+        "count": 6,
+        "sha256": "81a3d5ce92850b03103cb15b46db6fcacf71ba251417467ab38b4258fa029d73"
+      }
+    },
+    "committed_operations": [
+      [
+        "channel_ack",
+        8
+      ],
+      [
+        "message_send",
+        4
+      ],
+      [
+        "session_create",
+        12
+      ],
+      [
+        "session_human_request",
+        6
+      ],
+      [
+        "workforce_accept",
+        6
+      ],
+      [
+        "workforce_confirm_transfer",
+        4
+      ],
+      [
+        "workforce_observe",
+        2
+      ],
+      [
+        "workforce_prepare_transfer",
+        4
+      ],
+      [
+        "workforce_reserve",
+        6
+      ],
+      [
+        "workforce_takeover",
+        2
+      ]
+    ],
+    "postgres_tls": [
+      true,
+      "TLSv1.3"
+    ]
+  },
+  "forbidden_business_effect_absent": true,
+  "one_way_restriction_retained": true,
+  "duration_seconds": 15.192,
+  "private_output": "/private/tmp/care-link-imp03-003-shared/live-fenced-001",
+  "snapshot_scope": "23 core/workforce/access/lifecycle/control tables plus committed-operation counts. Excludes durable event/duty/job/recovery rows, audit-chain integrity and buffered/output effects."
+}

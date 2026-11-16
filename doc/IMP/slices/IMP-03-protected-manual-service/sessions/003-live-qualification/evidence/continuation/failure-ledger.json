@@ -1,0 +1,118 @@
+{
+  "recorded_at": "2026-11-14T00:00:19.377516+00:00",
+  "scope": "Failed attempts remain failures; subsequent passing evidence and bounded corrections do not erase them. Private raw logs excluded.",
+  "failures": [
+    {
+      "name": "Unsupported security app role before preparation",
+      "actual": "Initial four-role validation rejected a fifth security registry role before configuration creation.",
+      "correction": "Four supported application bindings; unused fifth issued provider account has no app authority.",
+      "public_evidence": null,
+      "private_log_binding": {
+        "path": "/private/tmp/care-link-imp03-003-cont1/prepare-diagnostic.log",
+        "sha256": "876eeb7f288c183570ff101137f94bc1dc43192e8ed0b20d7bb44e941b1a1da3"
+      }
+    },
+    {
+      "name": "Local no-route classification",
+      "actual": "Negative basic001 returned404 for forbidden local egress, while the probe expected403.",
+      "correction": "002 accepts actual local no-route404 separately from upstream mTLS403.",
+      "public_evidence": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/negative-basic-001.json",
+        "sha256": "ff986870fd0338cbba1ad74c7fe4ba062caa1cc5db51557e773201b4b94202ab"
+      },
+      "private_log_binding": {
+        "path": "/private/tmp/care-link-imp03-003-cont1/negative-basic.log",
+        "sha256": "74533e795496fb693c7a5fc08f8760c7582b689fe4888c40bbc476ccde092a5e"
+      }
+    },
+    {
+      "name": "TLS1.3 alert read ordering",
+      "actual": "Initial absent-SVID probe hit BrokenPipe while writing before reading the delayed TLS alert.",
+      "correction": "Read alert before HTTP write; final no-svid002 observed certificate-required denial.",
+      "public_evidence": null,
+      "private_log_binding": {
+        "path": "/private/tmp/care-link-imp03-003-cont1/no-svid.log",
+        "sha256": "c096324172e5b4e8225b48629d70d81b41195582b5b6ca5993212e97eda56661"
+      }
+    },
+    {
+      "name": "Expiry positive-control expectation",
+      "actual": "Pre-expiry request was admitted and canonically rejected400 INVALID_REQUEST, not the probe expected422.",
+      "correction": "Use the real canonical400 positive control; preserved004 failure.",
+      "public_evidence": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/expiry-004.json",
+        "sha256": "e28a83f9f40779793a8830f414fe545eff9007ddc24ffba88a9b897c96d739e2"
+      },
+      "private_log_binding": {
+        "path": "/private/tmp/care-link-imp03-003-cont1/expiry-002.log",
+        "sha256": "b3ae99ee32f13370ab1343c193dcdb3768b9fb3ae4670d9c5ab3eb4202a72b88"
+      }
+    },
+    {
+      "name": "Expiry agent readiness",
+      "actual": "New socket existed before an attested SVID was available.",
+      "correction": "Wait for actual SVID metadata, not socket presence.",
+      "public_evidence": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/expiry-003-lifecycle.json",
+        "sha256": "f2e357af998f486ac841bff253a06206dd90730f12bdf88aa34246bc21d29382"
+      },
+      "private_log_binding": {
+        "path": "/private/tmp/care-link-imp03-003-cont1/expiry-003.log",
+        "sha256": "2995950afab3d817fbeb7e3909705b87aa55a97af9f1786a6366fb546cb73cd4"
+      }
+    },
+    {
+      "name": "Generic certificate alert interpretation",
+      "actual": "005 rejected a generic remote CERTIFICATE_UNKNOWN because it required an EXPIRED literal.",
+      "correction": "Bounded interpretation preserves raw failure; final current-source006 independently passed; no expiry-specific server diagnosis.",
+      "public_evidence": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/expiry-005.json",
+        "sha256": "e6d049270d0283ae9ea01a60d13f39fda1e973f0e6c48ba5e692183c73ea13d8"
+      },
+      "private_log_binding": {
+        "path": "/private/tmp/care-link-imp03-003-cont1/expiry-005.log",
+        "sha256": "9b01927a94e22557ba55ae1bd38159ae0ae976688c8910b04fc4991e661cf496"
+      }
+    },
+    {
+      "name": "PDP barrier baseline overlapped an earlier read",
+      "actual": "PDP001 HTTP denials passed, but strict audit comparison found an in-flight pre-fault session_read PERMIT.",
+      "correction": "Drain bounded one-second requests for1.25s before baseline; unchanged strict audit rule; PDP002 passed.",
+      "public_evidence": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/option-b-live-pdp-loss-001.json",
+        "sha256": "335dfe94997d0e2a76e73be71e257e23c6a27ebe9374b847725b366398b30eb2"
+      },
+      "private_log_binding": {
+        "path": "/private/tmp/care-link-imp03-003-cont1/pdp-runner-001.log",
+        "sha256": "b8736d02ab30f5c8876cb7f9d3822e992ad885fe579c4799de49ebdc3e26701d"
+      }
+    },
+    {
+      "name": "Active-channel shutdown forced kill",
+      "actual": "Operations001 browser/state checks passed but stop exit137 was unacceptable.",
+      "correction": "Bound Uvicorn graceful drain to3s and normalize child signal exit; repeat002 exits143 with no accepting backend.",
+      "public_evidence": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/operations-001.json",
+        "sha256": "46b98d7cd51c7c023ef50a444cc41d3e7cdebc484848fd91e9c508e13c4996cd"
+      },
+      "private_log_binding": {
+        "path": "/private/tmp/care-link-imp03-003-cont1/operations-runner-001.log",
+        "sha256": "2958501863b4d9089fc5de39042dca00f5517acf91450f2f8c49ec563850c961"
+      }
+    },
+    {
+      "name": "Sandbox-local socket checks",
+      "actual": "One un-escalated unit invocation could not bind a local socket (EPERM).",
+      "correction": "Same scoped relay/result-gate checks reran with required sandbox permission:20 passed; not a runtime defect.",
+      "public_evidence": null,
+      "private_log_binding": {
+        "path": "/private/tmp/care-link-imp03-003-cont1/relay-shutdown-checks.log",
+        "sha256": "a465b47508428ac1e3f6e40e96024f928f8ce025da29d41a868dc2a27a04d8e5"
+      }
+    }
+  ],
+  "historical_original_target": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/historical-readiness-diagnosis.json",
+    "sha256": "c745cd16204178c1565eca7c6eb7afb61f625194df980c72fd28a56916aa9cac"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "test_source_sha256": "7a4081aa4ee179594294fb1253e617de28a7841fcc8f8898611a489636dbf1b6",
+  "label": "corrected-stream-002",
+  "exit_code": 0,
+  "duration_seconds": 531.38,
+  "human_acceptance": false,
+  "private_output": "/private/tmp/care-link-imp03-003-cont1/stability-corrected-stream-002"
+}

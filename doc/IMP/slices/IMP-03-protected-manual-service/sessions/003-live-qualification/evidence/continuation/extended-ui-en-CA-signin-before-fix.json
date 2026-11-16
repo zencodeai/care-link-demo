@@ -1,0 +1,9 @@
+{
+  "case": "ui",
+  "locale": "en-CA",
+  "attempt": "signin-before-fix",
+  "exit_code": 1,
+  "duration_seconds": 15.957,
+  "private_output": "/private/tmp/care-link-imp03-003-cont1/extended-ui-en-CA-signin-before-fix",
+  "human_acceptance": false
+}

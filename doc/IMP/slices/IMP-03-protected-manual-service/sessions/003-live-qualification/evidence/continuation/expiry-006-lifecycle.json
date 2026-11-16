@@ -1,0 +1,9 @@
+{
+  "temporary_containers_removed": [
+    "expiry5-seed",
+    "expiry5-agent",
+    "negative-expiry5"
+  ],
+  "workload_entry_removed": "f4185d4c-8afc-4ef5-8ab8-0bd4031b9af8",
+  "node_alias_retained": "spiffe://care-link.demo/host/imp03-003-cont1-expiry5"
+}

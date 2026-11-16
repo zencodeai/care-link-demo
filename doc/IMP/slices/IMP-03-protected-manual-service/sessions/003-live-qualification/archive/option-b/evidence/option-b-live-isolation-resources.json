@@ -1,0 +1,160 @@
+{
+  "roles": [
+    {
+      "role": "identity",
+      "container_id": "7fcba48e3ca11215a61bd1fbfb9589d82cd2ac94266289aaa1b1536c73307943",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "network": "none",
+      "read_only_root": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "bind_mount_count": 0,
+      "observed": {
+        "direct_external_tcp_denied": true,
+        "workload_api_absent": true,
+        "proxy_api_absent": true,
+        "sibling_config_absent": true,
+        "effective_uid": 22011
+      }
+    },
+    {
+      "role": "core",
+      "container_id": "3dd4677bb3a18a06285251734f11189bcf741d2fea74218dfc8e7b6190919a4e",
+      "image": "sha256:2b34147b1ed12989a3485087631568a8c05b15dea0e70e4da5aa4495af7ac300",
+      "network": "none",
+      "read_only_root": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "bind_mount_count": 0,
+      "observed": {
+        "direct_external_tcp_denied": true,
+        "workload_api_absent": true,
+        "proxy_api_absent": true,
+        "sibling_config_absent": true,
+        "effective_uid": 22012
+      }
+    },
+    {
+      "role": "data",
+      "container_id": "707ca047304c8598d72e3d1c477dc8460c5f6e66f69161d5e715764bdabed62b",
+      "image": "sha256:2b34147b1ed12989a3485087631568a8c05b15dea0e70e4da5aa4495af7ac300",
+      "network": "none",
+      "read_only_root": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "bind_mount_count": 0,
+      "observed": {
+        "direct_external_tcp_denied": true,
+        "workload_api_absent": true,
+        "proxy_api_absent": true,
+        "sibling_config_absent": true,
+        "effective_uid": 22013
+      }
+    },
+    {
+      "role": "pdp",
+      "container_id": "0df6e67a41f24e6a9d9bff6f12625a9ff457b2df762ff82d4738e991ea4cd670",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "network": "none",
+      "read_only_root": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "bind_mount_count": 0,
+      "observed": {
+        "direct_external_tcp_denied": true,
+        "workload_api_absent": true,
+        "proxy_api_absent": true,
+        "sibling_config_absent": true,
+        "effective_uid": 22014
+      }
+    },
+    {
+      "role": "journal",
+      "container_id": "8857e44ed82e0a1090fd42d1d4a7c3c8faff428e77ca1dd9fdff0b9d88e012e7",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "network": "none",
+      "read_only_root": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "bind_mount_count": 0,
+      "observed": {
+        "direct_external_tcp_denied": true,
+        "workload_api_absent": true,
+        "proxy_api_absent": true,
+        "sibling_config_absent": true,
+        "effective_uid": 22015
+      }
+    }
+  ],
+  "resource_sample": [
+    {
+      "BlockIO": "4.13MB / 6.94MB",
+      "CPUPerc": "0.29%",
+      "Container": "care-link-imp03-003-identity-app",
+      "ID": "7fcba48e3ca1",
+      "MemPerc": "37.26%",
+      "MemUsage": "95.38MiB / 256MiB",
+      "Name": "care-link-imp03-003-identity-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "5"
+    },
+    {
+      "BlockIO": "2.15MB / 4.1kB",
+      "CPUPerc": "0.23%",
+      "Container": "care-link-imp03-003-core-app",
+      "ID": "3dd4677bb3a1",
+      "MemPerc": "44.91%",
+      "MemUsage": "115MiB / 256MiB",
+      "Name": "care-link-imp03-003-core-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "4"
+    },
+    {
+      "BlockIO": "4.1kB / 4.1kB",
+      "CPUPerc": "0.26%",
+      "Container": "care-link-imp03-003-data-app",
+      "ID": "707ca047304c",
+      "MemPerc": "44.75%",
+      "MemUsage": "114.6MiB / 256MiB",
+      "Name": "care-link-imp03-003-data-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "4"
+    },
+    {
+      "BlockIO": "65.3MB / 21.9MB",
+      "CPUPerc": "0.12%",
+      "Container": "care-link-imp03-003-pdp-app",
+      "ID": "0df6e67a41f2",
+      "MemPerc": "29.77%",
+      "MemUsage": "76.21MiB / 256MiB",
+      "Name": "care-link-imp03-003-pdp-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "3"
+    },
+    {
+      "BlockIO": "45.1kB / 12.3kB",
+      "CPUPerc": "0.27%",
+      "Container": "care-link-imp03-003-journal-app",
+      "ID": "8857e44ed82e",
+      "MemPerc": "32.78%",
+      "MemUsage": "83.91MiB / 256MiB",
+      "Name": "care-link-imp03-003-journal-app",
+      "NetIO": "0B / 0B",
+      "PIDs": "3"
+    }
+  ],
+  "limits": [
+    "One resource sample, not a capacity/latency acceptance test",
+    "Absent sibling mounts and denied direct TCP do not establish Kubernetes CNI enforcement"
+  ]
+}

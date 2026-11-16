@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Complete locked repository lane",
+    "command": ".venv/bin/python tools/check.py with explicit private test DSN, pinned OPA binary and owned capture fixture",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Observed behavior matches the declared bounded check.",
+    "actual": "463 Python passed, one Linux-only skip; 56 TS/UI/parity passed. Strict types, lint/format, lock/generation/boundary/admission and builds passed. Real DB/OPA/journal/capture; identity/workload current-proof fixtures explicitly declared.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/evidence/full-check-complete.log",
+    "evidence_digest": "6b199ae42a613990bda83a079b0fc29018f3e8e03f30e10dea08c7b2fcfa3139",
+    "mock_used": true
+  },
+  {
+    "name": "Database, duty and policy adversarial lane",
+    "command": "pytest services/data/tests packages/policy-input/tests with named disposable fixtures",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Observed behavior matches the declared bounded check.",
+    "actual": "69 passed, including true workload duties, DENY audit, final ACL/epoch checks, actual committed DB transaction then lost acknowledgement, current-disconnect projections and exported-snapshot capture/quarantine import.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/evidence/database-duty-final.log",
+    "evidence_digest": "f61ff03b5f4e1311bcd8c92055f0f4103b76420a8d167f9cab63f2b09afee37a",
+    "mock_used": true
+  },
+  {
+    "name": "Clean offline reproducibility and negative guards",
+    "command": "UV_CACHE_DIR=/private/tmp/care-link-uv-cache CARE_LINK_PNPM_STORE=/private/tmp/care-link-pnpm-store .venv/bin/python tools/verify_clean.py",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Observed behavior matches the declared bounded check.",
+    "actual": "410 Python passed,54 explicit fixture/platform skips;56 TS/UI/parity passed. Missing test DSN/OPA is skipped truthfully. Mismatched Python/pnpm locks and schema loosening rejected. Earlier cache/socket attempts are retained separately.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/evidence/clean-verification-qualified.log",
+    "evidence_digest": "62b67ee52d33f57fcdb522b79baa07974654c413090311939478625df3ae65f1",
+    "mock_used": true
+  },
+  {
+    "name": "Final isolated core artifact",
+    "command": "tools/build_core_image.py --tag care-link-core:imp03-source-final; tools/smoke_core_image.py --image care-link-core:imp03-source-final",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Observed behavior matches the declared bounded check.",
+    "actual": "Pinned build and restricted real container smoke passed for sha256:cddbea55ca882ffb65075c46f22b4af174c24513eb117353bac189110a9f1ccb. No business DB driver/credentials or unrelated service packages. Default image remains developer-only with /v1 disabled.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/evidence/core-smoke-final.log",
+    "evidence_digest": "18c47852c1e6a9ebddd70adaa23b20ed2b8aedd9cb04fa4561eb8c3ce47533bd",
+    "mock_used": false
+  },
+  {
+    "name": "Planning source and links",
+    "command": ".venv/bin/python doc/IMP/validate_plan.py",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Observed behavior matches the declared bounded check.",
+    "actual": "11 frozen staged gates,44 tasks,206 operation allocations,7 roles, source hashes, schemas and links passed. Planning validation only.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/evidence/plan-validation.log",
+    "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+    "mock_used": false
+  },
+  {
+    "name": "Live operational G-03 qualification",
+    "command": null,
+    "tool_version": null,
+    "status": "not_run",
+    "expected": "Observed behavior matches the declared bounded check.",
+    "actual": "Not run: new services were not deployed; real private-origin OIDC/SVID/PDP/journal paths, separate browser accounts, stream fault barriers and independent help/static dependency drill remain required.",
+    "evidence_path": null,
+    "evidence_digest": null,
+    "mock_used": false
+  },
+  {
+    "name": "Independent human EN/FR/accessibility and stage decision",
+    "command": null,
+    "tool_version": null,
+    "status": "not_run",
+    "expected": "Observed behavior matches the declared bounded check.",
+    "actual": "Not run; component/contract tests and agent review do not provide independent language, screen-reader, clinical or human G-03 acceptance.",
+    "evidence_path": null,
+    "evidence_digest": null,
+    "mock_used": false
+  }
+]

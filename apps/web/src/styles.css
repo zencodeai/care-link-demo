@@ -147,3 +147,61 @@ input[aria-invalid="true"] {
 a {
   color: #174e70;
 }
+.manual-state {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) minmax(0, 2fr);
+  gap: 0.5rem;
+}
+.manual-state dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.manual-queue,
+.manual-messages {
+  padding-inline-start: 1.4rem;
+}
+.manual-queue li,
+.manual-messages li {
+  padding-block: 0.8rem;
+  border-bottom: 1px solid #bfcfca;
+  overflow-wrap: anywhere;
+}
+.manual-message-text {
+  white-space: pre-wrap;
+}
+.manual-choice {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-block: 1rem;
+}
+.manual-choice input {
+  width: auto;
+  flex: none;
+}
+.manual-reconciliation {
+  border: 2px solid #a35e28;
+  padding: 1rem;
+  margin-block: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.review-app header {
+  border-bottom: 2px solid #bfcfca;
+  padding-bottom: 1rem;
+}
+.review-app [hidden] {
+  display: none !important;
+}
+.review-app textarea {
+  display: block;
+  width: 100%;
+  max-width: 42rem;
+  font: inherit;
+}
+.review-app code {
+  overflow-wrap: anywhere;
+}
+.review-app select {
+  max-width: 100%;
+}

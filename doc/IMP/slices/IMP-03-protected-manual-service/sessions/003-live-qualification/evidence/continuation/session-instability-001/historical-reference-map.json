@@ -1,0 +1,101 @@
+{
+  "scope": "Earlier immutable packet references resolve by original path plus digest to these archived bytes.",
+  "aliases": [
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/qualification-status.md",
+      "content_sha256": "3e49cfe578b160f353acc1e5c0619ba66b3f4334c33e0e80041ae371522d5d4b",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-qualification-status.md",
+        "sha256": "3e49cfe578b160f353acc1e5c0619ba66b3f4334c33e0e80041ae371522d5d4b"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/source-dirty.patch",
+      "content_sha256": "d60f422798ee8438d594a89586c5dd3b07ac5c07ff730093015d85f18ef5661b",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-source-dirty.patch",
+        "sha256": "d60f422798ee8438d594a89586c5dd3b07ac5c07ff730093015d85f18ef5661b"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-results.json",
+      "content_sha256": "8ba0168e65c34f9795dc5cc1a96daddee990b19243268c0182b69a50e6df4c73",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-continuation-results.json",
+        "sha256": "8ba0168e65c34f9795dc5cc1a96daddee990b19243268c0182b69a50e6df4c73"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-deployed-artifacts.json",
+      "content_sha256": "8f3c3b3f27a761e90dfb78b60a81f6456253ebc19b2a77b8ad4782ce4843ca50",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-continuation-deployed-artifacts.json",
+        "sha256": "8f3c3b3f27a761e90dfb78b60a81f6456253ebc19b2a77b8ad4782ce4843ca50"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-environment.json",
+      "content_sha256": "abfe871c373848875265ca03b277c0d50a7da8aed46f0fa14afb78876535187f",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-continuation-environment.json",
+        "sha256": "abfe871c373848875265ca03b277c0d50a7da8aed46f0fa14afb78876535187f"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-demo-packet.json",
+      "content_sha256": "d74dc5d96f5c0c5c6d83cb172ded292a7951bfa91d27a617bc5f2950e135276d",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-continuation-demo-packet.json",
+        "sha256": "d74dc5d96f5c0c5c6d83cb172ded292a7951bfa91d27a617bc5f2950e135276d"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-agent-result.json",
+      "content_sha256": "fc3551ad25505eea36098ba1e9b496d9b131a111268ede3acedc7f88393c936c",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-continuation-agent-result.json",
+        "sha256": "fc3551ad25505eea36098ba1e9b496d9b131a111268ede3acedc7f88393c936c"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/final-runtime-binding.json",
+      "content_sha256": "b4c683a898fac638d960183ec20fd4c9176d6ef291bd11b3741e23f0c4e1f51a",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-final-runtime-binding.json",
+        "sha256": "b4c683a898fac638d960183ec20fd4c9176d6ef291bd11b3741e23f0c4e1f51a"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/handoff.md",
+      "content_sha256": "7347529f002056e21dd739a3082f8eacabf3840e3aa6ddc6775423ac5c549a86",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-handoff.md",
+        "sha256": "7347529f002056e21dd739a3082f8eacabf3840e3aa6ddc6775423ac5c549a86"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/human-review-progress.json",
+      "content_sha256": "b3f2d274bedcbef19c3bb1d79f1630d232b0f1394da38364bd0a903bea5a3f07",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-human-review-progress.json",
+        "sha256": "b3f2d274bedcbef19c3bb1d79f1630d232b0f1394da38364bd0a903bea5a3f07"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/continuation-packet-validation.json",
+      "content_sha256": "66276949f3297f6584b9c32d89fe1e931059f5f0deb204ebcbe4f724b7c976e8",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-continuation-packet-validation.json",
+        "sha256": "66276949f3297f6584b9c32d89fe1e931059f5f0deb204ebcbe4f724b7c976e8"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-candidate-manifest.json",
+      "content_sha256": "d11066926a0ddda9a7c6d26b4960795776d3ded63ff440babb2997f9485c4afc",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/session-instability-001/before-continuation-candidate-manifest.json",
+        "sha256": "d11066926a0ddda9a7c6d26b4960795776d3ded63ff440babb2997f9485c4afc"
+      }
+    }
+  ]
+}

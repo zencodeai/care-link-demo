@@ -1,0 +1,358 @@
+{
+  "stage_id": "IMP-03",
+  "canonical_operations": [
+    {
+      "operation_id": "continuation_rotate",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "continuation_recover",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "operation_status",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "session_create",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "session_read",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "session_disclosure",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "session_turns",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "session_assertions",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "session_choices",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "session_human_request",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "session_end",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "session_events",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "messages_read",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "message_send",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "queue_list",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "workforce_reserve",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "workforce_accept",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "workforce_prepare_transfer",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "workforce_confirm_transfer",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "workforce_transfer_failed",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "workforce_observe",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "workforce_takeover",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "control_change",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "policy_evaluate",
+      "source_owner": "packages/policy-input/src/care_link_policy_input/opa.py",
+      "binding": "signed pinned OPA adapter; deployed PDP binding remains qualification",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "journal_append",
+      "source_owner": "host/recovery-control/src/care_link_recovery_control/journal.py",
+      "binding": "verified host JournalPort implementation; deployed authenticated RPC remains qualification",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "journal_head",
+      "source_owner": "host/recovery-control/src/care_link_recovery_control/journal.py",
+      "binding": "verified host JournalPort implementation; deployed authenticated RPC remains qualification",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "authority_metadata",
+      "source_owner": "services/data/src/care_link_data/control.py",
+      "binding": "metadata-only guarded method and internal authority transport",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_continuation_rotate",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_continuation_recover",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_operation_status",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_session_create",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_session_read",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_session_disclosure",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_session_turns",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_session_assertions",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_session_choices",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_session_human_request",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_session_end",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_session_events",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_messages_read",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_message_send",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_queue_list",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_workforce_reserve",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_workforce_accept",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_workforce_prepare_transfer",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_workforce_confirm_transfer",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_workforce_transfer_failed",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_workforce_observe",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_workforce_takeover",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_control_change",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "job_execute",
+      "source_owner": "services/data/src/care_link_data/duty_app.py",
+      "binding": "canonical machine-only transport plus registered duty command; reservation_expiry only for job_execute",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "identity_revoke",
+      "source_owner": "services/data/src/care_link_data/duty_app.py",
+      "binding": "canonical machine-only transport plus registered duty command; reservation_expiry only for job_execute",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "channel_challenge_read",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "channel_ack",
+      "source_owner": "services/core/src/care_link_core/manual_app.py",
+      "binding": "named BFF transport, typed gateway and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_channel_challenge_read",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    },
+    {
+      "operation_id": "data_channel_ack",
+      "source_owner": "services/data/src/care_link_data/app.py",
+      "binding": "named internal transport and guarded service",
+      "deployed_qualification": "not_run"
+    }
+  ],
+  "local_additions": [
+    {
+      "id": "continuation_issue",
+      "path": "/v1/sessions/{session_id}/continuations",
+      "request": "RevisionCommand",
+      "response": "ContinuationIssued",
+      "authority": "current own session; AL0 only"
+    },
+    {
+      "id": "continuation_recovery_start",
+      "path": "/v1/auth/continuation-recovery",
+      "request": "ContinuationRecoveryStart",
+      "response": "Ceremony",
+      "authority": "current same principal and fresh exact bound ceremony"
+    }
+  ],
+  "note": "Source/local mechanism trace is not operation release, wire interoperability certification or human acceptance."
+}

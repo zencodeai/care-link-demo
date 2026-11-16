@@ -1,0 +1,11 @@
+["pnpm", "exec", "tsc", "--noEmit", "--project", "tests/e2e/imp03-extended/tsconfig.json"]
+["pnpm", "exec", "eslint", "tests/e2e/imp03-extended/helpers.ts"]
+["pnpm", "exec", "prettier", "--check", "tests/e2e/imp03-extended/helpers.ts"]
+Checking formatting...
+All matched files use Prettier code style!
+["pnpm", "exec", "pyright", "--project", "pyrightconfig.json"]
+0 errors, 0 warnings, 0 informations
+[".venv/bin/ruff", "check", "tools/imp03_shared/web.py", "tools/imp03_shared/trust_refresh.py"]
+All checks passed!
+[".venv/bin/ruff", "format", "--check", "tools/imp03_shared/web.py", "tools/imp03_shared/trust_refresh.py"]
+2 files already formatted

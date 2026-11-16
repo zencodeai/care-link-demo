@@ -1,0 +1,23 @@
+{
+  "session": "imp03-002",
+  "suite": "extended",
+  "mode": "ui",
+  "locale": "en-CA",
+  "status": "passed",
+  "actual_provider_actors": [
+    "pid"
+  ],
+  "browser_tls_verification": true,
+  "observations": [
+    "exact_en-CA_disclosure_ui",
+    "server_intake_gate",
+    "fictional_ui_intake_with_participant_attribution"
+  ],
+  "details": {},
+  "human_acceptance": false,
+  "limits": [
+    "Selected automated UI actions and exact recorded races; human language/accessibility review absent.",
+    "Browser-transport held reply does not cover every serving/OS buffered-output interleaving.",
+    "Durable row/effect counts and audit-chain evidence require the separate operator observations."
+  ]
+}

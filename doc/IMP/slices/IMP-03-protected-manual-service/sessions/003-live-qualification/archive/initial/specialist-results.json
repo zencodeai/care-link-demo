@@ -1,0 +1,21 @@
+[
+  {
+    "role": "imp_review",
+    "task": "qualification_review",
+    "mode": "read_only",
+    "files_changed": [],
+    "tests_executed": [],
+    "summary": "Validated inherited G-02 evidence, distinguished fixture/live coverage, identified Q-01 CSRF short-circuit in live mutation barrier. Final integrated evidence review pending.",
+    "final_integrated_review": "No substantive corrections. Test/build results match logs; 319 current source hashes, membership, patch/combined digests, digest groups and evidence hashes match. G-02 correctly inherited; fixtures/kernel evidence distinguished from live qualification; Q-01 accurately unresolved. Read-only; no edits/tests/resource actions."
+  },
+  {
+    "role": "imp_platform",
+    "task": "infrastructure_reuse",
+    "mode": "read_only",
+    "files_changed": [],
+    "tests_executed": [],
+    "live_commands_executed": [],
+    "summary": "Substrate reuse feasible; shared PostgreSQL/Keycloak/SPIRE requires guide/profile reconciliation and fresh state/identities. Existing helpers hardcode IMP02; SPIRE health/host networking and CSI driver collide if copied unchanged. Host journal remains outside cluster custody.",
+    "final_review": "No factual corrections to primary assessment/status/handoff. Original qualification evidence preserved; no deployment profile activated."
+  }
+]

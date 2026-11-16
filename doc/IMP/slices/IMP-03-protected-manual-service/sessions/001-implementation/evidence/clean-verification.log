@@ -1,0 +1,9 @@
++ /opt/homebrew/bin/uv sync --offline --locked --all-packages --all-groups
+Using CPython 3.14.7 interpreter at: /opt/homebrew/opt/python@3.14/bin/python3.14
+Creating virtual environment at: .venv
+Resolved 58 packages in 3ms
+error: Failed to download `ruff==0.14.3`
+  cause: Network connectivity is disabled, but the requested data wasn't found in the cache for: `https://files.pythonhosted.org/packages/de/03/db1bce591d55fd5f8a08bb02517fa0b5097b2ccabd4ea1ee29aa72b67d96/ruff-0.14.3-py3-none-macosx_11_0_arm64.whl`
+
+hint: `ruff` (v0.14.3) was included because `care-link-development:dev` (v0.1.0) depends on `ruff`
+Unexpected exit 1

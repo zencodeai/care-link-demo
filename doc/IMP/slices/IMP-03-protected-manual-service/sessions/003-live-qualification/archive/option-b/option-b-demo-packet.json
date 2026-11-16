@@ -1,0 +1,243 @@
+{
+  "packet_id": "IMP-03-003-OPTION-B-DEMO",
+  "stage_id": "IMP-03",
+  "gate_id": "G-03",
+  "candidate": {
+    "commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "diff_digest": "cd26e30f6b75792dd90af2e7b1f68e7cb00695e20049c56d5a871175d623590f",
+    "artifact_digest": "0086a101037bbb876b566d4626048f51dc4ad8d41bd891239505b0359b4fb607",
+    "configuration_digest": "dd6568602cf7fd215a47acfefc596d094155e0daad7daeab9d4cad73b6beb2b1",
+    "contract_digest": "2c370575070ed2e2bde86b0280a20fb7b8449f472bac8bf3236234ae0b3fe7ff",
+    "environment_digest": "c71350e7f0f77a3a415208eda593a213d633b1d858e7b0c0eec6cf901c066678",
+    "fixture_digest": "8bbab9d81fb8cfc120c4f9a988b6a822b6d4972ddc97bbc4bb300c48b126b51f"
+  },
+  "state": "draft",
+  "preconditions": [
+    "Explicit user selected Option B; separate scoped TLS renewal approved.",
+    "Fresh IMP03 realm/actors/DBs/credentials/custody/workload registrations; shared SPIRE/Keycloak/Postgres processes.",
+    "Private browser inputs/cache; browser CA exception explicit; synthetic only. Inherited G02 acceptance does not accept this candidate."
+  ],
+  "normal_steps": [
+    {
+      "action": "Run real issued-actor browser journey",
+      "expected": "Actual protected manual service under current authority",
+      "actual": "Passed attempt011; selected UI + API/SSE scope, fresh MFA recovery.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-normal-011-observations.json",
+          "sha256": "b4f156b984c1d37602d38c67995084366fc7069fd728ae5ac12d29c1f2544ff7"
+        }
+      ]
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Exercise four reversible dependency/audit barriers and final one-way core fence",
+      "expected": "Actual post-fault GET/POST denied and sampled durable state unchanged",
+      "actual": "All five passed; four restored; core generation1 fence retained. Snapshot exclusions remain explicit.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-identity-loss-001.json",
+          "sha256": "603f850244cd908f3cb0168bca9b121e9a0013a048c1d319d7eb62e7783ef172"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-pdp-loss-001.json",
+          "sha256": "5f127a7196bf5322bf3502029a4bd5dd22d441cdf2d12a0e94f437ea36118abc"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-journal-loss-001.json",
+          "sha256": "22e2e1afbdf42af3687c85cacf81f0bd4708fdae829abbdc1be8550e8232dd17"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-audit-loss-003.json",
+          "sha256": "0d34911505821281e0ebc0bc751bdac417fca97077f85962a930e99d68a77c84"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-fenced-001.json",
+          "sha256": "1ad2065d1a49e81b25f7d42570210baa924673f5800a48ee8d0d10c5fbe9b480"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "Final source lane",
+      "command": ".venv/bin/python tools/check.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "536 Python passed/56 declared external fixture skips; 59 TS tests; strict checks/build passed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-final-source-checks.log",
+      "evidence_digest": "9507156d0b3160cf152cdae73977a72d9e30e9fa02c8dac116f07dba56dc7443",
+      "mock_used": false
+    },
+    {
+      "name": "Full independent fixture lane",
+      "command": "python -m tools.imp03_verification.run_checks --output /private/tmp/care-link-imp03-003-full-20261113-002 --opa /private/tmp/care-link-imp03-tools/opa",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "590 Python passed/two declared skips; 59 TS tests. Real PostgreSQL TLS1.3/OPA/journal/adapter/capture fixtures; not live actors.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-full-full-check.log",
+      "evidence_digest": "b6624819344b6de4c736a8de14a3534413a2abc83a68df2f134dc0b8a17854f1",
+      "mock_used": false
+    },
+    {
+      "name": "Separate provisioning",
+      "command": "same runner: provisioning lane",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "1 passed on disposable fixture; separate from actual new shared-DB initialization.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-full-provisioning.log",
+      "evidence_digest": "91ac28e87543203edb8fac4612b815f59bf36ac9a72ab315b86b2e36637fba30",
+      "mock_used": false
+    },
+    {
+      "name": "Failure lifecycle regression",
+      "command": ".venv/bin/pytest tests/unit/test_imp03_shared_qualification.py -q",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "2 passed: partial reversible fault cleanup and unconfirmed fence outcome remains unknown. Ruff/strict Pyright passed after review.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-lifecycle-failure-checks.json",
+      "evidence_digest": "e33f97d1116fe52ce838f923dd87c75feb4c454dc2ee6d77cea543da26692b0f",
+      "mock_used": true
+    },
+    {
+      "name": "Live normal journey",
+      "command": "CARE_LINK_IMP03_PHASE=normal pnpm exec playwright test --config tests/e2e/imp03/playwright.config.ts",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "Actual three MFA actors, UI create, two-party SSE, attributed delivery, disconnect, takeover denial, dropped committed HTTP reply/reconciliation, fresh recovery; attempt011 passed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-normal-011-observations.json",
+      "evidence_digest": "b4f156b984c1d37602d38c67995084366fc7069fd728ae5ac12d29c1f2544ff7",
+      "mock_used": false
+    },
+    {
+      "name": "Live pdp-loss",
+      "command": "python -m tools.imp03_shared.qualification --phase pdp-loss --attempt 1",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "Actual GET/POST denied and sampled business snapshot/committed-operation counts unchanged; exact dependency restored.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-pdp-loss-001.json",
+      "evidence_digest": "5f127a7196bf5322bf3502029a4bd5dd22d441cdf2d12a0e94f437ea36118abc",
+      "mock_used": false
+    },
+    {
+      "name": "Live identity-loss",
+      "command": "python -m tools.imp03_shared.qualification --phase identity-loss --attempt 1",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "Actual GET/POST denied and sampled business snapshot/committed-operation counts unchanged; exact dependency restored.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-identity-loss-001.json",
+      "evidence_digest": "603f850244cd908f3cb0168bca9b121e9a0013a048c1d319d7eb62e7783ef172",
+      "mock_used": false
+    },
+    {
+      "name": "Live journal-loss",
+      "command": "python -m tools.imp03_shared.qualification --phase journal-loss --attempt 1",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "Actual GET/POST denied and sampled business snapshot/committed-operation counts unchanged; exact dependency restored.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-journal-loss-001.json",
+      "evidence_digest": "22e2e1afbdf42af3687c85cacf81f0bd4708fdae829abbdc1be8550e8232dd17",
+      "mock_used": false
+    },
+    {
+      "name": "Live audit-loss",
+      "command": "python -m tools.imp03_shared.qualification --phase audit-loss --attempt 3",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "Actual GET/POST denied and sampled business snapshot/committed-operation counts unchanged; exact dependency restored.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-audit-loss-003.json",
+      "evidence_digest": "0d34911505821281e0ebc0bc751bdac417fca97077f85962a930e99d68a77c84",
+      "mock_used": false
+    },
+    {
+      "name": "Live fenced",
+      "command": "python -m tools.imp03_shared.qualification --phase fenced --attempt 1",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "Actual GET/POST denied and sampled business snapshot/committed-operation counts unchanged; generation1 durable restriction retained.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-fenced-001.json",
+      "evidence_digest": "1ad2065d1a49e81b25f7d42570210baa924673f5800a48ee8d0d10c5fbe9b480",
+      "mock_used": false
+    },
+    {
+      "name": "Actual workload identities and natural renewal",
+      "command": "Exact UID22002 SPIRE API fetch on five inspected new agents",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "Only expected role SVID per parent/UID; new leaves after previous expiry on unchanged agents. Not image-selector or expired-leaf denial evidence.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-svid-renewal.json",
+      "evidence_digest": "25c791b11efd703511978644a392811f81d0aef3313db521a552003bbfa6d5b9",
+      "mock_used": false
+    },
+    {
+      "name": "Deployed UID/mount/network observations",
+      "command": "Read-only inspected role metadata plus in-container bounded denial probes",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "Five exact app UIDs/network-none/capless/read-only settings; absent sibling and API mounts; denied direct TCP. Not new-app CNI enforcement.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-live-isolation-resources.json",
+      "evidence_digest": "d6883a6515b0d3aad8c0d040a12d1ac619d45b76ff2bfb754a495778fef69976",
+      "mock_used": false
+    },
+    {
+      "name": "Approved TLS maintenance final verify",
+      "command": "tools.imp03_shared.tls_apply.verify(candidate, backup002)",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "CA/hostname and exact HTTPS leaf bindings/TLS1.3; PG verify-full TLS1.3; other Secret entries/protected IMP02 processes preserved.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-tls-final-verification.json",
+      "evidence_digest": "f8d6e90d5ec43042244fb9ce26645088e6057b3d12d73987619ebb5b49d59c79",
+      "mock_used": false
+    },
+    {
+      "name": "Scoped shutdown and observation",
+      "command": "Exact owned core stop/start and ten verified health requests",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "Container/volumes retained; help/static200 during core stop; stop exit241; ten health samples ~3ms median. Not capacity/protected latency acceptance.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/option-b-shutdown-latency.json",
+      "evidence_digest": "06da39b7c7d79adfaf47b4382b537d5c8d7635d15292ea9203d4092e15a8052b",
+      "mock_used": false
+    },
+    {
+      "name": "Human accessibility and G-03 decision",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Evidence supports the exact bounded observation; no inferred human acceptance.",
+      "actual": "Not run; explicit human review/decision required.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "Browser temporary CA exception remains; CA trust without bypass unqualified.",
+    "Docker apps outside kind and common workspace images; normal Kubernetes/Calico placement, per-role package distribution and exact image selectors unqualified. Co-located tests are present in serving artifacts.",
+    "Snapshots cover 23 core/workforce/access/lifecycle/control tables and committed-operation counts; durable.event/due_job/duty_*, recovery.command, audit-chain integrity and buffered/output effects excluded.",
+    "Live disclosure/intake UI, competing issued workers, buffered output across takeover, database-ack loss, current identity/ACL revocation and capture/import-to-quarantine remain additional scenarios.",
+    "Natural SVID renewal observed, not independent expired-leaf/open-connection rejection or comprehensive negative route/source-policy coverage.",
+    "Audit pre-readiness creation403 and timeout remain unexplained reliability observations; no audit fault was applied in those failed attempts.",
+    "Health timings/resource sample/core stop-start are bounded observations, not protected latency/capacity or full recovery acceptance; stop exit241 retained.",
+    "Human EN/FR, keyboard/screen-reader/usability and explicit G-03 acceptance absent. Participant admission disabled; IMP-04 not activated."
+  ],
+  "acceptance_scope": "Draft bounded shared-infrastructure engineering evidence; remaining live profile/scenario/human obligations prevent G03 closure. No human acceptance or next-stage authority.",
+  "rollback": "No automatic reset. Four reversible barriers restored. Final core restriction is one-way and retained. Exact seed/operator-seed/probes removed; ordinary new runtime/private state retained. Existing IMP02 changes only approved certificate renewal/reloads/restarts plus additive fresh resources. Do not replay maintenance or initial provisioning.",
+  "human_decision_id": null,
+  "is_example": false
+}

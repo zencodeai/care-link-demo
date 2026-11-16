@@ -1,0 +1,151 @@
+{
+  "packet_id": "IMP-03-002-DEMO",
+  "stage_id": "IMP-03",
+  "gate_id": "G-03",
+  "candidate": {
+    "commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "diff_digest": "16ae34fd819843a596c64a124d5a149c1cc5f0a0c04cf36bd1da8f9fd7be5d94",
+    "artifact_digest": "69200f64d01057e4a8db170e3bbe190b45e2996ec5747b51ef3d4b03f79930dd",
+    "configuration_digest": "4f5e2e5a506a5fbba8bdcc7666e5b1b2b2d04df94fc591b84301bb80e54d857a",
+    "contract_digest": "2c370575070ed2e2bde86b0280a20fb7b8449f472bac8bf3236234ae0b3fe7ff",
+    "environment_digest": "068975160d09b4bfa9dd375ced028a2a5ad45c7b0877408a0610a23665a57572",
+    "fixture_digest": "14d83f5b0e77b642de34a6b9b416a42a606d7a737a08cd37e246f354f0b870e3"
+  },
+  "state": "draft",
+  "preconditions": [
+    "Source completion is specifically authorized by the 2026-11-10 user request;G-02 historical scope preserved.",
+    "This is an uncommitted source/local-check candidate;no deployed IMP-03 target binding or issued browser actor evidence exists.",
+    "Runtime examples contain unissued placeholders;independent mesh/provider/DB/private-origin inputs and exact live environment must be bound before qualification."
+  ],
+  "normal_steps": [
+    {
+      "action": "Exercise signed metadata/final gateway/current identity adapters with real PostgreSQL TLS,OPA and host journal.",
+      "expected": "Protected manual effects require fresh authority and canonical audit;no cached or serialized claim creates permission.",
+      "actual": "Passed in explicit HTTP/provider/workload fixtures against real PG/OPA/journal;full lane505 Python and56TS passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/full-check.log",
+          "sha256": "157ddcd7b73d15eebdd7fd263e59bd09fc4cc1354e7b9ecb3f53145862263f29"
+        }
+      ]
+    },
+    {
+      "action": "Start independent role listeners and run separately issued participant/worker/supervisor browser journeys.",
+      "expected": "Exact current actors,two-party real SSE connection,manual messages,disconnect/takeover truth and bound recovery.",
+      "actual": null,
+      "evidence_refs": []
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Verify original deadline,mutation/tampered cursor/current identity rejection,DB grants and audit append failure.",
+      "expected": "No stale signed scope,current identity,connection,owner or audit-free effect can release protected success.",
+      "actual": "Full source/real-PG lane passed;fresh initial provisioning/audit revoke-and-restore test1 passed separately.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/full-check.log",
+          "sha256": "157ddcd7b73d15eebdd7fd263e59bd09fc4cc1354e7b9ecb3f53145862263f29"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/provisioning.log",
+          "sha256": "866432d567eb30f716ad0380ad29e9453b6fd80645780de4fbe94565dc3eab20"
+        }
+      ]
+    },
+    {
+      "action": "Instantiate corrected fence custody with actual Linux UID22000 and protected Unix bind.",
+      "expected": "Distinct owner/restriction/read identities satisfy native constructor and kernel listener custody.",
+      "actual": "Passed in network-disabled auto-removed Linux container;no SVID or deployed attestation claim.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/care-link-imp03-002-linux-fence.log",
+          "sha256": "2a7ceecf6d7da90ae0e96d8ceba18af403869e57dc6296175d02d4040142c206"
+        }
+      ]
+    },
+    {
+      "action": "Apply actual identity/PDP/journal/audit/fence live barriers after successful actor sign-in;check independent fallback surfaces.",
+      "expected": "Protected reads/mutations deny behind actual barriers;no implied human connection or independent-surface success claim without observations.",
+      "actual": null,
+      "evidence_refs": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "Final full source/PostgreSQL/OPA/journal/capture/adapter lane",
+      "command": "UV_CACHE_DIR=/private/tmp/care-link-uv-cache .venv/bin/python -m tools.imp03_verification.run_checks --output /private/tmp/care-link-imp03-002-final-check --opa /private/tmp/care-link-imp03-tools/opa",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared check succeeds without weakening controls.",
+      "actual": "505 Python passed;2 declared skips (Linux-only historical harness and separately invoked provisioning);56 TS/UI/parity passed. Locks/generation/admission/boundaries/types/lint/format/build passed. Identity/provider/workload callbacks in compatibility tests explicitly fixtures.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/full-check.log",
+      "evidence_digest": "157ddcd7b73d15eebdd7fd263e59bd09fc4cc1354e7b9ecb3f53145862263f29",
+      "mock_used": true
+    },
+    {
+      "name": "Fresh initial provisioning and reversible audit grant barrier",
+      "command": ".venv/bin/python -m pytest -q tests/integration/imp03_runtime/test_provisioning.py (explicit isolated provisioning TLS DSN supplied privately)",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared check succeeds without weakening controls.",
+      "actual": "1 passed;fresh DBs/logins/global roles/bootstrap/principal bindings;non-owning runtime grants,audit append revoke/restore and existing-target refusal verified;fixture removed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/provisioning.log",
+      "evidence_digest": "866432d567eb30f716ad0380ad29e9453b6fd80645780de4fbe94565dc3eab20",
+      "mock_used": false
+    },
+    {
+      "name": "Isolated core image build",
+      "command": ".venv/bin/python tools/build_core_image.py --tag care-link-core:imp03-runtime-002 --iid-file /private/tmp/care-link-imp03-002-core-iid.txt",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared check succeeds without weakening controls.",
+      "actual": "Built sha256:69200f64d01057e4a8db170e3bbe190b45e2996ec5747b51ef3d4b03f79930dd. Signing crypto explicit;default developer-only app.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/care-link-imp03-002-core-build.log",
+      "evidence_digest": "70d71d872b8c2dec30476eb50b8e5cd8332dd4eb4b1830f5f38b51be56ffafa1",
+      "mock_used": false
+    },
+    {
+      "name": "Restricted core image smoke",
+      "command": ".venv/bin/python tools/smoke_core_image.py --image care-link-core:imp03-runtime-002",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared check succeeds without weakening controls.",
+      "actual": "Passed nonroot/read-only/capability smoke;no business driver,identity,data,journal packages;temporary owned container removed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/care-link-imp03-002-core-smoke.log",
+      "evidence_digest": "1ecf77673da32a6d3b8849f9005c2fc6cfd3ca572326015027edfafd32120015",
+      "mock_used": false
+    },
+    {
+      "name": "Actual Linux fence custody/socket constructor",
+      "command": "docker run --rm --name care-link-imp03-002-fence-contract --network none --read-only --cap-drop ALL --user 22000:22999 (source workload-trust mount; exact FenceStore/FenceServer constructor probe)",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared check succeeds without weakening controls.",
+      "actual": "Real Linux UID22000 protected Unix bind/close passed with separate restriction UID22001;network disabled container auto-removed.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/evidence/care-link-imp03-002-linux-fence.log",
+      "evidence_digest": "2a7ceecf6d7da90ae0e96d8ceba18af403869e57dc6296175d02d4040142c206",
+      "mock_used": false
+    },
+    {
+      "name": "Live issued-provider/SVID/browser/barrier qualification",
+      "command": "CARE_LINK_IMP03_E2E_CONFIG=PRIVATE CARE_LINK_IMP03_E2E_OUTPUT=FRESH CARE_LINK_IMP03_PHASE=normal pnpm exec playwright test --config tests/e2e/imp03/playwright.config.ts",
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Actual protected target and issued actors pass normal and real fault-barrier phases.",
+      "actual": "not_run: independently issued IMP-03 target/provider/accounts/private origins are not supplied/configured. Executable sources and exact commands exist;no live observations fabricated.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "Independent deployed SPIRE/Envoy/SVID renewal/certificate/fence and private-network boundaries remain not_run.",
+    "Live issued-provider/browser phases are executable but not_run;actual binding/provisioned accounts unavailable in this session.",
+    "Per-role deployment-image isolation,human EN-FR/keyboard/screen-reader review and resource/latency qualification remain not_run.",
+    "Existing Starlette/TestClient deprecations and585kB Vite chunk warning remain."
+  ],
+  "acceptance_scope": "Draft source/local engineering evidence only.No human G-03 acceptance,participant admission,production/clinical readiness or IMP-04 activation.",
+  "rollback": "Stop only exact independently supervised IMP-03 roles;resume only receipt-bound paused dependency where applicable.Partial initial provisioning is retained for inspection,never automatically reset.Do not mutate IMP-02;one-way fences have no automatic unfence.",
+  "human_decision_id": null,
+  "is_example": false
+}

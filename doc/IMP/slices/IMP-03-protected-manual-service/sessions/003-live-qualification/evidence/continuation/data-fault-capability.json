@@ -1,0 +1,7 @@
+{
+  "old_id": "dcd8daa2aa9ea5419bad20adb294de83e2a8970b67028a32aa3058fee55ef543",
+  "new_id": "a35e8d893a3af897ffec45f83a4bd6d12e418f5c65b040eb6bc8898d037ae2b1",
+  "image": "sha256:5495366cdf435a23405b150dfb75c01b802d0a4caa1eeaf551e0a48a07d9dd96",
+  "scope": "One-shot continuation-only driver fault; inactive without exact private marker; original target unchanged",
+  "durable_volumes_preserved": true
+}

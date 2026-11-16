@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { parseCapability, parseContract } from "@care-link/contracts";
 import { messages } from "./messages";
 import { TrustAndHelp } from "./trust/TrustAndHelp";
+import { ManualService } from "./manual/ManualService";
+import { ReviewApp } from "./review/ReviewApp";
 
 type Locale = keyof typeof messages;
 type Connection = "loading" | "unavailable" | "invalid" | "connected";
@@ -24,7 +26,7 @@ const examples = {
   ),
 } satisfies Record<DemoContract, string>;
 
-export function App() {
+function DeveloperApp() {
   const [locale, setLocale] = useState<Locale>("en-CA");
   const [role, setRole] = useState<Role>("participant");
   const [connection, setConnection] = useState<Connection>("loading");
@@ -149,6 +151,7 @@ export function App() {
         oidcOrigin={import.meta.env.VITE_OIDC_ORIGIN ?? null}
         staticOrigin={import.meta.env.VITE_STATIC_ORIGIN ?? null}
       />
+      <ManualService locale={locale} />
       <section aria-labelledby="contracts-title">
         <h2 id="contracts-title">{text.contracts}</h2>
         <p>{text.privacy}</p>
@@ -207,5 +210,15 @@ export function App() {
         </form>
       </section>
     </main>
+  );
+}
+
+export function App() {
+  return /^r[0-9a-f]{32}-(participant|worker1|worker2|supervisor)\./.test(
+    window.location.hostname,
+  ) ? (
+    <ReviewApp />
+  ) : (
+    <DeveloperApp />
   );
 }

@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-11-14T13:59:05.931874+00:00",
+  "source": "user_message",
+  "message": "Cannot sign in: The approved identity-provider origin is not configured. Sign-in redirects are disabled.",
+  "cause": "Qualification image copied generic Vite dist without VITE_OIDC_ORIGIN, VITE_HELP_ORIGIN, VITE_STATIC_ORIGIN.",
+  "prior_test_gap": "Extended login helper fetched /v1/auth/login itself; it did not exercise Main account Sign in control.",
+  "human_review_checkpoint": "Participant sign-in blocked; no signed-in flow accepted.",
+  "scope": "Continuation-only frontend artifact/build correction; preserve original runtime/fence/shared services and acceptance receipt."
+}

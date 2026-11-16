@@ -1,0 +1,311 @@
++ /opt/homebrew/bin/uv sync --offline --locked --all-packages --all-groups
+Using CPython 3.14.7 interpreter at: /opt/homebrew/opt/python@3.14/bin/python3.14
+Creating virtual environment at: .venv
+Resolved 58 packages in 1ms
+   Building care-link-contracts @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/contracts/python
+   Building care-link-core @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/services/core
+   Building care-link-data @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/services/data
+   Building care-link-domain @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/domain
+   Building care-link-help @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/host/help
+   Building care-link-identity @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/services/identity
+   Building care-link-policy-input @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/policy-input
+   Building care-link-recovery-control @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/host/recovery-control
+   Building care-link-static @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/host/static
+   Building care-link-workload-trust @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/workload-trust
+      Built care-link-recovery-control @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/host/recovery-control
+      Built care-link-workload-trust @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/workload-trust
+      Built care-link-core @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/services/core
+      Built care-link-help @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/host/help
+      Built care-link-policy-input @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/policy-input
+      Built care-link-data @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/services/data
+      Built care-link-identity @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/services/identity
+      Built care-link-static @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/host/static
+      Built care-link-domain @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/domain
+      Built care-link-contracts @ file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/contracts/python
+Prepared 10 packages in 318ms
+Installed 56 packages in 81ms
+ + annotated-doc==0.0.5
+ + annotated-types==0.8.0
+ + anyio==4.16.0
+ + arrow==1.4.0
+ + attrs==26.1.0
+ + care-link-contracts==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/contracts/python)
+ + care-link-core==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/services/core)
+ + care-link-data==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/services/data)
+ + care-link-domain==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/domain)
+ + care-link-help==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/host/help)
+ + care-link-identity==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/services/identity)
+ + care-link-policy-input==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/policy-input)
+ + care-link-recovery-control==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/host/recovery-control)
+ + care-link-static==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/host/static)
+ + care-link-workload-trust==0.1.0 (from file:///private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/packages/workload-trust)
+ + certifi==2026.10.23
+ + cffi==2.1.1
+ + click==8.5.1
+ + cryptography==50.0.2
+ + fastapi==0.162.2
+ + fqdn==1.6.0
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httpx==0.28.1
+ + idna==3.20
+ + iniconfig==2.3.1
+ + isoduration==20.11.0
+ + jsonpointer==3.10
+ + jsonschema==4.25.1
+ + jsonschema-specifications==2025.9.1
+ + opentelemetry-api==1.45.2
+ + packaging==26.3
+ + pluggy==1.7.0
+ + psycopg==3.2.12
+ + psycopg-binary==3.2.12
+ + pycparser==3.12
+ + pydantic==2.14.3
+ + pydantic-core==2.50.4
+ + pygments==2.21.0
+ + pyjwt==2.15.1
+ + pytest==9.2.0
+ + python-dateutil==4.0.0
+ + referencing==0.37.0
+ + rfc3339-validator==0.1.4
+ + rfc3987==1.3.8
+ + rpds-py==2026.9.1
+ + ruff==0.14.3
+ + six==1.17.0
+ + starlette==1.10.0
+ + types-jsonschema==4.26.0.20261006
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.5
+ + tzdata==2026.6
+ + uri-template==1.3.0
+ + uvicorn==0.38.0
+ + webcolors==25.10.0
++ /Users/main/.npm-global/bin/pnpm install --offline --frozen-lockfile --ignore-scripts --store-dir /private/tmp/care-link-pnpm-store
+Scope: all 3 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +213
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 213, reused 213, downloaded 0, added 213, done
+
+devDependencies:
++ @axe-core/playwright 4.14.0
++ @eslint/js 10.0.1
++ @playwright/test 1.65.0
++ @testing-library/jest-dom 6.9.1
++ @testing-library/react 16.3.0
++ @types/node 22.19.1
++ eslint 10.14.0
++ jsdom 27.1.0
++ prettier 3.6.2
++ pyright 1.1.407
++ typescript 5.9.3
++ typescript-eslint 8.72.1
++ vitest 5.1.0
+
+Done in 1.1s using pnpm v10.20.0
++ /var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/.venv/bin/python tools/check.py
++ uv lock --check
+Resolved 58 packages in 1ms
++ pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts
+Scope: all 3 workspace projects
+Done in 128ms using pnpm v10.20.0
++ uv run --locked python tools/generate_contracts.py --check
+Browser validators match the pinned schema (54 public contracts).
+Contract snapshots match reviewed definitions.
++ uv run --locked python tools/check_boundaries.py
+Source dependency boundaries passed (source check, not runtime isolation).
++ uv run --locked python tools/check_imp02_admission.py
+IMP-02 source admission remains disabled; no live identity/network/content proof implied.
++ uv run --locked ruff check .
+All checks passed!
++ uv run --locked ruff format --check .
+172 files already formatted
++ pnpm exec pyright --project pyrightconfig.json
+0 errors, 0 warnings, 0 informations
++ pnpm typecheck
+
+> care-link-development@0.1.0 typecheck /private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_
+> pnpm -r typecheck
+
+Scope: 2 of 3 workspace projects
+packages/contracts/typescript typecheck$ tsc --noEmit
+packages/contracts/typescript typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done
++ pnpm lint
+
+> care-link-development@0.1.0 lint /private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_
+> eslint apps/web packages/contracts/typescript --max-warnings 0
+
++ pnpm format:check
+
+> care-link-development@0.1.0 format:check /private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_
+> prettier --check apps/web packages/contracts/typescript package.json pnpm-workspace.yaml pyrightconfig.json eslint.config.mjs vitest.config.ts
+
+Checking formatting...
+All matched files use Prettier code style!
++ uv run --locked pytest
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.2.0, pluggy-1.7.0
+rootdir: /private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_
+configfile: pyproject.toml
+testpaths: packages/policy-input/tests, services/data/tests, host/recovery-control/tests, packages/workload-trust/tests, packages/contracts/python/tests, services/core/tests, services/identity/tests, host/help/tests, host/static/tests, tests
+plugins: anyio-4.16.0
+collected 464 items
+
+packages/policy-input/tests/test_delegation.py ........                  [  1%]
+packages/policy-input/tests/test_duty_registry.py .....                  [  2%]
+packages/policy-input/tests/test_opa.py ..sssssss                        [  4%]
+services/data/tests/test_composition.py sssssss                          [  6%]
+services/data/tests/test_duties.py ssssssssssss                          [  8%]
+services/data/tests/test_manual.py sssssssssssss.ssssssssssssss          [ 14%]
+host/recovery-control/tests/test_capture.py ..........                   [ 17%]
+host/recovery-control/tests/test_journal.py .....................        [ 21%]
+packages/workload-trust/tests/test_fence_channel.py ...                  [ 22%]
+packages/workload-trust/tests/test_socket_custody.py F.                  [ 22%]
+packages/workload-trust/tests/test_workload_trust.py .............F..... [ 26%]
+..                                                                       [ 27%]
+packages/contracts/python/tests/test_validation.py ...............       [ 30%]
+services/core/tests/test_developer_api.py .............................. [ 36%]
+.                                                                        [ 37%]
+services/core/tests/test_manual_transport.py ........                    [ 38%]
+services/identity/tests/test_backups.py ..........                       [ 40%]
+services/identity/tests/test_identity.py ............................... [ 47%]
+..                                                                       [ 48%]
+services/identity/tests/test_manual_recovery.py ..                       [ 48%]
+services/identity/tests/test_owner_review.py ................            [ 51%]
+services/identity/tests/test_provider.py ............................... [ 58%]
+...............................                                          [ 65%]
+services/identity/tests/test_retention.py .........................      [ 70%]
+services/identity/tests/test_signals.py ..........                       [ 72%]
+services/identity/tests/test_workload_signals.py ...........             [ 75%]
+host/help/tests/test_authority_http.py ..................                [ 79%]
+host/help/tests/test_help.py ..........                                  [ 81%]
+host/help/tests/test_identity_integration.py .                           [ 81%]
+host/help/tests/test_lifecycle.py ................                       [ 84%]
+host/static/tests/test_card_compiler.py ..                               [ 85%]
+host/static/tests/test_owner_demo.py ...........                         [ 87%]
+host/static/tests/test_publication.py .............                      [ 90%]
+host/static/tests/test_static_retention.py .........                     [ 92%]
+tests/contract/test_snapshot.py .                                        [ 92%]
+tests/integration/imp02_lab/test_cni_ipv6.py ..                          [ 93%]
+tests/integration/imp02_lab/test_fence_users.py s                        [ 93%]
+tests/integration/imp02_lab/test_manifests.py .......                    [ 94%]
+tests/integration/imp02_lab/test_signals_probe.py ........               [ 96%]
+tests/network/test_probe_evidence.py .....                               [ 97%]
+tests/unit/test_boundaries.py .....                                      [ 98%]
+tests/unit/test_imp02_admission.py .                                     [ 98%]
+tests/unit/test_imp02_application.py .....                               [100%]
+
+=================================== FAILURES ===================================
+_ test_only_owned_refused_socket_is_recovered_and_listener_lease_is_exclusive __
+
+    def test_only_owned_refused_socket_is_recovered_and_listener_lease_is_exclusive() -> None:
+        with tempfile.TemporaryDirectory(prefix="cl-socket-") as scratch:
+            root = Path(scratch)
+            root.chmod(0o710)
+            path = root / "a.sock"
+            stale = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+>           stale.bind(str(path))
+E           PermissionError: [Errno 1] Operation not permitted
+
+packages/workload-trust/tests/test_socket_custody.py:19: PermissionError
+_ test_unix_http_listener_denies_untrusted_process_even_with_spoofed_peer_header _
+
+fixture = (<care_link_workload_trust.verification.WorkloadEnforcer object at 0x10f2cc390>, <care_link_workload_trust.fence.Fence...-link.demo/lab/help', <Certificate(subject=<Name()>, ...)>, <Certificate(subject=<Name(CN=Synthetic test root)>, ...)>)
+tmp_path = PosixPath('/private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/pytest-of-main/pytest-842/test_unix_http_listener_denies0')
+
+    def test_unix_http_listener_denies_untrusted_process_even_with_spoofed_peer_header(
+        fixture, tmp_path
+    ):
+        enforcer, _store, _clock, xfcc, _leaf, _root = fixture
+        enforcer.proxy_uid = os.getuid() + 1
+        with tempfile.TemporaryDirectory(prefix="cl-", dir=tempfile.gettempdir()) as scratch:
+            directory = Path(scratch)
+            directory.chmod(0o710)
+            os.chown(directory, -1, os.getgid())
+            address = directory / "a.sock"
+>           server = AuthorizationServer(address, enforcer, os.getuid(), os.getgid())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+packages/workload-trust/tests/test_workload_trust.py:235: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+packages/workload-trust/src/care_link_workload_trust/unix_server.py:141: in __init__
+    self.server_bind()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <care_link_workload_trust.unix_server.AuthorizationServer object at 0x10f26e510>
+
+    def server_bind(self):
+        """Called by constructor to bind the socket.
+    
+        May be overridden.
+    
+        """
+        if self.allow_reuse_address and hasattr(socket, "SO_REUSEADDR"):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # Since Linux 6.12.9, SO_REUSEPORT is not allowed
+        # on other address families than AF_INET/AF_INET6.
+        if (
+            self.allow_reuse_port and hasattr(socket, "SO_REUSEPORT")
+            and self.address_family in (socket.AF_INET, socket.AF_INET6)
+        ):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+>       self.socket.bind(self.server_address)
+E       PermissionError: [Errno 1] Operation not permitted
+
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py:478: PermissionError
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /private/var/folders/nh/mxqbqpzd0j126k259dt3y9v80000gn/T/care-link-clean-o3zfffi_/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [7] packages/policy-input/tests/test_opa.py:158: Pinned OPA fixture explicitly required for integration
+SKIPPED [1] services/data/tests/test_composition.py:77: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:196: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:238: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:271: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:310: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:332: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_composition.py:376: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:120: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [3] services/data/tests/test_duties.py:152: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [2] services/data/tests/test_duties.py:176: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:225: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:245: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:261: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:298: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:322: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_duties.py:342: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:91: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:116: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:138: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:149: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:191: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:231: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:265: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:311: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:331: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:361: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:375: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:409: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:429: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:462: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:485: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:517: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:553: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:564: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:595: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:611: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:654: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:673: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [4] services/data/tests/test_manual.py:715: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] services/data/tests/test_manual.py:785: explicit disposable PostgreSQL TLS fixture DSN not supplied
+SKIPPED [1] tests/integration/imp02_lab/test_fence_users.py:50: requires explicitly authorized disposable Linux container UID0/setuid test harness
+FAILED packages/workload-trust/tests/test_socket_custody.py::test_only_owned_refused_socket_is_recovered_and_listener_lease_is_exclusive - PermissionError: [Errno 1] Operation not permitted
+FAILED packages/workload-trust/tests/test_workload_trust.py::test_unix_http_listener_denies_untrusted_process_even_with_spoofed_peer_header - PermissionError: [Errno 1] Operation not permitted
+============= 2 failed, 408 passed, 54 skipped, 1 warning in 5.23s =============
+Unexpected exit 1

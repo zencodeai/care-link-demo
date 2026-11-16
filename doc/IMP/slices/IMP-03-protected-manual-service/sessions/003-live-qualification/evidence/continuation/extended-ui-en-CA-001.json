@@ -1,0 +1,9 @@
+{
+  "case": "ui",
+  "locale": "en-CA",
+  "attempt": "001",
+  "exit_code": 0,
+  "duration_seconds": 8.781,
+  "private_output": "/private/tmp/care-link-imp03-003-cont1/extended-ui-en-CA-001",
+  "human_acceptance": false
+}

@@ -1,0 +1,65 @@
+{
+  "recorded_at": "2026-11-14T14:15:22.690195+00:00",
+  "status": "corrected_and_affected_checks_passed",
+  "original_user_finding": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/finding.json",
+    "sha256": "f867e40e15142115c5d20623c53d91dbef1bf98ffaa14f38916620f1bf9c35ac"
+  },
+  "passed_live_cases": [
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-buffered-en-CA-signin-fix-003.json",
+      "sha256": "64b8e30b163110e43ac1550bb752157129781126157614788bdfd34caf0d8fbc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-ui-fr-CA-signin-fix-001.json",
+      "sha256": "30a57b7ae7fa5159fecf5e6c6908d59bf19776f068029fa006c4920edb262c4b"
+    }
+  ],
+  "failed_attempts": [
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-ui-en-CA-signin-before-fix.json",
+      "sha256": "a41e8cca42db9680ad8a795c4a0dfe1f8b02a6424d3ce17279bb1868eb1e9822"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-buffered-en-CA-signin-fix-001.json",
+      "sha256": "017ffee9e6cd76c3f7bdd13a56b453e7d9d6be830587ad47009c4381f4926de3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-ui-en-CA-signin-diagnostic-001.json",
+      "sha256": "23d4fa1ede27e20acfac22aa6aa22983d0d7514dbf879f278b8d6d8ccc4cc456"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/extended-buffered-en-CA-signin-fix-002.json",
+      "sha256": "469bc44ed2b83729947c0a48c0cba90f9d9e6c55d2df18c5bc46a0b0b3d14b96"
+    }
+  ],
+  "targeted_checks": [
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/targeted-checks.json",
+      "sha256": "88253da83be09e070d29e1755b5a47806c017da9eea19d8a5be4cf473fa384b5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/final-targeted-checks.json",
+      "sha256": "66e01a0047d4c74a3ae2d2808b0bb7c6a539e26f6925ceca070e209da2b186c9"
+    }
+  ],
+  "redeployment": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/redeployment.json",
+    "sha256": "1560172dfba5ca5023555d734a15dbcccd373b15ca61713b63e0928bb9f54588"
+  },
+  "public_bundle_refresh": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/trust-bundle-refresh.json",
+    "sha256": "92816e2b306ef8fcb1789aed43fd6cd9db243374267fd6ecf68a544df9f2e72f"
+  },
+  "preserved_targets": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/preserved-targets.json",
+    "sha256": "18b30fce3335b2b85ef73dbd15cf5cab7e2512a420e4f394c64ba0ffaa8b89b8"
+  },
+  "review": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/review.md",
+    "sha256": "c6f5c9584c51fd977118a37f760e8b24dbb3c6f6339b720fb8ff723f6b5ddff1"
+  },
+  "full_fixture_suite": "Pre-correction baseline preserved; no unrelated full-fixture rerun.",
+  "human_signed_in_review": "awaiting_user_retry",
+  "g03_acceptance": false
+}

@@ -1,0 +1,38 @@
+{
+  "recorded_at": "2026-11-14T00:02:27.624719+00:00",
+  "schema_validated": [
+    "work-packet-automation-continuation.json",
+    "continuation-demo-packet.json",
+    "continuation-agent-result.json"
+  ],
+  "current_reference_hashes_checked": 544,
+  "reference_hash_mismatches": 0,
+  "candidate_digest_formulas_verified": true,
+  "live_result_gates_verified": true,
+  "initial_sigkill_result_rejected": true,
+  "final_fault_capability_disabled": true,
+  "expiry_probe_source_hash_verified": true,
+  "current_markdown_links": "passed",
+  "git_diff_check": "passed",
+  "private_data_scan": {
+    "session_files_checked": 213,
+    "known_private_values": 31,
+    "hits": 0
+  },
+  "human_acceptance": false,
+  "packet": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-demo-packet.json",
+    "sha256": "d74dc5d96f5c0c5c6d83cb172ded292a7951bfa91d27a617bc5f2950e135276d"
+  },
+  "updated_at": "2026-11-14T14:16:07.125785+00:00",
+  "deployment_delta_acceptance": {
+    "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/deployment-delta-acceptance.json",
+    "sha256": "80f0021bc5619e46e845c159805d60f81a8e97811f58ed5da1fff698cc0757bd"
+  },
+  "reviewed_candidate_unchanged": false,
+  "update_scope": "Visible UI sign-in correction:29 web unit tests, scoped strict checks and actual four-actor EN/French UI retests. Prior full-fixture result is pre-correction baseline.",
+  "stage_acceptance": false,
+  "current_candidate_changed_since_deployment_scope_review": true,
+  "reviewed_candidate_note": "Immutable deployment-profile acceptance remains bound to its reviewed snapshot. Current candidate records the public-origin fix and public bundle refresh; overall G03 acceptance remains absent.",
+  "human_review_progress_updated_at": "2026-11-14T19:31:32.211848+00:00"
+}

@@ -1,0 +1,65 @@
+{
+  "command": [
+    "docker",
+    "create",
+    "--pull=never",
+    "--name",
+    "care-link-imp03-003-linux-uid",
+    "--label",
+    "care-link.scope=imp03-003-verification",
+    "--network",
+    "none",
+    "--read-only",
+    "--cap-drop=ALL",
+    "--cap-add=CHOWN",
+    "--cap-add=SETUID",
+    "--cap-add=SETGID",
+    "--security-opt=no-new-privileges",
+    "--pids-limit=64",
+    "--memory=256m",
+    "--cpus=1",
+    "--user",
+    "0:0",
+    "--tmpfs",
+    "/tmp:rw,noexec,nosuid,mode=1777",
+    "--mount",
+    "type=bind,src=/Users/main/Workspace/projects/care-link/care-link-demo/packages/workload-trust/src,dst=/current-workload,readonly",
+    "--mount",
+    "type=bind,src=/Users/main/Workspace/projects/care-link/care-link-demo/tests/integration/imp02_lab/test_fence_users.py,dst=/tests/test_fence_users.py,readonly",
+    "--env",
+    "PYTHONPATH=/current-workload",
+    "--env",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1",
+    "care-link-imp02-verification:002",
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "/tests/test_fence_users.py",
+    "--rootdir",
+    "/tests"
+  ],
+  "scope": "Actual Linux kernel UID/fence harness only; no deployed attestation/role isolation claim",
+  "image_id": "sha256:d81bae6fc33ffc727f7aaedd6ddc9882cb5631de7fa66f80b8ab8e63fcb714c2",
+  "restrictions": {
+    "NetworkMode": "none",
+    "ReadonlyRootfs": true,
+    "CapAdd": [
+      "CAP_CHOWN",
+      "CAP_SETGID",
+      "CAP_SETUID"
+    ],
+    "CapDrop": [
+      "ALL"
+    ],
+    "SecurityOpt": [
+      "no-new-privileges"
+    ],
+    "PortBindings": {}
+  },
+  "exit_code": 0,
+  "cleanup_exit_code": 0,
+  "duration_seconds": 2.34
+}

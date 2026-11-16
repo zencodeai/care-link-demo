@@ -1,0 +1,9 @@
+{
+  "case": "ui",
+  "locale": "en-CA",
+  "attempt": "restart-proof",
+  "exit_code": 0,
+  "duration_seconds": 8.534,
+  "private_output": "/private/tmp/care-link-imp03-003-cont1/extended-ui-en-CA-restart-proof",
+  "human_acceptance": false
+}

@@ -1,0 +1,18 @@
+{
+  "observations": [
+    {
+      "attempt": "live-audit-loss-001",
+      "start_time": "2026-11-13T15:36:36.374Z",
+      "duration_ms": 1984.3640000000003,
+      "audit_metadata": []
+    },
+    {
+      "attempt": "live-normal-009",
+      "start_time": "2026-11-13T15:31:22.564Z",
+      "duration_ms": 439.831,
+      "audit_metadata": []
+    }
+  ],
+  "conclusion": "Historical pre-readiness root cause remains unknown: raw browser failures lacked canonical response codes; audit metadata alone does not identify a transport/CSRF/readiness cause. No retries erased. New scoped readiness/progress/OTP-window controls and first-attempt positive cases are separate current evidence.",
+  "old_target_mutated": false
+}

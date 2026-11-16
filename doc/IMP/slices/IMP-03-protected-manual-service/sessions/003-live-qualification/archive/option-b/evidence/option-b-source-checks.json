@@ -1,0 +1,7 @@
+{
+  "command": ".venv/bin/python tools/check.py",
+  "exit_code": 0,
+  "duration_seconds": 30.712,
+  "profile": "source-only; optional external fixture skips remain distinct",
+  "human_acceptance": false
+}

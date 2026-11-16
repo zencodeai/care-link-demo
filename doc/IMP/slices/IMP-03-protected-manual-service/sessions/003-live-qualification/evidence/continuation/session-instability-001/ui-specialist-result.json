@@ -1,0 +1,49 @@
+{
+  "packet_id": "IMP-03-003-AUTOMATION-CONTINUATION",
+  "task_id": "IMP-03-D",
+  "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+  "role": "imp_web",
+  "status": "completed",
+  "changed_paths": [
+    "apps/web/src/manual/useManual.ts",
+    "apps/web/src/manual/api.ts",
+    "apps/web/src/manual/ManualService.test.tsx"
+  ],
+  "output_refs": [
+    {
+      "path": "apps/web/src/manual/useManual.ts",
+      "sha256": "54d033dcdbdd8f5ec0cdaea945a95567ead7ba640e749ff640fc200a0697119d"
+    },
+    {
+      "path": "apps/web/src/manual/api.ts",
+      "sha256": "451e1ff41e328540f94140ff986852694833132a4a27a9ccae51d67c0a88bffd"
+    },
+    {
+      "path": "apps/web/src/manual/ManualService.test.tsx",
+      "sha256": "acdc91f8102aaaf64fd21521e43497e456cd5f1f453261daac2f7e86239f981a"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Focused UI regressions",
+      "command": "pnpm --filter @care-link/web test; strict types/owned-file lint/format",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unsent recovery, original uncertain key retained after replay denial, current-only publication and principal isolation.",
+      "actual": "Specialist reported37 web tests passed, eight new regressions; strict types, ESLint and Prettier passed. Primary root test run independently passed67 total TS tests.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": true
+    }
+  ],
+  "findings": [],
+  "contract_changes": [
+    "No public runtime contract change. Local send gains optional dispatch callback after validation/CSRF and before mutation fetch."
+  ],
+  "remaining_risks": [
+    "Source defects confirmed and fixed; exact user-specific interleaving was not established by this specialist.",
+    "Primary owns all live deployment, actual browser tests and evidence binding. No human G03 acceptance."
+  ],
+  "handoff": "Unsent access/proof failures release pending state; genuinely dispatched uncertainty retains the original key through later403. Principal binding persists across identity loss. Stream/rights loss aborts stale publication and queues fresh revalidation; current-read guards cover snapshots/messages/queues/status. No edits outside assigned three files, no live ops/build/deployment or nested delegation.",
+  "is_example": false
+}

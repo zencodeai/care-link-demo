@@ -37,6 +37,64 @@ const cases: Case[] = source.fixtures
     ].includes(f.schema),
   )
   .map((f) => ({ ...f, raw: JSON.stringify(f.value) }));
+const continuation = {
+  family_id: "10000000-0000-4000-8000-000000000001",
+  generation: "1",
+  token: "A".repeat(43),
+  expires_at: "2026-11-09T21:00:00Z",
+  assurance: "AL0",
+  operation_id: "10000000-0000-4000-8000-000000000002",
+};
+for (const [id, value, valid] of [
+  ["continuation-issued", continuation, true],
+  [
+    "continuation-no-assurance-upgrade",
+    { ...continuation, assurance: "AL2" },
+    false,
+  ],
+  [
+    "continuation-canonical-nonce",
+    { ...continuation, token: "A".repeat(42) + "B" },
+    false,
+  ],
+  [
+    "continuation-overflow",
+    { ...continuation, generation: "9223372036854775808" },
+    false,
+  ],
+] as const)
+  cases.push({
+    id,
+    schema: "ContinuationIssued",
+    raw: JSON.stringify(value),
+    valid,
+  });
+const channelAck = {
+  expected_revision: "1",
+  challenge_id: continuation.family_id,
+  nonce: "A".repeat(43),
+  transport_generation: "1",
+  expected_control_epoch: "1",
+};
+for (const [id, value, valid] of [
+  ["channel-ack", channelAck, true],
+  [
+    "channel-party-not-caller-authority",
+    { ...channelAck, party: "worker" },
+    false,
+  ],
+  [
+    "channel-epoch-overflow",
+    { ...channelAck, expected_control_epoch: "9223372036854775808" },
+    false,
+  ],
+] as const)
+  cases.push({
+    id,
+    schema: "ChannelAckSubmit",
+    raw: JSON.stringify(value),
+    valid,
+  });
 for (const [id, raw, valid] of [
   ["zero", '{"expected_revision":"0"}', true],
   ["max", '{"expected_revision":"9223372036854775807"}', true],

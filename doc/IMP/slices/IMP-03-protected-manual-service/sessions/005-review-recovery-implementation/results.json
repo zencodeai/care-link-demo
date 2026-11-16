@@ -1,0 +1,141 @@
+{
+  "session": "IMP-03-005-review-recovery-implementation",
+  "status": "implemented_and_automated_scenarios_passed",
+  "human_acceptance": false,
+  "runtime": {
+    "runtime_files_verified": 106,
+    "runtime_source_and_web_fingerprint": "a8ff4ca766255cb61b43cd38f518d1cead1bc06943d3cccfa64668dbe4b1f2b9",
+    "application_image_id": "sha256:e854ff2799a235ac827439637ec06b7e5680b286561b1cc4fbbebc0580689de7",
+    "all_five_apps_match": true,
+    "host_toolkit_from_working_tree": true
+  },
+  "checks": {
+    "python_passed": 738,
+    "python_optional_skips": 2,
+    "separate_tls_provisioning_passed": 1,
+    "web_tests_passed": 81,
+    "static_types_lint_contracts_build": "passed",
+    "independent_review": "findings_corrected"
+  },
+  "chrome": {
+    "product": "Google Chrome for Testing",
+    "version": "157.0.8103.78",
+    "browser_contexts": 1,
+    "fresh_runs_passed": 3,
+    "test_retries": 0,
+    "cookie_or_cache_clearing": false,
+    "tls_verification": true,
+    "wcag_en_fr_scans": 8,
+    "wcag_violations": 0,
+    "run_ids": [
+      "963aa661-1579-4272-b690-90194131a679",
+      "e6840b5c-36c4-47f0-9d35-0ef60776f666",
+      "c50e7999-9f1d-4822-aa7e-cd3c62728559"
+    ],
+    "covered": [
+      "actual_30_second_expiry_and_fresh_preparation",
+      "closed_run_status_only_reauthentication",
+      "dropped_committed_http_reply_recovered_by_original_key_once",
+      "duplicate_tab_observer_explicit_claim",
+      "four_visible_password_mfa_logins",
+      "old_owner_blocked",
+      "previous_run_record_and_operation_denied",
+      "reserved_and_accepted_assignment_recovered",
+      "server_draft_reload_and_reauthentication",
+      "slot_signout_preserves_other_actors",
+      "supervisor_observe_then_explicit_interrupt_reload_and_takeover",
+      "visible_attributed_manual_exchange",
+      "visible_exact_disclosure_and_human_request",
+      "visible_fictional_intake",
+      "visible_two_party_channel_confirmation"
+    ]
+  },
+  "database": {
+    "read_only_verification": true,
+    "runs": [
+      {
+        "run_id": "963aa661-1579-4272-b690-90194131a679",
+        "state": "closed",
+        "conversations": 1,
+        "intake_turns": 1,
+        "intake_and_manual_messages": 4,
+        "manual_message_effects": 3,
+        "committed_message_operations": 3,
+        "lost_reply_effects": 1,
+        "canonical_audit_rows": 1,
+        "supervisor_is_current_owner": true,
+        "passed": true
+      },
+      {
+        "run_id": "e6840b5c-36c4-47f0-9d35-0ef60776f666",
+        "state": "closed",
+        "conversations": 1,
+        "intake_turns": 1,
+        "intake_and_manual_messages": 4,
+        "manual_message_effects": 3,
+        "committed_message_operations": 3,
+        "lost_reply_effects": 1,
+        "canonical_audit_rows": 1,
+        "supervisor_is_current_owner": true,
+        "passed": true
+      },
+      {
+        "run_id": "c50e7999-9f1d-4822-aa7e-cd3c62728559",
+        "state": "closed",
+        "conversations": 1,
+        "intake_turns": 1,
+        "intake_and_manual_messages": 4,
+        "manual_message_effects": 3,
+        "committed_message_operations": 3,
+        "lost_reply_effects": 1,
+        "canonical_audit_rows": 1,
+        "supervisor_is_current_owner": true,
+        "passed": true
+      }
+    ]
+  },
+  "toolkit": {
+    "environment": "imp03-review",
+    "durable_state": "OS user-state directory",
+    "credential_custody": "OS Keychain",
+    "second_worker_rotation_revision": "3",
+    "live_password_mfa_verification": "passed",
+    "restored_after_temporary_operator_input_removal": true,
+    "current_credential_restored": true,
+    "run_discovery_and_reconciliation": "passed"
+  },
+  "native_review": {
+    "chrome_for_testing_version": "158.0.8127.18",
+    "fresh_empty_run": "8135ccd8-427c-4b10-a950-9d316771e68d",
+    "ordinary_role_tabs_loaded": 4,
+    "participant_tab_selected": true,
+    "login_keychain_tls_trust_explicitly_approved": true,
+    "native_reviewer_and_provider_tls_verification": "passed",
+    "system_keychain_changed": false,
+    "dns_changed": false
+  },
+  "preservation": {
+    "original_fence_generation": 1,
+    "continuation_fence_generation": 0,
+    "original_target_mutated": false,
+    "prior_conversations_purged": false,
+    "commit_or_push": false
+  },
+  "earlier_failures_corrected": [
+    "Keycloak shared root authentication session blocked different users",
+    "New environment admin/immutable-container binding setup mismatch",
+    "Workspace selection hint differed between signer and verifier",
+    "Request deadline expiry misreported as lost identity; failed reads orphaned view leases",
+    "Driver read login body after UI navigation; read-only count script initially omitted the intake message"
+  ],
+  "limits": [
+    "Declared synthetic scenarios only; G-03 human review remains pending",
+    "Continuation transport certificates expire 2026-11-20",
+    "Main check skips optional privileged Linux UID0 fixture; isolated provisioning is checked separately"
+  ],
+  "evidence_sha256": {
+    "chrome_observations": "858835bf471acd738101f9bea9900cb69090721b5a318eaa967d897fd912aa03",
+    "database_counts": "5387864cff439c36aab5490aeda8708d2d6937a2b0a23d2961ce7392b73d2b3f",
+    "full_source_check_log": "188203842600691b6940e70d3acb107cc6f199daf246b6b4bd8f6e5ebcc3a033"
+  }
+}

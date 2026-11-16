@@ -1,0 +1,39 @@
+{
+  "browser": "isolated Linux Chromium; remote Playwright1.65.0",
+  "ignoreHTTPSErrors": false,
+  "global_trust_changed": false,
+  "nss_store": "dedicated browser-home volume",
+  "observations": [
+    {
+      "probe": "before_import",
+      "accepted": false,
+      "error": "net::ERR_CERT_AUTHORITY_INVALID",
+      "observed_in_previous_probe": true
+    },
+    {
+      "probe": "main",
+      "status": 200,
+      "accepted": true
+    },
+    {
+      "probe": "provider",
+      "status": 200,
+      "accepted": true
+    },
+    {
+      "probe": "help",
+      "status": 200,
+      "accepted": true
+    },
+    {
+      "probe": "static",
+      "status": 200,
+      "accepted": true
+    },
+    {
+      "probe": "wrong_hostname",
+      "accepted": false,
+      "error": "net::ERR_CERT_COMMON_NAME_INVALID"
+    }
+  ]
+}

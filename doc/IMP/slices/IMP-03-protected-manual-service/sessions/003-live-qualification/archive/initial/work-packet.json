@@ -1,0 +1,123 @@
+{
+  "packet_id": "IMP-03-003-QUALIFICATION",
+  "task_id": "IMP-03-D",
+  "stage_id": "IMP-03",
+  "mode": "verification",
+  "role": "imp_verifier",
+  "goal": "Execute available automated G-03 guide checks, bind candidate and G-02 dependency, inspect target prerequisites, retain sanitized evidence and honest remaining obligations.",
+  "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/002-runtime-completion/G-03-validation-guide.md",
+      "sha256": "dd75bcda5e8f46cef222d7c4610310ce438ed73d12c310ef01a0a57168b16c7a"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-08-IMP-02/decisions/G-02.json",
+      "sha256": "f3d49e1151a2ba4be33e8803231357f452eec1bb3f4a1fbc791112d2b38a2b5e"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/**",
+    "apps/**",
+    "services/**",
+    "packages/**",
+    "host/**",
+    "tools/**",
+    "tests/**",
+    "config/**",
+    "pyproject.toml",
+    "uv.lock",
+    "pnpm-lock.yaml"
+  ],
+  "write_paths": [
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/**",
+    "doc/IMP/slices/IMP-03-protected-manual-service/README.md"
+  ],
+  "dependencies": [
+    "G-02 accepted receipt G-02-MAIN-2026-11-09; immutable evidence retained"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "read_only_host_probe",
+    "mutate_named_lab",
+    "destroy_named_demo_resources"
+  ],
+  "prohibited_actions": [
+    "IMP-02 resource or sibling repository mutation",
+    "commit/push/merge/publish",
+    "global host trust/DNS/model changes",
+    "real personal data, police integration or autonomous contact",
+    "invented human acceptance, participant admission or IMP-04 activation",
+    "unbound existing target mutation, broad teardown or dependency installation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "2026-11-13 current chat: work in sessions/003-live-qualification; Proceed with what can be automated in the guide",
+    "scope": "Automated qualification checks and evidence using installed tools, fresh isolated verification fixtures and developer build/smoke. Determine actual independent target bindings before live operations."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP03-003-pg",
+      "kind": "test_database",
+      "scope": "Fresh care-link-imp03-001-postgres label care-link.scope=imp03-001-verification; loopback25433/tmpfs only; refuse existing; label-verified cleanup",
+      "owner_task_id": "IMP-03-D",
+      "expires_at": "2026-11-14T23:59:59Z"
+    },
+    {
+      "id": "IMP03-003-private-output",
+      "kind": "namespace",
+      "scope": "/private/tmp/care-link-imp03-003-*; existing private fixture preserved in owner-only archive by runner",
+      "owner_task_id": "IMP-03-D",
+      "expires_at": "2026-11-14T23:59:59Z"
+    },
+    {
+      "id": "IMP03-003-core-smoke",
+      "kind": "namespace",
+      "scope": "care-link-core:imp03-qualification-003 build; smoke helper UUID container with network none, no mounts/ports and cleanup by ID",
+      "owner_task_id": "IMP-03-D",
+      "expires_at": "2026-11-14T23:59:59Z"
+    },
+    {
+      "id": "IMP03-003-linux-uid",
+      "kind": "namespace",
+      "scope": "New care-link-imp03-003-linux-uid container only; cached care-link-imp02-verification:002 image read-only; current workload source/test mounts read-only; network none; in-container UID0 with only CHOWN/SETUID/SETGID; tmpfs temporary data; cleanup exact ID",
+      "owner_task_id": "IMP-03-D",
+      "expires_at": "2026-11-14T23:59:59Z"
+    }
+  ],
+  "expected_outputs": [
+    "Current candidate manifest and guide coverage status",
+    "Actual local test/build results, sanitized logs/digests, review and handoff"
+  ],
+  "positive_acceptance": [
+    "Available complete local checks pass against identifiable candidate; actual deployed observations remain separately bound"
+  ],
+  "adverse_acceptance": [
+    "Declared skips/failures retained; no fixtures represented as issued runtime identity or acceptance; IMP-02 preserved"
+  ],
+  "reviewer": "imp_review read-only findings, primary integration",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Unknown target ownership or missing issued bindings for live operations",
+    "Unsafe fixture collision or critical control defect; preserve unaffected checks"
+  ],
+  "is_example": false
+}

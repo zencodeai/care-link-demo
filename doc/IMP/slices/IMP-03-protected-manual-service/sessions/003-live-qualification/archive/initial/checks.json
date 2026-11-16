@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Candidate continuity and inherited G-02 dependency",
+    "command": "Rehash session002 manifest; verify all G-02 reviewed_evidence SHA256 values",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Current candidate behavior is verified within the declared local or live scope.",
+    "actual": "302/302 prior source files and 8/8 source inputs unchanged. All five G-02 evidence bindings match. Current manifest covers 319 source files; 17 extra paths were outside prior manifest scope. G-02 acceptance is inherited only.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/g02-dependency.json",
+    "evidence_digest": "da2423a0918052884267b300de35cbffde762546a3cfd3dbb8bd5d189d8f17cb",
+    "mock_used": false
+  },
+  {
+    "name": "Source-only complete checker",
+    "command": "UV_CACHE_DIR=/private/tmp/care-link-uv-cache UV_OFFLINE=1 UV_NO_SYNC=1 .venv/bin/python tools/check.py (optional fixture variables removed)",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Current candidate behavior is verified within the declared local or live scope.",
+    "actual": "451 Python passed, 56 declared optional/platform skips, 2 warnings; 56 TS/UI/parity tests passed. Lock/generation/admission/boundaries/types/lint/format/build passed.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/source-check.log",
+    "evidence_digest": "814158affbb61c04999160e886e16fa65d190125158260090762c3bc9095f8b2",
+    "mock_used": true
+  },
+  {
+    "name": "Full PostgreSQL OPA signed-journal capture and adapter lane",
+    "command": "UV_CACHE_DIR=/private/tmp/care-link-uv-cache UV_OFFLINE=1 UV_NO_SYNC=1 .venv/bin/python -m tools.imp03_verification.run_checks --output /private/tmp/care-link-imp03-003-full-20261113-001 --opa /private/tmp/care-link-imp03-tools/opa",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Current candidate behavior is verified within the declared local or live scope.",
+    "actual": "505 Python passed, 2 declared skips, 3 warnings; 56 TS/UI/parity passed; all checker commands passed. Real PostgreSQL TLS1.3 and pinned OPA; provider/workload seams are fixtures. Both skips were executed separately below.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/full-check.log",
+    "evidence_digest": "e42e24019c3e1bcdfb164e7228c11d3dcb46cd1f20ecadedb1ef56c2401357f9",
+    "mock_used": true
+  },
+  {
+    "name": "Separate initial provisioning and reversible audit grant barrier",
+    "command": "Runner separate provisioning lane: .venv/bin/python -m pytest -q tests/integration/imp03_runtime/test_provisioning.py with private disposable fixture DSN",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Current candidate behavior is verified within the declared local or live scope.",
+    "actual": "1 passed. Fresh DBs/logins/migrations/bootstrap/runtime grants, audit grant revoke/restore, existing-target refusal. Actors/subjects are illustrative bindings; no OIDC issuance or live outage claim.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/provisioning.log",
+    "evidence_digest": "7f20721722339faad833bedbd918bbce72ec5ee8917b82cf8b1a09bf4e47f2f3",
+    "mock_used": true
+  },
+  {
+    "name": "Isolated developer core image build",
+    "command": ".venv/bin/python tools/build_core_image.py --tag care-link-core:imp03-qualification-003 --iid-file /private/tmp/care-link-imp03-003-core-iid.txt",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Current candidate behavior is verified within the declared local or live scope.",
+    "actual": "Built sha256:8bde1acf545611075a15020047e65423f9cefe5631530b428aa57830e97f7d94. Default app remains developer-only; no per-role serving artifact isolation claim.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/core-build.log",
+    "evidence_digest": "8e597a6a3a41d9c8ca27d7fdcb43ece904b34d1a33d53779e5089aba63f5b8de",
+    "mock_used": false
+  },
+  {
+    "name": "Restricted developer core smoke",
+    "command": ".venv/bin/python tools/smoke_core_image.py --image care-link-core:imp03-qualification-003",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Current candidate behavior is verified within the declared local or live scope.",
+    "actual": "Passed nonroot, read-only, no-network/no-mount/no-port, capability-disabled behavior and dependency exclusions. Exact created container removed.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/core-smoke.log",
+    "evidence_digest": "3720d04db25413343c90c31dc924c2ada5324c804c138c77d71b8e5192acc682",
+    "mock_used": false
+  },
+  {
+    "name": "Actual Linux UID fence isolation",
+    "command": "Exact docker create/start/removal argv and cached image binding in evidence/linux-uid-result.json",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Current candidate behavior is verified within the declared local or live scope.",
+    "actual": "1 passed using current workload source/test mounted read-only in new Linux container. Real reader/writer/custodian UIDs, persistent channel fence observation, denied ledger access and wrong-server UID. No deployed attestation or IMP-03 per-role isolation claim.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/linux-uid.log",
+    "evidence_digest": "99d161a645be50b349f708e7258256d26012e07682341df9edd3b5d8fc1da2cf",
+    "mock_used": false
+  },
+  {
+    "name": "Source stability and fixture cleanup",
+    "command": "Post-check source SHA256 and public Docker identity/state comparison",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Current candidate behavior is verified within the declared local or live scope.",
+    "actual": "All 319 source hashes and HEAD unchanged. No IMP-03 container remains. Retained IMP-02 container identity/image/start time/restart count/state matches before. Private fixture files remain owner-only outside source.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/docker-after.json",
+    "evidence_digest": "55fc3884df8dd101e33636e723e9cda32012e206f39962ce6d202a6332c629ad",
+    "mock_used": false
+  },
+  {
+    "name": "Issued target normal and adverse browser phases",
+    "command": null,
+    "tool_version": null,
+    "status": "not_run",
+    "expected": "Current candidate behavior is verified within the declared local or live scope.",
+    "actual": "not_run: no independent IMP-03 Docker target discovered and guide-default private browser config absent; no issued target/operator/account bindings supplied. No fabricated input or substituted IMP-02 target.",
+    "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/environment.json",
+    "evidence_digest": "a9e528f3ccfe1979ec11d2b4919813dd240efa2530be53d33fa9b18e4677eaa2",
+    "mock_used": false
+  },
+  {
+    "name": "Human usability operational and G-03 decision",
+    "command": null,
+    "tool_version": null,
+    "status": "not_run",
+    "expected": "Current candidate behavior is verified within the declared local or live scope.",
+    "actual": "not_run: no actual live target demonstration, human EN/FR keyboard/screen-reader review, deployment resource/latency/rollback observations or explicit G-03 decision. Local durations are check durations, not service latency.",
+    "evidence_path": null,
+    "evidence_digest": null,
+    "mock_used": false
+  }
+]

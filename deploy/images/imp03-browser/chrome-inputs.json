@@ -1,0 +1,7 @@
+{
+  "version": "157.0.8103.78",
+  "playwright_version": "1.65.0",
+  "platform": "linux-arm64",
+  "url": "https://storage.googleapis.com/chrome-for-testing-public/157.0.8103.78/linux-arm64/chrome-linux-arm64.zip",
+  "sha256": "f354d666822a11d8fe99e923c44be77dd226fab2750c5b5947e6318818bf10f1"
+}

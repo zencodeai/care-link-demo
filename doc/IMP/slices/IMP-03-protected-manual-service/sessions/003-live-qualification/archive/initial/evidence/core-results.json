@@ -1,0 +1,30 @@
+{
+  "steps": [
+    {
+      "name": "core-build",
+      "command": [
+        ".venv/bin/python",
+        "tools/build_core_image.py",
+        "--tag",
+        "care-link-core:imp03-qualification-003",
+        "--iid-file",
+        "/private/tmp/care-link-imp03-003-core-iid.txt"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 4.6
+    },
+    {
+      "name": "core-smoke",
+      "command": [
+        ".venv/bin/python",
+        "tools/smoke_core_image.py",
+        "--image",
+        "care-link-core:imp03-qualification-003"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 1.09
+    }
+  ],
+  "image_id": "sha256:8bde1acf545611075a15020047e65423f9cefe5631530b428aa57830e97f7d94",
+  "scope": "Developer-only core image; no per-role deployment isolation claim"
+}

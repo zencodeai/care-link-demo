@@ -1,0 +1,77 @@
+[
+  {
+    "role": "identity",
+    "agent_id_preserved": true,
+    "before": {
+      "not_before": "2026-11-13T15:33:38+00:00",
+      "not_after": "2026-11-13T15:38:48+00:00"
+    },
+    "after": {
+      "not_before": "2026-11-13T15:40:45+00:00",
+      "not_after": "2026-11-13T15:45:55+00:00"
+    },
+    "renewed": true,
+    "old_leaf_expired_before_new_observation": true,
+    "exit_code": 0
+  },
+  {
+    "role": "core",
+    "agent_id_preserved": true,
+    "before": {
+      "not_before": "2026-11-13T15:33:29+00:00",
+      "not_after": "2026-11-13T15:38:39+00:00"
+    },
+    "after": {
+      "not_before": "2026-11-13T15:40:41+00:00",
+      "not_after": "2026-11-13T15:45:51+00:00"
+    },
+    "renewed": true,
+    "old_leaf_expired_before_new_observation": true,
+    "exit_code": 0
+  },
+  {
+    "role": "data",
+    "agent_id_preserved": true,
+    "before": {
+      "not_before": "2026-11-13T15:33:42+00:00",
+      "not_after": "2026-11-13T15:38:52+00:00"
+    },
+    "after": {
+      "not_before": "2026-11-13T15:40:55+00:00",
+      "not_after": "2026-11-13T15:46:05+00:00"
+    },
+    "renewed": true,
+    "old_leaf_expired_before_new_observation": true,
+    "exit_code": 0
+  },
+  {
+    "role": "pdp",
+    "agent_id_preserved": true,
+    "before": {
+      "not_before": "2026-11-13T15:33:32+00:00",
+      "not_after": "2026-11-13T15:38:42+00:00"
+    },
+    "after": {
+      "not_before": "2026-11-13T15:40:20+00:00",
+      "not_after": "2026-11-13T15:45:30+00:00"
+    },
+    "renewed": true,
+    "old_leaf_expired_before_new_observation": true,
+    "exit_code": 0
+  },
+  {
+    "role": "journal",
+    "agent_id_preserved": true,
+    "before": {
+      "not_before": "2026-11-13T15:33:41+00:00",
+      "not_after": "2026-11-13T15:38:51+00:00"
+    },
+    "after": {
+      "not_before": "2026-11-13T15:40:55+00:00",
+      "not_after": "2026-11-13T15:46:05+00:00"
+    },
+    "renewed": true,
+    "old_leaf_expired_before_new_observation": true,
+    "exit_code": 0
+  }
+]

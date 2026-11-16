@@ -1,0 +1,9 @@
+{
+  "case": "ui",
+  "locale": "en-CA",
+  "attempt": "signin-diagnostic-001",
+  "exit_code": 1,
+  "duration_seconds": 15.845,
+  "private_output": "/private/tmp/care-link-imp03-003-cont1/extended-ui-en-CA-signin-diagnostic-001",
+  "human_acceptance": false
+}

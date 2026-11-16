@@ -1,0 +1,64 @@
+{
+  "recorded_at": "2026-11-14T20:29:03.177861+00:00",
+  "original_imp02_entries": [
+    {
+      "entry_id": "7e0b1b06-2eb9-4978-9585-e0a8f2b2d2fa",
+      "unchanged": true
+    },
+    {
+      "entry_id": "811cae52-0d2c-461d-ad9e-17eb465850ef",
+      "unchanged": true
+    },
+    {
+      "entry_id": "10f42534-0dd8-45b7-a718-442a71f92f0f",
+      "unchanged": true
+    },
+    {
+      "entry_id": "551fd699-8848-4e75-8cba-1c9b906e71fb",
+      "unchanged": true
+    },
+    {
+      "entry_id": "01cd3948-a575-4269-b4f7-559c2bd717f3",
+      "unchanged": true
+    },
+    {
+      "entry_id": "324f20df-b748-436e-a3cc-e17961680b60",
+      "unchanged": true
+    }
+  ],
+  "original_fence": {
+    "generation": 1,
+    "denied": [
+      "spiffe://care-link.demo/demo/core"
+    ],
+    "head": "b9093c3fe012cfe2eb6bda45a2e76bb8441d5f1238c7c3df4f9ad7bd3ebe8b65"
+  },
+  "continuation_fence": {
+    "generation": 0,
+    "denied": [],
+    "head": "f302c8c9ebf633e62e8455bc70d5e83105143ddad449952eb3f4ca910a4d65df"
+  },
+  "user_conversation": {
+    "metadata": {
+      "id": "0e66db99-e3a4-488c-a81b-a667e02bf0fe",
+      "service_phase": "queued",
+      "transport": "connected",
+      "owner_id": null,
+      "unresolved": true,
+      "disclosure_acknowledged": true,
+      "revision": 3,
+      "control_epoch": 0,
+      "created_at": "2026-11-14 19:45:59.250085+00:00",
+      "updated_at": "2026-11-14 19:46:59.125620+00:00"
+    },
+    "support_acl_metadata": [
+      {
+        "purpose": "support",
+        "revoked_at": null,
+        "valid_until": null,
+        "revision": 1
+      }
+    ],
+    "no_message_content_read": true
+  }
+}

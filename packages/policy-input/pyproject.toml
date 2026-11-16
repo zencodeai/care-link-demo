@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "care-link-policy-input"
+version = "0.1.0"
+requires-python = ">=3.12,<3.15"
+dependencies = ["care-link-domain", "care-link-contracts", "cryptography==50.0.2"]
+
+[tool.uv.sources]
+care-link-domain = { workspace = true }
+care-link-contracts = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/care_link_policy_input"]

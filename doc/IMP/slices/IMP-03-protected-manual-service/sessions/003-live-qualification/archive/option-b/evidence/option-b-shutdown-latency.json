@@ -1,0 +1,59 @@
+{
+  "core_id_preserved": true,
+  "stop_exit": 241,
+  "stop_seconds": 0.228,
+  "independent_during_core_stop": {
+    "help_shell": {
+      "status": 200,
+      "seconds": 0.003962
+    },
+    "static": {
+      "status": 200,
+      "seconds": 0.003396
+    }
+  },
+  "health_latency_samples": [
+    {
+      "status": 200,
+      "seconds": 0.011169
+    },
+    {
+      "status": 200,
+      "seconds": 0.004216
+    },
+    {
+      "status": 200,
+      "seconds": 0.003103
+    },
+    {
+      "status": 200,
+      "seconds": 0.003788
+    },
+    {
+      "status": 200,
+      "seconds": 0.003052
+    },
+    {
+      "status": 200,
+      "seconds": 0.002376
+    },
+    {
+      "status": 200,
+      "seconds": 0.002711
+    },
+    {
+      "status": 200,
+      "seconds": 0.002619
+    },
+    {
+      "status": 200,
+      "seconds": 0.003019
+    },
+    {
+      "status": 200,
+      "seconds": 0.002839
+    }
+  ],
+  "median_seconds": 0.0030355,
+  "limits": "Ten unauthenticated health round trips and one supervised stop/start; no capacity or protected-operation latency acceptance."
+}

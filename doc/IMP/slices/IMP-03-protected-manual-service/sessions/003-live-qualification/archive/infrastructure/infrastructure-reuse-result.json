@@ -1,0 +1,100 @@
+{
+  "packet_id": "IMP-03-003-INFRA-REUSE-REVIEW",
+  "task_id": "IMP-03-D",
+  "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+  "role": "imp_platform",
+  "status": "completed",
+  "changed_paths": [
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/infrastructure-reuse-assessment.md",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/work-packet-infrastructure-reuse.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/imp02-reuse-inventory.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/imp02-reuse-postgres.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/imp02-reuse-spire.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/qualification-status.md",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/handoff.md",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/specialist-results.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/infrastructure-reuse-result.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/agent-result.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence-manifest.json",
+    "doc/IMP/slices/IMP-03-protected-manual-service/README.md"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/infrastructure-reuse-assessment.md",
+      "sha256": "625eb481bf3bac68c183dfabedb7215a838890215df14280b2903fe35d164d68"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/work-packet-infrastructure-reuse.json",
+      "sha256": "00574b29b3765c9bf9a2c9723763a02a53d27994fb6c615fcc1b62e0b5c51dc3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/imp02-reuse-inventory.json",
+      "sha256": "34980b1c3be0f26f38d122f7b68596669cc87c22980f8cdc8da8f20a90955abb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/imp02-reuse-postgres.json",
+      "sha256": "04039e42b9dc58fea768ca5fd9fe7a295f0b826cd1cbb78b733a86dc6c5a0e99"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/imp02-reuse-spire.json",
+      "sha256": "9d02c1c817ccc83dcf658a41250554244b091dcce70f2d00762cd017452f2aad"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/qualification-status.md",
+      "sha256": "13e68d3653bb67e4741d2ad0a9116cfa3597849c162cb1b922b159bb00a86f77"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/handoff.md",
+      "sha256": "0398c7751f777318dd1c3fa8ea8b3e3a870f526a74ed7a34711abbb77c3d927c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/specialist-results.json",
+      "sha256": "1bdb936c1cbc3c05ace5af059f0e7d427129bd3e16bc77af039fae0475cc2232"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Named cluster public inventory",
+      "command": "Exact argv recorded in evidence/imp02-reuse-inventory.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Read-only feasibility evidence without live resource mutation.",
+      "actual": "Existing node Ready; SPIRE/provider/PostgreSQL/application pods ready; infrastructure services/storage/policies inspected. Advertised capacity is not measured spare capacity.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/imp02-reuse-inventory.json",
+      "evidence_digest": "34980b1c3be0f26f38d122f7b68596669cc87c22980f8cdc8da8f20a90955abb",
+      "mock_used": false
+    },
+    {
+      "name": "Read-only database collision check",
+      "command": "Exact argv recorded in evidence/imp02-reuse-postgres.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Read-only feasibility evidence without live resource mutation.",
+      "actual": "PostgreSQL18.3 with TLS enabled/minimumTLS1.3 configured; identity/keycloak/postgres databases only; no requested IMP03 database/login/global group role names. Pod-local metadata query does not qualify a remote TLS path.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/imp02-reuse-postgres.json",
+      "evidence_digest": "04039e42b9dc58fea768ca5fd9fe7a295f0b826cd1cbb78b733a86dc6c5a0e99",
+      "mock_used": false
+    },
+    {
+      "name": "Public SPIRE registration collision check",
+      "command": "Exact argv recorded in evidence/imp02-reuse-spire.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Read-only feasibility evidence without live resource mutation.",
+      "actual": "Six existing IMP02 public registration entries; no IMP03 /demo/* workload IDs. No entry/SVID/token changed or issued.",
+      "evidence_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/imp02-reuse-spire.json",
+      "evidence_digest": "9d02c1c817ccc83dcf658a41250554244b091dcce70f2d00762cd017452f2aad",
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [],
+  "remaining_risks": [
+    "No live deployment/reuse activated; independent-instance guide remains unchanged.",
+    "Sharing existing stateful/trust services requires explicit profile reconciliation, exact resource additions and affected IMP02 regression evidence; shared administrator/outage/resource domains remain.",
+    "Old fixed-session tools and SPIRE/CSI collisions require bounded implementation; existing app image cannot serve current five-role runtime.",
+    "No measured spare capacity, new attestation/issued actors/TLS/runtime qualification or G03 acceptance."
+  ],
+  "handoff": "Reuse existing workstation/Docker/kind/Calico/storage/product images. Add separately owned IMP03 state/identities/workloads and off-cluster journal. Existing SPIRE/Keycloak/PostgreSQL sharing is technically plausible but changes current guide assumptions. See assessment for observed collision-free names, exact policy/tool changes and optionsA/B. This request authorized read-only assessment only.",
+  "is_example": false
+}

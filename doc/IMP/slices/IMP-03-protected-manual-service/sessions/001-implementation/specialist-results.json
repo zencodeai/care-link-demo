@@ -1,0 +1,263 @@
+[
+  {
+    "packet_id": "IMP-03-001-SCOPE",
+    "task_id": "IMP-03-A",
+    "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "role": "imp_scope",
+    "status": "completed",
+    "changed_paths": [],
+    "output_refs": [
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/review.md",
+        "sha256": "b7bdb6678759028c3d0828d7cdc65cee89ee3602e922fec1b938d8e981a923e2"
+      },
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/handoff.md",
+        "sha256": "bbe31ae9f50cf52684172ddc153e5e7af01b0ac082b5238cb9365a58c000c77e"
+      }
+    ],
+    "checks": [],
+    "findings": [],
+    "contract_changes": [],
+    "remaining_risks": [
+      "Specialist-local reports preceded primary integration where applicable; current candidate-bound checks are in checks.json. No stage or human acceptance was supplied."
+    ],
+    "handoff": "Focused work/findings returned to primary; exclusive source ownership returned before final integration. Read-only; no source edits or host operations.",
+    "is_example": false
+  },
+  {
+    "packet_id": "IMP-03-001-DATA",
+    "task_id": "IMP-03-B",
+    "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "role": "imp_python",
+    "status": "completed",
+    "changed_paths": [
+      "services/data/**"
+    ],
+    "output_refs": [
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/review.md",
+        "sha256": "b7bdb6678759028c3d0828d7cdc65cee89ee3602e922fec1b938d8e981a923e2"
+      },
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/handoff.md",
+        "sha256": "bbe31ae9f50cf52684172ddc153e5e7af01b0ac082b5238cb9365a58c000c77e"
+      }
+    ],
+    "checks": [
+      {
+        "name": "Specialist reported bounded checks",
+        "command": null,
+        "tool_version": null,
+        "status": "passed",
+        "expected": "Scoped source/local checks, without human or runtime admission.",
+        "actual": "Initial14 PostgreSQL TLS tests passed before later source additions; scoped Ruff and strict typing passed. Final full source was tested by primary.",
+        "evidence_path": null,
+        "evidence_digest": null,
+        "mock_used": true
+      }
+    ],
+    "findings": [],
+    "contract_changes": [],
+    "remaining_risks": [
+      "Specialist-local reports preceded primary integration where applicable; current candidate-bound checks are in checks.json. No stage or human acceptance was supplied."
+    ],
+    "handoff": "Focused work/findings returned to primary; exclusive source ownership returned before final integration. No deployment or shared-host mutation performed by this specialist.",
+    "is_example": false
+  },
+  {
+    "packet_id": "IMP-03-001-WEB",
+    "task_id": "IMP-03-C",
+    "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "role": "imp_web",
+    "status": "completed",
+    "changed_paths": [
+      "apps/web/src/manual/**",
+      "apps/web/src/App.tsx",
+      "apps/web/src/styles.css"
+    ],
+    "output_refs": [
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/review.md",
+        "sha256": "b7bdb6678759028c3d0828d7cdc65cee89ee3602e922fec1b938d8e981a923e2"
+      },
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/handoff.md",
+        "sha256": "bbe31ae9f50cf52684172ddc153e5e7af01b0ac082b5238cb9365a58c000c77e"
+      }
+    ],
+    "checks": [
+      {
+        "name": "Specialist reported bounded checks",
+        "command": null,
+        "tool_version": null,
+        "status": "passed",
+        "expected": "Scoped source/local checks, without human or runtime admission.",
+        "actual": "Nine manual component tests, TypeScript, ESLint and formatting passed; no live browser/identity qualification.",
+        "evidence_path": null,
+        "evidence_digest": null,
+        "mock_used": true
+      }
+    ],
+    "findings": [],
+    "contract_changes": [],
+    "remaining_risks": [
+      "Specialist-local reports preceded primary integration where applicable; current candidate-bound checks are in checks.json. No stage or human acceptance was supplied."
+    ],
+    "handoff": "Focused work/findings returned to primary; exclusive source ownership returned before final integration. No deployment or shared-host mutation performed by this specialist.",
+    "is_example": false
+  },
+  {
+    "packet_id": "IMP-03-001-JOURNAL",
+    "task_id": "IMP-03-B",
+    "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "role": "imp_platform",
+    "status": "completed",
+    "changed_paths": [
+      "host/recovery-control/**"
+    ],
+    "output_refs": [
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/review.md",
+        "sha256": "b7bdb6678759028c3d0828d7cdc65cee89ee3602e922fec1b938d8e981a923e2"
+      },
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/handoff.md",
+        "sha256": "bbe31ae9f50cf52684172ddc153e5e7af01b0ac082b5238cb9365a58c000c77e"
+      }
+    ],
+    "checks": [
+      {
+        "name": "Specialist reported bounded checks",
+        "command": null,
+        "tool_version": null,
+        "status": "passed",
+        "expected": "Scoped source/local checks, without human or runtime admission.",
+        "actual": "31 journal/capture tests, Ruff and strict typing passed. Consistent DB dump/import integration was subsequently completed by primary.",
+        "evidence_path": null,
+        "evidence_digest": null,
+        "mock_used": true
+      }
+    ],
+    "findings": [],
+    "contract_changes": [],
+    "remaining_risks": [
+      "Specialist-local reports preceded primary integration where applicable; current candidate-bound checks are in checks.json. No stage or human acceptance was supplied."
+    ],
+    "handoff": "Focused work/findings returned to primary; exclusive source ownership returned before final integration. No deployment or shared-host mutation performed by this specialist.",
+    "is_example": false
+  },
+  {
+    "packet_id": "IMP-03-001-CONTROLS",
+    "task_id": "IMP-03-D",
+    "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "role": "imp_controls",
+    "status": "completed",
+    "changed_paths": [],
+    "output_refs": [
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/review.md",
+        "sha256": "b7bdb6678759028c3d0828d7cdc65cee89ee3602e922fec1b938d8e981a923e2"
+      },
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/handoff.md",
+        "sha256": "bbe31ae9f50cf52684172ddc153e5e7af01b0ac082b5238cb9365a58c000c77e"
+      }
+    ],
+    "checks": [
+      {
+        "name": "Specialist reported bounded checks",
+        "command": null,
+        "tool_version": null,
+        "status": "passed",
+        "expected": "Scoped source/local checks, without human or runtime admission.",
+        "actual": "Independent31-test journal/capture pass and deterministic mutable-policy/reconnect reproductions; findings subsequently fixed by primary.",
+        "evidence_path": null,
+        "evidence_digest": null,
+        "mock_used": true
+      }
+    ],
+    "findings": [],
+    "contract_changes": [],
+    "remaining_risks": [
+      "Specialist-local reports preceded primary integration where applicable; current candidate-bound checks are in checks.json. No stage or human acceptance was supplied."
+    ],
+    "handoff": "Focused work/findings returned to primary; exclusive source ownership returned before final integration. Read-only; no source edits or host operations.",
+    "is_example": false
+  },
+  {
+    "packet_id": "IMP-03-001-DUTIES",
+    "task_id": "IMP-03-B",
+    "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "role": "imp_controls",
+    "status": "completed",
+    "changed_paths": [
+      "packages/domain/src/care_link_domain/duties.py",
+      "packages/policy-input/src/care_link_policy_input/duties.py",
+      "packages/policy-input/tests/test_duty_registry.py",
+      "services/data/src/care_link_data/duties.py",
+      "services/data/src/care_link_data/audit.py",
+      "services/data/src/care_link_data/workforce.py",
+      "services/data/migrations/001_manual.sql",
+      "services/data/tests/test_duties.py",
+      "services/data/tests/test_manual.py",
+      "config/demo/imp03/policy/manual.rego"
+    ],
+    "output_refs": [
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/review.md",
+        "sha256": "b7bdb6678759028c3d0828d7cdc65cee89ee3602e922fec1b938d8e981a923e2"
+      },
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/handoff.md",
+        "sha256": "bbe31ae9f50cf52684172ddc153e5e7af01b0ac082b5238cb9365a58c000c77e"
+      }
+    ],
+    "checks": [
+      {
+        "name": "Specialist reported bounded checks",
+        "command": null,
+        "tool_version": null,
+        "status": "passed",
+        "expected": "Scoped source/local checks, without human or runtime admission.",
+        "actual": "Five registry tests and scoped style/type/boundary checks passed; no database/container checks by specialist. Primary performed actual database and final integration tests.",
+        "evidence_path": null,
+        "evidence_digest": null,
+        "mock_used": true
+      }
+    ],
+    "findings": [],
+    "contract_changes": [],
+    "remaining_risks": [
+      "Specialist-local reports preceded primary integration where applicable; current candidate-bound checks are in checks.json. No stage or human acceptance was supplied."
+    ],
+    "handoff": "Focused work/findings returned to primary; exclusive source ownership returned before final integration. No deployment or shared-host mutation performed by this specialist.",
+    "is_example": false
+  },
+  {
+    "packet_id": "IMP-03-001-REVIEW",
+    "task_id": "IMP-03-D",
+    "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+    "role": "imp_review",
+    "status": "completed",
+    "changed_paths": [],
+    "output_refs": [
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/review.md",
+        "sha256": "b7bdb6678759028c3d0828d7cdc65cee89ee3602e922fec1b938d8e981a923e2"
+      },
+      {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/001-implementation/handoff.md",
+        "sha256": "bbe31ae9f50cf52684172ddc153e5e7af01b0ac082b5238cb9365a58c000c77e"
+      }
+    ],
+    "checks": [],
+    "findings": [],
+    "contract_changes": [],
+    "remaining_risks": [
+      "Specialist-local reports preceded primary integration where applicable; current candidate-bound checks are in checks.json. No stage or human acceptance was supplied."
+    ],
+    "handoff": "Focused work/findings returned to primary; exclusive source ownership returned before final integration. Read-only; no source edits or host operations.",
+    "is_example": false
+  }
+]

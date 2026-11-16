@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "profile": "imp03-option-b-transport-tls-renewal-proposal",
+  "prepared_at": "2026-11-13T14:39:46+00:00",
+  "apply_executed": false,
+  "existing_private_keys_copied": false,
+  "existing_input_files_changed": false,
+  "renewed_certificates": [
+    {
+      "name": "ca",
+      "filename": "ca.crt",
+      "old": {
+        "pem_sha256": "8f11a04ded64036f063f7abb244e5a17f20ea9d6694774d38ce6363aa86148c4",
+        "der_fingerprint_sha256": "70551c9e32f62f037547a1da13888fb127f5a32bbccaab7a11ba286ef780412e",
+        "subject": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "326981963595580051435133227547131010314874308371",
+        "not_valid_before": "2026-11-09T14:17:55+00:00",
+        "not_valid_after": "2026-11-11T14:22:55+00:00",
+        "public_key_spki_sha256": "696ea6618c6121a51d968c3696b2d00d57f5491e1ba70a3a243294a97fbaddfa"
+      },
+      "new": {
+        "pem_sha256": "741190b97cba404ec983cb0f396d251f4aaba6249cbeb524e79bf4475dc6ec89",
+        "der_fingerprint_sha256": "7272503c88c6f62c5ec990c565212cd847926964d01f616d4ecfd3746951da9f",
+        "subject": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "269451696274812397775408774468517178743487150710",
+        "not_valid_before": "2026-11-13T14:34:46+00:00",
+        "not_valid_after": "2026-11-27T14:39:46+00:00",
+        "public_key_spki_sha256": "696ea6618c6121a51d968c3696b2d00d57f5491e1ba70a3a243294a97fbaddfa"
+      },
+      "subject_issuer_extensions_preserved": true,
+      "public_key_spki_preserved": true,
+      "private_key_public_binding_verified": true
+    },
+    {
+      "name": "postgres",
+      "filename": "postgres.crt",
+      "old": {
+        "pem_sha256": "4ee63c67dfdde5db2b8b58b0d2e138214d34cda3b691f7138e1bc6fd85bf0309",
+        "der_fingerprint_sha256": "900a79bb624d9982bd1faaeb37690e276c47929dad80c7b5858e8178b5556542",
+        "subject": "CN=postgres.localhost",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "627950111422593190625477541511817002118918007584",
+        "not_valid_before": "2026-11-09T14:17:55+00:00",
+        "not_valid_after": "2026-11-10T14:22:55+00:00",
+        "public_key_spki_sha256": "6aa889d2c7e73e2cef5902718e94f8366e5fb3436d08435a924d2a9369a1e727"
+      },
+      "new": {
+        "pem_sha256": "2cc5b4d8410fef2bf2ab96200d3600564654b6839b786fa7ff10fd02fc6fedfc",
+        "der_fingerprint_sha256": "43db000524065600458ec06b7708c9b5a6f773021c0d58b76a68354a6cf78952",
+        "subject": "CN=postgres.localhost",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "488904545874468898716752697138671646316818872573",
+        "not_valid_before": "2026-11-13T14:34:46+00:00",
+        "not_valid_after": "2026-11-20T14:39:46+00:00",
+        "public_key_spki_sha256": "6aa889d2c7e73e2cef5902718e94f8366e5fb3436d08435a924d2a9369a1e727"
+      },
+      "subject_issuer_extensions_preserved": true,
+      "public_key_spki_preserved": true,
+      "private_key_public_binding_verified": true
+    },
+    {
+      "name": "keycloak",
+      "filename": "keycloak.crt",
+      "old": {
+        "pem_sha256": "0b958c1b08ec6454e03d40448e4f701310e79a9f19d3f67c83ee8ef0b35033ab",
+        "der_fingerprint_sha256": "72ff4b96f89d58cb4d8ad07add179fb650cc1146be4448840c93f9e7593165d6",
+        "subject": "CN=id.localhost",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "140353666245548663540826264254385276278576460191",
+        "not_valid_before": "2026-11-09T14:17:55+00:00",
+        "not_valid_after": "2026-11-10T14:22:55+00:00",
+        "public_key_spki_sha256": "940cf680c3603d93602578005191f73e3bdf5ac2ec51cfbb3069403d54132a9f"
+      },
+      "new": {
+        "pem_sha256": "6490a9468e48bdba7444bd41c64077db4b057cc0a486b77a259dd82cba08bed8",
+        "der_fingerprint_sha256": "bc905c5ba1ccb064546c0653cdcee82a0aa589e03cb1f750bbae3206adc2de66",
+        "subject": "CN=id.localhost",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "204396639499597573227162592977866650047110261524",
+        "not_valid_before": "2026-11-13T14:34:46+00:00",
+        "not_valid_after": "2026-11-20T14:39:46+00:00",
+        "public_key_spki_sha256": "940cf680c3603d93602578005191f73e3bdf5ac2ec51cfbb3069403d54132a9f"
+      },
+      "subject_issuer_extensions_preserved": true,
+      "public_key_spki_preserved": true,
+      "private_key_public_binding_verified": true
+    },
+    {
+      "name": "main",
+      "filename": "main.crt",
+      "old": {
+        "pem_sha256": "4076e2d767a7e4ebb96a4b8108b298b028ae618f1ffa86aa1958cc38c182c1e8",
+        "der_fingerprint_sha256": "63a5a37fc932aa3b46d30ddfa5e55ea45eee5778731e829fb6b3327195881856",
+        "subject": "CN=main.localhost",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "386391020624811835802102797634314240785435914635",
+        "not_valid_before": "2026-11-09T14:17:55+00:00",
+        "not_valid_after": "2026-11-10T14:22:55+00:00",
+        "public_key_spki_sha256": "326b78151b9b3aded8fc7c501f278fd06ebea7c44098b35ff20a1b8bc4caf894"
+      },
+      "new": {
+        "pem_sha256": "45a70e316925921d8eff30765afcfcb2524a4253a35847c173c6b7f4fdc649ca",
+        "der_fingerprint_sha256": "2152e42e8add583ec33ea70f0fd4a65cf69950c2ef2005d2c550af2431fa56f3",
+        "subject": "CN=main.localhost",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "188485790652651479133735114001475221660664420380",
+        "not_valid_before": "2026-11-13T14:34:46+00:00",
+        "not_valid_after": "2026-11-20T14:39:46+00:00",
+        "public_key_spki_sha256": "326b78151b9b3aded8fc7c501f278fd06ebea7c44098b35ff20a1b8bc4caf894"
+      },
+      "subject_issuer_extensions_preserved": true,
+      "public_key_spki_preserved": true,
+      "private_key_public_binding_verified": true
+    },
+    {
+      "name": "help",
+      "filename": "help.crt",
+      "old": {
+        "pem_sha256": "9efb120bc926897059e04782c0510c4ea3f146ad3e3444e9a2b74aa819b31b45",
+        "der_fingerprint_sha256": "0df421cc178bebf688d0024a6ffdab95bfeb54d0ae6a54b226e4c937826302fc",
+        "subject": "CN=help.localhost",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "495601221137171503633166594127833823555209391712",
+        "not_valid_before": "2026-11-09T14:17:55+00:00",
+        "not_valid_after": "2026-11-10T14:22:55+00:00",
+        "public_key_spki_sha256": "6f66ef9a54eb3c580991740803cc5b2d03bb33617788d7d8d803bcbbee8f9187"
+      },
+      "new": {
+        "pem_sha256": "3e029b3b3073ad7a886508cf317a29eef3a36fc785c96255763152d7d78e9ab4",
+        "der_fingerprint_sha256": "ae4e18d994178848466b884041acc589718697d654b5fccd16220d58406d5964",
+        "subject": "CN=help.localhost",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "328127782173564458829107534021499254876341486983",
+        "not_valid_before": "2026-11-13T14:34:46+00:00",
+        "not_valid_after": "2026-11-20T14:39:46+00:00",
+        "public_key_spki_sha256": "6f66ef9a54eb3c580991740803cc5b2d03bb33617788d7d8d803bcbbee8f9187"
+      },
+      "subject_issuer_extensions_preserved": true,
+      "public_key_spki_preserved": true,
+      "private_key_public_binding_verified": true
+    },
+    {
+      "name": "static",
+      "filename": "static.crt",
+      "old": {
+        "pem_sha256": "1362161284f5e89d76da28c6c026c56438ec9c78cd8476ab24fb9286655b1ef8",
+        "der_fingerprint_sha256": "c82ef053ef9067772aee2004d86a27792f23aa5d49565fc98a5927b656b931ba",
+        "subject": "CN=static.localhost",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "1389175124950094027671985842728492818027423708",
+        "not_valid_before": "2026-11-09T14:17:55+00:00",
+        "not_valid_after": "2026-11-10T14:22:55+00:00",
+        "public_key_spki_sha256": "0ae1c0402fcbfbf60b40e8ec716f9626862c03b2da9bf8456eb4ae9aeb8b34d2"
+      },
+      "new": {
+        "pem_sha256": "a2af61f34c6ea3faf712c780407480198f99fd873000d75e0810ac2ade251262",
+        "der_fingerprint_sha256": "865bfa53550ad6eb4e34eb7a119fc44e10957abce90b128e759ebe526dfc1b9a",
+        "subject": "CN=static.localhost",
+        "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+        "serial_number": "489105176856730258810467987635954894421621336728",
+        "not_valid_before": "2026-11-13T14:34:46+00:00",
+        "not_valid_after": "2026-11-20T14:39:46+00:00",
+        "public_key_spki_sha256": "0ae1c0402fcbfbf60b40e8ec716f9626862c03b2da9bf8456eb4ae9aeb8b34d2"
+      },
+      "subject_issuer_extensions_preserved": true,
+      "public_key_spki_preserved": true,
+      "private_key_public_binding_verified": true
+    }
+  ],
+  "new_manual_certificate": {
+    "name": "manual",
+    "filename": "manual.crt",
+    "private_key_filename": "manual.key",
+    "dns_names": [
+      "manual.localhost"
+    ],
+    "new": {
+      "pem_sha256": "b9dfc8cd61ae51b46ce49a2c54f3dff716f4d2e8d8a82b9c7b8d1025638fce48",
+      "der_fingerprint_sha256": "0544630b702f0889edc12ce8209b3e41247aa3172b32efadcc068204a9441535",
+      "subject": "CN=manual.localhost",
+      "issuer": "CN=CARE-Link IMP02-002 temporary lab CA",
+      "serial_number": "562401801009815235628856822804233422582454223780",
+      "not_valid_before": "2026-11-13T14:34:46+00:00",
+      "not_valid_after": "2026-11-20T14:39:46+00:00",
+      "public_key_spki_sha256": "ac1c22a56cc2112093b02cc9884531c0c92113ba03f5623a13036452bfb6f239"
+    },
+    "fresh_private_key_generated": true
+  },
+  "scope": "Prepared files only; no resource change, reload, host trust installation or approval."
+}

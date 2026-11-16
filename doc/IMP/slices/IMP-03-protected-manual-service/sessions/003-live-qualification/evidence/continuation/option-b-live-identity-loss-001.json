@@ -1,0 +1,3552 @@
+{
+  "phase": "identity-loss",
+  "attempt": 1,
+  "human_acceptance": false,
+  "pre_fault_quiescence_seconds": 1.25,
+  "exit_code": 0,
+  "before": {
+    "database": "imp03_runtime_002",
+    "journal_id": "16786426-e032-4565-a493-67295359e88b",
+    "policy_digest": "11794c6bd575d1cad41614fcd4b0a675b43ed10bfa0038b317271aa33e3b0216",
+    "tables": {
+      "access.continuation_family": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "access.continuation_token": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "audit.event": {
+        "count": 319,
+        "sha256": "0fcf2bfdff4ac1c3addc14a9f536b713d2240964b2e434263a130cb6929210aa"
+      },
+      "audit.head": {
+        "count": 1,
+        "sha256": "1b47be90eb63ca74809ef9ba3512c229dd9c45da7706a05853b5bcad5a80ad8c"
+      },
+      "control.guard": {
+        "count": 1,
+        "sha256": "3fbb503da4adb317c8d8d0bd747129db1b2506ccac31337b2f72242c1a6dd1c4"
+      },
+      "control.principal_guard": {
+        "count": 4,
+        "sha256": "aee53591b18b8b8e23a8b229686a9ad7c502a1af789255e64515326de127e0cc"
+      },
+      "control.signal_head": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "control.signal_receipt": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "control.signal_source": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.assertion": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.assessment": {
+        "count": 5,
+        "sha256": "7ee9ca35a9c48db0b49f653841dbc5cb0e4ae7ba4897d603f3d761d3750b67d3"
+      },
+      "core.choice": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.message": {
+        "count": 6,
+        "sha256": "40f5686d204ff41d4f2a0ebdcb7a8d5f8a59409945b88cd5e9a0d4d2a6213d1a"
+      },
+      "core.persona": {
+        "count": 8,
+        "sha256": "058de43b7ad21f59b3e7629df6b168b14801740d28f637705db73fb5e48b7cb0"
+      },
+      "core.session": {
+        "count": 8,
+        "sha256": "7555641c9af6288f67c18cbc7fb29ad0082ee5ff220eca118cb4b1d870bcf451"
+      },
+      "core.session_acl": {
+        "count": 9,
+        "sha256": "4ce17bd0db9f01cfa8ba3f17a690d83eb9a31c22cc392f84ecaad689e59baa6e"
+      },
+      "core.session_guard": {
+        "count": 8,
+        "sha256": "1dc7fcac4c89a083b97090a0d8745e38b12a2d12b6e05cb6fc85c2670e1b371d"
+      },
+      "core.subject_guard": {
+        "count": 8,
+        "sha256": "6d19f3384e069392dfead13850573e47a3b3539bbd9ff259e57b1d48db114292"
+      },
+      "core.turn": {
+        "count": 5,
+        "sha256": "c631f5eb43721faf18de4beca3ed9fd1fa3c2682b58a0da962e0bc4362660e6d"
+      },
+      "durable.due_job": {
+        "count": 1,
+        "sha256": "43fec3ae958d3ce4b28f701084944543e013f3f3647ff798e59674c44ca0ea30"
+      },
+      "durable.duty_nonce": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "durable.duty_operation": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "durable.event": {
+        "count": 27,
+        "sha256": "eadd7a61cbd1612ade025c429b49a6ab9027144ba69dbc928011ae424c4f067b"
+      },
+      "durable.operation": {
+        "count": 35,
+        "sha256": "52ed83959f11ae9f0178b577954c2926f3bd66c57422a61b17149a7ee34f1fb4"
+      },
+      "lifecycle.copy": {
+        "count": 19,
+        "sha256": "e0e56c9c78b228ae4b19dde98e1b930c8c7e2f6798c5462719aa1d62b650782f"
+      },
+      "lifecycle.dependency": {
+        "count": 11,
+        "sha256": "65714b28eb791a893a42dc52e62d64377833bec7e1ba6c5ce79d77600933a769"
+      },
+      "recovery.command": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "workforce.assignment": {
+        "count": 2,
+        "sha256": "00ba962c23bb0f46ff9ecd2f36c651587322a7a613371cccf81a3446b49bf753"
+      },
+      "workforce.channel_ack": {
+        "count": 2,
+        "sha256": "95941924f9aa3c2611b87c845655fc805e16a440edcce78b352f8bcd4c864ba9"
+      },
+      "workforce.channel_challenge": {
+        "count": 1,
+        "sha256": "835af75396f93ab08b5569f0a9b333739295e7c5f8d93bfeee27ac9b454a810e"
+      },
+      "workforce.queue_entry": {
+        "count": 5,
+        "sha256": "4eaf7b21f61832ae4703e7c08e62747a3cbd2f97b1664f2e89c3ec21c117736d"
+      }
+    },
+    "committed_operations": {
+      "operation": {
+        "count": 29,
+        "sha256": "5729f138d026b2e1c549b41f3f784c2e460d9783387a579768eb99c10736a386"
+      },
+      "duty_operation": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "non_rejected_operations": {
+      "operation": {
+        "count": 29,
+        "sha256": "5729f138d026b2e1c549b41f3f784c2e460d9783387a579768eb99c10736a386"
+      },
+      "duty_operation": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "rejected_operation_hashes": {
+      "operation": [
+        "54a8bf03963d052538853f124f59c0b5775df0a74d5a1e1f836b677895f1dd2f",
+        "581864917f6f8a504ca2b194eaf965ad2b147eb888b77763f243eb01a1eab75e",
+        "58485ae54f52b3944ec12c6a3d606437acccf13d7fbf49cd82cae2845dca3c45",
+        "743b8c4591852dd2c05b6552f7f08c44352bed81385abbbd552ae92f549f261f",
+        "ab7999d16021d831be1695dbec685e63ffdbdddb4f498001094da2d24af32f71",
+        "f722e685d0d0d0992c70ed9141f7c25b51356d61bac3921a941af87299ddb37d"
+      ],
+      "duty_operation": []
+    },
+    "audit": {
+      "valid": true,
+      "event_count": 319,
+      "head_digest": "9ee8a0147dbb38baef501342ad19f3dca9f98fd2995356cab46d5c864e42fad7",
+      "events": [
+        {
+          "hash": "6b00ce5d992ec7afc3429c8ba2386992171422f401cc2e2af2e776c7922964ba",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "efb8ab5db70782de61301cd011060edd1dfaa35fff54f1686715f67260a1bfdd",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "77b513edba5e6637f40fab934d752226026643d77202dfca899c1294bf6b8333",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "581ab364f10aba9f13378464ed8c4e29e608120ba17bf2d380fc80cddecad6bb",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ab5f8da9cf76fe10e208fd0ce02f154673974a0c0a2546264f1d6d26f497aff3",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8d2f893888ab310ec44afc22914f082e86dc7cfa4d74cdc547e97fd14d335942",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "79de21b29d5eb6a6755397c8e7897d63a5623ed1e5f139426e8ffd5420b6818c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e337bb8cf982cec633f069967d5461220f0d72ea4f7a8b96f7780c642deb1d65",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5cfd3b27f5046f9e074888a7e8746b3d9af935330a169d2d484a17054f84ba0f",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ebb30708d6abc5dd5a6d6e11d4e1e77885a7c3f63536242783ca465c58e93c76",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2b7743efa805bac5682d7cf4ed8d24288652b19919f8522e3472e324010724d5",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8703baebabd8d71b299d7fbd5508fd51aa5c18c95af1b06e13a95c03da9652d2",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "79dc943605bcd4876059debdc3d45e89988009222a471f8c6e2bfefcdf2597c9",
+          "action": "session_turns.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "6b76b324414b603b063eb133047baa72b7a61b9a54b234ecc23569dd31dc190b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ca9e10ae49ba59c7aab989d5f6d24fe4fa82691ccee50315ef87fc438f7a08d5",
+          "action": "session_disclosure",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d716e9c85283e11d6e2c9a56fd1e03b63f50caf2a7ba4d9074c505953fa384b0",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "568b6cbadd159b14484f0df5514ade78e5bd3bfe50023552407bf2179d788ecd",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "06f4dd67aff62b5ff7cdd560293b0dc5763d7f4706da7b6163e8bbaaf33cca75",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "844682830bd5b1c36b3c28ae309d258509970bf708c6726b3d2607e9432ff04e",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "60910aed563545b5e434c37cb8575b8f577b2cf6e74cd93374c455beff134b24",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "20dc7de0c97247c26104e7007ee629301ccc2d2d9ec3dd37908758107cadaa7b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e3f39f0451fbf4d1cc92714b142c1bb06bd6e7c081529ed3d39a7ba77a8e3adb",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a8f41595c5792f8b36c6095547fd9ac6995e86445e74af41add437614c77c66f",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "7b3ec3afe149b504cdb9ac6f1cff96d1299b30bc7204ab90ea67a5a671e02c2b",
+          "action": "session_turns",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d01acbdab46a2c77cb78fee432effea8ef59e32e283bf020506c0f302b6d92d3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "59cbe8086650c7aec1636557c3a32224d9c442b92843d6d6f1fbe5c8d4fe65ec",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f1038e0f56c9b837053d348556b759460c790196d1845718a74c26531d537115",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0c3daa64218f32c00e099dca888eeefdda262731f979a1d2a5022b144c1a0ea6",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "bc8547c48710123e57a21b702ab7d440b5609fdaeada94f84aaae40b24f7b1ec",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5a89f091d6fe704cef1021d5d826aaad9f1b8d8abd23d1aa653231a8dfdb926b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b2f0bcf56f278de605d29ab2e69d39cdf834ae8033863e842e3e61f39efe4fcf",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "973ffae0c66fdd4ace12ab564386d41d5ec166a1f6d37ea77b3ebba5985c79e4",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "786c3d4d8729d59c787bfd6a3e7c4c0a5383beba6882fb1b0c9cd0dab57208e2",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a16e3b2ecf4e6da8e38db95b37fbd6d0627a92420d606c5192c6c8a8bd42e60b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3ec326ccbd94e41bcee85bfcfdc0f96d6a86a6d6f0b1bb4508e093cfe4f86921",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "727dd98a84e1e2bc8ef6b2f8b2d04e4eb738204cb5aede97358d053bfc3c28f2",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6475379203d7fb0343bde795930116c32bb849905f7bc06278270098ada7c345",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a9ed89e3ea830603b2fcf1bab6b1ed3b204ea62a169d57e67d21d6989505ab51",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f0fbc52c04290363f6bc7c829e11938d0186de297deca99db6de980dd5cb9de4",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "39ae074139c8ad628a86dac74306f00318ddada6e832d8c03a612fe5a4fdb8af",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e53b79b1b05e2366410ed05b7a5f4ce4234074f99eef8750f2fc8d42c33518fc",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c40fd0248e2dbd440ef3b00a6145c9bde11c2e74f2f3f3f34c02e537b979ee5c",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6ed2a4a585277f9cf5060175d6e62adb6e3ada73dc91e08330a886fedf86a3ab",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "7117609fc50eca16f197d3ec196e73c414643244c652c0ba698ecf4c46416a4c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "db6c14680669a8c09a0061dba3deb72f7ffa5de2f116f5ca4c6630339551c8ad",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "30097b6462872c179123db3e5f17237a6328737c1f9daa5f75e7f0d70da4cc53",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "861b99ebbbcb3faa7dfef8e6d0512b40ea89498e8e45f57f86653a743567724a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9f1bdc97a14fee5592c69821002a8f06f256cc38c9f37a5a7dcf3211a2b53c83",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fdb02118d0535e439edf547689a0be90625a151bd000450983716e4670953c3a",
+          "action": "session_turns.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "47ddacf92c7705bd6783dbdbad271046f0d5eb8be7f0fc26c03afd7245574742",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "adf52ffc5505a682d82656725d71314f93460103c78413967f0d13883abff6cb",
+          "action": "session_disclosure",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ae5c7feec0882f910c8469e805c52658e65c8c640b9a0703848fcab69af1114f",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "df3d02f6188262a74c0b16468fc9ff0335cc0fd515c7e6242d04076f7c2d4062",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "852d4fe82415d56cbccf437f1de33307c61e9300547587f019dda7dfd2a95d3a",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9603389b081d49b4757ab2917edb560374c6615633f4b8df3fbf0eb315f485d5",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0ca2bd953b6b7e76422e8ddc02cc55c2a75690432da1bfedffaed94d67703788",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "52f91b41ed6f3c452a20db00cbbd815424d06b35b10568b017dc729755d684e9",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "69ea5386766e7f112fc57e24d84adc0ce837feebb414b4016f493f72ff416632",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "eda37d946ce94fdd384ca109e9e77b505e18e6c2ddf59bedc7c19cce6ecea54d",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b1f3a41e8a70b0b5e7d7ce37d985668b57db9632dbea9fa041798631fb763a8b",
+          "action": "session_turns",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a971abd0011838d6da81cf7c0bfb23eba67cd499303f00967974eec530628e03",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "590dd68e063b245db3e15fc2032ade35375b166d3dfb86f84ba36476852520c5",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2ebe5337f11311af8dfe99b3036450a1e3fd5a131e310506701a5c0fe8ded159",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c91ae224b2284e6915914a9b72f47f08985d45a7519d2e975d49dbd69753755f",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0eaa395b0f7ea6b22d3abcb65cc8cca8b1418612f6472352b6654b7240d9a97c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "68e63d9ce3e99aba8b6b93b2f4050aa285883587f9e7b5ba4408c77d7883a6fd",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "272f4b45995bea637daed26fdcad9bf5434e80d8578d9fac2a745b768c26c5f5",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "42c1b7dc8635e902c30927b966170f68865b2cea859221d4ed6bc3488d6a1c2b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0c78719165b3d481981eb075fb9f43cab04500a8396e0674502f62ca15b8a147",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "426f2c89d7bbebee4140f531ce5213bed260430eae871ff89bf33b28c6c0ac62",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0004b3ce375a4f6da70e5667633feccf7ab11420411cfa7a5bcfa52f70f0b387",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f403d7c1021e115a99cd24fc68139c7189f1f493d5817982be3687c78ceca2d8",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "21330b4bee64e4b40829b8cc8a243db2c469f1c4a300952abba7579ff016310f",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "79f4bc432e34c3ffcc99f47c2e77b58954379b8cc68467d39379d6af587a4351",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ee32524bd32b7689d3b0d470d5ed85e7af1703ffa98a62d36a909230abd241a2",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e17457efb43caea678bd23792ca62fd31d27532b2ed63948a3532f756e4ccb52",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "dad2e107ad433b17d8dd40db4dc1c57f5ee04bc4be6f9fa7659de47d993916e2",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "800fcd14c78a70a6db3e950374a9f8719239f1208c88229167f683a799b2424b",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2826e2b6c523e18c7cf676dc0bdf0b3ee0a007e8ac119ef1bf6a184145f913e2",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3ae14c36c11ca7b15219863144b284108ecf74fef7ea2a9b27d0337e5270bf6e",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c6e70573b4e543a8a825dce9118e970a23afcc2cc412230bad504c060aea7b8e",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "192b851cdd79dd46192e56a2c70f4e5f0c9e41e68949cecb702e24a24c6812b3",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b66cdb9c8ba5e17c0612acf0805fd24d96ba4df10852209233ac0d4aa0d481cf",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9313f60adf2949296016f7ccdeaa15b2273f097cb961ae5485127911a7aa2c34",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "195bf9738452612e30348f8e66b101e9b3297fed428757f72b302e7456933e40",
+          "action": "session_turns.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "9b0bbe82ca12c357c7d4a860a9f49e9f5a1d901975a5f5b098d85d78e09cb80d",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "92eb653c5d65cf63b73d38573cd6a589f7e37c4bad2e7bc2c2e486f27772bd82",
+          "action": "session_disclosure",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b1b54d36b8ddef626f8dd1883baabd8d21c7920ea413149a157296408c6a76fb",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "20ad060b61e2c6c6504171cdf7769802b10ef32416141fd6c758e7cf0d8a8e71",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "86637968ad00541a67e1dd9e527e1fc36fdeebbd041b0588e05d62d0d6a29823",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6fe9f1c1869728cb5fc375dc916cb7e64976b989e1de955c7d2690a564d0a770",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "87c805fb59664525179663baec4a90bdedaaafa8625a6a1c2f187c2aff30229b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9a3a638a55e50c2e9bfdfe52697d63d9049cdac6891c1b695c5e7ae061f31e76",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "46e423f79a92dd44473ce0f5af799fb014e0f6b767f9c68051309205fef864ee",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d22628867a1c0d50c9ca954ef70b248bff6e9e75c3d21c166c7ce0e092f7fa70",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b4fecc651e494ebffe700e4fcf9e71bc07606cd4e660d7757a74217c04ab45a9",
+          "action": "session_turns",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "14d750798e2c34e49f8f42fc276aad78a89ea99c939f72edc35d636ebc5a1ae7",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f0827178428eb54c1a0296e78efa02db4859bb9138e60f9fc5716f31d789a4ba",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "eb2b6e1ad5dc4297727caee6382d600366faec5a1fab0bbc952221b6aba1e629",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "62fb7c3b72939e140c6372788856d4124b52ab1e660801da4328d1e3bc0aa445",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2e3b14108bc730d41aadbfdb02b679a25c2a55e65d34d48a1e7c5bcce9826980",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fc34b67bfc3d4f208eb280416e16360c7da9bb7cc6c30b9f8f6ca58e1dd36289",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "45d75fa0bc7a1fac7ef1cdec2870098fae5641dc6032c538acd63a02abb9b7c4",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5748e4c27fa98afe669c3ff35830f774ae449a2ccb46a16569b9c8df8a6a64d3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f8837159ebb8e6e0d31aa22a06c1b347b18260270960df282e8410721b62a90d",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "dd4485d61dba88ed6e810a1cb546ba3767c2b5e3cecc6792fc3270278fbb41f1",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9d9ed4e94e769e540ebd52bddcde5384b2f0ef696b68ab34c06cf896fc135a42",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9c12ed0e42b5a068783a9b1b862432c281b4aecb54dc370866e502f0f98caf87",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9c1bb4ac1036775f63e1393e0e1c6111629c8304ee9dc67c251a6f91f7a9bc00",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3b817a5c8933c15097b33bbf68615b638199a7490194ba1aebd722b80e4ce75c",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4892e89c9c4dc1effe3c4154a7093f034ef4d4a98a3be61ba2ca0a6d942845e5",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "534d6cacebe773dd859a7f9e75b6a3bea58214ce4d9f7e8e6da2e12aeb089494",
+          "action": "session_human_request",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0870be490d6776209e6f7e050aa72346ec5d4688dce0ee91d30383e3081b1e5d",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3888262b0c54c285b5bcbf95e6a6849ade387f1666038c5de612e49ca71763d7",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1c7f63fbc2a1f7cc4458ab7c79f99e086211cf2dee7795939d0f336b86ee2196",
+          "action": "workforce_reserve",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "11318fb5ce53aec4bb2e758c2a64462016011d36fe0731a974ab40c6d7c37275",
+          "action": "workforce_reserve.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "beb3e4e2b81fb7fe715b2829d551c6954dd56c85623f2a271b75031c04345efa",
+          "action": "authority_metadata",
+          "decision": "DENY"
+        },
+        {
+          "hash": "2814e585dc120bf615afc343debb2dc0749d074f5b7a76b3cc94747086a62629",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6993de75a61c65ed7a78fedb1afa8fbd98e89dcd793fb2624319aff0c130046a",
+          "action": "workforce_accept",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e4b5a6b45ff7646c229b85125fd6974b95f52ca8d0a3125515200bd3d765664c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e4cea90cbbf4bf136ed3736c08ef77037b57a0c82c7dd773c574d9fddcad2294",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "7dc621045ac8bcd68c2d83f0dea2bcf06cec075c1082434968b0d18f87ccc970",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a74dccf359f2246de84dd8f99380ca32575b28bc4c77f5aa667ca528d0914717",
+          "action": "workforce_prepare_transfer",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "90736df6c2a69d94f22549db9d4202ff3366265411237b6cf3b0c1cc39416923",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a6582af55405b0b31fedc7d3efe3114c50060270deb4e0645425d61a25318d39",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ce77dd66d6480757a8b9f6a1b5578360cd8a16bded5301a7b108bda9b9081ce9",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e3804b0821cfea50febc930ec916fb1064213fd2be5999ea476cd1029e6df068",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0423125564c49342b375106e4d37e6e74734f6d653e708ec7bab7bb6402194c5",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "21e186a2e3d2f34c737824c068bc72e0cb8c70179468dccf9e6b7ef5e7c3368c",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c3d9150c18803c80f228651966269eb9d64bf6c8ccfa46a4f05d7f417c89eb63",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0b97827bc27ffb603b605a8fa41c7e497bd4ac0c08a9ca405961ebb6775f3344",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8a4e4075218c6ed6de50db65f3d4a95ce02fd3c8db4940a9b95b74815a8a30d1",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "187ef201b2f0f1f785289ab41f3076ea7fef37cbd4d96dc52eb1567560b48de9",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a03781266e62edb717c29e36083b62c1b3daf719e21389548f7b0a6d74c746b8",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fd4ad5383441d291ea8b9c91aced9b3c2d6e484df1d347abe2a99090da668c11",
+          "action": "channel_challenge_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "091da045639f829983fd72cc7ba11d85ed8681d150a3e99ff8bf9cb2206dfc06",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d6cab67d8585d57fda576bbfddcbc16eee147b5ab0270fd0471a2fc9583edc1a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "dd045523238ed8de99fa0bfc335c47ac007b9412edaaf77a459d2f51c4a08256",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "564d191ef4468f12f693794eded2ddcdf48287d7ff6d80bbf50fe32a22086745",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "66636da8e0bfe8cfdde7032435cc39df7f817645e2b6ca4069a6622009a1748f",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "52db23de0406e7709d0ff52fda6a085b2811c81610b315f28c6c5c8325984e87",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5a648a181d27373f9c242433f863a9b5404e9b7d3b4474feca124c3b188d713c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "07698bae070315271ee7cc03488100388c9b0a84a067be831adde8d5b55a990e",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e7f3b137ab00a472438a1c62587f1b15add7c1d343a0ddcac144f6072946de25",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d20ca4bc3aadb78067b55d2d3b0da6882314fe25a4b3178f8d31e4e9067da9ca",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1b9f351730b4c805a4d92d394a092af260cc9871febd3bf5dc9be66901fdc10d",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fdcf4d0643b48627fc2d26c98be2b864cfeea53a4e8dae1cba9c9bbc543ea8a6",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "25937073cfdd131f9fa54470efd061d6b6630f77b094f188c3bdf69790fb06a4",
+          "action": "channel_ack",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9cfd5f9a7874f9bff40612920980480f78b5b12498762f7932d72867dee09e42",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "faff1f7680c23af71a55aab3c1083de3424f6ecc324bc7e5608afd45559e5eb5",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "70e331c54f68d87bb33b4d7ecf88f65b78f4b1a837f3e37d6d5374f29a5fc254",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c90d7f6c4374da4e0e681b2fb40be3efa626520886dcb451a1724c5a30e54860",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d46565fad884f3bc1946c799e231bd10f46626670cf702b964beb5dbba73125c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "74cdcaab2f51d168b4b062dd132bb97b1f949161abfa0b9bd0686e86fb3c1ffb",
+          "action": "channel_challenge_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "beb41fa4fd2f548fba503e6fffdd4247711106b821dab1baf4ec0519f8d06f28",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1bd136ac5ac8a7bdfc586f45cc89f85b1c2732d38f305fe097d378762001fc13",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "077915627b795cdd293a4af35722307a4b0c4f31b3351f6cc44cd441797c77e0",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "bea9d49affb79d29754eaeb431e4cabd5f005e5ba43782215b9b112e45fbbee3",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a2f98d3afa49d590bfd50f5767e356003c8ecde3a51b653beba4a98a1089d511",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e64789911a394b2c9bc9b53ad2077579a75f9dc2a39d2afc772238358ed5a819",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d12d7eb5d654ba8c70e8d368e05cace3a99b428149fb67fbdf31f3d73238060a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f0fca0d298b23a6e69e106cc40a253055a09a343f30d90f3e1b941f3d42bb855",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "74d0491b76c49a1566e1db84ca2874d028472ab7c3ac7284faf251c004d90047",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4d4415a6b587edf53b6d590f7bf44e75835202e0a112bed60bf77cc48da2f265",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6cd8234a8c59a09ad5e8fa0756777cd3c2c840d9229858d142f505ff59279f58",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0fee20b0d6a9b40d0ddf3b516f9e1eb1409949848ba229d005a2c6d0fa93061e",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2ca4a972e2150d1442737e1c2d3a503e56fa65433f163c19e1219bb7971cc285",
+          "action": "channel_ack",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f17cdea0d7e6d4cc3ee8ad08c5a5bb43dc291f536db73f6b85e517af766c33d8",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c11ffc6d493d84213dc80662cc7f607a9da6e477f5f3eb0c5a5eb4d5a02ed521",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "bcf83462b166c42c33fa5c7643da747f16557857f168d9153423b8bf3219e353",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a7be721e054a631b79df2a38a3d9968bd9664bd294f868d080aab80537e960a8",
+          "action": "channel_ack.replay",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "66b48b6eb4f8d1268c2ae9e1f4f7b23403d4e93c17dc31a17d00c4c2f996d2fd",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "28af9e01cca8f7c4248376b79840c4003314f338e450a8f0df655a55ebbe4481",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "70a584185a8792355867719b2c51b3cdd1bbff61c472631a64fada36304fc5ae",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4747ad5c30bbdffb6d30aeeca6fbc5d072378c9b0167762dbc4733f4def34634",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5a513ab93d5c7d3ac9fba46cd9f681c06b311c7e1ec9da9d86f1ccf775696403",
+          "action": "workforce_confirm_transfer",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "213a4c10f61ee9224643822770765d25479404ef7b2a6a99a66766b078504225",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f8a6557537087a95af31c88a663f7cb30721ecddf9b21d715f3be3d936c0f56a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "538fea28de530ebd946801318e991fad2010fabfb34209f89f87a2cfa1eb7c98",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fd3de579284583ab1b3f515b58ee7b514d57d9b992a757b9a8e34449dcf55e85",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9c514f5af69c56da5472ccfec1e5350238b6c5cfaed5a7d0b7b23b82c6c18686",
+          "action": "message_send",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "756c0c7cfd09e4ff93e21c9229e88ed62e5fb831f6af5ee68baca3951f187eb1",
+          "action": "session_events.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "ef219822b6c5ef22b2bc1be5968c824420bdbe2f481dea0067f9b4e7aaf2a210",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b93e38aeaa595ac63ea899bb4aac3f0a6f3db70fc53f6c9037845457f4971762",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "57d79c6df1a5f9e3ae38a1325f5c11f81b276829460dc64383d0e7f147314623",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "702648b279a238c28a52e460ca72b3b9d6361461138cdb8a2b2231d697eb9a71",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0073165d334c196dc4ace901068b9b3ee9b5855a3e38bb9e394efa7d35ef3c8e",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "16508795ccf1904fcc71d1bd47ad7e785a5e198d8d643d84b600c621ac4cd447",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d3edc590d6856a00be154dc0e569cd6bccd755bcafc0d317268f8be05292ab7e",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1cea6587384ef20b23eabff852fd2f83f12684ad8b320926ab88fcf62e192bb3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "35b32d39fac79fad9ff10a55c2244ae6193086ce9538f92bbb9e46967082cf4a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b4b5ab5ca88b9abc500e932c7b19a682e2a309dc72b245c45f3e393ef3754f23",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "266552a2c1560e1c3561fe807aa6ad07bf1eeb90e71b99e1f1eeee96c7d7a27f",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f49aacb53c2be0cda2c3c34c5d41ff26c9d7482cb8aae174b584b5b5ed983d4b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a0ed593825856b01ac8eae07736dfa1672034ec342aa64235504a77c46dc78cd",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1052ac9984bca76e02a81b43ce65f9b0fa598ed5a5c66e2e1c1b76df550ba0ce",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3538d2b771fd99c1b3f9211607cce1581693f32c432bbfa6c48748354a9c75bc",
+          "action": "queue_list",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4008050b5f28b4bcfadfe2b34f5d3014403219aa051b2c760de008dc6b512ead",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "79a38ddf151178c56437c84c1e9cced96fa0c50bc8cff582107045f445331035",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "41d657356b76a0921bec5d7bdb86aebcee25e5a4f9ea9b6836e2b0601dd5ac3c",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9562cb63f8810ecc369791d6ba8e1c3239a4ffcbb4e72bf121a3af2db2f61644",
+          "action": "workforce_observe",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2dfc7f4596627202e8e36f12db6586403175fe67c1ee3639cc4d998abb9fdade",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "53feda2b69194d2b1951e438c8b4294dc2daa188ae1bb38418c607f45487d9e3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "27cb1a08de8ecb65aca19afb266ef1ef996c78e4f178db127366c4a693a7d4a7",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e1e3b7b6eef1992c6f517f7fec327969a69ca96a80d6a8e30da93d5353fa89a4",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "da4810a1b9c8763f006dd414f1887a0a7f13f911edb6084bc8425689ce3d5654",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "35a947fdb7824abdacf2279428dc51d8df507f759a13c3fa06a4d5446b2da1f3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4df8211e1881ec290077f5ebb1fcd70ba594ab1178c7576a9cf79b9ef092049b",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "da93f18d882a3b4e795859f5266deebea65a721d9876f90bb49515c39ccbafdc",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "60ba3877de73a5a5894bb35a82cc1fe7b5afedf6e3d6a895db9098ef0173fe1b",
+          "action": "workforce_takeover",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8ed26cddf04f50cf42e1c434da2fa13ee3974f50725c93395ec5bba17520e549",
+          "action": "authority_metadata",
+          "decision": "DENY"
+        },
+        {
+          "hash": "70816d8dfdd2b9b3e4458c7a7b95a103ac1afe816d970f6c08d7c98df6d7cecf",
+          "action": "session_events.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "5895b91765460ed06f8b902003bd4d0e593e71453eba25f724833194fd2f7b32",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "7f77a2d8a28a5e93bb1f1533b560d92c7084228a5974f34732de83b23244bdda",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f06fd22c473db6be9d358ee8319c728f78c542e41b47f3ad5750f0547222d7ce",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "615c148eb6b6de27cbf4a5186b980f1edbe23b75ef79e9f381bf6c9467a0cf16",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a10f9b1dd5c0599d400b9350c9de24d4dc3481929c2be4c929ce4c3c1c894979",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "7e0302c5e5d6c539d8d2b07ecaf8a0d5ef32cf9ea9457cd5759b8e39d237801b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a3c2a499831daae220e3f10874062a4fd10b7f06cc0524751e008c759c8ca518",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5ab769d4a0633b3462ef56266aa13d440cb8b8eb764c6b8b98319056d6bbd4d6",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "78e387f6c2ac501aa83fd6ac77a385e03e089ac265be83eb3c9f49a0d768d75c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4466ab55dcf6bb9f2bf07708f619b2ccbe1cfb4b0c2067669d1dc9e8198399c2",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "74115c4981420ac8d570b96a266b4d831bc76bbc9231d56b3aeaa1159321e6f0",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0978cc8044e1cda14881d23492634ebf6b54fd1840ee2192182bd96806d51942",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "58e551532330d951d300e56462dbae2afcd09ca67834458a39a37b8c35589696",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4297c24bc31d87ab6ed6b814195d134c297bfc71ac18c578acd54ef326be221b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fc35b3d51b1655eee77b78a0f6bc716052fb38f603f8d4d7be91cd00ee98f96e",
+          "action": "session_turns.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "2493f36ccf12243c339af790a50120239c2b636839734ac83569d5242b43211a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c3f9a8fb8853c0249ed290522633960c9f95bacc42b1171ece011dca3ca532b4",
+          "action": "session_disclosure",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a016ff84143e6520fce759799c6030a1e973978ebbc6155c3001a1eb016a27da",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "19f5c44682a18340d34c5567c3ce41a1ea6fcb62042778f8902e7c7e2fa62c41",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "bd9d818b88c16a939d74a0e066b563961ee847c025993f4cac01c413c33a8833",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3db67503e88d96e276a9ed8116289c7a0ad29e9c862b2def91d1ce489fb758fc",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9d699843cafa5a53c84c5162af2388c1adfd22d696af7333d6e5b58a3d675c2e",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "29a23444bdead9177b490158d6a18c10d2ad4640d804de590096f900c3c32a4a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "469419172197eb66d538e946d81bb3a584a0c401872d99c63a35f911b53cb19b",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0ba9268a5f77bd75410e8f438149a09e392a789597c7651600fb0a2e8b1f9032",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "63435e53d476cd02a1754ff6e16b9313d91b1ee277047852077bbbd85025b3fe",
+          "action": "session_turns",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b85b74c5a9d3d61b2acddfe7bbc70acd02f87c81b7b77e36095204783a1567c0",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "76114e76e5a3b627dbfb3779ead16eb04ccf06054eab5210dc0c433394c84eb5",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6c75c966d0801b70b84856a89caf01137d1c375784eb22e58fe0c5855dfc6a44",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "061b506ebc7db26542d96b456cc80ffcab2e9b9e2dbb7e2e3841a2693056ed0c",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d1e28176a3c94b2a4a4978e6c0e878144b154c55566aa7fe49a3d7fa09cfac36",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6f7f430e394facc577e6ef120ac16f80fadbee6d9a3e5c0fa66ff24133c05725",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ebbe7f71f94d0c49be0f11cda1b1045f9814f9f67605fc7464498032afac72ac",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fa74407dff50f6adedde32020510f98f0ec0ca89296a108766154f523f5523c9",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "89a9f0b94c2e1de17c419f156a79c98e012a24817e164d2868179b0a8733975b",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ed08ea70a9d67fe91ba52572370bf2472dd8a503eabb4e4d275428db89b8f559",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a969432b9c6946b4603777d69c2e35629d9fa5682438a476db3d3c01fe51534c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3a35efb2aabc6901d327157a86daf412589b33727d068dd56ee35ac963f98401",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4d3973eff300946c53f387bdbcb9fe26bc84508f16c4ec0aea6bef21a0cb6c38",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f27d412d6c64cd3e727120de5e780e9c5a833374adac8e8aefba708ba89aa919",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "21513973ed4248adb422e60164dd36219a91eb6752b744e217788797b01b01df",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "decce196fbaca26af55ecfe5b2568105f071c968d38c5602f392fb31635114ff",
+          "action": "session_human_request",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "66a6dbf6855ec2f2e84026148e5f9bf6ffa021739996ffa5d48f554ee133a80b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "88ee9ca452578feaf5d0edb13e5f9fea5218d24627ddfe0a0ffd4e23c9e93400",
+          "action": "operation_status",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "77c69a4ff461aafff51e3e367043b4c1d35f2d0068203c14f0b4f9d32c8ecf88",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "66d3ea0017753f2a311e4d061e85c0702423918e38b8aa1108381b2fd8c2ba7d",
+          "action": "session_human_request.replay",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1a42e87445a7d6da1dff18735208cf60000e3dd0b4f9c826d117c897da426921",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c8aa5fae81228433bef0bba2c880deb40c5f0afdb62ade3d95aa61bb89e59898",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "88b4201eddb5c5022d58d1dc11baa3331166493ac75c38a0c7a2febb956a238a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "524d8be829e5bdf66119cb841f79129b4c511f69322d4dc6258d4303b5530de8",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b45371ccb600cdcffb53ff93c0e821642bd53e50a39ab4ded7e928cf909a1243",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "57a9dff3c53fd52a9ed8dffbc00ef3495bbcd0c2d4168397f4ce4e044a09c2fc",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f6450eb22fb34fbd2bf1567203e9d8d19b2a0caa8c58c973e17333dceaa061a3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "dc83bc9fa176aa430313c59073b06d5b4aa1c0451d1a5c58b14e2c3b37d711c1",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5b4711c4a3de86b067d7ccb03a2c6eeb4ac7cd12518dad179434d05fe8992381",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "405f72cab5b3e64d157320d09d0fe7cda018e060777756d1ee090befc65440ba",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "458435cb13dd65eacd19aa5e4bba7a498f3ea1687328404684dd6aec0d4345c3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c636b60e9fbe53cad197f2afa096d1700947f985ee8ac3fe44d82e420b41398b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b92403f9cff7f4668a712467612e6d1fe2bb62fd68cb203af1c7b13a88a3356d",
+          "action": "session_turns.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "9b06d08be2689ef12c70a8b2ea412c8937e3fbc4f34afbe8985bd6843920e580",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "35b330b9762deeeb1a8b35e4e68caf12ad8a7a38e10e2a46998205dc7eeb70de",
+          "action": "session_disclosure",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8a15aea5a6db5a0ad4123bbb6915a7a7e71b714c2d745a2945c3d5e2eb8ba943",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2909247cc838d2498c4b8d61e7575bb62736cc4ab70ad49d64030e3f1024f4e8",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4df2aa0af54fe5d48c6d2c73d730407c5e840cbe99624b5546c2dcbb258c82f8",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "204b49303262c1de1015a06814566c4f4023d49d8ada2e92e11cd1e00c80a5ef",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3927ee46f3f9467b380e994998c9f3fe0161de3390819ee7786a0ebf9973c0b7",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d240f62ae8b4ee3ed497959ba2f883bf665efb0fc6679b7cce18770d211fbd5b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2dc1d81652cb01bd0b26a6d3e8ec2c29230ce8b633897a87ec33cb121d6e3c4b",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "256c654d6f688ddbbc75ccb3513fa3d2a0b16a82e99398b33f3ca4a1488b852d",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "43e81745d53761ea71c6d44cbb905269050aa2fd438a0eb52b94feff5c27cef7",
+          "action": "session_turns",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0dc163a40a9ebbcad018b294377a3dd8761988689ef4c4bf6a93998284612b81",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c267e0627824a06d393c021f945c43cc4949441e15511adc792316f93fc1e390",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0077a52c9d662c453d8c2b84af3ec63c221181b0dfed01b48aec7070f005717d",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9f3991eee023f68a047de18918df232b4ca2cd0c8e5ddb63b35804f4639f33d0",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "797d36ae3c06de77bc45f9018539b17fb60dd386a419c27475d8b65adc072cb9",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "70b5c4f5ebe738a9be664042aa86a481521cf6274d8ac61ee9d988a4778ce074",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "71e5a722199cc430fd977fb8a4085a17ebbcd0c2141e59d858d9210329b1e096",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e48172ffa8b4c60531d15c78d487ecc716406c98a9619b60409d8e4aed434d7f",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2857745ff4001dc1870ff1abed06e47733ef86f2d5a9798cb6683b57099e92a1",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1de7a248f5a4bd54f08a88f778300f78c5639fd4616be9de6367532e96a1c2f9",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "406bfeab568d82849b38b4c092708bd28060104cc118a69cc6652f52747f8def",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e09b92b98dcda86a5dba61ffd1e6bb178e014d5f02e19eec7fae8698b33c6985",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3ebb99afc669449a7135630bc49c1557ecb01fc938ad07f6dee1bf9752f632b2",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "79d91aa45448afc7a71e69aa1fdedd336ba736ad5738fef2a16dff8e182ae871",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "baf1755a57708e7884e02f25b50277431a9f659dbce19170d99994e45ee8b0f1",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "af2c32360d7a55a23fba44473911fe56593e3711b11e31044d49c6d9adad6b12",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c2184ca7cea2bae409b75940144ad6a12e2ecd137b960b6b0a1024b449331bd1",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8e8e7dd7e2473536e62727137dc996ca5a0e2e3881604b80c5a06344c419f85b",
+          "action": "session_events.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "4860d99a16bc28e55dd06d89c869ad5c9daa82e948a4bd7dee6a4e933689dfc7",
+          "action": "authority_metadata",
+          "decision": "DENY"
+        },
+        {
+          "hash": "d1020f65eb1cb96334b0d6882fc3c82a7fd4884cf44455ca2f07a7b8225e377c",
+          "action": "authority_metadata",
+          "decision": "DENY"
+        },
+        {
+          "hash": "273bcbcaa30fa9e76ff64484be6d858f45c141618fc6dd1874418413af77c2ce",
+          "action": "authority_metadata",
+          "decision": "DENY"
+        },
+        {
+          "hash": "56396b8115c618048fdd69268d4cb26ee7af8e0d4611f8ca49511af73007c729",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f2527e29b3f0c39ba37b60c1388b6fd028fceff8ef10034616f8048babcdfc43",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "916b7b1e5894bf015605b16b8a5b85e5f35b537ae087ab7780cdca37db80bc6b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "da3df7356a92085e8ecebcb260d42c7ca4a780c7631e2017593dbc84374d5b1f",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3f434fc378371f5fe0a7265e4a350d8e6eb99315d852cfc01f04c556f3f8042e",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f12e43fc1359907f9ced95b3b7d637d3f57297252294e9c756811a293a9a66e6",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "867f30ba5446f46ad0b9953c1aaf63601078204d659e97a881dc725f9648b4e7",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ee6c51804c155c53b500e30b70126d5463ae29a964d13e4404885365e6953655",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "77796c5030ece86568fc40cf0160a21f3aa516786c89f91f6e0b03013177c56c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f9077f44d1c7d00ca5eeed8df71681862bb4d0e792d266af54f0bebbcdda56af",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "822065bfca14a4336a9e72d9b871ab5cb4374d38ec3a8901310172f85c4dc025",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "14d7dec334595a5af2532056101cdccae852b471aaaa54b86f06a9e8bea73e6f",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fdb027a8ce44767ff60ca82c608b5d124fffffbc1b313d6b07f48316bf2d2f4b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "48661109a197a89f6d7408256fb7148ef73d1c2f9568c0a0f45406a42996027c",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fefa9d80713a17c75f7b5a3b41309945f9de239d539fec4045cc350dd87855e3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9ee8a0147dbb38baef501342ad19f3dca9f98fd2995356cab46d5c864e42fad7",
+          "action": "session_read",
+          "decision": "PERMIT"
+        }
+      ]
+    },
+    "postgres_tls": "TLSv1.3 verify-full"
+  },
+  "after": {
+    "database": "imp03_runtime_002",
+    "journal_id": "16786426-e032-4565-a493-67295359e88b",
+    "policy_digest": "11794c6bd575d1cad41614fcd4b0a675b43ed10bfa0038b317271aa33e3b0216",
+    "tables": {
+      "access.continuation_family": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "access.continuation_token": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "audit.event": {
+        "count": 319,
+        "sha256": "0fcf2bfdff4ac1c3addc14a9f536b713d2240964b2e434263a130cb6929210aa"
+      },
+      "audit.head": {
+        "count": 1,
+        "sha256": "1b47be90eb63ca74809ef9ba3512c229dd9c45da7706a05853b5bcad5a80ad8c"
+      },
+      "control.guard": {
+        "count": 1,
+        "sha256": "3fbb503da4adb317c8d8d0bd747129db1b2506ccac31337b2f72242c1a6dd1c4"
+      },
+      "control.principal_guard": {
+        "count": 4,
+        "sha256": "aee53591b18b8b8e23a8b229686a9ad7c502a1af789255e64515326de127e0cc"
+      },
+      "control.signal_head": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "control.signal_receipt": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "control.signal_source": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.assertion": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.assessment": {
+        "count": 5,
+        "sha256": "7ee9ca35a9c48db0b49f653841dbc5cb0e4ae7ba4897d603f3d761d3750b67d3"
+      },
+      "core.choice": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "core.message": {
+        "count": 6,
+        "sha256": "40f5686d204ff41d4f2a0ebdcb7a8d5f8a59409945b88cd5e9a0d4d2a6213d1a"
+      },
+      "core.persona": {
+        "count": 8,
+        "sha256": "058de43b7ad21f59b3e7629df6b168b14801740d28f637705db73fb5e48b7cb0"
+      },
+      "core.session": {
+        "count": 8,
+        "sha256": "7555641c9af6288f67c18cbc7fb29ad0082ee5ff220eca118cb4b1d870bcf451"
+      },
+      "core.session_acl": {
+        "count": 9,
+        "sha256": "4ce17bd0db9f01cfa8ba3f17a690d83eb9a31c22cc392f84ecaad689e59baa6e"
+      },
+      "core.session_guard": {
+        "count": 8,
+        "sha256": "1dc7fcac4c89a083b97090a0d8745e38b12a2d12b6e05cb6fc85c2670e1b371d"
+      },
+      "core.subject_guard": {
+        "count": 8,
+        "sha256": "6d19f3384e069392dfead13850573e47a3b3539bbd9ff259e57b1d48db114292"
+      },
+      "core.turn": {
+        "count": 5,
+        "sha256": "c631f5eb43721faf18de4beca3ed9fd1fa3c2682b58a0da962e0bc4362660e6d"
+      },
+      "durable.due_job": {
+        "count": 1,
+        "sha256": "43fec3ae958d3ce4b28f701084944543e013f3f3647ff798e59674c44ca0ea30"
+      },
+      "durable.duty_nonce": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "durable.duty_operation": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "durable.event": {
+        "count": 27,
+        "sha256": "eadd7a61cbd1612ade025c429b49a6ab9027144ba69dbc928011ae424c4f067b"
+      },
+      "durable.operation": {
+        "count": 35,
+        "sha256": "52ed83959f11ae9f0178b577954c2926f3bd66c57422a61b17149a7ee34f1fb4"
+      },
+      "lifecycle.copy": {
+        "count": 19,
+        "sha256": "e0e56c9c78b228ae4b19dde98e1b930c8c7e2f6798c5462719aa1d62b650782f"
+      },
+      "lifecycle.dependency": {
+        "count": 11,
+        "sha256": "65714b28eb791a893a42dc52e62d64377833bec7e1ba6c5ce79d77600933a769"
+      },
+      "recovery.command": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "workforce.assignment": {
+        "count": 2,
+        "sha256": "00ba962c23bb0f46ff9ecd2f36c651587322a7a613371cccf81a3446b49bf753"
+      },
+      "workforce.channel_ack": {
+        "count": 2,
+        "sha256": "95941924f9aa3c2611b87c845655fc805e16a440edcce78b352f8bcd4c864ba9"
+      },
+      "workforce.channel_challenge": {
+        "count": 1,
+        "sha256": "835af75396f93ab08b5569f0a9b333739295e7c5f8d93bfeee27ac9b454a810e"
+      },
+      "workforce.queue_entry": {
+        "count": 5,
+        "sha256": "4eaf7b21f61832ae4703e7c08e62747a3cbd2f97b1664f2e89c3ec21c117736d"
+      }
+    },
+    "committed_operations": {
+      "operation": {
+        "count": 29,
+        "sha256": "5729f138d026b2e1c549b41f3f784c2e460d9783387a579768eb99c10736a386"
+      },
+      "duty_operation": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "non_rejected_operations": {
+      "operation": {
+        "count": 29,
+        "sha256": "5729f138d026b2e1c549b41f3f784c2e460d9783387a579768eb99c10736a386"
+      },
+      "duty_operation": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "rejected_operation_hashes": {
+      "operation": [
+        "54a8bf03963d052538853f124f59c0b5775df0a74d5a1e1f836b677895f1dd2f",
+        "581864917f6f8a504ca2b194eaf965ad2b147eb888b77763f243eb01a1eab75e",
+        "58485ae54f52b3944ec12c6a3d606437acccf13d7fbf49cd82cae2845dca3c45",
+        "743b8c4591852dd2c05b6552f7f08c44352bed81385abbbd552ae92f549f261f",
+        "ab7999d16021d831be1695dbec685e63ffdbdddb4f498001094da2d24af32f71",
+        "f722e685d0d0d0992c70ed9141f7c25b51356d61bac3921a941af87299ddb37d"
+      ],
+      "duty_operation": []
+    },
+    "audit": {
+      "valid": true,
+      "event_count": 319,
+      "head_digest": "9ee8a0147dbb38baef501342ad19f3dca9f98fd2995356cab46d5c864e42fad7",
+      "events": [
+        {
+          "hash": "6b00ce5d992ec7afc3429c8ba2386992171422f401cc2e2af2e776c7922964ba",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "efb8ab5db70782de61301cd011060edd1dfaa35fff54f1686715f67260a1bfdd",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "77b513edba5e6637f40fab934d752226026643d77202dfca899c1294bf6b8333",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "581ab364f10aba9f13378464ed8c4e29e608120ba17bf2d380fc80cddecad6bb",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ab5f8da9cf76fe10e208fd0ce02f154673974a0c0a2546264f1d6d26f497aff3",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8d2f893888ab310ec44afc22914f082e86dc7cfa4d74cdc547e97fd14d335942",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "79de21b29d5eb6a6755397c8e7897d63a5623ed1e5f139426e8ffd5420b6818c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e337bb8cf982cec633f069967d5461220f0d72ea4f7a8b96f7780c642deb1d65",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5cfd3b27f5046f9e074888a7e8746b3d9af935330a169d2d484a17054f84ba0f",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ebb30708d6abc5dd5a6d6e11d4e1e77885a7c3f63536242783ca465c58e93c76",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2b7743efa805bac5682d7cf4ed8d24288652b19919f8522e3472e324010724d5",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8703baebabd8d71b299d7fbd5508fd51aa5c18c95af1b06e13a95c03da9652d2",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "79dc943605bcd4876059debdc3d45e89988009222a471f8c6e2bfefcdf2597c9",
+          "action": "session_turns.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "6b76b324414b603b063eb133047baa72b7a61b9a54b234ecc23569dd31dc190b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ca9e10ae49ba59c7aab989d5f6d24fe4fa82691ccee50315ef87fc438f7a08d5",
+          "action": "session_disclosure",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d716e9c85283e11d6e2c9a56fd1e03b63f50caf2a7ba4d9074c505953fa384b0",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "568b6cbadd159b14484f0df5514ade78e5bd3bfe50023552407bf2179d788ecd",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "06f4dd67aff62b5ff7cdd560293b0dc5763d7f4706da7b6163e8bbaaf33cca75",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "844682830bd5b1c36b3c28ae309d258509970bf708c6726b3d2607e9432ff04e",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "60910aed563545b5e434c37cb8575b8f577b2cf6e74cd93374c455beff134b24",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "20dc7de0c97247c26104e7007ee629301ccc2d2d9ec3dd37908758107cadaa7b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e3f39f0451fbf4d1cc92714b142c1bb06bd6e7c081529ed3d39a7ba77a8e3adb",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a8f41595c5792f8b36c6095547fd9ac6995e86445e74af41add437614c77c66f",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "7b3ec3afe149b504cdb9ac6f1cff96d1299b30bc7204ab90ea67a5a671e02c2b",
+          "action": "session_turns",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d01acbdab46a2c77cb78fee432effea8ef59e32e283bf020506c0f302b6d92d3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "59cbe8086650c7aec1636557c3a32224d9c442b92843d6d6f1fbe5c8d4fe65ec",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f1038e0f56c9b837053d348556b759460c790196d1845718a74c26531d537115",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0c3daa64218f32c00e099dca888eeefdda262731f979a1d2a5022b144c1a0ea6",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "bc8547c48710123e57a21b702ab7d440b5609fdaeada94f84aaae40b24f7b1ec",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5a89f091d6fe704cef1021d5d826aaad9f1b8d8abd23d1aa653231a8dfdb926b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b2f0bcf56f278de605d29ab2e69d39cdf834ae8033863e842e3e61f39efe4fcf",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "973ffae0c66fdd4ace12ab564386d41d5ec166a1f6d37ea77b3ebba5985c79e4",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "786c3d4d8729d59c787bfd6a3e7c4c0a5383beba6882fb1b0c9cd0dab57208e2",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a16e3b2ecf4e6da8e38db95b37fbd6d0627a92420d606c5192c6c8a8bd42e60b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3ec326ccbd94e41bcee85bfcfdc0f96d6a86a6d6f0b1bb4508e093cfe4f86921",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "727dd98a84e1e2bc8ef6b2f8b2d04e4eb738204cb5aede97358d053bfc3c28f2",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6475379203d7fb0343bde795930116c32bb849905f7bc06278270098ada7c345",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a9ed89e3ea830603b2fcf1bab6b1ed3b204ea62a169d57e67d21d6989505ab51",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f0fbc52c04290363f6bc7c829e11938d0186de297deca99db6de980dd5cb9de4",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "39ae074139c8ad628a86dac74306f00318ddada6e832d8c03a612fe5a4fdb8af",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e53b79b1b05e2366410ed05b7a5f4ce4234074f99eef8750f2fc8d42c33518fc",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c40fd0248e2dbd440ef3b00a6145c9bde11c2e74f2f3f3f34c02e537b979ee5c",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6ed2a4a585277f9cf5060175d6e62adb6e3ada73dc91e08330a886fedf86a3ab",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "7117609fc50eca16f197d3ec196e73c414643244c652c0ba698ecf4c46416a4c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "db6c14680669a8c09a0061dba3deb72f7ffa5de2f116f5ca4c6630339551c8ad",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "30097b6462872c179123db3e5f17237a6328737c1f9daa5f75e7f0d70da4cc53",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "861b99ebbbcb3faa7dfef8e6d0512b40ea89498e8e45f57f86653a743567724a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9f1bdc97a14fee5592c69821002a8f06f256cc38c9f37a5a7dcf3211a2b53c83",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fdb02118d0535e439edf547689a0be90625a151bd000450983716e4670953c3a",
+          "action": "session_turns.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "47ddacf92c7705bd6783dbdbad271046f0d5eb8be7f0fc26c03afd7245574742",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "adf52ffc5505a682d82656725d71314f93460103c78413967f0d13883abff6cb",
+          "action": "session_disclosure",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ae5c7feec0882f910c8469e805c52658e65c8c640b9a0703848fcab69af1114f",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "df3d02f6188262a74c0b16468fc9ff0335cc0fd515c7e6242d04076f7c2d4062",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "852d4fe82415d56cbccf437f1de33307c61e9300547587f019dda7dfd2a95d3a",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9603389b081d49b4757ab2917edb560374c6615633f4b8df3fbf0eb315f485d5",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0ca2bd953b6b7e76422e8ddc02cc55c2a75690432da1bfedffaed94d67703788",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "52f91b41ed6f3c452a20db00cbbd815424d06b35b10568b017dc729755d684e9",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "69ea5386766e7f112fc57e24d84adc0ce837feebb414b4016f493f72ff416632",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "eda37d946ce94fdd384ca109e9e77b505e18e6c2ddf59bedc7c19cce6ecea54d",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b1f3a41e8a70b0b5e7d7ce37d985668b57db9632dbea9fa041798631fb763a8b",
+          "action": "session_turns",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a971abd0011838d6da81cf7c0bfb23eba67cd499303f00967974eec530628e03",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "590dd68e063b245db3e15fc2032ade35375b166d3dfb86f84ba36476852520c5",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2ebe5337f11311af8dfe99b3036450a1e3fd5a131e310506701a5c0fe8ded159",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c91ae224b2284e6915914a9b72f47f08985d45a7519d2e975d49dbd69753755f",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0eaa395b0f7ea6b22d3abcb65cc8cca8b1418612f6472352b6654b7240d9a97c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "68e63d9ce3e99aba8b6b93b2f4050aa285883587f9e7b5ba4408c77d7883a6fd",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "272f4b45995bea637daed26fdcad9bf5434e80d8578d9fac2a745b768c26c5f5",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "42c1b7dc8635e902c30927b966170f68865b2cea859221d4ed6bc3488d6a1c2b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0c78719165b3d481981eb075fb9f43cab04500a8396e0674502f62ca15b8a147",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "426f2c89d7bbebee4140f531ce5213bed260430eae871ff89bf33b28c6c0ac62",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0004b3ce375a4f6da70e5667633feccf7ab11420411cfa7a5bcfa52f70f0b387",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f403d7c1021e115a99cd24fc68139c7189f1f493d5817982be3687c78ceca2d8",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "21330b4bee64e4b40829b8cc8a243db2c469f1c4a300952abba7579ff016310f",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "79f4bc432e34c3ffcc99f47c2e77b58954379b8cc68467d39379d6af587a4351",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ee32524bd32b7689d3b0d470d5ed85e7af1703ffa98a62d36a909230abd241a2",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e17457efb43caea678bd23792ca62fd31d27532b2ed63948a3532f756e4ccb52",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "dad2e107ad433b17d8dd40db4dc1c57f5ee04bc4be6f9fa7659de47d993916e2",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "800fcd14c78a70a6db3e950374a9f8719239f1208c88229167f683a799b2424b",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2826e2b6c523e18c7cf676dc0bdf0b3ee0a007e8ac119ef1bf6a184145f913e2",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3ae14c36c11ca7b15219863144b284108ecf74fef7ea2a9b27d0337e5270bf6e",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c6e70573b4e543a8a825dce9118e970a23afcc2cc412230bad504c060aea7b8e",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "192b851cdd79dd46192e56a2c70f4e5f0c9e41e68949cecb702e24a24c6812b3",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b66cdb9c8ba5e17c0612acf0805fd24d96ba4df10852209233ac0d4aa0d481cf",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9313f60adf2949296016f7ccdeaa15b2273f097cb961ae5485127911a7aa2c34",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "195bf9738452612e30348f8e66b101e9b3297fed428757f72b302e7456933e40",
+          "action": "session_turns.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "9b0bbe82ca12c357c7d4a860a9f49e9f5a1d901975a5f5b098d85d78e09cb80d",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "92eb653c5d65cf63b73d38573cd6a589f7e37c4bad2e7bc2c2e486f27772bd82",
+          "action": "session_disclosure",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b1b54d36b8ddef626f8dd1883baabd8d21c7920ea413149a157296408c6a76fb",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "20ad060b61e2c6c6504171cdf7769802b10ef32416141fd6c758e7cf0d8a8e71",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "86637968ad00541a67e1dd9e527e1fc36fdeebbd041b0588e05d62d0d6a29823",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6fe9f1c1869728cb5fc375dc916cb7e64976b989e1de955c7d2690a564d0a770",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "87c805fb59664525179663baec4a90bdedaaafa8625a6a1c2f187c2aff30229b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9a3a638a55e50c2e9bfdfe52697d63d9049cdac6891c1b695c5e7ae061f31e76",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "46e423f79a92dd44473ce0f5af799fb014e0f6b767f9c68051309205fef864ee",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d22628867a1c0d50c9ca954ef70b248bff6e9e75c3d21c166c7ce0e092f7fa70",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b4fecc651e494ebffe700e4fcf9e71bc07606cd4e660d7757a74217c04ab45a9",
+          "action": "session_turns",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "14d750798e2c34e49f8f42fc276aad78a89ea99c939f72edc35d636ebc5a1ae7",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f0827178428eb54c1a0296e78efa02db4859bb9138e60f9fc5716f31d789a4ba",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "eb2b6e1ad5dc4297727caee6382d600366faec5a1fab0bbc952221b6aba1e629",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "62fb7c3b72939e140c6372788856d4124b52ab1e660801da4328d1e3bc0aa445",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2e3b14108bc730d41aadbfdb02b679a25c2a55e65d34d48a1e7c5bcce9826980",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fc34b67bfc3d4f208eb280416e16360c7da9bb7cc6c30b9f8f6ca58e1dd36289",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "45d75fa0bc7a1fac7ef1cdec2870098fae5641dc6032c538acd63a02abb9b7c4",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5748e4c27fa98afe669c3ff35830f774ae449a2ccb46a16569b9c8df8a6a64d3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f8837159ebb8e6e0d31aa22a06c1b347b18260270960df282e8410721b62a90d",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "dd4485d61dba88ed6e810a1cb546ba3767c2b5e3cecc6792fc3270278fbb41f1",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9d9ed4e94e769e540ebd52bddcde5384b2f0ef696b68ab34c06cf896fc135a42",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9c12ed0e42b5a068783a9b1b862432c281b4aecb54dc370866e502f0f98caf87",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9c1bb4ac1036775f63e1393e0e1c6111629c8304ee9dc67c251a6f91f7a9bc00",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3b817a5c8933c15097b33bbf68615b638199a7490194ba1aebd722b80e4ce75c",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4892e89c9c4dc1effe3c4154a7093f034ef4d4a98a3be61ba2ca0a6d942845e5",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "534d6cacebe773dd859a7f9e75b6a3bea58214ce4d9f7e8e6da2e12aeb089494",
+          "action": "session_human_request",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0870be490d6776209e6f7e050aa72346ec5d4688dce0ee91d30383e3081b1e5d",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3888262b0c54c285b5bcbf95e6a6849ade387f1666038c5de612e49ca71763d7",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1c7f63fbc2a1f7cc4458ab7c79f99e086211cf2dee7795939d0f336b86ee2196",
+          "action": "workforce_reserve",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "11318fb5ce53aec4bb2e758c2a64462016011d36fe0731a974ab40c6d7c37275",
+          "action": "workforce_reserve.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "beb3e4e2b81fb7fe715b2829d551c6954dd56c85623f2a271b75031c04345efa",
+          "action": "authority_metadata",
+          "decision": "DENY"
+        },
+        {
+          "hash": "2814e585dc120bf615afc343debb2dc0749d074f5b7a76b3cc94747086a62629",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6993de75a61c65ed7a78fedb1afa8fbd98e89dcd793fb2624319aff0c130046a",
+          "action": "workforce_accept",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e4b5a6b45ff7646c229b85125fd6974b95f52ca8d0a3125515200bd3d765664c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e4cea90cbbf4bf136ed3736c08ef77037b57a0c82c7dd773c574d9fddcad2294",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "7dc621045ac8bcd68c2d83f0dea2bcf06cec075c1082434968b0d18f87ccc970",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a74dccf359f2246de84dd8f99380ca32575b28bc4c77f5aa667ca528d0914717",
+          "action": "workforce_prepare_transfer",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "90736df6c2a69d94f22549db9d4202ff3366265411237b6cf3b0c1cc39416923",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a6582af55405b0b31fedc7d3efe3114c50060270deb4e0645425d61a25318d39",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ce77dd66d6480757a8b9f6a1b5578360cd8a16bded5301a7b108bda9b9081ce9",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e3804b0821cfea50febc930ec916fb1064213fd2be5999ea476cd1029e6df068",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0423125564c49342b375106e4d37e6e74734f6d653e708ec7bab7bb6402194c5",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "21e186a2e3d2f34c737824c068bc72e0cb8c70179468dccf9e6b7ef5e7c3368c",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c3d9150c18803c80f228651966269eb9d64bf6c8ccfa46a4f05d7f417c89eb63",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0b97827bc27ffb603b605a8fa41c7e497bd4ac0c08a9ca405961ebb6775f3344",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8a4e4075218c6ed6de50db65f3d4a95ce02fd3c8db4940a9b95b74815a8a30d1",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "187ef201b2f0f1f785289ab41f3076ea7fef37cbd4d96dc52eb1567560b48de9",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a03781266e62edb717c29e36083b62c1b3daf719e21389548f7b0a6d74c746b8",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fd4ad5383441d291ea8b9c91aced9b3c2d6e484df1d347abe2a99090da668c11",
+          "action": "channel_challenge_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "091da045639f829983fd72cc7ba11d85ed8681d150a3e99ff8bf9cb2206dfc06",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d6cab67d8585d57fda576bbfddcbc16eee147b5ab0270fd0471a2fc9583edc1a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "dd045523238ed8de99fa0bfc335c47ac007b9412edaaf77a459d2f51c4a08256",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "564d191ef4468f12f693794eded2ddcdf48287d7ff6d80bbf50fe32a22086745",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "66636da8e0bfe8cfdde7032435cc39df7f817645e2b6ca4069a6622009a1748f",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "52db23de0406e7709d0ff52fda6a085b2811c81610b315f28c6c5c8325984e87",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5a648a181d27373f9c242433f863a9b5404e9b7d3b4474feca124c3b188d713c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "07698bae070315271ee7cc03488100388c9b0a84a067be831adde8d5b55a990e",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e7f3b137ab00a472438a1c62587f1b15add7c1d343a0ddcac144f6072946de25",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d20ca4bc3aadb78067b55d2d3b0da6882314fe25a4b3178f8d31e4e9067da9ca",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1b9f351730b4c805a4d92d394a092af260cc9871febd3bf5dc9be66901fdc10d",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fdcf4d0643b48627fc2d26c98be2b864cfeea53a4e8dae1cba9c9bbc543ea8a6",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "25937073cfdd131f9fa54470efd061d6b6630f77b094f188c3bdf69790fb06a4",
+          "action": "channel_ack",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9cfd5f9a7874f9bff40612920980480f78b5b12498762f7932d72867dee09e42",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "faff1f7680c23af71a55aab3c1083de3424f6ecc324bc7e5608afd45559e5eb5",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "70e331c54f68d87bb33b4d7ecf88f65b78f4b1a837f3e37d6d5374f29a5fc254",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c90d7f6c4374da4e0e681b2fb40be3efa626520886dcb451a1724c5a30e54860",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d46565fad884f3bc1946c799e231bd10f46626670cf702b964beb5dbba73125c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "74cdcaab2f51d168b4b062dd132bb97b1f949161abfa0b9bd0686e86fb3c1ffb",
+          "action": "channel_challenge_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "beb41fa4fd2f548fba503e6fffdd4247711106b821dab1baf4ec0519f8d06f28",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1bd136ac5ac8a7bdfc586f45cc89f85b1c2732d38f305fe097d378762001fc13",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "077915627b795cdd293a4af35722307a4b0c4f31b3351f6cc44cd441797c77e0",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "bea9d49affb79d29754eaeb431e4cabd5f005e5ba43782215b9b112e45fbbee3",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a2f98d3afa49d590bfd50f5767e356003c8ecde3a51b653beba4a98a1089d511",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e64789911a394b2c9bc9b53ad2077579a75f9dc2a39d2afc772238358ed5a819",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d12d7eb5d654ba8c70e8d368e05cace3a99b428149fb67fbdf31f3d73238060a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f0fca0d298b23a6e69e106cc40a253055a09a343f30d90f3e1b941f3d42bb855",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "74d0491b76c49a1566e1db84ca2874d028472ab7c3ac7284faf251c004d90047",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4d4415a6b587edf53b6d590f7bf44e75835202e0a112bed60bf77cc48da2f265",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6cd8234a8c59a09ad5e8fa0756777cd3c2c840d9229858d142f505ff59279f58",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0fee20b0d6a9b40d0ddf3b516f9e1eb1409949848ba229d005a2c6d0fa93061e",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2ca4a972e2150d1442737e1c2d3a503e56fa65433f163c19e1219bb7971cc285",
+          "action": "channel_ack",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f17cdea0d7e6d4cc3ee8ad08c5a5bb43dc291f536db73f6b85e517af766c33d8",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c11ffc6d493d84213dc80662cc7f607a9da6e477f5f3eb0c5a5eb4d5a02ed521",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "bcf83462b166c42c33fa5c7643da747f16557857f168d9153423b8bf3219e353",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a7be721e054a631b79df2a38a3d9968bd9664bd294f868d080aab80537e960a8",
+          "action": "channel_ack.replay",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "66b48b6eb4f8d1268c2ae9e1f4f7b23403d4e93c17dc31a17d00c4c2f996d2fd",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "28af9e01cca8f7c4248376b79840c4003314f338e450a8f0df655a55ebbe4481",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "70a584185a8792355867719b2c51b3cdd1bbff61c472631a64fada36304fc5ae",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4747ad5c30bbdffb6d30aeeca6fbc5d072378c9b0167762dbc4733f4def34634",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5a513ab93d5c7d3ac9fba46cd9f681c06b311c7e1ec9da9d86f1ccf775696403",
+          "action": "workforce_confirm_transfer",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "213a4c10f61ee9224643822770765d25479404ef7b2a6a99a66766b078504225",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f8a6557537087a95af31c88a663f7cb30721ecddf9b21d715f3be3d936c0f56a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "538fea28de530ebd946801318e991fad2010fabfb34209f89f87a2cfa1eb7c98",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fd3de579284583ab1b3f515b58ee7b514d57d9b992a757b9a8e34449dcf55e85",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9c514f5af69c56da5472ccfec1e5350238b6c5cfaed5a7d0b7b23b82c6c18686",
+          "action": "message_send",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "756c0c7cfd09e4ff93e21c9229e88ed62e5fb831f6af5ee68baca3951f187eb1",
+          "action": "session_events.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "ef219822b6c5ef22b2bc1be5968c824420bdbe2f481dea0067f9b4e7aaf2a210",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b93e38aeaa595ac63ea899bb4aac3f0a6f3db70fc53f6c9037845457f4971762",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "57d79c6df1a5f9e3ae38a1325f5c11f81b276829460dc64383d0e7f147314623",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "702648b279a238c28a52e460ca72b3b9d6361461138cdb8a2b2231d697eb9a71",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0073165d334c196dc4ace901068b9b3ee9b5855a3e38bb9e394efa7d35ef3c8e",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "16508795ccf1904fcc71d1bd47ad7e785a5e198d8d643d84b600c621ac4cd447",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d3edc590d6856a00be154dc0e569cd6bccd755bcafc0d317268f8be05292ab7e",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1cea6587384ef20b23eabff852fd2f83f12684ad8b320926ab88fcf62e192bb3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "35b32d39fac79fad9ff10a55c2244ae6193086ce9538f92bbb9e46967082cf4a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b4b5ab5ca88b9abc500e932c7b19a682e2a309dc72b245c45f3e393ef3754f23",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "266552a2c1560e1c3561fe807aa6ad07bf1eeb90e71b99e1f1eeee96c7d7a27f",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f49aacb53c2be0cda2c3c34c5d41ff26c9d7482cb8aae174b584b5b5ed983d4b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a0ed593825856b01ac8eae07736dfa1672034ec342aa64235504a77c46dc78cd",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1052ac9984bca76e02a81b43ce65f9b0fa598ed5a5c66e2e1c1b76df550ba0ce",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3538d2b771fd99c1b3f9211607cce1581693f32c432bbfa6c48748354a9c75bc",
+          "action": "queue_list",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4008050b5f28b4bcfadfe2b34f5d3014403219aa051b2c760de008dc6b512ead",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "79a38ddf151178c56437c84c1e9cced96fa0c50bc8cff582107045f445331035",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "41d657356b76a0921bec5d7bdb86aebcee25e5a4f9ea9b6836e2b0601dd5ac3c",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9562cb63f8810ecc369791d6ba8e1c3239a4ffcbb4e72bf121a3af2db2f61644",
+          "action": "workforce_observe",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2dfc7f4596627202e8e36f12db6586403175fe67c1ee3639cc4d998abb9fdade",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "53feda2b69194d2b1951e438c8b4294dc2daa188ae1bb38418c607f45487d9e3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "27cb1a08de8ecb65aca19afb266ef1ef996c78e4f178db127366c4a693a7d4a7",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e1e3b7b6eef1992c6f517f7fec327969a69ca96a80d6a8e30da93d5353fa89a4",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "da4810a1b9c8763f006dd414f1887a0a7f13f911edb6084bc8425689ce3d5654",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "35a947fdb7824abdacf2279428dc51d8df507f759a13c3fa06a4d5446b2da1f3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4df8211e1881ec290077f5ebb1fcd70ba594ab1178c7576a9cf79b9ef092049b",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "da93f18d882a3b4e795859f5266deebea65a721d9876f90bb49515c39ccbafdc",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "60ba3877de73a5a5894bb35a82cc1fe7b5afedf6e3d6a895db9098ef0173fe1b",
+          "action": "workforce_takeover",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8ed26cddf04f50cf42e1c434da2fa13ee3974f50725c93395ec5bba17520e549",
+          "action": "authority_metadata",
+          "decision": "DENY"
+        },
+        {
+          "hash": "70816d8dfdd2b9b3e4458c7a7b95a103ac1afe816d970f6c08d7c98df6d7cecf",
+          "action": "session_events.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "5895b91765460ed06f8b902003bd4d0e593e71453eba25f724833194fd2f7b32",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "7f77a2d8a28a5e93bb1f1533b560d92c7084228a5974f34732de83b23244bdda",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f06fd22c473db6be9d358ee8319c728f78c542e41b47f3ad5750f0547222d7ce",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "615c148eb6b6de27cbf4a5186b980f1edbe23b75ef79e9f381bf6c9467a0cf16",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a10f9b1dd5c0599d400b9350c9de24d4dc3481929c2be4c929ce4c3c1c894979",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "7e0302c5e5d6c539d8d2b07ecaf8a0d5ef32cf9ea9457cd5759b8e39d237801b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a3c2a499831daae220e3f10874062a4fd10b7f06cc0524751e008c759c8ca518",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5ab769d4a0633b3462ef56266aa13d440cb8b8eb764c6b8b98319056d6bbd4d6",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "78e387f6c2ac501aa83fd6ac77a385e03e089ac265be83eb3c9f49a0d768d75c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4466ab55dcf6bb9f2bf07708f619b2ccbe1cfb4b0c2067669d1dc9e8198399c2",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "74115c4981420ac8d570b96a266b4d831bc76bbc9231d56b3aeaa1159321e6f0",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0978cc8044e1cda14881d23492634ebf6b54fd1840ee2192182bd96806d51942",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "58e551532330d951d300e56462dbae2afcd09ca67834458a39a37b8c35589696",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4297c24bc31d87ab6ed6b814195d134c297bfc71ac18c578acd54ef326be221b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fc35b3d51b1655eee77b78a0f6bc716052fb38f603f8d4d7be91cd00ee98f96e",
+          "action": "session_turns.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "2493f36ccf12243c339af790a50120239c2b636839734ac83569d5242b43211a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c3f9a8fb8853c0249ed290522633960c9f95bacc42b1171ece011dca3ca532b4",
+          "action": "session_disclosure",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a016ff84143e6520fce759799c6030a1e973978ebbc6155c3001a1eb016a27da",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "19f5c44682a18340d34c5567c3ce41a1ea6fcb62042778f8902e7c7e2fa62c41",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "bd9d818b88c16a939d74a0e066b563961ee847c025993f4cac01c413c33a8833",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3db67503e88d96e276a9ed8116289c7a0ad29e9c862b2def91d1ce489fb758fc",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9d699843cafa5a53c84c5162af2388c1adfd22d696af7333d6e5b58a3d675c2e",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "29a23444bdead9177b490158d6a18c10d2ad4640d804de590096f900c3c32a4a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "469419172197eb66d538e946d81bb3a584a0c401872d99c63a35f911b53cb19b",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0ba9268a5f77bd75410e8f438149a09e392a789597c7651600fb0a2e8b1f9032",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "63435e53d476cd02a1754ff6e16b9313d91b1ee277047852077bbbd85025b3fe",
+          "action": "session_turns",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b85b74c5a9d3d61b2acddfe7bbc70acd02f87c81b7b77e36095204783a1567c0",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "76114e76e5a3b627dbfb3779ead16eb04ccf06054eab5210dc0c433394c84eb5",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6c75c966d0801b70b84856a89caf01137d1c375784eb22e58fe0c5855dfc6a44",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "061b506ebc7db26542d96b456cc80ffcab2e9b9e2dbb7e2e3841a2693056ed0c",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d1e28176a3c94b2a4a4978e6c0e878144b154c55566aa7fe49a3d7fa09cfac36",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "6f7f430e394facc577e6ef120ac16f80fadbee6d9a3e5c0fa66ff24133c05725",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ebbe7f71f94d0c49be0f11cda1b1045f9814f9f67605fc7464498032afac72ac",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fa74407dff50f6adedde32020510f98f0ec0ca89296a108766154f523f5523c9",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "89a9f0b94c2e1de17c419f156a79c98e012a24817e164d2868179b0a8733975b",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ed08ea70a9d67fe91ba52572370bf2472dd8a503eabb4e4d275428db89b8f559",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "a969432b9c6946b4603777d69c2e35629d9fa5682438a476db3d3c01fe51534c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3a35efb2aabc6901d327157a86daf412589b33727d068dd56ee35ac963f98401",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4d3973eff300946c53f387bdbcb9fe26bc84508f16c4ec0aea6bef21a0cb6c38",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f27d412d6c64cd3e727120de5e780e9c5a833374adac8e8aefba708ba89aa919",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "21513973ed4248adb422e60164dd36219a91eb6752b744e217788797b01b01df",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "decce196fbaca26af55ecfe5b2568105f071c968d38c5602f392fb31635114ff",
+          "action": "session_human_request",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "66a6dbf6855ec2f2e84026148e5f9bf6ffa021739996ffa5d48f554ee133a80b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "88ee9ca452578feaf5d0edb13e5f9fea5218d24627ddfe0a0ffd4e23c9e93400",
+          "action": "operation_status",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "77c69a4ff461aafff51e3e367043b4c1d35f2d0068203c14f0b4f9d32c8ecf88",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "66d3ea0017753f2a311e4d061e85c0702423918e38b8aa1108381b2fd8c2ba7d",
+          "action": "session_human_request.replay",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1a42e87445a7d6da1dff18735208cf60000e3dd0b4f9c826d117c897da426921",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c8aa5fae81228433bef0bba2c880deb40c5f0afdb62ade3d95aa61bb89e59898",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "88b4201eddb5c5022d58d1dc11baa3331166493ac75c38a0c7a2febb956a238a",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "524d8be829e5bdf66119cb841f79129b4c511f69322d4dc6258d4303b5530de8",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b45371ccb600cdcffb53ff93c0e821642bd53e50a39ab4ded7e928cf909a1243",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "57a9dff3c53fd52a9ed8dffbc00ef3495bbcd0c2d4168397f4ce4e044a09c2fc",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f6450eb22fb34fbd2bf1567203e9d8d19b2a0caa8c58c973e17333dceaa061a3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "dc83bc9fa176aa430313c59073b06d5b4aa1c0451d1a5c58b14e2c3b37d711c1",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "5b4711c4a3de86b067d7ccb03a2c6eeb4ac7cd12518dad179434d05fe8992381",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "405f72cab5b3e64d157320d09d0fe7cda018e060777756d1ee090befc65440ba",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "458435cb13dd65eacd19aa5e4bba7a498f3ea1687328404684dd6aec0d4345c3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c636b60e9fbe53cad197f2afa096d1700947f985ee8ac3fe44d82e420b41398b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "b92403f9cff7f4668a712467612e6d1fe2bb62fd68cb203af1c7b13a88a3356d",
+          "action": "session_turns.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "9b06d08be2689ef12c70a8b2ea412c8937e3fbc4f34afbe8985bd6843920e580",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "35b330b9762deeeb1a8b35e4e68caf12ad8a7a38e10e2a46998205dc7eeb70de",
+          "action": "session_disclosure",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8a15aea5a6db5a0ad4123bbb6915a7a7e71b714c2d745a2945c3d5e2eb8ba943",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2909247cc838d2498c4b8d61e7575bb62736cc4ab70ad49d64030e3f1024f4e8",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "4df2aa0af54fe5d48c6d2c73d730407c5e840cbe99624b5546c2dcbb258c82f8",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "204b49303262c1de1015a06814566c4f4023d49d8ada2e92e11cd1e00c80a5ef",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3927ee46f3f9467b380e994998c9f3fe0161de3390819ee7786a0ebf9973c0b7",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "d240f62ae8b4ee3ed497959ba2f883bf665efb0fc6679b7cce18770d211fbd5b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2dc1d81652cb01bd0b26a6d3e8ec2c29230ce8b633897a87ec33cb121d6e3c4b",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "256c654d6f688ddbbc75ccb3513fa3d2a0b16a82e99398b33f3ca4a1488b852d",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "43e81745d53761ea71c6d44cbb905269050aa2fd438a0eb52b94feff5c27cef7",
+          "action": "session_turns",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0dc163a40a9ebbcad018b294377a3dd8761988689ef4c4bf6a93998284612b81",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c267e0627824a06d393c021f945c43cc4949441e15511adc792316f93fc1e390",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "0077a52c9d662c453d8c2b84af3ec63c221181b0dfed01b48aec7070f005717d",
+          "action": "session_events",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9f3991eee023f68a047de18918df232b4ca2cd0c8e5ddb63b35804f4639f33d0",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "797d36ae3c06de77bc45f9018539b17fb60dd386a419c27475d8b65adc072cb9",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "70b5c4f5ebe738a9be664042aa86a481521cf6274d8ac61ee9d988a4778ce074",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "71e5a722199cc430fd977fb8a4085a17ebbcd0c2141e59d858d9210329b1e096",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e48172ffa8b4c60531d15c78d487ecc716406c98a9619b60409d8e4aed434d7f",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "2857745ff4001dc1870ff1abed06e47733ef86f2d5a9798cb6683b57099e92a1",
+          "action": "messages_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "1de7a248f5a4bd54f08a88f778300f78c5639fd4616be9de6367532e96a1c2f9",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "406bfeab568d82849b38b4c092708bd28060104cc118a69cc6652f52747f8def",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "e09b92b98dcda86a5dba61ffd1e6bb178e014d5f02e19eec7fae8698b33c6985",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3ebb99afc669449a7135630bc49c1557ecb01fc938ad07f6dee1bf9752f632b2",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "79d91aa45448afc7a71e69aa1fdedd336ba736ad5738fef2a16dff8e182ae871",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "baf1755a57708e7884e02f25b50277431a9f659dbce19170d99994e45ee8b0f1",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "af2c32360d7a55a23fba44473911fe56593e3711b11e31044d49c6d9adad6b12",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "c2184ca7cea2bae409b75940144ad6a12e2ecd137b960b6b0a1024b449331bd1",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "8e8e7dd7e2473536e62727137dc996ca5a0e2e3881604b80c5a06344c419f85b",
+          "action": "session_events.denied",
+          "decision": "DENY"
+        },
+        {
+          "hash": "4860d99a16bc28e55dd06d89c869ad5c9daa82e948a4bd7dee6a4e933689dfc7",
+          "action": "authority_metadata",
+          "decision": "DENY"
+        },
+        {
+          "hash": "d1020f65eb1cb96334b0d6882fc3c82a7fd4884cf44455ca2f07a7b8225e377c",
+          "action": "authority_metadata",
+          "decision": "DENY"
+        },
+        {
+          "hash": "273bcbcaa30fa9e76ff64484be6d858f45c141618fc6dd1874418413af77c2ce",
+          "action": "authority_metadata",
+          "decision": "DENY"
+        },
+        {
+          "hash": "56396b8115c618048fdd69268d4cb26ee7af8e0d4611f8ca49511af73007c729",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f2527e29b3f0c39ba37b60c1388b6fd028fceff8ef10034616f8048babcdfc43",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "916b7b1e5894bf015605b16b8a5b85e5f35b537ae087ab7780cdca37db80bc6b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "da3df7356a92085e8ecebcb260d42c7ca4a780c7631e2017593dbc84374d5b1f",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "3f434fc378371f5fe0a7265e4a350d8e6eb99315d852cfc01f04c556f3f8042e",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f12e43fc1359907f9ced95b3b7d637d3f57297252294e9c756811a293a9a66e6",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "867f30ba5446f46ad0b9953c1aaf63601078204d659e97a881dc725f9648b4e7",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "ee6c51804c155c53b500e30b70126d5463ae29a964d13e4404885365e6953655",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "77796c5030ece86568fc40cf0160a21f3aa516786c89f91f6e0b03013177c56c",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "f9077f44d1c7d00ca5eeed8df71681862bb4d0e792d266af54f0bebbcdda56af",
+          "action": "session_read",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "822065bfca14a4336a9e72d9b871ab5cb4374d38ec3a8901310172f85c4dc025",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "14d7dec334595a5af2532056101cdccae852b471aaaa54b86f06a9e8bea73e6f",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fdb027a8ce44767ff60ca82c608b5d124fffffbc1b313d6b07f48316bf2d2f4b",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "48661109a197a89f6d7408256fb7148ef73d1c2f9568c0a0f45406a42996027c",
+          "action": "session_create",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "fefa9d80713a17c75f7b5a3b41309945f9de239d539fec4045cc350dd87855e3",
+          "action": "authority_metadata",
+          "decision": "PERMIT"
+        },
+        {
+          "hash": "9ee8a0147dbb38baef501342ad19f3dca9f98fd2995356cab46d5c864e42fad7",
+          "action": "session_read",
+          "decision": "PERMIT"
+        }
+      ]
+    },
+    "postgres_tls": "TLSv1.3 verify-full"
+  },
+  "effect_comparison": {
+    "changed_tables": [],
+    "prohibited_changed_tables": [],
+    "committed_operation_rows_unchanged": true,
+    "non_rejected_operation_rows_unchanged": true,
+    "rejected_operation_rows_append_only": true,
+    "audit_chain_append_only": true,
+    "new_audit_events_permitted": true,
+    "no_prohibited_observed_effect": true,
+    "output_scope": "Database only; client buffered/delivered bytes require separate evidence"
+  },
+  "forbidden_business_effect_absent": true,
+  "exact_barrier_restored": true,
+  "duration_seconds": 9.197,
+  "private_output": "/private/tmp/care-link-imp03-003-cont1/live-identity-loss-001"
+}

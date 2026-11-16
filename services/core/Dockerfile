@@ -9,6 +9,10 @@ WORKDIR /app
 COPY pyproject.toml uv.lock .python-version ./
 COPY packages/contracts/python packages/contracts/python
 COPY services/core services/core
+COPY packages/domain packages/domain
+COPY packages/policy-input/pyproject.toml packages/policy-input/pyproject.toml
+COPY services/data/pyproject.toml services/data/pyproject.toml
+COPY host/recovery-control/pyproject.toml host/recovery-control/pyproject.toml
 # Resolve the workspace from all manifests without shipping unrelated service source.
 COPY services/identity/pyproject.toml services/identity/pyproject.toml
 COPY host/help/pyproject.toml host/help/pyproject.toml

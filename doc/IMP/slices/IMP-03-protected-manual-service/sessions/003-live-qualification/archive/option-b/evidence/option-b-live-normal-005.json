@@ -1,0 +1,8 @@
+{
+  "phase": "normal",
+  "attempt": 5,
+  "exit_code": 1,
+  "duration_seconds": 4.991,
+  "private_output": "/private/tmp/care-link-imp03-003-shared/live-normal-005",
+  "human_acceptance": false
+}

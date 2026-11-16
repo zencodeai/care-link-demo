@@ -1,0 +1,57 @@
+[
+  {
+    "role": "identity",
+    "agent_id": "8ca3433d1526caa35694216ae5826c7722b51ba3d56ac26906549d90e157d5d0",
+    "probe_uid": 22002,
+    "exit_code": 0,
+    "spiffe_ids": [
+      "spiffe://care-link.demo/demo/identity"
+    ],
+    "expected_only": true,
+    "attestation": "dedicated agent parent and Unix UID; no image-selector claim"
+  },
+  {
+    "role": "core",
+    "agent_id": "6197438271ab95ac8c5fec22c95078207d8089a386b52c7908ab12aa509ff37c",
+    "probe_uid": 22002,
+    "exit_code": 0,
+    "spiffe_ids": [
+      "spiffe://care-link.demo/demo/core"
+    ],
+    "expected_only": true,
+    "attestation": "dedicated agent parent and Unix UID; no image-selector claim"
+  },
+  {
+    "role": "data",
+    "agent_id": "d1faa37c9c08597445d48b73a23f3b3b02843ce477ed06e6a6a16c7ecec902ea",
+    "probe_uid": 22002,
+    "exit_code": 0,
+    "spiffe_ids": [
+      "spiffe://care-link.demo/demo/data"
+    ],
+    "expected_only": true,
+    "attestation": "dedicated agent parent and Unix UID; no image-selector claim"
+  },
+  {
+    "role": "pdp",
+    "agent_id": "77872d3b79d82dc41b7c5b98b21d5b7307c5250d2403a30b84b7b0d9608fb002",
+    "probe_uid": 22002,
+    "exit_code": 0,
+    "spiffe_ids": [
+      "spiffe://care-link.demo/demo/pdp"
+    ],
+    "expected_only": true,
+    "attestation": "dedicated agent parent and Unix UID; no image-selector claim"
+  },
+  {
+    "role": "journal",
+    "agent_id": "3effb19c967c8866c58c0c387594a7af40dcf7b3695948232eefaef8e96da2c0",
+    "probe_uid": 22002,
+    "exit_code": 0,
+    "spiffe_ids": [
+      "spiffe://care-link.demo/demo/journal"
+    ],
+    "expected_only": true,
+    "attestation": "dedicated agent parent and Unix UID; no image-selector claim"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-11-14T20:11:35.515251+00:00",
+  "old_container_id": "95a53bd9e52bf37dcc9d45167d2805492310b2eb5c7a1fbc82186fed5d9528ac",
+  "old_image_id": "sha256:782c6bc237ce80b378bbdfa4795af4e0d26c799298f06613ba2161a7df76f602",
+  "new_image_id": "sha256:0d87661654da00d5678c4816460e585bc3e6de25250acb8796594e1b43e902ab",
+  "scope": "Continuation core UI replacement only, preserve existing configuration, state, custody and fence",
+  "rollback_image_id": "sha256:782c6bc237ce80b378bbdfa4795af4e0d26c799298f06613ba2161a7df76f602",
+  "stop_exit_code": 143,
+  "new_container_id": "a98cdc1a7181b7e1bbe424c59846619ce842fe505f04c7f9dc9699cfbdfa67a9",
+  "network": "none",
+  "commit_fault_enabled": false,
+  "database_comparison": {
+    "changed_tables": [],
+    "prohibited_changed_tables": [],
+    "committed_operation_rows_unchanged": true,
+    "non_rejected_operation_rows_unchanged": true,
+    "rejected_operation_rows_append_only": true,
+    "audit_chain_append_only": true,
+    "new_audit_events_permitted": true,
+    "no_prohibited_observed_effect": true,
+    "output_scope": "Database only; client buffered/delivered bytes require separate evidence"
+  }
+}

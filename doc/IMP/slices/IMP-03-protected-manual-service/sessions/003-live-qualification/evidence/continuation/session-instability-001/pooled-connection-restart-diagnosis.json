@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-11-14T20:05:04.602169+00:00",
+  "core_proxy_container_id": "5c6d5b3374131d3a4118d0e379e7e388ee0181c336d928f8853120d5c5c034e4",
+  "running": true,
+  "started_at": "2026-11-14T20:04:27.725521222Z",
+  "readiness_after_restart": [
+    200
+  ],
+  "before_restart_evidence": "baseline-unsent-002 recorded empty403 after bundle refresh; exact immediate before/after comparison was not retained because the initial post-restart readiness probe hit TLS EOF.",
+  "interpretation": "Fresh connection pool after exact core-proxy restart restores bootstrap if200; pooled-certificate expiry is a hypothesis until sustained rotation validation."
+}

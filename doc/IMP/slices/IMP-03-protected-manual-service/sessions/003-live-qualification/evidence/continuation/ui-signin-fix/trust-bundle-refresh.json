@@ -1,0 +1,46 @@
+{
+  "recorded_at": "2026-11-14T14:08:46.812075+00:00",
+  "source": "Existing SPIRE server via exact verified kind node; public bundle only",
+  "bundle_sha256": "ddc7afddb5db223994cf60d417db22c641015e0cedfc2464fe48c881e5bad0de",
+  "roles": [
+    {
+      "role": "identity",
+      "container_id": "3a3f160e40b3831ff3d4a222147d14a5d6deb7a25bfbe966369e08cfcfb294e4",
+      "changed_and_restarted": true
+    },
+    {
+      "role": "core",
+      "container_id": "231a31d2d76b033fb0e558415cde92c7fe1d5f77472b5bb25134ffc198cecdf0",
+      "changed_and_restarted": true
+    },
+    {
+      "role": "data",
+      "container_id": "4bc729a3daa24017c5af3968410c7f4473521de1c7fa412abd489baebf3853e4",
+      "changed_and_restarted": true
+    },
+    {
+      "role": "pdp",
+      "container_id": "4fd399c0df9c5f4e405fe5fb0cfc7b428890543859cb900fb7ddadb3c752d389",
+      "changed_and_restarted": true
+    },
+    {
+      "role": "journal",
+      "container_id": "43e8c8e94318af0a6206c38d4b596ad5c1dad4774b9eefcc00ad50c2e72268ba",
+      "changed_and_restarted": true
+    }
+  ],
+  "issuer_policy_changed": false,
+  "fences_changed": false,
+  "database_comparison": {
+    "changed_tables": [],
+    "prohibited_changed_tables": [],
+    "committed_operation_rows_unchanged": true,
+    "non_rejected_operation_rows_unchanged": true,
+    "rejected_operation_rows_append_only": true,
+    "audit_chain_append_only": true,
+    "new_audit_events_permitted": true,
+    "no_prohibited_observed_effect": true,
+    "output_scope": "Database only; client buffered/delivered bytes require separate evidence"
+  },
+  "csrf_bootstrap_status": 200
+}

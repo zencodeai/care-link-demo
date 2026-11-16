@@ -1,0 +1,7 @@
+{
+  "command": ".venv/bin/python tools/check.py",
+  "exit_code": 0,
+  "duration_seconds": 30.675,
+  "scope": "final source; external fixture skips are separate from full lane",
+  "human_acceptance": false
+}

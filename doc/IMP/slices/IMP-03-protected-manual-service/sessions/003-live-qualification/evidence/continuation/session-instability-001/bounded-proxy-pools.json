@@ -1,0 +1,62 @@
+{
+  "maximum_connection_seconds": 60,
+  "routes_or_identity_rules_changed": false,
+  "issuer_policy_or_fences_changed": false,
+  "roles": [
+    {
+      "role": "journal",
+      "cluster_names": [],
+      "before_sha256": "28d77d2cbb899533091f33a3557437d78ae7776c5dec1437702a5f0b5a75fdd5",
+      "after_sha256": "28d77d2cbb899533091f33a3557437d78ae7776c5dec1437702a5f0b5a75fdd5",
+      "envoy_validation": "passed"
+    },
+    {
+      "role": "core",
+      "cluster_names": [
+        "identity_mesh_identity",
+        "identity_mesh_data",
+        "identity_mesh_pdp"
+      ],
+      "before_sha256": "30b8d4b7febf83af4162ecbd9c0c19fd0bebf727a976d389a157b7a1d527cbd7",
+      "after_sha256": "5180a7c3875f632ab933ef0997ec6eab035210ece05a6c127d0f64f928744987",
+      "envoy_validation": "passed"
+    },
+    {
+      "role": "data",
+      "cluster_names": [
+        "identity_mesh_identity",
+        "identity_mesh_core",
+        "identity_mesh_pdp",
+        "identity_mesh_journal"
+      ],
+      "before_sha256": "be102e284216acf079d09c7b4f15601f2e6100ebd8af3863717ca09f9d800200",
+      "after_sha256": "8d0c25642099224aeb48420cf1193dadab1f0b9857b56743599e227ba8be2672",
+      "envoy_validation": "passed"
+    },
+    {
+      "role": "pdp",
+      "cluster_names": [],
+      "before_sha256": "cb7c2f0cb892e1f34f882467d792a769302ea9c500cec2f86d6292c4dff14d61",
+      "after_sha256": "cb7c2f0cb892e1f34f882467d792a769302ea9c500cec2f86d6292c4dff14d61",
+      "envoy_validation": "passed"
+    },
+    {
+      "role": "identity",
+      "cluster_names": [],
+      "before_sha256": "73a9fac2a14af40cf8aa8d6aab82b7be47d6979d5bd42ef31d27547ed6e802f5",
+      "after_sha256": "73a9fac2a14af40cf8aa8d6aab82b7be47d6979d5bd42ef31d27547ed6e802f5",
+      "envoy_validation": "passed"
+    }
+  ],
+  "database_comparison": {
+    "changed_tables": [],
+    "prohibited_changed_tables": [],
+    "committed_operation_rows_unchanged": true,
+    "non_rejected_operation_rows_unchanged": true,
+    "rejected_operation_rows_append_only": true,
+    "audit_chain_append_only": true,
+    "new_audit_events_permitted": true,
+    "no_prohibited_observed_effect": true,
+    "output_scope": "Database only; client buffered/delivered bytes require separate evidence"
+  }
+}

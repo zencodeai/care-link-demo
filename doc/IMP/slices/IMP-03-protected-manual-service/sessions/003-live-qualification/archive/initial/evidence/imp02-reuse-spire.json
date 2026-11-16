@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-11-13T14:16:33.472615+00:00",
+  "argv": [
+    "kubectl",
+    "--kubeconfig",
+    "/private/tmp/care-link-imp02-002/cluster/kubeconfig",
+    "--context",
+    "kind-care-link-imp02-002",
+    "--request-timeout=15s",
+    "-n",
+    "care-link-imp02-002-trust",
+    "exec",
+    "deployment/spire-server",
+    "--",
+    "/opt/spire/bin/spire-server",
+    "entry",
+    "show",
+    "-socketPath",
+    "/run/spire/data/api.sock"
+  ],
+  "exit_code": 0,
+  "public_registration_output": "Found 6 entries\nEntry ID                : 7e0b1b06-2eb9-4978-9585-e0a8f2b2d2fa\nSPIFFE ID               : spiffe://care-link.demo/host/imp02-002\nParent ID               : spiffe://care-link.demo/spire/agent/join_token/59421c1e-a3a9-49d2-a467-c3bceada2d17\nRevision                : 0\nX509-SVID TTL           : default\nJWT-SVID TTL            : default\nSelector                : spiffe_id:spiffe://care-link.demo/spire/agent/join_token/59421c1e-a3a9-49d2-a467-c3bceada2d17\n\nEntry ID                : 811cae52-0d2c-461d-ad9e-17eb465850ef\nSPIFFE ID               : spiffe://care-link.demo/lab/help\nParent ID               : spiffe://care-link.demo/host/imp02-002\nRevision                : 0\nX509-SVID TTL           : 300\nJWT-SVID TTL            : default\nSelector                : unix:uid:21002\n\nEntry ID                : 10f42534-0dd8-45b7-a718-442a71f92f0f\nSPIFFE ID               : spiffe://care-link.demo/lab/identity\nParent ID               : spiffe://care-link.demo/node/imp02-002\nRevision                : 8\nX509-SVID TTL           : 300\nJWT-SVID TTL            : default\nSelector                : k8s:container-image:docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb\nSelector                : k8s:container-name:proxy\nSelector                : k8s:ns:care-link-imp02-002\nSelector                : k8s:pod-image:docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c\nSelector                : k8s:sa:identity\n\nEntry ID                : 551fd699-8848-4e75-8cba-1c9b906e71fb\nSPIFFE ID               : spiffe://care-link.demo/lab/identity_provider\nParent ID               : spiffe://care-link.demo/host/imp02-002\nRevision                : 0\nX509-SVID TTL           : 300\nJWT-SVID TTL            : default\nSelector                : unix:uid:21004\n\nEntry ID                : 01cd3948-a575-4269-b4f7-559c2bd717f3\nSPIFFE ID               : spiffe://care-link.demo/lab/main\nParent ID               : spiffe://care-link.demo/node/imp02-002\nRevision                : 8\nX509-SVID TTL           : 300\nJWT-SVID TTL            : default\nSelector                : k8s:container-image:docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb\nSelector                : k8s:container-name:proxy\nSelector                : k8s:ns:care-link-imp02-002\nSelector                : k8s:pod-image:docker.io/library/care-link-imp02-app@sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c\nSelector                : k8s:sa:main\n\nEntry ID                : 324f20df-b748-436e-a3cc-e17961680b60\nSPIFFE ID               : spiffe://care-link.demo/node/imp02-002\nParent ID               : spiffe://care-link.demo/spire/server\nRevision                : 0\nX509-SVID TTL           : default\nJWT-SVID TTL            : default\nSelector                : k8s_psat:agent_ns:care-link-imp02-002-trust\nSelector                : k8s_psat:agent_sa:spire-agent\nSelector                : k8s_psat:cluster:care-link-imp02-002\n\n",
+  "error": null,
+  "scope": "Public registration selectors/IDs only; no SVID/key fetch or entry mutation"
+}

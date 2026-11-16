@@ -1,0 +1,164 @@
+{
+  "packet_id": "IMP-03-005-REVIEW-RECOVERY-IMPLEMENTATION",
+  "task_id": "IMP-03-D",
+  "stage_id": "IMP-03",
+  "mode": "implementation",
+  "role": "imp_platform",
+  "goal": "Implement accepted review/recovery/toolkit design and extensively verify actual Google Chrome for Testing ordinary-tab journeys. Preserve original target, current data/fences and scoped approvals; keep minimum records.",
+  "baseline_commit": "caf3ddea7c8b4057d84f56632be1c0031e8ddecb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/qualification-status.md",
+      "sha256": "e6427c88d6e5997806ae6cadbff692ad634afb6e03440a79821ef5fd14f610db"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "b0d96ebbf0058a4394ef1e87b5685858c20e5ddfb91debc9bbf664c328a5b55d"
+    },
+    {
+      "path": "apps/web/src/manual/Workforce.tsx",
+      "sha256": "1feb47e107d64c4ff061a26be14ed484c1cf5504c4130518618de7abeacef641"
+    },
+    {
+      "path": "apps/web/src/manual/useManual.ts",
+      "sha256": "54d033dcdbdd8f5ec0cdaea945a95567ead7ba640e749ff640fc200a0697119d"
+    },
+    {
+      "path": "apps/web/src/manual/Connection.tsx",
+      "sha256": "0a6649836ec7e97120ba120b37aa0c168c16eaa8849052dcdd1c38bf4733a67d"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/app.py",
+      "sha256": "81da19d49ed227bda3906c0fd3b6e4a8ccaf05ae84addf579a072abf190dbac0"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/service.py",
+      "sha256": "6cda2a3698a2ebd26c8d71a19e4066f5b709a4d67c30a2c8cec9018965ef5cd9"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/provider.py",
+      "sha256": "cc06835a94be18da751226096776342d50922456a80553089555bb2c8df3c620"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_channels.py",
+      "sha256": "559a5ad69b7a35c6c24f8261bbbdaff1fdbf00f946c50908a6cb425284683db0"
+    },
+    {
+      "path": "tools/imp03_shared/profiles.py",
+      "sha256": "19dedf561b705e4d7767407dcb936b65ef431c7478b5cc7b99d46ed8d17f1524"
+    },
+    {
+      "path": "tools/imp03_shared/model.py",
+      "sha256": "8a462609d16445d3f2961f0a8a4441b645198377791ed522747d9766eb167685"
+    },
+    {
+      "path": "tests/e2e/imp03-extended/handoff-ui.spec.ts",
+      "sha256": "b785793ef54857797ef02699669e3d1001f41e37f116ef75db81e453960893de"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/004-review-recovery-design/review-and-design.md",
+      "sha256": "fc24c2ed747ac5eff25fbe020ec579402f1bf10295b22e6ec97e6b2af3efbf57"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/004-review-recovery-design/implementation-plan.md",
+      "sha256": "9bbf9b8c97430cacf3657bea4f6287750053a6dd15da0ebf354d1b5ffb6c8139"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/IMP/**",
+    "apps/web/src/**",
+    "services/identity/src/**",
+    "services/core/src/**",
+    "services/data/src/**",
+    "tools/imp03_shared/**",
+    "tools/imp03_runtime/**",
+    "tests/e2e/imp03*/**"
+  ],
+  "write_paths": [
+    "apps/web/**",
+    "services/core/**",
+    "services/data/**",
+    "services/identity/**",
+    "packages/**",
+    "config/demo/**",
+    "tools/**",
+    "tests/**",
+    "deploy/images/imp03*/**",
+    "doc/IMP/slices/IMP-03-protected-manual-service/sessions/005-review-recovery-implementation/**",
+    "doc/IMP/slices/IMP-03-protected-manual-service/README.md",
+    "pyproject.toml",
+    "pyrightconfig.json",
+    "uv.lock",
+    ".gitignore"
+  ],
+  "dependencies": [
+    "G-02 accepted dependency retained; G-03 incomplete",
+    "Session003 archived; technical candidate unchanged"
+  ],
+  "operation_ids": [],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "read_only_host_probe",
+    "mutate_named_lab",
+    "install_named_tools"
+  ],
+  "prohibited_actions": [
+    "Reset original target/fences or erase unresolved conversations",
+    "Unapproved global DNS/trust or shared IMP02 issuer/policy change",
+    "Sibling changes, HLD/LLD rewrite, commit/push, invented stage acceptance/IMP04 activation",
+    "Credentials, raw browser authentication URLs or transcripts in public records"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Current user: Implement changes; extensive automated Google Chrome for Testing; only minimum followup records; subsequent explicit user approval: Approve login-keychain TLS trust",
+    "scope": "Implement planned recovery, ordinary-tab actor isolation and durable toolkit; scoped existing continuation deployment/issued realm configuration and automated synthetic journeys. No global trust/DNS or original target changes. User separately approved adding the two fingerprint-verified lab CA certificates to the login keychain for TLS only; no system-keychain or DNS mutation."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP03-005-continuation",
+      "kind": "namespace",
+      "scope": "Continuation care-link-imp03-003-cont1-* apps/config/private state; actor realms care-link-imp03-cont1{,-worker1,-worker2,-supervisor}; named review browser fixtures. Preserve original target/shared server.",
+      "owner_task_id": "IMP-03-D",
+      "expires_at": "2026-11-22T23:59:59Z"
+    }
+  ],
+  "expected_outputs": [
+    "Implemented modular recovery and reference toolkit",
+    "Actual branded Chrome for Testing full shared-context runs and adverse verification",
+    "Minimal README/handoff and machine test summary, no packet snapshots"
+  ],
+  "positive_acceptance": [
+    "Three successive from-scratch ordinary-tab runs in same retained browser profile, no developer repair/cache clearing",
+    "Reload/reauth/unknown operation and assignment recovery; actor/cross-run isolation; durable toolkit state"
+  ],
+  "adverse_acceptance": [
+    "Current identity/PDP/audit/fence checks retained; stale tab/rights/nonce and cross-run deny",
+    "Failed attempts honestly summarized; 100 percent universal guarantee not claimed"
+  ],
+  "reviewer": "imp_review read-only integrated implementation review; primary owns contracts/integration/live ops",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Ownership collision or destructive outcome: inspect and preserve",
+    "No weakening authority checks to satisfy UI tests",
+    "Global trust/DNS required: prepare exact change and seek its scoped approval before mutation"
+  ],
+  "is_example": false
+}

@@ -1,0 +1,160 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 3.80kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#2 ...
+
+#3 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#3 DONE 0.5s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#2 DONE 0.5s
+
+#4 [uv 1/1] FROM ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#4 resolve ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc done
+#4 DONE 0.0s
+
+#5 [build  1/12] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#5 resolve docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 640.21kB 0.0s done
+#6 DONE 0.0s
+
+#7 [build  3/12] WORKDIR /app
+#7 CACHED
+
+#8 [build  4/12] COPY pyproject.toml uv.lock .python-version ./
+#8 CACHED
+
+#9 [build  2/12] COPY --from=uv /uv /usr/local/bin/uv
+#9 CACHED
+
+#10 [build  5/12] COPY packages/ packages/
+#10 CACHED
+
+#11 [build  6/12] COPY services/ services/
+#11 DONE 0.0s
+
+#12 [build  7/12] COPY host/ host/
+#12 DONE 0.0s
+
+#13 [build  8/12] RUN uv sync --locked --no-dev --all-packages
+#13 0.176 Using CPython 3.14.7 interpreter at: /usr/local/bin/python3.14
+#13 0.176 Creating virtual environment at: .venv
+#13 0.181 Resolved 58 packages in 2ms
+#13 0.203    Building care-link-core @ file:///app/services/core
+#13 0.204    Building care-link-data @ file:///app/services/data
+#13 0.204    Building care-link-help @ file:///app/host/help
+#13 0.205    Building care-link-domain @ file:///app/packages/domain
+#13 0.205    Building care-link-identity @ file:///app/services/identity
+#13 0.205    Building care-link-policy-input @ file:///app/packages/policy-input
+#13 0.206    Building care-link-recovery-control @ file:///app/host/recovery-control
+#13 0.206    Building care-link-static @ file:///app/host/static
+#13 0.207    Building care-link-contracts @ file:///app/packages/contracts/python
+#13 0.207    Building care-link-workload-trust @ file:///app/packages/workload-trust
+#13 0.513 Downloading pydantic-core (2.0MiB)
+#13 0.513 Downloading psycopg-binary (4.4MiB)
+#13 0.513 Downloading cryptography (4.5MiB)
+#13 0.846  Downloaded pydantic-core
+#13 0.909  Downloaded cryptography
+#13 0.923  Downloaded psycopg-binary
+#13 1.566       Built care-link-contracts @ file:///app/packages/contracts/python
+#13 1.566       Built care-link-core @ file:///app/services/core
+#13 1.566       Built care-link-recovery-control @ file:///app/host/recovery-control
+#13 1.566       Built care-link-static @ file:///app/host/static
+#13 1.566       Built care-link-domain @ file:///app/packages/domain
+#13 1.566       Built care-link-policy-input @ file:///app/packages/policy-input
+#13 1.567       Built care-link-data @ file:///app/services/data
+#13 1.567       Built care-link-workload-trust @ file:///app/packages/workload-trust
+#13 1.567       Built care-link-identity @ file:///app/services/identity
+#13 1.567       Built care-link-help @ file:///app/host/help
+#13 1.574 Prepared 49 packages in 1.39s
+#13 1.659 Installed 49 packages in 84ms
+#13 1.798 Bytecode compiled 776 files in 138ms
+#13 1.798  + annotated-doc==0.0.5
+#13 1.798  + annotated-types==0.8.0
+#13 1.798  + anyio==4.16.0
+#13 1.798  + arrow==1.4.0
+#13 1.798  + attrs==26.1.0
+#13 1.798  + care-link-contracts==0.1.0 (from file:///app/packages/contracts/python)
+#13 1.798  + care-link-core==0.1.0 (from file:///app/services/core)
+#13 1.798  + care-link-data==0.1.0 (from file:///app/services/data)
+#13 1.798  + care-link-domain==0.1.0 (from file:///app/packages/domain)
+#13 1.798  + care-link-help==0.1.0 (from file:///app/host/help)
+#13 1.798  + care-link-identity==0.1.0 (from file:///app/services/identity)
+#13 1.798  + care-link-policy-input==0.1.0 (from file:///app/packages/policy-input)
+#13 1.798  + care-link-recovery-control==0.1.0 (from file:///app/host/recovery-control)
+#13 1.798  + care-link-static==0.1.0 (from file:///app/host/static)
+#13 1.798  + care-link-workload-trust==0.1.0 (from file:///app/packages/workload-trust)
+#13 1.798  + certifi==2026.10.23
+#13 1.798  + cffi==2.1.1
+#13 1.798  + click==8.5.1
+#13 1.798  + cryptography==50.0.2
+#13 1.798  + fastapi==0.162.2
+#13 1.798  + fqdn==1.6.0
+#13 1.798  + h11==0.16.0
+#13 1.798  + httpcore==1.0.9
+#13 1.798  + httpx==0.28.1
+#13 1.798  + idna==3.20
+#13 1.798  + isoduration==20.11.0
+#13 1.798  + jsonpointer==3.10
+#13 1.798  + jsonschema==4.25.1
+#13 1.798  + jsonschema-specifications==2025.9.1
+#13 1.798  + opentelemetry-api==1.45.2
+#13 1.798  + psycopg==3.2.12
+#13 1.798  + psycopg-binary==3.2.12
+#13 1.798  + pycparser==3.12
+#13 1.798  + pydantic==2.14.3
+#13 1.798  + pydantic-core==2.50.4
+#13 1.798  + pyjwt==2.15.1
+#13 1.798  + python-dateutil==4.0.0
+#13 1.798  + referencing==0.37.0
+#13 1.798  + rfc3339-validator==0.1.4
+#13 1.798  + rfc3987==1.3.8
+#13 1.798  + rpds-py==2026.9.1
+#13 1.798  + six==1.17.0
+#13 1.798  + starlette==1.10.0
+#13 1.799  + typing-extensions==4.16.0
+#13 1.799  + typing-inspection==0.4.5
+#13 1.799  + tzdata==2026.6
+#13 1.799  + uri-template==1.3.0
+#13 1.799  + uvicorn==0.38.0
+#13 1.799  + webcolors==25.10.0
+#13 DONE 1.9s
+
+#14 [build  9/12] COPY tools/ tools/
+#14 DONE 0.0s
+
+#15 [build 10/12] COPY config/demo/imp03/ config/demo/imp03/
+#15 DONE 0.0s
+
+#16 [build 11/12] COPY apps/web/dist/ apps/web/dist/
+#16 DONE 0.0s
+
+#17 [build 12/12] RUN test -f /app/apps/web/dist/index.html && chmod -R a+rX /app/apps/web/dist
+#17 DONE 0.1s
+
+#18 [runtime 2/3] WORKDIR /app
+#18 CACHED
+
+#19 [runtime 3/3] COPY --from=build /app /app
+#19 DONE 0.3s
+
+#20 exporting to image
+#20 exporting layers
+#20 exporting layers 1.0s done
+#20 exporting manifest sha256:83a1b1c15bdfe0493a08b63c62239eb63c0e7dd94d39ae0eb29e4c3d96680bf7 done
+#20 exporting config sha256:c13594e8417aebe78739ce6858d62772d28d01c3808b95a1714ece2415237603 done
+#20 exporting attestation manifest sha256:538cbda60fc7b3f7b4422b2fa77e2fbf96843b35f53e6d55b9aafe76a140f526 done
+#20 exporting manifest list sha256:2b34147b1ed12989a3485087631568a8c05b15dea0e70e4da5aa4495af7ac300 done
+#20 naming to docker.io/library/care-link-imp03:qualification-003 done
+#20 unpacking to docker.io/library/care-link-imp03:qualification-003
+#20 unpacking to docker.io/library/care-link-imp03:qualification-003 0.3s done
+#20 DONE 1.4s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/pldulj00oaz8nitgcj2bgped2

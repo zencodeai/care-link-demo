@@ -1,0 +1,101 @@
+{
+  "scope": "Resolve prior immutable packet references by original path and content digest; snapshots retain their original bytes.",
+  "aliases": [
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/qualification-status.md",
+      "content_sha256": "943ef9ceca7f38389f998a0e78e734e93b439649d1c41625f112ed59e98e33a5",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-qualification-status.md",
+        "sha256": "943ef9ceca7f38389f998a0e78e734e93b439649d1c41625f112ed59e98e33a5"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/source-dirty.patch",
+      "content_sha256": "d60f422798ee8438d594a89586c5dd3b07ac5c07ff730093015d85f18ef5661b",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-source-dirty.patch",
+        "sha256": "d60f422798ee8438d594a89586c5dd3b07ac5c07ff730093015d85f18ef5661b"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-results.json",
+      "content_sha256": "3deafaf59d9c351fc2430fa197a32446fad16721386d3faf3d821f3999895bac",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-continuation-results.json",
+        "sha256": "3deafaf59d9c351fc2430fa197a32446fad16721386d3faf3d821f3999895bac"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-deployed-artifacts.json",
+      "content_sha256": "1aae9fd61bc71b25734802afcdfe61fddfd367c05e5def1644ce658c2f7a34a0",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-continuation-deployed-artifacts.json",
+        "sha256": "1aae9fd61bc71b25734802afcdfe61fddfd367c05e5def1644ce658c2f7a34a0"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-environment.json",
+      "content_sha256": "5bac5b40ce35c45e4a7f5ef37009dcad7f467b7eefcb767904a01d221e49fecc",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-continuation-environment.json",
+        "sha256": "5bac5b40ce35c45e4a7f5ef37009dcad7f467b7eefcb767904a01d221e49fecc"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-demo-packet.json",
+      "content_sha256": "eb42d06b1113d45e8cdb97dc48e73bdc8d8232aeaec738d0da174d49289a4fc3",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-continuation-demo-packet.json",
+        "sha256": "eb42d06b1113d45e8cdb97dc48e73bdc8d8232aeaec738d0da174d49289a4fc3"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-agent-result.json",
+      "content_sha256": "531d5de520b8e279dcecc781e9e86ed2448787987a95d2368e86067616d9700f",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-continuation-agent-result.json",
+        "sha256": "531d5de520b8e279dcecc781e9e86ed2448787987a95d2368e86067616d9700f"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/final-runtime-binding.json",
+      "content_sha256": "45fa3c5acca2165fe725343544f3ae8f28ba71b73cbe4fc085aeccd1974b8d8b",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-final-runtime-binding.json",
+        "sha256": "45fa3c5acca2165fe725343544f3ae8f28ba71b73cbe4fc085aeccd1974b8d8b"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/handoff.md",
+      "content_sha256": "28b8d5b07fe3a7244a434f4aac31a13d3c06fbe6c9fdaba7f767f432ed5577cc",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-handoff.md",
+        "sha256": "28b8d5b07fe3a7244a434f4aac31a13d3c06fbe6c9fdaba7f767f432ed5577cc"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/human-review-progress.json",
+      "content_sha256": "8b85ff89e44d433ea20cd567b8d0e54c95a83587575c931d01a52c738e35eda0",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-human-review-progress.json",
+        "sha256": "8b85ff89e44d433ea20cd567b8d0e54c95a83587575c931d01a52c738e35eda0"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/continuation-packet-validation.json",
+      "content_sha256": "7e5e7f7c892e54887ed1a6315613142da8ceedacedd97889d212b20a73483b7b",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-continuation-packet-validation.json",
+        "sha256": "7e5e7f7c892e54887ed1a6315613142da8ceedacedd97889d212b20a73483b7b"
+      }
+    },
+    {
+      "original_path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/continuation-candidate-manifest.json",
+      "content_sha256": "8fa45b61089dfdd114d0529dc22b5c90e2037e444caaa75c19186eb0d150e4d9",
+      "archived_content": {
+        "path": "doc/IMP/slices/IMP-03-protected-manual-service/sessions/003-live-qualification/evidence/continuation/ui-signin-fix/before-continuation-candidate-manifest.json",
+        "sha256": "8fa45b61089dfdd114d0529dc22b5c90e2037e444caaa75c19186eb0d150e4d9"
+      }
+    }
+  ]
+}
