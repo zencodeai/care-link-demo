@@ -1,0 +1,119 @@
+{
+  "packet_id": "IMP05-002-publication",
+  "task_id": "IMP-05-D",
+  "stage_id": "IMP-05",
+  "mode": "implementation",
+  "role": "imp_platform",
+  "goal": "Close IMP-05 source scope and publish an implementation PR without merging or deployment",
+  "baseline_commit": "f596a6b945fdaff97229da901093912d2f02f815",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "761c27e14d931c6e2ad9f7bc23630d43c18478e49deb3b89190b48017f4dafe6"
+    },
+    {
+      "path": "doc/LLD/06-consent-directory-and-referrals.md",
+      "sha256": "02671648ecf2cc31a9ed8aa3bb37de03ea83b7bff98e0a23e536ded6fdfc3903"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-16-IMP-04/ledger.json",
+      "sha256": "2957e025e5e9b655a5af4836e7dff049ff41128b09d7d543e1cbc016101638ae"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/REQ",
+    "doc/HLD",
+    "doc/LLD",
+    "doc/IMP"
+  ],
+  "write_paths": [
+    "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr/**",
+    "doc/IMP/slices/IMP-05-reviewed-simulated-referral/README.md",
+    "doc/IMP/executions/2026-11-20-IMP-05/ledger.json",
+    "doc/IMP/README.md",
+    "doc/IMP/planning-inventory.json"
+  ],
+  "dependencies": [
+    "IMP-05:G-05:automated_qualified",
+    "IMP-04 PR11 merged"
+  ],
+  "operation_ids": [
+    "referral_draft",
+    "referral_read",
+    "referral_review",
+    "referral_dispatch",
+    "dispatch_read",
+    "receipt_read",
+    "dispatch_reconcile",
+    "receiver_decide",
+    "receiver_package",
+    "simulator_send",
+    "data_referral_draft",
+    "data_referral_read",
+    "data_referral_review",
+    "data_referral_dispatch",
+    "data_dispatch_read",
+    "data_receipt_read",
+    "data_dispatch_reconcile",
+    "receiver_inbox"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "publish_pr"
+  ],
+  "prohibited_actions": [
+    "live deployment",
+    "host trust changes",
+    "real contact",
+    "police integration",
+    "commit",
+    "push",
+    "merge",
+    "model change"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Close IMP-05 and create PR",
+    "scope": "Finalize slice closure, create branch, commit and push qualified implementation, create PR; no merge/deployment/next-slice activation"
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Publication receipt",
+    "PR link and exact source commit",
+    "Updated closure index and ledger"
+  ],
+  "positive_acceptance": [
+    "Qualified source and baseline tree match preserved",
+    "Implementation committed and pushed on dedicated branch; PR against main",
+    "Durable publication handoff with actual URL and commit"
+  ],
+  "adverse_acceptance": [
+    "No unrelated source change or historical evidence rewrite",
+    "No human acceptance inference, deployment, merge or IMP06 activation"
+  ],
+  "reviewer": "primary coordinator: sequential publication verification",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "authority change",
+    "shared ownership conflict",
+    "destructive or live action needed"
+  ],
+  "is_example": false
+}

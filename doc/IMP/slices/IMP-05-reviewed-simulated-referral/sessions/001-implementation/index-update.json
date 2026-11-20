@@ -1,0 +1,6 @@
+{
+  "path": "doc/IMP/README.md",
+  "before_sha256": "3ff70e20458cfa2c21b656ec7300d3c2f200d2931a4302c568206cf3d56fde0f",
+  "after_sha256": "907a09e247b25bee62bb151f092c39cfe01f53126d4880b26f6a1d1713d918c3",
+  "scope": "Execution-status index update; prior hash preserved in canonical inventory execution_updates"
+}

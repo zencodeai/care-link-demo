@@ -69,6 +69,7 @@ def create_manual_identity_app(
     service: IdentityService,
     workload_verifier: Callable[[Request, str], bool],
     *,
+    receiver_enabled: bool = False,
     service_for_session: Callable[[str], IdentityService] | None = None,
 ) -> FastAPI:
     """Expose exact core/data mesh routes; never mount on a browser origin."""
@@ -252,7 +253,10 @@ def create_manual_identity_app(
 
     def route(name: str, peer: str) -> None:
         async def handler(request: Request) -> JSONResponse:
-            if not workload_verifier(request, peer):
+            permitted = workload_verifier(request, peer)
+            if not permitted and receiver_enabled and name in {"resolve", "current"}:
+                permitted = workload_verifier(request, "receiver")
+            if not permitted:
                 raise ManualError("manual.workload_denied")
             if (
                 request.query_params

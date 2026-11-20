@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "commands": [
+    {
+      "command": "pnpm exec playwright test -c tests/e2e/referral/playwright.config.ts",
+      "exit_code": 0,
+      "result": "6 passed; EN/FR worker, receiver and client"
+    },
+    {
+      "command": "pnpm exec tsc -p tests/e2e/referral/tsconfig.json",
+      "exit_code": 0
+    },
+    {
+      "command": "pnpm exec eslint tests/e2e/referral --max-warnings 0",
+      "exit_code": 0
+    },
+    {
+      "command": "pnpm exec prettier --check tests/e2e/referral",
+      "exit_code": 0
+    }
+  ],
+  "environment": {
+    "browser": "real Chromium through preexisting isolated Playwright server; /opt/chrome-for-testing/chrome",
+    "server": "ws://127.0.0.1:30905/",
+    "app": "Vite http://127.0.0.1:5175, own webServer lifecycle",
+    "api": "route-mocked synthetic authenticated responses; no deployed backend authority claim",
+    "provider": "mocked verification/proof responses; null provider navigation URL; no real MFA claim",
+    "tls": "HTTP loopback harness; ignoreHTTPSErrors false; no HTTPS qualification claim"
+  },
+  "coverage": {
+    "actor_language_cases": 6,
+    "viewport_widths": [
+      1280,
+      640
+    ],
+    "axe_scans": 12,
+    "axe_violations": 0,
+    "axe_incomplete": 0,
+    "keyboard": "real Tab focus from language selector, Enter activation, Space field selection; focused target asserted",
+    "native_200_percent_zoom": "not_tested",
+    "human_review": "deferred_until_after_IMP10"
+  },
+  "source_sha256": {
+    "apps/web/src/App.tsx": "685f6a34d5f63c9b7d5a3974c50589716ae019750addf7ae1eb31f4232b86d18",
+    "apps/web/src/referrals/Client.tsx": "c54a5d0cc8c2bde6cbd1c3ee0fefbc7e7851a03a8afacd639c3842e950b592c4",
+    "apps/web/src/referrals/Payload.tsx": "ff73fdbafbb3ddc3e630ebd1f273c94f97d1a1ccab35c4908af414b6af3189a4",
+    "apps/web/src/referrals/Receiver.tsx": "d8161349781c7dda4bd8490c23f8b029cda708b2f907869f3359557d116c2b78",
+    "apps/web/src/referrals/ReferralApp.test.tsx": "705933829862d7b5786041e5b1524bc1d1b8b07734e0f6ad1b0fb2263fb73f10",
+    "apps/web/src/referrals/ReferralApp.tsx": "649bf7986649606ceaf38e0e151d067f89a8dcd80b03cbe192c71797c2edd637",
+    "apps/web/src/referrals/Worker.tsx": "2e12fc2f30c93eff6c1a9ec9b31f104df142ffbf3a96493ed4d62037127d18d9",
+    "apps/web/src/referrals/api.ts": "e31a617099abb9711a9a68a0ce8eb0bfe184f9aefbe4fc4ff00c8850fc413290",
+    "apps/web/src/referrals/messages.ts": "72edf6c8d94f4ed89e22396595abf469e32c79db6337ba2008359b5f83dc4967",
+    "apps/web/src/referrals/styles.css": "f896fc133952303664975f2e32c59335a9707c281bb2ddd23801d8c75d329680",
+    "apps/web/src/referrals/types.ts": "f3b0fe8e5b970dbc516dc84f42bf7370dca77844a6c9a42004304b1755985c49",
+    "apps/web/src/referrals/useActions.ts": "4d5d2215782af971958af0f6a5be95cb0f01db019addc450873d593f5a680100",
+    "apps/web/src/referrals/useCommand.ts": "8652feb9ceaa5fca5f3de45aa6a523231f23a6782c972fe1e4c0a30a04258fae",
+    "packages/contracts/typescript/src/schema.json": "2d808739c847c6f178d1dd5007d2676b8bbd49c40acd0a4526608a32bc499de6",
+    "packages/contracts/typescript/src/validators.generated.cjs": "0a18e66c3b7761561292940759493e040bd4acbc5819f1df1a105635db09c940",
+    "tests/e2e/referral/README.md": "e49dd1c74eb1c96243fbe6d8a2955ea678bd44b2efb0053e7b10a09e35710780",
+    "tests/e2e/referral/fixtures.ts": "4179a56681e915d8435c9f0191c82613ad804b5d9e0fc99419a4fea223014281",
+    "tests/e2e/referral/playwright.config.ts": "79e9b3e4b9247bee59fe49cab88cd4943cc09e96dc81fb80e4a1ae212385d596",
+    "tests/e2e/referral/referral.spec.ts": "73f2336ed59bfc55e3f8552c56cc61982861866fc3aabd612db6c34e2e209ced",
+    "tests/e2e/referral/tsconfig.json": "f6fa9ff5161501f548c611889bca013142b3d7b6e818d01d6b220e769a3ad4c6"
+  }
+}

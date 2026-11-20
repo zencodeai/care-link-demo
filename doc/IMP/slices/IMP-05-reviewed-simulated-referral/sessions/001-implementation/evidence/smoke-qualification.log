@@ -1,0 +1,9 @@
+usage: python -m tools.imp05_runtime [-h] --config CONFIG
+
+Serve one explicitly provisioned IMP-05 role through its protected Unix
+socket.
+
+options:
+  -h, --help       show this help message and exit
+  --config CONFIG
+Qualification imports and receiver encryption smoke passed

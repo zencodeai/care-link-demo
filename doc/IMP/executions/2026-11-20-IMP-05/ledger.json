@@ -1,0 +1,81 @@
+{
+  "run_id": "2026-11-20-IMP-05",
+  "stage_id": "IMP-05",
+  "gate_id": "G-05",
+  "state": "automated_qualified",
+  "gate_state": "automated_qualified",
+  "closed": true,
+  "recorded_at": "2026-11-20T17:49:11.486863+00:00",
+  "baseline_commit": "75f8836b731b135f4a15cd8ba2b5acd937aca614",
+  "branch": "feat/imp-04-plans-consent-directory",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Implement service slice 05",
+    "scope": "Source implementation and isolated local automated verification"
+  },
+  "predecessor": {
+    "path": "doc/IMP/executions/2026-11-16-IMP-04/ledger.json",
+    "sha256": "2957e025e5e9b655a5af4836e7dff049ff41128b09d7d543e1cbc016101638ae"
+  },
+  "tasks": [
+    {
+      "id": "IMP-05-A",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-05-B",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-05-C",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-05-D",
+      "state": "completed"
+    }
+  ],
+  "session": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation",
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/candidate-manifest.json",
+    "sha256": "9c4af04b3b8b5685d709b4c8d81a92f561c8bc4fb98d2c23546991acba2e72d2"
+  },
+  "results": {
+    "path": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/results.json",
+    "sha256": "1a871c7873f7c584a7529c03c0ab2abbd6d5b70ae9f7a1ab9b2cd51669ffc5fb"
+  },
+  "qualification_packet": {
+    "path": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/demo-packet.json",
+    "sha256": "51e580a2607b479403ab65ce8cd0470200f9a1305da0e25768a2877574576328"
+  },
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": [],
+  "deployment_applied": false,
+  "participant_admission": false,
+  "next_slice_activated": false,
+  "remaining": [
+    "Human usability/screen-reader/visual/language review deferred_until_after_IMP10; no human acceptance inferred",
+    "No live deployment, native 200-percent zoom or real MFA/partner connector claim from mocked browser checks",
+    "Three explicitly gated legacy checks skipped: owned Docker capture, Linux UID/setuid harness, isolated provisioning fixture; not current IMP05 failures",
+    "No automatic resend for not_found/unavailable; authenticated worker pump; source edits create new draft identities",
+    "Coordinated rights/cleanup/terminal-parent anchor processing remains IMP08; current copies registered and unknown-delivery cleanup prevented"
+  ],
+  "current_session": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr",
+  "publication": {
+    "state": "published",
+    "authorization": "User: Close IMP-05 and create PR",
+    "branch": "feat/imp-05-reviewed-simulated-referral",
+    "base_branch": "main",
+    "base_commit": "f596a6b945fdaff97229da901093912d2f02f815",
+    "session": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr",
+    "merge_authorized": false,
+    "implementation_commit": "7cdeb740cfe9ce2746fcb19209347196aaa559dc",
+    "pull_request_number": 12,
+    "pull_request_url": "https://github.com/zencodeai/care-link-demo/pull/12",
+    "pull_request_state": "OPEN",
+    "receipt": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr/publication.json"
+  },
+  "commit_performed": true,
+  "push_performed": true,
+  "merge_performed": false
+}

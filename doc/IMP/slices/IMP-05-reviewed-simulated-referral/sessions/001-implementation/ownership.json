@@ -1,0 +1,78 @@
+{
+  "packet_id": "IMP05-001",
+  "stage_id": "IMP-05",
+  "task_ids": [
+    "IMP-05-A",
+    "IMP-05-B",
+    "IMP-05-C",
+    "IMP-05-D"
+  ],
+  "mode": "implementation",
+  "baseline_commit": "75f8836b731b135f4a15cd8ba2b5acd937aca614",
+  "goal": "Reviewed synthetic referral with exact consent, immutable payload, current final authorization and honest receiver reconciliation",
+  "authorization": "Current user: Implement service slice 05",
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/REQ",
+    "doc/HLD",
+    "doc/LLD",
+    "doc/IMP"
+  ],
+  "owners": {
+    "coordinator": [
+      "services/core",
+      "packages/contracts",
+      "tools/generate_contracts.py",
+      "tools",
+      "doc/IMP",
+      "tests/integration/referral"
+    ],
+    "backend": [
+      "services/data",
+      "services/simulators",
+      "tests/integration/referral/test_referral.py"
+    ],
+    "web": [
+      "apps/web/src/referrals",
+      "apps/web/src/App.tsx"
+    ]
+  },
+  "allowed_actions": [
+    "source edits",
+    "existing local tool execution",
+    "isolated synthetic automated tests"
+  ],
+  "prohibited_actions": [
+    "live deployment",
+    "host trust changes",
+    "real contact",
+    "police integration",
+    "commit",
+    "push",
+    "merge",
+    "model change"
+  ],
+  "resource_leases": {
+    "postgres": "dedicated disposable IMP05 fixture only; coordinator sole lifecycle owner",
+    "ports": [
+      25435
+    ],
+    "live_resources": "none"
+  },
+  "acceptance": [
+    "exact payload/recipient/fields/purpose/expiry review",
+    "fresh consent and source/policy/assignment checks at final authorization",
+    "one logical dispatch and consumed authorization",
+    "lost reply reconciliation without duplicate",
+    "receiver decisions scoped by service",
+    "EN/FR accessibility and meaningful adverse tests"
+  ],
+  "human_review": "deferred_until_after_IMP10",
+  "reviewer": "imp_review",
+  "stop_conditions": [
+    "authority change",
+    "shared ownership conflict",
+    "destructive or live action needed"
+  ]
+}

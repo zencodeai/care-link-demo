@@ -12,6 +12,7 @@ COPY services/core services/core
 COPY packages/domain packages/domain
 COPY packages/policy-input/pyproject.toml packages/policy-input/pyproject.toml
 COPY services/data/pyproject.toml services/data/pyproject.toml
+COPY services/simulators/pyproject.toml services/simulators/pyproject.toml
 COPY host/recovery-control/pyproject.toml host/recovery-control/pyproject.toml
 # Resolve the workspace from all manifests without shipping unrelated service source.
 COPY services/identity/pyproject.toml services/identity/pyproject.toml

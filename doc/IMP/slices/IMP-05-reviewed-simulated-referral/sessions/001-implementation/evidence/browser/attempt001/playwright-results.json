@@ -1,0 +1,445 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/main/Workspace/projects/care-link/care-link-demo/node_modules/.pnpm/@playwright+test@1.65.0/node_modules/@playwright/test/cli.js",
+      "test",
+      "-c",
+      "tests/e2e/referral/playwright.config.ts"
+    ],
+    "configFile": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/playwright.config.ts",
+    "rootDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/evidence/browser/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral",
+        "testIgnore": [],
+        "testMatch": [
+          "referral.spec.ts"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/evidence/browser/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral",
+        "snapshotDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral",
+        "testIgnore": [],
+        "testMatch": "referral.spec.ts",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5175",
+          "browserName": "chromium",
+          "ignoreHTTPSErrors": false,
+          "connectOptions": {
+            "wsEndpoint": "ws://127.0.0.1:30905/",
+            "exposeNetwork": "<loopback>",
+            "headers": {
+              "x-playwright-launch-options": "{\"executablePath\":\"/opt/chrome-for-testing/chrome\",\"headless\":true}"
+            }
+          },
+          "actionTimeout": 15000,
+          "navigationTimeout": 30000,
+          "trace": "off",
+          "screenshot": "off",
+          "video": "off"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/evidence/browser/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": {
+      "command": "pnpm --filter @care-link/web exec vite --host 127.0.0.1 --port 5175 --strictPort",
+      "url": "http://127.0.0.1:5175",
+      "reuseExistingServer": false,
+      "timeout": 30000,
+      "env": {
+        "VITE_OIDC_ORIGIN": "https://identity.qualification.localhost"
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "referral.spec.ts",
+      "file": "referral.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "worker exact review, uncertain delivery and partial reconciliation en-CA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1423,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:29:12.593Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "worker-en-CA-automated-accessibility.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbnZpcm9ubWVudCI6ICJpc29sYXRlZCBDaHJvbWl1bSB3aXRoIG1vY2tlZCBzeW50aGV0aWMgQVBJIGFuZCBwcm92aWRlcjsgSFRUUCBsb29wYmFjayBvbmx5IiwKICAiYnJvd3NlciI6ICJDaHJvbWl1bSIsCiAgIm5hdGl2ZV8yMDBfcGVyY2VudF96b29tIjogIm5vdF90ZXN0ZWQiLAogICJodW1hbl9yZXZpZXciOiAiZGVmZXJyZWRfdW50aWxfYWZ0ZXJfSU1QMTAiLAogICJyb3dzIjogWwogICAgewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAic2Nyb2xsV2lkdGgiOiAxMjgwLAogICAgICAidmlvbGF0aW9ucyI6IFtdLAogICAgICAiaW5jb21wbGV0ZSI6IFtdCiAgICB9LAogICAgewogICAgICAid2lkdGgiOiA2NDAsCiAgICAgICJzY3JvbGxXaWR0aCI6IDY0MCwKICAgICAgInZpb2xhdGlvbnMiOiBbXSwKICAgICAgImluY29tcGxldGUiOiBbXQogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-941a086c0233090d59fa",
+          "file": "referral.spec.ts",
+          "line": 96,
+          "column": 3
+        },
+        {
+          "title": "receiver field-specific decision en-CA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 973,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:29:14.279Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "receiver-en-CA-automated-accessibility.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbnZpcm9ubWVudCI6ICJpc29sYXRlZCBDaHJvbWl1bSB3aXRoIG1vY2tlZCBzeW50aGV0aWMgQVBJIGFuZCBwcm92aWRlcjsgSFRUUCBsb29wYmFjayBvbmx5IiwKICAiYnJvd3NlciI6ICJDaHJvbWl1bSIsCiAgIm5hdGl2ZV8yMDBfcGVyY2VudF96b29tIjogIm5vdF90ZXN0ZWQiLAogICJodW1hbl9yZXZpZXciOiAiZGVmZXJyZWRfdW50aWxfYWZ0ZXJfSU1QMTAiLAogICJyb3dzIjogWwogICAgewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAic2Nyb2xsV2lkdGgiOiAxMjgwLAogICAgICAidmlvbGF0aW9ucyI6IFtdLAogICAgICAiaW5jb21wbGV0ZSI6IFtdCiAgICB9LAogICAgewogICAgICAid2lkdGgiOiA2NDAsCiAgICAgICJzY3JvbGxXaWR0aCI6IDY0MCwKICAgICAgInZpb2xhdGlvbnMiOiBbXSwKICAgICAgImluY29tcGxldGUiOiBbXQogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-711562ee686cf7b1035a",
+          "file": "referral.spec.ts",
+          "line": 165,
+          "column": 3
+        },
+        {
+          "title": "client exact consent preview and provider-proof binding en-CA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 981,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:29:15.257Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "client-preview-en-CA-automated-accessibility.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbnZpcm9ubWVudCI6ICJpc29sYXRlZCBDaHJvbWl1bSB3aXRoIG1vY2tlZCBzeW50aGV0aWMgQVBJIGFuZCBwcm92aWRlcjsgSFRUUCBsb29wYmFjayBvbmx5IiwKICAiYnJvd3NlciI6ICJDaHJvbWl1bSIsCiAgIm5hdGl2ZV8yMDBfcGVyY2VudF96b29tIjogIm5vdF90ZXN0ZWQiLAogICJodW1hbl9yZXZpZXciOiAiZGVmZXJyZWRfdW50aWxfYWZ0ZXJfSU1QMTAiLAogICJyb3dzIjogWwogICAgewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAic2Nyb2xsV2lkdGgiOiAxMjgwLAogICAgICAidmlvbGF0aW9ucyI6IFtdLAogICAgICAiaW5jb21wbGV0ZSI6IFtdCiAgICB9LAogICAgewogICAgICAid2lkdGgiOiA2NDAsCiAgICAgICJzY3JvbGxXaWR0aCI6IDY0MCwKICAgICAgInZpb2xhdGlvbnMiOiBbXSwKICAgICAgImluY29tcGxldGUiOiBbXQogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-9c53ec41a3d761986a8d",
+          "file": "referral.spec.ts",
+          "line": 196,
+          "column": 3
+        },
+        {
+          "title": "worker exact review, uncertain delivery and partial reconciliation fr-CA",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15196,
+                  "error": {
+                    "message": "TimeoutError: locator.focus: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('combobox', { name: 'Language', exact: true })\u001b[22m\n",
+                    "stack": "TimeoutError: locator.focus: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('combobox', { name: 'Language', exact: true })\u001b[22m\n\n    at initialize (/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:39:18)\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:101:5",
+                    "location": {
+                      "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts",
+                      "column": 18,
+                      "line": 39
+                    },
+                    "snippet": " \u001b[90m 37 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m   \u001b[36mawait\u001b[39m language\u001b[33m.\u001b[39mselectOption(locale)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 39 |\u001b[39m   \u001b[36mawait\u001b[39m language\u001b[33m.\u001b[39mfocus()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 40 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mkeyboard\u001b[33m.\u001b[39mpress(\u001b[32m\"Tab\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 41 |\u001b[39m   \u001b[36mawait\u001b[39m expect(\n \u001b[90m 42 |\u001b[39m     page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"button\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m messages[locale]\u001b[33m.\u001b[39mcheck\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m,\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts",
+                        "column": 18,
+                        "line": 39
+                      },
+                      "message": "TimeoutError: locator.focus: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('combobox', { name: 'Language', exact: true })\u001b[22m\n\n\n  37 |   });\n  38 |   await language.selectOption(locale);\n> 39 |   await language.focus();\n     |                  ^\n  40 |   await page.keyboard.press(\"Tab\");\n  41 |   await expect(\n  42 |     page.getByRole(\"button\", { name: messages[locale].check, exact: true }),\n    at initialize (/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:39:18)\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:101:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:29:16.245Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/evidence/browser/artifacts/referral-worker-exact-revi-fbebc-artial-reconciliation-fr-CA/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts",
+                    "column": 18,
+                    "line": 39
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-ed04525b1462ed08c25c",
+          "file": "referral.spec.ts",
+          "line": 96,
+          "column": 3
+        },
+        {
+          "title": "receiver field-specific decision fr-CA",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15260,
+                  "error": {
+                    "message": "TimeoutError: locator.focus: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('combobox', { name: 'Language', exact: true })\u001b[22m\n",
+                    "stack": "TimeoutError: locator.focus: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('combobox', { name: 'Language', exact: true })\u001b[22m\n\n    at initialize (/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:39:18)\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:168:5",
+                    "location": {
+                      "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts",
+                      "column": 18,
+                      "line": 39
+                    },
+                    "snippet": " \u001b[90m 37 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m   \u001b[36mawait\u001b[39m language\u001b[33m.\u001b[39mselectOption(locale)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 39 |\u001b[39m   \u001b[36mawait\u001b[39m page\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 40 |\u001b[39m     \u001b[33m.\u001b[39mgetByRole(\u001b[32m\"combobox\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m messages[locale]\u001b[33m.\u001b[39mlanguage\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\n \u001b[90m 41 |\u001b[39m     \u001b[33m.\u001b[39mfocus()\u001b[33m;\u001b[39m\n \u001b[90m 42 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mkeyboard\u001b[33m.\u001b[39mpress(\u001b[32m\"Tab\"\u001b[39m)\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts",
+                        "column": 18,
+                        "line": 39
+                      },
+                      "message": "TimeoutError: locator.focus: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('combobox', { name: 'Language', exact: true })\u001b[22m\n\n\n  37 |   });\n  38 |   await language.selectOption(locale);\n> 39 |   await page\n     |             ^\n  40 |     .getByRole(\"combobox\", { name: messages[locale].language, exact: true })\n  41 |     .focus();\n  42 |   await page.keyboard.press(\"Tab\");\n    at initialize (/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:39:18)\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:168:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:29:31.704Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/evidence/browser/artifacts/referral-receiver-field-specific-decision-fr-CA/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts",
+                    "column": 18,
+                    "line": 39
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-a0d025a999fe7fc7133c",
+          "file": "referral.spec.ts",
+          "line": 165,
+          "column": 3
+        },
+        {
+          "title": "client exact consent preview and provider-proof binding fr-CA",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15254,
+                  "error": {
+                    "message": "TimeoutError: locator.focus: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('combobox', { name: 'Language', exact: true })\u001b[22m\n",
+                    "stack": "TimeoutError: locator.focus: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('combobox', { name: 'Language', exact: true })\u001b[22m\n\n    at initialize (/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:39:18)\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:201:5",
+                    "location": {
+                      "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts",
+                      "column": 18,
+                      "line": 39
+                    },
+                    "snippet": " \u001b[90m 37 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m   \u001b[36mawait\u001b[39m language\u001b[33m.\u001b[39mselectOption(locale)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 39 |\u001b[39m   \u001b[36mawait\u001b[39m page\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 40 |\u001b[39m     \u001b[33m.\u001b[39mgetByRole(\u001b[32m\"combobox\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m messages[locale]\u001b[33m.\u001b[39mlanguage\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\n \u001b[90m 41 |\u001b[39m     \u001b[33m.\u001b[39mfocus()\u001b[33m;\u001b[39m\n \u001b[90m 42 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mkeyboard\u001b[33m.\u001b[39mpress(\u001b[32m\"Tab\"\u001b[39m)\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts",
+                        "column": 18,
+                        "line": 39
+                      },
+                      "message": "TimeoutError: locator.focus: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('combobox', { name: 'Language', exact: true })\u001b[22m\n\n\n  37 |   });\n  38 |   await language.selectOption(locale);\n> 39 |   await page\n     |             ^\n  40 |     .getByRole(\"combobox\", { name: messages[locale].language, exact: true })\n  41 |     .focus();\n  42 |   await page.keyboard.press(\"Tab\");\n    at initialize (/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:39:18)\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:201:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T17:29:47.287Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/evidence/browser/artifacts/referral-client-exact-cons-8a50f-rovider-proof-binding-fr-CA/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts",
+                    "column": 18,
+                    "line": 39
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-fc82db48ab0a4073799c",
+          "file": "referral.spec.ts",
+          "line": 196,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-20T17:29:11.882Z",
+    "duration": 50755.295,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

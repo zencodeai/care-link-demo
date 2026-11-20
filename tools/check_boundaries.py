@@ -12,6 +12,7 @@ ALLOWED = {
     "recovery_control": {"recovery_control", "contracts", "domain"},
     "core": {"core", "contracts", "domain", "policy_input", "rendering"},
     "runtime": {"runtime", "contracts"},
+    "simulators": {"simulators", "contracts", "domain"},
     "data": {"data", "contracts", "domain", "policy_input"},
     "web": {"contracts"},
     "identity": {"identity", "contracts", "domain"},

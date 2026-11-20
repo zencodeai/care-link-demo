@@ -297,7 +297,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "3ff70e20458cfa2c21b656ec7300d3c2f200d2931a4302c568206cf3d56fde0f"
+      "sha256": "9a5afc020b8802e7a5ff56dd548793826eb8e2496556ed3889a3e7cac80fe68a"
     },
     {
       "path": "agent-contracts.json",
@@ -503,6 +503,34 @@
           "sha256": "3ff70e20458cfa2c21b656ec7300d3c2f200d2931a4302c568206cf3d56fde0f"
         }
       ]
+    },
+    {
+      "date": "2026-11-20",
+      "stage_id": "IMP-05",
+      "authorization": "User: Implement service slice 05",
+      "scope": "Update current execution-status index only; frozen REQ/HLD/LLD inputs, canonical stage allocations and historical evidence unchanged",
+      "artifacts": [
+        {
+          "path": "README.md",
+          "previous_sha256": "3ff70e20458cfa2c21b656ec7300d3c2f200d2931a4302c568206cf3d56fde0f",
+          "sha256": "907a09e247b25bee62bb151f092c39cfe01f53126d4880b26f6a1d1713d918c3"
+        }
+      ],
+      "evidence": "slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/results.json"
+    },
+    {
+      "date": "2026-11-20",
+      "stage_id": "IMP-05",
+      "authorization": "User: Close IMP-05 and create PR",
+      "scope": "Publication status index only; qualification and frozen REQ/HLD/LLD inputs preserved",
+      "artifacts": [
+        {
+          "path": "README.md",
+          "previous_sha256": "907a09e247b25bee62bb151f092c39cfe01f53126d4880b26f6a1d1713d918c3",
+          "sha256": "9a5afc020b8802e7a5ff56dd548793826eb8e2496556ed3889a3e7cac80fe68a"
+        }
+      ],
+      "evidence": "slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr/handoff.md"
     }
   ]
 }

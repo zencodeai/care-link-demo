@@ -158,7 +158,9 @@ class SignedEnvelopeFactory:
             )
         ).hexdigest()
         metadata_args: Record = {"action": action, "scope": scope, "payload_digest": payload_digest}
-        if action.startswith(("plan_", "consent_", "directory_")):
+        if action.startswith(
+            ("plan_", "consent_", "directory_", "referral_", "dispatch_", "receipt_", "dispatcher_")
+        ):
             metadata_args["planning"] = {
                 "action": action,
                 "operation_id": key,
@@ -218,7 +220,7 @@ class SignedEnvelopeFactory:
             "versions": metadata["versions"],
             "payload_digest": payload_digest,
             "consent_id": metadata.get("consent_id"),
-            "review_id": None,
+            "review_id": metadata.get("review_id"),
             "bundle_digest": metadata["bundle_digest"],
             "artifact_digests": metadata.get("artifact_digests", []),
             "mode": metadata["mode"],
@@ -231,6 +233,8 @@ class SignedEnvelopeFactory:
             request["directory_bindings"] = metadata["directory_bindings"]
         if "disclosure_grants" in metadata:
             request["disclosure_grants"] = metadata["disclosure_grants"]
+        if "referral_payload_digest" in metadata:
+            request["referral_payload_digest"] = metadata["referral_payload_digest"]
         validate_contract("PolicyInput", request)
         decision = self.policy.evaluate(request)
         validate_contract("PolicyDecision", decision)

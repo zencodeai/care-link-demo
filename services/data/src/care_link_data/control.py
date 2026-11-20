@@ -9,13 +9,14 @@ from care_link_domain import Actor, ManualError
 
 from .consent import Consent
 from .directory import Directory
+from .dispatches import Dispatches
 from .plans import Plans
 from .review import ReviewService
 from .store import Record, Transaction, instant, number, text
 from .values import Outcome, digest, integer, object_value
 
 
-class ManualService(Plans, Consent, Directory, ReviewService):
+class ManualService(Dispatches, Plans, Consent, Directory, ReviewService):
     def own_reports_read(self, actor: Actor, session_id: str) -> Record:
         import json
 
@@ -53,6 +54,20 @@ class ManualService(Plans, Consent, Directory, ReviewService):
         resource = old["resource_id"]
         if not isinstance(resource, str):
             return super()._replay(tx, actor, old, snapshot)
+        if old["result_type"] in {"ReferralView", "DispatchView", "ReviewView"}:
+            repository = {
+                "ReferralView": "referral",
+                "DispatchView": "dispatch",
+                "ReviewView": "referral_review",
+            }[text(old, "result_type")]
+            value = tx.get(repository, resource)
+            if value is None:
+                raise ManualError("manual.not_found", 404)
+            if old["result_type"] == "ReferralView":
+                return self.referral_projection(tx, actor, value)
+            if old["result_type"] == "DispatchView":
+                return self.dispatch_projection(value)
+            return self.review_projection(value)
         if old["result_type"] == "PlanView":
             plan = tx.get("plan", resource)
             if plan is None:
@@ -114,14 +129,24 @@ class ManualService(Plans, Consent, Directory, ReviewService):
         current = self._fresh_actor(actor)
         planning = object_value(request["planning"]) if request.get("planning") else None
         arguments: Record | None = None
-        if action.startswith(("plan_", "consent_", "directory_")):
+        if action.startswith(
+            ("plan_", "consent_", "directory_", "referral_", "dispatch_", "dispatcher_", "receipt_")
+        ):
             if planning is None or planning["action"] != action:
                 raise ManualError("manual.planning_target_required", 422)
             arguments = {
                 **object_value(planning["arguments"]),
                 **object_value(planning["path_arguments"]),
             }
-            if action == "plan_create":
+            if action in {"referral_draft", "referral_sources"}:
+                session_id = text(arguments, "session_id")
+            elif action.startswith("referral_"):
+                session_id = self._referral_session(current, text(arguments, "referral_id"))
+            elif action.startswith(("dispatch_", "dispatcher_", "receipt_")):
+                session_id = self._referral_session(
+                    current, text(arguments, "dispatch_id"), "dispatch"
+                )
+            elif action == "plan_create":
                 session_id = self._subject_session(
                     current, text(arguments, "subject_id"), text(planning, "operation_id")
                 )
@@ -178,6 +203,14 @@ class ManualService(Plans, Consent, Directory, ReviewService):
                     {
                         "resolved_scope": policy_input["scope"],
                         "consent_id": policy_input["consent_id"],
+                        **(
+                            {
+                                "review_id": policy_input["review_id"],
+                                "referral_payload_digest": policy_input["referral_payload_digest"],
+                            }
+                            if "referral_payload_digest" in policy_input
+                            else {}
+                        ),
                         "disclosure_grants": policy_input.get("disclosure_grants", []),
                         "artifact_digests": policy_input["artifact_digests"],
                         "directory_bindings": policy_input.get("directory_bindings", []),

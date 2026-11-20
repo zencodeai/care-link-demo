@@ -53,6 +53,7 @@ def create_review_identity_surface(
     *,
     provider_configs_file: Path | None = None,
     interactive_review_enabled: bool = False,
+    receiver_enabled: bool = False,
 ) -> ASGIApp:
     """Only the authenticated core BFF supplies the originating browser context."""
 
@@ -81,7 +82,10 @@ def create_review_identity_surface(
         interactive_policy_for_origin=interactive_policy if interactive_review_enabled else None,
     )
     internal = create_manual_identity_app(
-        service, workload_verifier, service_for_session=registry.session_service
+        service,
+        workload_verifier,
+        service_for_session=registry.session_service,
+        receiver_enabled=receiver_enabled,
     )
     legacy = create_app(service, ui_return_url=service.origin + "/")
 

@@ -119,6 +119,25 @@ NAMES = (
     "Gateway_directory_read",
     "Gateway_directory_ingest",
     "Gateway_directory_suspend",
+    "ReferralDraftCreate",
+    "ReferralView",
+    "ReferralPayload",
+    "ReviewCommand",
+    "ReviewView",
+    "DispatchRequest",
+    "DispatchView",
+    "ReceiptView",
+    "ReceiverDecision",
+    "ReceiverPackageQuery",
+    "ReceiverPackagePage",
+    "SimulatorSend",
+    "Gateway_referral_draft",
+    "Gateway_referral_read",
+    "Gateway_referral_review",
+    "Gateway_referral_dispatch",
+    "Gateway_dispatch_read",
+    "Gateway_receipt_read",
+    "Gateway_dispatch_reconcile",
 )
 
 
@@ -234,9 +253,25 @@ def render() -> str:
         "directory_ingest",
         "directory_suspend",
     )
+    # Referral context and receiver revision are additive transport projections.
+    # They expose server authority without changing canonical actor operations.
+    referral = json.loads((ROOT / "packages/contracts/referral.schema.json").read_text())
+    selected.update(referral["$defs"])
+    planning_actions += (
+        "referral_draft",
+        "referral_read",
+        "referral_review",
+        "referral_dispatch",
+        "dispatch_read",
+        "receipt_read",
+        "dispatch_reconcile",
+        "referral_context",
+        "dispatcher_send",
+        "referral_sources",
+    )
     targets = []
     for action in planning_actions:
-        gateway = source["$defs"]["Gateway_" + action]["properties"]
+        gateway = selected["Gateway_" + action]["properties"]
         targets.append(
             {
                 "type": "object",
@@ -254,6 +289,7 @@ def render() -> str:
     bindings = {
         "resolved_scope": {"$ref": "#/$defs/Scope"},
         "consent_id": source["$defs"]["PolicyInput"]["properties"]["consent_id"],
+        "review_id": source["$defs"]["PolicyInput"]["properties"]["review_id"],
         "disclosure_grants": {
             "type": "array",
             "items": {"$ref": "#/$defs/ConsentAuthority"},
@@ -265,7 +301,7 @@ def render() -> str:
         {
             "subject_id": {"$ref": "#/$defs/Id"},
             "session_id": {"$ref": "#/$defs/Id"},
-            "purpose": {"const": "plan"},
+            "purpose": {"enum": ["plan", "referral"]},
         }
     )
     bindings["directory_bindings"] = {
@@ -285,6 +321,13 @@ def render() -> str:
         },
     }
     selected["PolicyInput"]["properties"]["directory_bindings"] = bindings["directory_bindings"]
+    selected["PolicyInput"]["properties"]["referral_payload_digest"] = {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$",
+    }
+    bindings["referral_payload_digest"] = selected["PolicyInput"]["properties"][
+        "referral_payload_digest"
+    ]
     selected["MetadataResult"]["properties"].update(bindings)
     selected["PolicyInput"]["properties"]["disclosure_grants"] = bindings["disclosure_grants"]
     selected["RevisionVector"]["properties"]["directory_set_digest"] = {

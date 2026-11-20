@@ -1,0 +1,40 @@
+.referrals {
+  overflow-wrap: anywhere;
+}
+.referrals form + form,
+.referrals article,
+.referral-source {
+  margin-top: 1.25rem;
+}
+.referrals form button {
+  margin-top: 0.75rem;
+}
+.referrals input,
+.referrals select {
+  max-width: 100%;
+}
+.referrals fieldset {
+  min-width: 0;
+  margin: 1rem 0;
+  border: 1px solid #637d79;
+}
+.referrals input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 0.6rem;
+}
+.referrals dd {
+  margin-left: 0;
+  margin-bottom: 0.65rem;
+}
+.referrals dt {
+  font-weight: 650;
+}
+.referral-digest {
+  font-family: ui-monospace, monospace;
+  overflow-wrap: anywhere;
+}
+.referral-payload article {
+  border-top: 1px solid #bfcfca;
+  padding-top: 0.75rem;
+}

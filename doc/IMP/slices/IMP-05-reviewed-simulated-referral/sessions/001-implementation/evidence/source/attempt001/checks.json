@@ -1,0 +1,151 @@
+[
+  {
+    "command": [
+      "uv",
+      "lock",
+      "--check"
+    ],
+    "started_at": "2026-11-20T17:36:16.695886+00:00",
+    "completed_at": "2026-11-20T17:36:16.779526+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/01.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "install",
+      "--offline",
+      "--frozen-lockfile",
+      "--lockfile-only",
+      "--ignore-scripts"
+    ],
+    "started_at": "2026-11-20T17:36:16.779714+00:00",
+    "completed_at": "2026-11-20T17:36:16.939652+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/02.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "python",
+      "tools/generate_contracts.py",
+      "--check"
+    ],
+    "started_at": "2026-11-20T17:36:16.939822+00:00",
+    "completed_at": "2026-11-20T17:36:17.165650+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/03.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "python",
+      "tools/check_boundaries.py"
+    ],
+    "started_at": "2026-11-20T17:36:17.165813+00:00",
+    "completed_at": "2026-11-20T17:36:17.459880+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/04.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "python",
+      "tools/check_imp02_admission.py"
+    ],
+    "started_at": "2026-11-20T17:36:17.460053+00:00",
+    "completed_at": "2026-11-20T17:36:17.491767+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/05.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "ruff",
+      "check",
+      "."
+    ],
+    "started_at": "2026-11-20T17:36:17.491930+00:00",
+    "completed_at": "2026-11-20T17:36:17.532498+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/06.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "started_at": "2026-11-20T17:36:17.532663+00:00",
+    "completed_at": "2026-11-20T17:36:17.566477+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/07.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "started_at": "2026-11-20T17:36:17.566651+00:00",
+    "completed_at": "2026-11-20T17:36:20.512206+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/08.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "started_at": "2026-11-20T17:36:20.512471+00:00",
+    "completed_at": "2026-11-20T17:36:22.405861+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/09.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "lint"
+    ],
+    "started_at": "2026-11-20T17:36:22.406056+00:00",
+    "completed_at": "2026-11-20T17:36:25.474202+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/10.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "format:check"
+    ],
+    "started_at": "2026-11-20T17:36:25.474425+00:00",
+    "completed_at": "2026-11-20T17:36:26.275685+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/11.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "pytest"
+    ],
+    "started_at": "2026-11-20T17:36:26.275882+00:00",
+    "completed_at": "2026-11-20T17:37:47.113800+00:00",
+    "exit_code": 1,
+    "log": "evidence/source/attempt001/12.log"
+  }
+]

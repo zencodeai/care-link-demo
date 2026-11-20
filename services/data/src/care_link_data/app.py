@@ -106,6 +106,9 @@ def create_app(service: ManualService, security: GatewaySecurity) -> FastAPI:
     from .planning_app import attach_planning_gateway
 
     attach_planning_gateway(app, service, envelope)
+    from .referral_app import attach_referral_gateway
+
+    attach_referral_gateway(app, service, envelope)
 
     def mutation(name: str, output: str, method: Mutation) -> None:
         async def handler(request: Request) -> Response:

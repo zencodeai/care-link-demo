@@ -1,0 +1,2 @@
+<string>:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+Restricted Core smoke passed: developer endpoints only, no data/simulator/DB driver

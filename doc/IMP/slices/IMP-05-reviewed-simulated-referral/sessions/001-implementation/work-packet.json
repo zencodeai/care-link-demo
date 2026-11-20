@@ -1,0 +1,127 @@
+{
+  "packet_id": "IMP05-001-imp_python",
+  "task_id": "IMP-05-B",
+  "stage_id": "IMP-05",
+  "mode": "implementation",
+  "role": "imp_python",
+  "goal": "Reviewed synthetic referral with exact consent, immutable payload, current final authorization and honest receiver reconciliation",
+  "baseline_commit": "75f8836b731b135f4a15cd8ba2b5acd937aca614",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "761c27e14d931c6e2ad9f7bc23630d43c18478e49deb3b89190b48017f4dafe6"
+    },
+    {
+      "path": "doc/LLD/06-consent-directory-and-referrals.md",
+      "sha256": "02671648ecf2cc31a9ed8aa3bb37de03ea83b7bff98e0a23e536ded6fdfc3903"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-16-IMP-04/ledger.json",
+      "sha256": "2957e025e5e9b655a5af4836e7dff049ff41128b09d7d543e1cbc016101638ae"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/REQ",
+    "doc/HLD",
+    "doc/LLD",
+    "doc/IMP"
+  ],
+  "write_paths": [
+    "services/data/**",
+    "services/simulators/**"
+  ],
+  "dependencies": [
+    "IMP-04:G-04:automated_qualified"
+  ],
+  "operation_ids": [
+    "referral_draft",
+    "referral_read",
+    "referral_review",
+    "referral_dispatch",
+    "dispatch_read",
+    "receipt_read",
+    "dispatch_reconcile",
+    "receiver_decide",
+    "receiver_package",
+    "simulator_send",
+    "data_referral_draft",
+    "data_referral_read",
+    "data_referral_review",
+    "data_referral_dispatch",
+    "data_dispatch_read",
+    "data_receipt_read",
+    "data_dispatch_reconcile",
+    "receiver_inbox"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "live deployment",
+    "host trust changes",
+    "real contact",
+    "police integration",
+    "commit",
+    "push",
+    "merge",
+    "model change"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Implement service slice 05",
+    "scope": "Source implementation and isolated synthetic automated verification; no live deployment or publication"
+  },
+  "resource_leases": [
+    {
+      "id": "IMP05-test-db",
+      "kind": "test_database",
+      "scope": "care-link-imp05-001-postgres loopback35435; primary lifecycle owner",
+      "owner_task_id": "IMP-05-B",
+      "expires_at": "2026-11-21T00:00:00Z"
+    }
+  ],
+  "expected_outputs": [
+    "Scoped modules/tests",
+    "Actual checks and findings",
+    "Handoff"
+  ],
+  "positive_acceptance": [
+    "exact payload/recipient/fields/purpose/expiry review",
+    "fresh consent and source/policy/assignment checks at final authorization",
+    "one logical dispatch and consumed authorization",
+    "lost reply reconciliation without duplicate",
+    "receiver decisions scoped by service",
+    "EN/FR accessibility and meaningful adverse tests"
+  ],
+  "adverse_acceptance": [
+    "Stale consent/policy/source/assignment prevents send",
+    "Single-use authorization and stable dispatch identity",
+    "Wrong receiver and changed payload identity denied"
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "authority change",
+    "shared ownership conflict",
+    "destructive or live action needed"
+  ],
+  "is_example": false
+}

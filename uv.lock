@@ -13,6 +13,7 @@ members = [
     "care-link-identity",
     "care-link-policy-input",
     "care-link-recovery-control",
+    "care-link-simulators",
     "care-link-static",
     "care-link-workload-trust",
 ]
@@ -113,6 +114,7 @@ dependencies = [
     { name = "care-link-domain" },
     { name = "cryptography" },
     { name = "fastapi" },
+    { name = "httpx" },
     { name = "psycopg", extra = ["binary"] },
 ]
 
@@ -122,6 +124,7 @@ requires-dist = [
     { name = "care-link-domain", editable = "packages/domain" },
     { name = "cryptography", specifier = "==50.0.2" },
     { name = "fastapi", specifier = "==0.162.2" },
+    { name = "httpx", specifier = "==0.28.1" },
     { name = "psycopg", extras = ["binary"], specifier = "==3.2.12" },
 ]
 
@@ -241,6 +244,27 @@ requires-dist = [
     { name = "care-link-contracts", editable = "packages/contracts/python" },
     { name = "care-link-domain", editable = "packages/domain" },
     { name = "cryptography", specifier = "==50.0.2" },
+]
+
+[[package]]
+name = "care-link-simulators"
+version = "0.1.0"
+source = { editable = "services/simulators" }
+dependencies = [
+    { name = "care-link-contracts" },
+    { name = "care-link-domain" },
+    { name = "cryptography" },
+    { name = "fastapi" },
+    { name = "psycopg", extra = ["binary"] },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "care-link-contracts", editable = "packages/contracts/python" },
+    { name = "care-link-domain", editable = "packages/domain" },
+    { name = "cryptography", specifier = "==50.0.2" },
+    { name = "fastapi", specifier = "==0.162.2" },
+    { name = "psycopg", extras = ["binary"], specifier = "==3.2.12" },
 ]
 
 [[package]]
