@@ -1,0 +1,16 @@
+{
+  "recorded_at": "2026-11-20T17:54:24.532484+00:00",
+  "qualified_baseline": "75f8836b731b135f4a15cd8ba2b5acd937aca614",
+  "publication_base": "f596a6b945fdaff97229da901093912d2f02f815",
+  "base_tree": "6c97539e22d9fb53b3fc1209d4a4a380590d0972",
+  "qualified_baseline_tree": "6c97539e22d9fb53b3fc1209d4a4a380590d0972",
+  "equal_base_tree": true,
+  "source_bindings_checked": 605,
+  "source_mismatches": [],
+  "qualification_status": "automated_qualified",
+  "qualification_source": "../001-implementation/results.json",
+  "browser_api_provider": "mocked; current hashes preserved",
+  "human_review": "deferred_until_after_IMP10",
+  "predecessor_pr": "https://github.com/zencodeai/care-link-demo/pull/11",
+  "predecessor_state": "MERGED"
+}

@@ -1,0 +1,98 @@
+[WebServer] (node:13913) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:13914) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 6 tests using 1 worker
+
+(node:13921) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+(node:13921) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/6] tests/e2e/referral/referral.spec.ts:96:3 › worker exact review, uncertain delivery and partial reconciliation en-CA
+[2/6] tests/e2e/referral/referral.spec.ts:165:3 › receiver field-specific decision en-CA
+[3/6] tests/e2e/referral/referral.spec.ts:196:3 › client exact consent preview and provider-proof binding en-CA
+[4/6] tests/e2e/referral/referral.spec.ts:96:3 › worker exact review, uncertain delivery and partial reconciliation fr-CA
+  1) tests/e2e/referral/referral.spec.ts:96:3 › worker exact review, uncertain delivery and partial reconciliation fr-CA 
+
+    TimeoutError: locator.focus: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'Language', exact: true })
+
+
+      37 |   });
+      38 |   await language.selectOption(locale);
+    > 39 |   await language.focus();
+         |                  ^
+      40 |   await page.keyboard.press("Tab");
+      41 |   await expect(
+      42 |     page.getByRole("button", { name: messages[locale].check, exact: true }),
+        at initialize (/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:39:18)
+        at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:101:5
+
+    Error Context: doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/evidence/browser/artifacts/referral-worker-exact-revi-fbebc-artial-reconciliation-fr-CA/error-context.md
+
+
+(node:14059) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+(node:14059) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[5/6] tests/e2e/referral/referral.spec.ts:165:3 › receiver field-specific decision fr-CA
+  2) tests/e2e/referral/referral.spec.ts:165:3 › receiver field-specific decision fr-CA ────────────
+
+    TimeoutError: locator.focus: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'Language', exact: true })
+
+
+      37 |   });
+      38 |   await language.selectOption(locale);
+    > 39 |   await page
+         |             ^
+      40 |     .getByRole("combobox", { name: messages[locale].language, exact: true })
+      41 |     .focus();
+      42 |   await page.keyboard.press("Tab");
+        at initialize (/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:39:18)
+        at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:168:5
+
+    Error Context: doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/evidence/browser/artifacts/referral-receiver-field-specific-decision-fr-CA/error-context.md
+
+
+(node:14183) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+(node:14183) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[6/6] tests/e2e/referral/referral.spec.ts:196:3 › client exact consent preview and provider-proof binding fr-CA
+  3) tests/e2e/referral/referral.spec.ts:196:3 › client exact consent preview and provider-proof binding fr-CA 
+
+    TimeoutError: locator.focus: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'Language', exact: true })
+
+
+      37 |   });
+      38 |   await language.selectOption(locale);
+    > 39 |   await page
+         |             ^
+      40 |     .getByRole("combobox", { name: messages[locale].language, exact: true })
+      41 |     .focus();
+      42 |   await page.keyboard.press("Tab");
+        at initialize (/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:39:18)
+        at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/referral.spec.ts:201:5
+
+    Error Context: doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/evidence/browser/artifacts/referral-client-exact-cons-8a50f-rovider-proof-binding-fr-CA/error-context.md
+
+
+  3 failed
+    tests/e2e/referral/referral.spec.ts:96:3 › worker exact review, uncertain delivery and partial reconciliation fr-CA 
+    tests/e2e/referral/referral.spec.ts:165:3 › receiver field-specific decision fr-CA ─────────────
+    tests/e2e/referral/referral.spec.ts:196:3 › client exact consent preview and provider-proof binding fr-CA 
+  3 passed (50.8s)

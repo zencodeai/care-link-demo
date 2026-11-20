@@ -1,0 +1,416 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "ReferralContext": {
+      "type": "object",
+      "properties": {
+        "referral": {
+          "$ref": "#/$defs/ReferralView"
+        },
+        "versions": {
+          "$ref": "#/$defs/RevisionVector"
+        },
+        "review": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReviewView"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "consent_expires_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "referral",
+        "versions",
+        "review",
+        "consent_expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "ReceiverDetail": {
+      "type": "object",
+      "properties": {
+        "payload": {
+          "$ref": "#/$defs/ReferralPayload"
+        },
+        "revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "receipt": {
+          "$ref": "#/$defs/ReceiptView"
+        }
+      },
+      "required": [
+        "payload",
+        "revision",
+        "receipt"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_referral_context": {
+      "type": "object",
+      "properties": {
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "path_arguments": {
+          "$ref": "#/$defs/Path_referral_read"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "arguments",
+        "path_arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_dispatcher_send": {
+      "type": "object",
+      "properties": {
+        "arguments": {
+          "$ref": "#/$defs/RevisionCommand"
+        },
+        "path_arguments": {
+          "$ref": "#/$defs/Path_dispatch_read"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "arguments",
+        "path_arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "ReferralSourceItem": {
+      "type": "object",
+      "properties": {
+        "selected": {
+          "$ref": "#/$defs/SelectedField"
+        },
+        "field": {
+          "$ref": "#/$defs/PayloadField"
+        }
+      },
+      "required": [
+        "selected",
+        "field"
+      ],
+      "additionalProperties": false
+    },
+    "ReferralSourcePage": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReferralSourceItem"
+          },
+          "maxItems": 100
+        },
+        "next_cursor": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "items",
+        "next_cursor"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_referral_sources": {
+      "type": "object",
+      "properties": {
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "path_arguments": {
+          "$ref": "#/$defs/Path_session_read"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "arguments",
+        "path_arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "SimulatorLookup": {
+      "type": "object",
+      "properties": {
+        "service_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "dispatch_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "payload_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "service_id",
+        "dispatch_id",
+        "payload_digest"
+      ],
+      "additionalProperties": false
+    },
+    "ReceiverSend": {
+      "type": "object",
+      "properties": {
+        "service_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "package": {
+          "$ref": "#/$defs/SimulatorSend"
+        }
+      },
+      "required": [
+        "service_id",
+        "package"
+      ],
+      "additionalProperties": false
+    },
+    "ReceiverEnvelope": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "operation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "action": {
+              "const": "receiver_inbox"
+            },
+            "audience": {
+              "const": "care-link-receiver"
+            },
+            "arguments": {
+              "$ref": "#/$defs/ReceiverPackageQuery"
+            },
+            "path_arguments": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "evidence": {
+              "$ref": "#/$defs/IdentityEvidence"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "signature": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{86}$"
+            }
+          },
+          "required": [
+            "operation_id",
+            "action",
+            "audience",
+            "arguments",
+            "path_arguments",
+            "evidence",
+            "expires_at",
+            "signature"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "action": {
+              "const": "receiver_package"
+            },
+            "audience": {
+              "const": "care-link-receiver"
+            },
+            "arguments": {
+              "$ref": "#/$defs/Empty"
+            },
+            "path_arguments": {
+              "type": "object",
+              "properties": {
+                "dispatch_id": {
+                  "$ref": "#/$defs/Id"
+                }
+              },
+              "required": [
+                "dispatch_id"
+              ],
+              "additionalProperties": false
+            },
+            "evidence": {
+              "$ref": "#/$defs/IdentityEvidence"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "signature": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{86}$"
+            }
+          },
+          "required": [
+            "operation_id",
+            "action",
+            "audience",
+            "arguments",
+            "path_arguments",
+            "evidence",
+            "expires_at",
+            "signature"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "action": {
+              "const": "receiver_detail"
+            },
+            "audience": {
+              "const": "care-link-receiver"
+            },
+            "arguments": {
+              "$ref": "#/$defs/Empty"
+            },
+            "path_arguments": {
+              "type": "object",
+              "properties": {
+                "dispatch_id": {
+                  "$ref": "#/$defs/Id"
+                }
+              },
+              "required": [
+                "dispatch_id"
+              ],
+              "additionalProperties": false
+            },
+            "evidence": {
+              "$ref": "#/$defs/IdentityEvidence"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "signature": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{86}$"
+            }
+          },
+          "required": [
+            "operation_id",
+            "action",
+            "audience",
+            "arguments",
+            "path_arguments",
+            "evidence",
+            "expires_at",
+            "signature"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operation_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "action": {
+              "const": "receiver_decide"
+            },
+            "audience": {
+              "const": "care-link-receiver"
+            },
+            "arguments": {
+              "$ref": "#/$defs/ReceiverDecision"
+            },
+            "path_arguments": {
+              "type": "object",
+              "properties": {
+                "dispatch_id": {
+                  "$ref": "#/$defs/Id"
+                }
+              },
+              "required": [
+                "dispatch_id"
+              ],
+              "additionalProperties": false
+            },
+            "evidence": {
+              "$ref": "#/$defs/IdentityEvidence"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            "signature": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{86}$"
+            }
+          },
+          "required": [
+            "operation_id",
+            "action",
+            "audience",
+            "arguments",
+            "path_arguments",
+            "evidence",
+            "expires_at",
+            "signature"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

@@ -18,6 +18,7 @@ from .manual_channels import ManualChannels
 from .manual_ports import BrowserSecurity, ManualGateway
 from .planning_ports import PlanningGateway
 from .plans_review_context import PlansReviewContexts
+from .referral_ports import ReceiverGateway, ReferralGateway
 from .review_channels import ReviewViews
 from .review_context import ReviewContexts
 
@@ -69,6 +70,8 @@ def create_manual_app(
     plans_review_contexts: PlansReviewContexts | None = None,
     review_views: ReviewViews | None = None,
     planning: PlanningGateway | None = None,
+    referrals: ReferralGateway | None = None,
+    receiver: ReceiverGateway | None = None,
 ) -> FastAPI:
     """No permissive defaults; existing developer application stays separate."""
     app = FastAPI(title="CARE-Link manual BFF", docs_url=None, redoc_url=None, openapi_url=None)
@@ -164,6 +167,13 @@ def create_manual_app(
         from .planning_routes import attach_planning_routes
 
         attach_planning_routes(app, planning, actor)
+
+    if receiver is not None and referrals is None:
+        raise ValueError("Receiver routes require explicit referral composition")
+    if referrals is not None:
+        from .referral_routes import attach_referral_routes
+
+        attach_referral_routes(app, referrals, actor, receiver)
 
     def mutation_route(name: str, output: str, method: Mutation) -> Callable[[Request], object]:
         async def handle(request: Request) -> JSONResponse:

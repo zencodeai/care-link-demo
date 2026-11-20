@@ -1,0 +1,20 @@
+{
+  "environment": "isolated Chromium with mocked synthetic API and provider; HTTP loopback only",
+  "browser": "Chromium",
+  "native_200_percent_zoom": "not_tested",
+  "human_review": "deferred_until_after_IMP10",
+  "rows": [
+    {
+      "width": 1280,
+      "scrollWidth": 1280,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "width": 640,
+      "scrollWidth": 640,
+      "violations": [],
+      "incomplete": []
+    }
+  ]
+}

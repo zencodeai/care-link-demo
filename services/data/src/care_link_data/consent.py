@@ -185,10 +185,21 @@ class Consent(Engine):
                 target = tx.get("principal", recipient_id)
                 if target is None or target["revoked"] is not False:
                     raise ManualError("manual.recipient_unavailable", 404)
+            if recipient["kind"] == "service":
+                service_guard = tx.get("service_guard", recipient_id)
+                if (
+                    service_guard is None
+                    or service_guard["suspended"] is True
+                    or str(service_guard["current_revision"]) != recipient["directory_revision"]
+                ):
+                    raise ManualError("manual.directory_stale", 409)
             effective, expires = dt(body["effective_at"]), dt(body["expires_at"])
             if not effective <= self.clock() < expires or expires <= effective:
                 raise ManualError("manual.consent_interval", 422)
-            if body["purpose"] == "referral" and expires > self.clock() + timedelta(minutes=15):
+            if body["purpose"] == "referral" and (
+                expires > self.clock() + timedelta(minutes=15)
+                or expires > effective + timedelta(minutes=15)
+            ):
                 raise ManualError("manual.consent_interval", 422)
             fields = sorted(cast(list[str], body["fields"]))
             if body["basis"] == "self":

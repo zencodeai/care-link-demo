@@ -15,7 +15,7 @@ from care_link_data import AESGCMContentCipher, ManualService, PostgresStore
 from care_link_data.values import digest, stamp
 from care_link_domain import Actor, JournalState, ManualError
 from psycopg import sql
-from psycopg.conninfo import make_conninfo
+from psycopg.conninfo import conninfo_to_dict, make_conninfo
 
 ROOT = Path(__file__).resolve().parents[3]
 
@@ -108,8 +108,6 @@ def database() -> Iterator[Database]:
     admin = os.environ.get("CARE_LINK_MANUAL_TEST_DSN")
     if not admin:
         pytest.skip("explicit disposable PostgreSQL TLS fixture DSN not supplied")
-    from psycopg.conninfo import conninfo_to_dict
-
     settings = conninfo_to_dict(admin)
     name = "imp03_manual"
     password = secrets.token_urlsafe(32)
@@ -127,6 +125,7 @@ def database() -> Iterator[Database]:
             connection.execute(
                 (ROOT / "services/data/migrations/003_plans_consent_directory.sql").read_text()
             )
+            connection.execute((ROOT / "services/data/migrations/005_referrals.sql").read_text())
         migrated = True
         with psycopg.connect(admin) as connection:
             connection.execute(
@@ -247,3 +246,35 @@ def harness(database: Database) -> Harness:
         supervisor,
         operator,
     )
+
+
+@pytest.fixture(scope="session")
+def receiver_database(database):
+    settings = conninfo_to_dict(database.admin)
+    name = "imp05_receiver"
+    password = secrets.token_urlsafe(32)
+    with psycopg.connect(database.admin, autocommit=True) as connection:
+        connection.execute(sql.SQL("CREATE DATABASE {}").format(sql.Identifier(name)))
+    admin = make_conninfo(**{**settings, "dbname": name})
+    try:
+        with psycopg.connect(admin) as connection:
+            connection.execute(
+                (ROOT / "services/simulators/migrations/001_receiver.sql").read_text()
+            )
+        with psycopg.connect(database.admin) as connection:
+            connection.execute(
+                sql.SQL("CREATE ROLE imp05_receiver_test LOGIN INHERIT PASSWORD {}").format(
+                    sql.Literal(password)
+                )
+            )
+            connection.execute("GRANT care_link_receiver_runtime TO imp05_receiver_test")
+        runtime = make_conninfo(
+            **{**settings, "dbname": name, "user": "imp05_receiver_test", "password": password}
+        )
+        yield admin, runtime
+    finally:
+        with psycopg.connect(database.admin, autocommit=True) as connection:
+            connection.execute(
+                sql.SQL("DROP DATABASE {} WITH (FORCE)").format(sql.Identifier(name))
+            )
+            connection.execute("DROP ROLE IF EXISTS imp05_receiver_test,care_link_receiver_runtime")

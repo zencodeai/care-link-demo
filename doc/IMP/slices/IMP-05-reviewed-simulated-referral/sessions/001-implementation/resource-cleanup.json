@@ -1,0 +1,12 @@
+{
+  "owned_containers": [
+    "care-link-imp05-001-postgres",
+    "care-link-imp05-001-browser"
+  ],
+  "status": "removed",
+  "temporary_database_credentials": "removed",
+  "pytest_owned_sender_receiver_databases_and_roles": "removed by fixture finalizers",
+  "vite_test_server": "stopped by Playwright webServer lifecycle",
+  "live_demo_resources": "no mutation performed",
+  "images": "retained locally as build artifacts; not deployed or pushed"
+}

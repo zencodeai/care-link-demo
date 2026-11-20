@@ -5,6 +5,7 @@ import { TrustAndHelp } from "./trust/TrustAndHelp";
 import { ManualService } from "./manual/ManualService";
 import { ReviewApp } from "./review/ReviewApp";
 import { PlansReviewApp } from "./plans-review/PlansReviewApp";
+import { ReferralApp } from "./referrals/ReferralApp";
 import { PlansWorkspace } from "./plans/PlansWorkspace";
 
 type Locale = keyof typeof messages;
@@ -217,6 +218,11 @@ function DeveloperApp() {
 }
 
 export function App() {
+  if (
+    window.location.pathname === "/referrals" ||
+    window.location.pathname.startsWith("/referrals/")
+  )
+    return <ReferralApp />;
   if (
     window.location.pathname === "/plans-review" ||
     window.location.pathname.startsWith("/plans-review/")

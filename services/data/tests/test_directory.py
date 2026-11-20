@@ -220,7 +220,8 @@ def directory_harness(harness: Harness) -> Harness:
                 ).read_text()
             )
         connection.execute(
-            "TRUNCATE knowledge.service_guard,knowledge.service_version,knowledge.quarantine"
+            "TRUNCATE knowledge.service_guard,knowledge.service_version,"
+            "knowledge.quarantine CASCADE"
         )
     return h
 

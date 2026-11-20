@@ -27,7 +27,7 @@ PLAN_KEYS = frozenset(
 )
 
 
-def _directory_binding(
+def directory_policy_binding(
     tx: Transaction,
     service_id: str,
     request: Record,
@@ -184,7 +184,7 @@ def enrich_planning_policy(
                 data["purpose"] != "plan" or set(scope["fields"]).issubset(PLAN_KEYS)
             )
             if recipient["kind"] == "service":
-                _directory_binding(tx, text(recipient, "service_id"), request, manifests, now)
+                directory_policy_binding(tx, text(recipient, "service_id"), request, manifests, now)
     elif action.startswith("directory_"):
         if action == "directory_search":
             guards: list[Record] = []
@@ -203,7 +203,7 @@ def enrich_planning_policy(
             admitted = True
             for guard in guards:
                 binding: Record = {"versions": {}, "authority_facts": {}, "artifact_digests": []}
-                _directory_binding(tx, text(guard, "service_id"), binding, manifests, now)
+                directory_policy_binding(tx, text(guard, "service_id"), binding, manifests, now)
                 artifacts.update(cast(list[str], binding["artifact_digests"]))
                 directory_bindings.extend(cast(list[Record], binding["directory_bindings"]))
                 source_current = (
@@ -226,7 +226,7 @@ def enrich_planning_policy(
         else:
             service_id = text(data, "service_id")
             scope["recipient_id"] = service_id
-            _directory_binding(tx, service_id, request, manifests, now)
+            directory_policy_binding(tx, service_id, request, manifests, now)
             if action == "directory_ingest":
                 request["artifact_digests"] = [data["feed_artifact_digest"]]
                 admitted = admission_reason(data, manifests, now) is None

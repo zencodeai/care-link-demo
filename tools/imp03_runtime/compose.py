@@ -66,6 +66,46 @@ class Composition:
 
     def _compose(self) -> ASGIApp:
         cfg = self.config
+        referrals_enabled = cfg.get("referral_enabled", False)
+        if type(referrals_enabled) is not bool:
+            raise ValueError("Explicit boolean referral feature selection required")
+        mapping = None
+        if referrals_enabled and self.role in {"core", "data", "receiver"}:
+            from care_link_data.referral_mapping import read_mapping
+
+            pins = record(cfg["simulator_trusted_keys"])
+            mapping = read_mapping(
+                Path(text(cfg, "simulator_mapping_file")).read_text(),
+                {key: public_key(str(value)) for key, value in pins.items()},
+            )
+        if self.role == "receiver":
+            from care_link_simulators import ReceiverService
+            from care_link_simulators.app import create_app as receiver_app
+            from care_link_simulators.crypto import ReceiverCipher
+            from care_link_simulators.security import ReceiverIdentity
+
+            if mapping is None:
+                raise ValueError("Admitted receiver mapping required")
+            identity = self.identity()
+            service = ReceiverService(
+                text(cfg, "store_dsn"),
+                ReceiverCipher(Path(text(cfg, "content_key")).read_bytes()),
+                identity,
+                actor_services={
+                    key: str(value) for key, value in record(cfg["actor_services"]).items()
+                },
+                services=mapping.service_ids,
+                scenario=str(cfg.get("scenario", "normal")),
+            )
+            return receiver_app(
+                service,
+                ReceiverIdentity(
+                    public_key(text(cfg, "core_public_key")),
+                    public_key(text(cfg, "identity_public_key")),
+                    identity.resolve,
+                ),
+                self.verify,
+            )
         if self.role == "core":
             identity = self.identity()
             data_client, data_origin = self.remote("data")
@@ -99,7 +139,25 @@ class Composition:
                 if cfg.get("review_contexts_file")
                 else None
             )
-            gateway = HttpPlanningGateway(data_client, data_origin, envelopes)
+            from care_link_core.receiver_http import HttpReceiverGateway
+            from care_link_core.referral_http import HttpReferralGateway
+
+            gateway = (
+                HttpReferralGateway(data_client, data_origin, envelopes)
+                if referrals_enabled
+                else HttpPlanningGateway(data_client, data_origin, envelopes)
+            )
+            receiver_gateway = None
+            if referrals_enabled:
+                receiver_client, receiver_origin = self.remote("receiver")
+                if mapping is None or receiver_origin != mapping.origin:
+                    raise ValueError("Receiver transport must match the admitted technical origin")
+                receiver_gateway = HttpReceiverGateway(
+                    receiver_client,
+                    receiver_origin,
+                    identity,
+                    private_key(text(cfg, "core_signing_key")),
+                )
             app = create_manual_app(
                 gateway,
                 CookieSecurity(identity),
@@ -110,6 +168,8 @@ class Composition:
                 if isinstance(contexts, PlansReviewContexts)
                 else None,
                 planning=gateway,
+                referrals=gateway if isinstance(gateway, HttpReferralGateway) else None,
+                receiver=receiver_gateway,
             )
 
             async def current(request: Request) -> JSONResponse:
@@ -159,7 +219,11 @@ class Composition:
                 if interactive_review
                 else frozenset()
             )
-            if interactive_review:
+            if referrals_enabled:
+                review_entries |= frozenset(
+                    {"/referrals", "/referrals/", "/referrals/client", "/referrals/receiver"}
+                )
+            if interactive_review or referrals_enabled:
 
                 async def plans_review_entry() -> FileResponse:
                     return FileResponse(directory / "index.html")
@@ -190,6 +254,16 @@ class Composition:
             directory_admission = VerifiedDirectoryAdmission(
                 admissions, {key: public_key(str(path)) for key, path in pins.items()}
             )
+            receiver_port = None
+            if referrals_enabled:
+                from care_link_data.referral_http import HttpReceiverPort
+
+                receiver_client, receiver_origin = self.remote("receiver")
+                if mapping is None or receiver_origin != mapping.origin:
+                    raise ValueError("Receiver transport must match the admitted technical origin")
+                receiver_port = HttpReceiverPort(
+                    receiver_client, receiver_origin, mapping.service_ids
+                )
             service = ManualService(
                 PostgresStore(text(cfg, "store_dsn"), connection_factory=store_factory),
                 identity,
@@ -200,6 +274,8 @@ class Composition:
                 disclosure_templates=cast(dict[str, Record], cfg["disclosures"]),
                 cursor_key=Path(text(cfg, "cursor_key")).read_bytes(),
                 directory_admission=directory_admission,
+                receiver=receiver_port,
+                simulator_services=mapping.service_ids if mapping else frozenset(),
             )
             delegation = DelegationVerifier(
                 public_key(text(cfg, "core_public_key")),
@@ -232,9 +308,12 @@ class Composition:
                     if cfg.get("review_provider_configs_file")
                     else None,
                     interactive_review_enabled=interactive_review,
+                    receiver_enabled=referrals_enabled,
                 )
             browser = identity_app(service, ui_return_url=service.origin + "/")
-            internal = create_manual_identity_app(service, self.verify)
+            internal = create_manual_identity_app(
+                service, self.verify, receiver_enabled=referrals_enabled
+            )
 
             async def identity_surface(scope: Scope, receive: Receive, send: Send) -> None:
                 path = scope.get("path", "")

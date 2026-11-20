@@ -2,7 +2,7 @@
 
 Version 0.1 · 2026-11-06 · Proposed plan for human review. No application implementation, tool installation, host change or deployment is performed by this package.
 
-Execution status: [IMP-04 closed; G-04 automated-qualified](executions/2026-11-16-IMP-04/ledger.json). [IMP-03 historical acceptance](executions/2026-11-16-IMP-03/ledger.json) is preserved. Human review is deferred until after IMP-10; IMP-05 is not activated. The planning baseline below remains separate from actual execution records.
+Execution status: [IMP-05 source closed; G-05 automated-qualified](executions/2026-11-20-IMP-05/ledger.json). [IMP-04 qualification](executions/2026-11-16-IMP-04/ledger.json) and [IMP-03 historical acceptance](executions/2026-11-16-IMP-03/ledger.json) are preserved. Human review is deferred until after IMP-10; IMP-06 is not activated. IMP-05 source publication is tracked in its closure session; no live deployment occurred. The planning baseline below remains separate from actual execution records.
 
 Implement the accepted LLD as small, demonstrable service slices. Use Codex specialists for bounded analysis and scoped work and preserve one accountable integration owner. Security/governance controls are built into the earliest relevant behavior, not deferred to a final audit.
 

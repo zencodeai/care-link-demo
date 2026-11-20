@@ -23,7 +23,10 @@
     "tools/imp03_verification/audit_fault.py",
     "tools/imp04_deployment",
     "tools/imp04_review",
-    "tools/imp04_verification"
+    "tools/imp04_verification",
+    "services/simulators/src",
+    "tools/imp05_runtime",
+    "tools/imp05_verification"
   ],
   "pythonVersion": "3.14",
   "venvPath": ".",

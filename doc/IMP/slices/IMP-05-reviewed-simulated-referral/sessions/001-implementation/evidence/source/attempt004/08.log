@@ -1,0 +1,4 @@
+/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp05_verification/validate_plan.py
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp05_verification/validate_plan.py:30:12 - error: Cannot assign to attribute "check" for class "ModuleType"
+    Attribute "check" is unknown (reportAttributeAccessIssue)
+1 error, 0 warnings, 0 informations

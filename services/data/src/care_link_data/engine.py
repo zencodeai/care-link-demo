@@ -25,6 +25,7 @@ from care_link_domain import (
 
 from . import projections, review_projection, review_scope
 from .directory_admission import VerifiedDirectoryAdmission
+from .referral_ports import ReceiverPort
 from .store import PostgresStore, Record, Transaction, instant, number, text
 from .values import (
     PARTICIPANTS,
@@ -59,6 +60,8 @@ class Engine:
         scenario_bindings: dict[str, str] | None = None,
         content_key_ref: str | None = None,
         directory_admission: VerifiedDirectoryAdmission | None = None,
+        receiver: ReceiverPort | None = None,
+        simulator_services: frozenset[str] = frozenset(),
     ) -> None:
         self.store, self.authority, self.policy, self.journal, self.cipher = (
             store,
@@ -67,6 +70,8 @@ class Engine:
             journal,
             cipher,
         )
+        self.receiver = receiver
+        self.simulator_services = simulator_services
         self.channel, self.clock = channel, clock
         self.disclosure_templates = disclosure_templates or {}
         self.fixtures = fixtures or {}
@@ -355,6 +360,12 @@ class Engine:
                 self.clock(),
                 self.directory_artifacts,
             )
+        if arguments is not None and action.startswith(
+            ("referral_", "dispatch_", "receipt_", "dispatcher_")
+        ):
+            from .referral_policy import enrich_referral_policy
+
+            enrich_referral_policy(self, tx, actor, action, arguments, snapshot, request)
         return request
 
     def _fresh_actor(self, actor: Actor) -> Actor:
@@ -698,7 +709,45 @@ class Engine:
         expired grant. This is the final guarded disclosure authorization; no
         bytes are released if the check rolls back the transaction.
         """
-        if action.startswith("plan_"):
+        if action.startswith(("referral_", "dispatch_")):
+            from .dispatches import Dispatches
+
+            service = cast(Dispatches, self)
+            if action == "referral_sources":
+                session = object_value(snapshot["session"])
+                authorized = service.source_items(tx, actor, session)
+                if any(item not in authorized for item in cast(list[object], result["items"])):
+                    raise ManualError("manual.field_scope_denied")
+            elif action in {"referral_draft", "referral_read", "referral_context"}:
+                view = object_value(result["referral"]) if action == "referral_context" else result
+                referral = tx.get("referral", text(view, "id"))
+                if referral is None:
+                    raise ManualError("manual.not_found", 404)
+                service.referral_payload(tx, actor, referral)
+            elif action in {
+                "referral_review",
+                "referral_dispatch",
+                "dispatch_authorize",
+                "dispatch_consume",
+            }:
+                if action == "referral_review":
+                    referral = tx.get("referral", text(result, "draft_id"))
+                    if (
+                        referral is None
+                        or service.matching_referral_consent(tx, referral) is None
+                        or dt(result["expires_at"]) <= self.clock()
+                    ):
+                        raise ManualError("manual.review_interval", 409)
+                else:
+                    dispatch_id = text(result, "dispatch_id")
+                    dispatch = tx.get("dispatch", dispatch_id)
+                    referral = (
+                        tx.get("referral", text(dispatch, "referral_id")) if dispatch else None
+                    )
+                    if referral is None:
+                        raise ManualError("manual.not_found", 404)
+                    service.send_ready(tx, actor, referral, dispatch)
+        elif action.startswith("plan_"):
             from .consent import current_fields, owns_subject
 
             session = object_value(snapshot["session"])
@@ -967,13 +1016,15 @@ class Engine:
                 "copy_id": copy_id,
                 "subject_id": session["persona_id"],
                 "session_id": session["id"],
-                "purpose": "support",
+                "purpose": "referral" if kind == "referral" else "support",
                 "aggregate_type": kind,
                 "aggregate_id": aggregate_id,
                 "content_ref": "postgres:" + kind + ":" + aggregate_id,
                 "classification": "synthetic_content",
                 "encryption_key_ref": self.content_key_ref,
-                "anchor_kind": "last_parent_closed",
+                "anchor_kind": "referral_terminal_parent"
+                if kind == "referral"
+                else "last_parent_closed",
                 "anchor_at": None,
                 "expires_at": None,
                 "state": "anchor_pending",

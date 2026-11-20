@@ -65,10 +65,37 @@ TABLES: dict[str, tuple[str, tuple[str, ...]]] = {
     "delegation": ("consent.delegation", ("id",)),
     "directory": ("knowledge.service_version", ("id",)),
     "service_guard": ("knowledge.service_guard", ("service_id",)),
+    "referral": ("referral.generation", ("id",)),
+    "referral_review": ("referral.review", ("id",)),
+    "dispatch": ("referral.dispatch", ("id",)),
+    "authorization": ("referral.authorization", ("id",)),
+    "dispatch_observation": ("referral.observation", ("id",)),
+    "dispatch_attempt": ("referral.attempt", ("id",)),
     "directory_quarantine": ("knowledge.quarantine", ("id",)),
 }
-JSON_COLUMNS = {"field_states", "versions", "source", "scope", "recipient", "facts", "sources"}
-APPEND_ONLY = frozenset({"plan_field", "consent_event", "directory", "directory_quarantine"})
+JSON_COLUMNS = {
+    "selected",
+    "source_vector",
+    "receipt",
+    "field_states",
+    "versions",
+    "source",
+    "scope",
+    "recipient",
+    "facts",
+    "sources",
+}
+APPEND_ONLY = frozenset(
+    {
+        "referral_review",
+        "dispatch_observation",
+        "dispatch_attempt",
+        "plan_field",
+        "consent_event",
+        "directory",
+        "directory_quarantine",
+    }
+)
 READ_ONLY = APPEND_ONLY | {"delegation"}
 
 

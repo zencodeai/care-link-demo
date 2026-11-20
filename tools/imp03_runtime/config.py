@@ -75,7 +75,7 @@ DATA_ACTIONS = (
 
 
 def spiffe(role: str) -> str:
-    if role not in ROLES:
+    if role not in (*ROLES, "receiver"):
         raise ValueError("Unknown IMP-03 role")
     return "spiffe://care-link.demo/demo/" + role
 
@@ -152,9 +152,48 @@ def unique(pairs: list[tuple[str, object]]) -> Record:
 def workload(config: Record, role: str) -> BackendVerifier:
     if text(config, "role") != role or integer(config, "uid") != os.geteuid():
         raise ValueError("Exact process role/custodian required")
+    peers = routes(role) if role != "receiver" else {}
+    if config.get("referral_enabled") is True:
+        if role == "data":
+            actions = (
+                "referral_draft",
+                "referral_read",
+                "referral_context",
+                "referral_sources",
+                "referral_review",
+                "referral_dispatch",
+                "dispatch_read",
+                "receipt_read",
+                "dispatcher_send",
+                "dispatch_reconcile",
+            )
+            peers["core"] = peers["core"] | frozenset(
+                ("POST", "/internal/v1/data/" + action) for action in actions
+            )
+        if role == "identity":
+            peers["receiver"] = frozenset(
+                ("POST", "/internal/v1/manual-identity/" + name) for name in ("resolve", "current")
+            )
+        if role == "receiver":
+            peers = {
+                "data": frozenset(
+                    ("POST", "/internal/v1/receiver/" + name) for name in ("send", "lookup")
+                ),
+                "core": frozenset(
+                    ("POST", "/internal/v1/receiver/" + name)
+                    for name in (
+                        "receiver_inbox",
+                        "receiver_package",
+                        "receiver_detail",
+                        "receiver_decide",
+                    )
+                ),
+            }
+    elif role == "receiver":
+        raise ValueError("Receiver process requires explicit referral configuration")
     return BackendVerifier(
         integer(config, "proxy_uid"),
-        tuple(PeerRule(spiffe(peer), pairs) for peer, pairs in routes(role).items()),
+        tuple(PeerRule(spiffe(peer), pairs) for peer, pairs in peers.items()),
         UnixFenceClient(Path(text(config, "fence_socket")), integer(config, "fence_uid")),
         backend_uid=os.geteuid(),
         local_spiffe_id=spiffe(role),

@@ -1,0 +1,12 @@
+F821 Undefined name `conninfo_to_dict`
+   --> services/data/tests/conftest.py:255:16
+    |
+253 | @pytest.fixture(scope="session")
+254 | def receiver_database(database):
+255 |     settings = conninfo_to_dict(database.admin)
+    |                ^^^^^^^^^^^^^^^^
+256 |     name = "imp05_receiver"
+257 |     password = secrets.token_urlsafe(32)
+    |
+
+Found 1 error.

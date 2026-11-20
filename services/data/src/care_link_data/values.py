@@ -90,6 +90,35 @@ ROLES.update(
 )
 
 
+ROLES.update(
+    {
+        name: WORKFORCE
+        for name in (
+            "referral_sources",
+            "referral_draft",
+            "referral_review",
+            "referral_dispatch",
+            "dispatcher_send",
+            "dispatch_authorize",
+            "dispatch_consume",
+            "dispatch_observe",
+            "dispatch_reconcile",
+        )
+    }
+)
+ROLES.update(
+    {
+        name: WORKFORCE
+        for name in (
+            "referral_read",
+            "referral_context",
+            "dispatch_read",
+            "receipt_read",
+        )
+    }
+)
+
+
 def stamp(value: datetime) -> str:
     return value.astimezone(UTC).isoformat(timespec="microseconds").replace("+00:00", "Z")
 
@@ -138,3 +167,7 @@ class Outcome:
     resource_id: str | None = None
     session_id: str | None = None
     sensitive_once: bool = False
+
+
+ROLES["referral_read"] = PARTICIPANTS | WORKFORCE
+ROLES["referral_context"] = PARTICIPANTS | WORKFORCE

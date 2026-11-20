@@ -1,0 +1,22 @@
+[WebServer] (node:14429) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:14430) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 6 tests using 1 worker
+
+(node:14442) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+(node:14442) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/6] tests/e2e/referral/referral.spec.ts:96:3 › worker exact review, uncertain delivery and partial reconciliation en-CA
+[2/6] tests/e2e/referral/referral.spec.ts:165:3 › receiver field-specific decision en-CA
+[3/6] tests/e2e/referral/referral.spec.ts:196:3 › client exact consent preview and provider-proof binding en-CA
+[4/6] tests/e2e/referral/referral.spec.ts:96:3 › worker exact review, uncertain delivery and partial reconciliation fr-CA
+[5/6] tests/e2e/referral/referral.spec.ts:165:3 › receiver field-specific decision fr-CA
+[6/6] tests/e2e/referral/referral.spec.ts:196:3 › client exact consent preview and provider-proof binding fr-CA
+  6 passed (7.8s)
