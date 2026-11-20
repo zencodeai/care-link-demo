@@ -5,6 +5,7 @@ from typing import cast
 
 from .crypto import digest
 from .domain import PRIVILEGED_ROLES, IdentityError, Transaction, instant
+from .session_policy import marked_interactive_session
 
 
 def locally_restricted(tx: Transaction, session: dict[str, object], now: datetime) -> bool:
@@ -13,7 +14,10 @@ def locally_restricted(tx: Transaction, session: dict[str, object], now: datetim
             return True
         if session.get("role") in PRIVILEGED_ROLES and (
             session.get("mfa") is not True
-            or (now - instant(session["last_seen"])).total_seconds() >= 900
+            or (
+                not marked_interactive_session(session, now)
+                and (now - instant(session["last_seen"])).total_seconds() >= 900
+            )
         ):
             return True
         matches = [

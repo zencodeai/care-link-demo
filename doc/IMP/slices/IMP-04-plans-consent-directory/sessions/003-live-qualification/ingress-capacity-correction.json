@@ -1,0 +1,37 @@
+{
+  "reason": "Live probe proved only first16 concurrent nativeTLS health connections succeeded;17/18 rejected. Nine browser cookie jars retain multiple HTTP1 keepalive sockets.",
+  "previous_limit": 16,
+  "new_limit": 64,
+  "unchanged_limits": {
+    "idle_timeout_seconds": 30,
+    "max_lifetime_seconds": 300,
+    "buffer_bytes": 65536,
+    "connect_timeout_seconds": 2
+  },
+  "spec": {
+    "name": "care-link-imp04-002-ingress",
+    "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+    "args": [
+      "python",
+      "-c",
+      "\nimport asyncio\nfrom tools.imp03_shared.relay import TCPToTCPRelay, RelayLimits\nasync def run():\n    relay = TCPToTCPRelay(30443, \"172.29.44.12\", 30443,\n                          limits=RelayLimits(max_connections=64))\n    await relay.start()\n    try:\n        await asyncio.Event().wait()\n    finally:\n        await relay.close()\nasyncio.run(run())\n"
+    ],
+    "mounts": [],
+    "user": "65532:65532",
+    "cpus": "0.25",
+    "memory": "64m",
+    "network": "care-link-imp04-002-ingress",
+    "publish": [
+      "127.0.0.1:30443:30443"
+    ]
+  },
+  "scope": "Only inspected new IMP04 ingress replacement; no network/volume/port/UID/caps or auth policy changes",
+  "applied": true,
+  "applied_at": "2026-11-16T19:26:21.690654+00:00",
+  "replacement_receipt": {
+    "name": "care-link-imp04-002-ingress",
+    "old_container_id": "b2c1669cce98b3d4d0560f692bc9bb7f72747e872c443f9788127aeaf8bb2bc5",
+    "new_container_id": "634f88b3c4c039e262c9d53f028c35fe5909483185664667d09d987570c87ded",
+    "volumes_removed": false
+  }
+}

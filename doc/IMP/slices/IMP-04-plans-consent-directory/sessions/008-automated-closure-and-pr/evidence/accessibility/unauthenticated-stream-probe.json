@@ -1,0 +1,81 @@
+{
+  "version": "imp04.unauthenticated-stream-probe.v1",
+  "generated_at": "2026-11-20T16:54:16.432Z",
+  "run_id": "049d31b6-b936-42f1-bbd8-9841fade8bda",
+  "observations": [
+    {
+      "slot": "pid",
+      "cookie_sent": false,
+      "protected_headers_forged": [
+        "x-forwarded-client-cert",
+        "x-care-link-verified-spiffe",
+        "x-care-link-fence-generation",
+        "x-care-link-certificate-expires-at"
+      ],
+      "method": "GET",
+      "path": "/v1/review/events",
+      "status": 401,
+      "verified_https": true,
+      "tls": "TLSv1.3",
+      "content_type": "application/json",
+      "message_key": "manual.session_required",
+      "passed": true
+    },
+    {
+      "slot": "carer",
+      "cookie_sent": false,
+      "protected_headers_forged": [
+        "x-forwarded-client-cert",
+        "x-care-link-verified-spiffe",
+        "x-care-link-fence-generation",
+        "x-care-link-certificate-expires-at"
+      ],
+      "method": "GET",
+      "path": "/v1/review/events",
+      "status": 401,
+      "verified_https": true,
+      "tls": "TLSv1.3",
+      "content_type": "application/json",
+      "message_key": "manual.session_required",
+      "passed": true
+    },
+    {
+      "slot": "professional",
+      "cookie_sent": false,
+      "protected_headers_forged": [
+        "x-forwarded-client-cert",
+        "x-care-link-verified-spiffe",
+        "x-care-link-fence-generation",
+        "x-care-link-certificate-expires-at"
+      ],
+      "method": "GET",
+      "path": "/v1/review/events",
+      "status": 401,
+      "verified_https": true,
+      "tls": "TLSv1.3",
+      "content_type": "application/json",
+      "message_key": "manual.session_required",
+      "passed": true
+    },
+    {
+      "slot": "worker1",
+      "cookie_sent": false,
+      "protected_headers_forged": [
+        "x-forwarded-client-cert",
+        "x-care-link-verified-spiffe",
+        "x-care-link-fence-generation",
+        "x-care-link-certificate-expires-at"
+      ],
+      "method": "GET",
+      "path": "/v1/review/events",
+      "status": 401,
+      "verified_https": true,
+      "tls": "TLSv1.3",
+      "content_type": "application/json",
+      "message_key": "manual.session_required",
+      "passed": true
+    }
+  ],
+  "status": "passed",
+  "human_review": false
+}

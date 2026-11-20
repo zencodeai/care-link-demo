@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-11-16T18:31:53.112153+00:00",
+  "status": "passed",
+  "schema_packets": 3,
+  "source_continuity_entries": 69,
+  "artifact_bindings_verified": true,
+  "proposal_demo_ledger_hash_binding": true,
+  "unique_proposed_containers": 31,
+  "unique_proposed_volumes": 48,
+  "distinct_proposed_subnets": 4,
+  "local_markdown_links_resolve": 28,
+  "all_live_steps_unperformed": true,
+  "G04_pending_no_live_deployment": true,
+  "accepted_IMP03_ledger_and_acceptance_reference_unchanged": true,
+  "limitations": "Does not test new operator/images (unimplemented), current serving health or any live/qualification behavior."
+}

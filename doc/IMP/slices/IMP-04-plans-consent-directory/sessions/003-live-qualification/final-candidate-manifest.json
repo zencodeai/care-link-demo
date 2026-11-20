@@ -1,0 +1,263 @@
+{
+  "recorded_at": "2026-11-16T20:55:13.291208+00:00",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "branch": "feat/imp-04-plans-consent-directory",
+  "uncommitted": true,
+  "deployment_applied": true,
+  "accepted_proposal": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/target-proposal.json",
+    "sha256": "645107a51875afc2f1ee2f6520639c8e013385ec6f92c2f12caf087e190d681a"
+  },
+  "initial_image_manifest": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/candidate-manifest.json",
+    "sha256": "39520d06ad04ca2a1943551ab2ac8789d4c31072250123cc92a268bdd36d530d"
+  },
+  "serving_image": {
+    "image_tag": "care-link-imp04:plans-002",
+    "image_id": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+    "recipe_sha256": "72b8349944b1fcd07252d46dcd0d66d75b4eac65abbc4ad7728a9ba8b5c27f2c",
+    "log_sha256": "722a05163fc0843ca6c7804b1012a0319aba9eb5dfbb7ae8e5634f1bdaf31e3b",
+    "scope": "Qualification workspace distribution, not minimal per-role packaging"
+  },
+  "serving_web_build": {
+    "profile": "imp04-plans-002",
+    "main_origin": "https://plans.localhost:30443",
+    "origins": {
+      "VITE_OIDC_ORIGIN": "https://id.plans.localhost:31443",
+      "VITE_HELP_ORIGIN": "https://help.localhost:19443",
+      "VITE_STATIC_ORIGIN": "https://static.localhost:21443"
+    },
+    "scope": "Public build configuration only; no actor credentials or tokens",
+    "files": [
+      {
+        "path": "apps/web/dist/assets/index-CKHAkj2S.css",
+        "sha256": "072c1fe4864bbb2e3af4fe85bfc5bf778198e3e9fcb36a2e7768773ce0ac80ac"
+      },
+      {
+        "path": "apps/web/dist/assets/index-XkTHk5P0.js",
+        "sha256": "99423dc5f164827e4c5be3d8a6267ea863b84329885cd37b162a10fb60ec147c"
+      },
+      {
+        "path": "apps/web/dist/index.html",
+        "sha256": "e1fc59c4213a8d6765ef04d13c669fcd241098aa3456bae3cd56d7c30eb83b9c"
+      },
+      {
+        "path": "apps/web/dist/qualification-origins.json",
+        "sha256": "95374fdae6439bda883dfd9d1cf5d95a8c8b1b8fadc0c454a725f58172bb199c"
+      }
+    ],
+    "fingerprint": "816e0cf3baf6a38d50b5b3ce92530fd4effdf324808751ac6ad421be9a40980f"
+  },
+  "serving_source_proof": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/image-source-verification.json",
+    "sha256": "515d284e4247c11c65ee67cce202f9cd2d0f1caeb5c930da100ab8290df22f07"
+  },
+  "host_source_binding": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/current-source-bindings.json",
+    "sha256": "48c0a4f813ab64228356be2dd4fabd06c63570ef898abda266042b0afb4085aa"
+  },
+  "source_continuity": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/source-continuity.json",
+    "sha256": "5feb273f280c81ce0564768840c8354414886a677054310df8926691ae815f29"
+  },
+  "public_configuration_binding": {
+    "initial_deployment": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/rendered-deployment.json",
+      "sha256": "e6f11e2a28c9b00e4de3f9bcfb27542c00f4cd8b3d0243ac0d184eeb10705237"
+    },
+    "issued_public_identities": {
+      "target": "care-link-imp04-002",
+      "actors": [
+        {
+          "account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+          "subject": "a0a05524-20e2-4dda-bd45-d2aba9accbfb",
+          "roles": [
+            "pid"
+          ]
+        },
+        {
+          "account_id": "fe2303a4-ee1b-4931-a1ac-193e4938337c",
+          "subject": "839297ac-ec08-40f4-8f7d-25e1ec68207c",
+          "roles": [
+            "pid"
+          ]
+        },
+        {
+          "account_id": "fb881f96-e088-429c-a404-5208f22b4068",
+          "subject": "2746dafb-2cd6-4509-a255-7094c52657b9",
+          "roles": [
+            "carer"
+          ]
+        },
+        {
+          "account_id": "42dfc3a0-58f2-40d7-97c9-768d07dcd315",
+          "subject": "4bd33ed8-17a9-4ded-bc41-31563ed7bb80",
+          "roles": [
+            "professional_participant"
+          ]
+        },
+        {
+          "account_id": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+          "subject": "18a7a1c7-f79e-4f7f-94eb-8f12992f5728",
+          "roles": [
+            "worker"
+          ]
+        },
+        {
+          "account_id": "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+          "subject": "0638788f-0075-4387-a686-6dbb60897145",
+          "roles": [
+            "worker"
+          ]
+        },
+        {
+          "account_id": "6962247a-6849-4077-b445-0034051cbd57",
+          "subject": "783e492d-19e3-46d4-a89a-359aba15713b",
+          "roles": [
+            "supervisor"
+          ]
+        },
+        {
+          "account_id": "1152c7ae-32b6-4383-b99c-7589a663e453",
+          "subject": "967ce547-4809-4d48-891c-999f815b7934",
+          "roles": [
+            "operator"
+          ]
+        },
+        {
+          "account_id": "5f67f7bb-7e05-48c4-ae77-4d30666d604f",
+          "subject": "16da9d33-f536-4d74-8bad-3868c1659a69",
+          "roles": [
+            "security"
+          ]
+        }
+      ],
+      "policy_digest": "cc62534fcfaf302154ccb8e0aed6f386e7857e848354d8bb41d8d10177665604",
+      "transport_ca_sha256": "35e8a8bce98c0a2048674dc35912eadc7ec00d33e4c6c1b0966ed7c7f749b6b5",
+      "credentials_issued": true
+    },
+    "ingress_correction": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/ingress-capacity-correction.json",
+      "sha256": "2d38913c380799810aa122987e4cc3c4af5b67005e813cff4fc3e7ce51cebbc4"
+    },
+    "timing_restoration": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/qualification-adapter-plan.json",
+      "sha256": "74e81879ea405b949464a28935c018bd632f11105fef916442d9e3d48c7a7a71"
+    },
+    "new_networks": [
+      {
+        "name": "care-link-imp04-002-mesh",
+        "id": "93fb04e722e6760c3e832ece1cca126a4651f9012c7f425e87ea11fe9abddac7",
+        "driver": "bridge",
+        "internal": true,
+        "ipam": [
+          {
+            "Subnet": "172.29.44.0/24"
+          }
+        ],
+        "options": {
+          "com.docker.network.bridge.gateway_mode_ipv4": "isolated",
+          "com.docker.network.enable_ipv4": "true",
+          "com.docker.network.enable_ipv6": "false"
+        }
+      },
+      {
+        "name": "care-link-imp04-002-database",
+        "id": "8f9d80e80c0a2e9e22e5f653753cafb35307db4a3ca237697c5051dc2e849189",
+        "driver": "bridge",
+        "internal": true,
+        "ipam": [
+          {
+            "Gateway": "172.29.45.1",
+            "Subnet": "172.29.45.0/24"
+          }
+        ],
+        "options": {
+          "com.docker.network.enable_ipv4": "true",
+          "com.docker.network.enable_ipv6": "false"
+        }
+      },
+      {
+        "name": "care-link-imp04-002-infrastructure",
+        "id": "7775969a614cba8d41b73631d4cb111224d4a231349d1b0fd631abc39bbb5fec",
+        "driver": "bridge",
+        "internal": true,
+        "ipam": [
+          {
+            "Gateway": "172.29.46.1",
+            "Subnet": "172.29.46.0/24"
+          }
+        ],
+        "options": {
+          "com.docker.network.enable_ipv4": "true",
+          "com.docker.network.enable_ipv6": "false"
+        }
+      },
+      {
+        "name": "care-link-imp04-002-ingress",
+        "id": "08f89bca27049bbf4fef8e41ce62b0d5ed1a2af0a199fbce8e72754165bc4a7f",
+        "driver": "bridge",
+        "internal": false,
+        "ipam": [
+          {
+            "Gateway": "172.29.47.1",
+            "Subnet": "172.29.47.0/24"
+          }
+        ],
+        "options": {
+          "com.docker.network.enable_ipv4": "true",
+          "com.docker.network.enable_ipv6": "false"
+        }
+      }
+    ]
+  },
+  "public_configuration_digest": "a1c25e1dd135d9d306c45d8cb72d7f7be4b138285682d49a1c55e00e742eb780",
+  "environment_snapshot": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/final-snapshot.json",
+    "sha256": "de7d7ebe82b10d1e926ff6981c7434d71eacd52d7356b069135dd1576f418ff3"
+  },
+  "environment_digest": "de7d7ebe82b10d1e926ff6981c7434d71eacd52d7356b069135dd1576f418ff3",
+  "current_authority": {
+    "target": "care-link-imp04-002",
+    "journal": {
+      "state": {
+        "journal_id": "8b75464e-48c4-45a3-8321-f8faa198b5af",
+        "generation": "1",
+        "tip": "9",
+        "tip_digest": "755f8aefde48ba63289ed0ef2c3cf7207dfbce31a02b91a20e5047d326e82e55",
+        "restriction_barrier": "9",
+        "serving_generation": "1",
+        "observed_at": "2026-11-16T20:52:31.521986Z"
+      },
+      "signature_verified": true,
+      "nonce_bound": true,
+      "public_key_sha256": "faa62992e46ca08a730c5742e6ae171beed526ad39f00d79ecef192880f9ad30"
+    },
+    "fence": {
+      "generation": 0,
+      "head": "f302c8c9ebf633e62e8455bc70d5e83105143ddad449952eb3f4ca910a4d65df",
+      "allowed": [
+        "spiffe://care-link.demo/demo/core",
+        "spiffe://care-link.demo/demo/data",
+        "spiffe://care-link.demo/demo/identity",
+        "spiffe://care-link.demo/demo/journal",
+        "spiffe://care-link.demo/demo/pdp"
+      ],
+      "denied": [],
+      "command_count": 0,
+      "kernel_verified_custodian": true
+    }
+  },
+  "timing_adapter_currently_active": false,
+  "late_expiry_recovery": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/workload-expiry-late-recovery.json",
+    "sha256": "48e07db9c777020df644f0ee5eed23037dcd7a3ab2ea20a541454c7a05696008"
+  },
+  "human_gate_state": "pending",
+  "actual_limitations": [
+    "Policy256MiB OOM recovered without changing limit; cause unresolved",
+    "Strict A03/A04 tests failed with503 responses",
+    "Four-actor bilingual accessibility incomplete",
+    "No manual screen-reader/200percent zoom evidence"
+  ]
+}

@@ -30,7 +30,9 @@ export function AccountPanel({
   navigate: (url: string) => void;
   children?: ReactNode;
 }) {
-  const [role, setRole] = useState<"pid" | "worker" | "supervisor">("pid");
+  const [role, setRole] = useState<
+    "pid" | "carer" | "professional_participant" | "worker" | "supervisor"
+  >("pid");
   const { session, busy, notice, run, mutate, setSession } = channel;
   return (
     <section aria-labelledby={`${id}-title`}>
@@ -82,11 +84,21 @@ export function AccountPanel({
         disabled={busy}
         onChange={(event) => {
           const value = event.target.value;
-          if (value === "pid" || value === "worker" || value === "supervisor")
+          if (
+            value === "pid" ||
+            value === "carer" ||
+            value === "professional_participant" ||
+            value === "worker" ||
+            value === "supervisor"
+          )
             setRole(value);
         }}
       >
         <option value="pid">{text.pid}</option>
+        <option value="carer">{text.carer}</option>
+        <option value="professional_participant">
+          {text.professionalParticipant}
+        </option>
         <option value="worker">{text.worker}</option>
         <option value="supervisor">{text.supervisor}</option>
       </select>
@@ -101,7 +113,13 @@ export function AccountPanel({
               "/v1/auth/login",
               {
                 role,
-                return_route: role === "pid" ? "participant" : "workforce",
+                return_route: [
+                  "pid",
+                  "carer",
+                  "professional_participant",
+                ].includes(role)
+                  ? "participant"
+                  : "workforce",
                 locale,
               },
               signal,

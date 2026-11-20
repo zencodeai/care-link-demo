@@ -1,0 +1,78 @@
+{
+  "source_candidate_digest": "33dca1728a97abf0baa5949a2e6df66768e4a42f2f1b8748628aa90757dd95ba",
+  "source_candidate_manifest_sha256": "57e5cd9ebb97069207a2725572387687614f1f0506113ee7b2a87dfe6d9ee881",
+  "sources": [
+    {
+      "path": "services/data/migrations/001_manual.sql",
+      "sha256": "4e949968ed96009403870ccdf3cb49a47a885b4f7bfb10f54dc390dbc9ae22cd"
+    },
+    {
+      "path": "services/data/migrations/002_review_recovery.sql",
+      "sha256": "f20888c4daa455f5a8606ab2ccecc3b03e4d41ba6e8ee83bf8266c8d2cf0babb"
+    },
+    {
+      "path": "services/data/migrations/003_plans_consent_directory.sql",
+      "sha256": "295790c4df2c8ce600bd3362a82e43699118a8ac8889ba9074a4afdb77f3da42"
+    },
+    {
+      "path": "services/identity/migrations/001_identity.sql",
+      "sha256": "fa77d31cb725261281fac94f0a60f5b34c3e0e1bf93bc531b0917d72f303ff79"
+    },
+    {
+      "path": "services/identity/migrations/002_option_b_and_workload.sql",
+      "sha256": "fa40c00c6b8c32e5f2a56791214d82bdfff1468c9690e5eee6362bd4ae084dbd"
+    },
+    {
+      "path": "config/demo/imp04/policy/manual.rego",
+      "sha256": "cc62534fcfaf302154ccb8e0aed6f386e7857e848354d8bb41d8d10177665604"
+    },
+    {
+      "path": "config/demo/imp04/policy/bootstrap.json",
+      "sha256": "14dcdd98ff2b5bde8f38b2d3d8082bd18dd7616a0a9ef248f1a2a3967e4832e0"
+    },
+    {
+      "path": "config/demo/imp04/directory-fixtures.json",
+      "sha256": "26862660a86ce46088c9c98977eb78b6f49fe37ea585aac7c97ffc835443f6e6"
+    },
+    {
+      "path": "config/demo/imp04/directory-source-key-pin.json",
+      "sha256": "7b74979946be2edbaa32a8d109d609c881600d353f1e7735d3536fbc2f626fdb"
+    },
+    {
+      "path": "config/demo/imp03/products.json",
+      "sha256": "2a0c558afdc341f3ea655d10b85c77ed5c090b1590b78396f0fe178b207e7aed"
+    },
+    {
+      "path": "deploy/k8s/imp-02/products.json",
+      "sha256": "30736191987ca1c764a73a9577470e55e4a2e4fa2e54e0c868a1856ad20c1303"
+    },
+    {
+      "path": "deploy/images/imp03/Dockerfile",
+      "sha256": "b484f7cfcfc982e4dc85556794080aff7f007c34d62baefa170592b2650168cb"
+    },
+    {
+      "path": "deploy/images/imp03/Dockerfile.dockerignore",
+      "sha256": "59dc808f9a0da71818c1eab59b2d44a21f170fa95ce6fbec6ea7f3ac27e03b95"
+    },
+    {
+      "path": "deploy/images/imp03-browser/Dockerfile",
+      "sha256": "a8d884bd0ced0aa126c10e124801725aa1081e27bfe4bb259288d3994971175d"
+    },
+    {
+      "path": "deploy/images/imp03-browser/chrome-inputs.json",
+      "sha256": "f4cabb91e2dbbb6e00e6ad5cb00aa8926ee4e9ce9e56c7588207cf78ab8371f4"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "9d6dce7cfc60209e28c45e37240aa099188593f5f0fec2382c9bc1624b6c3ddf"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "219bfd7858fc3e820131c19732c64bbccb30d1b755b7674127fcea89957aa585"
+    }
+  ],
+  "source_container_image": null,
+  "proposed_deployment_image": null,
+  "proposed_config_digest": null,
+  "note": "Null deployment identities have not been built/generated; never substitute accepted IMP03 image or session001 web build for an IMP04 deployed candidate."
+}

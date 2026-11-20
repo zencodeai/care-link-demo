@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-11-20T16:43:08.822671+00:00",
+  "stage_id": "IMP-04",
+  "gate_id": "G-04",
+  "authorization": {
+    "source": "actual_user_message",
+    "instruction": "Close IMP-04 and create PR",
+    "scope": "Reconcile automated evidence, correct closure blockers, commit/push feature branch and create pull request; no merge or next-slice activation"
+  },
+  "policy": "Automated qualification through IMP-10; human review deferred to later GitHub issue follow-up",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "branch": "feat/imp-04-plans-consent-directory",
+  "resource_lease": {
+    "disposable_database_name": "care-link-imp04-closure-20261120-postgres",
+    "loopback_port": 25434,
+    "accepted_environments": "preserve",
+    "browser_tests": "owned temporary profiles/contexts in existing IMP04 broker only"
+  }
+}

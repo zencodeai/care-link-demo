@@ -16,6 +16,8 @@ AUTH_ROUTES = frozenset(
     {
         ("GET", "/v1/auth/csrf"),
         ("POST", "/v1/auth/login"),
+        ("POST", "/v1/auth/review/login"),
+        ("POST", "/v1/auth/review/verify"),
         ("GET", "/v1/auth/callback"),
         ("GET", "/v1/auth/session"),
         ("POST", "/v1/auth/logout"),
@@ -26,6 +28,18 @@ AUTH_ROUTES = frozenset(
     }
 )
 DATA_ACTIONS = (
+    "own_reports_read",
+    "plan_create",
+    "plan_read",
+    "plan_field_append",
+    "plan_retire",
+    "consent_grant",
+    "consent_read",
+    "consent_revoke",
+    "directory_search",
+    "directory_read",
+    "directory_ingest",
+    "directory_suspend",
     "session_create",
     "session_read",
     "session_disclosure",
@@ -76,7 +90,7 @@ def routes(role: str) -> dict[str, frozenset[tuple[str, str]]]:
             ),
             "data": frozenset(
                 ("POST", "/internal/v1/manual-identity/" + path)
-                for path in ("resolve", "current", "recovery")
+                for path in ("resolve", "current", "recovery", "consent-proof")
             ),
         }
     if role == "data":

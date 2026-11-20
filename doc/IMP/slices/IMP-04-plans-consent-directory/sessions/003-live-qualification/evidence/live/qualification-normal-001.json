@@ -1,0 +1,21 @@
+{
+  "phase": "normal",
+  "exit_code": 1,
+  "private_output": "/private/tmp/care-link-imp04-002/qualification-normal-001",
+  "status": "failed",
+  "not_run": [
+    "Q07 lifecycle copy metadata/purge (HTTP close/retire exercised only in lifecycle/all)",
+    "Q03 pending-review DB count requires coordinator read-only verification",
+    "Q08 manual screen reader/200% zoom",
+    "A03 deterministic deployed output race",
+    "A04 concurrent absent-grant serialization",
+    "A05 independently provisioned delegation",
+    "A07 workload/root/default-deny probes",
+    "A08 dependency fault barriers",
+    "A09 runtime DB privilege checks"
+  ],
+  "observations": [],
+  "error_first_lines": [
+    "Error: Real provider login failed; slot=pid; password=false; otp=false; private details suppressed"
+  ]
+}

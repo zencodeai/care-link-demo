@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-11-20T17:00:58.616882+00:00",
+  "staged_file_count": 682,
+  "staged_bytes": 7086444,
+  "findings": [],
+  "patterns": [
+    "private_key",
+    "github_token",
+    "aws_access_key",
+    "password_dsn",
+    "bearer_jwt"
+  ],
+  "exact_private_Env_secret_values_checked": 0,
+  "raw_values_printed": false,
+  "scope": "Pattern and exact known deployment Env value scan; not a claim of exhaustive secret detection."
+}

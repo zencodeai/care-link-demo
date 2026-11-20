@@ -1,12 +1,25 @@
 {
   "status": "workflow_specification_not_actual_execution",
+  "qualification_policy": {
+    "effective_date": "2026-11-20",
+    "authority": "Actual user instruction in this session: proceed without interactive human review, only automated tests; human review after implementation is complete (IMP-10), using GitHub issue follow-up bug-fix/improvement sessions.",
+    "applies_through_stage": "IMP-10",
+    "automated_tests_only": true,
+    "interactive_human_review_required": false,
+    "human_stage_acceptance_required": false,
+    "deferred_review_status": "deferred_until_after_IMP10",
+    "human_review_after": "IMP-10 automated_qualified",
+    "human_review_channel": "github_issue_followup_bug_fix_or_improvement_session",
+    "procedure": "06-demonstrations-and-human-decisions.md",
+    "historical_human_evidence": "preserve original outcomes, candidate bindings and actual acceptance; no fabricated or relabelled pass",
+    "action_and_runtime_approvals": "unchanged; automated qualification does not waive actual scope/action authorization or product-runtime human authority"
+  },
   "states": [
     "planned",
     "authorized",
     "in_progress",
-    "ready_for_demo",
-    "awaiting_human",
-    "accepted",
+    "ready_for_qualification",
+    "automated_qualified",
     "rework",
     "blocked",
     "cancelled"
@@ -23,7 +36,7 @@
       ],
       "to": "authorized",
       "owner": "actual_user_instruction_recorded_by_coordinator",
-      "guard": "scope/action authorization and accepted predecessor gates current",
+      "guard": "scope/action authorization and current automated-qualified or still-valid historical accepted predecessor evidence",
       "effect": "record exact authority reference; no inferred installation/deployment permission"
     },
     {
@@ -41,40 +54,31 @@
       "from": [
         "in_progress"
       ],
-      "to": "ready_for_demo",
+      "to": "ready_for_qualification",
       "owner": "coordinator",
-      "guard": "relevant checks/findings/evidence complete for declared scope",
-      "effect": "seal exact candidate binding and proposed demo"
+      "guard": "reviewable integrated candidate, declared mandatory automated checks and rollback prepared",
+      "effect": "bind exact source/artifacts/configuration/fixtures/environment and automated scenarios"
     },
     {
-      "event": "request_decision",
+      "event": "automated_checks_pass",
       "from": [
-        "ready_for_demo"
+        "ready_for_qualification"
       ],
-      "to": "awaiting_human",
+      "to": "automated_qualified",
       "owner": "coordinator",
-      "guard": "reviewable demo packet and rollback exist",
-      "effect": "present actual behavior/evidence and concise decision"
+      "guard": "all mandatory applicable automated checks actually passed against current candidate; no unrun required check or unresolved blocking control defect; dependency evidence current",
+      "effect": "record candidate-bound automated evidence and limitations; defer human review until after IMP-10; no human acceptance receipt or broader action authorization"
     },
     {
-      "event": "human_accept",
+      "event": "automated_checks_fail",
       "from": [
-        "awaiting_human"
-      ],
-      "to": "accepted",
-      "owner": "actual_human",
-      "guard": "actual attributable response, exact demonstrated candidate/packet and authority scope; no unresolved critical control defect",
-      "effect": "record scoped receipt; authorize no broader action by inference"
-    },
-    {
-      "event": "human_request_changes",
-      "from": [
-        "awaiting_human"
+        "in_progress",
+        "ready_for_qualification"
       ],
       "to": "rework",
-      "owner": "actual_human",
-      "guard": "actual response with requested changes",
-      "effect": "assign concrete revisions; preserve prior evidence history"
+      "owner": "coordinator",
+      "guard": "failed or unrun required automated check, or blocking defect with evidence",
+      "effect": "record failure and assign correction; do not count deferred human-only review as a failed automated check"
     },
     {
       "event": "resume_rework",
@@ -83,20 +87,19 @@
       ],
       "to": "in_progress",
       "owner": "coordinator",
-      "guard": "existing authorization still covers changes; dependencies/current baseline valid",
+      "guard": "existing authorization covers changes; dependencies/current baseline valid",
       "effect": "recheck affected behavior"
     },
     {
       "event": "material_change",
       "from": [
-        "accepted",
-        "ready_for_demo",
-        "awaiting_human"
+        "automated_qualified",
+        "ready_for_qualification"
       ],
       "to": "rework",
       "owner": "coordinator",
-      "guard": "changed candidate/contract/policy/environment affects reviewed scope",
-      "effect": "stale affected acceptance/evidence; require focused rerun and human decision"
+      "guard": "changed candidate/contract/policy/environment affects qualified scope",
+      "effect": "invalidate affected automated evidence and rerun relevant checks; retain history without requiring a per-stage interactive review"
     },
     {
       "event": "block",
@@ -104,12 +107,13 @@
         "planned",
         "authorized",
         "in_progress",
-        "ready_for_demo",
+        "ready_for_qualification",
+        "automated_qualified",
         "rework"
       ],
       "to": "blocked",
       "owner": "coordinator",
-      "guard": "actual decision/resource/authority/defect blocker with evidence",
+      "guard": "actual action-authorization/resource/authority/defect blocker with evidence; deferred human-only review is not an implementation blocker",
       "effect": "record affected capability/options; continue independent authorized work"
     },
     {
@@ -119,7 +123,7 @@
       ],
       "to": "authorized",
       "owner": "coordinator",
-      "guard": "blocker resolved and actual scoped authorization/current predecessor gates valid",
+      "guard": "blocker resolved; actual scoped authorization and current predecessor evidence valid",
       "effect": "resume bounded ready work"
     },
     {
@@ -128,8 +132,8 @@
         "planned",
         "authorized",
         "in_progress",
-        "ready_for_demo",
-        "awaiting_human",
+        "ready_for_qualification",
+        "automated_qualified",
         "rework",
         "blocked"
       ],
@@ -139,6 +143,11 @@
       "effect": "preserve evidence and reconcile uncertain effects; no destructive cleanup by inference"
     }
   ],
-  "defer_behavior": "actual human defer leaves awaiting_human with recorded reason; elapsed time is never acceptance",
-  "acceptance_check": "Software validates shape/digests and requires an attributable actual event; a generated receipt cannot prove human action."
+  "legacy_state_handling": {
+    "ready_for_demo": "Reconcile the current candidate/evidence as ready_for_qualification; no automatic pass.",
+    "awaiting_human": "Retain the historical record and resume evidence reconciliation as ready_for_qualification; missing interactive review no longer blocks qualification.",
+    "accepted": "Preserve actual historical human acceptance and its exact scope; it may satisfy a dependency only while its candidate binding remains valid."
+  },
+  "qualification_check": "Automated qualification requires actual current passing evidence. A generated receipt, deferred human review or elapsed time is never a pass.",
+  "human_review_followup": "After IMP-10 automated qualification, use GitHub issue follow-up sessions with issue-bound reproduction, fix, automated regression evidence and actual focused human observations where needed."
 }

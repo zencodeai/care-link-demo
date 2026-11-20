@@ -1,0 +1,181 @@
+{
+  "phase": "normal",
+  "exit_code": 1,
+  "private_output": "/private/tmp/care-link-imp04-002/qualification-session004-normal-final010",
+  "status": "failed",
+  "not_run": [
+    "Q04/A01: phase evidence incomplete (0/1 passed observations)",
+    "Q03-worker-conflict: phase evidence incomplete (0/1 passed observations)",
+    "A02-revocation: phase evidence incomplete (0/1 passed observations)",
+    "A02-real-expiry: phase evidence incomplete (0/1 passed observations)",
+    "Q09: phase evidence incomplete (0/1 passed observations)",
+    "Q09-draft: phase evidence incomplete (0/1 passed observations)",
+    "Coordinator read-only DB effects, review counts and lifecycle metadata are recorded outside browser phase"
+  ],
+  "observations": [
+    {
+      "case": "Q02",
+      "slot": "pid",
+      "status": "passed",
+      "account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T23:15:39.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "pid-other",
+      "status": "passed",
+      "account_id": "fe2303a4-ee1b-4931-a1ac-193e4938337c",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T23:15:40.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "carer",
+      "status": "passed",
+      "account_id": "fb881f96-e088-429c-a404-5208f22b4068",
+      "role": "carer",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T23:15:41.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "professional",
+      "status": "passed",
+      "account_id": "42dfc3a0-58f2-40d7-97c9-768d07dcd315",
+      "role": "professional_participant",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T23:15:42.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "worker1",
+      "status": "passed",
+      "account_id": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T23:15:44.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "worker2",
+      "status": "passed",
+      "account_id": "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T23:15:45.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "supervisor",
+      "status": "passed",
+      "account_id": "6962247a-6849-4077-b445-0034051cbd57",
+      "role": "supervisor",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T23:15:46.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "operator",
+      "status": "passed",
+      "account_id": "1152c7ae-32b6-4383-b99c-7589a663e453",
+      "role": "operator",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T23:15:48.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "security",
+      "status": "passed",
+      "account_id": "5f67f7bb-7e05-48c4-ae77-4d30666d604f",
+      "role": "security",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T23:15:50.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q01-browser",
+      "status": "passed",
+      "browser_version": "157.0.8103.78",
+      "ignore_https_errors": false,
+      "actual_provider_login_required_for_fresh_session": false,
+      "restored_genuine_same_actor_browser_state": true,
+      "phase_actor_slots_restored": [
+        "pid",
+        "pid-other",
+        "carer",
+        "professional",
+        "worker1",
+        "worker2"
+      ],
+      "unused_verified_actor_contexts_kept_closed": true,
+      "maximum_simultaneous_initial_authenticator_contexts": 1,
+      "api_driver_shell": "Actual main HTML/CSP; only app JavaScript assets aborted; no API interception",
+      "visible_ui_driver": "Real application bundle loaded on demand with ensureMain(true)",
+      "origin": "https://plans.localhost:30443",
+      "provider_origin": "https://id.plans.localhost:31443"
+    },
+    {
+      "case": "Q03/A01",
+      "status": "passed",
+      "plan_id": "50487504-46a0-48f2-96c5-747b5babd93c",
+      "plan_revision": "3",
+      "fields": [
+        "plan.medication_report",
+        "plan.strategies"
+      ],
+      "attribution_all_owner": true,
+      "stable_create_replayed_current_projection": true,
+      "denied_unshared_roles": 4
+    },
+    {
+      "case": "Q05/A01",
+      "slot": "carer",
+      "status": "passed",
+      "session_id": "210f3431-f0dc-47fb-8d9d-a70aa66a0076",
+      "report_id": "aed19d4a-646a-4234-98c7-3821e5465baa",
+      "restored_committed_report_after_reload": true,
+      "cross_author_denied": true
+    },
+    {
+      "case": "Q05/A01",
+      "slot": "professional",
+      "status": "passed",
+      "session_id": "fba6446a-7da1-4fe2-bf34-f6242948d5c7",
+      "report_id": "a861135d-e5dd-432a-989d-6dfc5061bbc1",
+      "restored_committed_report_after_reload": true,
+      "cross_author_denied": true
+    }
+  ],
+  "error_first_lines": [
+    "Error: Visible authority ceremony failed; safe diagnostic={\"stage\":\"provider_authentication\",\"caught_error_name\":\"Error\",\"ui\":{\"notice\":\"pending\",\"ceremony_verified\":false,\"ceremony_expired\":false,\"ceremony_provider_pending\":false,\"confirm_disabled\":null},\"network\":[{\"event\":\"request\",\"path\":\"/v1/auth/csrf\",\"method\":\"GET\",\"observed_at\":\"2026-11-16T"
+  ]
+}

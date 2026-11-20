@@ -1,0 +1,66 @@
+{
+  "recorded_at": "2026-11-17T02:12:25.228667+00:00",
+  "status": "diagnosed_with_explicit_remaining_uncertainty",
+  "confirmed": [
+    {
+      "id": "G04-UX-01",
+      "severity": "major",
+      "finding": "The exact failed-review browser authorization matched a completed ordinary PID login, not a plan-edit MFA ceremony. No PID ceremony exists in the review interval.",
+      "evidence": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/006-human-mfa-diagnosis/browser-navigation-timeline.json",
+          "sha256": "b6201af2a5a4ebf42d0e0ca8b439ed76483001471c0c4ae5f21d8680fa5b4b2c"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/006-human-mfa-diagnosis/identity-authentication-correlation.json",
+          "sha256": "e96a4ce02cb0d79ea067d24ca41fe78771bf8ef6f70a71f2dc01424d811c5852"
+        }
+      ]
+    },
+    {
+      "id": "G04-UX-02",
+      "severity": "major",
+      "finding": "The second login replaced/revoked its exact previous PID session and returned to the generic root. Review selection and draft are React-memory-only and are not reconstructed after that navigation.",
+      "evidence": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/006-human-mfa-diagnosis/identity-authentication-correlation.json",
+          "sha256": "e96a4ce02cb0d79ea067d24ca41fe78771bf8ef6f70a71f2dc01424d811c5852"
+        }
+      ]
+    },
+    {
+      "id": "G04-UX-03",
+      "severity": "major",
+      "finding": "Saved plan was not deleted: retained exact plan remains active at revision5 with all4 field versions. Lost state was the visible workspace/unsent local draft.",
+      "evidence": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/006-human-mfa-diagnosis/identity-authentication-correlation.json",
+          "sha256": "e96a4ce02cb0d79ea067d24ca41fe78771bf8ef6f70a71f2dc01424d811c5852"
+        }
+      ]
+    },
+    {
+      "id": "G04-UX-04",
+      "severity": "major",
+      "finding": "Every five-second background refresh uses the same busy flag that disables the entire plan/sharing UI; current selected resources and seven directory entries are reread. This was repeatedly visible during setup."
+    },
+    {
+      "id": "G04-UX-05",
+      "severity": "major",
+      "finding": "The human entry is a developer shell with independent identity surfaces, multiple verification controls, raw-ID loading and no prepared actor-led review recovery."
+    },
+    {
+      "id": "G04-UX-06",
+      "severity": "major",
+      "finding": "The facilitated review added window/profile selection, a separate credential terminal and long multi-action chat instructions. Setup was not ready before requesting human checks."
+    }
+  ],
+  "not_proven": [
+    "Which exact visible control initiated the ordinary login; no click/network trace was captured for the human attempt.",
+    "The precise trigger for reauthentication. Configured provider900s idle timeout and observed last_seen cutoffs are consistent with it, but no provider-expiry event has been correlated.",
+    "Any server-side loss of the saved plan or fields; the query shows they remain present."
+  ],
+  "gate_state": "pending",
+  "human_review": "failed_mfa_sharing_component",
+  "implementation_or_deployment_applied": false
+}

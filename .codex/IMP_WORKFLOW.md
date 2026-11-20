@@ -1,6 +1,18 @@
 # Implementation slice sessions
 
-Read AGENTS.md, doc/IMP/README.md, doc/IMP/02-codex-agent-contracts.md and doc/IMP/03-repository-design-and-modularity.md before implementation. Preserve accepted REQ/HLD/LLD boundaries and current human gates.
+Read AGENTS.md, doc/IMP/README.md, doc/IMP/02-codex-agent-contracts.md and doc/IMP/03-repository-design-and-modularity.md before implementation. Preserve accepted REQ/HLD/LLD boundaries and current action-authorization requirements. Apply the qualification policy below to current and future implementation work.
+
+## Qualification policy — effective 2026-11-20
+
+The user directed that implementation proceed using automated tests only, with interactive human review deferred until implementation through IMP-10 is complete. Human review then belongs to bug-fix/improvement sessions using GitHub issue follow-up. This policy supersedes earlier per-step/per-stage interactive demonstrations and human stage-acceptance prerequisites, including a pending G-04 human review. Stop the current interactive review sequence; do not ask for its remaining actor observations or a stage-acceptance response.
+
+For IMP-00 through IMP-10, run the applicable automated unit, contract, integration, browser, EN/FR/accessibility, adverse, security, recovery and performance checks for the declared slice. Bind actual results to the source, build, configuration, fixtures and environment. A required automated check that failed or was not run is not a pass. Resolve blocking defects and reconcile changed candidates before recording `automated_qualified`. Do not wait for an interactive reviewer or a human stage-acceptance receipt to progress within work already authorized by the user. Retain separate slice/follow-up chats and scoped task authorization.
+
+Record `deferred_until_after_IMP10` for unperformed human usability, screen-reader, visual or language review. Automated accessibility/browser checks do not establish a human pass. Preserve existing human results and decisions as historical evidence; do not relabel a failure as passed, fabricate acceptance, or close an implementation gate merely because this policy changed. The machine progression and legacy-state handling are in `doc/IMP/stage-workflow.json`; the qualification and issue follow-up procedure is in `doc/IMP/06-demonstrations-and-human-decisions.md`.
+
+After IMP-10 is automated-qualified, use the GitHub issue follow-up functionality for each human-reported bug or improvement. Bind the issue URL/number, affected stage and candidate, expected/actual behavior, reproduction steps, synthetic evidence and acceptance criteria to a dedicated follow-up session. Implement the scoped correction, add meaningful automated regression coverage, and attach the results. Request focused human observations in that issue follow-up when needed; record the actual reply and unresolved findings. Do not reinstate a full interactive gate for every earlier slice. If GitHub access or the follow-up capability is unavailable, retain an issue-ready local handoff and report that limitation; do not invent an issue, URL, trigger or completion.
+
+This changes implementation qualification only. Product-runtime human consent, MFA, approval, independent authority and recovery-promotion controls remain enforced. Deployment, host/SSL trust changes, destructive operations, external publication, commits, pushes and merges still require the actual authorization applicable to those actions. Updating the workflow does not itself execute them or start the next slice. Preserve the private synthetic-demo and no-police-integration boundaries.
 
 ## Session and handoff ownership
 
@@ -10,7 +22,7 @@ Use one durable folder per slice: doc/IMP/slices/<IMP-NN>-<slice-slug>/. Bind it
 
 The slice README.md records scope, stage/task/operation IDs, source references, dependencies, owned code paths, current state, evidence and unresolved decisions. Keep each chat's work packet, results and handoff in sessions/<NNN>-<purpose>/ beneath the slice folder. Use the existing WorkPacket/AgentResult/DemoPacket contracts for applicable records; a handoff does not grant authorization.
 
-At chat start read the slice README and most recent handoff, inspect current branch/commit and uncommitted changes, confirm prerequisite gates and scope against the current user instruction, and identify changed sources. Do not assume access to earlier chats or treat old packets as new authorization. At chat end update the slice README and session handoff with changed files, actual checks and evidence, failures/not-run reasons, remaining work, decisions and a concrete next-chat starting point. Record actual human decisions separately; never infer stage acceptance.
+At chat start read the slice README and most recent handoff, inspect current branch/commit and uncommitted changes, confirm current automated qualification or historical accepted dependency evidence and scope against the current user instruction, and identify changed sources. Do not assume access to earlier chats or treat old packets as new authorization. At chat end update the slice README and session handoff with changed files, actual checks and evidence, failures/not-run reasons, remaining work, decisions and a concrete next-chat starting point. Record automated qualification separately from actual human decisions and action approvals; never infer human acceptance. Carry deferred human review into the post-IMP-10 GitHub issue follow-up queue.
 
 ## Modular implementation and uncluttered root
 

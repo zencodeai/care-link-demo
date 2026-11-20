@@ -1,0 +1,48 @@
+{
+  "target": "care-link-imp04-002",
+  "results": [
+    {
+      "operation": "plan_read",
+      "status": "failed",
+      "code": "manual.gateway_denied",
+      "http_status": 403,
+      "elapsed_ms": 171,
+      "hops": [
+        {
+          "host": "identity.imp04.mesh",
+          "path": "/internal/v1/manual-identity/evidence",
+          "status": 200,
+          "bytes": 535,
+          "code": null,
+          "message_key": null,
+          "state": null,
+          "elapsed_ms": 28
+        },
+        {
+          "host": "data.imp04.mesh",
+          "path": "/internal/v1/data/authority",
+          "status": 200,
+          "bytes": 1174,
+          "code": null,
+          "message_key": null,
+          "state": null,
+          "elapsed_ms": 136
+        }
+      ]
+    }
+  ],
+  "actor_authentication": [
+    {
+      "host": "identity.imp04.mesh",
+      "path": "/internal/v1/manual-identity/authenticate",
+      "status": 200,
+      "bytes": 470,
+      "code": null,
+      "message_key": null,
+      "state": null,
+      "elapsed_ms": 52
+    }
+  ],
+  "content_returned": false,
+  "credentials_returned": false
+}

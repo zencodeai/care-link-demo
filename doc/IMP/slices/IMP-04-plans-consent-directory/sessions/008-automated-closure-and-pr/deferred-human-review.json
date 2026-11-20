@@ -1,0 +1,17 @@
+{
+  "status": "deferred_until_after_IMP10",
+  "authority": "Actual user instruction to stop interactive human review through IMP-10",
+  "follow_up": "GitHub issue follow-up bug-fix/improvement sessions after integrated implementation is complete",
+  "issue_created": false,
+  "review_agenda": [
+    "Four actors \u00d7 English/French usefulness and understandable wording",
+    "VoiceOver/Chrome screen-reader names, order, focus and announcements",
+    "Populated200percent visual layout and complete sharing workflow",
+    "Login/context restoration, draft preservation and interruption recovery"
+  ],
+  "historical_results": [
+    "../005-human-accessibility-review/human-review-progress.json",
+    "../006-human-mfa-diagnosis/README.md"
+  ],
+  "human_decision_id": null
+}

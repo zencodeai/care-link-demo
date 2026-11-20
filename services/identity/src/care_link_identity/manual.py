@@ -96,6 +96,52 @@ class ManualIdentityAuthority:
         ):
             raise ManualError("manual.csrf_denied")
 
+    def consent_proof(
+        self,
+        actor: Actor,
+        proof_id: str,
+        subject_id: str,
+        session_id: str,
+        purpose: str,
+        basis: str,
+    ) -> None:
+        """Validate an action/subject-bound MFA ceremony, never a relationship.
+
+        Business custody separately verifies own-subject/session binding. The
+        verified grant retains its explicit expiry; ceremony expiry governs new
+        grants and does not silently shorten an already-created sharing grant.
+        """
+        for value in (proof_id, subject_id, session_id):
+            if str(UUID(value)) != value:
+                raise ManualError("manual.consent_proof_required")
+        expected = {
+            "plan": "plan_edit",
+            "referral": "referral_consent",
+            "follow_up": "follow_up_consent",
+        }.get(purpose)
+        if basis != "self" or expected is None:
+            raise ManualError("manual.consent_proof_required")
+        current = self.current(actor)
+        with self.service.store.transaction() as tx:
+            session = tx.get("session", digest(current.credential_ref))
+            ceremony = tx.get("ceremony", proof_id)
+            now = self.service.clock()
+            if (
+                session is None
+                or ceremony is None
+                or session.get("account_id") != actor.account_id
+                or session.get("role") != "pid"
+                or session.get("mfa") is not True
+                or ceremony.get("session_hash") != digest(current.credential_ref)
+                or ceremony.get("purpose") != expected
+                or ceremony.get("resource_id") != subject_id
+                or ceremony.get("state") != "verified"
+                or ceremony.get("expected_revision") != session.get("revision")
+                or instant(ceremony["expires_at"]) <= now
+                or not 0 <= (now - instant(session["auth_time"])).total_seconds() <= 300
+            ):
+                raise ManualError("manual.consent_proof_required")
+
     def recovery_proof(
         self, actor: Actor, ceremony_id: str, session_id: str, family_id: str
     ) -> None:

@@ -1,0 +1,48 @@
+{
+  "read_only": true,
+  "certificates": [
+    {
+      "hostname": "plans.localhost",
+      "port": 30443,
+      "certificate_file": "/private/tmp/care-link-imp04-002/tls/manual.crt",
+      "certificate_sha256_der": "c1c1f33dfbf4607f55bd17b2d492516735d2e7b300fa5d7ace29dfeee7f1646e",
+      "certificate_sha256_pem": "3c5df2dacc2e1cf790d132664e34b342cc97e19d79ab4658e249c03e1678cdcc",
+      "san_dns": [
+        "plans.localhost"
+      ],
+      "is_ca": false,
+      "not_after_utc": "2026-11-18T19:02:29+00:00",
+      "native_macos_trust": "not_trusted",
+      "current_endpoint_matches_certificate": true,
+      "dedicated_ca_tls_hostname_validation": "passed",
+      "exact_certificate_already_in_login_keychain": false
+    },
+    {
+      "hostname": "id.plans.localhost",
+      "port": 31443,
+      "certificate_file": "/private/tmp/care-link-imp04-002/tls/keycloak.crt",
+      "certificate_sha256_der": "d102ee77ef6c1ad8fce878acb0c08d089efe5512e4fb1116c9a6d29e150d9940",
+      "certificate_sha256_pem": "7295ad2ce6ec0cfefd070f8cf7f5c17307cdb46b0e7b567a1c464613fbfe7def",
+      "san_dns": [
+        "id.plans.localhost"
+      ],
+      "is_ca": false,
+      "not_after_utc": "2026-11-18T19:02:29+00:00",
+      "native_macos_trust": "not_trusted",
+      "current_endpoint_matches_certificate": true,
+      "dedicated_ca_tls_hostname_validation": "passed",
+      "exact_certificate_already_in_login_keychain": false
+    }
+  ],
+  "keychain": "/Users/main/Library/Keychains/login.keychain-db",
+  "no_native_trust_changes": true,
+  "visible_browser": {
+    "name": "Google Chrome for Testing",
+    "version": "158.0.8127.18",
+    "app_path": "/tmp/care-link-imp02-002/browsers/chromium-1254/chrome-mac-arm64/Google Chrome for Testing.app",
+    "new_window": "Incognito IMP04 origin only",
+    "observed_result": "Privacy error: Your connection is not private",
+    "warning_bypassed": false
+  },
+  "known_accepted_profiles_modified": false
+}

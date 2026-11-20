@@ -24,6 +24,7 @@ describe("precompiled browser validators under disabled string code generation",
           if (
             ![
               "ajv/dist/runtime/ucs2length",
+              "ajv/dist/runtime/equal",
               "ajv-formats/dist/formats",
             ].includes(name)
           )

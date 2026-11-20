@@ -1,0 +1,98 @@
+{
+  "initial_accepted_proposal": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/target-proposal.json",
+    "sha256": "645107a51875afc2f1ee2f6520639c8e013385ec6f92c2f12caf087e190d681a"
+  },
+  "initial_rendered_deployment": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/rendered-deployment.json",
+    "sha256": "e6f11e2a28c9b00e4de3f9bcfb27542c00f4cd8b3d0243ac0d184eeb10705237"
+  },
+  "deltas": [
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/deployment-proposal.json",
+      "sha256": "ed5454a87b51d3c87b659456157f79d66da04f5d0d9c1ab605e972164d9c36e5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/deployment-receipts.json",
+      "sha256": "d939d7e70f9236f2db292d15e34021f4240f264dfe31a3fef316a7b5724fb3cb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/diagnostic-deployment-proposal.json",
+      "sha256": "465150804b472fe34f8b8df6690463d1bbeaacc8834d2bd528d235afcfe82ee4"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/diagnostic-deployment-receipt.json",
+      "sha256": "94ca13ce605f944817f720179f6a67e5d5988c401dd0e75247d665eed0be3a65"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/identity-sweep-proposal.json",
+      "sha256": "735cd64266fb412b03bb7ed170ef101104e3f12504c8ed1f2abed4413ded4bf2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/identity-sweep-receipt.json",
+      "sha256": "8578b063ba1a0cd177ae80c44ba4cf03ff7bb64ecb0a896b488a54354f1c112a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/popup-deployment-proposal.json",
+      "sha256": "23d7390fa0e4afa2020b5ea86c4aac7508259cb9f4a3657fdc38124c4404884e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/popup-deployment-receipt.json",
+      "sha256": "2b5d020adec23322ac169ef6b921650b49f7803e910e1e0135ffeb1ac98ecb98"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/rotation-deployment-proposal.json",
+      "sha256": "be02a0b4776a5ea72f5bdcf0794fee7e4bdb7ba761f8678a9235335ca90a121d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/rotation-deployment-receipt.json",
+      "sha256": "b4c8e659d0bfdb4104610db8aff92bfee9b868aedc29dab657f2c57fc87b5dd6"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/proxy-trace-proposal.json",
+      "sha256": "ecb2d3ae455e0c530a27f5ca986f6b0ad948d6c36715fdb7559a090ce523dbd7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/proxy-trace-receipt.json",
+      "sha256": "ded2160dc571994673dfa9e1c4239be80ea93ff4be7adb3d5af073d000c251bc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/timing-activation-proposal.json",
+      "sha256": "a0a226fcb25f421b3760df0ab79487590be2517faf20633e3495ddcba04a9b81"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/timing-activation-receipt.json",
+      "sha256": "04cfe2e9d423f6aa2af727fb31e80e154ad6f8bde2ec950a6054834ae75367af"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/timing-restoration-proposal.json",
+      "sha256": "43413a576357fb29c5610c4b7bafa8ff229da0126a79813bb03cf952bf1bd774"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/timing-restoration-receipt.json",
+      "sha256": "fb8632bf531269778b5d705c6993f867b879b3fe2d384adf015561e80567ff2b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/browser-route-proposal002.json",
+      "sha256": "b0b04cab59dbf88b31bffc1ba446cea1909379b494263d3ed2a702cb619891b8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/browser-route-probe002.json",
+      "sha256": "4dcadbf2dac436d3960dd7044dcb9b118c4e93dbd30ff4bd346fcce94f2655c2"
+    }
+  ],
+  "current_timing_adapter_active": false,
+  "core_trace_marker": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/trace-disabled.json",
+    "sha256": "9911cb3df2b37f9f67793fa2c5f90c827f5736dfcb1cf02345957d185f6db287"
+  },
+  "effective_runtime_metadata": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-runtime-metadata.json",
+    "sha256": "610c3555a1e07c536caa602190c31cb0169a8258f8ef33e9730804aeeb3db0d5"
+  },
+  "workload_recovery_bound": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/human-recovery-bound.json",
+    "sha256": "9dbb9a53fdfead72f17e3bb97725cf066911d9428f5b088709c46584da0f2e08"
+  },
+  "public_only": true
+}

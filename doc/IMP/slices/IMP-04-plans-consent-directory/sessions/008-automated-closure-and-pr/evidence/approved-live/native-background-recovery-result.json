@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-11-20T16:12:20.606770+00:00",
+  "run_id": "049d31b6-b936-42f1-bbd8-9841fade8bda",
+  "candidate_image_id": "sha256:6bcbb3adf5e42fab4e078f8a513e39282db4c621807d526cdf136c88030d5cfa",
+  "actor": "carer",
+  "observation_source": "Native Chrome AX via cua_repl",
+  "failure": "Exact directory entry URL blocked, 8 requests affected",
+  "during_failure": {
+    "private_report_and_directory_cleared": true,
+    "unavailable_notice": true,
+    "draft_saved_status_retained": true
+  },
+  "after_unblock": {
+    "manual_refresh_or_business_action": false,
+    "own_report_restored": true,
+    "directory_entries_restored": 4,
+    "current_information_loaded_notice": true,
+    "stale_unavailable_notice_removed": true,
+    "unsent_carer_draft_restored": true
+  },
+  "cleanup": {
+    "patterns_removed": true,
+    "blocking_and_throttling_enabled": false,
+    "nothing_throttled_or_blocked_observed": true,
+    "devtools_closed": true
+  },
+  "business_command_replay": "Excluded by implementation and verified in focused unit tests; not inferred from this AX-only observation",
+  "human_screen_reader_result": "not_run_for_new_build",
+  "G04_acceptance": "pending"
+}

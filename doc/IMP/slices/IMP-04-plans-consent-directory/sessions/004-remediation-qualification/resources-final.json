@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-11-17T00:28:02.112522+00:00",
+  "target": "care-link-imp04-002",
+  "observations": [
+    {
+      "name": "care-link-imp04-002-pdp-app",
+      "container_id": "6e4aeced55fc6681525afb55699f92c42eb1622388740308fccfa97383a33166",
+      "image": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9",
+      "running": true,
+      "oom_killed": false,
+      "init_reaper": false,
+      "memory_limit_bytes": 268435456,
+      "pids_limit": 96,
+      "cgroup": {
+        "memory.current": "75927552",
+        "memory.peak": "141656064",
+        "memory.max": "268435456",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "pids.current": "3",
+        "pids.max": "96",
+        "pids.events": "max 0"
+      }
+    },
+    {
+      "name": "care-link-imp04-002-review-chrome",
+      "container_id": "b931b72ef3a66856086858cd6bc4422002b2e3d477fd441416e0038ccae73c8f",
+      "image": "sha256:847d0429ebe65559c9cc8cfb415f072fc9bf347050dc0fd7248d5cbcf0669a48",
+      "running": true,
+      "oom_killed": false,
+      "init_reaper": true,
+      "memory_limit_bytes": 1610612736,
+      "pids_limit": 512,
+      "cgroup": {
+        "memory.current": "233426944",
+        "memory.peak": "976039936",
+        "memory.max": "1610612736",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 194792",
+        "pids.current": "26",
+        "pids.max": "512",
+        "pids.events": "max 0",
+        "zombie_processes": 0
+      }
+    }
+  ],
+  "credentials_or_commands_returned": false
+}

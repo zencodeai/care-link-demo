@@ -1,0 +1,7 @@
+{
+  "database": "imp04_identity_002",
+  "select_only": true,
+  "samples": 127,
+  "max_observed_transaction_ms": 964.0,
+  "manual_cleanup_invoked": false
+}

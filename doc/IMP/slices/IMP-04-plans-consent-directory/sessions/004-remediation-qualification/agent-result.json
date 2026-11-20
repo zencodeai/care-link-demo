@@ -1,0 +1,219 @@
+{
+  "packet_id": "WP-IMP04-004-integration",
+  "task_id": "IMP-04-D",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "role": "imp_platform",
+  "status": "partial",
+  "changed_paths": [
+    "packages/policy-input/src/care_link_policy_input/opa.py",
+    "services/identity/src/care_link_identity/credential_sweep.py",
+    "services/identity/src/care_link_identity/retention.py",
+    "services/core/src/care_link_core/manual_http.py",
+    "apps/web/src/plans/**",
+    "tools/imp04_deployment/**",
+    "tools/imp04_verification/**",
+    "tests/unit/imp04_deployment/**",
+    "tests/e2e/imp04-live/**",
+    "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/**",
+    "doc/IMP/slices/IMP-04-plans-consent-directory/README.md",
+    "doc/IMP/executions/2026-11-16-IMP-04/ledger.json"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/results.json",
+      "sha256": "e46f9bf08500aeb1f86a60e125b930a91200a649d37ab03d25eb79c560ac765e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/demo-packet.json",
+      "sha256": "7ae97dea040e0ffdfd92846326b4827238a1bb7cde1651caea95b09c85b88999"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-candidate-manifest.json",
+      "sha256": "8065971c710bb2f84726150df2aa21aa6b3859fab0a8a8cbb739ba514e60c0b8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/qualification-results.md",
+      "sha256": "b54a5bb1e24867caf914078600ae6c8718d3d614ef56e85c0b7c20bfe4396584"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/handoff.md",
+      "sha256": "713b845a42bbe5fefe2e92fef0884c9d4140f8f704b7c2365e12eff1e6f702b5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/independent-review.json",
+      "sha256": "3b81c771a76f36acafc14d41ec163a2ea873a6062c6604a576bfe1c90ba90d80"
+    }
+  ],
+  "checks": [
+    {
+      "name": "web-focused",
+      "command": "pnpm --filter @care-link/web exec vitest run src/plans/AuthorityVerification.test.tsx src/plans/PlansWorkspace.test.tsx src/plans/RotationRecovery.test.tsx",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "\n RUN  v5.1.0 /Users/main/Workspace/projects/care-link/care-link-demo/apps/web\n\n\n Test Files  3 passed (3)\n      Tests  38 passed (38)\n   Start at  19:13:23\n   Duration  7.83s (tests 81%, environment 13%, import 5%, transform 1%)\n\n",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/web-focused.log",
+      "evidence_digest": "7042cb88c65a92fbe425e909e7b0d337e66c186418f62514e225cfca77c985fe",
+      "mock_used": true
+    },
+    {
+      "name": "web-typescript",
+      "command": "pnpm --filter @care-link/web exec tsc --noEmit",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "Exit0; command completed successfully with no stdout/stderr.",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/web-typescript.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "live-typescript",
+      "command": "pnpm exec tsc --noEmit --project tests/e2e/imp04-live/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "Exit0; command completed successfully with no stdout/stderr.",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/live-typescript.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "web-lint",
+      "command": "pnpm --filter @care-link/web exec eslint src/plans",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "Exit0; command completed successfully with no stdout/stderr.",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/web-lint.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "typescript-format",
+      "command": "pnpm exec prettier --check apps/web/src/plans tests/e2e/imp04-live",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "Checking formatting...\nAll matched files use Prettier code style!\n",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/typescript-format.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "boundaries",
+      "command": ".venv/bin/python tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "Source dependency boundaries passed (source check, not runtime isolation).\n",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/boundaries.log",
+      "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "mock_used": false
+    },
+    {
+      "name": "contracts",
+      "command": ".venv/bin/python tools/generate_contracts.py --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "Browser validators match the pinned schema (72 public contracts).\nContract snapshots match reviewed definitions.\n",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/contracts.log",
+      "evidence_digest": "0537f5be93b6bf84de3ce0a39f65bca9f01475eba04f026d50e76e89a6e2cef8",
+      "mock_used": false
+    },
+    {
+      "name": "python-focused",
+      "command": ".venv/bin/python -m pytest -q services/core/tests services/identity/tests packages/policy-input/tests tests/unit/imp04_deployment --tb=short",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "........................................................................ [ 15%]\n........................................................................ [ 30%]\n........................................................................ [ 45%]\n........................................................................ [ 61%]\n..........................sssssss....................................... [ 76%]\n........................................................................ [ 91%]\n.......................................                                  [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nSKIPPED [7] packages/policy-input/tests/test_opa.py:186: Pinned OPA fixture explicitly required for integration\n464 passed, 7 skipped, 1 warning in 4.01s\n",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/python-focused.log",
+      "evidence_digest": "cf54f63c71ec6d6430ce1b85f877cd408e1daa280811fd32432e7ef7360a3846",
+      "mock_used": true
+    },
+    {
+      "name": "pyright",
+      "command": "pnpm exec pyright tools/imp04_deployment tools/imp04_verification services/identity/src services/core/src packages/policy-input/src",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "0 errors, 0 warnings, 0 informations\n",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/pyright.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "ruff",
+      "command": ".venv/bin/python -m ruff check tools/imp04_deployment tools/imp04_verification tests/unit/imp04_deployment services/identity/src services/identity/tests/test_credential_sweep.py services/core/src/care_link_core/manual_http.py services/core/tests/test_manual_gateway_errors.py packages/policy-input",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "All checks passed!\n",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/ruff.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "python-format",
+      "command": ".venv/bin/python -m ruff format --check tools/imp04_deployment tools/imp04_verification tests/unit/imp04_deployment services/identity/src services/identity/tests/test_credential_sweep.py services/core/src/care_link_core/manual_http.py services/core/tests/test_manual_gateway_errors.py packages/policy-input",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "69 files already formatted\n",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/python-format.log",
+      "evidence_digest": "70aeb2781372748bf56bc4126fc132461937977430c7144a7cb865fa230b87a6",
+      "mock_used": false
+    },
+    {
+      "name": "whitespace",
+      "command": "git diff --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared scoped source check succeeds; live qualification is separately recorded",
+      "actual": "Exit0; command completed successfully with no stdout/stderr.",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/whitespace.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "native-javascript-syntax",
+      "command": "node --check tools/imp04_verification/native_browser.cjs",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Frozen native verifier parses",
+      "actual": "Exit0; command completed successfully with no stdout/stderr.",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/native-javascript-syntax.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    }
+  ],
+  "findings": [
+    {
+      "id": "IMP04-004-HUMAN",
+      "severity": "major",
+      "source_refs": [
+        "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/human-review.md",
+        "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/human-review-status.json"
+      ],
+      "affected_path_or_operation": "G-04 qualification",
+      "problem": "Actual human screen-reader/populated200percent accessibility results and stage decision have not been supplied.",
+      "recommendation": "Perform the concrete human procedure and record actual observations before a bound G-04 decision.",
+      "verification": "Human reviewer, date, tool versions,8rows and exact candidate digest."
+    }
+  ],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Human screen-reader review and populated native200percent visual review are not_run for all four actors and both locales; automated axe/keyboard/zoom do not replace them.",
+    "Actual human G-04 decision remains pending; deployment/remediation authorization and a300s recovery target are not stage acceptance.",
+    "Remote-controller accessibility phases on the final UI retain failures, including intermittent503/pending observations; the new native persistent-profile path is independently qualified, not evidence that every browser/controller path is reliable.",
+    "Directory sources remain stale and the previously suspended service stays suspended. No fresh availability assertion.",
+    "No elapsed30day purge, backup completion, literal provider-role-change race, or full-reload persistence of unsent drafts is claimed. Grantor authority loss was actual journalled business-principal revocation of a new case actor.",
+    "The native verifier watchdog uses best-effort context close, not a hard process-kill guarantee.",
+    "Image distribution remains a qualification workspace rather than minimal per-role packaging. Final Data/PDP/journal serving serve.py and diagnostics.py differ from newer host instrumentation; their exact hashes are recorded, and role/package source matches are separate.",
+    "Resource evidence records no OOM/PID-limit events or browser zombies; socket throttling was observed and is not reported as zero."
+  ],
+  "handoff": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/handoff.md",
+  "is_example": false
+}

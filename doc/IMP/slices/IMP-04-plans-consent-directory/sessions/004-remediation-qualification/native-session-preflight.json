@@ -1,0 +1,30 @@
+[
+  {
+    "slot": "pid",
+    "status": 200,
+    "account_matches": true,
+    "role_matches": true,
+    "assurance": "AL1"
+  },
+  {
+    "slot": "carer",
+    "status": 200,
+    "account_matches": true,
+    "role_matches": true,
+    "assurance": "AL1"
+  },
+  {
+    "slot": "professional",
+    "status": 200,
+    "account_matches": true,
+    "role_matches": true,
+    "assurance": "AL1"
+  },
+  {
+    "slot": "worker1",
+    "status": 200,
+    "account_matches": true,
+    "role_matches": true,
+    "assurance": "AL1"
+  }
+]

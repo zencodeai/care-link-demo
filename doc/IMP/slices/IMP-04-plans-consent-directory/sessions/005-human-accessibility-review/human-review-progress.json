@@ -1,0 +1,165 @@
+{
+  "status": "human_review_failed_investigation",
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-candidate-manifest.json",
+    "sha256": "8065971c710bb2f84726150df2aa21aa6b3859fab0a8a8cbb739ba514e60c0b8"
+  },
+  "demo_packet": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/demo-packet.json",
+    "sha256": "7ae97dea040e0ffdfd92846326b4827238a1bb7cde1651caea95b09c85b88999"
+  },
+  "reviewer": {
+    "attribution": "current user; display name not supplied",
+    "browser": "Google Chrome for Testing158.0.8127.18",
+    "os": "macOS26.6.2",
+    "screen_reader": "VoiceOver10 (build993)",
+    "selected_by": "actual user reply"
+  },
+  "rows": [
+    {
+      "actor": "pid",
+      "locale": "en-CA",
+      "screen_reader_status": "failed_component",
+      "populated_native_200_visual_status": "failed_component",
+      "human_observations": {
+        "source": "actual_user_reply",
+        "reply": "PID EN/FR plan and directory checks passed",
+        "question_scope": "Populated plan/directory, English and French, VoiceOver and200percent visual/keyboard, including headings/control names, reading/focus order, dispute/human-review announcements and stale/suspended/unknown directory wording.",
+        "plan_directory_screen_reader": "passed_by_human",
+        "plan_directory_200_percent_visual": "passed_by_human",
+        "mfa_sharing_draft_component": {
+          "status": "failed",
+          "source": "actual_user_reply",
+          "reply": "User logged-out automatically, demo state lost.",
+          "recorded_at": "2026-11-17T01:47:56.095439+00:00",
+          "scope": "MFA/sharing review; exact point and mechanism under diagnosis. Prior plan/directory component passes remain attributed separately."
+        }
+      },
+      "observed_at": "2026-11-17T01:38:33.963196+00:00"
+    },
+    {
+      "actor": "pid",
+      "locale": "fr-CA",
+      "screen_reader_status": "failed_component",
+      "populated_native_200_visual_status": "failed_component",
+      "human_observations": {
+        "source": "actual_user_reply",
+        "reply": "PID EN/FR plan and directory checks passed",
+        "question_scope": "Populated plan/directory, English and French, VoiceOver and200percent visual/keyboard, including headings/control names, reading/focus order, dispute/human-review announcements and stale/suspended/unknown directory wording.",
+        "plan_directory_screen_reader": "passed_by_human",
+        "plan_directory_200_percent_visual": "passed_by_human",
+        "mfa_sharing_draft_component": {
+          "status": "failed",
+          "source": "actual_user_reply",
+          "reply": "User logged-out automatically, demo state lost.",
+          "recorded_at": "2026-11-17T01:47:56.095439+00:00",
+          "scope": "MFA/sharing review; exact point and mechanism under diagnosis. Prior plan/directory component passes remain attributed separately."
+        }
+      },
+      "observed_at": "2026-11-17T01:38:33.963196+00:00"
+    },
+    {
+      "actor": "carer",
+      "locale": "en-CA",
+      "screen_reader_status": "not_run",
+      "populated_native_200_visual_status": "not_run",
+      "human_observations": null,
+      "observed_at": null
+    },
+    {
+      "actor": "carer",
+      "locale": "fr-CA",
+      "screen_reader_status": "not_run",
+      "populated_native_200_visual_status": "not_run",
+      "human_observations": null,
+      "observed_at": null
+    },
+    {
+      "actor": "professional",
+      "locale": "en-CA",
+      "screen_reader_status": "not_run",
+      "populated_native_200_visual_status": "not_run",
+      "human_observations": null,
+      "observed_at": null
+    },
+    {
+      "actor": "professional",
+      "locale": "fr-CA",
+      "screen_reader_status": "not_run",
+      "populated_native_200_visual_status": "not_run",
+      "human_observations": null,
+      "observed_at": null
+    },
+    {
+      "actor": "worker1",
+      "locale": "en-CA",
+      "screen_reader_status": "not_run",
+      "populated_native_200_visual_status": "not_run",
+      "human_observations": null,
+      "observed_at": null
+    },
+    {
+      "actor": "worker1",
+      "locale": "fr-CA",
+      "screen_reader_status": "not_run",
+      "populated_native_200_visual_status": "not_run",
+      "human_observations": null,
+      "observed_at": null
+    }
+  ],
+  "gate_id": "G-04",
+  "gate_state": "pending",
+  "human_decision_id": null,
+  "instruction_to_proceed_is_stage_acceptance": false,
+  "native_tls_validation": "passed_for_main_and_actual_provider_by_native_mac_and_Chrome_connection_secure",
+  "setup_approval": "mac-trust-approval.json",
+  "trust_receipt": "mac-trust-receipt.json",
+  "trust_validation": "mac-trust-validation.json",
+  "browser_setup": "human-browser-launch002.json",
+  "current_step": {
+    "actor": "pid",
+    "locale": "en-CA",
+    "stage": "investigate_actual_logout_and_state_loss",
+    "actual_user_report": "logged in",
+    "server_role_verified": "pid",
+    "account_id_verified": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+    "assurance_verified": "AL2",
+    "retained_conversation": "9511e9cf-bb8e-49c8-a46b-496015f26a09",
+    "retained_plan": "9990438f-9536-469a-8f12-6e6e6735e9a8",
+    "human_accessibility_result": "failed_component",
+    "assistant_preparation_verified": {
+      "pid_uid_role_AL2": true,
+      "conversation_loaded_revision": "14",
+      "plan_loaded_revision": "5",
+      "populated_plan_has_medication_and_disputed_strategy_reports": true,
+      "seven_directory_options_loaded": true,
+      "native_chrome_zoom_label": "200%",
+      "main_and_provider_native_chrome_connection_secure": true
+    },
+    "voiceover_enable_attempt": "Native app launch requested; UI controller timed out, actual enablement not yet independently confirmed",
+    "next_component": "Actual PID MFA/sharing preview and draft screen-reader/visual review after plan/directory observations",
+    "actual_human_plan_directory_reply": "PID EN/FR plan and directory checks passed",
+    "unsent_draft_prepared": true,
+    "recipient_prepared": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+    "proposed_preview_fields": [
+      "strategies"
+    ],
+    "field_selection_verification": "Human to confirm actual preview; checkbox click was attempted but selected state not independently confirmed",
+    "new_permission_created": false,
+    "actual_provider_mfa_component": "not_yet_reported",
+    "actual_human_mfa_reply": "User logged-out automatically, demo state lost."
+  },
+  "native_mac_trust_cleanup": {
+    "status": "pending_after_review",
+    "scope": "Only two exact newly imported SSL leaf certificates, per approved rollback commands"
+  },
+  "blocking_findings": [
+    {
+      "id": "IMP04-005-HUMAN-01",
+      "severity": "major",
+      "status": "open",
+      "actual_user_report": "User logged-out automatically, demo state lost.",
+      "impact": "Cannot claim MFA/draft/preview review pass or request acceptance until diagnosed and resolved/reviewed."
+    }
+  ]
+}

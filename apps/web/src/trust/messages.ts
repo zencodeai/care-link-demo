@@ -11,6 +11,8 @@ export const trustMessages = {
     signOut: "Sign out",
     role: "Requested sign-in role",
     pid: "Participant",
+    carer: "Carer",
+    professionalParticipant: "Professional participant",
     worker: "Worker",
     supervisor: "Supervisor",
     roleHint:
@@ -81,6 +83,8 @@ export const trustMessages = {
     signOut: "Se déconnecter",
     role: "Rôle de connexion demandé",
     pid: "Participant",
+    carer: "Proche aidant",
+    professionalParticipant: "Participant professionnel",
     worker: "Intervenant",
     supervisor: "Superviseur",
     roleHint:

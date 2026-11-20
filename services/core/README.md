@@ -11,3 +11,6 @@ The five-process source composition, preparation/provisioning and protected work
 The additive local continuation-issuance route is `POST /v1/sessions/{session_id}/continuations` with RevisionCommand. It returns ContinuationIssued once at AL0. Retry a lost response with the same key; HTTP409 REPLACEMENT_UNAVAILABLE means use current operation status and a fresh bound recovery ceremony, not a guessed token or a new automatic command.
 
 The IMP-03 session records exact source, checks and remaining operational qualification. All service data is fictional; no police integration, real partner connector or autonomous emergency contact is implemented.
+# IMP-04 planning port
+
+`HttpPlanningGateway` and its separate typed port/routes expose plans, exact consent and informational directory options through the current signed delegation/identity/PDP chain. `create_manual_app(..., planning=gateway)` explicitly composes these capabilities. The gateway receives no business database credentials. Actor-owned reports have a narrow current read; carer/professional status grants no workforce or PID authority. Source implementation, contract extensions and qualification limits are recorded in the [IMP-04 handoff](../../doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/handoff.md).

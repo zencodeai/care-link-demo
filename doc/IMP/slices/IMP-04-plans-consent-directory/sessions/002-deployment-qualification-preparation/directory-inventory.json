@@ -1,0 +1,142 @@
+{
+  "pin": {
+    "key_id": "imp04-synthetic-source-001",
+    "algorithm": "Ed25519",
+    "public_key_hex": "81e1f34b1603e825069913a28cae702aa61be88b0f8f56bf05a74a6afffe09bc",
+    "public_key_sha256": "78184a7cffde02ac1d6b95aa54e2b0cc1d8be20defe0767d7dbdec7b0fd41cfa",
+    "scope": "IMP-04 private synthetic engineering source candidates",
+    "human_review": false,
+    "participant_admission": false
+  },
+  "fixture_sha256": "26862660a86ce46088c9c98977eb78b6f49fe37ea585aac7c97ffc835443f6e6",
+  "items": [
+    {
+      "service_id": "40400000-0000-4000-8000-000000000001",
+      "operating_state": "normal_operations",
+      "feed_artifact_digest": "5f01726cfdb1403859c46aada876422acaa51325838a7a95998aedcff89ba9fe",
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000101",
+          "revision": "1",
+          "digest": "57a17ebdd7d596eeab5df6cdca4cf2242c359fc477c230aa92a761b930149c68",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "human_review": false,
+      "participant_admission": false
+    },
+    {
+      "service_id": "40400000-0000-4000-8000-000000000002",
+      "operating_state": "temporary_closure",
+      "feed_artifact_digest": "0c659697f58978b3699b33701d73d478b6b6cd869eca0b7142c51328ca47e237",
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000102",
+          "revision": "1",
+          "digest": "138650ff9b8f4ed47ff193e93a33d7297332b0a8aa89750aa9521a6766f2b741",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "human_review": false,
+      "participant_admission": false
+    },
+    {
+      "service_id": "40400000-0000-4000-8000-000000000003",
+      "operating_state": "regional_outage",
+      "feed_artifact_digest": "8a9e90adaf6fa4ede53e88c0d2889d203eb0af501e4325cb0146ca0c2959f775",
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000103",
+          "revision": "1",
+          "digest": "c043bde2edd91921c9cb871749effb163f5eb988fd53e11b9bc3f9625cc0f814",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "human_review": false,
+      "participant_admission": false
+    },
+    {
+      "service_id": "40400000-0000-4000-8000-000000000004",
+      "operating_state": "holiday_hours",
+      "feed_artifact_digest": "a56b6941de9a40b7a3415592cb5a4428168e1534601e7af01f209e36cac29966",
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000104",
+          "revision": "1",
+          "digest": "a7b319196f0f40a346149bfca7aa7e42b80e7c48f435475481ec5a6435954bdf",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "human_review": false,
+      "participant_admission": false
+    },
+    {
+      "service_id": "40400000-0000-4000-8000-000000000005",
+      "operating_state": "severe_weather",
+      "feed_artifact_digest": "1beee154fcc1622aacd82f31b04312edb80aa563611b28b8d5c7bfbea60ae499",
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000105",
+          "revision": "1",
+          "digest": "0192e2e4b9ffdc1a54845a4b709628adf2ff56cf76c47ba144a67234abcd8483",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "human_review": false,
+      "participant_admission": false
+    },
+    {
+      "service_id": "40400000-0000-4000-8000-000000000006",
+      "operating_state": "api_failure",
+      "feed_artifact_digest": "4eafaa22b3199de29e4e5cc10f875f22ae2632a284affd1aab9dab0655bb21ef",
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000106",
+          "revision": "1",
+          "digest": "531be5fc9122db9649e3b60dc7cd263ff5804ae9923289e65135d9e19071e6b1",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "human_review": false,
+      "participant_admission": false
+    },
+    {
+      "service_id": "40400000-0000-4000-8000-000000000007",
+      "operating_state": "conflicting_source",
+      "feed_artifact_digest": "4a7cff5c819b8eb39a4c96d98ee464bace7a4f57ec034e43cbdd63f74fa3b337",
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000107",
+          "revision": "1",
+          "digest": "956140a1eac5b9168eb03c8aec0fcfa0b0f26b7e94746f318b8ed2897a82a790",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "disputed"
+        }
+      ],
+      "human_review": false,
+      "participant_admission": false
+    }
+  ],
+  "freshness_seconds": {
+    "structural": 2592000,
+    "operational": 86400,
+    "near_realtime": 300
+  },
+  "fixed_observed_at": "2026-11-16T18:00:00Z",
+  "near_realtime_expires_at": "2026-11-16T18:05:00Z",
+  "operational_expires_at": "2026-11-17T18:00:00Z",
+  "structural_expires_at": "2026-12-16T18:00:00Z"
+}

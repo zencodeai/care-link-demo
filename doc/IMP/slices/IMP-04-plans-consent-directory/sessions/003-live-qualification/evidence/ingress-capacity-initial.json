@@ -1,0 +1,79 @@
+{
+  "target": "care-link-imp04-002",
+  "checked_at": "2026-11-16T19:24:01.624980+00:00",
+  "probe": "concurrent native TLS keep-alive GET health",
+  "results": [
+    {
+      "index": 1,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 2,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 3,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 4,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 5,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 6,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 7,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 8,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 9,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 10,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 11,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 12,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 13,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 14,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 15,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 16,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 17,
+      "error_class": "SSLEOFError"
+    },
+    {
+      "index": 18,
+      "error_class": "SSLEOFError"
+    }
+  ]
+}

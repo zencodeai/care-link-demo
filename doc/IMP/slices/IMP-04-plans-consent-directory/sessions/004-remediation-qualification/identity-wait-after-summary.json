@@ -1,0 +1,8 @@
+{
+  "select_only": true,
+  "samples": 38,
+  "max_observed_transaction_ms": 13.0,
+  "max_observed_query_ms": 11.0,
+  "background_routine_manually_invoked": false,
+  "pre_fix_max_observed_transaction_ms": 964
+}

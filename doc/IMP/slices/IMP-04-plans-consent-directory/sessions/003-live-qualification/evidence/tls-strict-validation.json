@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-11-16T19:02:47.783189+00:00",
+  "checks": [
+    {
+      "certificate": "manual",
+      "exit_code": 0,
+      "verified": true
+    },
+    {
+      "certificate": "keycloak",
+      "exit_code": 0,
+      "verified": true
+    },
+    {
+      "certificate": "postgres",
+      "exit_code": 0,
+      "verified": true
+    }
+  ],
+  "new_ca_sha256": "35e8a8bce98c0a2048674dc35912eadc7ec00d33e4c6c1b0966ed7c7f749b6b5",
+  "initial_unqualified_new_only_certificates_retained_privately": true,
+  "accepted_certificates_changed": false,
+  "failed_check_attempt": "/usr/bin/openssl LibreSSL lacks verify_hostname; repeated using existing OpenSSL3 without changing certificates"
+}

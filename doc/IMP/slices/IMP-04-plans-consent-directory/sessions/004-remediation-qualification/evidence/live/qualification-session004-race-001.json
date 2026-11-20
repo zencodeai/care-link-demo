@@ -1,0 +1,181 @@
+{
+  "phase": "race",
+  "exit_code": 1,
+  "private_output": "/private/tmp/care-link-imp04-002/qualification-session004-race-001",
+  "status": "failed",
+  "not_run": [
+    "A03-revoke-before-policy: phase evidence incomplete (0/1 passed observations)",
+    "A03-expire-before-final-output: phase evidence incomplete (0/1 passed observations)"
+  ],
+  "observations": [
+    {
+      "case": "Q02",
+      "slot": "pid",
+      "status": "passed",
+      "account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:28:36.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "pid-other",
+      "status": "passed",
+      "account_id": "fe2303a4-ee1b-4931-a1ac-193e4938337c",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:47.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "carer",
+      "status": "passed",
+      "account_id": "fb881f96-e088-429c-a404-5208f22b4068",
+      "role": "carer",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:48.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "professional",
+      "status": "passed",
+      "account_id": "42dfc3a0-58f2-40d7-97c9-768d07dcd315",
+      "role": "professional_participant",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:49.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "worker1",
+      "status": "passed",
+      "account_id": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:50.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "worker2",
+      "status": "passed",
+      "account_id": "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:51.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "supervisor",
+      "status": "passed",
+      "account_id": "6962247a-6849-4077-b445-0034051cbd57",
+      "role": "supervisor",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:52.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "operator",
+      "status": "passed",
+      "account_id": "1152c7ae-32b6-4383-b99c-7589a663e453",
+      "role": "operator",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:53.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "security",
+      "status": "passed",
+      "account_id": "5f67f7bb-7e05-48c4-ae77-4d30666d604f",
+      "role": "security",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:54.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q01-browser",
+      "status": "passed",
+      "browser_version": "157.0.8103.78",
+      "ignore_https_errors": false,
+      "actual_provider_login_required_for_fresh_session": false,
+      "restored_genuine_same_actor_browser_state": true,
+      "phase_actor_slots_restored": [
+        "pid",
+        "worker2"
+      ],
+      "unused_verified_actor_contexts_kept_closed": true,
+      "maximum_simultaneous_initial_authenticator_contexts": 1,
+      "api_driver_shell": "Actual main HTML/CSP; only app JavaScript assets aborted; no API interception",
+      "visible_ui_driver": "Real application bundle loaded on demand with ensureMain(true)",
+      "origin": "https://plans.localhost:30443",
+      "provider_origin": "https://id.plans.localhost:31443"
+    },
+    {
+      "case": "A03-scope",
+      "status": "passed",
+      "session_id": "af44ec2f-bf9c-4f41-98a7-40ef06ea45d2",
+      "subject_id": "3f61e063-376a-493d-be1d-c90a86b89167",
+      "plan_id": "27c042ff-0642-4c88-9ab2-d0faef232af0",
+      "fresh_subject_and_plan": true,
+      "prior_grants_restrictions_and_subjects_untouched": true,
+      "actual_subject_bound_mfa": true
+    },
+    {
+      "case": "A03-revoke-timing",
+      "status": "observed",
+      "nonce": "2e644a70-1b87-434f-b3e2-fb4245f59ac0",
+      "ready": {
+        "target": "care-link-imp04-002",
+        "phase": "before_policy",
+        "action": "plan_read",
+        "actor_id": "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+        "nonce": "2e644a70-1b87-434f-b3e2-fb4245f59ac0",
+        "operation_id": "04a70ffb-d18e-4c9a-9915-18c6a0f8fc08",
+        "marker_sha256": "b38d4ac390bcc088768149a25f996f041e021052c63eaddd94fa0fb347a749c1",
+        "entered_at": "2026-11-16T22:31:27.880370+00:00"
+      },
+      "finished": {
+        "target": "care-link-imp04-002",
+        "phase": "before_policy",
+        "action": "plan_read",
+        "actor_id": "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+        "nonce": "2e644a70-1b87-434f-b3e2-fb4245f59ac0",
+        "operation_id": "04a70ffb-d18e-4c9a-9915-18c6a0f8fc08",
+        "marker_sha256": "b38d4ac390bcc088768149a25f996f041e021052c63eaddd94fa0fb347a749c1",
+        "entered_at": "2026-11-16T22:31:27.880370+00:00",
+        "released_at": "2026-11-16T22:31:28.565517+00:00"
+      },
+      "pending_status": 503,
+      "pending_message_key": "manual.deadline_exceeded",
+      "actual_csrf_prefetched_before_hold": true,
+      "revoke_idempotency_key": "53265462-520e-4864-8e8b-ab4205df875c"
+    }
+  ],
+  "error_first_lines": [
+    "Error: Pending request denied after current journalled revocation"
+  ]
+}

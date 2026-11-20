@@ -1,0 +1,16 @@
+{
+  "authority": [
+    {
+      "source_kind": "user_message",
+      "instruction_reference": "Implement service slice 04",
+      "scope": "IMP-04 source implementation and isolated local checks"
+    }
+  ],
+  "predecessor_acceptance_ref": {
+    "path": "doc/IMP/executions/2026-11-16-IMP-03/ledger.json",
+    "sha256": "8a2f845de4bb457557700e0636f00cb1cab9b255d021247127bc7485c3f77e3e"
+  },
+  "G-04": null,
+  "deployment_authorization": null,
+  "publication_authorization": null
+}

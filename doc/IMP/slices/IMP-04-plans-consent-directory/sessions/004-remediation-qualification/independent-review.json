@@ -1,0 +1,30 @@
+{
+  "reviewer_agent": "/root/imp04_release_review",
+  "mode": "read_only",
+  "status": "completed",
+  "human_acceptance": false,
+  "candidate_reviewed": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-candidate-manifest.json",
+    "sha256": "8065971c710bb2f84726150df2aa21aa6b3859fab0a8a8cbb739ba514e60c0b8"
+  },
+  "checks": [
+    "DemoPacket and AgentResult schemas; matching candidate bindings",
+    "853 original public hash bindings; final source-state correction independently recomputed",
+    "All532 final host source-file hashes and exact tracked Git diff recomputed; combined diff_digest matches",
+    "Accepted64 exact metadata preservation; owned29running/2stopped",
+    "Five roles unfrozen; instrumentation off; final native8/8 exactUID/role/AL2, zero axe violations, actual200percent zoom and cleanup",
+    "Earlier failures, actual503 and human/accessibility/G04 limitations remain explicit"
+  ],
+  "finding": {
+    "id": "IMP04-004-REVIEW-DIGEST",
+    "problem": "Combined source-state digest input/command/serialization was opaque",
+    "status": "resolved",
+    "verification": "Exact canonical object, serialization, Git command/scope and inventory definition exposed; independently recomputed combined digest matches candidate."
+  },
+  "remaining_packet_findings": [],
+  "remaining_human_work": [
+    "Screen-reader and populated200percent visual review in8actor/locale cases",
+    "Actual human G-04 decision on exact candidate"
+  ],
+  "no_edits_or_live_operations": true
+}

@@ -1,0 +1,85 @@
+...........EEE..................EEEE.EE                                  [100%]
+==================================== ERRORS ====================================
+_ ERROR at setup of test_postgres_plan_versions_grant_filter_revoke_and_replay _
+services/data/tests/conftest.py:118: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 25434 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_____ ERROR at setup of test_postgres_invalid_proof_has_no_positive_effect _____
+services/data/tests/conftest.py:118: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 25434 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_postgres_retirement_preserves_independent_plan_lifecycle _
+services/data/tests/conftest.py:118: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 25434 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_rejected_replacement_preserves_last_admitted_version __
+services/data/tests/conftest.py:118: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 25434 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_missing_record_ingestion_race_serializes_and_versions_append _
+services/data/tests/conftest.py:118: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 25434 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_authoritative_suspension_is_journalled_and_cannot_be_relaxed_by_ingest _
+services/data/tests/conftest.py:118: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 25434 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+__ ERROR at setup of test_participant_cannot_admit_sources_or_suspend_options __
+services/data/tests/conftest.py:118: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 25434 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_____ ERROR at setup of test_failed_first_source_keeps_no_admitted_version _____
+services/data/tests/conftest.py:118: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 25434 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_search_filters_need_and_cursor_is_bound_to_actor_query _
+services/data/tests/conftest.py:118: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 25434 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+=========================== short test summary info ============================
+ERROR services/data/tests/test_plans_consent.py::test_postgres_plan_versions_grant_filter_revoke_and_replay
+ERROR services/data/tests/test_plans_consent.py::test_postgres_invalid_proof_has_no_positive_effect
+ERROR services/data/tests/test_plans_consent.py::test_postgres_retirement_preserves_independent_plan_lifecycle
+ERROR services/data/tests/test_directory.py::test_rejected_replacement_preserves_last_admitted_version
+ERROR services/data/tests/test_directory.py::test_missing_record_ingestion_race_serializes_and_versions_append
+ERROR services/data/tests/test_directory.py::test_authoritative_suspension_is_journalled_and_cannot_be_relaxed_by_ingest
+ERROR services/data/tests/test_directory.py::test_participant_cannot_admit_sources_or_suspend_options
+ERROR services/data/tests/test_directory.py::test_failed_first_source_keeps_no_admitted_version
+ERROR services/data/tests/test_directory.py::test_search_filters_need_and_cursor_is_bound_to_actor_query
+30 passed, 9 errors in 0.09s

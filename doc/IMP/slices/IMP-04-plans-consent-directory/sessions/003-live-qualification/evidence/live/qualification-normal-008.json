@@ -1,0 +1,204 @@
+{
+  "phase": "normal",
+  "exit_code": 1,
+  "private_output": "/private/tmp/care-link-imp04-002/qualification-normal-008",
+  "status": "failed",
+  "not_run": [
+    "Q07 lifecycle copy metadata/purge (HTTP close/retire exercised only in lifecycle/all)",
+    "Q03 pending-review DB count requires coordinator read-only verification",
+    "Q08 manual screen reader/200% zoom",
+    "A03 deterministic deployed output race",
+    "A04 concurrent absent-grant serialization",
+    "A05 independently provisioned delegation",
+    "A07 workload/root/default-deny probes",
+    "A08 dependency fault barriers",
+    "A09 runtime DB privilege checks"
+  ],
+  "observations": [
+    {
+      "case": "Q02",
+      "slot": "pid",
+      "status": "passed",
+      "account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T19:37:45.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": false
+    },
+    {
+      "case": "Q02",
+      "slot": "pid-other",
+      "status": "passed",
+      "account_id": "fe2303a4-ee1b-4931-a1ac-193e4938337c",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T19:37:46.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": false
+    },
+    {
+      "case": "Q02",
+      "slot": "carer",
+      "status": "passed",
+      "account_id": "fb881f96-e088-429c-a404-5208f22b4068",
+      "role": "carer",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T19:37:47.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": false
+    },
+    {
+      "case": "Q02",
+      "slot": "professional",
+      "status": "passed",
+      "account_id": "42dfc3a0-58f2-40d7-97c9-768d07dcd315",
+      "role": "professional_participant",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T19:37:47.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": false
+    },
+    {
+      "case": "Q02",
+      "slot": "worker1",
+      "status": "passed",
+      "account_id": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T19:37:48.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": false
+    },
+    {
+      "case": "Q02",
+      "slot": "worker2",
+      "status": "passed",
+      "account_id": "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T19:37:49.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": false
+    },
+    {
+      "case": "Q02",
+      "slot": "supervisor",
+      "status": "passed",
+      "account_id": "6962247a-6849-4077-b445-0034051cbd57",
+      "role": "supervisor",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T19:37:50.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": false
+    },
+    {
+      "case": "Q02",
+      "slot": "operator",
+      "status": "passed",
+      "account_id": "1152c7ae-32b6-4383-b99c-7589a663e453",
+      "role": "operator",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T19:37:51.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": false
+    },
+    {
+      "case": "Q02",
+      "slot": "security",
+      "status": "passed",
+      "account_id": "5f67f7bb-7e05-48c4-ae77-4d30666d604f",
+      "role": "security",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T19:37:52.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": false
+    },
+    {
+      "case": "Q01-browser",
+      "status": "passed",
+      "browser_version": "157.0.8103.78",
+      "ignore_https_errors": false,
+      "actual_provider_login_required_for_fresh_session": true,
+      "restored_genuine_same_actor_browser_state": true,
+      "maximum_simultaneous_initial_authenticator_contexts": 1,
+      "api_driver_shell": "Actual main HTML/CSP; only app JavaScript assets aborted; no API interception",
+      "visible_ui_driver": "Real application bundle loaded on demand with ensureMain(true)",
+      "origin": "https://plans.localhost:30443",
+      "provider_origin": "https://id.plans.localhost:31443"
+    },
+    {
+      "case": "Q03/A01",
+      "status": "passed",
+      "plan_id": "9c7fc257-c29f-4a0a-9912-eaa690a25118",
+      "plan_revision": "3",
+      "fields": [
+        "plan.medication_report",
+        "plan.strategies"
+      ],
+      "attribution_all_owner": true,
+      "stable_create_replayed_current_projection": true,
+      "denied_unshared_roles": 4
+    },
+    {
+      "case": "Q05/A01",
+      "slot": "carer",
+      "status": "passed",
+      "session_id": "c6b06c0b-d549-4ed4-9407-05e5648a1fa2",
+      "report_id": "2709486b-2d85-4f5a-b9f4-b8d738181015",
+      "restored_committed_report_after_reload": true,
+      "cross_author_denied": true
+    },
+    {
+      "case": "Q05/A01",
+      "slot": "professional",
+      "status": "passed",
+      "session_id": "8f2bd09a-bf87-45ac-bd91-8f4e4e1d8394",
+      "report_id": "45f4f5fe-77ea-4cff-b391-e819244bc30b",
+      "restored_committed_report_after_reload": true,
+      "cross_author_denied": true
+    },
+    {
+      "case": "Q04/A01",
+      "status": "passed",
+      "grant_id": "d390f3e6-0bcc-42cc-8045-f66a35897621",
+      "ceremony_verified": true,
+      "visible_exact_preview_confirmed": true,
+      "disclosed_fields": [
+        "plan.strategies"
+      ],
+      "medication_absent": true,
+      "unassigned_worker_append_denied": true
+    },
+    {
+      "case": "Q03-worker-conflict",
+      "status": "passed",
+      "plan_id": "9c7fc257-c29f-4a0a-9912-eaa690a25118",
+      "assignment_id": "ff3922eb-8eea-4805-a896-bc7000299d70",
+      "plan_revision": "4",
+      "exact_assignment_required": true,
+      "two_authors_retained": true,
+      "strategies_disputed": true,
+      "pending_human_review_db_count": "coordinator_read_only_check_required"
+    },
+    {
+      "case": "A02-revocation",
+      "status": "passed",
+      "grant_id": "d390f3e6-0bcc-42cc-8045-f66a35897621",
+      "revoked_at": "2026-11-16T19:38:14.790781Z",
+      "later_disclosure_denied": true
+    }
+  ],
+  "error_first_lines": [
+    "Error: Live API failed: slot=worker2; path=/v1/plans/9c7fc257-c29f-4a0a-9912-eaa690a25118; status=0; code=no_code"
+  ]
+}

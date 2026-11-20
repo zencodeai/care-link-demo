@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-16T18:31:53.095341+00:00",
+  "schema": {
+    "path": "doc/IMP/contracts/planning.schema.json",
+    "sha256": "1c0b6a36ce895f6401f635f5abe14676105eeed6a66b8aa5ce2da15005baf51f"
+  },
+  "results": [
+    {
+      "file": "work-packet.json",
+      "contract": "WorkPacket",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "demo-packet.json",
+      "contract": "DemoPacket",
+      "status": "passed",
+      "errors": []
+    },
+    {
+      "file": "agent-result.json",
+      "contract": "AgentResult",
+      "status": "passed",
+      "errors": []
+    }
+  ]
+}

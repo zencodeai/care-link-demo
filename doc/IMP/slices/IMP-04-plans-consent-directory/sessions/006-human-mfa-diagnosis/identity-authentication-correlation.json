@@ -1,0 +1,133 @@
+{
+  "read_only": true,
+  "retained_plan_metadata": [
+    {
+      "id": "9990438f-9536-469a-8f12-6e6e6735e9a8",
+      "subject_id": "e4a61f05-75a7-4148-be38-876a869c3936",
+      "session_id": "9511e9cf-bb8e-49c8-a46b-496015f26a09",
+      "revision": 5,
+      "state": "active",
+      "created_at": "2026-11-16 23:21:29.121279+00:00",
+      "updated_at": "2026-11-16 23:51:10.451500+00:00",
+      "retired_at": null
+    }
+  ],
+  "retained_field_metadata": [
+    {
+      "id": "468f3c50-0367-453a-bb90-ac4e50157717",
+      "plan_id": "9990438f-9536-469a-8f12-6e6e6735e9a8",
+      "author_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "revision": 2,
+      "field_key": "plan.strategies",
+      "verification": "unverified",
+      "supersedes_id": null
+    },
+    {
+      "id": "7b18ec2d-3617-4a8f-a4c0-96723423d53f",
+      "plan_id": "9990438f-9536-469a-8f12-6e6e6735e9a8",
+      "author_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "revision": 3,
+      "field_key": "plan.medication_report",
+      "verification": "unverified",
+      "supersedes_id": null
+    },
+    {
+      "id": "128a5166-49f5-47c1-abbe-e28a7f38ef5b",
+      "plan_id": "9990438f-9536-469a-8f12-6e6e6735e9a8",
+      "author_id": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+      "revision": 4,
+      "field_key": "plan.strategies",
+      "verification": "disputed",
+      "supersedes_id": null
+    },
+    {
+      "id": "ed61f7ea-c8e4-4acd-b647-4cef41ab409d",
+      "plan_id": "9990438f-9536-469a-8f12-6e6e6735e9a8",
+      "author_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "revision": 5,
+      "field_key": "plan.strategies",
+      "verification": "disputed",
+      "supersedes_id": "468f3c50-0367-453a-bb90-ac4e50157717"
+    }
+  ],
+  "isolation": "repeatable_read",
+  "actor_account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+  "exact_browser_state_matched_intents": [
+    {
+      "case": "initial_login",
+      "browser_authorization_utc": "2026-11-17T01:24:47.915681+00:00",
+      "metadata": {
+        "intent_created_at": "2026-11-17T01:24:47.814Z",
+        "intent_expires_at": "2026-11-17T01:29:47.814Z",
+        "intent_state": "completed",
+        "requested_role": "pid",
+        "has_ceremony": false,
+        "ceremony_purpose": null,
+        "ceremony_state": null,
+        "ceremony_resource_id": null,
+        "ceremony_not_before": null,
+        "ceremony_expires_at": null,
+        "proof_mfa": null,
+        "proof_consumed": null,
+        "bound_session_account": null,
+        "bound_session_auth_time": null,
+        "bound_session_revoked": null,
+        "predecessor_account": null,
+        "predecessor_revoked": null,
+        "predecessor_replaced_locally": null
+      }
+    },
+    {
+      "case": "failed_review_authentication",
+      "browser_authorization_utc": "2026-11-17T01:45:40.956005+00:00",
+      "metadata": {
+        "intent_created_at": "2026-11-17T01:45:40.880Z",
+        "intent_expires_at": "2026-11-17T01:50:40.880Z",
+        "intent_state": "completed",
+        "requested_role": "pid",
+        "has_ceremony": false,
+        "ceremony_purpose": null,
+        "ceremony_state": null,
+        "ceremony_resource_id": null,
+        "ceremony_not_before": null,
+        "ceremony_expires_at": null,
+        "proof_mfa": null,
+        "proof_consumed": null,
+        "bound_session_account": null,
+        "bound_session_auth_time": null,
+        "bound_session_revoked": null,
+        "predecessor_account": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+        "predecessor_revoked": "true",
+        "predecessor_replaced_locally": "true"
+      }
+    }
+  ],
+  "actor_session_metadata": [
+    {
+      "created_at": "2026-11-17T01:29:27.587Z",
+      "auth_time": "2026-11-17T01:29:27.000Z",
+      "expires_at": "2026-11-17T02:29:27.000Z",
+      "last_seen": "2026-11-17T01:44:23.645Z",
+      "role": "pid",
+      "revision": "1",
+      "role_revision": "1",
+      "mfa": "true",
+      "revoked": "true",
+      "replaced_locally": "true"
+    },
+    {
+      "created_at": "2026-11-17T01:46:27.424Z",
+      "auth_time": "2026-11-17T01:46:27.000Z",
+      "expires_at": "2026-11-17T02:46:27.000Z",
+      "last_seen": "2026-11-17T02:01:25.246Z",
+      "role": "pid",
+      "revision": "1",
+      "role_revision": "1",
+      "mfa": "true",
+      "revoked": "false",
+      "replaced_locally": null
+    }
+  ],
+  "actor_ceremonies_in_interval": [],
+  "credential_keys_hashes_tokens_urls_or_narratives_returned": false
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "name": "deployment-unit-tests",
+    "command": ".venv/bin/python -m pytest -q tests/unit/imp04_deployment",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Command succeeds using repository tools; this is a source/tooling check",
+    "actual": "35 tests passed; mocked Docker boundaries, separate from actual live evidence",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/deployment-unit-tests.log",
+    "evidence_digest": "df70669069be3675214df9a658fcbdd9c46674dced6b2b05ae940adff42baf07",
+    "mock_used": true
+  },
+  {
+    "name": "ruff",
+    "command": ".venv/bin/python -m ruff check tools/imp04_deployment tools/imp04_verification tests/unit/imp04_deployment",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Command succeeds using repository tools; this is a source/tooling check",
+    "actual": "Exit 0: All checks passed!",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/ruff.log",
+    "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "mock_used": false
+  },
+  {
+    "name": "python-format",
+    "command": ".venv/bin/python -m ruff format --check tools/imp04_deployment tools/imp04_verification tests/unit/imp04_deployment",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Command succeeds using repository tools; this is a source/tooling check",
+    "actual": "Exit 0: 25 files already formatted",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/python-format.log",
+    "evidence_digest": "7715b02781372f8741fb309aee97a6483e689c9039f0d78081dd910f70b0256e",
+    "mock_used": false
+  },
+  {
+    "name": "pyright",
+    "command": "pnpm exec pyright tools/imp04_deployment tools/imp04_verification",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Command succeeds using repository tools; this is a source/tooling check",
+    "actual": "Exit 0: 0 errors, 0 warnings, 0 informations",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/pyright.log",
+    "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+    "mock_used": false
+  },
+  {
+    "name": "live-typescript",
+    "command": "pnpm exec tsc --noEmit --project tests/e2e/imp04-live/tsconfig.json",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Command succeeds using repository tools; this is a source/tooling check",
+    "actual": "Exit 0: ",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/live-typescript.log",
+    "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mock_used": false
+  },
+  {
+    "name": "live-format",
+    "command": "pnpm exec prettier --check tests/e2e/imp04-live",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Command succeeds using repository tools; this is a source/tooling check",
+    "actual": "Exit 0: Checking formatting...\nAll matched files use Prettier code style!",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/live-format.log",
+    "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+    "mock_used": false
+  },
+  {
+    "name": "contracts",
+    "command": ".venv/bin/python tools/generate_contracts.py --check",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Command succeeds using repository tools; this is a source/tooling check",
+    "actual": "Exit 0: Browser validators match the pinned schema (72 public contracts).\nContract snapshots match reviewed definitions.",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/contracts.log",
+    "evidence_digest": "0537f5be93b6bf84de3ce0a39f65bca9f01475eba04f026d50e76e89a6e2cef8",
+    "mock_used": false
+  },
+  {
+    "name": "boundaries",
+    "command": ".venv/bin/python tools/check_boundaries.py",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Command succeeds using repository tools; this is a source/tooling check",
+    "actual": "Exit 0: Source dependency boundaries passed (source check, not runtime isolation).",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/boundaries.log",
+    "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+    "mock_used": false
+  },
+  {
+    "name": "whitespace",
+    "command": "git diff --check",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Command succeeds using repository tools; this is a source/tooling check",
+    "actual": "Exit 0: ",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/whitespace.log",
+    "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mock_used": false
+  }
+]

@@ -78,7 +78,7 @@ class ReviewService(ContinuationService):
                     "review_draft",
                     session_id=selected["id"],
                     principal_id=current.account_id,
-                    limit=2,
+                    limit=3,
                 ):
                     expired = instant(row, "expires_at") <= self.clock()
                     prepared = tx.review_records(
@@ -246,6 +246,12 @@ class ReviewService(ContinuationService):
             row, _current = self.require_session(session, guard)
             self.active(row)
             kind = text(body, "kind")
+            if kind == "plan":
+                run = (
+                    tx.peek("review_run", current.review_run_id) if current.review_run_id else None
+                )
+                if run is None or run.get("scenario") != "plans-consent-directory":
+                    raise ManualError("manual.review_context_required")
             if kind == "intake" and current.role not in PARTICIPANTS:
                 raise ManualError("manual.participant_role")
             existing = tx.rows(
@@ -294,6 +300,8 @@ class ReviewService(ContinuationService):
             row, current_guard = self.require_session(session, guard)
             self.active(row)
             kind = text(body, "kind")
+            if kind not in {"intake", "message"}:
+                raise ManualError("manual.invalid_review_intent", 422)
             drafts = tx.rows(
                 "review_draft",
                 session_id=session_id,

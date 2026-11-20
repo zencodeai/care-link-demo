@@ -1,0 +1,70 @@
+{
+  "target": "care-link-imp04-002",
+  "scope": "Own issuer only; no agents/fences/accepted resources changed",
+  "before": [
+    {
+      "role": "identity",
+      "spiffe_id": "spiffe://care-link.demo/demo/identity",
+      "not_after": "2026-11-16T20:45:15+00:00"
+    },
+    {
+      "role": "core",
+      "spiffe_id": "spiffe://care-link.demo/demo/core",
+      "not_after": "2026-11-16T20:46:06+00:00"
+    },
+    {
+      "role": "data",
+      "spiffe_id": "spiffe://care-link.demo/demo/data",
+      "not_after": "2026-11-16T20:45:41+00:00"
+    },
+    {
+      "role": "pdp",
+      "spiffe_id": "spiffe://care-link.demo/demo/pdp",
+      "not_after": "2026-11-16T20:46:32+00:00"
+    },
+    {
+      "role": "journal",
+      "spiffe_id": "spiffe://care-link.demo/demo/journal",
+      "not_after": "2026-11-16T20:44:10+00:00"
+    }
+  ],
+  "status": "failed",
+  "issuer_stopped_at": "2026-11-16T20:41:35.067385+00:00",
+  "after_issuer_stop": [
+    {
+      "role": "identity",
+      "spiffe_id": "spiffe://care-link.demo/demo/identity",
+      "not_after": "2026-11-16T20:45:15+00:00"
+    },
+    {
+      "role": "core",
+      "spiffe_id": "spiffe://care-link.demo/demo/core",
+      "not_after": "2026-11-16T20:46:06+00:00"
+    },
+    {
+      "role": "data",
+      "spiffe_id": "spiffe://care-link.demo/demo/data",
+      "not_after": "2026-11-16T20:45:41+00:00"
+    },
+    {
+      "role": "pdp",
+      "spiffe_id": "spiffe://care-link.demo/demo/pdp",
+      "not_after": "2026-11-16T20:46:32+00:00"
+    },
+    {
+      "role": "journal",
+      "spiffe_id": "spiffe://care-link.demo/demo/journal",
+      "not_after": "2026-11-16T20:44:10+00:00"
+    }
+  ],
+  "wait_until": "2026-11-16T20:46:37.067385+00:00",
+  "expired_observed_at": "2026-11-16T20:46:37.070685+00:00",
+  "expired_protected_bootstrap_status": 503,
+  "expired_public_health_status": 200,
+  "expired_trust_denied": true,
+  "issuer_restarted_at": "2026-11-16T20:46:37.248159+00:00",
+  "after_recovery": null,
+  "recovered_protected_bootstrap_status": 503,
+  "clock_changed": false,
+  "agent_or_fence_restart": false
+}

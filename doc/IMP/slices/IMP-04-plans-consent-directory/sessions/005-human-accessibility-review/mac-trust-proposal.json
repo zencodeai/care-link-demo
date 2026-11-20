@@ -1,0 +1,103 @@
+{
+  "proposal_id": "IMP04-005-native-mac-leaf-trust",
+  "state": "prepared_not_applied",
+  "reason": "Actual VoiceOver/Chrome review requires native macOS TLS trust; browser shows certificate privacy interstitial.",
+  "authorization_required": "Explicit approval for this Mac user trust change; prior headless-only qualification did not authorize Mac trust edits.",
+  "certificates": [
+    {
+      "hostname": "plans.localhost",
+      "port": 30443,
+      "certificate_file": "/private/tmp/care-link-imp04-002/tls/manual.crt",
+      "certificate_sha256_der": "c1c1f33dfbf4607f55bd17b2d492516735d2e7b300fa5d7ace29dfeee7f1646e",
+      "certificate_sha256_pem": "3c5df2dacc2e1cf790d132664e34b342cc97e19d79ab4658e249c03e1678cdcc",
+      "san_dns": [
+        "plans.localhost"
+      ],
+      "is_ca": false,
+      "not_after_utc": "2026-11-18T19:02:29+00:00",
+      "native_macos_trust": "not_trusted",
+      "current_endpoint_matches_certificate": true,
+      "dedicated_ca_tls_hostname_validation": "passed",
+      "exact_certificate_already_in_login_keychain": false
+    },
+    {
+      "hostname": "id.plans.localhost",
+      "port": 31443,
+      "certificate_file": "/private/tmp/care-link-imp04-002/tls/keycloak.crt",
+      "certificate_sha256_der": "d102ee77ef6c1ad8fce878acb0c08d089efe5512e4fb1116c9a6d29e150d9940",
+      "certificate_sha256_pem": "7295ad2ce6ec0cfefd070f8cf7f5c17307cdb46b0e7b567a1c464613fbfe7def",
+      "san_dns": [
+        "id.plans.localhost"
+      ],
+      "is_ca": false,
+      "not_after_utc": "2026-11-18T19:02:29+00:00",
+      "native_macos_trust": "not_trusted",
+      "current_endpoint_matches_certificate": true,
+      "dedicated_ca_tls_hostname_validation": "passed",
+      "exact_certificate_already_in_login_keychain": false
+    }
+  ],
+  "apply_commands": [
+    [
+      "/usr/bin/security",
+      "add-trusted-cert",
+      "-r",
+      "trustAsRoot",
+      "-p",
+      "ssl",
+      "-k",
+      "/Users/main/Library/Keychains/login.keychain-db",
+      "/private/tmp/care-link-imp04-002/tls/manual.crt"
+    ],
+    [
+      "/usr/bin/security",
+      "add-trusted-cert",
+      "-r",
+      "trustAsRoot",
+      "-p",
+      "ssl",
+      "-k",
+      "/Users/main/Library/Keychains/login.keychain-db",
+      "/private/tmp/care-link-imp04-002/tls/keycloak.crt"
+    ]
+  ],
+  "rollback_commands": [
+    [
+      "/usr/bin/security",
+      "delete-certificate",
+      "-t",
+      "-Z",
+      "c1c1f33dfbf4607f55bd17b2d492516735d2e7b300fa5d7ace29dfeee7f1646e",
+      "/Users/main/Library/Keychains/login.keychain-db"
+    ],
+    [
+      "/usr/bin/security",
+      "delete-certificate",
+      "-t",
+      "-Z",
+      "d102ee77ef6c1ad8fce878acb0c08d089efe5512e4fb1116c9a6d29e150d9940",
+      "/Users/main/Library/Keychains/login.keychain-db"
+    ]
+  ],
+  "scope": "Import/trust only two exact non-CA SSL server certificates in current user login keychain. Each has one DNS SAN and expires2026-11-18T19:02:29Z. Applies to current-user SSL clients, not just the review window. No CA/root key or CA certificate imported.",
+  "chromium_constraint": "Current Chromium skips application/hostname-scoped macOS trust records. Commands therefore use SSL policy only and rely on unchanged single-host certificate SAN, exact leaf pin, non-CA constraints and expiry; no application/hostname trust-record constraints are claimed.",
+  "chrome_source": "https://chromium.googlesource.com/chromium/src/+/main/net/cert/internal/trust_store_mac.cc",
+  "apple_source": "https://developer.apple.com/documentation/security/sectrustsettingsresult/trustasroot",
+  "retained": [
+    "Native certificate/hostname/expiry checking; no browser warning bypass or ignoreTLSflags",
+    "System keychain, DNS, accepted IMP03 profiles/runtime, all prior restrictions/data and application images",
+    "No certificate/private-key regeneration, public exposure, software install, commit/push or automatic stage acceptance"
+  ],
+  "validation": [
+    "Before each command verify exact DER fingerprint/SAN/non-CA/expiry and absence from login keychain; capture actual outcome",
+    "Native macOS SSL trust evaluation and normal Chrome navigation must succeed for main and IdP",
+    "Record expected wrong-hostname failure and verify non-SSL policy not trusted",
+    "If command fails or unexpected existing trust appears, stop; do not broaden scope or bypass warnings"
+  ],
+  "cleanup": "After human review completes, remove only the two newly imported exact fingerprint records and their user trust. Capture receipt and verify native trust returns to prior untrusted state. Do not remove any existing certificate.",
+  "preflight": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/005-human-accessibility-review/native-review-preflight.json",
+    "sha256": "5f317496fbc58e95172f404261cc4e2b6b14af0504d2cc87218eac24e549dbd7"
+  },
+  "chrome_source_blob_sha1_observed": "5bb8181f318983f7108bcfca5b911a1fed1ce582"
+}

@@ -7,6 +7,7 @@ import {
 import { Conversation } from "./Conversation";
 import { Workforce } from "./Workforce";
 import { PendingOperations } from "./PendingOperations";
+import { PlansWorkspace } from "../plans/PlansWorkspace";
 import { labels } from "./labels";
 import { useReview } from "./useReview";
 import type { Conversation as ConversationView, Locale } from "./types";
@@ -216,6 +217,14 @@ export function ReviewApp() {
               conversation={current}
               locale={locale}
               text={text}
+            />
+          )}
+          {channel.session && channel.workspace?.run_state === "active" && (
+            <PlansWorkspace
+              key={channel.session.account_id}
+              locale={locale}
+              {...(current ? { initialSessionId: current.id } : {})}
+              viewId={channel.view?.view_id ?? null}
             />
           )}
         </div>

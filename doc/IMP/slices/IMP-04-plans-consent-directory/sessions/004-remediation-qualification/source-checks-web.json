@@ -1,0 +1,50 @@
+[
+  {
+    "name": "web-focused",
+    "command": "pnpm --filter @care-link/web exec vitest run src/plans/AuthorityVerification.test.tsx src/plans/PlansWorkspace.test.tsx",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/web-focused.log",
+    "sha256": "b74229806bc64d96b0df98aa324690c0f4a70c6199414a31d06a5d2f9735a121"
+  },
+  {
+    "name": "web-typescript",
+    "command": "pnpm --filter @care-link/web exec tsc --noEmit",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/web-typescript.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "live-typescript",
+    "command": "pnpm exec tsc --noEmit --project tests/e2e/imp04-live/tsconfig.json",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/live-typescript.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "web-lint",
+    "command": "pnpm --filter @care-link/web exec eslint src/plans",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/web-lint.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "typescript-format",
+    "command": "pnpm exec prettier --check apps/web/src/plans tests/e2e/imp04-live",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/typescript-format.log",
+    "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+  },
+  {
+    "name": "pyright",
+    "command": "pnpm exec pyright tools/imp04_deployment tools/imp04_verification services/identity/src services/core/src packages/policy-input/src",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/pyright.log",
+    "sha256": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332"
+  }
+]

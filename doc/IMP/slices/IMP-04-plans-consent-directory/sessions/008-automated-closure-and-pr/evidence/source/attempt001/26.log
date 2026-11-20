@@ -1,0 +1,24 @@
+
+/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/imp04-live/adverse.ts
+  90:9  error  The value assigned to 'pause' is not used in subsequent statements   no-useless-assignment
+  92:7  error  The value assigned to 'result' is not used in subsequent statements  no-useless-assignment
+
+/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/imp04-live/browser.ts
+  627:7  error  There is no `cause` attached to the symptom error being thrown  preserve-caught-error
+
+/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/imp04-live/cases.ts
+   229:5  error  There is no `cause` attached to the symptom error being thrown  preserve-caught-error
+   568:5  error  There is no `cause` attached to the symptom error being thrown  preserve-caught-error
+  1821:7  error  There is no `cause` attached to the symptom error being thrown  preserve-caught-error
+
+/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/imp04-live/manual.ts
+  255:7  error  Unsafe usage of ThrowStatement  no-unsafe-finally
+
+/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/imp04-live/pending_ui.ts
+  71:7  error  The value assigned to 'paused' is not used in subsequent statements         no-useless-assignment
+  73:5  error  The value assigned to 'originalKey' is not used in subsequent statements    no-useless-assignment
+  74:5  error  The value assigned to 'originalBody' is not used in subsequent statements   no-useless-assignment
+  75:7  error  The value assigned to 'failureStatus' is not used in subsequent statements  no-useless-assignment
+
+✖ 11 problems (11 errors, 0 warnings)
+

@@ -1,0 +1,10 @@
+{
+  "status": "pending",
+  "screen_reader_review": "not_run",
+  "populated_native_200_percent_human_visual_review": "not_run",
+  "gate_id": "G-04",
+  "gate_state": "pending",
+  "human_decision_id": null,
+  "source_instruction": "IMP_WORKFLOW: Record actual human decisions separately; never infer stage acceptance.",
+  "checklist": "human-review.md"
+}

@@ -1,0 +1,6 @@
+{
+  "action": "Manually invoke live IdentityRetention.expire_credentials twice for profiling",
+  "decision": "rejected",
+  "reason": "Can revoke sessions, delete proof records and expire ceremonies; mutating authentication-state side effect not specifically authorized",
+  "resolution": "Invocation not executed. Continue with SELECT-only live observations and synthetic test fixtures; do not manually invoke cleanup. Background application maintenance remains ordinary existing behavior."
+}

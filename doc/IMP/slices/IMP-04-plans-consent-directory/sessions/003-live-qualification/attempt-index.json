@@ -1,0 +1,550 @@
+{
+  "scope": "Each attempt retains its actual outcome; observations in failed phases do not make the whole phase pass. Per-phase not_run lists are local to that phase, not a global checklist. Raw browser artifacts are excluded.",
+  "attempts": [
+    {
+      "attempt": "qualification-absence-001",
+      "phase": "absent-race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-absence-001.json",
+        "sha256": "c7510892918af613e685bb690c1b43958c74633613ca9b6263b7a437d30e2564"
+      }
+    },
+    {
+      "attempt": "qualification-absence-002",
+      "phase": "absent-race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [
+        "A04-timing"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-absence-002.json",
+        "sha256": "c0a20c2b408000d811d2fac0f9e0c2e345f338b7e9faf904410d03d1c40c8f6c"
+      }
+    },
+    {
+      "attempt": "qualification-accessibility-001",
+      "phase": "accessibility",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [
+        "Q08",
+        "Q08"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-accessibility-001.json",
+        "sha256": "43cc09c6add296aedf48a149726ebbb9cb11686a46185d1e5e4cde7b42d6b352"
+      }
+    },
+    {
+      "attempt": "qualification-accessibility-002",
+      "phase": "accessibility",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-accessibility-002.json",
+        "sha256": "09b31fc4c041c3bbaa6552f6409043f7bb0b4f07e3791cb406b88000277d0d7c"
+      }
+    },
+    {
+      "attempt": "qualification-accessibility-003",
+      "phase": "accessibility",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [
+        "Q08"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-accessibility-003.json",
+        "sha256": "5aaf4be1c588a662a234bf22f6b97a957351cf43220f9fe82f62b55704e19e54"
+      }
+    },
+    {
+      "attempt": "qualification-accessibility-004",
+      "phase": "accessibility",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [
+        "Q08"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-accessibility-004.json",
+        "sha256": "5e797f999bfe695ca719b7609033872c1b3ff81682049983eb782665e0b7674f"
+      }
+    },
+    {
+      "attempt": "qualification-delegation-001",
+      "phase": "delegation",
+      "status": "passed",
+      "exit_code": 0,
+      "observed_cases": [
+        "A05-scope",
+        "A05-scope",
+        "A05-scope",
+        "A05"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-delegation-001.json",
+        "sha256": "afa7922aa711598306de03212b74f17b3153e6febf0daa71b71435bbef98ee54"
+      }
+    },
+    {
+      "attempt": "qualification-delegation-expired-001",
+      "phase": "delegation-expired",
+      "status": "passed",
+      "exit_code": 0,
+      "observed_cases": [
+        "A05-expired"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-delegation-expired-001.json",
+        "sha256": "c56cf94b9e298a63feeb8b67e1ac0c210b85d6b2af7aa262154ff5f15e518c55"
+      }
+    },
+    {
+      "attempt": "qualification-dependency-001",
+      "phase": "dependency",
+      "status": "passed",
+      "exit_code": 0,
+      "observed_cases": [
+        "A08",
+        "A08",
+        "A08"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-dependency-001.json",
+        "sha256": "c38dda6866408e6acf4fda1052f36f3d108a5ecfb8a383e9fb20e503ccbe7abd"
+      }
+    },
+    {
+      "attempt": "qualification-directory-001",
+      "phase": "directory",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-directory-001.json",
+        "sha256": "013bfa0ffe17f5320138a48b3473fc8a252228f048403635d4cb456f97867cd8"
+      }
+    },
+    {
+      "attempt": "qualification-directory-002",
+      "phase": "directory",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-directory-002.json",
+        "sha256": "db9c44ed8902e0ea2c2c0ab14b77282dfb5c33c8aab51901da0072d402152b97"
+      }
+    },
+    {
+      "attempt": "qualification-directory-003",
+      "phase": "directory",
+      "status": "passed",
+      "exit_code": 0,
+      "observed_cases": [
+        "Q06-pre-ingest",
+        "Q06-pre-ingest",
+        "Q06-pre-ingest",
+        "Q06-pre-ingest",
+        "Q06-pre-ingest",
+        "Q06-pre-ingest",
+        "Q06-pre-ingest",
+        "Q06",
+        "Q06",
+        "A06"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-directory-003.json",
+        "sha256": "00de3e7e23725e6a94fde6da4c1094bc718cc235af1a98d4af0fa202e27ed43d"
+      }
+    },
+    {
+      "attempt": "qualification-lifecycle-001",
+      "phase": "lifecycle",
+      "status": "passed",
+      "exit_code": 0,
+      "observed_cases": [
+        "Q07"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-lifecycle-001.json",
+        "sha256": "b107da3266d9369fd7854e1c2d57a3481a1cde0526c206ef9656228888b3e200"
+      }
+    },
+    {
+      "attempt": "qualification-manual-001",
+      "phase": "manual-regression",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-manual-001.json",
+        "sha256": "8bddeee09fd178d6990e0d782289f3d517459f9bbdc105ffac0cd858d6c74059"
+      }
+    },
+    {
+      "attempt": "qualification-manual-002",
+      "phase": "manual-regression",
+      "status": "passed",
+      "exit_code": 0,
+      "observed_cases": [
+        "Q09-manual-created",
+        "Q09-manual-regression"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-manual-002.json",
+        "sha256": "ead9ac3e2c6d6ee65cb7eeb2077678f58408857218f5df0a1181a1237867effe"
+      }
+    },
+    {
+      "attempt": "qualification-normal-001",
+      "phase": "normal",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-001.json",
+        "sha256": "781dc33f0f75bae776b78ab5384e7dbc7531f351c7c2cbf3e507866307aaaeb4"
+      }
+    },
+    {
+      "attempt": "qualification-normal-002",
+      "phase": "normal",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-002.json",
+        "sha256": "c3ed8d1e63566152aab464a50471cbcc52138aa12df68b85f895a20e285cfae5"
+      }
+    },
+    {
+      "attempt": "qualification-normal-003",
+      "phase": "normal",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-003.json",
+        "sha256": "cd6e48a9ba3c1f85d88884ef27ce1ce664e3e14ed2ade1a733fd05fe3d251be5"
+      }
+    },
+    {
+      "attempt": "qualification-normal-004",
+      "phase": "normal",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-004.json",
+        "sha256": "bb608502f76f67a60e2cd38919924a3e330e38ee023754853a1b044a7cf6bec6"
+      }
+    },
+    {
+      "attempt": "qualification-normal-005",
+      "phase": "normal",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-005.json",
+        "sha256": "daf72af7cc9a2a3b278939599c1786e5e8b42568442b94c01757ebe3e938e95a"
+      }
+    },
+    {
+      "attempt": "qualification-normal-006",
+      "phase": "normal",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-006.json",
+        "sha256": "aa8343d46562c8242b3f48d4ab25788c9b859d63a8f2969a1469399026ecd26a"
+      }
+    },
+    {
+      "attempt": "qualification-normal-007",
+      "phase": "normal",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [
+        "Q03/A01",
+        "Q05/A01",
+        "Q05/A01"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-007.json",
+        "sha256": "f448475f43faa5c87f2be949294b423fe54491f20d107652bdee0a238e5c51b7"
+      }
+    },
+    {
+      "attempt": "qualification-normal-008",
+      "phase": "normal",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [
+        "Q03/A01",
+        "Q05/A01",
+        "Q05/A01",
+        "Q04/A01",
+        "Q03-worker-conflict",
+        "A02-revocation"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-008.json",
+        "sha256": "76a4ac0f9453e9eae99608089d2e8d75ec6a4a0d23ff2ce8ffb4796c77c1d494"
+      }
+    },
+    {
+      "attempt": "qualification-normal-009",
+      "phase": "normal",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-009.json",
+        "sha256": "47a9183c307eedac59dec5b4a97983a65b76c022cb29a107b77b08ccca6e9e55"
+      }
+    },
+    {
+      "attempt": "qualification-normal-continue-001",
+      "phase": "normal-continue",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [
+        "normal-continue",
+        "A02-real-expiry"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-continue-001.json",
+        "sha256": "01e7b4c1c37a1d64ea51689f21cfdf3284a493193c6318c065c180033663710f"
+      }
+    },
+    {
+      "attempt": "qualification-pending-ui-001",
+      "phase": "pending-ui",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-pending-ui-001.json",
+        "sha256": "227f58a40195e6b6ead5c8d53b62025fc60ad680e7302377a7784547a99a6386"
+      }
+    },
+    {
+      "attempt": "qualification-pending-ui-002",
+      "phase": "pending-ui",
+      "status": "passed",
+      "exit_code": 0,
+      "observed_cases": [
+        "Q09-pending-ui"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-pending-ui-002.json",
+        "sha256": "6c70905ad10b415544123e13705da84d69e2363a81eab7b52b3a82e963ad274e"
+      }
+    },
+    {
+      "attempt": "qualification-race-001",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-001.json",
+        "sha256": "b13fd2f28c719e99e6a08c5809a69ae66d00513d9a3eff389515a3fea6326dbf"
+      }
+    },
+    {
+      "attempt": "qualification-race-002",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-002.json",
+        "sha256": "611a0225a0bb217dce2420f2cc4afda82ae9ffd436db891f3f50443c6fe45858"
+      }
+    },
+    {
+      "attempt": "qualification-race-003",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-003.json",
+        "sha256": "d37ee12a2b3350230bf294c210d36a831d7fb331a3e36bb72bae47b47eaeb652"
+      }
+    },
+    {
+      "attempt": "qualification-race-004",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-004.json",
+        "sha256": "813596f64f99af35b5ccbd59b0f17a12aabc3d95849536e12a0e4a256c0ecffc"
+      }
+    },
+    {
+      "attempt": "qualification-race-005",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-005.json",
+        "sha256": "12b4fcfc7df2be57364c19e46a7c27b7dca2a274a7ed473236b67fa94db65778"
+      }
+    },
+    {
+      "attempt": "qualification-race-006",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-006.json",
+        "sha256": "f6bb667ae9b647c8a1d4d925499db9e2854589f40cab94ebdb046b8910c94fe8"
+      }
+    },
+    {
+      "attempt": "qualification-race-007",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-007.json",
+        "sha256": "51e176f22954507688ef90bdd1b3b7d2d72cdd6fc864997ea567d232fabea56b"
+      }
+    },
+    {
+      "attempt": "qualification-race-008",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-008.json",
+        "sha256": "b0a50865050e54e78bba4dd8c7093b1df7eebe27acca676cc4d5fc5ec9638f57"
+      }
+    },
+    {
+      "attempt": "qualification-race-009",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-009.json",
+        "sha256": "47b3eb54926f24899ac7c047341cb4dfc0f5f447e19a99eaa55768280ed3b770"
+      }
+    },
+    {
+      "attempt": "qualification-race-010",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-010.json",
+        "sha256": "aa2ed5c7e5a32ba7c6433cef4c165c836c06deb90222221b598c2de4100941f2"
+      }
+    },
+    {
+      "attempt": "qualification-race-011",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-011.json",
+        "sha256": "43c6fddfe90f7b574937cf88b566fc964fbb0a2d6cbb6e2014ca0599a9e0e7b2"
+      }
+    },
+    {
+      "attempt": "qualification-race-012",
+      "phase": "race",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [
+        "A03-revoke-timing"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-012.json",
+        "sha256": "722b7da044dbc2499d0d42ae6a13a42e8890257c9efbe034f8edf5acb40974d3"
+      }
+    },
+    {
+      "attempt": "qualification-reload-001",
+      "phase": "reload-only",
+      "status": "passed",
+      "exit_code": 0,
+      "observed_cases": [
+        "Q09-reload-only"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-reload-001.json",
+        "sha256": "1f4fd715c9e261c5533cf039a2e8e11c7203fb1e8737fa1f68fde547e4b54654"
+      }
+    },
+    {
+      "attempt": "qualification-report-ui-001",
+      "phase": "report-ui",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-report-ui-001.json",
+        "sha256": "3e87a7c953dc86bae969e814e8be27389f91de1914760e059813dff5fc1e9cc2"
+      }
+    },
+    {
+      "attempt": "qualification-report-ui-002",
+      "phase": "report-ui",
+      "status": "failed",
+      "exit_code": 1,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-report-ui-002.json",
+        "sha256": "1614ab89cbea24833f38a7d92f1cf727a2794addc41d7cf8955f0048be39caf1"
+      }
+    },
+    {
+      "attempt": "qualification-report-ui-003",
+      "phase": "report-ui",
+      "status": "passed",
+      "exit_code": 0,
+      "observed_cases": [
+        "Q05-report-ui",
+        "Q05-report-ui",
+        "Q05-report-ui",
+        "Q05-report-ui"
+      ],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-report-ui-003.json",
+        "sha256": "361eebe6f7112eccb2a75508a48b3bdaf6f62c971b3816e374ea5fe70f4da170"
+      }
+    },
+    {
+      "attempt": "qualification-supervisor-001",
+      "phase": "signin",
+      "status": "passed",
+      "exit_code": 0,
+      "observed_cases": [],
+      "evidence": {
+        "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-supervisor-001.json",
+        "sha256": "8a9e3dd3db68018b525a3191e2ee7f6511f54e403cc7005f9735cc48d061ae75"
+      }
+    }
+  ]
+}

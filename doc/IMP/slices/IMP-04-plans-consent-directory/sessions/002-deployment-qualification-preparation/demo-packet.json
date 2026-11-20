@@ -1,0 +1,147 @@
+{
+  "packet_id": "DEMO-IMP04-002-live-preparation",
+  "stage_id": "IMP-04",
+  "gate_id": "G-04",
+  "candidate": {
+    "commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+    "diff_digest": "33dca1728a97abf0baa5949a2e6df66768e4a42f2f1b8748628aa90757dd95ba",
+    "artifact_digest": "c94d5b2115a3ac09eb1cee89bac9fe6081d605e24d1142bd76c05e4848372301",
+    "configuration_digest": "bc76f4d3fd3f10236234a280bf2b94e1e2142cfc95e5bc89a59e17e8c9d81505",
+    "contract_digest": "476117eb56bd9d34a96ee928d6c282aeffc5fff4f4ebdadbe0cd668a1c178a8c",
+    "environment_digest": "645107a51875afc2f1ee2f6520639c8e013385ec6f92c2f12caf087e190d681a",
+    "fixture_digest": "26862660a86ce46088c9c98977eb78b6f49fe37ea585aac7c97ffc835443f6e6"
+  },
+  "state": "draft",
+  "preconditions": [
+    "Preparation binding only: source/build hashes inherited from unchanged session001; environment_digest binds target-proposal.json, not a deployment",
+    "Implement and review exact new target orchestration and immutable image/config artifacts before deployment-change approval",
+    "Record actual deployment authorization and reviewed candidate digest before first live mutation",
+    "Recheck resource collisions/capacity and accepted IMP03 state; abort on unexpected change",
+    "Separate synthetic accounts/current native TLS and workload trust; no real-source/clinical claims"
+  ],
+  "normal_steps": [
+    {
+      "action": "Q01: Confirm source/image/configuration/TLS/trust binding and accepted IMP03 preservation",
+      "expected": "Only new target changes; current verify-full TLS/SVID and actual identity issuer; no accepted restart",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "Q02: Use distinct PID, carer, professional participant, workforce and admin accounts in separate cookie jars",
+      "expected": "Current roles/assurance come from provider and identity, no browser role authority",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "Q03: PID creates and appends attributed plan fields; assigned worker adds scoped conflicting safety report",
+      "expected": "Append-only attribution/dispute/pending review; no overwriting another author",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "Q04: Complete subject-bound plan_edit MFA; preview and grant only plan.strategies to worker1 for purpose plan",
+      "expected": "Exact recipient, fields, source revisions, interval and authority basis; medication field absent",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "Q05: Carer and professional create own reports then reload",
+      "expected": "Own author/subject reports persist; relationship labels confer no PID/workforce permission",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "Q06: Authorized operator ingests seven exact signed directory fixtures; inspect in EN/FR",
+      "expected": "Seven named operating labels, provenance, fixed observation times, stale/unknown availability and no executable destination",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "Q07: Close support session, retain active plan; retire plan",
+      "expected": "Separate plan lifecycle and retirement+30-day copy anchors without simulated purge claim",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "Q08: Repeat actor journeys in English/French with keyboard, focus, errors, live regions, axe and manual screen reader review",
+      "expected": "Usable actor controls and truthful unknown/recovery state; human accessibility evidence recorded",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "Q09: Preserve unsent input/pending key during step-up or transient failure in a mounted page; after reload re-read committed work by recorded IDs; exercise inherited manual flow on new target",
+      "expected": "Mounted-page in-memory input and same pending logical key survive the tested transient flow; committed work is recoverable by IDs and no duplicate effects. No pending-intent/draft persistence across full reload is claimed.",
+      "actual": null,
+      "evidence_refs": []
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "A01: Attempt PID plan/report access by unshared carer/professional/other PID; forge browser role/subject/scope",
+      "expected": "Direct API denies; no extra fields or cross-author reports",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "A02: Request wider fields than current grant, narrow surviving grant, expire grant on wall clock",
+      "expected": "Only every currently permitted field; no broad-grant cache or clock substitution",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "A03: Hold pending output at reviewed target-only final-release barrier, then revoke/expire/change grantor role/delegation",
+      "expected": "Zero newly forbidden bytes after boundary; correlated DB/journal/output timestamps; no lock-induced fake race",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "A04: Run fresh grant creation races on absent grant scope",
+      "expected": "Subject guard serialization with real DB and independent request streams; actual effects counted",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "A05: Independently provision exact carer delegation, then expire or revoke it and retry",
+      "expected": "Runtime cannot provision delegation; exact fields/purpose/subject/grantor/time checked; journaled restrictions cannot be undone",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "A06: Mutate source payload/signature/key ID and attempt ingest; suspend admitted service as security",
+      "expected": "Quarantine rejected digest; participant denied; authoritative suspension persists across reingest",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "A07: Use a new diagnostic foreign CA and same logical role name against the new target; compare public accepted/new root fingerprints and disjoint bundles; test unknown/no/expired SVID and direct backend/DB probes",
+      "expected": "Independent-root default deny, UID/route/expiry/fence checks; no accepted private key/SVID access or accepted reconfiguration",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "A08: Pause new target identity/PDP/journal only using verified process receipts; recover new dependencies",
+      "expected": "Bounded fail-closed/unknown outcomes with no permissive fallback; correct current state on recovery",
+      "actual": null,
+      "evidence_refs": []
+    },
+    {
+      "action": "A09: Try runtime DDL/delegation write/immutable source-field-event mutation and cross-role credentials",
+      "expected": "Least privilege, RLS/trigger and kernel UID/socket checks enforce; admin secrets absent from serving mounts",
+      "actual": null,
+      "evidence_refs": []
+    }
+  ],
+  "checks": [],
+  "residuals": [
+    "Deployment not authorized/applied; target-specific operator/recipe and live harness do not yet exist",
+    "Draft candidate environment digest binds target proposal, not live configuration; build/image/config/actor/journal identities must be populated and packet rebound before live review",
+    "Deterministic deployed final-release consent race requires independently reviewed barrier; source/adapter races cannot count as deployed evidence",
+    "Fresh positive directory availability requires actual new observations/revisions and signed artifacts with independently reviewed pins",
+    "Native EN/FR keyboard/screen reader/accessibility and G-04 human decision not run",
+    "Private synthetic engineering only; no police integration/autonomous emergency contact, real participant admission or IMP05"
+  ],
+  "acceptance_scope": "Pending private synthetic G-04 engineering qualification. No deployment, live evidence or human acceptance asserted. All actual step fields remain null until performed.",
+  "rollback": "Use target-proposal.json rollback: stop only inspected/receipt-bound new IMP04 resources, retain state/evidence; accepted IMP03 keeps serving. No down migration or restriction reset.",
+  "human_decision_id": null,
+  "is_example": false
+}

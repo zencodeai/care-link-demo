@@ -1,0 +1,69 @@
+{
+  "checked_at": "2026-11-17T00:24:20.897047+00:00",
+  "scope": "Read-only metadata for five exact owned IMP04 roles; no configs/DSNs/keys returned. OPA is a separately mounted artifact.",
+  "status": "passed",
+  "roles": [
+    {
+      "uid": 22011,
+      "qualification_enabled": false,
+      "cgroup_freeze": "0",
+      "trace_marker_present": false,
+      "role": "identity",
+      "container_id": "fef04eb164f88646aacf2f6804cbbc81137b4a340a1991f06b713b7c3d6816a1",
+      "image": "sha256:e195d6351dbe1a95cba3b8a817608ea7acd54a53a147d3447378f1ff6a6ec17d",
+      "readonly_rootfs": true,
+      "app_directory_mount_absent": true
+    },
+    {
+      "uid": 22012,
+      "qualification_enabled": false,
+      "cgroup_freeze": "0",
+      "trace_marker_present": false,
+      "role": "core",
+      "container_id": "7df1f404ebf2e591b9db8d6e96dc5270e947cdb7123e7e62b73c2b427f4f19cf",
+      "image": "sha256:ac3d235c269226bf459cdaaf3ff2288db104af971ae71b88147a627d727e3150",
+      "readonly_rootfs": true,
+      "app_directory_mount_absent": true
+    },
+    {
+      "uid": 22013,
+      "qualification_enabled": false,
+      "cgroup_freeze": "0",
+      "trace_marker_present": false,
+      "role": "data",
+      "container_id": "4ba847cab137d0345be70e80d78756ecbd26c3c328d3349c7a1adb804ab28adb",
+      "image": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9",
+      "readonly_rootfs": true,
+      "app_directory_mount_absent": true
+    },
+    {
+      "uid": 22014,
+      "qualification_enabled": false,
+      "cgroup_freeze": "0",
+      "trace_marker_present": false,
+      "opa": {
+        "mounted_path": "/opt/opa",
+        "actual_sha256": "8fc1c524f93b4369eb207961aba213d990604205fc49fe3ba923dfc125c8a422",
+        "expected_sha256": "8fc1c524f93b4369eb207961aba213d990604205fc49fe3ba923dfc125c8a422",
+        "matches": true,
+        "policy_source_sha256": "cc62534fcfaf302154ccb8e0aed6f386e7857e848354d8bb41d8d10177665604"
+      },
+      "role": "pdp",
+      "container_id": "6e4aeced55fc6681525afb55699f92c42eb1622388740308fccfa97383a33166",
+      "image": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9",
+      "readonly_rootfs": true,
+      "app_directory_mount_absent": true
+    },
+    {
+      "uid": 22015,
+      "qualification_enabled": false,
+      "cgroup_freeze": "0",
+      "trace_marker_present": false,
+      "role": "journal",
+      "container_id": "c299ad83f4d1a4add9921fb7b22323e7032f933f0f3e13ddc18d9642cafd5cab",
+      "image": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9",
+      "readonly_rootfs": true,
+      "app_directory_mount_absent": true
+    }
+  ]
+}

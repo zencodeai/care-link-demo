@@ -1,0 +1,42 @@
+{
+  "image_id": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9",
+  "method": "Read-only Docker image archive, selected serving files hashed without extraction",
+  "files": [
+    {
+      "path": "packages/policy-input/src/care_link_policy_input/opa.py",
+      "expected_sha256": "f709d6861e4d7bf0b0db3346f833e13ea74e21ab2c9cb39a03fef6bef18792e9",
+      "image_sha256": "f709d6861e4d7bf0b0db3346f833e13ea74e21ab2c9cb39a03fef6bef18792e9"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_http.py",
+      "expected_sha256": "d23a72635821f7000eec86983d90380f4ba7cc7049af4e28f9943a0474c5163c",
+      "image_sha256": "d23a72635821f7000eec86983d90380f4ba7cc7049af4e28f9943a0474c5163c"
+    },
+    {
+      "path": "apps/web/dist/index.html",
+      "expected_sha256": "e4e0ee255dfb28e6a0215cb611011b124f27a05cc2f62c0cff461d6a1442ed07",
+      "image_sha256": "e4e0ee255dfb28e6a0215cb611011b124f27a05cc2f62c0cff461d6a1442ed07"
+    },
+    {
+      "path": "apps/web/dist/assets/index-CZdo04iK.js",
+      "expected_sha256": "e1089757c380521840cce5b841cc88e4a5e5e540f148b661c393c025ea36b468",
+      "image_sha256": "e1089757c380521840cce5b841cc88e4a5e5e540f148b661c393c025ea36b468"
+    },
+    {
+      "path": "tools/imp04_deployment/serve.py",
+      "expected_sha256": "eb14ddbf635043c9220d7efc71380761522fd4649ff7361334e291e04aaeea30",
+      "image_sha256": "eb14ddbf635043c9220d7efc71380761522fd4649ff7361334e291e04aaeea30"
+    },
+    {
+      "path": "tools/imp04_deployment/qualification.py",
+      "expected_sha256": "b74273fed502211469e5dc2dfbd750c7e62749bec67b3717b6a8300f745ffe5e",
+      "image_sha256": "b74273fed502211469e5dc2dfbd750c7e62749bec67b3717b6a8300f745ffe5e"
+    },
+    {
+      "path": "tools/imp04_deployment/barrier.py",
+      "expected_sha256": "8c45787146b0bc2eea1e788c74670de96c238cd269df22e7de4fb32b23fbef70",
+      "image_sha256": "8c45787146b0bc2eea1e788c74670de96c238cd269df22e7de4fb32b23fbef70"
+    }
+  ],
+  "status": "passed"
+}

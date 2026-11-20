@@ -1,0 +1,46 @@
+{
+  "recorded_at": "2026-11-17T01:02:15.821799+00:00",
+  "authorization": {
+    "source": "user_message",
+    "instruction": "Proceed with human screen-reader review, populated-page 200% visual review and actual acceptance",
+    "reviewer_setup_reply": "VoiceOver and Chrome on this Mac",
+    "scope": "Prepare and facilitate actual human review; preserve accepted environments, prior sealed packet, runtime controls and separate actual human decision."
+  },
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "branch": "feat/imp-04-plans-consent-directory",
+  "candidate": {
+    "commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+    "diff_digest": "793d32bd080a1963585f4074754105e5daf83e073cde7eff1c0846e892772a89",
+    "artifact_digest": "9dba09aa1d5d4a96a75ab23924bfae324ce8869ee0f0d3112d7cf22de53dce61",
+    "configuration_digest": "26ae24599b81dcd8e87356e9e8aab85b6e6f65ed122846494a858052624d3a46",
+    "contract_digest": "476117eb56bd9d34a96ee928d6c282aeffc5fff4f4ebdadbe0cd668a1c178a8c",
+    "environment_digest": "2261e6022f6dedd0b917a992b72d878153a36784fe3ff2ebd563504b939aff23",
+    "fixture_digest": "26862660a86ce46088c9c98977eb78b6f49fe37ea585aac7c97ffc835443f6e6"
+  },
+  "prior_packet": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/demo-packet.json",
+    "sha256": "7ae97dea040e0ffdfd92846326b4827238a1bb7cde1651caea95b09c85b88999"
+  },
+  "prior_candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-candidate-manifest.json",
+    "sha256": "8065971c710bb2f84726150df2aa21aa6b3859fab0a8a8cbb739ba514e60c0b8"
+  },
+  "prior_seal_files_verified": 185,
+  "code_files_verified": 532,
+  "prior_seal_unchanged": true,
+  "human_observations_received": false,
+  "human_gate_decision_received": false,
+  "computer_use": {
+    "native_chrome_available": true,
+    "browser_connector_available": false,
+    "browser_connector_error": "browser access host unavailable",
+    "native_accessibility_api_available": true
+  },
+  "macos_imp04_server_trust": {
+    "status": "not_trusted",
+    "actual_native_trust_result": "CSSMERR_TP_NOT_TRUSTED",
+    "evaluation_scope": "Read-only native macOS SSL certificate evaluation; no trust changes"
+  },
+  "state": "preparing_human_review",
+  "human_decision_id": null
+}

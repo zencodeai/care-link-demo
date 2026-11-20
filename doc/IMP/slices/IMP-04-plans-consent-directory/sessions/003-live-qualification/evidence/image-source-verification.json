@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "image_id": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+  "files": [
+    {
+      "path": "tools/imp04_deployment/__init__.py",
+      "sha256": "2334f80fdbfc3e316f1c083236972e883ea1f5c89b7ba742e1b5d7e8a530a3bf",
+      "actual_sha256": "2334f80fdbfc3e316f1c083236972e883ea1f5c89b7ba742e1b5d7e8a530a3bf"
+    },
+    {
+      "path": "tools/imp04_deployment/barrier.py",
+      "sha256": "8c45787146b0bc2eea1e788c74670de96c238cd269df22e7de4fb32b23fbef70",
+      "actual_sha256": "8c45787146b0bc2eea1e788c74670de96c238cd269df22e7de4fb32b23fbef70"
+    },
+    {
+      "path": "tools/imp04_deployment/build.py",
+      "sha256": "d3363cab5203d4af84488369f53fd2938d00bc150cfbde27c412347f55b1954b",
+      "actual_sha256": "d3363cab5203d4af84488369f53fd2938d00bc150cfbde27c412347f55b1954b"
+    },
+    {
+      "path": "tools/imp04_deployment/config.py",
+      "sha256": "97ee5bffb68db30b6671b379f19b04d7962d915481fd2d708be91f3777ffdb1b",
+      "actual_sha256": "97ee5bffb68db30b6671b379f19b04d7962d915481fd2d708be91f3777ffdb1b"
+    },
+    {
+      "path": "tools/imp04_deployment/deploy.py",
+      "sha256": "1097571cc94f9f517f8273244657a720e5f20803a870b3833ec492c5ed43bd4d",
+      "actual_sha256": "1097571cc94f9f517f8273244657a720e5f20803a870b3833ec492c5ed43bd4d"
+    },
+    {
+      "path": "tools/imp04_deployment/docker.py",
+      "sha256": "841fa9bdbd25e6fe72af71a71154327534088fab160f215313549da56178c883",
+      "actual_sha256": "841fa9bdbd25e6fe72af71a71154327534088fab160f215313549da56178c883"
+    },
+    {
+      "path": "tools/imp04_deployment/prepare.py",
+      "sha256": "110d3c9926ab88e5490676c67db9363fe05912018322bf33ad0d704776386116",
+      "actual_sha256": "110d3c9926ab88e5490676c67db9363fe05912018322bf33ad0d704776386116"
+    },
+    {
+      "path": "tools/imp04_deployment/provision.py",
+      "sha256": "7a989cc617255d630bb7e4efda671ca68ffb1c19fa62dc961123430769ca2304",
+      "actual_sha256": "7a989cc617255d630bb7e4efda671ca68ffb1c19fa62dc961123430769ca2304"
+    },
+    {
+      "path": "tools/imp04_deployment/qualification.py",
+      "sha256": "b74273fed502211469e5dc2dfbd750c7e62749bec67b3717b6a8300f745ffe5e",
+      "actual_sha256": "b74273fed502211469e5dc2dfbd750c7e62749bec67b3717b6a8300f745ffe5e"
+    },
+    {
+      "path": "tools/imp04_deployment/serve.py",
+      "sha256": "eb14ddbf635043c9220d7efc71380761522fd4649ff7361334e291e04aaeea30",
+      "actual_sha256": "eb14ddbf635043c9220d7efc71380761522fd4649ff7361334e291e04aaeea30"
+    },
+    {
+      "path": "tools/imp04_deployment/supervisor.py",
+      "sha256": "3fb71f36625f761fb3a87c60424562c3b7a07cb9c4843fa45191b3692a6a623f",
+      "actual_sha256": "3fb71f36625f761fb3a87c60424562c3b7a07cb9c4843fa45191b3692a6a623f"
+    },
+    {
+      "path": "tools/imp04_deployment/trust.py",
+      "sha256": "93ead3e941349bb85be5a3ceeaa1f789644644378c8f3183de6c82732876120c",
+      "actual_sha256": "93ead3e941349bb85be5a3ceeaa1f789644644378c8f3183de6c82732876120c"
+    }
+  ],
+  "note": "Actual new image Python source verified inside approved seed container"
+}

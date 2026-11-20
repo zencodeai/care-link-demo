@@ -1,0 +1,15 @@
+{
+  "role": "identity",
+  "actual_source_sha256": {
+    "/app/services/identity/src/care_link_identity/retention.py": "625988921489fd09faa6bc17508232b00cbd722824f29559ab6ccb96b0256020",
+    "/app/services/identity/src/care_link_identity/credential_sweep.py": "793dea5875ae7f425c951eb53231cbada3009ba86baf49e24962241756e0a24f"
+  },
+  "matches_reviewed_build": true,
+  "identity_test_result": {
+    "passed": 228,
+    "sweep_differential_tests": 14,
+    "reported_by": "imp04_remediation_python; independently rerun14 by imp04_release_review"
+  },
+  "semantics_review": "No critical blockers; same outer guard, predicates, disposal/counters; at most one SQL scan per kind, not a claim of linear CPU",
+  "manual_live_maintenance_invoked": false
+}

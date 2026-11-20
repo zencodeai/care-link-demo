@@ -1,0 +1,147 @@
+[
+  {
+    "name": "uv-lock",
+    "command": [
+      "uv",
+      "lock",
+      "--check"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/uv-lock.log"
+  },
+  {
+    "name": "pnpm-lock",
+    "command": [
+      "pnpm",
+      "install",
+      "--offline",
+      "--frozen-lockfile",
+      "--lockfile-only",
+      "--ignore-scripts"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/pnpm-lock.log"
+  },
+  {
+    "name": "contracts",
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "tools/generate_contracts.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/contracts.log"
+  },
+  {
+    "name": "boundaries",
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "tools/check_boundaries.py"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/boundaries.log"
+  },
+  {
+    "name": "admission",
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "tools/check_imp02_admission.py"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/admission.log"
+  },
+  {
+    "name": "ruff",
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "."
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/ruff.log"
+  },
+  {
+    "name": "python-format",
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/python-format.log"
+  },
+  {
+    "name": "pyright",
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/pyright.log"
+  },
+  {
+    "name": "typescript",
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/typescript.log"
+  },
+  {
+    "name": "eslint",
+    "command": [
+      "pnpm",
+      "lint"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/eslint.log"
+  },
+  {
+    "name": "prettier",
+    "command": [
+      "pnpm",
+      "format:check"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/prettier.log"
+  },
+  {
+    "name": "python-tests",
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/python-tests.log"
+  },
+  {
+    "name": "web-tests",
+    "command": [
+      "pnpm",
+      "test"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/web-tests.log"
+  },
+  {
+    "name": "web-build",
+    "command": [
+      "pnpm",
+      "build"
+    ],
+    "exit_code": 0,
+    "evidence": "evidence/web-build.log"
+  }
+]

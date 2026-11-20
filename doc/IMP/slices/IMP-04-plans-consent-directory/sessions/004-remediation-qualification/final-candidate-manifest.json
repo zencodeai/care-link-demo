@@ -1,0 +1,136 @@
+{
+  "recorded_at": "2026-11-17T00:31:05.251024+00:00",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "branch": "feat/imp-04-plans-consent-directory",
+  "uncommitted": true,
+  "deployment_applied": true,
+  "candidate": {
+    "commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+    "diff_digest": "793d32bd080a1963585f4074754105e5daf83e073cde7eff1c0846e892772a89",
+    "artifact_digest": "9dba09aa1d5d4a96a75ab23924bfae324ce8869ee0f0d3112d7cf22de53dce61",
+    "configuration_digest": "26ae24599b81dcd8e87356e9e8aab85b6e6f65ed122846494a858052624d3a46",
+    "contract_digest": "476117eb56bd9d34a96ee928d6c282aeffc5fff4f4ebdadbe0cd668a1c178a8c",
+    "environment_digest": "2261e6022f6dedd0b917a992b72d878153a36784fe3ff2ebd563504b939aff23",
+    "fixture_digest": "26862660a86ce46088c9c98977eb78b6f49fe37ea585aac7c97ffc835443f6e6"
+  },
+  "digest_definitions": {
+    "diff_digest": "SHA256 canonical object containing tracked binary git-diff SHA and complete code inventory SHA; includes untracked implementation source through that inventory",
+    "artifact_digest": "SHA256 serving-artifacts.json",
+    "configuration_digest": "SHA256 final-configuration-binding.json",
+    "contract_digest": "SHA256 current Python runtime schema file",
+    "environment_digest": "SHA256 final-snapshot.json",
+    "fixture_digest": "SHA256 directory fixture file"
+  },
+  "source_state_digest": {
+    "input": {
+      "tracked_diff_sha256": "70c81471e3b4e5a4e6ba1b4b806865f157670e5ff4965c7f1fd1bdf96149593f",
+      "source_inventory_sha256": "7fa60cc424bc64716747eea7667a4b47bc803c6232fca9f87e5683b39b575816"
+    },
+    "serialization": "UTF-8 JSON; sorted keys; ensure_ascii=False; separators comma/colon; no newline",
+    "algorithm": "SHA256 of serialized input object",
+    "tracked_diff_command": [
+      "git",
+      "diff",
+      "--binary",
+      "HEAD",
+      "--",
+      "apps",
+      "services",
+      "host",
+      "packages",
+      "tools",
+      "tests",
+      "config",
+      "deploy",
+      ".python-version",
+      "package.json",
+      "pnpm-lock.yaml",
+      "pnpm-workspace.yaml",
+      "pyproject.toml",
+      "pyrightconfig.json",
+      "tsconfig.json",
+      "uv.lock"
+    ],
+    "inventory_definition": "SHA256 of final-source-bindings.json files array under the same canonical serialization; includes Git-known untracked code files"
+  },
+  "host_source_binding": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-source-bindings.json",
+    "sha256": "3c56ff0cf257d84a1416eddf14d59580c6a783c480bb66ceb56865089e537233"
+  },
+  "serving_artifacts": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/serving-artifacts.json",
+    "sha256": "9dba09aa1d5d4a96a75ab23924bfae324ce8869ee0f0d3112d7cf22de53dce61"
+  },
+  "public_configuration_binding": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-configuration-binding.json",
+    "sha256": "26ae24599b81dcd8e87356e9e8aab85b6e6f65ed122846494a858052624d3a46"
+  },
+  "environment_snapshot": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-snapshot.json",
+    "sha256": "2261e6022f6dedd0b917a992b72d878153a36784fe3ff2ebd563504b939aff23"
+  },
+  "resource_observations": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/resources-final.json",
+    "sha256": "bf08b0512473fdec1b0bd4f5aaa4e171642fca9cba00c0043c640085b804ea21"
+  },
+  "fixture": {
+    "path": "config/demo/imp04/directory-fixtures.json",
+    "sha256": "26862660a86ce46088c9c98977eb78b6f49fe37ea585aac7c97ffc835443f6e6"
+  },
+  "contract": {
+    "path": "packages/contracts/python/src/care_link_contracts/schema.json",
+    "sha256": "476117eb56bd9d34a96ee928d6c282aeffc5fff4f4ebdadbe0cd668a1c178a8c"
+  },
+  "live_attempts": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/attempt-index.json",
+    "sha256": "bd0f3c7a669b88dc21bfe2d19c3c27c5cba7696e3692a8310da7686bc27c6bef"
+  },
+  "native_accessibility": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/native-accessibility-session004-final007.json",
+    "sha256": "51b581002dabb67bd991262d431913be7806c10593b6199ddd31fe2acdcb9c57"
+  },
+  "current_authority": {
+    "target": "care-link-imp04-002",
+    "journal": {
+      "state": {
+        "journal_id": "8b75464e-48c4-45a3-8321-f8faa198b5af",
+        "generation": "1",
+        "tip": "17",
+        "tip_digest": "b551fd190fe94af515c002be40ff9a7ffbcd4bb05c16571604024d024182cb5b",
+        "restriction_barrier": "17",
+        "serving_generation": "1",
+        "observed_at": "2026-11-17T00:28:01.718085Z"
+      },
+      "signature_verified": true,
+      "nonce_bound": true,
+      "public_key_sha256": "faa62992e46ca08a730c5742e6ae171beed526ad39f00d79ecef192880f9ad30"
+    },
+    "fence": {
+      "generation": 0,
+      "head": "f302c8c9ebf633e62e8455bc70d5e83105143ddad449952eb3f4ca910a4d65df",
+      "allowed": [
+        "spiffe://care-link.demo/demo/core",
+        "spiffe://care-link.demo/demo/data",
+        "spiffe://care-link.demo/demo/identity",
+        "spiffe://care-link.demo/demo/journal",
+        "spiffe://care-link.demo/demo/pdp"
+      ],
+      "denied": [],
+      "command_count": 0,
+      "kernel_verified_custodian": true
+    }
+  },
+  "accepted_imp03_preserved": true,
+  "timing_adapter_currently_active": false,
+  "human_gate_state": "pending",
+  "actual_limitations": [
+    "Human screen-reader review and populated native200percent visual review are not_run for all four actors and both locales; automated axe/keyboard/zoom do not replace them.",
+    "Actual human G-04 decision remains pending; deployment/remediation authorization and a300s recovery target are not stage acceptance.",
+    "Remote-controller accessibility phases on the final UI retain failures, including intermittent503/pending observations; the new native persistent-profile path is independently qualified, not evidence that every browser/controller path is reliable.",
+    "Directory sources remain stale and the previously suspended service stays suspended. No fresh availability assertion.",
+    "No elapsed30day purge, backup completion, literal provider-role-change race, or full-reload persistence of unsent drafts is claimed. Grantor authority loss was actual journalled business-principal revocation of a new case actor.",
+    "The native verifier watchdog uses best-effort context close, not a hard process-kill guarantee.",
+    "Image distribution remains a qualification workspace rather than minimal per-role packaging. Final Data/PDP/journal serving serve.py and diagnostics.py differ from newer host instrumentation; their exact hashes are recorded, and role/package source matches are separate.",
+    "Resource evidence records no OOM/PID-limit events or browser zombies; socket throttling was observed and is not reported as zero."
+  ]
+}

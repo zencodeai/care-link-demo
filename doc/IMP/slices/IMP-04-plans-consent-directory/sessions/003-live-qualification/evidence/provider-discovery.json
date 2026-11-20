@@ -1,0 +1,5 @@
+{
+  "provider_discovery": "passed",
+  "issuer": "https://id.plans.localhost:31443/realms/care-link-imp04-002",
+  "native_strict_tls": true
+}

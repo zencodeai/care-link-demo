@@ -1,0 +1,130 @@
+{
+  "packet_id": "WP-IMP04-005-human-review",
+  "task_id": "IMP-04-D",
+  "stage_id": "IMP-04",
+  "mode": "verification",
+  "role": "imp_verifier",
+  "goal": "Prepare and facilitate actual VoiceOver/Chrome human screen-reader and populated200percent visual review of the unchanged IMP04 candidate; record actual observations and only a subsequently supplied human G04 decision.",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/handoff.md",
+      "sha256": "713b845a42bbe5fefe2e92fef0884c9d4140f8f704b7c2365e12eff1e6f702b5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-candidate-manifest.json",
+      "sha256": "8065971c710bb2f84726150df2aa21aa6b3859fab0a8a8cbb739ba514e60c0b8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/demo-packet.json",
+      "sha256": "7ae97dea040e0ffdfd92846326b4827238a1bb7cde1651caea95b09c85b88999"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/005-human-accessibility-review/starting-state.json",
+      "sha256": "26c2b1910d9cab865f1ec88072070525e4dab52b5f3e894fab045c37a6374e92"
+    }
+  ],
+  "read_paths": [
+    "doc/IMP/**",
+    "tools/imp04_deployment/**",
+    "tools/imp04_verification/**",
+    "apps/web/src/**",
+    "tests/e2e/imp04-live/**"
+  ],
+  "write_paths": [
+    "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/005-human-accessibility-review/**",
+    "doc/IMP/slices/IMP-04-plans-consent-directory/README.md",
+    "doc/IMP/executions/2026-11-16-IMP-04/ledger.json"
+  ],
+  "dependencies": [
+    "G-03 accepted",
+    "IMP-04 session001 source candidate retained uncommitted"
+  ],
+  "operation_ids": [
+    "plan_create",
+    "plan_read",
+    "plan_field_append",
+    "plan_retire",
+    "consent_grant",
+    "consent_read",
+    "consent_revoke",
+    "directory_search",
+    "directory_read",
+    "directory_ingest",
+    "directory_suspend",
+    "data_plan_create",
+    "data_plan_read",
+    "data_plan_field_append",
+    "data_plan_retire",
+    "data_consent_grant",
+    "data_consent_read",
+    "data_consent_revoke",
+    "data_directory_search",
+    "data_directory_read",
+    "data_directory_ingest",
+    "data_directory_suspend"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "run_declared_read_only_checks",
+    "edit_assigned_evidence",
+    "prepare_exact_browser_trust_proposal",
+    "facilitate_authorized_synthetic_browser_UI",
+    "record_actual_human_observations",
+    "record_only_actual_human_gate_decision"
+  ],
+  "prohibited_actions": [
+    "No changes to sealed session004 evidence or application/source/image/runtime controls",
+    "No accepted IMP03/IMP02, sibling, fence/restriction reset, realdata/police/model changes",
+    "No Mac trust mutation until exact proposal explicitly accepted; no warning bypass",
+    "No inferred human review/acceptance from automation, assistant observations or instruction to proceed",
+    "No commit/push/next slice or participant admission"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Proceed with human screen-reader review, populated-page 200% visual review and actual acceptance; VoiceOver and Chrome on this Mac",
+    "scope": "Prepare/facilitate actual human review and record a separate actual human decision; exact Mac trust change still pending proposal approval."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP04-005-human-evidence",
+      "kind": "file_set",
+      "scope": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/005-human-accessibility-review/** plus slice README and execution ledger",
+      "owner_task_id": "IMP-04-D",
+      "expires_at": "2026-11-17T06:00:00Z"
+    }
+  ],
+  "expected_outputs": [
+    "Prepared native review setup and exact trust delta/actual receipt if accepted",
+    "Eight actual human screen-reader/200percent observation rows with reviewer/device/tool metadata",
+    "Actual G04 decision record or explicit awaiting_human; current handoff"
+  ],
+  "positive_acceptance": [
+    "Unchanged exact candidate and prior seals verified",
+    "Native TLS and isolated actual actor contexts; no credential exposure",
+    "Human reports attributed separately from assistant-assisted observations",
+    "Stage only closes after actual decision; accepted environments preserved"
+  ],
+  "adverse_acceptance": [
+    "Unperformed rows remain not_run",
+    "Unexpected certificate/authority/privacy state stops affected work",
+    "Failed review observations remain failed until separately corrected/reviewed"
+  ],
+  "reviewer": "Human reviewer and actual G04 decision maker; root verifies binding",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Unapproved trust change, native TLS warning or mismatched candidate prevents dependent review",
+    "No screen-reader observation or acceptance is fabricated",
+    "Stop on scope/credential mismatch; continue safe preparation"
+  ],
+  "is_example": false
+}

@@ -1,0 +1,393 @@
+{
+  "checked_at": "2026-11-16T19:30:26.184496+00:00",
+  "accepted_resources": 64,
+  "exact_identity_image_status_started_mount_network_comparison": "passed",
+  "differences": [],
+  "observed": [
+    {
+      "name": "care-link-imp03-003-cont1-journal-app",
+      "id": "6f9c332c9d88d18b4995f7a0485a54ed9f333798641346a03166b899dba79a7b",
+      "image": "sha256:e854ff2799a235ac827439637ec06b7e5680b286561b1cc4fbbebc0580689de7",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-pdp-app",
+      "id": "eb8eaecc257bb698314cd4d4f0646af010477ba264dab96e7a8ff96a831c275a",
+      "image": "sha256:e854ff2799a235ac827439637ec06b7e5680b286561b1cc4fbbebc0580689de7",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-data-app",
+      "id": "7eb49785e01f6f9f11e9850ccbe6dd4b048f025014d00d2f0498cc1bb7f24d16",
+      "image": "sha256:e854ff2799a235ac827439637ec06b7e5680b286561b1cc4fbbebc0580689de7",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-core-app",
+      "id": "67414498b3e15d2d1d8fc21584cbc8a79970f046295670017bc255ecad37b73a",
+      "image": "sha256:e854ff2799a235ac827439637ec06b7e5680b286561b1cc4fbbebc0580689de7",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-identity-app",
+      "id": "5693a31d5e77026b33ef83b18b6f60202c71686736b92d5f6ddcb030c47ef9fe",
+      "image": "sha256:e854ff2799a235ac827439637ec06b7e5680b286561b1cc4fbbebc0580689de7",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-review-chrome",
+      "id": "81660273374b5689e9511fb0698322013347d43f3c83a1e508dadde0724f26c8",
+      "image": "sha256:847d0429ebe65559c9cc8cfb415f072fc9bf347050dc0fd7248d5cbcf0669a48",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-ingress",
+      "id": "2b44f1f187a917a69540c4c35b073dc72f5a0c4af29c78973282c7eae217e448",
+      "image": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-journal-proxy",
+      "id": "f316a0d1e444d059322f329b49939488f948912ba89f48780b6ced1352617d48",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-journal-authorization",
+      "id": "43e8c8e94318af0a6206c38d4b596ad5c1dad4774b9eefcc00ad50c2e72268ba",
+      "image": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-pdp-proxy",
+      "id": "98d13420b360f27d6b754aeed5e0fe00077386ce993dce93b6b816f84eefa2c9",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-pdp-authorization",
+      "id": "4fd399c0df9c5f4e405fe5fb0cfc7b428890543859cb900fb7ddadb3c752d389",
+      "image": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-data-proxy",
+      "id": "fd07ca32e5f2d065d8d813dee1c6d01954bce6b7043365382bf5f420092748ad",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-data-authorization",
+      "id": "4bc729a3daa24017c5af3968410c7f4473521de1c7fa412abd489baebf3853e4",
+      "image": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-core-proxy",
+      "id": "5c6d5b3374131d3a4118d0e379e7e388ee0181c336d928f8853120d5c5c034e4",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-core-authorization",
+      "id": "231a31d2d76b033fb0e558415cde92c7fe1d5f77472b5bb25134ffc198cecdf0",
+      "image": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-identity-proxy",
+      "id": "65283d7fd306d7cbffb9cbe56e2a4b2da833983af5568ddbc70a54905c1c9a3f",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-identity-authorization",
+      "id": "3a3f160e40b3831ff3d4a222147d14a5d6deb7a25bfbe966369e08cfcfb294e4",
+      "image": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-browser-ingress",
+      "id": "dedf6deb4c652faa8e42195d2fde0ad2809eefa3bfdea50edde8455a66fcea70",
+      "image": "sha256:17c1fa95c00fbfa6991b7275ecdc003d84ef6cb6b967251353f247eaab4e3961",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-data-db-connector",
+      "id": "c7da3665a6650aa18a9e34f68f0e03726022a1dd0d8d78a4bb57cc2c6912c949",
+      "image": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-identity-provider-connector",
+      "id": "325bbb32e8ce4e69abf9146239db6eb1ced4ab313508d23acd926e2e42388ce9",
+      "image": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-identity-db-connector",
+      "id": "407331d4597d7a2ded049fc78031bf2d6dc94861fbf639c890036b3a7e53618f",
+      "image": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-postgres-ingress",
+      "id": "c7db634a5066fcbf61a86314309ecce06a7bfa6844c661bbb1e1908947913123",
+      "image": "sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-fence",
+      "id": "0ad2a1d3259b96ae2e20c3d1d9b1f10ea8cfe580755532a5de4fc2b10e21a428",
+      "image": "sha256:2051f02702dab384495c3194072ce91d41f850f07d2ff896a23021d5b9426f3e",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-journal-agent",
+      "id": "cc6d41cbe70f7af0ac8d1d5d0f1a92e715cc26e55cab530b025be6cf736aedad",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-pdp-agent",
+      "id": "54d5d9508dc4bba38fddfa1d26bd0c70650f1b70cfa1cead360f00d97caf5b09",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-data-agent",
+      "id": "194f9581ae36956e667303b9e37a37e361a69468457ba6d40164d3c944e3d863",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-core-agent",
+      "id": "2445b27106b6688b6048def4957a78d8de409c3dcf3a280b7a997f8d99099c35",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-cont1-identity-agent",
+      "id": "7000d2617f89f579fa6ebe870c9332ccf115f1b810deacf15a6129ab7168dae3",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-data-app",
+      "id": "707ca047304c8598d72e3d1c477dc8460c5f6e66f69161d5e715764bdabed62b",
+      "image": "sha256:2b34147b1ed12989a3485087631568a8c05b15dea0e70e4da5aa4495af7ac300",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-core-app",
+      "id": "3dd4677bb3a18a06285251734f11189bcf741d2fea74218dfc8e7b6190919a4e",
+      "image": "sha256:2b34147b1ed12989a3485087631568a8c05b15dea0e70e4da5aa4495af7ac300",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-ingress",
+      "id": "befcfb467b8f77869a3b6fbc39fe78cd73c6428ffe9b566ad0ba779e73a5056c",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-journal-proxy",
+      "id": "f1f487dc45f60226125c48bf20c7f37f106a67f113f26d63c62b44face52cac3",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-journal-app",
+      "id": "8857e44ed82e0a1090fd42d1d4a7c3c8faff428e77ca1dd9fdff0b9d88e012e7",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-journal-authorization",
+      "id": "3178d480bf80c7b97032cb78ae64ab5d1ebc2595c408cf0be1140feda9369f28",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-pdp-proxy",
+      "id": "c8d67ccb618a91330e4ca9dad1eba45c0577512109021437ad51f50ba6dbf935",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-pdp-app",
+      "id": "0df6e67a41f24e6a9d9bff6f12625a9ff457b2df762ff82d4738e991ea4cd670",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-pdp-authorization",
+      "id": "69df50376c06e8d9c2e244462480b7ae4b6747c0424c90d56ef259f3e83f7aa4",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-data-proxy",
+      "id": "c7646237e7b7626acae67be0cef6ad1836b89ffb571798343e40e4b542918592",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-data-authorization",
+      "id": "c106755ebcbbd2a3973de8a74903d15d2e3251193017f926356594936b2ca9de",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-core-proxy",
+      "id": "575ca5ce658f21bbde04059deb9c182e9c1a8b36f8d223af239d0bade8dacb28",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-core-authorization",
+      "id": "4be7015c3f1ee45c37616dd3620df8317277aacf4591b84be1f75d2aa04410af",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-identity-proxy",
+      "id": "ae626df519952a53ebbe8f97b39ce759f827658ff72c410518b22405c35f2c68",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-identity-app",
+      "id": "7fcba48e3ca11215a61bd1fbfb9589d82cd2ac94266289aaa1b1536c73307943",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-identity-authorization",
+      "id": "d31524d37e02e642ef7f2da8b5f7165cd26868e0ac31168d1e215be259bb7ac4",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-data-db-connector",
+      "id": "58d12b0899be061ac8bd82b6d0a6c5516608c79e5020e8bb53ab38487d801982",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-identity-provider-connector",
+      "id": "f6f062462c30ec146f8312c6e1b935823d8ae44d3c46ceda4b729128520ee210",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-identity-db-connector",
+      "id": "f41392ece5e35cd288c02a6822131f01a6992de73f10460feea3ff4b97e671c3",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-fence",
+      "id": "b592f88101e26d0861c09507c27d6a659736f3eac15fbdd47d199b2b94d804a6",
+      "image": "sha256:935146dcd77ffeb3000e254f5c6b4459ddc10172a8ef674b8ef01e6387eec482",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-journal-agent",
+      "id": "3effb19c967c8866c58c0c387594a7af40dcf7b3695948232eefaef8e96da2c0",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-pdp-agent",
+      "id": "77872d3b79d82dc41b7c5b98b21d5b7307c5250d2403a30b84b7b0d9608fb002",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-data-agent",
+      "id": "d1faa37c9c08597445d48b73a23f3b3b02843ce477ed06e6a6a16c7ecec902ea",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-core-agent",
+      "id": "6197438271ab95ac8c5fec22c95078207d8089a386b52c7908ab12aa509ff37c",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp03-003-identity-agent",
+      "id": "8ca3433d1526caa35694216ae5826c7722b51ba3d56ac26906549d90e157d5d0",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp02-002-host-proxy",
+      "id": "5e33db687536b53dbc17348c9c198dfce5d26d2fec77f7afd8e349c221ce4ec7",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp02-002-host-signal-proxy",
+      "id": "1cd1379ce63f7c961404b29be0337b635c41570a5e47fceec41e8a371e69f5e9",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp02-002-host-help",
+      "id": "b90df7e5a857506522ed710dac86fefc805d1bfa3a472ddceb9296874e43b7b0",
+      "image": "sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp02-002-host-agent",
+      "id": "0600cc321b064f820b9a2ceabb547d5ae8be1f5bc2ede93a5a06f615e857e05e",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp02-002-static",
+      "id": "4b541e318d997e62976dc81f9c42f58429b8f5aa0979b44729c375498cabfe13",
+      "image": "sha256:217f2b95076840d0510621ae46abc43d32ed4c60e35370bf6c05529c4e6f200c",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp02-002-host-signal-client",
+      "id": "5a955c9c3bb23690811bae5105926d8a6e5bc276e6f43ae7a5e1eb9bf6a68b8c",
+      "image": "sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+      "status": "exited"
+    },
+    {
+      "name": "care-link-imp02-002-host-signal-cert-probe",
+      "id": "9001934b03e0fa252946dc3a2c5c149be93eec4f072a9b564d85e290deac77bd",
+      "image": "sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+      "status": "exited"
+    },
+    {
+      "name": "care-link-imp02-002-host-cert-probe",
+      "id": "bce6c0885929bc8decdec6b72f6a2999490975e911e39d5382579b1f08c2c098",
+      "image": "sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+      "status": "exited"
+    },
+    {
+      "name": "care-link-imp02-002-host-seed",
+      "id": "a6fc8abbee0e2479cd7f91f71a5ded0c887839f85cbcb721448440a01660a88c",
+      "image": "sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+      "status": "exited"
+    },
+    {
+      "name": "care-link-imp02-002-host-control",
+      "id": "0ba0befe5f02bb2ad39e749d8ea83766ce49fe5e4344ab69eaf1829e127e8b19",
+      "image": "sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56",
+      "status": "running"
+    },
+    {
+      "name": "care-link-imp02-002-control-plane",
+      "id": "1c1c907344c74fb3e008f55a39e8ff8b7bc4385387beedca547dd7ce21d6b9c8",
+      "image": "sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "status": "running"
+    }
+  ],
+  "scope": "Read-only Docker public metadata; no accepted credentials or business content read"
+}

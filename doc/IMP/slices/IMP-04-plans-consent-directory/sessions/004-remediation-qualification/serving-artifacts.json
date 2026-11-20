@@ -1,0 +1,190 @@
+{
+  "definition": "SHA256 of this file binds the complete 31-container name/immutable container-ID/image-ID inventory. Roles legitimately use different immutable image builds.",
+  "containers": [
+    {
+      "name": "care-link-imp04-002-identity-agent",
+      "id": "f08422772e246fa156a5513966e34eb43a6926862ea0371fb060dd53b68bd542",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6"
+    },
+    {
+      "name": "care-link-imp04-002-identity-authorization",
+      "id": "a36026be55f883d8e629f21902dfc4f4d4b30abf77643933d28cf6b01f75acc4",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    },
+    {
+      "name": "care-link-imp04-002-identity-app",
+      "id": "fef04eb164f88646aacf2f6804cbbc81137b4a340a1991f06b713b7c3d6816a1",
+      "image": "sha256:e195d6351dbe1a95cba3b8a817608ea7acd54a53a147d3447378f1ff6a6ec17d"
+    },
+    {
+      "name": "care-link-imp04-002-identity-proxy",
+      "id": "aacc28f4261661e1e9f7ccf0c81c18a2232f97b8aeede569298126c317ecc509",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    {
+      "name": "care-link-imp04-002-core-agent",
+      "id": "9f2315688dbb40731c8286e7f8545c40fa0e812f4a6aed133a8ab19cb076266b",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6"
+    },
+    {
+      "name": "care-link-imp04-002-core-authorization",
+      "id": "77834b53c1bd82268a0838b69cde05b12224f517848622186295779846bdceaf",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    },
+    {
+      "name": "care-link-imp04-002-core-app",
+      "id": "7df1f404ebf2e591b9db8d6e96dc5270e947cdb7123e7e62b73c2b427f4f19cf",
+      "image": "sha256:ac3d235c269226bf459cdaaf3ff2288db104af971ae71b88147a627d727e3150"
+    },
+    {
+      "name": "care-link-imp04-002-core-proxy",
+      "id": "097898303f566c07013f46a4419aa4b6a64fd91bcacd0b08a074618e89b856fd",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    {
+      "name": "care-link-imp04-002-data-agent",
+      "id": "1bc0bff876c4d89be1a6f3f122ffbf8faaa8dd8fc26fc71d1e10ff2d09db4d73",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6"
+    },
+    {
+      "name": "care-link-imp04-002-data-authorization",
+      "id": "ad5b14687e8b10aa305c0ca1415d7e64afcdce0b4b036724f99ff6e07a1ff1fa",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    },
+    {
+      "name": "care-link-imp04-002-data-app",
+      "id": "4ba847cab137d0345be70e80d78756ecbd26c3c328d3349c7a1adb804ab28adb",
+      "image": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9"
+    },
+    {
+      "name": "care-link-imp04-002-data-proxy",
+      "id": "f486989ad97ee0096a4f17702b838694182e9c85870bc39c78eee426131086c0",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    {
+      "name": "care-link-imp04-002-pdp-agent",
+      "id": "1527e4224b2f91da0058f007fd1b039856e7b409b24fc0787cae891798a3df2e",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6"
+    },
+    {
+      "name": "care-link-imp04-002-pdp-authorization",
+      "id": "c720ca499edad6425e9b3182a4cbffad749205423d359136385e963a9a9866cf",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    },
+    {
+      "name": "care-link-imp04-002-pdp-app",
+      "id": "6e4aeced55fc6681525afb55699f92c42eb1622388740308fccfa97383a33166",
+      "image": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9"
+    },
+    {
+      "name": "care-link-imp04-002-pdp-proxy",
+      "id": "0b2f2e8e94f320bacc30b460949a7a764417b9f0d2d797a9955157121a38ce6d",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    {
+      "name": "care-link-imp04-002-journal-agent",
+      "id": "606e2b16e473a262ceba04b3e1f79a2b03400e703d307e3e755b5baa86708d0f",
+      "image": "sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6"
+    },
+    {
+      "name": "care-link-imp04-002-journal-authorization",
+      "id": "5f5bd67b93b031d6d1c5f6851e9fd7cc967c5e7fd12b69ce149e2beddce27800",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    },
+    {
+      "name": "care-link-imp04-002-journal-app",
+      "id": "c299ad83f4d1a4add9921fb7b22323e7032f933f0f3e13ddc18d9642cafd5cab",
+      "image": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9"
+    },
+    {
+      "name": "care-link-imp04-002-journal-proxy",
+      "id": "8909136c8f765dd1c70824ffc95c894d256bf72ca078bb29a8307af17f329180",
+      "image": "sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    {
+      "name": "care-link-imp04-002-spire-server",
+      "id": "e9d378b4202155b54dde8b1d6a01a8248aea5e05df0220175fea013d750c746d",
+      "image": "sha256:ff546f4c62dafc479a0cd79eae9a7b6df2975754d75efd31706098e0d7548837"
+    },
+    {
+      "name": "care-link-imp04-002-postgres",
+      "id": "04228c48ed8dcdb4c9651fc9fd59e67d2c0e0c83ba4a51df1faeb6797878dec9",
+      "image": "sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba"
+    },
+    {
+      "name": "care-link-imp04-002-keycloak",
+      "id": "32e2989f0ca29b76a893a23bf634ca274dc26a0b7d77876c41c1fae4b2ea6140",
+      "image": "sha256:eb16e701be9e124e7d7a35ce00a8a86bef7d15ed63a262c7f3ec770cda846918"
+    },
+    {
+      "name": "care-link-imp04-002-fence",
+      "id": "5a449a44276a30cffca48b271f315d6e37711af5e4711c188e2e4fa69e5999e5",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    },
+    {
+      "name": "care-link-imp04-002-identity-db-connector",
+      "id": "8fe8b7cfb07bd56fb71d29a5ea2f57ada95b0112f3fb93c82e87ac93a7ac46c5",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    },
+    {
+      "name": "care-link-imp04-002-data-db-connector",
+      "id": "d5682af507844a06c97e3df6d1e7f152ab8639ee2d41ba566943ff6df9c8a131",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    },
+    {
+      "name": "care-link-imp04-002-identity-provider-connector",
+      "id": "d1b0d30adae7bcece9da9b8f1e6f51dfe8ff1a6addc35e1e271fcf67bd792b01",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    },
+    {
+      "name": "care-link-imp04-002-ingress",
+      "id": "634f88b3c4c039e262c9d53f028c35fe5909483185664667d09d987570c87ded",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    },
+    {
+      "name": "care-link-imp04-002-review-chrome",
+      "id": "b931b72ef3a66856086858cd6bc4422002b2e3d477fd441416e0038ccae73c8f",
+      "image": "sha256:847d0429ebe65559c9cc8cfb415f072fc9bf347050dc0fd7248d5cbcf0669a48"
+    },
+    {
+      "name": "care-link-imp04-002-seed",
+      "id": "9d39cca47d4cd277b3beb4f2c45fd6f7ab97322c0c805c92120164fd47887ff1",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    },
+    {
+      "name": "care-link-imp04-002-operator-seed",
+      "id": "99bbcbc63c1aa286e3866101bf6350370d7472e516b2b2fb9b9d310ff538b48c",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd"
+    }
+  ],
+  "source_proofs": [
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/phase-source-continuity.json",
+      "sha256": "7f45682ed1809805767a7d2b450c976ff8837fc3c8cb6e63bc56001c9fba3f95"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-runtime-metadata.json",
+      "sha256": "610c3555a1e07c536caa602190c31cb0169a8258f8ef33e9730804aeeb3db0d5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-serving-source-proof.json",
+      "sha256": "290e6caec085599ecf2677d91f00bdf6b4a2867216bb7e7342734e98a62212f4"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/image-verification.json",
+      "sha256": "cf28e932f617f428bb0f6b38ec8bab67f13161c69d7a6849c813703578858217"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/identity-sweep-verification.json",
+      "sha256": "04cd000deefaea02b5204c441fd364603584c79cf562bc1fdf2d7be9b7cf33a3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/rotation-image-verification.json",
+      "sha256": "c185bbb04ddac17353a09ebe5ca408ee0164c179b15ed104313c8bca62aa81b3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/reproducible-web-build.json",
+      "sha256": "73cc12b6c79853a2b64cb43c877d3f8669e6469df82a760e72a7bbbbf561d714"
+    }
+  ]
+}

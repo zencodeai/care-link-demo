@@ -1,0 +1,575 @@
+{
+  "content_status": "engineering_candidate_not_independently_reviewed",
+  "instructions": "Synthetic static fixture bytes only. Fixed source timestamps intentionally age; never refresh timestamps to imply verification. No executable destinations.",
+  "feeds": [
+    {
+      "expected_revision": "0",
+      "service_id": "40400000-0000-4000-8000-000000000001",
+      "facts": {
+        "name": "Fictional option 1",
+        "jurisdictions": [
+          "CA-XX"
+        ],
+        "languages": [
+          "en-CA",
+          "fr-CA"
+        ],
+        "age_scope": "all_fixture",
+        "availability": "available_fixture",
+        "police_involvement": "unknown",
+        "qualifications": [
+          "Normal fictional operations; availability requires current evidence.",
+          "Fonctionnement fictif normal; disponibilité selon les preuves actuelles."
+        ],
+        "alternative_service_id": null,
+        "hours_description": "Fictional daytime hours / Horaire fictif de jour",
+        "operating_state": "normal_operations"
+      },
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000101",
+          "revision": "1",
+          "digest": "57a17ebdd7d596eeab5df6cdca4cf2242c359fc477c230aa92a761b930149c68",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "feed_artifact_digest": "5f01726cfdb1403859c46aada876422acaa51325838a7a95998aedcff89ba9fe"
+    },
+    {
+      "expected_revision": "0",
+      "service_id": "40400000-0000-4000-8000-000000000002",
+      "facts": {
+        "name": "Fictional option 2",
+        "jurisdictions": [
+          "CA-XX"
+        ],
+        "languages": [
+          "en-CA",
+          "fr-CA"
+        ],
+        "age_scope": "all_fixture",
+        "availability": "available_fixture",
+        "police_involvement": "unknown",
+        "qualifications": [
+          "Temporary closure; this option is unavailable.",
+          "Fermeture temporaire; cette option est indisponible."
+        ],
+        "alternative_service_id": null,
+        "hours_description": "Fictional daytime hours / Horaire fictif de jour",
+        "operating_state": "temporary_closure"
+      },
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000102",
+          "revision": "1",
+          "digest": "138650ff9b8f4ed47ff193e93a33d7297332b0a8aa89750aa9521a6766f2b741",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "feed_artifact_digest": "0c659697f58978b3699b33701d73d478b6b6cd869eca0b7142c51328ca47e237"
+    },
+    {
+      "expected_revision": "0",
+      "service_id": "40400000-0000-4000-8000-000000000003",
+      "facts": {
+        "name": "Fictional option 3",
+        "jurisdictions": [
+          "CA-XX"
+        ],
+        "languages": [
+          "en-CA",
+          "fr-CA"
+        ],
+        "age_scope": "all_fixture",
+        "availability": "available_fixture",
+        "police_involvement": "unknown",
+        "qualifications": [
+          "Regional outage; this option is unavailable.",
+          "Panne régionale; cette option est indisponible."
+        ],
+        "alternative_service_id": null,
+        "hours_description": "Fictional daytime hours / Horaire fictif de jour",
+        "operating_state": "regional_outage"
+      },
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000103",
+          "revision": "1",
+          "digest": "c043bde2edd91921c9cb871749effb163f5eb988fd53e11b9bc3f9625cc0f814",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "feed_artifact_digest": "8a9e90adaf6fa4ede53e88c0d2889d203eb0af501e4325cb0146ca0c2959f775"
+    },
+    {
+      "expected_revision": "0",
+      "service_id": "40400000-0000-4000-8000-000000000004",
+      "facts": {
+        "name": "Fictional option 4",
+        "jurisdictions": [
+          "CA-XX"
+        ],
+        "languages": [
+          "en-CA",
+          "fr-CA"
+        ],
+        "age_scope": "all_fixture",
+        "availability": "available_fixture",
+        "police_involvement": "unknown",
+        "qualifications": [
+          "Holiday hours; current event-specific verification is required.",
+          "Horaire des jours fériés; vérification actuelle propre à cet événement requise."
+        ],
+        "alternative_service_id": null,
+        "hours_description": "Fictional daytime hours / Horaire fictif de jour",
+        "operating_state": "holiday_hours"
+      },
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000104",
+          "revision": "1",
+          "digest": "a7b319196f0f40a346149bfca7aa7e42b80e7c48f435475481ec5a6435954bdf",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "feed_artifact_digest": "a56b6941de9a40b7a3415592cb5a4428168e1534601e7af01f209e36cac29966"
+    },
+    {
+      "expected_revision": "0",
+      "service_id": "40400000-0000-4000-8000-000000000005",
+      "facts": {
+        "name": "Fictional option 5",
+        "jurisdictions": [
+          "CA-XX"
+        ],
+        "languages": [
+          "en-CA",
+          "fr-CA"
+        ],
+        "age_scope": "all_fixture",
+        "availability": "available_fixture",
+        "police_involvement": "unknown",
+        "qualifications": [
+          "Severe weather; current event-specific verification is required.",
+          "Intempéries; vérification actuelle propre à cet événement requise."
+        ],
+        "alternative_service_id": null,
+        "hours_description": "Fictional daytime hours / Horaire fictif de jour",
+        "operating_state": "severe_weather"
+      },
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000105",
+          "revision": "1",
+          "digest": "0192e2e4b9ffdc1a54845a4b709628adf2ff56cf76c47ba144a67234abcd8483",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "feed_artifact_digest": "1beee154fcc1622aacd82f31b04312edb80aa563611b28b8d5c7bfbea60ae499"
+    },
+    {
+      "expected_revision": "0",
+      "service_id": "40400000-0000-4000-8000-000000000006",
+      "facts": {
+        "name": "Fictional option 6",
+        "jurisdictions": [
+          "CA-XX"
+        ],
+        "languages": [
+          "en-CA",
+          "fr-CA"
+        ],
+        "age_scope": "all_fixture",
+        "availability": "available_fixture",
+        "police_involvement": "unknown",
+        "qualifications": [
+          "Source API unavailable; availability is unknown.",
+          "API source indisponible; disponibilité inconnue."
+        ],
+        "alternative_service_id": null,
+        "hours_description": "Fictional daytime hours / Horaire fictif de jour",
+        "operating_state": "api_failure"
+      },
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000106",
+          "revision": "1",
+          "digest": "531be5fc9122db9649e3b60dc7cd263ff5804ae9923289e65135d9e19071e6b1",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "verified"
+        }
+      ],
+      "feed_artifact_digest": "4eafaa22b3199de29e4e5cc10f875f22ae2632a284affd1aab9dab0655bb21ef"
+    },
+    {
+      "expected_revision": "0",
+      "service_id": "40400000-0000-4000-8000-000000000007",
+      "facts": {
+        "name": "Fictional option 7",
+        "jurisdictions": [
+          "CA-XX"
+        ],
+        "languages": [
+          "en-CA",
+          "fr-CA"
+        ],
+        "age_scope": "all_fixture",
+        "availability": "available_fixture",
+        "police_involvement": "unknown",
+        "qualifications": [
+          "Sources conflict; affected availability is unknown.",
+          "Sources contradictoires; disponibilité concernée inconnue."
+        ],
+        "alternative_service_id": null,
+        "hours_description": "Fictional daytime hours / Horaire fictif de jour",
+        "operating_state": "conflicting_source"
+      },
+      "sources": [
+        {
+          "kind": "directory",
+          "id": "40400000-0000-4000-8000-000000000107",
+          "revision": "1",
+          "digest": "956140a1eac5b9168eb03c8aec0fcfa0b0f26b7e94746f318b8ed2897a82a790",
+          "observed_at": "2026-11-16T18:00:00.000000Z",
+          "verification": "disputed"
+        }
+      ],
+      "feed_artifact_digest": "4a7cff5c819b8eb39a4c96d98ee464bace7a4f57ec034e43cbdd63f74fa3b337"
+    }
+  ],
+  "signed_admissions": [
+    {
+      "version": "care.directory.admission.v1",
+      "artifact_digest": "5f01726cfdb1403859c46aada876422acaa51325838a7a95998aedcff89ba9fe",
+      "manifest_digest": "3eeb09e80271f8f21fd10509c4ef47320a58cebd3b2e03ea4fbf65fbc7ffdd8a",
+      "manifest": {
+        "admitted": true,
+        "service_id": "40400000-0000-4000-8000-000000000001",
+        "payload_digest": "5f01726cfdb1403859c46aada876422acaa51325838a7a95998aedcff89ba9fe",
+        "needs": [
+          "client_support",
+          "carer_support",
+          "navigation",
+          "interpretation"
+        ],
+        "source_authorities": [
+          {
+            "id": "40400000-0000-4000-8000-000000000101",
+            "revision": "1",
+            "digest": "57a17ebdd7d596eeab5df6cdca4cf2242c359fc477c230aa92a761b930149c68",
+            "owner": "synthetic-demo-curator",
+            "method": "engineering-fixture",
+            "field_classes": {
+              "name": "structural",
+              "jurisdictions": "structural",
+              "languages": "structural",
+              "age_scope": "structural",
+              "police_involvement": "structural",
+              "qualifications": "structural",
+              "alternative_service_id": "structural",
+              "hours_description": "operational",
+              "operating_state": "operational",
+              "availability": "near_realtime"
+            },
+            "event_verified": false
+          }
+        ]
+      },
+      "key_id": "imp04-synthetic-source-001",
+      "tags": {
+        "environment": "demo",
+        "population": "synthetic"
+      },
+      "human_review": false,
+      "participant_admission": false,
+      "signature": "X4zI2TCwYD_0hBQgdBTi0HxGDHWjHrn9EJz1hS8iBS5eLrkGoUaxR8SdVw2KKKOcquLwXqgbERWtL9J5qv5yDQ"
+    },
+    {
+      "version": "care.directory.admission.v1",
+      "artifact_digest": "0c659697f58978b3699b33701d73d478b6b6cd869eca0b7142c51328ca47e237",
+      "manifest_digest": "c1101ddd43feda4cd8767dddc98c7e08c4e89175721ecbb6c921392fbe76c5ad",
+      "manifest": {
+        "admitted": true,
+        "service_id": "40400000-0000-4000-8000-000000000002",
+        "payload_digest": "0c659697f58978b3699b33701d73d478b6b6cd869eca0b7142c51328ca47e237",
+        "needs": [
+          "client_support",
+          "carer_support",
+          "navigation",
+          "interpretation"
+        ],
+        "source_authorities": [
+          {
+            "id": "40400000-0000-4000-8000-000000000102",
+            "revision": "1",
+            "digest": "138650ff9b8f4ed47ff193e93a33d7297332b0a8aa89750aa9521a6766f2b741",
+            "owner": "synthetic-demo-curator",
+            "method": "engineering-fixture",
+            "field_classes": {
+              "name": "structural",
+              "jurisdictions": "structural",
+              "languages": "structural",
+              "age_scope": "structural",
+              "police_involvement": "structural",
+              "qualifications": "structural",
+              "alternative_service_id": "structural",
+              "hours_description": "operational",
+              "operating_state": "operational",
+              "availability": "near_realtime"
+            },
+            "event_verified": false
+          }
+        ]
+      },
+      "key_id": "imp04-synthetic-source-001",
+      "tags": {
+        "environment": "demo",
+        "population": "synthetic"
+      },
+      "human_review": false,
+      "participant_admission": false,
+      "signature": "LWrkWrJ_cnM5zPTuHMMueaB2QiGRTQSyu0czBK0yNoGImsZQiVQupxKB6I8FP89qVBFijXFLM61mkFRu7Ie4Cw"
+    },
+    {
+      "version": "care.directory.admission.v1",
+      "artifact_digest": "8a9e90adaf6fa4ede53e88c0d2889d203eb0af501e4325cb0146ca0c2959f775",
+      "manifest_digest": "445187d33a93205ec99406aa2c15dbce7151af00eb63e4b495d0c7a601e0cd1e",
+      "manifest": {
+        "admitted": true,
+        "service_id": "40400000-0000-4000-8000-000000000003",
+        "payload_digest": "8a9e90adaf6fa4ede53e88c0d2889d203eb0af501e4325cb0146ca0c2959f775",
+        "needs": [
+          "client_support",
+          "carer_support",
+          "navigation",
+          "interpretation"
+        ],
+        "source_authorities": [
+          {
+            "id": "40400000-0000-4000-8000-000000000103",
+            "revision": "1",
+            "digest": "c043bde2edd91921c9cb871749effb163f5eb988fd53e11b9bc3f9625cc0f814",
+            "owner": "synthetic-demo-curator",
+            "method": "engineering-fixture",
+            "field_classes": {
+              "name": "structural",
+              "jurisdictions": "structural",
+              "languages": "structural",
+              "age_scope": "structural",
+              "police_involvement": "structural",
+              "qualifications": "structural",
+              "alternative_service_id": "structural",
+              "hours_description": "operational",
+              "operating_state": "operational",
+              "availability": "near_realtime"
+            },
+            "event_verified": false
+          }
+        ]
+      },
+      "key_id": "imp04-synthetic-source-001",
+      "tags": {
+        "environment": "demo",
+        "population": "synthetic"
+      },
+      "human_review": false,
+      "participant_admission": false,
+      "signature": "JNUKdbFTUdsEnyIRwg4sinp1oJPBXvEurfPSz0iYSxoLUiUr80wH2xNHFHuuDckJPWN55sus1GPKhc9SSL_UCg"
+    },
+    {
+      "version": "care.directory.admission.v1",
+      "artifact_digest": "a56b6941de9a40b7a3415592cb5a4428168e1534601e7af01f209e36cac29966",
+      "manifest_digest": "f743e816b9a567c4f7019f289b4f44715a5a87d0ba7395e5d3ee611955c4e199",
+      "manifest": {
+        "admitted": true,
+        "service_id": "40400000-0000-4000-8000-000000000004",
+        "payload_digest": "a56b6941de9a40b7a3415592cb5a4428168e1534601e7af01f209e36cac29966",
+        "needs": [
+          "client_support",
+          "carer_support",
+          "navigation",
+          "interpretation"
+        ],
+        "source_authorities": [
+          {
+            "id": "40400000-0000-4000-8000-000000000104",
+            "revision": "1",
+            "digest": "a7b319196f0f40a346149bfca7aa7e42b80e7c48f435475481ec5a6435954bdf",
+            "owner": "synthetic-demo-curator",
+            "method": "engineering-fixture",
+            "field_classes": {
+              "name": "structural",
+              "jurisdictions": "structural",
+              "languages": "structural",
+              "age_scope": "structural",
+              "police_involvement": "structural",
+              "qualifications": "structural",
+              "alternative_service_id": "structural",
+              "hours_description": "operational",
+              "operating_state": "operational",
+              "availability": "near_realtime"
+            },
+            "event_verified": false
+          }
+        ]
+      },
+      "key_id": "imp04-synthetic-source-001",
+      "tags": {
+        "environment": "demo",
+        "population": "synthetic"
+      },
+      "human_review": false,
+      "participant_admission": false,
+      "signature": "jM1pMUjmRKwYxjJQv3IJB4oruZbfL-27SvM6J8ndI6QuIPZcnpoJqHEwxMzMxZkyAPNNnYu_y2ZPVmBDIPrkDQ"
+    },
+    {
+      "version": "care.directory.admission.v1",
+      "artifact_digest": "1beee154fcc1622aacd82f31b04312edb80aa563611b28b8d5c7bfbea60ae499",
+      "manifest_digest": "7097708eeea411bcf58d07579b340739d73329404e90d561600867a12c6dd9b4",
+      "manifest": {
+        "admitted": true,
+        "service_id": "40400000-0000-4000-8000-000000000005",
+        "payload_digest": "1beee154fcc1622aacd82f31b04312edb80aa563611b28b8d5c7bfbea60ae499",
+        "needs": [
+          "client_support",
+          "carer_support",
+          "navigation",
+          "interpretation"
+        ],
+        "source_authorities": [
+          {
+            "id": "40400000-0000-4000-8000-000000000105",
+            "revision": "1",
+            "digest": "0192e2e4b9ffdc1a54845a4b709628adf2ff56cf76c47ba144a67234abcd8483",
+            "owner": "synthetic-demo-curator",
+            "method": "engineering-fixture",
+            "field_classes": {
+              "name": "structural",
+              "jurisdictions": "structural",
+              "languages": "structural",
+              "age_scope": "structural",
+              "police_involvement": "structural",
+              "qualifications": "structural",
+              "alternative_service_id": "structural",
+              "hours_description": "operational",
+              "operating_state": "operational",
+              "availability": "near_realtime"
+            },
+            "event_verified": false
+          }
+        ]
+      },
+      "key_id": "imp04-synthetic-source-001",
+      "tags": {
+        "environment": "demo",
+        "population": "synthetic"
+      },
+      "human_review": false,
+      "participant_admission": false,
+      "signature": "yO-ydF-8ZWrJxBoIU_-uYZfjx6G50Qaoz_ZG_tRAxvnuzG4FiBFwsgPshuevi4Hc8fciJUs4GdJOdzbnoDsHCA"
+    },
+    {
+      "version": "care.directory.admission.v1",
+      "artifact_digest": "4eafaa22b3199de29e4e5cc10f875f22ae2632a284affd1aab9dab0655bb21ef",
+      "manifest_digest": "e749befc8560fee47adf89c7cbab17f6b527c3cd5aad8e8a711e58fa15b7cb67",
+      "manifest": {
+        "admitted": true,
+        "service_id": "40400000-0000-4000-8000-000000000006",
+        "payload_digest": "4eafaa22b3199de29e4e5cc10f875f22ae2632a284affd1aab9dab0655bb21ef",
+        "needs": [
+          "client_support",
+          "carer_support",
+          "navigation",
+          "interpretation"
+        ],
+        "source_authorities": [
+          {
+            "id": "40400000-0000-4000-8000-000000000106",
+            "revision": "1",
+            "digest": "531be5fc9122db9649e3b60dc7cd263ff5804ae9923289e65135d9e19071e6b1",
+            "owner": "synthetic-demo-curator",
+            "method": "engineering-fixture",
+            "field_classes": {
+              "name": "structural",
+              "jurisdictions": "structural",
+              "languages": "structural",
+              "age_scope": "structural",
+              "police_involvement": "structural",
+              "qualifications": "structural",
+              "alternative_service_id": "structural",
+              "hours_description": "operational",
+              "operating_state": "operational",
+              "availability": "near_realtime"
+            },
+            "event_verified": false
+          }
+        ]
+      },
+      "key_id": "imp04-synthetic-source-001",
+      "tags": {
+        "environment": "demo",
+        "population": "synthetic"
+      },
+      "human_review": false,
+      "participant_admission": false,
+      "signature": "G1Hh5yWxNCs7d6zId2sn9HoIv1_6FQ6WITTbsHeDjSiwHkk7n9OjSTkQgKT8Fs8QEYRkOSbWVDA4yI2dVYU5AA"
+    },
+    {
+      "version": "care.directory.admission.v1",
+      "artifact_digest": "4a7cff5c819b8eb39a4c96d98ee464bace7a4f57ec034e43cbdd63f74fa3b337",
+      "manifest_digest": "5422725a37dcf414f2e113eda5131e7c41a72cf37f0a0f2a6c93a91ed5487347",
+      "manifest": {
+        "admitted": true,
+        "service_id": "40400000-0000-4000-8000-000000000007",
+        "payload_digest": "4a7cff5c819b8eb39a4c96d98ee464bace7a4f57ec034e43cbdd63f74fa3b337",
+        "needs": [
+          "client_support",
+          "carer_support",
+          "navigation",
+          "interpretation"
+        ],
+        "source_authorities": [
+          {
+            "id": "40400000-0000-4000-8000-000000000107",
+            "revision": "1",
+            "digest": "956140a1eac5b9168eb03c8aec0fcfa0b0f26b7e94746f318b8ed2897a82a790",
+            "owner": "synthetic-demo-curator",
+            "method": "engineering-fixture",
+            "field_classes": {
+              "name": "structural",
+              "jurisdictions": "structural",
+              "languages": "structural",
+              "age_scope": "structural",
+              "police_involvement": "structural",
+              "qualifications": "structural",
+              "alternative_service_id": "structural",
+              "hours_description": "operational",
+              "operating_state": "operational",
+              "availability": "near_realtime"
+            },
+            "event_verified": false
+          }
+        ]
+      },
+      "key_id": "imp04-synthetic-source-001",
+      "tags": {
+        "environment": "demo",
+        "population": "synthetic"
+      },
+      "human_review": false,
+      "participant_admission": false,
+      "signature": "f_guM49Q_xEYa-Qt9pdVCSLohQv5gRcKBTZAuEgk-0Jj6r_hCiFY9mdfvMcbr6_gaZrv_NjIKnEI4pL7vxQ_CA"
+    }
+  ]
+}

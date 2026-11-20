@@ -1,0 +1,414 @@
+{
+  "recorded_at": "2026-11-16T20:55:13.374180+00:00",
+  "scope": "Public qualification/session artifacts only; self excluded to avoid a circular hash",
+  "files": [
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/README.md",
+      "sha256": "555422ce4708d70f76237457e0faa244ce69c1cc3866437f06519e42350840a0"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/agent-result.json",
+      "sha256": "c1060b8891f7d721af5acc9a1a64cd05c512f6dc0201b8e1c25136d79e17d5a5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/attempt-index.json",
+      "sha256": "adbc86c3a2df616e78301988941f094591833057c8e71f8da2e20ad83ce97d92"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/candidate-manifest.json",
+      "sha256": "39520d06ad04ca2a1943551ab2ac8789d4c31072250123cc92a268bdd36d530d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/checks.json",
+      "sha256": "a497036e4f5a185c79ac005a54f9d055c46721ce154f90e30fa225bccadbf1c6"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/current-source-bindings.json",
+      "sha256": "48c0a4f813ab64228356be2dd4fabd06c63570ef898abda266042b0afb4085aa"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/demo-packet.json",
+      "sha256": "2ffe9ebc5b017ad6be27fb01acec29ad6b18aaed5c96c90ec0b88635e29ce511"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/deployment-acceptance.json",
+      "sha256": "bec31edcad8f078fb54942ec9c3f98ed042759f00f3c1775eb82bdc3711bb5d9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/accepted-preservation-interim.json",
+      "sha256": "e1ca7a87e3cf4af4adc1d9e4175b18fcc3f5a4bb5c2ce229131b3d605d0e5a20"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/authority-failure-diagnostic.json",
+      "sha256": "aa0a37eb81404a7b7b5c40091ab76364c8c3005e87a852b0a8c759a88001ecfe"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/browser-resource-diagnosis.json",
+      "sha256": "ccb782d2f47969998f5c6c15635b4c613aaa19a7c15495a7e4c0ab9fecaf7283"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/boundaries.log",
+      "sha256": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/contracts.log",
+      "sha256": "0537f5be93b6bf84de3ce0a39f65bca9f01475eba04f026d50e76e89a6e2cef8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/deployment-unit-tests.log",
+      "sha256": "df70669069be3675214df9a658fcbdd9c46674dced6b2b05ae940adff42baf07"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/live-format.log",
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/live-typescript.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/pyright.log",
+      "sha256": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/python-format.log",
+      "sha256": "7715b02781372f8741fb309aee97a6483e689c9039f0d78081dd910f70b0256e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/ruff.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/whitespace.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/database-absence.json",
+      "sha256": "7b4f024b7ec1e4660afe7117811690c69c4ee49313fc31a92393344f8159416a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/database-final.json",
+      "sha256": "3c6347171aed2f62854dbac98c3aecaa5c105c474176463d6097c9df7ff964ad"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/database-interim-race.json",
+      "sha256": "0224a267bb5c36fabc24b72633184420116dc016b6f1a1f62989c02da39959c3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/database-lifecycle-review-controls.json",
+      "sha256": "6945a57f3f87557cac26fc322bd27ca2554b4b3e84003c4c1588a6bc67b4e49c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/database-privileges-initial.json",
+      "sha256": "bbcd8c36a22a88ee4519ec04af182c3a8902c4e7cac6ad76a54e5e66ea6f32bf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/delegation-admission.json",
+      "sha256": "b2b0ad94d7f1247127dc21d1820c5dd4136608a866a5836491e353d4ae8ed60d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/final-snapshot.json",
+      "sha256": "de7d7ebe82b10d1e926ff6981c7434d71eacd52d7356b069135dd1576f418ff3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/image-source-verification.json",
+      "sha256": "515d284e4247c11c65ee67cce202f9cd2d0f1caeb5c930da100ab8290df22f07"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/ingress-capacity-corrected.json",
+      "sha256": "a92c509131d19a4911cf6583215818af531e21d4795efd49e0112f1387d9775f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/ingress-capacity-initial.json",
+      "sha256": "dc2c81e7adcbfc55257d791eb00e0b929b21e763149236c65178999f58203437"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-absence-001.json",
+      "sha256": "c7510892918af613e685bb690c1b43958c74633613ca9b6263b7a437d30e2564"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-absence-002.json",
+      "sha256": "c0a20c2b408000d811d2fac0f9e0c2e345f338b7e9faf904410d03d1c40c8f6c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-accessibility-001.json",
+      "sha256": "43cc09c6add296aedf48a149726ebbb9cb11686a46185d1e5e4cde7b42d6b352"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-accessibility-002.json",
+      "sha256": "09b31fc4c041c3bbaa6552f6409043f7bb0b4f07e3791cb406b88000277d0d7c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-accessibility-003.json",
+      "sha256": "5aaf4be1c588a662a234bf22f6b97a957351cf43220f9fe82f62b55704e19e54"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-accessibility-004.json",
+      "sha256": "5e797f999bfe695ca719b7609033872c1b3ff81682049983eb782665e0b7674f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-delegation-001.json",
+      "sha256": "afa7922aa711598306de03212b74f17b3153e6febf0daa71b71435bbef98ee54"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-delegation-expired-001.json",
+      "sha256": "c56cf94b9e298a63feeb8b67e1ac0c210b85d6b2af7aa262154ff5f15e518c55"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-dependency-001.json",
+      "sha256": "c38dda6866408e6acf4fda1052f36f3d108a5ecfb8a383e9fb20e503ccbe7abd"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-directory-001.json",
+      "sha256": "013bfa0ffe17f5320138a48b3473fc8a252228f048403635d4cb456f97867cd8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-directory-002.json",
+      "sha256": "db9c44ed8902e0ea2c2c0ab14b77282dfb5c33c8aab51901da0072d402152b97"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-directory-003.json",
+      "sha256": "00de3e7e23725e6a94fde6da4c1094bc718cc235af1a98d4af0fa202e27ed43d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-lifecycle-001.json",
+      "sha256": "b107da3266d9369fd7854e1c2d57a3481a1cde0526c206ef9656228888b3e200"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-manual-001.json",
+      "sha256": "8bddeee09fd178d6990e0d782289f3d517459f9bbdc105ffac0cd858d6c74059"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-manual-002.json",
+      "sha256": "ead9ac3e2c6d6ee65cb7eeb2077678f58408857218f5df0a1181a1237867effe"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-001.json",
+      "sha256": "781dc33f0f75bae776b78ab5384e7dbc7531f351c7c2cbf3e507866307aaaeb4"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-002.json",
+      "sha256": "c3ed8d1e63566152aab464a50471cbcc52138aa12df68b85f895a20e285cfae5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-003.json",
+      "sha256": "cd6e48a9ba3c1f85d88884ef27ce1ce664e3e14ed2ade1a733fd05fe3d251be5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-004.json",
+      "sha256": "bb608502f76f67a60e2cd38919924a3e330e38ee023754853a1b044a7cf6bec6"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-005.json",
+      "sha256": "daf72af7cc9a2a3b278939599c1786e5e8b42568442b94c01757ebe3e938e95a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-006.json",
+      "sha256": "aa8343d46562c8242b3f48d4ab25788c9b859d63a8f2969a1469399026ecd26a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-007.json",
+      "sha256": "f448475f43faa5c87f2be949294b423fe54491f20d107652bdee0a238e5c51b7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-008.json",
+      "sha256": "76a4ac0f9453e9eae99608089d2e8d75ec6a4a0d23ff2ce8ffb4796c77c1d494"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-009.json",
+      "sha256": "47a9183c307eedac59dec5b4a97983a65b76c022cb29a107b77b08ccca6e9e55"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-continue-001.json",
+      "sha256": "01e7b4c1c37a1d64ea51689f21cfdf3284a493193c6318c065c180033663710f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-pending-ui-001.json",
+      "sha256": "227f58a40195e6b6ead5c8d53b62025fc60ad680e7302377a7784547a99a6386"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-pending-ui-002.json",
+      "sha256": "6c70905ad10b415544123e13705da84d69e2363a81eab7b52b3a82e963ad274e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-001.json",
+      "sha256": "b13fd2f28c719e99e6a08c5809a69ae66d00513d9a3eff389515a3fea6326dbf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-002.json",
+      "sha256": "611a0225a0bb217dce2420f2cc4afda82ae9ffd436db891f3f50443c6fe45858"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-003.json",
+      "sha256": "d37ee12a2b3350230bf294c210d36a831d7fb331a3e36bb72bae47b47eaeb652"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-004.json",
+      "sha256": "813596f64f99af35b5ccbd59b0f17a12aabc3d95849536e12a0e4a256c0ecffc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-005.json",
+      "sha256": "12b4fcfc7df2be57364c19e46a7c27b7dca2a274a7ed473236b67fa94db65778"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-006.json",
+      "sha256": "f6bb667ae9b647c8a1d4d925499db9e2854589f40cab94ebdb046b8910c94fe8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-007.json",
+      "sha256": "51e176f22954507688ef90bdd1b3b7d2d72cdd6fc864997ea567d232fabea56b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-008.json",
+      "sha256": "b0a50865050e54e78bba4dd8c7093b1df7eebe27acca676cc4d5fc5ec9638f57"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-009.json",
+      "sha256": "47b3eb54926f24899ac7c047341cb4dfc0f5f447e19a99eaa55768280ed3b770"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-010.json",
+      "sha256": "aa2ed5c7e5a32ba7c6433cef4c165c836c06deb90222221b598c2de4100941f2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-011.json",
+      "sha256": "43c6fddfe90f7b574937cf88b566fc964fbb0a2d6cbb6e2014ca0599a9e0e7b2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-012.json",
+      "sha256": "722b7da044dbc2499d0d42ae6a13a42e8890257c9efbe034f8edf5acb40974d3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-reload-001.json",
+      "sha256": "1f4fd715c9e261c5533cf039a2e8e11c7203fb1e8737fa1f68fde547e4b54654"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-report-ui-001.json",
+      "sha256": "3e87a7c953dc86bae969e814e8be27389f91de1914760e059813dff5fc1e9cc2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-report-ui-002.json",
+      "sha256": "1614ab89cbea24833f38a7d92f1cf727a2794addc41d7cf8955f0048be39caf1"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-report-ui-003.json",
+      "sha256": "361eebe6f7112eccb2a75508a48b3bdaf6f62c971b3816e374ea5fe70f4da170"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-supervisor-001.json",
+      "sha256": "8a9e3dd3db68018b525a3191e2ee7f6511f54e403cc7005f9735cc48d061ae75"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/network-denials.json",
+      "sha256": "fb16b4e0d83e9de7fade769264d25cae8ea75cc2f65cb57f6670c054ae95b817"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/policy-oom-recovery.json",
+      "sha256": "b2161c56bc86a320d92d0193a56e3afffd4c9e3979e9c1524ab5001f08d5a47c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/preflight-inventory.json",
+      "sha256": "8b36de0b7536fc924734864413db1f4b4977f4b4fa2c9b0f38fa7692340c24f4"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/provider-discovery.json",
+      "sha256": "2b928422e4a1b2cbe53ffdf1cbec3f517be384b3f9c887c37e364d891ee4b618"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/snapshot-before-operator-cleanup.json",
+      "sha256": "72b925e426eaabbab1af77619cd5d8c224831cdcf99b038eeca1761c2f6faddb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/snapshot-interim.json",
+      "sha256": "528a1368e43c137bfa7e5a10715b26156b3ce27dd2ff77dedec822ecd107d5ca"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/tls-strict-validation.json",
+      "sha256": "95c52cffb8588e8fd7676c319cf490d2e535afecdae02e0ea0467570263ead11"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/workload-expiry-late-recovery.json",
+      "sha256": "48e07db9c777020df644f0ee5eed23037dcd7a3ab2ea20a541454c7a05696008"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/workload-expiry.json",
+      "sha256": "21e166a8b6ce99bdefed5ac7b842b93c04ced3b2a393a15d9915414c2925f1a2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/final-candidate-manifest.json",
+      "sha256": "92ec7d0cfff704b701bd56aa68ef7d28010518a48bd26adfda4abba23872ffe7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/handoff.md",
+      "sha256": "ba8f585d52cb2cfd9fda36d8e3535ca4df0e229cd54a32a17ff8fa2f2861ebef"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/human-decisions.json",
+      "sha256": "5bfa4fbfdfa452fc29cdaa661212e307c579f38ab083c67f3f804dc3d2ca97f2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/ingress-capacity-correction.json",
+      "sha256": "2d38913c380799810aa122987e4cc3c4af5b67005e813cff4fc3e7ce51cebbc4"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/packet-verification.json",
+      "sha256": "d93a2523021caaa292b73105278ab36f9fcfc48fa163aa75b18881cc7e38fa84"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/progress.md",
+      "sha256": "bff6799dd6b6651e967b52bdbecd9a3990c6eb614ce3139721cda1779456f0c3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/qualification-adapter-plan.json",
+      "sha256": "74e81879ea405b949464a28935c018bd632f11105fef916442d9e3d48c7a7a71"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/qualification-results.md",
+      "sha256": "80e26c95c15b7cfdc2d05b87129fab6d7fdf482e47f6e247d4266bebfb0772a7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/rendered-deployment.json",
+      "sha256": "e6f11e2a28c9b00e4de3f9bcfb27542c00f4cd8b3d0243ac0d184eeb10705237"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/results.json",
+      "sha256": "cf8db7ad5a1830c55d580fafa334549ca96db4f88135174f399b2293b46ca792"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/review.md",
+      "sha256": "167d53b1f3965ad26a4dc3712d876f515bc02d5802f1c86382d2d06d78c0c873"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/schema-validation.json",
+      "sha256": "3fd72b7883f216b8061430236a2f50174a07e95e34b2a60ddab0b7ea68756aba"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/source-continuity.json",
+      "sha256": "5feb273f280c81ce0564768840c8354414886a677054310df8926691ae815f29"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/starting-state.json",
+      "sha256": "849d98570f56a0ff8484812a1af0568bfdbc026c5f61e3a04461c576497c5b1f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/work-packet-configuration.json",
+      "sha256": "b8a21812cf56371a33dd78e139594d5b101ab4dc396e3b3bd98262ae07a615a0"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/work-packet-platform.json",
+      "sha256": "b1e18cf63438306fab8304adb42f6c3d37612bb71dc6d6b863dcdeeeab71631f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/work-packet-qualification.json",
+      "sha256": "3a31c62f1c1ac9469e718cd195e8869384301da16daa0e9ca11edbec220657c6"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/work-packet-review.json",
+      "sha256": "c9a0e1a61f9c66033f641a476f9fa86c6794dc33d657237bfc7568cadfba1a65"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/work-packet.json",
+      "sha256": "cf2f6ab1c26103ac120094dff0fc9f060b4bca7f33a17f6a578ad28f68f566f1"
+    }
+  ]
+}

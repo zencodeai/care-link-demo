@@ -24,6 +24,7 @@ from care_link_domain import (
 )
 
 from . import projections, review_projection, review_scope
+from .directory_admission import VerifiedDirectoryAdmission
 from .store import PostgresStore, Record, Transaction, instant, number, text
 from .values import (
     PARTICIPANTS,
@@ -57,6 +58,7 @@ class Engine:
         cursor_key: bytes | None = None,
         scenario_bindings: dict[str, str] | None = None,
         content_key_ref: str | None = None,
+        directory_admission: VerifiedDirectoryAdmission | None = None,
     ) -> None:
         self.store, self.authority, self.policy, self.journal, self.cipher = (
             store,
@@ -71,6 +73,8 @@ class Engine:
         self.cursor_key = cursor_key
         self.scenario_bindings = scenario_bindings or {}
         self.content_key_ref = content_key_ref or getattr(cipher, "key_ref", None)
+        # Admission manifests are deployment inputs, never directory feed fields.
+        self.directory_artifacts = directory_admission.manifests if directory_admission else {}
 
     @staticmethod
     def active_assignment(tx: Transaction, session_id: str) -> Record | None:
@@ -157,6 +161,16 @@ class Engine:
             object_value(snapshot["review_run"]) if snapshot.get("review_run") else None,
         ):
             return False
+        if action.startswith(("plan_", "consent_")):
+            if session is None:
+                # Preflight contains no target content. Resource discovery and
+                # exact current field authorization occur in the final command.
+                return True
+            from .consent import capability_access
+
+            return capability_access(tx, actor, action, object_value(session), self.clock())
+        if action.startswith("directory_"):
+            return True
         if session is None:
             return action in {
                 "review_workspace",
@@ -246,6 +260,8 @@ class Engine:
         operation_id: str,
         payload_digest: str,
         snapshot: Record,
+        *,
+        arguments: Record | None = None,
     ) -> Record:
         session = object_value(snapshot["session"]) if snapshot["session"] else None
         control = object_value(snapshot["control"])
@@ -255,9 +271,15 @@ class Engine:
             if action.startswith("workforce_")
             or action
             in {"queue_list", "control_change", "manual_identity_restrict", "manual_queue_review"}
+            else "plan"
+            if action.startswith("plan_")
+            else "governance"
+            if action == "directory_ingest"
+            else "security"
+            if action == "directory_suspend"
             else "support"
         )
-        return {
+        request: Record = {
             "operation_id": operation_id,
             "actor": {
                 "kind": "human",
@@ -320,6 +342,21 @@ class Engine:
             },
         }
 
+        if arguments is not None and action.startswith(("plan_", "consent_", "directory_")):
+            from .planning_policy import enrich_planning_policy
+
+            enrich_planning_policy(
+                tx,
+                actor,
+                action,
+                arguments,
+                snapshot,
+                request,
+                self.clock(),
+                self.directory_artifacts,
+            )
+        return request
+
     def _fresh_actor(self, actor: Actor) -> Actor:
         if actor.request_deadline is not None and actor.request_deadline <= self.clock():
             raise ManualError("manual.deadline_exceeded", 503)
@@ -378,6 +415,48 @@ class Engine:
         ):
             raise ManualError("manual.journal_barrier", 503)
 
+    def append_restriction(
+        self,
+        tx: Transaction,
+        key: str,
+        control: Record,
+        restriction: Record,
+        scope: Record,
+    ) -> None:
+        before = self.journal.head()
+        request: Record = {
+            "command_id": key,
+            "expected_tip": str(before.tip),
+            "kind": "restrict_intent",
+            "scope": scope,
+            "restriction": restriction,
+            "binding_digest": digest(restriction),
+            "db_operation_id": key,
+            "relaxation_evidence_digest": None,
+        }
+        after = self.journal.append(request)
+        if (
+            after.journal_id != before.journal_id
+            or after.generation != before.generation
+            or after.restriction_barrier <= before.restriction_barrier
+        ):
+            raise ManualError("manual.journal_append_invalid", 503)
+        control["restriction_barrier"] = after.restriction_barrier
+        control["journal_tip_seen"] = after.tip
+        tx.put("control", control)
+        tx.put(
+            "recovery",
+            {
+                "command_id": key,
+                "intent_seq": after.tip,
+                "barrier_seq": after.restriction_barrier,
+                "payload_digest": digest(request),
+                "state": "applied",
+                "db_operation_id": key,
+                "applied_at": self.clock(),
+            },
+        )
+
     def _audit(
         self,
         tx: Transaction,
@@ -429,6 +508,7 @@ class Engine:
         *,
         contract: str | None = None,
         queue: bool = False,
+        replay: Handler | None = None,
     ) -> Record:
         started = time.monotonic()
         data = cast(Record, json.loads(canonical(data)))
@@ -457,7 +537,7 @@ class Engine:
         with self.store.transaction(current, session_id, locked=False, queue=queue) as prepare:
             snapshot = self._snapshot(prepare, current, session_id, extra_principals)
             request = self._policy_input(
-                prepare, current, action, operation_id, payload_digest, snapshot
+                prepare, current, action, operation_id, payload_digest, snapshot, arguments=data
             )
             validate_contract("PolicyInput", request)
         try:
@@ -481,7 +561,10 @@ class Engine:
                 final_actor = self._fresh_actor(current)
                 # A fresh identity receipt ID is evidence of this revalidation;
                 # policy binding retains the original receipt and guard vector.
-                if self._versions(final_actor, latest) != request["versions"]:
+                final_request = self._policy_input(
+                    tx, final_actor, action, operation_id, payload_digest, latest, arguments=data
+                )
+                if final_request != request:
                     raise ManualError("manual.stale_authority", 409)
                 if not self._accessible(tx, final_actor, action, latest):
                     raise ManualError("manual.not_found", 404)
@@ -497,7 +580,17 @@ class Engine:
                         or old["payload_digest"] != payload_digest
                     ):
                         raise ManualError("manual.idempotency_conflict", 409)
-                    result = self._replay(tx, final_actor, old, latest)
+                    result = (
+                        replay(
+                            tx,
+                            final_actor,
+                            data,
+                            cast(Record | None, latest["session"]),
+                            cast(Record | None, latest["guard"]),
+                        ).value
+                        if replay is not None and old["state"] == "committed"
+                        else self._replay(tx, final_actor, old, latest)
+                    )
                     self._audit(
                         tx,
                         final_actor,
@@ -505,7 +598,7 @@ class Engine:
                         str(uuid4()),
                         payload_digest,
                         result,
-                        self._versions(final_actor, latest),
+                        object_value(request["versions"]),
                     )
                 else:
                     review_scope.assert_submission_intent(
@@ -556,12 +649,15 @@ class Engine:
                         operation_id,
                         payload_digest,
                         result.value,
-                        self._versions(final_actor, latest),
+                        object_value(request["versions"]),
                         audit_id=audit_id,
                     )
                     result = result.value
                 if key or action == "channel_challenge_read":
                     review_scope.assert_channel_current(final_actor, self.channel)
+                self._check_output_authority(
+                    tx, final_actor, action, result, latest, object_value(request["scope"])
+                )
                 if (
                     time.monotonic() - started >= 1
                     or dt(decision["expires_at"]) <= self.clock()
@@ -586,6 +682,53 @@ class Engine:
                 extra_principals,
             )
             raise
+
+    def _check_output_authority(
+        self,
+        tx: Transaction,
+        actor: Actor,
+        action: str,
+        result: Record,
+        snapshot: Record,
+        policy_scope: Record,
+    ) -> None:
+        """Recheck the exact selected disclosure after content work and audit.
+
+        A narrower surviving grant cannot authorize fields selected under an
+        expired grant. This is the final guarded disclosure authorization; no
+        bytes are released if the check rolls back the transaction.
+        """
+        if action.startswith("plan_"):
+            from .consent import current_fields, owns_subject
+
+            session = object_value(snapshot["session"])
+            emitted = {
+                text(object_value(field), "field") for field in cast(list[object], result["fields"])
+            }
+            if not emitted.issubset(cast(list[str], policy_scope["fields"])):
+                raise ManualError("manual.field_scope_denied")
+            if action != "plan_read" and (
+                not actor.mfa or not 0 <= (self.clock() - actor.auth_time).total_seconds() < 300
+            ):
+                raise ManualError("manual.assurance_required")
+            if not owns_subject(tx, actor, session):
+                allowed = current_fields(tx, actor, session, self.clock())
+                fields = result.get("fields")
+                if not allowed or not isinstance(fields, list):
+                    raise ManualError("manual.field_scope_denied")
+                for raw in cast(list[object], fields):
+                    field = object_value(raw)
+                    if field["field"] not in allowed:
+                        raise ManualError("manual.field_scope_denied")
+        elif action == "consent_grant" and dt(result["expires_at"]) <= self.clock():
+            raise ManualError("manual.consent_interval", 409)
+        elif action.startswith("directory_") and action != "directory_suspend":
+            candidates = result.get("items", [result])
+            if isinstance(candidates, list):
+                for raw in cast(list[object], candidates):
+                    view = object_value(raw)
+                    if view.get("state") == "verified" and dt(view["expires_at"]) <= self.clock():
+                        raise ManualError("manual.directory_projection_expired", 409)
 
     def _record_denial(
         self,

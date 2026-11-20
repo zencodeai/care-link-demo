@@ -1,0 +1,9 @@
+{
+  "tag": "care-link-imp04:background-recovery-20261120",
+  "image_id": "sha256:6bcbb3adf5e42fab4e078f8a513e39282db4c621807d526cdf136c88030d5cfa",
+  "base_image_id": "sha256:d80abfb846e4c8e2a5b211a4ed47d1eefb11cf38e648d125ea60d6ec00560b00",
+  "base_layers_preserved": true,
+  "runtime_configuration_unchanged": true,
+  "change_scope": "Only /app/apps/web/dist public assets replaced",
+  "web_fingerprint": "494770ab4858a449f6c6f9a744d11bd446e3f2cfb28d25671ba0571885a72b2a"
+}

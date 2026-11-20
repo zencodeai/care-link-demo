@@ -1,0 +1,34 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/main/Workspace/projects/care-link/care-link-demo
+configfile: pyproject.toml
+testpaths: packages/policy-input/tests, services/data/tests, host/recovery-control/tests, packages/workload-trust/tests, packages/contracts/python/tests, services/core/tests, services/identity/tests, host/help/tests, host/static/tests, tests
+plugins: anyio-4.16.0
+collected 1119 items / 2 errors
+
+==================================== ERRORS ====================================
+__________ ERROR collecting tests/unit/imp04_review/test_lifecycle.py __________
+import file mismatch:
+imported module 'test_lifecycle' has this __file__ attribute:
+  /Users/main/Workspace/projects/care-link/care-link-demo/host/help/tests/test_lifecycle.py
+which is not the same as the test file we want to collect:
+  /Users/main/Workspace/projects/care-link/care-link-demo/tests/unit/imp04_review/test_lifecycle.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__________ ERROR collecting tests/unit/imp04_review/test_operator.py ___________
+import file mismatch:
+imported module 'test_operator' has this __file__ attribute:
+  /Users/main/Workspace/projects/care-link/care-link-demo/tests/unit/imp04_deployment/test_operator.py
+which is not the same as the test file we want to collect:
+  /Users/main/Workspace/projects/care-link/care-link-demo/tests/unit/imp04_review/test_operator.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR tests/unit/imp04_review/test_lifecycle.py
+ERROR tests/unit/imp04_review/test_operator.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
+========================= 1 warning, 2 errors in 0.35s =========================

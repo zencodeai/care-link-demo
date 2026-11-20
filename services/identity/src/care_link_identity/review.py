@@ -6,12 +6,15 @@ from threading import RLock
 
 from .crypto import digest
 from .domain import IdentityError, Provider, text
+from .interactive_provider import AutomaticReviewProvider
 from .provider import OIDCProvider
 from .review_context import ReviewContext
 from .service import IdentityService
+from .session_policy import InteractiveReviewPolicy
 
 ContextLoader = Callable[[], Mapping[str, ReviewContext]]
 ProviderFactory = Callable[[str], Provider]
+InteractivePolicyFactory = Callable[[str], InteractiveReviewPolicy | None]
 
 
 class ReviewIdentityRegistry:
@@ -20,11 +23,15 @@ class ReviewIdentityRegistry:
         base: IdentityService,
         contexts: ContextLoader,
         provider_for_origin: ProviderFactory | None = None,
+        *,
+        interactive_policy_for_origin: InteractivePolicyFactory | None = None,
     ) -> None:
         self.base, self.contexts = base, contexts
         self.provider_for_origin = provider_for_origin or self._provider
         self._custom_provider = provider_for_origin is not None
         self._providers: dict[str, Provider] = {}
+        self.interactive_policy_for_origin = interactive_policy_for_origin
+        self._interactive: dict[InteractiveReviewPolicy, AutomaticReviewProvider] = {}
         self._lock = RLock()
 
     def _provider(self, origin: str) -> Provider:
@@ -44,7 +51,19 @@ class ReviewIdentityRegistry:
         context = contexts.get(origin)
         if context is None or context.origin != origin:
             raise IdentityError("identity.review_origin_denied")
-        if self._custom_provider:
+        policy = (
+            self.interactive_policy_for_origin(origin)
+            if self.interactive_policy_for_origin
+            else None
+        )
+        if policy is not None:
+            policy.check(context, self.base.clock())
+            with self._lock:
+                provider = self._interactive.get(policy)
+                if provider is None:
+                    provider = AutomaticReviewProvider(policy, self.contexts, self.base.clock)
+                    self._interactive[policy] = provider
+        elif self._custom_provider:
             provider = self.provider_for_origin(origin)
         else:
             with self._lock:
@@ -61,6 +80,7 @@ class ReviewIdentityRegistry:
             origin,
             self.base.clock,
             review_context=context,
+            interactive_policy=policy,
         )
 
     def session_service(self, raw_session: str) -> IdentityService:

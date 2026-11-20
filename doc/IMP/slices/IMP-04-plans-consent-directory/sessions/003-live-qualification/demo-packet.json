@@ -1,0 +1,384 @@
+{
+  "packet_id": "DEMO-IMP04-003-live-execution",
+  "stage_id": "IMP-04",
+  "gate_id": "G-04",
+  "candidate": {
+    "commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+    "diff_digest": "9fb44311be9d6397f157a8ffba68a59ea33e31af5ae8f3db35a1170c531da703",
+    "artifact_digest": "b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+    "configuration_digest": "a1c25e1dd135d9d306c45d8cb72d7f7be4b138285682d49a1c55e00e742eb780",
+    "contract_digest": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a",
+    "environment_digest": "de7d7ebe82b10d1e926ff6981c7434d71eacd52d7356b069135dd1576f418ff3",
+    "fixture_digest": "26862660a86ce46088c9c98977eb78b6f49fe37ea585aac7c97ffc835443f6e6"
+  },
+  "state": "draft",
+  "preconditions": [
+    "Actual user deployment acceptance in deployment-acceptance.json; not G-04 acceptance",
+    "Separate synthetic deployment; accepted64 containers preserved by exact final comparison",
+    "Frozen serving image distinct from later host operator/harness binding",
+    "Strict failed live cases remain unresolved; packet is not a gate-ready claim"
+  ],
+  "normal_steps": [
+    {
+      "action": "Q01: Confirm source/image/configuration/TLS/trust binding and accepted IMP03 preservation",
+      "expected": "Only new target changes; current verify-full TLS/SVID and actual identity issuer; no accepted restart",
+      "actual": "Passed target TLS/source/native browser binding; final snapshot preserves accepted resources.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/final-snapshot.json",
+          "sha256": "de7d7ebe82b10d1e926ff6981c7434d71eacd52d7356b069135dd1576f418ff3"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/tls-strict-validation.json",
+          "sha256": "95c52cffb8588e8fd7676c319cf490d2e535afecdae02e0ea0467570263ead11"
+        }
+      ]
+    },
+    {
+      "action": "Q02: Use distinct PID, carer, professional participant, workforce and admin accounts in separate cookie jars",
+      "expected": "Current roles/assurance come from provider and identity, no browser role authority",
+      "actual": "Passed nine real password+OTP actor identities/AL2 in separate jars; actual same-actor state restoration recorded.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-report-ui-003.json",
+          "sha256": "361eebe6f7112eccb2a75508a48b3bdaf6f62c971b3816e374ea5fe70f4da170"
+        }
+      ]
+    },
+    {
+      "action": "Q03: PID creates and appends attributed plan fields; assigned worker adds scoped conflicting safety report",
+      "expected": "Append-only attribution/dispute/pending review; no overwriting another author",
+      "actual": "Passed own plan/stable creation/append attribution, assigned conflicting worker report/dispute; pending review metadata recorded.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-008.json",
+          "sha256": "76a4ac0f9453e9eae99608089d2e8d75ec6a4a0d23ff2ce8ffb4796c77c1d494"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/database-final.json",
+          "sha256": "3c6347171aed2f62854dbac98c3aecaa5c105c474176463d6097c9df7ff964ad"
+        }
+      ]
+    },
+    {
+      "action": "Q04: Complete subject-bound plan_edit MFA; preview and grant only plan.strategies to worker1 for purpose plan",
+      "expected": "Exact recipient, fields, source revisions, interval and authority basis; medication field absent",
+      "actual": "Passed visible exact preview and genuine subject MFA/confirmation, strategies-only sharing and medication absence.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-008.json",
+          "sha256": "76a4ac0f9453e9eae99608089d2e8d75ec6a4a0d23ff2ce8ffb4796c77c1d494"
+        }
+      ]
+    },
+    {
+      "action": "Q05: Carer and professional create own reports then reload",
+      "expected": "Own author/subject reports persist; relationship labels confer no PID/workforce permission",
+      "actual": "Passed two own reports and cross-author denial plus actual native UI manual reselection before/after reload; IDs API-bound, not rendered.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-report-ui-003.json",
+          "sha256": "361eebe6f7112eccb2a75508a48b3bdaf6f62c971b3816e374ea5fe70f4da170"
+        }
+      ]
+    },
+    {
+      "action": "Q06: Authorized operator ingests seven exact signed directory fixtures; inspect in EN/FR",
+      "expected": "Seven named operating labels, provenance, fixed observation times, stale/unknown availability and no executable destination",
+      "actual": "Passed exact7 signed EN/FR directory projections, stale facts, quarantine and persistent suspension; no fresh availability.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-directory-003.json",
+          "sha256": "00de3e7e23725e6a94fde6da4c1094bc718cc235af1a98d4af0fa202e27ed43d"
+        }
+      ]
+    },
+    {
+      "action": "Q07: Close support session, retain active plan; retire plan",
+      "expected": "Separate plan lifecycle and retirement+30-day copy anchors without simulated purge claim",
+      "actual": "Passed supportclose/activeplan independence and actual retirement+30day retained copy anchor; purge not run.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-lifecycle-001.json",
+          "sha256": "b107da3266d9369fd7854e1c2d57a3481a1cde0526c206ef9656228888b3e200"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/database-final.json",
+          "sha256": "3c6347171aed2f62854dbac98c3aecaa5c105c474176463d6097c9df7ff964ad"
+        }
+      ]
+    },
+    {
+      "action": "Q08: Repeat actor journeys in English/French with keyboard, focus, errors, live regions, axe and manual screen reader review",
+      "expected": "Usable actor controls and truthful unknown/recovery state; human accessibility evidence recorded",
+      "actual": "Incomplete: PID English scan passed; earlier PID French scan passed. Full4actor bilingual procedure failed on French search503. Human screen-reader/actual200percent zoom not run.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-accessibility-001.json",
+          "sha256": "43cc09c6add296aedf48a149726ebbb9cb11686a46185d1e5e4cde7b42d6b352"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-accessibility-004.json",
+          "sha256": "5e797f999bfe695ca719b7609033872c1b3ff81682049983eb782665e0b7674f"
+        }
+      ]
+    },
+    {
+      "action": "Q09: Preserve unsent input/pending key during step-up or transient failure in a mounted page; after reload re-read committed work by recorded IDs; exercise inherited manual flow on new target",
+      "expected": "Mounted-page in-memory input and same pending logical key survive the tested transient flow; committed work is recoverable by IDs and no duplicate effects. No pending-intent/draft persistence across full reload is claimed.",
+      "actual": "Passed real manual handoff/messages/same-key replay, committed reload recovery and actual pendingUI503 to same-key/body retry200 with correlated DB effect count. Full-reload draft persistence not claimed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-manual-002.json",
+          "sha256": "ead9ac3e2c6d6ee65cb7eeb2077678f58408857218f5df0a1181a1237867effe"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-pending-ui-002.json",
+          "sha256": "6c70905ad10b415544123e13705da84d69e2363a81eab7b52b3a82e963ad274e"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/database-final.json",
+          "sha256": "3c6347171aed2f62854dbac98c3aecaa5c105c474176463d6097c9df7ff964ad"
+        }
+      ]
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "A01: Attempt PID plan/report access by unshared carer/professional/other PID; forge browser role/subject/scope",
+      "expected": "Direct API denies; no extra fields or cross-author reports",
+      "actual": "Passed unshared/other-PID/cross-author/unassigned denials and direct forged-header backend403; browser-forgery matrix not live-run.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-008.json",
+          "sha256": "76a4ac0f9453e9eae99608089d2e8d75ec6a4a0d23ff2ce8ffb4796c77c1d494"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/network-denials.json",
+          "sha256": "fb16b4e0d83e9de7fade769264d25cae8ea75cc2f65cb57f6670c054ae95b817"
+        }
+      ]
+    },
+    {
+      "action": "A02: Request wider fields than current grant, narrow surviving grant, expire grant on wall clock",
+      "expected": "Only every currently permitted field; no broad-grant cache or clock substitution",
+      "actual": "Passed real wider-grant wall-clock expiry with narrow surviving fields, then final narrow revoke denial; whole normal-continue phase later failed reload driver.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-continue-001.json",
+          "sha256": "01e7b4c1c37a1d64ea51689f21cfdf3284a493193c6318c065c180033663710f"
+        }
+      ]
+    },
+    {
+      "action": "A03: Hold pending output at reviewed target-only final-release barrier, then revoke/expire/change grantor role/delegation",
+      "expected": "Zero newly forbidden bytes after boundary; correlated DB/journal/output timestamps; no lock-induced fake race",
+      "actual": "FAILED strict pending-output revocation qualification: entered/released receipt, actual journalled revoke, no projection but503 manual.gateway_denied; final-output expiry/role-change proof incomplete.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-012.json",
+          "sha256": "722b7da044dbc2499d0d42ae6a13a42e8890257c9efbe034f8edf5acb40974d3"
+        }
+      ]
+    },
+    {
+      "action": "A04: Run fresh grant creation races on absent grant scope",
+      "expected": "Subject guard serialization with real DB and independent request streams; actual effects counted",
+      "actual": "FAILED strict absent-scope serialization qualification: actual held/released pending grant returns503; bounded DB operation metadata recorded separately.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-absence-002.json",
+          "sha256": "c0a20c2b408000d811d2fac0f9e0c2e345f338b7e9faf904410d03d1c40c8f6c"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/database-absence.json",
+          "sha256": "7b4f024b7ec1e4660afe7117811690c69c4ee49313fc31a92393344f8159416a"
+        }
+      ]
+    },
+    {
+      "action": "A05: Independently provision exact carer delegation, then expire or revoke it and retry",
+      "expected": "Runtime cannot provision delegation; exact fields/purpose/subject/grantor/time checked; journaled restrictions cannot be undone",
+      "actual": "Passed offline exact carer delegation and actual delegation expiry denial while prior grant remained otherwise live/unrevoked; runtime delegation write rights denied.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-delegation-001.json",
+          "sha256": "afa7922aa711598306de03212b74f17b3153e6febf0daa71b71435bbef98ee54"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-delegation-expired-001.json",
+          "sha256": "c56cf94b9e298a63feeb8b67e1ac0c210b85d6b2af7aa262154ff5f15e518c55"
+        }
+      ]
+    },
+    {
+      "action": "A06: Mutate source payload/signature/key ID and attempt ingest; suspend admitted service as security",
+      "expected": "Quarantine rejected digest; participant denied; authoritative suspension persists across reingest",
+      "actual": "Passed digest quarantine, participant administrative denial and security suspension surviving valid reingest.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-directory-003.json",
+          "sha256": "00de3e7e23725e6a94fde6da4c1094bc718cc235af1a98d4af0fa202e27ed43d"
+        }
+      ]
+    },
+    {
+      "action": "A07: Use a new diagnostic foreign CA and same logical role name against the new target; compare public accepted/new root fingerprints and disjoint bundles; test unknown/no/expired SVID and direct backend/DB probes",
+      "expected": "Independent-root default deny, UID/route/expiry/fence checks; no accepted private key/SVID access or accepted reconfiguration",
+      "actual": "Passed no-SVID/foreignCA/backend/role-mount checks. Actual issuer-stop realexpiry result: failed. No clock substitution or accepted credential use.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/network-denials.json",
+          "sha256": "fb16b4e0d83e9de7fade769264d25cae8ea75cc2f65cb57f6670c054ae95b817"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/workload-expiry.json",
+          "sha256": "21e166a8b6ce99bdefed5ac7b842b93c04ced3b2a393a15d9915414c2925f1a2"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/workload-expiry-late-recovery.json",
+          "sha256": "48e07db9c777020df644f0ee5eed23037dcd7a3ab2ea20a541454c7a05696008"
+        }
+      ]
+    },
+    {
+      "action": "A08: Pause new target identity/PDP/journal only using verified process receipts; recover new dependencies",
+      "expected": "Bounded fail-closed/unknown outcomes with no permissive fallback; correct current state on recovery",
+      "actual": "Passed actual freezer faults identity/PDP/journal, zero projected fields, ordinary200 after recovery; hostwatchdog20s. Initial ineffective SIGSTOP attempt does not count.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-dependency-001.json",
+          "sha256": "c38dda6866408e6acf4fda1052f36f3d108a5ecfb8a383e9fb20e503ccbe7abd"
+        }
+      ]
+    },
+    {
+      "action": "A09: Try runtime DDL/delegation write/immutable source-field-event mutation and cross-role credentials",
+      "expected": "Least privilege, RLS/trigger and kernel UID/socket checks enforce; admin secrets absent from serving mounts",
+      "actual": "Passed runtime privilege denials/forced RLS/nonprivileged role flags via actual verify-full protected DB connector.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/database-final.json",
+          "sha256": "3c6347171aed2f62854dbac98c3aecaa5c105c474176463d6097c9df7ff964ad"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "deployment-unit-tests",
+      "command": ".venv/bin/python -m pytest -q tests/unit/imp04_deployment",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "35 tests passed; mocked Docker boundaries, separate from actual live evidence",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/deployment-unit-tests.log",
+      "evidence_digest": "df70669069be3675214df9a658fcbdd9c46674dced6b2b05ae940adff42baf07",
+      "mock_used": true
+    },
+    {
+      "name": "ruff",
+      "command": ".venv/bin/python -m ruff check tools/imp04_deployment tools/imp04_verification tests/unit/imp04_deployment",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: All checks passed!",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/ruff.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "python-format",
+      "command": ".venv/bin/python -m ruff format --check tools/imp04_deployment tools/imp04_verification tests/unit/imp04_deployment",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: 25 files already formatted",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/python-format.log",
+      "evidence_digest": "7715b02781372f8741fb309aee97a6483e689c9039f0d78081dd910f70b0256e",
+      "mock_used": false
+    },
+    {
+      "name": "pyright",
+      "command": "pnpm exec pyright tools/imp04_deployment tools/imp04_verification",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: 0 errors, 0 warnings, 0 informations",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/pyright.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "live-typescript",
+      "command": "pnpm exec tsc --noEmit --project tests/e2e/imp04-live/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: ",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/live-typescript.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "live-format",
+      "command": "pnpm exec prettier --check tests/e2e/imp04-live",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: Checking formatting...\nAll matched files use Prettier code style!",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/live-format.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "contracts",
+      "command": ".venv/bin/python tools/generate_contracts.py --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: Browser validators match the pinned schema (72 public contracts).\nContract snapshots match reviewed definitions.",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/contracts.log",
+      "evidence_digest": "0537f5be93b6bf84de3ce0a39f65bca9f01475eba04f026d50e76e89a6e2cef8",
+      "mock_used": false
+    },
+    {
+      "name": "boundaries",
+      "command": ".venv/bin/python tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: Source dependency boundaries passed (source check, not runtime isolation).",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/boundaries.log",
+      "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "mock_used": false
+    },
+    {
+      "name": "whitespace",
+      "command": "git diff --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: ",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/whitespace.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "A03/A04 strict race expectations failed: pending requests returned503 manual.gateway_denied despite entered/released receipts after journalled restriction.",
+    "Second French UI directory search returned503; full four-actor bilingual scan did not complete. Final restored-default normal009 also failed new-session create with503 after1158ms; all9 sign-ins passed.",
+    "Policy app genuinely OOM-killed under approved256MiB. Restart restored service but is not a fix.",
+    "Repeated qualification launches accumulated zombie processes and reached512 PID limit.",
+    "Manual screen-reader and actual200% zoom review not run; full native bilingual coverage incomplete.",
+    "No fresh directory availability claim: exact signed fixtures remain stale and one service remains suspended.",
+    "No elapsed30day purge/backup-completion evidence, final-output expiry/role-change race, or live browser-role forgery matrix.",
+    "No full-reload persistence of unsent drafts/pending intent claimed.",
+    "Issuer-expiry denied as expected; recovery exceeded75s harness window, later all5 new certs and protected200 recorded without agent/fence restart.",
+    "Deployment approval is separate from actual human G-04 acceptance."
+  ],
+  "acceptance_scope": "Private synthetic engineering evidence only. Deployment applied; partial qualification with major unresolved live findings. G-04 acceptance has not been requested or inferred from deployment approval.",
+  "rollback": "Use target-proposal.json rollback: stop only inspected/receipt-bound new IMP04 resources, retain state/evidence; accepted IMP03 keeps serving. No down migration or restriction reset.",
+  "human_decision_id": null,
+  "is_example": false
+}

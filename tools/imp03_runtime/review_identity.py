@@ -13,6 +13,7 @@ from care_link_identity.review import ReviewIdentityRegistry
 from care_link_identity.review_context import ReviewContext
 from care_link_identity.review_providers import ReviewProviders
 from care_link_identity.service import IdentityService
+from care_link_identity.session_policy import policy_for_context
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 from starlette.types import ASGIApp, Receive, Scope, Send
@@ -20,12 +21,25 @@ from starlette.types import ASGIApp, Receive, Scope, Send
 from .config import record, unique
 
 
-def load_contexts(path: Path) -> dict[str, ReviewContext]:
+def load_contexts(
+    path: Path, *, interactive_review_enabled: bool = False
+) -> dict[str, ReviewContext]:
     """Read an atomically published non-secret exact allowlist, never DNS authority."""
     source = record(json.loads(path.read_text(), object_pairs_hook=unique))
     result: dict[str, ReviewContext] = {}
     for origin, value in source.items():
         context = record(value)
+        if interactive_review_enabled:
+            from care_link_core.plans_review_context import validate_entry
+
+            validate_entry(origin, context)
+            fields = {
+                key: value
+                for key, value in context.items()
+                if key not in {"session_id", "plan_id", "recipient_id"}
+            }
+            result[origin] = ReviewContext(origin=origin, **cast(dict[str, str], fields))
+            continue
         if set(context) != {"run_id", "slot_id", "account_id", "provider_subject", "role", "state"}:
             raise ValueError("Exact review identity context fields required")
         result[origin] = ReviewContext(origin=origin, **cast(dict[str, str], context))
@@ -38,11 +52,21 @@ def create_review_identity_surface(
     workload_verifier: Callable[[Request, str], bool],
     *,
     provider_configs_file: Path | None = None,
+    interactive_review_enabled: bool = False,
 ) -> ASGIApp:
     """Only the authenticated core BFF supplies the originating browser context."""
 
     def contexts() -> dict[str, ReviewContext]:
-        return load_contexts(contexts_file)
+        return load_contexts(contexts_file, interactive_review_enabled=interactive_review_enabled)
+
+    if interactive_review_enabled and provider_configs_file is not None:
+        raise ValueError("Automatic review cannot share the manual provider catalog")
+
+    def interactive_policy(origin: str):
+        context = contexts().get(origin)
+        if context is None:
+            raise IdentityError("identity.review_origin_denied")
+        return policy_for_context(context, enabled=True)
 
     if provider_configs_file is not None:
         if not isinstance(service.provider, OIDCProvider):
@@ -50,7 +74,12 @@ def create_review_identity_surface(
         providers = ReviewProviders(service.provider, contexts, provider_configs_file)
     else:
         providers = None
-    registry = ReviewIdentityRegistry(service, contexts, providers)
+    registry = ReviewIdentityRegistry(
+        service,
+        contexts,
+        providers,
+        interactive_policy_for_origin=interactive_policy if interactive_review_enabled else None,
+    )
     internal = create_manual_identity_app(
         service, workload_verifier, service_for_session=registry.session_service
     )

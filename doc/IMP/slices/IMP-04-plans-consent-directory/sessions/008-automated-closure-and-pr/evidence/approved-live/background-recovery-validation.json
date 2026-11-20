@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-11-20T16:02:32.486417+00:00",
+  "tests": {
+    "full_vitest": {
+      "passed": 155,
+      "failed": 0
+    },
+    "focused_before_fix": {
+      "passed": 1,
+      "failed": 1,
+      "failure": "Transient 503 did not restore directory selection"
+    },
+    "focused_after_fix": {
+      "passed": 2,
+      "failed": 0
+    }
+  },
+  "typescript_typecheck": "passed",
+  "targeted_eslint": "passed",
+  "prettier_check": "passed",
+  "web_build": "passed",
+  "image_smoke": {
+    "matched_source_and_asset_files": 22,
+    "imports": "passed",
+    "private_source_exclusions": "passed"
+  },
+  "repository_document_files_preserved": 1035,
+  "new_documentation_files": 0,
+  "deployment_applied": false
+}

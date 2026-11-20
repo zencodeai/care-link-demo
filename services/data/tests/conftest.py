@@ -124,6 +124,9 @@ def database() -> Iterator[Database]:
     try:
         with psycopg.connect(target) as connection:
             connection.execute((ROOT / "services/data/migrations/001_manual.sql").read_text())
+            connection.execute(
+                (ROOT / "services/data/migrations/003_plans_consent_directory.sql").read_text()
+            )
         migrated = True
         with psycopg.connect(admin) as connection:
             connection.execute(

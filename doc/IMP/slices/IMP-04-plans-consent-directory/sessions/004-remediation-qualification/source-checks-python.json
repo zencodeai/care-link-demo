@@ -1,0 +1,50 @@
+[
+  {
+    "name": "python-focused",
+    "command": ".venv/bin/python -m pytest -q services/core/tests services/identity/tests packages/policy-input/tests tests/unit/imp04_deployment --tb=short",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/python-focused.log",
+    "sha256": "0770eed4c9bbc02268b58107f194bf5be5f502abf1d12cfc5b6c9c018390bc2d"
+  },
+  {
+    "name": "boundaries",
+    "command": ".venv/bin/python tools/check_boundaries.py",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/boundaries.log",
+    "sha256": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8"
+  },
+  {
+    "name": "contracts",
+    "command": ".venv/bin/python tools/generate_contracts.py --check",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/contracts.log",
+    "sha256": "0537f5be93b6bf84de3ce0a39f65bca9f01475eba04f026d50e76e89a6e2cef8"
+  },
+  {
+    "name": "ruff",
+    "command": ".venv/bin/python -m ruff check tools/imp04_deployment tools/imp04_verification tests/unit/imp04_deployment services/identity/src services/identity/tests/test_credential_sweep.py services/core/src/care_link_core/manual_http.py services/core/tests/test_manual_gateway_errors.py packages/policy-input",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/ruff.log",
+    "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  {
+    "name": "python-format",
+    "command": ".venv/bin/python -m ruff format --check tools/imp04_deployment tools/imp04_verification tests/unit/imp04_deployment services/identity/src services/identity/tests/test_credential_sweep.py services/core/src/care_link_core/manual_http.py services/core/tests/test_manual_gateway_errors.py packages/policy-input",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/python-format.log",
+    "sha256": "60b1abe1dfdcd741df7a1fc710e64e44c702e4ab4e4529c9c4a0ff7a0063f067"
+  },
+  {
+    "name": "whitespace",
+    "command": "git diff --check",
+    "status": "passed",
+    "exit_code": 0,
+    "evidence": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/whitespace.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

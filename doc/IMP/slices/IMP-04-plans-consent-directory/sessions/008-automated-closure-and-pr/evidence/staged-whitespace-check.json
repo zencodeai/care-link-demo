@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-11-20T17:00:58.469451+00:00",
+  "source_and_non_log_staged_diff_check": "passed",
+  "command": [
+    "git",
+    "diff",
+    "--cached",
+    "--check",
+    "--",
+    ".",
+    ":(exclude)doc/IMP/**/*.log"
+  ],
+  "raw_log_diff_check": "10 blank-at-EOF findings in immutable command transcripts; no source whitespace finding",
+  "disposition": "Preserved original raw log bytes and evidence digests; not reformatted to hide terminal output."
+}

@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "validated": [
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-rotation.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-platform.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-native-zoom.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-native-accessibility.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-popup.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-authority-case.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-qualification.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-python.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-web.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-absent-proof.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-identity-sweep.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-review.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet.json",
+      "contract": "WorkPacket"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/agent-result.json",
+      "contract": "AgentResult"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/demo-packet.json",
+      "contract": "DemoPacket"
+    }
+  ],
+  "errors": []
+}

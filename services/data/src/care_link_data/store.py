@@ -57,8 +57,19 @@ TABLES: dict[str, tuple[str, tuple[str, ...]]] = {
     "review_member": ("core.review_member", ("session_id",)),
     "review_draft": ("core.review_draft", ("id",)),
     "review_intent": ("core.review_intent", ("operation_id",)),
+    "plan": ("plans.plan", ("id",)),
+    "plan_field": ("plans.field", ("id",)),
+    "plan_review": ("plans.review_work", ("id",)),
+    "consent": ("consent.current_grant", ("grant_id",)),
+    "consent_event": ("consent.event", ("id",)),
+    "delegation": ("consent.delegation", ("id",)),
+    "directory": ("knowledge.service_version", ("id",)),
+    "service_guard": ("knowledge.service_guard", ("service_id",)),
+    "directory_quarantine": ("knowledge.quarantine", ("id",)),
 }
-JSON_COLUMNS = {"field_states", "versions"}
+JSON_COLUMNS = {"field_states", "versions", "source", "scope", "recipient", "facts", "sources"}
+APPEND_ONLY = frozenset({"plan_field", "consent_event", "directory", "directory_quarantine"})
+READ_ONLY = APPEND_ONLY | {"delegation"}
 
 
 def _record(value: Record) -> Record:
@@ -87,7 +98,7 @@ class Transaction:
             sql.Identifier(*table.split(".")),
             sql.SQL(" WHERE ") + conditions if where else sql.SQL(""),
             sql.SQL(",").join(sql.Identifier(key) for key in TABLES[repository][1]),
-            sql.SQL(" FOR UPDATE") if self.locked else sql.SQL(""),
+            sql.SQL(" FOR UPDATE") if self.locked and repository not in READ_ONLY else sql.SQL(""),
         )
         return [_record(row) for row in self.connection.execute(query, (*where.values(), limit))]
 
@@ -111,6 +122,20 @@ class Transaction:
         table, keys = TABLES[repository]
         columns = tuple(record)
         nonkeys = [column for column in columns if column not in keys]
+        if repository in READ_ONLY:
+            if repository == "delegation":
+                raise ValueError("Delegations require separate provisioning custody")
+            self.connection.execute(
+                sql.SQL("INSERT INTO {} ({}) VALUES ({})").format(
+                    sql.Identifier(*table.split(".")),
+                    sql.SQL(",").join(map(sql.Identifier, columns)),
+                    sql.SQL(",").join(sql.Placeholder() for _ in columns),
+                ),
+                tuple(
+                    Jsonb(value) if key in JSON_COLUMNS else value for key, value in record.items()
+                ),
+            )
+            return
         if repository in {"control", "principal"}:
             # Runtime may update preprovisioned authority guards, never insert or
             # recreate one. PostgreSQL UPSERT requires INSERT even on conflict.
@@ -198,6 +223,16 @@ class Transaction:
         row = self.connection.execute("SELECT to_regclass('core.review_run') AS name").fetchone()
         return row is not None and row["name"] is not None
 
+    def directory_page(self, after: str | None, limit: int) -> list[Record]:
+        if not 1 <= limit <= 51:
+            raise ValueError("Invalid directory page size")
+        rows = self.connection.execute(
+            "SELECT * FROM knowledge.service_guard WHERE service_id>%s::uuid "
+            "ORDER BY service_id LIMIT %s",
+            (after or "00000000-0000-0000-0000-000000000000", limit),
+        ).fetchall()
+        return [_record(row) for row in rows]
+
     def review_sessions(self, run_id: str | None) -> list[Record]:
         rows = self.connection.execute(
             "SELECT s.* FROM core.session s LEFT JOIN core.review_member m ON m.session_id=s.id "
@@ -250,7 +285,7 @@ class Transaction:
         self.connection.execute(
             "UPDATE lifecycle.copy SET anchor_at=%s,"
             "expires_at=%s+interval '7 days',state='retained' "
-            "WHERE session_id=%s AND state='anchor_pending'",
+            "WHERE session_id=%s AND state='anchor_pending' AND purpose='support'",
             (anchor, anchor, session_id),
         )
 

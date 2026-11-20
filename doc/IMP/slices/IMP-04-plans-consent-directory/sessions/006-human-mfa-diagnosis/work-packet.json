@@ -1,0 +1,127 @@
+{
+  "packet_id": "WP-IMP04-006-diagnosis",
+  "task_id": "IMP-04-D",
+  "stage_id": "IMP-04",
+  "mode": "verification",
+  "role": "imp_verifier",
+  "goal": "Diagnose low usability of G04 interactive review and actual PID MFA/sharing failure; correlate browser navigation, identity metadata, UI/recovery and facilitation burden; propose prioritized improvements with acceptance criteria, without implementation/deployment.",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/005-human-accessibility-review/human-review-progress.json",
+      "sha256": "70afd27a79efb577262ee9674d429d55b4c08693c3a33ea562c0d9874a66d66e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/005-human-accessibility-review/human-browser-launch002.json",
+      "sha256": "fe2b7deedfc35d1534c1280af0c0183d9fa4b6df17894a5fbe36ebf167f63263"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-candidate-manifest.json",
+      "sha256": "8065971c710bb2f84726150df2aa21aa6b3859fab0a8a8cbb739ba514e60c0b8"
+    }
+  ],
+  "read_paths": [
+    "doc/IMP/**",
+    "tools/imp04_deployment/**",
+    "tools/imp04_verification/**",
+    "apps/web/src/**",
+    "tests/e2e/imp04-live/**"
+  ],
+  "write_paths": [
+    "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/006-human-mfa-diagnosis/**",
+    "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/005-human-accessibility-review/human-review-progress.json",
+    "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/005-human-accessibility-review/handoff.md",
+    "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/005-human-accessibility-review/README.md",
+    "doc/IMP/slices/IMP-04-plans-consent-directory/README.md",
+    "doc/IMP/executions/2026-11-16-IMP-04/ledger.json"
+  ],
+  "dependencies": [
+    "G-03 accepted",
+    "IMP-04 session001 source candidate retained uncommitted"
+  ],
+  "operation_ids": [
+    "plan_create",
+    "plan_read",
+    "plan_field_append",
+    "plan_retire",
+    "consent_grant",
+    "consent_read",
+    "consent_revoke",
+    "directory_search",
+    "directory_read",
+    "directory_ingest",
+    "directory_suspend",
+    "data_plan_create",
+    "data_plan_read",
+    "data_plan_field_append",
+    "data_plan_retire",
+    "data_consent_grant",
+    "data_consent_read",
+    "data_consent_revoke",
+    "data_directory_search",
+    "data_directory_read",
+    "data_directory_ingest",
+    "data_directory_suspend"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "read_only_owned_browser_history",
+    "read_only_scoped_identity_and_runtime_metadata",
+    "bounded_native_UI_read_observation",
+    "write_assigned_diagnostic_evidence"
+  ],
+  "prohibited_actions": [
+    "No application/source/image/configuration deployment or data/state reset",
+    "No new login/step-up/credential maintenance or provider mutation during evidence capture",
+    "No accepted IMP03/IMP02 or other browser/profile/sibling changes",
+    "No raw cookies/password/OTP/credential hashes/auth-query/proof tokens in output",
+    "No human acceptance inference, commit/push or next slice"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "PID MFA/sharing review: demo did not work, causing the review to fail. Diagnose. Follow-up: Usability of the G-04 interactive review is very low. Diagnose, propose improvements.",
+    "scope": "Evidence-led diagnosis only. G04 remains pending; existing trust setup not broadened."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP04-006-diagnostic-evidence",
+      "kind": "file_set",
+      "scope": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/006-human-mfa-diagnosis/** and specified current indexes only",
+      "owner_task_id": "IMP-04-D",
+      "expires_at": "2026-11-17T06:00:00Z"
+    }
+  ],
+  "expected_outputs": [
+    "Sanitized browser/session/ceremony and runtime timeline",
+    "Confirmed causes distinguished from unresolved hypotheses",
+    "Read-only source review findings and exact proposed remediation; no applying fixes",
+    "Prioritized actor-led review usability proposal, before/after flow and measurable readiness criteria"
+  ],
+  "positive_acceptance": [
+    "Actual failed review retained and G04 pending",
+    "Root cause bound to actual same actor/profile/session window where possible",
+    "Sealed004 acceptedsource/runtime unchanged; no secrets output"
+  ],
+  "adverse_acceptance": [
+    "Missing logs or correlation remain unknown, not proof of absence",
+    "Do not blame the user or call lost durable data without evidence",
+    "No deadline/authority/cache bypass or reset"
+  ],
+  "reviewer": "Independent read-only source reviewers; no human acceptance",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Stop any operation that changes live identity/business state",
+    "No broad DB/log dumps; scope to exact actor and review interval",
+    "No fix/deployment without concrete separately presented delta"
+  ],
+  "is_example": false
+}

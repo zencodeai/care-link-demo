@@ -11,16 +11,16 @@ import httpx
 from care_link_core.manual_app import create_manual_app
 from care_link_core.manual_channels import ManualChannels
 from care_link_core.manual_envelopes import SignedEnvelopeFactory
-from care_link_core.manual_http import HttpManualGateway
 from care_link_core.manual_identity import HttpManualIdentity
 from care_link_core.manual_security import CookieSecurity
+from care_link_core.planning_http import HttpPlanningGateway
 from care_link_domain import ManualError
 from care_link_policy_input import DelegationVerifier, OpaPolicy
 from care_link_recovery_control import FileJournal
 from care_link_workload_trust import SOCKET_PEER_SCOPE_KEY, SocketPeer
 from fastapi import Request
 from starlette.concurrency import run_in_threadpool
-from starlette.responses import JSONResponse
+from starlette.responses import FileResponse, JSONResponse
 from starlette.routing import Route
 from starlette.types import ASGIApp, Receive, Scope, Send
 
@@ -78,22 +78,38 @@ class Composition:
                 private_key(text(cfg, "core_signing_key")),
             )
             channels = ManualChannels()
+            from care_link_core.review_channels import ReviewViews
+
+            self.review_channels = channels
+            self.review_views = ReviewViews(channels)
+            from care_link_core.plans_review_context import PlansReviewContexts
             from care_link_core.review_context import ReviewContexts
 
             from .review_browser import add_review_auth_proxy, review_origin_guard
 
+            interactive_review = cfg.get("interactive_review_enabled", False)
+            if type(interactive_review) is not bool or (
+                interactive_review and not cfg.get("review_contexts_file")
+            ):
+                raise ValueError("Explicit review registry and boolean feature switch required")
             contexts = (
-                ReviewContexts(
+                (PlansReviewContexts if interactive_review else ReviewContexts)(
                     Path(text(cfg, "review_contexts_file")), text(cfg, "review_legacy_origin")
                 )
                 if cfg.get("review_contexts_file")
                 else None
             )
+            gateway = HttpPlanningGateway(data_client, data_origin, envelopes)
             app = create_manual_app(
-                HttpManualGateway(data_client, data_origin, envelopes),
+                gateway,
                 CookieSecurity(identity),
                 channels,
                 review_contexts=contexts,
+                review_views=self.review_views,
+                plans_review_contexts=contexts
+                if isinstance(contexts, PlansReviewContexts)
+                else None,
+                planning=gateway,
             )
 
             async def current(request: Request) -> JSONResponse:
@@ -137,13 +153,29 @@ class Composition:
                 for route in developer_app().routes
                 if getattr(route, "path", "") == "/dev/health"
             )
-            add_client(app, Path(text(cfg, "web_directory")))
-            surface = secure_surface(app)
+            directory = Path(text(cfg, "web_directory"))
+            review_entries: frozenset[str] = (
+                frozenset({"/plans-review", "/plans-review/"})
+                if interactive_review
+                else frozenset()
+            )
+            if interactive_review:
+
+                async def plans_review_entry() -> FileResponse:
+                    return FileResponse(directory / "index.html")
+
+                for entry in sorted(review_entries):
+                    app.add_api_route(
+                        entry, plans_review_entry, methods=["GET"], include_in_schema=False
+                    )
+            add_client(app, directory)
+            surface = secure_surface(app, public_client_paths=review_entries)
             return review_origin_guard(surface, contexts) if contexts else surface
         if self.role == "data":
             from care_link_data import AESGCMContentCipher, ManualService, PostgresStore
             from care_link_data.app import SignedGatewaySecurity
             from care_link_data.app import create_app as data_app
+            from care_link_data.directory_admission import VerifiedDirectoryAdmission
 
             identity = self.identity()
             store_factory = None
@@ -151,6 +183,13 @@ class Composition:
                 from tools.imp03_shared.commit_fault import connection_factory
 
                 store_factory = connection_factory(Path(text(cfg, "content_key")).parent)
+            if cfg.get("directory_artifacts"):
+                raise ValueError("Unsigned directory admission configuration is forbidden")
+            admissions = cast(list[Record], cfg.get("directory_signed_admissions", []))
+            pins = record(cfg.get("directory_trusted_keys", {}))
+            directory_admission = VerifiedDirectoryAdmission(
+                admissions, {key: public_key(str(path)) for key, path in pins.items()}
+            )
             service = ManualService(
                 PostgresStore(text(cfg, "store_dsn"), connection_factory=store_factory),
                 identity,
@@ -160,6 +199,7 @@ class Composition:
                 channel=HttpChannels(*self.remote("core")),
                 disclosure_templates=cast(dict[str, Record], cfg["disclosures"]),
                 cursor_key=Path(text(cfg, "cursor_key")).read_bytes(),
+                directory_admission=directory_admission,
             )
             delegation = DelegationVerifier(
                 public_key(text(cfg, "core_public_key")),
@@ -173,6 +213,11 @@ class Composition:
             from care_link_identity.manual_runtime import create_manual_identity_app
 
             service = identity_service(cfg, self.clients)
+            interactive_review = cfg.get("interactive_review_enabled", False)
+            if type(interactive_review) is not bool or (
+                interactive_review and not cfg.get("review_contexts_file")
+            ):
+                raise ValueError("Explicit review registry and boolean feature switch required")
             self.retention = RetentionService(
                 service.store, service.custody, None, clock=service.clock
             )
@@ -186,6 +231,7 @@ class Composition:
                     provider_configs_file=Path(text(cfg, "review_provider_configs_file"))
                     if cfg.get("review_provider_configs_file")
                     else None,
+                    interactive_review_enabled=interactive_review,
                 )
             browser = identity_app(service, ui_return_url=service.origin + "/")
             internal = create_manual_identity_app(service, self.verify)

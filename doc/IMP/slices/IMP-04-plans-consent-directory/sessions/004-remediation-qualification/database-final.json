@@ -1,0 +1,260 @@
+{
+  "target": "care-link-imp04-002",
+  "database": "imp04_runtime_002",
+  "probes": [
+    {
+      "probe": "runtime_ddl",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_insert",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_update",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_delete",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_field_update",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_event_delete",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_source_update",
+      "permission_denied": true
+    }
+  ],
+  "runtime_superuser_createdb_createrole_bypassrls": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "forced_rls": [
+    [
+      "current_grant",
+      true,
+      true
+    ],
+    [
+      "field",
+      true,
+      true
+    ],
+    [
+      "plan",
+      true,
+      true
+    ]
+  ],
+  "effect_counts": {
+    "plans.plan": 19,
+    "plans.field": 40,
+    "plans.review_work": 6,
+    "consent.current_grant": 26,
+    "consent.event": 41,
+    "knowledge.service_version": 10,
+    "knowledge.quarantine": 3
+  },
+  "plan_anchor_total_retired_30day_active_counts": [
+    59,
+    4,
+    55
+  ],
+  "status": "passed",
+  "failures": [],
+  "plan_copy_metadata": [
+    [
+      "0ea5a97c-ef44-4aa7-8520-df098a82e203",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "1633065e-2e6c-415b-9778-8d86dad53319",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "1e12eea3-a8a1-4c42-8597-ad3dbdf90574",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "27c042ff-0642-4c88-9ab2-d0faef232af0",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "28c86fa9-7434-4d2d-84ca-9b287148b0fc",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "4008cd0d-5f2a-4031-a5c5-d4d67f6d8025",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "4697d05f-dc2e-4bff-8e6d-e50a4c8ed362",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "49a60bfb-ad3e-42bc-a405-b86d578f23e6",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "50487504-46a0-48f2-96c5-747b5babd93c",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "55566900-4448-489e-bd6b-11c5af61cad9",
+      "plan_retired",
+      "2026-11-16 19:45:10.242974+00:00",
+      "2026-12-16 19:45:10.242974+00:00",
+      "retained"
+    ],
+    [
+      "58d7860d-19d2-463a-9bdb-22b52e15d1dc",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "5fad1e72-949a-451c-89aa-a5b94a29b7eb",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "767bdbf7-95bd-4c34-9672-689b0f80b543",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "95cb8570-e648-4ff3-a800-f766e8979efa",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "9990438f-9536-469a-8f12-6e6e6735e9a8",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "9c7fc257-c29f-4a0a-9912-eaa690a25118",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "bf9dcb39-5e20-41a9-8b75-de993621022c",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "d0b38920-f534-43ee-bc53-1b45e60d9e33",
+      "plan_retired",
+      "2026-11-16 23:24:08.903277+00:00",
+      "2026-12-16 23:24:08.903277+00:00",
+      "retained"
+    ],
+    [
+      "e66e9c7d-7b5b-4d5f-a0f2-67848dccbdba",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ]
+  ],
+  "pending_review_counts": [
+    [
+      "1633065e-2e6c-415b-9778-8d86dad53319",
+      1
+    ],
+    [
+      "9990438f-9536-469a-8f12-6e6e6735e9a8",
+      2
+    ],
+    [
+      "9c7fc257-c29f-4a0a-9912-eaa690a25118",
+      3
+    ]
+  ],
+  "control_metadata": [
+    "8b75464e-48c4-45a3-8321-f8faa198b5af",
+    1,
+    1,
+    "ai_disabled",
+    17
+  ],
+  "content_returned": false,
+  "selected_effect_metadata": {
+    "operation": {
+      "row_count": 1,
+      "record": {
+        "operation_id": "d616816a-9dcc-45be-bad2-9afa5e718e72",
+        "principal_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+        "operation_name": "plan_field_append",
+        "state": "committed",
+        "session_id": "9511e9cf-bb8e-49c8-a46b-496015f26a09",
+        "resource_id": "9990438f-9536-469a-8f12-6e6e6735e9a8",
+        "result_type": "PlanView",
+        "canonical_audit_id": "ab9b483f-ae78-4ccd-b569-e26add882ebe"
+      }
+    },
+    "field": {
+      "row_count": 1,
+      "record": {
+        "id": "ed61f7ea-c8e4-4acd-b647-4cef41ab409d",
+        "plan_id": "9990438f-9536-469a-8f12-6e6e6735e9a8",
+        "author_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+        "session_id": "9511e9cf-bb8e-49c8-a46b-496015f26a09",
+        "revision": 5,
+        "field_key": "plan.strategies",
+        "verification": "disputed",
+        "supersedes_id": "468f3c50-0367-453a-bb90-ac4e50157717",
+        "safety_relevant": false
+      },
+      "operation_plan_author_session_correlation_count": 1
+    }
+  }
+}

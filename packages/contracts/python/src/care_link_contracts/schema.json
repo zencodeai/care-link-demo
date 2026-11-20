@@ -351,7 +351,10 @@
             "participant",
             "worker1",
             "worker2",
-            "supervisor"
+            "supervisor",
+            "pid",
+            "carer",
+            "professional"
           ]
         },
         "review_origin": {
@@ -389,7 +392,8 @@
             "delete",
             "identity_link",
             "governance",
-            "promotion"
+            "promotion",
+            "follow_up_consent"
           ]
         },
         "resource_id": {
@@ -2622,6 +2626,46 @@
         },
         "authority_facts": {
           "$ref": "#/$defs/AuthorityFacts"
+        },
+        "directory_bindings": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "service_id": {
+                "$ref": "#/$defs/Id"
+              },
+              "revision": {
+                "$ref": "#/$defs/Revision"
+              },
+              "artifact_digest": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "suspended": {
+                "type": "boolean"
+              },
+              "current": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "service_id",
+              "revision",
+              "artifact_digest",
+              "suspended",
+              "current"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "disclosure_grants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ConsentAuthority"
+          },
+          "maxItems": 32
         }
       },
       "required": [
@@ -2975,6 +3019,10 @@
           "x-decimalMaximum": "9223372036854775807",
           "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
         },
+        "directory_set_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
         "review_run": {
           "$ref": "#/$defs/Revision"
         }
@@ -3162,6 +3210,15 @@
           "minItems": 0,
           "maxItems": 32,
           "uniqueItems": true
+        },
+        "subject_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "session_id": {
+          "$ref": "#/$defs/Id"
+        },
+        "purpose": {
+          "const": "plan"
         }
       },
       "required": [
@@ -4485,7 +4542,10 @@
             "participant",
             "worker1",
             "worker2",
-            "supervisor"
+            "supervisor",
+            "pid",
+            "carer",
+            "professional"
           ]
         },
         "review_origin": {
@@ -5438,6 +5498,274 @@
         "payload_digest": {
           "type": "string",
           "pattern": "^[0-9a-f]{64}$"
+        },
+        "planning": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "plan_create"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/PlanCreate"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_plan_create"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "plan_read"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/Empty"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_plan_read"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "plan_field_append"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/PlanFieldCreate"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_plan_field_append"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "plan_retire"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/RevisionCommand"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_plan_retire"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "consent_grant"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/ConsentGrant"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_consent_grant"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "consent_read"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/Empty"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_consent_read"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "consent_revoke"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/RevisionCommand"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_consent_revoke"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "directory_search"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/DirectoryQuery"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_directory_search"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "directory_read"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/Empty"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_directory_read"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "directory_ingest"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/DirectoryIngest"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_directory_ingest"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "directory_suspend"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/ReasonCommand"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_directory_suspend"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            }
+          ]
         }
       },
       "required": [
@@ -5472,6 +5800,71 @@
         },
         "complete": {
           "type": "boolean"
+        },
+        "resolved_scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "consent_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "disclosure_grants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ConsentAuthority"
+          },
+          "maxItems": 32
+        },
+        "artifact_digests": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "minItems": 0,
+          "maxItems": 32,
+          "uniqueItems": true
+        },
+        "directory_bindings": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "service_id": {
+                "$ref": "#/$defs/Id"
+              },
+              "revision": {
+                "$ref": "#/$defs/Revision"
+              },
+              "artifact_digest": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "suspended": {
+                "type": "boolean"
+              },
+              "current": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "service_id",
+              "revision",
+              "artifact_digest",
+              "suspended",
+              "current"
+            ],
+            "additionalProperties": false
+          }
         }
       },
       "required": [
@@ -5540,6 +5933,1009 @@
         "journal_barrier",
         "audit_digest",
         "state"
+      ],
+      "additionalProperties": false
+    },
+    "PlanCreate": {
+      "type": "object",
+      "properties": {
+        "subject_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "subject_id",
+        "expected_revision"
+      ],
+      "additionalProperties": false
+    },
+    "PlanFieldCreate": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "field": {
+          "type": "string",
+          "enum": [
+            "needs",
+            "preferences",
+            "observations",
+            "rationale",
+            "plan.warning_signs",
+            "plan.strategies",
+            "plan.responders",
+            "plan.medication_report",
+            "plan.advance_wishes",
+            "plan.contacts",
+            "plan.substitute_decision_maker",
+            "summary",
+            "outcome"
+          ]
+        },
+        "value": {
+          "$ref": "#/$defs/AssertionValue"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "safety_relevant": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "expected_revision",
+        "field",
+        "value",
+        "source",
+        "safety_relevant"
+      ],
+      "additionalProperties": false
+    },
+    "PlanView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "subject_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "active",
+            "retired"
+          ]
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AssertionView"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "retired_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "subject_id",
+        "revision",
+        "state",
+        "fields",
+        "retired_at"
+      ],
+      "additionalProperties": false
+    },
+    "ConsentGrant": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "subject_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "purpose": {
+          "type": "string",
+          "enum": [
+            "plan",
+            "referral",
+            "follow_up"
+          ]
+        },
+        "recipient": {
+          "$ref": "#/$defs/Recipient"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "needs",
+              "preferences",
+              "observations",
+              "rationale",
+              "plan.warning_signs",
+              "plan.strategies",
+              "plan.responders",
+              "plan.medication_report",
+              "plan.advance_wishes",
+              "plan.contacts",
+              "plan.substitute_decision_maker",
+              "summary",
+              "outcome"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "self",
+            "explicit_demo_delegation"
+          ]
+        },
+        "authority_proof_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "expected_revision",
+        "subject_id",
+        "session_id",
+        "purpose",
+        "recipient",
+        "fields",
+        "basis",
+        "authority_proof_id",
+        "effective_at",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "Recipient": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/ServiceRecipient"
+        },
+        {
+          "$ref": "#/$defs/AccountRecipient"
+        }
+      ]
+    },
+    "ServiceRecipient": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "service"
+        },
+        "service_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "directory_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "kind",
+        "service_id",
+        "directory_revision"
+      ],
+      "additionalProperties": false
+    },
+    "AccountRecipient": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "account"
+        },
+        "account_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "kind",
+        "account_id"
+      ],
+      "additionalProperties": false
+    },
+    "ConsentView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "recipient": {
+          "$ref": "#/$defs/Recipient"
+        },
+        "grantor_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "scope_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "revoked_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "scope",
+        "recipient",
+        "grantor_id",
+        "scope_digest",
+        "effective_at",
+        "expires_at",
+        "revoked_at"
+      ],
+      "additionalProperties": false
+    },
+    "DirectoryQuery": {
+      "type": "object",
+      "properties": {
+        "jurisdiction": {
+          "$ref": "#/$defs/Jurisdiction"
+        },
+        "locale": {
+          "$ref": "#/$defs/Locale"
+        },
+        "need": {
+          "type": "string",
+          "enum": [
+            "client_support",
+            "carer_support",
+            "navigation",
+            "interpretation"
+          ]
+        },
+        "cursor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        }
+      },
+      "required": [
+        "jurisdiction",
+        "locale",
+        "need"
+      ],
+      "additionalProperties": false
+    },
+    "DirectoryIngest": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "service_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "facts": {
+          "$ref": "#/$defs/DirectoryFacts"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "feed_artifact_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "expected_revision",
+        "service_id",
+        "facts",
+        "sources",
+        "feed_artifact_digest"
+      ],
+      "additionalProperties": false
+    },
+    "DirectoryFacts": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "jurisdictions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "CA-XX",
+              "CA-YY"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Locale"
+          },
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "age_scope": {
+          "type": "string",
+          "enum": [
+            "adult_fixture",
+            "youth_fixture",
+            "all_fixture"
+          ]
+        },
+        "availability": {
+          "type": "string",
+          "enum": [
+            "available_fixture",
+            "unavailable",
+            "unknown"
+          ]
+        },
+        "police_involvement": {
+          "type": "string",
+          "enum": [
+            "independent_fixture",
+            "third_party_possible",
+            "unknown"
+          ]
+        },
+        "qualifications": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "minItems": 0,
+          "maxItems": 8
+        },
+        "alternative_service_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "hours_description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "operating_state": {
+          "type": "string",
+          "enum": [
+            "normal_operations",
+            "temporary_closure",
+            "regional_outage",
+            "holiday_hours",
+            "severe_weather",
+            "api_failure",
+            "conflicting_source"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "jurisdictions",
+        "languages",
+        "age_scope",
+        "availability",
+        "police_involvement",
+        "qualifications",
+        "alternative_service_id",
+        "hours_description",
+        "operating_state"
+      ],
+      "additionalProperties": false
+    },
+    "DirectoryView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "facts": {
+          "$ref": "#/$defs/DirectoryFacts"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 1,
+          "maxItems": 32
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "verified",
+            "stale",
+            "quarantined",
+            "suspended"
+          ]
+        },
+        "verified_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "facts",
+        "sources",
+        "state",
+        "verified_at",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "DirectoryPage": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DirectoryView"
+          },
+          "minItems": 0,
+          "maxItems": 50
+        },
+        "next_cursor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1024
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "items",
+        "next_cursor"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_plan_create": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_plan_create"
+        },
+        "arguments": {
+          "$ref": "#/$defs/PlanCreate"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_plan_create": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "Gateway_plan_read": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_plan_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_plan_read": {
+      "type": "object",
+      "properties": {
+        "plan_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "plan_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_plan_field_append": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_plan_field_append"
+        },
+        "arguments": {
+          "$ref": "#/$defs/PlanFieldCreate"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_plan_field_append": {
+      "type": "object",
+      "properties": {
+        "plan_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "plan_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_plan_retire": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_plan_retire"
+        },
+        "arguments": {
+          "$ref": "#/$defs/RevisionCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_plan_retire": {
+      "type": "object",
+      "properties": {
+        "plan_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "plan_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_consent_grant": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_consent_grant"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ConsentGrant"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_consent_grant": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "Gateway_consent_read": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_consent_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_consent_read": {
+      "type": "object",
+      "properties": {
+        "grant_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "grant_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_consent_revoke": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_consent_revoke"
+        },
+        "arguments": {
+          "$ref": "#/$defs/RevisionCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_consent_revoke": {
+      "type": "object",
+      "properties": {
+        "grant_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "grant_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_directory_search": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_directory_search"
+        },
+        "arguments": {
+          "$ref": "#/$defs/DirectoryQuery"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_directory_search": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "Gateway_directory_read": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_directory_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_directory_read": {
+      "type": "object",
+      "properties": {
+        "service_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "service_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_directory_ingest": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_directory_ingest"
+        },
+        "arguments": {
+          "$ref": "#/$defs/DirectoryIngest"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_directory_ingest": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "Gateway_directory_suspend": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_directory_suspend"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReasonCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_directory_suspend": {
+      "type": "object",
+      "properties": {
+        "service_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "service_id"
       ],
       "additionalProperties": false
     },
@@ -5826,6 +7222,64 @@
       ],
       "additionalProperties": false
     },
+    "OwnReportPage": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AssertionView"
+          },
+          "maxItems": 100
+        },
+        "next_cursor": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "items",
+        "next_cursor"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_own_reports_read": {
+      "type": "object",
+      "properties": {
+        "arguments": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        },
+        "path_arguments": {
+          "type": "object",
+          "properties": {
+            "session_id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            }
+          },
+          "required": [
+            "session_id"
+          ],
+          "additionalProperties": false
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "arguments",
+        "path_arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
     "ReviewWorkspaceQuery": {
       "type": "object",
       "properties": {
@@ -5854,7 +7308,8 @@
           "type": "string",
           "enum": [
             "intake",
-            "message"
+            "message",
+            "plan"
           ]
         },
         "text": {
@@ -5941,7 +7396,8 @@
           "type": "string",
           "enum": [
             "intake",
-            "message"
+            "message",
+            "plan"
           ]
         },
         "revision": {
@@ -6164,7 +7620,7 @@
           "items": {
             "$ref": "#/$defs/ReviewDraftView"
           },
-          "maxItems": 2
+          "maxItems": 3
         },
         "pending_intents": {
           "type": "array",
@@ -6323,6 +7779,147 @@
         "arguments",
         "delegation",
         "decision"
+      ],
+      "additionalProperties": false
+    },
+    "PlansReviewContext": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "const": false
+            }
+          },
+          "required": [
+            "enabled"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "const": true
+            },
+            "mode": {
+              "const": "plans"
+            },
+            "authentication_mode": {
+              "const": "automatic_review"
+            },
+            "environment": {
+              "const": "synthetic-review"
+            },
+            "origin": {
+              "type": "string",
+              "format": "uri"
+            },
+            "run_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "slot_id": {
+              "enum": [
+                "pid",
+                "carer",
+                "professional",
+                "worker1"
+              ]
+            },
+            "account_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "role": {
+              "enum": [
+                "pid",
+                "carer",
+                "professional_participant",
+                "worker"
+              ]
+            },
+            "run_state": {
+              "enum": [
+                "active",
+                "closing",
+                "closed"
+              ]
+            },
+            "started_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "enabled",
+            "mode",
+            "authentication_mode",
+            "environment",
+            "origin",
+            "run_id",
+            "slot_id",
+            "account_id",
+            "role",
+            "run_state",
+            "started_at",
+            "expires_at"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "PlansReviewWorkspace": {
+      "type": "object",
+      "properties": {
+        "workspace": {
+          "$ref": "#/$defs/ReviewWorkspace"
+        },
+        "selection": {
+          "type": "object",
+          "properties": {
+            "session_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "plan_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "recipient_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "session_id",
+            "plan_id",
+            "recipient_id"
+          ],
+          "additionalProperties": false
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "workspace",
+        "selection",
+        "expires_at"
       ],
       "additionalProperties": false
     },

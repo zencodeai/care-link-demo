@@ -1,0 +1,107 @@
+{
+  "target": "care-link-imp04-002",
+  "scope": "Own issuer only; no agents/fences/accepted resources changed",
+  "before": [
+    {
+      "role": "identity",
+      "spiffe_id": "spiffe://care-link.demo/demo/identity",
+      "not_after": "2026-11-16T23:02:30+00:00"
+    },
+    {
+      "role": "core",
+      "spiffe_id": "spiffe://care-link.demo/demo/core",
+      "not_after": "2026-11-16T23:03:00+00:00"
+    },
+    {
+      "role": "data",
+      "spiffe_id": "spiffe://care-link.demo/demo/data",
+      "not_after": "2026-11-16T23:00:44+00:00"
+    },
+    {
+      "role": "pdp",
+      "spiffe_id": "spiffe://care-link.demo/demo/pdp",
+      "not_after": "2026-11-16T23:02:13+00:00"
+    },
+    {
+      "role": "journal",
+      "spiffe_id": "spiffe://care-link.demo/demo/journal",
+      "not_after": "2026-11-16T23:02:15+00:00"
+    }
+  ],
+  "status": "passed",
+  "runtime_svid_ttl_seconds": 300,
+  "issuer_outage_minimum_seconds": 302,
+  "recovery_observation_seconds": 300,
+  "recovery_bound_scope": "User-agreed300s recovery from issuer restart; application deadlines unchanged",
+  "recovery_window_user_agreed": true,
+  "application_deadlines_changed": false,
+  "issuer_stopped_at": "2026-11-16T22:58:07.418283+00:00",
+  "after_issuer_stop": [
+    {
+      "role": "identity",
+      "spiffe_id": "spiffe://care-link.demo/demo/identity",
+      "not_after": "2026-11-16T23:02:30+00:00"
+    },
+    {
+      "role": "core",
+      "spiffe_id": "spiffe://care-link.demo/demo/core",
+      "not_after": "2026-11-16T23:03:00+00:00"
+    },
+    {
+      "role": "data",
+      "spiffe_id": "spiffe://care-link.demo/demo/data",
+      "not_after": "2026-11-16T23:00:44+00:00"
+    },
+    {
+      "role": "pdp",
+      "spiffe_id": "spiffe://care-link.demo/demo/pdp",
+      "not_after": "2026-11-16T23:02:13+00:00"
+    },
+    {
+      "role": "journal",
+      "spiffe_id": "spiffe://care-link.demo/demo/journal",
+      "not_after": "2026-11-16T23:02:15+00:00"
+    }
+  ],
+  "wait_until": "2026-11-16T23:03:09.418283+00:00",
+  "expired_observed_at": "2026-11-16T23:03:09.422027+00:00",
+  "expired_protected_bootstrap_status": 503,
+  "expired_public_health_status": 200,
+  "expired_trust_denied": true,
+  "issuer_restarted_at": "2026-11-16T23:03:09.607314+00:00",
+  "recovery_observation_deadline_at": "2026-11-16T23:08:09.607362+00:00",
+  "recovered_observed_at": "2026-11-16T23:05:17.197259+00:00",
+  "recovery_attempts": 84,
+  "recovery_observation_finished_at": "2026-11-16T23:05:17.197289+00:00",
+  "recovery_elapsed_seconds": 127.591,
+  "after_recovery": [
+    {
+      "role": "identity",
+      "spiffe_id": "spiffe://care-link.demo/demo/identity",
+      "not_after": "2026-11-16T23:10:13+00:00"
+    },
+    {
+      "role": "core",
+      "spiffe_id": "spiffe://care-link.demo/demo/core",
+      "not_after": "2026-11-16T23:09:50+00:00"
+    },
+    {
+      "role": "data",
+      "spiffe_id": "spiffe://care-link.demo/demo/data",
+      "not_after": "2026-11-16T23:10:15+00:00"
+    },
+    {
+      "role": "pdp",
+      "spiffe_id": "spiffe://care-link.demo/demo/pdp",
+      "not_after": "2026-11-16T23:09:48+00:00"
+    },
+    {
+      "role": "journal",
+      "spiffe_id": "spiffe://care-link.demo/demo/journal",
+      "not_after": "2026-11-16T23:10:08+00:00"
+    }
+  ],
+  "recovered_protected_bootstrap_status": 200,
+  "clock_changed": false,
+  "agent_or_fence_restart": false
+}

@@ -1,0 +1,11 @@
+{
+  "format_version": "care.manual-bootstrap.v1",
+  "artifact_digest": "cc62534fcfaf302154ccb8e0aed6f386e7857e848354d8bb41d8d10177665604",
+  "source": "manual.rego",
+  "key_id": "imp04-source-candidate-local-engineering",
+  "public_key": "zXCN2S4OhBu9QTiqi0geBF9k1WiwmKfT4UhdKuT0qtU=",
+  "signature": "tYtBIa9o319MUQ7YRTSXphqPFjWBwLq+E6K+7VWpv8iIR/VlcUaovWZWzyX+3aVFr3Uz/OvI9JLa6HYJBobfBw==",
+  "authority": "local_engineering_integrity_only",
+  "human_acceptance": null,
+  "participant_admission": false
+}

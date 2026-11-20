@@ -1,0 +1,271 @@
+{
+  "entries": 66,
+  "status": "passed",
+  "entries_verified": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "eacf30daa0b7485eb83d232d097766852bbac9c3df200ab160ef9885df6a13be"
+    },
+    {
+      "path": "apps/web/src/plans/AuthorityVerification.tsx",
+      "sha256": "ca57d5d8c7db9d823ef754e8a7c11e6de425a38102d168d141c5c2db9e372fc1"
+    },
+    {
+      "path": "apps/web/src/plans/ConsentPanel.tsx",
+      "sha256": "c1d01b13cb90355e4311bd85544945a7396d2481ba8da6829a5a3faf16fb651a"
+    },
+    {
+      "path": "apps/web/src/plans/DirectoryOptions.tsx",
+      "sha256": "edd22387c763382da0422e5af875309772520efc33056fcef7d838e64aea86d5"
+    },
+    {
+      "path": "apps/web/src/plans/PlanEditor.tsx",
+      "sha256": "a6bdab7377766667bf93f236f858785a1c9f6df37fbdf96bcd49f0e369fd020d"
+    },
+    {
+      "path": "apps/web/src/plans/PlansWorkspace.test.tsx",
+      "sha256": "7b4ff11f5e696ccee325d19b6fec73f358fdd414c1395e748857fcf30d18b9a9"
+    },
+    {
+      "path": "apps/web/src/plans/PlansWorkspace.tsx",
+      "sha256": "eb5243daca4dc3e05efd03ed8395eaf085b1dc0c602422ae6936c288488294a7"
+    },
+    {
+      "path": "apps/web/src/plans/api.ts",
+      "sha256": "2036099b3c19d6a4c92b22dedaeeb2089a0cad0447486400286dff814e47cb8d"
+    },
+    {
+      "path": "apps/web/src/plans/messages.ts",
+      "sha256": "ed6dbbb2291a4abbb35f02524de900a99cc6942a84ecc16a024e1b0adc0e46d5"
+    },
+    {
+      "path": "apps/web/src/plans/usePlans.ts",
+      "sha256": "bb3aef5d610f2e67a2c12b654cbb2d659a734f6f6758ff11158cf02a08036d73"
+    },
+    {
+      "path": "apps/web/src/review/ReviewApp.tsx",
+      "sha256": "7232cee970ea35ef6469c3647a7d289dc54cf56cdc9b6d1972aeb6dcd6ddd1f6"
+    },
+    {
+      "path": "apps/web/src/trust/IdentityPanel.tsx",
+      "sha256": "b67ca6f79585f65172a9b6263c3d160a4a0370366be5445141150b5fcc65fc1f"
+    },
+    {
+      "path": "apps/web/src/trust/messages.ts",
+      "sha256": "bf5771e12be79f8cefb4a2bb49ef0c4d2d348fb4f57a240d57d9a787d34d8643"
+    },
+    {
+      "path": "config/demo/imp04/README.md",
+      "sha256": "a94e9ea8f9583f367cfcbb24e08d8b651ba781ed920384f3aa223fb449b6c080"
+    },
+    {
+      "path": "config/demo/imp04/directory-fixtures.json",
+      "sha256": "26862660a86ce46088c9c98977eb78b6f49fe37ea585aac7c97ffc835443f6e6"
+    },
+    {
+      "path": "config/demo/imp04/directory-source-key-pin.json",
+      "sha256": "7b74979946be2edbaa32a8d109d609c881600d353f1e7735d3536fbc2f626fdb"
+    },
+    {
+      "path": "config/demo/imp04/policy/README.md",
+      "sha256": "b4dcf365cea61603bbc361577785538376c76e46d791ecccaa33b9ab66108fde"
+    },
+    {
+      "path": "config/demo/imp04/policy/bootstrap.json",
+      "sha256": "14dcdd98ff2b5bde8f38b2d3d8082bd18dd7616a0a9ef248f1a2a3967e4832e0"
+    },
+    {
+      "path": "config/demo/imp04/policy/manual.rego",
+      "sha256": "cc62534fcfaf302154ccb8e0aed6f386e7857e848354d8bb41d8d10177665604"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/schema.json",
+      "sha256": "476117eb56bd9d34a96ee928d6c282aeffc5fff4f4ebdadbe0cd668a1c178a8c"
+    },
+    {
+      "path": "packages/contracts/python/src/care_link_contracts/validation.py",
+      "sha256": "de33677a8353be952811823006d36cc2653a55624db2c2f7911bc75612b3c4f9"
+    },
+    {
+      "path": "packages/contracts/typescript/src/schema.json",
+      "sha256": "476117eb56bd9d34a96ee928d6c282aeffc5fff4f4ebdadbe0cd668a1c178a8c"
+    },
+    {
+      "path": "packages/contracts/typescript/src/validators.generated.cjs",
+      "sha256": "6e955e135fea9c5d9c96198fd96725c634471aaecabf87f6cc14c906ef277a8d"
+    },
+    {
+      "path": "packages/contracts/typescript/src/validators.generated.d.cts",
+      "sha256": "798150049a77b3920967dffd9878cee44056e66da960b760303e8ec93f682b96"
+    },
+    {
+      "path": "packages/contracts/typescript/tests/generated.test.ts",
+      "sha256": "e6764fa6efee62ca08700d814367afff494fdc60b47598b053b244de504707f8"
+    },
+    {
+      "path": "packages/domain/src/care_link_domain/ports.py",
+      "sha256": "0bf0b97abb34a75dac98b58672ca824a682b39ed43bd3c693ab04c4b39253ad3"
+    },
+    {
+      "path": "services/core/README.md",
+      "sha256": "285a1c8d944f487a0b483e83306aa8f2bd3fb1d6956e1c7f15d24e56a2561d9f"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_app.py",
+      "sha256": "418b2ee4b4a763ade3528ccd9d519f88f1efb2d3674f5474c80233b198c568cf"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_envelopes.py",
+      "sha256": "44c346e4a9f262489b4760408365eccfacd55e340660e019fc2b8196a4d6884b"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_identity.py",
+      "sha256": "3b98e43786693df225e27f32345f69cb6c7099d7ed0c07e34fa286b7330bcdd7"
+    },
+    {
+      "path": "services/core/src/care_link_core/planning_http.py",
+      "sha256": "68431949d53ced8f90dc8ca4e378e16202370ae5af39bbc1754f2826a1ca0ccb"
+    },
+    {
+      "path": "services/core/src/care_link_core/planning_ports.py",
+      "sha256": "4d69b14accff0aa8a107cad0bfbad1f7874bd54ccdeaae622f9c305425686ab6"
+    },
+    {
+      "path": "services/core/src/care_link_core/planning_routes.py",
+      "sha256": "955bfc1a2bd49154628ec652a82e2b27ece58a257653e609af8db0e08f19df93"
+    },
+    {
+      "path": "services/data/README.md",
+      "sha256": "79bac288383f29aa1dd8ee1e136bb0f3ed3c86ca80ad30bd501c5f3b2d9ef9a2"
+    },
+    {
+      "path": "services/data/migrations/003_plans_consent_directory.sql",
+      "sha256": "295790c4df2c8ce600bd3362a82e43699118a8ac8889ba9074a4afdb77f3da42"
+    },
+    {
+      "path": "services/data/src/care_link_data/app.py",
+      "sha256": "8d45bc578ad848c5ffb447442c8c43040f60658e58da7d1e38b842e93539d5b4"
+    },
+    {
+      "path": "services/data/src/care_link_data/consent.py",
+      "sha256": "826a4b001e0ba81f59d12a601222df88d664bcab599bb308cd162d080ab3bc30"
+    },
+    {
+      "path": "services/data/src/care_link_data/control.py",
+      "sha256": "0f0211e95c5de25f2162bb9c692b544007ab20dcaef85eb1c821009c28d7d3bb"
+    },
+    {
+      "path": "services/data/src/care_link_data/directory.py",
+      "sha256": "5885379a4708b4916c60d036b90702eb618e956de597d6d2b5898ebc5c22a968"
+    },
+    {
+      "path": "services/data/src/care_link_data/directory_admission.py",
+      "sha256": "d00bbd146d4b32994a01dab313b6a6ea78193a43355ab2f8d653a5dc36020204"
+    },
+    {
+      "path": "services/data/src/care_link_data/engine.py",
+      "sha256": "ad354944a6d0558fceecb7b497aa707c77ff2b394ead2005e9df6d0eb574b273"
+    },
+    {
+      "path": "services/data/src/care_link_data/planning_app.py",
+      "sha256": "d66482395faa1623e5dde4dc488ee5f6dd651958bc1b597c77fe9b6daaf8432a"
+    },
+    {
+      "path": "services/data/src/care_link_data/planning_policy.py",
+      "sha256": "8aa25faf5c3b7968526b0b1ee27493408a981009b8652d3bdd03d9af50b9fb25"
+    },
+    {
+      "path": "services/data/src/care_link_data/plans.py",
+      "sha256": "48e77cd8eac6fd8c5fb62935ead96c9d8ff5daf756edcb99cb75561c1800f128"
+    },
+    {
+      "path": "services/data/src/care_link_data/store.py",
+      "sha256": "41acddd3527e51df3e9fb7725771ef2633fa270bb019f0bea24fee99af04fe6a"
+    },
+    {
+      "path": "services/data/src/care_link_data/values.py",
+      "sha256": "f8c4f3cadb7633660ca336bfadfb7ee9a8b9e338412f8d900f4500580a2a4187"
+    },
+    {
+      "path": "services/data/tests/conftest.py",
+      "sha256": "c90526b5bcf9871c039491ac42d61bcf159ad6879e79ef0ecd85effe41130807"
+    },
+    {
+      "path": "services/data/tests/test_directory.py",
+      "sha256": "d54b891d720bb016206c825cd8d501713f6b766d5c97b960adafb50817f5f1c7"
+    },
+    {
+      "path": "services/data/tests/test_directory_admission.py",
+      "sha256": "00e1e44f462c2c078bd1eb424178d2113a3bfde068175500f0452d586a17d241"
+    },
+    {
+      "path": "services/data/tests/test_imp04_adverse.py",
+      "sha256": "598ea058b32edbdc5bd243c330ce86927455976dd92f41c0ac4b1f9d406d40e7"
+    },
+    {
+      "path": "services/data/tests/test_planning_composition.py",
+      "sha256": "fe2c4f9f9ac0871bb6d2696aa7c72e7954b3d203e4361fc2ce41bd6e91525eb6"
+    },
+    {
+      "path": "services/data/tests/test_plans_consent.py",
+      "sha256": "a8c5548a4617039f6e7226de00793640b3b3343ff70428a4cf770accc96c0e79"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/manual.py",
+      "sha256": "4a0c99de2be764b3f520f895da394d3dfbf27d9a227eca38f46e6a0c1834a601"
+    },
+    {
+      "path": "services/identity/src/care_link_identity/manual_runtime.py",
+      "sha256": "328aaf4f93a24b2b01adf58d6b359841b29f104f19196e1d64fd8b7d1619bb9f"
+    },
+    {
+      "path": "services/identity/tests/test_planning_proof.py",
+      "sha256": "ed9a961ec277a92aea8016795628eb1fec02b880aeb06499e3fd27c73b23c15e"
+    },
+    {
+      "path": "tools/generate_browser_validators.mjs",
+      "sha256": "07d25bb78cef779ea6953f5c576cd04d5bc31dd5c8db4449690fc4e875d3dec8"
+    },
+    {
+      "path": "tools/generate_contracts.py",
+      "sha256": "253a0d17d5287c77fa7d424afcf479dbc6462a775ac9ecce557b34f295361e33"
+    },
+    {
+      "path": "tools/imp03_runtime/compose.py",
+      "sha256": "49f63783ef15d8f7121ef0caf0f0c320e48b2052e86f68c8a56de14963d78357"
+    },
+    {
+      "path": "tools/imp03_runtime/config.py",
+      "sha256": "1606530d5fa7ed386b906c601c098274dfe1bd29ee00f2f2b8f19d57e095f120"
+    },
+    {
+      "path": "tools/imp04_verification/__init__.py",
+      "sha256": "cd0107b59e652d21ecc639d04c3ae734da9e1fdc4687d2fbcc26ed441ca124eb"
+    },
+    {
+      "path": "tools/imp04_verification/database.py",
+      "sha256": "a7ab35c18df3c90b1af262b02972aa07ca689335ed4641ac42be670018318152"
+    },
+    {
+      "path": "tools/imp04_verification/run_checks.py",
+      "sha256": "8c6ff190287a8d0db79db86b45e85d318b001ba1ee421b21339c3d47879aa66d"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-16-IMP-03/ledger.json",
+      "sha256": "8a2f845de4bb457557700e0636f00cb1cab9b255d021247127bc7485c3f77e3e"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "doc/LLD/06-consent-directory-and-referrals.md",
+      "sha256": "02671648ecf2cc31a9ed8aa3bb37de03ea83b7bff98e0a23e536ded6fdfc3903"
+    }
+  ],
+  "old_web_build": "Replaced by explicitly qualified imp04 public-origin build; initial image manifest binds its four actual files."
+}

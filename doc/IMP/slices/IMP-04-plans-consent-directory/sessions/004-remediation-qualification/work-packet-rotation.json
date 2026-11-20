@@ -1,0 +1,148 @@
+{
+  "packet_id": "WP-IMP04-004-rotation",
+  "task_id": "IMP-04-D",
+  "stage_id": "IMP-04",
+  "mode": "implementation",
+  "role": "imp_platform",
+  "goal": "Recover once from a read-only401 during an actually admitted pending same-principal MFA cookie rotation; hide projections during full fresh revalidation, preserve local draft/ceremony, retain all denial/deadline rules.",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-16-IMP-03/ledger.json",
+      "sha256": "8a2f845de4bb457557700e0636f00cb1cab9b255d021247127bc7485c3f77e3e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/handoff.md",
+      "sha256": "ba8f585d52cb2cfd9fda36d8e3535ca4df0e229cd54a32a17ff8fa2f2861ebef"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/results.json",
+      "sha256": "cf8db7ad5a1830c55d580fafa334549ca96db4f88135174f399b2293b46ca792"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/final-candidate-manifest.json",
+      "sha256": "92ec7d0cfff704b701bd56aa68ef7d28010518a48bd26adfda4abba23872ffe7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/qualification-results.md",
+      "sha256": "80e26c95c15b7cfdc2d05b87129fab6d7fdf482e47f6e247d4266bebfb0772a7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/final-snapshot.json",
+      "sha256": "de7d7ebe82b10d1e926ff6981c7434d71eacd52d7356b069135dd1576f418ff3"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/IMP/**",
+    "doc/LLD/**",
+    "doc/REQ/**",
+    "tools/**",
+    "services/**",
+    "apps/**",
+    "packages/**",
+    "config/**",
+    "deploy/**",
+    "tests/**"
+  ],
+  "write_paths": [
+    "apps/web/src/plans/usePlans.ts",
+    "apps/web/src/plans/AuthorityVerification.tsx",
+    "apps/web/src/plans/PlansWorkspace.tsx",
+    "apps/web/src/plans/AuthorityVerification.test.tsx",
+    "apps/web/src/plans/PlansWorkspace.test.tsx",
+    "apps/web/src/plans/RotationRecovery.test.tsx"
+  ],
+  "dependencies": [
+    "G-03 accepted",
+    "IMP-04 session001 source candidate retained uncommitted"
+  ],
+  "operation_ids": [
+    "plan_create",
+    "plan_read",
+    "plan_field_append",
+    "plan_retire",
+    "consent_grant",
+    "consent_read",
+    "consent_revoke",
+    "directory_search",
+    "directory_read",
+    "directory_ingest",
+    "directory_suspend",
+    "data_plan_create",
+    "data_plan_read",
+    "data_plan_field_append",
+    "data_plan_retire",
+    "data_consent_grant",
+    "data_consent_read",
+    "data_consent_revoke",
+    "data_directory_search",
+    "data_directory_read",
+    "data_directory_ingest",
+    "data_directory_suspend"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "No accepted IMP03/IMP02 runtime, custody, source or state changes; no sibling changes",
+    "No real data/police integration/autonomous emergency contact, model/global host trust changes",
+    "No commit/push/merge, human G04 self-approval, next slice or real participant admission"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Proceed with the focused IMP-04 remediation session and clean qualification rerun to address 1-6",
+    "scope": "Diagnose and repair scoped IMP04 source/tooling, present exact deployment correction before apply, and execute clean synthetic qualification; no human self-acceptance."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP04-004-rotation-web",
+      "kind": "file_set",
+      "scope": "apps/web/src/plans/{usePlans.ts,AuthorityVerification.tsx,PlansWorkspace.tsx,AuthorityVerification.test.tsx,PlansWorkspace.test.tsx,RotationRecovery.test.tsx}",
+      "owner_task_id": "IMP-04-D",
+      "expires_at": "2026-11-17T06:00:00Z"
+    }
+  ],
+  "expected_outputs": [
+    "Root-cause evidence and reviewed source corrections",
+    "Exact deployment change packet presented before application",
+    "Clean native/DB/race/fault/recovery qualification with truthful outcomes",
+    "Human accessibility/acceptance evidence or explicitly outstanding human action; exact candidate packet and handoff"
+  ],
+  "positive_acceptance": [
+    "Accepted IMP03 unchanged; retained IMP04 restrictions/data preserved",
+    "Ordinary operations reliable within original deadlines",
+    "PDP bounded memory and browser child reaping verified",
+    "Real A03/A04 and8 actor/locale scans pass with effects correlated",
+    "Actual recovery bound measured; human G04 decision separate"
+  ],
+  "adverse_acceptance": [
+    "No weakening of authorization/deadlines/fixturefreshness or broad status acceptance",
+    "Failures/not_run remain explicit; no hidden resets or skipped negative evidence"
+  ],
+  "reviewer": "imp_review read-only integrated source/deployment/evidence review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Any operation outside accepted target or authority stops dependent work",
+    "No credential leakage, failed current authorization bypass or accepted state mutation",
+    "Raise any material deviation from accepted proposal; preserve independent in-scope work"
+  ],
+  "is_example": false
+}

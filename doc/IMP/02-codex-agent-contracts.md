@@ -30,6 +30,8 @@ AgentResult names packet/task/baseline, status, changed paths, outputs, exact co
 
 Coordinator verifies result identity and baseline, inspects the diff, runs relevant integration checks, reconciles findings and updates the stage evidence. A separate agent thread can review work without providing independent human approval. A read-only reviewer does not edit the result it reviews; fixes return to owner/coordinator and get rechecked.
 
+Under the 2026-11-20 qualification policy, the coordinator records `automated_qualified` from applicable passing automated evidence through IMP-10. Specialists still cannot fabricate human acceptance. Missing interactive observations are recorded as deferred to post-IMP-10 GitHub issue follow-up, rather than blocking the implementation stage. Failed or unrun mandatory automated checks and blocking control defects still prevent qualification.
+
 ## Concurrency and file ownership
 
 Use at most three concurrent specialist threads, excluding primary, matching the existing project cap. Delegate only independent bounded tasks when user/applicable project instructions authorize delegation. Do not spawn nested agents or recursive Codex CLI sessions. Use focused context/paths instead of copying the whole repository and repeating the same investigation. End completed tasks; retain meaningful handoff records, not long speculative chatter.

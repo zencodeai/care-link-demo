@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-11-16T20:49:36.605640+00:00",
+  "status": "recovered_after_test_timeout",
+  "actual_leaves": [
+    {
+      "role": "identity",
+      "spiffe_id": "spiffe://care-link.demo/demo/identity",
+      "not_after": "2026-11-16T20:53:24+00:00"
+    },
+    {
+      "role": "core",
+      "spiffe_id": "spiffe://care-link.demo/demo/core",
+      "not_after": "2026-11-16T20:53:23+00:00"
+    },
+    {
+      "role": "data",
+      "spiffe_id": "spiffe://care-link.demo/demo/data",
+      "not_after": "2026-11-16T20:53:20+00:00"
+    },
+    {
+      "role": "pdp",
+      "spiffe_id": "spiffe://care-link.demo/demo/pdp",
+      "not_after": "2026-11-16T20:53:24+00:00"
+    },
+    {
+      "role": "journal",
+      "spiffe_id": "spiffe://care-link.demo/demo/journal",
+      "not_after": "2026-11-16T20:53:34+00:00"
+    }
+  ],
+  "protected_status": 200,
+  "public_health_status": 200,
+  "issuer_restart_only": true,
+  "agent_fence_restart_or_clock_change": false,
+  "original_result_preserved": "workload-expiry.json remains failed because75second recovery observation window elapsed"
+}

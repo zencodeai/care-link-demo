@@ -1,0 +1,146 @@
+{
+  "observed_at": "2026-11-20T15:31:33.321592+00:00",
+  "run_id": "049d31b6-b936-42f1-bbd8-9841fade8bda",
+  "tls_verified": true,
+  "isolated_session": true,
+  "passed": true,
+  "uninterrupted_ready_seconds": 65.205,
+  "ready_event_count": 33,
+  "events": [
+    {
+      "event": "ready",
+      "seconds": 0.055
+    },
+    {
+      "event": "ready",
+      "seconds": 2.083
+    },
+    {
+      "event": "ready",
+      "seconds": 4.122
+    },
+    {
+      "event": "ready",
+      "seconds": 6.156
+    },
+    {
+      "event": "ready",
+      "seconds": 8.192
+    },
+    {
+      "event": "ready",
+      "seconds": 10.228
+    },
+    {
+      "event": "ready",
+      "seconds": 12.262
+    },
+    {
+      "event": "ready",
+      "seconds": 14.301
+    },
+    {
+      "event": "ready",
+      "seconds": 16.339
+    },
+    {
+      "event": "ready",
+      "seconds": 18.374
+    },
+    {
+      "event": "ready",
+      "seconds": 20.406
+    },
+    {
+      "event": "ready",
+      "seconds": 22.442
+    },
+    {
+      "event": "ready",
+      "seconds": 24.48
+    },
+    {
+      "event": "ready",
+      "seconds": 26.514
+    },
+    {
+      "event": "ready",
+      "seconds": 28.549
+    },
+    {
+      "event": "ready",
+      "seconds": 30.585
+    },
+    {
+      "event": "ready",
+      "seconds": 32.618
+    },
+    {
+      "event": "ready",
+      "seconds": 34.655
+    },
+    {
+      "event": "ready",
+      "seconds": 36.691
+    },
+    {
+      "event": "ready",
+      "seconds": 38.735
+    },
+    {
+      "event": "ready",
+      "seconds": 40.769
+    },
+    {
+      "event": "ready",
+      "seconds": 42.804
+    },
+    {
+      "event": "ready",
+      "seconds": 44.841
+    },
+    {
+      "event": "ready",
+      "seconds": 46.875
+    },
+    {
+      "event": "ready",
+      "seconds": 48.917
+    },
+    {
+      "event": "ready",
+      "seconds": 50.951
+    },
+    {
+      "event": "ready",
+      "seconds": 52.987
+    },
+    {
+      "event": "ready",
+      "seconds": 55.031
+    },
+    {
+      "event": "ready",
+      "seconds": 57.066
+    },
+    {
+      "event": "ready",
+      "seconds": 59.099
+    },
+    {
+      "event": "ready",
+      "seconds": 61.133
+    },
+    {
+      "event": "ready",
+      "seconds": 63.171
+    },
+    {
+      "event": "ready",
+      "seconds": 65.205
+    }
+  ],
+  "preflight_session_logged_out": true,
+  "human_review": "not_run",
+  "G04_acceptance": "pending"
+}

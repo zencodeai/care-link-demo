@@ -1,0 +1,130 @@
+{
+  "packet_id": "WP-IMP04-002-preparation",
+  "task_id": "IMP-04-D",
+  "stage_id": "IMP-04",
+  "mode": "planning",
+  "role": "imp_platform",
+  "goal": "Prepare exact isolated deployment delta and live qualification packet before any application, preserving accepted IMP-03 environment.",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/handoff.md",
+      "sha256": "b0965e51b8ee7ebc093182e7773d67da6a1060cf6a7d48b15f7f6e355c8ea585"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/candidate-manifest.json",
+      "sha256": "57e5cd9ebb97069207a2725572387687614f1f0506113ee7b2a87dfe6d9ee881"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-16-IMP-03/ledger.json",
+      "sha256": "8a2f845de4bb457557700e0636f00cb1cab9b255d021247127bc7485c3f77e3e"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/IMP/**",
+    "doc/LLD/**",
+    "doc/REQ/**",
+    "tools/**",
+    "services/**",
+    "apps/**",
+    "packages/**",
+    "config/**",
+    "deploy/**",
+    "tests/**"
+  ],
+  "write_paths": [
+    "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/**",
+    "doc/IMP/slices/IMP-04-plans-consent-directory/README.md",
+    "doc/IMP/executions/2026-11-16-IMP-04/ledger.json"
+  ],
+  "dependencies": [
+    "G-03 accepted",
+    "IMP-04 session001 source candidate retained uncommitted"
+  ],
+  "operation_ids": [
+    "plan_create",
+    "plan_read",
+    "plan_field_append",
+    "plan_retire",
+    "consent_grant",
+    "consent_read",
+    "consent_revoke",
+    "directory_search",
+    "directory_read",
+    "directory_ingest",
+    "directory_suspend",
+    "data_plan_create",
+    "data_plan_read",
+    "data_plan_field_append",
+    "data_plan_retire",
+    "data_consent_grant",
+    "data_consent_read",
+    "data_consent_revoke",
+    "data_directory_search",
+    "data_directory_read",
+    "data_directory_ingest",
+    "data_directory_suspend"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "read_only_host_probe"
+  ],
+  "prohibited_actions": [
+    "No deployment, live migration, actor provisioning, resource mutation or network/host/model changes",
+    "No accepted IMP-03 changes, credential revelation, resets or fence changes",
+    "No application implementation, commit, push, participant admission, G-04 acceptance or IMP-05 activation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Continue IMP-04 from the session001 handoff. Prepare the deployment and live qualification packet in a new session folder. Preserve the accepted IMP-03 environment and present the exact deployment changes before applying them.",
+    "scope": "Preparation and read-only inspection only; present exact changes before applying."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP04-002-documents",
+      "kind": "file_set",
+      "scope": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/**; slice README; IMP04 ledger",
+      "owner_task_id": "IMP-04-D",
+      "expires_at": "2026-11-23T23:59:59Z"
+    }
+  ],
+  "expected_outputs": [
+    "Exact proposed deployment inventory and changes with source hashes, migration/policy/source/actor bindings and rollback",
+    "Pending live DemoPacket and evidence matrix",
+    "Actual preparation checks, review, human decision state and handoff"
+  ],
+  "positive_acceptance": [
+    "Accepted IMP-03 source and runtime preserved",
+    "Concrete isolated resource proposal and bounded application plan",
+    "Live checks cover separate actors, seven states, consent races, trust and EN/FR accessibility"
+  ],
+  "adverse_acceptance": [
+    "Hard-coded IMP03 operator targets identified; no existing deployment command represented as safe for IMP04",
+    "Unknown current inventory or unavailable live evidence explicitly reported"
+  ],
+  "reviewer": "imp_review read-only integrated review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 90,
+  "stop_conditions": [
+    "Do not apply any changes before user review",
+    "Surface unimplemented deployment tooling and unbound live artifacts"
+  ],
+  "is_example": false
+}

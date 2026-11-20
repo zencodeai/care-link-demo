@@ -1,0 +1,578 @@
+{
+  "checked_at": "2026-11-20T16:56:00.728605+00:00",
+  "preserved_other_container_count": 94,
+  "all_preserved": true,
+  "current_core": {
+    "id": "b6cd35ec3aa7e064ba43a67979c7007c380e3e57c412223dbf9edc2aea13e7ff",
+    "image_id": "sha256:6bcbb3adf5e42fab4e078f8a513e39282db4c621807d526cdf136c88030d5cfa"
+  },
+  "total_container_count": 95,
+  "containers": [
+    {
+      "container_name": "/care-link-imp04-002-review-chrome",
+      "container_id": "7e7495e741b6800b0d2dbc0974b56bf1670fc908b16834bd2eedb7ca1e83d021",
+      "configuration_sha256": "c938a1a9461f5157ed22ffa3ad11af1cd8e1d6e27379c1d1a8ef4595ef0b03a1",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-ingress",
+      "container_id": "5591c414c6564d849ad3cc17708d12f200f7727c8e843f7a57f67421d7f49ebd",
+      "configuration_sha256": "8e20cfcd71442857abb35336e23496c6277aa9f1a202419641602ae4862fed63",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-journal-proxy",
+      "container_id": "ea762710e58e75e5f48aa5434024c2b9e83225bb0ab79b4752d553b35af2e0ce",
+      "configuration_sha256": "2061a801fbd5e8c1bd1d9554c95519df811ba3ba53d14ff63e8259d19441c4d2",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-journal-authorization",
+      "container_id": "5ca589c8b82d8116d8646f81a3989d946fb6f400c442fb5a8e756270c0398859",
+      "configuration_sha256": "9fbc33df356cf30ae81b09bea31ce5b9529b67ad2de8e1407640a9c7ce81fe3f",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-pdp-proxy",
+      "container_id": "57c46e892f238856e739fb388248046879f986eda0d2cba6ef8fcb5c8d333725",
+      "configuration_sha256": "d6f28df5385ee75826f6b61da072ca622927e759cb6db7679541adbaec92f51c",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-pdp-authorization",
+      "container_id": "92caf0800579fc9f1c4f8ee805038ce3411073afb163ff998d18dd1d2bfa7256",
+      "configuration_sha256": "82276e3589dc1fcba83993d73a0768f482e7618d3021bd1e9b0570ac56880864",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-data-proxy",
+      "container_id": "d4a928328420abe0272ac2a0c3f1cc289f39e11040c23a0cc715eb8b324741d1",
+      "configuration_sha256": "f509651515ff04523e6f4ce06a863ef1db4ddf5d0978e6a1e805cdddc0f862e7",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-data-authorization",
+      "container_id": "3c733119450c91a0ba832034cf561fb4257757b50fb75a560b74e93037bcf101",
+      "configuration_sha256": "2b1dd8415a42fa77ee502678b49985ec5e11e04cccd906067ac5c101c60062f6",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-core-proxy",
+      "container_id": "5e50165842c49ea25bf5c76f909a58e6af552a8c41bd1184c650bd274d8ebed4",
+      "configuration_sha256": "368e8a54cee05754d1fa68fac740dbea7c781129ddd92b30ae523e83d13e145d",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-core-authorization",
+      "container_id": "d08aa72d9585230e7ab17c714ea05f6222ef9ba6f1a2d6943f561a800a4b0748",
+      "configuration_sha256": "b6c4a60db76cfc09069cc4144d606f95ee22494f88633e9d9d337c18b4298711",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-identity-proxy",
+      "container_id": "3ff1522039213bc79ba99f7c4266e3f2631e48c97d24db78ff24cdf047005b3d",
+      "configuration_sha256": "9a02e7c230da49c4b86b568e64b762ab6b09210197d89d96205e4eb3256c1cc4",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-identity-authorization",
+      "container_id": "8a092b390feebc3aadd71609293003b22309e24aed790fa84c322e809857c68b",
+      "configuration_sha256": "de3e1f790960a761da220b8fc059b775345a2ecc27a296601322dae03db4679e",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-journal-app",
+      "container_id": "e66d0760baff0fb0bef761dca6ebe66e3833e095b3ae040b72be0ba31e8711f0",
+      "configuration_sha256": "39509383da7beb3d8a9c89a6ef97122e71d83bb648f9109c04e38e0c56040e14",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-pdp-app",
+      "container_id": "0fc7f0aa752b5db6208bf7767ba45bd985f9a75038447a03f454538930fce31c",
+      "configuration_sha256": "80e3205f12342c90616e210ee1d55a0ba847eeeb9038c1897e1993812c574d38",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-data-app",
+      "container_id": "d9fec9942252639e7311248a5f383ec4a6167dd24c1a52fe40de1e791a81363e",
+      "configuration_sha256": "5622de70776108c24435acd30de6f211b734c8c255807bfe727df351793aabac",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-identity-app",
+      "container_id": "6ba413a8c7c64d79823a8fdc09293a0a006c6449e260f1ed886bd19a2b528cc6",
+      "configuration_sha256": "8e296b0a99cbbb556a4893bcfdb817f6e64a9e2b124830946209f3d0fd082117",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-operator-seed",
+      "container_id": "c2a4bd7bae1d7d3b2db10ebcabf74b66a88c9e4ec24b7232d5562d2b5d853e39",
+      "configuration_sha256": "661addd1b25c7cd7c2d05b68d9b8d987e2530031bf59799530d38f2154cf9121",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-identity-provider-connector",
+      "container_id": "45fe9ae22db239177b81f685e66b2d36f48ac1211ad9bbefc725d967aad0e92b",
+      "configuration_sha256": "ef003fcfb697eb44ae61a3d680a009e012b250ccd5fd8e65091e062f243f3434",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-data-db-connector",
+      "container_id": "5f782df915914d607da630a4e296e0c0b297141c050b5b2d45b1e9ce01017307",
+      "configuration_sha256": "9725260f9ac89fdff14fdba55c5632b3657bf91ffe5cc817f10bb42b47a3e852",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-identity-db-connector",
+      "container_id": "57f546b4e3ab8b771b40a24390fcffd4b159e75be43a30b9554f8e3fcba19699",
+      "configuration_sha256": "9cff335e41923163965b8b12f616303630bbe620f25b6cb2b413e4217962f249",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-fence",
+      "container_id": "4d59f313634a917caf29925c89348836ea4ac78817b11d4d982cbddc3d47f25a",
+      "configuration_sha256": "b864ac27b76bc03e377f01543682458af3fc2b3cc1f3d543912f9f259809e607",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-journal-agent",
+      "container_id": "12227bbc920fe5fa970957eb1fedcc97bd827f052ead41faf743e093861bf0d6",
+      "configuration_sha256": "e57d950f2eff36d7e0bb6d1d21bb53e6526254365caf9612c5f09328d9999f6d",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-pdp-agent",
+      "container_id": "217396ffad2c194b2cfaa593241083aae6ef4a82804031711ef8f5a3b404a2e4",
+      "configuration_sha256": "e15bb142a475d3e2b8775609cbf2dbd3a2d4cb8880ba7f498ee893b64326156b",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-data-agent",
+      "container_id": "3c243f7d2bd554c854aa42834c97563b5c27ddcc1c045468fa9c8af779ddba91",
+      "configuration_sha256": "b5b52fa2f2a9c9e4fb6a8dc3504a974d6448d0086e62d5c31e6f603754050994",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-core-agent",
+      "container_id": "a5e68ec856cca493b55d36f80a22b01aa9463586497e58b657e5116783b5cfbe",
+      "configuration_sha256": "7ede238e76f604095d513eaeec951430023b0777bd2000123e78dca8201ce4f5",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-identity-agent",
+      "container_id": "af2389a88c350ad8566883b0d221cd8b638a33eb4676a0643eef4919e5e33267",
+      "configuration_sha256": "8dde2dc572dbfac9d3cdae5a642d3ff4b63e22b488a4996cc879b06f3bf380ff",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-keycloak",
+      "container_id": "e6f6dbbebc055d42e966b34e7966bf9b4bd0aa10f75643c2c6ced289532e5821",
+      "configuration_sha256": "6a0643f82eea6b409c3f5fa8550ed31765612733a1bc5d03282886130ac0c24d",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-postgres",
+      "container_id": "caebccdc6c7385e4b2ae848efd98ca6506f87651e366036f0832639dc8298434",
+      "configuration_sha256": "e8eacb934074baf17466b42d194be131302c06e0e612a3e194efbb0bd59be6d8",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-spire-server",
+      "container_id": "00099c8e55e48a6233613784167bfa6cf0edda783592fa49f18e61bfece4e6f9",
+      "configuration_sha256": "d580c70fe19646d8b72a7a8ea247cd2f51988d3a62aee66ea356a93d7c27cdcb",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp04-002-seed",
+      "container_id": "ee3c7dfbdb9428bb69da193017450aaec74ff0cfb1c90dcec48631de0760c4db",
+      "configuration_sha256": "b144920fc75a7da75d40987450ec1f8eaca9a3a45aa26740b74386588a3e6911",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-journal-app",
+      "container_id": "6f9c332c9d88d18b4995f7a0485a54ed9f333798641346a03166b899dba79a7b",
+      "configuration_sha256": "4e08bf5fbb3f2f675647f0ac66f25e09874207450c992d330dd6efa91912d6bc",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-pdp-app",
+      "container_id": "eb8eaecc257bb698314cd4d4f0646af010477ba264dab96e7a8ff96a831c275a",
+      "configuration_sha256": "cf58454147b1aa1016cd9d817629badeb75d01b93071481f93a8eae2b4cc4861",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-data-app",
+      "container_id": "7eb49785e01f6f9f11e9850ccbe6dd4b048f025014d00d2f0498cc1bb7f24d16",
+      "configuration_sha256": "e13444347500ebb2d34740f90894f3be4194f85be203b921e33317860cfea430",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-core-app",
+      "container_id": "67414498b3e15d2d1d8fc21584cbc8a79970f046295670017bc255ecad37b73a",
+      "configuration_sha256": "289a8bdab4082644731a4b831a2dd6ec01c22769ce1b3ee30d4a657b13fc153f",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-identity-app",
+      "container_id": "5693a31d5e77026b33ef83b18b6f60202c71686736b92d5f6ddcb030c47ef9fe",
+      "configuration_sha256": "b5d83bdfd642c2b72d5d1a2dc4bdaeb5cceae5003e67502fee61c32ab1f3b1cf",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-review-chrome",
+      "container_id": "81660273374b5689e9511fb0698322013347d43f3c83a1e508dadde0724f26c8",
+      "configuration_sha256": "f53123c873b9e14fa2f976c810325a42f931762e7740c2bd11bb2dcb69d64607",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-ingress",
+      "container_id": "2b44f1f187a917a69540c4c35b073dc72f5a0c4af29c78973282c7eae217e448",
+      "configuration_sha256": "60d39b8dfb1d970852048cac1b76d4c86b9581d2b4d5a957c103d0343bd62815",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-journal-proxy",
+      "container_id": "f316a0d1e444d059322f329b49939488f948912ba89f48780b6ced1352617d48",
+      "configuration_sha256": "5c40d5358cc64811cbf3d3f7b3af0074b992693f5c85b1b8588670fa7b7d087c",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-journal-authorization",
+      "container_id": "43e8c8e94318af0a6206c38d4b596ad5c1dad4774b9eefcc00ad50c2e72268ba",
+      "configuration_sha256": "ee7a9517cd90358bc9326396a4f3829673b58639efcb7516c3a73057ace358b2",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-pdp-proxy",
+      "container_id": "98d13420b360f27d6b754aeed5e0fe00077386ce993dce93b6b816f84eefa2c9",
+      "configuration_sha256": "600d1e326b6a62bde1c9e8f1278e92ca304e483bc11b9e29d1cbbff1c9caf75e",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-pdp-authorization",
+      "container_id": "4fd399c0df9c5f4e405fe5fb0cfc7b428890543859cb900fb7ddadb3c752d389",
+      "configuration_sha256": "8dcd82b382ea472f4a94c134e0a49fbf943cf095384dd49ecd79a9409254b491",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-data-proxy",
+      "container_id": "fd07ca32e5f2d065d8d813dee1c6d01954bce6b7043365382bf5f420092748ad",
+      "configuration_sha256": "3b53bb6071514798b3a7f2bdb8d6cbea2c2bccac374500a23c48eb145177f103",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-data-authorization",
+      "container_id": "4bc729a3daa24017c5af3968410c7f4473521de1c7fa412abd489baebf3853e4",
+      "configuration_sha256": "352fa6d2496dbf9d5759bc932d63286b3b8c7a8614b9c54c81ac58b6be75d75e",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-core-proxy",
+      "container_id": "5c6d5b3374131d3a4118d0e379e7e388ee0181c336d928f8853120d5c5c034e4",
+      "configuration_sha256": "54b9020304bca06b5655b9ca3e713b7f0bd1bef58ada06459488ae97fcf53c32",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-core-authorization",
+      "container_id": "231a31d2d76b033fb0e558415cde92c7fe1d5f77472b5bb25134ffc198cecdf0",
+      "configuration_sha256": "b4f1b5024c2bbb9021099f7bb9ab24a9f96bf71d57fe82e28be97fe4fe3d0754",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-identity-proxy",
+      "container_id": "65283d7fd306d7cbffb9cbe56e2a4b2da833983af5568ddbc70a54905c1c9a3f",
+      "configuration_sha256": "670507eca26820216dc4c35fb85d0dbb6748b7e2c00c8b059e6a7dfad4995761",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-identity-authorization",
+      "container_id": "3a3f160e40b3831ff3d4a222147d14a5d6deb7a25bfbe966369e08cfcfb294e4",
+      "configuration_sha256": "168980701114ef12a0592e199d29d683ea72bc9ffdb57cdaf8a7c4f018185078",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-browser-ingress",
+      "container_id": "dedf6deb4c652faa8e42195d2fde0ad2809eefa3bfdea50edde8455a66fcea70",
+      "configuration_sha256": "eb83a16965caf9a6873d320ee50538bf625c36803d094293f1ef4a083b7f38b0",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-data-db-connector",
+      "container_id": "c7da3665a6650aa18a9e34f68f0e03726022a1dd0d8d78a4bb57cc2c6912c949",
+      "configuration_sha256": "8cbe062f59cbc98ed7af7faa879e6677933a6ea8891ffaf60327269448c092fe",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-identity-provider-connector",
+      "container_id": "325bbb32e8ce4e69abf9146239db6eb1ced4ab313508d23acd926e2e42388ce9",
+      "configuration_sha256": "4aea666b8484ebaa04c048f873886b8312df6ef806a5546b909e41ec3a48c65c",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-identity-db-connector",
+      "container_id": "407331d4597d7a2ded049fc78031bf2d6dc94861fbf639c890036b3a7e53618f",
+      "configuration_sha256": "6e367faf5047e99e348cd25ca35c354a95dd1ad00769d0557e45349378fe731c",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-postgres-ingress",
+      "container_id": "c7db634a5066fcbf61a86314309ecce06a7bfa6844c661bbb1e1908947913123",
+      "configuration_sha256": "fae1ac96bdad9f45484efda7260fcf96a752d9dd922cb9de2d6d7927f91f3154",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-fence",
+      "container_id": "0ad2a1d3259b96ae2e20c3d1d9b1f10ea8cfe580755532a5de4fc2b10e21a428",
+      "configuration_sha256": "e983ac1f950d2cc462b0ed19b7e0ecc5ea2dfc02b3eafc4f3d7f599e691f6c20",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-journal-agent",
+      "container_id": "cc6d41cbe70f7af0ac8d1d5d0f1a92e715cc26e55cab530b025be6cf736aedad",
+      "configuration_sha256": "627af45827f08653650d4e367b64ed41fc0868a62234e6eaabedacfaa9986d9d",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-pdp-agent",
+      "container_id": "54d5d9508dc4bba38fddfa1d26bd0c70650f1b70cfa1cead360f00d97caf5b09",
+      "configuration_sha256": "45d9fa329a853993e6bbb6a129cc872772b7a6986ae97d09433f9dea241c1c6f",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-data-agent",
+      "container_id": "194f9581ae36956e667303b9e37a37e361a69468457ba6d40164d3c944e3d863",
+      "configuration_sha256": "723d00c3a03641121a8fdb67714e3af616ef11f47400b82acc66f74d3dda4569",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-core-agent",
+      "container_id": "2445b27106b6688b6048def4957a78d8de409c3dcf3a280b7a997f8d99099c35",
+      "configuration_sha256": "4df2bfdbe6955e00ad6164b74191e120394deb8107161c3c17e52acec2c08af4",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-cont1-identity-agent",
+      "container_id": "7000d2617f89f579fa6ebe870c9332ccf115f1b810deacf15a6129ab7168dae3",
+      "configuration_sha256": "0ae503df252f44896856f47bcbea19f1ab23555c3238a21a19c75c08003d850c",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-data-app",
+      "container_id": "707ca047304c8598d72e3d1c477dc8460c5f6e66f69161d5e715764bdabed62b",
+      "configuration_sha256": "0dc9eb7ebdc8aef67f88ce70d1b0b74cec2ffd9e20941c4c3f043e96a3609968",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-core-app",
+      "container_id": "3dd4677bb3a18a06285251734f11189bcf741d2fea74218dfc8e7b6190919a4e",
+      "configuration_sha256": "7b3d32f8ef3a37860e1f0c59cce2c58979a512a6f82f520ec8ef1d1b8fa529bc",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-ingress",
+      "container_id": "befcfb467b8f77869a3b6fbc39fe78cd73c6428ffe9b566ad0ba779e73a5056c",
+      "configuration_sha256": "5759d66bceb7b767983c237b382553bc216fd82ac075bcdee199dca0993b5dc0",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-journal-proxy",
+      "container_id": "f1f487dc45f60226125c48bf20c7f37f106a67f113f26d63c62b44face52cac3",
+      "configuration_sha256": "9edd8764f86d5e66f940bd394ffad3e8cff8ccf5f759c33a3a08bb7738f8ed47",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-journal-app",
+      "container_id": "8857e44ed82e0a1090fd42d1d4a7c3c8faff428e77ca1dd9fdff0b9d88e012e7",
+      "configuration_sha256": "afb290cbc336e3fbf225e15a67054295e0d43b147c6e2978da36e14be9adc715",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-journal-authorization",
+      "container_id": "3178d480bf80c7b97032cb78ae64ab5d1ebc2595c408cf0be1140feda9369f28",
+      "configuration_sha256": "a663ce32c99465dd15e852eee04921c884190479624e691d638ba20c5693a17a",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-pdp-proxy",
+      "container_id": "c8d67ccb618a91330e4ca9dad1eba45c0577512109021437ad51f50ba6dbf935",
+      "configuration_sha256": "e14796b7205be2332f61074b2ab1d3ecf45f76802fd8db8ab9982899a081147a",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-pdp-app",
+      "container_id": "0df6e67a41f24e6a9d9bff6f12625a9ff457b2df762ff82d4738e991ea4cd670",
+      "configuration_sha256": "25d54869321792d638738e8164927d362e527ac56fe9c010d2b6e2282312ab23",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-pdp-authorization",
+      "container_id": "69df50376c06e8d9c2e244462480b7ae4b6747c0424c90d56ef259f3e83f7aa4",
+      "configuration_sha256": "86487477e2654a76a423f24bdbb8fbdbfeba3f5109a12a25eaa84f35ee568754",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-data-proxy",
+      "container_id": "c7646237e7b7626acae67be0cef6ad1836b89ffb571798343e40e4b542918592",
+      "configuration_sha256": "2ca238e169d1ce54299fd3198dfbc46b9507afdf8ac5a3574831b752760a67de",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-data-authorization",
+      "container_id": "c106755ebcbbd2a3973de8a74903d15d2e3251193017f926356594936b2ca9de",
+      "configuration_sha256": "b2863140267228e9f19f2ee72a7b885635ec3900b86aa8152a199696450f6472",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-core-proxy",
+      "container_id": "575ca5ce658f21bbde04059deb9c182e9c1a8b36f8d223af239d0bade8dacb28",
+      "configuration_sha256": "f522b7cf59d82535814cab65c5620c865f5d41f6540ecc66bd5cb19233bd7088",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-core-authorization",
+      "container_id": "4be7015c3f1ee45c37616dd3620df8317277aacf4591b84be1f75d2aa04410af",
+      "configuration_sha256": "6f1c27953cc69592aada3b89ddedcdf073df7ab452288bac19a7af34ebab7af7",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-identity-proxy",
+      "container_id": "ae626df519952a53ebbe8f97b39ce759f827658ff72c410518b22405c35f2c68",
+      "configuration_sha256": "e2b47bee6412e33568f36db367e3b48ddb43faf9b01388cb26618bf120c92e17",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-identity-app",
+      "container_id": "7fcba48e3ca11215a61bd1fbfb9589d82cd2ac94266289aaa1b1536c73307943",
+      "configuration_sha256": "8063d0a749b978a20e735f6318b1b0003db2efb2b553e8ee2a9df859968e85f3",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-identity-authorization",
+      "container_id": "d31524d37e02e642ef7f2da8b5f7165cd26868e0ac31168d1e215be259bb7ac4",
+      "configuration_sha256": "37667da5dab741d35f4925f3706247343dfb5211cbb26ecf2c37bcba6b91f819",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-data-db-connector",
+      "container_id": "58d12b0899be061ac8bd82b6d0a6c5516608c79e5020e8bb53ab38487d801982",
+      "configuration_sha256": "2ef5d164ce89db5f20218da5f9cf98503c1c47ed494ff7b10b16f7d9717dbf90",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-identity-provider-connector",
+      "container_id": "f6f062462c30ec146f8312c6e1b935823d8ae44d3c46ceda4b729128520ee210",
+      "configuration_sha256": "8ac19ffb965badd55b5ffe2db3a7f0f564b8d8f7e8d6d4bc34db428187321032",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-identity-db-connector",
+      "container_id": "f41392ece5e35cd288c02a6822131f01a6992de73f10460feea3ff4b97e671c3",
+      "configuration_sha256": "9cbd1349cec4418fc868a2fe0153441f3bb267dd80c7922bcbcd02fd234787cc",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-fence",
+      "container_id": "b592f88101e26d0861c09507c27d6a659736f3eac15fbdd47d199b2b94d804a6",
+      "configuration_sha256": "1d1c1a4f76a2098a0817b03066763f06b3f6fa1d6b7e8274ab1722ffc519bc83",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-journal-agent",
+      "container_id": "3effb19c967c8866c58c0c387594a7af40dcf7b3695948232eefaef8e96da2c0",
+      "configuration_sha256": "4077f510552feed39695ae67929040c47c908d9303d68c1cf824e552bd0af173",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-pdp-agent",
+      "container_id": "77872d3b79d82dc41b7c5b98b21d5b7307c5250d2403a30b84b7b0d9608fb002",
+      "configuration_sha256": "c258aa8938ed69392fbc1798b85460cdbd272bcaccafb925950fa6048b5e0019",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-data-agent",
+      "container_id": "d1faa37c9c08597445d48b73a23f3b3b02843ce477ed06e6a6a16c7ecec902ea",
+      "configuration_sha256": "1b1424c6eddc71ee4db798c50cdba94d111e8bda131b70a89902a6c7ab577fd6",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-core-agent",
+      "container_id": "6197438271ab95ac8c5fec22c95078207d8089a386b52c7908ab12aa509ff37c",
+      "configuration_sha256": "d2eae7a2f775af79202f4a41d1b29e74d6416f62b6283a74cbeaf53a5e44fc54",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp03-003-identity-agent",
+      "container_id": "8ca3433d1526caa35694216ae5826c7722b51ba3d56ac26906549d90e157d5d0",
+      "configuration_sha256": "8085b1b71f13e829a747170ea9c61312da478e7d085e6e4cf77512e6e35fcfa0",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp02-002-host-proxy",
+      "container_id": "5e33db687536b53dbc17348c9c198dfce5d26d2fec77f7afd8e349c221ce4ec7",
+      "configuration_sha256": "fe1202b9d9d54f78835961e08635388303d1e1891eb3eb5b1d7b07e6038ef39f",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp02-002-host-signal-proxy",
+      "container_id": "1cd1379ce63f7c961404b29be0337b635c41570a5e47fceec41e8a371e69f5e9",
+      "configuration_sha256": "e91a3ebda6e6b9cf447f4359c531a72b68854c08ba08df71444d6cdcd9173ec7",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp02-002-host-help",
+      "container_id": "b90df7e5a857506522ed710dac86fefc805d1bfa3a472ddceb9296874e43b7b0",
+      "configuration_sha256": "500e6f80c07db9292606f679bdfb6f8fd5ce7eeb863955dad528bd1caa539b6f",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp02-002-host-agent",
+      "container_id": "0600cc321b064f820b9a2ceabb547d5ae8be1f5bc2ede93a5a06f615e857e05e",
+      "configuration_sha256": "8670024eec090e5b5b25b572fc005516ff5531cd7ab4b9bc3dc521eebd03d09a",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp02-002-static",
+      "container_id": "4b541e318d997e62976dc81f9c42f58429b8f5aa0979b44729c375498cabfe13",
+      "configuration_sha256": "95e95cb5968d68df8a3909e939d911b8df8c00c8ac28135f22a7449e21bf894f",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp02-002-host-signal-client",
+      "container_id": "5a955c9c3bb23690811bae5105926d8a6e5bc276e6f43ae7a5e1eb9bf6a68b8c",
+      "configuration_sha256": "a5228487bcd1265cef4861b4138f94f9c6173096e769468f53b2294a4454db59",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp02-002-host-signal-cert-probe",
+      "container_id": "9001934b03e0fa252946dc3a2c5c149be93eec4f072a9b564d85e290deac77bd",
+      "configuration_sha256": "b6d500ab20132a7986d93ae18314b9bcaa6c7f61682fc58dcc90efec4460e156",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp02-002-host-cert-probe",
+      "container_id": "bce6c0885929bc8decdec6b72f6a2999490975e911e39d5382579b1f08c2c098",
+      "configuration_sha256": "4314f1fe7e33ad36f051cf1a776988b87b25bd91c099ee903ffddca943f31dc1",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp02-002-host-seed",
+      "container_id": "a6fc8abbee0e2479cd7f91f71a5ded0c887839f85cbcb721448440a01660a88c",
+      "configuration_sha256": "c3212c26588439a5669900c202bbf990c1eeaad0fcfe751c84706bcc1a318340",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp02-002-host-control",
+      "container_id": "0ba0befe5f02bb2ad39e749d8ea83766ce49fe5e4344ab69eaf1829e127e8b19",
+      "configuration_sha256": "90a73281f73a50d03eacfd10d2fcf8cce526d6dbb28a225645a347c393dae820",
+      "preserved": true
+    },
+    {
+      "container_name": "/care-link-imp02-002-control-plane",
+      "container_id": "1c1c907344c74fb3e008f55a39e8ff8b7bc4385387beedca547dd7ce21d6b9c8",
+      "configuration_sha256": "7016319fdd5e32218e3092f421632122df3868ec9b2d98604e59d3e899dd5898",
+      "preserved": true
+    }
+  ],
+  "closure_deployment_applied": false,
+  "accepted_IMP03_mutated": false
+}

@@ -49,7 +49,12 @@ class OpaPolicy:
     def _verify(self) -> None:
         try:
             self.public_key.verify(base64.b64decode(self.signature, validate=True), self.source)
-            if hashlib.sha256(self.executable.read_bytes()).hexdigest() != self.executable_digest:
+            # Integrity is checked for every evaluation. Stream the pinned
+            # executable instead of allocating one complete binary per request:
+            # overlapping 60MB reads otherwise compete with the OPA children.
+            with self.executable.open("rb") as binary:
+                actual_digest = hashlib.file_digest(binary, "sha256").hexdigest()
+            if actual_digest != self.executable_digest:
                 raise ValueError("binary digest mismatch")
         except (OSError, ValueError, InvalidSignature) as error:
             raise ManualError("manual.policy_integrity", 503) from error

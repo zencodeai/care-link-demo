@@ -1,0 +1,20 @@
+{
+  "plan_id": "4697d05f-dc2e-4bff-8e6d-e50a4c8ed362",
+  "observed": [
+    {
+      "stage": "plan_read",
+      "status": 200,
+      "elapsed_ms": 465
+    },
+    {
+      "stage": "field_append",
+      "status": 200,
+      "elapsed_ms": 427,
+      "code": null,
+      "message_key": null,
+      "revision": "2",
+      "operation_id": "71cb98bb-5c94-4b8f-a93c-79f026ae7218"
+    }
+  ],
+  "content_returned": false
+}

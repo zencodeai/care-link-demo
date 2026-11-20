@@ -10,7 +10,7 @@ from datetime import UTC, datetime, timedelta
 from typing import cast
 from uuid import UUID, uuid4
 
-from .credential_disposal import fence_session_material, locally_restricted, maintenance_restricted
+from .credential_sweep import sweep_credentials
 from .crypto import Custody
 from .domain import IdentityError, Store, Transaction, instant, stamp, text
 from .retention_ports import (
@@ -541,54 +541,9 @@ class RetentionService:
 
     def expire_credentials(self) -> int:
         """Restriction-only scheduled maintenance; never grants account authority."""
-        now, cleared = self.clock(), 0
+        now = self.clock()
         with self.store.transaction() as tx:
-            for key, record in tx.items("session"):
-                if locally_restricted(tx, record, now):
-                    if record.get("access_token") or record.get("revoked") is not True:
-                        record.update({"access_token": "", "revoked": True})
-                        tx.put("session", key, record)
-                        cleared += 1
-                    fence_session_material(tx, key)
-            for key, record in tx.items("intent"):
-                if "expires_at" not in record:
-                    continue
-                if record.get("purpose") == "owner_access_review":
-                    restricted = maintenance_restricted(tx, record)
-                    if (
-                        instant(record["expires_at"]) <= now
-                        or record.get("review_consumed") is True
-                        or record.get("state") in {"failed", "uncertain"}
-                        or restricted
-                    ):
-                        record.update({"verifier": "", "nonce": "", "access_token": ""})
-                        if restricted:
-                            record["state"] = "failed"
-                        tx.put("intent", key, record)
-                        cleared += 1
-                    continue
-                if instant(record["expires_at"]) <= now or record.get("state") in {
-                    "completed",
-                    "failed",
-                    "uncertain",
-                }:
-                    if record.get("verifier") or record.get("nonce"):
-                        record.update(
-                            {
-                                "verifier": "",
-                                "nonce": "",
-                                "state": "failed"
-                                if record.get("state") == "pending"
-                                else record["state"],
-                            }
-                        )
-                        tx.put("intent", key, record)
-                        cleared += 1
-            for key, record in tx.items("proof"):
-                if record.get("consumed") is True or instant(record["expires_at"]) <= now:
-                    tx.delete("proof", key)
-                    cleared += 1
-        return cleared
+            return sweep_credentials(tx, now)
 
     def purge_expired_protocol_metadata(self) -> int:
         """Dispose expired protocol metadata after its class window.

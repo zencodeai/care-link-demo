@@ -1,0 +1,33 @@
+{
+  "phase": "race",
+  "exit_code": 1,
+  "private_output": "/private/tmp/care-link-imp04-002/qualification-race-008",
+  "status": "failed",
+  "not_run": [
+    "Q07 lifecycle copy metadata/purge (HTTP close/retire exercised only in lifecycle/all)",
+    "Q03 pending-review DB count requires coordinator read-only verification",
+    "Q08 manual screen reader/200% zoom",
+    "A04 concurrent absent-grant serialization",
+    "A05 independently provisioned delegation",
+    "A07 workload/root/default-deny probes",
+    "A08 dependency fault barriers",
+    "A09 runtime DB privilege checks"
+  ],
+  "observations": [
+    {
+      "case": "Q02",
+      "slot": "pid",
+      "status": "passed",
+      "account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T20:30:55.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    }
+  ],
+  "error_first_lines": [
+    "Error: Actual password+OTP yields AL2"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "target": "care-link-imp04-002",
+  "read_only": true,
+  "kind_counts": {
+    "session": 398,
+    "ceremony": 14,
+    "intent": 806,
+    "account": 9
+  },
+  "restricted_or_expired_sessions": 387,
+  "contents_returned": false
+}

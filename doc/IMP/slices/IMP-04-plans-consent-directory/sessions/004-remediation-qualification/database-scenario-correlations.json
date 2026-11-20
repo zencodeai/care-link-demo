@@ -1,0 +1,59 @@
+{
+  "reviews": [
+    [
+      "ac3865a0-911f-4e86-aefe-44b57810d8d1",
+      "9990438f-9536-469a-8f12-6e6e6735e9a8",
+      "128a5166-49f5-47c1-abbe-e28a7f38ef5b",
+      "pending",
+      "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+      4,
+      true
+    ],
+    [
+      "d38f0989-d4b2-4d56-be51-1876acdc3cbf",
+      "9990438f-9536-469a-8f12-6e6e6735e9a8",
+      "ed61f7ea-c8e4-4acd-b647-4cef41ab409d",
+      "pending",
+      "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      5,
+      false
+    ]
+  ],
+  "retired_plan_copies": [
+    [
+      "d0b38920-f534-43ee-bc53-1b45e60d9e33",
+      "plan_retired",
+      "2026-11-16 23:24:08.903277+00:00",
+      "2026-12-16 23:24:08.903277+00:00",
+      "retained"
+    ]
+  ],
+  "manual_message_effect": [
+    [
+      "341dad38-099e-41cf-b1a5-f82a4e8a1710",
+      "committed",
+      "c6546ab2-31bd-42b2-a249-d34d17d146c5",
+      "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+      "c6546ab2-31bd-42b2-a249-d34d17d146c5",
+      "b1943a09-5d82-465f-8b51-a43a33f12db0",
+      "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+      "human_authored"
+    ]
+  ],
+  "read_only": true,
+  "narratives_or_credentials_returned": false,
+  "status": "passed",
+  "failures": [],
+  "selectors": {
+    "plan": "9990438f-9536-469a-8f12-6e6e6735e9a8",
+    "retired_plan": "d0b38920-f534-43ee-bc53-1b45e60d9e33",
+    "retired_at": "2026-11-16T23:24:08.903277Z",
+    "manual_session": "b1943a09-5d82-465f-8b51-a43a33f12db0",
+    "message": "c6546ab2-31bd-42b2-a249-d34d17d146c5",
+    "message_key": "341dad38-099e-41cf-b1a5-f82a4e8a1710",
+    "worker1": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+    "worker2": "7c6e64bd-eabc-48bd-9501-baf8e469e963"
+  },
+  "probe_source_sha256": "a4520945b05799930dddc6ac0bbf6296e3b4294a9d421f3472f550363ad2be47",
+  "review_interpretation": "One pending review for the original worker conflict at revision4; one additional pending review for the later reconciled PID revision5 against the retained safety-relevant worker report."
+}

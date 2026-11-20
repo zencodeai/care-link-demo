@@ -1,0 +1,74 @@
+{
+  "target": "care-link-imp04-002",
+  "database": "imp04_runtime_002",
+  "probes": [
+    {
+      "probe": "runtime_ddl",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_insert",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_update",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_delete",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_field_update",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_event_delete",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_source_update",
+      "permission_denied": true
+    }
+  ],
+  "runtime_superuser_createdb_createrole_bypassrls": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "forced_rls": [
+    [
+      "current_grant",
+      true,
+      true
+    ],
+    [
+      "field",
+      true,
+      true
+    ],
+    [
+      "plan",
+      true,
+      true
+    ]
+  ],
+  "effect_counts": {
+    "plans.plan": 0,
+    "plans.field": 0,
+    "plans.review_work": 0,
+    "consent.current_grant": 0,
+    "consent.event": 0,
+    "knowledge.service_version": 0,
+    "knowledge.quarantine": 0
+  },
+  "plan_anchor_total_retired_30day_active_counts": [
+    0,
+    0,
+    0
+  ],
+  "status": "passed",
+  "failures": [],
+  "content_returned": false
+}

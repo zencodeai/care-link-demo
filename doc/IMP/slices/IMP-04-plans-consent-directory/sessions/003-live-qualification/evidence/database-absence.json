@@ -1,0 +1,120 @@
+{
+  "target": "care-link-imp04-002",
+  "database": "imp04_runtime_002",
+  "probes": [
+    {
+      "probe": "runtime_ddl",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_insert",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_update",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_delete",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_field_update",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_event_delete",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_source_update",
+      "permission_denied": true
+    }
+  ],
+  "runtime_superuser_createdb_createrole_bypassrls": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "forced_rls": [
+    [
+      "current_grant",
+      true,
+      true
+    ],
+    [
+      "field",
+      true,
+      true
+    ],
+    [
+      "plan",
+      true,
+      true
+    ]
+  ],
+  "effect_counts": {
+    "plans.plan": 3,
+    "plans.field": 8,
+    "plans.review_work": 3,
+    "consent.current_grant": 14,
+    "consent.event": 22,
+    "knowledge.service_version": 8,
+    "knowledge.quarantine": 1
+  },
+  "plan_anchor_total_retired_30day_active_counts": [
+    11,
+    2,
+    9
+  ],
+  "status": "failed",
+  "failures": [
+    "absent_operation_not_rejected_without_resource"
+  ],
+  "plan_copy_metadata": [
+    [
+      "49a60bfb-ad3e-42bc-a405-b86d578f23e6",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "55566900-4448-489e-bd6b-11c5af61cad9",
+      "plan_retired",
+      "2026-11-16 19:45:10.242974+00:00",
+      "2026-12-16 19:45:10.242974+00:00",
+      "retained"
+    ],
+    [
+      "9c7fc257-c29f-4a0a-9912-eaa690a25118",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ]
+  ],
+  "pending_review_counts": [
+    [
+      "9c7fc257-c29f-4a0a-9912-eaa690a25118",
+      3
+    ]
+  ],
+  "control_metadata": [
+    "8b75464e-48c4-45a3-8321-f8faa198b5af",
+    1,
+    1,
+    "ai_disabled",
+    9
+  ],
+  "content_returned": false,
+  "selected_effect_metadata": {
+    "absent_operation": {
+      "row_count": 0,
+      "record": null,
+      "grant_count_for_resource": null,
+      "grant_count_scope": "Exact operation resource_id only; null resource is no recorded grant resource, not evidence about unrelated grants"
+    }
+  }
+}

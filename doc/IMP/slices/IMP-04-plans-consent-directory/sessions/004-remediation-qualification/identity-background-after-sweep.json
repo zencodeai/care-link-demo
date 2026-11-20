@@ -1,0 +1,600 @@
+{
+  "target": "care-link-imp04-002",
+  "runtime_role_only": true,
+  "database": "imp04_identity_002",
+  "columns": [
+    "pid",
+    "state",
+    "wait_event_type",
+    "wait_event",
+    "blocking_pids",
+    "query_age_ms",
+    "table_category",
+    "transaction_age_ms"
+  ],
+  "samples": [
+    {
+      "elapsed_ms": 936,
+      "rows": [
+        [
+          19842,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "4",
+          "other",
+          "5"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1378,
+      "rows": [
+        [
+          19847,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_record",
+          "3"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2079,
+      "rows": [
+        [
+          19857,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_record",
+          "2"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2940,
+      "rows": [
+        [
+          19866,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_record",
+          "3"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 3095,
+      "rows": [
+        [
+          19869,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "other",
+          "0"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 4890,
+      "rows": [
+        [
+          19885,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "other",
+          "1"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 5359,
+      "rows": [
+        [
+          19890,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_record",
+          "1"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8160,
+      "rows": [
+        [
+          19917,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "advisory_guard",
+          "2"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8653,
+      "rows": [
+        [
+          19919,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_record",
+          "3"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 9043,
+      "rows": [
+        [
+          19923,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "advisory_guard",
+          "1"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 9121,
+      "rows": [
+        [
+          19925,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_record",
+          "2"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 10454,
+      "rows": [
+        [
+          19939,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "other",
+          "0"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 11002,
+      "rows": [
+        [
+          19941,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "3",
+          "identity_kind_scan",
+          "13"
+        ],
+        [
+          19942,
+          "active",
+          "Lock",
+          "advisory",
+          [
+            19941
+          ],
+          "11",
+          "advisory_guard",
+          "12"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 11677,
+      "rows": [
+        [
+          19949,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "1"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13935,
+      "rows": [
+        [
+          19958,
+          "active",
+          "IO",
+          "WalSync",
+          [],
+          "2",
+          "other",
+          "5"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14065,
+      "rows": [
+        [
+          19966,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "other",
+          "1"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14349,
+      "rows": [
+        [
+          19980,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "other",
+          "0"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14452,
+      "rows": [
+        [
+          19985,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "other",
+          "0"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14480,
+      "rows": [
+        [
+          19986,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "other",
+          "3"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 16036,
+      "rows": [
+        [
+          19988,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "3",
+          "identity_kind_scan",
+          "9"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 16327,
+      "rows": [
+        [
+          19990,
+          "active",
+          null,
+          null,
+          [],
+          "3",
+          "identity_record",
+          "7"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 16353,
+      "rows": [
+        [
+          19991,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "advisory_guard",
+          "3"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 16379,
+      "rows": [
+        [
+          19992,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_record",
+          "3"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 16432,
+      "rows": [
+        [
+          19995,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "other",
+          "2"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 16537,
+      "rows": [
+        [
+          20000,
+          "active",
+          "IO",
+          "WalSync",
+          [],
+          "1",
+          "other",
+          "5"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 16615,
+      "rows": [
+        [
+          20006,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "other",
+          "1"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 16798,
+      "rows": [
+        [
+          20014,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "other",
+          "1"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 16955,
+      "rows": [
+        [
+          20023,
+          "active",
+          "IO",
+          "WalSync",
+          [],
+          "0",
+          "other",
+          "3"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 17241,
+      "rows": [
+        [
+          20027,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_record",
+          "2"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 17267,
+      "rows": [
+        [
+          20029,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_record",
+          "3"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 17292,
+      "rows": [
+        [
+          20031,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_record",
+          "1"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 17472,
+      "rows": [
+        [
+          20046,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_record",
+          "2"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 17575,
+      "rows": [
+        [
+          20049,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_record",
+          "2"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 18067,
+      "rows": [
+        [
+          20068,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_record",
+          "3"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 18093,
+      "rows": [
+        [
+          20070,
+          "idle in transaction",
+          null,
+          null,
+          [],
+          "0",
+          "other",
+          "1"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 18144,
+      "rows": [
+        [
+          20075,
+          "active",
+          "IO",
+          "WalSync",
+          [],
+          "0",
+          "other",
+          "3"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 18796,
+      "rows": [
+        [
+          20096,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_record",
+          "6"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19186,
+      "rows": [
+        [
+          20098,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_record",
+          "3"
+        ]
+      ]
+    }
+  ],
+  "sql_or_content_returned": false
+}

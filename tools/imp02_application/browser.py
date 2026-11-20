@@ -100,11 +100,16 @@ def add_client(app: FastAPI, directory: Path, *, help_surface: bool = False) -> 
     app.mount("/", StaticFiles(directory=directory, html=True))
 
 
-def secure_surface(app: FastAPI, help_api: ASGIApp | None = None) -> ASGIApp:
+def secure_surface(
+    app: FastAPI,
+    help_api: ASGIApp | None = None,
+    *,
+    public_client_paths: frozenset[str] = frozenset(),
+) -> ASGIApp:
     async def headers(request: Request, call_next: RequestResponseEndpoint) -> Response:
         response = await call_next(request)
-        public_client = request.url.path in {"/", "/private-help"} or request.url.path.startswith(
-            "/assets/"
+        public_client = request.url.path in {"/", "/private-help"} | public_client_paths or (
+            request.url.path.startswith("/assets/")
         )
         response.headers["Content-Security-Policy"] = (
             "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; "

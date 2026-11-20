@@ -84,3 +84,16 @@ class ReviewViews:
                 or not secrets.compare_digest(self._owners.get(view.key, ""), handle)
             ):
                 raise ManualError("manual.review_observer", 409)
+
+    def retire_run(self, run_id: str) -> int:
+        """Fence old pages during explicit operator cleanup; preserve other runs."""
+        with self._lock:
+            handles = [handle for handle, view in self._views.items() if view.key[0] == run_id]
+            keys = {self._views[handle].key for handle in handles}
+            for key in keys:
+                self.channels.invalidate_binding(key[2], key[3])
+                self._owners.pop(key, None)
+                self._revisions.pop(key, None)
+            for handle in handles:
+                del self._views[handle]
+            return len(handles)

@@ -1,0 +1,191 @@
+{
+  "persistent_native_settings_available": true,
+  "controls": [
+    {
+      "id": "colorSchemeModeSelect",
+      "label": null,
+      "value": "0",
+      "options": [
+        {
+          "value": "1",
+          "text": "\n            Light\n          "
+        },
+        {
+          "value": "2",
+          "text": "\n            Dark\n          "
+        },
+        {
+          "value": "0",
+          "text": "\n            Device\n          "
+        }
+      ]
+    },
+    {
+      "id": "zoomLevel",
+      "label": null,
+      "value": "1",
+      "options": [
+        {
+          "value": "0.25",
+          "text": "\n            25%\n          "
+        },
+        {
+          "value": "0.3333333333333333",
+          "text": "\n            33%\n          "
+        },
+        {
+          "value": "0.5",
+          "text": "\n            50%\n          "
+        },
+        {
+          "value": "0.6666666666666666",
+          "text": "\n            67%\n          "
+        },
+        {
+          "value": "0.75",
+          "text": "\n            75%\n          "
+        },
+        {
+          "value": "0.8",
+          "text": "\n            80%\n          "
+        },
+        {
+          "value": "0.9",
+          "text": "\n            90%\n          "
+        },
+        {
+          "value": "1",
+          "text": "\n            100%\n          "
+        },
+        {
+          "value": "1.1",
+          "text": "\n            110%\n          "
+        },
+        {
+          "value": "1.25",
+          "text": "\n            125%\n          "
+        },
+        {
+          "value": "1.5",
+          "text": "\n            150%\n          "
+        },
+        {
+          "value": "1.75",
+          "text": "\n            175%\n          "
+        },
+        {
+          "value": "2",
+          "text": "\n            200%\n          "
+        },
+        {
+          "value": "2.5",
+          "text": "\n            250%\n          "
+        },
+        {
+          "value": "3",
+          "text": "\n            300%\n          "
+        },
+        {
+          "value": "4",
+          "text": "\n            400%\n          "
+        },
+        {
+          "value": "5",
+          "text": "\n            500%\n          "
+        }
+      ]
+    },
+    {
+      "id": "dropdownMenu",
+      "label": "Bookmarks bar",
+      "value": "1",
+      "options": [
+        {
+          "value": "0",
+          "text": "\n      Always show\n    "
+        },
+        {
+          "value": "1",
+          "text": "\n      Only show on New Tab page\n    "
+        },
+        {
+          "value": "2",
+          "text": "\n      Always hide\n    "
+        },
+        {
+          "value": "SETTINGS_DROPDOWN_NOT_FOUND_ITEM",
+          "text": "\n    Custom\n  "
+        }
+      ]
+    },
+    {
+      "id": "dropdownMenu",
+      "label": "Tab position",
+      "value": "false",
+      "options": [
+        {
+          "value": "true",
+          "text": "\n      Vertical\n    "
+        },
+        {
+          "value": "false",
+          "text": "\n      Horizontal\n    "
+        },
+        {
+          "value": "SETTINGS_DROPDOWN_NOT_FOUND_ITEM",
+          "text": "\n    Custom\n  "
+        }
+      ]
+    },
+    {
+      "id": "dropdownMenu",
+      "label": "Chrome Panels Side panel position",
+      "value": "true",
+      "options": [
+        {
+          "value": "false",
+          "text": "\n      Left\n    "
+        },
+        {
+          "value": "true",
+          "text": "\n      Right\n    "
+        },
+        {
+          "value": "SETTINGS_DROPDOWN_NOT_FOUND_ITEM",
+          "text": "\n    Custom\n  "
+        }
+      ]
+    },
+    {
+      "id": "dropdownMenu",
+      "label": "Font size",
+      "value": "16",
+      "options": [
+        {
+          "value": "9",
+          "text": "\n      Very small\n    "
+        },
+        {
+          "value": "12",
+          "text": "\n      Small\n    "
+        },
+        {
+          "value": "16",
+          "text": "\n      Medium (Recommended)\n    "
+        },
+        {
+          "value": "20",
+          "text": "\n      Large\n    "
+        },
+        {
+          "value": "24",
+          "text": "\n      Very large\n    "
+        },
+        {
+          "value": "SETTINGS_DROPDOWN_NOT_FOUND_ITEM",
+          "text": "\n    Custom\n  "
+        }
+      ]
+    }
+  ]
+}
