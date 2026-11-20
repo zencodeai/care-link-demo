@@ -1,0 +1,68 @@
+{
+  "packet_id": "IMP05-002-publication",
+  "task_id": "IMP-05-D",
+  "baseline_commit": "f596a6b945fdaff97229da901093912d2f02f815",
+  "role": "imp_platform",
+  "status": "completed",
+  "changed_paths": [
+    "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr",
+    "doc/IMP/slices/IMP-05-reviewed-simulated-referral/README.md",
+    "doc/IMP/executions/2026-11-20-IMP-05/ledger.json",
+    "doc/IMP/README.md",
+    "doc/IMP/planning-inventory.json"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr/publication.json",
+      "sha256": "0d80dab2fa02a96b1dae636c771e957d048b2c11d69a24ff64c0bdcfe13118ac"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr/source-continuity.json",
+      "sha256": "81d797df31743f2a90eef4ad1574f7c09791a5f912873788aafc364f455523bc"
+    }
+  ],
+  "checks": [
+    {
+      "name": "source-continuity",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Authorized closure/publication scope verified",
+      "actual": "All qualified source hashes matched; merged IMP04 main tree equals recorded baseline tree",
+      "evidence_path": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr/source-continuity.json",
+      "evidence_digest": "81d797df31743f2a90eef4ad1574f7c09791a5f912873788aafc364f455523bc",
+      "mock_used": false
+    },
+    {
+      "name": "final-plan",
+      "command": ".venv/bin/python -m tools.imp05_verification.validate_plan",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Authorized closure/publication scope verified",
+      "actual": "Canonical plan/hash/schema/link validation passed with current closure records",
+      "evidence_path": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr/evidence/plan-validation-final.log",
+      "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+      "mock_used": false
+    },
+    {
+      "name": "pull-request",
+      "command": "gh pr view 12 --repo zencodeai/care-link-demo",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Authorized closure/publication scope verified",
+      "actual": "PR12 open, non-draft, correct feature branch and main base; current CI snapshot retained",
+      "evidence_path": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr/evidence/pr-created.json",
+      "evidence_digest": "332a20b7f96aa74bd1bd50258d5a50f434a95f330bc9671ec39bb84c2ca5446d",
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Human review deferred_until_after_IMP10",
+    "GitHub CI status is separate from carried-forward local qualification; inspect PR checks",
+    "No merge or deployment authorized or performed"
+  ],
+  "handoff": "PR12 open: https://github.com/zencodeai/care-link-demo/pull/12. Qualified source committed and pushed; session001 evidence preserved. See session002 handoff.",
+  "is_example": false
+}

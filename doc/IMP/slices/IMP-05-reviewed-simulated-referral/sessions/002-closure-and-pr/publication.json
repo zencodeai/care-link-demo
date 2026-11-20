@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-11-20T17:56:27.950474+00:00",
+  "authorization": "User: Close IMP-05 and create PR",
+  "state": "published",
+  "repository": "zencodeai/care-link-demo",
+  "repository_visibility": "private",
+  "branch": "feat/imp-05-reviewed-simulated-referral",
+  "base_branch": "main",
+  "base_commit": "f596a6b945fdaff97229da901093912d2f02f815",
+  "implementation_commit": "7cdeb740cfe9ce2746fcb19209347196aaa559dc",
+  "pull_request": {
+    "number": 12,
+    "url": "https://github.com/zencodeai/care-link-demo/pull/12",
+    "state": "OPEN",
+    "draft": false
+  },
+  "qualification": "G-05 automated_qualified for private synthetic source scope",
+  "human_review": "deferred_until_after_IMP10",
+  "merge_performed": false,
+  "deployment_performed": false,
+  "next_slice_activated": false,
+  "github_connector": "Repository404; configured Git/gh CLI fallback used",
+  "evidence_handling": "Original captured logs retain whitespace and original hash bindings; source/docs diff check excludes immutable .log files"
+}

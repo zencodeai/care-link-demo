@@ -51,7 +51,6 @@
   "human_review": "deferred_until_after_IMP10",
   "human_decisions": [],
   "deployment_applied": false,
-  "commit_push_merge_performed": false,
   "participant_admission": false,
   "next_slice_activated": false,
   "remaining": [
@@ -63,12 +62,20 @@
   ],
   "current_session": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr",
   "publication": {
-    "state": "preparing",
+    "state": "published",
     "authorization": "User: Close IMP-05 and create PR",
     "branch": "feat/imp-05-reviewed-simulated-referral",
     "base_branch": "main",
     "base_commit": "f596a6b945fdaff97229da901093912d2f02f815",
     "session": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr",
-    "merge_authorized": false
-  }
+    "merge_authorized": false,
+    "implementation_commit": "7cdeb740cfe9ce2746fcb19209347196aaa559dc",
+    "pull_request_number": 12,
+    "pull_request_url": "https://github.com/zencodeai/care-link-demo/pull/12",
+    "pull_request_state": "OPEN",
+    "receipt": "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/002-closure-and-pr/publication.json"
+  },
+  "commit_performed": true,
+  "push_performed": true,
+  "merge_performed": false
 }
