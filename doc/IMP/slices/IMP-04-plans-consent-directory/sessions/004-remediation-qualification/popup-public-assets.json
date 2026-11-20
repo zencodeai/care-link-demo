@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "length": 465,
+    "sha256": "4dc1689f50e1f925ce013db685aa4e6ed52c8ef0f8fa4f31d34295da6b206095",
+    "csp": "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+  },
+  {
+    "path": "/assets/index-dbz9DUZf.js",
+    "status": 200,
+    "type": "text/javascript; charset=utf-8",
+    "length": 831475,
+    "sha256": "b571c99d1d57ebf5ef1b2fefe4df4a41128b1c44aebb5401da3d289d7cf736dd",
+    "csp": "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+  },
+  {
+    "path": "/assets/index-CKHAkj2S.css",
+    "status": 200,
+    "type": "text/css; charset=utf-8",
+    "length": 2697,
+    "sha256": "072c1fe4864bbb2e3af4fe85bfc5bf778198e3e9fcb36a2e7768773ce0ac80ac",
+    "csp": "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+  }
+]

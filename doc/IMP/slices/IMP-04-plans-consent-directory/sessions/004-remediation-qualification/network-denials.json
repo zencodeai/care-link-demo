@@ -1,0 +1,38 @@
+{
+  "target": "care-link-imp04-002",
+  "tls_probes": [
+    {
+      "probe": "no_client_SVID",
+      "denied": true,
+      "error_class": "SSLError",
+      "server_public_identity": {
+        "uris": [
+          "spiffe://care-link.demo/demo/data"
+        ],
+        "not_after": "Nov 16 22:30:01 2026 GMT"
+      },
+      "http_status_line": null
+    },
+    {
+      "probe": "foreign_CA_same_logical_core",
+      "denied": true,
+      "error_class": "SSLError",
+      "server_public_identity": {
+        "uris": [
+          "spiffe://care-link.demo/demo/data"
+        ],
+        "not_after": "Nov 16 22:30:01 2026 GMT"
+      },
+      "http_status_line": null
+    }
+  ],
+  "backend_probe": {
+    "probe": "direct_backend_forged_header",
+    "status": 403,
+    "denied": true,
+    "cross_role_data_mount_absent": true
+  },
+  "status": "passed",
+  "accepted_private_credentials_accessed": false,
+  "foreign_test_is_diagnostic_CA_not_an_accepted_SVID": true
+}

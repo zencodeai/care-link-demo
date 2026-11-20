@@ -1,0 +1,147 @@
+{
+  "packet_id": "WP-IMP04-003-platform",
+  "task_id": "IMP-04-D",
+  "stage_id": "IMP-04",
+  "mode": "implementation",
+  "role": "imp_platform",
+  "goal": "Implement accepted isolated deployment proposal, deploy only that target and execute live qualification, preserving accepted IMP03.",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/handoff.md",
+      "sha256": "b0965e51b8ee7ebc093182e7773d67da6a1060cf6a7d48b15f7f6e355c8ea585"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/candidate-manifest.json",
+      "sha256": "57e5cd9ebb97069207a2725572387687614f1f0506113ee7b2a87dfe6d9ee881"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-16-IMP-03/ledger.json",
+      "sha256": "8a2f845de4bb457557700e0636f00cb1cab9b255d021247127bc7485c3f77e3e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/target-proposal.json",
+      "sha256": "645107a51875afc2f1ee2f6520639c8e013385ec6f92c2f12caf087e190d681a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/deployment-delta.md",
+      "sha256": "f289fc3f587a23aaab4e635ab033b8f9881273756fc1106ee360c2155371c90b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/qualification-plan.md",
+      "sha256": "480d74320c051ed0839bdc85b71bbb7c4fcbfd82959d6eca65c170760cb403ec"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/IMP/**",
+    "doc/LLD/**",
+    "doc/REQ/**",
+    "tools/**",
+    "services/**",
+    "apps/**",
+    "packages/**",
+    "config/**",
+    "deploy/**",
+    "tests/**"
+  ],
+  "write_paths": [
+    "tools/imp04_deployment/docker.py",
+    "tools/imp04_deployment/deploy.py",
+    "tools/imp04_deployment/trust.py",
+    "tools/imp04_deployment/build.py",
+    "deploy/images/imp04/**",
+    "tests/unit/imp04_deployment/test_operator.py",
+    "tools/imp04_verification/live_snapshot.py",
+    "tools/imp04_verification/live_database.py"
+  ],
+  "dependencies": [
+    "G-03 accepted",
+    "IMP-04 session001 source candidate retained uncommitted"
+  ],
+  "operation_ids": [
+    "plan_create",
+    "plan_read",
+    "plan_field_append",
+    "plan_retire",
+    "consent_grant",
+    "consent_read",
+    "consent_revoke",
+    "directory_search",
+    "directory_read",
+    "directory_ingest",
+    "directory_suspend",
+    "data_plan_create",
+    "data_plan_read",
+    "data_plan_field_append",
+    "data_plan_retire",
+    "data_consent_grant",
+    "data_consent_read",
+    "data_consent_revoke",
+    "data_directory_search",
+    "data_directory_read",
+    "data_directory_ingest",
+    "data_directory_suspend"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "No accepted IMP03/IMP02 runtime, custody, source or state changes; no sibling changes",
+    "No real data/police integration/autonomous emergency contact, model/global host trust changes",
+    "No commit/push/merge, human G04 self-approval, next slice or real participant admission"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Exact deployment proposal reviwed and accepted\nProceed with Live qualification procedure",
+    "scope": "Implement necessary target-scoped tooling, deploy exact accepted DEPLOY-IMP04-002 resources and run qualification; preserve accepted IMP03. Current instruction authorizes execution after proposal review."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP04-003-platform",
+      "kind": "file_set",
+      "scope": "Exclusive files enumerated in write_paths, including scoped Docker freezer APIs and follow-up snapshot/database verifiers; no live Docker operations by specialist.",
+      "owner_task_id": "IMP-04-D",
+      "expires_at": "2026-11-23T23:59:59Z"
+    }
+  ],
+  "expected_outputs": [
+    "Exact proposed deployment inventory and changes with source hashes, migration/policy/source/actor bindings and rollback",
+    "Pending live DemoPacket and evidence matrix",
+    "Actual preparation checks, review, human decision state and handoff"
+  ],
+  "positive_acceptance": [
+    "Accepted IMP-03 source and runtime preserved",
+    "Concrete isolated resource proposal and bounded application plan",
+    "Live checks cover separate actors, seven states, consent races, trust and EN/FR accessibility"
+  ],
+  "adverse_acceptance": [
+    "Hard-coded IMP03 operator targets identified; no existing deployment command represented as safe for IMP04",
+    "Unknown current inventory or unavailable live evidence explicitly reported"
+  ],
+  "reviewer": "imp_review read-only integrated source/deployment/evidence review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Any operation outside accepted target or authority stops dependent work",
+    "No credential leakage, failed current authorization bypass or accepted state mutation",
+    "Raise any material deviation from accepted proposal; preserve independent in-scope work"
+  ],
+  "is_example": false
+}

@@ -1,0 +1,11 @@
+{
+  "source_kind": "actual_user_reply",
+  "actual_response": "Approve exact proposal",
+  "recorded_at": "2026-11-17T01:09:16.104209+00:00",
+  "proposal": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/005-human-accessibility-review/mac-trust-proposal.json",
+    "sha256": "9464122276457da0b96cb216a66936f97ce7556898364070237b72d17057478d"
+  },
+  "scope": "Two exact current non-CA SSL leaf trust entries in current user login keychain, validation and exact new-entry removal after review; no CA/root/system/DNS/runtime change.",
+  "is_g04_acceptance": false
+}

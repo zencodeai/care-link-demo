@@ -63,6 +63,33 @@ ROLES: dict[str, frozenset[str]] = {
 }
 
 
+# Exact IMP-04 public operation roles; relationship labels grant no authority.
+ROLES.update(
+    {
+        "own_reports_read": PARTICIPANTS,
+        "plan_create": frozenset({"pid"}),
+        "plan_read": frozenset(
+            {"professional_participant", "pid", "worker", "carer", "supervisor"}
+        ),
+        "plan_field_append": frozenset({"pid", "worker"}),
+        "plan_retire": frozenset({"pid"}),
+        "consent_grant": frozenset({"carer", "pid", "professional_participant"}),
+        "consent_read": frozenset(
+            {"professional_participant", "pid", "worker", "carer", "supervisor"}
+        ),
+        "consent_revoke": frozenset({"carer", "pid", "professional_participant"}),
+        "directory_search": frozenset(
+            {"professional_participant", "pid", "worker", "carer", "supervisor"}
+        ),
+        "directory_read": frozenset(
+            {"professional_participant", "pid", "worker", "carer", "supervisor"}
+        ),
+        "directory_ingest": frozenset({"operator", "governance"}),
+        "directory_suspend": frozenset({"governance", "security"}),
+    }
+)
+
+
 def stamp(value: datetime) -> str:
     return value.astimezone(UTC).isoformat(timespec="microseconds").replace("+00:00", "Z")
 

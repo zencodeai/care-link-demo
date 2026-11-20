@@ -1,0 +1,89 @@
+{
+  "stage_id": "IMP-04",
+  "session": "001-implementation",
+  "recorded_at": "2026-11-16T18:08:37.139631Z",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "branch": "feat/imp-04-plans-consent-directory",
+  "source_implementation": "completed",
+  "automated_verification": "passed",
+  "python": {
+    "passed": 813,
+    "skipped": 3,
+    "warnings": 4,
+    "evidence": "evidence/python-tests.log"
+  },
+  "web_and_contract": {
+    "passed": 100,
+    "evidence": "evidence/web-tests.log"
+  },
+  "source_lane": {
+    "passed": 14,
+    "failed": 0,
+    "checks": "checks.json"
+  },
+  "independent_adverse_tests": {
+    "passed": 10,
+    "evidence_source": "imp_verifier report; included in final full suite"
+  },
+  "source_signature_tests": {
+    "passed": 18,
+    "evidence_source": "test_directory_admission.py; included in full suite"
+  },
+  "skipped": [
+    {
+      "check": "consistent capture/role-quarantined import",
+      "reason": "Separate explicitly enabled owned Docker capture fixture required; original IMP03 helper is bound to its own container/port."
+    },
+    {
+      "check": "Linux distinct-UID fence harness",
+      "reason": "Requires separately authorized disposable Linux UID0/setuid fixture."
+    },
+    {
+      "check": "runtime provisioning",
+      "reason": "Requires separate isolated TLS provisioning fixture; no existing environment provisioning authority inferred."
+    }
+  ],
+  "not_run": [
+    "Live deployment/migration of accepted lab",
+    "Native multi-account Chrome/EN-FR accessibility/keyboard qualification",
+    "Deployed workload identity/default-deny/SVID qualification for this candidate",
+    "Human G-04 demonstration/acceptance",
+    "Clinical/production or real-source validation"
+  ],
+  "planning_validation": {
+    "status": "failed_preexisting_inventory_drift",
+    "path": "doc/IMP/README.md",
+    "inventory_sha256": "931b25d1fcc89f4ecd10416913e182a12b899c22a93b577da1e0b501283a84ae",
+    "starting_and_current_sha256": "7ad50e352d49fba753d311318086c4d62b0e8625447fcfb434e094f2ad1bff08",
+    "current_matches_starting_commit": true,
+    "inventory_rewritten": false
+  },
+  "fixture": {
+    "container": "care-link-imp04-001-postgres",
+    "port": 25434,
+    "image": "postgres@sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba",
+    "tls": "verify-full with dedicated fixture CA",
+    "lifecycle": "created_for_this_session_then_removed_after_tests",
+    "temporary_private_material": "retained owner-only outside Git; no credential values in evidence"
+  },
+  "failures_corrected": [
+    "Initial loopback test call required sandbox escalation",
+    "Noncanonical test AssertionValue corrected",
+    "Plan retirement anchored once to avoid microsecond expiry drift",
+    "Race test accepts stale-authority as well as stale-revision rejection",
+    "Test security actor/reason corrected",
+    "Static Ajv equality helper allowlisted in CSP test",
+    "Output expiry and narrow-grant leakage fenced at final disclosure",
+    "PDP exact scope/source binding, signed source admission and current own-report projection added",
+    "Append response fields and PlanCreate replay scope/session anchors bound exactly"
+  ],
+  "limits": [
+    "Source/adapter tests use explicit provider and mesh fixtures alongside real PostgreSQL/OPA/journal",
+    "Independent source qualifications and policy signatures are engineering integrity only",
+    "No new source image has been deployed or stage accepted"
+  ],
+  "human_G04": null,
+  "participant_admission": false,
+  "next_stage_activated": false,
+  "commit_or_push": false
+}

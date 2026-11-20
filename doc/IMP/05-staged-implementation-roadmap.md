@@ -1,6 +1,6 @@
 # Staged implementation roadmap
 
-All stages are planned and require the scoped authorization/evidence/human decision defined in this package. The [machine plan](implementation-plan.json) is the canonical dependency/allocation record.
+The [machine plan](implementation-plan.json) is the canonical dependency/allocation record; its planned states are not an execution ledger. Effective 2026-11-20, stages qualify through applicable automated checks under the [current workflow](06-demonstrations-and-human-decisions.md). Run the demonstration scenarios below as automated normal/adverse assertions. Human review agendas are deferred to GitHub issue follow-up bug-fix/improvement sessions after IMP-10; they are not stage-progression prerequisites. Actual action authorization and product-runtime human controls remain separate.
 
 ```mermaid
 flowchart TB
@@ -25,7 +25,7 @@ flowchart TB
 
 Make an actionable, reviewed environment/tool/model plan without claiming a deployment.
 
-Depends on: none. Human checkpoint: **G-00**.
+Depends on: none. Automated qualification checkpoint: **G-00**.
 
 Scope:
 
@@ -54,7 +54,7 @@ Deliverables:
 
 Verification: VT-01, VT-09, VT-12, VT-17; AT-01, AT-10, AT-11.
 
-Human decision: Accept the concrete tool/version/environment proposal and scoped next-stage setup actions, or request changes. Existing workstation/model choices are not reopened.
+Deferred human review after IMP-10 (GitHub issue follow-up): Accept the concrete tool/version/environment proposal and scoped next-stage setup actions, or request changes. Existing workstation/model choices are not reopened.
 
 Rollback: Read-only stage leaves host state unchanged; discard only generated redacted reports if explicitly requested.
 
@@ -62,7 +62,7 @@ Rollback: Read-only stage leaves host state unchanged; discard only generated re
 
 Create a reproducible modular development loop with a visible contract demonstration.
 
-Depends on: IMP-00. Human checkpoint: **G-01**.
+Depends on: IMP-00. Automated qualification checkpoint: **G-01**.
 
 Scope:
 
@@ -92,7 +92,7 @@ Deliverables:
 
 Verification: VT-01, VT-08, VT-11, VT-17; AT-01, AT-08, AT-09, AT-10, AT-13.
 
-Human decision: Accept the developer demonstration and reproducible command surface; no participant-use or deployment approval is inferred.
+Deferred human review after IMP-10 (GitHub issue follow-up): Accept the developer demonstration and reproducible command surface; no participant-use or deployment approval is inferred.
 
 Rollback: Revert candidate files/locks together; retain the last verified development baseline and do not touch source repositories.
 
@@ -100,7 +100,7 @@ Rollback: Revert candidate files/locks together; retain the last verified develo
 
 Prove private access boundaries and an honest fallback on this workstation.
 
-Depends on: IMP-01. Human checkpoint: **G-02**.
+Depends on: IMP-01. Automated qualification checkpoint: **G-02**.
 
 Scope:
 
@@ -131,7 +131,7 @@ Deliverables:
 
 Verification: VT-02, VT-03, VT-12, VT-16; AT-01, AT-02, AT-10, AT-13, AT-15.
 
-Human decision: Review login/help/fallback and denied-route demonstrations. Accept only the observed environment scope; unverified content or trust keeps participant admission disabled.
+Deferred human review after IMP-10 (GitHub issue follow-up): Review login/help/fallback and denied-route demonstrations. Accept only the observed environment scope; unverified content or trust keeps participant admission disabled.
 
 Rollback: Fence candidate private listeners/identities, retain reviewed static publication, remove only named disposable resources after explicit confirmation of target scope.
 
@@ -139,7 +139,7 @@ Rollback: Fence candidate private listeners/identities, retain reviewed static p
 
 Deliver the first complete useful actor journey without relying on AI.
 
-Depends on: IMP-02. Human checkpoint: **G-03**.
+Depends on: IMP-02. Automated qualification checkpoint: **G-03**.
 
 Scope:
 
@@ -170,7 +170,7 @@ Deliverables:
 
 Verification: VT-03, VT-04, VT-05, VT-10, VT-11, VT-14, VT-16; AT-02, AT-03, AT-04, AT-09, AT-14.
 
-Human decision: Demonstrate normal manual service and adverse ownership/audit behavior. Human acceptance establishes this bounded baseline, not full-demo or clinical readiness.
+Deferred human review after IMP-10 (GitHub issue follow-up): Demonstrate normal manual service and adverse ownership/audit behavior. Human acceptance establishes this bounded baseline, not full-demo or clinical readiness.
 
 Rollback: Keep schema-compatible last-known-good manual path; restrict protected service if current authority cannot be established. Never rewind live rights or erase unresolved cases.
 
@@ -178,7 +178,7 @@ Rollback: Keep schema-compatible last-known-good manual path; restrict protected
 
 Support client-led planning and service choice without leaking another actor’s private context.
 
-Depends on: IMP-03. Human checkpoint: **G-04**.
+Depends on: IMP-03. Automated qualification checkpoint: **G-04**.
 
 Scope:
 
@@ -206,7 +206,7 @@ Deliverables:
 
 Verification: VT-04, VT-06, VT-13; AT-03, AT-05, AT-06, AT-07, AT-14.
 
-Human decision: Review exact field-level views and revoke/unknown-state demonstrations using separate accounts; accept the scoped privacy behavior.
+Deferred human review after IMP-10 (GitHub issue follow-up): Review exact field-level views and revoke/unknown-state demonstrations using separate accounts; accept the scoped privacy behavior.
 
 Rollback: Disable affected plan/share/option capability if filtering fails; retain current negative rights and the accepted manual service.
 
@@ -214,7 +214,7 @@ Rollback: Disable affected plan/share/option capability if filtering fails; reta
 
 Complete client→worker→receiving-service work with exact consent and honest delivery states.
 
-Depends on: IMP-04. Human checkpoint: **G-05**.
+Depends on: IMP-04. Automated qualification checkpoint: **G-05**.
 
 Scope:
 
@@ -242,7 +242,7 @@ Deliverables:
 
 Verification: VT-06, VT-07, VT-11, VT-12; AT-05, AT-08, AT-09, AT-14, AT-15.
 
-Human decision: Demonstrate exact review, before/after-authorization revocation and dropped-reply reconciliation. Human acceptance concerns simulator behavior only.
+Deferred human review after IMP-10 (GitHub issue follow-up): Demonstrate exact review, before/after-authorization revocation and dropped-reply reconciliation. Human acceptance concerns simulator behavior only.
 
 Rollback: Fence unsent work; retain unknown in-flight attempts for reconciliation. Roll back only compatible code, never rewrite receipt/consent history.
 
@@ -250,7 +250,7 @@ Rollback: Fence unsent work; retain unknown in-flight attempts for reconciliatio
 
 Add optional source-linked assistance to an already usable manual workflow.
 
-Depends on: IMP-05. Human checkpoint: **G-06**.
+Depends on: IMP-05. Automated qualification checkpoint: **G-06**.
 
 Scope:
 
@@ -280,7 +280,7 @@ Deliverables:
 
 Verification: VT-08, VT-09, VT-18; AT-08, AT-17, AT-18.
 
-Human decision: Review actual source-linked usefulness, seeded errors and outage behavior. Admit only demonstrated functions; record unadmitted functions as explicit remaining scope.
+Deferred human review after IMP-10 (GitHub issue follow-up): Review actual source-linked usefulness, seeded errors and outage behavior. Admit only demonstrated functions; record unadmitted functions as explicit remaining scope.
 
 Rollback: Disable AI functions/prompt/model bundle under current control epoch; preserve manual service, current rights and independently available fallback.
 
@@ -288,7 +288,7 @@ Rollback: Disable AI functions/prompt/model bundle under current control epoch; 
 
 Close the supported synthetic workflow with truthful follow-up and rights processing.
 
-Depends on: IMP-05. Human checkpoint: **G-07**.
+Depends on: IMP-05. Automated qualification checkpoint: **G-07**.
 
 Scope:
 
@@ -316,7 +316,7 @@ Deliverables:
 
 Verification: VT-06, VT-11, VT-13, VT-14; AT-06, AT-09, AT-11, AT-14.
 
-Human decision: Review cancellation, own-data export, active purge and retained-exception demos. Accept only the proven active-copy scope; backup erasure remains a later obligation.
+Deferred human review after IMP-10 (GitHub issue follow-up): Review cancellation, own-data export, active purge and retained-exception demos. Accept only the proven active-copy scope; backup erasure remains a later obligation.
 
 Rollback: Stop purge/delivery jobs and preserve restrictions/holds. Never restore deleted content to simplify rollback; use quarantined recovery if necessary.
 
@@ -324,7 +324,7 @@ Rollback: Stop purge/delivery jobs and preserve restrictions/holds. Never restor
 
 Expose and verify controlled live change, scoped containment and honest operational evidence.
 
-Depends on: IMP-03, IMP-05. Human checkpoint: **G-08**.
+Depends on: IMP-03, IMP-05. Automated qualification checkpoint: **G-08**.
 
 Scope:
 
@@ -352,7 +352,7 @@ Deliverables:
 
 Verification: VT-02, VT-10, VT-12, VT-18; AT-12, AT-14, AT-15, AT-16.
 
-Human decision: Review live restrictive/relaxing change, independent approval separation and containment/metrics demos; accept only the observed authorities and environment.
+Deferred human review after IMP-10 (GitHub issue follow-up): Review live restrictive/relaxing change, independent approval separation and containment/metrics demos; accept only the observed authorities and environment.
 
 Rollback: Use a new controlled epoch selecting a compatible previous bundle; retain newest revokes/deletes/holds and independent serving ownership.
 
@@ -360,7 +360,7 @@ Rollback: Use a new controlled epoch selecting a compatible previous bundle; ret
 
 Prove that old snapshots cannot resurrect revoked rights and that cutover cannot create two serving generations.
 
-Depends on: IMP-07, IMP-08. Human checkpoint: **G-09**.
+Depends on: IMP-07, IMP-08. Automated qualification checkpoint: **G-09**.
 
 Scope:
 
@@ -388,27 +388,27 @@ Deliverables:
 
 Verification: VT-07, VT-13, VT-14, VT-15, VT-17; AT-09, AT-10, AT-11, AT-14, AT-15.
 
-Human decision: Review stale-head and interrupted-cutover demonstrations. A drill acceptance is not approval of future restores; each actual serving promotion retains its own exact human decision.
+Deferred human review after IMP-10 (GitHub issue follow-up): Review stale-head and interrupted-cutover demonstrations. A drill acceptance is not approval of future restores; each actual serving promotion retains its own exact human decision.
 
 Rollback: Keep protected serving quarantined. Reconcile gate/router/DB under restriction and use a newly validated compatible target, never blind rewind.
 
-## IMP-10 — Integrated demonstrator acceptance and sustainable delivery
+## IMP-10 — Integrated automated qualification and follow-up handoff
 
 Present a complete bounded demonstrator with reproducible evidence and remaining limitations.
 
-Depends on: IMP-06, IMP-07, IMP-08, IMP-09. Human checkpoint: **G-10**.
+Depends on: IMP-06, IMP-07, IMP-08, IMP-09. Automated qualification checkpoint: **G-10**.
 
 Scope:
 
 - Run all actor journeys/use cases, applicable invariant/adverse suites, EN/FR accessibility and internal channel/training scenarios.
 - Measure declared workstation load, failures/cold-warm model behavior and actor-only/assisted outcomes with raw missingness.
-- Reconcile every local/source requirement disposition, reproducibility, LKG, runbooks and independent human review.
+- Reconcile every local/source requirement disposition, reproducibility, LKG and runbooks; retain the deferred human-review inventory for post-IMP-10 issue follow-up.
 
 Demonstration:
 
 - Run the full client→worker→receiver→plan/follow-up/rights journey across separate profiles and show real observations.
 - Disable model/policy/audit/identity/cluster in turn and show only capabilities whose dependencies survive.
-- Have the human follow the published demo/runbook from a clean candidate with exact artifact/source/config pins.
+- Run the published scenarios automatically from a clean candidate with exact artifact/source/config pins; retain the reproduction procedure for later human issue follow-up.
 
 Adverse outcomes to prove:
 
@@ -421,10 +421,10 @@ Deliverables:
 - Reproducible demo/runbooks and evidence index
 - Full requirement/control/source disposition matrix
 - Workstation performance and actor-evaluation results
-- Human acceptance/candidate release record and compatible rollback
+- Automated qualification record, deferred human-review inventory and compatible rollback
 
 Verification: VT-01, VT-02, VT-03, VT-04, VT-05, VT-06, VT-07, VT-08, VT-09, VT-10, VT-11, VT-12, VT-13, VT-14, VT-15, VT-16, VT-17, VT-18; AT-01, AT-02, AT-03, AT-04, AT-05, AT-06, AT-07, AT-08, AT-09, AT-10, AT-11, AT-12, AT-13, AT-14, AT-15, AT-16, AT-17, AT-18.
 
-Human decision: Accept the exact synthetic-demo candidate, request rework or accept a clearly narrowed scope with recorded remaining obligations. Never infer production/clinical approval.
+Deferred human review after IMP-10 (GitHub issue follow-up): Accept the exact synthetic-demo candidate, request rework or accept a clearly narrowed scope with recorded remaining obligations. Never infer production/clinical approval.
 
 Rollback: Retain last verified accepted candidate if current and compatible; otherwise restrict private service and retain independent static information. Preserve all current rights.

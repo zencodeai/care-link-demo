@@ -1,0 +1,272 @@
+[
+  {
+    "observed_at": "2026-11-16T21:52:16.932041+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/authenticate",
+    "status": 200,
+    "elapsed_ms": 28
+  },
+  {
+    "observed_at": "2026-11-16T21:52:16.974791+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/csrf",
+    "status": 200,
+    "elapsed_ms": 42
+  },
+  {
+    "observed_at": "2026-11-16T21:52:17.010276+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/evidence",
+    "status": 200,
+    "elapsed_ms": 33
+  },
+  {
+    "observed_at": "2026-11-16T21:52:17.173113+00:00",
+    "host": "data.imp04.mesh",
+    "path": "/internal/v1/data/authority",
+    "status": 200,
+    "elapsed_ms": 153,
+    "deadline_remaining_ms": 731,
+    "operation_id": "fd71baee-faad-419b-abf9-c778aa89c7f6"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:17.203668+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/evidence",
+    "status": 200,
+    "elapsed_ms": 28
+  },
+  {
+    "observed_at": "2026-11-16T21:52:17.275150+00:00",
+    "host": "pdp.imp04.mesh",
+    "path": "/internal/v1/policy/evaluate",
+    "status": 200,
+    "elapsed_ms": 69,
+    "operation_id": "fc3a8fb0-8c08-488c-8a95-116a8abe2391"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:17.472182+00:00",
+    "host": "data.imp04.mesh",
+    "path": "/internal/v1/data/session_create",
+    "status": 200,
+    "elapsed_ms": 193,
+    "deadline_remaining_ms": 432,
+    "operation_id": "fc3a8fb0-8c08-488c-8a95-116a8abe2391"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:17.576879+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/authenticate",
+    "status": 200,
+    "elapsed_ms": 21
+  },
+  {
+    "observed_at": "2026-11-16T21:52:17.617983+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/csrf",
+    "status": 200,
+    "elapsed_ms": 41
+  },
+  {
+    "observed_at": "2026-11-16T21:52:17.647277+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/evidence",
+    "status": 200,
+    "elapsed_ms": 27
+  },
+  {
+    "observed_at": "2026-11-16T21:52:17.779209+00:00",
+    "host": "data.imp04.mesh",
+    "path": "/internal/v1/data/authority",
+    "status": 200,
+    "elapsed_ms": 130,
+    "deadline_remaining_ms": 776,
+    "operation_id": "ae552247-713f-477f-9506-ed86a15b8d1e"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:17.812411+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/evidence",
+    "status": 200,
+    "elapsed_ms": 33
+  },
+  {
+    "observed_at": "2026-11-16T21:52:17.862525+00:00",
+    "host": "pdp.imp04.mesh",
+    "path": "/internal/v1/policy/evaluate",
+    "status": 200,
+    "elapsed_ms": 48,
+    "operation_id": "ae552247-713f-477f-9506-ed86a15b8d1e"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:18.081324+00:00",
+    "host": "data.imp04.mesh",
+    "path": "/internal/v1/data/plan_create",
+    "status": 200,
+    "elapsed_ms": 214,
+    "deadline_remaining_ms": 474,
+    "operation_id": "ae552247-713f-477f-9506-ed86a15b8d1e"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:18.226097+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/authenticate",
+    "status": 200,
+    "elapsed_ms": 21
+  },
+  {
+    "observed_at": "2026-11-16T21:52:18.267298+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/csrf",
+    "status": 200,
+    "elapsed_ms": 41
+  },
+  {
+    "observed_at": "2026-11-16T21:52:18.300235+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/evidence",
+    "status": 200,
+    "elapsed_ms": 31
+  },
+  {
+    "observed_at": "2026-11-16T21:52:18.437391+00:00",
+    "host": "data.imp04.mesh",
+    "path": "/internal/v1/data/authority",
+    "status": 200,
+    "elapsed_ms": 135,
+    "deadline_remaining_ms": 767,
+    "operation_id": "4049aa56-f972-49ab-aed5-21ea69f584fe"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:18.476426+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/evidence",
+    "status": 200,
+    "elapsed_ms": 38
+  },
+  {
+    "observed_at": "2026-11-16T21:52:18.533799+00:00",
+    "host": "pdp.imp04.mesh",
+    "path": "/internal/v1/policy/evaluate",
+    "status": 200,
+    "elapsed_ms": 55,
+    "operation_id": "4049aa56-f972-49ab-aed5-21ea69f584fe"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:18.806636+00:00",
+    "host": "data.imp04.mesh",
+    "path": "/internal/v1/data/plan_field_append",
+    "status": 200,
+    "elapsed_ms": 268,
+    "deadline_remaining_ms": 398,
+    "operation_id": "4049aa56-f972-49ab-aed5-21ea69f584fe"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:19.106171+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/authenticate",
+    "status": 200,
+    "elapsed_ms": 29
+  },
+  {
+    "observed_at": "2026-11-16T21:52:19.158187+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/csrf",
+    "status": 200,
+    "elapsed_ms": 51
+  },
+  {
+    "observed_at": "2026-11-16T21:52:19.198411+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/evidence",
+    "status": 200,
+    "elapsed_ms": 38
+  },
+  {
+    "observed_at": "2026-11-16T21:52:19.335735+00:00",
+    "host": "data.imp04.mesh",
+    "path": "/internal/v1/data/authority",
+    "status": 200,
+    "elapsed_ms": 136,
+    "deadline_remaining_ms": 741,
+    "operation_id": "6162386d-4021-4c87-a504-13d5ee99157b"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:19.367844+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/evidence",
+    "status": 200,
+    "elapsed_ms": 31
+  },
+  {
+    "observed_at": "2026-11-16T21:52:19.418556+00:00",
+    "host": "pdp.imp04.mesh",
+    "path": "/internal/v1/policy/evaluate",
+    "status": 200,
+    "elapsed_ms": 49,
+    "operation_id": "6162386d-4021-4c87-a504-13d5ee99157b"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:19.614716+00:00",
+    "host": "data.imp04.mesh",
+    "path": "/internal/v1/data/plan_field_append",
+    "status": 200,
+    "elapsed_ms": 194,
+    "deadline_remaining_ms": 462,
+    "operation_id": "6162386d-4021-4c87-a504-13d5ee99157b"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:19.889701+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/authenticate",
+    "status": 200,
+    "elapsed_ms": 32
+  },
+  {
+    "observed_at": "2026-11-16T21:52:19.936541+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/csrf",
+    "status": 200,
+    "elapsed_ms": 46
+  },
+  {
+    "observed_at": "2026-11-16T21:52:19.965186+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/evidence",
+    "status": 200,
+    "elapsed_ms": 28
+  },
+  {
+    "observed_at": "2026-11-16T21:52:20.091646+00:00",
+    "host": "data.imp04.mesh",
+    "path": "/internal/v1/data/authority",
+    "status": 200,
+    "elapsed_ms": 124,
+    "deadline_remaining_ms": 766,
+    "operation_id": "ae552247-713f-477f-9506-ed86a15b8d1e"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:20.118057+00:00",
+    "host": "identity.imp04.mesh",
+    "path": "/internal/v1/manual-identity/evidence",
+    "status": 200,
+    "elapsed_ms": 26
+  },
+  {
+    "observed_at": "2026-11-16T21:52:20.166653+00:00",
+    "host": "pdp.imp04.mesh",
+    "path": "/internal/v1/policy/evaluate",
+    "status": 200,
+    "elapsed_ms": 47,
+    "operation_id": "ae552247-713f-477f-9506-ed86a15b8d1e"
+  },
+  {
+    "observed_at": "2026-11-16T21:52:20.390365+00:00",
+    "host": "data.imp04.mesh",
+    "path": "/internal/v1/data/plan_create",
+    "status": 200,
+    "elapsed_ms": 222,
+    "deadline_remaining_ms": 467,
+    "operation_id": "ae552247-713f-477f-9506-ed86a15b8d1e"
+  }
+]

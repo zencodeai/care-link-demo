@@ -109,7 +109,16 @@ def parse_actor(data: Record) -> Actor:
         if str(UUID(_text(data, "review_run_id"))) != data["review_run_id"]:
             raise ValueError("Canonical review run required")
         fixed_origin(_text(data, "review_origin"))
-        if data["review_slot_id"] not in {"participant", "worker1", "worker2", "supervisor"}:
+        slots = {
+            "participant": "pid",
+            "worker1": "worker",
+            "worker2": "worker",
+            "supervisor": "supervisor",
+            "pid": "pid",
+            "carer": "carer",
+            "professional": "professional_participant",
+        }
+        if slots.get(str(data["review_slot_id"])) != data["role"]:
             raise ValueError("Known actor slot required")
     for field in ("account_id", "identity_evidence_id"):
         if str(UUID(_text(data, field))) != data[field]:
@@ -313,3 +322,25 @@ class HttpManualIdentity:
             },
         ) != {"verified": True}:
             raise ManualError("manual.fresh_recovery_required")
+
+    def consent_proof(
+        self,
+        actor: Actor,
+        proof_id: str,
+        subject_id: str,
+        session_id: str,
+        purpose: str,
+        basis: str,
+    ) -> None:
+        if self._call(
+            "consent-proof",
+            {
+                "credential_ref": actor.credential_ref,
+                "proof_id": proof_id,
+                "subject_id": subject_id,
+                "session_id": session_id,
+                "purpose": purpose,
+                "basis": basis,
+            },
+        ) != {"verified": True}:
+            raise ManualError("manual.consent_proof_required")

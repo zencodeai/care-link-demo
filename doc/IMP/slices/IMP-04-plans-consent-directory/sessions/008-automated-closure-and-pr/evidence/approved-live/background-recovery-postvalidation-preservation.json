@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-11-20T16:13:28.537203+00:00",
+  "current_core_image_id": "sha256:6bcbb3adf5e42fab4e078f8a513e39282db4c621807d526cdf136c88030d5cfa",
+  "all_other_containers_unchanged": 94,
+  "original_retained_environments_preserved": 64,
+  "stream_amendment_unchanged": true,
+  "total_containers": 95,
+  "human_acceptance": "pending"
+}

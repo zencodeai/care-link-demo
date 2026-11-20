@@ -1,0 +1,13 @@
+{
+  "role": "core",
+  "serving_source": {
+    "apps/web/dist/index.html": "4dc1689f50e1f925ce013db685aa4e6ed52c8ef0f8fa4f31d34295da6b206095",
+    "apps/web/dist/qualification-origins.json": "95374fdae6439bda883dfd9d1cf5d95a8c8b1b8fadc0c454a725f58172bb199c",
+    "apps/web/dist/assets/index-dbz9DUZf.js": "b571c99d1d57ebf5ef1b2fefe4df4a41128b1c44aebb5401da3d289d7cf736dd",
+    "services/core/src/care_link_core/manual_http.py": "d23a72635821f7000eec86983d90380f4ba7cc7049af4e28f9943a0474c5163c",
+    "packages/policy-input/src/care_link_policy_input/opa.py": "f709d6861e4d7bf0b0db3346f833e13ea74e21ab2c9cb39a03fef6bef18792e9",
+    "tools/imp04_deployment/diagnostics.py": "8797cc49d38ff3531fda9da97ae858da83cd13995bdcf4c0c7b7374eacb4d7ff"
+  },
+  "matches_selected_host_files": true,
+  "trace_marker_absent": true
+}

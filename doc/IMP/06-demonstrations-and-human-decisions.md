@@ -1,44 +1,41 @@
-# Demonstrability and human-in-the-loop decisions
+# Automated qualification and deferred human review
 
-## A reviewable candidate before asking
+## Current policy and scope
 
-Every gate G-00…G-10 corresponds to a self-contained stage. Coordinator prepares the actual candidate, setup, exact scripts, evidence and rollback before requesting acceptance. The human sees useful behavior and critical failure outcomes, not a plan to show them later. A reviewer need not infer internal security from a screenshot: connect actor-visible results to direct API/race/DB/network evidence. A recording supports review but does not prove the current candidate or replace an interactive demonstration where needed.
+Effective 2026-11-20, the user directed implementation to proceed using automated tests only through completion of IMP-10. Interactive human review and human stage-acceptance receipts are no longer prerequisites for implementation progression. Human review belongs to later bug-fix/improvement sessions using GitHub issue follow-up after IMP-10 is complete. This supersedes earlier per-stage human-gate instructions, including the pending G-04 review sequence. Stop requesting its remaining actor observations or a G-04 human acceptance decision.
 
-DemoPacket binds stage/gate, source commit and dirty-diff digest (or clean commit), artifact/config/contract/fixture/environment digests, steps/expected observations, preconditions, actual automated results, evidence paths/digests, residuals, proposed acceptance scope and rollback. Preserve useful client/worker workflows while injecting the exact failures the stage claims to handle. Use separate role browser profiles and real authenticated channels for connection claims. All stories/person data are synthetic; actual account metadata and keys remain protected.
+The gate IDs G-00…G-10 continue to identify the same bounded technical scopes and normal/adverse outcomes. They now identify automated implementation qualification checkpoints. Their existing human-review prompts remain deferred review agendas, not active progression guards. Historical human results, failures and actual acceptance decisions retain their original candidate and scope; preserve them without rewriting history or generating replacement human receipts.
 
-Human decision binds the exact DemoPacket digest and candidate/environment. Allowed decisions: accept_stage, request_changes, defer, reject. The decision records actual human attribution and authority/scope, evidence reviewed, constraints and timestamp. No timeout, preselected UI choice, agent output or second account for the same human can create acceptance. A stage decision is not necessarily independent release/clinical review; where independence is required, the corresponding real identities/roles must exist. Do not infer them from the role catalogue.
+## Candidate and evidence
 
-## Procedure
+Prepare the actual candidate, exact automated scenarios, evidence and rollback before recording qualification. Bind source commit and dirty-diff digest, artifact/configuration/contract/fixture/environment digests, preconditions, expected and actual outcomes, check commands, evidence locators/digests and residual findings. Direct API, DB, race, network and browser assertions must establish the claimed behavior and prohibited-effect absence. A screenshot, scanner badge or count of passing tests is insufficient by itself.
 
-1. Confirm dependencies and prior accepted gate bindings still match; validate candidate and relevant tests. Do not replay stale private results or use a staging flag to bypass current authority.
-2. Run the normal actor/operator scenario. Explain simulated versus actual observations, incomplete features, unknown wait/connection and non-clinical status.
-3. Run the named adverse cases and show both expected denial/absence and durable actual state. A denial log alone is insufficient if prohibited bytes/effects were still delivered.
-4. Show reproducibility, rollback and current limitations. Summarize failures/missing evidence without hiding them behind coverage counts.
-5. Present the concrete decision: accept the stated stage scope, request specified rework, defer or reject. Explain any actual authorization needed for installation/deployment separately from design/stage acceptance.
-6. Record the user's actual response and its scope. If absent, leave awaiting_human. If material candidate/contracts/policy/environment changes, mark previous acceptance stale for affected behavior and re-demonstrate relevant cases; do not silently extend approval.
+Continue using WorkPacket, AgentResult, CheckResult and DemoPacket for their applicable purposes. The historical DemoPacket name does not require an interactive demonstration: its normal/adverse steps may be executed by an automated harness. Leave `human_decision_id` null unless an actual human decision exists. Record `automated_qualified` in the execution ledger, separate from historical `accepted` or a HumanDecision record. Record unperformed human review as `deferred_until_after_IMP10`, never passed or implicitly accepted. Automated accessibility checks cannot claim human screen-reader, visual or language approval.
 
-All stages currently have empty evidence and no acceptance. [Examples](examples/) are explicitly unexecuted. A machine-readable receipt is a record of a real human action, not proof that someone acted merely because JSON validates. No cryptographic signing system is introduced for development stage notes; existing runtime artifact/promotion signatures and independent authorities remain separate.
+## Implementation qualification procedure
 
-## What each gate protects
+1. Confirm the current scoped authorization, ready WorkPackets, candidate and dependency bindings. Dependencies may use current automated qualification or still-valid historical accepted evidence. Do not replay stale private evidence or use a test flag to bypass runtime authority.
+2. Execute applicable automated normal and adverse cases for the declared stage: unit, contract, real DB/integration, browser, EN/FR/accessibility/layout, direct API/security, race, recovery, model and performance checks as relevant. Distinguish actual services from explicit test doubles and simulations.
+3. Verify returned behavior and durable state, including absence of prohibited bytes/effects. Preserve failures, missingness, timeouts, environment limits and the exact tested scope.
+4. Resolve blocking defects and rerun materially affected checks. A failed or unrun mandatory automated check prevents qualification. A deferred human-only review does not. Preserve evidence of earlier failures and record their resolution.
+5. The coordinator records `automated_qualified` only when the required automated evidence is current and passing and blocking findings are resolved. Do not ask for per-step interactive observations or a human stage-acceptance response. Continue dependent work only within existing user authorization; do not auto-start a new slice/chat or infer deployment, commit or merge permission.
+6. On a material source, contract, policy or environment change, invalidate affected automated qualification and repeat the relevant checks. On completing IMP-10, retain the integrated automated qualification packet and the deferred human-review inventory for GitHub issue follow-up.
 
-G-00 accepts observed planning decisions and scoped setup proposal. G-01 accepts the developer foundation. G-02 protects identity/network/fallback boundaries. G-03 protects manual service, audit and exclusive human control. G-04 protects field privacy/consent and source truth. G-05 protects dispatch/uncertainty. G-06 protects actual AI usefulness/admission and fallback. G-07 protects lifecycle/rights truth. G-08 protects live authority changes and evidence access. G-09 protects recovery serving. G-10 accepts a specifically bounded synthetic demonstrator.
+The [machine workflow](stage-workflow.json) defines active progression. Previously `ready_for_demo` or `awaiting_human` work returns to evidence reconciliation under this policy; it does not become qualified automatically. Historical accepted records remain historical. This workflow update itself does not close an implementation checkpoint or assert that its automated checks passed.
 
-Stage acceptance may permit authorized dependent coding but does not automatically mutate the live workstation or promote a restored target. Each actual restore serving promotion retains the LLD's distinct exact human approval. Human review of implementation/config PRs remains required; agents cannot merge their own changes as human approval.
+## Human review after IMP-10: GitHub issue follow-up
 
-## Concise decision template
+After implementation through IMP-10 is automated-qualified, handle each human-reported bug or improvement through the GitHub issue follow-up functionality. Human review is scoped to the issue and the integrated application, rather than restarting every earlier implementation-stage gate.
 
-```text
-Stage / gate:
-Candidate source + diff/artifact/environment binding:
-Demo packet digest:
-Observed normal behavior and adverse cases:
-Tests/evidence reviewed; failures or missing observations:
-Accepted scope / limitations / remaining obligations:
-Rollback and last-known-good status:
-Actual human response, attribution and time: [pending until received]
-Action authorized by this response: [explicit scope only]
-```
+- Bind the actual repository and issue URL/number, issue scope, affected stage/candidate and a dedicated follow-up chat/session folder under the owning slice. A cross-slice issue names one integration owner and explicit write ownership.
+- Capture expected and actual behavior, reproducible steps, affected actor/language/browser/assistive technology, severity, synthetic evidence, acceptance criteria and relevant earlier test/result references. Deferred human checks may identify usability, screen-reader, visual, language or workflow improvements without claiming they previously passed.
+- Reproduce and diagnose the issue, make the scoped fix, add meaningful automated regression coverage, and run affected checks. Preserve deterministic authorization, consent, audit, isolation and recovery controls.
+- Use the issue follow-up session to request focused human observations when needed. Record the actual reply and tested candidate. Track remaining findings and follow-up work; do not infer a human pass or issue resolution from agent output or test counts.
+- Attach or link the permitted patch and test evidence through the authorized GitHub follow-up flow. Issue creation, comments, closure, commit/push, PR and merge actions require their applicable session authorization; this policy update does not perform those actions or invent a GitHub automation trigger.
+- If GitHub access or the follow-up capability is unavailable, retain an issue-ready local handoff and report the limitation. Do not fabricate an issue URL, successful follow-up or review result.
 
-Prefer one meaningful decision per integrated stage, not approval requests after every reversible edit. If independent work is already authorized, continue it while a different gate awaits a human; never cross an unaccepted dependent authority boundary to keep a schedule.
+## Authority and evidence limits
 
-Development-stage candidate/environment digests bind review-relevant source, artifact versions/configuration, fixtures and declared capabilities, not every transient session timestamp. Recheck only materially affected behavior on change. Actual serving promotion remains stricter: its approval binds the LLD current live target/head/generation, and changes invalidate that particular promotion receipt. A stage review cannot replace it.
+Product-runtime human consent, MFA, worker connection/acknowledgement, independent authority and exact serving-promotion approvals remain enforced. Automate synthetic scenarios without disabling those controls, and report simulated human actions honestly. Separate necessary installation, deployment, host/SSL trust, destructive-action and publication approvals from implementation qualification. Previously approved actions remain approved within their recorded scope.
+
+All stories/person data remain synthetic; account metadata and keys remain protected. Automated qualification and later issue review establish only the declared engineering scope, not clinical efficacy, real-partner/channel capability, independent release approval or production readiness. Preserve no-police-integration and absent autonomous emergency-contact constraints.

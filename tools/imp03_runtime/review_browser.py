@@ -67,7 +67,9 @@ def add_review_auth_proxy(
         response.raw_headers = [
             (key, value)
             for key, value in upstream.headers.raw
-            if key.decode().lower() in RESPONSE_HEADERS | {"set-cookie"}
+            if key.decode().lower()
+            in RESPONSE_HEADERS
+            | {"set-cookie", "x-care-link-authentication-mode", "x-care-link-review-expires-at"}
         ]
         return response
 
@@ -81,6 +83,8 @@ def add_review_auth_proxy(
         "/v1/auth/step-up/confirm": ["POST"],
         "/v1/auth/step-up/proof": ["GET"],
         "/v1/auth/continuation-recovery": ["POST"],
+        "/v1/auth/review/login": ["POST"],
+        "/v1/auth/review/verify": ["POST"],
     }.items():
         app.add_api_route(path, forward, methods=methods)
 

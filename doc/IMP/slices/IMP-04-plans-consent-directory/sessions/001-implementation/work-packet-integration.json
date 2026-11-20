@@ -1,0 +1,144 @@
+{
+  "packet_id": "WP-IMP04-001-integration",
+  "task_id": "IMP-04-B",
+  "stage_id": "IMP-04",
+  "mode": "implementation",
+  "role": "imp_python",
+  "goal": "Implement attributed plans, exact consent and sourced directory with guarded current authorization and actor screens.",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "25cc5d17ed9b91c23b4f3a785b6bf18147f71b30b52e9c5274f4014bf861f0fa"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "a3c8807a8cddef72618757e30790fa86ca5667b6f50607fa59dbf0a8382ae472"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+    },
+    {
+      "path": "doc/LLD/06-consent-directory-and-referrals.md",
+      "sha256": "02671648ecf2cc31a9ed8aa3bb37de03ea83b7bff98e0a23e536ded6fdfc3903"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-16-IMP-03/ledger.json",
+      "sha256": "8a2f845de4bb457557700e0636f00cb1cab9b255d021247127bc7485c3f77e3e"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/REQ/**",
+    "doc/HLD/**",
+    "doc/LLD/**",
+    "doc/IMP/**",
+    "services/**",
+    "packages/**",
+    "apps/web/**",
+    "tools/**",
+    "config/**",
+    "tests/**"
+  ],
+  "write_paths": [
+    "services/core/**",
+    "services/data/**",
+    "services/identity/**",
+    "packages/**",
+    "apps/web/**",
+    "config/demo/imp04/**",
+    "tests/**",
+    "tools/**",
+    "doc/IMP/slices/IMP-04-plans-consent-directory/**",
+    "doc/IMP/executions/2026-11-16-IMP-04/**",
+    "doc/IMP/README.md"
+  ],
+  "dependencies": [
+    "G-03 accepted; clean source baseline"
+  ],
+  "operation_ids": [
+    "plan_create",
+    "plan_read",
+    "plan_field_append",
+    "plan_retire",
+    "consent_grant",
+    "consent_read",
+    "consent_revoke",
+    "directory_search",
+    "directory_read",
+    "directory_ingest",
+    "directory_suspend",
+    "data_plan_create",
+    "data_plan_read",
+    "data_plan_field_append",
+    "data_plan_retire",
+    "data_consent_grant",
+    "data_consent_read",
+    "data_consent_revoke",
+    "data_directory_search",
+    "data_directory_read",
+    "data_directory_ingest",
+    "data_directory_suspend"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "No deployment, installation, host/model changes, commits, push or publication",
+    "No sibling edits, HLD/LLD rewrite, real data or participant admission",
+    "No fabricated human acceptance or next-slice activation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Implement service slice 04",
+    "scope": "Source implementation and isolated local verification of IMP-04; no live deployment or host changes."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP04-integration",
+      "kind": "file_set",
+      "scope": "services/core/**; services/data/**; services/identity/**; packages/**; apps/web/**; config/demo/imp04/**; tests/**; tools/**; doc/IMP/slices/IMP-04-plans-consent-directory/**; doc/IMP/executions/2026-11-16-IMP-04/**; doc/IMP/README.md",
+      "owner_task_id": "IMP-04-B",
+      "expires_at": "2026-11-23T23:59:59Z"
+    },
+    {
+      "id": "IMP04-postgres",
+      "kind": "test_database",
+      "scope": "Only care-link-imp04-001-postgres; loopback25434; temporary /private/tmp/care-link-imp04-001/database; no accepted lab changes",
+      "owner_task_id": "IMP-04-D",
+      "expires_at": "2026-11-23T23:59:59Z"
+    }
+  ],
+  "expected_outputs": [
+    "Modular plan/consent/directory implementation and screens",
+    "Actual check evidence and review findings",
+    "Durable handoff and truthful G-04 readiness"
+  ],
+  "positive_acceptance": [
+    "Own PID edits and exact shared field views; attributed carer reports",
+    "Seven directory operating states, current provenance and truthful unknowns",
+    "Granular consent with current proof and journalled revocation"
+  ],
+  "adverse_acceptance": [
+    "Relationship and professional participant status confer no authority",
+    "Missing-grant race serialized on existing subject guard",
+    "Expired/revoked sharing and stale/suspended sources fail closed"
+  ],
+  "reviewer": "imp_review read-only integrated review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Preserve existing resources and authority boundaries",
+    "Raise incompatible design contract with concrete findings"
+  ],
+  "is_example": false
+}

@@ -1,0 +1,38 @@
+{
+  "target": "care-link-imp04-002-core-app",
+  "current_container_id": "d79d8bfc772463116077849256d42460b8005e4c160dcf21ca35a50e081e1473",
+  "image_before": "sha256:862aad546f83b6d266b6fcfbce6ad2880b48a05ca7f796cef2aa126efa060dda",
+  "image_after": "sha256:ac3d235c269226bf459cdaaf3ff2288db104af971ae71b88147a627d727e3150",
+  "delta": "UI-only read recovery for one401 during an actually admitted same-principal pending MFA ceremony; immediately hidden/inert projections, full current reauthorization of every selected resource, same original5s signal, no automatic POST retry. Account+role keys clear old drafts on principal change.",
+  "specification": {
+    "name": "care-link-imp04-002-core-app",
+    "image": "sha256:ac3d235c269226bf459cdaaf3ff2288db104af971ae71b88147a627d727e3150",
+    "args": [
+      "python",
+      "-m",
+      "tools.imp04_deployment.serve",
+      "--root",
+      "/run/care-link-imp03-002/configuration",
+      "--role",
+      "core"
+    ],
+    "mounts": [
+      "type=volume,source=care-link-imp04-002-core-config,target=/run/care-link-imp03-002/configuration/core",
+      "type=volume,source=care-link-imp04-002-core-backend,target=/run/care-link-imp03-002/core/backend",
+      "type=volume,source=care-link-imp04-002-core-outbound,target=/run/care-link-imp03-002/core/outbound,readonly",
+      "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly"
+    ],
+    "user": "22012:22012",
+    "cpus": "1",
+    "memory": "256m",
+    "groups": [
+      "22002",
+      "22999"
+    ],
+    "tmpfs": [
+      "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+    ]
+  },
+  "retained": "Exact command/UID/mounts/ports/networks/CPU/memory/PIDs, all rights/state; default Data serving and trace disabled; accepted IMP03 unchanged",
+  "checks": "38 focused UI tests and independent source review passed"
+}

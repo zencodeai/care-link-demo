@@ -1,0 +1,290 @@
+{
+  "version": "imp04.review-accessibility-attempt-history.v1",
+  "generated_at": "2026-11-20T16:56:05.472Z",
+  "accepted_final": "review-matrix-05.json",
+  "human_review": false,
+  "attempts": [
+    {
+      "file": "review-matrix-01.json",
+      "sha256": "9a0ea73b5a4f0ed204184338cf41960b247117caa9e1837d0222516daf568ca5",
+      "generated_at": "2026-11-20T16:46:22.143Z",
+      "status": "failed",
+      "passed": 0,
+      "rows": 8,
+      "failures": [
+        {
+          "slot": "pid",
+          "locale": "en-CA",
+          "stage": "keyboard",
+          "category": "keyboard_reachable_named_visible",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "pid",
+          "locale": "fr-CA",
+          "stage": "keyboard",
+          "category": "keyboard_reachable_named_visible",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "carer",
+          "locale": "en-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "carer",
+          "locale": "fr-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "professional",
+          "locale": "en-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "professional",
+          "locale": "fr-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "worker1",
+          "locale": "en-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "worker1",
+          "locale": "fr-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        }
+      ],
+      "all_axe_completed": 6,
+      "verified_logouts": 0
+    },
+    {
+      "file": "review-matrix-02.json",
+      "sha256": "7f980b8c773581ac97a732a19122c3e02f499ae2fac59a5dd3945975f16eed80",
+      "generated_at": "2026-11-20T16:48:56.545Z",
+      "status": "failed",
+      "passed": 0,
+      "rows": 8,
+      "failures": [
+        {
+          "slot": "pid",
+          "locale": "en-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "pid",
+          "locale": "fr-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "carer",
+          "locale": "en-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "carer",
+          "locale": "fr-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "professional",
+          "locale": "en-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "professional",
+          "locale": "fr-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "worker1",
+          "locale": "en-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        },
+        {
+          "slot": "worker1",
+          "locale": "fr-CA",
+          "stage": "cleanup",
+          "category": "logout_not_verified",
+          "cleanup": {
+            "logout": false,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        }
+      ],
+      "all_axe_completed": 8,
+      "verified_logouts": 0
+    },
+    {
+      "file": "review-matrix-03.json",
+      "sha256": "25b71669cc909786f9a7de32164db317fd2f0751f1cbaf70c1c714e7867c7db3",
+      "generated_at": "2026-11-20T16:51:03.576Z",
+      "status": "failed",
+      "passed": 7,
+      "rows": 8,
+      "failures": [
+        {
+          "slot": "carer",
+          "locale": "fr-CA",
+          "stage": "automatic_sign_in",
+          "category": "driver_timeout",
+          "cleanup": {
+            "logout": true,
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        }
+      ],
+      "all_axe_completed": 7,
+      "verified_logouts": 8
+    },
+    {
+      "file": "review-matrix-04.json",
+      "sha256": "8e1ca64945bda3343db634b1bda7aa295fdc9a418acaea1ede08d05643b899f2",
+      "generated_at": "2026-11-20T16:53:44.562Z",
+      "status": "failed",
+      "passed": 7,
+      "rows": 8,
+      "failures": [
+        {
+          "slot": "pid",
+          "locale": "en-CA",
+          "stage": "launch",
+          "category": "driver_timeout",
+          "cleanup": {
+            "zoom_restored": true,
+            "context_closed": true,
+            "profile_removed": true
+          }
+        }
+      ],
+      "all_axe_completed": 7,
+      "verified_logouts": 7
+    },
+    {
+      "file": "review-matrix-05.json",
+      "sha256": "840601ee6bb4936086fe4fee17be3c90677a136a012c34d955bcccccc861e78e",
+      "generated_at": "2026-11-20T16:55:22.123Z",
+      "status": "passed",
+      "passed": 8,
+      "rows": 8,
+      "failures": [],
+      "all_axe_completed": 8,
+      "verified_logouts": 8
+    }
+  ],
+  "runner_corrections": [
+    "Account for native datetime-local internal Tab stops without altering values.",
+    "Include required UUID Idempotency-Key for own logout.",
+    "Unload app onto own same-origin HTML with script loads blocked, rather than API JSON document whose CSP blocks fetch.",
+    "Use bounded 45-second Chromium Settings/startup waits after two earlier short driver timeouts."
+  ],
+  "earlier_session_cleanup_limitation": "First two attempts discarded cookies after failed cleanup; 16 isolated synthetic authentication sessions were not explicitly logged out. They remain bounded by the existing approved run expiry 2026-11-20T18:53:30.760406Z. All contexts/profiles from every attempt were closed/removed; no grants/reports were mutated. All authenticated sessions created in attempts 03–05 were explicitly logged out and verified 401.",
+  "optional_probe": "unauthenticated-stream-probe.json"
+}

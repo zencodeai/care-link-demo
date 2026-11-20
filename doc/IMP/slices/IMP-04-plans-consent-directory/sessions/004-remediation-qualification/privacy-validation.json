@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "public_files_scanned": 185,
+  "known_private_values_checked": 2666,
+  "scope": "Current original/case actor passwords/OTP seeds, current broker endpoint/query material, all retained qualification actor-cookie values, URL queries and private-key PEM headers. No secret values returned. This is a bounded export check, not a claim of exhaustive secret discovery.",
+  "failures": []
+}

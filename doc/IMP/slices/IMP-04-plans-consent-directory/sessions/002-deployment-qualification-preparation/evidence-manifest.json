@@ -1,0 +1,85 @@
+{
+  "scope": "Preparation files only; no deployed evidence",
+  "files": [
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/README.md",
+      "sha256": "a184dc8b169cfe9a58079216ff8ef8f5feaa91a8ee440705611f814abfe7a591"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/agent-result.json",
+      "sha256": "34e5996ded9a6fc149bbb5722106ff0c9f05f136d4497be8dfee7060a68ac365"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/artifact-bindings.json",
+      "sha256": "f82d392cc54d989c1b3052f3cab3bbbdda4dfcaa44d2cc2ac8d393677d9bf672"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/artifact-verification.json",
+      "sha256": "76d8ddd1cccbfc0574d9873a3082075e8b356bd95414cd6dfde9ba5e14a59025"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/checks.json",
+      "sha256": "3c4b81e8a2be51f45327bedfafe167605dfeb88a2ac5eb20b9cd457ca41a3bb9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/continuity-check.json",
+      "sha256": "c7047a6ca7ed550bfcbb8345a58ca75e72eae6a5c7c3b77fec35cb0d39d1548b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/demo-packet.json",
+      "sha256": "4ed05cf9637e9a09945c5826b22f9f0506dcae0d941961fbc46d459d89f34038"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/deployment-delta.md",
+      "sha256": "f289fc3f587a23aaab4e635ab033b8f9881273756fc1106ee360c2155371c90b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/directory-inventory.json",
+      "sha256": "e1e82ecba954e85b8150b6cbb60760336a08e25ce5c736ed0de2044ddc8a4c2f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/handoff.md",
+      "sha256": "d0e824257cdd54f63bc1d93c6fabd186ea32aa55fd2ee82d909f0400ef9831e0"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/human-decisions.json",
+      "sha256": "68abcd9248a05ec029734050ca7991ceb9ab0c58cb4b52a4ea32d6de401b174c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/preparation-validation.json",
+      "sha256": "b915c8e9cc203de0e3ea558ea4de792d9b7ed261d880204dd0e533867ce724f5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/qualification-plan.md",
+      "sha256": "480d74320c051ed0839bdc85b71bbb7c4fcbfd82959d6eca65c170760cb403ec"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/resource-inventory.json",
+      "sha256": "5cbe14a1561d34e4b47cb7bc9dbf2b4f0a61ae12f2d33bb24facfd80259b9c52"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/results.json",
+      "sha256": "412180df7cc3da9170a6ca6675611296e3b4442e0268955f453dddc3b36ef302"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/review.md",
+      "sha256": "7ed2c87c2133a92353dceb262031783d24a300022e6c7ba78f47e20ebd512de0"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/schema-validation.json",
+      "sha256": "20508aa5345a97eb67101af6ae79cda651e6674bcbac8250af2d0e80dd04050a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/starting-state.json",
+      "sha256": "63e9a0d1f7c6e5fd066d61545b53984723435d19ed6e6d5263f7e2582073fc34"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/target-proposal.json",
+      "sha256": "645107a51875afc2f1ee2f6520639c8e013385ec6f92c2f12caf087e190d681a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/work-packet.json",
+      "sha256": "f4d650270cf57118d9c277ee1e3b76b25740643d4c6587728b6724136de4bb37"
+    }
+  ]
+}

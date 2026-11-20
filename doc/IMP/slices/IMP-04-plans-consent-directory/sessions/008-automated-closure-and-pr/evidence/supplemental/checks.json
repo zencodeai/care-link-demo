@@ -1,0 +1,53 @@
+[
+  {
+    "command": [
+      "node",
+      "--check",
+      "tools/imp04_verification/review_accessibility.cjs"
+    ],
+    "started_at": "2026-11-20T16:56:36.866230+00:00",
+    "finished_at": "2026-11-20T16:56:36.886194+00:00",
+    "exit_code": 0,
+    "log": "01.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tools/imp04_verification/review_accessibility.cjs"
+    ],
+    "started_at": "2026-11-20T16:56:36.886225+00:00",
+    "finished_at": "2026-11-20T16:56:37.137282+00:00",
+    "exit_code": 0,
+    "log": "02.log",
+    "log_sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+  },
+  {
+    "command": [
+      ".venv/bin/ruff",
+      "check",
+      "tools/check.py"
+    ],
+    "started_at": "2026-11-20T16:56:37.137305+00:00",
+    "finished_at": "2026-11-20T16:56:37.181083+00:00",
+    "exit_code": 0,
+    "log": "03.log",
+    "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  {
+    "command": [
+      ".venv/bin/ruff",
+      "format",
+      "--check",
+      "tools/check.py"
+    ],
+    "started_at": "2026-11-20T16:56:37.181105+00:00",
+    "finished_at": "2026-11-20T16:56:37.190607+00:00",
+    "exit_code": 0,
+    "log": "04.log",
+    "log_sha256": "fd2299c9f1c6dc869070883e281051bfe93aacf66c1a3b0069f45b4aa410ca50"
+  }
+]

@@ -2,6 +2,7 @@ import base64
 import hashlib
 import json
 import os
+import tracemalloc
 from pathlib import Path
 from subprocess import CompletedProcess
 from unittest.mock import patch
@@ -147,6 +148,33 @@ def test_binary_tamper_and_wrong_signature_deny(tmp_path):
             policy.signature,
             Ed25519PrivateKey.generate().public_key(),
         )
+
+
+def test_every_evaluation_streams_binary_integrity_without_whole_file_allocation(tmp_path):
+    executable = tmp_path / "opa"
+    # A sparse large file makes any complete read visible to tracemalloc while
+    # keeping this integrity-only test independent of an installed OPA fixture.
+    with executable.open("wb") as binary:
+        binary.truncate(16 * 1024 * 1024)
+    policy = build(tmp_path, executable)
+    reply = CompletedProcess([], 0, b'{"result":[{"expressions":[{"value":true}]}]}', b"")
+    tracemalloc.start()
+    try:
+        with (
+            patch.object(Path, "read_bytes", side_effect=AssertionError("Whole-file read")),
+            patch("care_link_policy_input.opa.subprocess.run", return_value=reply),
+        ):
+            assert policy.evaluate(policy_request())["decision"] == "PERMIT"
+        _current, peak = tracemalloc.get_traced_memory()
+    finally:
+        tracemalloc.stop()
+    assert peak < 1024 * 1024
+    # Successful verification is not cached: modifying the exact executable
+    # must still be detected on the next operation.
+    with executable.open("r+b") as binary:
+        binary.write(b"modified")
+    with pytest.raises(ManualError, match="policy_integrity"):
+        policy.evaluate(policy_request())
 
 
 @pytest.mark.parametrize(

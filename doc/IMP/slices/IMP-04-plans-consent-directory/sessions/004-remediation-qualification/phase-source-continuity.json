@@ -1,0 +1,94 @@
+{
+  "status": "passed",
+  "frozen_image": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9",
+  "source_custodian_container": "4ba847cab137d0345be70e80d78756ecbd26c3c328d3349c7a1adb804ab28adb",
+  "method": "Read-only full Core Python source hash inventory from the unchanged cfe02 qualification image carried by Data; same immutable image was used by earlier Core candidate. Compare final host; final-serving-source-proof separately proves final Core actual bytes.",
+  "files": [
+    {
+      "path": "services/core/src/care_link_core/__init__.py",
+      "frozen_cfe02_sha256": "847290961e32f0a5a72e9271fcfe697813ae58318af14885f09d1d5a3b4cf8ce",
+      "current_host_and_final_core_sha256": "847290961e32f0a5a72e9271fcfe697813ae58318af14885f09d1d5a3b4cf8ce"
+    },
+    {
+      "path": "services/core/src/care_link_core/app.py",
+      "frozen_cfe02_sha256": "f50ef45cfd35e89cf9370620505e2f894305affd54e20395e1d11465ef0d334c",
+      "current_host_and_final_core_sha256": "f50ef45cfd35e89cf9370620505e2f894305affd54e20395e1d11465ef0d334c"
+    },
+    {
+      "path": "services/core/src/care_link_core/capabilities.py",
+      "frozen_cfe02_sha256": "946271da54ad3cbc857512f4c028a6d29a34f8b64276075f641f085f4687d25e",
+      "current_host_and_final_core_sha256": "946271da54ad3cbc857512f4c028a6d29a34f8b64276075f641f085f4687d25e"
+    },
+    {
+      "path": "services/core/src/care_link_core/cli.py",
+      "frozen_cfe02_sha256": "6038d316bd0e3a44a3fde0980f1489e06b50fc740ee445bc8909ce00e919d009",
+      "current_host_and_final_core_sha256": "6038d316bd0e3a44a3fde0980f1489e06b50fc740ee445bc8909ce00e919d009"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_app.py",
+      "frozen_cfe02_sha256": "418b2ee4b4a763ade3528ccd9d519f88f1efb2d3674f5474c80233b198c568cf",
+      "current_host_and_final_core_sha256": "418b2ee4b4a763ade3528ccd9d519f88f1efb2d3674f5474c80233b198c568cf"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_channels.py",
+      "frozen_cfe02_sha256": "c2e6adb251d063035f5de902299e521445f56927457d2e49a47c704174e58892",
+      "current_host_and_final_core_sha256": "c2e6adb251d063035f5de902299e521445f56927457d2e49a47c704174e58892"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_envelopes.py",
+      "frozen_cfe02_sha256": "44c346e4a9f262489b4760408365eccfacd55e340660e019fc2b8196a4d6884b",
+      "current_host_and_final_core_sha256": "44c346e4a9f262489b4760408365eccfacd55e340660e019fc2b8196a4d6884b"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_http.py",
+      "frozen_cfe02_sha256": "d23a72635821f7000eec86983d90380f4ba7cc7049af4e28f9943a0474c5163c",
+      "current_host_and_final_core_sha256": "d23a72635821f7000eec86983d90380f4ba7cc7049af4e28f9943a0474c5163c"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_identity.py",
+      "frozen_cfe02_sha256": "3b98e43786693df225e27f32345f69cb6c7099d7ed0c07e34fa286b7330bcdd7",
+      "current_host_and_final_core_sha256": "3b98e43786693df225e27f32345f69cb6c7099d7ed0c07e34fa286b7330bcdd7"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_ports.py",
+      "frozen_cfe02_sha256": "715f2935c0dac338c35fda5433aa36440cebf7ede9734c13566b451fe1c1b92f",
+      "current_host_and_final_core_sha256": "715f2935c0dac338c35fda5433aa36440cebf7ede9734c13566b451fe1c1b92f"
+    },
+    {
+      "path": "services/core/src/care_link_core/manual_security.py",
+      "frozen_cfe02_sha256": "ef12d0643dfae606fcc55617a9662541f53b7e0a5664726b99aca285e0b0870f",
+      "current_host_and_final_core_sha256": "ef12d0643dfae606fcc55617a9662541f53b7e0a5664726b99aca285e0b0870f"
+    },
+    {
+      "path": "services/core/src/care_link_core/planning_http.py",
+      "frozen_cfe02_sha256": "68431949d53ced8f90dc8ca4e378e16202370ae5af39bbc1754f2826a1ca0ccb",
+      "current_host_and_final_core_sha256": "68431949d53ced8f90dc8ca4e378e16202370ae5af39bbc1754f2826a1ca0ccb"
+    },
+    {
+      "path": "services/core/src/care_link_core/planning_ports.py",
+      "frozen_cfe02_sha256": "4d69b14accff0aa8a107cad0bfbad1f7874bd54ccdeaae622f9c305425686ab6",
+      "current_host_and_final_core_sha256": "4d69b14accff0aa8a107cad0bfbad1f7874bd54ccdeaae622f9c305425686ab6"
+    },
+    {
+      "path": "services/core/src/care_link_core/planning_routes.py",
+      "frozen_cfe02_sha256": "955bfc1a2bd49154628ec652a82e2b27ece58a257653e609af8db0e08f19df93",
+      "current_host_and_final_core_sha256": "955bfc1a2bd49154628ec652a82e2b27ece58a257653e609af8db0e08f19df93"
+    },
+    {
+      "path": "services/core/src/care_link_core/review_channels.py",
+      "frozen_cfe02_sha256": "9503d95c239443ae110a65a7d5dbe84d728bc1179c6115e25c051b0b9a2ebdfb",
+      "current_host_and_final_core_sha256": "9503d95c239443ae110a65a7d5dbe84d728bc1179c6115e25c051b0b9a2ebdfb"
+    },
+    {
+      "path": "services/core/src/care_link_core/review_context.py",
+      "frozen_cfe02_sha256": "04ee2feecbda08bf68d54d41655a62d38750ad111e1bdb9b8b84dccfeade6852",
+      "current_host_and_final_core_sha256": "04ee2feecbda08bf68d54d41655a62d38750ad111e1bdb9b8b84dccfeade6852"
+    },
+    {
+      "path": "services/core/src/care_link_core/review_routes.py",
+      "frozen_cfe02_sha256": "8d15320e89a2ec91b78ddb2ba321bdd5fc0186a94b099e8ced827b57b7fcc5f4",
+      "current_host_and_final_core_sha256": "8d15320e89a2ec91b78ddb2ba321bdd5fc0186a94b099e8ced827b57b7fcc5f4"
+    }
+  ],
+  "scope": "Earlier backend race/delegation/authority evidence remains applicable to unchanged Core Python and shared/runtime source. Final client MFA/popup/UI behavior is qualified by normal-final011 and later UI-specific phases, not inferred from older runs. Actual per-phase outcomes/images remain scoped; no assertion every phase ran against the final UI image."
+}

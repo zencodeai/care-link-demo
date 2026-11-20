@@ -1,0 +1,18 @@
+{
+  "started_at": "2026-11-17T01:18:59.613724+00:00",
+  "pid": 97978,
+  "argv": [
+    "/private/tmp/care-link-imp02-002/browsers/chromium-1254/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+    "--user-data-dir=/private/tmp/care-link-imp04-002/human-review-profiles/pid",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "https://plans.localhost:30443"
+  ],
+  "private_log": "/private/tmp/care-link-imp04-002/human-pid-chrome.log",
+  "profile": "/private/tmp/care-link-imp04-002/human-review-profiles/pid",
+  "new_dedicated_profile": true,
+  "existing_browser_processes_restarted": false,
+  "tls_bypass_flags": false,
+  "state": "stopped_owned_process_after_UI_selection_ambiguity",
+  "existing_profiles_modified": false
+}

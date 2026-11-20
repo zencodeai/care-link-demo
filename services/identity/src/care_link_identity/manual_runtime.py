@@ -135,6 +135,14 @@ def create_manual_identity_app(
             "resolve": {"evidence"},
             "current": {"credential_ref"},
             "recovery": {"credential_ref", "ceremony_id", "session_id", "family_id"},
+            "consent-proof": {
+                "credential_ref",
+                "proof_id",
+                "subject_id",
+                "session_id",
+                "purpose",
+                "basis",
+            },
         }
         if set(data) != fields[name]:
             raise ManualError("manual.invalid_identity_request", 422)
@@ -216,6 +224,19 @@ def create_manual_identity_app(
                 raise ManualError("manual.identity_evidence_changed")
             return _actor_record(actor)
         actor, proof = lookup(text(data, "credential_ref"))
+        if name == "consent-proof":
+            raw = service.custody.decrypt(text(proof, "credential"))
+            ManualIdentityAuthority(selected(raw)).consent_proof(
+                replace(actor, credential_ref=raw),
+                text(data, "proof_id"),
+                text(data, "subject_id"),
+                text(data, "session_id"),
+                text(data, "purpose"),
+                text(data, "basis"),
+            )
+            if actor.request_deadline is None or actor.request_deadline <= service.clock():
+                raise ManualError("manual.identity_evidence_expired")
+            return {"verified": True}
         if name == "recovery":
             raw = service.custody.decrypt(text(proof, "credential"))
             ManualIdentityAuthority(selected(raw)).recovery_proof(
@@ -258,6 +279,6 @@ def create_manual_identity_app(
 
     for name in ("authenticate", "csrf", "evidence"):
         route(name, "core")
-    for name in ("resolve", "current", "recovery"):
+    for name in ("resolve", "current", "recovery", "consent-proof"):
         route(name, "data")
     return app

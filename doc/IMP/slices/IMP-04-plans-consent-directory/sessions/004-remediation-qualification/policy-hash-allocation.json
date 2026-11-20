@@ -1,0 +1,18 @@
+{
+  "scope": "Workstation Python allocation measurement, not container RSS or throughput",
+  "binary_bytes": 60179132,
+  "results": [
+    {
+      "mode": "whole_binary_read",
+      "bytes_peak": 60180459,
+      "elapsed_ms": 28,
+      "sha256": "8fc1c524f93b4369eb207961aba213d990604205fc49fe3ba923dfc125c8a422"
+    },
+    {
+      "mode": "streamed_hash",
+      "bytes_peak": 396041,
+      "elapsed_ms": 21,
+      "sha256": "8fc1c524f93b4369eb207961aba213d990604205fc49fe3ba923dfc125c8a422"
+    }
+  ]
+}

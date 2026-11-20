@@ -1,0 +1,13 @@
+{
+  "observed_cgroup_memory_events": {
+    "max": 0,
+    "oom": 0,
+    "oom_kill": 0
+  },
+  "pids_limit": 512,
+  "pids_limit_hit_counter": 116,
+  "idle_pids": 163,
+  "zombies": 143,
+  "correction": "Receipt-bound stop/start of existing new review browser; no recreation, resource-budget or trust change; all persistent browser-home material preserved",
+  "claim_limit": "Counter corroborates process pressure across repeated qualification; it does not by itself establish every earlier UI timeout cause. Batch browser restart required after repeated harness runs; no init reaper added."
+}

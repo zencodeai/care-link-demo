@@ -1,0 +1,228 @@
+{
+  "packet_id": "DEMO-IMP04-001-source",
+  "stage_id": "IMP-04",
+  "gate_id": "G-04",
+  "candidate": {
+    "commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+    "diff_digest": "33dca1728a97abf0baa5949a2e6df66768e4a42f2f1b8748628aa90757dd95ba",
+    "artifact_digest": "c94d5b2115a3ac09eb1cee89bac9fe6081d605e24d1142bd76c05e4848372301",
+    "configuration_digest": "bc76f4d3fd3f10236234a280bf2b94e1e2142cfc95e5bc89a59e17e8c9d81505",
+    "contract_digest": "476117eb56bd9d34a96ee928d6c282aeffc5fff4f4ebdadbe0cd668a1c178a8c",
+    "environment_digest": "2a100b3884c00aba5b9ff118bfff33585658f42f1336575465bbf36d67dcf5bc",
+    "fixture_digest": "26862660a86ce46088c9c98977eb78b6f49fe37ea585aac7c97ffc835443f6e6"
+  },
+  "state": "draft",
+  "preconditions": [
+    "G-03 accepted; this candidate is source/build-bound, not deployed",
+    "Before live review, authorize exact isolated deployment, migration003, policy/source pins and actor provisioning",
+    "Use separate issued synthetic accounts and current source qualification; no participant admission"
+  ],
+  "normal_steps": [
+    {
+      "action": "Create and edit own PID plan; grant selected fields to separate account",
+      "expected": "Only exact current fields disclosed; attributed data retained",
+      "actual": "Real signed BFF/data/identity ports with PostgreSQL, OPA and journal passed under explicit provider/mesh fixtures",
+      "evidence_refs": []
+    },
+    {
+      "action": "Read saved carer/professional own reports and seven directory states",
+      "expected": "Own author/subject only; truthful provenance, alternatives and unknowns",
+      "actual": "Controlled UI tests and domain/transport tests passed; native separate-account qualification not run",
+      "evidence_refs": []
+    },
+    {
+      "action": "Perform native G-04 separate-account demonstration",
+      "expected": "Human observes exact scoped candidate",
+      "actual": null,
+      "evidence_refs": []
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Race missing grant creation, revoke pending output and expire wider sharing",
+      "expected": "Current subject guards/final output checks deny stale disclosure",
+      "actual": "10 independent PostgreSQL adverse tests pass",
+      "evidence_refs": []
+    },
+    {
+      "action": "Mutate policy fields/recipient/subject/grant/source and feed signature",
+      "expected": "PDP or source admission denies altered binding",
+      "actual": "Real OPA mutation tests and18 signed admission tests pass",
+      "evidence_refs": []
+    },
+    {
+      "action": "Retry plan creation after edits and another same-subject session",
+      "expected": "Same logical key reprojects current permitted plan with original anchor",
+      "actual": "Real signed transport regression passes",
+      "evidence_refs": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "uv-lock",
+      "command": "uv lock --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/uv-lock.log",
+      "evidence_digest": "e4ea73825a7df494d53788fbab3eb2aba022a8654fe43d3080b0d4c30582fa3a",
+      "mock_used": false
+    },
+    {
+      "name": "pnpm-lock",
+      "command": "pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/pnpm-lock.log",
+      "evidence_digest": "5e7f8dc5394032dbce2539c450d4fb5064e4f00c6fa78e797074c76010852b9a",
+      "mock_used": false
+    },
+    {
+      "name": "contracts",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python tools/generate_contracts.py --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/contracts.log",
+      "evidence_digest": "0537f5be93b6bf84de3ce0a39f65bca9f01475eba04f026d50e76e89a6e2cef8",
+      "mock_used": false
+    },
+    {
+      "name": "boundaries",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/boundaries.log",
+      "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "mock_used": false
+    },
+    {
+      "name": "admission",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python tools/check_imp02_admission.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/admission.log",
+      "evidence_digest": "a3882b2b400134aad06bb6a1f3a2d33c28096330b037dec61ece67944843d0b1",
+      "mock_used": false
+    },
+    {
+      "name": "ruff",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m ruff check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/ruff.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "python-format",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m ruff format --check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/python-format.log",
+      "evidence_digest": "ea5ed067e5fad191291a777b8294a25fbbf5e121c6d018d67816147b644a03df",
+      "mock_used": false
+    },
+    {
+      "name": "pyright",
+      "command": "pnpm exec pyright --project pyrightconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/pyright.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "typescript",
+      "command": "pnpm typecheck",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/typescript.log",
+      "evidence_digest": "e2619b18e6eda193c3629cf5a0d6112df29e1f4e400b0c8b0ad8a99861ed2ac5",
+      "mock_used": false
+    },
+    {
+      "name": "eslint",
+      "command": "pnpm lint",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/eslint.log",
+      "evidence_digest": "d957502195d6b7bf553082127cc2b44f0602f6924caec17c117d0a1e09273f12",
+      "mock_used": false
+    },
+    {
+      "name": "prettier",
+      "command": "pnpm format:check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/prettier.log",
+      "evidence_digest": "1264ec68aa3a02a4163de506eca818cf94c93265a31cc61682a0898bc86fb889",
+      "mock_used": false
+    },
+    {
+      "name": "python-tests",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m pytest -q --tb=short",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "813 passed,3 skipped; explicit provider/mesh fixtures",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/python-tests.log",
+      "evidence_digest": "0576f6594d06ba567f1436674641e95d6579d65c13836255241b34a7813160d4",
+      "mock_used": true
+    },
+    {
+      "name": "web-tests",
+      "command": "pnpm test",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "100 passed",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/web-tests.log",
+      "evidence_digest": "7f3ec5a314d7e7b6689a08bf60d8f88c05a9f94c5dc196229af28bd93be506d9",
+      "mock_used": true
+    },
+    {
+      "name": "web-build",
+      "command": "pnpm build",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/web-build.log",
+      "evidence_digest": "8776aa7353cf11ff0ca5ac9d3e9e94ebe19801b6375f369bb8f9a182428518fa",
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "Live deployment/migration of accepted lab",
+    "Native multi-account Chrome/EN-FR accessibility/keyboard qualification",
+    "Deployed workload identity/default-deny/SVID qualification for this candidate",
+    "Human G-04 demonstration/acceptance",
+    "Clinical/production or real-source validation",
+    "Frozen planning inventory README mismatch pre-existed; inventory retained unchanged"
+  ],
+  "acceptance_scope": "Engineering source candidate only. No human G-04 acceptance or live participant-use authority is asserted.",
+  "rollback": "No live changes require rollback. Preserve accepted manual service; revert this uncommitted source candidate as one reviewed change if requested. Never reset current restrictions or accepted demo state.",
+  "human_decision_id": null,
+  "is_example": false
+}

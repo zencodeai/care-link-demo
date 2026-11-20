@@ -9,6 +9,15 @@ from care_link_domain import Actor, ManualError
 
 Record = dict[str, object]
 
+# These fixed transport keys distinguish exhausted budgets/current guard changes
+# without reflecting arbitrary upstream strings or response contents to clients.
+_SAFE_GATEWAY_ERRORS = {
+    "manual.deadline": 503,
+    "manual.deadline_exceeded": 503,
+    "manual.stale_authority": 409,
+    "manual.journal_barrier": 503,
+}
+
 
 class EnvelopeFactory(Protocol):
     def build(
@@ -76,10 +85,16 @@ class HttpManualGateway:
                 "REPLACEMENT_UNAVAILABLE": "manual.replacement_unavailable",
                 "REVISION_CONFLICT": "manual.stale_revision",
             }
-            raise ManualError(
-                mapping.get(cast(str, payload["code"]), "manual.gateway_denied"),
-                response.status_code,
-            )
+            failure_key = mapping.get(cast(str, payload["code"]))
+            if failure_key is None:
+                supplied = payload.get("message_key")
+                failure_key = (
+                    supplied
+                    if isinstance(supplied, str)
+                    and _SAFE_GATEWAY_ERRORS.get(supplied) == response.status_code
+                    else "manual.gateway_denied"
+                )
+            raise ManualError(failure_key, response.status_code)
         return cast(Record, parse_contract(output, response.text))
 
     def _result(

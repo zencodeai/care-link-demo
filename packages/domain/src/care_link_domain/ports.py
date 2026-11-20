@@ -52,6 +52,16 @@ class AuthorityPort(Protocol):
         self, actor: Actor, ceremony_id: str, session_id: str, family_id: str
     ) -> None: ...
 
+    def consent_proof(
+        self,
+        actor: Actor,
+        proof_id: str,
+        subject_id: str,
+        session_id: str,
+        purpose: str,
+        basis: str,
+    ) -> None: ...
+
 
 class PolicyPort(Protocol):
     def evaluate(self, request: dict[str, object]) -> dict[str, object]: ...

@@ -1,0 +1,9 @@
+{
+  "key_id": "imp04-synthetic-source-001",
+  "algorithm": "Ed25519",
+  "public_key_hex": "81e1f34b1603e825069913a28cae702aa61be88b0f8f56bf05a74a6afffe09bc",
+  "public_key_sha256": "78184a7cffde02ac1d6b95aa54e2b0cc1d8be20defe0767d7dbdec7b0fd41cfa",
+  "scope": "IMP-04 private synthetic engineering source candidates",
+  "human_review": false,
+  "participant_admission": false
+}

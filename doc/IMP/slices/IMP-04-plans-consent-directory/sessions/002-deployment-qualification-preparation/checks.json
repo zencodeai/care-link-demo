@@ -1,0 +1,79 @@
+[
+  {
+    "name": "session001-continuity",
+    "command": "Read and SHA-256 compare every source_files/web_build_files/source_bindings entry in session001 candidate-manifest.json",
+    "tool_version": "Python hashlib",
+    "status": "passed",
+    "expected": "Every bound file unchanged",
+    "actual": "69/69 entries match; source and old web build unchanged",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/continuity-check.json",
+    "evidence_digest": "c7047a6ca7ed550bfcbb8345a58ca75e72eae6a5c7c3b77fec35cb0d39d1548b",
+    "mock_used": false
+  },
+  {
+    "name": "policy-and-directory-integrity",
+    "command": "Ed25519 policy signature + VerifiedDirectoryAdmission on exact seven fixture envelopes with separately pinned public key",
+    "tool_version": "Existing .venv cryptography and care_link_data",
+    "status": "passed",
+    "expected": "Exact policy SHA/signature and separate key hash/all envelope signatures verify",
+    "actual": "Passed; no claim of live freshness, policy acceptance or human source review",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/artifact-verification.json",
+    "evidence_digest": "76d8ddd1cccbfc0574d9873a3082075e8b356bd95414cd6dfde9ba5e14a59025",
+    "mock_used": false
+  },
+  {
+    "name": "read-only-docker-inventory",
+    "command": "docker ps; network ls/inspect IPAM; volume ls; image ls; inspect Name/Id/Image/StartedAt/Status/Ports only",
+    "tool_version": "Existing Docker CLI",
+    "status": "passed",
+    "expected": "Public identities only; accepted app image present; proposed prefix/subnets absent",
+    "actual": "64 existing containers inventoried; five accepted continuation apps use e854ff...; no new prefix/subnet collision observed; no resource mutation",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/resource-inventory.json",
+    "evidence_digest": "5cbe14a1561d34e4b47cb7bc9dbf2b4f0a61ae12f2d33bb24facfd80259b9c52",
+    "mock_used": false
+  },
+  {
+    "name": "proposed-port-listeners",
+    "command": "lsof -nP -iTCP:30443 -iTCP:31443 -iTCP:25436 -iTCP:30900 -sTCP:LISTEN",
+    "tool_version": "Existing lsof",
+    "status": "passed",
+    "expected": "No current listener on proposed ports",
+    "actual": "Exit1 with no output (lsof no matches); not a port reservation",
+    "evidence_path": null,
+    "evidence_digest": null,
+    "mock_used": false
+  },
+  {
+    "name": "live-qualification",
+    "command": "Not executed",
+    "tool_version": null,
+    "status": "not_run",
+    "expected": "Actual isolated deployment, genuine IdP/SVID/browser/races/accessibility and G04 decision",
+    "actual": "Preparation only; no deployment authorization, operator implementation or built live image/configuration exists",
+    "evidence_path": null,
+    "evidence_digest": null,
+    "mock_used": false
+  },
+  {
+    "name": "packet-schema",
+    "command": "Existing .venv Python: JSON Schema Draft202012Validator and packet/file/digest/link/target invariants",
+    "tool_version": "Existing jsonschema / Python stdlib",
+    "status": "passed",
+    "expected": "Preparation contracts and references consistent",
+    "actual": "WorkPacket, DemoPacket, AgentResult validate against unchanged planning schema",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/schema-validation.json",
+    "evidence_digest": "20508aa5345a97eb67101af6ae79cda651e6674bcbac8250af2d0e80dd04050a",
+    "mock_used": false
+  },
+  {
+    "name": "preparation-consistency",
+    "command": "Existing .venv Python: JSON Schema Draft202012Validator and packet/file/digest/link/target invariants",
+    "tool_version": "Existing jsonschema / Python stdlib",
+    "status": "passed",
+    "expected": "Preparation contracts and references consistent",
+    "actual": "Proposal/demo/ledger hashes, 31 containers,48 volumes,4 subnets, all seven exact labels,69 continuity files and local links verified",
+    "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/preparation-validation.json",
+    "evidence_digest": "b915c8e9cc203de0e3ea558ea4de792d9b7ed261d880204dd0e533867ce724f5",
+    "mock_used": false
+  }
+]

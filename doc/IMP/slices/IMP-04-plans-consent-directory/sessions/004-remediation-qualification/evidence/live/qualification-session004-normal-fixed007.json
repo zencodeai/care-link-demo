@@ -1,0 +1,231 @@
+{
+  "phase": "normal",
+  "exit_code": 0,
+  "private_output": "/private/tmp/care-link-imp04-002/qualification-session004-normal-fixed007",
+  "status": "passed",
+  "not_run": [
+    "Coordinator read-only DB effects, review counts and lifecycle metadata are recorded outside browser phase"
+  ],
+  "observations": [
+    {
+      "case": "Q02",
+      "slot": "pid",
+      "status": "passed",
+      "account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:46.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "pid-other",
+      "status": "passed",
+      "account_id": "fe2303a4-ee1b-4931-a1ac-193e4938337c",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:47.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "carer",
+      "status": "passed",
+      "account_id": "fb881f96-e088-429c-a404-5208f22b4068",
+      "role": "carer",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:48.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "professional",
+      "status": "passed",
+      "account_id": "42dfc3a0-58f2-40d7-97c9-768d07dcd315",
+      "role": "professional_participant",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:49.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "worker1",
+      "status": "passed",
+      "account_id": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:50.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "worker2",
+      "status": "passed",
+      "account_id": "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:51.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "supervisor",
+      "status": "passed",
+      "account_id": "6962247a-6849-4077-b445-0034051cbd57",
+      "role": "supervisor",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:52.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "operator",
+      "status": "passed",
+      "account_id": "1152c7ae-32b6-4383-b99c-7589a663e453",
+      "role": "operator",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:53.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "security",
+      "status": "passed",
+      "account_id": "5f67f7bb-7e05-48c4-ae77-4d30666d604f",
+      "role": "security",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:27:54.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q01-browser",
+      "status": "passed",
+      "browser_version": "157.0.8103.78",
+      "ignore_https_errors": false,
+      "actual_provider_login_required_for_fresh_session": false,
+      "restored_genuine_same_actor_browser_state": true,
+      "phase_actor_slots_restored": [
+        "pid",
+        "pid-other",
+        "carer",
+        "professional",
+        "worker1",
+        "worker2"
+      ],
+      "unused_verified_actor_contexts_kept_closed": true,
+      "maximum_simultaneous_initial_authenticator_contexts": 1,
+      "api_driver_shell": "Actual main HTML/CSP; only app JavaScript assets aborted; no API interception",
+      "visible_ui_driver": "Real application bundle loaded on demand with ensureMain(true)",
+      "origin": "https://plans.localhost:30443",
+      "provider_origin": "https://id.plans.localhost:31443"
+    },
+    {
+      "case": "Q03/A01",
+      "status": "passed",
+      "plan_id": "1633065e-2e6c-415b-9778-8d86dad53319",
+      "plan_revision": "3",
+      "fields": [
+        "plan.medication_report",
+        "plan.strategies"
+      ],
+      "attribution_all_owner": true,
+      "stable_create_replayed_current_projection": true,
+      "denied_unshared_roles": 4
+    },
+    {
+      "case": "Q05/A01",
+      "slot": "carer",
+      "status": "passed",
+      "session_id": "5a8f001b-4f11-4d50-a8c9-f449255d0bee",
+      "report_id": "9b3a7e17-be07-4a28-a4b5-12521dacbb7c",
+      "restored_committed_report_after_reload": true,
+      "cross_author_denied": true
+    },
+    {
+      "case": "Q05/A01",
+      "slot": "professional",
+      "status": "passed",
+      "session_id": "aed68f31-6098-4ca8-8abd-946f28e8d272",
+      "report_id": "b0fed7e1-ae40-461d-bedf-007c56722d1e",
+      "restored_committed_report_after_reload": true,
+      "cross_author_denied": true
+    },
+    {
+      "case": "Q09-draft",
+      "status": "passed",
+      "unsent_input_retained_after_provider_callback": true,
+      "unsent_input_retained_after_visible_confirmation": true,
+      "field_append_not_submitted": true,
+      "mounted_page_only": true,
+      "browser_persistent_storage_used": false,
+      "full_reload_persistence_claimed": false
+    },
+    {
+      "case": "Q04/A01",
+      "status": "passed",
+      "grant_id": "6fa8d6a0-439d-407e-ad50-3df62db985c8",
+      "ceremony_verified": true,
+      "visible_exact_preview_confirmed": true,
+      "disclosed_fields": [
+        "plan.strategies"
+      ],
+      "medication_absent": true,
+      "unassigned_worker_append_denied": true
+    },
+    {
+      "case": "Q03-worker-conflict",
+      "status": "passed",
+      "plan_id": "1633065e-2e6c-415b-9778-8d86dad53319",
+      "assignment_id": "4ccb403b-21b0-4bfb-bf9a-b8f499562866",
+      "plan_revision": "4",
+      "exact_assignment_required": true,
+      "two_authors_retained": true,
+      "strategies_disputed": true,
+      "pending_human_review_db_count": "coordinator_read_only_check_required"
+    },
+    {
+      "case": "A02-revocation",
+      "status": "passed",
+      "grant_id": "6fa8d6a0-439d-407e-ad50-3df62db985c8",
+      "revoked_at": "2026-11-16T22:28:54.583448Z",
+      "later_disclosure_denied": true
+    },
+    {
+      "case": "A02-real-expiry",
+      "status": "passed",
+      "broad_grant_id": "5b58fe3c-2dab-454d-a2da-5d161116619e",
+      "broad_expires_at": "2026-11-16T22:29:09.799000Z",
+      "observed_after": "2026-11-16T22:29:11.884Z",
+      "narrower_surviving_fields": [
+        "plan.strategies"
+      ],
+      "final_narrow_revocation_denied": true,
+      "wall_clock_unchanged": true
+    },
+    {
+      "case": "Q09",
+      "status": "passed",
+      "committed_work_reloaded_by_manual_ids": true,
+      "full_reload_pending_intent_persistence": "not_claimed"
+    }
+  ],
+  "error_first_lines": []
+}

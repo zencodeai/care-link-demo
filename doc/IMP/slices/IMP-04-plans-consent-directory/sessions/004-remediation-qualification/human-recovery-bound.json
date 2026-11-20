@@ -1,0 +1,7 @@
+{
+  "decision": "issuer_recovery_bound",
+  "value_seconds": 300,
+  "starts_at": "issuer_restart",
+  "source": "User reply: Recover within 300 seconds of issuer restart (one configured certificate lifetime)",
+  "application_deadline_or_certificate_ttl_changed": false
+}

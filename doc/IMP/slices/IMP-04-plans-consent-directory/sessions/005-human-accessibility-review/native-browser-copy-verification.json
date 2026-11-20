@@ -1,0 +1,1398 @@
+{
+  "source_app": "/private/tmp/care-link-imp02-002/browsers/chromium-1254/chrome-mac-arm64/Google Chrome for Testing.app",
+  "copy_app": "/private/tmp/care-link-imp04-002/human-review-browser/IMP04 Chrome Review.app",
+  "all_files_and_symlinks_match": true,
+  "files": [
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Google Chrome for Testing Framework",
+      "symlink": "Versions/Current/Google Chrome for Testing Framework"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Helpers",
+      "symlink": "Versions/Current/Helpers"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Libraries",
+      "symlink": "Versions/Current/Libraries"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Resources",
+      "symlink": "Versions/Current/Resources"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Google Chrome for Testing Framework",
+      "sha256": "22d632562824f6f5a9f9ff99e0807db448f97c58f163b85123aae1590bac10fc"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Alerts).app/Contents/Info.plist",
+      "sha256": "024c0e3a2887901dad0e448605eb03f13d9b79cabd85c61fc37fd7629276c77f"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Alerts).app/Contents/MacOS/Google Chrome for Testing Helper (Alerts)",
+      "sha256": "814112a77a7c5bbe7fc56526b53f81ed337a3d77bf55b10194666c9e9afc9c1b"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Alerts).app/Contents/PkgInfo",
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Alerts).app/Contents/Resources/Assets.car",
+      "sha256": "e70466610b4bdbb61098baf07d342e8e21a67c34cfd2c53e400d3e588ed2cc4c"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Alerts).app/Contents/Resources/app.icns",
+      "sha256": "3be5d5276c19c48925acc2c6a7896ce238d73b1ca8b74c30724799e2d28223ae"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Alerts).app/Contents/Resources/base.lproj/InfoPlist.strings",
+      "sha256": "b978a9cb5bd3109d3198f4f8387517511326986f2549b2a5bb968816f61ebda0"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif Alerts).app/Contents/Info.plist",
+      "sha256": "a2f851879ba5bef0f0c12bcff2c2a8955c79facac1c7d9dabca6108fe33dc9a7"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif Alerts).app/Contents/MacOS/Google Chrome for Testing Helper (Aperitif Alerts)",
+      "sha256": "90284bb3870e76c20abe041dddab80dbe69698474d4ab8ae85b8ed033ba7f870"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif Alerts).app/Contents/PkgInfo",
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif Alerts).app/Contents/Resources/Assets.car",
+      "sha256": "e70466610b4bdbb61098baf07d342e8e21a67c34cfd2c53e400d3e588ed2cc4c"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif Alerts).app/Contents/Resources/app.icns",
+      "sha256": "3be5d5276c19c48925acc2c6a7896ce238d73b1ca8b74c30724799e2d28223ae"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif Alerts).app/Contents/Resources/base.lproj/InfoPlist.strings",
+      "sha256": "b978a9cb5bd3109d3198f4f8387517511326986f2549b2a5bb968816f61ebda0"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif GPU).app/Contents/Info.plist",
+      "sha256": "dc7cb03ddc9c3d83db300c768ae231e000d89a4742579e743bdfec5bda50896e"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif GPU).app/Contents/MacOS/Google Chrome for Testing Helper (Aperitif GPU)",
+      "sha256": "820a43edb186f39d1e6ee99371e913625c186e7eb188e3b28cc79cf38e7a1df1"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif GPU).app/Contents/PkgInfo",
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif Renderer).app/Contents/Info.plist",
+      "sha256": "b80ee3e442c7a081e0be172b3faddc55c62c93ba5ca50231e045cd68800787af"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif Renderer).app/Contents/MacOS/Google Chrome for Testing Helper (Aperitif Renderer)",
+      "sha256": "98b47d19f07953e8fe475107374303d57b8762ebf047a887a6cdd0df8304df45"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif Renderer).app/Contents/PkgInfo",
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif).app/Contents/Info.plist",
+      "sha256": "f03b9ba2051e5c5e1881d705bdd6abcce926af74e581d8553da2d1c209882e93"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif).app/Contents/MacOS/Google Chrome for Testing Helper (Aperitif)",
+      "sha256": "04a8ea6688bccdc9d32ca807588b7ffe49aa6e44022e798b2ff2cd4227b24804"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Aperitif).app/Contents/PkgInfo",
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (GPU).app/Contents/Info.plist",
+      "sha256": "b39348fab4468757407bf2e5268ac162464bb510e7e74f59a8118342275fa0bf"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (GPU).app/Contents/MacOS/Google Chrome for Testing Helper (GPU)",
+      "sha256": "981640b3e11cb8353a0d2f698054c04a6ce967ece97122f5b499d58d111ec9b2"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (GPU).app/Contents/PkgInfo",
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Renderer).app/Contents/Info.plist",
+      "sha256": "ae2737c3999c75b008dff8b94f36e4d4e35a59e46dd916c8ed0a4cd34c18eeea"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Renderer).app/Contents/MacOS/Google Chrome for Testing Helper (Renderer)",
+      "sha256": "5223d2f8ef84de0256f3176648e876507b03feaec830ff005f2984db616c3ced"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper (Renderer).app/Contents/PkgInfo",
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper.app/Contents/Info.plist",
+      "sha256": "11fbc0653af2e19ccaf7d77e550603a40fa31b9177b6c39a17491fb95e86bc29"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper.app/Contents/MacOS/Google Chrome for Testing Helper",
+      "sha256": "a17fd6beeb2fad91224c36fabd57077f91f54a6fb8274e9074ee5c5525792ad3"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/Google Chrome for Testing Helper.app/Contents/PkgInfo",
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/app_mode_loader",
+      "sha256": "23d5e0869ff223b775fa36ca91adacd09107a174f6544cc97cd6f44a87cbb1bd"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/chrome_crashpad_handler",
+      "sha256": "d37506f30c40fe9b0c444d69303832ab39c87978be23f5630f797b705fd7996a"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Helpers/web_app_shortcut_copier",
+      "sha256": "785cb5960bcf2edb235915859439d5841f9fcbb61399d649f87fedbf7f62cdc7"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/IwaKeyDistribution/iwa-key-distribution.pb",
+      "sha256": "274f2cc20e5627c35d54cef0b5798f0a43bbc560fd52aa61a044a518c881a7d6"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/IwaKeyDistribution/manifest.json",
+      "sha256": "313d7ea9fb517aea7819f0f70ad56a26a7410cae164433ce80f9e88c5be4379c"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/MEIPreload/manifest.json",
+      "sha256": "44844cf3dde6e80087ae0e6bf0d9326d7ef7d23326d24ac83af0850be26923d2"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/MEIPreload/preloaded_data.pb",
+      "sha256": "c6070a157b4e28d16fbccbd233e93846ddb070c85e1a1bc64469b7a5f1424fad"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/PrivacySandboxAttestationsPreloaded/manifest.json",
+      "sha256": "51c311a4ba03140bcd1c827f8d93dba50cadda736925903b26e95609275dbffd"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/PrivacySandboxAttestationsPreloaded/privacy-sandbox-attestations.dat",
+      "sha256": "59e345dc13aedee9ea46b92e58300ecaca944aaea9384c7af885400ac2ae8806"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/WidevineCdm/LICENSE",
+      "sha256": "20de375707692099b3132084695377ce5fec0aec05813dedcce094b8eda44386"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/WidevineCdm/_platform_specific/mac_arm64/libwidevinecdm.dylib",
+      "sha256": "e1e9f6b0c77f4251542a2f49dda419c85eda88c5d9ef2721d5d594dc195a6e5f"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/WidevineCdm/manifest.json",
+      "sha256": "620fadefec2d3e2351720ca916f674752869d88d18c3886bc268cd1522726277"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/libaperitif.dylib",
+      "sha256": "0c9fcf8722608bced1bac9cc670cb7449ba9ee5173ccb7f79eba2b363488eeb4"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/libvk_swiftshader.dylib",
+      "sha256": "78608f37961aa6401434c77567a303eb8bea7986d423ab54ff254a60c4fd0759"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/libvulkan.dylib",
+      "sha256": "cc9c0e9af591ed91f6f3dadcf3c2b2b0742e41c318d696a1c615c774bdf26cab"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Libraries/vk_swiftshader_icd.json",
+      "sha256": "d717d915e31e7c27948b80b36ab34e2d897888114c5c7d0af835f93eb53e58f5"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/Info.plist",
+      "sha256": "5df54a68294762e6f3e506cbfec50636f5b29f83d5dd0f811085284cff820bd1"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/af.lproj/locale.pak",
+      "sha256": "af909390ef1bb65a17e4969cfc7359308adca5a9de0fd4dde925f1c7fc9a6b80"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/af_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/af_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/af_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/am.lproj/locale.pak",
+      "sha256": "4acd27124677e21cb81fcff0f3b3ee63b13c1575d1aa5166a990f41fb6307003"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/am_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/am_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/am_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/app_mode-Info.plist",
+      "sha256": "ef683638d6a2cb8d87234affa3bbf72d2b42e57ec70795eef47b0f7d7fa54ca9"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ar.lproj/locale.pak",
+      "sha256": "7beb5f6bd786f699ef920d524b8d3d8aaf0faa58d9c934c66fbac3a5c5aa22b7"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ar_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ar_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ar_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/bg.lproj/locale.pak",
+      "sha256": "90f001af0145591936d1ded10f43ee33fe3a82bfb8abfe60e8616f9e533acfad"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/bg_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/bg_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/bg_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/bn.lproj/locale.pak",
+      "sha256": "de8b18bfad4b0cffce342cbde883b8eedb53147e6f9a2cbe3f9c5c9a3cc7eb00"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/bn_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/bn_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/bn_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ca.lproj/locale.pak",
+      "sha256": "405989e2ccefc28dfcb130e2380912c4e44ecd2be9a075e4aa36650ee4a4ce5f"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ca_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ca_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ca_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/chrome_100_percent.pak",
+      "sha256": "ced604b58a36fafead746f583e3d001ac75e721a46fcc477a1e034c09f759993"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/chrome_200_percent.pak",
+      "sha256": "02adc0b0d307fe193056c86344fe36245952011d56946f5ac707ded36c84bf9d"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/cs.lproj/locale.pak",
+      "sha256": "3fb8ac2c10f7c1e3f15f113e688f00a6c93d3a4c4a7c637f57ffce58ef7d5c70"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/cs_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/cs_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/cs_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/da.lproj/locale.pak",
+      "sha256": "c78b98d31e142ba2a4d672abf7702cd5a1e8f082ba64fe209889bc878605da14"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/da_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/da_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/da_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/de.lproj/locale.pak",
+      "sha256": "2caa23a59f046967c2316e44872b2d21d3eeeffca479b1095ce8d94015edff99"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/de_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/de_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/de_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/el.lproj/locale.pak",
+      "sha256": "e914de44c80b142aa75f258482c5d73449d843ada69117510088236b4ac710bd"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/el_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/el_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/el_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/en.lproj/locale.pak",
+      "sha256": "5ccf1b3ab3d2828b5d31eb34203d58b4c3289108541a47e75fb63515f0256f12"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/en_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/en_GB.lproj/locale.pak",
+      "sha256": "1b2506274d12324740ac8e978e38d4634db37789919d3310f80eb9b84682a53d"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/en_GB_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/en_GB_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/en_GB_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/en_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/en_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/es.lproj/locale.pak",
+      "sha256": "505d9b8e541d6e8440fc49113ba6b7f685ee5a1eafba463c9c954cd0eb496b2a"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/es_419.lproj/locale.pak",
+      "sha256": "09c3dd0968c64004d2a781f2213fc37cf0f265542267b09fd78e5b29ddfd48a7"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/es_419_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/es_419_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/es_419_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/es_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/es_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/es_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/et.lproj/locale.pak",
+      "sha256": "f4d2ec8e1da9c482dbabc6a6f636135bae691d8a706b3c15d655a51f122c183f"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/et_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/et_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/et_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fa.lproj/locale.pak",
+      "sha256": "8f0ad6ee641d815192db002653dbce2c0bef403f7824557a2070e98d8abdfab4"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fa_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fa_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fa_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fi.lproj/locale.pak",
+      "sha256": "5bdd42d430de0ba1dc395e87ecaf392f527a80efc551a5e827ac097bb577579c"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fi_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fi_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fi_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fil.lproj/locale.pak",
+      "sha256": "4306eacac4833d249fd9f79683722e22bed4acfa52b41bb6ed90ee8e280983ef"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fil_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fil_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fil_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fr.lproj/locale.pak",
+      "sha256": "5219172c82cd7da679b6e27ce0973782d854fd01dd46e4a250ad28315bab14e3"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fr_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fr_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/fr_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/gpu_shader_cache.bin",
+      "sha256": "d3fc3a27c1d9a651f5d470e0f6ef2e06094ec5ad58c68b497b22b312442fdb8d"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/gu.lproj/locale.pak",
+      "sha256": "85b6fb162821924e4d2f191c005de2123bda903a26f2eb1df319369d557ffee9"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/gu_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/gu_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/gu_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/he.lproj/locale.pak",
+      "sha256": "288252465a7399590c9448f438b1623715e4619f840a7e0c1e73be37a5df1d64"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/he_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/he_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/he_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hi.lproj/locale.pak",
+      "sha256": "3503be715a26405a77a2fb5e4ef6a11029640e8d231fbd4fe658da72cb65d13c"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hi_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hi_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hi_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hr.lproj/locale.pak",
+      "sha256": "827fb4bba5b30fd1f6f02ef571dc9d4f0432cfe7e6346431d33c50004e7fcf67"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hr_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hr_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hr_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hu.lproj/locale.pak",
+      "sha256": "af655e8b5e726403a08e62f6345cd8b2e764b8bb5da8764a2cc1060fb2cbd1db"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hu_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hu_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/hu_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/icudtl.dat",
+      "sha256": "e1ed8f674bb8449731b79cae956042da59f9ecbd37c8d3f86586a22b4836e5b2"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/id.lproj/locale.pak",
+      "sha256": "5c7ff757114c9345fe3361ba1aa7637b3883a90401b66df7144ae4c679097d95"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/id_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/id_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/id_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/install.sh",
+      "sha256": "1b541faca17a7a1a124d9e288fd27bf66785f3667d788243383ab17700489b69"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/it.lproj/locale.pak",
+      "sha256": "46f98e45d5318afdbc1a3aba293417b9614ad7a64857f1f4cba572721caae252"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/it_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/it_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/it_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ja.lproj/locale.pak",
+      "sha256": "bf6bd5c45090011d7b31f132b3d40c2680eefa37fc6fb9350eeb0664b53b6a74"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ja_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ja_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ja_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/kn.lproj/locale.pak",
+      "sha256": "ec5f56fd2156d401f7af4b36a4270cafd79e791041ab9845a5fd27bed3c9e6df"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/kn_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/kn_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/kn_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ko.lproj/locale.pak",
+      "sha256": "90ab7e280bcbd9450246a5fdcb00e8da0adf2a4f8ab2a452103099c156f6f57f"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ko_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ko_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ko_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/lt.lproj/locale.pak",
+      "sha256": "d1a26f414df9572565075fdf4390266b22c0170b3e3a7a5ab0652e3a449ab30a"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/lt_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/lt_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/lt_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/lv.lproj/locale.pak",
+      "sha256": "3f66acefb4971ec7e8155202f73791a0883346a1ec06bd2cf72c7e9268aa93fe"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/lv_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/lv_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/lv_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ml.lproj/locale.pak",
+      "sha256": "d893ceed36bdb7baf71d2eb615cad01b3b1a216e5ca48fd99aad30d563f3b2f2"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ml_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ml_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ml_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/mr.lproj/locale.pak",
+      "sha256": "a4a23e7f6cbc862848678feabdd9b638692642cf0dc39476b80a5e64557ff45e"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/mr_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/mr_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/mr_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ms.lproj/locale.pak",
+      "sha256": "8123b7dc9dc385fe24191bb51859eeb5ee62e49136cad21dfb4e18e2eb5bc550"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ms_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ms_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ms_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/nb.lproj/locale.pak",
+      "sha256": "fdbf1ebc201f7b283c7e1a675d50f8359b900d14464f8f272b928cb71b461fea"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/nb_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/nb_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/nb_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/nl.lproj/locale.pak",
+      "sha256": "4da245a0bab45ba188672e19213bec86a59138bc3da8f71dcf3d7696dc9e33d7"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/nl_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/nl_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/nl_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pl.lproj/locale.pak",
+      "sha256": "9b31325a11421c096f511b52e78444f46d60fcf0865ec847850011251c677a6c"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pl_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pl_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pl_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/product_logo_32.png",
+      "sha256": "ae841ee4a539c13ac00e29c6e0f85369f2e280b22659a876093bd61cd34be172"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pt_BR.lproj/locale.pak",
+      "sha256": "1a6b23860e970e4801f95b925eb02afc3cbb4a39f97b1db7d8740d825990e4a7"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pt_BR_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pt_BR_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pt_BR_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pt_PT.lproj/locale.pak",
+      "sha256": "86e4515e6ce2279ece9485f42cef53fe6870afa88c7151bb66f85016c10dda49"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pt_PT_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pt_PT_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/pt_PT_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/resources.pak",
+      "sha256": "212eadbf8130c7caadf61ecb37b4b2298405b293bcfc6c1c524de511f76abb13"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ro.lproj/locale.pak",
+      "sha256": "ffe93364980df66a8d3dbc9c1cc1af8d1304f684dd2fa4e4bcf228ddad2414c4"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ro_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ro_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ro_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ru.lproj/locale.pak",
+      "sha256": "7fd3a7433ecfa6ad31a3cdba9f612c847a1b78a8a7be260fc0661a1b402f7b3e"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ru_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ru_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ru_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sk.lproj/locale.pak",
+      "sha256": "1fe8b220a30fa5a62c19603dfe6c7ea3c07e8c697803f21bec0fcd9cf0381a75"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sk_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sk_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sk_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sl.lproj/locale.pak",
+      "sha256": "5ae88f895271ffd8350ebc044a3bd9497c72c7587120baa3272a8863cf564982"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sl_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sl_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sl_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sr.lproj/locale.pak",
+      "sha256": "97874dfd1a2557c9d331dc39cbb41504f84cae28df2bd821a2fa4d6118f3efe8"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sr_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sr_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sr_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sv.lproj/locale.pak",
+      "sha256": "bd7cb0bae010dad6c07c79256985f3593002a3fdb81397c154326e6c45cfe2e9"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sv_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sv_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sv_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sw.lproj/locale.pak",
+      "sha256": "88779a9551bef5d3873d4f7f72fb5d89f757a077faeab5e9cf418f41e64a3b9e"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sw_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sw_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/sw_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ta.lproj/locale.pak",
+      "sha256": "3884502cbdd119cb9f1a264123be115d4d5ae5130e12baa83043835d347eb889"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ta_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ta_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ta_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/te.lproj/locale.pak",
+      "sha256": "eb11f3bbbb025880b0deaede6e6575d7498b74ee974990af478d64b65a05033b"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/te_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/te_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/te_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/th.lproj/locale.pak",
+      "sha256": "09790c3c77542453966eb33c662c150ad351afd2e7a6f1b3fc82a89dde8ef8cd"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/th_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/th_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/th_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/tr.lproj/locale.pak",
+      "sha256": "d66e6ef519a1e4671a64454722f6aceb382fffdc64d6659000deed9e1f2c2638"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/tr_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/tr_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/tr_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/uk.lproj/locale.pak",
+      "sha256": "bba5f019fb7009cf2fc65820f2a51b851b5c53e947e1e5aae87d591ca737a70a"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/uk_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/uk_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/uk_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ur.lproj/locale.pak",
+      "sha256": "b4b0b984f064da47971ba150c3b0bd320b3155d8dadc994d86eef48628c274db"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ur_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ur_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/ur_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/v8_context_snapshot.arm64.bin",
+      "sha256": "0cb3b97e1066096d82c27c30faa502a70e444d17db26fbf569d581d16623aeff"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/vi.lproj/locale.pak",
+      "sha256": "120b2ededde3d8ba60c25273f11e0dfc0d601205e3f685d2ca31a85c1c5b96e2"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/vi_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/vi_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/vi_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/webui_code_cache.arm64.pak",
+      "sha256": "e53ad027b28e8e071b5c8eb83e793da399d61238d6a55fad6335a492767de5b6"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/zh_CN.lproj/locale.pak",
+      "sha256": "069fd8fbb11b83f6e14b3542b13d9c62c068d70799d1848441e6ab4be8071c09"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/zh_CN_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/zh_CN_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/zh_CN_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/zh_TW.lproj/locale.pak",
+      "sha256": "3c2365393625e55b7eb54bc103de394f5b655e6d645b4c810e890148dc8550a1"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/zh_TW_FEMININE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/zh_TW_MASCULINE.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/158.0.8127.18/Resources/zh_TW_NEUTER.lproj/locale.pak",
+      "sha256": "ca73097bd968b363b7145e86b64f3c595e533808b0763dc8863a27fc363cfa51"
+    },
+    {
+      "path": "Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/Current",
+      "symlink": "158.0.8127.18"
+    },
+    {
+      "path": "Contents/Info.plist",
+      "sha256": "64fc4ef7608037e01caf594385072cf8666e4fbad77be1df13e497bf9d5db02f"
+    },
+    {
+      "path": "Contents/MacOS/Google Chrome for Testing",
+      "sha256": "6ac929cf1af41969ed0de43ac88a015ae4b70f92dcc1bfb60871bfa7f141e96d"
+    },
+    {
+      "path": "Contents/PkgInfo",
+      "sha256": "2e923178639849f5232473c3ae9fa451a9df4bc41751b2bf2d40045bc13ddcff"
+    },
+    {
+      "path": "Contents/Resources/Assets.car",
+      "sha256": "e70466610b4bdbb61098baf07d342e8e21a67c34cfd2c53e400d3e588ed2cc4c"
+    },
+    {
+      "path": "Contents/Resources/af.lproj/InfoPlist.strings",
+      "sha256": "17b824e57ec41f794aff5b3b3250e69782066bf09fd3f3f23ce73bbe37a71de0"
+    },
+    {
+      "path": "Contents/Resources/am.lproj/InfoPlist.strings",
+      "sha256": "15869c887da0088edbed8de2e5a16fc083b47199cc028d9738a7da226ea91ced"
+    },
+    {
+      "path": "Contents/Resources/app.icns",
+      "sha256": "3be5d5276c19c48925acc2c6a7896ce238d73b1ca8b74c30724799e2d28223ae"
+    },
+    {
+      "path": "Contents/Resources/ar.lproj/InfoPlist.strings",
+      "sha256": "24b51b392e027be7c2957a7c7483d16daf4a6e12e1ff2c61f4b8319c4786d4e7"
+    },
+    {
+      "path": "Contents/Resources/bg.lproj/InfoPlist.strings",
+      "sha256": "eeb4dea0ffd2795ac156bae47844667cce5945702c61c2479aec148155700d7e"
+    },
+    {
+      "path": "Contents/Resources/bn.lproj/InfoPlist.strings",
+      "sha256": "e832a0221b313459c032a0696e935a0ebd7a685dceecc48ad5736d663898bccd"
+    },
+    {
+      "path": "Contents/Resources/ca.lproj/InfoPlist.strings",
+      "sha256": "c92aa86617e9fa4aa63e736da0b5f075a61bcb772c83da2f383f024b44fce92a"
+    },
+    {
+      "path": "Contents/Resources/com.google.chrome.for.testing.manifest/Contents/Resources/com.google.chrome.for.testing.manifest",
+      "sha256": "102cf8a836f6414d0e098b33d5d61159547139c5a6d7eaa803aef80bd23ce330"
+    },
+    {
+      "path": "Contents/Resources/com.google.chrome.for.testing.manifest/Contents/Resources/en.lproj/Localizable.strings",
+      "sha256": "03475e8a78e9b6fd0965e69afcd1aee304010d4dc7d36360829639461009cbee"
+    },
+    {
+      "path": "Contents/Resources/cs.lproj/InfoPlist.strings",
+      "sha256": "2fa5bcc82d94b28e80970d80823a59ee05cbb774d503f4843b890c8b8e764c2c"
+    },
+    {
+      "path": "Contents/Resources/da.lproj/InfoPlist.strings",
+      "sha256": "6010cb47d34032d6203b44c19fd980ec86f01292a3d95eae0939496ecc9758ad"
+    },
+    {
+      "path": "Contents/Resources/de.lproj/InfoPlist.strings",
+      "sha256": "6c9495c4c907b0ae2e25976f41cdce4b0935fa1a7674f30cbd40c10972d141d0"
+    },
+    {
+      "path": "Contents/Resources/el.lproj/InfoPlist.strings",
+      "sha256": "4ede8ae13ccc4d66cd348f6320717a87d4fcc6cdcdd059e50285dc9cd01534d6"
+    },
+    {
+      "path": "Contents/Resources/en.lproj/InfoPlist.strings",
+      "sha256": "aa88c1b442a50e842eae00597868bb5695493b65f5af0434d37a5d7f57178c76"
+    },
+    {
+      "path": "Contents/Resources/en_GB.lproj/InfoPlist.strings",
+      "sha256": "e43600157050cea882c532e034a96194c6a4dfc95c04d5a080c5173974e7fadb"
+    },
+    {
+      "path": "Contents/Resources/es.lproj/InfoPlist.strings",
+      "sha256": "eb7ecf35bb4f9e100fbd8ecb1979684725c78e0915c2f5c471b4a3b372c37c27"
+    },
+    {
+      "path": "Contents/Resources/es_419.lproj/InfoPlist.strings",
+      "sha256": "4b39ce148852145250788a05f488ccb5f8044283c7ad95b54d41844ce6d2e550"
+    },
+    {
+      "path": "Contents/Resources/et.lproj/InfoPlist.strings",
+      "sha256": "7baa3b56775a43546cbb097291ab286d25d8f66d5202a15433efcd0194fd3d8c"
+    },
+    {
+      "path": "Contents/Resources/fa.lproj/InfoPlist.strings",
+      "sha256": "eec99905d984dec23f1d6d28c84ab2360cf4a7a4178e592bd3103d38cb600103"
+    },
+    {
+      "path": "Contents/Resources/fi.lproj/InfoPlist.strings",
+      "sha256": "cc6e08f5bffcc1c647c86fab7a0242f4eb2edb223eff36449083610cd75662b0"
+    },
+    {
+      "path": "Contents/Resources/fil.lproj/InfoPlist.strings",
+      "sha256": "6d98c9a8bf047e4a030b4282b78c7b07a03ca20105161ec3936fdae2aac098f8"
+    },
+    {
+      "path": "Contents/Resources/fr.lproj/InfoPlist.strings",
+      "sha256": "64b4c88cc85d813948c3ecdd7d1c32ec40ea25a07b94a936ddcb49ddffb20c82"
+    },
+    {
+      "path": "Contents/Resources/gu.lproj/InfoPlist.strings",
+      "sha256": "73057a5cd133dac29a8d5ecf900af64fabf540664cac7c05d1e02f6d099cede1"
+    },
+    {
+      "path": "Contents/Resources/he.lproj/InfoPlist.strings",
+      "sha256": "6268f47cc762741c103eafb576bce9b625c237a663b14ae821f548a72f838c4f"
+    },
+    {
+      "path": "Contents/Resources/hi.lproj/InfoPlist.strings",
+      "sha256": "4ba5ed505e8f1cd3a85cdf1b2f2661178eb7401f4212e2c1e58126086b0cb242"
+    },
+    {
+      "path": "Contents/Resources/hr.lproj/InfoPlist.strings",
+      "sha256": "44dce1307cf4421e2c455253365995a15e6667db8ea7c638c3b1cdc8e3028849"
+    },
+    {
+      "path": "Contents/Resources/hu.lproj/InfoPlist.strings",
+      "sha256": "c2ca1695f62479e196bc7cae3ce47946c29d2add2b404021f56ce94d372f0b54"
+    },
+    {
+      "path": "Contents/Resources/id.lproj/InfoPlist.strings",
+      "sha256": "2b7fcf30af9226e18f608e106f55a27d61425e09a3d6f96f56b036c16cb449ec"
+    },
+    {
+      "path": "Contents/Resources/it.lproj/InfoPlist.strings",
+      "sha256": "0282804812ec6c776598210f58f325dfe1f596fb57ea7380ef1caf63513a6af5"
+    },
+    {
+      "path": "Contents/Resources/ja.lproj/InfoPlist.strings",
+      "sha256": "b21e7e43d929494058dd72ab584b63267e914556028c24dc2220e56447a53137"
+    },
+    {
+      "path": "Contents/Resources/kn.lproj/InfoPlist.strings",
+      "sha256": "bf0f2b2b3b4aa6eef04ac0f0d692570121c29b606dfefc9d5196f964a9266e19"
+    },
+    {
+      "path": "Contents/Resources/ko.lproj/InfoPlist.strings",
+      "sha256": "ac982d1cd04046b5f7de74434e1c73c503d03690c488e7b70b0b7d4867fab49a"
+    },
+    {
+      "path": "Contents/Resources/lt.lproj/InfoPlist.strings",
+      "sha256": "c866fa66e0153cbd8b038e4613d973de7a93ab06a3665e8396bd00176c0a1f53"
+    },
+    {
+      "path": "Contents/Resources/lv.lproj/InfoPlist.strings",
+      "sha256": "395bb9f24f5fcce803ec474f5892e4cf58bc4228ee69b77d3c52097f96d2825c"
+    },
+    {
+      "path": "Contents/Resources/ml.lproj/InfoPlist.strings",
+      "sha256": "3f417e8e4e34ead53fe7cdd19895f75d738035f74029fcf08473e04bb838a2e1"
+    },
+    {
+      "path": "Contents/Resources/mr.lproj/InfoPlist.strings",
+      "sha256": "fb4470afb9920226017902a0931d728a3dd23d4beb7281f8e76041be07e7b9a1"
+    },
+    {
+      "path": "Contents/Resources/ms.lproj/InfoPlist.strings",
+      "sha256": "88191147e51b7f8d677a3eb4aae38c985ff4eb43ff36b052a1b1aef9c1744834"
+    },
+    {
+      "path": "Contents/Resources/nb.lproj/InfoPlist.strings",
+      "sha256": "1dd5417870aa917318fa43c7427f1183c3667b378518cc02bd02b500e76fae13"
+    },
+    {
+      "path": "Contents/Resources/nl.lproj/InfoPlist.strings",
+      "sha256": "11c268155ccc3c91a4ccc5cd67635918df6d274ccd5d6a5e4e8ed5db434a9e03"
+    },
+    {
+      "path": "Contents/Resources/pl.lproj/InfoPlist.strings",
+      "sha256": "c96f4d0fc0608bec867a2cd8126d71a6f1697f01dc0866c4aed9200ecead30b8"
+    },
+    {
+      "path": "Contents/Resources/pt_BR.lproj/InfoPlist.strings",
+      "sha256": "a52ff352102f8b4b755cf79022ae94f46e528d8e54eee00eb1cd9c9fee3ecf27"
+    },
+    {
+      "path": "Contents/Resources/pt_PT.lproj/InfoPlist.strings",
+      "sha256": "1784ec8b404f5842939aaa020227f1a14a83ed12bf3b18ffe7d7372e65ac9bf8"
+    },
+    {
+      "path": "Contents/Resources/ro.lproj/InfoPlist.strings",
+      "sha256": "77add060b834f3d8658d248968a3ee629f2586278aed92819fab4d46d71ced79"
+    },
+    {
+      "path": "Contents/Resources/ru.lproj/InfoPlist.strings",
+      "sha256": "3915744d0adcaef9bad3745e6a1a5685f7f59ed43ba36aadccacdf34496e38e7"
+    },
+    {
+      "path": "Contents/Resources/scripting.sdef",
+      "sha256": "cd0453c2e166a0b664f8ea1d1ac04b53a54eed14835569b6104a7823dbb950f2"
+    },
+    {
+      "path": "Contents/Resources/sk.lproj/InfoPlist.strings",
+      "sha256": "40d297062b96ef88e0d51ff34a0c86d7adf50152a0b38e8b47870e1477995464"
+    },
+    {
+      "path": "Contents/Resources/sl.lproj/InfoPlist.strings",
+      "sha256": "ea442abfa065f5615923cb965dd22efa037d9b06c7aff7fbee9590f43a1b4b5f"
+    },
+    {
+      "path": "Contents/Resources/sr.lproj/InfoPlist.strings",
+      "sha256": "5820257c54f5cd1ef9ceb4cf4e7fbe9c4fcdce5c9db9440e3e72efcf804785e9"
+    },
+    {
+      "path": "Contents/Resources/sv.lproj/InfoPlist.strings",
+      "sha256": "d78c00d98bb714a6d81fbc7703334fd191b87cc87aca14d74d5504fce32f572d"
+    },
+    {
+      "path": "Contents/Resources/sw.lproj/InfoPlist.strings",
+      "sha256": "e2f77ac633104f9120f6f4ef204a26855225cd5d7b810949b3d872566132fc21"
+    },
+    {
+      "path": "Contents/Resources/ta.lproj/InfoPlist.strings",
+      "sha256": "152091bc999659cc2fba8f9432162f3e2c0c75220977f87771d8d19248321ecb"
+    },
+    {
+      "path": "Contents/Resources/te.lproj/InfoPlist.strings",
+      "sha256": "ce97211fdbdc7c19d196bf24329b6d43200d1dcd82ddbeb2879b7294ad458bbf"
+    },
+    {
+      "path": "Contents/Resources/th.lproj/InfoPlist.strings",
+      "sha256": "8e1df1dadea5bc7c5f8a8d5a15db5893f4cbb07af45c5107fbda160aee20cc36"
+    },
+    {
+      "path": "Contents/Resources/tr.lproj/InfoPlist.strings",
+      "sha256": "a961dba095a40eb8da63fa508928aac765c2b3f7f9385861640624fd2beb6ef5"
+    },
+    {
+      "path": "Contents/Resources/uk.lproj/InfoPlist.strings",
+      "sha256": "2fa7fe2f3e2641f4c6975c2936bf9ccce14a4009be1ace38b736daef9669d185"
+    },
+    {
+      "path": "Contents/Resources/ur.lproj/InfoPlist.strings",
+      "sha256": "6b4be07ed082e985f5bbef4c55b8b24b3a52a7efa38344d2992048e90e9cfc01"
+    },
+    {
+      "path": "Contents/Resources/vi.lproj/InfoPlist.strings",
+      "sha256": "eea2aa3baf956bcbc5fecceddae3bf8e8d93f3d20c2132b48a3d7d11922b8731"
+    },
+    {
+      "path": "Contents/Resources/zh_CN.lproj/InfoPlist.strings",
+      "sha256": "f1e87b66a1cfd2516e82694c6dd0365e5b606f5e1d4f5beb7ccefa8fb8888410"
+    },
+    {
+      "path": "Contents/Resources/zh_TW.lproj/InfoPlist.strings",
+      "sha256": "181a34b8c4ad811a08843034cf92e46c532a0136bb30b6333556b2aea3ae85c5"
+    }
+  ],
+  "codesign": {
+    "source_and_copy_exit_code": 1,
+    "same_diagnostic": "code has no resources but signature indicates they must be present",
+    "original_preexisting_condition": true,
+    "no_resign_no_gatekeeper_or_xattr_change": true
+  },
+  "scope": "Same already installed Playwright Chrome158 bytes; no new download or software version. Original accepted browser is untouched."
+}

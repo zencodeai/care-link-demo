@@ -1,0 +1,29 @@
+{
+  "scope": "Retained existing synthetic resources only. No credentials, narrative, grants or proofs copied.",
+  "source": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-final011.json",
+    "sha256": "90fe804b4176b75e2191bd6b5fb8186b9c9cb4ec46288f26a3fc907c9497c755"
+  },
+  "pid": {
+    "account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+    "conversation_id": "9511e9cf-bb8e-49c8-a46b-496015f26a09",
+    "plan_id": "9990438f-9536-469a-8f12-6e6e6735e9a8"
+  },
+  "carer": {
+    "account_id": "fb881f96-e088-429c-a404-5208f22b4068",
+    "conversation_id": "949c9d42-8e86-4848-b71b-48af7297734b",
+    "report_id": "e9335825-37c5-4147-9f4d-a8e24f1d11f7"
+  },
+  "professional": {
+    "account_id": "42dfc3a0-58f2-40d7-97c9-768d07dcd315",
+    "conversation_id": "112e9dc4-749f-469c-8c0c-1511ba389d1f",
+    "report_id": "696c96d3-c1f7-45c0-b3d8-d55fe796d0d7"
+  },
+  "worker1": {
+    "account_id": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+    "conversation_id": "9511e9cf-bb8e-49c8-a46b-496015f26a09",
+    "plan_id": "9990438f-9536-469a-8f12-6e6e6735e9a8",
+    "old_grants_remain_revoked": true,
+    "new_exact_scope_grant": "not_created; actual PID preview/commit required for positive view"
+  }
+}

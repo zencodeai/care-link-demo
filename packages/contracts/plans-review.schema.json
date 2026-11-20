@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:care-link:plans-review:1",
+  "$defs": {
+    "PlansReviewContext": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "const": false
+            }
+          },
+          "required": [
+            "enabled"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "const": true
+            },
+            "mode": {
+              "const": "plans"
+            },
+            "authentication_mode": {
+              "const": "automatic_review"
+            },
+            "environment": {
+              "const": "synthetic-review"
+            },
+            "origin": {
+              "type": "string",
+              "format": "uri"
+            },
+            "run_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "slot_id": {
+              "enum": [
+                "pid",
+                "carer",
+                "professional",
+                "worker1"
+              ]
+            },
+            "account_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "role": {
+              "enum": [
+                "pid",
+                "carer",
+                "professional_participant",
+                "worker"
+              ]
+            },
+            "run_state": {
+              "enum": [
+                "active",
+                "closing",
+                "closed"
+              ]
+            },
+            "started_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "enabled",
+            "mode",
+            "authentication_mode",
+            "environment",
+            "origin",
+            "run_id",
+            "slot_id",
+            "account_id",
+            "role",
+            "run_state",
+            "started_at",
+            "expires_at"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "PlansReviewWorkspace": {
+      "type": "object",
+      "properties": {
+        "workspace": {
+          "$ref": "#/$defs/ReviewWorkspace"
+        },
+        "selection": {
+          "type": "object",
+          "properties": {
+            "session_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "plan_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "recipient_id": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Id"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "session_id",
+            "plan_id",
+            "recipient_id"
+          ],
+          "additionalProperties": false
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "workspace",
+        "selection",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

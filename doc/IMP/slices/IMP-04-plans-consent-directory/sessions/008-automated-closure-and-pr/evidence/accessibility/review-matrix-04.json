@@ -1,0 +1,689 @@
+{
+  "version": "imp04.review-accessibility.v1",
+  "observations": [
+    {
+      "slot": "pid",
+      "locale": "en-CA",
+      "status": "failed",
+      "checks": {
+        "isolated_empty_cookie_context": true
+      },
+      "cleanup": {
+        "zoom_restored": true,
+        "context_closed": true,
+        "profile_removed": true
+      },
+      "forbidden_write_attempts": 0,
+      "stage": "launch",
+      "error_category": "driver_timeout"
+    },
+    {
+      "slot": "pid",
+      "locale": "fr-CA",
+      "status": "passed",
+      "checks": {
+        "isolated_empty_cookie_context": true,
+        "verified_https": true,
+        "automatic_role_sign_in": true,
+        "populated_authorized_projection": true,
+        "populated_directory": true,
+        "native_browser_200_percent": true,
+        "layout_at_200_percent": true,
+        "keyboard_at_200_percent": true,
+        "axe_at_200_percent": true,
+        "no_business_writes": true
+      },
+      "cleanup": {
+        "logout": true,
+        "zoom_restored": true,
+        "context_closed": true,
+        "profile_removed": true
+      },
+      "forbidden_write_attempts": 0,
+      "account_id": "c01c9af4-42d7-5952-b9d1-669fdf416725",
+      "projection": {
+        "kind": "plan",
+        "field_count": 3,
+        "field_scope": [
+          "plan.medication_report",
+          "plan.strategies"
+        ],
+        "disputed_count": 2,
+        "revision": "4"
+      },
+      "directory": {
+        "count": 4,
+        "states": [
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "suspended",
+            "expired": true
+          }
+        ],
+        "ttl_preserved": true,
+        "unknown_availability": 3,
+        "unavailable": 1
+      },
+      "zoom": {
+        "baseline": {
+          "dpr": 1,
+          "width": 1440,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "enlarged": {
+          "dpr": 2,
+          "width": 720,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "native_ratio": 2
+      },
+      "layout": {
+        "viewport_width": 720,
+        "document_width": 720,
+        "visible_controls": 26,
+        "clipped_controls": []
+      },
+      "keyboard": {
+        "focusable_controls": 25,
+        "distinct_controls_reached": 25,
+        "unnamed_or_offscreen_focus": 0,
+        "reverse_tab_exercised": true
+      },
+      "axe": {
+        "violations": [],
+        "passed": 24,
+        "incomplete": []
+      },
+      "cleanup_http": {
+        "passed": true,
+        "csrf_status": 200,
+        "logout_status": 200,
+        "session_after_logout": 401
+      }
+    },
+    {
+      "slot": "carer",
+      "locale": "en-CA",
+      "status": "passed",
+      "checks": {
+        "isolated_empty_cookie_context": true,
+        "verified_https": true,
+        "automatic_role_sign_in": true,
+        "populated_authorized_projection": true,
+        "populated_directory": true,
+        "native_browser_200_percent": true,
+        "layout_at_200_percent": true,
+        "keyboard_at_200_percent": true,
+        "axe_at_200_percent": true,
+        "no_business_writes": true
+      },
+      "cleanup": {
+        "logout": true,
+        "zoom_restored": true,
+        "context_closed": true,
+        "profile_removed": true
+      },
+      "forbidden_write_attempts": 0,
+      "account_id": "bd0ad4c5-d4bc-5c59-8fa1-b2e1644307e7",
+      "projection": {
+        "kind": "own_reports",
+        "count": 1,
+        "attributed_to_current_actor": true,
+        "unverified": true
+      },
+      "directory": {
+        "count": 4,
+        "states": [
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "suspended",
+            "expired": true
+          }
+        ],
+        "ttl_preserved": true,
+        "unknown_availability": 3,
+        "unavailable": 1
+      },
+      "zoom": {
+        "baseline": {
+          "dpr": 1,
+          "width": 1440,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "enlarged": {
+          "dpr": 2,
+          "width": 720,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "native_ratio": 2
+      },
+      "layout": {
+        "viewport_width": 720,
+        "document_width": 720,
+        "visible_controls": 12,
+        "clipped_controls": []
+      },
+      "keyboard": {
+        "focusable_controls": 12,
+        "distinct_controls_reached": 12,
+        "unnamed_or_offscreen_focus": 0,
+        "reverse_tab_exercised": true
+      },
+      "axe": {
+        "violations": [],
+        "passed": 23,
+        "incomplete": []
+      },
+      "cleanup_http": {
+        "passed": true,
+        "csrf_status": 200,
+        "logout_status": 200,
+        "session_after_logout": 401
+      }
+    },
+    {
+      "slot": "carer",
+      "locale": "fr-CA",
+      "status": "passed",
+      "checks": {
+        "isolated_empty_cookie_context": true,
+        "verified_https": true,
+        "automatic_role_sign_in": true,
+        "populated_authorized_projection": true,
+        "populated_directory": true,
+        "native_browser_200_percent": true,
+        "layout_at_200_percent": true,
+        "keyboard_at_200_percent": true,
+        "axe_at_200_percent": true,
+        "no_business_writes": true
+      },
+      "cleanup": {
+        "logout": true,
+        "zoom_restored": true,
+        "context_closed": true,
+        "profile_removed": true
+      },
+      "forbidden_write_attempts": 0,
+      "account_id": "bd0ad4c5-d4bc-5c59-8fa1-b2e1644307e7",
+      "projection": {
+        "kind": "own_reports",
+        "count": 1,
+        "attributed_to_current_actor": true,
+        "unverified": true
+      },
+      "directory": {
+        "count": 4,
+        "states": [
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "suspended",
+            "expired": true
+          }
+        ],
+        "ttl_preserved": true,
+        "unknown_availability": 3,
+        "unavailable": 1
+      },
+      "zoom": {
+        "baseline": {
+          "dpr": 1,
+          "width": 1440,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "enlarged": {
+          "dpr": 2,
+          "width": 720,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "native_ratio": 2
+      },
+      "layout": {
+        "viewport_width": 720,
+        "document_width": 720,
+        "visible_controls": 12,
+        "clipped_controls": []
+      },
+      "keyboard": {
+        "focusable_controls": 12,
+        "distinct_controls_reached": 12,
+        "unnamed_or_offscreen_focus": 0,
+        "reverse_tab_exercised": true
+      },
+      "axe": {
+        "violations": [],
+        "passed": 23,
+        "incomplete": []
+      },
+      "cleanup_http": {
+        "passed": true,
+        "csrf_status": 200,
+        "logout_status": 200,
+        "session_after_logout": 401
+      }
+    },
+    {
+      "slot": "professional",
+      "locale": "en-CA",
+      "status": "passed",
+      "checks": {
+        "isolated_empty_cookie_context": true,
+        "verified_https": true,
+        "automatic_role_sign_in": true,
+        "populated_authorized_projection": true,
+        "populated_directory": true,
+        "native_browser_200_percent": true,
+        "layout_at_200_percent": true,
+        "keyboard_at_200_percent": true,
+        "axe_at_200_percent": true,
+        "no_business_writes": true
+      },
+      "cleanup": {
+        "logout": true,
+        "zoom_restored": true,
+        "context_closed": true,
+        "profile_removed": true
+      },
+      "forbidden_write_attempts": 0,
+      "account_id": "8b020d31-6e9f-5f8b-935b-a4abd1f4870b",
+      "projection": {
+        "kind": "own_reports",
+        "count": 1,
+        "attributed_to_current_actor": true,
+        "unverified": true
+      },
+      "directory": {
+        "count": 4,
+        "states": [
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "suspended",
+            "expired": true
+          }
+        ],
+        "ttl_preserved": true,
+        "unknown_availability": 3,
+        "unavailable": 1
+      },
+      "zoom": {
+        "baseline": {
+          "dpr": 1,
+          "width": 1440,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "enlarged": {
+          "dpr": 2,
+          "width": 720,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "native_ratio": 2
+      },
+      "layout": {
+        "viewport_width": 720,
+        "document_width": 720,
+        "visible_controls": 12,
+        "clipped_controls": []
+      },
+      "keyboard": {
+        "focusable_controls": 12,
+        "distinct_controls_reached": 12,
+        "unnamed_or_offscreen_focus": 0,
+        "reverse_tab_exercised": true
+      },
+      "axe": {
+        "violations": [],
+        "passed": 23,
+        "incomplete": []
+      },
+      "cleanup_http": {
+        "passed": true,
+        "csrf_status": 200,
+        "logout_status": 200,
+        "session_after_logout": 401
+      }
+    },
+    {
+      "slot": "professional",
+      "locale": "fr-CA",
+      "status": "passed",
+      "checks": {
+        "isolated_empty_cookie_context": true,
+        "verified_https": true,
+        "automatic_role_sign_in": true,
+        "populated_authorized_projection": true,
+        "populated_directory": true,
+        "native_browser_200_percent": true,
+        "layout_at_200_percent": true,
+        "keyboard_at_200_percent": true,
+        "axe_at_200_percent": true,
+        "no_business_writes": true
+      },
+      "cleanup": {
+        "logout": true,
+        "zoom_restored": true,
+        "context_closed": true,
+        "profile_removed": true
+      },
+      "forbidden_write_attempts": 0,
+      "account_id": "8b020d31-6e9f-5f8b-935b-a4abd1f4870b",
+      "projection": {
+        "kind": "own_reports",
+        "count": 1,
+        "attributed_to_current_actor": true,
+        "unverified": true
+      },
+      "directory": {
+        "count": 4,
+        "states": [
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "suspended",
+            "expired": true
+          }
+        ],
+        "ttl_preserved": true,
+        "unknown_availability": 3,
+        "unavailable": 1
+      },
+      "zoom": {
+        "baseline": {
+          "dpr": 1,
+          "width": 1440,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "enlarged": {
+          "dpr": 2,
+          "width": 720,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "native_ratio": 2
+      },
+      "layout": {
+        "viewport_width": 720,
+        "document_width": 720,
+        "visible_controls": 12,
+        "clipped_controls": []
+      },
+      "keyboard": {
+        "focusable_controls": 12,
+        "distinct_controls_reached": 12,
+        "unnamed_or_offscreen_focus": 0,
+        "reverse_tab_exercised": true
+      },
+      "axe": {
+        "violations": [],
+        "passed": 23,
+        "incomplete": []
+      },
+      "cleanup_http": {
+        "passed": true,
+        "csrf_status": 200,
+        "logout_status": 200,
+        "session_after_logout": 401
+      }
+    },
+    {
+      "slot": "worker1",
+      "locale": "en-CA",
+      "status": "passed",
+      "checks": {
+        "isolated_empty_cookie_context": true,
+        "verified_https": true,
+        "automatic_role_sign_in": true,
+        "populated_authorized_projection": true,
+        "populated_directory": true,
+        "native_browser_200_percent": true,
+        "layout_at_200_percent": true,
+        "keyboard_at_200_percent": true,
+        "axe_at_200_percent": true,
+        "no_business_writes": true
+      },
+      "cleanup": {
+        "logout": true,
+        "zoom_restored": true,
+        "context_closed": true,
+        "profile_removed": true
+      },
+      "forbidden_write_attempts": 0,
+      "account_id": "1ff177ca-3082-5f3e-904f-dc99dd8753a9",
+      "projection": {
+        "kind": "plan",
+        "field_count": 2,
+        "field_scope": [
+          "plan.strategies"
+        ],
+        "disputed_count": 2,
+        "revision": "4"
+      },
+      "directory": {
+        "count": 4,
+        "states": [
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "suspended",
+            "expired": true
+          }
+        ],
+        "ttl_preserved": true,
+        "unknown_availability": 3,
+        "unavailable": 1
+      },
+      "zoom": {
+        "baseline": {
+          "dpr": 1,
+          "width": 1440,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "enlarged": {
+          "dpr": 2,
+          "width": 720,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "native_ratio": 2
+      },
+      "layout": {
+        "viewport_width": 720,
+        "document_width": 720,
+        "visible_controls": 15,
+        "clipped_controls": []
+      },
+      "keyboard": {
+        "focusable_controls": 14,
+        "distinct_controls_reached": 14,
+        "unnamed_or_offscreen_focus": 0,
+        "reverse_tab_exercised": true
+      },
+      "axe": {
+        "violations": [],
+        "passed": 23,
+        "incomplete": []
+      },
+      "cleanup_http": {
+        "passed": true,
+        "csrf_status": 200,
+        "logout_status": 200,
+        "session_after_logout": 401
+      }
+    },
+    {
+      "slot": "worker1",
+      "locale": "fr-CA",
+      "status": "passed",
+      "checks": {
+        "isolated_empty_cookie_context": true,
+        "verified_https": true,
+        "automatic_role_sign_in": true,
+        "populated_authorized_projection": true,
+        "populated_directory": true,
+        "native_browser_200_percent": true,
+        "layout_at_200_percent": true,
+        "keyboard_at_200_percent": true,
+        "axe_at_200_percent": true,
+        "no_business_writes": true
+      },
+      "cleanup": {
+        "logout": true,
+        "zoom_restored": true,
+        "context_closed": true,
+        "profile_removed": true
+      },
+      "forbidden_write_attempts": 0,
+      "account_id": "1ff177ca-3082-5f3e-904f-dc99dd8753a9",
+      "projection": {
+        "kind": "plan",
+        "field_count": 2,
+        "field_scope": [
+          "plan.strategies"
+        ],
+        "disputed_count": 2,
+        "revision": "4"
+      },
+      "directory": {
+        "count": 4,
+        "states": [
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "stale",
+            "expired": true
+          },
+          {
+            "state": "suspended",
+            "expired": true
+          }
+        ],
+        "ttl_preserved": true,
+        "unknown_availability": 3,
+        "unavailable": 1
+      },
+      "zoom": {
+        "baseline": {
+          "dpr": 1,
+          "width": 1440,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "enlarged": {
+          "dpr": 2,
+          "width": 720,
+          "outer": 1440,
+          "pinch": 1
+        },
+        "native_ratio": 2
+      },
+      "layout": {
+        "viewport_width": 720,
+        "document_width": 720,
+        "visible_controls": 15,
+        "clipped_controls": []
+      },
+      "keyboard": {
+        "focusable_controls": 14,
+        "distinct_controls_reached": 14,
+        "unnamed_or_offscreen_focus": 0,
+        "reverse_tab_exercised": true
+      },
+      "axe": {
+        "violations": [],
+        "passed": 23,
+        "incomplete": []
+      },
+      "cleanup_http": {
+        "passed": true,
+        "csrf_status": 200,
+        "logout_status": 200,
+        "session_after_logout": 401
+      }
+    }
+  ],
+  "generated_at": "2026-11-20T16:53:44.562Z",
+  "run_id": "049d31b6-b936-42f1-bbd8-9841fade8bda",
+  "axe_version": "4.14.0",
+  "axe_sha256": "20c09fe157a8a34a30e241aaa1fcdade657734f08ab379ecfbeb7d45cc46e878",
+  "harness_sha256": "78c9e50ad4680ac9f0054cae26392685cb4714e552086bcefa8bcfc931cab56a",
+  "human_review": false,
+  "status": "failed"
+}

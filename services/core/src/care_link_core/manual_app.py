@@ -16,6 +16,8 @@ from starlette.responses import JSONResponse, StreamingResponse
 
 from .manual_channels import ManualChannels
 from .manual_ports import BrowserSecurity, ManualGateway
+from .planning_ports import PlanningGateway
+from .plans_review_context import PlansReviewContexts
 from .review_channels import ReviewViews
 from .review_context import ReviewContexts
 
@@ -64,6 +66,9 @@ def create_manual_app(
     channels: ManualChannels,
     *,
     review_contexts: ReviewContexts | None = None,
+    plans_review_contexts: PlansReviewContexts | None = None,
+    review_views: ReviewViews | None = None,
+    planning: PlanningGateway | None = None,
 ) -> FastAPI:
     """No permissive defaults; existing developer application stays separate."""
     app = FastAPI(title="CARE-Link manual BFF", docs_url=None, redoc_url=None, openapi_url=None)
@@ -123,7 +128,11 @@ def create_manual_app(
     app.add_exception_handler(ManualError, error_response)
     app.add_exception_handler(ContractError, error_response)
 
-    views = ReviewViews(channels)
+    if plans_review_contexts is not None and plans_review_contexts is not review_contexts:
+        raise ValueError("Plans review must share the exact authenticated origin registry")
+    if review_views is not None and review_views.channels is not channels:
+        raise ValueError("Review view custody must use the exact serving channels")
+    views = review_views if review_views is not None else ReviewViews(channels)
 
     async def actor(
         request: Request, *, mutation: bool = False, require_view: bool = True
@@ -150,6 +159,11 @@ def create_manual_app(
             if current.review_run_id and require_view:
                 views.require(current, request.headers.get("x-review-view", ""))
         return current
+
+    if planning is not None:
+        from .planning_routes import attach_planning_routes
+
+        attach_planning_routes(app, planning, actor)
 
     def mutation_route(name: str, output: str, method: Mutation) -> Callable[[Request], object]:
         async def handle(request: Request) -> JSONResponse:
@@ -388,4 +402,7 @@ def create_manual_app(
         add_review_routes(
             app, cast(ReviewGateway, gateway), channels, views, actor, review_contexts
         )
+    from .plans_review_routes import WorkspaceGateway, attach_plans_review_routes
+
+    attach_plans_review_routes(app, cast(WorkspaceGateway, gateway), actor, plans_review_contexts)
     return app

@@ -1,0 +1,8 @@
+{
+  "target": "care-link-imp04-002-core-app",
+  "current_container_id": "4b4147a94a6b462a597a8538d17f7c10c813d9d49d7d479bab7adf66879a7145",
+  "image_before": "sha256:92be415d5a55f72af658f53b28452500b8e82ff4e3f928c36e3d101cfb1c600c",
+  "image_after": "sha256:9d01013cb67a7a6dabfebc8e54b64d15742ee2376fed3757ab612d3db68ba108",
+  "delta": "Private trace records fixed classification for nonJSON proxy failures; no body, permissions, clock, deadline or configuration expansion",
+  "same_original_trace_lease": true
+}

@@ -1,0 +1,128 @@
+{
+  "target": "care-link-imp04-002",
+  "runtime_role_only": true,
+  "columns": [
+    "pid",
+    "state",
+    "wait_event_type",
+    "wait_event",
+    "blocking_pids",
+    "query_age_ms",
+    "table_category"
+  ],
+  "samples": [
+    {
+      "elapsed_ms": 8678,
+      "rows": [
+        [
+          17308,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "13",
+          "other"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8704,
+      "rows": [
+        [
+          17308,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "audit"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8935,
+      "rows": [
+        [
+          17323,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "7",
+          "other"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8961,
+      "rows": [
+        [
+          17323,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "3",
+          "other"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 9142,
+      "rows": [
+        [
+          17344,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "other"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 9167,
+      "rows": [
+        [
+          17344,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "26",
+          "other"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 9377,
+      "rows": [
+        [
+          17359,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "12",
+          "other"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 9403,
+      "rows": [
+        [
+          17359,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "other"
+        ]
+      ]
+    }
+  ],
+  "sql_or_content_returned": false
+}

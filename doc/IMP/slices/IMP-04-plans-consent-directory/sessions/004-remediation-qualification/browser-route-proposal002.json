@@ -1,0 +1,12 @@
+{
+  "target": "care-link-imp04-002",
+  "browser_id": "b931b72ef3a66856086858cd6bc4422002b2e3d477fd441416e0038ccae73c8f",
+  "ingress_id": "634f88b3c4c039e262c9d53f028c35fe5909483185664667d09d987570c87ded",
+  "address": "172.29.47.3",
+  "temporary_browser_args": [
+    "--host-resolver-rules=MAP plans.localhost 172.29.47.3",
+    "--proxy-bypass-list=<-loopback>;plans.localhost"
+  ],
+  "scope": "Qualification browser only: direct main-origin route to the already owned shared ingress. Identity-provider origin retains existing broker forwarding. Same HTTPS hostname/native TLS, budgets, actors, server authorization/deadlines and no host DNS/trust changes.",
+  "delta_from_first_probe": "Apply implicit-loopback subtraction before explicit plans.localhost bypass, so the last matching explicit rule selects the owned ingress route."
+}

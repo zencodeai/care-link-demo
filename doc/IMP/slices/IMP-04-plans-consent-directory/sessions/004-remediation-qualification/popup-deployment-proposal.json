@@ -1,0 +1,37 @@
+{
+  "target": "care-link-imp04-002-core-app",
+  "current_container_id": "6ac587e91eaf79a9cf0a140c537004d99c971f086d5ed03457b44b1aabf67f9a",
+  "image_before": "sha256:9d01013cb67a7a6dabfebc8e54b64d15742ee2376fed3757ab612d3db68ba108",
+  "image_after": "sha256:862aad546f83b6d266b6fcfbce6ad2880b48a05ca7f796cef2aa126efa060dda",
+  "delta": "Public web popup lifecycle fix only: acquire existing UI channel before opening provider window; close own blank popup if start fails. Backend controls/deadlines unchanged; temporary trace marker absent/default off.",
+  "specification": {
+    "name": "care-link-imp04-002-core-app",
+    "image": "sha256:862aad546f83b6d266b6fcfbce6ad2880b48a05ca7f796cef2aa126efa060dda",
+    "args": [
+      "python",
+      "-m",
+      "tools.imp04_deployment.serve",
+      "--root",
+      "/run/care-link-imp03-002/configuration",
+      "--role",
+      "core"
+    ],
+    "mounts": [
+      "type=volume,source=care-link-imp04-002-core-config,target=/run/care-link-imp03-002/configuration/core",
+      "type=volume,source=care-link-imp04-002-core-backend,target=/run/care-link-imp03-002/core/backend",
+      "type=volume,source=care-link-imp04-002-core-outbound,target=/run/care-link-imp03-002/core/outbound,readonly",
+      "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly"
+    ],
+    "user": "22012:22012",
+    "cpus": "1",
+    "memory": "256m",
+    "groups": [
+      "22002",
+      "22999"
+    ],
+    "tmpfs": [
+      "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+    ]
+  },
+  "retained": "Exact current UID, budgets, mounts, networks, ports, commands, rights and all state; no accepted environment change"
+}

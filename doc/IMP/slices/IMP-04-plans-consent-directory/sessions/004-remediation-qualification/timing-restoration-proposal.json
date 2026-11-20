@@ -1,0 +1,40 @@
+{
+  "target": "care-link-imp04-002-data-app",
+  "current_container_id": "76d74f4815541967a15825f1320cee6d6c018c8d83594ee358cd930636111eb6",
+  "image_unchanged": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9",
+  "delta": "Remove CARE_LINK_IMP04_QUALIFICATION; restore default Composition after completed A03/A04/authority-loss. All volumes, historical receipts and restrictions retained.",
+  "specification": {
+    "name": "care-link-imp04-002-data-app",
+    "image": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9",
+    "args": [
+      "python",
+      "-m",
+      "tools.imp04_deployment.serve",
+      "--root",
+      "/run/care-link-imp03-002/configuration",
+      "--role",
+      "data",
+      "--forward",
+      "5432",
+      "22042",
+      "/run/care-link-imp03-002/connectors/data-db/forward.sock"
+    ],
+    "mounts": [
+      "type=volume,source=care-link-imp04-002-data-config,target=/run/care-link-imp03-002/configuration/data",
+      "type=volume,source=care-link-imp04-002-data-backend,target=/run/care-link-imp03-002/data/backend",
+      "type=volume,source=care-link-imp04-002-data-outbound,target=/run/care-link-imp03-002/data/outbound,readonly",
+      "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly",
+      "type=volume,source=care-link-imp04-002-data-db,target=/run/care-link-imp03-002/connectors/data-db,readonly"
+    ],
+    "user": "22013:22013",
+    "cpus": "1",
+    "memory": "256m",
+    "groups": [
+      "22002",
+      "22999"
+    ],
+    "tmpfs": [
+      "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "preparation_authorized": true,
+  "source": "current user instruction quoted in work-packet.json",
+  "deployment_authorized": false,
+  "deployment_review_decision": null,
+  "G-04_decision": null,
+  "participant_admission": false,
+  "next_slice_activated": false,
+  "commit_push_authorized": false
+}

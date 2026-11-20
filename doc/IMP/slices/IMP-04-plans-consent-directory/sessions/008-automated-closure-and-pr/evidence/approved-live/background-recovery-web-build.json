@@ -1,0 +1,29 @@
+{
+  "profile": "imp04-plans-002",
+  "main_origin": "https://plans.localhost:30443",
+  "origins": {
+    "VITE_OIDC_ORIGIN": "https://id.plans.localhost:31443",
+    "VITE_HELP_ORIGIN": "https://help.localhost:19443",
+    "VITE_STATIC_ORIGIN": "https://static.localhost:21443"
+  },
+  "scope": "Public build configuration only; no actor credentials or tokens",
+  "files": [
+    {
+      "path": "apps/web/dist/assets/index-BH7eaAeh.js",
+      "sha256": "7ce91512d77221b49aa39acc21ebacffa5e758f0127665a83da18c8841e7089d"
+    },
+    {
+      "path": "apps/web/dist/assets/index-CKHAkj2S.css",
+      "sha256": "072c1fe4864bbb2e3af4fe85bfc5bf778198e3e9fcb36a2e7768773ce0ac80ac"
+    },
+    {
+      "path": "apps/web/dist/index.html",
+      "sha256": "cdb5922d9dc4f6ab960e63cb0a541e4c6a287d10fa7e4c67c0eef3b726e4aaa5"
+    },
+    {
+      "path": "apps/web/dist/qualification-origins.json",
+      "sha256": "95374fdae6439bda883dfd9d1cf5d95a8c8b1b8fadc0c454a725f58172bb199c"
+    }
+  ],
+  "fingerprint": "494770ab4858a449f6c6f9a744d11bd446e3f2cfb28d25671ba0571885a72b2a"
+}

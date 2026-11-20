@@ -1,0 +1,8 @@
+{
+  "method": "Actual chrome://settings/appearance UI navigation in the existing isolated browser context",
+  "outcome": "unsupported",
+  "reason": "Playwright/Chrome refuses native Settings in isolated browser contexts; requires a persistent browser context",
+  "browser_changed": false,
+  "css_or_pinch_substituted": false,
+  "actual_200_percent_claimed": false
+}

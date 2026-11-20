@@ -69,3 +69,24 @@ def test_view_handle_is_bound_to_exact_session_run_and_actor():
             views.require(changed, active["view_id"])
     with pytest.raises(ManualError):
         views.require(subject, "")
+
+
+def test_retiring_one_run_invalidates_only_its_views_and_transport():
+    first, other = actor(), actor()
+    channels = ManualChannels()
+    views = ReviewViews(channels)
+    first_page = views.register(first)
+    views.register(first)
+    other_page = views.register(other)
+    with channels.open(first) as one, channels.open(other) as two:
+        assert views.retire_run(first.review_run_id) == 2
+        assert not channels.current(
+            one.account_id, one.browser_session_digest, one.transport_generation
+        )
+        assert channels.current(
+            two.account_id, two.browser_session_digest, two.transport_generation
+        )
+        with pytest.raises(ManualError):
+            views.require(first, first_page["view_id"])
+        views.require(other, other_page["view_id"])
+        assert views.retire_run(first.review_run_id) == 0

@@ -1,0 +1,79 @@
+{
+  "version": "imp04.native-zoom.v1",
+  "observations": [
+    {
+      "slot": "pid",
+      "account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "role": "pid",
+      "locale": "en-CA",
+      "status": "failed",
+      "stage": "baseline",
+      "profile_removed": true
+    },
+    {
+      "slot": "pid",
+      "account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "role": "pid",
+      "locale": "fr-CA",
+      "status": "failed",
+      "stage": "baseline",
+      "profile_removed": true
+    },
+    {
+      "slot": "carer",
+      "account_id": "fb881f96-e088-429c-a404-5208f22b4068",
+      "role": "carer",
+      "locale": "en-CA",
+      "status": "failed",
+      "stage": "baseline",
+      "profile_removed": true
+    },
+    {
+      "slot": "carer",
+      "account_id": "fb881f96-e088-429c-a404-5208f22b4068",
+      "role": "carer",
+      "locale": "fr-CA",
+      "status": "failed",
+      "stage": "baseline",
+      "profile_removed": true
+    },
+    {
+      "slot": "professional",
+      "account_id": "42dfc3a0-58f2-40d7-97c9-768d07dcd315",
+      "role": "professional_participant",
+      "locale": "en-CA",
+      "status": "failed",
+      "stage": "baseline",
+      "profile_removed": true
+    },
+    {
+      "slot": "professional",
+      "account_id": "42dfc3a0-58f2-40d7-97c9-768d07dcd315",
+      "role": "professional_participant",
+      "locale": "fr-CA",
+      "status": "failed",
+      "stage": "baseline",
+      "profile_removed": true
+    },
+    {
+      "slot": "worker1",
+      "account_id": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+      "role": "worker",
+      "locale": "en-CA",
+      "status": "failed",
+      "stage": "baseline",
+      "profile_removed": true
+    },
+    {
+      "slot": "worker1",
+      "account_id": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+      "role": "worker",
+      "locale": "fr-CA",
+      "status": "failed",
+      "stage": "baseline",
+      "profile_removed": true
+    }
+  ],
+  "status": "failed",
+  "review_scope": "Automated native zoom and keyboard checks; human review remains separate"
+}

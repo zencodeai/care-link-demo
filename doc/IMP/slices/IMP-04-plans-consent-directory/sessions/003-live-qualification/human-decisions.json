@@ -1,0 +1,8 @@
+{
+  "deployment_decision_ref": "deployment-acceptance.json",
+  "gate_id": "G-04",
+  "gate_state": "pending",
+  "human_decisions": [],
+  "participant_admission": false,
+  "next_slice_activated": false
+}

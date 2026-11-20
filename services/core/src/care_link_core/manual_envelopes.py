@@ -67,6 +67,12 @@ class SignedEnvelopeFactory:
             "subject_id": None,
             "purpose": "service_operations"
             if action.startswith("workforce_") or action in {"queue_list", "control_change"}
+            else "plan"
+            if action.startswith("plan_")
+            else "governance"
+            if action == "directory_ingest"
+            else "security"
+            if action == "directory_suspend"
             else "support",
             "fields": [],
             "recipient_id": None,
@@ -152,6 +158,13 @@ class SignedEnvelopeFactory:
             )
         ).hexdigest()
         metadata_args: Record = {"action": action, "scope": scope, "payload_digest": payload_digest}
+        if action.startswith(("plan_", "consent_", "directory_")):
+            metadata_args["planning"] = {
+                "action": action,
+                "operation_id": key,
+                "arguments": args,
+                "path_arguments": paths,
+            }
         metadata_paths: Record = {"session_id": resource} if resource is not None else {}
         metadata_key = str(uuid4())
         preflight = self._delegation(
@@ -199,21 +212,25 @@ class SignedEnvelopeFactory:
             "operation_id": key,
             "actor": self._actor(actor, evidence["id"], target=True),
             "action": action,
-            "scope": scope,
+            "scope": metadata.get("resolved_scope", scope),
             "tags": {"environment": "demo", "population": "synthetic"},
             "jurisdiction": args.get("jurisdiction") if action == "session_create" else None,
             "versions": metadata["versions"],
             "payload_digest": payload_digest,
-            "consent_id": None,
+            "consent_id": metadata.get("consent_id"),
             "review_id": None,
             "bundle_digest": metadata["bundle_digest"],
-            "artifact_digests": [],
+            "artifact_digests": metadata.get("artifact_digests", []),
             "mode": metadata["mode"],
             # Successful metadata is itself audited inside the gateway.
             "audit_ready": True,
             "authority_complete": True,
             "authority_facts": metadata["authority_facts"],
         }
+        if "directory_bindings" in metadata:
+            request["directory_bindings"] = metadata["directory_bindings"]
+        if "disclosure_grants" in metadata:
+            request["disclosure_grants"] = metadata["disclosure_grants"]
         validate_contract("PolicyInput", request)
         decision = self.policy.evaluate(request)
         validate_contract("PolicyDecision", decision)

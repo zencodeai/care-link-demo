@@ -1,0 +1,19 @@
+{
+  "target": "care-link-imp04-002-core-app",
+  "current_container_id": "103c9c07e14ef0296c4b609bd1206ac29ed567a04a8211ff397da9271fa8bd42",
+  "image_before": "sha256:cfe02b66ae4502fb443a75b3a8ec804642a82754f9b0f7fbea4bf0e6464139b9",
+  "image_after": "sha256:92be415d5a55f72af658f53b28452500b8e82ff4e3f928c36e3d101cfb1c600c",
+  "purpose": "Temporary default-off owner-private RPC timing observation, no authority or deadline changes",
+  "marker": {
+    "version": "imp04.trace.v1",
+    "target": "care-link-imp04-002",
+    "role": "core",
+    "expires_at": "2026-11-16T22:11:01.792286Z"
+  },
+  "marker_uid": 22012,
+  "marker_mode": "0600",
+  "log_limit_bytes": 5242880,
+  "logging": "Knownhost/path/status/time/UUID/deadline/fixederrorcodeonly; noheaders/credentials/fullbody/narrative",
+  "disable": "Remove marker; same inode/lease validation disables installed hooks immediately",
+  "interpretation_limit": "Response-only trace has no completion row for transport failures; missing row does not prove no attempt"
+}

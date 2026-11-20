@@ -257,15 +257,15 @@
   "artifacts": [
     {
       "path": "01-baseline-and-delivery-model.md",
-      "sha256": "15480af5035c1bedb1f3cd425eca44b75e488a427bfaee75ffc26f732c979551"
+      "sha256": "3b126560de93937afd76e6304b11ff7bcda536e4e03a72a9963aa9ed245b26a0"
     },
     {
       "path": "02-codex-agent-contracts.md",
-      "sha256": "bf08ac34467c811ad84c04a2700d58fdfec6b3edb3d324842f2b5653c1adbd70"
+      "sha256": "eb25635b8bc6552567c8e0f034e08b19ce05eaaf9d7ec5aca10a8b61d59288de"
     },
     {
       "path": "03-repository-design-and-modularity.md",
-      "sha256": "d4c2373743b2c1e940fc932a7d0b8433e024c6a9e05b4e0e4b8aca8d47acdffb"
+      "sha256": "daa47967415d4e309ed2adce78d7fc1453b767fc585874c77b0ee37a016e6635"
     },
     {
       "path": "04-technology-tooling-and-quality.md",
@@ -273,19 +273,19 @@
     },
     {
       "path": "05-staged-implementation-roadmap.md",
-      "sha256": "53c5a4a952ca97ea88f063c5b2dcfde1dbc4c6bfc0ce30c705e0fe6dbe1af0b8"
+      "sha256": "5be31953aa4bbbc36b965aa9455df203e8135121d631bb7727045a3603d1158d"
     },
     {
       "path": "06-demonstrations-and-human-decisions.md",
-      "sha256": "b1ed365773f2fea868455888e0d6181b111f1ccbfbc260971c89785d4bf2949a"
+      "sha256": "b72e31ce0af0ade97e22c662ecd03112c17dcc60503703a32abaecbfb2222d25"
     },
     {
       "path": "07-work-packages-and-sequencing.md",
-      "sha256": "fd20f207dfc7bc018404ba49b16b4c433da78cdb4b435be0359355c4b5f4993f"
+      "sha256": "40762402292238b78b123b8629025a14a9b9350b414b044f237a67e2b5b69bee"
     },
     {
       "path": "08-verification-ci-and-evidence.md",
-      "sha256": "63bd3935fe174eee2c4d0cbe27ef992f60ec37e345c077375111adb3152e3093"
+      "sha256": "2225102aad46972837872cbe1f46ff6b682fbc584479917d21b4d239c0b02b47"
     },
     {
       "path": "09-risks-decisions-and-first-stage.md",
@@ -297,7 +297,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "931b25d1fcc89f4ecd10416913e182a12b899c22a93b577da1e0b501283a84ae"
+      "sha256": "3ff70e20458cfa2c21b656ec7300d3c2f200d2931a4302c568206cf3d56fde0f"
     },
     {
       "path": "agent-contracts.json",
@@ -365,11 +365,11 @@
     },
     {
       "path": "implementation-plan.json",
-      "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+      "sha256": "761c27e14d931c6e2ad9f7bc23630d43c18478e49deb3b89190b48017f4dafe6"
     },
     {
       "path": "stage-workflow.json",
-      "sha256": "30a97459f0479cd453769e8d458ea248a205264651c8f4bc32d5045d1a379bab"
+      "sha256": "06ac42c0f5afeaa808fc671a35183a451a35fd57a30da1ee99edbdd78c80b273"
     },
     {
       "path": "tooling.json",
@@ -377,7 +377,7 @@
     },
     {
       "path": "validate_plan.py",
-      "sha256": "5a75361ed33d5d12e05c95c837fb0bdff2d8e61f730dd6c4d7c76e7e83b4d9f9"
+      "sha256": "623b18dfc6f7b6654626fcab92067b7f72e1701681c76054f2b3ed19ece0d1e6"
     },
     {
       "path": "validation-requirements.txt",
@@ -399,6 +399,108 @@
           "path": "README.md",
           "previous_sha256": "1d488ca397c3427c176dd85cc63e3e892db304a1b1cf3fc879cd031b7113032e",
           "sha256": "931b25d1fcc89f4ecd10416913e182a12b899c22a93b577da1e0b501283a84ae"
+        }
+      ]
+    }
+  ],
+  "workflow_updates": [
+    {
+      "date": "2026-11-20",
+      "authority": "Actual current user instruction to use automated tests through IMP-10 and defer human review to GitHub issue follow-up bug-fix/improvement sessions after implementation.",
+      "scope": "Qualification workflow and planning artifacts only; frozen REQ/HLD/LLD input hashes and historical execution evidence unchanged.",
+      "artifacts": [
+        {
+          "path": "01-baseline-and-delivery-model.md",
+          "previous_sha256": "15480af5035c1bedb1f3cd425eca44b75e488a427bfaee75ffc26f732c979551",
+          "sha256": "3b126560de93937afd76e6304b11ff7bcda536e4e03a72a9963aa9ed245b26a0",
+          "previous_inventory_sha256": "15480af5035c1bedb1f3cd425eca44b75e488a427bfaee75ffc26f732c979551",
+          "preexisting_inventory_drift": false
+        },
+        {
+          "path": "02-codex-agent-contracts.md",
+          "previous_sha256": "bf08ac34467c811ad84c04a2700d58fdfec6b3edb3d324842f2b5653c1adbd70",
+          "sha256": "eb25635b8bc6552567c8e0f034e08b19ce05eaaf9d7ec5aca10a8b61d59288de",
+          "previous_inventory_sha256": "bf08ac34467c811ad84c04a2700d58fdfec6b3edb3d324842f2b5653c1adbd70",
+          "preexisting_inventory_drift": false
+        },
+        {
+          "path": "03-repository-design-and-modularity.md",
+          "previous_sha256": "d4c2373743b2c1e940fc932a7d0b8433e024c6a9e05b4e0e4b8aca8d47acdffb",
+          "sha256": "daa47967415d4e309ed2adce78d7fc1453b767fc585874c77b0ee37a016e6635",
+          "previous_inventory_sha256": "d4c2373743b2c1e940fc932a7d0b8433e024c6a9e05b4e0e4b8aca8d47acdffb",
+          "preexisting_inventory_drift": false
+        },
+        {
+          "path": "05-staged-implementation-roadmap.md",
+          "previous_sha256": "53c5a4a952ca97ea88f063c5b2dcfde1dbc4c6bfc0ce30c705e0fe6dbe1af0b8",
+          "sha256": "5be31953aa4bbbc36b965aa9455df203e8135121d631bb7727045a3603d1158d",
+          "previous_inventory_sha256": "53c5a4a952ca97ea88f063c5b2dcfde1dbc4c6bfc0ce30c705e0fe6dbe1af0b8",
+          "preexisting_inventory_drift": false
+        },
+        {
+          "path": "06-demonstrations-and-human-decisions.md",
+          "previous_sha256": "b1ed365773f2fea868455888e0d6181b111f1ccbfbc260971c89785d4bf2949a",
+          "sha256": "b72e31ce0af0ade97e22c662ecd03112c17dcc60503703a32abaecbfb2222d25",
+          "previous_inventory_sha256": "b1ed365773f2fea868455888e0d6181b111f1ccbfbc260971c89785d4bf2949a",
+          "preexisting_inventory_drift": false
+        },
+        {
+          "path": "07-work-packages-and-sequencing.md",
+          "previous_sha256": "fd20f207dfc7bc018404ba49b16b4c433da78cdb4b435be0359355c4b5f4993f",
+          "sha256": "40762402292238b78b123b8629025a14a9b9350b414b044f237a67e2b5b69bee",
+          "previous_inventory_sha256": "fd20f207dfc7bc018404ba49b16b4c433da78cdb4b435be0359355c4b5f4993f",
+          "preexisting_inventory_drift": false
+        },
+        {
+          "path": "08-verification-ci-and-evidence.md",
+          "previous_sha256": "63bd3935fe174eee2c4d0cbe27ef992f60ec37e345c077375111adb3152e3093",
+          "sha256": "2225102aad46972837872cbe1f46ff6b682fbc584479917d21b4d239c0b02b47",
+          "previous_inventory_sha256": "63bd3935fe174eee2c4d0cbe27ef992f60ec37e345c077375111adb3152e3093",
+          "preexisting_inventory_drift": false
+        },
+        {
+          "path": "README.md",
+          "previous_sha256": "7ad50e352d49fba753d311318086c4d62b0e8625447fcfb434e094f2ad1bff08",
+          "sha256": "b98d60b79b484225c83864a2dcac64c1ba3decd627a6784a903c46c2da1ffb0b",
+          "previous_inventory_sha256": "931b25d1fcc89f4ecd10416913e182a12b899c22a93b577da1e0b501283a84ae",
+          "preexisting_inventory_drift": true
+        },
+        {
+          "path": "implementation-plan.json",
+          "previous_sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc",
+          "sha256": "761c27e14d931c6e2ad9f7bc23630d43c18478e49deb3b89190b48017f4dafe6",
+          "previous_inventory_sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc",
+          "preexisting_inventory_drift": false
+        },
+        {
+          "path": "stage-workflow.json",
+          "previous_sha256": "30a97459f0479cd453769e8d458ea248a205264651c8f4bc32d5045d1a379bab",
+          "sha256": "06ac42c0f5afeaa808fc671a35183a451a35fd57a30da1ee99edbdd78c80b273",
+          "previous_inventory_sha256": "30a97459f0479cd453769e8d458ea248a205264651c8f4bc32d5045d1a379bab",
+          "preexisting_inventory_drift": false
+        },
+        {
+          "path": "validate_plan.py",
+          "previous_sha256": "5a75361ed33d5d12e05c95c837fb0bdff2d8e61f730dd6c4d7c76e7e83b4d9f9",
+          "sha256": "623b18dfc6f7b6654626fcab92067b7f72e1701681c76054f2b3ed19ece0d1e6",
+          "previous_inventory_sha256": "5a75361ed33d5d12e05c95c837fb0bdff2d8e61f730dd6c4d7c76e7e83b4d9f9",
+          "preexisting_inventory_drift": false
+        }
+      ],
+      "preexisting_inventory_note": "The README artifact digest already differed from its current pre-edit bytes; both the prior inventory digest and actual pre-edit digest are retained. No frozen source input was refreshed."
+    }
+  ],
+  "execution_updates": [
+    {
+      "date": "2026-11-20",
+      "authority": "Actual user instruction: Close IMP-04 and create PR",
+      "scope": "Current execution index only; planning allocations and56 frozen REQ/HLD/LLD inputs preserved",
+      "artifacts": [
+        {
+          "path": "README.md",
+          "previous_sha256": "b98d60b79b484225c83864a2dcac64c1ba3decd627a6784a903c46c2da1ffb0b",
+          "previous_inventory_sha256": "b98d60b79b484225c83864a2dcac64c1ba3decd627a6784a903c46c2da1ffb0b",
+          "sha256": "3ff70e20458cfa2c21b656ec7300d3c2f200d2931a4302c568206cf3d56fde0f"
         }
       ]
     }

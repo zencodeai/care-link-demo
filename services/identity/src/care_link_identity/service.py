@@ -21,6 +21,7 @@ from .domain import (
 )
 from .provisioning import provision_account
 from .review_context import ReviewContext
+from .session_policy import AUTOMATIC_REVIEW, InteractiveReviewPolicy
 
 
 class IdentityService:
@@ -35,12 +36,39 @@ class IdentityService:
         clock: Callable[[], datetime] = lambda: datetime.now(UTC),
         *,
         review_context: ReviewContext | None = None,
+        interactive_policy: InteractiveReviewPolicy | None = None,
     ) -> None:
         self.store, self.provider, self.custody, self.signer = store, provider, custody, signer
         self.issuer, self.origin, self.clock = issuer, origin, clock
         if review_context is not None and review_context.origin != origin:
             raise ValueError("Review context must match configured service origin")
         self.review_context = review_context
+        from .interactive_provider import AutomaticReviewProvider
+
+        if isinstance(provider, AutomaticReviewProvider) or interactive_policy is not None:
+            if (
+                interactive_policy is None
+                or not isinstance(provider, AutomaticReviewProvider)
+                or provider.policy != interactive_policy
+                or review_context != interactive_policy.context
+            ):
+                raise ValueError("Automatic provider requires its exact explicit review policy")
+        self.interactive_policy = interactive_policy
+
+    def _interactive_current(self) -> None:
+        if self.interactive_policy is not None:
+            from .interactive_provider import AutomaticReviewProvider
+
+            if not isinstance(self.provider, AutomaticReviewProvider):
+                raise IdentityError("identity.interactive_review_unavailable", 401)
+            self.provider.check()
+
+    def _session_expiry(self, provider_expiry: datetime, now: datetime) -> datetime:
+        return (
+            min(provider_expiry, self.interactive_policy.expires_at)
+            if self.interactive_policy
+            else min(provider_expiry, now + timedelta(hours=1))
+        )
 
     def provision(self, subject: str, account_id: str, roles: list[str]) -> None:
         """Offline provisioning hook; no route automatically grants roles from claims.
@@ -51,6 +79,7 @@ class IdentityService:
         provision_account(self.store, self.issuer, subject, account_id, roles, clock=self.clock)
 
     def _account(self, tx: Transaction, subject: str, role: str) -> dict[str, object]:
+        self._interactive_current()
         account = tx.get("account", digest(self.issuer + "\0" + subject))
         issuer = tx.get("issuer", self.issuer)
         if (
@@ -87,6 +116,7 @@ class IdentityService:
         session_hash: str | None = None,
         previous_raw_session: str | None = None,
     ) -> tuple[dict[str, object], str]:
+        self._interactive_current()
         if role not in PRIVILEGED_ROLES | PARTICIPANT_ROLES:
             raise IdentityError("identity.invalid_role")
         if self.review_context is not None and role != self.review_context.role:
@@ -271,9 +301,7 @@ class IdentityService:
                             "last_seen": stamp(now),
                             "factors": list(principal.factors),
                             "access_token": self.custody.encrypt(principal.access_token),
-                            "expires_at": stamp(
-                                min(principal.expires_at, now + timedelta(hours=1))
-                            ),
+                            "expires_at": stamp(self._session_expiry(principal.expires_at, now)),
                         }
                     )
                     tx.put("session", replacement_hash, session)
@@ -300,7 +328,7 @@ class IdentityService:
                         "mfa": principal.mfa,
                         "factors": list(principal.factors),
                         "auth_time": stamp(principal.auth_time),
-                        "expires_at": stamp(min(principal.expires_at, now + timedelta(hours=1))),
+                        "expires_at": stamp(self._session_expiry(principal.expires_at, now)),
                         "last_seen": stamp(now),
                         "revision": account["revision"],
                         "role_revision": account["role_revision"],
@@ -313,6 +341,8 @@ class IdentityService:
                     if self.review_context is not None:
                         session.update(self.review_context.binding())
                         session["provider_issuer"] = self.issuer
+                    if self.interactive_policy is not None:
+                        session.update(self.interactive_policy.metadata())
                     tx.put("session", digest(raw_session), session)
                 intent.update({"state": "completed", "verifier": "", "nonce": ""})
                 tx.put("intent", key, intent)
@@ -358,8 +388,22 @@ class IdentityService:
         return result
 
     def _usable_session(self, session: dict[str, object], now: datetime) -> bool:
+        self._interactive_current()
         return (
             session.get("revoked") is not True
+            and (self.interactive_policy is None or session.get("mfa") is True)
+            and (
+                (
+                    self.interactive_policy is None
+                    and session.get("authentication_mode") != AUTOMATIC_REVIEW
+                )
+                or (
+                    self.interactive_policy is not None
+                    and all(
+                        session.get(k) == v for k, v in self.interactive_policy.metadata().items()
+                    )
+                )
+            )
             and session.get("origin") == self.origin
             and (self.review_context is None or session.get("provider_issuer") == self.issuer)
             and (
@@ -371,7 +415,10 @@ class IdentityService:
                 session.get("role") not in PRIVILEGED_ROLES
                 or (
                     session.get("mfa") is True
-                    and (now - instant(session["last_seen"])).total_seconds() < 900
+                    and (
+                        self.interactive_policy is not None
+                        or (now - instant(session["last_seen"])).total_seconds() < 900
+                    )
                 )
             )
         )

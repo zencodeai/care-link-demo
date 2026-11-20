@@ -1,0 +1,1 @@
+{"status": "metadata_failed", "key": "manual.dependency_unavailable", "observed": [{"status": 200, "host": "data.imp04.mesh", "path": "/internal/v1/data/authority", "message_key": null}, {"status": 503, "host": "pdp.imp04.mesh", "path": "/internal/v1/policy/evaluate", "message_key": null}]}

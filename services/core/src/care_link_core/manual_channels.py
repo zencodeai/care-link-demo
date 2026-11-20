@@ -65,8 +65,12 @@ class ManualChannels:
 
     def invalidate(self, actor: Actor) -> None:
         """Explicit page takeover fences the prior transport without changing owner."""
+        self.invalidate_binding(actor.account_id, actor.browser_session_digest)
+
+    def invalidate_binding(self, account_id: str, browser_session_digest: str) -> None:
+        """Retire only the exact server-owned browser transport binding."""
         with self._lock:
-            state = self._connections.get(self._key(actor))
+            state = self._connections.get((account_id, browser_session_digest))
             if state:
                 state.active = False
                 self._advance(state)

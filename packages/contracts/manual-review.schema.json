@@ -18,7 +18,9 @@
           ]
         }
       },
-      "required": ["session_id"],
+      "required": [
+        "session_id"
+      ],
       "additionalProperties": false
     },
     "ReviewDraftSave": {
@@ -26,7 +28,11 @@
       "properties": {
         "kind": {
           "type": "string",
-          "enum": ["intake", "message"]
+          "enum": [
+            "intake",
+            "message",
+            "plan"
+          ]
         },
         "text": {
           "type": "string",
@@ -40,7 +46,11 @@
           "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
         }
       },
-      "required": ["kind", "text", "expected_revision"],
+      "required": [
+        "kind",
+        "text",
+        "expected_revision"
+      ],
       "additionalProperties": false
     },
     "ReviewIntentPrepare": {
@@ -48,7 +58,10 @@
       "properties": {
         "kind": {
           "type": "string",
-          "enum": ["intake", "message"]
+          "enum": [
+            "intake",
+            "message"
+          ]
         },
         "draft_revision": {
           "type": "string",
@@ -73,7 +86,10 @@
         },
         "locale": {
           "type": "string",
-          "enum": ["en-CA", "fr-CA"]
+          "enum": [
+            "en-CA",
+            "fr-CA"
+          ]
         }
       },
       "required": [
@@ -100,7 +116,11 @@
         },
         "kind": {
           "type": "string",
-          "enum": ["intake", "message"]
+          "enum": [
+            "intake",
+            "message",
+            "plan"
+          ]
         },
         "revision": {
           "type": "string",
@@ -143,7 +163,10 @@
         },
         "kind": {
           "type": "string",
-          "enum": ["intake", "message"]
+          "enum": [
+            "intake",
+            "message"
+          ]
         },
         "draft_revision": {
           "type": "string",
@@ -166,7 +189,10 @@
         },
         "action": {
           "type": "string",
-          "enum": ["session_turns", "message_send"]
+          "enum": [
+            "session_turns",
+            "message_send"
+          ]
         },
         "payload": {
           "anyOf": [
@@ -273,8 +299,16 @@
           ]
         },
         "run_state": {
-          "type": ["string", "null"],
-          "enum": ["active", "closing", "closed", null]
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "active",
+            "closing",
+            "closed",
+            null
+          ]
         },
         "conversations": {
           "type": "array",
@@ -308,7 +342,7 @@
           "items": {
             "$ref": "#/$defs/ReviewDraftView"
           },
-          "maxItems": 2
+          "maxItems": 3
         },
         "pending_intents": {
           "type": "array",
@@ -376,7 +410,12 @@
           "$ref": "#/$defs/PolicyDecision"
         }
       },
-      "required": ["path_arguments", "arguments", "delegation", "decision"],
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
       "additionalProperties": false
     },
     "Gateway_review_draft_save": {
@@ -395,7 +434,12 @@
           "$ref": "#/$defs/PolicyDecision"
         }
       },
-      "required": ["path_arguments", "arguments", "delegation", "decision"],
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
       "additionalProperties": false
     },
     "Gateway_review_intent_prepare": {
@@ -414,7 +458,12 @@
           "$ref": "#/$defs/PolicyDecision"
         }
       },
-      "required": ["path_arguments", "arguments", "delegation", "decision"],
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
       "additionalProperties": false
     },
     "ReviewIntentCancel": {
@@ -426,7 +475,9 @@
           "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
         }
       },
-      "required": ["operation_id"],
+      "required": [
+        "operation_id"
+      ],
       "additionalProperties": false
     },
     "Gateway_review_intent_cancel": {
@@ -445,7 +496,12 @@
           "$ref": "#/$defs/PolicyDecision"
         }
       },
-      "required": ["path_arguments", "arguments", "delegation", "decision"],
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
       "additionalProperties": false
     }
   }

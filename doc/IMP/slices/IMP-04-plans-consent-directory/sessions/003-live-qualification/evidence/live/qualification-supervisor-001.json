@@ -1,0 +1,41 @@
+{
+  "phase": "signin",
+  "exit_code": 0,
+  "private_output": "/private/tmp/care-link-imp04-002/qualification-supervisor-001",
+  "status": "passed",
+  "not_run": [
+    "Q07 lifecycle copy metadata/purge (HTTP close/retire exercised only in lifecycle/all)",
+    "Q03 pending-review DB count requires coordinator read-only verification",
+    "Q08 manual screen reader/200% zoom",
+    "A03 deterministic deployed output race",
+    "A04 concurrent absent-grant serialization",
+    "A05 independently provisioned delegation",
+    "A07 workload/root/default-deny probes",
+    "A08 dependency fault barriers",
+    "A09 runtime DB privilege checks"
+  ],
+  "observations": [
+    {
+      "case": "Q02",
+      "slot": "supervisor",
+      "status": "passed",
+      "account_id": "6962247a-6849-4077-b445-0034051cbd57",
+      "role": "supervisor",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T19:18:28.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": false
+    },
+    {
+      "case": "Q01-browser",
+      "status": "passed",
+      "browser_version": "157.0.8103.78",
+      "ignore_https_errors": false,
+      "no_token_cookie_injection": true,
+      "origin": "https://plans.localhost:30443",
+      "provider_origin": "https://id.plans.localhost:31443"
+    }
+  ],
+  "error_first_lines": []
+}

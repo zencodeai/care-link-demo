@@ -1,0 +1,98 @@
+{
+  "recorded_at": "2026-11-20T16:57:59.924975+00:00",
+  "stage_id": "IMP-04",
+  "gate_id": "G-04",
+  "status": "automated_qualified",
+  "blocking_findings": [],
+  "human_review": "deferred_until_after_IMP10",
+  "human_decision_id": null,
+  "current_source": {
+    "python_passed": 1140,
+    "python_skipped": 3,
+    "web_contract_passed": 155,
+    "source_lane_commands_passed": 32,
+    "new_CI_harness_commands_passed": 2,
+    "supplemental_harness_and_CI_file_checks_passed": 4,
+    "real_PostgreSQL": "disposable TLS1.3 verify-full",
+    "real_OPA": "1.22.2 pinnedSHA256",
+    "checks": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/evidence/source/attempt002/source-checks.json",
+      "sha256": "451dbe7a1050ec99f08e29e45895edccb0f96712c4707ae78512bf4d239a5015"
+    },
+    "supplemental": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/evidence/supplemental/checks.json",
+      "sha256": "3579766ff1768adc9e88c17fe60b4c9153834e7e445a83f543a4a504611405c4"
+    },
+    "database_cleanup": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/evidence/source/attempt002/database-cleanup.json",
+      "sha256": "0f9126a0eb3a3bcd348910a1776da7aebba10d8a0e3d6a3b2a34006efb1e0041"
+    }
+  },
+  "current_review_browser": {
+    "passed": 8,
+    "total": 8,
+    "actors": 4,
+    "locales": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "axe_violations": 0,
+    "axe_incomplete": 0,
+    "zoom": "native Chrome setting200percent; measured2xDPR with pinch1",
+    "all_final_sessions_logged_out": true,
+    "durable_projection_unchanged": true,
+    "business_write_attempts": 0,
+    "result": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/evidence/accessibility/review-matrix-05.json",
+      "sha256": "840601ee6bb4936086fe4fee17be3c90677a136a012c34d955bcccccc861e78e"
+    },
+    "attempt_history": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/evidence/accessibility/attempt-history.json",
+      "sha256": "a773b8e2e1b2a834ff41c4be557c474f21f3b41099322cfd001d5873c4c27709"
+    }
+  },
+  "stream_security": {
+    "source_cookie_security_cases_passed": 6,
+    "identity_port": "explicit deterministic test double",
+    "live_forged_header_cases_passed": 4,
+    "live_result": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/evidence/accessibility/unauthenticated-stream-probe.json",
+      "sha256": "70b7c9e8edddbdc0662e9f4bb4d339c020fc8a7e017c405e063050c56e402a95"
+    }
+  },
+  "build": {
+    "restricted_core_smoke": "passed",
+    "qualification_image_import_hash_smoke": "passed;29 selected source/asset files",
+    "closure_image_deployed": false,
+    "qualification_image": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/evidence/build/qualification-image-build.json",
+      "sha256": "a03517597c40e1681db1c1fd73dc7930cab14f8d2570199a0c502145986b8941"
+    },
+    "qualification_smoke": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/evidence/build/qualification-image-smoke.json",
+      "sha256": "2ef0649d5076f1816acf738d06beda5bce7ec48c340e521dec65be23cb6d0c4d"
+    }
+  },
+  "source_impact": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/source-impact.json",
+    "sha256": "10f860c5ae3a2b1f7934e450688f6e8404423be86c8426ff30ebb26abf16af88"
+  },
+  "environment_preservation": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/evidence/environment-preservation.json",
+    "sha256": "e6e5f5cc1cdc77326a0e50c4b01df910cd1407493d1f9f4adacabc0f91b580c5"
+  },
+  "earlier_live_evidence": "../004-remediation-qualification/results.json",
+  "approved_live_recovery": "evidence/approved-live/native-background-recovery-result.json",
+  "residuals": [
+    "Human screen-reader, visual, usefulness and language review is deferred until after IMP-10 via GitHub issue follow-up; earlier human results/failures remain historical.",
+    "Three explicitly gated legacy tests were skipped: owned Linux UID0/setuid harness, Docker capture fixture and isolated IMP03 provisioning fixture. No OPA or IMP04 PostgreSQL test was skipped.",
+    "Planning validator retains146 pre-existing broken historical IMP03 local-link occurrences; no source/input hash is silently refreshed to hide this.",
+    "Historical remote browser/controller failures remain recorded. Final review matrix uses owned headless Chromium profiles with verified native zoom, not human/native-window screen-reader review.",
+    "First two browser attempts left16 isolated synthetic auth sessions without explicit logout. Cookie material/profiles were removed; those sessions are bounded by approved run expiry 2026-11-20T18:53:30Z. All later/final test sessions explicitly logged out. No business write was attempted.",
+    "Live directory fixtures are expired/stale or suspended; availability is unknown or unavailable, never freshly asserted.",
+    "Approved live stream route omits fallback header stripping; real cookie/actor/view/current-authority checks and negative probes pass. Fresh source generator preserves stripping. No closure redeployment occurred.",
+    "Historical issuer-outage recovery127.591 s meets the agreed 300 s bound on its recorded candidate; unchanged security/domain source comparison supports carry-forward, not a fresh outage rerun.",
+    "No elapsed30day purge, completed backup, literal provider-role-change race or universal browser reliability is claimed. Image remains a qualification workspace, not minimal per-role packaging.",
+    "Private synthetic engineering qualification only; no participant admission, clinical/real-partner/production release approval, police integration or next-slice activation."
+  ]
+}

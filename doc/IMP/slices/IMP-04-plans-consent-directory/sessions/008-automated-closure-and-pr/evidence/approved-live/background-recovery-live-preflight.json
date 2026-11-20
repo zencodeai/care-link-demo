@@ -1,0 +1,127 @@
+{
+  "run_id": "049d31b6-b936-42f1-bbd8-9841fade8bda",
+  "actual_https": true,
+  "tls_bypass": false,
+  "served_assets_match": true,
+  "actors": [
+    {
+      "slot": "pid",
+      "role": "pid",
+      "automatic_login": true,
+      "restored_selection": true,
+      "live_stream": true,
+      "plan_fields": [
+        "plan.medication_report",
+        "plan.strategies"
+      ],
+      "own_report_count": 1,
+      "directory": {
+        "current": {
+          "state": "stale",
+          "availability": "unknown"
+        },
+        "stale": {
+          "state": "stale",
+          "availability": "unknown"
+        },
+        "suspended": {
+          "state": "suspended",
+          "availability": "unavailable"
+        },
+        "unknown": {
+          "state": "stale",
+          "availability": "unknown"
+        }
+      },
+      "preflight_session_logged_out": true
+    },
+    {
+      "slot": "carer",
+      "role": "carer",
+      "automatic_login": true,
+      "restored_selection": true,
+      "live_stream": true,
+      "plan_fields": [],
+      "own_report_count": 1,
+      "directory": {
+        "current": {
+          "state": "stale",
+          "availability": "unknown"
+        },
+        "stale": {
+          "state": "stale",
+          "availability": "unknown"
+        },
+        "suspended": {
+          "state": "suspended",
+          "availability": "unavailable"
+        },
+        "unknown": {
+          "state": "stale",
+          "availability": "unknown"
+        }
+      },
+      "preflight_session_logged_out": true
+    },
+    {
+      "slot": "professional",
+      "role": "professional_participant",
+      "automatic_login": true,
+      "restored_selection": true,
+      "live_stream": true,
+      "plan_fields": [],
+      "own_report_count": 1,
+      "directory": {
+        "current": {
+          "state": "stale",
+          "availability": "unknown"
+        },
+        "stale": {
+          "state": "stale",
+          "availability": "unknown"
+        },
+        "suspended": {
+          "state": "suspended",
+          "availability": "unavailable"
+        },
+        "unknown": {
+          "state": "stale",
+          "availability": "unknown"
+        }
+      },
+      "preflight_session_logged_out": true
+    },
+    {
+      "slot": "worker1",
+      "role": "worker",
+      "automatic_login": true,
+      "restored_selection": true,
+      "live_stream": true,
+      "plan_fields": [
+        "plan.strategies"
+      ],
+      "own_report_count": null,
+      "directory": {
+        "current": {
+          "state": "stale",
+          "availability": "unknown"
+        },
+        "stale": {
+          "state": "stale",
+          "availability": "unknown"
+        },
+        "suspended": {
+          "state": "suspended",
+          "availability": "unavailable"
+        },
+        "unknown": {
+          "state": "stale",
+          "availability": "unknown"
+        }
+      },
+      "preflight_session_logged_out": true
+    }
+  ],
+  "human_review": "not_run",
+  "G04_acceptance": "pending"
+}

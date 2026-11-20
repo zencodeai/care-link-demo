@@ -1,0 +1,20 @@
+{
+  "started_at": "2026-11-17T01:22:39.442872+00:00",
+  "pid": 98928,
+  "argv": [
+    "/private/tmp/care-link-imp04-002/human-review-browser/IMP04 Chrome Review.app/Contents/MacOS/Google Chrome for Testing",
+    "--user-data-dir=/private/tmp/care-link-imp04-002/human-review-profiles/pid-native",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "https://plans.localhost:30443"
+  ],
+  "app_path": "/private/tmp/care-link-imp04-002/human-review-browser/IMP04 Chrome Review.app",
+  "source_app_path": "/private/tmp/care-link-imp02-002/browsers/chromium-1254/chrome-mac-arm64/Google Chrome for Testing.app",
+  "profile": "/private/tmp/care-link-imp04-002/human-review-profiles/pid-native",
+  "private_log": "/private/tmp/care-link-imp04-002/human-pid-native-chrome.log",
+  "tls_bypass_flags": false,
+  "existing_browser_processes_restarted": false,
+  "state": "verified_main_and_actual_provider_connection_secure",
+  "copy_verification": "native-browser-copy-verification.json",
+  "native_chrome_tls_observed_at": "2026-11-17T01:27:22.109428+00:00"
+}

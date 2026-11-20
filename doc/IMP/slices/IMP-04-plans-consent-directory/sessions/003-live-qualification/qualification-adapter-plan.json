@@ -1,0 +1,100 @@
+{
+  "target": "care-link-imp04-002-data-app",
+  "qualification_spec": {
+    "name": "care-link-imp04-002-data-app",
+    "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+    "args": [
+      "python",
+      "-m",
+      "tools.imp04_deployment.serve",
+      "--root",
+      "/run/care-link-imp03-002/configuration",
+      "--role",
+      "data",
+      "--forward",
+      "5432",
+      "22042",
+      "/run/care-link-imp03-002/connectors/data-db/forward.sock"
+    ],
+    "mounts": [
+      "type=volume,source=care-link-imp04-002-data-config,target=/run/care-link-imp03-002/configuration/data",
+      "type=volume,source=care-link-imp04-002-data-backend,target=/run/care-link-imp03-002/data/backend",
+      "type=volume,source=care-link-imp04-002-data-outbound,target=/run/care-link-imp03-002/data/outbound,readonly",
+      "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly",
+      "type=volume,source=care-link-imp04-002-data-db,target=/run/care-link-imp03-002/connectors/data-db,readonly"
+    ],
+    "user": "22013:22013",
+    "cpus": "1",
+    "memory": "256m",
+    "groups": [
+      "22002",
+      "22999"
+    ],
+    "tmpfs": [
+      "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+    ],
+    "environment": {
+      "CARE_LINK_IMP04_QUALIFICATION": "plans-002"
+    }
+  },
+  "normal_restore_spec": {
+    "name": "care-link-imp04-002-data-app",
+    "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+    "args": [
+      "python",
+      "-m",
+      "tools.imp04_deployment.serve",
+      "--root",
+      "/run/care-link-imp03-002/configuration",
+      "--role",
+      "data",
+      "--forward",
+      "5432",
+      "22042",
+      "/run/care-link-imp03-002/connectors/data-db/forward.sock"
+    ],
+    "mounts": [
+      "type=volume,source=care-link-imp04-002-data-config,target=/run/care-link-imp03-002/configuration/data",
+      "type=volume,source=care-link-imp04-002-data-backend,target=/run/care-link-imp03-002/data/backend",
+      "type=volume,source=care-link-imp04-002-data-outbound,target=/run/care-link-imp03-002/data/outbound,readonly",
+      "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly",
+      "type=volume,source=care-link-imp04-002-data-db,target=/run/care-link-imp03-002/connectors/data-db,readonly"
+    ],
+    "user": "22013:22013",
+    "cpus": "1",
+    "memory": "256m",
+    "groups": [
+      "22002",
+      "22999"
+    ],
+    "tmpfs": [
+      "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+    ]
+  },
+  "control_directory": "/run/care-link-imp03-002/configuration/data/qualification",
+  "control_mode": "0700 UID22013; one-shot owner-only nonce/actor/action/phase/expiry markers",
+  "effects": "Timing only; original clock/identity/policy/journal/guards/final authorization unchanged. before_policy for concurrent revocation/absence; before_final_output for real expiry only.",
+  "cleanup": "Replace exact inspected data-app with original environment; retain all volumes/keys/journal/fence/data.",
+  "applied": true,
+  "activation_receipt": {
+    "name": "care-link-imp04-002-data-app",
+    "old_container_id": "e7d98110c17e1c9d29df525f25315859ab6d1af9413d20b8dc83d6e7e7f5d1ca",
+    "new_container_id": "9b29c13b948c2a05c9cbee5c3ac93783b6ad0aa1f465321ec0dc0d4a77ceadc1",
+    "volumes_removed": false
+  },
+  "restoration_receipt": {
+    "name": "care-link-imp04-002-data-app",
+    "old_container_id": "9b29c13b948c2a05c9cbee5c3ac93783b6ad0aa1f465321ec0dc0d4a77ceadc1",
+    "new_container_id": "61d2a8f379a562d3963c3be10d8ec3bba355d908dccaa1af604307f01ad01631",
+    "volumes_removed": false
+  },
+  "was_applied": true,
+  "currently_active": false,
+  "state": "restored",
+  "normal_serving_confirmation": {
+    "target": "care-link-imp04-002",
+    "role": "data",
+    "uid": 22013,
+    "qualification_enabled": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "role": "core",
+  "source_and_ui_sha256": {
+    "apps/web/dist/index.html": "05d6196169f964e50a36aadc55aec82ee275f5e4c4611c51d72c92267e9fc5fb",
+    "apps/web/dist/assets/index-IEux2UWS.js": "589130aa69d34f7235b5f0cc83ea9adb88dec0ffd013cb76463386a222cb3886",
+    "apps/web/dist/qualification-origins.json": "95374fdae6439bda883dfd9d1cf5d95a8c8b1b8fadc0c454a725f58172bb199c",
+    "services/core/src/care_link_core/manual_http.py": "d23a72635821f7000eec86983d90380f4ba7cc7049af4e28f9943a0474c5163c"
+  },
+  "selected_files_match_host": true,
+  "web_source_scope": "Dockerfile ships compiled dist, not apps/web/src. Build provenance binds reviewed host TS inputs to these exact compiled bytes."
+}

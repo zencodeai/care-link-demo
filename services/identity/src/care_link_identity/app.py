@@ -100,6 +100,14 @@ def create_app(
 
     def respond(name: str, value: dict[str, object]) -> JSONResponse:
         validate_contract(name, value)
+        simulated_headers = (
+            {
+                "X-Care-Link-Authentication-Mode": "automatic_review",
+                "X-Care-Link-Review-Expires-At": stamp(service.interactive_policy.expires_at),
+            }
+            if service is not None and service.interactive_policy is not None
+            else {}
+        )
         return JSONResponse(
             value,
             headers={
@@ -108,8 +116,20 @@ def create_app(
                 "X-Content-Type-Options": "nosniff",
                 "Referrer-Policy": "no-referrer",
                 "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none'",
+                **simulated_headers,
             },
         )
+
+    def review_cookies(response: Response, raw: str, binding: str) -> None:
+        authority = configured()
+        policy = authority.interactive_policy
+        if policy is None:
+            raise IdentityError("identity.interactive_review_disabled", 404)
+        maximum = max(1, int((policy.expires_at - authority.clock()).total_seconds()))
+        for name, value in ((session_cookie, raw), (BINDING_COOKIE, binding)):
+            response.set_cookie(
+                name, value, secure=True, httponly=True, samesite="lax", max_age=maximum
+            )
 
     async def body(request: Request, name: str) -> dict[str, object]:
         if request.headers.get("content-encoding") is not None:
@@ -374,6 +394,40 @@ def create_app(
         )
         return respond("Ceremony", result)
 
+    async def review_login(request: Request) -> JSONResponse:
+        from . import interactive_review
+
+        await body(request, "Empty")
+        authority = configured()
+        interactive_review.configured(authority)
+        await run_in_threadpool(csrf, request, True)
+        binding = request.cookies.get(BINDING_COOKIE, "")
+        if not binding:
+            raise IdentityError("identity.browser_binding_required")
+        view, raw = await run_in_threadpool(
+            interactive_review.login, authority, binding, request.cookies.get(session_cookie)
+        )
+        response = respond("BrowserSession", view)
+        review_cookies(response, raw, binding)
+        return response
+
+    async def review_verify(request: Request) -> JSONResponse:
+        from . import interactive_review
+
+        data = await body(request, "StepUpStart")
+        authority = configured()
+        interactive_review.configured(authority)
+        await run_in_threadpool(csrf, request)
+        binding = request.cookies.get(BINDING_COOKIE, "")
+        if not binding:
+            raise IdentityError("identity.browser_binding_required")
+        result, raw = await run_in_threadpool(
+            interactive_review.verify, authority, raw_cookie(request), binding, data
+        )
+        response = respond("Ceremony", result)
+        review_cookies(response, raw, binding)
+        return response
+
     async def stepup_confirm(request: Request) -> JSONResponse:
         data = await body(request, "CeremonyConfirm")
         await run_in_threadpool(csrf, request)
@@ -471,6 +525,8 @@ def create_app(
     app.add_api_route("/v1/auth/logout", logout, methods=["POST"])
     app.add_api_route("/v1/auth/continuation-recovery", continuation_recovery, methods=["POST"])
     app.add_api_route("/v1/auth/step-up", stepup_start, methods=["POST"])
+    app.add_api_route("/v1/auth/review/login", review_login, methods=["POST"])
+    app.add_api_route("/v1/auth/review/verify", review_verify, methods=["POST"])
     app.add_api_route("/v1/auth/step-up/confirm", stepup_confirm, methods=["POST"])
     app.add_api_route("/v1/auth/step-up/proof", stepup_proof, methods=["GET"])
     app.add_api_route("/internal/v1/identity/help-authorize", help_authorize, methods=["POST"])

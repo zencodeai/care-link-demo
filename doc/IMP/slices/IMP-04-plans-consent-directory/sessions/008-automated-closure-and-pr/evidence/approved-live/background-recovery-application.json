@@ -1,0 +1,13 @@
+{
+  "applied_at": "2026-11-20T16:06:34.514636+00:00",
+  "proposal_sha256": "f5443c127f0f68a1a49283a31eb3607245347cd1915baa1fb751e2a39dc81ba4",
+  "old_core_container_id": "6af123373a929dc7ef9975fc5c8c6e4694a90fecff74df068cc272e48dae8687",
+  "new_core_container_id": "b6cd35ec3aa7e064ba43a67979c7007c380e3e57c412223dbf9edc2aea13e7ff",
+  "candidate_image_id": "sha256:6bcbb3adf5e42fab4e078f8a513e39282db4c621807d526cdf136c88030d5cfa",
+  "exact_https_assets_verified": true,
+  "other_containers_unchanged": 94,
+  "volumes_removed": 0,
+  "rollback_applied": false,
+  "human_review": "recheck_pending",
+  "G04_acceptance": "pending"
+}

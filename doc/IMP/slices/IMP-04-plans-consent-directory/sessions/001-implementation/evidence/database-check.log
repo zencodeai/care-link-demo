@@ -1,0 +1,40 @@
+...........F.F.........................                                  [100%]
+=================================== FAILURES ===================================
+__________ test_postgres_plan_versions_grant_filter_revoke_and_replay __________
+services/data/tests/test_plans_consent.py:285: in test_postgres_plan_versions_grant_filter_revoke_and_replay
+    plan = h.service.plan_field_append(
+services/data/src/care_link_data/plans.py:286: in plan_field_append
+    validate_contract("PlanFieldCreate", data)
+packages/contracts/python/src/care_link_contracts/validation.py:344: in validate_contract
+    raise ContractError("invalid")
+E   care_link_contracts.validation.ContractError: invalid
+________ test_postgres_retirement_preserves_independent_plan_lifecycle _________
+services/data/src/care_link_data/store.py:348: in transaction
+    yield tx
+services/data/src/care_link_data/engine.py:593: in _run
+    result = handler(
+services/data/src/care_link_data/plans.py:336: in retire
+    tx.put("copy", copy)
+services/data/src/care_link_data/store.py:170: in put
+    self.connection.execute(query, values)
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.CheckViolation: new row for relation "copy" violates check constraint "copy_check1"
+
+The above exception was the direct cause of the following exception:
+services/data/tests/test_plans_consent.py:326: in test_postgres_retirement_preserves_independent_plan_lifecycle
+    h.service.plan_retire(
+services/data/src/care_link_data/plans.py:344: in plan_retire
+    return self._run(
+services/data/src/care_link_data/engine.py:541: in _run
+    with self.store.transaction(current, session_id, queue=queue) as tx:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py:162: in __exit__
+    self.gen.throw(value)
+services/data/src/care_link_data/store.py:352: in transaction
+    raise ManualError("manual.commit_unknown", 503) from error
+E   care_link_domain.ports.ManualError: manual.commit_unknown
+=========================== short test summary info ============================
+FAILED services/data/tests/test_plans_consent.py::test_postgres_plan_versions_grant_filter_revoke_and_replay
+FAILED services/data/tests/test_plans_consent.py::test_postgres_retirement_preserves_independent_plan_lifecycle
+2 failed, 37 passed in 1.83s

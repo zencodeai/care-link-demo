@@ -103,6 +103,10 @@ def create_app(service: ManualService, security: GatewaySecurity) -> FastAPI:
             cast(Record, parsed["path_arguments"]),
         )
 
+    from .planning_app import attach_planning_gateway
+
+    attach_planning_gateway(app, service, envelope)
+
     def mutation(name: str, output: str, method: Mutation) -> None:
         async def handler(request: Request) -> Response:
             actor, key, args, paths = await envelope(request, name)

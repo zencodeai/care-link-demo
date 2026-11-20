@@ -1,0 +1,7 @@
+{
+  "container_id": "fc4a79cb9271056e484075f068ca67908063d4520b34c42c48262c35d4ec6371",
+  "removed": true,
+  "tls": "verify-full",
+  "opa": "1.22.2",
+  "accepted_environment_mutated": false
+}

@@ -1,0 +1,225 @@
+{
+  "phase": "absent-race",
+  "exit_code": 0,
+  "private_output": "/private/tmp/care-link-imp04-002/qualification-session004-absence-001",
+  "status": "passed",
+  "not_run": [
+    "Coordinator read-only DB effects, review counts and lifecycle metadata are recorded outside browser phase"
+  ],
+  "observations": [
+    {
+      "case": "Q02",
+      "slot": "pid",
+      "status": "passed",
+      "account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:38:19.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "pid-other",
+      "status": "passed",
+      "account_id": "fe2303a4-ee1b-4931-a1ac-193e4938337c",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:26.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "carer",
+      "status": "passed",
+      "account_id": "fb881f96-e088-429c-a404-5208f22b4068",
+      "role": "carer",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:27.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "professional",
+      "status": "passed",
+      "account_id": "42dfc3a0-58f2-40d7-97c9-768d07dcd315",
+      "role": "professional_participant",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:28.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "worker1",
+      "status": "passed",
+      "account_id": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:29.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "worker2",
+      "status": "passed",
+      "account_id": "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:30.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "supervisor",
+      "status": "passed",
+      "account_id": "6962247a-6849-4077-b445-0034051cbd57",
+      "role": "supervisor",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:31.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "operator",
+      "status": "passed",
+      "account_id": "1152c7ae-32b6-4383-b99c-7589a663e453",
+      "role": "operator",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:32.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "security",
+      "status": "passed",
+      "account_id": "5f67f7bb-7e05-48c4-ae77-4d30666d604f",
+      "role": "security",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:34.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q01-browser",
+      "status": "passed",
+      "browser_version": "157.0.8103.78",
+      "ignore_https_errors": false,
+      "actual_provider_login_required_for_fresh_session": false,
+      "restored_genuine_same_actor_browser_state": true,
+      "phase_actor_slots_restored": [
+        "pid",
+        "worker2"
+      ],
+      "unused_verified_actor_contexts_kept_closed": true,
+      "maximum_simultaneous_initial_authenticator_contexts": 1,
+      "api_driver_shell": "Actual main HTML/CSP; only app JavaScript assets aborted; no API interception",
+      "visible_ui_driver": "Real application bundle loaded on demand with ensureMain(true)",
+      "origin": "https://plans.localhost:30443",
+      "provider_origin": "https://id.plans.localhost:31443"
+    },
+    {
+      "case": "A04-scope",
+      "status": "passed",
+      "session_id": "c5db94f6-8bbe-4061-a442-044e1385709b",
+      "subject_id": "377b4c8a-b99a-40f5-965b-1078d30d8253",
+      "plan_id": "e66e9c7d-7b5b-4d5f-a0f2-67848dccbdba",
+      "fresh_subject_and_plan": true,
+      "prior_grants_restrictions_and_subjects_untouched": true,
+      "actual_subject_bound_mfa": true
+    },
+    {
+      "case": "A04-timing",
+      "status": "observed",
+      "nonce": "4de7448a-0aab-4a45-a0a3-80f782dbf700",
+      "ready": {
+        "target": "care-link-imp04-002",
+        "phase": "before_policy",
+        "action": "consent_grant",
+        "actor_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+        "nonce": "4de7448a-0aab-4a45-a0a3-80f782dbf700",
+        "operation_id": "c023f20c-05f5-4e0f-a3cd-629fbe4de6af",
+        "marker_sha256": "c2c9755204eded389eb37225a5804851737b98630721d8cb6bba44517a0cb7d1",
+        "entered_at": "2026-11-16T22:39:06.912846+00:00"
+      },
+      "finished": {
+        "target": "care-link-imp04-002",
+        "phase": "before_policy",
+        "action": "consent_grant",
+        "actor_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+        "nonce": "4de7448a-0aab-4a45-a0a3-80f782dbf700",
+        "operation_id": "c023f20c-05f5-4e0f-a3cd-629fbe4de6af",
+        "marker_sha256": "c2c9755204eded389eb37225a5804851737b98630721d8cb6bba44517a0cb7d1",
+        "entered_at": "2026-11-16T22:39:06.912846+00:00",
+        "released_at": "2026-11-16T22:39:07.161282+00:00"
+      },
+      "pending_status": 409,
+      "pending_message_key": "manual.stale_authority",
+      "genuine_csrf_prefetched_before_hold": true,
+      "revoke_invoked_at": "2026-11-16T22:39:06.510Z",
+      "revoke_timing": {
+        "request_started_at": "2026-11-16T22:39:06.519Z",
+        "response_observed_at": "2026-11-16T22:39:07.144Z"
+      },
+      "coordination": "Native preflights overlap; recorded revocation follows hold entry and genuine HTTP200 commit acknowledgement precedes release",
+      "revoked_at": "2026-11-16T22:39:07.095838Z"
+    },
+    {
+      "case": "A04",
+      "status": "passed",
+      "nonce": "4de7448a-0aab-4a45-a0a3-80f782dbf700",
+      "ready": {
+        "target": "care-link-imp04-002",
+        "phase": "before_policy",
+        "action": "consent_grant",
+        "actor_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+        "nonce": "4de7448a-0aab-4a45-a0a3-80f782dbf700",
+        "operation_id": "c023f20c-05f5-4e0f-a3cd-629fbe4de6af",
+        "marker_sha256": "c2c9755204eded389eb37225a5804851737b98630721d8cb6bba44517a0cb7d1",
+        "entered_at": "2026-11-16T22:39:06.912846+00:00"
+      },
+      "pending_operation_id": "c023f20c-05f5-4e0f-a3cd-629fbe4de6af",
+      "old_grant_id": "bdabf7fb-8480-4a07-bba7-d9a1e748fb74",
+      "revoke_result": {
+        "operation_id": "215bcdc0-8f82-408d-9c70-f5737648629a",
+        "state": "committed",
+        "resource_id": "bdabf7fb-8480-4a07-bba7-d9a1e748fb74",
+        "revision": "2",
+        "audit_ref": "84aad4f4-dbe9-471a-a0ef-63eeb7244ab5"
+      },
+      "finished": {
+        "target": "care-link-imp04-002",
+        "phase": "before_policy",
+        "action": "consent_grant",
+        "actor_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+        "nonce": "4de7448a-0aab-4a45-a0a3-80f782dbf700",
+        "operation_id": "c023f20c-05f5-4e0f-a3cd-629fbe4de6af",
+        "marker_sha256": "c2c9755204eded389eb37225a5804851737b98630721d8cb6bba44517a0cb7d1",
+        "entered_at": "2026-11-16T22:39:06.912846+00:00",
+        "released_at": "2026-11-16T22:39:07.161282+00:00"
+      },
+      "pending_status": 409,
+      "operation_status_http": 200,
+      "operation_state": "rejected",
+      "recipient_disclosure_status": 403,
+      "new_grant_effect_count": "coordinator_read_only_DB_verification_required",
+      "original_expected_revision": "5"
+    }
+  ],
+  "error_first_lines": []
+}

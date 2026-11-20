@@ -1,0 +1,57 @@
+{
+  "recorded_at": "2026-11-20T17:00:58.728367+00:00",
+  "stage_id": "IMP-04",
+  "gate_id": "G-04",
+  "qualification": "automated_qualified",
+  "source": {
+    "baseline_commit": "a9bbcbccaee67cb3c23dcae3c763f64dbedb0509",
+    "branch": "feat/imp-04-plans-consent-directory",
+    "tracked_diff_sha256": "60377fb8dd2c3c478b3935ed533a3ecd6f8b9a2ffce101d6fc7236609839ba74",
+    "all_source_inventory_sha256": "4c6c48043faf07c4171b2e8891cfec2b74a41c3ed09d1a2fc04c16ad711ac226",
+    "source_bindings": {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/source-bindings.json",
+      "sha256": "48fc18cece4697cf5f7adc98f1741e2f43952945d0653ee2f6aa7a0d9f45ae73"
+    },
+    "uncommitted_at_qualification": true,
+    "commit_binding": "Final PR commits bind these source bytes; self-referential evidence/commit hashes are excluded."
+  },
+  "source_impact": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/source-impact.json",
+    "sha256": "10f860c5ae3a2b1f7934e450688f6e8404423be86c8426ff30ebb26abf16af88"
+  },
+  "results": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/results.json",
+    "sha256": "01c64576ef302d635626301f06335aa2f20e80c36bd9ec2ea80343b39997a4d0"
+  },
+  "evidence": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/evidence-manifest.json",
+    "sha256": "4bb4850c92e95e5c8fc278e5355ecec29b2e78d3078f04d1e0e5d80e2f51da3c"
+  },
+  "public_contract": {
+    "path": "packages/contracts/python/src/care_link_contracts/schema.json",
+    "sha256": "e12c7b70024df2fde40473fcc75e39d80f146f8242c06be81aa18ff8b0e58e8e"
+  },
+  "fixture": {
+    "path": "config/demo/imp04/directory-fixtures.json",
+    "sha256": "26862660a86ce46088c9c98977eb78b6f49fe37ea585aac7c97ffc835443f6e6"
+  },
+  "closure_qualification_image": {
+    "image_tag": "care-link-imp04:closure-20261120",
+    "image_id": "sha256:43228d6bf9db0ad94f6c45e0624ac73c41011ded09c1f7122e340804911cbb5a",
+    "recipe_sha256": "72b8349944b1fcd07252d46dcd0d66d75b4eac65abbc4ad7728a9ba8b5c27f2c",
+    "log_sha256": "d20274fa7e883336da3fd9ddecd806d3cd9f13ec0f5a87e417c61b6c5d4543b7",
+    "scope": "Qualification workspace distribution, not minimal per-role packaging"
+  },
+  "deployed_core_image_id": "sha256:6bcbb3adf5e42fab4e078f8a513e39282db4c621807d526cdf136c88030d5cfa",
+  "deployed_other_role_image_id": "sha256:d80abfb846e4c8e2a5b211a4ed47d1eefb11cf38e648d125ea60d6ec00560b00",
+  "deployed_stream_config_sha256": "5808e1b7a1f9cdf627ccc2af35879ed125aba866fcee7d630fa688198abb5d0b",
+  "source_and_live_equivalence": "Only exact selected source/asset image matches and unchanged-domain comparisons are asserted. Closure image undeployed; approved live stream differs from fresh generator header stripping. See source-impact.json.",
+  "environment": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/evidence/environment-preservation.json",
+    "sha256": "e6e5f5cc1cdc77326a0e50c4b01df910cd1407493d1f9f4adacabc0f91b580c5"
+  },
+  "review_fixture_run_id": "049d31b6-b936-42f1-bbd8-9841fade8bda",
+  "review_fixture_expires_at": "2026-11-20T18:53:30Z",
+  "human_review": "deferred_until_after_IMP10",
+  "human_decision_id": null
+}

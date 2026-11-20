@@ -1,0 +1,172 @@
+{
+  "phase": "delegation",
+  "exit_code": 0,
+  "private_output": "/private/tmp/care-link-imp04-002/qualification-session004-delegation-001",
+  "status": "passed",
+  "not_run": [],
+  "observations": [
+    {
+      "case": "Q02",
+      "slot": "pid",
+      "status": "passed",
+      "account_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:25.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "pid-other",
+      "status": "passed",
+      "account_id": "fe2303a4-ee1b-4931-a1ac-193e4938337c",
+      "role": "pid",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:26.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "carer",
+      "status": "passed",
+      "account_id": "fb881f96-e088-429c-a404-5208f22b4068",
+      "role": "carer",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:27.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "professional",
+      "status": "passed",
+      "account_id": "42dfc3a0-58f2-40d7-97c9-768d07dcd315",
+      "role": "professional_participant",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:28.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "worker1",
+      "status": "passed",
+      "account_id": "40b13fd6-ef4b-4600-820c-a51766f5a25b",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:29.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "worker2",
+      "status": "passed",
+      "account_id": "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+      "role": "worker",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:30.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "supervisor",
+      "status": "passed",
+      "account_id": "6962247a-6849-4077-b445-0034051cbd57",
+      "role": "supervisor",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:31.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "operator",
+      "status": "passed",
+      "account_id": "1152c7ae-32b6-4383-b99c-7589a663e453",
+      "role": "operator",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:32.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q02",
+      "slot": "security",
+      "status": "passed",
+      "account_id": "5f67f7bb-7e05-48c4-ae77-4d30666d604f",
+      "role": "security",
+      "assurance": "AL2",
+      "auth_time": "2026-11-16T22:37:34.000Z",
+      "separate_browser_context": true,
+      "native_tls": true,
+      "resumed_private_session": true
+    },
+    {
+      "case": "Q01-browser",
+      "status": "passed",
+      "browser_version": "157.0.8103.78",
+      "ignore_https_errors": false,
+      "actual_provider_login_required_for_fresh_session": false,
+      "restored_genuine_same_actor_browser_state": true,
+      "phase_actor_slots_restored": [
+        "pid",
+        "carer",
+        "worker2"
+      ],
+      "unused_verified_actor_contexts_kept_closed": true,
+      "maximum_simultaneous_initial_authenticator_contexts": 1,
+      "api_driver_shell": "Actual main HTML/CSP; only app JavaScript assets aborted; no API interception",
+      "visible_ui_driver": "Real application bundle loaded on demand with ensureMain(true)",
+      "origin": "https://plans.localhost:30443",
+      "provider_origin": "https://id.plans.localhost:31443"
+    },
+    {
+      "case": "A05-scope",
+      "status": "passed",
+      "variant": "wider_fields",
+      "delegation_id": "2f53fcf6-d2d1-452b-9268-83428522779b",
+      "http_status": 403
+    },
+    {
+      "case": "A05-scope",
+      "status": "passed",
+      "variant": "wrong_purpose",
+      "delegation_id": "2f53fcf6-d2d1-452b-9268-83428522779b",
+      "http_status": 403
+    },
+    {
+      "case": "A05-scope",
+      "status": "passed",
+      "variant": "wrong_subject_binding",
+      "delegation_id": "2f53fcf6-d2d1-452b-9268-83428522779b",
+      "http_status": 404
+    },
+    {
+      "case": "A05",
+      "status": "passed",
+      "delegation_id": "2f53fcf6-d2d1-452b-9268-83428522779b",
+      "grant_id": "2cd5f958-9b9a-4541-9e68-43d922485b3c",
+      "grant_expires_at": "2026-11-16T22:50:20.418000Z",
+      "expires_at": "2026-11-16T22:45:20.418055+00:00",
+      "grantor_id": "fb881f96-e088-429c-a404-5208f22b4068",
+      "recipient_id": "7c6e64bd-eabc-48bd-9501-baf8e469e963",
+      "disclosed_fields": [
+        "plan.strategies"
+      ],
+      "runtime_delegation_write_rights": "coordinator_DB_privilege_check_required"
+    }
+  ],
+  "error_first_lines": []
+}

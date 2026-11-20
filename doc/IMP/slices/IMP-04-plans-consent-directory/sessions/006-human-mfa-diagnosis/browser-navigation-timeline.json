@@ -1,0 +1,187 @@
+{
+  "read_only": true,
+  "source_profile": "owned dedicated human-review PID profile only",
+  "interval_utc": [
+    "2026-11-17T00:30:00+00:00",
+    "2026-11-17T01:53:42.253137+00:00"
+  ],
+  "rows": [
+    {
+      "visit_id": 1,
+      "utc": "2026-11-17T01:22:42.121861+00:00",
+      "from_visit_id": 0,
+      "transition_raw": 805306369,
+      "transition_core_raw": 1,
+      "origin": "https://plans.localhost:30443",
+      "route_class": "/",
+      "query_parameter_names": [],
+      "has_fragment": false
+    },
+    {
+      "visit_id": 2,
+      "utc": "2026-11-17T01:24:47.915681+00:00",
+      "from_visit_id": 0,
+      "transition_raw": 805306369,
+      "transition_core_raw": 1,
+      "origin": "https://id.plans.localhost:31443",
+      "route_class": "provider_authorization",
+      "query_parameter_names": [
+        "claims",
+        "client_id",
+        "code_challenge",
+        "code_challenge_method",
+        "nonce",
+        "redirect_uri",
+        "response_mode",
+        "response_type",
+        "scope",
+        "state"
+      ],
+      "has_fragment": false
+    },
+    {
+      "visit_id": 3,
+      "utc": "2026-11-17T01:29:09.727774+00:00",
+      "from_visit_id": 0,
+      "transition_raw": 805306375,
+      "transition_core_raw": 7,
+      "origin": "https://id.plans.localhost:31443",
+      "route_class": "provider_login_form",
+      "query_parameter_names": [
+        "client_data",
+        "client_id",
+        "execution",
+        "session_code",
+        "tab_id"
+      ],
+      "has_fragment": false
+    },
+    {
+      "visit_id": 4,
+      "utc": "2026-11-17T01:29:09.731213+00:00",
+      "from_visit_id": 0,
+      "transition_raw": 805306368,
+      "transition_core_raw": 0,
+      "origin": "https://id.plans.localhost:31443",
+      "route_class": "provider_login_form",
+      "query_parameter_names": [
+        "client_data",
+        "client_id",
+        "execution",
+        "tab_id"
+      ],
+      "has_fragment": false
+    },
+    {
+      "visit_id": 5,
+      "utc": "2026-11-17T01:29:27.614194+00:00",
+      "from_visit_id": 0,
+      "transition_raw": 268435463,
+      "transition_core_raw": 7,
+      "origin": "https://plans.localhost:30443",
+      "route_class": "/v1/auth/callback",
+      "query_parameter_names": [
+        "code",
+        "iss",
+        "session_state",
+        "state"
+      ],
+      "has_fragment": false
+    },
+    {
+      "visit_id": 6,
+      "utc": "2026-11-17T01:29:27.614194+00:00",
+      "from_visit_id": 5,
+      "transition_raw": -1610612729,
+      "transition_core_raw": 7,
+      "origin": "https://plans.localhost:30443",
+      "route_class": "/",
+      "query_parameter_names": [],
+      "has_fragment": false
+    },
+    {
+      "visit_id": 7,
+      "utc": "2026-11-17T01:45:40.956005+00:00",
+      "from_visit_id": 0,
+      "transition_raw": 805306368,
+      "transition_core_raw": 0,
+      "origin": "https://id.plans.localhost:31443",
+      "route_class": "provider_authorization",
+      "query_parameter_names": [
+        "claims",
+        "client_id",
+        "code_challenge",
+        "code_challenge_method",
+        "nonce",
+        "redirect_uri",
+        "response_mode",
+        "response_type",
+        "scope",
+        "state"
+      ],
+      "has_fragment": false
+    },
+    {
+      "visit_id": 8,
+      "utc": "2026-11-17T01:46:10.315624+00:00",
+      "from_visit_id": 0,
+      "transition_raw": 805306375,
+      "transition_core_raw": 7,
+      "origin": "https://id.plans.localhost:31443",
+      "route_class": "provider_login_form",
+      "query_parameter_names": [
+        "client_data",
+        "client_id",
+        "execution",
+        "session_code",
+        "tab_id"
+      ],
+      "has_fragment": false
+    },
+    {
+      "visit_id": 9,
+      "utc": "2026-11-17T01:46:10.333397+00:00",
+      "from_visit_id": 0,
+      "transition_raw": 805306368,
+      "transition_core_raw": 0,
+      "origin": "https://id.plans.localhost:31443",
+      "route_class": "provider_login_form",
+      "query_parameter_names": [
+        "client_data",
+        "client_id",
+        "execution",
+        "tab_id"
+      ],
+      "has_fragment": false
+    },
+    {
+      "visit_id": 10,
+      "utc": "2026-11-17T01:46:27.457452+00:00",
+      "from_visit_id": 0,
+      "transition_raw": 268435463,
+      "transition_core_raw": 7,
+      "origin": "https://plans.localhost:30443",
+      "route_class": "/v1/auth/callback",
+      "query_parameter_names": [
+        "code",
+        "iss",
+        "session_state",
+        "state"
+      ],
+      "has_fragment": false
+    },
+    {
+      "visit_id": 11,
+      "utc": "2026-11-17T01:46:27.457452+00:00",
+      "from_visit_id": 10,
+      "transition_raw": -1610612729,
+      "transition_core_raw": 7,
+      "origin": "https://plans.localhost:30443",
+      "route_class": "/",
+      "query_parameter_names": [],
+      "has_fragment": false
+    }
+  ],
+  "query_values_fragments_or_credentials_returned": false,
+  "limit": 500
+}

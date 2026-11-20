@@ -1,0 +1,11 @@
+# IMP-04 closure handoff
+
+IMP-04/G-04 is closed as **automated_qualified**. Current user authorization is “Close IMP-04 and create PR”; it includes publication of this feature branch and excludes merge or starting IMP-05. The branch is `feat/imp-04-plans-consent-directory`, fast-forwarded onto main's IMP03 merge commit with identical baseline file trees. The PR's Git metadata binds the final commit; the source inventory binds the tested bytes without a self-referential commit digest.
+
+Read [results](results.json), [candidate manifest](candidate-manifest.json) and [source impact](source-impact.json). All32 original current-source commands and the added verifier syntax/format CI checks passed; 1,140 Python and 155 web/contract tests passed. The real disposable TLS DB was removed. Final automated current-review matrix passed 8/8 with all final test sessions logged out; raw earlier failed attempts remain in the packet. The fresh closure qualification image was built/smoked and remains undeployed.
+
+Source closure fixes make the approved infinite GET stream route reproducible without changing shared IMP03 defaults, add adversarial cookie/actor/current-authority tests, include all IMP04 tools in strict typing and the live harness in CI, resolve duplicate pytest module filenames, and fix lint/format findings. The current live Core recovery image and other role image IDs are recorded separately. Existing approved containers and Mac trust are preserved. No live change follows from the source generator correction.
+
+Human review is `deferred_until_after_IMP10`; use [the issue-ready agenda](deferred-human-review.json) for later GitHub issue follow-up. Historical human failures/passes remain historical. Existing bounded auth-session residue, browser path limits, expired directory sources and the146 pre-existing planning-link errors remain explicit. No clinical/production admission or next slice is implied.
+
+Next chat: inspect the PR/CI disposition and main before requesting or implementing IMP-05. Do not reuse the expiring review run as a fresh fixture or restart interactive human review under the old gate. A new deployment still requires its applicable exact change authorization.

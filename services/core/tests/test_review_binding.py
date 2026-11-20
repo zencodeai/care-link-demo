@@ -6,12 +6,13 @@ from uuid import uuid4
 
 from care_link_core.manual_app import create_manual_app
 from care_link_core.manual_channels import ManualChannels
+from care_link_core.review_channels import ReviewViews
 from care_link_core.review_context import ReviewContexts
 from care_link_domain import Actor
 from fastapi.testclient import TestClient
 
 
-def setup(tmp_path, legacy=False):
+def setup(tmp_path, legacy=False, *, injected_views=None):
     now = datetime.now(UTC)
     subject = Actor(
         str(uuid4()),
@@ -45,9 +46,15 @@ def setup(tmp_path, legacy=False):
         else subject
     )
     channels = ManualChannels()
+    if injected_views is not None:
+        channels = injected_views.channels
     gateway = Mock()
     app = create_manual_app(
-        gateway, security, channels, review_contexts=ReviewContexts(file, "https://legacy.test")
+        gateway,
+        security,
+        channels,
+        review_contexts=ReviewContexts(file, "https://legacy.test"),
+        review_views=injected_views,
     )
     return TestClient(app, base_url="https://review.test"), subject, channels, gateway
 
@@ -75,3 +82,15 @@ def test_nonce_read_needs_active_view_handle(tmp_path):
     response = client.get("/v1/sessions/" + str(uuid4()) + "/workforce/challenge")
     assert response.status_code == 409
     gateway.channel_challenge_read.assert_not_called()
+
+
+def test_operator_retirement_uses_exact_serving_view_custody(tmp_path):
+    channels = ManualChannels()
+    views = ReviewViews(channels)
+    client, subject, _channels, _gateway = setup(tmp_path, injected_views=views)
+    registered = client.post("/v1/review/view", json={})
+    assert registered.status_code == 200
+    handle = registered.json()["view_id"]
+    assert client.get("/v1/review/view", headers={"X-Review-View": handle}).status_code == 200
+    assert views.retire_run(subject.review_run_id) == 1
+    assert client.get("/v1/review/view", headers={"X-Review-View": handle}).status_code == 409

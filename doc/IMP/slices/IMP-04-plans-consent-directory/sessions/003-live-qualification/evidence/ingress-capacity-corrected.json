@@ -1,0 +1,269 @@
+{
+  "target": "care-link-imp04-002",
+  "checked_at": "2026-11-16T19:26:37.780422+00:00",
+  "status": "passed",
+  "successful_concurrent_connections": 64,
+  "bounded_65th_rejected": true,
+  "results": [
+    {
+      "index": 1,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 2,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 3,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 4,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 5,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 6,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 7,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 8,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 9,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 10,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 11,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 12,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 13,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 14,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 15,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 16,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 17,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 18,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 19,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 20,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 21,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 22,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 23,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 24,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 25,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 26,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 27,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 28,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 29,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 30,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 31,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 32,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 33,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 34,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 35,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 36,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 37,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 38,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 39,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 40,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 41,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 42,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 43,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 44,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 45,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 46,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 47,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 48,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 49,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 50,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 51,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 52,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 53,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 54,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 55,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 56,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 57,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 58,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 59,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 60,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 61,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 62,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 63,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 64,
+      "status": "HTTP/1.1 200 OK"
+    },
+    {
+      "index": 65,
+      "error_class": "SSLEOFError"
+    }
+  ]
+}

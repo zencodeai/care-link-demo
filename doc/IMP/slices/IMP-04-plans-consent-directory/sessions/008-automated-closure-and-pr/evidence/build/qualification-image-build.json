@@ -1,0 +1,7 @@
+{
+  "image_tag": "care-link-imp04:closure-20261120",
+  "image_id": "sha256:43228d6bf9db0ad94f6c45e0624ac73c41011ded09c1f7122e340804911cbb5a",
+  "recipe_sha256": "72b8349944b1fcd07252d46dcd0d66d75b4eac65abbc4ad7728a9ba8b5c27f2c",
+  "log_sha256": "d20274fa7e883336da3fd9ddecd806d3cd9f13ec0f5a87e417c61b6c5d4543b7",
+  "scope": "Qualification workspace distribution, not minimal per-role packaging"
+}

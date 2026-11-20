@@ -1,0 +1,948 @@
+{
+  "proposal_id": "DEPLOY-IMP04-002",
+  "networks": [
+    {
+      "name": "care-link-imp04-002-mesh",
+      "subnet": "172.29.44.0/24",
+      "internal": true,
+      "bridge_intercontainer_communication": true,
+      "gateway_mode_ipv4": "isolated"
+    },
+    {
+      "name": "care-link-imp04-002-database",
+      "subnet": "172.29.45.0/24",
+      "internal": true,
+      "bridge_intercontainer_communication": true
+    },
+    {
+      "name": "care-link-imp04-002-infrastructure",
+      "subnet": "172.29.46.0/24",
+      "internal": true,
+      "bridge_intercontainer_communication": true
+    },
+    {
+      "name": "care-link-imp04-002-ingress",
+      "subnet": "172.29.47.0/24",
+      "internal": false,
+      "bridge_intercontainer_communication": true
+    }
+  ],
+  "volumes": [
+    "care-link-imp04-002-operator",
+    "care-link-imp04-002-fence",
+    "care-link-imp04-002-opa",
+    "care-link-imp04-002-identity-db",
+    "care-link-imp04-002-identity-provider",
+    "care-link-imp04-002-data-db",
+    "care-link-imp04-002-postgres-config",
+    "care-link-imp04-002-postgres-data",
+    "care-link-imp04-002-spire-server-config",
+    "care-link-imp04-002-spire-server-data",
+    "care-link-imp04-002-keycloak-config",
+    "care-link-imp04-002-keycloak-data",
+    "care-link-imp04-002-browser-home",
+    "care-link-imp04-002-identity-config",
+    "care-link-imp04-002-identity-backend",
+    "care-link-imp04-002-identity-outbound",
+    "care-link-imp04-002-identity-authorization",
+    "care-link-imp04-002-identity-proxy",
+    "care-link-imp04-002-identity-agent",
+    "care-link-imp04-002-identity-svid",
+    "care-link-imp04-002-core-config",
+    "care-link-imp04-002-core-backend",
+    "care-link-imp04-002-core-outbound",
+    "care-link-imp04-002-core-authorization",
+    "care-link-imp04-002-core-proxy",
+    "care-link-imp04-002-core-agent",
+    "care-link-imp04-002-core-svid",
+    "care-link-imp04-002-data-config",
+    "care-link-imp04-002-data-backend",
+    "care-link-imp04-002-data-outbound",
+    "care-link-imp04-002-data-authorization",
+    "care-link-imp04-002-data-proxy",
+    "care-link-imp04-002-data-agent",
+    "care-link-imp04-002-data-svid",
+    "care-link-imp04-002-pdp-config",
+    "care-link-imp04-002-pdp-backend",
+    "care-link-imp04-002-pdp-outbound",
+    "care-link-imp04-002-pdp-authorization",
+    "care-link-imp04-002-pdp-proxy",
+    "care-link-imp04-002-pdp-agent",
+    "care-link-imp04-002-pdp-svid",
+    "care-link-imp04-002-journal-config",
+    "care-link-imp04-002-journal-backend",
+    "care-link-imp04-002-journal-outbound",
+    "care-link-imp04-002-journal-authorization",
+    "care-link-imp04-002-journal-proxy",
+    "care-link-imp04-002-journal-agent",
+    "care-link-imp04-002-journal-svid"
+  ],
+  "containers": [
+    {
+      "name": "care-link-imp04-002-seed",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-c",
+        "import time;time.sleep(14400)"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-operator,target=/volumes/operator",
+        "type=volume,source=care-link-imp04-002-fence,target=/volumes/fence",
+        "type=volume,source=care-link-imp04-002-opa,target=/volumes/opa",
+        "type=volume,source=care-link-imp04-002-identity-db,target=/volumes/identity-db",
+        "type=volume,source=care-link-imp04-002-identity-provider,target=/volumes/identity-provider",
+        "type=volume,source=care-link-imp04-002-data-db,target=/volumes/data-db",
+        "type=volume,source=care-link-imp04-002-postgres-config,target=/volumes/postgres-config",
+        "type=volume,source=care-link-imp04-002-postgres-data,target=/volumes/postgres-data",
+        "type=volume,source=care-link-imp04-002-spire-server-config,target=/volumes/spire-server-config",
+        "type=volume,source=care-link-imp04-002-spire-server-data,target=/volumes/spire-server-data",
+        "type=volume,source=care-link-imp04-002-keycloak-config,target=/volumes/keycloak-config",
+        "type=volume,source=care-link-imp04-002-keycloak-data,target=/volumes/keycloak-data",
+        "type=volume,source=care-link-imp04-002-browser-home,target=/volumes/browser-home",
+        "type=volume,source=care-link-imp04-002-identity-config,target=/volumes/identity-config",
+        "type=volume,source=care-link-imp04-002-identity-backend,target=/volumes/identity-backend",
+        "type=volume,source=care-link-imp04-002-identity-outbound,target=/volumes/identity-outbound",
+        "type=volume,source=care-link-imp04-002-identity-authorization,target=/volumes/identity-authorization",
+        "type=volume,source=care-link-imp04-002-identity-proxy,target=/volumes/identity-proxy",
+        "type=volume,source=care-link-imp04-002-identity-agent,target=/volumes/identity-agent",
+        "type=volume,source=care-link-imp04-002-identity-svid,target=/volumes/identity-svid",
+        "type=volume,source=care-link-imp04-002-core-config,target=/volumes/core-config",
+        "type=volume,source=care-link-imp04-002-core-backend,target=/volumes/core-backend",
+        "type=volume,source=care-link-imp04-002-core-outbound,target=/volumes/core-outbound",
+        "type=volume,source=care-link-imp04-002-core-authorization,target=/volumes/core-authorization",
+        "type=volume,source=care-link-imp04-002-core-proxy,target=/volumes/core-proxy",
+        "type=volume,source=care-link-imp04-002-core-agent,target=/volumes/core-agent",
+        "type=volume,source=care-link-imp04-002-core-svid,target=/volumes/core-svid",
+        "type=volume,source=care-link-imp04-002-data-config,target=/volumes/data-config",
+        "type=volume,source=care-link-imp04-002-data-backend,target=/volumes/data-backend",
+        "type=volume,source=care-link-imp04-002-data-outbound,target=/volumes/data-outbound",
+        "type=volume,source=care-link-imp04-002-data-authorization,target=/volumes/data-authorization",
+        "type=volume,source=care-link-imp04-002-data-proxy,target=/volumes/data-proxy",
+        "type=volume,source=care-link-imp04-002-data-agent,target=/volumes/data-agent",
+        "type=volume,source=care-link-imp04-002-data-svid,target=/volumes/data-svid",
+        "type=volume,source=care-link-imp04-002-pdp-config,target=/volumes/pdp-config",
+        "type=volume,source=care-link-imp04-002-pdp-backend,target=/volumes/pdp-backend",
+        "type=volume,source=care-link-imp04-002-pdp-outbound,target=/volumes/pdp-outbound",
+        "type=volume,source=care-link-imp04-002-pdp-authorization,target=/volumes/pdp-authorization",
+        "type=volume,source=care-link-imp04-002-pdp-proxy,target=/volumes/pdp-proxy",
+        "type=volume,source=care-link-imp04-002-pdp-agent,target=/volumes/pdp-agent",
+        "type=volume,source=care-link-imp04-002-pdp-svid,target=/volumes/pdp-svid",
+        "type=volume,source=care-link-imp04-002-journal-config,target=/volumes/journal-config",
+        "type=volume,source=care-link-imp04-002-journal-backend,target=/volumes/journal-backend",
+        "type=volume,source=care-link-imp04-002-journal-outbound,target=/volumes/journal-outbound",
+        "type=volume,source=care-link-imp04-002-journal-authorization,target=/volumes/journal-authorization",
+        "type=volume,source=care-link-imp04-002-journal-proxy,target=/volumes/journal-proxy",
+        "type=volume,source=care-link-imp04-002-journal-agent,target=/volumes/journal-agent",
+        "type=volume,source=care-link-imp04-002-journal-svid,target=/volumes/journal-svid"
+      ],
+      "user": "0:0",
+      "cpus": "1",
+      "memory": "256m",
+      "tmpfs": [
+        "/operator:rw,noexec,nosuid,size=160m,mode=0700",
+        "/run/care-link-imp03-002:rw,noexec,nosuid,size=32m,mode=0711"
+      ],
+      "cap_add": [
+        "CHOWN",
+        "DAC_OVERRIDE"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-spire-server",
+      "image": "ghcr.io/spiffe/spire-server@sha256:ff546f4c62dafc479a0cd79eae9a7b6df2975754d75efd31706098e0d7548837",
+      "args": [
+        "-config",
+        "/config/server.conf"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-spire-server-config,target=/config,readonly",
+        "type=volume,source=care-link-imp04-002-spire-server-data,target=/run/spire/data"
+      ],
+      "user": "0:0",
+      "cpus": "1",
+      "memory": "256m",
+      "network": "care-link-imp04-002-infrastructure",
+      "ip": "172.29.46.10",
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-postgres",
+      "image": "postgres@sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba",
+      "args": [
+        "-c",
+        "set -a; . /config/postgres.env; set +a; export PGDATA=/var/lib/postgresql/data; exec docker-entrypoint.sh postgres -c ssl=on -c ssl_cert_file=/config/postgres.crt -c ssl_key_file=/config/postgres.key -c hba_file=/config/pg_hba.conf -c ssl_min_protocol_version=TLSv1.3"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-postgres-config,target=/config,readonly",
+        "type=volume,source=care-link-imp04-002-postgres-config,target=/docker-entrypoint-initdb.d,readonly",
+        "type=volume,source=care-link-imp04-002-postgres-data,target=/var/lib/postgresql/data"
+      ],
+      "user": "999:999",
+      "cpus": "1",
+      "memory": "512m",
+      "network": "care-link-imp04-002-database",
+      "ip": "172.29.45.10",
+      "aliases": [
+        "postgres.imp04.internal"
+      ],
+      "publish": [
+        "127.0.0.1:25436:5432"
+      ],
+      "entrypoint": "/bin/sh",
+      "tmpfs": [
+        "/var/run/postgresql:rw,noexec,nosuid,size=4m,mode=1777",
+        "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-keycloak",
+      "image": "sha256:eb16e701be9e124e7d7a35ce00a8a86bef7d15ed63a262c7f3ec770cda846918",
+      "args": [
+        "-c",
+        "set -a; . /config/kc.env; set +a; exec /opt/keycloak/bin/kc.sh start --optimized --import-realm --hostname=https://id.plans.localhost:31443 --hostname-strict=true --http-enabled=false --https-certificate-file=/config/keycloak.crt --https-certificate-key-file=/config/keycloak.key"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-keycloak-config,target=/config,readonly",
+        "type=volume,source=care-link-imp04-002-keycloak-config,target=/opt/keycloak/data/import,readonly",
+        "type=volume,source=care-link-imp04-002-keycloak-data,target=/opt/keycloak/data"
+      ],
+      "user": "1000:1000",
+      "cpus": "2",
+      "memory": "1024m",
+      "network": "care-link-imp04-002-database",
+      "ip": "172.29.45.13",
+      "publish": [
+        "127.0.0.1:31443:8443"
+      ],
+      "entrypoint": "/bin/sh",
+      "pids_limit": 512,
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=64m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-identity-agent",
+      "image": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "args": [
+        "-config",
+        "/config/agent.conf"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-identity-agent,target=/config",
+        "type=volume,source=care-link-imp04-002-identity-svid,target=/run/spire/sockets"
+      ],
+      "user": "0:0",
+      "cpus": "0.5",
+      "memory": "128m",
+      "network": "care-link-imp04-002-infrastructure",
+      "ip": "172.29.46.11",
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=8m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-core-agent",
+      "image": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "args": [
+        "-config",
+        "/config/agent.conf"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-core-agent,target=/config",
+        "type=volume,source=care-link-imp04-002-core-svid,target=/run/spire/sockets"
+      ],
+      "user": "0:0",
+      "cpus": "0.5",
+      "memory": "128m",
+      "network": "care-link-imp04-002-infrastructure",
+      "ip": "172.29.46.12",
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=8m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-data-agent",
+      "image": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "args": [
+        "-config",
+        "/config/agent.conf"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-data-agent,target=/config",
+        "type=volume,source=care-link-imp04-002-data-svid,target=/run/spire/sockets"
+      ],
+      "user": "0:0",
+      "cpus": "0.5",
+      "memory": "128m",
+      "network": "care-link-imp04-002-infrastructure",
+      "ip": "172.29.46.13",
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=8m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-pdp-agent",
+      "image": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "args": [
+        "-config",
+        "/config/agent.conf"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-pdp-agent,target=/config",
+        "type=volume,source=care-link-imp04-002-pdp-svid,target=/run/spire/sockets"
+      ],
+      "user": "0:0",
+      "cpus": "0.5",
+      "memory": "128m",
+      "network": "care-link-imp04-002-infrastructure",
+      "ip": "172.29.46.14",
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=8m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-journal-agent",
+      "image": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "args": [
+        "-config",
+        "/config/agent.conf"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-journal-agent,target=/config",
+        "type=volume,source=care-link-imp04-002-journal-svid,target=/run/spire/sockets"
+      ],
+      "user": "0:0",
+      "cpus": "0.5",
+      "memory": "128m",
+      "network": "care-link-imp04-002-infrastructure",
+      "ip": "172.29.46.15",
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=8m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-fence",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp03_runtime",
+        "trust",
+        "--role",
+        "fence",
+        "--config",
+        "/run/care-link-imp03-002/fence/config.json"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence"
+      ],
+      "user": "22000:22000",
+      "cpus": "0.5",
+      "memory": "128m",
+      "groups": [
+        "22999"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-identity-db-connector",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp03_shared.relay",
+        "unix",
+        "--socket",
+        "/run/care-link-imp03-002/connectors/identity-db/forward.sock",
+        "--target-host",
+        "172.29.45.10",
+        "--target-port",
+        "5432",
+        "--allowed-uid",
+        "22011",
+        "--allowed-uid",
+        "0",
+        "--access-gid",
+        "22011"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-identity-db,target=/run/care-link-imp03-002/connectors/identity-db"
+      ],
+      "user": "22041:22041",
+      "cpus": "0.25",
+      "memory": "64m",
+      "network": "care-link-imp04-002-database",
+      "ip": "172.29.45.11",
+      "groups": [
+        "22011"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-data-db-connector",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp03_shared.relay",
+        "unix",
+        "--socket",
+        "/run/care-link-imp03-002/connectors/data-db/forward.sock",
+        "--target-host",
+        "172.29.45.10",
+        "--target-port",
+        "5432",
+        "--allowed-uid",
+        "22013",
+        "--allowed-uid",
+        "0",
+        "--access-gid",
+        "22013"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-data-db,target=/run/care-link-imp03-002/connectors/data-db"
+      ],
+      "user": "22042:22042",
+      "cpus": "0.25",
+      "memory": "64m",
+      "network": "care-link-imp04-002-database",
+      "ip": "172.29.45.12",
+      "groups": [
+        "22013"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-identity-provider-connector",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp03_shared.relay",
+        "unix",
+        "--socket",
+        "/run/care-link-imp03-002/connectors/identity-provider/forward.sock",
+        "--target-host",
+        "172.29.46.20",
+        "--target-port",
+        "8443",
+        "--allowed-uid",
+        "22011",
+        "--allowed-uid",
+        "0",
+        "--access-gid",
+        "22011"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-identity-provider,target=/run/care-link-imp03-002/connectors/identity-provider"
+      ],
+      "user": "22041:22041",
+      "cpus": "0.25",
+      "memory": "64m",
+      "network": "care-link-imp04-002-infrastructure",
+      "ip": "172.29.46.21",
+      "groups": [
+        "22011"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-operator-seed",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-c",
+        "import time;time.sleep(14400)"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-operator,target=/run/care-link-imp03-002/configuration",
+        "type=volume,source=care-link-imp04-002-identity-config,target=/run/care-link-imp03-002/configuration/identity",
+        "type=volume,source=care-link-imp04-002-core-config,target=/run/care-link-imp03-002/configuration/core",
+        "type=volume,source=care-link-imp04-002-data-config,target=/run/care-link-imp03-002/configuration/data",
+        "type=volume,source=care-link-imp04-002-pdp-config,target=/run/care-link-imp03-002/configuration/pdp",
+        "type=volume,source=care-link-imp04-002-journal-config,target=/run/care-link-imp03-002/configuration/journal",
+        "type=volume,source=care-link-imp04-002-data-db,target=/run/care-link-imp03-002/connectors/data-db,readonly"
+      ],
+      "user": "0:0",
+      "cpus": "1",
+      "memory": "256m",
+      "network": "care-link-imp04-002-database",
+      "cap_add": [
+        "CHOWN",
+        "DAC_OVERRIDE"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-identity-authorization",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp03_runtime",
+        "trust",
+        "--role",
+        "authorization",
+        "--config",
+        "/run/care-link-imp03-002/identity/authorization/config.json"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-identity-authorization,target=/run/care-link-imp03-002/identity/authorization",
+        "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly"
+      ],
+      "user": "22031:22031",
+      "cpus": "0.5",
+      "memory": "128m",
+      "groups": [
+        "22002",
+        "22999"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-identity-app",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp04_deployment.serve",
+        "--root",
+        "/run/care-link-imp03-002/configuration",
+        "--role",
+        "identity",
+        "--forward",
+        "5432",
+        "22041",
+        "/run/care-link-imp03-002/connectors/identity-db/forward.sock",
+        "--forward",
+        "31443",
+        "22041",
+        "/run/care-link-imp03-002/connectors/identity-provider/forward.sock"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-identity-config,target=/run/care-link-imp03-002/configuration/identity",
+        "type=volume,source=care-link-imp04-002-identity-backend,target=/run/care-link-imp03-002/identity/backend",
+        "type=volume,source=care-link-imp04-002-identity-outbound,target=/run/care-link-imp03-002/identity/outbound,readonly",
+        "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly",
+        "type=volume,source=care-link-imp04-002-identity-db,target=/run/care-link-imp03-002/connectors/identity-db,readonly",
+        "type=volume,source=care-link-imp04-002-identity-provider,target=/run/care-link-imp03-002/connectors/identity-provider,readonly"
+      ],
+      "user": "22011:22011",
+      "cpus": "1",
+      "memory": "256m",
+      "groups": [
+        "22002",
+        "22999"
+      ],
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-identity-proxy",
+      "image": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "args": [
+        "-c",
+        "/run/care-link-imp03-002/identity/proxy/envoy.json",
+        "--log-level",
+        "critical",
+        "--disable-hot-restart"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-identity-proxy,target=/run/care-link-imp03-002/identity/proxy,readonly",
+        "type=volume,source=care-link-imp04-002-identity-backend,target=/run/care-link-imp03-002/identity/backend,readonly",
+        "type=volume,source=care-link-imp04-002-identity-outbound,target=/run/care-link-imp03-002/identity/outbound",
+        "type=volume,source=care-link-imp04-002-identity-authorization,target=/run/care-link-imp03-002/identity/authorization,readonly",
+        "type=volume,source=care-link-imp04-002-identity-svid,target=/run/care-link-imp03-002/identity/spire,readonly"
+      ],
+      "user": "22002:22002",
+      "cpus": "1",
+      "memory": "256m",
+      "network": "care-link-imp04-002-mesh",
+      "ip": "172.29.44.11",
+      "pid_container": "care-link-imp04-002-identity-agent"
+    },
+    {
+      "name": "care-link-imp04-002-core-authorization",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp03_runtime",
+        "trust",
+        "--role",
+        "authorization",
+        "--config",
+        "/run/care-link-imp03-002/core/authorization/config.json"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-core-authorization,target=/run/care-link-imp03-002/core/authorization",
+        "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly"
+      ],
+      "user": "22032:22032",
+      "cpus": "0.5",
+      "memory": "128m",
+      "groups": [
+        "22002",
+        "22999"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-core-app",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp04_deployment.serve",
+        "--root",
+        "/run/care-link-imp03-002/configuration",
+        "--role",
+        "core"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-core-config,target=/run/care-link-imp03-002/configuration/core",
+        "type=volume,source=care-link-imp04-002-core-backend,target=/run/care-link-imp03-002/core/backend",
+        "type=volume,source=care-link-imp04-002-core-outbound,target=/run/care-link-imp03-002/core/outbound,readonly",
+        "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly"
+      ],
+      "user": "22012:22012",
+      "cpus": "1",
+      "memory": "256m",
+      "groups": [
+        "22002",
+        "22999"
+      ],
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-core-proxy",
+      "image": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "args": [
+        "-c",
+        "/run/care-link-imp03-002/core/proxy/envoy.json",
+        "--log-level",
+        "critical",
+        "--disable-hot-restart"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-core-proxy,target=/run/care-link-imp03-002/core/proxy,readonly",
+        "type=volume,source=care-link-imp04-002-core-backend,target=/run/care-link-imp03-002/core/backend,readonly",
+        "type=volume,source=care-link-imp04-002-core-outbound,target=/run/care-link-imp03-002/core/outbound",
+        "type=volume,source=care-link-imp04-002-core-authorization,target=/run/care-link-imp03-002/core/authorization,readonly",
+        "type=volume,source=care-link-imp04-002-core-svid,target=/run/care-link-imp03-002/core/spire,readonly"
+      ],
+      "user": "22002:22002",
+      "cpus": "1",
+      "memory": "256m",
+      "network": "care-link-imp04-002-mesh",
+      "ip": "172.29.44.12",
+      "pid_container": "care-link-imp04-002-core-agent"
+    },
+    {
+      "name": "care-link-imp04-002-data-authorization",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp03_runtime",
+        "trust",
+        "--role",
+        "authorization",
+        "--config",
+        "/run/care-link-imp03-002/data/authorization/config.json"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-data-authorization,target=/run/care-link-imp03-002/data/authorization",
+        "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly"
+      ],
+      "user": "22033:22033",
+      "cpus": "0.5",
+      "memory": "128m",
+      "groups": [
+        "22002",
+        "22999"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-data-app",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp04_deployment.serve",
+        "--root",
+        "/run/care-link-imp03-002/configuration",
+        "--role",
+        "data",
+        "--forward",
+        "5432",
+        "22042",
+        "/run/care-link-imp03-002/connectors/data-db/forward.sock"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-data-config,target=/run/care-link-imp03-002/configuration/data",
+        "type=volume,source=care-link-imp04-002-data-backend,target=/run/care-link-imp03-002/data/backend",
+        "type=volume,source=care-link-imp04-002-data-outbound,target=/run/care-link-imp03-002/data/outbound,readonly",
+        "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly",
+        "type=volume,source=care-link-imp04-002-data-db,target=/run/care-link-imp03-002/connectors/data-db,readonly"
+      ],
+      "user": "22013:22013",
+      "cpus": "1",
+      "memory": "256m",
+      "groups": [
+        "22002",
+        "22999"
+      ],
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-data-proxy",
+      "image": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "args": [
+        "-c",
+        "/run/care-link-imp03-002/data/proxy/envoy.json",
+        "--log-level",
+        "critical",
+        "--disable-hot-restart"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-data-proxy,target=/run/care-link-imp03-002/data/proxy,readonly",
+        "type=volume,source=care-link-imp04-002-data-backend,target=/run/care-link-imp03-002/data/backend,readonly",
+        "type=volume,source=care-link-imp04-002-data-outbound,target=/run/care-link-imp03-002/data/outbound",
+        "type=volume,source=care-link-imp04-002-data-authorization,target=/run/care-link-imp03-002/data/authorization,readonly",
+        "type=volume,source=care-link-imp04-002-data-svid,target=/run/care-link-imp03-002/data/spire,readonly"
+      ],
+      "user": "22002:22002",
+      "cpus": "1",
+      "memory": "256m",
+      "network": "care-link-imp04-002-mesh",
+      "ip": "172.29.44.13",
+      "pid_container": "care-link-imp04-002-data-agent"
+    },
+    {
+      "name": "care-link-imp04-002-pdp-authorization",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp03_runtime",
+        "trust",
+        "--role",
+        "authorization",
+        "--config",
+        "/run/care-link-imp03-002/pdp/authorization/config.json"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-pdp-authorization,target=/run/care-link-imp03-002/pdp/authorization",
+        "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly"
+      ],
+      "user": "22034:22034",
+      "cpus": "0.5",
+      "memory": "128m",
+      "groups": [
+        "22002",
+        "22999"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-pdp-app",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp04_deployment.serve",
+        "--root",
+        "/run/care-link-imp03-002/configuration",
+        "--role",
+        "pdp"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-pdp-config,target=/run/care-link-imp03-002/configuration/pdp",
+        "type=volume,source=care-link-imp04-002-pdp-backend,target=/run/care-link-imp03-002/pdp/backend",
+        "type=volume,source=care-link-imp04-002-pdp-outbound,target=/run/care-link-imp03-002/pdp/outbound,readonly",
+        "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly",
+        "type=volume,source=care-link-imp04-002-opa,target=/opt,readonly"
+      ],
+      "user": "22014:22014",
+      "cpus": "1",
+      "memory": "256m",
+      "groups": [
+        "22002",
+        "22999"
+      ],
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-pdp-proxy",
+      "image": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "args": [
+        "-c",
+        "/run/care-link-imp03-002/pdp/proxy/envoy.json",
+        "--log-level",
+        "critical",
+        "--disable-hot-restart"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-pdp-proxy,target=/run/care-link-imp03-002/pdp/proxy,readonly",
+        "type=volume,source=care-link-imp04-002-pdp-backend,target=/run/care-link-imp03-002/pdp/backend,readonly",
+        "type=volume,source=care-link-imp04-002-pdp-outbound,target=/run/care-link-imp03-002/pdp/outbound",
+        "type=volume,source=care-link-imp04-002-pdp-authorization,target=/run/care-link-imp03-002/pdp/authorization,readonly",
+        "type=volume,source=care-link-imp04-002-pdp-svid,target=/run/care-link-imp03-002/pdp/spire,readonly"
+      ],
+      "user": "22002:22002",
+      "cpus": "1",
+      "memory": "256m",
+      "network": "care-link-imp04-002-mesh",
+      "ip": "172.29.44.14",
+      "pid_container": "care-link-imp04-002-pdp-agent"
+    },
+    {
+      "name": "care-link-imp04-002-journal-authorization",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp03_runtime",
+        "trust",
+        "--role",
+        "authorization",
+        "--config",
+        "/run/care-link-imp03-002/journal/authorization/config.json"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-journal-authorization,target=/run/care-link-imp03-002/journal/authorization",
+        "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly"
+      ],
+      "user": "22035:22035",
+      "cpus": "0.5",
+      "memory": "128m",
+      "groups": [
+        "22002",
+        "22999"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-journal-app",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp04_deployment.serve",
+        "--root",
+        "/run/care-link-imp03-002/configuration",
+        "--role",
+        "journal"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-journal-config,target=/run/care-link-imp03-002/configuration/journal",
+        "type=volume,source=care-link-imp04-002-journal-backend,target=/run/care-link-imp03-002/journal/backend",
+        "type=volume,source=care-link-imp04-002-journal-outbound,target=/run/care-link-imp03-002/journal/outbound,readonly",
+        "type=volume,source=care-link-imp04-002-fence,target=/run/care-link-imp03-002/fence,readonly"
+      ],
+      "user": "22015:22015",
+      "cpus": "1",
+      "memory": "256m",
+      "groups": [
+        "22002",
+        "22999"
+      ],
+      "tmpfs": [
+        "/tmp:rw,noexec,nosuid,size=16m,mode=1777"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-journal-proxy",
+      "image": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "args": [
+        "-c",
+        "/run/care-link-imp03-002/journal/proxy/envoy.json",
+        "--log-level",
+        "critical",
+        "--disable-hot-restart"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-journal-proxy,target=/run/care-link-imp03-002/journal/proxy,readonly",
+        "type=volume,source=care-link-imp04-002-journal-backend,target=/run/care-link-imp03-002/journal/backend,readonly",
+        "type=volume,source=care-link-imp04-002-journal-outbound,target=/run/care-link-imp03-002/journal/outbound",
+        "type=volume,source=care-link-imp04-002-journal-authorization,target=/run/care-link-imp03-002/journal/authorization,readonly",
+        "type=volume,source=care-link-imp04-002-journal-svid,target=/run/care-link-imp03-002/journal/spire,readonly"
+      ],
+      "user": "22002:22002",
+      "cpus": "1",
+      "memory": "256m",
+      "network": "care-link-imp04-002-mesh",
+      "ip": "172.29.44.15",
+      "pid_container": "care-link-imp04-002-journal-agent"
+    },
+    {
+      "name": "care-link-imp04-002-ingress",
+      "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+      "args": [
+        "python",
+        "-m",
+        "tools.imp03_shared.relay",
+        "ingress",
+        "--listen-port",
+        "30443",
+        "--target-host",
+        "172.29.44.12",
+        "--target-port",
+        "30443"
+      ],
+      "mounts": [],
+      "user": "65532:65532",
+      "cpus": "0.25",
+      "memory": "64m",
+      "network": "care-link-imp04-002-ingress",
+      "publish": [
+        "127.0.0.1:30443:30443"
+      ]
+    },
+    {
+      "name": "care-link-imp04-002-review-chrome",
+      "image": "sha256:847d0429ebe65559c9cc8cfb415f072fc9bf347050dc0fd7248d5cbcf0669a48",
+      "args": [
+        "node",
+        "/opt/review-server.cjs"
+      ],
+      "mounts": [
+        "type=volume,source=care-link-imp04-002-browser-home,target=/run/browser-home"
+      ],
+      "user": "65532:65532",
+      "cpus": "2",
+      "memory": "1536m",
+      "network": "care-link-imp04-002-ingress",
+      "publish": [
+        "127.0.0.1:30900:29900"
+      ],
+      "pids_limit": 512,
+      "tmpfs": [
+        "/tmp:rw,nosuid,nodev,size=1g,mode=1777"
+      ],
+      "environment": {
+        "HOME": "/run/browser-home",
+        "NODE_EXTRA_CA_CERTS": "/run/browser-home/ca.crt",
+        "CARE_LINK_REVIEW_WS_PATH": "PRIVATE_ISSUED_AT_BROWSER_PHASE"
+      }
+    }
+  ],
+  "additional_networks": {
+    "care-link-imp04-002-keycloak": [
+      {
+        "name": "care-link-imp04-002-infrastructure",
+        "ip": "172.29.46.20"
+      },
+      {
+        "name": "care-link-imp04-002-ingress"
+      }
+    ],
+    "care-link-imp04-002-ingress": [
+      {
+        "name": "care-link-imp04-002-mesh"
+      }
+    ]
+  }
+}

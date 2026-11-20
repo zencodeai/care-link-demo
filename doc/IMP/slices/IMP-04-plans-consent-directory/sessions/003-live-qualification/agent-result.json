@@ -1,0 +1,203 @@
+{
+  "packet_id": "WP-IMP04-003-integration",
+  "task_id": "IMP-04-D",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "role": "imp_platform",
+  "status": "partial",
+  "changed_paths": [
+    "tools/imp04_deployment/**",
+    "tools/imp04_verification/live*.py",
+    "tests/unit/imp04_deployment/**",
+    "tests/e2e/imp04-live/**",
+    "deploy/images/imp04/**",
+    "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/**",
+    "doc/IMP/slices/IMP-04-plans-consent-directory/README.md",
+    "doc/IMP/executions/2026-11-16-IMP-04/ledger.json"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/results.json",
+      "sha256": "cf8db7ad5a1830c55d580fafa334549ca96db4f88135174f399b2293b46ca792"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/demo-packet.json",
+      "sha256": "2ffe9ebc5b017ad6be27fb01acec29ad6b18aaed5c96c90ec0b88635e29ce511"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/final-candidate-manifest.json",
+      "sha256": "92ec7d0cfff704b701bd56aa68ef7d28010518a48bd26adfda4abba23872ffe7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/qualification-results.md",
+      "sha256": "80e26c95c15b7cfdc2d05b87129fab6d7fdf482e47f6e247d4266bebfb0772a7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/handoff.md",
+      "sha256": "ba8f585d52cb2cfd9fda36d8e3535ca4df0e229cd54a32a17ff8fa2f2861ebef"
+    }
+  ],
+  "checks": [
+    {
+      "name": "deployment-unit-tests",
+      "command": ".venv/bin/python -m pytest -q tests/unit/imp04_deployment",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "35 tests passed; mocked Docker boundaries, separate from actual live evidence",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/deployment-unit-tests.log",
+      "evidence_digest": "df70669069be3675214df9a658fcbdd9c46674dced6b2b05ae940adff42baf07",
+      "mock_used": true
+    },
+    {
+      "name": "ruff",
+      "command": ".venv/bin/python -m ruff check tools/imp04_deployment tools/imp04_verification tests/unit/imp04_deployment",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: All checks passed!",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/ruff.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "python-format",
+      "command": ".venv/bin/python -m ruff format --check tools/imp04_deployment tools/imp04_verification tests/unit/imp04_deployment",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: 25 files already formatted",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/python-format.log",
+      "evidence_digest": "7715b02781372f8741fb309aee97a6483e689c9039f0d78081dd910f70b0256e",
+      "mock_used": false
+    },
+    {
+      "name": "pyright",
+      "command": "pnpm exec pyright tools/imp04_deployment tools/imp04_verification",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: 0 errors, 0 warnings, 0 informations",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/pyright.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "live-typescript",
+      "command": "pnpm exec tsc --noEmit --project tests/e2e/imp04-live/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: ",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/live-typescript.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "live-format",
+      "command": "pnpm exec prettier --check tests/e2e/imp04-live",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: Checking formatting...\nAll matched files use Prettier code style!",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/live-format.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "contracts",
+      "command": ".venv/bin/python tools/generate_contracts.py --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: Browser validators match the pinned schema (72 public contracts).\nContract snapshots match reviewed definitions.",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/contracts.log",
+      "evidence_digest": "0537f5be93b6bf84de3ce0a39f65bca9f01475eba04f026d50e76e89a6e2cef8",
+      "mock_used": false
+    },
+    {
+      "name": "boundaries",
+      "command": ".venv/bin/python tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: Source dependency boundaries passed (source check, not runtime isolation).",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/boundaries.log",
+      "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "mock_used": false
+    },
+    {
+      "name": "whitespace",
+      "command": "git diff --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Command succeeds using repository tools; this is a source/tooling check",
+      "actual": "Exit 0: ",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/checks/whitespace.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    }
+  ],
+  "findings": [
+    {
+      "id": "IMP04-LIVE-01",
+      "severity": "major",
+      "source_refs": [
+        "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-race-012.json",
+        "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-absence-002.json"
+      ],
+      "affected_path_or_operation": "plan_read/consent_grant",
+      "problem": "A03/A04 strict race expectations failed: pending requests returned503 manual.gateway_denied despite entered/released receipts after journalled restriction.",
+      "recommendation": "Diagnose exact downstream error and complete output-expiry/role-change/absence evidence under original immutable request deadlines; do not broaden successful status codes.",
+      "verification": "Fresh synthetic scope, independently correlated journal/DB effects and entered/released/output timestamps."
+    },
+    {
+      "id": "IMP04-LIVE-02",
+      "severity": "major",
+      "source_refs": [
+        "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-accessibility-004.json",
+        "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/live/qualification-normal-009.json"
+      ],
+      "affected_path_or_operation": "directory_search / native bilingual UI",
+      "problem": "Second French UI directory search returned503; full four-actor bilingual scan did not complete. Final restored-default normal009 also failed new-session create with503 after1158ms; all9 sign-ins passed.",
+      "recommendation": "Capture safe exact downstream status/error and resolve failure; repeat all8 native actor/locale scans.",
+      "verification": "All4actors x2locales keyboard/focus/errors/live-region checks plus zero-violation native scans."
+    },
+    {
+      "id": "IMP04-LIVE-03",
+      "severity": "major",
+      "source_refs": [
+        "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/policy-oom-recovery.json"
+      ],
+      "affected_path_or_operation": "care-link-imp04-002-pdp-app",
+      "problem": "Policy app genuinely OOM-killed under approved256MiB. Restart restored service but is not a fix.",
+      "recommendation": "Investigate evaluation concurrency/resource peaks; present any exact deployment correction for review before applying.",
+      "verification": "Repeat representative workload with current limits/corrected reviewed candidate and no OOM or deadline bypass."
+    },
+    {
+      "id": "IMP04-LIVE-04",
+      "severity": "minor",
+      "source_refs": [
+        "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/evidence/browser-resource-diagnosis.json"
+      ],
+      "affected_path_or_operation": "new review browser lifecycle",
+      "problem": "Repeated qualification launches accumulated zombie processes and reached512 PID limit.",
+      "recommendation": "Design a scoped reaper/lifecycle correction; current batch restart retains CA/home and original budget but is not a permanent correction.",
+      "verification": "Repeated bounded runs without zombie accumulation or PID ceiling hits."
+    }
+  ],
+  "contract_changes": [],
+  "remaining_risks": [
+    "A03/A04 strict race expectations failed: pending requests returned503 manual.gateway_denied despite entered/released receipts after journalled restriction.",
+    "Second French UI directory search returned503; full four-actor bilingual scan did not complete. Final restored-default normal009 also failed new-session create with503 after1158ms; all9 sign-ins passed.",
+    "Policy app genuinely OOM-killed under approved256MiB. Restart restored service but is not a fix.",
+    "Repeated qualification launches accumulated zombie processes and reached512 PID limit.",
+    "Manual screen-reader and actual200% zoom review not run; full native bilingual coverage incomplete.",
+    "No fresh directory availability claim: exact signed fixtures remain stale and one service remains suspended.",
+    "No elapsed30day purge/backup-completion evidence, final-output expiry/role-change race, or live browser-role forgery matrix.",
+    "No full-reload persistence of unsent drafts/pending intent claimed.",
+    "Issuer-expiry denied as expected; recovery exceeded75s harness window, later all5 new certs and protected200 recorded without agent/fence restart.",
+    "Deployment approval is separate from actual human G-04 acceptance."
+  ],
+  "handoff": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/handoff.md",
+  "is_example": false
+}

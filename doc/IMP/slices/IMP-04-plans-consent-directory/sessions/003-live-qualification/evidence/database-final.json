@@ -1,0 +1,140 @@
+{
+  "target": "care-link-imp04-002",
+  "database": "imp04_runtime_002",
+  "probes": [
+    {
+      "probe": "runtime_ddl",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_insert",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_update",
+      "permission_denied": true
+    },
+    {
+      "probe": "delegation_delete",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_field_update",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_event_delete",
+      "permission_denied": true
+    },
+    {
+      "probe": "immutable_source_update",
+      "permission_denied": true
+    }
+  ],
+  "runtime_superuser_createdb_createrole_bypassrls": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "forced_rls": [
+    [
+      "current_grant",
+      true,
+      true
+    ],
+    [
+      "field",
+      true,
+      true
+    ],
+    [
+      "plan",
+      true,
+      true
+    ]
+  ],
+  "effect_counts": {
+    "plans.plan": 3,
+    "plans.field": 8,
+    "plans.review_work": 3,
+    "consent.current_grant": 14,
+    "consent.event": 22,
+    "knowledge.service_version": 8,
+    "knowledge.quarantine": 1
+  },
+  "plan_anchor_total_retired_30day_active_counts": [
+    11,
+    2,
+    9
+  ],
+  "status": "passed",
+  "failures": [],
+  "plan_copy_metadata": [
+    [
+      "49a60bfb-ad3e-42bc-a405-b86d578f23e6",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ],
+    [
+      "55566900-4448-489e-bd6b-11c5af61cad9",
+      "plan_retired",
+      "2026-11-16 19:45:10.242974+00:00",
+      "2026-12-16 19:45:10.242974+00:00",
+      "retained"
+    ],
+    [
+      "9c7fc257-c29f-4a0a-9912-eaa690a25118",
+      "plan_retired",
+      null,
+      null,
+      "anchor_pending"
+    ]
+  ],
+  "pending_review_counts": [
+    [
+      "9c7fc257-c29f-4a0a-9912-eaa690a25118",
+      3
+    ]
+  ],
+  "control_metadata": [
+    "8b75464e-48c4-45a3-8321-f8faa198b5af",
+    1,
+    1,
+    "ai_disabled",
+    9
+  ],
+  "content_returned": false,
+  "selected_effect_metadata": {
+    "operation": {
+      "row_count": 1,
+      "record": {
+        "operation_id": "2d572b0d-08f5-4614-96c1-196a236d94ef",
+        "principal_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+        "operation_name": "plan_field_append",
+        "state": "committed",
+        "session_id": "c877de3c-6310-48b5-b7a6-c1b84d312792",
+        "resource_id": "9c7fc257-c29f-4a0a-9912-eaa690a25118",
+        "result_type": "PlanView",
+        "canonical_audit_id": "cc487917-1ccc-465a-bfc5-3bce9597a178"
+      }
+    },
+    "field": {
+      "row_count": 1,
+      "record": {
+        "id": "812e4e96-ffde-44f5-bb50-7c3592dffdbe",
+        "plan_id": "9c7fc257-c29f-4a0a-9912-eaa690a25118",
+        "author_id": "21eded6a-6b90-4114-bb76-f45188a83e2a",
+        "session_id": "c877de3c-6310-48b5-b7a6-c1b84d312792",
+        "revision": 6,
+        "field_key": "plan.strategies",
+        "verification": "disputed",
+        "supersedes_id": "7693f664-57bc-4b2a-8092-f1f2b1c8e83b",
+        "safety_relevant": false
+      },
+      "operation_plan_author_session_correlation_count": 1
+    }
+  }
+}

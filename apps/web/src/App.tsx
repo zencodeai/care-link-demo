@@ -4,6 +4,8 @@ import { messages } from "./messages";
 import { TrustAndHelp } from "./trust/TrustAndHelp";
 import { ManualService } from "./manual/ManualService";
 import { ReviewApp } from "./review/ReviewApp";
+import { PlansReviewApp } from "./plans-review/PlansReviewApp";
+import { PlansWorkspace } from "./plans/PlansWorkspace";
 
 type Locale = keyof typeof messages;
 type Connection = "loading" | "unavailable" | "invalid" | "connected";
@@ -152,6 +154,7 @@ function DeveloperApp() {
         staticOrigin={import.meta.env.VITE_STATIC_ORIGIN ?? null}
       />
       <ManualService locale={locale} />
+      <PlansWorkspace locale={locale} />
       <section aria-labelledby="contracts-title">
         <h2 id="contracts-title">{text.contracts}</h2>
         <p>{text.privacy}</p>
@@ -214,6 +217,11 @@ function DeveloperApp() {
 }
 
 export function App() {
+  if (
+    window.location.pathname === "/plans-review" ||
+    window.location.pathname.startsWith("/plans-review/")
+  )
+    return <PlansReviewApp />;
   return /^r[0-9a-f]{32}-(participant|worker1|worker2|supervisor)\./.test(
     window.location.hostname,
   ) ? (

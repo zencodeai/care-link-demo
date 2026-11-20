@@ -7,12 +7,99 @@ from uuid import uuid4
 from care_link_contracts import validate_contract
 from care_link_domain import Actor, ManualError
 
+from .consent import Consent
+from .directory import Directory
+from .plans import Plans
 from .review import ReviewService
 from .store import Record, Transaction, instant, number, text
 from .values import Outcome, digest, integer, object_value
 
 
-class ManualService(ReviewService):
+class ManualService(Plans, Consent, Directory, ReviewService):
+    def own_reports_read(self, actor: Actor, session_id: str) -> Record:
+        import json
+
+        from .projections import assertion_view
+
+        def read(
+            tx: Transaction,
+            current: Actor,
+            _data: Record,
+            session: Record | None,
+            guard: Record | None,
+        ) -> Outcome:
+            row, _ = self.require_session(session, guard)
+            if row["participant_account_id"] != current.account_id:
+                raise ManualError("manual.not_found", 404)
+            reports = tx.rows(
+                "assertion", session_id=session_id, author_id=current.account_id, limit=100
+            )
+            if len(reports) == 100:
+                raise ManualError("manual.report_history_limit", 503)
+            values = [
+                assertion_view(report, self.cipher, json.loads)
+                for report in reports
+                if report["subject_id"] == row["persona_id"]
+            ]
+            return Outcome("OwnReportPage", {"items": values, "next_cursor": None})
+
+        return self._run(actor, "own_reports_read", None, {}, session_id, read)
+
+    def _replay(self, tx: Transaction, actor: Actor, old: Record, snapshot: Record) -> Record:
+        from .consent import consent_view, grant_current, owns_subject
+
+        if old["state"] != "committed":
+            return super()._replay(tx, actor, old, snapshot)
+        resource = old["resource_id"]
+        if not isinstance(resource, str):
+            return super()._replay(tx, actor, old, snapshot)
+        if old["result_type"] == "PlanView":
+            plan = tx.get("plan", resource)
+            if plan is None:
+                raise ManualError("manual.not_found", 404)
+            return self.plan_projection(tx, actor, plan)
+        if old["result_type"] == "ConsentView":
+            grant = tx.get("consent", resource)
+            session = snapshot["session"]
+            if (
+                grant is None
+                or session is None
+                or not (
+                    owns_subject(tx, actor, object_value(session))
+                    or grant["grantor_id"] == actor.account_id
+                    or grant["recipient_kind"] == "account"
+                    and grant["recipient_id"] == actor.account_id
+                    and grant_current(tx, grant, self.clock())
+                )
+            ):
+                raise ManualError("manual.not_found", 404)
+            return consent_view(grant)
+        if old["result_type"] == "DirectoryView":
+            return self.directory_projection(tx, self.lookup_directory(tx, resource))
+        if old["operation_name"] == "consent_revoke":
+            grant = tx.get("consent", resource)
+            if grant is None:
+                raise ManualError("manual.not_found", 404)
+            return {
+                "operation_id": old["operation_id"],
+                "state": "committed",
+                "resource_id": resource,
+                "revision": str(number(grant, "revision")),
+                "audit_ref": old["canonical_audit_id"],
+            }
+        if old["operation_name"] == "directory_suspend":
+            guard = tx.get("service_guard", resource)
+            if guard is None:
+                raise ManualError("manual.not_found", 404)
+            return {
+                "operation_id": old["operation_id"],
+                "state": "committed",
+                "resource_id": resource,
+                "revision": str(number(guard, "current_revision")),
+                "audit_ref": old["canonical_audit_id"],
+            }
+        return super()._replay(tx, actor, old, snapshot)
+
     def authority_metadata(self, actor: Actor, request: Record) -> Record:
         """Exact metadata preflight, after transport verifies signed delegation.
 
@@ -25,12 +112,39 @@ class ManualService(ReviewService):
         session_id = scope["session_id"] if isinstance(scope["session_id"], str) else None
         action = text(request, "action")
         current = self._fresh_actor(actor)
+        planning = object_value(request["planning"]) if request.get("planning") else None
+        arguments: Record | None = None
+        if action.startswith(("plan_", "consent_", "directory_")):
+            if planning is None or planning["action"] != action:
+                raise ManualError("manual.planning_target_required", 422)
+            arguments = {
+                **object_value(planning["arguments"]),
+                **object_value(planning["path_arguments"]),
+            }
+            if action == "plan_create":
+                session_id = self._subject_session(
+                    current, text(arguments, "subject_id"), text(planning, "operation_id")
+                )
+            elif action.startswith("plan_"):
+                session_id = self._plan_session(current, text(arguments, "plan_id"))
+            elif action == "consent_grant":
+                session_id = text(arguments, "session_id")
+            elif action.startswith("consent_"):
+                session_id = self._consent_session(current, text(arguments, "grant_id"))
+            else:
+                session_id = None
         with self.store.transaction(current, session_id, queue=action == "queue_list") as tx:
             snapshot = self._snapshot(tx, current, session_id)
             current = self._fresh_actor(current)
             self.assert_journal_current(snapshot)
             policy_input = self._policy_input(
-                tx, current, action, str(uuid4()), text(request, "payload_digest"), snapshot
+                tx,
+                current,
+                action,
+                text(planning, "operation_id") if planning else str(uuid4()),
+                text(request, "payload_digest"),
+                snapshot,
+                arguments=arguments,
             )
             control = object_value(snapshot["control"])
             facts = object_value(policy_input["authority_facts"])
@@ -40,7 +154,7 @@ class ManualService(ReviewService):
                 session is None or object_value(session)["persona_id"] != scope["subject_id"]
             ):
                 complete = False
-            versions = self._versions(current, snapshot)
+            versions = object_value(policy_input["versions"])
             if not complete:
                 facts["resource_owned_or_assigned"] = False
                 facts["field_scope_allowed"] = False
@@ -59,6 +173,16 @@ class ManualService(ReviewService):
                 "mode": control["mode"],
                 "complete": complete,
             }
+            if planning is not None:
+                result.update(
+                    {
+                        "resolved_scope": policy_input["scope"],
+                        "consent_id": policy_input["consent_id"],
+                        "disclosure_grants": policy_input.get("disclosure_grants", []),
+                        "artifact_digests": policy_input["artifact_digests"],
+                        "directory_bindings": policy_input.get("directory_bindings", []),
+                    }
+                )
             validate_contract("MetadataResult", result)
             self._audit(
                 tx,
@@ -112,48 +236,6 @@ class ManualService(ReviewService):
 
         return self._run(
             actor, "operation_status", None, {"operation_id": operation_id}, None, status
-        )
-
-    def append_restriction(
-        self,
-        tx: Transaction,
-        key: str,
-        control: Record,
-        restriction: Record,
-        scope: Record,
-    ) -> None:
-        before = self.journal.head()
-        request: Record = {
-            "command_id": key,
-            "expected_tip": str(before.tip),
-            "kind": "restrict_intent",
-            "scope": scope,
-            "restriction": restriction,
-            "binding_digest": digest(restriction),
-            "db_operation_id": key,
-            "relaxation_evidence_digest": None,
-        }
-        after = self.journal.append(request)
-        if (
-            after.journal_id != before.journal_id
-            or after.generation != before.generation
-            or after.restriction_barrier <= before.restriction_barrier
-        ):
-            raise ManualError("manual.journal_append_invalid", 503)
-        control["restriction_barrier"] = after.restriction_barrier
-        control["journal_tip_seen"] = after.tip
-        tx.put("control", control)
-        tx.put(
-            "recovery",
-            {
-                "command_id": key,
-                "intent_seq": after.tip,
-                "barrier_seq": after.restriction_barrier,
-                "payload_digest": digest(request),
-                "state": "applied",
-                "db_operation_id": key,
-                "applied_at": self.clock(),
-            },
         )
 
     def control_change(self, actor: Actor, key: str, data: Record) -> Record:

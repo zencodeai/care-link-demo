@@ -99,6 +99,26 @@ NAMES = (
     "SignedDelegation",
     "PageQuery",
     "BackupView",
+    "PlanCreate",
+    "PlanFieldCreate",
+    "PlanView",
+    "ConsentGrant",
+    "ConsentView",
+    "DirectoryQuery",
+    "DirectoryIngest",
+    "DirectoryView",
+    "DirectoryPage",
+    "Gateway_plan_create",
+    "Gateway_plan_read",
+    "Gateway_plan_field_append",
+    "Gateway_plan_retire",
+    "Gateway_consent_grant",
+    "Gateway_consent_read",
+    "Gateway_consent_revoke",
+    "Gateway_directory_search",
+    "Gateway_directory_read",
+    "Gateway_directory_ingest",
+    "Gateway_directory_suspend",
 )
 
 
@@ -198,8 +218,103 @@ def render() -> str:
         "required": list(properties),
         "additionalProperties": False,
     }
+    # IMP-04 additive transport bindings: exact target discovery, multi-grant
+    # policy evidence and actor-owned current reports. Canonical LLD unchanged.
+    selected["StepUpStart"]["properties"]["purpose"]["enum"].append("follow_up_consent")
+    planning_actions = (
+        "plan_create",
+        "plan_read",
+        "plan_field_append",
+        "plan_retire",
+        "consent_grant",
+        "consent_read",
+        "consent_revoke",
+        "directory_search",
+        "directory_read",
+        "directory_ingest",
+        "directory_suspend",
+    )
+    targets = []
+    for action in planning_actions:
+        gateway = source["$defs"]["Gateway_" + action]["properties"]
+        targets.append(
+            {
+                "type": "object",
+                "properties": {
+                    "action": {"const": action},
+                    "operation_id": {"$ref": "#/$defs/Id"},
+                    "arguments": gateway["arguments"],
+                    "path_arguments": gateway["path_arguments"],
+                },
+                "required": ["action", "operation_id", "arguments", "path_arguments"],
+                "additionalProperties": False,
+            }
+        )
+    selected["MetadataRequest"]["properties"]["planning"] = {"oneOf": targets}
+    bindings = {
+        "resolved_scope": {"$ref": "#/$defs/Scope"},
+        "consent_id": source["$defs"]["PolicyInput"]["properties"]["consent_id"],
+        "disclosure_grants": {
+            "type": "array",
+            "items": {"$ref": "#/$defs/ConsentAuthority"},
+            "maxItems": 32,
+        },
+        "artifact_digests": source["$defs"]["PolicyInput"]["properties"]["artifact_digests"],
+    }
+    selected["ConsentAuthority"]["properties"].update(
+        {
+            "subject_id": {"$ref": "#/$defs/Id"},
+            "session_id": {"$ref": "#/$defs/Id"},
+            "purpose": {"const": "plan"},
+        }
+    )
+    bindings["directory_bindings"] = {
+        "type": "array",
+        "maxItems": 100,
+        "items": {
+            "type": "object",
+            "properties": {
+                "service_id": {"$ref": "#/$defs/Id"},
+                "revision": {"$ref": "#/$defs/Revision"},
+                "artifact_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "suspended": {"type": "boolean"},
+                "current": {"type": "boolean"},
+            },
+            "required": ["service_id", "revision", "artifact_digest", "suspended", "current"],
+            "additionalProperties": False,
+        },
+    }
+    selected["PolicyInput"]["properties"]["directory_bindings"] = bindings["directory_bindings"]
+    selected["MetadataResult"]["properties"].update(bindings)
+    selected["PolicyInput"]["properties"]["disclosure_grants"] = bindings["disclosure_grants"]
+    selected["RevisionVector"]["properties"]["directory_set_digest"] = {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$",
+    }
+    selected["OwnReportPage"] = {
+        "type": "object",
+        "properties": {
+            "items": {"type": "array", "items": {"$ref": "#/$defs/AssertionView"}, "maxItems": 100},
+            "next_cursor": {"type": "null"},
+        },
+        "required": ["items", "next_cursor"],
+        "additionalProperties": False,
+    }
+    selected["Gateway_own_reports_read"] = {
+        "type": "object",
+        "properties": {
+            "arguments": source["$defs"]["Empty"],
+            "path_arguments": source["$defs"]["Path_session_read"],
+            "delegation": source["$defs"]["Gateway_session_read"]["properties"]["delegation"],
+            "decision": source["$defs"]["Gateway_session_read"]["properties"]["decision"],
+        },
+        "required": ["arguments", "path_arguments", "delegation", "decision"],
+        "additionalProperties": False,
+    }
     review = json.loads((ROOT / "packages/contracts/manual-review.schema.json").read_text())
     selected.update(review["$defs"])
+    plans_review = json.loads((ROOT / "packages/contracts/plans-review.schema.json").read_text())
+    selected.update(plans_review["$defs"])
     include("Id")
     include("Revision")
     for name in ("BrowserSession", "IdentityEvidence"):
@@ -208,7 +323,17 @@ def render() -> str:
             "properties": {
                 **selected[name]["properties"],
                 "review_run_id": {"$ref": "#/$defs/Id"},
-                "review_slot_id": {"enum": ["participant", "worker1", "worker2", "supervisor"]},
+                "review_slot_id": {
+                    "enum": [
+                        "participant",
+                        "worker1",
+                        "worker2",
+                        "supervisor",
+                        "pid",
+                        "carer",
+                        "professional",
+                    ]
+                },
                 "review_origin": {"type": "string", "format": "uri", "pattern": "^https://"},
             },
         }

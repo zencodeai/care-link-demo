@@ -1,0 +1,20 @@
+{
+  "name": "care-link-imp04-002-pdp-app",
+  "id": "71108c1e77b0435dd8b71d8ca5ec36784f4aa71073269b86df599f0a0b1c54f5",
+  "image": "sha256:b5282ae84b127c301f8dbc5cfec7a14c5e8e278b7c9317c0a8eb11811dc88edd",
+  "state_before": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": true,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 137,
+    "Error": "",
+    "StartedAt": "2026-11-16T19:06:32.843139597Z",
+    "FinishedAt": "2026-11-16T20:24:58.586479633Z"
+  },
+  "memory_limit_bytes": 268435456,
+  "action": "Start exact same inspected container, original configuration/limits/volumes; no fence or journal reset"
+}

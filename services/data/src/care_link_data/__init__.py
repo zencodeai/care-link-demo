@@ -4,7 +4,7 @@ from .audit import verify_audit_chain
 from .control import ManualService
 from .crypto import AESGCMContentCipher
 from .duties import DutyCommands, SignalSource
-from .review_admin import ReviewRunAdmin, apply_review_migration
+from .review_admin import ReviewRunAdmin, apply_plans_review_migration, apply_review_migration
 from .store import PostgresStore
 
 __all__ = [
@@ -15,5 +15,6 @@ __all__ = [
     "PostgresStore",
     "ReviewRunAdmin",
     "apply_review_migration",
+    "apply_plans_review_migration",
     "verify_audit_chain",
 ]

@@ -20,7 +20,10 @@
     "tools/demo",
     "tools/imp03_shared/review_*.py",
     "tools/imp03_verification/live_barrier.py",
-    "tools/imp03_verification/audit_fault.py"
+    "tools/imp03_verification/audit_fault.py",
+    "tools/imp04_deployment",
+    "tools/imp04_review",
+    "tools/imp04_verification"
   ],
   "pythonVersion": "3.14",
   "venvPath": ".",

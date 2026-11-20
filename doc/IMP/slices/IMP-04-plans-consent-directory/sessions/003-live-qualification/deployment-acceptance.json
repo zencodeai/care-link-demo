@@ -1,0 +1,14 @@
+{
+  "decision": "accept_deployment_proposal_and_proceed_qualification",
+  "actual_human_attribution": "Current user",
+  "instruction_reference": "Exact deployment proposal reviwed and accepted\nProceed with Live qualification procedure",
+  "accepted_proposal": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/target-proposal.json",
+    "sha256": "645107a51875afc2f1ee2f6520639c8e013385ec6f92c2f12caf087e190d681a"
+  },
+  "deployment_scope": "DEPLOY-IMP04-002; new independent target only",
+  "G04_acceptance": false,
+  "participant_admission": false,
+  "commit_push_authorized": false,
+  "recorded_at": "2026-11-16T18:50:44.861641+00:00"
+}

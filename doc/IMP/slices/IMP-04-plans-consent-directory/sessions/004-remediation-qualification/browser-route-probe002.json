@@ -1,0 +1,9 @@
+{
+  "main": {
+    "status": 200,
+    "remote_ip": "172.29.47.3"
+  },
+  "provider_metadata_status": 200,
+  "native_tls_bypass": false,
+  "direct_route_verified": true
+}

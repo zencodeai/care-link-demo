@@ -1,0 +1,30 @@
+{
+  "read_only": true,
+  "public_flags_only": true,
+  "processes": [
+    {
+      "pid": 52549,
+      "executable": "/private/tmp/care-link-imp02-002/browsers/chromium-1254/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+      "flags_present": {
+        "--ignore-certificate-errors": false,
+        "--ignore-certificate-errors-spki-list": false,
+        "--allow-insecure-localhost": false,
+        "--test-type": false,
+        "--enable-automation": false,
+        "--incognito": false
+      }
+    },
+    {
+      "pid": 97978,
+      "executable": "/private/tmp/care-link-imp02-002/browsers/chromium-1254/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+      "flags_present": {
+        "--ignore-certificate-errors": false,
+        "--ignore-certificate-errors-spki-list": false,
+        "--allow-insecure-localhost": false,
+        "--test-type": false,
+        "--enable-automation": false,
+        "--incognito": false
+      }
+    }
+  ]
+}

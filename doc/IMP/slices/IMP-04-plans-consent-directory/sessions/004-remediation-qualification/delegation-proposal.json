@@ -1,0 +1,16 @@
+{
+  "target": "care-link-imp04-002",
+  "subject_id": "6e578026-d36b-4320-b5e3-fdf34c0a70ae",
+  "session_id": "34b3a55d-faf0-4426-89ed-ed53132cd424",
+  "grantor_id": "fb881f96-e088-429c-a404-5208f22b4068",
+  "delegation_id": "2f53fcf6-d2d1-452b-9268-83428522779b",
+  "purposes": [
+    "plan"
+  ],
+  "fields": [
+    "plan.strategies"
+  ],
+  "lifetime_seconds": 600,
+  "scope": "One newly inserted synthetic delegation through existing offline migration-owner helper; no sharing grant, no old delegation updates or expiry changes",
+  "state": "prepared"
+}

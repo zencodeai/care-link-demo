@@ -1,0 +1,932 @@
+{
+  "recorded_at": "2026-11-17T00:33:03.489205+00:00",
+  "scope": "All durable session004 files except this manifest itself. Raw private browser/authentication/checkpoint artifacts are excluded from the repository. Later edits invalidate the corresponding hashes.",
+  "files": [
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/README.md",
+      "sha256": "b47c60196a1aac7ffe12f20968fe3f007a410bfe2e6e5b1706a33545fff517ff",
+      "bytes": 981
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/agent-result.json",
+      "sha256": "5fec49b6d76e0508987610fcfe467b42ede09ca115c1395ac99b934fdab35071",
+      "bytes": 14670
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/attempt-index.json",
+      "sha256": "bd0f3c7a669b88dc21bfe2d19c3c27c5cba7696e3692a8310da7686bc27c6bef",
+      "bytes": 30058
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/authority-case-prepared.json",
+      "sha256": "ea8349465a3a4af934484c3ff0a489d594b483de022ffdc55a969b4818b8aa42",
+      "bytes": 228
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/auto-review-note.json",
+      "sha256": "d0ae5104c1d1e42caf246c47845228abd93655b1bc2e8edb4cd67b0bb89e5ca9",
+      "bytes": 492
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/baseline-runtime.json",
+      "sha256": "5dd6b77d580f5392facd430ac7958ae81988f6d14b1906b6d870705d477d0ad6",
+      "bytes": 230365
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/browser-route-probe.json",
+      "sha256": "33588e2eb6548346e863d341b4598f0567f621af5ab9957733f31fd1fab4f902",
+      "bytes": 234
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/browser-route-probe002.json",
+      "sha256": "4dcadbf2dac436d3960dd7044dcb9b118c4e93dbd30ff4bd346fcce94f2655c2",
+      "bytes": 168
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/browser-route-proposal.json",
+      "sha256": "5f12170eeda2581f984fc10421bdcdabaae05a04e627687fe466391a3f76f890",
+      "bytes": 660
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/browser-route-proposal002.json",
+      "sha256": "b0b04cab59dbf88b31bffc1ba446cea1909379b494263d3ed2a702cb619891b8",
+      "bytes": 835
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/carer-denial-diagnostic.json",
+      "sha256": "7dc75a12b168a440b340c064c80cce1a4d4d9752fb7da97ffb270e1a56086013",
+      "bytes": 1118
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/boundaries.log",
+      "sha256": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "bytes": 75
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/contracts.log",
+      "sha256": "0537f5be93b6bf84de3ce0a39f65bca9f01475eba04f026d50e76e89a6e2cef8",
+      "bytes": 113
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/live-typescript.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/pyright.log",
+      "sha256": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "bytes": 37
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/python-focused.log",
+      "sha256": "0770eed4c9bbc02268b58107f194bf5be5f502abf1d12cfc5b6c9c018390bc2d",
+      "bytes": 1228
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/python-format.log",
+      "sha256": "60b1abe1dfdcd741df7a1fc710e64e44c702e4ab4e4529c9c4a0ff7a0063f067",
+      "bytes": 27
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/ruff.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/typescript-format.log",
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "bytes": 66
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/web-focused.log",
+      "sha256": "b74229806bc64d96b0df98aa324690c0f4a70c6199414a31d06a5d2f9735a121",
+      "bytes": 233
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/web-lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/web-typescript.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks/whitespace.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/boundaries.log",
+      "sha256": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "bytes": 75
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/contracts.log",
+      "sha256": "0537f5be93b6bf84de3ce0a39f65bca9f01475eba04f026d50e76e89a6e2cef8",
+      "bytes": 113
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/live-typescript.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/pyright.log",
+      "sha256": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "bytes": 37
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/python-focused.log",
+      "sha256": "dbfde12470ddbffd9cf4599be638e90255f3e98be8e523473ef90fb6b1e442ea",
+      "bytes": 1308
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/python-format.log",
+      "sha256": "4cfce4314a68bfd72805ca6ee4c4477596a8626548f54945751eb6fcfa34f996",
+      "bytes": 27
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/ruff.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/typescript-format.log",
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "bytes": 66
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/web-focused.log",
+      "sha256": "a1f5429e08d8d527aecec917345a5386857b2f3463a82ed65c7d5c92de173ef5",
+      "bytes": 231
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/web-lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/web-typescript.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final/whitespace.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/boundaries.log",
+      "sha256": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "bytes": 75
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/contracts.log",
+      "sha256": "0537f5be93b6bf84de3ce0a39f65bca9f01475eba04f026d50e76e89a6e2cef8",
+      "bytes": 113
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/live-typescript.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/native-javascript-syntax.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/pyright.log",
+      "sha256": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "bytes": 37
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/python-focused.log",
+      "sha256": "52e6fecfd0ef89135f506fa4ea6453aea6a44a680c96e2325962d680addaca5e",
+      "bytes": 1308
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/python-format.log",
+      "sha256": "70aeb2781372748bf56bc4126fc132461937977430c7144a7cb865fa230b87a6",
+      "bytes": 27
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/ruff.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/typescript-format.log",
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "bytes": 66
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/web-focused.log",
+      "sha256": "7042cb88c65a92fbe425e909e7b0d337e66c186418f62514e225cfca77c985fe",
+      "bytes": 231
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/web-lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/web-typescript.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final2/whitespace.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/native-javascript-syntax.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/pyright.log",
+      "sha256": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "bytes": 37
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/python-focused.log",
+      "sha256": "cf54f63c71ec6d6430ce1b85f877cd408e1daa280811fd32432e7ef7360a3846",
+      "bytes": 1308
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/python-format.log",
+      "sha256": "70aeb2781372748bf56bc4126fc132461937977430c7144a7cb865fa230b87a6",
+      "bytes": 27
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/ruff.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks-final3/whitespace.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/checks.json",
+      "sha256": "a28ad243409eb2b8f336b9ff0b4511d2b041a1172dd05c711c649edc161887d5",
+      "bytes": 9797
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/core-hop-trace004.json",
+      "sha256": "60754824049e012344fee6368e67c1257c778b6e5ea6ad99d0b7b24b7895afea",
+      "bytes": 7788
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/core-hop-trace005.json",
+      "sha256": "e7089f273c7b76032affa57e0ef1fdfd3b7a5d22119700a2192dfb74e4773a97",
+      "bytes": 15961
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/database-absence.json",
+      "sha256": "538e7f52112fbe8e085d6b8aed04ae012829dfe2b9de2ffa42ea0c2578fa07d6",
+      "bytes": 5509
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/database-authority-loss-corrected.json",
+      "sha256": "002e8ad6520fc8f5ecbc499ea9fab4eb076f83174ed68d1ec575f373fa5c24de",
+      "bytes": 1472
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/database-authority-loss.json",
+      "sha256": "8c1305c34c5b98ab1384c9885a6bdfe458b7fbc889218be88451fadc36515af5",
+      "bytes": 608
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/database-final.json",
+      "sha256": "4f8d43cde9e8fcf475211b0e8510f858e3d5301d4db828afe20b4bc752ad4245",
+      "bytes": 5350
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/database-scenario-correlations.json",
+      "sha256": "e0aea6125f1d5d55560dc885c232f801a02d339bf3d7c971672f0c80f5d475f0",
+      "bytes": 1954
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/database-waits-native002.json",
+      "sha256": "75f582cb3a7976597d355da16a0d35f162e9b1dddee4320039b2b6ad7232b180",
+      "bytes": 23742
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/database-waits001.json",
+      "sha256": "f34d28c4823979f2c39f8d4c46e9412c72648f2c4ee6f24ed4308e473917c256",
+      "bytes": 2039
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/delegation-proposal.json",
+      "sha256": "96897305b1562d4247548cebb4d3aa81f82f19c6d13f831f9d8b552ada058125",
+      "bytes": 553
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/delegation-receipt.json",
+      "sha256": "6396d241fa0f1d1f138429e7be0bfc0de9fa90455f1c296ae37be13442497183",
+      "bytes": 472
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/demo-packet.json",
+      "sha256": "7ae97dea040e0ffdfd92846326b4827238a1bb7cde1651caea95b09c85b88999",
+      "bytes": 30425
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/deployment-proposal.json",
+      "sha256": "ed5454a87b51d3c87b659456157f79d66da04f5d0d9c1ab605e972164d9c36e5",
+      "bytes": 12230
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/deployment-receipts.json",
+      "sha256": "d939d7e70f9236f2db292d15e34021f4240f264dfe31a3fef316a7b5724fb3cb",
+      "bytes": 1811
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/diagnostic-baseline.json",
+      "sha256": "1e6cf3d2eee80b067990412c5a30c23cf2e49e7cd7761372cd69f8c112a0f8ae",
+      "bytes": 8113
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/diagnostic-deployment-proposal.json",
+      "sha256": "465150804b472fe34f8b8df6690463d1bbeaacc8834d2bd528d235afcfe82ee4",
+      "bytes": 1017
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/diagnostic-deployment-receipt.json",
+      "sha256": "94ca13ce605f944817f720179f6a67e5d5988c401dd0e75247d665eed0be3a65",
+      "bytes": 253
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/native-accessibility-session004-final003.json",
+      "sha256": "5f47602a5ee0e9edfeaa640a61f35c06f0e9e5f7d31887234dc555776ddeac25",
+      "bytes": 2460
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/native-accessibility-session004-final004.json",
+      "sha256": "637eccbf913deae55121dbac4e58c2e0bc4336d91e57fe66bab208f576ceb1ad",
+      "bytes": 9799
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/native-accessibility-session004-final005.json",
+      "sha256": "ba1fa4a97bf8c523fbc1f1af66099fe2c59aa356f573bfa3a7378352f5ab1610",
+      "bytes": 6507
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/native-accessibility-session004-final006.json",
+      "sha256": "3ce5867cf3b5f77e669a9ad9bce556c3b61a5cd64f89cd2d2605bf5bae187979",
+      "bytes": 10611
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/native-accessibility-session004-final007.json",
+      "sha256": "51b581002dabb67bd991262d431913be7806c10593b6199ddd31fe2acdcb9c57",
+      "bytes": 13620
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/native-zoom-session004-001.json",
+      "sha256": "993269082e314ae2022f5919eebe95d71988b5c1faf02416cf109db084885d3d",
+      "bytes": 2046
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-absence-001.json",
+      "sha256": "c2015b1cb33536ee7b45c460cabe7cf536be5c69bde0b8393885c59f3a1f1338",
+      "bytes": 8094
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-accessibility-001.json",
+      "sha256": "46366deae0bda7fa7454932e40b50cd5ecbee9212fad3007091bcccc57885256",
+      "bytes": 12856
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-authority-loss-001.json",
+      "sha256": "983c67ffc7170058c15c28677885cdbbf79644d5e1e43f8b70493981d7f1f7f4",
+      "bytes": 10088
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-delegation-001.json",
+      "sha256": "5fa9a004d80fd7ccad09aaecc283b7a84d3aef343a4ce004508ca80c5c62455e",
+      "bytes": 5300
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-delegation-expired-001.json",
+      "sha256": "7e3bde07407a57d692eb84fa05b79e15584746d99b3e121b3e3a2141b14cefd9",
+      "bytes": 4705
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-diagnostic-signin-002.json",
+      "sha256": "09e05cdc5b4fd0943d4c4b3deee086e998e170a3298373cb547579438e589776",
+      "bytes": 1314
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-direct-accessibility-001.json",
+      "sha256": "a1aa25850cc50dc2694d2a4bd5ca7099d23d122cb8cec7227bd5ae7e1468375a",
+      "bytes": 9135
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-direct-dependency-001.json",
+      "sha256": "96fa3a4096dee3e3aa10a78a286c3ef29c7c8b73d998b50fb737fa6fbe5e2d97",
+      "bytes": 7372
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-direct-manual-regression-001.json",
+      "sha256": "9ed0505efe7e02bfaee5ceef140cb2da8127a4e0c47a91e8a22f9ed84793b220",
+      "bytes": 5600
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-direct-pending-ui-001.json",
+      "sha256": "342c6e6f839ec0b8de2c4ccc31402f166769b1ea8013c859375e827d30cfc08e",
+      "bytes": 5836
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-directory-001.json",
+      "sha256": "46493817c7c062acb6304d59517dc754e5ee99f01344aa4a5302513cf04688c0",
+      "bytes": 8926
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-final-accessibility-001.json",
+      "sha256": "a5f77f23594ef763ab6ae14829d0dc04afad286de6c39ddfdfc0c431b9974b85",
+      "bytes": 7748
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-final-accessibility-002.json",
+      "sha256": "24fbddc66dc4b050f2896ce20dcae205befe41cdd1109f63aa1e00952885653c",
+      "bytes": 8044
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-final-directory-001.json",
+      "sha256": "0c2909b6faa5338d6a0f474b47fa654ee9535a345b9a881e74e1fe6a76e31f9b",
+      "bytes": 8932
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-final-lifecycle-001.json",
+      "sha256": "ae33cd4298cf73686b676c535304f823364da9e3f8806325685278957ce40bb8",
+      "bytes": 4741
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-final-reload-only-001.json",
+      "sha256": "0ba4b4a7910554651b1894f09323cba71b4aaf8c9f7452ba83cd1c05e736fee2",
+      "bytes": 4568
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-final-report-ui-001.json",
+      "sha256": "79743f0967d0c71ceae3f5ef8564b4db48a986a0cfb64bc77a6cece6d4190000",
+      "bytes": 6769
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-native-signin-001.json",
+      "sha256": "1637157c4c14d9dda3ba3e6931a72c33d08f2dce3233b758070f2f1ed86689d9",
+      "bytes": 4157
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-native-signin-002.json",
+      "sha256": "08573fe29467b46401b899e9de39384f8198539f6b838b3d16dbbd54df9321a0",
+      "bytes": 4157
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-native-signin-003.json",
+      "sha256": "c74f1e2c4731fceb661eb680a303eece2c2202c218a3d25275389b26f9bf5f40",
+      "bytes": 4157
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-native-signin-004.json",
+      "sha256": "94dfc0e2d830546f9686bf9513dc0b179ca35ac51b1155397f8195fae456b8bf",
+      "bytes": 4157
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-001.json",
+      "sha256": "2635388a6611572635cee3f2d03a26f4bfeea03ebe965add46f490b848dcdd0a",
+      "bytes": 5113
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-002.json",
+      "sha256": "246f47d91aa32f1d86e20208ed6451b32e6e83d8236aeb1fadc1c3d052aff3cf",
+      "bytes": 5133
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-003.json",
+      "sha256": "41ee6daeee9a9df0bb20f6428678bf68d5d3e0dd69e8db7abc9b8dc46c6a6f39",
+      "bytes": 6131
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-final008.json",
+      "sha256": "b4db87e61ec5f6be4bb18343d0cb66ea3ef129a9a522ef1a93cbe2b516383934",
+      "bytes": 5800
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-final009.json",
+      "sha256": "79ff062d10e7935879bf234c40fa00561f2634940e3d5bc8a2e4e74fce7656b8",
+      "bytes": 5736
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-final010.json",
+      "sha256": "273335a54b956fcb331781414a3793fe2b241b745891cc55643b63d8265189c1",
+      "bytes": 6133
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-final011.json",
+      "sha256": "90fe804b4176b75e2191bd6b5fb8186b9c9cb4ec46288f26a3fc907c9497c755",
+      "bytes": 7355
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-fixed006.json",
+      "sha256": "1a2d37c2e76a86c7b3696917e15febc278c0bfbeec82709a77bbc18a33737e65",
+      "bytes": 5736
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-fixed007.json",
+      "sha256": "41a9ff3134e5412b6c0eba4fd0d53bce810eef878b679b8b2cfb409b8ea22f96",
+      "bytes": 7211
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-traced004.json",
+      "sha256": "023f7f9f3b18d3c0ca2aa1a6e38be8008e24be0aedaeb88c4be43e58d7a91045",
+      "bytes": 5011
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-normal-traced005.json",
+      "sha256": "b1e7c1a1bfd9336d0d113285e698b716783593e66c14e2cb0ff110cb21030c65",
+      "bytes": 5011
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-race-001.json",
+      "sha256": "efce9f6053fdbc463a4d706524522a851ec5497aabd6e5b166f85f14eb8e0fdd",
+      "bytes": 6101
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-race-002.json",
+      "sha256": "b30393f85573c3aab782b4f9715e604c52c3191f92edbf96d6c8f19d6e54a623",
+      "bytes": 10691
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/evidence/live/qualification-session004-signin-001.json",
+      "sha256": "6c1e56a3e4b83e37b07363cdd3bdd31749f29afbbb64c62ee89ddecbc19a191f",
+      "bytes": 1783
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/field-probe004.json",
+      "sha256": "98210fa1040819522e26a3cf98d427a19a5007c1a64cbd4fd2f28a517ffbaebb",
+      "bytes": 412
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-candidate-manifest.json",
+      "sha256": "8065971c710bb2f84726150df2aa21aa6b3859fab0a8a8cbb739ba514e60c0b8",
+      "bytes": 7062
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-configuration-binding.json",
+      "sha256": "26ae24599b81dcd8e87356e9e8aab85b6e6f65ed122846494a858052624d3a46",
+      "bytes": 5406
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-runtime-metadata.json",
+      "sha256": "610c3555a1e07c536caa602190c31cb0169a8258f8ef33e9730804aeeb3db0d5",
+      "bytes": 2658
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-serving-source-proof.json",
+      "sha256": "290e6caec085599ecf2677d91f00bdf6b4a2867216bb7e7342734e98a62212f4",
+      "bytes": 123602
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-snapshot.json",
+      "sha256": "2261e6022f6dedd0b917a992b72d878153a36784fe3ff2ebd563504b939aff23",
+      "bytes": 230367
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-source-bindings.json",
+      "sha256": "3c56ff0cf257d84a1416eddf14d59580c6a783c480bb66ceb56865089e537233",
+      "bytes": 81470
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/handoff.md",
+      "sha256": "713b845a42bbe5fefe2e92fef0884c9d4140f8f704b7c2365e12eff1e6f702b5",
+      "bytes": 4473
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/human-recovery-bound.json",
+      "sha256": "9dbb9a53fdfead72f17e3bb97725cf066911d9428f5b088709c46584da0f2e08",
+      "bytes": 269
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/human-review-status.json",
+      "sha256": "8ce2f9945faca27a897fa96433d33d71732d1e6c2e8930f995803249e40a45dc",
+      "bytes": 352
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/human-review.md",
+      "sha256": "b387f3f30d1c7564f6e3c54f98ae959f0406bf362088f5af93b15d51f188f86e",
+      "bytes": 2974
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/identity-background-after-sweep.json",
+      "sha256": "3f2175c0cff7cc494829c4d6bfeefde69588ae62db0220f9b86bb0b9a626bbfb",
+      "bytes": 9424
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/identity-background-waits.json",
+      "sha256": "bb058de0066a519b56c9cf51daae2dca0714af5eb6da19edf5b98b081940fac3",
+      "bytes": 31601
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/identity-counts-readonly.json",
+      "sha256": "445cac8193e64a487674ec03da1f479bcb07b37ca62347faac2e862dc9cca230",
+      "bytes": 230
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/identity-sweep-proposal.json",
+      "sha256": "735cd64266fb412b03bb7ed170ef101104e3f12504c8ed1f2abed4413ded4bf2",
+      "bytes": 2246
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/identity-sweep-receipt.json",
+      "sha256": "8578b063ba1a0cd177ae80c44ba4cf03ff7bb64ecb0a896b488a54354f1c112a",
+      "bytes": 257
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/identity-sweep-verification.json",
+      "sha256": "04cd000deefaea02b5204c441fd364603584c79cf562bc1fdf2d7be9b7cf33a3",
+      "bytes": 744
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/identity-wait-after-summary.json",
+      "sha256": "9e07241cb38f5e075a2ddce3285c7a952ca810b94a2109acba61547b14090dd5",
+      "bytes": 209
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/identity-wait-summary.json",
+      "sha256": "cde25a25b2f3c7d7bcad0fea8b376dea6dfe681f7fde6a3991cb563ace5d3228",
+      "bytes": 155
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/image-verification.json",
+      "sha256": "cf28e932f617f428bb0f6b38ec8bab67f13161c69d7a6849c813703578858217",
+      "bytes": 1985
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/independent-review.json",
+      "sha256": "3b81c771a76f36acafc14d41ec163a2ea873a6062c6604a576bfe1c90ba90d80",
+      "bytes": 1553
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/link-and-hash-validation.json",
+      "sha256": "0c715e3439ed8b3aaa4669a3e7d6d895a0138b236b26327ca246267d5a06c91f",
+      "bytes": 109
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/native-session-preflight.json",
+      "sha256": "00a5029be2fd1cce28bfe486535c1ac0b34ee1b35947adc8d9ae5867672bb9f2",
+      "bytes": 518
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/native-zoom-persistent-probe.json",
+      "sha256": "4b599a0ef1f08854fa2d31db444a5fb87c87f1388d97cad114cca6a3998dbbf3",
+      "bytes": 4320
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/native-zoom-settings-probe.json",
+      "sha256": "97907115a597e432e6b7dd65f265fd6efcfe1a5e62dacf1f4e9becd277a99638",
+      "bytes": 366
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/network-denials.json",
+      "sha256": "14e0c2ef2032fd321feb9e657d0708a9a7de1f8b3d56db6abd2b8139c1564b6f",
+      "bytes": 955
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/normal-fixed006-interruption.json",
+      "sha256": "22fb0dba685f6733e4a0b9181614d72894614688bd5dcef83158c08b59173c85",
+      "bytes": 5973
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/phase-source-continuity.json",
+      "sha256": "7f45682ed1809805767a7d2b450c976ff8837fc3c8cb6e63bc56001c9fba3f95",
+      "bytes": 5755
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/policy-hash-allocation.json",
+      "sha256": "ac5303e2a73d1fb9ba2767b02fa725d3e52a6cf39f753dbde4cf1338254ca523",
+      "bytes": 503
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/popup-deployment-proposal.json",
+      "sha256": "23d7390fa0e4afa2020b5ea86c4aac7508259cb9f4a3657fdc38124c4404884e",
+      "bytes": 1672
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/popup-deployment-receipt.json",
+      "sha256": "2b5d020adec23322ac169ef6b921650b49f7803e910e1e0135ffeb1ac98ecb98",
+      "bytes": 253
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/popup-image-verification.json",
+      "sha256": "38084469252daf62c77fa21661b3e735af421a8a566aa7c21756be7b7fea30b5",
+      "bytes": 814
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/popup-public-assets.json",
+      "sha256": "23b868374808a37bf0a1baac6378423d88bdb2554285e507bb53c41a2c0c4188",
+      "bytes": 1117
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/privacy-validation.json",
+      "sha256": "6926516d20dd6243d856916ad8109aa5db578ffea1555f91a564cd2521a80b8b",
+      "bytes": 409
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/proxy-trace-proposal.json",
+      "sha256": "ecb2d3ae455e0c530a27f5ca986f6b0ad948d6c36715fdb7559a090ce523dbd7",
+      "bytes": 513
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/proxy-trace-receipt.json",
+      "sha256": "ded2160dc571994673dfa9e1c4239be80ea93ff4be7adb3d5af073d000c251bc",
+      "bytes": 253
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/qualification-results.md",
+      "sha256": "b54a5bb1e24867caf914078600ae6c8718d3d614ef56e85c0b7c20bfe4396584",
+      "bytes": 5963
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/reproducible-web-build.json",
+      "sha256": "73cc12b6c79853a2b64cb43c877d3f8669e6469df82a760e72a7bbbbf561d714",
+      "bytes": 9643
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/resource-baseline.json",
+      "sha256": "be270aaedce6286d6f3c2f16aa18a2d220bf83ca2f28527f5668c3e7e7d0bfd6",
+      "bytes": 1561
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/resources-after-three-trials.json",
+      "sha256": "aaeec1eebae1aacecc5957bde95e0ce4555c508c1bed2b8c2f529c754cb85395",
+      "bytes": 1614
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/resources-during-final010.json",
+      "sha256": "ba7375f3e9dc1d7304d5f23c5e3294b9e2842cb3bb7e3e760d8a71a42b9cfbde",
+      "bytes": 1615
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/resources-during-fixed006.json",
+      "sha256": "03b5626ab24d9a7641684cf4a2468c081b792ff599239fcd0299fa2f7027a83b",
+      "bytes": 1615
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/resources-final.json",
+      "sha256": "bf08b0512473fdec1b0bd4f5aaa4e171642fca9cba00c0043c640085b804ea21",
+      "bytes": 1615
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/results.json",
+      "sha256": "e46f9bf08500aeb1f86a60e125b930a91200a649d37ab03d25eb79c560ac765e",
+      "bytes": 16641
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/root-cause-analysis.md",
+      "sha256": "f906a79479b0cef4c6a5ed06f99581f647d6258dccd8b7823d6626b8a1e82309",
+      "bytes": 4350
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/rotation-deployment-proposal.json",
+      "sha256": "be02a0b4776a5ea72f5bdcf0794fee7e4bdb7ba761f8678a9235335ca90a121d",
+      "bytes": 1851
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/rotation-deployment-receipt.json",
+      "sha256": "b4c8e659d0bfdb4104610db8aff92bfee9b868aedc29dab657f2c57fc87b5dd6",
+      "bytes": 253
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/rotation-image-verification.json",
+      "sha256": "c185bbb04ddac17353a09ebe5ca408ee0164c179b15ed104313c8bca62aa81b3",
+      "bytes": 696
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/schema-validation.json",
+      "sha256": "34ebe7690259a6b79021a5f0ff87b5673daa363e7bb15fd61b3cd54278f1b33d",
+      "bytes": 2641
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/serving-artifacts.json",
+      "sha256": "9dba09aa1d5d4a96a75ab23924bfae324ce8869ee0f0d3112d7cf22de53dce61",
+      "bytes": 9028
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/source-checks-python.json",
+      "sha256": "44b01130e7c2bc57d702f35cb05a0e82e4f64e368c60da978b1e3d7e57469965",
+      "bytes": 2686
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/source-checks-web.json",
+      "sha256": "d9883e7ea89a7da15573ead1ad5a5b4f23ccb6e94244e25cc5063b501819b714",
+      "bytes": 2336
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/starting-state.json",
+      "sha256": "f3414ba2c545df90ef1adab5ce0442a0d893acdfc4b26f985596d177f823e33e",
+      "bytes": 25277
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/timing-activation-proposal.json",
+      "sha256": "a0a226fcb25f421b3760df0ab79487590be2517faf20633e3495ddcba04a9b81",
+      "bytes": 1778
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/timing-activation-receipt.json",
+      "sha256": "04cfe2e9d423f6aa2af727fb31e80e154ad6f8bde2ec950a6054834ae75367af",
+      "bytes": 253
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/timing-restoration-proposal.json",
+      "sha256": "43413a576357fb29c5610c4b7bafa8ff229da0126a79813bb03cf952bf1bd774",
+      "bytes": 1630
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/timing-restoration-receipt.json",
+      "sha256": "fb8632bf531269778b5d705c6993f867b879b3fe2d384adf015561e80567ff2b",
+      "bytes": 253
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/trace-disabled.json",
+      "sha256": "9911cb3df2b37f9f67793fa2c5f90c827f5736dfcb1cf02345957d185f6db287",
+      "bytes": 54
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-absent-proof.json",
+      "sha256": "036329d2ca56fa5c4733e42f1f40538bab2bb59c83abecfcf0fc01b56edb149a",
+      "bytes": 5392
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-authority-case.json",
+      "sha256": "97fa11ebc169c2bb294e195a256303524faf25f7d05d1a5edbd43658872abd38",
+      "bytes": 5648
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-identity-sweep.json",
+      "sha256": "2d3798fdc262fc6871992fe3d901b27466ee373ad44001d1fdba0b6ec9133b7e",
+      "bytes": 5781
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-native-accessibility.json",
+      "sha256": "6b14d461bd0757af78421b3217d3154ac473ed79fc8456a5f79cc0a1b71e1b14",
+      "bytes": 5735
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-native-zoom.json",
+      "sha256": "ed0db794a1db4b1dc7cd9a7e75acf43424738801407bf8a4dc45be46d03c78b8",
+      "bytes": 5584
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-platform.json",
+      "sha256": "f448b06525358e94de4643ed8b6a0a596253f0255e3c471a450368d26729ad9b",
+      "bytes": 5823
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-popup.json",
+      "sha256": "4a1913b5aafd931e2d237f95b2e0d1b5feb1ea953c6e04c9cd00334232c8456f",
+      "bytes": 5554
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-python.json",
+      "sha256": "30dac8b0c3288f7f2cdabb3cf0eb95bde2b07f347d8d327126ba83f7704fe2b8",
+      "bytes": 5899
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-qualification.json",
+      "sha256": "3e996573387490da04514d31ea9826ec71dc4a5f7edb67ede5b50706f11923e2",
+      "bytes": 5562
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-review.json",
+      "sha256": "4b6f826115f8b114a776254cc9fea2a8b0fe4b9df84a01f6066286394242c4f2",
+      "bytes": 5178
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-rotation.json",
+      "sha256": "14f9c52fd7f1d7ebff7ef07bd29d5bc4b611ff65599929a57fa86f54677f3112",
+      "bytes": 5873
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet-web.json",
+      "sha256": "f6fb04594db4b9f5242ad03b3465dca062e85a2430d0cde5a58fe5bfe790cd22",
+      "bytes": 5610
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/work-packet.json",
+      "sha256": "0cbbba3664be91e1f69c735ef4a261e4158237ec2aed555bb05030e7d8929746",
+      "bytes": 6205
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/workload-expiry.json",
+      "sha256": "1a7e7a53c3de8eebdb0cd85b0c8c789372f759bd3276ea12810295babb2be80d",
+      "bytes": 3350
+    }
+  ],
+  "canonical_inventory_sha256": "226cc4fec37bd44a5b71fe1cadfa2cb760f8cd1d5c25be4935905e48e4a29893"
+}

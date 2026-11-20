@@ -14,6 +14,11 @@ class ReviewContext:
     role: str
     provider_subject: str | None = None
     state: str = "active"
+    mode: str | None = None
+    authentication_mode: str | None = None
+    environment: str | None = None
+    expires_at: str | None = None
+    started_at: str | None = None
 
     def __post_init__(self) -> None:
         url = urlsplit(self.origin)
@@ -32,6 +37,9 @@ class ReviewContext:
                 raise ValueError("Canonical review context UUID required")
         roles = {
             "participant": "pid",
+            "pid": "pid",
+            "carer": "carer",
+            "professional": "professional_participant",
             "worker1": "worker",
             "worker2": "worker",
             "supervisor": "supervisor",

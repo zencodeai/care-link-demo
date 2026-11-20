@@ -58,7 +58,7 @@
         "Model metadata and capability unverified"
       ],
       "gate_id": "G-00",
-      "human_decision": "Accept the concrete tool/version/environment proposal and scoped next-stage setup actions, or request changes. Existing workstation/model choices are not reopened.",
+      "human_decision": "Deferred until after IMP-10 through GitHub issue follow-up; not an implementation qualification prerequisite. Original review scope: Accept the concrete tool/version/environment proposal and scoped next-stage setup actions, or request changes. Existing workstation/model choices are not reopened.",
       "rollback": "Read-only stage leaves host state unchanged; discard only generated redacted reports if explicitly requested.",
       "completion_evidence": [],
       "human_acceptance": null
@@ -116,7 +116,7 @@
         "Shared development environment mistaken for deployment isolation"
       ],
       "gate_id": "G-01",
-      "human_decision": "Accept the developer demonstration and reproducible command surface; no participant-use or deployment approval is inferred.",
+      "human_decision": "Deferred until after IMP-10 through GitHub issue follow-up; not an implementation qualification prerequisite. Original review scope: Accept the developer demonstration and reproducible command surface; no participant-use or deployment approval is inferred.",
       "rollback": "Revert candidate files/locks together; retain the last verified development baseline and do not touch source repositories.",
       "completion_evidence": [],
       "human_acceptance": null
@@ -176,7 +176,7 @@
         "Real account metadata governed as synthetic"
       ],
       "gate_id": "G-02",
-      "human_decision": "Review login/help/fallback and denied-route demonstrations. Accept only the observed environment scope; unverified content or trust keeps participant admission disabled.",
+      "human_decision": "Deferred until after IMP-10 through GitHub issue follow-up; not an implementation qualification prerequisite. Original review scope: Review login/help/fallback and denied-route demonstrations. Accept only the observed environment scope; unverified content or trust keeps participant admission disabled.",
       "rollback": "Fence candidate private listeners/identities, retain reviewed static publication, remove only named disposable resources after explicit confirmation of target scope.",
       "completion_evidence": [],
       "human_acceptance": null
@@ -239,7 +239,7 @@
         "Authority checked only on login"
       ],
       "gate_id": "G-03",
-      "human_decision": "Demonstrate normal manual service and adverse ownership/audit behavior. Human acceptance establishes this bounded baseline, not full-demo or clinical readiness.",
+      "human_decision": "Deferred until after IMP-10 through GitHub issue follow-up; not an implementation qualification prerequisite. Original review scope: Demonstrate normal manual service and adverse ownership/audit behavior. Human acceptance establishes this bounded baseline, not full-demo or clinical readiness.",
       "rollback": "Keep schema-compatible last-known-good manual path; restrict protected service if current authority cannot be established. Never rewind live rights or erase unresolved cases.",
       "completion_evidence": [],
       "human_acceptance": null
@@ -294,7 +294,7 @@
         "Source admission confused with operating availability"
       ],
       "gate_id": "G-04",
-      "human_decision": "Review exact field-level views and revoke/unknown-state demonstrations using separate accounts; accept the scoped privacy behavior.",
+      "human_decision": "Deferred until after IMP-10 through GitHub issue follow-up; not an implementation qualification prerequisite. Original review scope: Review exact field-level views and revoke/unknown-state demonstrations using separate accounts; accept the scoped privacy behavior.",
       "rollback": "Disable affected plan/share/option capability if filtering fails; retain current negative rights and the accepted manual service.",
       "completion_evidence": [],
       "human_acceptance": null
@@ -350,7 +350,7 @@
         "Unknown delivery retried as a new logical effect"
       ],
       "gate_id": "G-05",
-      "human_decision": "Demonstrate exact review, before/after-authorization revocation and dropped-reply reconciliation. Human acceptance concerns simulator behavior only.",
+      "human_decision": "Deferred until after IMP-10 through GitHub issue follow-up; not an implementation qualification prerequisite. Original review scope: Demonstrate exact review, before/after-authorization revocation and dropped-reply reconciliation. Human acceptance concerns simulator behavior only.",
       "rollback": "Fence unsent work; retain unknown in-flight attempts for reconciliation. Roll back only compatible code, never rewrite receipt/consent history.",
       "completion_evidence": [],
       "human_acceptance": null
@@ -406,7 +406,7 @@
         "Timeout mistaken for released compute"
       ],
       "gate_id": "G-06",
-      "human_decision": "Review actual source-linked usefulness, seeded errors and outage behavior. Admit only demonstrated functions; record unadmitted functions as explicit remaining scope.",
+      "human_decision": "Deferred until after IMP-10 through GitHub issue follow-up; not an implementation qualification prerequisite. Original review scope: Review actual source-linked usefulness, seeded errors and outage behavior. Admit only demonstrated functions; record unadmitted functions as explicit remaining scope.",
       "rollback": "Disable AI functions/prompt/model bundle under current control epoch; preserve manual service, current rights and independently available fallback.",
       "completion_evidence": [],
       "human_acceptance": null
@@ -462,7 +462,7 @@
         "Pending backup falsely reported complete"
       ],
       "gate_id": "G-07",
-      "human_decision": "Review cancellation, own-data export, active purge and retained-exception demos. Accept only the proven active-copy scope; backup erasure remains a later obligation.",
+      "human_decision": "Deferred until after IMP-10 through GitHub issue follow-up; not an implementation qualification prerequisite. Original review scope: Review cancellation, own-data export, active purge and retained-exception demos. Accept only the proven active-copy scope; backup erasure remains a later obligation.",
       "rollback": "Stop purge/delivery jobs and preserve restrictions/holds. Never restore deleted content to simplify rollback; use quarantined recovery if necessary.",
       "completion_evidence": [],
       "human_acceptance": null
@@ -519,7 +519,7 @@
         "Framework mapping mistaken for certification"
       ],
       "gate_id": "G-08",
-      "human_decision": "Review live restrictive/relaxing change, independent approval separation and containment/metrics demos; accept only the observed authorities and environment.",
+      "human_decision": "Deferred until after IMP-10 through GitHub issue follow-up; not an implementation qualification prerequisite. Original review scope: Review live restrictive/relaxing change, independent approval separation and containment/metrics demos; accept only the observed authorities and environment.",
       "rollback": "Use a new controlled epoch selecting a compatible previous bundle; retain newest revokes/deletes/holds and independent serving ownership.",
       "completion_evidence": [],
       "human_acceptance": null
@@ -578,7 +578,7 @@
         "Same host claimed independent of root/disaster"
       ],
       "gate_id": "G-09",
-      "human_decision": "Review stale-head and interrupted-cutover demonstrations. A drill acceptance is not approval of future restores; each actual serving promotion retains its own exact human decision.",
+      "human_decision": "Deferred until after IMP-10 through GitHub issue follow-up; not an implementation qualification prerequisite. Original review scope: Review stale-head and interrupted-cutover demonstrations. A drill acceptance is not approval of future restores; each actual serving promotion retains its own exact human decision.",
       "rollback": "Keep protected serving quarantined. Reconcile gate/router/DB under restriction and use a newly validated compatible target, never blind rewind.",
       "completion_evidence": [],
       "human_acceptance": null
@@ -665,7 +665,7 @@
         "Synthetic evaluation promoted to clinical evidence"
       ],
       "gate_id": "G-10",
-      "human_decision": "Accept the exact synthetic-demo candidate, request rework or accept a clearly narrowed scope with recorded remaining obligations. Never infer production/clinical approval.",
+      "human_decision": "Deferred until after IMP-10 through GitHub issue follow-up; not an implementation qualification prerequisite. Original review scope: Accept the exact synthetic-demo candidate, request rework or accept a clearly narrowed scope with recorded remaining obligations. Never infer production/clinical approval.",
       "rollback": "Retain last verified accepted candidate if current and compatible; otherwise restrict private service and retain independent static information. Preserve all current rights.",
       "completion_evidence": [],
       "human_acceptance": null
@@ -5444,5 +5444,6 @@
   ],
   "source_dispositions": "../LLD/traceability.json",
   "runtime_evidence": "not_run",
-  "human_decisions": []
+  "human_decisions": [],
+  "qualification_policy_ref": "stage-workflow.json#/qualification_policy"
 }

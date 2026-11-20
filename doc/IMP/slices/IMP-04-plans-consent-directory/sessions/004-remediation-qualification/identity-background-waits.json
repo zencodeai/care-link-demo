@@ -1,0 +1,1923 @@
+{
+  "target": "care-link-imp04-002",
+  "runtime_role_only": true,
+  "database": "imp04_identity_002",
+  "columns": [
+    "pid",
+    "state",
+    "wait_event_type",
+    "wait_event",
+    "blocking_pids",
+    "query_age_ms",
+    "table_category",
+    "transaction_age_ms"
+  ],
+  "samples": [
+    {
+      "elapsed_ms": 1656,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          null,
+          null,
+          [],
+          "4",
+          "identity_kind_scan",
+          "12"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1682,
+      "rows": [
+        [
+          19705,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "38"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1708,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_kind_scan",
+          "64"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1734,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "90"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1759,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "115"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1785,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "141"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1811,
+      "rows": [
+        [
+          19705,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "167"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1837,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "193"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1862,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "218"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1888,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "244"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1913,
+      "rows": [
+        [
+          19705,
+          "active",
+          "Client",
+          "ClientWrite",
+          [],
+          "1",
+          "identity_kind_scan",
+          "269"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1939,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "295"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1964,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "321"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 1990,
+      "rows": [
+        [
+          19705,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "346"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2016,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "372"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2041,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "397"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2067,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "423"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2093,
+      "rows": [
+        [
+          19705,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "449"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2121,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "8",
+          "identity_kind_scan",
+          "477"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2146,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "503"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2173,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "529"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2199,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "555"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2225,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "8",
+          "identity_kind_scan",
+          "581"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2251,
+      "rows": [
+        [
+          19705,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "607"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2277,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_kind_scan",
+          "633"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2303,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "659"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2328,
+      "rows": [
+        [
+          19705,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "685"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2354,
+      "rows": [
+        [
+          19705,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "710"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2380,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_kind_scan",
+          "736"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2405,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "761"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2430,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "787"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2456,
+      "rows": [
+        [
+          19705,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "812"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2482,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_kind_scan",
+          "838"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2507,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "863"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2533,
+      "rows": [
+        [
+          19705,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "889"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2558,
+      "rows": [
+        [
+          19705,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "915"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 2584,
+      "rows": [
+        [
+          19705,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "940"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7647,
+      "rows": [
+        [
+          19707,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "24"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7673,
+      "rows": [
+        [
+          19707,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "49"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7699,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "75"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7725,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "10",
+          "identity_kind_scan",
+          "102"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7751,
+      "rows": [
+        [
+          19707,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "128"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7777,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "153"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7803,
+      "rows": [
+        [
+          19707,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "179"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7829,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "205"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7855,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "232"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7881,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_kind_scan",
+          "257"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7907,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "283"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7933,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "309"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7959,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "335"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 7985,
+      "rows": [
+        [
+          19707,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "362"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8011,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "387"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8037,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "413"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8066,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "443"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8092,
+      "rows": [
+        [
+          19707,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "469"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8118,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "495"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8144,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "520"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8170,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "546"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8196,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "572"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8228,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "15",
+          "identity_kind_scan",
+          "604"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8253,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_kind_scan",
+          "629"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8280,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_kind_scan",
+          "656"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8305,
+      "rows": [
+        [
+          19707,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "681"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8331,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "707"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8356,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "733"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8382,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_kind_scan",
+          "759"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8408,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "784"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8434,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "810"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8460,
+      "rows": [
+        [
+          19707,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "836"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8485,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "862"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8511,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "888"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8537,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "913"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8562,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "939"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 8588,
+      "rows": [
+        [
+          19707,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "964"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13625,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "advisory_guard",
+          "1"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13651,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "27"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13677,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "53"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13702,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "79"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13728,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "104"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13754,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "130"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13783,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_kind_scan",
+          "159"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13808,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "184"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13834,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "210"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13862,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "239"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13888,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "264"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13914,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "290"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13939,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "316"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13965,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "342"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 13991,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "367"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14017,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "393"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14043,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "419"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14068,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "444"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14094,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "470"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14119,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "496"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14145,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "521"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14171,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "547"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14201,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "578"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14227,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "604"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14253,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_kind_scan",
+          "629"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14279,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          null,
+          null,
+          [],
+          "2",
+          "identity_kind_scan",
+          "655"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14304,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "681"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14330,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "706"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14356,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "732"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14381,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "758"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14407,
+      "rows": [
+        [
+          19708,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "783"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14432,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "809"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14458,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "834"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14483,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "860"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14509,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "885"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14534,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "911"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14560,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "936"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 14586,
+      "rows": [
+        [
+          19708,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "962"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19619,
+      "rows": [
+        [
+          19710,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "other",
+          "1"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19645,
+      "rows": [
+        [
+          19710,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "27"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19670,
+      "rows": [
+        [
+          19710,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "52"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19696,
+      "rows": [
+        [
+          19710,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "78"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19722,
+      "rows": [
+        [
+          19710,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "1",
+          "identity_kind_scan",
+          "103"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19748,
+      "rows": [
+        [
+          19710,
+          "idle in transaction",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "130"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19774,
+      "rows": [
+        [
+          19710,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "156"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19800,
+      "rows": [
+        [
+          19710,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "0",
+          "identity_kind_scan",
+          "182"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19826,
+      "rows": [
+        [
+          19710,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "17",
+          "identity_kind_scan",
+          "208"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19852,
+      "rows": [
+        [
+          19710,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "233"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19877,
+      "rows": [
+        [
+          19710,
+          "idle in transaction",
+          "Client",
+          "ClientRead",
+          [],
+          "2",
+          "identity_kind_scan",
+          "259"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19903,
+      "rows": [
+        [
+          19710,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "285"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19929,
+      "rows": [
+        [
+          19710,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "310"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19955,
+      "rows": [
+        [
+          19710,
+          "active",
+          null,
+          null,
+          [],
+          "1",
+          "identity_kind_scan",
+          "336"
+        ]
+      ]
+    },
+    {
+      "elapsed_ms": 19980,
+      "rows": [
+        [
+          19710,
+          "active",
+          null,
+          null,
+          [],
+          "0",
+          "identity_kind_scan",
+          "362"
+        ]
+      ]
+    }
+  ],
+  "sql_or_content_returned": false
+}

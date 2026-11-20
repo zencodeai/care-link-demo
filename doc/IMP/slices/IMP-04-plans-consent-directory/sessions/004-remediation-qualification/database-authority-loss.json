@@ -1,0 +1,30 @@
+{
+  "columns": [
+    "principal_id",
+    "identity_revision",
+    "role_revision",
+    "role",
+    "revoked",
+    "operation_id",
+    "operation_name",
+    "state",
+    "resource_id",
+    "canonical_audit_id",
+    "event_id",
+    "audit_action",
+    "audit_decision",
+    "operator_principal",
+    "audit_created_at"
+  ],
+  "rows": [],
+  "control_journal_metadata": [
+    "8b75464e-48c4-45a3-8321-f8faa198b5af",
+    1,
+    15,
+    15
+  ],
+  "read_only": true,
+  "narratives_returned": false,
+  "status": "failed",
+  "probe_source_sha256": "57c597a58225de733364254e45ce76b833762fb44953805335999680aeaeaeb3"
+}

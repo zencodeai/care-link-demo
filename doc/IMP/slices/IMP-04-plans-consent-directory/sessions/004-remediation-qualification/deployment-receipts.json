@@ -1,0 +1,42 @@
+{
+  "proposal_sha256": "ed5454a87b51d3c87b659456157f79d66da04f5d0d9c1ab605e972164d9c36e5",
+  "receipts": [
+    {
+      "name": "care-link-imp04-002-identity-app",
+      "old_container_id": "90b4653a5a78dc3383633f1f2e66498b828cd7adad6ab5bf0886d3e84bbc415d",
+      "new_container_id": "80a828c05a2af14a84a749d56b1f5f29dce5b925139878178598d04c5cf803a7",
+      "volumes_removed": false
+    },
+    {
+      "name": "care-link-imp04-002-core-app",
+      "old_container_id": "95a9651a423d58308868bad1d3b3113fffde7e936cbb374e69461c504d49ad7c",
+      "new_container_id": "103c9c07e14ef0296c4b609bd1206ac29ed567a04a8211ff397da9271fa8bd42",
+      "volumes_removed": false
+    },
+    {
+      "name": "care-link-imp04-002-data-app",
+      "old_container_id": "61d2a8f379a562d3963c3be10d8ec3bba355d908dccaa1af604307f01ad01631",
+      "new_container_id": "289e32148f28719794ed79aa2b8eda27d377f72ed06d200bd24ec93bea8aa310",
+      "volumes_removed": false
+    },
+    {
+      "name": "care-link-imp04-002-pdp-app",
+      "old_container_id": "71108c1e77b0435dd8b71d8ca5ec36784f4aa71073269b86df599f0a0b1c54f5",
+      "new_container_id": "6e4aeced55fc6681525afb55699f92c42eb1622388740308fccfa97383a33166",
+      "volumes_removed": false
+    },
+    {
+      "name": "care-link-imp04-002-journal-app",
+      "old_container_id": "730765755b41a18b0d2d80ece70041a1dfb965d658b45ec2ef2cf3c868276266",
+      "new_container_id": "c299ad83f4d1a4add9921fb7b22323e7032f933f0f3e13ddc18d9642cafd5cab",
+      "volumes_removed": false
+    },
+    {
+      "name": "care-link-imp04-002-review-chrome",
+      "old_container_id": "e4c1e43d69fbecc3779a95321abb46655990989afe8370317f161856154a8940",
+      "new_container_id": "b931b72ef3a66856086858cd6bc4422002b2e3d477fd441416e0038ccae73c8f",
+      "volumes_removed": false
+    }
+  ],
+  "complete": true
+}

@@ -1,0 +1,19 @@
+# IMP-04 session002 handoff
+
+The user requested continuation from session001 to prepare deployment and live qualification in a new session folder, preserve accepted IMP-03 and present exact deployment changes before application. **Preparation is complete; nothing was deployed or migrated.**
+
+Read [README.md](README.md), [deployment-delta.md](deployment-delta.md), [target-proposal.json](target-proposal.json), [qualification-plan.md](qualification-plan.md) and [demo-packet.json](demo-packet.json). The deployment delta specifies a separate `care-link-imp04-002` target: independent SPIRE/Keycloak/PostgreSQL, exact new names/networks/ports/custody, fresh identity/business migrations including003, nine actors in ordinary isolated browser contexts, signed IMP-04 policy and independently pinned directory admissions, and stop-only rollback preserving restrictions and data.
+
+Source continuity: branch `feat/imp-04-plans-consent-directory`, baseline commit `a91087350306cf847ade2479c9ad05542c9d3adb`; existing session001 implementation remains uncommitted and unchanged. All69 source/build/reference entries still match its manifest. Policy signature, seven directory signatures and independent pin verify. Read-only Docker inventory observed the accepted five continuation apps on image `sha256:e854ff2799a235ac827439637ec06b7e5680b286561b1cc4fbbebc0580689de7`. Inventory/port observations are time-bound; they do not prove current serving health or replace final preflight.
+
+This session changed only its new preparation folder, the IMP-04 slice index and IMP-04 execution ledger continuity fields. No session001 evidence, accepted IMP-03 record, application source, global config or sibling repository was changed. No commit/push, host/model change, credential issuance, actor admission, deployment or live test occurred. `results.json` and `checks.json` record the actual preparation checks and not-run limits. Canonical planning contracts validate the WorkPacket/DemoPacket/AgentResult.
+
+Read-only `imp_platform`, `imp_controls` and `imp_review` assisted; coordinator retained sole write ownership. [review.md](review.md) records resolved findings and limits. Gate G-04 remains pending with no human decision; G-03 remains accepted/closed. No next slice is activated.
+
+## Next chat starting point
+
+If assigned, implement the new scoped operator/build/verification assets specified in the deployment delta; use a new IMP-04 session folder and explicit WorkPacket. Do not run `tools.imp03_shared` deployment or the old `prepare`/`provision` commands against the new target. They contain fixed IMP-03 target/policy/role/migration assumptions. Do not modify accepted operators/toolkit to make this proposal work.
+
+Before applying anything, produce/review the actual new source patch, qualified web build, immutable app/browser IDs and complete rendered per-container argv/mount/network/UID/configuration plan. Re-present that exact candidate and obtain the actual deployment-change decision. This packet's image/configuration/actor IDs are null/unissued by design; approving a scope document cannot silently approve later changed bytes.
+
+Then, only with the scoped instruction, recheck capacity/collisions and accepted metadata/fence/journal/health without mutation, deploy the new target and execute qualification. Directory fixtures observed2026-11-16 18:00Z age naturally; fresh positive availability needs real new observations/revisions/signatures with separately reviewed pin/hash binding. Live consent output races need reviewed instrumentation; source adapter tests are insufficient. Do native EN/FR keyboard/screen-reader checks and current workload/default-deny proof. Finally request the actual G-04 decision on the demonstrated candidate. Never infer acceptance, reset restrictions or alter IMP-03 to make progress.

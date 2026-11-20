@@ -1,0 +1,148 @@
+{
+  "run_id": "2026-11-16-IMP-04",
+  "stage_id": "IMP-04",
+  "state": "automated_qualified",
+  "gate_id": "G-04",
+  "gate_state": "automated_qualified",
+  "closed": true,
+  "source_implementation_status": "completed",
+  "automated_verification_status": "passed",
+  "live_qualification_status": "automated_qualified_with_bounded_historical_evidence",
+  "current_session": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr",
+  "handoff": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/handoff.md",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "branch": "feat/imp-04-plans-consent-directory",
+  "planning_baseline": {
+    "path": "doc/IMP/implementation-plan.json",
+    "sha256": "f118f1fa1c69c167acc732266a6afe87059118143f6e753bb81e5261a6d2d9fc"
+  },
+  "predecessor_acceptance": [
+    {
+      "path": "doc/IMP/executions/2026-11-16-IMP-03/ledger.json",
+      "sha256": "8a2f845de4bb457557700e0636f00cb1cab9b255d021247127bc7485c3f77e3e"
+    }
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Implement service slice 04",
+    "scope": "Source implementation and isolated local verification"
+  },
+  "tasks": [
+    {
+      "id": "IMP-04-A",
+      "state": "completed",
+      "result": "Canonical scope, source references and disjoint ownership reconciled"
+    },
+    {
+      "id": "IMP-04-B",
+      "state": "completed",
+      "result": "Plans, consent, sourced directory and guarded typed transports implemented"
+    },
+    {
+      "id": "IMP-04-C",
+      "state": "completed",
+      "result": "Bilingual actor screens and current own-report view implemented"
+    },
+    {
+      "id": "IMP-04-D",
+      "state": "completed",
+      "result": "Current-source realDB/OPA regression,8/8 automated review cases, source/live stream denials and preserved historical adverse evidence support automated G04 qualification; human review deferred."
+    }
+  ],
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/candidate-manifest.json",
+    "sha256": "a508659d2e0c3be142a17b6749acbe5890a88ec50f04d83964aab9af62c0e777"
+  },
+  "checks_ref": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/results.json",
+    "sha256": "01c64576ef302d635626301f06335aa2f20e80c36bd9ec2ea80343b39997a4d0"
+  },
+  "human_decisions": [],
+  "remaining": [],
+  "participant_admission": false,
+  "next_slice_activated": false,
+  "deployment_preparation_status": "accepted_and_applied",
+  "deployment_applied": true,
+  "deployment_proposal": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/002-deployment-qualification-preparation/target-proposal.json",
+    "sha256": "645107a51875afc2f1ee2f6520639c8e013385ec6f92c2f12caf087e190d681a"
+  },
+  "qualification_packet": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/demo-packet.json",
+    "sha256": "7ae97dea040e0ffdfd92846326b4827238a1bb7cde1651caea95b09c85b88999"
+  },
+  "follow_up_authorization": {
+    "source": "user_message",
+    "instruction": "Proceed with the focused IMP-04 remediation session and clean qualification rerun to address 1-6",
+    "scope": "Scoped corrections and exact change proposals before apply; independent synthetic qualification; actual human acceptance remains separate"
+  },
+  "deployment_acceptance": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/003-live-qualification/deployment-acceptance.json"
+  },
+  "progress": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/README.md",
+  "human_review_record": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/005-human-accessibility-review/human-review-progress.json",
+    "sha256": "70afd27a79efb577262ee9674d429d55b4c08693c3a33ea562c0d9874a66d66e"
+  },
+  "current_diagnostic_scope": "Closure complete; no remaining blocking findings",
+  "history": [
+    {
+      "recorded_at": "2026-11-20T16:57:59.924975+00:00",
+      "reason": "Automated closure reconciliation after explicit workflow change and current passing checks",
+      "prior_record": {
+        "state": "in_progress",
+        "gate_state": "pending",
+        "closed": false,
+        "live_qualification_status": "human_review_failed_diagnosis_and_usability_proposal",
+        "current_session": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/006-human-mfa-diagnosis",
+        "handoff": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/006-human-mfa-diagnosis/handoff.md",
+        "candidate_manifest": {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/final-candidate-manifest.json",
+          "sha256": "8065971c710bb2f84726150df2aa21aa6b3859fab0a8a8cbb739ba514e60c0b8"
+        },
+        "checks_ref": {
+          "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/004-remediation-qualification/results.json",
+          "sha256": "e46f9bf08500aeb1f86a60e125b930a91200a649d37ab03d25eb79c560ac765e"
+        },
+        "remaining": [
+          "Resolve actual human MFA/sharing review failure and lost-workspace recovery",
+          "Make interactive review usable before remaining human actor/locale cases",
+          "Complete actual human review and separately record G04 decision",
+          "Human screen-reader review and populated native200percent visual review are not_run for all four actors and both locales; automated axe/keyboard/zoom do not replace them.",
+          "Actual human G-04 decision remains pending; deployment/remediation authorization and a300s recovery target are not stage acceptance.",
+          "Remote-controller accessibility phases on the final UI retain failures, including intermittent503/pending observations; the new native persistent-profile path is independently qualified, not evidence that every browser/controller path is reliable.",
+          "Directory sources remain stale and the previously suspended service stays suspended. No fresh availability assertion.",
+          "No elapsed30day purge, backup completion, literal provider-role-change race, or full-reload persistence of unsent drafts is claimed. Grantor authority loss was actual journalled business-principal revocation of a new case actor.",
+          "The native verifier watchdog uses best-effort context close, not a hard process-kill guarantee.",
+          "Image distribution remains a qualification workspace rather than minimal per-role packaging. Final Data/PDP/journal serving serve.py and diagnostics.py differ from newer host instrumentation; their exact hashes are recorded, and role/package source matches are separate.",
+          "Resource evidence records no OOM/PID-limit events or browser zombies; socket throttling was observed and is not reported as zero."
+        ],
+        "current_diagnostic_scope": "Read-only diagnosis and proposed usability improvements; no implementation/deployment acceptance.",
+        "commit_push_performed": false
+      }
+    }
+  ],
+  "residuals": [
+    "Human screen-reader, visual, usefulness and language review is deferred until after IMP-10 via GitHub issue follow-up; earlier human results/failures remain historical.",
+    "Three explicitly gated legacy tests were skipped: owned Linux UID0/setuid harness, Docker capture fixture and isolated IMP03 provisioning fixture. No OPA or IMP04 PostgreSQL test was skipped.",
+    "Planning validator retains146 pre-existing broken historical IMP03 local-link occurrences; no source/input hash is silently refreshed to hide this.",
+    "Historical remote browser/controller failures remain recorded. Final review matrix uses owned headless Chromium profiles with verified native zoom, not human/native-window screen-reader review.",
+    "First two browser attempts left16 isolated synthetic auth sessions without explicit logout. Cookie material/profiles were removed; those sessions are bounded by approved run expiry2026-11-20T18:53:30Z. All later/final test sessions explicitly logged out. No business write was attempted.",
+    "Live directory fixtures are expired/stale or suspended; availability is unknown or unavailable, never freshly asserted.",
+    "Approved live stream route omits fallback header stripping; real cookie/actor/view/current-authority checks and negative probes pass. Fresh source generator preserves stripping. No closure redeployment occurred.",
+    "Historical issuer-outage recovery127.591s meets the agreed300s bound on its recorded candidate; unchanged security/domain source comparison supports carry-forward, not a fresh outage rerun.",
+    "No elapsed30day purge, completed backup, literal provider-role-change race or universal browser reliability is claimed. Image remains a qualification workspace, not minimal per-role packaging.",
+    "Private synthetic engineering qualification only; no participant admission, clinical/real-partner/production release approval, police integration or next-slice activation."
+  ],
+  "human_review_status": "deferred_until_after_IMP10",
+  "deferred_human_review": {
+    "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/008-automated-closure-and-pr/deferred-human-review.json",
+    "sha256": "816c6d31ec4998c2b131c37cd6f6a69cd40dc432d8662dbf420ec01de5e8a40d"
+  },
+  "publication_authorization": "Actual user instruction: Close IMP-04 and create PR; merge is not authorized",
+  "publication_record": "The feature-branch commit and pull-request metadata record actual publication; no merge authorization is implied.",
+  "qualification_policy": {
+    "path": ".codex/IMP_WORKFLOW.md",
+    "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+  }
+}

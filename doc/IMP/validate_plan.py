@@ -27,6 +27,30 @@ def safe_owned_path(path):
     return not path.startswith(("/", "~")) and ".." not in Path(path).parts and path not in {"*", "**", "."}
 
 
+def validate_qualification_policy(plan, workflow):
+    policy = workflow["qualification_policy"]
+    check(plan.get("qualification_policy_ref") == "stage-workflow.json#/qualification_policy",
+          "plan does not reference current qualification policy")
+    check(policy["effective_date"] == "2026-11-20" and policy["applies_through_stage"] == "IMP-10",
+          "qualification policy scope drift")
+    check(policy["automated_tests_only"] is True and
+          policy["interactive_human_review_required"] is False and
+          policy["human_stage_acceptance_required"] is False,
+          "interactive human gate reintroduced during implementation")
+    check(policy["deferred_review_status"] == "deferred_until_after_IMP10" and
+          policy["human_review_after"] == "IMP-10 automated_qualified" and
+          policy["human_review_channel"] == "github_issue_followup_bug_fix_or_improvement_session",
+          "deferred GitHub issue follow-up policy drift")
+    check({"ready_for_qualification", "automated_qualified"} <= set(workflow["states"]) and
+          not {"ready_for_demo", "awaiting_human", "accepted"} & set(workflow["states"]),
+          "active workflow still requires a legacy human stage gate")
+    qualifications = [t for t in workflow["transitions"] if t["to"] == "automated_qualified"]
+    check(len(qualifications) == 1 and qualifications[0]["event"] == "automated_checks_pass" and
+          qualifications[0]["owner"] == "coordinator" and
+          qualifications[0]["from"] == ["ready_for_qualification"],
+          "invalid automated qualification transition")
+
+
 def semantics(kind, value):
     if kind == "WorkPacket":
         for path in value["write_paths"]:
@@ -124,7 +148,7 @@ def main():
     stage_ids = {s["id"] for s in stages}
     check(stage_ids == {"IMP-%02d" % n for n in range(11)}, "missing stage")
     gates = {s["gate_id"] for s in stages}
-    check(len(gates) == len(stages), "shared/duplicate human gate")
+    check(len(gates) == len(stages), "shared/duplicate qualification checkpoint")
     check(not plan["human_decisions"], "new plan must not invent human acceptance")
     roles = load("agent-contracts.json")
     names = {a["name"] for a in roles["roles"]}
@@ -151,6 +175,7 @@ def main():
         check(all(t["stage_id"] == task["stage_id"] for t in tasks if t["id"] in task["depends_on"]),
               "cross-stage task dependency must be declared at stage gate")
     workflow = load("stage-workflow.json")
+    validate_qualification_policy(plan, workflow)
     states = set(workflow["states"])
     check(workflow["initial"] in states and set(workflow["terminal"]) <= states, "invalid workflow boundary")
     transition_keys = set()

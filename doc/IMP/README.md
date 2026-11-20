@@ -2,9 +2,11 @@
 
 Version 0.1 · 2026-11-06 · Proposed plan for human review. No application implementation, tool installation, host change or deployment is performed by this package.
 
-Execution status: [IMP-03 closed; G-03 accepted](executions/2026-11-16-IMP-03/ledger.json). The planning baseline below remains separate from actual execution records.
+Execution status: [IMP-04 closed; G-04 automated-qualified](executions/2026-11-16-IMP-04/ledger.json). [IMP-03 historical acceptance](executions/2026-11-16-IMP-03/ledger.json) is preserved. Human review is deferred until after IMP-10; IMP-05 is not activated. The planning baseline below remains separate from actual execution records.
 
-Implement the accepted LLD as small, demonstrable service slices. Use Codex specialists for bounded analysis and scoped work, preserve one accountable integration owner, and require explicit human decisions on exact stage candidates. Security/governance controls are built into the earliest relevant behavior, not deferred to a final audit.
+Implement the accepted LLD as small, demonstrable service slices. Use Codex specialists for bounded analysis and scoped work and preserve one accountable integration owner. Security/governance controls are built into the earliest relevant behavior, not deferred to a final audit.
+
+**Current workflow policy · 2026-11-20:** the user directed automated qualification only through completion of IMP-10. Per-step interactive human review and per-stage human acceptance are no longer implementation prerequisites, including the pending G-04 review. Human usability, screen-reader, visual and language review is deferred to bug-fix/improvement sessions using GitHub issue follow-up after IMP-10. Preserve prior results as history; record unperformed human review as deferred, never passed. This policy supersedes older human-gate wording in this planning package and slice handoffs. See the [active workflow](../../.codex/IMP_WORKFLOW.md), [qualification procedure](06-demonstrations-and-human-decisions.md) and [machine workflow](stage-workflow.json). Actual deployment/action approvals and product-runtime human authority remain separate. This update does not itself qualify a stage or authorize the next slice.
 
 | Read | Purpose |
 |---|---|
@@ -12,8 +14,8 @@ Implement the accepted LLD as small, demonstrable service slices. Use Codex spec
 | [02 — Codex agent contracts](02-codex-agent-contracts.md) | Roles, dispatch, inputs/results, ownership, concurrency and escalation |
 | [03 — Repository and modularity](03-repository-design-and-modularity.md) | Python/TypeScript boundaries and implementation design practices |
 | [04 — Tooling and quality](04-technology-tooling-and-quality.md) | Recommended tools, pinned setup and mandatory checks by technology |
-| [05 — Implementation stages](05-staged-implementation-roadmap.md) | Stage scope, demonstrations, adverse outcomes and human gates |
-| [06 — Human demonstrations](06-demonstrations-and-human-decisions.md) | Demo packets, decisions, evidence binding and progression |
+| [05 — Implementation stages](05-staged-implementation-roadmap.md) | Stage scope, automated scenarios, adverse outcomes and qualification checkpoints |
+| [06 — Qualification and deferred human review](06-demonstrations-and-human-decisions.md) | Candidate-bound automated evidence and post-IMP-10 GitHub issue follow-up |
 | [07 — Work packages](07-work-packages-and-sequencing.md) | Ready-to-start rules, task slicing and parallel ownership |
 | [08 — Verification and CI](08-verification-ci-and-evidence.md) | Test strategy, CI lanes, risk-based checks and truthful evidence |
 | [09 — Decisions and first stage](09-risks-decisions-and-first-stage.md) | Remaining implementation choices and the first concrete work packet |

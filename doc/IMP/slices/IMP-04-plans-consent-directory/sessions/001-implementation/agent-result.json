@@ -1,0 +1,269 @@
+{
+  "packet_id": "WP-IMP04-001-integration",
+  "task_id": "IMP-04-B",
+  "baseline_commit": "a91087350306cf847ade2479c9ad05542c9d3adb",
+  "role": "imp_python",
+  "status": "completed",
+  "changed_paths": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/plans/AuthorityVerification.tsx",
+    "apps/web/src/plans/ConsentPanel.tsx",
+    "apps/web/src/plans/DirectoryOptions.tsx",
+    "apps/web/src/plans/PlanEditor.tsx",
+    "apps/web/src/plans/PlansWorkspace.test.tsx",
+    "apps/web/src/plans/PlansWorkspace.tsx",
+    "apps/web/src/plans/api.ts",
+    "apps/web/src/plans/messages.ts",
+    "apps/web/src/plans/usePlans.ts",
+    "apps/web/src/review/ReviewApp.tsx",
+    "apps/web/src/trust/IdentityPanel.tsx",
+    "apps/web/src/trust/messages.ts",
+    "config/demo/imp04/README.md",
+    "config/demo/imp04/directory-fixtures.json",
+    "config/demo/imp04/directory-source-key-pin.json",
+    "config/demo/imp04/policy/README.md",
+    "config/demo/imp04/policy/bootstrap.json",
+    "config/demo/imp04/policy/manual.rego",
+    "packages/contracts/python/src/care_link_contracts/schema.json",
+    "packages/contracts/python/src/care_link_contracts/validation.py",
+    "packages/contracts/typescript/src/schema.json",
+    "packages/contracts/typescript/src/validators.generated.cjs",
+    "packages/contracts/typescript/src/validators.generated.d.cts",
+    "packages/contracts/typescript/tests/generated.test.ts",
+    "packages/domain/src/care_link_domain/ports.py",
+    "services/core/README.md",
+    "services/core/src/care_link_core/manual_app.py",
+    "services/core/src/care_link_core/manual_envelopes.py",
+    "services/core/src/care_link_core/manual_identity.py",
+    "services/core/src/care_link_core/planning_http.py",
+    "services/core/src/care_link_core/planning_ports.py",
+    "services/core/src/care_link_core/planning_routes.py",
+    "services/data/README.md",
+    "services/data/migrations/003_plans_consent_directory.sql",
+    "services/data/src/care_link_data/app.py",
+    "services/data/src/care_link_data/consent.py",
+    "services/data/src/care_link_data/control.py",
+    "services/data/src/care_link_data/directory.py",
+    "services/data/src/care_link_data/directory_admission.py",
+    "services/data/src/care_link_data/engine.py",
+    "services/data/src/care_link_data/planning_app.py",
+    "services/data/src/care_link_data/planning_policy.py",
+    "services/data/src/care_link_data/plans.py",
+    "services/data/src/care_link_data/store.py",
+    "services/data/src/care_link_data/values.py",
+    "services/data/tests/conftest.py",
+    "services/data/tests/test_directory.py",
+    "services/data/tests/test_directory_admission.py",
+    "services/data/tests/test_imp04_adverse.py",
+    "services/data/tests/test_planning_composition.py",
+    "services/data/tests/test_plans_consent.py",
+    "services/identity/src/care_link_identity/manual.py",
+    "services/identity/src/care_link_identity/manual_runtime.py",
+    "services/identity/tests/test_planning_proof.py",
+    "tools/generate_browser_validators.mjs",
+    "tools/generate_contracts.py",
+    "tools/imp03_runtime/compose.py",
+    "tools/imp03_runtime/config.py",
+    "tools/imp04_verification/__init__.py",
+    "tools/imp04_verification/database.py",
+    "tools/imp04_verification/run_checks.py"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/handoff.md",
+      "sha256": "b0965e51b8ee7ebc093182e7773d67da6a1060cf6a7d48b15f7f6e355c8ea585"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/implementation-deltas.md",
+      "sha256": "3c8c1f1e74648b5c2ef455285b89a31a29f4a300503d0c357d5356a58ce06381"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/review.md",
+      "sha256": "1d15beccab2f97ea9402e2b7a9571281eae1254445f6fd94e18b514562fcd5f7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/results.json",
+      "sha256": "96eec1124ac23a01b0ea07018643febb904c9a3afebefdfa72ff0a04a8c7ffb4"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/checks.json",
+      "sha256": "0b5fa782ba6cab5dc4f03e88262d42e30147ea2e5569697b9da409913a035d5e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/candidate-manifest.json",
+      "sha256": "57e5cd9ebb97069207a2725572387687614f1f0506113ee7b2a87dfe6d9ee881"
+    }
+  ],
+  "checks": [
+    {
+      "name": "uv-lock",
+      "command": "uv lock --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/uv-lock.log",
+      "evidence_digest": "e4ea73825a7df494d53788fbab3eb2aba022a8654fe43d3080b0d4c30582fa3a",
+      "mock_used": false
+    },
+    {
+      "name": "pnpm-lock",
+      "command": "pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/pnpm-lock.log",
+      "evidence_digest": "5e7f8dc5394032dbce2539c450d4fb5064e4f00c6fa78e797074c76010852b9a",
+      "mock_used": false
+    },
+    {
+      "name": "contracts",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python tools/generate_contracts.py --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/contracts.log",
+      "evidence_digest": "0537f5be93b6bf84de3ce0a39f65bca9f01475eba04f026d50e76e89a6e2cef8",
+      "mock_used": false
+    },
+    {
+      "name": "boundaries",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/boundaries.log",
+      "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "mock_used": false
+    },
+    {
+      "name": "admission",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python tools/check_imp02_admission.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/admission.log",
+      "evidence_digest": "a3882b2b400134aad06bb6a1f3a2d33c28096330b037dec61ece67944843d0b1",
+      "mock_used": false
+    },
+    {
+      "name": "ruff",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m ruff check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/ruff.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "python-format",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m ruff format --check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/python-format.log",
+      "evidence_digest": "ea5ed067e5fad191291a777b8294a25fbbf5e121c6d018d67816147b644a03df",
+      "mock_used": false
+    },
+    {
+      "name": "pyright",
+      "command": "pnpm exec pyright --project pyrightconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/pyright.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "typescript",
+      "command": "pnpm typecheck",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/typescript.log",
+      "evidence_digest": "e2619b18e6eda193c3629cf5a0d6112df29e1f4e400b0c8b0ad8a99861ed2ac5",
+      "mock_used": false
+    },
+    {
+      "name": "eslint",
+      "command": "pnpm lint",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/eslint.log",
+      "evidence_digest": "d957502195d6b7bf553082127cc2b44f0602f6924caec17c117d0a1e09273f12",
+      "mock_used": false
+    },
+    {
+      "name": "prettier",
+      "command": "pnpm format:check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/prettier.log",
+      "evidence_digest": "1264ec68aa3a02a4163de506eca818cf94c93265a31cc61682a0898bc86fb889",
+      "mock_used": false
+    },
+    {
+      "name": "python-tests",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m pytest -q --tb=short",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "813 passed,3 skipped; explicit provider/mesh fixtures",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/python-tests.log",
+      "evidence_digest": "0576f6594d06ba567f1436674641e95d6579d65c13836255241b34a7813160d4",
+      "mock_used": true
+    },
+    {
+      "name": "web-tests",
+      "command": "pnpm test",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "100 passed",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/web-tests.log",
+      "evidence_digest": "7f3ec5a314d7e7b6689a08bf60d8f88c05a9f94c5dc196229af28bd93be506d9",
+      "mock_used": true
+    },
+    {
+      "name": "web-build",
+      "command": "pnpm build",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit0 for declared source check",
+      "actual": "Exit0; see bound log",
+      "evidence_path": "doc/IMP/slices/IMP-04-plans-consent-directory/sessions/001-implementation/evidence/web-build.log",
+      "evidence_digest": "8776aa7353cf11ff0ca5ac9d3e9e94ebe19801b6375f369bb8f9a182428518fa",
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [
+    "Typed signed planning target discovery with logical-operation replay anchors",
+    "Exact multi-grant and directory policy evidence; full final disclosure scope",
+    "OwnReportPage and author-owned current read",
+    "Distinct subject-bound follow_up_consent ceremony; no sends or scheduling"
+  ],
+  "remaining_risks": [
+    "Live deployment/migration of accepted lab",
+    "Native multi-account Chrome/EN-FR accessibility/keyboard qualification",
+    "Deployed workload identity/default-deny/SVID qualification for this candidate",
+    "Human G-04 demonstration/acceptance",
+    "Clinical/production or real-source validation"
+  ],
+  "handoff": "Source implementation complete; separate next chat for explicitly authorized live qualification and actual G-04 decision. See session handoff.",
+  "is_example": false
+}

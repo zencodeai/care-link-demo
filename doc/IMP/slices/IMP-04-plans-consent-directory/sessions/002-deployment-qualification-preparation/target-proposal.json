@@ -1,0 +1,622 @@
+{
+  "proposal_id": "DEPLOY-IMP04-002",
+  "status": "proposed_not_applied",
+  "authorization_state": "preparation_only",
+  "target": {
+    "environment_id": "imp04-plans-002",
+    "prefix": "care-link-imp04-002",
+    "label": {
+      "care-link.scope": "imp04-002"
+    },
+    "private_root": "/private/tmp/care-link-imp04-002",
+    "directory_mode": "0700",
+    "private_file_mode": "0600",
+    "legacy_container_root": "/run/care-link-imp03-002",
+    "legacy_protocol_session": "imp03-002",
+    "browser_mode": "ordinary App; no review_contexts_file; isolated profile/context per actor"
+  },
+  "networks": [
+    {
+      "name": "care-link-imp04-002-mesh",
+      "subnet": "172.29.44.0/24",
+      "internal": true,
+      "bridge_intercontainer_communication": true,
+      "gateway_mode_ipv4": "isolated"
+    },
+    {
+      "name": "care-link-imp04-002-database",
+      "subnet": "172.29.45.0/24",
+      "internal": true,
+      "bridge_intercontainer_communication": true
+    },
+    {
+      "name": "care-link-imp04-002-infrastructure",
+      "subnet": "172.29.46.0/24",
+      "internal": true,
+      "bridge_intercontainer_communication": true
+    },
+    {
+      "name": "care-link-imp04-002-ingress",
+      "subnet": "172.29.47.0/24",
+      "internal": false,
+      "bridge_intercontainer_communication": true
+    }
+  ],
+  "addresses": {
+    "role_proxies": {
+      "identity": "172.29.44.11",
+      "core": "172.29.44.12",
+      "data": "172.29.44.13",
+      "pdp": "172.29.44.14",
+      "journal": "172.29.44.15"
+    },
+    "postgres": "172.29.45.10",
+    "identity_db_connector": "172.29.45.11",
+    "data_db_connector": "172.29.45.12",
+    "keycloak_database": "172.29.45.13",
+    "spire_server": "172.29.46.10",
+    "role_agents": {
+      "identity": "172.29.46.11",
+      "core": "172.29.46.12",
+      "data": "172.29.46.13",
+      "pdp": "172.29.46.14",
+      "journal": "172.29.46.15"
+    },
+    "keycloak_infrastructure": "172.29.46.20",
+    "identity_provider_connector": "172.29.46.21"
+  },
+  "published_ports": [
+    {
+      "container": "care-link-imp04-002-ingress",
+      "host": "127.0.0.1",
+      "host_port": 30443,
+      "container_port": 30443,
+      "origin": "https://plans.localhost:30443"
+    },
+    {
+      "container": "care-link-imp04-002-keycloak",
+      "host": "127.0.0.1",
+      "host_port": 31443,
+      "container_port": 8443,
+      "origin": "https://id.plans.localhost:31443"
+    },
+    {
+      "container": "care-link-imp04-002-postgres",
+      "host": "127.0.0.1",
+      "host_port": 25436,
+      "container_port": 5432,
+      "origin": null
+    },
+    {
+      "container": "care-link-imp04-002-review-chrome",
+      "host": "127.0.0.1",
+      "host_port": 30900,
+      "container_port": 29900,
+      "origin": null
+    }
+  ],
+  "volumes": [
+    "care-link-imp04-002-operator",
+    "care-link-imp04-002-fence",
+    "care-link-imp04-002-opa",
+    "care-link-imp04-002-identity-db",
+    "care-link-imp04-002-identity-provider",
+    "care-link-imp04-002-data-db",
+    "care-link-imp04-002-postgres-config",
+    "care-link-imp04-002-postgres-data",
+    "care-link-imp04-002-spire-server-config",
+    "care-link-imp04-002-spire-server-data",
+    "care-link-imp04-002-keycloak-config",
+    "care-link-imp04-002-keycloak-data",
+    "care-link-imp04-002-browser-home",
+    "care-link-imp04-002-identity-config",
+    "care-link-imp04-002-identity-backend",
+    "care-link-imp04-002-identity-outbound",
+    "care-link-imp04-002-identity-authorization",
+    "care-link-imp04-002-identity-proxy",
+    "care-link-imp04-002-identity-agent",
+    "care-link-imp04-002-identity-svid",
+    "care-link-imp04-002-core-config",
+    "care-link-imp04-002-core-backend",
+    "care-link-imp04-002-core-outbound",
+    "care-link-imp04-002-core-authorization",
+    "care-link-imp04-002-core-proxy",
+    "care-link-imp04-002-core-agent",
+    "care-link-imp04-002-core-svid",
+    "care-link-imp04-002-data-config",
+    "care-link-imp04-002-data-backend",
+    "care-link-imp04-002-data-outbound",
+    "care-link-imp04-002-data-authorization",
+    "care-link-imp04-002-data-proxy",
+    "care-link-imp04-002-data-agent",
+    "care-link-imp04-002-data-svid",
+    "care-link-imp04-002-pdp-config",
+    "care-link-imp04-002-pdp-backend",
+    "care-link-imp04-002-pdp-outbound",
+    "care-link-imp04-002-pdp-authorization",
+    "care-link-imp04-002-pdp-proxy",
+    "care-link-imp04-002-pdp-agent",
+    "care-link-imp04-002-pdp-svid",
+    "care-link-imp04-002-journal-config",
+    "care-link-imp04-002-journal-backend",
+    "care-link-imp04-002-journal-outbound",
+    "care-link-imp04-002-journal-authorization",
+    "care-link-imp04-002-journal-proxy",
+    "care-link-imp04-002-journal-agent",
+    "care-link-imp04-002-journal-svid"
+  ],
+  "containers": [
+    {
+      "name": "care-link-imp04-002-identity-agent",
+      "purpose": "agent",
+      "role": "identity",
+      "network": "infrastructure",
+      "uid": 0,
+      "memory_mib": 128,
+      "cpu_limit": 0.5
+    },
+    {
+      "name": "care-link-imp04-002-identity-authorization",
+      "purpose": "authorization",
+      "role": "identity",
+      "network": "none",
+      "uid": 22031,
+      "memory_mib": 128,
+      "cpu_limit": 0.5
+    },
+    {
+      "name": "care-link-imp04-002-identity-app",
+      "purpose": "app",
+      "role": "identity",
+      "network": "none",
+      "uid": 22011,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-identity-proxy",
+      "purpose": "proxy",
+      "role": "identity",
+      "network": "mesh",
+      "uid": 22002,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-core-agent",
+      "purpose": "agent",
+      "role": "core",
+      "network": "infrastructure",
+      "uid": 0,
+      "memory_mib": 128,
+      "cpu_limit": 0.5
+    },
+    {
+      "name": "care-link-imp04-002-core-authorization",
+      "purpose": "authorization",
+      "role": "core",
+      "network": "none",
+      "uid": 22032,
+      "memory_mib": 128,
+      "cpu_limit": 0.5
+    },
+    {
+      "name": "care-link-imp04-002-core-app",
+      "purpose": "app",
+      "role": "core",
+      "network": "none",
+      "uid": 22012,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-core-proxy",
+      "purpose": "proxy",
+      "role": "core",
+      "network": "mesh",
+      "uid": 22002,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-data-agent",
+      "purpose": "agent",
+      "role": "data",
+      "network": "infrastructure",
+      "uid": 0,
+      "memory_mib": 128,
+      "cpu_limit": 0.5
+    },
+    {
+      "name": "care-link-imp04-002-data-authorization",
+      "purpose": "authorization",
+      "role": "data",
+      "network": "none",
+      "uid": 22033,
+      "memory_mib": 128,
+      "cpu_limit": 0.5
+    },
+    {
+      "name": "care-link-imp04-002-data-app",
+      "purpose": "app",
+      "role": "data",
+      "network": "none",
+      "uid": 22013,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-data-proxy",
+      "purpose": "proxy",
+      "role": "data",
+      "network": "mesh",
+      "uid": 22002,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-pdp-agent",
+      "purpose": "agent",
+      "role": "pdp",
+      "network": "infrastructure",
+      "uid": 0,
+      "memory_mib": 128,
+      "cpu_limit": 0.5
+    },
+    {
+      "name": "care-link-imp04-002-pdp-authorization",
+      "purpose": "authorization",
+      "role": "pdp",
+      "network": "none",
+      "uid": 22034,
+      "memory_mib": 128,
+      "cpu_limit": 0.5
+    },
+    {
+      "name": "care-link-imp04-002-pdp-app",
+      "purpose": "app",
+      "role": "pdp",
+      "network": "none",
+      "uid": 22014,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-pdp-proxy",
+      "purpose": "proxy",
+      "role": "pdp",
+      "network": "mesh",
+      "uid": 22002,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-journal-agent",
+      "purpose": "agent",
+      "role": "journal",
+      "network": "infrastructure",
+      "uid": 0,
+      "memory_mib": 128,
+      "cpu_limit": 0.5
+    },
+    {
+      "name": "care-link-imp04-002-journal-authorization",
+      "purpose": "authorization",
+      "role": "journal",
+      "network": "none",
+      "uid": 22035,
+      "memory_mib": 128,
+      "cpu_limit": 0.5
+    },
+    {
+      "name": "care-link-imp04-002-journal-app",
+      "purpose": "app",
+      "role": "journal",
+      "network": "none",
+      "uid": 22015,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-journal-proxy",
+      "purpose": "proxy",
+      "role": "journal",
+      "network": "mesh",
+      "uid": 22002,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-spire-server",
+      "purpose": "Dedicated authority with SQLite and disk keys",
+      "network": "infrastructure",
+      "uid": 0,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-postgres",
+      "purpose": "Fresh TLS PostgreSQL; three independent DBs",
+      "network": "database",
+      "uid": 999,
+      "memory_mib": 512,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-keycloak",
+      "purpose": "Dedicated optimized provider",
+      "network": "database+infrastructure+ingress",
+      "uid": 1000,
+      "memory_mib": 1024,
+      "cpu_limit": 2
+    },
+    {
+      "name": "care-link-imp04-002-fence",
+      "purpose": "Fresh one-way restrictive ledger",
+      "network": "none",
+      "uid": 22000,
+      "memory_mib": 128,
+      "cpu_limit": 0.5
+    },
+    {
+      "name": "care-link-imp04-002-identity-db-connector",
+      "purpose": "Raw TLS DB relay",
+      "network": "database",
+      "uid": 22041,
+      "memory_mib": 64,
+      "cpu_limit": 0.25
+    },
+    {
+      "name": "care-link-imp04-002-data-db-connector",
+      "purpose": "Raw TLS DB relay",
+      "network": "database",
+      "uid": 22042,
+      "memory_mib": 64,
+      "cpu_limit": 0.25
+    },
+    {
+      "name": "care-link-imp04-002-identity-provider-connector",
+      "purpose": "Raw TLS provider relay",
+      "network": "infrastructure",
+      "uid": 22041,
+      "memory_mib": 64,
+      "cpu_limit": 0.25
+    },
+    {
+      "name": "care-link-imp04-002-ingress",
+      "purpose": "Raw browser TLS relay",
+      "network": "mesh+ingress",
+      "uid": 65532,
+      "memory_mib": 64,
+      "cpu_limit": 0.25
+    },
+    {
+      "name": "care-link-imp04-002-review-chrome",
+      "purpose": "Isolated browser and CA custody",
+      "network": "ingress",
+      "uid": 65532,
+      "memory_mib": 1536,
+      "cpu_limit": 2
+    },
+    {
+      "name": "care-link-imp04-002-seed",
+      "purpose": "Initial-only Linux custody preparation; stopped after preparation",
+      "network": "none",
+      "uid": 0,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    },
+    {
+      "name": "care-link-imp04-002-operator-seed",
+      "purpose": "Initial-only migration/provision; stopped before serving",
+      "network": "database",
+      "uid": 0,
+      "memory_mib": 256,
+      "cpu_limit": 1
+    }
+  ],
+  "identities": {
+    "trust_domain": "care-link.demo",
+    "root": "New IMP04-only root; no shared/federated CA bundle",
+    "parents": {
+      "identity": "spiffe://care-link.demo/host/imp04-002-identity",
+      "core": "spiffe://care-link.demo/host/imp04-002-core",
+      "data": "spiffe://care-link.demo/host/imp04-002-data",
+      "pdp": "spiffe://care-link.demo/host/imp04-002-pdp",
+      "journal": "spiffe://care-link.demo/host/imp04-002-journal"
+    },
+    "workloads": {
+      "identity": "spiffe://care-link.demo/demo/identity",
+      "core": "spiffe://care-link.demo/demo/core",
+      "data": "spiffe://care-link.demo/demo/data",
+      "pdp": "spiffe://care-link.demo/demo/pdp",
+      "journal": "spiffe://care-link.demo/demo/journal"
+    },
+    "workload_selector": "unix:uid:22002 in corresponding agent PID namespace",
+    "svid_ttl_seconds": 300,
+    "join_token_ttl_seconds": 600,
+    "agent_keys": "Persist in owned agent config volume or receipt-bound reenrolment; never restart memory-only identity from consumed token",
+    "proxy_uid": 22002,
+    "fence_uid": 22000,
+    "restriction_uid": 22001,
+    "fence_reader_gid": 22999
+  },
+  "database": {
+    "server_hostname": "postgres.imp04.internal",
+    "identity": {
+      "database": "imp04_identity_002",
+      "runtime_login": "imp04_identity_runtime_002",
+      "migrations": [
+        "services/identity/migrations/001_identity.sql",
+        "services/identity/migrations/002_option_b_and_workload.sql"
+      ]
+    },
+    "data": {
+      "database": "imp04_runtime_002",
+      "runtime_login": "imp04_data_runtime_002",
+      "migrations": [
+        "services/data/migrations/001_manual.sql",
+        "services/data/migrations/002_review_recovery.sql",
+        "services/data/migrations/003_plans_consent_directory.sql"
+      ]
+    },
+    "provider": {
+      "database": "imp04_provider_002",
+      "runtime_login": "imp04_provider_runtime_002",
+      "migrations": "Keycloak-owned initial schema, after empty DB provisioning"
+    },
+    "tls": "verify-full with independent transport CA; distinct generated credentials",
+    "migration_owner": "Private initial-only supervisor; absent from serving mounts"
+  },
+  "provider": {
+    "origin": "https://id.plans.localhost:31443",
+    "realm": "care-link-imp04-002",
+    "client_id": "care-link-imp04-002-browser",
+    "access_audience": "care-link-imp04-002-resource",
+    "redirect_uri": "https://plans.localhost:30443/v1/auth/callback",
+    "actors": [
+      {
+        "slot": "pid",
+        "username": "imp04-pid",
+        "role": "pid",
+        "account_id": null,
+        "provider_subject": null
+      },
+      {
+        "slot": "pid-other",
+        "username": "imp04-pid-other",
+        "role": "pid",
+        "account_id": null,
+        "provider_subject": null
+      },
+      {
+        "slot": "carer",
+        "username": "imp04-carer",
+        "role": "carer",
+        "account_id": null,
+        "provider_subject": null
+      },
+      {
+        "slot": "professional",
+        "username": "imp04-professional",
+        "role": "professional_participant",
+        "account_id": null,
+        "provider_subject": null
+      },
+      {
+        "slot": "worker1",
+        "username": "imp04-worker1",
+        "role": "worker",
+        "account_id": null,
+        "provider_subject": null
+      },
+      {
+        "slot": "worker2",
+        "username": "imp04-worker2",
+        "role": "worker",
+        "account_id": null,
+        "provider_subject": null
+      },
+      {
+        "slot": "supervisor",
+        "username": "imp04-supervisor",
+        "role": "supervisor",
+        "account_id": null,
+        "provider_subject": null
+      },
+      {
+        "slot": "operator",
+        "username": "imp04-operator",
+        "role": "operator",
+        "account_id": null,
+        "provider_subject": null
+      },
+      {
+        "slot": "security",
+        "username": "imp04-security",
+        "role": "security",
+        "account_id": null,
+        "provider_subject": null
+      }
+    ],
+    "mfa": "Individually issued password+TOTP; fresh AL2 ceremonies; no credentials in repo",
+    "browser_isolation": "Separate provider and application cookie jar/profile/context for each account; no role substitution"
+  },
+  "policy": {
+    "source": "config/demo/imp04/policy/manual.rego",
+    "source_sha256": "cc62534fcfaf302154ccb8e0aed6f386e7857e848354d8bb41d8d10177665604",
+    "bootstrap": "config/demo/imp04/policy/bootstrap.json",
+    "bootstrap_sha256": "14dcdd98ff2b5bde8f38b2d3d8082bd18dd7616a0a9ef248f1a2a3967e4832e0",
+    "opa_linux_arm64_sha256": "8fc1c524f93b4369eb207961aba213d990604205fc49fe3ba923dfc125c8a422"
+  },
+  "directory": {
+    "envelopes": "config/demo/imp04/directory-fixtures.json#signed_admissions",
+    "envelopes_file_sha256": "26862660a86ce46088c9c98977eb78b6f49fe37ea585aac7c97ffc835443f6e6",
+    "trusted_key_pin": "config/demo/imp04/directory-source-key-pin.json",
+    "trusted_key_pin_sha256": "7b74979946be2edbaa32a8d109d609c881600d353f1e7735d3536fbc2f626fdb",
+    "runtime_keys": [
+      "directory_signed_admissions",
+      "directory_trusted_keys"
+    ],
+    "admission": "Exact signed feeds via actual authorized operator; no direct serving-table seed",
+    "freshness": "Fixed observations; current availability may be unknown/stale. No timestamp refresh or key replacement."
+  },
+  "images": {
+    "pinned": {
+      "spire_server": "ghcr.io/spiffe/spire-server@sha256:ff546f4c62dafc479a0cd79eae9a7b6df2975754d75efd31706098e0d7548837",
+      "spire_agent": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+      "envoy": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+      "postgres": "postgres@sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba",
+      "keycloak_runtime": "docker.io/library/care-link-imp02-keycloak@sha256:eb16e701be9e124e7d7a35ce00a8a86bef7d15ed63a262c7f3ec770cda846918",
+      "python": "docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56"
+    },
+    "uv": "ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc",
+    "browser_base_id": "sha256:847d0429ebe65559c9cc8cfb415f072fc9bf347050dc0fd7248d5cbcf0669a48",
+    "application_tag": "care-link-imp04:plans-002",
+    "application_image_id": null,
+    "browser_image_id": null,
+    "readiness": "SPIRE server/uv not confirmed in host cache; pinned acquisition or build required, no mutable tag execution",
+    "derived_keycloak_image_id": "sha256:eb16e701be9e124e7d7a35ce00a8a86bef7d15ed63a262c7f3ec770cda846918",
+    "keycloak_reference_kind": "Local derived image provenance; verify and run immutable local image ID or rebuild pinned Keycloak.Dockerfile. Do not assume docker.io/library/care-link-imp02-keycloak is a published registry repository."
+  },
+  "web": {
+    "VITE_OIDC_ORIGIN": "https://id.plans.localhost:31443",
+    "VITE_HELP_ORIGIN": "https://help.localhost:19443",
+    "VITE_STATIC_ORIGIN": "https://static.localhost:21443",
+    "qualification_profile": "imp04-plans-002",
+    "help_static_limit": "Existing public fallback links only; do not assert IMP04 identity integration or mutate those services."
+  },
+  "new_source_work_required": [
+    "tools/imp04_deployment/**: exact target config, fresh-only render/provision/serve/relay, guarded Docker operations, own authority/provider, verification/custody receipts",
+    "deploy/images/imp04/Dockerfile and Dockerfile.dockerignore: add IMP04 config; use pinned build bases; require explicit web provenance",
+    "tests/unit/imp04_deployment/**: refuse accepted target/prefix/mount/network/credential adoption, validate target plan and source pins",
+    "tests/e2e/imp04-live/**: ordinary actor browser contexts; qualification/evidence capture",
+    "tools/imp04_verification/**: optional leased final-output race barrier adapter; separately rebind source/image if added"
+  ],
+  "protected_resources": [
+    "care-link-imp03-003-*",
+    "care-link-imp03-003-cont1-*",
+    "care-link-imp02-002-*",
+    "kind cluster care-link-imp02-002",
+    "all accepted SPIRE registrations/Keycloak realms/credentials/DBs/conversations/journals/fences",
+    "tools/imp03_shared/**; tools/imp03_runtime/**; tools/demo/**; existing deployment recipes remain unchanged"
+  ],
+  "rollback": {
+    "trigger": "Any preservation mismatch, source/config/pin mismatch or qualification failure",
+    "action": "Stop exact receipt-bound IMP04 ingress, then IMP04 apps/authorizers/proxies/agents as required. Retain all new data/journal/fence/custody/evidence. Return reviewer links to retained IMP03.",
+    "prohibited": "No shared restart, broad prune, accepted mutation, down migration, restriction reset or automatic delete"
+  },
+  "resource_budgets": {
+    "sum_container_memory_limits_mib_including_stopped_seed_phases": 8064,
+    "capacity_check": "Check live Docker/host capacity before deployment; do not stop or resize IMP03 to make space. No CPU reservation guarantee; one shared workstation/daemon remains."
+  },
+  "release_binding_required": [
+    "new source patch digest and code review",
+    "qualified web file manifest/fingerprint",
+    "application and browser immutable image IDs",
+    "exact rendered mount/network/UID/argv plan digest",
+    "public configuration fingerprints, new transport/authority root fingerprints",
+    "new account/subject IDs, new journal ID and fence baseline",
+    "explicit deployment-change review before applying"
+  ]
+}

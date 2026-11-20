@@ -1,0 +1,31 @@
+..................................F.................F                    [100%]
+=================================== FAILURES ===================================
+______ test_missing_record_ingestion_race_serializes_and_versions_append _______
+services/data/tests/test_directory.py:263: in test_missing_record_ingestion_race_serializes_and_versions_append
+    assert results.count("manual.stale_revision") == 1
+E   AssertionError: assert 0 == 1
+E    +  where 0 = <built-in method count of list object at 0x1140db080>('manual.stale_revision')
+E    +    where <built-in method count of list object at 0x1140db080> = ['manual.stale_authority', '1'].count
+_______ test_actual_directory_policy_binds_source_and_suspension_target ________
+services/data/tests/test_planning_composition.py:293: in test_actual_directory_policy_binds_source_and_suspension_target
+    PostgresStore(h.database.admin).provision_principal(security)
+services/data/src/care_link_data/store.py:377: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(33dcecd8-aa92-46b4-9486-136b57b12b3a) already exists.
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/fastapi/testclient.py:1
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+services/data/tests/test_planning_composition.py::test_signed_bff_plan_consent_proof_shared_view_and_revocation
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py:1144: StarletteDeprecationWarning: You should not use the 'timeout' argument with the TestClient. See https://github.com/Kludex/starlette/issues/1108 for more information.
+    return self.request(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/data/tests/test_directory.py::test_missing_record_ingestion_race_serializes_and_versions_append
+FAILED services/data/tests/test_planning_composition.py::test_actual_directory_policy_binds_source_and_suspension_target
+2 failed, 51 passed, 2 warnings in 9.70s

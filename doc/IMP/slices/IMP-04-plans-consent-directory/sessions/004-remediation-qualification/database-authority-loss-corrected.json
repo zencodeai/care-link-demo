@@ -1,0 +1,48 @@
+{
+  "columns": [
+    "principal_id",
+    "identity_revision",
+    "role_revision",
+    "role",
+    "revoked",
+    "operation_id",
+    "operation_name",
+    "state",
+    "durable_resource_id",
+    "payload_digest",
+    "canonical_audit_id",
+    "event_id",
+    "audit_action",
+    "audit_decision",
+    "operator_principal",
+    "audit_input_digest",
+    "audit_created_at"
+  ],
+  "rows": [
+    [
+      "9363214a-1050-4f2f-a1ff-11c0c9009b94",
+      2,
+      1,
+      "carer",
+      true,
+      "aa9f7bc0-05e7-49b6-b222-8dfbfceb536a",
+      "manual_identity_restrict",
+      "committed",
+      null,
+      "34523c25501182af0946cd35e19cf6469f14d7120f2b0f5bef50d2e3c13e4d6e",
+      "fec3ae23-eb4f-4dcf-a2a5-6a59f7f6a640",
+      "fec3ae23-eb4f-4dcf-a2a5-6a59f7f6a640",
+      "manual_identity_restrict",
+      "PERMIT",
+      "1152c7ae-32b6-4383-b99c-7589a663e453",
+      "34523c25501182af0946cd35e19cf6469f14d7120f2b0f5bef50d2e3c13e4d6e",
+      "2026-11-16 22:40:48.291104+00:00"
+    ]
+  ],
+  "expected_exact_payload_digest": "34523c25501182af0946cd35e19cf6469f14d7120f2b0f5bef50d2e3c13e4d6e",
+  "correlation": "Exact canonical action/session/payload digest binds the target principal; generic Outcome leaves durable.resource_id null for this action. Canonical audit joins by both event and operation IDs.",
+  "read_only": true,
+  "narratives_returned": false,
+  "status": "passed",
+  "probe_source_sha256": "d14c7f94493a0be26d85afee43113eeebbdaf9ddfe90bb3f09c0761668d756b3"
+}
