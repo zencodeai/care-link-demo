@@ -1,0 +1,44 @@
+Failed Tests 1 ^[[49m^[[22m^[[31m⎯⎯⎯⎯⎯⎯⎯^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9533980Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9534492Z ^[[41m^[[1m FAIL ^[[22m^[[49m apps/web/src/manual/ManualService.test.tsx^[[2m > ^[[22mmanual actor workspaces^[[2m > ^[[22mkeeps both-party channel liveness during ACK and reauthorizes each stream update
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535085Z ^[[31m^[[1mAssertionError^[[22m: expected [] to have a length of 1 but got +0^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535255Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535329Z ^[[32m- Expected^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535473Z ^[[31m+ Received^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535543Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535605Z ^[[32m- 1^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535725Z ^[[31m+ 0^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535795Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9536004Z ^[[36m ^[[2m❯^[[22m apps/web/src/manual/ManualService.test.tsx:^[[2m762:21^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9643095Z     ^[[90m760|^[[39m     ^[[35mawait^[[39m ^[[34mcheck^[[39m()^[[33m;^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9643408Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9682986Z     ^[[90m761|^[[39m     ^[[35mawait^[[39m ^[[34mopen^[[39m()^[[33m;^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9683640Z     ^[[90m762|^[[39m     ^[[34mexpect^[[39m(sources)^[[33m.^[[39m^[[34mtoHaveLength^[[39m(^[[34m1^[[39m)^[[33m;^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9684107Z     ^[[90m   |^[[39m                     ^[[31m^^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9684505Z     ^[[90m763|^[[39m     fireEvent^[[33m.^[[39m^[[34mclick^[[39m(
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9685164Z     ^[[90m764|^[[39m       screen^[[33m.^[[39m^[[34mgetByRole^[[39m(^[[32m"button"^[[39m^[[33m,^[[39m { name^[[33m:^[[39m ^[[32m"Confirm my app channel"^[[39m })^[[33m,^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9685569Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9685808Z ^[[31m^[[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9685992Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9686406Z ^[[2m Test Files ^[[22m ^[[1m^[[31m1 failed^[[39m^[[22m^[[2m | ^[[22m^[[1m^[[32m19 passed^[[39m^[[22m^[[90m (20)^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9687131Z ^[[2m      Tests ^[[22m ^[[1m^[[31m1 failed^[[39m^[[22m^[[2m | ^[[22m^[[1m^[[32m222 passed^[[39m^[[22m^[[90m (223)^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9692798Z ^[[2m   Start at ^[[22m 17:05:59
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9703351Z ^[[2m   Duration ^[[22m 42.22s^[[2m (tests 74%, environment 12%, import 8%, transform 5%)^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9712285Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9723475Z ^[[2m    Isolate ^[[22m ^[[33m20 workers spawned^[[39m^[[2m · ~323ms startup each (spawn + environment, per file)^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9732947Z ^[[2m            ^[[22m ^[[2mat least ~6.14s faster with ^[[22m^[[33misolate: false^[[39m^[[2m — reuses workers across files instead of one per file^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9733375Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9733405Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9757745Z ##[error]AssertionError: expected [] to have a length of 1 but got +0
+fast	Run uv run --locked python tools/check.py	
+fast	Run uv run --locked python tools/check.py	- Expected
+fast	Run uv run --locked python tools/check.py	+ Received
+fast	Run uv run --locked python tools/check.py	
+fast	Run uv run --locked python tools/check.py	- 1
+fast	Run uv run --locked python tools/check.py	+ 0
+fast	Run uv run --locked python tools/check.py	
+fast	Run uv run --locked python tools/check.py	 ❯ apps/web/src/manual/ManualService.test.tsx:762:21
+fast	Run uv run --locked python tools/check.py	
+fast	Run uv run --locked python tools/check.py	
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:42.0342427Z  ELIFECYCLE  Test failed. See above for more details.
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:42.0844732Z ##[error]Process completed with exit code 1.

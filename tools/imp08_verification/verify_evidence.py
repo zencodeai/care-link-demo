@@ -1,5 +1,6 @@
 """Verify source/build, session schemas and actual IMP-08 evidence bindings offline."""
 
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -8,7 +9,7 @@ from typing import Protocol, cast
 from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[2]
-SESSION = ROOT / "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation"
+BASE_SESSION = ROOT / "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation"
 
 
 class _Validator(Protocol):
@@ -24,22 +25,41 @@ def binding(value: dict[str, str]) -> None:
         raise ValueError("Evidence/source binding drift: " + value["path"])
 
 
+def selected_binding(value: dict[str, str], expected: Path) -> None:
+    if (ROOT / value["path"]).resolve() != expected.resolve():
+        raise ValueError("Selected session candidate/results binding mismatch")
+    binding(value)
+
+
 def main() -> None:
-    manifest = json.loads((SESSION / "candidate-manifest.json").read_text())
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--session", type=Path)
+    args = parser.parse_args()
+    ledger_path = ROOT / "doc/IMP/executions/2026-11-21-IMP-08/ledger.json"
+    ledger = json.loads(ledger_path.read_text())
+    session = args.session or (ROOT / ledger.get("current_session", str(BASE_SESSION)))
+    session = session.resolve()
+    if not session.is_relative_to(BASE_SESSION.parent.resolve()):
+        raise ValueError("Verification session must belong to IMP-08")
+    if not (session / "candidate-manifest.json").is_file():
+        if args.session is not None:
+            raise ValueError("Requested session has no candidate manifest")
+        session = BASE_SESSION
+    manifest = json.loads((session / "candidate-manifest.json").read_text())
     for name in ("source_hashes", "reference_hashes", "build_hashes"):
         for path, expected in manifest[name].items():
             if digest(ROOT / path) != expected:
                 raise ValueError("Candidate drift: " + path)
     candidate = manifest["candidate"]
-    if candidate["environment_digest"] != digest(SESSION / "environment.json"):
+    if candidate["environment_digest"] != digest(session / "environment.json"):
         raise ValueError("Environment binding drift")
     print("Source, reference, build and environment hashes matched.")
 
     schema = json.loads((ROOT / "doc/IMP/contracts/planning.schema.json").read_text())
     for path in (
-        *SESSION.glob("*-work-packet.json"),
-        SESSION / "agent-result.json",
-        SESSION / "demo-packet.json",
+        *session.glob("*-work-packet.json"),
+        session / "agent-result.json",
+        session / "demo-packet.json",
     ):
         kind = (
             "WorkPacket"
@@ -58,14 +78,14 @@ def main() -> None:
             binding(source)
     print("WorkPacket, AgentResult and DemoPacket contracts and source bindings valid.")
 
-    result = json.loads((SESSION / "results.json").read_text())
-    binding(result["candidate_manifest"])
+    result = json.loads((session / "results.json").read_text())
+    selected_binding(result["candidate_manifest"], session / "candidate-manifest.json")
     for check in result["checks"]:
         if check["status"] != "passed":
             raise ValueError("Unresolved qualification check")
         if digest(ROOT / check["evidence_path"]) != check["evidence_digest"]:
             raise ValueError("Check log drift")
-    demo = json.loads((SESSION / "demo-packet.json").read_text())
+    demo = json.loads((session / "demo-packet.json").read_text())
     if demo["candidate"] != candidate or demo["human_decision_id"] is not None:
         raise ValueError("Demo candidate/human decision mismatch")
     for step in (*demo["normal_steps"], *demo["adverse_steps"]):
@@ -74,6 +94,15 @@ def main() -> None:
     ledger = json.loads((ROOT / "doc/IMP/executions/2026-11-21-IMP-08/ledger.json").read_text())
     for key in ("candidate_manifest", "results", "qualification_packet"):
         binding(ledger[key])
+    for key, filename in (
+        ("current_candidate_manifest", "candidate-manifest.json"),
+        ("current_results", "results.json"),
+    ):
+        if key in ledger:
+            if args.session is None:
+                selected_binding(ledger[key], session / filename)
+            else:
+                binding(ledger[key])
     for predecessor in ledger["predecessors"]:
         binding(predecessor)
         state = json.loads((ROOT / predecessor["path"]).read_text())["state"]
@@ -83,7 +112,7 @@ def main() -> None:
 
     plan = json.loads((ROOT / "doc/IMP/implementation-plan.json").read_text())
     expected = next(row["relevant_operations"] for row in plan["tasks"] if row["id"] == "IMP-08-A")
-    actual = json.loads((SESSION / "operation-trace.json").read_text())
+    actual = json.loads((session / "operation-trace.json").read_text())
     if set(expected) != {row["operation_id"] for row in actual["operations"]}:
         raise ValueError("Operation trace mismatch")
     print("Canonical operation coverage matched; human review remains deferred.")

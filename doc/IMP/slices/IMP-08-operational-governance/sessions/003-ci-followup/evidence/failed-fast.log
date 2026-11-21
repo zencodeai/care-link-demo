@@ -1,0 +1,608 @@
+fast	Run uv run --locked python tools/check.py	﻿2026-11-21T17:04:17.6825613Z ##[group]Run uv run --locked python tools/check.py
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:17.6825850Z ^[[36;1muv run --locked python tools/check.py^[[0m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:17.6841504Z shell: /usr/bin/bash -e {0}
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:17.6841640Z env:
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:17.6841757Z   UV_PYTHON_DOWNLOADS: automatic
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:17.6841965Z ##[endgroup]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:17.7795573Z + uv lock --check
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:17.7884401Z Resolved 93 packages in 1ms
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:17.7891034Z + pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:17.9769916Z Scope: all 3 workspace projects
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:18.3872426Z Done in 583ms using pnpm v10.20.0
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:18.3947686Z + uv run --locked --all-packages python tools/generate_contracts.py --check
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:18.9126603Z Browser validators match the pinned schema (130 public contracts).
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:18.9683069Z Additive agentic OpenAPI matches shared contracts
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:18.9742770Z Contract snapshots match reviewed definitions.
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:18.9831200Z + uv run --locked --all-packages python tools/check_boundaries.py
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:19.3819468Z Source dependency boundaries passed (source check, not runtime isolation).
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:19.3876562Z + uv run --locked --all-packages python tools/check_imp02_admission.py
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:19.4143975Z IMP-02 source admission remains disabled; no live identity/network/content proof implied.
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:19.4179155Z + uv run --locked --all-packages ruff check .
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:19.5671361Z All checks passed!
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:19.5713358Z + uv run --locked --all-packages ruff format --check .
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:19.8608146Z 555 files already formatted
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:19.8629752Z + pnpm exec pyright --project pyrightconfig.json
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:31.0493141Z 0 errors, 0 warnings, 0 informations
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:31.1534055Z + pnpm typecheck
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:31.3612326Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:31.3613508Z > care-link-development@0.1.0 typecheck /home/runner/work/care-link-demo/care-link-demo
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:31.3632642Z > pnpm -r typecheck
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:31.3652083Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:31.5812928Z Scope: 2 of 3 workspace projects
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:31.5847977Z packages/contracts/typescript typecheck$ tsc --noEmit
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:32.6362080Z packages/contracts/typescript typecheck: Done
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:32.6370922Z apps/web typecheck$ tsc --noEmit
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:36.9438868Z apps/web typecheck: Done
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:36.9587326Z + pnpm lint
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:37.1162511Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:37.1166629Z > care-link-development@0.1.0 lint /home/runner/work/care-link-demo/care-link-demo
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:37.1167694Z > eslint apps/web packages/contracts/typescript --max-warnings 0
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:37.1168100Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:45.9845892Z + pnpm format:check
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:46.1394889Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:46.1395735Z > care-link-development@0.1.0 format:check /home/runner/work/care-link-demo/care-link-demo
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:46.1396777Z > prettier --check apps/web packages/contracts/typescript package.json pnpm-workspace.yaml pyrightconfig.json eslint.config.mjs vitest.config.ts
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:46.1397415Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:46.1917812Z Checking formatting...
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:48.9181811Z All matched files use Prettier code style!
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:48.9492775Z + uv run --locked --all-packages pytest
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:52.9250441Z ============================= test session starts ==============================
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:52.9251174Z platform linux -- Python 3.14.7, pytest-9.2.0, pluggy-1.7.0
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:52.9251663Z rootdir: /home/runner/work/care-link-demo/care-link-demo
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:52.9252222Z configfile: pyproject.toml
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:52.9253740Z testpaths: packages/knowledge/tests, services/runtime/tests, services/inference/tests, host/inference-bridge/tests, services/simulators/tests, packages/policy-input/tests, services/data/tests, host/recovery-control/tests, packages/workload-trust/tests, packages/contracts/python/tests, services/core/tests, services/identity/tests, host/help/tests, host/static/tests, tests
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:52.9255571Z plugins: langsmith-0.15.1, anyio-4.16.0
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:52.9255898Z collected 1687 items
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:52.9256096Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:52.9313665Z packages/knowledge/tests/test_catalog.py ...............                 [  0%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.4635455Z services/runtime/tests/test_client.py ...                                [  1%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.4798539Z services/runtime/tests/test_workflow.py .....                            [  1%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.5662999Z services/inference/tests/test_inference.py ............................. [  3%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.6043129Z ....                                                                     [  3%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.6093212Z services/inference/tests/test_selection.py ...........                   [  3%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.6374803Z services/inference/tests/test_tokenization.py ............               [  4%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.6453186Z host/inference-bridge/tests/test_artifacts.py ....                       [  4%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.6583271Z host/inference-bridge/tests/test_bridge.py ..............                [  5%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.6593087Z host/inference-bridge/tests/test_credentials.py .                        [  5%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.6656945Z host/inference-bridge/tests/test_loaded.py .......                       [  6%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.6696535Z packages/policy-input/tests/test_assistance_policy.py sssssssssssss      [  6%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.6826432Z packages/policy-input/tests/test_delegation.py ........                  [  7%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.7084524Z packages/policy-input/tests/test_duty_registry.py .....                  [  7%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.7139662Z packages/policy-input/tests/test_imp07_policy.py sssssssssssssssssssss   [  9%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.7168077Z packages/policy-input/tests/test_imp08_policy.py sssssssssss             [  9%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.7774223Z packages/policy-input/tests/test_opa.py ...sssssss                       [ 10%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.7818885Z packages/policy-input/tests/test_referral_policy.py ssssssssssssssssssss [ 11%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.7913385Z ssssssssssssssssssssssssssssssssssssssssssss                             [ 14%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.7957505Z services/data/tests/test_assistance.py ssssssssssssssssssss              [ 15%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.7980895Z services/data/tests/test_assistance_jobs.py sssssssssss                  [ 15%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.7995135Z services/data/tests/test_assistance_knowledge.py sssss                   [ 16%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8010359Z services/data/tests/test_composition.py sssssss                          [ 16%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8020348Z services/data/tests/test_core_assistance_chain.py ssss                   [ 16%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8157193Z services/data/tests/test_directory.py ..................ssss.ss          [ 18%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8261749Z services/data/tests/test_directory_admission.py ..................       [ 19%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8328602Z services/data/tests/test_duties.py ssssssssssss                          [ 20%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8357115Z services/data/tests/test_identity_deadline.py .......                    [ 20%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8382522Z services/data/tests/test_imp04_adverse.py ssssssssss                     [ 21%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8441622Z services/data/tests/test_imp07_lifecycle.py ssssss.sssssssssssssssssssss [ 22%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8468695Z ssssssssss                                                               [ 23%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8471847Z services/data/tests/test_imp08_boundary.py s                             [ 23%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8547392Z services/data/tests/test_imp08_controls.py ...........ssssssssssssssssss [ 25%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8554110Z ss                                                                       [ 25%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8586704Z services/data/tests/test_imp08_evidence_postgres.py ssssssssssssss       [ 26%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8726012Z services/data/tests/test_imp08_evidence_unit.py ...............          [ 26%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8751643Z services/data/tests/test_imp08_inline.py sssssssssss                     [ 27%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8755284Z services/data/tests/test_imp08_latency.py s                              [ 27%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8772182Z services/data/tests/test_lifecycle_adverse.py ssssss                     [ 28%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8781735Z services/data/tests/test_lifecycle_boundary.py ssss                      [ 28%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8846145Z services/data/tests/test_manual.py sssssssssssss.sssssssssssssss         [ 29%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8856369Z services/data/tests/test_planning_composition.py sss                     [ 30%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8935446Z services/data/tests/test_plans_consent.py ...........ssss                [ 31%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8946029Z services/data/tests/test_plans_review_recovery.py ssss                   [ 31%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:53.8951825Z services/data/tests/test_referral_composition.py ss                      [ 31%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:54.0711224Z services/data/tests/test_referrals.py ssssssssssssssssssssssssssssssssss [ 33%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:54.0715974Z s                                                                        [ 33%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:54.0748406Z services/data/tests/test_review_recovery.py ssssssssssssss               [ 34%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:54.0751540Z services/data/tests/test_runtime_composition.py s                        [ 34%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:54.1788422Z host/recovery-control/tests/test_capture.py ..........                   [ 34%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:54.3030172Z host/recovery-control/tests/test_journal.py .....................        [ 36%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:54.3057915Z packages/workload-trust/tests/test_fence_channel.py ...                  [ 36%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:54.6003737Z packages/workload-trust/tests/test_imp06_routes.py ...........           [ 37%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:54.6019183Z packages/workload-trust/tests/test_socket_custody.py ..                  [ 37%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:55.5819589Z packages/workload-trust/tests/test_workload_trust.py ................... [ 38%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:55.6821303Z ..                                                                       [ 38%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:55.6945721Z packages/contracts/python/tests/test_validation.py ...............       [ 39%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:55.8094507Z services/core/tests/test_assistance_work.py .............                [ 40%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:55.8899063Z services/core/tests/test_developer_api.py .............................. [ 41%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:55.8926891Z .                                                                        [ 41%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:56.1451673Z services/core/tests/test_imp07_transport.py ................             [ 42%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:56.7433298Z services/core/tests/test_imp08_transport.py ..................           [ 43%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:56.8394999Z services/core/tests/test_manual_envelopes.py .................           [ 44%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:56.8889227Z services/core/tests/test_manual_gateway_errors.py .........              [ 45%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:56.9577447Z services/core/tests/test_manual_transport.py ........                    [ 45%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:56.9703913Z services/core/tests/test_plans_review_context.py ...............         [ 46%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:57.0145918Z services/core/tests/test_plans_review_routes.py .......                  [ 47%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:57.1686528Z services/core/tests/test_referral_transport.py ........                  [ 47%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:04:57.1926948Z services/core/tests/test_review_binding.py ....                          [ 47%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:01.5393124Z services/core/tests/test_review_cookie_security.py ......                [ 48%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:01.5406628Z services/core/tests/test_review_views.py ...                             [ 48%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:01.5645147Z services/identity/tests/test_backups.py ..........                       [ 49%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:01.5828985Z services/identity/tests/test_credential_sweep.py ..............          [ 49%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:01.7545878Z services/identity/tests/test_identity.py ............................... [ 51%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:01.7670154Z ..                                                                       [ 51%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:01.8027410Z services/identity/tests/test_imp07_rights_proof.py ..............        [ 52%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:01.9800526Z services/identity/tests/test_interactive_review.py ..................... [ 53%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:02.0429260Z ...............                                                          [ 54%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:02.0455278Z services/identity/tests/test_manual_recovery.py ..                       [ 54%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:02.1121781Z services/identity/tests/test_manual_runtime.py ..........                [ 55%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:02.1244831Z services/identity/tests/test_owner_review.py ................            [ 56%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:02.1406126Z services/identity/tests/test_planning_proof.py .....                     [ 56%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:03.0877728Z services/identity/tests/test_provider.py ............................... [ 58%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:04.1374255Z ...............................                                          [ 60%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:04.1562919Z services/identity/tests/test_receiver_workload.py .                      [ 60%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:04.1773264Z services/identity/tests/test_retention.py .........................      [ 62%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:04.2153787Z services/identity/tests/test_review_identity.py ...............          [ 62%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:04.5148432Z services/identity/tests/test_review_providers.py ..........              [ 63%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:04.5317443Z services/identity/tests/test_review_proxy.py .....                       [ 63%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:04.5422888Z services/identity/tests/test_signals.py ..........                       [ 64%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:04.5504760Z services/identity/tests/test_workload_signals.py ...........             [ 65%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:04.5622532Z host/help/tests/test_authority_http.py ..................                [ 66%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:04.7247104Z host/help/tests/test_help.py ..........                                  [ 66%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:04.7931178Z host/help/tests/test_identity_integration.py .                           [ 66%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.1289903Z host/help/tests/test_lifecycle.py ................                       [ 67%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.1356516Z host/static/tests/test_card_compiler.py ..                               [ 67%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.1629803Z host/static/tests/test_owner_demo.py ...........                         [ 68%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.2173860Z host/static/tests/test_publication.py .............                      [ 69%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.3967010Z host/static/tests/test_static_retention.py .........                     [ 69%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.3979151Z tests/contract/test_agentic_workflow.py ..                               [ 69%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4019555Z tests/contract/test_snapshot.py .                                        [ 69%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4034647Z tests/evaluation/test_assistance_evaluation.py ...                       [ 70%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4194271Z tests/evaluation/test_assistance_transport.py ..                         [ 70%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4202103Z tests/integration/imp02_lab/test_cni_ipv6.py ..                          [ 70%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4206542Z tests/integration/imp02_lab/test_fence_users.py s                        [ 70%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4279780Z tests/integration/imp02_lab/test_manifests.py .......                    [ 70%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4381591Z tests/integration/imp02_lab/test_signals_probe.py ........               [ 71%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4388873Z tests/integration/imp03_runtime/test_provisioning.py s                   [ 71%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4408796Z tests/integration/referral/test_history_links.py .                       [ 71%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4429094Z tests/integration/referral/test_runtime.py ..                            [ 71%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4936952Z tests/integration/referral/test_transport.py ........                    [ 72%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.4956309Z tests/network/test_probe_evidence.py .....                               [ 72%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.5412177Z tests/unit/imp04_deployment/test_authority_case.py ....................  [ 73%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.5515292Z tests/unit/imp04_deployment/test_browser_stream.py ..                    [ 73%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.7183363Z tests/unit/imp04_deployment/test_configuration.py ...............        [ 74%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.7274653Z tests/unit/imp04_deployment/test_diagnostics.py .....                    [ 74%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.7360795Z tests/unit/imp04_deployment/test_live_database.py ...................... [ 76%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.7379104Z .....                                                                    [ 76%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:06.8117067Z tests/unit/imp04_deployment/test_live_zoom.py .......................... [ 77%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:07.3143208Z ..................................                                       [ 79%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:07.3284404Z tests/unit/imp04_deployment/test_operator.py ...................         [ 81%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:07.3376201Z tests/unit/imp04_deployment/test_qualification.py ....                   [ 81%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:08.0511366Z tests/unit/imp04_review/test_adapters.py .............                   [ 82%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:08.0592960Z tests/unit/imp04_review/test_build_context.py .............              [ 82%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:08.0717880Z tests/unit/imp04_review/test_fixture_sources.py ...                      [ 83%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:08.0726292Z tests/unit/imp04_review/test_initial_migration_receipt.py .              [ 83%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:08.1038238Z tests/unit/imp04_review/test_operator_login.py ..................        [ 84%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:08.1102249Z tests/unit/imp04_review/test_preparation.py ......                       [ 84%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:08.3134214Z tests/unit/imp04_review/test_review_lifecycle.py ............            [ 85%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:09.3333617Z tests/unit/imp04_review/test_review_operator.py ......                   [ 85%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:09.4204612Z tests/unit/imp04_review/test_serving_entry.py .........                  [ 86%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:09.4244074Z tests/unit/test_boundaries.py ......                                     [ 86%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:09.4438138Z tests/unit/test_demo_review_environment.py .......                       [ 86%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:09.8653408Z tests/unit/test_demo_review_provider.py ..............                   [ 87%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:09.9397665Z tests/unit/test_demo_review_realms.py ..                                 [ 87%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:09.9528409Z tests/unit/test_demo_review_start.py .                                   [ 87%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.0521404Z tests/unit/test_demo_toolkit.py ................                         [ 88%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.0527719Z tests/unit/test_imp02_admission.py .                                     [ 88%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.0905161Z tests/unit/test_imp02_application.py .....                               [ 89%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.1034093Z tests/unit/test_imp03_extended_commit_fault.py ................          [ 90%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.1186987Z tests/unit/test_imp03_extended_evidence.py ............                  [ 90%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.1228149Z tests/unit/test_imp03_extended_negative.py ..........                    [ 91%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.1247031Z tests/unit/test_imp03_extended_result_gates.py ......                    [ 91%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.1852308Z tests/unit/test_imp03_runtime.py ....................                    [ 93%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.1978316Z tests/unit/test_imp03_shared_docker.py ................................. [ 94%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.1994783Z ...                                                                      [ 95%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.2255788Z tests/unit/test_imp03_shared_provider.py ...............                 [ 96%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.2283807Z tests/unit/test_imp03_shared_qualification.py ..                         [ 96%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:16.3452256Z tests/unit/test_imp03_shared_relay.py ..............                     [ 96%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:18.5508439Z tests/unit/test_imp03_shared_tls.py .......                              [ 97%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:27.2527728Z tests/unit/test_imp03_shared_tls_apply.py ............                   [ 98%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:27.2713936Z tests/unit/test_imp06_composition.py ....                                [ 98%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:27.2809456Z tests/unit/test_imp06_provider_stop.py ..........                        [ 98%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.0871709Z tests/unit/test_imp06_release_custody.py ...............                 [ 99%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9610446Z tests/unit/test_imp06_serving_release.py ...                             [100%]
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9611100Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9611505Z =============================== warnings summary ===============================
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9612431Z .venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9613704Z   /home/runner/work/care-link-demo/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9614774Z     if asyncio.iscoroutinefunction(func):
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9615062Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9615580Z tests/unit/test_imp03_runtime.py::test_journal_response_is_fresh_signed_nonce_bound_and_reports_serving_fence
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9616829Z   /home/runner/work/care-link-demo/care-link-demo/.venv/lib/python3.14/site-packages/httpx2/_client.py:1198: StarletteDeprecationWarning: You should not use the 'timeout' argument with the TestClient. See https://github.com/Kludex/starlette/issues/1108 for more information.
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9618004Z     return self.request(
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9618251Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9618596Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9619162Z =========================== short test summary info ============================
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9619818Z SKIPPED [8] packages/policy-input/tests/test_assistance_policy.py:59: Explicit pinned OPA binary required
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9620575Z SKIPPED [5] packages/policy-input/tests/test_assistance_policy.py:79: Explicit pinned OPA binary required
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9621313Z SKIPPED [9] packages/policy-input/tests/test_imp07_policy.py:59: Explicit pinned OPA binary required
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9622139Z SKIPPED [7] packages/policy-input/tests/test_imp07_policy.py:82: Explicit pinned OPA binary required
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9622878Z SKIPPED [2] packages/policy-input/tests/test_imp07_policy.py:114: Explicit pinned OPA binary required
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9624352Z SKIPPED [3] packages/policy-input/tests/test_imp07_policy.py:143: Explicit pinned OPA binary required
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9625070Z SKIPPED [10] packages/policy-input/tests/test_imp08_policy.py:33: Explicit pinned OPA required
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9625768Z SKIPPED [1] packages/policy-input/tests/test_imp08_policy.py:66: Explicit pinned OPA required
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9626523Z SKIPPED [7] packages/policy-input/tests/test_opa.py:186: Pinned OPA fixture explicitly required for integration
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9627429Z SKIPPED [4] packages/policy-input/tests/test_referral_policy.py:143: Pinned OPA fixture explicitly required for referral policy qualification
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9628396Z SKIPPED [35] packages/policy-input/tests/test_referral_policy.py:150: Pinned OPA fixture explicitly required for referral policy qualification
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9629419Z SKIPPED [5] packages/policy-input/tests/test_referral_policy.py:199: Pinned OPA fixture explicitly required for referral policy qualification
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9630372Z SKIPPED [4] packages/policy-input/tests/test_referral_policy.py:214: Pinned OPA fixture explicitly required for referral policy qualification
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9631323Z SKIPPED [4] packages/policy-input/tests/test_referral_policy.py:231: Pinned OPA fixture explicitly required for referral policy qualification
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9632720Z SKIPPED [4] packages/policy-input/tests/test_referral_policy.py:243: Pinned OPA fixture explicitly required for referral policy qualification
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9633669Z SKIPPED [1] packages/policy-input/tests/test_referral_policy.py:251: Pinned OPA fixture explicitly required for referral policy qualification
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9634627Z SKIPPED [4] packages/policy-input/tests/test_referral_policy.py:258: Pinned OPA fixture explicitly required for referral policy qualification
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9635596Z SKIPPED [2] packages/policy-input/tests/test_referral_policy.py:275: Pinned OPA fixture explicitly required for referral policy qualification
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9636579Z SKIPPED [1] packages/policy-input/tests/test_referral_policy.py:284: Pinned OPA fixture explicitly required for referral policy qualification
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9637455Z SKIPPED [1] services/data/tests/test_assistance.py:103: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9638276Z SKIPPED [1] services/data/tests/test_assistance.py:116: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9639083Z SKIPPED [1] services/data/tests/test_assistance.py:149: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9639893Z SKIPPED [1] services/data/tests/test_assistance.py:165: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9640684Z SKIPPED [1] services/data/tests/test_assistance.py:190: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9641493Z SKIPPED [1] services/data/tests/test_assistance.py:207: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9642458Z SKIPPED [1] services/data/tests/test_assistance.py:217: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9643265Z SKIPPED [1] services/data/tests/test_assistance.py:252: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9644056Z SKIPPED [1] services/data/tests/test_assistance.py:282: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9644856Z SKIPPED [1] services/data/tests/test_assistance.py:296: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9645660Z SKIPPED [1] services/data/tests/test_assistance.py:330: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9646452Z SKIPPED [1] services/data/tests/test_assistance.py:345: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9647243Z SKIPPED [1] services/data/tests/test_assistance.py:358: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9648250Z SKIPPED [2] services/data/tests/test_assistance.py:367: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9649055Z SKIPPED [1] services/data/tests/test_assistance.py:390: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9649845Z SKIPPED [1] services/data/tests/test_assistance.py:406: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9650636Z SKIPPED [1] services/data/tests/test_assistance.py:432: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9651436Z SKIPPED [1] services/data/tests/test_assistance.py:452: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9652333Z SKIPPED [1] services/data/tests/test_assistance.py:503: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9653151Z SKIPPED [1] services/data/tests/test_assistance_jobs.py:51: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9653970Z SKIPPED [1] services/data/tests/test_assistance_jobs.py:65: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9654801Z SKIPPED [1] services/data/tests/test_assistance_jobs.py:76: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9655632Z SKIPPED [1] services/data/tests/test_assistance_jobs.py:85: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9656594Z SKIPPED [1] services/data/tests/test_assistance_jobs.py:106: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9657418Z SKIPPED [1] services/data/tests/test_assistance_jobs.py:141: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9658255Z SKIPPED [1] services/data/tests/test_assistance_jobs.py:153: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9659080Z SKIPPED [1] services/data/tests/test_assistance_jobs.py:241: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9659913Z SKIPPED [1] services/data/tests/test_assistance_jobs.py:257: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9660737Z SKIPPED [1] services/data/tests/test_assistance_jobs.py:276: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9661557Z SKIPPED [1] services/data/tests/test_assistance_jobs.py:285: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9662501Z SKIPPED [1] services/data/tests/test_assistance_knowledge.py:40: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9663351Z SKIPPED [1] services/data/tests/test_assistance_knowledge.py:65: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9664198Z SKIPPED [1] services/data/tests/test_assistance_knowledge.py:73: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9665056Z SKIPPED [1] services/data/tests/test_assistance_knowledge.py:96: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9665904Z SKIPPED [1] services/data/tests/test_assistance_knowledge.py:131: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9666863Z SKIPPED [1] services/data/tests/test_composition.py:77: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9667677Z SKIPPED [1] services/data/tests/test_composition.py:196: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9668468Z SKIPPED [1] services/data/tests/test_composition.py:238: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9669265Z SKIPPED [1] services/data/tests/test_composition.py:271: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9670062Z SKIPPED [1] services/data/tests/test_composition.py:310: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9671088Z SKIPPED [1] services/data/tests/test_composition.py:332: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9671986Z SKIPPED [1] services/data/tests/test_composition.py:376: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9672817Z SKIPPED [1] services/data/tests/test_core_assistance_chain.py:103: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9673683Z SKIPPED [1] services/data/tests/test_core_assistance_chain.py:125: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9674564Z SKIPPED [1] services/data/tests/test_core_assistance_chain.py:133: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9675428Z SKIPPED [1] services/data/tests/test_core_assistance_chain.py:143: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9676253Z SKIPPED [1] services/data/tests/test_directory.py:235: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9677044Z SKIPPED [1] services/data/tests/test_directory.py:248: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9677835Z SKIPPED [1] services/data/tests/test_directory.py:272: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9678628Z SKIPPED [1] services/data/tests/test_directory.py:293: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9679539Z SKIPPED [1] services/data/tests/test_directory.py:318: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9680343Z SKIPPED [1] services/data/tests/test_directory.py:331: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9681124Z SKIPPED [1] services/data/tests/test_duties.py:120: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9682002Z SKIPPED [3] services/data/tests/test_duties.py:152: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9682759Z SKIPPED [2] services/data/tests/test_duties.py:176: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9683546Z SKIPPED [1] services/data/tests/test_duties.py:225: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9684315Z SKIPPED [1] services/data/tests/test_duties.py:245: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9685082Z SKIPPED [1] services/data/tests/test_duties.py:261: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9685844Z SKIPPED [1] services/data/tests/test_duties.py:298: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9686621Z SKIPPED [1] services/data/tests/test_duties.py:322: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9687394Z SKIPPED [1] services/data/tests/test_duties.py:342: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9688189Z SKIPPED [1] services/data/tests/test_imp04_adverse.py:54: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9689002Z SKIPPED [1] services/data/tests/test_imp04_adverse.py:83: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9689805Z SKIPPED [1] services/data/tests/test_imp04_adverse.py:112: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9690623Z SKIPPED [2] services/data/tests/test_imp04_adverse.py:140: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9691434Z SKIPPED [1] services/data/tests/test_imp04_adverse.py:171: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9692324Z SKIPPED [1] services/data/tests/test_imp04_adverse.py:188: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9693127Z SKIPPED [1] services/data/tests/test_imp04_adverse.py:222: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9694053Z SKIPPED [1] services/data/tests/test_imp04_adverse.py:265: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9694861Z SKIPPED [1] services/data/tests/test_imp04_adverse.py:296: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9695701Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:198: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9696560Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:212: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9697380Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:226: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9698205Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:268: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9699022Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:280: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9699917Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:295: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9700744Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:354: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9701559Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:364: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9702575Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:376: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9703421Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:396: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9704224Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:432: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9705046Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:453: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9705863Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:479: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9706684Z SKIPPED [3] services/data/tests/test_imp07_lifecycle.py:523: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9707509Z SKIPPED [4] services/data/tests/test_imp07_lifecycle.py:588: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9708432Z SKIPPED [2] services/data/tests/test_imp07_lifecycle.py:616: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9709271Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:639: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9710094Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:652: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9710913Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:679: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9711779Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:702: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9712690Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:724: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9713513Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:753: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9714332Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:797: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9715157Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:818: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9715976Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:887: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9716810Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:905: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9717733Z SKIPPED [1] services/data/tests/test_imp07_lifecycle.py:944: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9718536Z SKIPPED [4] services/data/tests/test_imp07_lifecycle.py:978: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9719350Z SKIPPED [1] services/data/tests/test_imp08_boundary.py:35: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9720164Z SKIPPED [1] services/data/tests/test_imp08_controls.py:203: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9721310Z SKIPPED [1] services/data/tests/test_imp08_controls.py:214: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9722215Z SKIPPED [1] services/data/tests/test_imp08_controls.py:237: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9723031Z SKIPPED [1] services/data/tests/test_imp08_controls.py:247: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9723848Z SKIPPED [1] services/data/tests/test_imp08_controls.py:260: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9724675Z SKIPPED [1] services/data/tests/test_imp08_controls.py:288: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9725594Z SKIPPED [1] services/data/tests/test_imp08_controls.py:300: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9726415Z SKIPPED [1] services/data/tests/test_imp08_controls.py:318: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9727232Z SKIPPED [1] services/data/tests/test_imp08_controls.py:333: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9728062Z SKIPPED [1] services/data/tests/test_imp08_controls.py:372: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9728942Z SKIPPED [1] services/data/tests/test_imp08_controls.py:397: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9729805Z SKIPPED [1] services/data/tests/test_imp08_controls.py:491: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9730618Z SKIPPED [1] services/data/tests/test_imp08_controls.py:511: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9731438Z SKIPPED [1] services/data/tests/test_imp08_controls.py:523: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9732348Z SKIPPED [1] services/data/tests/test_imp08_controls.py:555: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9733156Z SKIPPED [1] services/data/tests/test_imp08_controls.py:587: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9733966Z SKIPPED [1] services/data/tests/test_imp08_controls.py:597: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9734797Z SKIPPED [1] services/data/tests/test_imp08_controls.py:643: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9735616Z SKIPPED [1] services/data/tests/test_imp08_controls.py:702: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9736429Z SKIPPED [1] services/data/tests/test_imp08_controls.py:749: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9737294Z SKIPPED [1] services/data/tests/test_imp08_evidence_postgres.py:91: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9738181Z SKIPPED [1] services/data/tests/test_imp08_evidence_postgres.py:118: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9739051Z SKIPPED [1] services/data/tests/test_imp08_evidence_postgres.py:140: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9739924Z SKIPPED [1] services/data/tests/test_imp08_evidence_postgres.py:146: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9740912Z SKIPPED [4] services/data/tests/test_imp08_evidence_postgres.py:152: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9741792Z SKIPPED [1] services/data/tests/test_imp08_evidence_postgres.py:186: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9742752Z SKIPPED [2] services/data/tests/test_imp08_evidence_postgres.py:246: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9743608Z SKIPPED [1] services/data/tests/test_imp08_evidence_postgres.py:266: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9744471Z SKIPPED [1] services/data/tests/test_imp08_evidence_postgres.py:279: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9745350Z SKIPPED [1] services/data/tests/test_imp08_evidence_postgres.py:297: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9746178Z SKIPPED [3] services/data/tests/test_imp08_inline.py:33: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9746972Z SKIPPED [1] services/data/tests/test_imp08_inline.py:59: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9747773Z SKIPPED [1] services/data/tests/test_imp08_inline.py:88: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9748692Z SKIPPED [1] services/data/tests/test_imp08_inline.py:113: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9749492Z SKIPPED [1] services/data/tests/test_imp08_inline.py:141: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9750301Z SKIPPED [1] services/data/tests/test_imp08_inline.py:157: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9751118Z SKIPPED [1] services/data/tests/test_imp08_inline.py:174: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9752004Z SKIPPED [1] services/data/tests/test_imp08_inline.py:208: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9752813Z SKIPPED [1] services/data/tests/test_imp08_inline.py:224: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9753631Z SKIPPED [1] services/data/tests/test_imp08_latency.py:16: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9754447Z SKIPPED [1] services/data/tests/test_lifecycle_adverse.py:93: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9755293Z SKIPPED [1] services/data/tests/test_lifecycle_adverse.py:141: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9756121Z SKIPPED [1] services/data/tests/test_lifecycle_adverse.py:174: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9757024Z SKIPPED [1] services/data/tests/test_lifecycle_adverse.py:228: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9757880Z SKIPPED [1] services/data/tests/test_lifecycle_adverse.py:254: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9758713Z SKIPPED [1] services/data/tests/test_lifecycle_adverse.py:283: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9759556Z SKIPPED [1] services/data/tests/test_lifecycle_boundary.py:53: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9760396Z SKIPPED [3] services/data/tests/test_lifecycle_boundary.py:201: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9761196Z SKIPPED [1] services/data/tests/test_manual.py:91: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9762058Z SKIPPED [1] services/data/tests/test_manual.py:116: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9762834Z SKIPPED [1] services/data/tests/test_manual.py:138: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9763705Z SKIPPED [1] services/data/tests/test_manual.py:149: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9764475Z SKIPPED [1] services/data/tests/test_manual.py:191: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9765230Z SKIPPED [1] services/data/tests/test_manual.py:231: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9766002Z SKIPPED [1] services/data/tests/test_manual.py:265: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9766771Z SKIPPED [1] services/data/tests/test_manual.py:311: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9767529Z SKIPPED [1] services/data/tests/test_manual.py:331: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9768293Z SKIPPED [1] services/data/tests/test_manual.py:361: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9769059Z SKIPPED [1] services/data/tests/test_manual.py:375: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9769819Z SKIPPED [1] services/data/tests/test_manual.py:409: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9770596Z SKIPPED [1] services/data/tests/test_manual.py:429: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9771469Z SKIPPED [1] services/data/tests/test_manual.py:462: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9772325Z SKIPPED [1] services/data/tests/test_manual.py:485: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9773093Z SKIPPED [1] services/data/tests/test_manual.py:517: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9773842Z SKIPPED [1] services/data/tests/test_manual.py:553: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9774602Z SKIPPED [1] services/data/tests/test_manual.py:564: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9775448Z SKIPPED [1] services/data/tests/test_manual.py:595: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9776248Z SKIPPED [1] services/data/tests/test_manual.py:611: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9777013Z SKIPPED [1] services/data/tests/test_manual.py:654: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9777782Z SKIPPED [1] services/data/tests/test_manual.py:673: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9778545Z SKIPPED [4] services/data/tests/test_manual.py:715: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9779307Z SKIPPED [1] services/data/tests/test_manual.py:785: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9780073Z SKIPPED [1] services/data/tests/test_manual.py:810: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9780899Z SKIPPED [1] services/data/tests/test_planning_composition.py:109: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9781761Z SKIPPED [1] services/data/tests/test_planning_composition.py:256: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9782702Z SKIPPED [1] services/data/tests/test_planning_composition.py:322: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9783530Z SKIPPED [1] services/data/tests/test_plans_consent.py:285: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9784333Z SKIPPED [1] services/data/tests/test_plans_consent.py:317: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9785132Z SKIPPED [1] services/data/tests/test_plans_consent.py:327: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9785990Z SKIPPED [1] services/data/tests/test_plans_consent.py:348: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9787055Z SKIPPED [1] services/data/tests/test_plans_review_recovery.py:49: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9787907Z SKIPPED [1] services/data/tests/test_plans_review_recovery.py:71: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9788763Z SKIPPED [1] services/data/tests/test_plans_review_recovery.py:80: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9789618Z SKIPPED [1] services/data/tests/test_plans_review_recovery.py:111: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9790468Z SKIPPED [1] services/data/tests/test_referral_composition.py:30: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9791314Z SKIPPED [1] services/data/tests/test_referral_composition.py:193: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9792227Z SKIPPED [1] services/data/tests/test_referrals.py:172: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9793017Z SKIPPED [4] services/data/tests/test_referrals.py:191: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9793795Z SKIPPED [1] services/data/tests/test_referrals.py:228: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9794682Z SKIPPED [2] services/data/tests/test_referrals.py:241: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9795467Z SKIPPED [5] services/data/tests/test_referrals.py:256: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9796253Z SKIPPED [1] services/data/tests/test_referrals.py:307: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9797029Z SKIPPED [1] services/data/tests/test_referrals.py:326: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9797814Z SKIPPED [1] services/data/tests/test_referrals.py:339: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9798598Z SKIPPED [1] services/data/tests/test_referrals.py:362: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9799380Z SKIPPED [1] services/data/tests/test_referrals.py:377: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9800155Z SKIPPED [1] services/data/tests/test_referrals.py:400: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9800940Z SKIPPED [1] services/data/tests/test_referrals.py:413: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9801722Z SKIPPED [1] services/data/tests/test_referrals.py:438: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9802589Z SKIPPED [4] services/data/tests/test_referrals.py:445: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9803364Z SKIPPED [4] services/data/tests/test_referrals.py:487: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9804154Z SKIPPED [1] services/data/tests/test_referrals.py:509: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9804929Z SKIPPED [2] services/data/tests/test_referrals.py:531: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9805707Z SKIPPED [1] services/data/tests/test_referrals.py:595: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9806484Z SKIPPED [1] services/data/tests/test_referrals.py:610: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9807257Z SKIPPED [1] services/data/tests/test_referrals.py:633: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9808067Z SKIPPED [1] services/data/tests/test_review_recovery.py:111: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9808892Z SKIPPED [1] services/data/tests/test_review_recovery.py:152: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9809948Z SKIPPED [1] services/data/tests/test_review_recovery.py:180: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9810766Z SKIPPED [1] services/data/tests/test_review_recovery.py:203: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9811579Z SKIPPED [1] services/data/tests/test_review_recovery.py:225: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9812522Z SKIPPED [1] services/data/tests/test_review_recovery.py:263: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9813328Z SKIPPED [1] services/data/tests/test_review_recovery.py:283: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9814186Z SKIPPED [1] services/data/tests/test_review_recovery.py:299: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9815003Z SKIPPED [1] services/data/tests/test_review_recovery.py:315: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9815826Z SKIPPED [1] services/data/tests/test_review_recovery.py:335: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9816644Z SKIPPED [1] services/data/tests/test_review_recovery.py:369: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9817573Z SKIPPED [1] services/data/tests/test_review_recovery.py:419: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9818390Z SKIPPED [1] services/data/tests/test_review_recovery.py:478: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9819213Z SKIPPED [1] services/data/tests/test_review_recovery.py:510: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9820048Z SKIPPED [1] services/data/tests/test_runtime_composition.py:27: explicit disposable PostgreSQL TLS fixture DSN not supplied
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9820985Z SKIPPED [1] tests/integration/imp02_lab/test_fence_users.py:50: requires explicitly authorized disposable Linux container UID0/setuid test harness
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9822033Z SKIPPED [1] tests/integration/imp03_runtime/test_provisioning.py:27: explicit isolated provisioning TLS fixture required; run separately
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:28.9822752Z =============== 1309 passed, 378 skipped, 18 warnings in 37.29s ================
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:30.6719080Z + pnpm exec tsc -p tests/e2e/imp02/tsconfig.json
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:32.1148982Z + pnpm exec eslint tests/e2e/imp02 --max-warnings 0
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:34.7186559Z + pnpm exec prettier --check tests/e2e/imp02
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:34.9122880Z Checking formatting...
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:35.3726111Z All matched files use Prettier code style!
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:35.4162764Z + pnpm exec tsc -p tests/e2e/imp03/tsconfig.json
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:36.7398905Z + pnpm exec eslint tests/e2e/imp03 --max-warnings 0
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:38.9375904Z + pnpm exec prettier --check tests/e2e/imp03
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:39.1313152Z Checking formatting...
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:39.4113279Z All matched files use Prettier code style!
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:39.4385138Z + pnpm exec tsc -p tests/e2e/imp03-extended/tsconfig.json
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:40.9729920Z + pnpm exec eslint tests/e2e/imp03-extended --max-warnings 0
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:43.7301468Z + pnpm exec prettier --check tests/e2e/imp03-extended
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:43.9416001Z Checking formatting...
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:44.5393236Z All matched files use Prettier code style!
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:44.5704990Z + pnpm exec tsc -p tests/e2e/imp03-review/tsconfig.json
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:46.0198771Z + pnpm exec eslint tests/e2e/imp03-review --max-warnings 0
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:48.5208950Z + pnpm exec prettier --check tests/e2e/imp03-review
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:48.7282085Z Checking formatting...
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:49.1328720Z All matched files use Prettier code style!
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:49.1482980Z + pnpm exec tsc -p tests/e2e/imp04-live/tsconfig.json
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:50.9383700Z + pnpm exec eslint tests/e2e/imp04-live --max-warnings 0
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:54.4161106Z + pnpm exec prettier --check tests/e2e/imp04-live
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:54.6168940Z Checking formatting...
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:55.6114195Z All matched files use Prettier code style!
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:55.6308723Z + pnpm exec tsc -p tests/contract/tsconfig.json
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:56.8109416Z + pnpm exec eslint tests/contract --max-warnings 0
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:58.6513549Z + pnpm exec prettier --check tests/contract
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:58.8452873Z Checking formatting...
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:58.9802489Z All matched files use Prettier code style!
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:58.9963310Z + node --check tools/imp04_verification/review_accessibility.cjs
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:59.0107125Z + pnpm exec prettier --check tools/imp04_verification/review_accessibility.cjs
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:59.2098948Z Checking formatting...
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:59.3561510Z All matched files use Prettier code style!
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:59.3728172Z + pnpm test
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:59.5280496Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:59.5281553Z > care-link-development@0.1.0 test /home/runner/work/care-link-demo/care-link-demo
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:59.5282530Z > vitest run
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:59.5282829Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:59.7301162Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:59.7302786Z ^[[1m^[[30m^[[46m RUN ^[[49m^[[39m^[[22m ^[[36mv5.1.0 ^[[39m^[[90m/home/runner/work/care-link-demo/care-link-demo^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:05:59.7303394Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:05.4934216Z  ^[[32m✓^[[39m apps/web/src/plans-review/PlansReviewApp.test.tsx ^[[2m(^[[22m^[[2m31 tests^[[22m^[[2m)^[[22m^[[33m 4471^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:05.4935890Z    ^[[33m^[[2m✓^[[22m^[[39m revalidates directory references after transient failure, while a 403 denial clears them^[[33m 568^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:05.4936779Z    ^[[33m^[[2m✓^[[22m^[[39m revalidates directory references after transient failure, while a 503 denial clears them^[[33m 566^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:05.4939719Z    ^[[33m^[[2m✓^[[22m^[[39m losing the real stream hides the workspace and invalidates sharing verification and preview^[[33m 1637^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8602727Z  ^[[31m❯^[[39m apps/web/src/manual/ManualService.test.tsx ^[[2m(^[[22m^[[2m17 tests^[[22m^[[2m | ^[[22m^[[31m1 failed^[[39m^[[2m)^[[22m^[[33m 1658^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8662925Z    ^[[31m❯^[[39m manual actor workspaces ^[[2m(17)^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8663880Z      ^[[32m✓^[[39m clears an unsent command after failed access so same-account reauthentication can reopen the conversation^[[32m 270^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8672895Z      ^[[32m✓^[[39m does not create an unknown mutation when CSRF bootstrap fails before dispatch^[[32m 71^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8673871Z      ^[[32m✓^[[39m retains a genuinely dispatched unknown operation and its original key across same-account reauthentication^[[32m 117^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8674946Z      ^[[32m✓^[[39m does not carry another actor's pending operation through a period with no current identity^[[32m 101^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8675771Z      ^[[32m✓^[[39m retains the original unknown operation when a later replay is denied^[[32m 127^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8687324Z      ^[[32m✓^[[39m does not publish a held canonical operation status across stream loss^[[32m 91^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8688146Z      ^[[32m✓^[[39m invalidates a held SessionView on stream error and keeps fresh reopen reachable^[[32m 70^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8689018Z      ^[[32m✓^[[39m invalidates a held SessionView on stream rights_changed and keeps fresh reopen reachable^[[32m 69^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8689906Z      ^[[32m✓^[[39m selects the workspace from current server role and keeps assignment unconnected^[[32m 93^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8690739Z      ^[[32m✓^[[39m retries a lost response with its exact operation key and preserves the unsent message^[[32m 83^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8691594Z      ^[[32m✓^[[39m hides private projections after current authority is lost and preserves draft across reauthentication^[[32m 59^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8692606Z      ^[[32m✓^[[39m requires explicit end choice and permits human request before disclosure^[[32m 63^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8693845Z      ^[[32m✓^[[39m confirms a handoff only after current two-party evidence and refreshes a worker ACK with its original key^[[32m 137^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8698497Z ^[[31m     ^[[31m×^[[31m keeps both-party channel liveness during ACK and reauthorizes each stream update^[[39m^[[32m 26^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8699357Z      ^[[32m✓^[[39m keeps observing supervisors read-only when they do not own the conversation^[[32m 43^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8700234Z      ^[[32m✓^[[39m keeps observation read-only and requires explicit scoped interruption confirmation before takeover^[[32m 196^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:07.8701045Z      ^[[32m✓^[[39m offers the French workspace while preserving an unsent fictional situation^[[32m 41^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:09.9001248Z  ^[[32m✓^[[39m apps/web/src/plans/PlansWorkspace.test.tsx ^[[2m(^[[22m^[[2m21 tests^[[22m^[[2m)^[[22m^[[33m 1386^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:12.5736157Z  ^[[32m✓^[[39m apps/web/src/lifecycle/LifecycleApp.test.tsx ^[[2m(^[[22m^[[2m14 tests^[[22m^[[2m)^[[22m^[[33m 1973^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:12.5743159Z    ^[[33m^[[2m✓^[[22m^[[39m keeps pending follow-up unanchored and displays truthful cancellation in en-CA^[[33m 349^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:15.3369959Z  ^[[32m✓^[[39m apps/web/src/review/ReviewApp.test.tsx ^[[2m(^[[22m^[[2m14 tests^[[22m^[[2m)^[[22m^[[33m 2069^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:15.3399319Z    ^[[33m^[[2m✓^[[22m^[[39m restores a supervisor interrupt grant after remount and hides it after expiry^[[33m 320^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:15.3403090Z    ^[[33m^[[2m✓^[[22m^[[39m boots one account/workspace automatically and saves/reloads a draft^[[33m 515^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:15.3404000Z    ^[[33m^[[2m✓^[[22m^[[39m protects unsaved local text during a full navigation and removes the prompt after server save^[[33m 475^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:17.5284954Z  ^[[32m✓^[[39m apps/web/src/governance/GovernanceApp.test.tsx ^[[2m(^[[22m^[[2m16 tests^[[22m^[[2m)^[[22m^[[33m 1402^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:21.6083613Z  ^[[32m✓^[[39m apps/web/src/referrals/ReferralApp.test.tsx ^[[2m(^[[22m^[[2m12 tests^[[22m^[[2m)^[[22m^[[33m 3359^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:21.6091852Z    ^[[33m^[[2m✓^[[22m^[[39m reviews exact fields and reconciles one dispatch without inferring acceptance (en-CA)^[[33m 780^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:21.6109906Z    ^[[33m^[[2m✓^[[22m^[[39m reviews exact fields and reconciles one dispatch without inferring acceptance (fr-CA)^[[33m 481^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:21.6111000Z    ^[[33m^[[2m✓^[[22m^[[39m keeps an unknown send unresolved and restores the same dispatch before reconciliation^[[33m 393^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:21.6111854Z    ^[[33m^[[2m✓^[[22m^[[39m resumes an uncertain send using the same immutable operation key and body^[[33m 361^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:25.2233103Z  ^[[32m✓^[[39m apps/web/src/assistance/AssistancePanel.test.tsx ^[[2m(^[[22m^[[2m21 tests^[[22m^[[2m)^[[22m^[[33m 2958^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:25.2239083Z    ^[[33m^[[2m✓^[[22m^[[39m polls only reads of the authorized task until a draft is ready^[[33m 2023^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:34.1597790Z  ^[[32m✓^[[39m apps/web/src/plans/RotationRecovery.test.tsx ^[[2m(^[[22m^[[2m11 tests^[[22m^[[2m)^[[22m^[[33m 8271^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:34.1600313Z    ^[[32m✓^[[39m bounded same-principal step-up read recovery ^[[2m(11)^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:34.1601261Z      ^[[33m^[[2m✓^[[22m^[[39m never retries a mutation401 during a pending ceremony^[[33m 380^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:34.1602385Z      ^[[33m^[[2m✓^[[22m^[[39m hides projections, re-reads every selected resource and retains the mounted draft/ceremony^[[33m 377^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:34.1603288Z      ^[[33m^[[2m✓^[[22m^[[39m clears old actor inputs if fresh identity has changed^[[33m 309^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:34.1604172Z      ^[[33m^[[2m✓^[[22m^[[39m clears old-role inputs when the same account changes role and reopens the same plan^[[33m 303^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:34.1605600Z      ^[[33m^[[2m✓^[[22m^[[39m cannot publish a late response after the original five-second abort^[[33m 5287^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:35.6940252Z  ^[[32m✓^[[39m apps/web/src/trust/TrustAndHelp.test.tsx ^[[2m(^[[22m^[[2m13 tests^[[22m^[[2m)^[[22m^[[33m 831^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:36.6767518Z  ^[[32m✓^[[39m apps/web/src/plans/AuthorityVerification.test.tsx ^[[2m(^[[22m^[[2m6 tests^[[22m^[[2m)^[[22m^[[33m 378^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:37.5514960Z  ^[[32m✓^[[39m tests/contract/parity.test.ts ^[[2m(^[[22m^[[2m1 test^[[22m^[[2m)^[[22m^[[32m 271^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:38.8838088Z  ^[[32m✓^[[39m apps/web/src/App.test.tsx ^[[2m(^[[22m^[[2m7 tests^[[22m^[[2m)^[[22m^[[33m 636^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:39.8124202Z  ^[[32m✓^[[39m apps/web/src/assistance/KnowledgePanel.test.tsx ^[[2m(^[[22m^[[2m5 tests^[[22m^[[2m)^[[22m^[[33m 324^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:40.3249184Z  ^[[32m✓^[[39m packages/contracts/typescript/tests/contracts.test.ts ^[[2m(^[[22m^[[2m24 tests^[[22m^[[2m)^[[22m^[[32m 20^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:40.8243625Z  ^[[32m✓^[[39m apps/web/src/plans-review/WorkGate.test.ts ^[[2m(^[[22m^[[2m4 tests^[[22m^[[2m)^[[22m^[[32m 6^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.2460921Z  ^[[32m✓^[[39m tests/contract/imp03-barrier.test.ts ^[[2m(^[[22m^[[2m3 tests^[[22m^[[2m)^[[22m^[[32m 7^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.3484528Z  ^[[32m✓^[[39m packages/contracts/typescript/tests/generated.test.ts ^[[2m(^[[22m^[[2m1 test^[[22m^[[2m)^[[22m^[[32m 16^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.8367061Z  ^[[32m✓^[[39m apps/web/src/plans-review/WorkGatePin.test.ts ^[[2m(^[[22m^[[2m1 test^[[22m^[[2m)^[[22m^[[32m 4^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9475217Z  ^[[32m✓^[[39m tests/contract/manual-artifacts.test.ts ^[[2m(^[[22m^[[2m1 test^[[22m^[[2m)^[[22m^[[32m 3^[[2mms^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9522387Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9533735Z ^[[31m⎯⎯⎯⎯⎯⎯⎯^[[39m^[[1m^[[41m Failed Tests 1 ^[[49m^[[22m^[[31m⎯⎯⎯⎯⎯⎯⎯^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9533980Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9534492Z ^[[41m^[[1m FAIL ^[[22m^[[49m apps/web/src/manual/ManualService.test.tsx^[[2m > ^[[22mmanual actor workspaces^[[2m > ^[[22mkeeps both-party channel liveness during ACK and reauthorizes each stream update
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535085Z ^[[31m^[[1mAssertionError^[[22m: expected [] to have a length of 1 but got +0^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535255Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535329Z ^[[32m- Expected^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535473Z ^[[31m+ Received^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535543Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535605Z ^[[32m- 1^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535725Z ^[[31m+ 0^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9535795Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9536004Z ^[[36m ^[[2m❯^[[22m apps/web/src/manual/ManualService.test.tsx:^[[2m762:21^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9643095Z     ^[[90m760|^[[39m     ^[[35mawait^[[39m ^[[34mcheck^[[39m()^[[33m;^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9643408Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9682986Z     ^[[90m761|^[[39m     ^[[35mawait^[[39m ^[[34mopen^[[39m()^[[33m;^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9683640Z     ^[[90m762|^[[39m     ^[[34mexpect^[[39m(sources)^[[33m.^[[39m^[[34mtoHaveLength^[[39m(^[[34m1^[[39m)^[[33m;^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9684107Z     ^[[90m   |^[[39m                     ^[[31m^^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9684505Z     ^[[90m763|^[[39m     fireEvent^[[33m.^[[39m^[[34mclick^[[39m(
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9685164Z     ^[[90m764|^[[39m       screen^[[33m.^[[39m^[[34mgetByRole^[[39m(^[[32m"button"^[[39m^[[33m,^[[39m { name^[[33m:^[[39m ^[[32m"Confirm my app channel"^[[39m })^[[33m,^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9685569Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9685808Z ^[[31m^[[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯^[[22m^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9685992Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9686406Z ^[[2m Test Files ^[[22m ^[[1m^[[31m1 failed^[[39m^[[22m^[[2m | ^[[22m^[[1m^[[32m19 passed^[[39m^[[22m^[[90m (20)^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9687131Z ^[[2m      Tests ^[[22m ^[[1m^[[31m1 failed^[[39m^[[22m^[[2m | ^[[22m^[[1m^[[32m222 passed^[[39m^[[22m^[[90m (223)^[[39m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9692798Z ^[[2m   Start at ^[[22m 17:05:59
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9703351Z ^[[2m   Duration ^[[22m 42.22s^[[2m (tests 74%, environment 12%, import 8%, transform 5%)^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9712285Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9723475Z ^[[2m    Isolate ^[[22m ^[[33m20 workers spawned^[[39m^[[2m · ~323ms startup each (spawn + environment, per file)^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9732947Z ^[[2m            ^[[22m ^[[2mat least ~6.14s faster with ^[[22m^[[33misolate: false^[[39m^[[2m — reuses workers across files instead of one per file^[[22m
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9733375Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9733405Z 
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:41.9757745Z ##[error]AssertionError: expected [] to have a length of 1 but got +0
+fast	Run uv run --locked python tools/check.py	
+fast	Run uv run --locked python tools/check.py	- Expected
+fast	Run uv run --locked python tools/check.py	+ Received
+fast	Run uv run --locked python tools/check.py	
+fast	Run uv run --locked python tools/check.py	- 1
+fast	Run uv run --locked python tools/check.py	+ 0
+fast	Run uv run --locked python tools/check.py	
+fast	Run uv run --locked python tools/check.py	 ❯ apps/web/src/manual/ManualService.test.tsx:762:21
+fast	Run uv run --locked python tools/check.py	
+fast	Run uv run --locked python tools/check.py	
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:42.0342427Z  ELIFECYCLE  Test failed. See above for more details.
+fast	Run uv run --locked python tools/check.py	2026-11-21T17:06:42.0844732Z ##[error]Process completed with exit code 1.

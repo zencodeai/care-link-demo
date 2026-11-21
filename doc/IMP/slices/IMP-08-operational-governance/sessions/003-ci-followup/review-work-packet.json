@@ -1,0 +1,121 @@
+{
+  "packet_id": "IMP08-003-review",
+  "task_id": "IMP-08-D",
+  "stage_id": "IMP-08",
+  "mode": "review",
+  "role": "imp_review",
+  "goal": "Read-only review of the CI timing fix: preserve strict liveness/revocation checks and immutable qualification history.",
+  "baseline_commit": "9fa9b25a1dd263c123735a9fd95c3c22e4be5913",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/handoff.md",
+      "sha256": "09a6c786b3a31e5edde4a0cdfeee7f802dbb8022d39d8e93db7b9ff3bce8c66b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/baseline-manual-test.txt",
+      "sha256": "acdc91f8102aaaf64fd21521e43497e456cd5f1f453261daac2f7e86239f981a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/baseline-verifier.txt",
+      "sha256": "5bf5850cecabe9abf2c0c688ab664a8571f00832cb69d0f99236177117be22ab"
+    }
+  ],
+  "read_paths": [
+    "doc/REQ",
+    "doc/HLD",
+    "doc/LLD",
+    "doc/IMP",
+    "host/inference-bridge",
+    "services",
+    "tools",
+    "config/demo/assistance"
+  ],
+  "write_paths": [],
+  "dependencies": [
+    "IMP-03:G-03:accepted",
+    "IMP-05:G-05:automated_qualified",
+    "IMP-08:G-08:automated_qualified"
+  ],
+  "operation_ids": [
+    "artifact_register",
+    "artifact_review",
+    "activation_create",
+    "exception_create",
+    "incident_create",
+    "activation_read",
+    "activation_commit",
+    "incident_read",
+    "audit_query",
+    "metrics_query",
+    "activation_ack",
+    "health_read",
+    "data_artifact_register",
+    "data_artifact_review",
+    "data_activation_create",
+    "data_exception_create",
+    "data_incident_create",
+    "data_activation_read",
+    "data_activation_commit",
+    "data_incident_read",
+    "data_audit_query",
+    "data_metrics_query",
+    "scoped_access_grant",
+    "incident_transition",
+    "evidence_export",
+    "audit_export_read",
+    "data_scoped_access_grant",
+    "data_incident_transition",
+    "data_evidence_export",
+    "data_audit_export_read"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "publish_pr"
+  ],
+  "prohibited_actions": [
+    "unrelated source changes",
+    "research resource publication",
+    "merge",
+    "deployment",
+    "IMP-09 activation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "CI failed (follow-up to Close IMP-08, create PR)",
+    "scope": "Diagnose and fix PR15 CI, retain qualification provenance, commit and push the scoped correction to the existing PR. No merge, deployment or next-slice activation."
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Verified qualified source continuity",
+    "Open private repository pull request",
+    "Publication receipt and ledger"
+  ],
+  "positive_acceptance": [
+    "Same stream remains live during ACK and closes on current authority loss",
+    "Full frontend/CI checks pass on the corrected PR head",
+    "Original qualification records remain historical and current test-only source bindings are verified"
+  ],
+  "adverse_acceptance": [
+    "No assertion removed, global retry or timeout budget weakened",
+    "No product permissions or runtime code changed",
+    "Unrelated research remains excluded"
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Qualified source or predecessor drift",
+    "Private remote access or write authority unavailable"
+  ],
+  "is_example": false
+}

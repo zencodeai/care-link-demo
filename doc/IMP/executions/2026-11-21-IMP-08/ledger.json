@@ -77,7 +77,7 @@
     "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/deferred-review-inventory.json",
     "sha256": "e6d76ea60136b8ffc5568e1b18108b383b9b4294d487dda6b5d2f94070d520dc"
   },
-  "current_session": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr",
+  "current_session": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup",
   "publication": {
     "state": "published",
     "authorization": "User: Close IMP-08, create PR",
@@ -91,5 +91,27 @@
     "pull_request_number": 15,
     "pull_request_url": "https://github.com/zencodeai/care-link-demo/pull/15",
     "pull_request_state": "OPEN"
+  },
+  "current_candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/candidate-manifest.json",
+    "sha256": "6daf4bd55508f747c8efeab54352d28974ced81c469ca6d0f4a565322250f48e"
+  },
+  "current_results": {
+    "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/results.json",
+    "sha256": "e2cc31c6d8521b905a6db7479eb6af69ca99cfb374c7c28077dfadf09fb3d89f"
+  },
+  "ci_followup": {
+    "state": "local_checks_passed",
+    "session": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup",
+    "runtime_source_changed": false,
+    "source_continuity": {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/source-continuity.json",
+      "sha256": "74d1f82fc293e4c7127cbbe23951ffbb4d8882568a649855e7cb23497b5b50a6"
+    },
+    "failed_run": "44927973473",
+    "original_head": "9fa9b25a1dd263c123735a9fd95c3c22e4be5913",
+    "corrected_remote_ci": "pending_observation",
+    "merge_performed": false,
+    "deployment_applied": false
   }
 }

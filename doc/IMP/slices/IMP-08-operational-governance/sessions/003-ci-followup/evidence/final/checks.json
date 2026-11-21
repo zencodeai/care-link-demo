@@ -1,0 +1,75 @@
+[
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "check",
+      "."
+    ],
+    "exit_code": 0,
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/01.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "exit_code": 0,
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/02.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "exit_code": 0,
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/03.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "-m",
+      "tools.imp08_verification.verify_evidence"
+    ],
+    "exit_code": 0,
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/04.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "-m",
+      "tools.imp05_verification.validate_plan"
+    ],
+    "exit_code": 0,
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/05.log"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/06.log"
+  }
+]

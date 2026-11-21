@@ -759,7 +759,9 @@ describe("manual actor workspaces", () => {
     render(<ManualService locale="en-CA" />);
     await check();
     await open();
-    expect(sources).toHaveLength(1);
+    // The message projection can render before the passive subscription effect.
+    // Wait for the resource this scenario exercises instead of assuming a flush.
+    await waitFor(() => expect(sources).toHaveLength(1));
     fireEvent.click(
       screen.getByRole("button", { name: "Confirm my app channel" }),
     );
@@ -769,10 +771,12 @@ describe("manual actor workspaces", () => {
     expect(sources).toHaveLength(1);
     expect(sources[0]?.closed).toBe(false);
     api.revoke();
-    sources[0]?.onmessage?.();
+    act(() => {
+      sources[0]?.onmessage?.();
+    });
     await screen.findByText(/Sign in again. Private information is hidden/);
     expect(screen.queryByText("Fictional message")).not.toBeInTheDocument();
-    expect(sources[0]?.closed).toBe(true);
+    await waitFor(() => expect(sources[0]?.closed).toBe(true));
   });
   it("keeps observing supervisors read-only when they do not own the conversation", async () => {
     fixture("supervisor");
