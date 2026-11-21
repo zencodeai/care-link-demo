@@ -154,7 +154,7 @@ class EncryptedCaptures:
         self._decrypt(identity, verified)
         return self._view(verified)
 
-    def _manifest(self, identity: str) -> dict[str, object]:
+    def _manifest(self, identity: str, *, allow_expired: bool = False) -> dict[str, object]:
         directory = self.path / str(UUID(identity))
         if directory.is_symlink() or not directory.is_dir():
             raise ManualError("capture.custody_unavailable", 503)
@@ -189,7 +189,9 @@ class EncryptedCaptures:
             raise ManualError("capture.manifest_invalid", 503)
         capture_at = datetime.fromisoformat(str(manifest["capture_at"]).replace("Z", "+00:00"))
         expires_at = datetime.fromisoformat(str(manifest["expires_at"]).replace("Z", "+00:00"))
-        if expires_at != capture_at + timedelta(days=7) or self.clock() >= expires_at:
+        if expires_at != capture_at + timedelta(days=7):
+            raise ManualError("capture.manifest_invalid", 503)
+        if not allow_expired and self.clock() >= expires_at:
             raise ManualError("capture.expired", 410)
         return manifest
 
@@ -226,6 +228,55 @@ class EncryptedCaptures:
         if {item.name for item in directory.iterdir()} != expected_files:
             raise ManualError("capture.inventory_incomplete", 503)
         return result
+
+    def manifest(self, backup_id: str) -> dict[str, object]:
+        """Verified immutable metadata for recovery binding; no plaintext objects."""
+        return self._manifest(str(UUID(backup_id)))
+
+    def inventory(self) -> tuple[dict[str, object], ...]:
+        """Every retained capture, preserving its original expiry after restores."""
+        result: list[dict[str, object]] = []
+        for entry in sorted(self.path.iterdir()):
+            identity = str(UUID(entry.name))
+            manifest = self._manifest(identity, allow_expired=True)
+            expires = datetime.fromisoformat(str(manifest["expires_at"]).replace("Z", "+00:00"))
+            if self.clock() < expires:
+                self._decrypt(identity, manifest)
+            view = self._view(manifest)
+            if self.clock() >= expires:
+                view["state"] = "expired"
+            result.append(view)
+        return tuple(result)
+
+    def expire(self, backup_id: str, *, retained_by_hold: bool) -> dict[str, object]:
+        """Account for known encrypted copies; this is not physical erasure proof.
+
+        The maintenance composition obtains current hold authority before calling.
+        The signed original manifest remains as the immutable accounting record.
+        """
+        identity = str(UUID(backup_id))
+        manifest = self._manifest(identity, allow_expired=True)
+        expires = datetime.fromisoformat(str(manifest["expires_at"]).replace("Z", "+00:00"))
+        if self.clock() < expires or retained_by_hold:
+            raise ManualError("capture.expiry_or_hold_denied", 409)
+        directory = self.path / identity
+        names = cast(list[dict[str, object]], manifest["objects"])
+        expected = {"manifest.json", *(str(item["name"]) + ".aesgcm" for item in names)}
+        if not {entry.name for entry in directory.iterdir()} <= expected:
+            raise ManualError("capture.inventory_incomplete", 503)
+        for item in names:
+            object_path = directory / (str(item["name"]) + ".aesgcm")
+            if object_path.is_symlink():
+                raise ManualError("capture.custody_unavailable", 503)
+            object_path.unlink(missing_ok=True)
+        fsync_directory(directory)
+        return {
+            "backup_id": identity,
+            "manifest_digest": digest(canonical(manifest)),
+            "expires_at": manifest["expires_at"],
+            "known_encrypted_objects_unlinked": True,
+            "physical_erasure_proven": False,
+        }
 
     def inspect(self, backup_id: str) -> dict[str, object]:
         identity = str(UUID(backup_id))

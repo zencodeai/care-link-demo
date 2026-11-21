@@ -24,6 +24,14 @@ class _ValidatorFactories(Protocol):
 
 
 ContractName = Literal[
+    "RestoreCreate",
+    "RestoreView",
+    "PromotionPropose",
+    "PromotionApprove",
+    "PromotionExecute",
+    "PromotionView",
+    "PromotionBinding",
+    "HelpReconcile",
     "GovernanceArtifactContext",
     "Gateway_artifact_context",
     "ArtifactRegister",
@@ -278,6 +286,14 @@ ContractName = Literal[
     "Gateway_review_intent_prepare",
 ]
 CONTRACT_NAMES: tuple[ContractName, ...] = (
+    "RestoreCreate",
+    "RestoreView",
+    "PromotionPropose",
+    "PromotionApprove",
+    "PromotionExecute",
+    "PromotionView",
+    "PromotionBinding",
+    "HelpReconcile",
     "GovernanceArtifactContext",
     "Gateway_artifact_context",
     "ArtifactRegister",

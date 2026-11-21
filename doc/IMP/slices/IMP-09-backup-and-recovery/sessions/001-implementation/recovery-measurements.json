@@ -1,0 +1,18 @@
+{
+  "scope": "Owned synthetic fixture; one tiny dataset; automated simulated approval. Not a real human staffing/PITR/continuous RPO/RTO pass.",
+  "observations": [
+    {
+      "name": "full_synthetic_recovery_elapsed_seconds",
+      "value": "1.1846920419484377"
+    },
+    {
+      "name": "approval_kind",
+      "value": "automated synthetic action; no real human approval"
+    },
+    {
+      "name": "capture_age_at_restore_seconds",
+      "value": "1.128167"
+    }
+  ],
+  "interpretation": "Capture age was observed at drill completion and is an upper bound for age at restore, not a committed-data-loss/PITR measurement. Full elapsed includes automated synthetic approval and test cleanup; no real staffing approval delay was omitted or claimed measured."
+}

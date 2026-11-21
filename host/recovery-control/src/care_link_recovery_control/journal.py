@@ -218,16 +218,18 @@ class FileJournal:
             observed_at=self.clock(),
         )
 
-    def head(self) -> JournalState:
+    def snapshot(self) -> tuple[JournalState, tuple[dict[str, object], ...]]:
+        """One verified head and chain snapshot for scoped host recovery/admission."""
         with self._exclusive():
-            head, _ = self._verified()
-            return self._state(head)
+            head, records = self._verified()
+            return self._state(head), tuple(records)
+
+    def head(self) -> JournalState:
+        return self.snapshot()[0]
 
     def records(self) -> tuple[dict[str, object], ...]:
         """Host-recovery inspection; callers still require scoped host authority."""
-        with self._exclusive():
-            _, records = self._verified()
-            return tuple(records)
+        return self.snapshot()[1]
 
     def append(self, request: dict[str, object]) -> JournalState:
         # Freeze caller-owned containers before validation and signing.

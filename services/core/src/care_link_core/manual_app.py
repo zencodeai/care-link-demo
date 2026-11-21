@@ -17,11 +17,13 @@ from starlette.responses import JSONResponse, StreamingResponse
 from .assistance import AssistanceGateway
 from .assistance_broker import InferenceBroker
 from .governance_ports import GovernanceGateway
+from .help_reconcile import HelpReconciler
 from .lifecycle_ports import LifecycleGateway
 from .manual_channels import ManualChannels
 from .manual_ports import BrowserSecurity, ManualGateway
 from .planning_ports import PlanningGateway
 from .plans_review_context import PlansReviewContexts
+from .recovery_routes import RecoveryGateway
 from .referral_ports import ReceiverGateway, ReferralGateway
 from .review_channels import ReviewViews
 from .review_context import ReviewContexts
@@ -76,12 +78,16 @@ def create_manual_app(
     planning: PlanningGateway | None = None,
     lifecycle: LifecycleGateway | None = None,
     governance: GovernanceGateway | None = None,
+    recovery: RecoveryGateway | None = None,
     referrals: ReferralGateway | None = None,
     receiver: ReceiverGateway | None = None,
     assistance: AssistanceGateway | None = None,
     assistance_availability: Callable[[Actor], Record] | None = None,
     assistance_broker: InferenceBroker | None = None,
     runtime_verify: Callable[[Request], WorkloadPeer] | None = None,
+    generation_admission: Callable[[], None] | None = None,
+    help_reconciler: HelpReconciler | None = None,
+    help_verify: Callable[[Request], bool] | None = None,
 ) -> FastAPI:
     """No permissive defaults; existing developer application stays separate."""
     app = FastAPI(title="CARE-Link manual BFF", docs_url=None, redoc_url=None, openapi_url=None)
@@ -151,6 +157,8 @@ def create_manual_app(
         request: Request, *, mutation: bool = False, require_view: bool = True
     ) -> Actor:
         deadline = datetime.now(UTC) + timedelta(seconds=1)
+        if generation_admission is not None:
+            await run_in_threadpool(generation_admission)
         current = channels.bind(await run_in_threadpool(security.authenticate, request))
         if review_contexts is not None:
             context = review_contexts.context(request.headers.get("host", ""))
@@ -173,6 +181,13 @@ def create_manual_app(
                 views.require(current, request.headers.get("x-review-view", ""))
         return current
 
+    if (help_reconciler is None) != (help_verify is None):
+        raise ValueError("Help import requires exact current workload verification")
+    if help_reconciler is not None and help_verify is not None:
+        from .help_reconcile import attach_help_reconcile
+
+        attach_help_reconcile(app, help_reconciler, help_verify)
+
     if (assistance_broker is None) != (runtime_verify is None):
         raise ValueError("Broker routes require exact runtime workload verification")
     if assistance_broker is not None and runtime_verify is not None:
@@ -184,6 +199,11 @@ def create_manual_app(
         from .assistance import attach_assistance_routes
 
         attach_assistance_routes(app, assistance, actor, availability=assistance_availability)
+
+    if recovery is not None:
+        from .recovery_routes import attach_recovery_routes
+
+        attach_recovery_routes(app, recovery, actor)
 
     if governance is not None:
         from .governance_routes import attach_governance_routes

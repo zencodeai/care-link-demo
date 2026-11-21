@@ -1,0 +1,40 @@
+.recovery-app {
+  max-width: 64rem;
+  margin: auto;
+  padding: 1.5rem;
+}
+.recovery-app section {
+  margin-block: 1.5rem;
+}
+.recovery-app fieldset {
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+.recovery-app label {
+  display: block;
+  margin-top: 0.75rem;
+}
+.recovery-app input {
+  width: min(100%, 34rem);
+  box-sizing: border-box;
+}
+.recovery-app code,
+.recovery-app dd {
+  overflow-wrap: anywhere;
+}
+.recovery-app dd {
+  margin-inline-start: 1rem;
+}
+.recovery-app button {
+  margin: 0.75rem 0.5rem 0.5rem 0;
+}
+.recovery-app :focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
+}
+@media (max-width: 640px) {
+  .recovery-app {
+    padding: 1rem;
+  }
+}

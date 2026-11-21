@@ -12,6 +12,14 @@ TARGETS = (
     ROOT / "packages/contracts/typescript/src/schema.json",
 )
 NAMES = (
+    "RestoreCreate",
+    "RestoreView",
+    "PromotionPropose",
+    "PromotionApprove",
+    "PromotionExecute",
+    "PromotionView",
+    "PromotionBinding",
+    "HelpReconcile",
     "GovernanceArtifactContext",
     "Gateway_artifact_context",
     "ArtifactRegister",

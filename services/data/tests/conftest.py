@@ -149,6 +149,9 @@ def database() -> Iterator[Database]:
             connection.execute(
                 (ROOT / "services/data/migrations/011_imp08_custody_ordering.sql").read_text()
             )
+            connection.execute(
+                (ROOT / "services/data/migrations/012_imp09_recovery.sql").read_text()
+            )
         migrated = True
         with psycopg.connect(admin) as connection:
             connection.execute(
@@ -220,7 +223,9 @@ def harness(database: Database) -> Harness:
             "lifecycle.scan_cursor,durable.duty_nonce,durable.duty_operation,"
             "durable.due_job,"
             "control.signal_receipt,control.signal_head,control.signal_source,"
-            "recovery.command,control.guard,control.principal_guard,audit.head CASCADE"
+            "recovery.help_import,recovery.target_validation,recovery.restriction,"
+            "recovery.new_principal,recovery.command,control.guard,"
+            "control.principal_guard,audit.head CASCADE"
         )
         connection.execute("INSERT INTO audit.head VALUES('demo',1,repeat('0',64))")
     now = datetime.now(UTC)

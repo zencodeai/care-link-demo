@@ -1,0 +1,19 @@
+
+==================================== ERRORS ====================================
+_________ ERROR collecting services/core/tests/test_imp09_recovery.py __________
+import file mismatch:
+imported module 'test_imp09_recovery' has this __file__ attribute:
+  /Users/main/Workspace/projects/care-link/care-link-demo/services/data/tests/test_imp09_recovery.py
+which is not the same as the test file we want to collect:
+  /Users/main/Workspace/projects/care-link/care-link-demo/services/core/tests/test_imp09_recovery.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR services/core/tests/test_imp09_recovery.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+17 warnings, 1 error in 0.13s

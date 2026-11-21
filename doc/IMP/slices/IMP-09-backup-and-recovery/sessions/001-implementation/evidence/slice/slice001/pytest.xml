@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.126" timestamp="2026-11-21T12:54:49.538074-05:00" hostname="mains-MacBook-Pro.local"><testcase classname="" name="services.core.tests.test_imp09_recovery" time="0.000"><error message="collection failure">import file mismatch:
+imported module 'test_imp09_recovery' has this __file__ attribute:
+  /Users/main/Workspace/projects/care-link/care-link-demo/services/data/tests/test_imp09_recovery.py
+which is not the same as the test file we want to collect:
+  /Users/main/Workspace/projects/care-link/care-link-demo/services/core/tests/test_imp09_recovery.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules</error></testcase></testsuite></testsuites>

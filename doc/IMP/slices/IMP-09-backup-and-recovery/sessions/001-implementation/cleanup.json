@@ -1,0 +1,9 @@
+{
+  "postgres_container": "care-link-imp09-001-postgres",
+  "postgres_removed": true,
+  "private_fixture_credentials_removed": true,
+  "browser_container": "care-link-imp09-001-browser",
+  "browser_removed": true,
+  "earlier_labs_modified": false,
+  "note": "Initial fixture reused established IMP03 TLS generator with explicit IMP09 name/port/private path; cleanup verified its inherited fixture label. Source adapter/runbook uses dedicated IMP09 provisioning for future sessions."
+}

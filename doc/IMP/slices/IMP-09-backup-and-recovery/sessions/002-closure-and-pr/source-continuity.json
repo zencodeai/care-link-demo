@@ -1,0 +1,13 @@
+{
+  "qualified_baseline": "8d3e93500f297852e682b1bfd0f5b0e9b6813d44",
+  "publication_base": "2c859c12f57c424bbefa1730be9c20bed72c989b",
+  "baseline_trees_identical": true,
+  "source_hashes_matched": 950,
+  "reference_hashes_matched": 58,
+  "build_hashes_matched": 3,
+  "runtime_source_changed": false,
+  "automated_results_reused": "session001 exact source/build/environment evidence remains bound; no unnecessary test rerun",
+  "excluded_preexisting": [
+    "doc/research/2026-11-20-agentic-care/resources/"
+  ]
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "pytest",
+      "services/data/tests/test_imp09_help.py",
+      "services/data/tests/test_imp09_integration.py",
+      "services/data/tests/test_imp09_recovery.py",
+      "services/core/tests/test_imp09_transport.py",
+      "services/identity/tests/test_imp09_promotion.py",
+      "host/recovery-control/tests/test_capture.py",
+      "host/recovery-control/tests/test_journal.py",
+      "host/recovery-control/tests/test_recovery.py",
+      "host/help/tests/test_imp09_spool.py",
+      "-q",
+      "--tb=short",
+      "--junitxml",
+      "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/slice/slice003/pytest.xml"
+    ],
+    "started_at": "2026-11-21T17:56:53.842378+00:00",
+    "completed_at": "2026-11-21T17:57:02.594290+00:00",
+    "exit_code": 0,
+    "log": "evidence/slice/slice003/01.log",
+    "sha256": "f60dc2fc5a49df95d0cb176a1e936e9d55b4ab4f0261ef9af10c13b679a5e7fe"
+  }
+]
