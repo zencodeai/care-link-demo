@@ -58,8 +58,8 @@
   "human_decisions": [],
   "deployment_applied": false,
   "participant_admission": false,
-  "commit_performed": false,
-  "push_performed": false,
+  "commit_performed": true,
+  "push_performed": true,
   "merge_performed": false,
   "next_slice_activated": false,
   "remaining": [
@@ -79,12 +79,17 @@
   },
   "current_session": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr",
   "publication": {
-    "state": "prepared",
+    "state": "published",
     "authorization": "User: Close IMP-08, create PR",
     "branch": "feat/imp-08-operational-governance",
     "base_branch": "main",
     "base_commit": "0f8b190d5f110ec221f61c54fe8d1aa0170d7e4a",
     "session": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr",
-    "merge_authorized": false
+    "merge_authorized": false,
+    "receipt": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/publication.json",
+    "implementation_commit": "673306eb2963b2f9178251d2e565cf39230d2f58",
+    "pull_request_number": 15,
+    "pull_request_url": "https://github.com/zencodeai/care-link-demo/pull/15",
+    "pull_request_state": "OPEN"
   }
 }

@@ -1,9 +1,11 @@
-# IMP-08 closure handoff
+# IMP-08 publication handoff
 
-G-08 is automated-qualified for the isolated synthetic governance source/build. The user requested “Close IMP-08, create PR”. All 900 source hashes, 58 source references, 3 build outputs and 47 qualification check bindings matched. Merged IMP-07 main commit0f8b190d5f110ec221f61c54fe8d1aa0170d7e4a has the same tree as qualified baseline83406f94014ca3cc71f870b3b8c771841c6e83f9.
+G-08 is closed as automated_qualified for its isolated synthetic governance source/build. All 900 source hashes, 58 reference hashes, 3 build hashes and 47 automated check bindings matched. The merged IMP-07 main tree equals the qualified baseline.
 
-The dedicated branch is feat/imp-08-operational-governance. [Source continuity](source-continuity.json), [publication scan](publication-scan.json), [PR description](pr-body.md) and [implementation handoff](../001-implementation/handoff.md). Source publication is being prepared; an actual publication receipt will follow commit/push/PR creation.
+Implementation commit `673306eb2963b2f9178251d2e565cf39230d2f58` is pushed on `feat/imp-08-operational-governance`. [PR #15](https://github.com/zencodeai/care-link-demo/pull/15) is open against `main`. [Publication receipt](publication.json), [source continuity](source-continuity.json), [publication scan](publication-scan.json) and [implementation handoff](../001-implementation/handoff.md). A subsequent documentation-only commit records this receipt; it does not change qualified product source.
 
-Validation retained: 1,684 Python tests with3 explicit legacy skips,223 frontend tests,102 focused tests and13 Chromium route-fixture cases passed. All38 source checks passed; closure verifies continuity rather than relabeling or repeating unchanged behavioral evidence. Human review stays deferred_until_after_IMP10. Policy-only activation, metadata-only audit and all other source limits remain explicit.
+Validation retained: 1,684 Python tests passed with 3 explicit legacy skips, 223 frontend tests, 102 focused slice tests and 13 Chromium route-fixture cases passed. All 38 source commands and final metadata/evidence checks passed. Closure verified continuity, schema, links and scoped publication; unchanged behavioral tests were not rerun. Raw log whitespace remains unchanged to preserve evidence digests.
 
-Unrelated research resources are excluded. No merge, deployment, host trust/model change or IMP-09 activation. Next chat should verify the published head/evidence and act only on newly assigned scope.
+Human review remains deferred_until_after_IMP10. Live activation here is Rego-policy-only and audit access is metadata-only; all other qualified source limits remain in the implementation packet. Backup/recovery and physical-erasure proof remain IMP-09. GitHub Foundation checks were running at the initial publication read; the final PR snapshot records the latest observation. Local qualification does not imply a remote CI pass.
+
+Pre-existing research resources remain excluded and untouched. No merge, deployment, host trust/model change or IMP-09 activation was performed. Next chat: verify PR head/CI and source/evidence bindings, then act only on the newly assigned scope. Merge and deployment require their actual authorization.

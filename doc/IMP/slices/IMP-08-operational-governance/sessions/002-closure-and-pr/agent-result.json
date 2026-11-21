@@ -1,0 +1,81 @@
+{
+  "packet_id": "IMP08-002-closure-and-pr",
+  "task_id": "IMP-08-D",
+  "baseline_commit": "0f8b190d5f110ec221f61c54fe8d1aa0170d7e4a",
+  "role": "imp_verifier",
+  "status": "completed",
+  "changed_paths": [
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/",
+    "doc/IMP/slices/IMP-08-operational-governance/README.md",
+    "doc/IMP/executions/2026-11-21-IMP-08/ledger.json"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/publication.json",
+      "sha256": "1bdb8ddf87a40dfe187d17cca999c927ff2cca01b226abc9d1c63baeef332e61"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/source-continuity.json",
+      "sha256": "7af95961b48b369fee9bfdc7f90f23c6c8a5961eb075b5bb68432a8208f4db78"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/publication-scan.json",
+      "sha256": "bf7aab4a5b7b058b7b92a61562f49cdd756df9a9997d358145caa69466691399"
+    }
+  ],
+  "checks": [
+    {
+      "name": "closure-01",
+      "command": "uv run --locked --all-packages python -m tools.imp08_verification.verify_evidence",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Qualified source/build/evidence continuity and planning links remain valid",
+      "actual": "Exit0; no product source changes",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/check-01.log",
+      "evidence_digest": "5f41fdbc61e779f40e84eb56c0243886bc055f88e101eac804d0f24956d8afcd",
+      "mock_used": false
+    },
+    {
+      "name": "closure-02",
+      "command": "uv run --locked --all-packages python -m tools.imp05_verification.validate_plan",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Qualified source/build/evidence continuity and planning links remain valid",
+      "actual": "Exit0; no product source changes",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/check-02.log",
+      "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+      "mock_used": false
+    },
+    {
+      "name": "closure-03",
+      "command": "git diff --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Qualified source/build/evidence continuity and planning links remain valid",
+      "actual": "Exit0; no product source changes",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/check-03.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "staged-source-and-evidence",
+      "command": "git diff --cached --check -- . :(glob,exclude)**/*.log",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source/docs whitespace valid while exact raw log bytes and excluded research are preserved",
+      "actual": "Non-log check passed; raw log whitespace retained under original evidence digests",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/staged-validation.json",
+      "evidence_digest": "d39146fc6a5fcad7744eecf943c54d4f222783b92d9be65f978cf2307641598b",
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Human usability, screen-reader, visual and language review remains deferred until after IMP-10.",
+    "Policy-only live activation and metadata-only audit; isolated synthetic qualification does not establish deployment or production readiness.",
+    "Remote CI was running at publication; no merge or CI pass inferred."
+  ],
+  "handoff": "IMP-08 closed for its automated synthetic scope. Private PR15 open against main; implementation commit pushed. No merge, deployment or IMP-09 activation. Read final handoff and verify latest PR head/CI before new work.",
+  "is_example": false
+}
