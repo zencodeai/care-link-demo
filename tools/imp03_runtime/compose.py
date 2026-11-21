@@ -36,12 +36,25 @@ from .remote import HttpChannels, HttpJournal, HttpPolicy
 if TYPE_CHECKING:
     from care_link_identity import IdentityService, RetentionService
 
+    from tools.imp06_runtime.manual_roles import ManualRoleAssistance
+
 
 class Composition:
-    def __init__(self, config: Record) -> None:
+    def __init__(self, config: Record, *, ai: ManualRoleAssistance | None = None) -> None:
         self.config = config
         self.role = text(config, "role")
-        self.verify = workload(config, self.role)
+        self.ai = ai
+        if ai is None:
+            self.verify = workload(config, self.role)
+        else:
+            if (
+                self.role not in {"core", "data"}
+                or integer(config, "uid") != os.geteuid()
+                or ai.verifier.local_spiffe_id != f"spiffe://care-link.demo/demo/{self.role}"
+                or ai.verifier.proxy_uid != integer(config, "proxy_uid")
+            ):
+                raise ValueError("exact protected assisted role configuration required")
+            self.verify = ai.verifier
         self.clients: list[httpx.Client] = []
         self.retention: RetentionService | None = None
         self.maintenance_state = "not_started"
@@ -66,6 +79,9 @@ class Composition:
 
     def _compose(self) -> ASGIApp:
         cfg = self.config
+        assistance_enabled = cfg.get("assistance_enabled", False)
+        if type(assistance_enabled) is not bool:
+            raise ValueError("Explicit boolean assistance feature selection required")
         referrals_enabled = cfg.get("referral_enabled", False)
         if type(referrals_enabled) is not bool:
             raise ValueError("Explicit boolean referral feature selection required")
@@ -158,19 +174,52 @@ class Composition:
                     identity,
                     private_key(text(cfg, "core_signing_key")),
                 )
-            app = create_manual_app(
-                gateway,
-                CookieSecurity(identity),
-                channels,
-                review_contexts=contexts,
-                review_views=self.review_views,
-                plans_review_contexts=contexts
-                if isinstance(contexts, PlansReviewContexts)
-                else None,
-                planning=gateway,
-                referrals=gateway if isinstance(gateway, HttpReferralGateway) else None,
-                receiver=receiver_gateway,
-            )
+            from care_link_core.assistance import HttpAssistanceGateway
+
+            plans_contexts = contexts if isinstance(contexts, PlansReviewContexts) else None
+            referrals = gateway if isinstance(gateway, HttpReferralGateway) else None
+            if self.ai is None:
+                app = create_manual_app(
+                    gateway,
+                    CookieSecurity(identity),
+                    channels,
+                    review_contexts=contexts,
+                    review_views=self.review_views,
+                    plans_review_contexts=plans_contexts,
+                    planning=gateway,
+                    referrals=referrals,
+                    receiver=receiver_gateway,
+                    assistance=HttpAssistanceGateway(data_client, data_origin, envelopes)
+                    if assistance_enabled
+                    else None,
+                )
+            else:
+                import ssl
+
+                from tools.imp06_runtime.core import core_application
+                from tools.imp06_runtime.trust import runtime_verifier
+
+                app = core_application(
+                    gateway,
+                    CookieSecurity(identity),
+                    channels,
+                    data_client=data_client,
+                    data_origin=data_origin,
+                    envelopes=envelopes,
+                    identity=identity,
+                    signing_key=private_key(text(cfg, "core_signing_key")),
+                    inference_tls=ssl.create_default_context(),
+                    releases=self.ai.releases,
+                    runtime_verify=runtime_verifier(self.verify),
+                    planning=gateway,
+                    referrals=referrals,
+                    receiver=receiver_gateway,
+                    knowledge=self.ai.knowledge.catalog,
+                    inference_socket=self.ai.inference_socket,
+                    review_contexts=contexts,
+                    plans_review_contexts=plans_contexts,
+                    review_views=self.review_views,
+                )
 
             async def current(request: Request) -> JSONResponse:
                 if not self.verify(request, "data"):
@@ -223,15 +272,15 @@ class Composition:
                 review_entries |= frozenset(
                     {"/referrals", "/referrals/", "/referrals/client", "/referrals/receiver"}
                 )
-            if interactive_review or referrals_enabled:
+            if self.ai is not None:
+                review_entries |= frozenset({"/assistance"})
+            if review_entries:
 
-                async def plans_review_entry() -> FileResponse:
+                async def client_entry() -> FileResponse:
                     return FileResponse(directory / "index.html")
 
                 for entry in sorted(review_entries):
-                    app.add_api_route(
-                        entry, plans_review_entry, methods=["GET"], include_in_schema=False
-                    )
+                    app.add_api_route(entry, client_entry, methods=["GET"], include_in_schema=False)
             add_client(app, directory)
             surface = secure_surface(app, public_client_paths=review_entries)
             return review_origin_guard(surface, contexts) if contexts else surface
@@ -282,7 +331,33 @@ class Composition:
                 public_key(text(cfg, "identity_public_key")),
                 identity.resolve,
             )
-            return data_app(service, SignedGatewaySecurity(delegation, self.verify))
+            from care_link_data import AssistanceCoordinator
+
+            security = SignedGatewaySecurity(delegation, self.verify)
+            if self.ai is not None:
+                from tools.imp06_runtime.data import data_application
+                from tools.imp06_runtime.trust import current_runtime
+
+                stop = self.ai.provider_stop
+                if stop is None:
+                    raise ValueError("Data provider stop authority required")
+                return data_application(
+                    service,
+                    security,
+                    releases=self.ai.releases,
+                    delegations=delegation,
+                    verify=self.verify,
+                    runtime_current=current_runtime(self.ai.fences),
+                    bridge_generation=stop.current_generation,
+                    knowledge=self.ai.knowledge.catalog,
+                    knowledge_regions=self.ai.knowledge.regions,
+                    provider_stop=stop,
+                )
+            return data_app(
+                service,
+                security,
+                assistance=AssistanceCoordinator(service) if assistance_enabled else None,
+            )
         if self.role == "identity":
             from care_link_identity import RetentionService
             from care_link_identity import create_app as identity_app
@@ -371,6 +446,13 @@ class Composition:
 
     async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
         if scope["type"] == "lifespan":
+            if self.ai is not None:
+                try:
+                    await self.app(scope, receive, send)
+                finally:
+                    for client in self.clients:
+                        client.close()
+                return
             stop = asyncio.Event()
             maintenance = asyncio.create_task(self.maintain(stop)) if self.retention else None
             while True:

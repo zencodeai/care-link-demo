@@ -1,0 +1,302 @@
+"""Real TLS PostgreSQL tests for persistent inference occupancy and deduplication."""
+
+from concurrent.futures import ThreadPoolExecutor
+from datetime import UTC, datetime, timedelta
+from pathlib import Path
+from uuid import uuid4
+
+import psycopg
+import pytest
+from care_link_data import PostgresStore
+from care_link_data.assistance_jobs import PostgresJobLedger
+
+
+@pytest.fixture
+def jobs_store(database):
+    with psycopg.connect(database.admin) as connection:
+        if (
+            connection.execute("SELECT to_regclass('assistance.compute_slot')").fetchone()[0]
+            is None
+        ):
+            connection.execute(
+                (Path(__file__).parents[1] / "migrations/007_imp06_inference.sql").read_text()
+            )
+        connection.execute("TRUNCATE assistance.compute_slot,assistance.inference_job CASCADE")
+        connection.execute(
+            "INSERT INTO assistance.compute_slot(id,state) "
+            "VALUES ('local-1','free'),('local-2','free')"
+        )
+    return PostgresStore(database.runtime)
+
+
+def job():
+    return {
+        "id": str(uuid4()),
+        "task_id": str(uuid4()),
+        "step_id": str(uuid4()),
+        "fence": "1",
+        "revision": "1",
+        "model_digest": "a" * 64,
+        "prompt_digest": "b" * 64,
+        "request_digest": "c" * 64,
+        "deadline": datetime.now(UTC) + timedelta(seconds=25),
+        "bridge_generation": "bridge-1",
+    }
+
+
+def ledger(store, **kwargs):
+    return PostgresJobLedger(store, current=lambda _tx, _record: True, **kwargs)
+
+
+def test_unknown_slots_survive_new_adapter_and_deduplicate_provider_work(jobs_store):
+    first, second = job(), job()
+    service = ledger(jobs_store)
+    assert service.reserve(first) == "local-1"
+    service.mark_unknown(first["id"])
+    assert service.reserve(second) == "local-2"
+    service.mark_unknown(second["id"])
+    restarted = ledger(jobs_store)
+    assert restarted.reserve(job()) is None
+    assert restarted.reserve(first) is None
+    assert restarted.complete(first["id"], "d" * 64, deliverable=True) is False
+    assert restarted.reserve(job()) == "local-1"
+
+
+def test_only_two_concurrent_jobs_and_completion_delivered_once(jobs_store):
+    jobs = [job() for _ in range(8)]
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        slots = list(pool.map(ledger(jobs_store).reserve, jobs))
+    assert sum(slot is not None for slot in slots) == 2
+    item = jobs[next(i for i, slot in enumerate(slots) if slot is not None)]
+    service = ledger(jobs_store)
+    assert service.complete(item["id"], "d" * 64, deliverable=True)
+    assert not service.complete(item["id"], "d" * 64, deliverable=True)
+
+
+def test_stale_current_guard_rejects_admission_and_completion(jobs_store):
+    item = job()
+    service = PostgresJobLedger(jobs_store, current=lambda _tx, _record: False)
+    assert service.reserve(item) is None
+    assert ledger(jobs_store).reserve(item)
+    assert not service.complete(item["id"], "d" * 64, deliverable=True)
+    assert ledger(jobs_store).reserve(job())
+
+
+def test_generation_alone_cannot_clear_unknown_compute(jobs_store):
+    item = job()
+    service = ledger(jobs_store)
+    service.reserve(item)
+    service.mark_unknown(item["id"])
+    with pytest.raises(ValueError, match="authenticated provider stop evidence required"):
+        service.release_verified(item["id"], "bridge-1")
+    stopped_at = datetime.now(UTC)
+    privileged = ledger(
+        jobs_store,
+        bridge_generation="bridge-2",
+        verified_stop_time=lambda generation: stopped_at if generation == "bridge-1" else None,
+    )
+    with pytest.raises(ValueError):
+        privileged.release_verified(item["id"], "bridge-2")
+    assert privileged.release_verified(item["id"], "bridge-1")
+    assert not privileged.release_verified(item["id"], "bridge-1")
+    assert privileged.reserve(job()) is None
+    assert privileged.reserve({**job(), "bridge_generation": "bridge-2"}) == "local-1"
+
+
+def test_restart_reconciles_exactly_the_slots_covered_by_verified_stop(jobs_store):
+    unknown, orphaned = job(), job()
+    service = ledger(jobs_store, bridge_generation="bridge-1")
+    assert service.reserve(unknown) == "local-1"
+    service.mark_unknown(unknown["id"])
+    premature_stop = datetime.now(UTC)
+    assert service.reserve(orphaned) == "local-2"
+    assert service.reserve(job()) is None
+
+    restarted = ledger(jobs_store, bridge_generation="bridge-2")
+    assert restarted.reconcile_stopped() == 0
+    assert restarted.reserve({**job(), "bridge_generation": "bridge-2"}) is None
+    stopped_after_first_job = ledger(
+        jobs_store,
+        bridge_generation="bridge-2",
+        verified_stop_time=lambda _generation: premature_stop,
+    )
+    assert stopped_after_first_job.reconcile_stopped() == 1
+    assert not stopped_after_first_job.release_verified(orphaned["id"], "bridge-1")
+
+    stopped_at = datetime.now(UTC)
+    recovered = ledger(
+        jobs_store,
+        bridge_generation="bridge-2",
+        verified_stop_time=lambda generation: stopped_at if generation == "bridge-1" else None,
+    )
+    assert recovered.reconcile_stopped() == 1
+    assert recovered.reconcile_stopped() == 0
+    assert not recovered.complete(orphaned["id"], "a" * 64, deliverable=True)
+    assert service.reserve(job()) is None
+    assert recovered.reserve(job()) is None
+    assert recovered.reserve({**job(), "bridge_generation": "bridge-2"}) == "local-1"
+    assert recovered.reserve({**job(), "bridge_generation": "bridge-2"}) == "local-2"
+
+
+def test_retired_generation_completion_frees_compute_without_draft_delivery(jobs_store):
+    old_job = job()
+    before_restart = ledger(jobs_store, bridge_generation="bridge-1")
+    assert before_restart.reserve(old_job) == "local-1"
+
+    after_restart = ledger(jobs_store, bridge_generation="bridge-2")
+    assert not after_restart.complete(old_job["id"], "a" * 64, deliverable=True)
+    current_job = {**job(), "bridge_generation": "bridge-2"}
+    assert after_restart.reserve(current_job) == "local-1"
+    assert after_restart.complete(current_job["id"], "b" * 64, deliverable=True)
+
+
+def test_runtime_role_cannot_mint_extra_compute_slot(jobs_store, database):
+    del jobs_store
+    with psycopg.connect(database.runtime) as connection:
+        with pytest.raises(psycopg.errors.InsufficientPrivilege):
+            connection.execute(
+                "INSERT INTO assistance.compute_slot(id,state) VALUES ('local-3','free')"
+            )
+
+
+def stored_context(h):
+    import hashlib
+    import json
+
+    from care_link_data.assistance_transport import StoredInferenceAuthority
+
+    from services.data.tests.test_assistance import case, lease, request
+
+    service, data, peer = case(h)
+    task = service.task_create(h.worker, str(uuid4()), data)
+    claimed = lease(service, h, task, peer)
+    service.reserve_proposal(h.worker, request(task, claimed), peer)
+    snapshot = service.context_snapshot(h.worker, task["id"])
+    instruction = "Extract attributed source statements only; all output remains unsent."
+    source = {
+        "kind": "template",
+        "id": str(uuid4()),
+        "revision": "1",
+        "digest": hashlib.sha256(instruction.encode()).hexdigest(),
+        "observed_at": "2026-11-20T12:00:00Z",
+        "verification": "verified",
+    }
+    first = {
+        "source": source,
+        "label": "approved_instruction",
+        "text": instruction,
+        "critical": True,
+    }
+
+    def canonical(value):
+        return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+
+    release = {
+        "instruction_source": source,
+        "instruction": instruction,
+        "model_digest": "a" * 64,
+        "prompt_digest": hashlib.sha256(canonical([first]).encode()).hexdigest(),
+    }
+    body = {
+        "job_id": str(uuid4()),
+        "task_id": task["id"],
+        "step_id": claimed["step_id"],
+        "fence": claimed["fence"],
+        "function": "worker_summary",
+        "model_digest": "a" * 64,
+        "prompt_digest": release["prompt_digest"],
+        "budgets": task["budgets"],
+        "deadline": (datetime.now(UTC) + timedelta(seconds=20)).isoformat().replace("+00:00", "Z"),
+        "items": [
+            first,
+            {
+                "source": source,
+                "label": "structured_state",
+                "critical": True,
+                "text": canonical(
+                    {
+                        "task": snapshot["task"],
+                        "goal": snapshot["goal"],
+                        "step": request(task, claimed),
+                    }
+                ),
+            },
+            *[
+                {
+                    "source": item["ref"],
+                    "label": "untrusted_report",
+                    "text": item["text"],
+                    "critical": True,
+                }
+                for item in snapshot["sources"]
+            ],
+        ],
+    }
+    authority = StoredInferenceAuthority(
+        service, service.actor_for_task, {"worker_summary": release}, "bridge-1"
+    )
+    return service, task, claimed, body, authority
+
+
+def test_stored_context_reconstructs_current_sources_and_rejects_label_promotion(harness):
+    import copy
+
+    from care_link_domain import ManualError
+
+    _service, task, _claimed, body, authority = stored_context(harness)
+    resolved = authority.resolve(body)
+    assert resolved["revision"] == task["revision"]
+    assert resolved["allowed_tools"] == ["session_read"]
+    assert resolved["items"] == body["items"]
+    promoted = copy.deepcopy(body)
+    promoted["items"][2]["label"] = "approved_fact"
+    with pytest.raises(ManualError, match="server_context_mismatch"):
+        authority.resolve(promoted)
+
+
+def test_stored_context_and_current_check_reject_cancelled_task(harness):
+    from care_link_domain import ManualError
+
+    service, task, claimed, body, authority = stored_context(harness)
+    current = {
+        "task_id": task["id"],
+        "step_id": claimed["step_id"],
+        "fence": claimed["fence"],
+        "revision": task["revision"],
+    }
+    assert authority.current(current)
+    service.task_cancel(
+        harness.worker, str(uuid4()), {"expected_revision": task["revision"]}, task["id"]
+    )
+    assert not authority.current(current)
+    with pytest.raises(ManualError):
+        authority.resolve(body)
+
+
+def test_stored_context_unreleased_function_never_infers_from_request_pins(harness):
+    from care_link_domain import ManualError
+
+    _service, _task, _claimed, body, authority = stored_context(harness)
+    authority.releases = {}
+    with pytest.raises(ManualError, match="function_disabled"):
+        authority.resolve(body)
+
+
+def test_context_tracks_current_releases_without_restarting_data(harness):
+    from care_link_data import StoredInferenceAuthority
+    from care_link_domain import ManualError
+
+    service, _task, _claimed, body, previous = stored_context(harness)
+    records = previous.releases
+    assert isinstance(records, dict)
+    current = {}
+    authority = StoredInferenceAuthority(
+        service, service.actor_for_task, lambda: current, "bridge-1"
+    )
+    with pytest.raises(ManualError, match="function_disabled"):
+        authority.resolve(body)
+    current.update(records)
+    assert authority.resolve(body)["items"] == body["items"]
+    current.clear()
+    with pytest.raises(ManualError, match="function_disabled"):
+        authority.resolve(body)

@@ -1,0 +1,6 @@
+{
+  "state": "passed",
+  "exit_code": 0,
+  "browser_image": "sha256:847d0429ebe65559c9cc8cfb415f072fc9bf347050dc0fd7248d5cbcf0669a48",
+  "scope": "Pinned real Chromium with exact EN/FR synthetic application fixtures"
+}

@@ -159,7 +159,18 @@ class SignedEnvelopeFactory:
         ).hexdigest()
         metadata_args: Record = {"action": action, "scope": scope, "payload_digest": payload_digest}
         if action.startswith(
-            ("plan_", "consent_", "directory_", "referral_", "dispatch_", "receipt_", "dispatcher_")
+            (
+                "plan_",
+                "consent_",
+                "directory_",
+                "referral_",
+                "dispatch_",
+                "receipt_",
+                "dispatcher_",
+                "task_",
+                "draft_",
+                "assistance_",
+            )
         ):
             metadata_args["planning"] = {
                 "action": action,

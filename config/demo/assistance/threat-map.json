@@ -1,0 +1,410 @@
+{
+  "baseline": "OWASP LLM Top10 deliberate2025 and MITRE ATLAS2026.10",
+  "sources": "threat-sources.json",
+  "responsible_human_role": "demo release owner",
+  "review_date": "2026-11-20",
+  "residual_risk": "Structural containment does not establish semantic or clinical accuracy; all real model functions disabled",
+  "references": {
+    "LLM01:2025": "Prompt Injection",
+    "LLM02:2025": "Sensitive Information Disclosure",
+    "LLM03:2025": "Supply Chain",
+    "LLM05:2025": "Improper Output Handling",
+    "LLM06:2025": "Excessive Agency",
+    "LLM09:2025": "Misinformation",
+    "LLM10:2025": "Unbounded Consumption",
+    "AML.T0051": "LLM Prompt Injection",
+    "AML.T0054": "LLM Jailbreak"
+  },
+  "functions": {
+    "client_navigation": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "carer_context": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "worker_summary": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "worker_wording": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "referral_preparation": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "handoff_tracking": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "receiver_completeness": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "plan_draft": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "follow_up_draft": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "supervisor_queue": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "incident_draft": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "evidence_draft": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    },
+    "training_debrief": {
+      "state": "disabled",
+      "applicability": [
+        "LLM01:2025",
+        "LLM02:2025",
+        "LLM03:2025",
+        "LLM05:2025",
+        "LLM06:2025",
+        "LLM09:2025",
+        "LLM10:2025",
+        "AML.T0051",
+        "AML.T0054"
+      ],
+      "enforcement_owner": "broker and inference gateway",
+      "controls": [
+        "server-built attributed context",
+        "closed whole-proposal schema",
+        "exact current source-extractive output",
+        "no dynamic/native tools",
+        "current actor/resource/purpose checks",
+        "durable2slot uncertain occupancy",
+        "verified exact model/tokenizer/template/schema/prompt release"
+      ],
+      "structural_tests": [
+        "services/inference/tests/test_inference.py",
+        "host/inference-bridge/tests/test_bridge.py",
+        "services/data/tests/test_assistance_jobs.py"
+      ],
+      "function_evidence": "not_run; cannot admit from generic structural tests"
+    }
+  }
+}

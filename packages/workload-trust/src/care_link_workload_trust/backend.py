@@ -13,7 +13,7 @@ from typing import Protocol
 from .fence import TrustDenied
 from .fence_protocol import FenceReader
 from .unix_server import PeerSocket, peer_uid
-from .verification import IDENTITY, PeerRule
+from .verification import IDENTITY, PeerRule, route_matches
 
 SOCKET_PEER_SCOPE_KEY = "care_link.kernel_socket_peer"
 
@@ -68,11 +68,18 @@ class BackendVerifier:
         capsule = request.scope.get(SOCKET_PEER_SCOPE_KEY)
         if not isinstance(capsule, SocketPeer) or capsule.uid != self.proxy_uid:
             return False
+        # ASGI separates the query from url.path. Internal task/inference/data
+        # commands admit no query adapter, even over the protected proxy socket.
+        if request.url.path.startswith("/internal/") and request.scope.get("query_string") not in (
+            None,
+            b"",
+        ):
+            return False
         peer = request.headers.get("x-care-link-verified-spiffe", "")
         if not any(
             rule.spiffe_id == peer
             and peer.rsplit("/", 1)[-1] == peer_role
-            and (request.method, request.url.path) in rule.routes
+            and route_matches(rule.routes, request.method, request.url.path)
             for rule in self.rules
         ):
             return False

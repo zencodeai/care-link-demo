@@ -1,0 +1,104 @@
+{
+  "packet_id": "IMP06-001-web",
+  "task_id": "IMP-06-C",
+  "baseline_commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "state": "completed_source_checks",
+  "recorded_at": "2026-11-20T18:19:31.298995+00:00",
+  "commands": [
+    {
+      "command": "pnpm --filter @care-link/web typecheck",
+      "exit_code": 0
+    },
+    {
+      "command": "pnpm exec tsc -p tests/e2e/assistance/tsconfig.json",
+      "exit_code": 0
+    },
+    {
+      "command": "pnpm exec eslint apps/web/src/assistance tests/e2e/assistance --max-warnings 0",
+      "exit_code": 0
+    },
+    {
+      "command": "pnpm exec prettier --write apps/web/src/assistance tests/e2e/assistance",
+      "exit_code": 0
+    },
+    {
+      "command": "pnpm exec vitest run apps/web/src/assistance/AssistancePanel.test.tsx",
+      "exit_code": 0,
+      "passed": 10
+    },
+    {
+      "command": "IMP06_BROWSER_OUTPUT=doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/browser pnpm exec playwright test --config tests/e2e/assistance/playwright.config.ts",
+      "exit_code": 0,
+      "passed": 7
+    }
+  ],
+  "browser": {
+    "runner": "owned loopback5176 Vite, pinned Chromium via owned Playwright loopback30906",
+    "mocked_boundaries": [
+      "browser API responses",
+      "EventSource no-event fixture",
+      "dev health unavailable fixture"
+    ],
+    "locales": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "axe_scans": 6,
+    "axe_violations": 0,
+    "axe_incomplete": 0,
+    "keyboard_and_focus": true,
+    "reflow_widths": [
+      1280,
+      640
+    ],
+    "manual_after_reject_and_outage": "worker human-authored message appears in acknowledged server projection; accepted_draft_id null; EN/FR",
+    "stats": {
+      "startTime": "2026-11-20T18:19:03.405Z",
+      "duration": 8317.643999999998,
+      "expected": 7,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "earlier_failures": [
+    {
+      "cause": "Default sandbox disallowed Vite loopback listener",
+      "resolution": "Scoped command sandbox escalation approved; no host configuration changed"
+    },
+    {
+      "cause": "Vite optimized contract cache stale after schema generation; UI correctly failed closed",
+      "resolution": "Test Vite uses --force"
+    },
+    {
+      "cause": "Manual navigation fixture lacked EventSource boundary and initial selector addressed plans input",
+      "resolution": "Explicit quiet EventSource fixture; scoped manual region selectors"
+    },
+    {
+      "cause": "Generic text locator matched unsent textarea before send acknowledgement",
+      "resolution": "Assert projected .manual-message-text and /messages mutation body"
+    }
+  ],
+  "limitations": [
+    "Synthetic API responses do not qualify real deployed identity/PDP/data or local model quality",
+    "No human usability/screen-reader/visual/language pass; deferred_until_after_IMP10",
+    "Only worker_summary UI function exposed when server-admitted; other functions remain disabled"
+  ],
+  "source_sha256": {
+    "apps/web/src/assistance/AssistanceApp.tsx": "4b5b31c1138678009df7cdbd4d0c636e5b9f5e68ccb997bdef006af48f7112ff",
+    "apps/web/src/assistance/AssistancePanel.test.tsx": "214c040303f585669b04007bd8b9a2ea1b51e7117168fc7fe2a0da257e4a702e",
+    "apps/web/src/assistance/AssistancePanel.tsx": "7981266687dafcdd0ccf37bb0847a84f5c0783106cebe05805be976f747ff27a",
+    "apps/web/src/assistance/DraftReview.tsx": "07c6e19feaeab97dad9fe32604a4f90e7ab56f2f29aba11f764a0c5419a53610",
+    "apps/web/src/assistance/api.ts": "7adaf20da3bd59e0ca8afa6e701932872aea2b6a3e84c6af14de08be97ff3d2c",
+    "apps/web/src/assistance/fixtures.ts": "2a199df38b45fa3b0602064035fa9ba61f4e326a0e6a773a71b800afd304766e",
+    "apps/web/src/assistance/messages.ts": "53c041e5084f6ea3d6088edbce70f3f3916c050c584f8297dd8fb9de55673de8",
+    "apps/web/src/assistance/styles.css": "e428c87a46e85a6476ba38f2c28a31f7ff1fcd88e43c43448352bd9385d7403a",
+    "apps/web/src/assistance/types.ts": "a392cf3f8e8c3288d3933df727751783a3e6c756ebf7db5e4b6b2e18eb49f713",
+    "apps/web/src/assistance/useAssistance.ts": "6735e5a42168fe7735833f4b2032dc356aeb97a0fae853c8c420a8c0f47a5029",
+    "tests/e2e/assistance/README.md": "79b36e5134b2c6c99cd320f7c86523751ce6b45772a50461da85d49ff31f2a3c",
+    "tests/e2e/assistance/assistance.spec.ts": "228126084506b4219c2d49b6ca4f3a327eea26dce6c8049ee9c0723d0cda0696",
+    "tests/e2e/assistance/fixtures.ts": "3f9f68b9f037a4d4f4fcecca000ea067f1e79abc94559bdba51ca672917ea6f1",
+    "tests/e2e/assistance/playwright.config.ts": "88bee706e922410de58243645d41824ba8058b7784369c4873231d476daecf26",
+    "tests/e2e/assistance/tsconfig.json": "beb6f17a3f5e5656eed984206d4c1d1dd91d860e4563aadc66e0f2d8b38e82d2"
+  }
+}

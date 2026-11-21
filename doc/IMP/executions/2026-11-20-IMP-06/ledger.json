@@ -1,0 +1,199 @@
+{
+  "run_id": "2026-11-20-IMP-06",
+  "stage_id": "IMP-06",
+  "gate_id": "G-06",
+  "state": "automated_qualified",
+  "gate_state": "automated_qualified",
+  "closed": true,
+  "recorded_at": "2026-11-20T18:48:54.254143+00:00",
+  "baseline_commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "branch": "feat/imp-06-bounded-ai-assistance",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Implement service slice 06",
+    "scope": "Source implementation and isolated automated synthetic verification"
+  },
+  "predecessor": {
+    "path": "doc/IMP/executions/2026-11-20-IMP-05/ledger.json",
+    "sha256": "332d95bf8784a3b2a7080f96aa93098ce3b33b2342179528f8d22561a12e679d"
+  },
+  "tasks": [
+    {
+      "id": "IMP-06-A",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-06-B",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-06-C",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-06-D",
+      "state": "completed"
+    }
+  ],
+  "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation",
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/candidate-manifest.json",
+    "sha256": "3b1f28b0921744eddf9ef85849cdb76a7d945a8653de60f359e835b762604b5a"
+  },
+  "results": {
+    "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/agent-result.json",
+    "sha256": "4de8f8cfee28e134b55e75a61c0d176b556a0c9281fdf5333b9aff428f9f86c3"
+  },
+  "qualification_packet": {
+    "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/demo-packet.json",
+    "sha256": "dd1681b58ae3dc5610bfdf5ff13f0a556f22550722ce14b81a05fe0cf736287b"
+  },
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": [],
+  "deployment_applied": false,
+  "participant_admission": false,
+  "next_slice_activated": false,
+  "remaining": [
+    "Scope is isolated synthetic worker_summary only. Other model functions remain disabled.",
+    "Independent signed exact serving approval and current evaluator boots govern existing demo activation.",
+    "Separate operator-controlled provider restart has its own lifecycle qualification scope. This gate exercised live timeout containment and preserves uncertain occupancy.",
+    "Human usability, native assistive-technology, visual, language and clinical review remain deferred_until_after_IMP10."
+  ],
+  "blocker": null,
+  "source_implementation_complete_for_first_profile": true,
+  "action_authorizations_not_inferred": [
+    "model loading or SDK installation",
+    "live deployment or host trust changes",
+    "commit/push/publication/merge"
+  ],
+  "documentation_updates": [
+    {
+      "date": "2026-11-20",
+      "authorization": "User: Update documentation with this information",
+      "decision": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/002-qwen-integration-documentation",
+      "user_selected_model": "qwen3.8-27b",
+      "installed_artifact_candidate": "lmstudio-community/Qwen3.8-27B-MLX-4bit",
+      "loaded_model_id": null,
+      "framework_recommendation": "LangGraph bounded workflow layer; not adopted or installed",
+      "state_change": "none; G-06 remains blocked and all AI disabled",
+      "implementation_migrated": false
+    }
+  ],
+  "qualification_history": [
+    {
+      "scope": "Earlier session001/002 source/reachability state before agentic implementation",
+      "blocker": "Existing selected local model server unavailable; verified loaded artifact/tokenizer/template and actual function/deployed isolation evidence absent",
+      "remaining": [
+        "G-06 remains unqualified: actual local model/tokenizer/template/server/engine and per-function evaluation missing",
+        "No deployed AI mesh/compute/latency qualification",
+        "Other function/binding profiles are explicitly disabled",
+        "Human usability/screen-reader/visual/language review deferred_until_after_IMP10"
+      ]
+    },
+    {
+      "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/003-agentic-workflows-rag",
+      "authority": "User explicitly requested architecture/design/framework resources/documentation/implementation",
+      "source_implemented": true,
+      "source_verified": true,
+      "gate_qualified": false,
+      "candidate_manifest": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/003-agentic-workflows-rag/candidate-manifest.json",
+      "results": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/003-agentic-workflows-rag/results.json",
+      "handoff": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/003-agentic-workflows-rag/handoff.md",
+      "actual_qwen_cases_passed": 4,
+      "deployment_applied": false,
+      "commit_or_push": false,
+      "updated_at": "2026-11-20T22:35:15.431697+00:00"
+    },
+    {
+      "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification",
+      "authority": "User: Proceed with the preceding authentication, tokenizer and isolation/release task list",
+      "source_implemented": true,
+      "source_verified": true,
+      "gate_qualified": false,
+      "candidate_manifest": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/candidate-manifest.json",
+      "results": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/agent-result.json",
+      "handoff": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/handoff.md",
+      "actual_qwen_cases_passed": 4,
+      "enforced_loopback_authentication": "passed",
+      "authenticated_tokenizer": "passed",
+      "runtime_core_fixture_isolation": "passed",
+      "deployment_applied": false,
+      "commit_or_push": false,
+      "updated_at": "2026-11-20T23:03:50.336321+00:00"
+    },
+    {
+      "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification",
+      "authority": "User: Complete remaining tasks",
+      "source_implemented": true,
+      "source_verified": true,
+      "gate_qualified": false,
+      "candidate_manifest": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/candidate-manifest.json",
+      "results": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/agent-result.json",
+      "handoff": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/handoff.md",
+      "enforced_loopback_authentication": "passed",
+      "original_credential_revocation": "passed",
+      "actual_qwen_cases_passed": 4,
+      "bounded_workload_cases_passed": 10,
+      "isolated_role_mesh": "passed",
+      "isolated_signed_release_disable": "passed",
+      "durable_recovery_and_policy_tests": 78,
+      "deployment_applied": false,
+      "commit_or_push": false,
+      "updated_at": "2026-11-20T23:41:27.234529+00:00"
+    },
+    {
+      "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification",
+      "authority": "User selected isolated synthetic demo for AI activation",
+      "source_implemented": true,
+      "source_verified": true,
+      "gate_qualified": false,
+      "candidate_manifest": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/candidate-manifest.json",
+      "results": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/agent-result.json",
+      "handoff": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/handoff.md",
+      "isolated_ai_enabled_run": "passed",
+      "worker_summary_real_provider": "passed",
+      "manual_continuity_after_disable": "passed",
+      "provider_sdk_owned_cancel": "passed",
+      "real_combined_provider_recovery": "blocked",
+      "serving_deployment_applied": false,
+      "commit_or_push": false,
+      "updated_at": "2026-11-21T00:12:05.584446+00:00"
+    },
+    {
+      "scope": "Initial source-only qualification record",
+      "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation",
+      "candidate_manifest": {
+        "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/candidate-manifest.json",
+        "sha256": "196c6ef83601dddddb1134584d76c4bcacbbe3f426ad335ee94221f8ece437ef"
+      },
+      "results": {
+        "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/results.json",
+        "sha256": "9ca3878fadea78a679773f5617281bd7fb9e481fb3256106f1d9fee0c4ab4f44"
+      },
+      "qualification_packet": {
+        "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/demo-packet.json",
+        "sha256": "fe4e10727a0930e7014eeff3440180361419b2c10475979c23fb2d2d934c4e32"
+      }
+    }
+  ],
+  "latest_followup": {
+    "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure",
+    "authority": "User requested close G-06",
+    "scope": "Isolated synthetic worker_summary",
+    "gate_qualified": true,
+    "updated_at": "2026-11-21T14:45:47.151592+00:00",
+    "candidate_image": "sha256:30134ead2a7e175c7815622ab362bff9a61eceda0b27809b2d7b2c9f8bfc3e5e",
+    "candidate_manifest": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/candidate-manifest.json",
+    "results": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/agent-result.json",
+    "handoff": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/handoff.md",
+    "matched_case": "passed",
+    "live_timeout_manual_continuity": "passed",
+    "protected_live_provider": "passed",
+    "browser_cases": 11,
+    "serving_deployment_applied": false,
+    "commit_or_push": false
+  },
+  "closed_at": "2026-11-21T14:45:47.151592+00:00",
+  "current_session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure"
+}

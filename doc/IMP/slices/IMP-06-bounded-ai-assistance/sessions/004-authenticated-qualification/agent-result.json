@@ -1,0 +1,179 @@
+{
+  "packet_id": "IMP06-004-authenticated-qualification",
+  "task_id": "IMP-06-D",
+  "baseline_commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "role": "imp_verifier",
+  "status": "partial",
+  "changed_paths": [
+    "deploy/images/imp06/Dockerfile.dockerignore",
+    "host/inference-bridge/pyproject.toml",
+    "host/inference-bridge/src/care_link_inference_bridge/bridge.py",
+    "host/inference-bridge/src/care_link_inference_bridge/credentials.py",
+    "host/inference-bridge/src/care_link_inference_bridge/loaded.py",
+    "host/inference-bridge/tests/test_bridge.py",
+    "host/inference-bridge/tests/test_credentials.py",
+    "host/inference-bridge/tests/test_loaded.py",
+    "services/inference/src/care_link_inference/gateway.py",
+    "services/inference/tests/test_inference.py",
+    "services/runtime/src/care_link_runtime/client.py",
+    "tests/evaluation/qwen_local.py",
+    "tests/unit/test_imp06_composition.py",
+    "tools/imp06_runtime/README.md",
+    "tools/imp06_runtime/bridge.py",
+    "tools/imp06_runtime/core.py",
+    "tools/imp06_runtime/inference.py",
+    "tools/imp06_runtime/runtime.py",
+    "tools/imp06_verification/runtime_isolation.py",
+    "uv.lock",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/README.md",
+    "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/README.md",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/handoff.md",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/work-packet.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/candidate-manifest.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/authenticated-qwen.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/image-smoke.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/runtime-isolation.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/server-authentication.json"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/candidate-manifest.json",
+      "sha256": "730275582e1ebaa5798d78542e5d7e2565f870dd59671e1cc60a92e883b4d27b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/handoff.md",
+      "sha256": "aff4b30b2d12e30a94fde5f48b3f8932a14c4176dcfd6cfab9b9ff510fc56ce2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/authenticated-qwen.json",
+      "sha256": "5ebd5f33def54316b8776f336a04d6be442af2cd64a9d9552e380e7333f4921a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/image-smoke.json",
+      "sha256": "4a36af70baf143761c7ec63fb3d46778ed5004c285a07121ee810d31cf4ce2ae"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/runtime-isolation.json",
+      "sha256": "cade832a6b08312e56935022bd7824ef08de9a45aad4dafacd0befbdce4d3cf2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/server-authentication.json",
+      "sha256": "0ab255c4e388edad0049cf09987562d61ecd184c6b20ef98dd06bcfb896a316c"
+    }
+  ],
+  "checks": [
+    {
+      "name": "server-authentication",
+      "command": "REST discovery and completion authorization with isolated HTTP connections and SDK model discovery via loopback",
+      "tool_version": "LM Studio 0.4.28+2 / SDK 1.6.0b1",
+      "status": "passed",
+      "expected": "Missing and invalid token denied. Valid token accepted.",
+      "actual": "REST 401 for missing and invalid. REST discovery 200 and expected SDK instance for valid.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/server-authentication.json",
+      "evidence_digest": "0ab255c4e388edad0049cf09987562d61ecd184c6b20ef98dd06bcfb896a316c",
+      "mock_used": false
+    },
+    {
+      "name": "authenticated-qwen",
+      "command": ".venv/bin/python -m tests.evaluation.qwen_local --artifact-dir [installed artifact] --model-index [local index] --token-file [private host path] --output [receipt] --run",
+      "tool_version": "SDK 1.6.0b1",
+      "status": "passed",
+      "expected": "Four synthetic EN/FR cases agree on exact prompt count and retain required source grounding.",
+      "actual": "Four passed with exact token parity. Both reasoning probes reported zero reasoning tokens.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/authenticated-qwen.json",
+      "evidence_digest": "5ebd5f33def54316b8776f336a04d6be442af2cd64a9d9552e380e7333f4921a",
+      "mock_used": false
+    },
+    {
+      "name": "candidate-image",
+      "command": "docker build with deploy/images/imp06/Dockerfile and docker run --network none --read-only --cap-drop ALL using candidate digest",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Locked package, role factory imports and matching source bytes. Model disabled.",
+      "actual": "13 hashes matched. UID 65532, SDK 1.6.0b1, knowledge catalog loaded and AI disabled.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/image-smoke.json",
+      "evidence_digest": "4a36af70baf143761c7ec63fb3d46778ed5004c285a07121ee810d31cf4ce2ae",
+      "mock_used": false
+    },
+    {
+      "name": "runtime-isolation",
+      "command": "docker run --rm --pull never --name care-link-imp06-004-isolation --label care-link.session=imp06-004-isolation --network none --read-only --security-opt no-new-privileges --cap-drop ALL --cap-add CHOWN --cap-add DAC_OVERRIDE --cap-add SETUID --cap-add SETGID --cap-add KILL --tmpfs /tmp:rw,nodev,nosuid,noexec,size=16777216 --user 0:0 --pids-limit 64 --memory 512m --mount type=bind,source=\"$PWD/tools/imp06_verification/runtime_isolation.py\",target=/probe.py,readonly --workdir /app --env PYTHONPATH=/app --env PYTHONDONTWRITEBYTECODE=1 sha256:24c05a0e0d93c8f12f92495d2fe0c733a0efe875d795ae8be52e54f3b41ba291 python /probe.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "mTLS controls, Unix workload peer and same-connection revocation exercised.",
+      "actual": "Candidate passed Linux network namespace, real Core ingress, TLS client identity and live fence checks with a fixture CA and relay.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/runtime-isolation.json",
+      "evidence_digest": "cade832a6b08312e56935022bd7824ef08de9a45aad4dafacd0befbdce4d3cf2",
+      "mock_used": false
+    },
+    {
+      "name": "scoped-python",
+      "command": ".venv/bin/pytest -q host/inference-bridge/tests services/runtime/tests services/inference/tests packages/workload-trust/tests/test_imp06_routes.py services/core/tests/test_assistance_work.py tests/unit/test_imp06_composition.py tests/contract/test_agentic_workflow.py tests/evaluation",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Scoped behavior and composition regressions pass.",
+      "actual": "123 passed. 17 LangSmith asyncio.iscoroutinefunction deprecation warnings.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": true
+    },
+    {
+      "name": "static",
+      "command": "uv lock --check --offline, Ruff check and format check, pnpm exec pyright --project pyrightconfig.json, git diff --check, tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Locked dependencies, format, types and dependency boundaries pass.",
+      "actual": "93 packages resolved, 45 files formatted, zero Pyright errors and warnings, diff and dependency boundaries passed.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    },
+    {
+      "name": "complete-role-topology",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Verified mesh routes, rotation and recovery across all separate roles.",
+      "actual": "The disposable fixture covered the Runtime to Core hop. Full five-role target is unprovisioned.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    },
+    {
+      "name": "release-activation",
+      "command": null,
+      "tool_version": null,
+      "status": "blocked",
+      "expected": "Signed exact release evidence and current evaluator acknowledgment.",
+      "actual": "Source callback has no durable release authority. Independent serving approval absent. All functions disabled.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "findings": [
+    {
+      "id": "IMP06-004-release-authority",
+      "severity": "major",
+      "source_refs": [
+        "tools/imp06_runtime/releases.py",
+        "tools/imp06_runtime/data.py",
+        "services/data/src/care_link_data/assistance_jobs.py"
+      ],
+      "affected_path_or_operation": "Inference release and provider stop recovery",
+      "problem": "Release bindings require an externally verified current callback. Composed Data has no verified provider-stop authority.",
+      "recommendation": "Connect current signed release custody and generation-bound stop evidence to the separate deployed roles.",
+      "verification": "Exercise exact bundle rejection, in-flight disable and confirmed slot recovery in the target role topology."
+    }
+  ],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Complete isolated SPIRE and Envoy topology for Core, Data, Runtime, Inference and the host bridge, credential rotation, and manual continuity with live disablement.",
+    "Compose authenticated generation-bound provider stop authority and measure durable timeout, cancellation, restart, recovery and workload-scale latency in the deployed topology.",
+    "Verify an immutable evaluated release binding, signer provenance and evaluator digest/epoch/boot acknowledgment. Preserve independent exact-bundle human approval for serving activation.",
+    "Keep other actor task profiles disabled pending separate evidence. Human implementation usability review remains deferred until after IMP-10."
+  ],
+  "handoff": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/handoff.md",
+  "is_example": false
+}

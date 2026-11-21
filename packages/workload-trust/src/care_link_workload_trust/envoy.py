@@ -5,7 +5,7 @@ import re
 from dataclasses import dataclass
 from pathlib import PurePosixPath
 
-from .verification import IDENTITY, PeerRule
+from .verification import IDENTITY, PeerRule, envoy_path_match, route_timeout
 
 IMAGE = re.compile(r"[a-z0-9./_-]+@sha256:[0-9a-f]{64}\Z")
 VERSION = re.compile(r"[0-9]+\.[0-9]+\.[0-9]+\Z")
@@ -87,12 +87,12 @@ def build_envoy(inputs: ProxyInputs) -> dict[str, object]:
     routes = [
         {
             "match": {
-                "path": path,
+                **envoy_path_match(path),
                 "headers": [{"name": ":method", "string_match": {"exact": method}}],
             },
             "route": {
                 "cluster": "application",
-                "timeout": "40s" if path.startswith("/bff/") else "10s",
+                "timeout": route_timeout(path),
             },
             "request_headers_to_remove": [
                 "x-forwarded-client-cert",
@@ -142,6 +142,7 @@ def build_envoy(inputs: ProxyInputs) -> dict[str, object]:
                             {"remove": "x-care-link-verified-spiffe"},
                             {"remove": "x-care-link-fence-generation"},
                             {"remove": "x-care-link-certificate-expires-at"},
+                            {"remove": "x-care-link-certificate-digest"},
                         ]
                     },
                 },
@@ -170,6 +171,7 @@ def build_envoy(inputs: ProxyInputs) -> dict[str, object]:
                                     {"exact": "x-care-link-verified-spiffe"},
                                     {"exact": "x-care-link-fence-generation"},
                                     {"exact": "x-care-link-certificate-expires-at"},
+                                    {"exact": "x-care-link-certificate-digest"},
                                 ]
                             }
                         },

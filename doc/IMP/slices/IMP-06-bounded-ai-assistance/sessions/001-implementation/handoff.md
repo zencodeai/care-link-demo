@@ -1,0 +1,41 @@
+# IMP-06 implementation handoff
+
+Source implementation is in place for the first bounded profile. **G-06 is blocked / not automated_qualified**: actual selected-model admission and live runtime/deployment evidence are missing. This is an operational/evidence blocker, not a human usability or stage-acceptance gate. Human review remains `deferred_until_after_IMP10`.
+
+User instruction: “Implement service slice 06.” Baseline `d0a2e188363e7fa136c920f02033cac52edf91ba`, clean initial tree. Current local branch `feat/imp-06-bounded-ai-assistance`; changes remain uncommitted. G-05 automated-qualified predecessor is retained. No commit, push, publication, merge, live deployment, host-trust change, SDK installation or model load occurred.
+
+## Delivered source
+
+- Core task/draft HTTP gateway, exact source-review context, server-owned actor ceilings and broker custody. Runtime cannot supply actor authority, approved labels, model pins or an arbitrary proposal: only the exact authenticated gateway result enters proposal custody.
+- Data-owned PostgreSQL encrypted task/draft/observation/idempotency records, RLS and locator separation, lifecycle registration, four-step/three-tool/two-proposal counters, step fences and leases. Process restart cannot reset them; lost ephemeral authority requires explicit fresh human revision.
+- First profile: `worker_summary` / `prepare_summary` / `draft_ready`, current selected session assertions, source-extractive unsent drafts and `session_read`. Other function/binding profiles remain explicitly disabled. Accept/edit/reject never dispatch or grant consent; editing needs a fresh exact acceptance. Old task revision/fence/current-draft identity, changed sources or runtime fences cannot authorize stale output.
+- Signed Core-to-Data task delegation and separate authenticated Data context/ledger ports. Inference receives no business database credentials. Two durable compute slots survive timeout/restart and remain occupied until observed completion or independently verified stop; full capacity immediately denies optional AI with zero queued work.
+- Exact local `google/gemma-4-12b-qat` adapter, bounded whole-response parsing, loaded/artifact/tokenizer/template/schema/function admission, token proof and current-source checks. Tokenization stays on the authenticated host bridge; only it owns the SDK handle and fixed loopback access. Runtime renews its lease during one bounded inference and has no autonomous task/model retry or send loop.
+- EN/FR optional assistance panel and actor route, immutable review facts, edit/reject/accept, unknown-operation reconciliation, cancellation and private-source hiding on authority failures. Manual messaging completes after rejecting every suggestion and during AI outage.
+- Explicit role factories and fixed peer graph under `tools/imp06_runtime`, narrowly matched canonical UUID lease routes and longer bounded generation mesh timeouts. These are source builders; no running lab configuration was changed.
+
+The exact 125 changed source paths and all 745 candidate source hashes are indexed in [candidate-manifest.json](candidate-manifest.json). [Implementation deltas](implementation-deltas.md) record the narrower initial profile, zero queue, ephemeral actor custody and compatibility. No HLD/LLD was rewritten.
+
+## Actual checks
+
+- Broad repository lane: **38 commands passed**, including **1,332 Python tests**, 3 explicitly gated legacy skips, web tests, contract/type/lint/build and planning integrity checks. This earlier lane predates the final review corrections.
+- Final affected lane: **11 commands passed**, including **139 pytest regressions**, **180 web/contract tests**, strict types, lint/format, boundaries, regenerated-contract parity, build and plan validation. Source hashes were identical before/after this lane; [checks and binding](evidence/final/attempt001/checks.json).
+- Final real Chromium: **9 passed**, with EN/FR, keyboard/focus, 1280/640 reflow, six clean axe scans, source review/rejection, acknowledged manual messages during outage, stale/unknown/cancel outcomes and401/403 privacy regressions. API/provider/SSE responses were synthetic fixtures; this is not deployed backend or MFA evidence. [Final browser report](evidence/browser/final/playwright-results.json).
+- Actual pinned OPA checks cover task preflight current scope, role/purpose/workload/fence denial and AI-disabled task creation. Real TLS PostgreSQL covers source/lease/runtime races, budgets, encrypted persistence, review identities, observed-completion-only capacity release and runtime fencing during generation. Signed transport tests verify actual Core/Identity Ed25519 signatures; role verifiers/mesh deployment remain explicitly separate.
+- Final restricted Core and broad qualification images built and passed nonroot/read-only/network-none smoke checks. **197 packaged role/configuration/web files matched source/build hashes**. These are qualification artifacts, not deployed role-isolation proof. [Packaging receipt](evidence/packaging/checks.json).
+
+Earlier failures remain evidence: an early editable package was built before module files existed, and initial browser fixtures had gaps. Both were corrected before the successful bound checks. [Review findings and resolutions](review-findings.md) includes task-revision, completion-predicate, privacy, runtime-fence, mesh and tokenizer-boundary corrections. Three legacy broad-suite skips remain unrun, not passed: owned Docker capture, Linux UID/setuid harness and isolated provisioning fixture.
+
+## Model and remaining qualification
+
+The read-only loopback probe found no available model server. [Availability receipt](model-availability.json) reports actual model evaluation as `not_run`. The selected local GGUF file was found and hashed in [artifact observation](local-artifact-observation.json); this proves bytes only, not publisher provenance, loaded identity, tokenizer/template or capability. The `lms ps/ls` inspection command earlier attempted automatic local service startup and failed in the restricted environment; no successful server startup or loaded model was observed. The later availability probe itself makes no startup/load request.
+
+All thirteen model function admissions stay disabled. Required real artifact origin/license/quantization/server/engine, exact loaded artifact and tokenizer/template/window proof, EN/FR grounding, seeded-error, injection/adversarial and latency/capacity evaluations remain `not_run`/unknown. No alternative model, character estimate, invented evidence or increased runtime budget was used. Deployed broker/gateway/bridge workload and network-denial/timeout/recovery evidence is also unqualified; synthetic HTTP transports and source route tests do not replace it.
+
+The native SDK adapter accepts an already externally verified loaded handle and exact current artifact/tokenizer/template proof; no LM Studio SDK was installed and no handle was fabricated. Any subsequent actual setup/model loading needs its applicable action authorization under the project agent contract. Human consent, MFA, current scope, human review and independent stop/recovery authority remain product-runtime controls.
+
+## Cleanup and next starting point
+
+Only dedicated `care-link-imp06-001-postgres` and `care-link-imp06-001-browser` resources were removed, after label checks; their temporary database/TLS credentials were removed. Preexisting IMP-02/03/04 running demos were preserved. Built source images remain local and unserved.
+
+Next authorized continuation should read this handoff, [results](results.json), the [execution ledger](../../../../executions/2026-11-20-IMP-06/ledger.json), candidate hashes and disabled manifest. Reconcile source before resuming. Obtain the actual selected local runtime/SDK setup and action scope, verify loaded artifact/tokenizer/template without substitution, run synthetic per-function and isolated role/mesh qualification, and admit only passing functions. A failed or unrun mandatory check keeps G-06 unqualified. Keep other functions explicitly unadmitted; do not advance to IMP-07 automatically. Post-IMP-10 human observations belong to GitHub issue follow-up sessions.

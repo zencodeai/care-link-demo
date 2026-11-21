@@ -1,0 +1,11 @@
+{
+  "qualification_image": "sha256:4caff27c9a1b397b858f3ef6c3453009ab8e3714d06c16c17198e72fe65b8406",
+  "source_hashes_matched": 196,
+  "imports_resources_nonroot_readonly_network_none": "passed",
+  "core_image_check": {
+    "broker_sha256": "c078ce0e95d5df39dde17e06d5cbbc210489f5093a2ec83c753b72eae848a41a",
+    "nonroot_no_sdk_runtime_or_store": "passed"
+  },
+  "deployment": false,
+  "core_image": "sha256:5bac3ca28486038e5589e0538cc7d49aa9b9503b3bb019b7cb7a4eed3a7e7652"
+}

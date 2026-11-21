@@ -1,0 +1,91 @@
+{
+  "scope": "IMP06-003-inference owned-source verification; not deployment/function admission",
+  "state": "passed",
+  "checks": [
+    {
+      "command": ".venv/bin/python -m pytest tests/evaluation services/runtime/tests host/inference-bridge/tests services/inference/tests -q",
+      "result": "85 passed; 17 third-party LangSmith deprecation warnings"
+    },
+    {
+      "command": "node_modules/.bin/pyright services/runtime/src host/inference-bridge/src services/inference/src tools/imp06_runtime/runtime.py tools/imp06_runtime/bridge.py",
+      "result": "0 errors, 0 warnings"
+    },
+    {
+      "command": ".venv/bin/ruff check services/runtime host/inference-bridge services/inference tools/imp06_runtime/runtime.py tools/imp06_runtime/bridge.py tests/evaluation/qwen_local.py",
+      "result": "passed"
+    },
+    {
+      "command": ".venv/bin/ruff format --check services/runtime host/inference-bridge services/inference tools/imp06_runtime/runtime.py tools/imp06_runtime/bridge.py tests/evaluation/qwen_local.py",
+      "result": "passed formatting; final format command reported31 files unchanged"
+    },
+    {
+      "command": ".venv/bin/python tools/check_boundaries.py",
+      "result": "passed source dependency directions only"
+    }
+  ],
+  "actual_model_evaluation": {
+    "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/003-agentic-workflows-rag/evidence/model/attempt009-final-clinical-reference-passed.json",
+    "cases_passed": 4,
+    "latency_seconds": [
+      3.831802625209093,
+      1.4134835000149906,
+      1.8895585830323398,
+      1.58174120914191
+    ],
+    "reasoning_tokens": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "exact_template_counts_matched": true,
+    "catalog_bound": true,
+    "execution_source_hashes_match_current": true
+  },
+  "source_sha256": {
+    "host/inference-bridge/pyproject.toml": "0d8638082829ddf2858608005de592be1f19e429e43baa6fd9d381431ec9f9ac",
+    "host/inference-bridge/src/care_link_inference_bridge/__init__.py": "b1dbdf2c1b54970e279c796cb4f58884edd215c0d58d798f9ea7ad99eaea6b01",
+    "host/inference-bridge/src/care_link_inference_bridge/app.py": "a75be6198cd514afbcc93893a03b5520c1abf87e3e285971ee0313fad2dacd26",
+    "host/inference-bridge/src/care_link_inference_bridge/artifacts.py": "670c5b4ad28eaf420a994e64041a47bc71bccfa51aedab0e4eda7e39a8115b00",
+    "host/inference-bridge/src/care_link_inference_bridge/bridge.py": "e744a1cbc6ee131e67facf7c8ed4eb5b125a74dce56235dc187b7fffba7071b3",
+    "host/inference-bridge/src/care_link_inference_bridge/loaded.py": "1f7436f8e55c28b57a43253d9be95810f7e48cc940c362cf8592b8ad014daa91",
+    "host/inference-bridge/src/care_link_inference_bridge/tokenization.py": "8c0c8e427f9d727064f107a550f26367492445c1714acc05b43d43bba0960535",
+    "host/inference-bridge/tests/test_artifacts.py": "1191c990c84452c61387f4421099f8de5cf77fa1c30e27e648ab5c89750fbb5e",
+    "host/inference-bridge/tests/test_bridge.py": "bb0ca610bc1c667fed2231422647cfbfe3215890f1c04008f1c851bdf6775ebf",
+    "host/inference-bridge/tests/test_loaded.py": "1d3a07aebcb50fc743576d9c65ceb91db736f6604ffae735e2d00f19af180f2d",
+    "services/inference/pyproject.toml": "6a52945b6058559a8da4d342ea6b9aea89011846e7c9230e74bb314b95343701",
+    "services/inference/src/care_link_inference/__init__.py": "ffbbfddba1516edff876b641b5a4cddce0bac35b130775a1dc93de3b4772b477",
+    "services/inference/src/care_link_inference/admission.py": "47220bf2bcfe3efd47e72217debaf2ea921a63dc95a7b3b8720bd20a8ddb4bb4",
+    "services/inference/src/care_link_inference/composition.py": "b377e60dffa699409cc0046628b1589c182206026b80c00b9b5afd3a80889ea1",
+    "services/inference/src/care_link_inference/context.py": "7f4eaf5854e9365bcb8d30e15eb7e8991fbd336e55b2d43bb4128f38d8e1f195",
+    "services/inference/src/care_link_inference/evaluation.py": "88968ba048f3859645a917b29424188186f62c6a631b4e2706a9d41bb980f01b",
+    "services/inference/src/care_link_inference/gateway.py": "e0a46a3dc87e75690307d912cb8aada023a68e31de8e97f8260553f02ad54a65",
+    "services/inference/src/care_link_inference/http.py": "516a7a931f544abf8d59f19349da5b8989a6ba10967918c49bb20905b32bdc5a",
+    "services/inference/src/care_link_inference/parser.py": "8c5485e1143d990d59f9a5139b474e568c83cea27c2990bcdf639aa952b7ba19",
+    "services/inference/src/care_link_inference/selection.py": "7a97a1e520e7c9aa9f198b7816d6a40e860f51595041354e5912f90983823f2f",
+    "services/inference/src/care_link_inference/tokenization.py": "8bb3e92eb1fe38ce11f3a8faf64fa7ea1daeccb187b8cef0c16daa4f660a861b",
+    "services/inference/tests/test_inference.py": "b0a31d883a6d22e0aa6cbb7933a7e2387da2a95651ed240aff2f55537643c555",
+    "services/inference/tests/test_selection.py": "b11bfdfab91a77e9d6e1117f6d2617dde422e53a0f9a13ef9deb95b4d03c2250",
+    "services/inference/tests/test_tokenization.py": "ec79847ce1ec549bede5a3d0f0fbdcd13d666297f7f4eee06efce999a370c0c9",
+    "services/runtime/pyproject.toml": "d33092dfb0d152de60db707abd0476e785321350bdb64a84e62f727e31955010",
+    "services/runtime/src/care_link_runtime/__init__.py": "084a4e80084b4b967cc3e6e5ec272c07cc0ee298e64120590467581d60b6570c",
+    "services/runtime/src/care_link_runtime/client.py": "2bbeeeda815596e5c4454b59612f7e5fb588b2ffe453d8559dd8c00432104ece",
+    "services/runtime/src/care_link_runtime/worker.py": "6c00a149d0a8a32d0792101d79ba9566e9e3e0e7e4dbd6895e0e48674532d051",
+    "services/runtime/src/care_link_runtime/workflow.py": "fec9bd7540b9883dbe9196d73ec36d53a68ad2ed9b6f0dee1cc60ee07c8eff64",
+    "services/runtime/tests/test_client.py": "d75c62f095450528ec38487e1da31029512fdb7fec8799fc3f63b30ba4558029",
+    "services/runtime/tests/test_workflow.py": "ef28721e1855cbdafe83ed23d6a9c55acac5e95df1fbf02ed74d4fda1e479873",
+    "tests/evaluation/qwen_local.py": "1bae104a7749bdd732ce3d40c2bcf40eb45fd197b8c7e52be471dc93dff7b03f",
+    "tools/imp06_runtime/bridge.py": "616c342f59d7bfbb85fc0d6ddc11f1a0559ecf758574344cd0076aac05251b0d",
+    "tools/imp06_runtime/inference.py": "168d2b36a0bc6ed6cbc06fe5af03821d7a74906566c732ea7f5e54652f3c9aa1",
+    "tools/imp06_runtime/runtime.py": "e6440b0bd0e92c3551e18bd5d92f6826a2fcf182704b6e5b7edeedd9f154b2b0"
+  },
+  "limitations": [
+    "Direct host synthetic evaluation only; no deployed workload/network isolation qualification",
+    "No release admission or clinical outcome/quality certification",
+    "SDK1.5 generated RPC structures and vendor config keys are pinned integration seams",
+    "Observed alias/artifact mapping is local metadata; no engine attestation/publisher signature proof",
+    "Server-side API authentication enforcement not established; bridge composition accepts supplied REST credential"
+  ],
+  "model_configuration_changed": false,
+  "function_admitted": false
+}

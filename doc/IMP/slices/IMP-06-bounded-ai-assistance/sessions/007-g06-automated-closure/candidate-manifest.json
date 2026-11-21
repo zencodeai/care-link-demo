@@ -1,0 +1,292 @@
+{
+  "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure",
+  "recorded_at": "2026-11-21T14:45:47.151592+00:00",
+  "baseline_commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "scope": "Isolated synthetic worker_summary only",
+  "gate": "G-06",
+  "gate_state": "automated_qualified",
+  "role_runtime_image": "sha256:30134ead2a7e175c7815622ab362bff9a61eceda0b27809b2d7b2c9f8bfc3e5e",
+  "qualification_release_bundle": "dfad553fa142b510b8f5194616cb769613e4bfb10c5057dd10f94a6c2cee8179",
+  "serving_release_approved": false,
+  "candidate_binding": {
+    "commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+    "diff_digest": "80a5eb78e16414ad5f4c7b96c5ec247d8c02bbc1645d63bbd944d94c13afc4b1",
+    "artifact_digest": "30134ead2a7e175c7815622ab362bff9a61eceda0b27809b2d7b2c9f8bfc3e5e",
+    "configuration_digest": "bee199e3140a51dd76c937b5f6681f27a51f1985d0041e0a6f991b6081ec64fb",
+    "contract_digest": "aa2abb769ac881dd0b9af142e0ec8ababec05cacb1817fc62ff5cd5e5b141e9a",
+    "environment_digest": "4b8f72a58a35955aa005d665e9dca00638643785e737f79fcbc5e1e781d6d796",
+    "fixture_digest": "7de742fbd528db6da57ba62e02f5e9f95fc49e8afa1a79a0e379041bcd1d45d4"
+  },
+  "source": [
+    {
+      "path": "config/demo/assistance/agentic-threat-map.json",
+      "sha256": "e76a38e85675f32c9affe6dd01378487d3b5f3eab0475e3bfe3251a90687f4a6"
+    },
+    {
+      "path": "config/demo/assistance/model-manifest.json",
+      "sha256": "46012a23bca1c75320299e1439f90fc746d770781a4760db277f043fa73ee8d6"
+    },
+    {
+      "path": "config/demo/assistance/prompts/worker-summary-v2.txt",
+      "sha256": "9a2346447229d68437abe76945e8a70ed99c305321bf3cc63f66d32ae37704a3"
+    },
+    {
+      "path": "config/demo/assistance/threat-map.json",
+      "sha256": "05892b13b626402070035fc32becdbe28ff4ddfeaaa196a22a674c6cbe2edf75"
+    },
+    {
+      "path": "config/demo/assistance/threat-sources.json",
+      "sha256": "b8f55b5e0935f6c6b782eea2eee768b0c8cb10ad93025b3bde3def0e39414bd3"
+    },
+    {
+      "path": "config/demo/knowledge/catalog.json",
+      "sha256": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+    },
+    {
+      "path": "config/demo/knowledge/scenario-binding.json",
+      "sha256": "52ee4d86ffa8c20a326ede8bff892579057a14e823d3425a6b9fc5b2c7810b22"
+    },
+    {
+      "path": "doc/LLD/contracts/agentic.openapi.json",
+      "sha256": "ee57e1acfb9f3c206ab374aaabe40fee86355b576383025b16895ea22c83091f"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "dcc8df20c339d67dfdf0ea89892d80b731cdb6a795be567f56773837689b7b61"
+    },
+    {
+      "path": "host/inference-bridge/src/care_link_inference_bridge/artifacts.py",
+      "sha256": "b3ed6269acfe1dc01377f79644be33ff53a009a7cff00c9e422b74f92eb35014"
+    },
+    {
+      "path": "host/inference-bridge/src/care_link_inference_bridge/bridge.py",
+      "sha256": "3b36e397bf4b67b112f6bbd3cdd235449b28186aefaf682e05b0edc2a8640881"
+    },
+    {
+      "path": "host/inference-bridge/src/care_link_inference_bridge/credentials.py",
+      "sha256": "7b27e1585b9d2cb2c2142f4f3e78fd5b4e5fd1bbaae93b1b1f3642a4b34ff371"
+    },
+    {
+      "path": "host/inference-bridge/src/care_link_inference_bridge/loaded.py",
+      "sha256": "7f34b632962f36feed2efafbef3fad0adaaae285b7e3c9d342e139378529d70d"
+    },
+    {
+      "path": "host/inference-bridge/src/care_link_inference_bridge/tokenization.py",
+      "sha256": "8c0c8e427f9d727064f107a550f26367492445c1714acc05b43d43bba0960535"
+    },
+    {
+      "path": "packages/contracts/assistance.schema.json",
+      "sha256": "77408d21e6024e07b11a5db4dd4662778c8de7c40fbe75cf387040b2f3fbefad"
+    },
+    {
+      "path": "services/data/src/care_link_data/assistance_jobs.py",
+      "sha256": "de4d0714b0f5aa380062093f0cfec136674bd0384a4ead937d91a100cfdb0c81"
+    },
+    {
+      "path": "services/data/src/care_link_data/assistance_transport.py",
+      "sha256": "19281b7a33a32b48e90735d9295ad19aa6b7d7d3b6401fa9772aa9180de3b11d"
+    },
+    {
+      "path": "services/data/tests/conftest.py",
+      "sha256": "e92070953db1011d8be885fce3600e9517241a8e06b34e75ee07ec35c5aea91e"
+    },
+    {
+      "path": "services/inference/src/care_link_inference/admission.py",
+      "sha256": "c2028535e2b2f73e28e1a9c0313e2e70281821831d2eeff89a2b971d02ce6bd5"
+    },
+    {
+      "path": "services/inference/src/care_link_inference/context.py",
+      "sha256": "7f4eaf5854e9365bcb8d30e15eb7e8991fbd336e55b2d43bb4128f38d8e1f195"
+    },
+    {
+      "path": "services/inference/src/care_link_inference/gateway.py",
+      "sha256": "0d2e296f4a8c38585a790c910d9bd547da35e5c8927fb9c72543c23161dbe3c8"
+    },
+    {
+      "path": "services/inference/src/care_link_inference/parser.py",
+      "sha256": "8c5485e1143d990d59f9a5139b474e568c83cea27c2990bcdf639aa952b7ba19"
+    },
+    {
+      "path": "services/inference/src/care_link_inference/selection.py",
+      "sha256": "7a97a1e520e7c9aa9f198b7816d6a40e860f51595041354e5912f90983823f2f"
+    },
+    {
+      "path": "services/runtime/src/care_link_runtime/client.py",
+      "sha256": "72a2494e7a54d8c2109fd4fdd6a2143c181b531cdd836e23cce6679ca929a684"
+    },
+    {
+      "path": "tests/e2e/assistance/assistance.spec.ts",
+      "sha256": "1fdf18a9fc0ef07a055cafedd28f88f5f2ee2e8e8ddc8b5988378e7bb685bda3"
+    },
+    {
+      "path": "tests/e2e/assistance/fixtures.ts",
+      "sha256": "7e4da986a26941a161388878e74d7f281e522a225703f6ada82ec96849975304"
+    },
+    {
+      "path": "tests/evaluation/qwen_combined_journey.py",
+      "sha256": "1cde808471af6ad6c11521e05ab581cd623ca07f50d20c7802c84996db788e41"
+    },
+    {
+      "path": "tests/evaluation/qwen_g06_timeout.py",
+      "sha256": "543284dca1ec47a71e88b86ccb0e4ff326af9cc5751ebd11eb3419668afe0c91"
+    },
+    {
+      "path": "tests/evaluation/qwen_local.py",
+      "sha256": "0332a13c8368a70c582237892080c03010bcc41d70530403da6acd312b98cc46"
+    },
+    {
+      "path": "tools/imp03_runtime/compose.py",
+      "sha256": "645e9407e99ac94c0de1c2e58dd230a5a2f3f9539114f664dd345bff293bfc0a"
+    },
+    {
+      "path": "tools/imp06_runtime/bridge.py",
+      "sha256": "ba444f5a2894dcd59fd2ada36a6afc2661c2759c6afb71c2d3bd7565db868f51"
+    },
+    {
+      "path": "tools/imp06_runtime/core.py",
+      "sha256": "1574e28af9811b037a3190b6253ac6c54dc34c43fee84bde7212c3b764d8e171"
+    },
+    {
+      "path": "tools/imp06_runtime/data.py",
+      "sha256": "9377882b8d222fb05603268d4d44f73d26de45edc91367e460e174b134a6fee6"
+    },
+    {
+      "path": "tools/imp06_runtime/inference.py",
+      "sha256": "7c3ffedfb73c6889ff44ad98d35648af891531e707a732413620e298e6b8b18c"
+    },
+    {
+      "path": "tools/imp06_runtime/manual_roles.py",
+      "sha256": "52a956df53d0b1d6349dcb940f8e23043e0ee4695c6c4f9aed47cd9b1e0ddf73"
+    },
+    {
+      "path": "tools/imp06_runtime/provider_stop.py",
+      "sha256": "e1c72ddb572e27a0c393376a7d50d4abfb431f88fb4a54e486b72589a0bdeb59"
+    },
+    {
+      "path": "tools/imp06_runtime/release_custody.py",
+      "sha256": "445a3bda13d2c0582e4297a8aa787ad96576d68ff969508fbee8f6091dfbdf8b"
+    },
+    {
+      "path": "tools/imp06_runtime/release_custody_records.py",
+      "sha256": "d3b9d25259be2376c6fbbb42d33f733ce6b52f6be3c961770b8229c9a80f60c1"
+    },
+    {
+      "path": "tools/imp06_runtime/role_process.py",
+      "sha256": "b24a5a0eb3212b656d53647177341d75b58a3a7ba8d691c49c5d2d9394eb3899"
+    },
+    {
+      "path": "tools/imp06_runtime/runtime.py",
+      "sha256": "6753753700da6a17ae9c052a79194cb1ba442bfb02e376570bcc29d5f3a205e0"
+    },
+    {
+      "path": "tools/imp06_runtime/serve.py",
+      "sha256": "6f630c8285250820fadea5fe61c46239e411b93434fecae6d1281de6f38e2d5c"
+    },
+    {
+      "path": "tools/imp06_runtime/serving_release.py",
+      "sha256": "ba369ce4b366fbae1ea669908071a3809f8db01a032243a2fa0dd6ff87786ffd"
+    },
+    {
+      "path": "tools/imp06_runtime/serving_release_candidate.py",
+      "sha256": "e9436c5ea2d3fd4b1805a6baacbef5755b187a963a92e8a3ba93cc1398fcc255"
+    },
+    {
+      "path": "tools/imp06_verification/g06_protected.py",
+      "sha256": "a12e4cfde4026ad53c67886d5a2a6ac0557104643a9b1cd71e5a6c6c49f53205"
+    },
+    {
+      "path": "tools/imp06_verification/g06_protected_processes.py",
+      "sha256": "95db5f106d0e2fd78e6eb995c52d65de176994d058b5b4fec9c4a5c173e1a207"
+    },
+    {
+      "path": "tools/imp06_verification/g06_protected_wire.py",
+      "sha256": "baca73410aac5055e8d45791472da9752176deb54eca3e24a3758121c5e4f114"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "ca93b38cd301c24c503b5fabad7e5cf849fffd23a819c529b425c4016b863b4e"
+    }
+  ],
+  "observations": [
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/browser/browser-command.log",
+      "sha256": "57b31096ddddc3cbcd77990e7fc4ec80f1bf381e091eec9ca30b9eea5f1f9212"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/browser/playwright-results.json",
+      "sha256": "f2e116efa8dbe1826f3dce045ab6f866d198689157f4c197fca14be9ff61b3b9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/browser/summary.json",
+      "sha256": "d46b519b171223218bdbdb98b6c41297f096a71a48aca2ed04766f8733bf15dc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/matched-actor-journey.json",
+      "sha256": "678622bdb4ccb392b0315debb3e82bc766d960a0682b3b3d40be47ef676434cd"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/matched-fixture-journey.json",
+      "sha256": "a3c0cbcbb8180c8362f058a9ba5d8a606240a29063a0da031eb701f7437958e5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/postgresql-adverse.json",
+      "sha256": "46b326e4b81bcff3c9089d0e86ab071a163c8cd7378cdb7a47437b67065a2662"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/protected-harness-smoke.json",
+      "sha256": "a4460a3519c2bf443c94492fd619e6e9cf3bc2f74d966ac7c813f8dc8ed809a3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/protected-live-provider.json",
+      "sha256": "808826f3b3817a9b7f9bc30b76fe03a6cdf5c2a8e537e33586f5eaeef39acb69"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/source-checks.json",
+      "sha256": "d249058080613dd02cfe73fcccedb35111ba0530b655bec1900a257c7905298b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/threat-validation.json",
+      "sha256": "869717b630f17452410775e520eeec3972f70a6def8da3cc351972df851a1466"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/timeout-live.json",
+      "sha256": "04e72de40c9237ba89353f1f2db373d25213fec6ce899dc0013866c2323bc599"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/image-smoke.json",
+      "sha256": "3bed460923c35f9110bc43a18284ac5e2290e0522e01947c87d14a5f5b06bff5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/role-topology.json",
+      "sha256": "6bd6cbba88786ab9f566e051b82e23ca4cad368c9215a5509165bc729a1ecba8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json",
+      "sha256": "a8561413dfeb22e6296a2ea508432b9ac84d7ecbc9cc64ee7b653288bb31c178"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-final-workload.json",
+      "sha256": "5244505c0e679279befd5af95873080ec618826f18883c844702a1dde42db23b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/model-provenance.json",
+      "sha256": "4309f5e7ebc13658d062a61f287ebf63e6ad407929e5dd03b23a0a6553d08233"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/provider-hard-stop.json",
+      "sha256": "438dc27d49ca21a862d2fe87a4acd153fab6203f353a7aba083d049861534655"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/signed-bridge.json",
+      "sha256": "71976480eb443ad7aed4aeee606e91cfcca737345f77db70753191808930b14a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/credential-rotation.json",
+      "sha256": "d59c68e97bdf3202be77f31b40d59fd5f6b6f7736b3b1886ace2b689d0db3711"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/source-inventory.json",
+      "sha256": "9930f77448b5a8eca17b803d790353f483202a36d891393dd9e36b4de20a4248"
+    }
+  ]
+}

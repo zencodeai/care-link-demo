@@ -1,0 +1,72 @@
+{
+  "reviews": [
+    {
+      "role": "lld_review",
+      "mode": "read_only",
+      "findings": [
+        {
+          "id": "R1",
+          "issue": "Time-based reranking could add evidence without task revision",
+          "resolution": "Exact pinned refs resolved; explicit revision repins",
+          "status": "resolved; real PostgreSQL future-activation regression passed"
+        },
+        {
+          "id": "R2",
+          "issue": "Catalog digest was independent of evaluated function release",
+          "resolution": "Core/Data release callbacks require matching evaluated catalog digest",
+          "status": "resolved; missing/mismatch/malformed pin denials tested"
+        },
+        {
+          "id": "R3",
+          "issue": "Retrieval prose included task goal not used by source",
+          "resolution": "Prose aligned to permitted assertion query and fallback",
+          "status": "resolved"
+        },
+        {
+          "id": "R4",
+          "issue": "Runtime instructions described earlier source baseline",
+          "resolution": "Updated current source/dependency/resource instructions",
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "role": "hld_review",
+      "mode": "read_only",
+      "findings": [
+        {
+          "id": "H1",
+          "issue": "Historical Gemma wording remained normative in HLD03",
+          "resolution": "Current Qwen direction reconciled; earlier acceptance explicitly historical",
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "role": "lld_review",
+      "mode": "read_only",
+      "scope": "provider evidence-selection and actual template/tokenizer amendment",
+      "findings": [
+        {
+          "id": "P1",
+          "issue": "Provider source selection and authority reconstruction",
+          "status": "no blocking issue; full canonical and Core guards retained"
+        },
+        {
+          "id": "P2",
+          "issue": "Selection cap12 vs generic context cap32",
+          "resolution": "Preflight excessive mandatory assertions before tokenizer/provider/slot work; test and design added",
+          "status": "resolved"
+        },
+        {
+          "id": "P3",
+          "issue": "SDK internal/generated RPC/vendor render-mode compatibility",
+          "resolution": "Pinned version, empirical prompt-count check, source/wire/render digests and fail-closed mismatch",
+          "status": "explicit compatibility and release qualification limit"
+        }
+      ]
+    }
+  ],
+  "human_approval": false,
+  "tests_by_reviewers": false
+}

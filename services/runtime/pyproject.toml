@@ -1,0 +1,15 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "care-link-runtime"
+version = "0.1.0"
+requires-python = ">=3.12,<3.15"
+dependencies = ["care-link-contracts", "httpx==0.28.1", "langgraph==1.2.24"]
+
+[tool.uv.sources]
+care-link-contracts = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/care_link_runtime"]

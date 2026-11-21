@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/usr/local/bin/docker",
+    "build",
+    "--file",
+    "deploy/images/imp06/Dockerfile",
+    "--tag",
+    "care-link-imp06:source",
+    "--iidfile",
+    "/private/tmp/care-link-imp06-image.id",
+    "--progress=plain",
+    "."
+  ],
+  "exit_code": 0,
+  "recorded_at": "2026-11-20T18:44:12.068784+00:00"
+}

@@ -1,0 +1,80 @@
+{
+  "recorded_at": "2026-11-20T22:32:34.482599+00:00",
+  "status": "source_implemented_verified; admission/deployment qualification incomplete",
+  "stage": "IMP-06",
+  "gate": "G-06",
+  "automated_qualified": false,
+  "source_implementation_complete_for_first_profile": true,
+  "delivered": [
+    "bounded LangGraph worker preparation and Runtime dispatch",
+    "six-role knowledge lookup and worker RAG",
+    "catalog/role/locale/expiry/release/source integrity controls",
+    "trusted evidence projection with mandatory patient assertion coverage",
+    "exact Qwen artifact/template/tokenizer/nonthinking prompt counts",
+    "EN/FR account/session-bound optional automatic preparation and exact review",
+    "Qwen pin migration and versioned framework/resource provenance"
+  ],
+  "checks": {
+    "source_lane": {
+      "commands_passed": 38,
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/003-agentic-workflows-rag/evidence/source/attempt003/checks.json",
+      "before_after_source_identical": true,
+      "python_passed": 1441,
+      "legacy_skipped": 3,
+      "web_contract_tests_passed": 193,
+      "types_lint_generation_build": "passed"
+    },
+    "chromium": {
+      "passed": 11,
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/003-agentic-workflows-rag/evidence/browser/playwright-results.json",
+      "synthetic_api_fixtures": true,
+      "deployed_authority_proof": false
+    },
+    "actual_qwen": {
+      "passed": 4,
+      "languages": [
+        "en-CA",
+        "fr-CA"
+      ],
+      "injection_cases": 2,
+      "seconds": [
+        3.831802625209093,
+        1.4134835000149906,
+        1.8895585830323398,
+        1.58174120914191
+      ],
+      "reasoning_tokens": 0,
+      "exact_prompt_counts": true,
+      "catalog_and_source_hashes_current": true,
+      "receipt": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/003-agentic-workflows-rag/evidence/model/attempt009-final-clinical-reference-passed.json"
+    },
+    "design": {
+      "canonical_lld": "passed391types206operations799fixtures78records",
+      "additive_openapi": "passed",
+      "planning": "passed",
+      "human_approval": false
+    },
+    "packaging": {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/003-agentic-workflows-rag/evidence/packaging/checks.json",
+      "critical_source_config_web_hashes": 196,
+      "deployed": false
+    }
+  },
+  "failed_attempts_preserved": [
+    "source/attempt001: lint during integration",
+    "source/attempt002: HTTPX1/2 relay compatibility corrected",
+    "model: unavailable/schema/reasoning-only/irrelevant-reference target attempts"
+  ],
+  "remaining_qualification": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/003-agentic-workflows-rag/remaining-qualification.md",
+  "all_ai_admissions_disabled": true,
+  "clinical_qualification": false,
+  "deployed_isolation_qualified": false,
+  "lmstudio_server_authentication_enforced_verified": false,
+  "human_review": "deferred_until_after_IMP10",
+  "model_loaded_or_unloaded_by_agent": false,
+  "host_settings_changed": false,
+  "deployment_performed": false,
+  "commit_or_push": false,
+  "changes_since_session_baseline": 93,
+  "configuration_files_preserved": 24
+}

@@ -1,5 +1,9 @@
 # CARE-Link technical low-level design
 
+> Current authorized implementation · 2026-11-20: [Agentic workflows and role-scoped clinical knowledge](18-agentic-knowledge-workflows.md) records the bounded LangGraph architecture, Qwen migration, resource provenance and implementation limits. See session003 evidence for actual qualification; no clinical or deployed-readiness pass is implied.
+
+> Current model direction · 2026-11-20: [LLD18](18-agentic-knowledge-workflows.md) specifies the authorized Qwen pin migration, LangGraph execution and scoped knowledge mechanisms. Older decisions and evidence are preserved. G-06 remains unqualified until mandatory automated evidence is complete.
+
 Version 0.2 · 2026-11-06 · Recommended local design choices accepted; implementation/deployment evidence remains pending.
 
 This is a new design derived from the current requirements and HLD, following the explicit LLD authoring request. No deleted LLD was recovered. It specifies the actor-led service, bounded AI assistance and deterministic controls needed to implement the closed synthetic demonstrator. The five accepted local HLD decisions remain binding within their recorded qualifications. The user subsequently accepted the recommended LLD choices, this workstation and the exact LM Studio model identifier; see the [scoped acceptance record](decisions/2026-11-06-implementation-choices-and-model.md). This does not establish independent implementation/release approval.

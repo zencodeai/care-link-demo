@@ -1,0 +1,138 @@
+"""Concrete isolated inference bindings. No business-store credentials enter here."""
+
+import json
+import ssl
+from datetime import datetime
+from typing import cast
+
+import httpx
+
+from .admission import InferenceDenied
+from .gateway import BrokerRequest
+
+
+class DataTransport:
+    def __init__(
+        self, tls: ssl.SSLContext, *, transport: httpx.BaseTransport | None = None
+    ) -> None:
+        if tls.verify_mode != ssl.CERT_REQUIRED or not tls.check_hostname:
+            raise ValueError("authenticated data TLS required")
+        self.client = httpx.Client(
+            verify=tls, transport=transport, trust_env=False, follow_redirects=False
+        )
+
+    def call(self, operation: str, body: dict[str, object]) -> dict[str, object]:
+        if operation not in {"context", "current", "reserve", "unknown", "complete"}:
+            raise ValueError("fixed inference ledger operation required")
+        try:
+            with self.client.stream(
+                "POST",
+                "https://data:8443/internal/v1/data/assistance/inference/" + operation,
+                json=body,
+                timeout=1,
+                follow_redirects=False,
+            ) as response:
+                response.raise_for_status()
+                raw = bytearray()
+                for chunk in response.iter_bytes():
+                    if len(raw) + len(chunk) > 262144:
+                        raise ValueError("bounded data response required")
+                    raw.extend(chunk)
+
+            def unique(pairs: list[tuple[str, object]]) -> dict[str, object]:
+                result: dict[str, object] = {}
+                for key, value in pairs:
+                    if key in result:
+                        raise ValueError("duplicate data response key")
+                    result[key] = value
+                return result
+
+            value: object = json.loads(raw, object_pairs_hook=unique)
+            if not isinstance(value, dict):
+                raise ValueError("closed data response required")
+            return cast(dict[str, object], value)
+        except (httpx.HTTPError, ValueError) as error:
+            raise InferenceDenied("current_data_unavailable") from error
+
+    def close(self) -> None:
+        self.client.close()
+
+
+class HttpJobLedger:
+    def __init__(self, data: DataTransport) -> None:
+        self.data = data
+
+    def reserve(self, record: dict[str, object]) -> str | None:
+        body = {
+            **record,
+            "deadline": cast(datetime, record["deadline"]).isoformat().replace("+00:00", "Z"),
+        }
+        result = self.data.call("reserve", body)
+        if set(result) != {"slot_id"} or result["slot_id"] not in {None, "local-1", "local-2"}:
+            raise InferenceDenied("invalid_slot_receipt")
+        return cast(str | None, result["slot_id"])
+
+    def mark_unknown(self, job_id: str) -> None:
+        if self.data.call("unknown", {"job_id": job_id}) != {"state": "recorded"}:
+            raise InferenceDenied("invalid_unknown_receipt")
+
+    def complete(self, job_id: str, result_digest: str, *, deliverable: bool) -> bool:
+        result = self.data.call(
+            "complete",
+            {"job_id": job_id, "result_digest": result_digest, "deliverable": deliverable},
+        )
+        if set(result) != {"deliverable"} or type(result["deliverable"]) is not bool:
+            raise InferenceDenied("invalid_completion_receipt")
+        return result["deliverable"]
+
+
+class HttpContextAuthority:
+    def __init__(self, data: DataTransport) -> None:
+        self.data = data
+
+    def resolve(self, request: dict[str, object]) -> BrokerRequest:
+        value = self.data.call("context", request)
+        if set(value) != {
+            "task_id",
+            "step_id",
+            "fence",
+            "revision",
+            "function",
+            "items",
+            "allowed_tools",
+            "deadline",
+            "bridge_generation",
+            "job_id",
+            "output_tokens",
+            "context_tokens",
+        }:
+            raise InferenceDenied("invalid_context_receipt")
+        return BrokerRequest(
+            str(value["task_id"]),
+            str(value["step_id"]),
+            str(value["fence"]),
+            str(value["revision"]),
+            str(value["function"]),
+            tuple(cast(list[dict[str, object]], value["items"])),
+            frozenset(cast(list[str], value["allowed_tools"])),
+            datetime.fromisoformat(str(value["deadline"])),
+            str(value["bridge_generation"]),
+            str(value["job_id"]),
+            cast(int, value["output_tokens"]),
+            cast(int, value["context_tokens"]),
+        )
+
+    def current(self, request: BrokerRequest) -> bool:
+        try:
+            result = self.data.call(
+                "current",
+                {
+                    "task_id": request.task_id,
+                    "step_id": request.step_id,
+                    "fence": request.fence,
+                    "revision": request.revision,
+                },
+            )
+            return result == {"current": True}
+        except InferenceDenied:
+            return False

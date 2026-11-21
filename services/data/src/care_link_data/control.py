@@ -130,7 +130,18 @@ class ManualService(Dispatches, Plans, Consent, Directory, ReviewService):
         planning = object_value(request["planning"]) if request.get("planning") else None
         arguments: Record | None = None
         if action.startswith(
-            ("plan_", "consent_", "directory_", "referral_", "dispatch_", "dispatcher_", "receipt_")
+            (
+                "plan_",
+                "consent_",
+                "directory_",
+                "referral_",
+                "dispatch_",
+                "dispatcher_",
+                "receipt_",
+                "task_",
+                "draft_",
+                "assistance_",
+            )
         ):
             if planning is None or planning["action"] != action:
                 raise ManualError("manual.planning_target_required", 422)
@@ -138,7 +149,11 @@ class ManualService(Dispatches, Plans, Consent, Directory, ReviewService):
                 **object_value(planning["arguments"]),
                 **object_value(planning["path_arguments"]),
             }
-            if action in {"referral_draft", "referral_sources"}:
+            if action.startswith(("task_", "draft_", "assistance_")):
+                from .assistance.metadata import metadata_scope
+
+                session_id = metadata_scope(self, current, action, arguments)
+            elif action in {"referral_draft", "referral_sources"}:
                 session_id = text(arguments, "session_id")
             elif action.startswith("referral_"):
                 session_id = self._referral_session(current, text(arguments, "referral_id"))

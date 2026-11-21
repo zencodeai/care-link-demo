@@ -1,0 +1,13 @@
+
+> care-link-development@0.1.0 test /Users/main/Workspace/projects/care-link/care-link-demo
+> vitest run
+
+
+ RUN  v5.1.0 /Users/main/Workspace/projects/care-link/care-link-demo
+
+
+ Test Files  17 passed (17)
+      Tests  180 passed (180)
+   Start at  13:33:51
+   Duration  8.41s (tests 60%, environment 26%, import 11%, transform 3%)
+

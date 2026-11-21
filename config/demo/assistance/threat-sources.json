@@ -1,0 +1,108 @@
+{
+  "verified_at": "2026-11-20",
+  "sources": [
+    {
+      "reference": "owasp2025",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "path": "2025/LLM01_PromptInjection.md",
+      "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-LLM-Top10/4298f1f0519380d93729b7241df67c1b9f64b663/2025/LLM01_PromptInjection.md",
+      "sha256": "0b6c84e994ed7e2813ae4d758259adcd6344c20f48b14a65fb1c59e61871a1b9",
+      "verified_identifiers": [
+        "LLM01:2025 Prompt Injection"
+      ]
+    },
+    {
+      "reference": "owasp2025",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "path": "2025/LLM02_SensitiveInformationDisclosure.md",
+      "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-LLM-Top10/4298f1f0519380d93729b7241df67c1b9f64b663/2025/LLM02_SensitiveInformationDisclosure.md",
+      "sha256": "bdfa1bcba7575ff7c1804c141cc7944c580cff5cae2e8d9a1bff2b39c40a60f6",
+      "verified_identifiers": [
+        "LLM02:2025 Sensitive Information Disclosure"
+      ]
+    },
+    {
+      "reference": "owasp2025",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "path": "2025/LLM03_SupplyChain.md",
+      "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-LLM-Top10/4298f1f0519380d93729b7241df67c1b9f64b663/2025/LLM03_SupplyChain.md",
+      "sha256": "c6290f02114ad9bbf8bd9651840c91fcb06cfaa6be1b5dfc3b14b9e13e76e697",
+      "verified_identifiers": [
+        "LLM03:2025 Supply Chain"
+      ]
+    },
+    {
+      "reference": "owasp2025",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "path": "2025/LLM05_ImproperOutputHandling.md",
+      "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-LLM-Top10/4298f1f0519380d93729b7241df67c1b9f64b663/2025/LLM05_ImproperOutputHandling.md",
+      "sha256": "fd0c4c63ede6584813884baaa571b3e22ea4111a7612e0507505ea7b43b2c519",
+      "verified_identifiers": [
+        "LLM05:2025 Improper Output Handling"
+      ]
+    },
+    {
+      "reference": "owasp2025",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "path": "2025/LLM06_ExcessiveAgency.md",
+      "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-LLM-Top10/4298f1f0519380d93729b7241df67c1b9f64b663/2025/LLM06_ExcessiveAgency.md",
+      "sha256": "e96b52b5f47b4d3443f0226498f6764d8701be9ed9984625bf63b6c43b7b96a5",
+      "verified_identifiers": [
+        "LLM06:2025 Excessive Agency"
+      ]
+    },
+    {
+      "reference": "owasp2025",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "path": "2025/LLM09_Misinformation.md",
+      "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-LLM-Top10/4298f1f0519380d93729b7241df67c1b9f64b663/2025/LLM09_Misinformation.md",
+      "sha256": "546fdec266aa18ed9d269af4a059ebf32408b9500a98f1cc1b072b2805339a87",
+      "verified_identifiers": [
+        "LLM09:2025 Misinformation"
+      ]
+    },
+    {
+      "reference": "owasp2025",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "path": "2025/LLM10_UnboundedConsumption.md",
+      "url": "https://raw.githubusercontent.com/GenAI-Security-Project/GenAI-LLM-Top10/4298f1f0519380d93729b7241df67c1b9f64b663/2025/LLM10_UnboundedConsumption.md",
+      "sha256": "25f5e3b9c5308c57294c7a1dbea0167065845b32487a811eb87012422a103361",
+      "verified_identifiers": [
+        "LLM10:2025 Unbounded Consumption"
+      ]
+    },
+    {
+      "reference": "atlas",
+      "revision": "f56c1468731d6428e5bf875263b4643b46d67437",
+      "path": "dist/v6/ATLAS-2026.10.yaml",
+      "url": "https://raw.githubusercontent.com/mitre-atlas/atlas-data/f56c1468731d6428e5bf875263b4643b46d67437/dist/v6/ATLAS-2026.10.yaml",
+      "sha256": "ac41ee9f99a47084ba5fdfc77ae83a28687e12390240fffeb37df7914ffe142d",
+      "verified_identifiers": [
+        "AML.T0051",
+        "AML.T0054"
+      ]
+    }
+  ],
+  "edition_delta": "OWASP2026 successor observed; REQ09 deliberate2025 baseline retained. No live policy edition changed.",
+  "interface_references": [
+    {
+      "url": "https://lmstudio.ai/docs/python/tokenization",
+      "verified_at": "2026-11-20",
+      "supports": [
+        "Chat.from_history",
+        "apply_prompt_template",
+        "tokenize",
+        "get_context_length"
+      ],
+      "runtime_evidence": "not_run; SDK/loaded handle unavailable"
+    },
+    {
+      "url": "https://lmstudio.ai/docs/developer/openai-compat/structured-output",
+      "verified_at": "2026-11-20",
+      "supports": [
+        "fixed chat completions schema interface"
+      ],
+      "runtime_evidence": "not_run; selected model unavailable"
+    }
+  ]
+}

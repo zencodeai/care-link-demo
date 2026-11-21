@@ -1,0 +1,115 @@
+{
+  "state": "passed",
+  "profile": "worker_summary",
+  "pinned_sources": [
+    {
+      "path": "2025/LLM01_PromptInjection.md",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "sha256": "0b6c84e994ed7e2813ae4d758259adcd6344c20f48b14a65fb1c59e61871a1b9",
+      "identifiers": [
+        "LLM01:2025 Prompt Injection"
+      ]
+    },
+    {
+      "path": "2025/LLM02_SensitiveInformationDisclosure.md",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "sha256": "bdfa1bcba7575ff7c1804c141cc7944c580cff5cae2e8d9a1bff2b39c40a60f6",
+      "identifiers": [
+        "LLM02:2025 Sensitive Information Disclosure"
+      ]
+    },
+    {
+      "path": "2025/LLM03_SupplyChain.md",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "sha256": "c6290f02114ad9bbf8bd9651840c91fcb06cfaa6be1b5dfc3b14b9e13e76e697",
+      "identifiers": [
+        "LLM03:2025 Supply Chain"
+      ]
+    },
+    {
+      "path": "2025/LLM05_ImproperOutputHandling.md",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "sha256": "fd0c4c63ede6584813884baaa571b3e22ea4111a7612e0507505ea7b43b2c519",
+      "identifiers": [
+        "LLM05:2025 Improper Output Handling"
+      ]
+    },
+    {
+      "path": "2025/LLM06_ExcessiveAgency.md",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "sha256": "e96b52b5f47b4d3443f0226498f6764d8701be9ed9984625bf63b6c43b7b96a5",
+      "identifiers": [
+        "LLM06:2025 Excessive Agency"
+      ]
+    },
+    {
+      "path": "2025/LLM09_Misinformation.md",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "sha256": "546fdec266aa18ed9d269af4a059ebf32408b9500a98f1cc1b072b2805339a87",
+      "identifiers": [
+        "LLM09:2025 Misinformation"
+      ]
+    },
+    {
+      "path": "2025/LLM10_UnboundedConsumption.md",
+      "revision": "4298f1f0519380d93729b7241df67c1b9f64b663",
+      "sha256": "25f5e3b9c5308c57294c7a1dbea0167065845b32487a811eb87012422a103361",
+      "identifiers": [
+        "LLM10:2025 Unbounded Consumption"
+      ]
+    },
+    {
+      "path": "dist/v6/ATLAS-2026.10.yaml",
+      "revision": "f56c1468731d6428e5bf875263b4643b46d67437",
+      "sha256": "ac41ee9f99a47084ba5fdfc77ae83a28687e12390240fffeb37df7914ffe142d",
+      "identifiers": [
+        "AML.T0051",
+        "AML.T0054"
+      ]
+    }
+  ],
+  "controls": [
+    "server-built attributed context",
+    "closed whole-proposal schema",
+    "exact current source-extractive output",
+    "no dynamic/native tools",
+    "current actor/resource/purpose checks",
+    "durable2slot uncertain occupancy",
+    "verified exact model/tokenizer/template/schema/prompt release"
+  ],
+  "evidence_by_identifier": {
+    "LLM01:2025": [
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json"
+    ],
+    "LLM02:2025": [
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/role-topology.json",
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/postgresql-adverse.json"
+    ],
+    "LLM03:2025": [
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/model-provenance.json",
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/image-smoke.json"
+    ],
+    "LLM05:2025": [
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/source-checks.json",
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/matched-actor-journey.json"
+    ],
+    "LLM06:2025": [
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/role-topology.json",
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/matched-actor-journey.json"
+    ],
+    "LLM09:2025": [
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json",
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/matched-actor-journey.json"
+    ],
+    "LLM10:2025": [
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/timeout-live.json",
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/postgresql-adverse.json"
+    ],
+    "AML.T0051": [
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json"
+    ],
+    "AML.T0054": [
+      "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json"
+    ]
+  }
+}

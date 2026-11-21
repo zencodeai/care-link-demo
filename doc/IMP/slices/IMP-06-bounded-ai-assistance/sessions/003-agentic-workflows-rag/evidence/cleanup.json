@@ -1,0 +1,9 @@
+{
+  "owned_browser_removed": true,
+  "owned_database_removed": true,
+  "temporary_database_credentials_removed": true,
+  "scope_label": "imp06-003-verification",
+  "existing_demos_untouched": true,
+  "model_loaded_or_unloaded_by_agent": false,
+  "images_retained_for_review": true
+}

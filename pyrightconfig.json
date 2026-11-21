@@ -26,7 +26,13 @@
     "tools/imp04_verification",
     "services/simulators/src",
     "tools/imp05_runtime",
-    "tools/imp05_verification"
+    "tools/imp05_verification",
+    "services/runtime/src",
+    "services/inference/src",
+    "host/inference-bridge/src",
+    "tools/imp06_verification",
+    "tools/imp06_runtime",
+    "packages/knowledge/src"
   ],
   "pythonVersion": "3.14",
   "venvPath": ".",

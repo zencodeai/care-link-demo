@@ -1,0 +1,162 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.89kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 1.21kB done
+#4 DONE 0.0s
+
+#5 [build  1/19] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#5 resolve docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 done
+#5 DONE 0.0s
+
+#6 [uv 1/1] FROM ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#6 resolve ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 19.60kB 0.0s done
+#7 DONE 0.0s
+
+#8 [build  2/19] COPY --from=uv /uv /usr/local/bin/uv
+#8 CACHED
+
+#9 [build  3/19] WORKDIR /app
+#9 CACHED
+
+#10 [build  4/19] COPY pyproject.toml uv.lock .python-version ./
+#10 CACHED
+
+#11 [build  5/19] COPY packages/contracts/python packages/contracts/python
+#11 CACHED
+
+#12 [build  6/19] COPY services/core services/core
+#12 DONE 0.0s
+
+#13 [build  7/19] COPY packages/domain packages/domain
+#13 DONE 0.0s
+
+#14 [build  8/19] COPY packages/policy-input/pyproject.toml packages/policy-input/pyproject.toml
+#14 DONE 0.0s
+
+#15 [build  9/19] COPY services/data/pyproject.toml services/data/pyproject.toml
+#15 DONE 0.0s
+
+#16 [build 10/19] COPY services/simulators/pyproject.toml services/simulators/pyproject.toml
+#16 DONE 0.0s
+
+#17 [build 11/19] COPY host/recovery-control/pyproject.toml host/recovery-control/pyproject.toml
+#17 DONE 0.0s
+
+#18 [build 12/19] COPY services/identity/pyproject.toml services/identity/pyproject.toml
+#18 DONE 0.0s
+
+#19 [build 13/19] COPY host/help/pyproject.toml host/help/pyproject.toml
+#19 DONE 0.0s
+
+#20 [build 14/19] COPY host/static/pyproject.toml host/static/pyproject.toml
+#20 DONE 0.0s
+
+#21 [build 15/19] COPY packages/workload-trust/pyproject.toml packages/workload-trust/pyproject.toml
+#21 DONE 0.0s
+
+#22 [build 16/19] COPY services/runtime/pyproject.toml services/runtime/pyproject.toml
+#22 DONE 0.0s
+
+#23 [build 17/19] COPY services/inference/pyproject.toml services/inference/pyproject.toml
+#23 DONE 0.0s
+
+#24 [build 18/19] COPY host/inference-bridge/pyproject.toml host/inference-bridge/pyproject.toml
+#24 DONE 0.0s
+
+#25 [build 19/19] RUN uv sync --locked --no-dev --no-editable --package care-link-core
+#25 0.219 Using CPython 3.14.7 interpreter at: /usr/local/bin/python3.14
+#25 0.219 Creating virtual environment at: .venv
+#25 0.224 Resolved 62 packages in 2ms
+#25 0.237    Building care-link-contracts @ file:///app/packages/contracts/python
+#25 0.238    Building care-link-domain @ file:///app/packages/domain
+#25 0.238    Building care-link-core @ file:///app/services/core
+#25 0.634 Downloading pydantic-core (2.0MiB)
+#25 0.636 Downloading cryptography (4.5MiB)
+#25 2.890       Built care-link-domain @ file:///app/packages/domain
+#25 2.893       Built care-link-contracts @ file:///app/packages/contracts/python
+#25 2.895       Built care-link-core @ file:///app/services/core
+#25 ...
+
+#10 [build  4/19] COPY pyproject.toml uv.lock .python-version ./
+#10 CACHED
+
+#25 [build 19/19] RUN uv sync --locked --no-dev --no-editable --package care-link-core
+#25 3.943  Downloaded pydantic-core
+#25 4.874  Downloaded cryptography
+#25 4.874 Prepared 39 packages in 4.64s
+#25 5.089 Installed 39 packages in 214ms
+#25 5.298 Bytecode compiled 718 files in 208ms
+#25 5.298  + annotated-doc==0.0.5
+#25 5.298  + annotated-types==0.8.0
+#25 5.298  + anyio==4.16.0
+#25 5.298  + arrow==1.4.0
+#25 5.298  + attrs==26.1.0
+#25 5.298  + care-link-contracts==0.1.0 (from file:///app/packages/contracts/python)
+#25 5.298  + care-link-core==0.1.0 (from file:///app/services/core)
+#25 5.298  + care-link-domain==0.1.0 (from file:///app/packages/domain)
+#25 5.298  + certifi==2026.10.23
+#25 5.298  + cffi==2.1.1
+#25 5.298  + click==8.5.1
+#25 5.298  + cryptography==50.0.2
+#25 5.298  + fastapi==0.162.2
+#25 5.298  + fqdn==1.6.0
+#25 5.298  + h11==0.16.0
+#25 5.298  + httpcore==1.0.9
+#25 5.298  + httpx==0.28.1
+#25 5.298  + idna==3.20
+#25 5.298  + isoduration==20.11.0
+#25 5.298  + jsonpointer==3.10
+#25 5.298  + jsonschema==4.25.1
+#25 5.298  + jsonschema-specifications==2025.9.1
+#25 5.298  + opentelemetry-api==1.45.2
+#25 5.298  + pycparser==3.12
+#25 5.298  + pydantic==2.14.3
+#25 5.298  + pydantic-core==2.50.4
+#25 5.299  + python-dateutil==4.0.0
+#25 5.299  + referencing==0.37.0
+#25 5.299  + rfc3339-validator==0.1.4
+#25 5.299  + rfc3987==1.3.8
+#25 5.299  + rpds-py==2026.9.1
+#25 5.299  + six==1.17.0
+#25 5.299  + starlette==1.10.0
+#25 5.299  + typing-extensions==4.16.0
+#25 5.299  + typing-inspection==0.4.5
+#25 5.299  + tzdata==2026.6
+#25 5.299  + uri-template==1.3.0
+#25 5.299  + uvicorn==0.38.0
+#25 5.299  + webcolors==25.10.0
+#25 DONE 5.3s
+
+#26 [runtime 2/3] WORKDIR /app
+#26 CACHED
+
+#27 [runtime 3/3] COPY --from=build /app/.venv /app/.venv
+#27 DONE 0.2s
+
+#28 exporting to image
+#28 exporting layers
+#28 exporting layers 0.8s done
+#28 exporting manifest sha256:acc206865c678c8c461d4187205b99f44e12e4dff8f1dca4499bc677186489c5 done
+#28 exporting config sha256:65271ef67968b9b91aabf606866a61700ccc0cf7c8d46b8dc4db0797e9997268 done
+#28 exporting attestation manifest sha256:3455a084a12332d8b7ec4f54bdc6349e49dfb984956073f3e7b9fecabde11d77 done
+#28 exporting manifest list sha256:6e69e7da6a8d56a633fc790d1489a49b0849c649a1c6aa5fb49ab08644339654 done
+#28 naming to docker.io/library/care-link-core:imp06-source done
+#28 unpacking to docker.io/library/care-link-core:imp06-source
+#28 unpacking to docker.io/library/care-link-core:imp06-source 0.3s done
+#28 DONE 1.1s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/t61on0hozlkendzbutv2kdk0q

@@ -22207,7 +22207,7 @@
       "schema": "ModelPin",
       "valid": true,
       "value": {
-        "model_identifier": "google/gemma-4-12b-qat",
+        "model_identifier": "qwen/qwen3.8-27b",
         "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         "origin": "https://example.invalid/approved",
         "quantization": "x",
@@ -22227,7 +22227,7 @@
       "schema": "ModelPin",
       "valid": false,
       "value": {
-        "model_identifier": "google/gemma-4-12b-qat",
+        "model_identifier": "qwen/qwen3.8-27b",
         "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         "origin": "https://example.invalid/approved",
         "quantization": "x",
@@ -22298,7 +22298,7 @@
           }
         ],
         "model": {
-          "model_identifier": "google/gemma-4-12b-qat",
+          "model_identifier": "qwen/qwen3.8-27b",
           "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
           "origin": "https://example.invalid/approved",
           "quantization": "x",
@@ -22364,7 +22364,7 @@
           }
         ],
         "model": {
-          "model_identifier": "google/gemma-4-12b-qat",
+          "model_identifier": "qwen/qwen3.8-27b",
           "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
           "origin": "https://example.invalid/approved",
           "quantization": "x",
@@ -23550,7 +23550,7 @@
       "schema": "ModelPin",
       "valid": true,
       "value": {
-        "model_identifier": "google/gemma-4-12b-qat",
+        "model_identifier": "qwen/qwen3.8-27b",
         "artifact_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         "origin": "https://example.invalid/approved",
         "quantization": "x",

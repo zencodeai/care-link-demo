@@ -1,0 +1,124 @@
+{
+  "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification",
+  "baseline_commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "recorded_at": "2026-11-20T23:03:11.100509+00:00",
+  "scope": "Local synthetic preadmission evidence",
+  "gate": "G-06",
+  "gate_state": "blocked",
+  "attached_signature": null,
+  "serving_approval": null,
+  "function_admitted": false,
+  "source": [
+    {
+      "path": "deploy/images/imp06/Dockerfile.dockerignore",
+      "sha256": "db8ec4e3d90a15f0f5be41a5da403af76d3f707205ce5cace88bbd29459c8157"
+    },
+    {
+      "path": "host/inference-bridge/pyproject.toml",
+      "sha256": "653f9f59098a81394838da858b24bd4e5205275c712343dd34d9b8f33dc1cda6"
+    },
+    {
+      "path": "host/inference-bridge/src/care_link_inference_bridge/bridge.py",
+      "sha256": "3b36e397bf4b67b112f6bbd3cdd235449b28186aefaf682e05b0edc2a8640881"
+    },
+    {
+      "path": "host/inference-bridge/src/care_link_inference_bridge/credentials.py",
+      "sha256": "7b27e1585b9d2cb2c2142f4f3e78fd5b4e5fd1bbaae93b1b1f3642a4b34ff371"
+    },
+    {
+      "path": "host/inference-bridge/src/care_link_inference_bridge/loaded.py",
+      "sha256": "7f34b632962f36feed2efafbef3fad0adaaae285b7e3c9d342e139378529d70d"
+    },
+    {
+      "path": "host/inference-bridge/tests/test_bridge.py",
+      "sha256": "cbd40ed104b76ac99b1be5842fd1dfa317240e34d003881a37072f2c6f98be91"
+    },
+    {
+      "path": "host/inference-bridge/tests/test_credentials.py",
+      "sha256": "17fc56707a01410a5d559d03f94e23cd64022bca68c6150e6019b642f0c91c27"
+    },
+    {
+      "path": "host/inference-bridge/tests/test_loaded.py",
+      "sha256": "38cbe1d531aea9afc9c2a271144fee8166754c129cd5d1e872e41d6435a33185"
+    },
+    {
+      "path": "services/inference/src/care_link_inference/gateway.py",
+      "sha256": "faef46d088561882f2eea53b20b53cd9828c2f681ba15f042c5dc8c6946d52e7"
+    },
+    {
+      "path": "services/inference/tests/test_inference.py",
+      "sha256": "c69473c95a5a1cf1870ed890ac7fa456503f21c49d8819fe30799f97c2c0682e"
+    },
+    {
+      "path": "services/runtime/src/care_link_runtime/client.py",
+      "sha256": "72a2494e7a54d8c2109fd4fdd6a2143c181b531cdd836e23cce6679ca929a684"
+    },
+    {
+      "path": "tests/evaluation/qwen_local.py",
+      "sha256": "ff01b36922f8b2c0f8f4325db6245e5e1db3f517a9cf66838710043846880a7d"
+    },
+    {
+      "path": "tests/unit/test_imp06_composition.py",
+      "sha256": "d6e1d5b1ee6df6cdcf35c39a618576b44fbe2552337afe35e81682e882eb93e0"
+    },
+    {
+      "path": "tools/imp06_runtime/README.md",
+      "sha256": "145a864b2b5c3bc13d0bb90e802010e44c575dc30e3ade401020d5aa749fdbec"
+    },
+    {
+      "path": "tools/imp06_runtime/bridge.py",
+      "sha256": "ba444f5a2894dcd59fd2ada36a6afc2661c2759c6afb71c2d3bd7565db868f51"
+    },
+    {
+      "path": "tools/imp06_runtime/core.py",
+      "sha256": "623f05e39b36531a9ba4ef193b0177e7ef651f134d9721723547c3a0981566a4"
+    },
+    {
+      "path": "tools/imp06_runtime/inference.py",
+      "sha256": "7c3ffedfb73c6889ff44ad98d35648af891531e707a732413620e298e6b8b18c"
+    },
+    {
+      "path": "tools/imp06_runtime/runtime.py",
+      "sha256": "6753753700da6a17ae9c052a79194cb1ba442bfb02e376570bcc29d5f3a205e0"
+    },
+    {
+      "path": "tools/imp06_verification/runtime_isolation.py",
+      "sha256": "fe7d178645964d9a0903df68651b6807213625376deb18ea245ede8f3f5b0105"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "ca93b38cd301c24c503b5fabad7e5cf849fffd23a819c529b425c4016b863b4e"
+    },
+    {
+      "path": "deploy/images/imp06/Dockerfile",
+      "sha256": "0d5ca311c885dcda992968fe6411e58b8ee0a360ccbf2afe99f39ce5d380b040"
+    },
+    {
+      "path": "config/demo/assistance/model-manifest.json",
+      "sha256": "46012a23bca1c75320299e1439f90fc746d770781a4760db277f043fa73ee8d6"
+    },
+    {
+      "path": "config/demo/knowledge/catalog.json",
+      "sha256": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+    }
+  ],
+  "observations": [
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/authenticated-qwen.json",
+      "sha256": "5ebd5f33def54316b8776f336a04d6be442af2cd64a9d9552e380e7333f4921a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/image-smoke.json",
+      "sha256": "4a36af70baf143761c7ec63fb3d46778ed5004c285a07121ee810d31cf4ce2ae"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/runtime-isolation.json",
+      "sha256": "cade832a6b08312e56935022bd7824ef08de9a45aad4dafacd0befbdce4d3cf2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/evidence/server-authentication.json",
+      "sha256": "0ab255c4e388edad0049cf09987562d61ecd184c6b20ef98dd06bcfb896a316c"
+    }
+  ],
+  "candidate_image": "sha256:24c05a0e0d93c8f12f92495d2fe0c733a0efe875d795ae8be52e54f3b41ba291"
+}

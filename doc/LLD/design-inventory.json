@@ -14,7 +14,7 @@
     },
     {
       "path": "doc/REQ/03-architecture-and-interfaces.md",
-      "sha256": "a92bb34695af0693dd93aa3410fe3cdfb8084fc3e2281700e7792eb4350aa8e6"
+      "sha256": "5197c31c39471fcdf2627d2dbeba6515efeb5e6961755a1efd90348b895106b9"
     },
     {
       "path": "doc/REQ/04-data-security-governance.md",
@@ -42,15 +42,15 @@
     },
     {
       "path": "doc/REQ/10-agentic-ai-and-service-model.md",
-      "sha256": "b28618d461f0cc2de120a14acc5a08cbc841c4ddbb67b9fe64d3db8afb1fd1ec"
+      "sha256": "6cf6bd2ed9cce022e8d6a03726a03b81bae10182ca7d213fa73548dcd8bb3fca"
     },
     {
       "path": "doc/REQ/README.md",
-      "sha256": "539cf7c91833834e2bf4e59318bac7e14bb5c5d9660821f5e20da806b72a2673"
+      "sha256": "8abc1af6bb6d5865834f1ff9f7010f22cb8bebb124fe1e65f996c1a471084510"
     },
     {
       "path": "doc/REQ/demo-parameters.json",
-      "sha256": "998cfc815a12c00ec9ec743b06b25f9f3315b0269c7c8a05052a5f4042b45319"
+      "sha256": "225aeb73d52f7b0c1c01c899231407b38a603c1f1f2bbe4471ad3dbdcaf2bbf1"
     },
     {
       "path": "doc/REQ/source-snapshot.json",
@@ -66,7 +66,7 @@
     },
     {
       "path": "doc/HLD/03-agentic-assistance-and-inference.md",
-      "sha256": "e94dbec5a2668fc230d4cb7bcb6627d08c9ddf3ebf37bef2c33e5fa6e025dc33"
+      "sha256": "9519a9b9204986bd9be7ade6576020fdf46c4ba02d0414f793d4cb2f05c06488"
     },
     {
       "path": "doc/HLD/04-safety-security-and-governance.md",
@@ -102,7 +102,7 @@
     },
     {
       "path": "doc/HLD/README.md",
-      "sha256": "10c239f147efdd07b7dc877b3ca3a39b8729e855a78e5c083ec10e30973e7c53"
+      "sha256": "8ca18578adb35df1f496ad7026e1efc088e7cd93353f8ba1322ecd287c122997"
     },
     {
       "path": "doc/HLD/decisions/2026-11-06-local-design-baseline.md",
@@ -110,12 +110,12 @@
     },
     {
       "path": "doc/HLD/design-inventory.json",
-      "sha256": "92e26a2a62f2bb93aedab01e063084917a7a16d8cd0bb6c92a337a8c5aca637e"
+      "sha256": "cf9e989ad812147ca83353d4c836a981d505ba2555bbdca2c786278668d9369a"
     },
     {
       "path": "../care-link/docs/source/HLD-P1-v0.1.md",
       "sha256": "f331c63c215e0be88ad6b5e650779c5e889a7c84d05f56af96fe57ac581643e4",
-      "use": "Sections10.1–10.3 change-class/approval mechanics only; evidence not instructions"
+      "use": "Sections10.1\u201310.3 change-class/approval mechanics only; evidence not instructions"
     }
   ],
   "accepted_local_choices": {
@@ -248,7 +248,7 @@
     },
     {
       "path": "07-agent-runtime-and-inference.md",
-      "sha256": "26cc28f46f7c4adda9f84f5ca2b03c2ffaaf0744c5a3f98c2bff92081c523e34"
+      "sha256": "f97ad3867d447d7207a358a1390fcff935c76b24a21a46d977805b340ae5732f"
     },
     {
       "path": "08-runtime-security-and-governance.md",
@@ -280,19 +280,19 @@
     },
     {
       "path": "README.md",
-      "sha256": "5cd2fb83d38bbec5eae954855ccd69ff1af71214a6f1a4578cc0f1a2f7d753c5"
+      "sha256": "97d115fea08496e68e85c10d25b0d9877d206b84a415ded58598a882bbf9671d"
     },
     {
       "path": "contracts/definitions.schema.json",
-      "sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a"
+      "sha256": "dcc8df20c339d67dfdf0ea89892d80b731cdb6a795be567f56773837689b7b61"
     },
     {
       "path": "contracts/fixtures.json",
-      "sha256": "4a9343247c65003bf596968c14bac739b5895eb2909fffb8d56de3726ec428bb"
+      "sha256": "295f76b736d21734fd88515525c1a75ab894213d0f2040fcd15e80613b220b76"
     },
     {
       "path": "contracts/openapi.json",
-      "sha256": "968955c48e862989b344b0047246668157888de033276b1f7406946ffc6fdaa3"
+      "sha256": "6d8cb1c07826d9a6b135f654789e938874f108496d81c882abb6ac48ad0e6570"
     },
     {
       "path": "contracts/operations.json",
@@ -312,7 +312,7 @@
     },
     {
       "path": "implementation-defaults.json",
-      "sha256": "24acd839326067219d65ff79cd90badb349d336ec9284e06b30279623acdf856"
+      "sha256": "a025ae9c4986350bba2eff6f3ffe2586dc7e43464c569ec134f68e7b4f9ee84c"
     },
     {
       "path": "storage-model.json",
@@ -329,6 +329,14 @@
     {
       "path": "validation-requirements.txt",
       "sha256": "ccc16568b004301780fda5a9a63f6f07eca45521fee26505e443636244bb48ca"
+    },
+    {
+      "path": "18-agentic-knowledge-workflows.md",
+      "sha256": "90155e126edd4fe2c58fe8c5e25dca7aa46dddd6449825eaf5fa9c3017af5dd6"
+    },
+    {
+      "path": "contracts/agentic.openapi.json",
+      "sha256": "ee57e1acfb9f3c206ab374aaabe40fee86355b576383025b16895ea22c83091f"
     }
   ],
   "local_design_acceptance": {
@@ -433,6 +441,317 @@
       "new_sha256": "92e26a2a62f2bb93aedab01e063084917a7a16d8cd0bb6c92a337a8c5aca637e",
       "acceptance_record": "doc/LLD/decisions/2026-11-06-implementation-choices-and-model.md",
       "reason": "explicit user-approved local LLD/workstation/model baseline reconciliation"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/03-architecture-and-interfaces.md",
+      "previous_sha256": "a92bb34695af0693dd93aa3410fe3cdfb8084fc3e2281700e7792eb4350aa8e6",
+      "new_sha256": "ad8e271a6d5048d948437487f5d25a9d18368ec364195b816c62cc57e1b5fc98",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/README.md",
+      "previous_sha256": "539cf7c91833834e2bf4e59318bac7e14bb5c5d9660821f5e20da806b72a2673",
+      "new_sha256": "9803f020d015b089ce86d9b2752f9d64b024b41a848eb5f244adefabb4f1ed18",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/03-agentic-assistance-and-inference.md",
+      "previous_sha256": "e94dbec5a2668fc230d4cb7bcb6627d08c9ddf3ebf37bef2c33e5fa6e025dc33",
+      "new_sha256": "590c5181fe3aae776c422c37360b42bd05be582ce9bd4208f23a57e9038a0545",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/README.md",
+      "previous_sha256": "10c239f147efdd07b7dc877b3ca3a39b8729e855a78e5c083ec10e30973e7c53",
+      "new_sha256": "49f1d9c626e4fa92c8f9e08436d3b852132d4f376ae0b53f32bf96a25f1b2238",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/design-inventory.json",
+      "previous_sha256": "92e26a2a62f2bb93aedab01e063084917a7a16d8cd0bb6c92a337a8c5aca637e",
+      "new_sha256": "7f49641e8ddd5300d6c0d7696806df4bdc94d50bb4b33127821e03eb109cd18e",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/03-architecture-and-interfaces.md",
+      "previous_sha256": "ad8e271a6d5048d948437487f5d25a9d18368ec364195b816c62cc57e1b5fc98",
+      "new_sha256": "5197c31c39471fcdf2627d2dbeba6515efeb5e6961755a1efd90348b895106b9",
+      "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+      "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/10-agentic-ai-and-service-model.md",
+      "previous_sha256": "b28618d461f0cc2de120a14acc5a08cbc841c4ddbb67b9fe64d3db8afb1fd1ec",
+      "new_sha256": "6cf6bd2ed9cce022e8d6a03726a03b81bae10182ca7d213fa73548dcd8bb3fca",
+      "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+      "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/README.md",
+      "previous_sha256": "9803f020d015b089ce86d9b2752f9d64b024b41a848eb5f244adefabb4f1ed18",
+      "new_sha256": "8abc1af6bb6d5865834f1ff9f7010f22cb8bebb124fe1e65f996c1a471084510",
+      "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+      "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/demo-parameters.json",
+      "previous_sha256": "998cfc815a12c00ec9ec743b06b25f9f3315b0269c7c8a05052a5f4042b45319",
+      "new_sha256": "225aeb73d52f7b0c1c01c899231407b38a603c1f1f2bbe4471ad3dbdcaf2bbf1",
+      "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+      "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/03-agentic-assistance-and-inference.md",
+      "previous_sha256": "590c5181fe3aae776c422c37360b42bd05be582ce9bd4208f23a57e9038a0545",
+      "new_sha256": "9519a9b9204986bd9be7ade6576020fdf46c4ba02d0414f793d4cb2f05c06488",
+      "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+      "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/README.md",
+      "previous_sha256": "49f1d9c626e4fa92c8f9e08436d3b852132d4f376ae0b53f32bf96a25f1b2238",
+      "new_sha256": "8ca18578adb35df1f496ad7026e1efc088e7cd93353f8ba1322ecd287c122997",
+      "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+      "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/design-inventory.json",
+      "previous_sha256": "a565be6ca6071c5dd7b5fa28bb977a76b12fc0c5dcd0c7a3487b58040bb931d6",
+      "new_sha256": "d8c31a315f18d555ab8c0d4845ce484706c9e1aa8bba468756d2e72aa784df28",
+      "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+      "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
     }
-  ]
+  ],
+  "documentation_updates": [
+    {
+      "date": "2026-11-20",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "scope": "Narrow model-direction overlay only; no new HLD/LLD authoring baseline or machine-contract migration",
+      "revised_bindings": [
+        {
+          "date": "2026-11-20",
+          "path": "doc/REQ/03-architecture-and-interfaces.md",
+          "previous_sha256": "a92bb34695af0693dd93aa3410fe3cdfb8084fc3e2281700e7792eb4350aa8e6",
+          "new_sha256": "ad8e271a6d5048d948437487f5d25a9d18368ec364195b816c62cc57e1b5fc98",
+          "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+          "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/REQ/README.md",
+          "previous_sha256": "539cf7c91833834e2bf4e59318bac7e14bb5c5d9660821f5e20da806b72a2673",
+          "new_sha256": "9803f020d015b089ce86d9b2752f9d64b024b41a848eb5f244adefabb4f1ed18",
+          "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+          "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/HLD/03-agentic-assistance-and-inference.md",
+          "previous_sha256": "e94dbec5a2668fc230d4cb7bcb6627d08c9ddf3ebf37bef2c33e5fa6e025dc33",
+          "new_sha256": "590c5181fe3aae776c422c37360b42bd05be582ce9bd4208f23a57e9038a0545",
+          "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+          "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/HLD/README.md",
+          "previous_sha256": "10c239f147efdd07b7dc877b3ca3a39b8729e855a78e5c083ec10e30973e7c53",
+          "new_sha256": "49f1d9c626e4fa92c8f9e08436d3b852132d4f376ae0b53f32bf96a25f1b2238",
+          "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+          "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/HLD/design-inventory.json",
+          "previous_sha256": "92e26a2a62f2bb93aedab01e063084917a7a16d8cd0bb6c92a337a8c5aca637e",
+          "new_sha256": "7f49641e8ddd5300d6c0d7696806df4bdc94d50bb4b33127821e03eb109cd18e",
+          "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+          "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+        },
+        {
+          "path": "doc/LLD/07-agent-runtime-and-inference.md",
+          "previous_sha256": "26cc28f46f7c4adda9f84f5ca2b03c2ffaaf0744c5a3f98c2bff92081c523e34",
+          "new_sha256": "a92bcaa85a75fdd8f0bec5fc522f441db53733166b116eb838c2a5f5f9093c57"
+        },
+        {
+          "path": "doc/LLD/README.md",
+          "previous_sha256": "5cd2fb83d38bbec5eae954855ccd69ff1af71214a6f1a4578cc0f1a2f7d753c5",
+          "new_sha256": "b01f7acce366c6811acb3d813aae54575882cf2fea2afd124fc4ea5c7f082def"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "scope": "User-enabled LM Studio: verified loaded ID and synthetic connectivity; no application migration/admission",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "previous_record_sha256": "a8ba1409bf0306ceb05bc29bda45013e75f6477788912fca23c177e8ef44d320",
+      "record_sha256": "8d8a2ba2efc415c1fe79fa37922053855e07d0f638fef53e24e7b45286f644b6",
+      "revised_bindings": [
+        {
+          "path": "doc/HLD/design-inventory.json",
+          "previous_sha256": "7f49641e8ddd5300d6c0d7696806df4bdc94d50bb4b33127821e03eb109cd18e",
+          "new_sha256": "a565be6ca6071c5dd7b5fa28bb977a76b12fc0c5dcd0c7a3487b58040bb931d6"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+      "scope": "Agentic workflow/RAG design and coordinated Qwen model contract migration; no deployment/admission",
+      "revised_bindings": [
+        {
+          "date": "2026-11-20",
+          "path": "doc/REQ/03-architecture-and-interfaces.md",
+          "previous_sha256": "ad8e271a6d5048d948437487f5d25a9d18368ec364195b816c62cc57e1b5fc98",
+          "new_sha256": "5197c31c39471fcdf2627d2dbeba6515efeb5e6961755a1efd90348b895106b9",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/REQ/10-agentic-ai-and-service-model.md",
+          "previous_sha256": "b28618d461f0cc2de120a14acc5a08cbc841c4ddbb67b9fe64d3db8afb1fd1ec",
+          "new_sha256": "6cf6bd2ed9cce022e8d6a03726a03b81bae10182ca7d213fa73548dcd8bb3fca",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/REQ/README.md",
+          "previous_sha256": "9803f020d015b089ce86d9b2752f9d64b024b41a848eb5f244adefabb4f1ed18",
+          "new_sha256": "8abc1af6bb6d5865834f1ff9f7010f22cb8bebb124fe1e65f996c1a471084510",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/REQ/demo-parameters.json",
+          "previous_sha256": "998cfc815a12c00ec9ec743b06b25f9f3315b0269c7c8a05052a5f4042b45319",
+          "new_sha256": "225aeb73d52f7b0c1c01c899231407b38a603c1f1f2bbe4471ad3dbdcaf2bbf1",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/HLD/03-agentic-assistance-and-inference.md",
+          "previous_sha256": "590c5181fe3aae776c422c37360b42bd05be582ce9bd4208f23a57e9038a0545",
+          "new_sha256": "9519a9b9204986bd9be7ade6576020fdf46c4ba02d0414f793d4cb2f05c06488",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/HLD/README.md",
+          "previous_sha256": "49f1d9c626e4fa92c8f9e08436d3b852132d4f376ae0b53f32bf96a25f1b2238",
+          "new_sha256": "8ca18578adb35df1f496ad7026e1efc088e7cd93353f8ba1322ecd287c122997",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/HLD/design-inventory.json",
+          "previous_sha256": "a565be6ca6071c5dd7b5fa28bb977a76b12fc0c5dcd0c7a3487b58040bb931d6",
+          "new_sha256": "d8c31a315f18d555ab8c0d4845ce484706c9e1aa8bba468756d2e72aa784df28",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/LLD/07-agent-runtime-and-inference.md",
+          "previous_sha256": "a92bcaa85a75fdd8f0bec5fc522f441db53733166b116eb838c2a5f5f9093c57",
+          "new_sha256": "f97ad3867d447d7207a358a1390fcff935c76b24a21a46d977805b340ae5732f",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/LLD/README.md",
+          "previous_sha256": "b01f7acce366c6811acb3d813aae54575882cf2fea2afd124fc4ea5c7f082def",
+          "new_sha256": "97d115fea08496e68e85c10d25b0d9877d206b84a415ded58598a882bbf9671d",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/LLD/contracts/definitions.schema.json",
+          "previous_sha256": "6da165050332d4854788fda692256966dcff3869151d7f688e19b7eef2520f4a",
+          "new_sha256": "dcc8df20c339d67dfdf0ea89892d80b731cdb6a795be567f56773837689b7b61",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/LLD/contracts/fixtures.json",
+          "previous_sha256": "4a9343247c65003bf596968c14bac739b5895eb2909fffb8d56de3726ec428bb",
+          "new_sha256": "295f76b736d21734fd88515525c1a75ab894213d0f2040fcd15e80613b220b76",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/LLD/contracts/openapi.json",
+          "previous_sha256": "968955c48e862989b344b0047246668157888de033276b1f7406946ffc6fdaa3",
+          "new_sha256": "6d8cb1c07826d9a6b135f654789e938874f108496d81c882abb6ac48ad0e6570",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        },
+        {
+          "date": "2026-11-20",
+          "path": "doc/LLD/implementation-defaults.json",
+          "previous_sha256": "24acd839326067219d65ff79cd90badb349d336ec9284e06b30279623acdf856",
+          "new_sha256": "a025ae9c4986350bba2eff6f3ffe2586dc7e43464c569ec134f68e7b4f9ee84c",
+          "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+          "reason": "Explicit authorized workflow/RAG implementation and coordinated Qwen migration"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "decision_record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+      "scope": "Final reviewed evidence-selection/nonthinking/source-freshness design amendment; historical receipts preserved",
+      "revised_bindings": [
+        {
+          "path": "doc/HLD/design-inventory.json",
+          "previous_sha256": "d8c31a315f18d555ab8c0d4845ce484706c9e1aa8bba468756d2e72aa784df28",
+          "new_sha256": "cf9e989ad812147ca83353d4c836a981d505ba2555bbdca2c786278668d9369a"
+        },
+        {
+          "path": "doc/LLD/18-agentic-knowledge-workflows.md",
+          "previous_sha256": "241e1a308331b0619f4663aa0ba6eb9a921b740087bd2c96d4aa7c5055c278c2",
+          "new_sha256": "90155e126edd4fe2c58fe8c5e25dca7aa46dddd6449825eaf5fa9c3017af5dd6"
+        }
+      ]
+    }
+  ],
+  "current_model_direction": {
+    "date": "2026-11-20",
+    "record": "doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md",
+    "record_sha256": "b1e57af4d8ceda455f2e0a437faf14a555146415d4b60b24c4b6a4f64b694026",
+    "authority": "User explicitly requested architecture/design/framework resources/documentation/implementation",
+    "user_selected_model": "qwen3.8-27b",
+    "artifact_candidate": "lmstudio-community/Qwen3.8-27B-MLX-4bit",
+    "loaded_model_id": "qwen/qwen3.8-27b",
+    "framework_recommendation": "LangGraph1.2.24 adopted for bounded runtime; hostSDK1.5.0 installed",
+    "machine_contracts_and_source": "Current Qwen pins migrated; historical Gemma evidence retained",
+    "runtime_admission": "disabled pending actual qualification",
+    "connectivity": "direct host discovery and synthetic inference passed; application integration pending",
+    "loaded_artifact_binding": "not yet verified by full weight/tokenizer/template digests"
+  }
 }

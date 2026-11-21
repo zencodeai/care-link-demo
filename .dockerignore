@@ -34,3 +34,13 @@
 !services/data/pyproject.toml
 !host/recovery-control/
 !host/recovery-control/pyproject.toml
+
+# Workspace manifests for IMP-05/06; their source is excluded from Core.
+!services/simulators/
+!services/simulators/pyproject.toml
+!services/runtime/
+!services/runtime/pyproject.toml
+!services/inference/
+!services/inference/pyproject.toml
+!host/inference-bridge/
+!host/inference-bridge/pyproject.toml

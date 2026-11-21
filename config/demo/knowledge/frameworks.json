@@ -1,0 +1,48 @@
+{
+  "frameworks": [
+    {
+      "package": "langgraph",
+      "version": "1.2.24",
+      "license": "MIT",
+      "registry": "https://pypi.org/project/langgraph/1.2.24/",
+      "installed_in": "project .venv",
+      "authority": "User requested framework/resource acquisition and implementation"
+    },
+    {
+      "package": "lmstudio",
+      "version": "1.5.0",
+      "license": "MIT",
+      "registry": "https://pypi.org/project/lmstudio/1.5.0/",
+      "installed_in": "project .venv",
+      "authority": "User requested framework/resource acquisition and implementation"
+    },
+    {
+      "package": "langchain-core",
+      "version": "1.8.4",
+      "license": "MIT",
+      "registry": "https://pypi.org/project/langchain-core/1.8.4/",
+      "installed_in": "project .venv",
+      "authority": "User requested framework/resource acquisition and implementation"
+    },
+    {
+      "package": "langgraph-checkpoint",
+      "version": "4.3.2",
+      "license": "MIT",
+      "registry": "https://pypi.org/project/langgraph-checkpoint/4.3.2/",
+      "installed_in": "project .venv",
+      "authority": "User requested framework/resource acquisition and implementation"
+    },
+    {
+      "package": "langsmith",
+      "version": "0.15.1",
+      "license": "MIT",
+      "registry": "https://pypi.org/project/langsmith/0.15.1/",
+      "installed_in": "project .venv",
+      "authority": "User requested framework/resource acquisition and implementation"
+    }
+  ],
+  "lockfile": "uv.lock",
+  "lock_sha256": "3aa80573f9e75771af40d6ee2b1c5ffe23a4462dd0a2137ebd68a2b81f189018",
+  "runtime_cloud_tracing": "disabled; tracing configuration denied by bounded runner",
+  "model_lifecycle": "no load/unload/download authorized or performed"
+}

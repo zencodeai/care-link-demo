@@ -1,0 +1,124 @@
+{
+  "packet_id": "IMP06-003-inference",
+  "task_id": "IMP-06-B",
+  "stage_id": "IMP-06",
+  "mode": "implementation",
+  "role": "imp_platform",
+  "goal": "Implement scoped agentic workflow, Qwen local integration and role-scoped knowledge assistance: inference",
+  "baseline_commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "761c27e14d931c6e2ad9f7bc23630d43c18478e49deb3b89190b48017f4dafe6"
+    },
+    {
+      "path": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "sha256": "8d8a2ba2efc415c1fe79fa37922053855e07d0f638fef53e24e7b45286f644b6"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/REQ",
+    "doc/HLD",
+    "doc/LLD",
+    "doc/IMP"
+  ],
+  "write_paths": [
+    "services/runtime/**",
+    "services/inference/**",
+    "host/inference-bridge/**",
+    "tools/imp06_runtime/bridge.py",
+    "tools/imp06_runtime/inference.py",
+    "tools/imp06_runtime/runtime.py",
+    "tests/evaluation/**",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/003-agentic-workflows-rag/evidence/model/**"
+  ],
+  "dependencies": [
+    "IMP-05:G-05:automated_qualified"
+  ],
+  "operation_ids": [
+    "task_create",
+    "task_read",
+    "task_cancel",
+    "task_revise",
+    "draft_read",
+    "draft_review",
+    "step_lease",
+    "step_renew",
+    "proposal_submit",
+    "tool_invoke",
+    "inference_request",
+    "inference_execute",
+    "data_task_create",
+    "data_task_read",
+    "data_task_cancel",
+    "data_task_revise",
+    "data_draft_read",
+    "data_draft_review"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "live deployment",
+    "host trust changes",
+    "real contact",
+    "police integration",
+    "commit",
+    "push",
+    "merge",
+    "model load/unload/settings changes"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Actions: Architecture; Design; Gather required frameworks and ressources; Update documentation; Implement",
+    "scope": "Scoped IMP06 follow-through, project-local dependencies, synthetic source/real-loaded-model checks; no deployment/publication"
+  },
+  "resource_leases": [
+    {
+      "id": "IMP06-003-inference-files",
+      "kind": "file_set",
+      "scope": "inference exclusive source paths listed in write_paths",
+      "owner_task_id": "IMP-06-B",
+      "expires_at": "2026-11-22T00:00:00Z"
+    }
+  ],
+  "expected_outputs": [
+    "Scoped modules/tests",
+    "Actual checks and findings",
+    "Handoff"
+  ],
+  "positive_acceptance": [
+    "Source-linked unsent human-reviewed assistance",
+    "Atomic durable shared counters and leases",
+    "Exact local model and verified admission",
+    "Timeout retains compute slot",
+    "Manual service independent"
+  ],
+  "adverse_acceptance": [
+    "Stale sources/epochs/payload rejected",
+    "No dynamic tools or autonomous effect",
+    "No budget reset on restart/reclaim"
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "authority change",
+    "shared ownership conflict",
+    "destructive or live action needed"
+  ],
+  "is_example": false
+}

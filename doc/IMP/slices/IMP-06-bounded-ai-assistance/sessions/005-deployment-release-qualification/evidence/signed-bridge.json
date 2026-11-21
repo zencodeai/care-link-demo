@@ -1,0 +1,20 @@
+{
+  "state": "passed",
+  "recorded_at": "2026-11-20T23:35:03.563384+00:00",
+  "bundle_digest": "751fc8def13e11a1ef446a87c075f1c149b91499ac35de9043c393835ae6fb86",
+  "candidate_image_id": "sha256:120e9e8480919fc5016a9b13ee5640ce794758f46d38d77d001eaf55ebf98246",
+  "activated_epoch": 1,
+  "restricted_epoch": 2,
+  "signed_fixture_acknowledgments": [
+    "core",
+    "data",
+    "host-inference-bridge",
+    "inference",
+    "runtime"
+  ],
+  "untrusted_asgi_request": 403,
+  "gateway_completed_exact_synthetic_excerpt": true,
+  "gateway_discarded_in_flight_proposal_after_epoch_change": true,
+  "new_work_after_disable": "denied",
+  "authorization_scope": "Ephemeral qualification ledger and evaluator keys, ASGI relay, and real authenticated LM Studio. Serving authorization is separate."
+}

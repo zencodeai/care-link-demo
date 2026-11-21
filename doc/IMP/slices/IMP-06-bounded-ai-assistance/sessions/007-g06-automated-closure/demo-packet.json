@@ -1,0 +1,222 @@
+{
+  "packet_id": "IMP06-007-automated-qualification",
+  "stage_id": "IMP-06",
+  "gate_id": "G-06",
+  "candidate": {
+    "commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+    "diff_digest": "80a5eb78e16414ad5f4c7b96c5ec247d8c02bbc1645d63bbd944d94c13afc4b1",
+    "artifact_digest": "30134ead2a7e175c7815622ab362bff9a61eceda0b27809b2d7b2c9f8bfc3e5e",
+    "configuration_digest": "bee199e3140a51dd76c937b5f6681f27a51f1985d0041e0a6f991b6081ec64fb",
+    "contract_digest": "aa2abb769ac881dd0b9af142e0ec8ababec05cacb1817fc62ff5cd5e5b141e9a",
+    "environment_digest": "4b8f72a58a35955aa005d665e9dca00638643785e737f79fcbc5e1e781d6d796",
+    "fixture_digest": "7de742fbd528db6da57ba62e02f5e9f95fc49e8afa1a79a0e379041bcd1d45d4"
+  },
+  "state": "demonstrated",
+  "preconditions": [
+    "User authorized G-06 closure in the previously selected isolated synthetic scope.",
+    "G-05 automated qualification and exact predecessor digest verified.",
+    "Fixed authenticated Qwen artifact and constrained worker profile verified."
+  ],
+  "normal_steps": [
+    {
+      "action": "Matched synthetic worker case",
+      "expected": "Actor-only and assisted runs permit durable manual follow-through; assistance remains attributable and unsent.",
+      "actual": "Live matched case passed with one scoped protocol observation, exact review edit and worker rejection.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/matched-actor-journey.json",
+          "sha256": "678622bdb4ccb392b0315debb3e82bc766d960a0682b3b3d40be47ef676434cd"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/browser/summary.json",
+          "sha256": "d46b519b171223218bdbdb98b6c41297f096a71a48aca2ed04766f8733bf15dc"
+        }
+      ]
+    },
+    {
+      "action": "Real provider and deployed role trust",
+      "expected": "Loaded model, tokenizer and authenticated boundaries remain exact.",
+      "actual": "Live Qwen and protected SPIRE/Envoy provider edge passed. Separate deployed role graph and revocation passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json",
+          "sha256": "a8561413dfeb22e6296a2ea508432b9ac84d7ecbc9cc64ee7b653288bb31c178"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-final-workload.json",
+          "sha256": "5244505c0e679279befd5af95873080ec618826f18883c844702a1dde42db23b"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/protected-live-provider.json",
+          "sha256": "808826f3b3817a9b7f9bc30b76fe03a6cdf5c2a8e537e33586f5eaeef39acb69"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/role-topology.json",
+          "sha256": "6bd6cbba88786ab9f566e051b82e23ca4cad368c9215a5509165bc729a1ecba8"
+        }
+      ]
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Timeout while actual challenge remains pending",
+      "expected": "Keep exact unknown slot occupied, avoid draft, preserve manual service.",
+      "actual": "All verified on the same real request and durable TLS database. The observation never entered broker custody.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/timeout-live.json",
+          "sha256": "04e72de40c9237ba89353f1f2db373d25213fec6ce899dc0013866c2323bc599"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/postgresql-adverse.json",
+          "sha256": "46b326e4b81bcff3c9089d0e86ab071a163c8cd7378cdb7a47437b67065a2662"
+        }
+      ]
+    },
+    {
+      "action": "Stale review, replay and unauthorized route",
+      "expected": "Reject stale and forged operations, preserve shared budgets and manual fallback.",
+      "actual": "Exact stale review digest rejected. Durable, role and browser checks passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/matched-actor-journey.json",
+          "sha256": "678622bdb4ccb392b0315debb3e82bc766d960a0682b3b3d40be47ef676434cd"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/postgresql-adverse.json",
+          "sha256": "46b326e4b81bcff3c9089d0e86ab071a163c8cd7378cdb7a47437b67065a2662"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/role-topology.json",
+          "sha256": "6bd6cbba88786ab9f566e051b82e23ca4cad368c9215a5509165bc729a1ecba8"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/browser/summary.json",
+          "sha256": "d46b519b171223218bdbdb98b6c41297f096a71a48aca2ed04766f8733bf15dc"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "matched-actor-workflow",
+      "command": "python -m tools.imp06_verification.enabled_demo --run",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Matched actor-only and live assisted case, bounded tool, exact review and manual follow-through.",
+      "actual": "Both cases committed a human-authored reply. Assisted worker edited and rejected one durable extracted draft. No referral dispatch.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/matched-actor-journey.json",
+      "evidence_digest": "678622bdb4ccb392b0315debb3e82bc766d960a0682b3b3d40be47ef676434cd",
+      "mock_used": true
+    },
+    {
+      "name": "live-timeout-containment",
+      "command": "pytest tests/evaluation/qwen_g06_timeout.py using the live provider",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Real provider response still pending after caller timeout, exact durable unknown slot, usable manual write and no late proposal.",
+      "actual": "Manual write committed at 0.3223s while Qwen request was pending. Same response completed at 7.5215s. Job and slot stayed compute_unknown and no draft was emitted.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/timeout-live.json",
+      "evidence_digest": "04e72de40c9237ba89353f1f2db373d25213fec6ce899dc0013866c2323bc599",
+      "mock_used": true
+    },
+    {
+      "name": "budgets-and-adverse-database",
+      "command": "pytest on dedicated verify-full manifest-pinned PostgreSQL",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Durable claims, restart budgets, authority and source fencing, stop evidence policies.",
+      "actual": "40 passed. Deterministic matched fixture also passed.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/postgresql-adverse.json",
+      "evidence_digest": "46b326e4b81bcff3c9089d0e86ab071a163c8cd7378cdb7a47437b67065a2662",
+      "mock_used": true
+    },
+    {
+      "name": "isolated-role-network",
+      "command": "python -m tools.imp06_verification.role_topology --run on exact candidate",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Six authenticated edges, no direct bypass, SVID rotation and live revocation with manual availability.",
+      "actual": "Previously ran on exact unchanged candidate. Six allowed edges, four denied probes, restrictive generation and manual response passed.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/role-topology.json",
+      "evidence_digest": "6bd6cbba88786ab9f566e051b82e23ca4cad368c9215a5509165bc729a1ecba8",
+      "mock_used": true
+    },
+    {
+      "name": "protected-live-provider",
+      "command": "python -m tools.imp06_verification.g06_protected --run on exact candidate",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Live tokenizer and generation through verified Inference identity plus malformed route denials.",
+      "actual": "Pinned SPIRE and Envoy passed. Real Qwen exact count was 27 input tokens. Both malformed requests were denied after cold startup readiness correction.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/protected-live-provider.json",
+      "evidence_digest": "808826f3b3817a9b7f9bc30b76fe03a6cdf5c2a8e537e33586f5eaeef39acb69",
+      "mock_used": true
+    },
+    {
+      "name": "browser-bilingual",
+      "command": "pnpm exec playwright test --config tests/e2e/assistance/playwright.config.ts",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Real Chromium EN/FR keyboard, axe, reflow, stale review, permissions and manual fallback.",
+      "actual": "11 passed on synthetic API fixtures.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/browser/summary.json",
+      "evidence_digest": "d46b519b171223218bdbdb98b6c41297f096a71a48aca2ed04766f8733bf15dc",
+      "mock_used": true
+    },
+    {
+      "name": "exact-model-function",
+      "command": "python -m tests.evaluation.qwen_local --run",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exact signed candidate model/render/tokenizer, EN/FR verified grounding and injected context.",
+      "actual": "Four authenticated EN/FR cases passed with exact counts and zero reasoning tokens against unchanged model sources.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json",
+      "evidence_digest": "a8561413dfeb22e6296a2ea508432b9ac84d7ecbc9cc64ee7b653288bb31c178",
+      "mock_used": false
+    },
+    {
+      "name": "bounded-model-load",
+      "command": "python -m tests.evaluation.qwen_workload",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Admitted input cap qualified under bounded concurrency.",
+      "actual": "Ten live cases passed at up to 2035 prompt tokens below the 2048 limit. Sample p95 23.261 seconds.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-final-workload.json",
+      "evidence_digest": "5244505c0e679279befd5af95873080ec618826f18883c844702a1dde42db23b",
+      "mock_used": false
+    },
+    {
+      "name": "pinned-threat-mapping",
+      "command": "Compare upstream pin SHA-256, profile applicability and exact evidence links",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Verify OWASP and ATLAS identifiers bound to worker profile cases.",
+      "actual": "Eight pinned files and nine identifiers verified.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/threat-validation.json",
+      "evidence_digest": "869717b630f17452410775e520eeec3972f70a6def8da3cc351972df851a1466",
+      "mock_used": false
+    },
+    {
+      "name": "source-contract-lock",
+      "command": "Scoped pytest, Pyright, Ruff, contract checks, lock and dependency boundaries",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Current source and contract regressions pass.",
+      "actual": "148 scoped tests plus all static checks passed.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/evidence/source-checks.json",
+      "evidence_digest": "d249058080613dd02cfe73fcccedb35111ba0530b655bec1900a257c7905298b",
+      "mock_used": true
+    }
+  ],
+  "residuals": [
+    "Scope is isolated synthetic worker_summary only. Other model functions remain disabled.",
+    "Independent signed exact serving approval and current evaluator boots govern existing demo activation.",
+    "Separate operator-controlled provider restart has its own lifecycle qualification scope. This gate exercised live timeout containment and preserves uncertain occupancy.",
+    "Human usability, native assistive-technology, visual, language and clinical review remain deferred_until_after_IMP10."
+  ],
+  "acceptance_scope": "Automated qualification for IMP-06 isolated synthetic worker_summary / prepare_summary / draft_ready and applicable VT-08, VT-09, VT-18 and AT-08, AT-17, AT-18 outcomes.",
+  "rollback": "Advance restrictive release epoch, preserve manual service and held compute until observed completion or verified stop.",
+  "human_decision_id": null,
+  "is_example": false
+}

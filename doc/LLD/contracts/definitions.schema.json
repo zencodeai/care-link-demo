@@ -12655,7 +12655,7 @@
           "pattern": "^[0-9a-f]{64}$"
         },
         "model_identifier": {
-          "const": "google/gemma-4-12b-qat"
+          "const": "qwen/qwen3.8-27b"
         }
       },
       "required": [

@@ -1,0 +1,42 @@
+{
+  "run": "imp06-004-runtime-isolation",
+  "candidate_image": {
+    "tag": "care-link-imp06:auth-qualification-004",
+    "docker_image_id": "sha256:24c05a0e0d93c8f12f92495d2fe0c733a0efe875d795ae8be52e54f3b41ba291",
+    "source_override": "Only the verification script was mounted. Core, Runtime, workload trust and composition imports resolved from /app in the candidate."
+  },
+  "harness": {
+    "path": "tools/imp06_verification/runtime_isolation.py",
+    "sha256": "fe7d178645964d9a0903df68651b6807213625376deb18ea245ede8f3f5b0105"
+  },
+  "container": {
+    "network": "none",
+    "read_only": true,
+    "privileges": "No new privileges. Supervisor with only CHOWN, DAC_OVERRIDE, SETUID, SETGID and KILL. Runtime effective capabilities verified zero.",
+    "cleanup": "Docker listed no container with care-link.session=imp06-004-isolation after exit."
+  },
+  "command": "docker run --rm --pull never --name care-link-imp06-004-isolation --label care-link.session=imp06-004-isolation --network none --read-only --security-opt no-new-privileges --cap-drop ALL --cap-add CHOWN --cap-add DAC_OVERRIDE --cap-add SETUID --cap-add SETGID --cap-add KILL --tmpfs /tmp:rw,nodev,nosuid,noexec,size=16777216 --user 0:0 --pids-limit 64 --memory 512m --mount type=bind,source=\"$PWD/tools/imp06_verification/runtime_isolation.py\",target=/probe.py,readonly --workdir /app --env PYTHONPATH=/app --env PYTHONDONTWRITEBYTECODE=1 sha256:24c05a0e0d93c8f12f92495d2fe0c733a0efe875d795ae8be52e54f3b41ba291 python /probe.py",
+  "exit_code": 0,
+  "observed": {
+    "scope": "disposable Linux; fixture mTLS; protected Core route",
+    "only_active_interface": "lo",
+    "runtime_effective_capabilities": 0,
+    "non_loopback_ip_connect": "IPv4 and IPv6 unreachable",
+    "runtime_namespace_port_1234": "connection refused",
+    "direct_core_backend_socket": "permission denied",
+    "wrong_kernel_uid_forged_attestation": 403,
+    "fixture_mtls_without_client_certificate": "connection rejected",
+    "runtime_core_claim": "200, schema-valid empty work item",
+    "runtime_inference_route": 403,
+    "runtime_core_claim_after_fence": "403 on the original TLS connection",
+    "fence_generation": 1,
+    "envoy_spire_role_topology": "not_run",
+    "release_qualification": "not_run"
+  },
+  "limits": [
+    "Fixture-issued TLS credentials and custom fixture relay; no installation of Envoy or SPIRE.",
+    "Separate kernel UIDs in a shared disposable Linux network namespace, with real Core broker ingress, certificate and role policy, protected Unix backend and durable fence. No Data, Inference, host bridge, model, or actual task processing was exercised.",
+    "Port 1234 check concerns the isolated namespace only. The workstation's LM Studio service was not contacted.",
+    "No release custody, deployed workload recovery, scale or human review is established."
+  ]
+}

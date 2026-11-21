@@ -1,0 +1,66 @@
+{
+  "recorded_at": "2026-11-20T23:36:08.645754+00:00",
+  "state": "passed",
+  "scope": "Disposable Linux synthetic provider process and kernel-authenticated Unix fence",
+  "container": {
+    "name": "care-link-imp06-005-provider-stop-final",
+    "image": "care-link-imp06:deployment-qualification-005-final",
+    "image_id": "sha256:120e9e8480919fc5016a9b13ee5640ce794758f46d38d77d001eaf55ebf98246",
+    "network": "none",
+    "source_override": "Only the verification script was mounted. Application sources were loaded from the candidate image.",
+    "cleanup": "No container remained with the exact session label"
+  },
+  "command": "docker run --rm --pull never --name care-link-imp06-005-provider-stop-final --label care-link.session=imp06-005-provider-stop-final --network none --read-only --security-opt no-new-privileges --cap-drop ALL --cap-add CHOWN --cap-add DAC_OVERRIDE --cap-add SETUID --cap-add SETGID --cap-add KILL --tmpfs /tmp:rw,nodev,nosuid,noexec,size=16777216 --user 0:0 --pids-limit 32 --memory 256m --mount type=bind,source=\"$PWD/tools/imp06_verification/provider_stop.py\",target=/probe.py,readonly --env PYTHONPATH=/app sha256:120e9e8480919fc5016a9b13ee5640ce794758f46d38d77d001eaf55ebf98246 python /probe.py",
+  "source_sha256": {
+    "tools/imp06_verification/provider_stop.py": "7473b5bbb886acaa70cf976b4644245e691b6259397206ce10382a79a13f28d9",
+    "tools/imp06_runtime/provider_stop.py": "e1c72ddb572e27a0c393376a7d50d4abfb431f88fb4a54e486b72589a0bdeb59",
+    "tools/imp06_runtime/data.py": "9377882b8d222fb05603268d4d44f73d26de45edc91367e460e174b134a6fee6",
+    "services/data/src/care_link_data/assistance_jobs.py": "de4d0714b0f5aa380062093f0cfec136674bd0384a4ead937d91a100cfdb0c81"
+  },
+  "container_exit_code": 0,
+  "observed": {
+    "client_disconnect_while_provider_alive": true,
+    "client_timeout_while_provider_alive": true,
+    "compute_process_exited": true,
+    "exit_code": -9,
+    "fence_alone_denied": true,
+    "verified_after_hard_exit": true
+  },
+  "method": [
+    "Start an isolated, supervisor-owned disposable provider process under a distinct UID and accept two synthetic requests.",
+    "Observe timeout and disconnection from the client while the provider remains alive.",
+    "Restrict the inference identity through the real UnixFenceClient and FenceServer using the separate control UID. Data still denies stop verification.",
+    "Kill and reap the named fixture child and observe socket closure. Persist the signed host stop record and verify it under the separate Data UID using the public key and kernel-authenticated fence."
+  ],
+  "external_connections": {
+    "lm_studio": false,
+    "database": false
+  },
+  "limits": [
+    "The provider is a disposable synthetic process. This run does not establish LM Studio cancellation or operational stop.",
+    "The Data-side verifier used a fixture Ed25519 key. No deployment or serving authority was granted.",
+    "The proof establishes the local receipt and fence boundary. Durable database occupancy and full deployed role recovery are separate tests."
+  ],
+  "packaged_source_sha256": {
+    "tools/imp06_runtime/provider_stop.py": "e1c72ddb572e27a0c393376a7d50d4abfb431f88fb4a54e486b72589a0bdeb59",
+    "tools/imp06_runtime/data.py": "9377882b8d222fb05603268d4d44f73d26de45edc91367e460e174b134a6fee6",
+    "services/data/src/care_link_data/assistance_jobs.py": "de4d0714b0f5aa380062093f0cfec136674bd0384a4ead937d91a100cfdb0c81"
+  },
+  "earlier_overlay_probe": {
+    "recorded_at": "2026-11-20T23:25:31.115925+00:00",
+    "container": {
+      "name": "care-link-imp06-005-provider-stop",
+      "image": "care-link-imp06:auth-qualification-004",
+      "image_id": "sha256:24c05a0e0d93c8f12f92495d2fe0c733a0efe875d795ae8be52e54f3b41ba291",
+      "network": "none",
+      "source_override": "Only the verification script and the current Data-side provider-stop verifier were mounted",
+      "cleanup": "No container remained with the exact session label"
+    },
+    "command": "docker run --rm --pull never --name care-link-imp06-005-provider-stop --label care-link.session=imp06-005-provider-stop --network none --read-only --security-opt no-new-privileges --cap-drop ALL --cap-add CHOWN --cap-add DAC_OVERRIDE --cap-add SETUID --cap-add SETGID --cap-add KILL --tmpfs /tmp:rw,nodev,nosuid,noexec,size=16777216 --user 0:0 --pids-limit 32 --memory 256m --mount type=bind,source=\"$PWD/tools/imp06_runtime/provider_stop.py\",target=/app/tools/imp06_runtime/provider_stop.py,readonly --mount type=bind,source=\"$PWD/tools/imp06_verification/provider_stop.py\",target=/probe.py,readonly --env PYTHONPATH=/app care-link-imp06:auth-qualification-004 python /probe.py",
+    "source_sha256": {
+      "tools/imp06_verification/provider_stop.py": "7473b5bbb886acaa70cf976b4644245e691b6259397206ce10382a79a13f28d9",
+      "tools/imp06_runtime/provider_stop.py": "e1c72ddb572e27a0c393376a7d50d4abfb431f88fb4a54e486b72589a0bdeb59"
+    },
+    "container_exit_code": 0
+  }
+}

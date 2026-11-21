@@ -6,13 +6,13 @@ Research/revision date: 2026-11-04. Status: proposed requirements extension. The
 
 Agentic AI supports actors in understanding a request, gathering permitted context, identifying missing information, finding verified service options, preparing an actionable plan, coordinating authorized work and checking the outcome. The human actor retains responsibility for clinical judgement and consequential service decisions. Deterministic services retain authority over access, consent, governance, commitments and execution. An agent is useful because it can adapt a bounded multi-step task to observations; it is not the owner of the client or the service.
 
-An LLM producing a single summary is an AI assistance function. An **agentic workflow** iterates through a goal, scoped context, proposed next step, authorized tool call, observed result and updated task state until it completes, is cancelled or requires a human. Multiple named functions do not require multiple autonomous agents, separate models or a complex agent framework. The initial architecture can implement role-scoped assistants on one bounded runtime and the requested local Gemma model.
+An LLM producing a single summary is an AI assistance function. An **agentic workflow** iterates through a goal, scoped context, proposed next step, authorized tool call, observed result and updated task state until it completes, is cancelled or requires a human. Multiple named functions do not require multiple autonomous agents, separate models or a complex agent framework. The initial architecture can implement role-scoped assistants on one bounded runtime and the requested local Qwen model.
 
 **TR-AI-01 — Service objective.** SHALL optimize the service process for client needs and preferences, accurate information, timely meaningful human connection, appropriate verified pathways, successful handoff and reduced actor administration, subject to safety, privacy, equity, security and governance constraints. “Optimal service” SHALL mean demonstrable improvement against an approved baseline and stated trade-offs, not a promise of mathematically optimal care. Engagement, throughput, model usage or police avoidance alone SHALL not define success.
 
 ## Similar systems and evidence
 
-These are comparators for specific functions, not replicas, partners, endorsements or proof that autonomous crisis care works. None of the cited material establishes the safety of CARE-Link, local `google/gemma-4-12b-qat` or a multi-agent crisis platform. Imported service practices must not override the project’s no-police-integration constraint.
+These are comparators for specific functions, not replicas, partners, endorsements or proof that autonomous crisis care works. None of the cited material establishes the safety of CARE-Link, local `qwen/qwen3.8-27b` or a multi-agent crisis platform. Imported service practices must not override the project’s no-police-integration constraint.
 
 | Comparator / primary evidence | What the source establishes | CARE-Link design inference and limits |
 |---|---|---|
@@ -69,10 +69,26 @@ The recommended synthesis is **actor assistance plus bounded coordination**, wit
 
 **TR-AI-13 — Demonstrate useful assistance without unapproved trade-offs.** Compare actor-only and actor-plus-AI work on matched synthetic cases, with counterbalanced order and independently reviewed rubrics. Measure time to a verified actionable option and meaningful human connection; critical fact accuracy/omission; unsupported claims; appropriate handoff/consent; actor editing/rejection and cognitive workload; client agency/accessibility; EN/FR differences; security/governance violations; manual continuity under failure. Include difficult, ambiguous and adversarial multi-turn cases. Report raw counts, missingness and latency/failure distributions. No throughput benefit compensates for an unauthorized action or missed critical scenario. Synthetic evaluation does not establish real clinical benefit or a non-inferiority margin.
 
-**TR-AI-14 — Capability admission by task.** The required LM Studio/Gemma model SHALL pass each proposed task’s structured-output, groundedness, context, EN/FR, latency and adversarial evaluation before enabling that task. No assumption that the selected model can safely plan every workflow. Keep unsupported functions manual, simplify their scope or use deterministic templates; do not silently switch models or infer clinical competence from fluent text. Proposed task usefulness targets require a measured actor-only baseline; initially require zero seeded critical-fact fabrication/omission and zero unauthorized effects in approved acceptance scenarios. Failing a scenario blocks that function until resolved/reviewed.
+**TR-AI-14 — Capability admission by task.** The required LM Studio/Qwen model SHALL pass each proposed task’s structured-output, groundedness, context, EN/FR, latency and adversarial evaluation before enabling that task. No assumption that the selected model can safely plan every workflow. Keep unsupported functions manual, simplify their scope or use deterministic templates; do not silently switch models or infer clinical competence from fluent text. Proposed task usefulness targets require a measured actor-only baseline; initially require zero seeded critical-fact fabrication/omission and zero unauthorized effects in approved acceptance scenarios. Failing a scenario blocks that function until resolved/reviewed.
 
 **TR-AI-15 — Versioned lifecycle and ownership.** Each assistant function SHALL have an intended use, named responsible human role, enabled modes/tools, limits, evaluation suite, approved model/prompt/config versions and rollback/disable path. Offline changes and shadow evaluations SHALL not affect live decisions. Worker suggestion acceptance, incident feedback or client conversations SHALL not trigger online learning, fine-tuning or self-modification. Reflect approved changes in the governance register, not just a prompt file.
 
 These requirements extend TR-SCP-02, TR-ACT-01…03, TR-WF-01…09 and TR-LLM-01…05. They preserve authority/security constraints while making useful actor assistance a primary delivery outcome. They do not close upstream clinical/legal questions or authorize real crisis use.
 
 > This prototype demonstrates control and containment architecture using non-clinical stub logic and synthetic data. It provides no evidence of clinical safety, triage validity, or equity performance, and must not be cited as such.
+
+## Explicit workflow and retrieval implementation direction — 2026-11-20
+
+The user requested architecture/design/resource acquisition/documentation/implementation after reviewing research on workload automation, mission-critical agentic security and clinical RAG. [Current architecture](../decisions/2026-11-20-agentic-workflows-and-clinical-rag.md) selects bounded LangGraph under existing deterministic authority and local Qwen.
+
+**TR-RAG-01.** SHALL distinguish clinical reference knowledge, patient-specific facts/reports and current operational observations. Preserve source identity/version, language, population, jurisdiction, dates, publisher and permitted use.
+
+**TR-RAG-02.** SHALL authorize patient context and filter role/locale/applicability before retrieval results reach model/UI. Source text cannot grant capability, change policy or authorize disclosure/effects. Unknown applicability remains explicit.
+
+**TR-RAG-03.** SHALL bind pending generation/review to exact catalog and source identities; changed/expired references invalidate use. No silent source self-update, cross-client memory or automatic ingestion.
+
+**TR-RAG-04.** SHALL show sourced clinical references separately from individual reports, record unresolved information without invention, and test claim support/applicability rather than citation presence alone. No clinical safety or publisher endorsement follows from byte integrity.
+
+**TR-RAG-05.** SHALL support bounded automatic preparation only within explicit actor/account/session scope, preserve unknown-command identity, expose progress/cancel and keep manual service available. Consequential decisions retain current authority.
+
+**TR-RAG-06.** SHALL evaluate retrieval recall/precision, groundedness, source freshness, wrong-role/population/entity, conflicting guidance, EN/FR, clinical omissions, review effort and adversarial behavior per function. Synthetic/automated checks do not establish clinical benefit.

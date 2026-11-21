@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-11-20T18:48:54.254143+00:00",
+  "host": "this_workstation macOS arm64",
+  "python": "3.14.7",
+  "node": "22.14.0",
+  "pnpm": "10.20.0",
+  "uv": "0.12.17",
+  "database": "disposable PostgreSQL image sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba; localhost35436 TLS verify-full; removed",
+  "browser": "Chromium /opt/chrome-for-testing/chrome in cached image847d0429ebe65559c9cc8cfb415f072fc9bf347050dc0fd7248d5cbcf0669a48; loopback30906 test fixture removed",
+  "browser_api": "synthetic route/provider/SSE responses; no deployed backend, provider MFA or live network qualification claim",
+  "model": "existing loopback server unavailable; no model loaded; local file bytes observed separately",
+  "human_review": "deferred_until_after_IMP10"
+}

@@ -16,6 +16,22 @@ from .fence import TrustDenied
 from .fence_protocol import FenceReader
 
 IDENTITY = re.compile(r"spiffe://care-link\.demo/[a-z][a-z0-9_-]{0,31}/[a-z][a-z0-9_-]{0,63}\Z")
+TASK_ROUTES = frozenset(
+    {
+        "/internal/v1/tasks/{task_id}/lease",
+        "/internal/v1/tasks/{task_id}/renew",
+        "/internal/v1/data/assistance/step_lease/{task_id}",
+        "/internal/v1/data/assistance/step_renew/{task_id}",
+    }
+)
+UUID_PATTERN = r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+INFERENCE_ROUTES = frozenset(
+    {
+        "/internal/v1/broker/inference",
+        "/internal/v1/inference/jobs",
+        "/internal/v1/inference/execute",
+    }
+)
 
 
 @dataclass(frozen=True)
@@ -27,16 +43,57 @@ class PeerRule:
         if IDENTITY.fullmatch(self.spiffe_id) is None or not self.routes:
             raise ValueError("exact environment/service SPIFFE identity and routes required")
         for method, path in self.routes:
-            if method not in {"GET", "POST", "PUT", "PATCH", "DELETE"} or not canonical_path(path):
+            if method not in {"GET", "POST", "PUT", "PATCH", "DELETE"} or not canonical_route(path):
                 raise ValueError("exact canonical method/path required")
+            if path in TASK_ROUTES and method != "POST":
+                raise ValueError("task lease routes require POST")
 
 
 def canonical_path(path: str) -> bool:
     return (
         path.startswith("/")
-        and not any(x in path for x in ("%", "?", "#", "\\", "//", ".."))
+        and not any(x in path for x in ("%", "?", "#", "\\", "//", "..", "{", "}", "*"))
         and all(32 < ord(x) < 127 for x in path)
     )
+
+
+def canonical_route(path: str) -> bool:
+    """Only four internal task operations have a canonical UUID path segment."""
+    return path in TASK_ROUTES or canonical_path(path)
+
+
+def task_route_pattern(path: str) -> str:
+    if path not in TASK_ROUTES:
+        raise ValueError("closed task operation template required")
+    return "^" + re.escape(path).replace(r"\{task_id\}", UUID_PATTERN) + "$"
+
+
+def route_matches(routes: frozenset[tuple[str, str]], method: str, path: str) -> bool:
+    if not canonical_path(path):
+        return False
+    return any(
+        candidate_method == method
+        and (
+            candidate == path
+            or (candidate in TASK_ROUTES and re.fullmatch(task_route_pattern(candidate), path))
+        )
+        for candidate_method, candidate in routes
+    )
+
+
+def envoy_path_match(path: str) -> dict[str, object]:
+    if path in TASK_ROUTES:
+        return {"safe_regex": {"google_re2": {}, "regex": task_route_pattern(path)}}
+    if not canonical_path(path):
+        raise ValueError("canonical operation route required")
+    return {"path": path}
+
+
+def route_timeout(path: str) -> str:
+    # The provider deadline remains thirty seconds. Its three exact transport
+    # hops need enough time to carry the completion/unknown receipt; broad
+    # metadata/business routes retain their existing ten-second outer ceiling.
+    return "40s" if path.startswith("/bff/") or path in INFERENCE_ROUTES else "10s"
 
 
 def operation_path(method: str, target: str) -> str:
@@ -189,7 +246,10 @@ class WorkloadEnforcer:
             raise TrustDenied("unverified local proxy")
         path = operation_path(method, path)
         cert, intermediates, peer = _xfcc(xfcc)
-        if not any(rule.spiffe_id == peer and (method, path) in rule.routes for rule in self.rules):
+        if not any(
+            rule.spiffe_id == peer and route_matches(rule.routes, method, path)
+            for rule in self.rules
+        ):
             raise TrustDenied("peer route denied")
         now = self.clock()
         try:

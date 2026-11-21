@@ -153,6 +153,20 @@ def workload(config: Record, role: str) -> BackendVerifier:
     if text(config, "role") != role or integer(config, "uid") != os.geteuid():
         raise ValueError("Exact process role/custodian required")
     peers = routes(role) if role != "receiver" else {}
+    if config.get("assistance_enabled") is True and role == "data":
+        actions = (
+            "task_create",
+            "task_read",
+            "task_cancel",
+            "task_revise",
+            "draft_read",
+            "draft_review",
+            "assistance_task_context",
+            "assistance_draft_context",
+        )
+        peers["core"] = peers["core"] | frozenset(
+            ("POST", "/internal/v1/data/" + action) for action in actions
+        )
     if config.get("referral_enabled") is True:
         if role == "data":
             actions = (

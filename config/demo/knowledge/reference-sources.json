@@ -1,0 +1,57 @@
+{
+  "scope": "Research reference snapshots, not runtime clinical corpus or executable policy",
+  "sources": [
+    {
+      "id": "ontario-major-depression",
+      "url": "https://www.ontariohealth.ca/content/dam/ontariohealth/documents/filter-list/qs/qs-major-depression-quality-standard-2025-en.pdf",
+      "title": "Ontario Health Major Depression quality standard, October 2025",
+      "retrieved_on": "2026-11-20",
+      "clinical_use": "reference_only; synthetic evaluation; no clinical admission",
+      "license_status": "publisher terms retained; no assumption of clinical endorsement or redistribution rights",
+      "status": "downloaded",
+      "path": "doc/research/2026-11-20-agentic-care/resources/ontario-major-depression.pdf",
+      "sha256": "37e2cdb6491757ad8d3f81794aa83833e8a44480d6712ce05067c942c8b03bb5",
+      "bytes": 605493,
+      "content_type": "application/pdf"
+    },
+    {
+      "id": "fhir-clinical-reasoning",
+      "url": "https://hl7.org/fhir/R5/clinicalreasoning-module.html",
+      "title": "HL7 FHIR R5 Clinical Reasoning",
+      "retrieved_on": "2026-11-20",
+      "clinical_use": "reference_only; synthetic evaluation; no clinical admission",
+      "license_status": "publisher terms retained; no assumption of clinical endorsement or redistribution rights",
+      "status": "downloaded",
+      "path": "doc/research/2026-11-20-agentic-care/resources/fhir-clinical-reasoning.html",
+      "sha256": "4d31f3a96c1554cb33dfc3dfcc0ced238160855312141175423ec2456a84b89f",
+      "bytes": 62907,
+      "content_type": "text/html"
+    },
+    {
+      "id": "owasp-agentic-v2",
+      "url": "https://genai.owasp.org/download/58383/",
+      "title": "OWASP Securing Agentic Applications V2, November 2026",
+      "retrieved_on": "2026-11-20",
+      "clinical_use": "reference_only; synthetic evaluation; no clinical admission",
+      "license_status": "publisher terms retained; no assumption of clinical endorsement or redistribution rights",
+      "status": "downloaded",
+      "path": "doc/research/2026-11-20-agentic-care/resources/owasp-agentic-v2.pdf",
+      "sha256": "e88b904f8b50a5dfeede6c181e42dd69c49748dc7caeb6d80d75750703454ecf",
+      "bytes": 3650249,
+      "content_type": "application/pdf"
+    },
+    {
+      "id": "nist-genai",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+      "title": "NIST AI 600-1, July 2024",
+      "retrieved_on": "2026-11-20",
+      "clinical_use": "reference_only; synthetic evaluation; no clinical admission",
+      "license_status": "publisher terms retained; no assumption of clinical endorsement or redistribution rights",
+      "status": "downloaded",
+      "path": "doc/research/2026-11-20-agentic-care/resources/nist-genai.pdf",
+      "sha256": "6e73620ab6b64e90ef2c04bf0e0d6246185a2f4b1b13cab0df494496cff89b6a",
+      "bytes": 1174643,
+      "content_type": "application/pdf"
+    }
+  ]
+}

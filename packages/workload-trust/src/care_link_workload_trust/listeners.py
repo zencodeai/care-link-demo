@@ -7,7 +7,7 @@ from pathlib import PurePosixPath
 from typing import cast
 from urllib.parse import urlsplit
 
-from .verification import IDENTITY, canonical_path
+from .verification import IDENTITY, TASK_ROUTES, canonical_route, envoy_path_match, route_timeout
 
 HCM = (
     "type.googleapis.com/envoy.extensions.filters.network."
@@ -22,6 +22,7 @@ PROTECTED_HEADERS = [
     "x-care-link-verified-spiffe",
     "x-care-link-fence-generation",
     "x-care-link-certificate-expires-at",
+    "x-care-link-certificate-digest",
 ]
 
 
@@ -155,7 +156,9 @@ def add_outbound(config: dict[str, object], inputs: OutboundListener) -> dict[st
         or not PurePosixPath(inputs.socket_path).is_absolute()
         or ".." in PurePosixPath(inputs.socket_path).parts
         or any(
-            method not in {"GET", "POST"} or not canonical_path(path)
+            method not in {"GET", "POST"}
+            or not canonical_route(path)
+            or (path in TASK_ROUTES and method != "POST")
             for method, path in inputs.routes
         )
     ):
@@ -244,7 +247,7 @@ def add_outbound(config: dict[str, object], inputs: OutboundListener) -> dict[st
                                             "routes": [
                                                 {
                                                     "match": {
-                                                        "path": path,
+                                                        **envoy_path_match(path),
                                                         "headers": [
                                                             {
                                                                 "name": ":method",
@@ -254,9 +257,7 @@ def add_outbound(config: dict[str, object], inputs: OutboundListener) -> dict[st
                                                     },
                                                     "route": {
                                                         "cluster": "identity_mesh",
-                                                        "timeout": "40s"
-                                                        if path.startswith("/bff/")
-                                                        else "10s",
+                                                        "timeout": route_timeout(path),
                                                     },
                                                     "request_headers_to_remove": PROTECTED_HEADERS,
                                                 }

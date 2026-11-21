@@ -1,0 +1,37 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/evaluation/qwen_local.py:7:1
+   |
+ 5 |   """
+ 6 |
+ 7 | / import argparse
+ 8 | | import hashlib
+ 9 | | import json
+10 | | import os
+11 | | import time
+12 | | from dataclasses import asdict
+13 | | from datetime import UTC, datetime, timedelta
+14 | | from importlib.metadata import version
+15 | | from pathlib import Path
+16 | | from typing import cast
+17 | | from uuid import NAMESPACE_URL, uuid5
+18 | |
+19 | | import httpx
+20 | | import lmstudio as lms
+21 | | from jsonschema import Draft202012Validator, FormatChecker
+22 | | from care_link_inference import (
+23 | |     InferenceDenied,
+24 | |     parse_proposal,
+25 | |     proposal_schema,
+26 | |     provider_proposal_schema,
+27 | | )
+28 | | from care_link_inference.context import canonical
+29 | | from care_link_inference.gateway import provider_envelope
+30 | | from care_link_inference_bridge import MODEL, LocalModelBridge
+31 | | from care_link_inference_bridge.artifacts import pin_artifact
+32 | | from care_link_inference_bridge.loaded import LoadedBinding, bind_loaded_model
+   | |______________________________________________________________________________^
+   |
+help: Organize imports
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

@@ -1,0 +1,51 @@
+.assistance {
+  min-width: 0;
+}
+.assistance .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.assistance-copy {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.assistance code,
+.assistance dd {
+  overflow-wrap: anywhere;
+}
+.assistance textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+}
+.assistance dt {
+  font-weight: 700;
+}
+.assistance dd {
+  margin: 0 0 0.75rem;
+}
+.assistance h3:focus {
+  outline: 3px solid #145fa1;
+  outline-offset: 4px;
+}
+
+.assistance-automatic {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.assistance-workflow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  padding-left: 1.5rem;
+}
+.assistance-knowledge input {
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+}
+.assistance-knowledge li {
+  overflow-wrap: anywhere;
+}

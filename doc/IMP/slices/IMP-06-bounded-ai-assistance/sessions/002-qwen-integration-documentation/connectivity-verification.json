@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-20",
+  "recorded_at": "2026-11-20T21:25:05Z",
+  "scope": "Direct local connectivity only; not CARE-Link integration or function admission",
+  "authority": "User enabled localhost LM Studio and reported model loaded; continuation of documentation/reachability task",
+  "endpoint": "http://127.0.0.1:1234",
+  "execution": "host-network check after sandbox connection failed",
+  "discovery": {
+    "openai_models": "passed",
+    "native_models": "passed",
+    "model_key": "qwen/qwen3.8-27b",
+    "loaded_instance_id": "qwen/qwen3.8-27b",
+    "variant": "qwen/qwen3.8-27b@4bit",
+    "format": "mlx",
+    "context_length": 8192,
+    "parallel": 4,
+    "reasoning_default": "xhigh",
+    "reasoning_options": [
+      "off",
+      "low",
+      "medium",
+      "xhigh",
+      "on"
+    ],
+    "advertised_vision": true,
+    "advertised_trained_tool_use": true
+  },
+  "synthetic_generation": {
+    "status": "passed",
+    "path": "/v1/chat/completions",
+    "model": "qwen/qwen3.8-27b",
+    "user_prompt": "Synthetic connectivity test. Return only the single word READY.",
+    "temperature": 0,
+    "max_tokens": 128,
+    "stream": false,
+    "final_content": "\n\nREADY",
+    "finish_reason": "stop",
+    "elapsed_seconds": 5.25624375,
+    "usage": {
+      "prompt_tokens": 64,
+      "completion_tokens": 34,
+      "total_tokens": 98,
+      "reasoning_tokens": 30
+    },
+    "reasoning_field_present": true,
+    "reasoning_text_retained": false
+  },
+  "authorization_header_sent": false,
+  "authentication_enforced": false,
+  "exact_artifact_digest_binding_verified": false,
+  "model_configuration_changed_by_agent": false,
+  "care_link_source_or_runtime_changed": false,
+  "function_admission": false,
+  "previous_decision_sha256": "a8ba1409bf0306ceb05bc29bda45013e75f6477788912fca23c177e8ef44d320",
+  "decision_sha256": "8d8a2ba2efc415c1fe79fa37922053855e07d0f638fef53e24e7b45286f644b6",
+  "checks": {
+    "status": "passed",
+    "current_inventory_bindings": "passed",
+    "non_documentation_continuity": "768 files preserved",
+    "canonical_plan_validation": "PASS: 11 staged gates, 44 tasks, 206 operation allocations, 7 TOML roles, handoff fixtures, DAGs, links and frozen inputs. Planning checks only.",
+    "whitespace": "passed",
+    "application_qualification": "not_run; direct synthetic connectivity only"
+  },
+  "current_document_hashes": {
+    "README.md": "2b0d602fd85329df452be142bfa408ba5ac58aee9b48d7890fd6218ce3efbff8",
+    "doc/decisions/2026-11-20-qwen-lm-studio-integration.md": "8d8a2ba2efc415c1fe79fa37922053855e07d0f638fef53e24e7b45286f644b6",
+    "doc/HLD/design-inventory.json": "a565be6ca6071c5dd7b5fa28bb977a76b12fc0c5dcd0c7a3487b58040bb931d6",
+    "doc/LLD/design-inventory.json": "5875859284e9ee0ea782b12ec628e19dad2abc55864b5dea7290444031d16e09",
+    "doc/IMP/planning-inventory.json": "08c39f5ca269452d951610cbcc3bf3e08a29ecb9aeb1a41dd4064abe131f32cd",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/002-qwen-integration-documentation/README.md": "056c647eaca9432606760809b73f9d89f2d9353f228c9b471f8937fdaebe8eaf",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/002-qwen-integration-documentation/handoff.md": "b93907d40ee04c5eb3aae6b7c743345bd6d0e2df1029862c128b8e0e49880c9c"
+  }
+}

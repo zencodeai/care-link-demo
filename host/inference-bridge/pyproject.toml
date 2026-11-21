@@ -1,0 +1,15 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "care-link-inference-bridge"
+version = "0.1.0"
+requires-python = ">=3.12,<3.15"
+dependencies = ["care-link-contracts", "httpx==0.28.1", "fastapi==0.162.2", "lmstudio==1.6.0b1"]
+
+[tool.uv.sources]
+care-link-contracts = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/care_link_inference_bridge"]

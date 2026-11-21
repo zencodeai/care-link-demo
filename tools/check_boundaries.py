@@ -8,12 +8,15 @@ ROOT = Path(__file__).resolve().parents[1]
 ALLOWED = {
     "contracts": {"contracts"},
     "domain": {"domain"},
+    "knowledge": {"knowledge"},
     "policy_input": {"policy_input", "contracts", "domain"},
     "recovery_control": {"recovery_control", "contracts", "domain"},
-    "core": {"core", "contracts", "domain", "policy_input", "rendering"},
+    "core": {"core", "contracts", "domain", "policy_input", "rendering", "knowledge"},
     "runtime": {"runtime", "contracts"},
+    "inference": {"inference", "contracts"},
+    "inference_bridge": {"inference_bridge", "contracts"},
     "simulators": {"simulators", "contracts", "domain"},
-    "data": {"data", "contracts", "domain", "policy_input"},
+    "data": {"data", "contracts", "domain", "policy_input", "knowledge"},
     "web": {"contracts"},
     "identity": {"identity", "contracts", "domain"},
     "help": {"help", "contracts"},
@@ -42,15 +45,17 @@ def violations(owner: str, imports: list[str]) -> list[str]:
             )
         ):
             failures.append(f"{owner} cannot import {name}")
-        if owner in {"runtime", "core", "domain", "contracts", "web"} and segments[0] in {
+        if owner in {"runtime", "core", "domain", "contracts", "web", "knowledge"} and segments[
+            0
+        ] in {
             "sqlalchemy",
             "psycopg",
             "psycopg2",
             "sqlite3",
         }:
             failures.append(f"{owner} cannot import persistence driver {name}")
-        if owner == "domain" and segments[0] in {"fastapi", "httpx", "uvicorn"}:
-            failures.append(f"domain cannot import framework/transport {name}")
+        if owner in {"domain", "knowledge"} and segments[0] in {"fastapi", "httpx", "uvicorn"}:
+            failures.append(f"{owner} cannot import framework/transport {name}")
     return failures
 
 

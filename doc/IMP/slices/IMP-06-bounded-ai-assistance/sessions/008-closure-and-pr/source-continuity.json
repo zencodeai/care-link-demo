@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-11-21T14:53:52.089178+00:00",
+  "state": "passed",
+  "qualified_baseline": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "publication_base": "b8c08cbc5f0ea8cf9238ee2070ca606a50edc85a",
+  "base_tree": "fa279e41112ed428c596987927e5c0b63fa7c380",
+  "equal_base_trees": true,
+  "source_bindings_checked": 805,
+  "candidate_evidence_and_ledger_bindings_checked": 71,
+  "qualification_status": "automated_qualified",
+  "qualification_scope": "Isolated synthetic worker_summary only",
+  "predecessor_pr": "https://github.com/zencodeai/care-link-demo/pull/12",
+  "predecessor_pr_state": "MERGED"
+}

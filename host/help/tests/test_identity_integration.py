@@ -118,8 +118,15 @@ def test_http_identity_proof_to_signed_spool_and_identity_loss(tmp_path: Path) -
     with TestClient(app, base_url="https://identity.test") as internal:
 
         def relay(request: httpx.Request) -> httpx.Response:
-            return internal.request(
+            result = internal.request(
                 request.method, request.url.path, content=request.content, headers=request.headers
+            )
+            # Starlette selects HTTPX2 when the LM Studio SDK installs it. This
+            # transport belongs to HTTPX1: relay wire values, not client objects.
+            return httpx.Response(
+                result.status_code,
+                headers=list(result.headers.multi_items()),
+                content=result.content,
             )
 
         with httpx.Client(transport=httpx.MockTransport(relay)) as workload:

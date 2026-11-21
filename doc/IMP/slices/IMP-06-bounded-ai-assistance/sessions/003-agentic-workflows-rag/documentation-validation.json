@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "new_and_edited_document_local_links": "passed",
+  "current_design_input_artifact_and_decision_hashes": "passed",
+  "work_packet_agent_result_schemas": "passed",
+  "current_source_matches_final_frozen_candidate": true,
+  "temporary_database_credentials_removed": true,
+  "mermaid": "text syntax reviewed; no standalone diagram renderer used",
+  "full_design_validator": "passed with isolated pinned validation requirements",
+  "additive_openapi_validator": "passed",
+  "planning_validator": "passed",
+  "model_functions_admitted": false,
+  "deployed": false
+}

@@ -1,0 +1,418 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "AssistanceStatus": {
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 96
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "functions": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "worker_summary"
+            ]
+          },
+          "maxItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "available",
+        "reason",
+        "functions"
+      ],
+      "additionalProperties": false
+    },
+    "AssistanceTaskContext": {
+      "type": "object",
+      "properties": {
+        "task": {
+          "$ref": "#/$defs/TaskView"
+        },
+        "draft_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 96
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "execution_fence": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$"
+        }
+      },
+      "required": [
+        "task",
+        "draft_id",
+        "available",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "AssistanceDraftContext": {
+      "type": "object",
+      "properties": {
+        "draft": {
+          "$ref": "#/$defs/DraftView"
+        },
+        "original_text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 12000
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "$ref": "#/$defs/SourceRef"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 12000
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "source_url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://",
+                "maxLength": 2048
+              },
+              "source_title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300
+              }
+            },
+            "required": [
+              "ref",
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 32
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expected_effect": {
+          "const": "unsent_draft"
+        },
+        "ai_provenance": {
+          "const": true
+        }
+      },
+      "required": [
+        "draft",
+        "original_text",
+        "sources",
+        "scope",
+        "expires_at",
+        "expected_effect",
+        "ai_provenance"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_assistance_status": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_assistance_task_context": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "type": "object",
+          "properties": {
+            "task_id": {
+              "$ref": "#/$defs/Id"
+            }
+          },
+          "required": [
+            "task_id"
+          ],
+          "additionalProperties": false
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_assistance_draft_context": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "type": "object",
+          "properties": {
+            "draft_id": {
+              "$ref": "#/$defs/Id"
+            }
+          },
+          "required": [
+            "draft_id"
+          ],
+          "additionalProperties": false
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "KnowledgeQuery": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "locale": {
+          "enum": [
+            "en-CA",
+            "fr-CA"
+          ]
+        }
+      },
+      "required": [
+        "query",
+        "locale"
+      ],
+      "additionalProperties": false
+    },
+    "KnowledgeEntry": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 2048,
+          "pattern": "^https://"
+        },
+        "source_title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "locale": {
+          "enum": [
+            "en-CA",
+            "fr-CA"
+          ]
+        }
+      },
+      "required": [
+        "source",
+        "title",
+        "text",
+        "source_url",
+        "source_title",
+        "locale"
+      ],
+      "additionalProperties": false
+    },
+    "KnowledgeResults": {
+      "type": "object",
+      "properties": {
+        "catalog_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/KnowledgeEntry"
+          },
+          "maxItems": 4
+        },
+        "notice": {
+          "const": "synthetic_demo_information"
+        }
+      },
+      "required": [
+        "catalog_digest",
+        "entries",
+        "notice"
+      ],
+      "additionalProperties": false
+    },
+    "RuntimeWork": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "task_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "task_revision": {
+              "type": "string",
+              "pattern": "^[1-9][0-9]{0,18}$"
+            },
+            "fence": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]{0,18})$"
+            }
+          },
+          "required": [
+            "task_id",
+            "task_revision",
+            "fence"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "task_id": {
+              "type": "null"
+            },
+            "task_revision": {
+              "type": "null"
+            },
+            "fence": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "task_id",
+            "task_revision",
+            "fence"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "RuntimeWorkItem": {
+      "$ref": "#/$defs/RuntimeWork"
+    },
+    "RuntimeWorkRequest": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "ModelEvidenceSelection": {
+      "type": "object",
+      "properties": {
+        "selected_indices": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 63
+          },
+          "minItems": 1,
+          "maxItems": 12,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "selected_indices"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

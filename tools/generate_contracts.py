@@ -3,6 +3,7 @@
 import argparse
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -138,6 +139,23 @@ NAMES = (
     "Gateway_dispatch_read",
     "Gateway_receipt_read",
     "Gateway_dispatch_reconcile",
+    "TaskCreate",
+    "TaskView",
+    "DraftView",
+    "LeaseCommand",
+    "LeaseView",
+    "Proposal",
+    "ToolInvoke",
+    "Observation",
+    "RuntimeInferenceRequest",
+    "InferenceRequest",
+    "InferenceResult",
+    "Gateway_task_create",
+    "Gateway_task_read",
+    "Gateway_task_cancel",
+    "Gateway_task_revise",
+    "Gateway_draft_read",
+    "Gateway_draft_review",
 )
 
 
@@ -268,6 +286,19 @@ def render() -> str:
         "referral_context",
         "dispatcher_send",
         "referral_sources",
+    )
+    assistance = json.loads((ROOT / "packages/contracts/assistance.schema.json").read_text())
+    selected.update(assistance["$defs"])
+    planning_actions += (
+        "task_create",
+        "task_read",
+        "task_cancel",
+        "task_revise",
+        "draft_read",
+        "draft_review",
+        "assistance_status",
+        "assistance_task_context",
+        "assistance_draft_context",
     )
     targets = []
     for action in planning_actions:
@@ -415,6 +446,10 @@ def main() -> None:
     if args.check:
         command.append("--check")
     subprocess.run(command, cwd=ROOT, check=True)  # noqa: S603
+    api = [sys.executable, str(ROOT / "tools/generate_agentic_api.py")]
+    if args.check:
+        api.append("--check")
+    subprocess.run(api, cwd=ROOT, check=True)  # noqa: S603
     print("Contract snapshots match reviewed definitions.")
 
 

@@ -1,0 +1,57 @@
+{
+  "actual_checks": {
+    "container_import": {
+      "autoclean": true,
+      "image_tag": "care-link-imp06:enabled-ai-qualification-006",
+      "mount_scope": "three read-only qualification source files",
+      "network": "none",
+      "privileges": "all capabilities dropped, no new privileges, read-only root",
+      "reported": "read-only application-user relay import passed",
+      "uid": 26112
+    },
+    "git_diff_check": "passed",
+    "ruff_lint_and_format": "passed",
+    "strict_pyright": "0 errors, 0 warnings, 0 informations",
+    "transport_only": {
+      "authenticated_spiffe_role": "spiffe://care-link.demo/demo/inference",
+      "cleanup_verified": {
+        "containers": 27,
+        "networks": 2,
+        "volumes": 7
+      },
+      "command_exit_code": 1,
+      "command_exit_reason": "An extra Runtime claim diagnostic invoked a nonexistent helper after the two protected-route checks. Cleanup and ownership checks ran.",
+      "execute_malformed_envelope_status": 400,
+      "inference_agent_proxy_and_bridge_agent_proxy_authorization_app_running": true,
+      "model_credentials_accessed": false,
+      "tokenize_malformed_digest_status": 400
+    },
+    "wire": {
+      "adverse_denials": [
+        "unknown route",
+        "changed content digest",
+        "caller-selected destination",
+        "expired deadline",
+        "duplicate JSON field",
+        "partial frame",
+        "oversized frame"
+      ],
+      "positive": [
+        "bounded fixed tokenize round trip",
+        "bounded fixed generation request"
+      ]
+    }
+  },
+  "live_model": {
+    "reason": "Coordinator owns authenticated live model execution for this isolated workflow",
+    "state": "not_run_in_packaging_smoke"
+  },
+  "recorded_at": "2026-11-21T14:36:45.147138+00:00",
+  "scope": "Fixed synthetic relay source and read-only disposable packaging smoke",
+  "source_sha256": {
+    "tools/imp06_verification/g06_protected.py": "a12e4cfde4026ad53c67886d5a2a6ac0557104643a9b1cd71e5a6c6c49f53205",
+    "tools/imp06_verification/g06_protected_processes.py": "95db5f106d0e2fd78e6eb995c52d65de176994d058b5b4fec9c4a5c173e1a207",
+    "tools/imp06_verification/g06_protected_wire.py": "baca73410aac5055e8d45791472da9752176deb54eca3e24a3758121c5e4f114"
+  },
+  "state": "passed"
+}

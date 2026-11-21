@@ -1,0 +1,7 @@
+# IMP-06 agentic workflows and clinical knowledge follow-through
+
+User instruction: architecture, design, gather frameworks/resources, update documentation and implement. This is the scoped continuation of the assigned IMP-06 work in the existing chat; it does not advance IMP-07. The user instruction supplies implementation authority despite earlier documentation-only scope. Source baseline and the previously dirty tree are preserved in [baseline](baseline.json); historical session001/002 receipts remain point-in-time evidence.
+
+The primary owns architecture/design, shared contracts, model migration, dependencies, integration and evidence. The three explicitly bounded implementation owners are recorded in the backend, inference and web work packets. They share no writable source paths; source/package/lock integration is primary-owned. No nested delegation, deployment, host-trust change, real personal records, external contact, commit or push is authorized by these packets.
+
+Read [architecture and decisions](../../../../../decisions/2026-11-20-agentic-workflows-and-clinical-rag.md), [implementation design](../../../../../LLD/18-agentic-knowledge-workflows.md) and the final handoff/results in this folder. Qualification is based on actual checks, not framework adoption or model connectivity. G-06 remains unqualified until all mandatory model and deployed-isolation evidence is satisfied. Human review remains deferred_until_after_IMP10; product-runtime authority is retained.

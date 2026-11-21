@@ -1,0 +1,167 @@
+{
+  "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification",
+  "recorded_at": "2026-11-20T23:41:27.234529+00:00",
+  "baseline_commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "scope": "Exact local synthetic qualification candidate and disposable evidence",
+  "gate": "G-06",
+  "gate_state": "blocked",
+  "role_runtime_image": "sha256:120e9e8480919fc5016a9b13ee5640ce794758f46d38d77d001eaf55ebf98246",
+  "qualification_release_bundle": "751fc8def13e11a1ef446a87c075f1c149b91499ac35de9043c393835ae6fb86",
+  "serving_release_approved": false,
+  "source": [
+    {
+      "path": "host/inference-bridge/src/care_link_inference_bridge/artifacts.py",
+      "sha256": "b3ed6269acfe1dc01377f79644be33ff53a009a7cff00c9e422b74f92eb35014"
+    },
+    {
+      "path": "host/inference-bridge/tests/test_artifacts.py",
+      "sha256": "2d84cd656f929d92ab0451297e12cc327d77ca501534b5cdf9802caab87dcb67"
+    },
+    {
+      "path": "services/data/src/care_link_data/assistance_jobs.py",
+      "sha256": "de4d0714b0f5aa380062093f0cfec136674bd0384a4ead937d91a100cfdb0c81"
+    },
+    {
+      "path": "services/data/src/care_link_data/assistance_transport.py",
+      "sha256": "19281b7a33a32b48e90735d9295ad19aa6b7d7d3b6401fa9772aa9180de3b11d"
+    },
+    {
+      "path": "services/data/tests/test_assistance_jobs.py",
+      "sha256": "52d046dd7171183cc1f8ca7f05892a4fa24b0347846a3b67521cda2886aeabb9"
+    },
+    {
+      "path": "services/inference/src/care_link_inference/admission.py",
+      "sha256": "c2028535e2b2f73e28e1a9c0313e2e70281821831d2eeff89a2b971d02ce6bd5"
+    },
+    {
+      "path": "services/inference/src/care_link_inference/gateway.py",
+      "sha256": "0d2e296f4a8c38585a790c910d9bd547da35e5c8927fb9c72543c23161dbe3c8"
+    },
+    {
+      "path": "services/inference/tests/test_inference.py",
+      "sha256": "01755b930543ab845e58c01944e3f958361985daa57cd2106c70bd418ec72f29"
+    },
+    {
+      "path": "tests/evaluation/qwen_local.py",
+      "sha256": "0332a13c8368a70c582237892080c03010bcc41d70530403da6acd312b98cc46"
+    },
+    {
+      "path": "tests/evaluation/qwen_signed_bridge.py",
+      "sha256": "7a389860aeed81b0a18febef9beac3d35101128b6d02a70e3252c9355ac4ce3e"
+    },
+    {
+      "path": "tests/evaluation/qwen_workload.py",
+      "sha256": "4a04a93a91419b97ac92a12b64dcdd0e742972074621f48b9126191712451ba5"
+    },
+    {
+      "path": "tests/unit/test_imp06_provider_stop.py",
+      "sha256": "9c81c18f97bc35fa92d5940db6d6c4b11758c16bf1acd69df198ef67d84d507e"
+    },
+    {
+      "path": "tests/unit/test_imp06_release_custody.py",
+      "sha256": "8d7ee3a2828e60fe25ca66dcd80f241f4b2f00413ff3b32841dcdaee7d20b694"
+    },
+    {
+      "path": "tools/imp06_runtime/README.md",
+      "sha256": "1fa8a9ffa8969cb79dba46f1f610ff69e59b705d086c66300a0ee834af1b7964"
+    },
+    {
+      "path": "tools/imp06_runtime/data.py",
+      "sha256": "9377882b8d222fb05603268d4d44f73d26de45edc91367e460e174b134a6fee6"
+    },
+    {
+      "path": "tools/imp06_runtime/provider_stop.py",
+      "sha256": "e1c72ddb572e27a0c393376a7d50d4abfb431f88fb4a54e486b72589a0bdeb59"
+    },
+    {
+      "path": "tools/imp06_runtime/release_custody.py",
+      "sha256": "445a3bda13d2c0582e4297a8aa787ad96576d68ff969508fbee8f6091dfbdf8b"
+    },
+    {
+      "path": "tools/imp06_runtime/release_custody_records.py",
+      "sha256": "d3b9d25259be2376c6fbbb42d33f733ce6b52f6be3c961770b8229c9a80f60c1"
+    },
+    {
+      "path": "tools/imp06_verification/provider_stop.py",
+      "sha256": "7473b5bbb886acaa70cf976b4644245e691b6259397206ce10382a79a13f28d9"
+    },
+    {
+      "path": "tools/imp06_verification/role_topology.py",
+      "sha256": "ed917e0a5a1f25a75ac726fcf9175e3cb81a1d66824c5e6ca45b43accb6f21ed"
+    },
+    {
+      "path": "tools/imp06_verification/role_topology_processes.py",
+      "sha256": "fbcadddf209344b999a08b27ecb9191e2aa6a587d16487de378ebe30ef4d0d4e"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "ca93b38cd301c24c503b5fabad7e5cf849fffd23a819c529b425c4016b863b4e"
+    },
+    {
+      "path": "deploy/images/imp06/Dockerfile",
+      "sha256": "0d5ca311c885dcda992968fe6411e58b8ee0a360ccbf2afe99f39ce5d380b040"
+    },
+    {
+      "path": "config/demo/assistance/model-manifest.json",
+      "sha256": "46012a23bca1c75320299e1439f90fc746d770781a4760db277f043fa73ee8d6"
+    },
+    {
+      "path": "config/demo/knowledge/catalog.json",
+      "sha256": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+    }
+  ],
+  "observations": [
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json",
+      "sha256": "a8561413dfeb22e6296a2ea508432b9ac84d7ecbc9cc64ee7b653288bb31c178"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/credential-rotation.json",
+      "sha256": "d59c68e97bdf3202be77f31b40d59fd5f6b6f7736b3b1886ace2b689d0db3711"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/data-recovery-first-opa-start.json",
+      "sha256": "713b402982209d24b4f1b879acc2c2ff68950215c48d3d69d0639a5ba54ebb8b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/data-recovery.json",
+      "sha256": "6526286ea9550d0390c17c38ddabe47d620721e2faca423a5372294e9a79db5a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/image-smoke.json",
+      "sha256": "a6c1ee17fddcfefb264e625822fd9c7b0c50e044a4f17e80c2a5bbfd5f109bed"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/model-provenance.json",
+      "sha256": "4309f5e7ebc13658d062a61f287ebf63e6ad407929e5dd03b23a0a6553d08233"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/provider-hard-stop.json",
+      "sha256": "438dc27d49ca21a862d2fe87a4acd153fab6203f353a7aba083d049861534655"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-bounded-workload.json",
+      "sha256": "1b5773098c57ebd79f34390a5684fd587a3a4531dd65794fab99e3b78f5053ab"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-final-workload.json",
+      "sha256": "5244505c0e679279befd5af95873080ec618826f18883c844702a1dde42db23b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-workload.json",
+      "sha256": "e27805abd248617d737ec1e34f81f4df04a4b2f31cd9ae157a8a8ee846074dcc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/role-topology-initial-image.json",
+      "sha256": "b419e27b7a2ace59c95dc35a2de507f459cf7246c402f38542651077fa5e825c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/role-topology.json",
+      "sha256": "20dc0460280ae38758147518f05181880eff5dd90a0c7f89f37869587c60eb38"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/signed-bridge.json",
+      "sha256": "71976480eb443ad7aed4aeee606e91cfcca737345f77db70753191808930b14a"
+    }
+  ]
+}
