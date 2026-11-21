@@ -6,4 +6,6 @@ G-09: **automated_qualified** for the bound isolated synthetic source/build. Tas
 
 Includes immutable encrypted capture/inventory, current-rights quarantine reconciliation, independent exact promotion approval, durable generation fencing, minimal help reconciliation and bilingual recovery UI. All38 source checks passed:1747 backend tests (3 legacy environment skips),234 frontend tests and11 browser cases;94 focused slice checks passed.
 
-Human review: deferred_until_after_IMP10. Actual serving decisions remain separately authorized. No physical-erasure, deployed-readiness, real staffing RTO, commit/push/merge/deployment or next-slice activation. Disposable fixtures removed; pre-existing research resources untouched.
+Human review: deferred_until_after_IMP10. Actual serving decisions remain separately authorized. No physical-erasure, deployed-readiness or real staffing RTO claim. No merge/deployment or next-slice activation. Disposable fixtures removed; pre-existing research resources untouched.
+
+Delivery closed: [PR16](https://github.com/zencodeai/care-link-demo/pull/16) is open against main. See [closure handoff](sessions/002-closure-and-pr/handoff.md). Source/build continuity verified; current remote CI pending at publication.

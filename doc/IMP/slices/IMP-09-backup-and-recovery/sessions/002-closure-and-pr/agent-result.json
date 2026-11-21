@@ -1,0 +1,58 @@
+{
+  "packet_id": "IMP09-002-closure-and-pr",
+  "task_id": "IMP-09-D",
+  "baseline_commit": "2c859c12f57c424bbefa1730be9c20bed72c989b",
+  "role": "imp_verifier",
+  "status": "completed",
+  "changed_paths": [
+    "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr",
+    "doc/IMP/slices/IMP-09-backup-and-recovery/README.md",
+    "doc/IMP/executions/2026-11-21-IMP-09/ledger.json"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr/publication.json",
+      "sha256": "98f03d259f7b13adc09501f9932bf622468b3192aa5854accc54cc0f8d443dcf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr/source-continuity.json",
+      "sha256": "8a7806b12ae28eb825c714ed7ada3ac00fdfa185aeb4847321c060aa58f0eeab"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr/handoff.md",
+      "sha256": "b47568e8d7d2d2ed845ae7c5ba234066b91a3ae7bb4c87635444060e0d9db70d"
+    }
+  ],
+  "checks": [
+    {
+      "name": "qualified-continuity",
+      "command": "uv run --locked --all-packages python -m tools.imp09_verification.verify_evidence",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Qualified source/build/evidence/schema bindings remain valid",
+      "actual": "950 source,58 references,3 build hashes match; all qualification references verified",
+      "evidence_path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr/verification.log",
+      "evidence_digest": "5f41fdbc61e779f40e84eb56c0243886bc055f88e101eac804d0f24956d8afcd",
+      "mock_used": false
+    },
+    {
+      "name": "publication",
+      "command": "git push --set-upstream origin feat/imp-09-backup-and-recovery; gh pr create --repo zencodeai/care-link-demo --base main --head feat/imp-09-backup-and-recovery --body-file <prepared-body>",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Private scoped PR with correct base/head; no merge/deployment",
+      "actual": "PR16 OPEN against merged main; remote CI in progress; research excluded",
+      "evidence_path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr/publication.json",
+      "evidence_digest": "98f03d259f7b13adc09501f9932bf622468b3192aa5854accc54cc0f8d443dcf",
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Current remote CI still running at observation; no pass claimed",
+    "Human review deferred_until_after_IMP10; no merge/deployment or actual serving approval"
+  ],
+  "handoff": "IMP09 delivery closed; PR16 open; next work requires scoped instruction and current head verification.",
+  "is_example": false
+}

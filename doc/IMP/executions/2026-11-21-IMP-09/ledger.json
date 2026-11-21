@@ -58,8 +58,8 @@
   "human_decisions": [],
   "deployment_applied": false,
   "participant_admission": false,
-  "commit_performed": false,
-  "push_performed": false,
+  "commit_performed": true,
+  "push_performed": true,
   "merge_performed": false,
   "next_slice_activated": false,
   "remaining": [
@@ -74,5 +74,32 @@
   "deferred_review_inventory": {
     "path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/deferred-review-inventory.json",
     "sha256": "8638602653c5bcfe542b0fc15493c0f6a87018e0a5d4bac25c1ce891aa3846c9"
-  }
+  },
+  "current_session": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr",
+  "publication": {
+    "state": "published",
+    "authorization": "User: Close IMP-09, create PR",
+    "repository": "zencodeai/care-link-demo",
+    "repository_private": true,
+    "branch": "feat/imp-09-backup-and-recovery",
+    "base_branch": "main",
+    "base_commit": "2c859c12f57c424bbefa1730be9c20bed72c989b",
+    "implementation_commit": "fa06df69ee5321e881dc3df4340ce8988d3c7532",
+    "pull_request_number": 16,
+    "pull_request_url": "https://github.com/zencodeai/care-link-demo/pull/16",
+    "pull_request_state": "OPEN",
+    "draft": false,
+    "recorded_at": "2026-11-21T18:18:24.202490+00:00",
+    "merge_authorized": false,
+    "deployment_authorized": false,
+    "next_slice_activated": false,
+    "ci_state_at_publication": "in_progress; no remote pass claimed",
+    "transport": "GitHub connector lacked private repository access; authenticated gh CLI used",
+    "excluded": [
+      "doc/research/2026-11-20-agentic-care/resources/"
+    ],
+    "session": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr",
+    "receipt": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr/publication.json"
+  },
+  "delivery_closed": true
 }
