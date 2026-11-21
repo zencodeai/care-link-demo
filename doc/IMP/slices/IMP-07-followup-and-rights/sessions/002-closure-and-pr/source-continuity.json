@@ -13,5 +13,8 @@
   "scope": "Isolated synthetic IMP-07 source; human review deferred_until_after_IMP10; backup erasure pending IMP-09",
   "excluded_preexisting": [
     "doc/research/2026-11-20-agentic-care/resources/"
-  ]
+  ],
+  "implementation_commit": "a3004493de9f95efa145afb6f5baae0b72329f2f",
+  "committed_source_bindings_checked": 839,
+  "committed_reference_bindings_checked": 58
 }

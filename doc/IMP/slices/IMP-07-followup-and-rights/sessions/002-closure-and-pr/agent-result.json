@@ -1,0 +1,60 @@
+{
+  "packet_id": "IMP07-002-closure-and-pr",
+  "task_id": "IMP-07-D",
+  "baseline_commit": "a1be01f91d461c59669517307fd2ea5259182235",
+  "role": "imp_verifier",
+  "status": "completed",
+  "changed_paths": [
+    "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr/",
+    "doc/IMP/slices/IMP-07-followup-and-rights/README.md",
+    "doc/IMP/executions/2026-11-21-IMP-07/ledger.json"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr/publication.json",
+      "sha256": "06cad45cd6549c9106ad9fc5d273926b735331022d0a34207dabdeaa6b62edeb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr/source-continuity.json",
+      "sha256": "46e2015fe32566f47a5bd655d7043a558e679817d2ec96bd7bca39cbd499c721"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr/pr-snapshot.json",
+      "sha256": "e0869c5d5f114211635db3f092db95e48b9f957084e3dee865bb3ad05ea717c4"
+    }
+  ],
+  "checks": [
+    {
+      "name": "qualified-source-publication-continuity",
+      "command": "Compare qualified hashes with working tree and committed Git blobs",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "839 source and58 reference hashes match committed bytes",
+      "actual": "897 committed bindings matched; predecessor main tree identical",
+      "evidence_path": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr/source-continuity.json",
+      "evidence_digest": "46e2015fe32566f47a5bd655d7043a558e679817d2ec96bd7bca39cbd499c721",
+      "mock_used": false
+    },
+    {
+      "name": "private-pr-created",
+      "command": "gh pr create / gh pr view14",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Open private repository PR for exact published branch",
+      "actual": "PR14 OPEN, ready for review, main base; CI in progress",
+      "evidence_path": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr/pr-snapshot.json",
+      "evidence_digest": "e0869c5d5f114211635db3f092db95e48b9f957084e3dee865bb3ad05ea717c4",
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Human review deferred_until_after_IMP10",
+    "Backup erasure/recovery proof pending IMP-09",
+    "Remote CI in progress at publication; no pass inferred",
+    "No merge/deployment/IMP-08 activation authorized"
+  ],
+  "handoff": "Read closure handoff and actual PR14 head/CI. Qualified source unchanged. User must separately authorize merge or deployment.",
+  "is_example": false
+}

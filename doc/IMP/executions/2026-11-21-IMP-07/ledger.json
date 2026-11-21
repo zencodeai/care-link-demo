@@ -7,7 +7,7 @@
   "closed": true,
   "recorded_at": "2026-11-21T15:53:34.363909+00:00",
   "baseline_commit": "a1be01f91d461c59669517307fd2ea5259182235",
-  "branch": "feat/imp-06-bounded-ai-assistance",
+  "branch": "feat/imp-07-followup-and-rights",
   "authorization": {
     "source_kind": "user_message",
     "instruction_reference": "Implement service slice 07",
@@ -52,8 +52,8 @@
   "human_decisions": [],
   "deployment_applied": false,
   "participant_admission": false,
-  "commit_performed": false,
-  "push_performed": false,
+  "commit_performed": true,
+  "push_performed": true,
   "merge_performed": false,
   "next_slice_activated": false,
   "remaining": [
@@ -66,13 +66,17 @@
   ],
   "current_session": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr",
   "publication": {
-    "state": "prepared",
+    "state": "published",
     "authorization": "User: Close IMP-07 and create PR",
     "branch": "feat/imp-07-followup-and-rights",
     "base_branch": "main",
     "base_commit": "f9c2f0f7217b80729171ba8526a535a45f14c2ba",
     "session": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr",
     "receipt": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr/publication.json",
-    "merge_authorized": false
+    "merge_authorized": false,
+    "implementation_commit": "a3004493de9f95efa145afb6f5baae0b72329f2f",
+    "pull_request_number": 14,
+    "pull_request_url": "https://github.com/zencodeai/care-link-demo/pull/14",
+    "pull_request_state": "OPEN"
   }
 }
