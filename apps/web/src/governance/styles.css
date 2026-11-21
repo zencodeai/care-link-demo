@@ -1,0 +1,20 @@
+.governance-app code,
+.governance-app dd,
+.governance-app li {
+  overflow-wrap: anywhere;
+}
+.governance-app fieldset {
+  min-inline-size: 0;
+  margin-block: 1rem;
+  padding: 0 1rem 1rem;
+  border: 1px solid #bfcfca;
+}
+.governance-app select {
+  max-width: 100%;
+}
+.governance-app [hidden] {
+  display: none !important;
+}
+.governance-app dd {
+  margin-inline-start: 1rem;
+}

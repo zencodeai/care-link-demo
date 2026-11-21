@@ -12,6 +12,39 @@ TARGETS = (
     ROOT / "packages/contracts/typescript/src/schema.json",
 )
 NAMES = (
+    "GovernanceArtifactContext",
+    "Gateway_artifact_context",
+    "ArtifactRegister",
+    "ArtifactView",
+    "ArtifactReview",
+    "ActivationCreate",
+    "ActivationAck",
+    "ActivationView",
+    "ExceptionCreate",
+    "IncidentCreate",
+    "IncidentView",
+    "IncidentTransition",
+    "AuditQuery",
+    "AuditPage",
+    "ScopeGrantCreate",
+    "MetricsQuery",
+    "MetricsView",
+    "MetricCount",
+    "HealthView",
+    "Gateway_artifact_register",
+    "Gateway_artifact_review",
+    "Gateway_activation_create",
+    "Gateway_activation_read",
+    "Gateway_activation_commit",
+    "Gateway_exception_create",
+    "Gateway_incident_create",
+    "Gateway_incident_read",
+    "Gateway_incident_transition",
+    "Gateway_audit_query",
+    "Gateway_metrics_query",
+    "Gateway_scoped_access_grant",
+    "Gateway_evidence_export",
+    "Gateway_audit_export_read",
     "FollowUpCreate",
     "FollowUpView",
     "FollowUpBindAnchor",
@@ -191,6 +224,9 @@ NAMES = (
 
 def render() -> str:
     source = json.loads((ROOT / "doc/LLD/contracts/definitions.schema.json").read_text())
+    source["$defs"].update(
+        json.loads((ROOT / "packages/contracts/governance.schema.json").read_text())["$defs"]
+    )
     selected: dict[str, object] = {}
 
     def include(name: str) -> None:
@@ -351,6 +387,36 @@ def render() -> str:
         "rights_read",
         "export_download",
     )
+    # IMP-08 health is a current guarded projection, using the same signed boundary.
+    selected["Gateway_health_read"] = {
+        "type": "object",
+        "properties": {
+            "path_arguments": {"$ref": "#/$defs/Empty"},
+            "arguments": {"$ref": "#/$defs/Empty"},
+            "delegation": {"$ref": "#/$defs/SignedDelegation"},
+            "decision": {"$ref": "#/$defs/PolicyDecision"},
+        },
+        "required": ["path_arguments", "arguments", "delegation", "decision"],
+        "additionalProperties": False,
+    }
+    planning_actions += (
+        "artifact_register",
+        "artifact_review",
+        "activation_create",
+        "activation_read",
+        "activation_commit",
+        "exception_create",
+        "incident_create",
+        "incident_read",
+        "incident_transition",
+        "audit_query",
+        "metrics_query",
+        "scoped_access_grant",
+        "evidence_export",
+        "audit_export_read",
+        "health_read",
+    )
+    planning_actions += ("artifact_context",)
     targets = []
     for action in planning_actions:
         gateway = selected["Gateway_" + action]["properties"]

@@ -1,0 +1,23 @@
+{
+  "owner": "IMP08-001-web",
+  "image": "sha256:847d0429ebe65559c9cc8cfb415f072fc9bf347050dc0fd7248d5cbcf0669a48",
+  "browser_containers": [
+    {
+      "id": "721941a6af92292da1fe1ce3987de926746743810907a0bf60e3844b0b5a0cab",
+      "state": "removed_after_pass12"
+    },
+    {
+      "id": "06a22d30ea183bafa0d65a29d3011d7f0e9fae5287956b49894b0dbddfede8a3",
+      "state": "removed_after_pass13"
+    },
+    {
+      "id": "d63d1e093529eeeac8876d5abad470f480da31c467edecd947da0ce697af249e",
+      "state": "removed_after_final_privacy_race_pass13"
+    }
+  ],
+  "loopback_ports": {
+    "4188": "owned Vite auto-stopped by Playwright",
+    "30908": "owned container removed"
+  },
+  "other_resources": "untouched"
+}

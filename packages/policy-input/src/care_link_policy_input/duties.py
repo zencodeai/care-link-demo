@@ -138,7 +138,7 @@ class SignedDutyRegistry:
         validate_contract("DutyDefinition", definition.definition.wire())
         duty = definition.definition
         if (
-            action not in {"identity_revoke", "job_execute", "lifecycle_due"}
+            action not in {"identity_revoke", "job_execute", "lifecycle_due", "activation_ack"}
             or action not in duty.operations
             or actor.action != action
             or definition.actor_id != actor.actor_id
@@ -174,6 +174,17 @@ class SignedDutyRegistry:
                     not {"expired_copy", "due_followup"}.issubset(duty.resource_classes)
                     or actor.workload_id != "spiffe://care-link.demo/demo/jobs"
                     or scope.purpose != "rights"
+                    or scope.session_id is not None
+                    or scope.subject_id is not None
+                    or actor.job_id is not None
+                )
+            )
+            or (
+                action == "activation_ack"
+                and (
+                    "validated_security_event" not in duty.resource_classes
+                    or actor.workload_id != "spiffe://care-link.demo/demo/enforcer"
+                    or scope.purpose != "governance"
                     or scope.session_id is not None
                     or scope.subject_id is not None
                     or actor.job_id is not None

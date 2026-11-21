@@ -1,0 +1,18 @@
+
+> @care-link/web@0.1.0 build /Users/main/Workspace/projects/care-link/care-link-demo/apps/web
+> tsc --noEmit && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 133 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.47 kB │ gzip:   0.30 kB
+dist/assets/index-BQNIl61a.css      4.25 kB │ gzip:   1.40 kB
+dist/assets/index-xf4tTDF-.js   1,646.55 kB │ gzip: 249.68 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.06s

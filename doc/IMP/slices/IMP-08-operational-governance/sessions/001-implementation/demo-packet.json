@@ -1,0 +1,648 @@
+{
+  "packet_id": "IMP08-001-automated-qualification",
+  "stage_id": "IMP-08",
+  "gate_id": "G-08",
+  "candidate": {
+    "commit": "83406f94014ca3cc71f870b3b8c771841c6e83f9",
+    "diff_digest": "c9b70b9628bf715ab838325de89924ebbf1d63c98479c79ed690c4b4329bedb8",
+    "artifact_digest": "df79d83f719cfda148ffc06d1ff272fdf43647ac086cd85f0078ce7051e1bd80",
+    "configuration_digest": "7f5f967468542277d1226e1020ff3baa06f8e4e6f08c64d4995af618aab25bce",
+    "contract_digest": "39007757eca4a8f74c307680b27b7ce02c77f754fbcc05aefd4957c83f5192ec",
+    "environment_digest": "93131dc0307782ad3fceeeac675144554d9f5a7ee019a74ce3402cb407385599",
+    "fixture_digest": "e7be5250fe9ed35bd2b863aa25418e053c8a86f91b390ea9839e51c4aed5378d"
+  },
+  "state": "demonstrated",
+  "preconditions": [
+    "Current user assigned Implement service slice08",
+    "G-03 historical accepted dependency, G-05 automated-qualified dependency and G-07 continuity inspected",
+    "Owned disposable synthetic TLS PostgreSQL/pinned OPA/Chromium only; no deployment/publication"
+  ],
+  "normal_steps": [
+    {
+      "action": "Signed controlled policy change",
+      "expected": "Exact signed bytes, class-specific independent current reviews and current per-boot ACKs",
+      "actual": "Real signed OPA candidate register/review/ACK/commit selects new evaluator; signed identity HTTP registration/context and actual filesystem-journal activation/reopen passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/db008/01.log",
+          "sha256": "73350ce83fd0afdc243ecf92aca7def6cd51ec15d8443bcd9be88f6d5f4dc848"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/playwright-results.json",
+          "sha256": "74bbdb519c321207aaedfcedcdd780734d3b1ed593a70983899e8349039251a9"
+        }
+      ]
+    },
+    {
+      "action": "Accountable evidence and outcome metrics",
+      "expected": "Scoped metadata-only audit/export and coupled safely suppressed aggregates",
+      "actual": "Real PostgreSQL scoped grants, exact cursor/export scope, fixed release/denominator and complementary suppression passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/db008/01.log",
+          "sha256": "73350ce83fd0afdc243ecf92aca7def6cd51ec15d8443bcd9be88f6d5f4dc848"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/playwright-results.json",
+          "sha256": "74bbdb519c321207aaedfcedcdd780734d3b1ed593a70983899e8349039251a9"
+        }
+      ]
+    },
+    {
+      "action": "Actor workspaces",
+      "expected": "Operator/security/governance/auditor workflows in EN/FR",
+      "actual": "223 frontend tests and13 Chromium checks passed; keyboard/axe1280/640px and export pages/current authority covered.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/db008/01.log",
+          "sha256": "73350ce83fd0afdc243ecf92aca7def6cd51ec15d8443bcd9be88f6d5f4dc848"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/playwright-results.json",
+          "sha256": "74bbdb519c321207aaedfcedcdd780734d3b1ed593a70983899e8349039251a9"
+        }
+      ]
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Stale authority and rollback",
+      "expected": "No stale receipt/boot/permit or old epoch restores rights",
+      "actual": "Expiry after audit rolls back activation; signer/reviewer loss, boot/resource/required-set drift, terminal denial replay and paused permit all denied; rollback uses fresh reviews and higher epoch.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/db008/01.log",
+          "sha256": "73350ce83fd0afdc243ecf92aca7def6cd51ec15d8443bcd9be88f6d5f4dc848"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/playwright-results.json",
+          "sha256": "74bbdb519c321207aaedfcedcdd780734d3b1ed593a70983899e8349039251a9"
+        }
+      ]
+    },
+    {
+      "action": "Concurrent custody change",
+      "expected": "Custody writers serialize with the final business/audit commit",
+      "actual": "BEFORE STATEMENT global-first trigger holds boot/receipt mutations until commit; later change denies subsequent effects/downloads.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/db008/01.log",
+          "sha256": "73350ce83fd0afdc243ecf92aca7def6cd51ec15d8443bcd9be88f6d5f4dc848"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/playwright-results.json",
+          "sha256": "74bbdb519c321207aaedfcedcdd780734d3b1ed593a70983899e8349039251a9"
+        }
+      ]
+    },
+    {
+      "action": "No unauthorized export or UI disclosure",
+      "expected": "No operator standing browse, individual exposure, isolated police measure or expired private view",
+      "actual": "Direct API/schema negatives, role-loss/download expiry, whole-family suppression and delayed response after reauth private-render regression passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/db008/01.log",
+          "sha256": "73350ce83fd0afdc243ecf92aca7def6cd51ec15d8443bcd9be88f6d5f4dc848"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/playwright-results.json",
+          "sha256": "74bbdb519c321207aaedfcedcdd780734d3b1ed593a70983899e8349039251a9"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "source-01",
+      "command": "uv lock --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/01.log",
+      "evidence_digest": "4178fef676ecb0344d286cee8513ec61e5ddd3328fa87b5b801eaef9c04c83fb",
+      "mock_used": false
+    },
+    {
+      "name": "source-02",
+      "command": "pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/02.log",
+      "evidence_digest": "58439b7aa2539da4264dc06c4b30bd133917d6c251c38bc0dd6b0cd57b7d79d4",
+      "mock_used": false
+    },
+    {
+      "name": "source-03",
+      "command": "uv run --locked --all-packages python tools/generate_contracts.py --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/03.log",
+      "evidence_digest": "90533ae9e8a6e09e26ead2d68464954ee14fc64f040cc24366e942cbcd9d9b7a",
+      "mock_used": false
+    },
+    {
+      "name": "source-04",
+      "command": "uv run --locked --all-packages python tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/04.log",
+      "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "mock_used": false
+    },
+    {
+      "name": "source-05",
+      "command": "uv run --locked --all-packages python tools/check_imp02_admission.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/05.log",
+      "evidence_digest": "a3882b2b400134aad06bb6a1f3a2d33c28096330b037dec61ece67944843d0b1",
+      "mock_used": false
+    },
+    {
+      "name": "source-06",
+      "command": "uv run --locked --all-packages ruff check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/06.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "source-07",
+      "command": "uv run --locked --all-packages ruff format --check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/07.log",
+      "evidence_digest": "e7d7b93e17b0fd7179f1e099120c25fb1bd8a3437d0a04ddaae4c7b34afff4a7",
+      "mock_used": false
+    },
+    {
+      "name": "source-08",
+      "command": "pnpm exec pyright --project pyrightconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/08.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "source-09",
+      "command": "pnpm typecheck",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/09.log",
+      "evidence_digest": "e2619b18e6eda193c3629cf5a0d6112df29e1f4e400b0c8b0ad8a99861ed2ac5",
+      "mock_used": false
+    },
+    {
+      "name": "source-10",
+      "command": "pnpm lint",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/10.log",
+      "evidence_digest": "d957502195d6b7bf553082127cc2b44f0602f6924caec17c117d0a1e09273f12",
+      "mock_used": false
+    },
+    {
+      "name": "source-11",
+      "command": "pnpm format:check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/11.log",
+      "evidence_digest": "1264ec68aa3a02a4163de506eca818cf94c93265a31cc61682a0898bc86fb889",
+      "mock_used": false
+    },
+    {
+      "name": "source-12",
+      "command": "uv run --locked --all-packages pytest --tb=short",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/12.log",
+      "evidence_digest": "3f38b2f7ca014dae0e3e8a445cc13262aca21a14883eca557f171e18c444e4f7",
+      "mock_used": true
+    },
+    {
+      "name": "source-13",
+      "command": "pnpm exec tsc -p tests/e2e/imp02/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/13.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-14",
+      "command": "pnpm exec eslint tests/e2e/imp02 --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/14.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-15",
+      "command": "pnpm exec prettier --check tests/e2e/imp02",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/15.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-16",
+      "command": "pnpm exec tsc -p tests/e2e/imp03/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/16.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-17",
+      "command": "pnpm exec eslint tests/e2e/imp03 --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/17.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-18",
+      "command": "pnpm exec prettier --check tests/e2e/imp03",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/18.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-19",
+      "command": "pnpm exec tsc -p tests/e2e/imp03-extended/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/19.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-20",
+      "command": "pnpm exec eslint tests/e2e/imp03-extended --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/20.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-21",
+      "command": "pnpm exec prettier --check tests/e2e/imp03-extended",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/21.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-22",
+      "command": "pnpm exec tsc -p tests/e2e/imp03-review/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/22.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-23",
+      "command": "pnpm exec eslint tests/e2e/imp03-review --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/23.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-24",
+      "command": "pnpm exec prettier --check tests/e2e/imp03-review",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/24.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-25",
+      "command": "pnpm exec tsc -p tests/e2e/imp04-live/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/25.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-26",
+      "command": "pnpm exec eslint tests/e2e/imp04-live --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/26.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-27",
+      "command": "pnpm exec prettier --check tests/e2e/imp04-live",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/27.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-28",
+      "command": "pnpm exec tsc -p tests/contract/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/28.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-29",
+      "command": "pnpm exec eslint tests/contract --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/29.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-30",
+      "command": "pnpm exec prettier --check tests/contract",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/30.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-31",
+      "command": "node --check tools/imp04_verification/review_accessibility.cjs",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/31.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-32",
+      "command": "pnpm exec prettier --check tools/imp04_verification/review_accessibility.cjs",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/32.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-33",
+      "command": "pnpm test",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/33.log",
+      "evidence_digest": "196165d781ceb8aa6e72b652c94f5c457a1055759e29bcf0082c45076d6c1d28",
+      "mock_used": true
+    },
+    {
+      "name": "source-34",
+      "command": "pnpm build",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/34.log",
+      "evidence_digest": "9ccdf65cc5d69ba33611b676b7632475e5197b4e7452017505d0e22d5f58649e",
+      "mock_used": false
+    },
+    {
+      "name": "source-35",
+      "command": "pnpm exec tsc -p tests/e2e/governance/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/35.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-36",
+      "command": "pnpm exec eslint tests/e2e/governance --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/36.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-37",
+      "command": "pnpm exec prettier --check tests/e2e/governance",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/37.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-38",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m tools.imp05_verification.validate_plan",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/38.log",
+      "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+      "mock_used": false
+    },
+    {
+      "name": "slice-01",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m pytest services/data/tests/test_imp08_boundary.py services/data/tests/test_imp08_controls.py services/data/tests/test_imp08_evidence_postgres.py services/data/tests/test_imp08_evidence_unit.py services/data/tests/test_imp08_inline.py services/data/tests/test_imp08_latency.py services/core/tests/test_imp08_transport.py packages/policy-input/tests/test_imp08_policy.py -q --tb=short --junitxml /Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/db008/pytest.xml",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Applicable automated source check succeeds with runtime controls intact",
+      "actual": "Exit0; individual results and explicit legacy skips retained in bound log",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/db008/01.log",
+      "evidence_digest": "73350ce83fd0afdc243ecf92aca7def6cd51ec15d8443bcd9be88f6d5f4dc848",
+      "mock_used": true
+    },
+    {
+      "name": "chromium-en-fr",
+      "command": "pnpm exec playwright test --config tests/e2e/governance/playwright.config.ts",
+      "tool_version": "1.65.0",
+      "status": "passed",
+      "expected": "EN/FR four-role keyboard/axe/layout/current authority/private evidence and export pagination behavior",
+      "actual": "13 expected;0 unexpected/skipped/flaky; synthetic route fixtures",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/playwright-results.json",
+      "evidence_digest": "74bbdb519c321207aaedfcedcdd780734d3b1ed593a70983899e8349039251a9",
+      "mock_used": true
+    },
+    {
+      "name": "final-01",
+      "command": "uv run --locked --all-packages ruff check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final tooling, contracts, boundaries and formatting remain valid",
+      "actual": "Exit0; final metadata-only evidence binding delta checked after full source run",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/final003/01.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "final-02",
+      "command": "uv run --locked --all-packages ruff format --check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final tooling, contracts, boundaries and formatting remain valid",
+      "actual": "Exit0; final metadata-only evidence binding delta checked after full source run",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/final003/02.log",
+      "evidence_digest": "7cf5f66c26f6519b5c852cba8cea7cbbaffab5aa119720a0ef62a6dcf3c78dab",
+      "mock_used": false
+    },
+    {
+      "name": "final-03",
+      "command": "pnpm exec pyright --project pyrightconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final tooling, contracts, boundaries and formatting remain valid",
+      "actual": "Exit0; final metadata-only evidence binding delta checked after full source run",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/final003/03.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "final-04",
+      "command": "uv run --locked --all-packages python tools/generate_contracts.py --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final tooling, contracts, boundaries and formatting remain valid",
+      "actual": "Exit0; final metadata-only evidence binding delta checked after full source run",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/final003/04.log",
+      "evidence_digest": "90533ae9e8a6e09e26ead2d68464954ee14fc64f040cc24366e942cbcd9d9b7a",
+      "mock_used": false
+    },
+    {
+      "name": "final-05",
+      "command": "uv run --locked --all-packages python tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final tooling, contracts, boundaries and formatting remain valid",
+      "actual": "Exit0; final metadata-only evidence binding delta checked after full source run",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/final003/05.log",
+      "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "mock_used": false
+    },
+    {
+      "name": "final-06",
+      "command": "git diff --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final tooling, contracts, boundaries and formatting remain valid",
+      "actual": "Exit0; final metadata-only evidence binding delta checked after full source run",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/final003/06.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "final-document-bindings",
+      "command": "uv run --locked --all-packages python -m tools.imp08_verification.verify_evidence; uv run --locked --all-packages python -m tools.imp05_verification.validate_plan; git diff --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Session schemas, source/build/environment/evidence hashes, dependencies, canonical operation trace, links and diff validate",
+      "actual": "All assertions and validators passed; human review remains deferred",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/document-checks.log",
+      "evidence_digest": "d7faa9d24f28fe1ac333a84698233ec28552c4d6a80595b68b5ffc3aa28ac160",
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "Human usability, screen-reader, visual and language review is deferred_until_after_IMP10; no human acceptance inferred.",
+    "Isolated synthetic source only: OIDC provider and identity persistence are fixtures, signed HTTP/mesh is in-process; no deployed network/provider, clinical, legal, production or certification claim.",
+    "Live activation through this path admits Rego policy artifacts only; other artifact kinds are registered/classified/reviewed and require their separate subsystem release admission.",
+    "Audit evidence is metadata-only; content grants deny. Incidents contain exact principal recipient or explicit global capability; unsupported subject/session/field scope denies without widening.",
+    "Only admitted demo.review_frequency exceptions can register; they grant no business authority and cannot waive fixed exclusions.",
+    "Three existing legacy checks explicitly skipped: owned Docker capture, Linux UID/setuid harness and isolated provisioning fixture; no new pass is inferred for them.",
+    "Local sequential30-request performance sample is not a deployed sustained-load/drift/alert SLO. Current instance evidence expires after30seconds and needs separately provisioned trusted observation.",
+    "Existing web build chunk-size warning remains: approximately1.65MB minified/250KB gzip aggregate entry. Build succeeds; no deployed performance claim.",
+    "Backup/restore and physical-erasure proof remain IMP-09; existing deletion/hold/recovery restrictions and serving release ownership are preserved."
+  ],
+  "acceptance_scope": "Automated qualification of the bound isolated synthetic IMP-08 source/build candidate; policy-only live activation and metadata-only audit limits explicit. Human review deferred. No deployed readiness or authority inferred.",
+  "rollback": "Use new higher epoch and fresh current reviews/ACKs selecting a compatible prior policy; retain all newer restrictions/holds/tombstones and independent serving ownership. Orphan relaxation intent grants nothing.",
+  "human_decision_id": null,
+  "is_example": false
+}

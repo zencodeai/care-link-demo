@@ -1,0 +1,15 @@
+{
+  "stage_id": "IMP-08",
+  "qualified_baseline": "83406f94014ca3cc71f870b3b8c771841c6e83f9",
+  "pr_base": "0f8b190d5f110ec221f61c54fe8d1aa0170d7e4a",
+  "baseline_tree": "dad3f3d47f165837704702427c3806bf071f980f",
+  "pr_base_tree": "dad3f3d47f165837704702427c3806bf071f980f",
+  "base_trees_equal": true,
+  "source_hashes_matched": 900,
+  "reference_hashes_matched": 58,
+  "build_hashes_matched": 3,
+  "qualified_checks_retained": 47,
+  "product_source_changed_in_closure": false,
+  "branch": "feat/imp-08-operational-governance",
+  "github_access": "Connector private-repository read returned404; authenticated local GitHub CLI confirmed private repository and merged predecessor PR14."
+}

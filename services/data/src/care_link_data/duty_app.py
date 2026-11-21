@@ -15,6 +15,7 @@ from starlette.concurrency import run_in_threadpool
 from starlette.responses import JSONResponse
 
 from .duties import DutyCommands
+from .governance.ack import EnforcerAcknowledgements
 from .lifecycle.jobs import LifecycleJobs
 from .values import canonical
 
@@ -50,7 +51,13 @@ class SignedDutySecurity:
         self.resolver, self.workload_verifier = resolver, workload_verifier
 
     def verify(self, request: Request, data: Record, action: str, key: str) -> DutyActor:
-        peer = "identity" if action == "identity_revoke" else "jobs"
+        peer = (
+            "identity"
+            if action == "identity_revoke"
+            else "enforcer"
+            if action == "activation_ack"
+            else "jobs"
+        )
         admitted = self.workload_verifier(request, peer)
         expected = "spiffe://care-link.demo/demo/" + peer
         if (
@@ -69,7 +76,9 @@ class SignedDutySecurity:
             peer="spiffe://care-link.demo/demo/" + peer,
             method=request.method,
             path=request.url.path,
-            audience="care-link-control" if action == "identity_revoke" else "care-link-core",
+            audience="care-link-control"
+            if action in {"identity_revoke", "activation_ack"}
+            else "care-link-core",
             body_digest=hashlib.sha256(canonical(data).encode()).hexdigest(),
             operation_id=key,
             request_digest=DutyCommands.binding(action, key, data),
@@ -87,7 +96,11 @@ class SignedDutySecurity:
 
 
 def create_duty_app(
-    commands: DutyCommands, security: DutySecurity, *, lifecycle: LifecycleJobs | None = None
+    commands: DutyCommands,
+    security: DutySecurity,
+    *,
+    lifecycle: LifecycleJobs | None = None,
+    enforcers: EnforcerAcknowledgements | None = None,
 ) -> FastAPI:
     app = FastAPI(
         title="CARE-Link registered workload duties",
@@ -127,7 +140,10 @@ def create_duty_app(
     app.add_exception_handler(ContractError, error_response)
 
     def route(
-        action: str, contract: str, method: Callable[[DutyActor, str, Record], Record]
+        action: str,
+        contract: str,
+        method: Callable[[DutyActor, str, Record], Record],
+        output: str = "CommandResult",
     ) -> Callable[[Request], object]:
         async def handle(request: Request) -> JSONResponse:
             if request.query_params or request.headers.get("content-encoding") is not None:
@@ -151,7 +167,7 @@ def create_duty_app(
                 raise ManualError("manual.invalid_request", 400) from error
             actor = await run_in_threadpool(security.verify, request, data, action, key)
             result = await run_in_threadpool(method, actor, key, data)
-            validate_contract("CommandResult", result)
+            validate_contract(output, result)
             return JSONResponse(result, headers={"Cache-Control": "no-store"})
 
         return handle
@@ -170,6 +186,12 @@ def create_duty_app(
         app.add_api_route(
             "/internal/v1/lifecycle/due",
             route("lifecycle_due", "LifecycleDueRequest", lifecycle.lifecycle_due),
+            methods=["POST"],
+        )
+    if enforcers is not None:
+        app.add_api_route(
+            "/internal/v1/control/ack",
+            route("activation_ack", "ActivationAck", enforcers.activation_ack, "ActivationView"),
             methods=["POST"],
         )
     return app

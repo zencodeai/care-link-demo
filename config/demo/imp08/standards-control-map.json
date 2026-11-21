@@ -1,0 +1,175 @@
+{
+  "version": "imp08-1",
+  "status": "tailored_synthetic_source_control_map",
+  "scope": "Applicable identifier subset only. No framework certification, universal coverage, clinical approval or ISO clause review. NIST AI RMF/Zero Trust and SSF/CAEP remain existing requirement references; interoperability is not newly qualified.",
+  "applicable_denominator": {
+    "asvs_selected_unique_requirements": 6,
+    "llm_risk_categories": 2,
+    "agentic_risk_categories": 4,
+    "atlas_techniques": 2
+  },
+  "records": [
+    {
+      "local_control": "LC-SCOPE",
+      "source": "asvs",
+      "edition": "5.0.0",
+      "verified_identifiers": [
+        "v5.0.0-8.2.1",
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3",
+        "v5.0.0-8.3.1",
+        "v5.0.0-8.3.2",
+        "v5.0.0-8.3.3"
+      ],
+      "official_artifact": {
+        "url": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x17-V8-Authorization.md",
+        "sha256": "60c188b1703cab2086841d8f1b4adc0ededf66ed38c676a11bb92347646b5330",
+        "bytes": 5920,
+        "retrieved_at": "2026-11-21T16:19:03.725394+00:00"
+      },
+      "enforcement_owner": "services/data/src/care_link_data/engine.py",
+      "policy_digest": "cd2b66cb19bb3e3ade6bf82b0fadb62c74f62eafd52b7dc81feb8299e4454885",
+      "negative_tests": [
+        "services/core/tests/test_imp08_transport.py",
+        "services/data/tests/test_imp08_inline.py"
+      ],
+      "evidence_status": "bound_automated_results_in_slice_session",
+      "responsible_human_role": "security",
+      "review_date": "2026-11-21",
+      "applicability_and_residual": "Selected function/data/field authorization and trusted current permission boundaries; no full ASVS Level2 assessment.",
+      "evidence_ref": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/results.json"
+    },
+    {
+      "local_control": "LC-AGENT",
+      "source": "llm01",
+      "edition": "2025",
+      "verified_identifiers": [
+        "LLM01:2025"
+      ],
+      "official_artifact": {
+        "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+        "sha256": "c140019072a7e8f20234a3d8a4fa4d7779bb509377c852688948d37e8c3ae620",
+        "bytes": 365706,
+        "retrieved_at": "2026-11-21T16:19:03.899117+00:00"
+      },
+      "enforcement_owner": "services/core/src/care_link_core/assistance_broker/broker.py",
+      "policy_digest": "cd2b66cb19bb3e3ade6bf82b0fadb62c74f62eafd52b7dc81feb8299e4454885",
+      "negative_tests": [
+        "services/core/tests",
+        "services/runtime/tests"
+      ],
+      "evidence_status": "bound_automated_results_in_slice_session",
+      "responsible_human_role": "security",
+      "review_date": "2026-11-21",
+      "applicability_and_residual": "Direct/indirect injection threat scenarios; bounded broker tools and independent service authorization remain the control.",
+      "evidence_ref": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/results.json"
+    },
+    {
+      "local_control": "LC-AGENT",
+      "source": "llm06",
+      "edition": "2025",
+      "verified_identifiers": [
+        "LLM06:2025"
+      ],
+      "official_artifact": {
+        "url": "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/",
+        "sha256": "1effcd7575c6454680b932c9970665a205d9165776fc83581e8bb5825c73c7bf",
+        "bytes": 370891,
+        "retrieved_at": "2026-11-21T16:19:04.177669+00:00"
+      },
+      "enforcement_owner": "services/core/src/care_link_core/assistance_broker/broker.py",
+      "policy_digest": "cd2b66cb19bb3e3ade6bf82b0fadb62c74f62eafd52b7dc81feb8299e4454885",
+      "negative_tests": [
+        "services/core/tests",
+        "services/runtime/tests"
+      ],
+      "evidence_status": "bound_automated_results_in_slice_session",
+      "responsible_human_role": "security",
+      "review_date": "2026-11-21",
+      "applicability_and_residual": "Least agency, fixed tools and human review; taxonomic mapping does not prove model robustness.",
+      "evidence_ref": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/results.json"
+    },
+    {
+      "local_control": "LC-ARTIFACT",
+      "source": "agentic",
+      "edition": "OWASP Top10 For Agentic Applications 2026, December2025",
+      "verified_identifiers": [
+        "ASI02",
+        "ASI03",
+        "ASI04",
+        "ASI08"
+      ],
+      "official_artifact": {
+        "url": "https://genai.owasp.org/download/52117/",
+        "sha256": "a2db94cd00b08e0b3a5e5b619afe024bdbcd74503111085705e4f3dd886fcb5c",
+        "bytes": 1274186,
+        "retrieved_at": "2026-11-21T16:19:06.304305+00:00"
+      },
+      "enforcement_owner": "services/data/src/care_link_data/governance",
+      "policy_digest": "cd2b66cb19bb3e3ade6bf82b0fadb62c74f62eafd52b7dc81feb8299e4454885",
+      "negative_tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_inline.py"
+      ],
+      "evidence_status": "bound_automated_results_in_slice_session",
+      "responsible_human_role": "governance",
+      "review_date": "2026-11-21",
+      "applicability_and_residual": "Selected tool/identity/supply-chain/cascading-failure risks; signed artifacts and bounded controls. No independent clinical authority.",
+      "evidence_ref": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/results.json"
+    },
+    {
+      "local_control": "LC-AGENT",
+      "source": "atlas",
+      "edition": "2026.10 content;6.1.0 format",
+      "verified_identifiers": [
+        "AML.T0051.000",
+        "AML.T0051.001"
+      ],
+      "official_artifact": {
+        "url": "https://raw.githubusercontent.com/mitre-atlas/atlas-data/f56c1468731d6428e5bf875263b4643b46d67437/dist/v6/ATLAS-2026.10.yaml",
+        "sha256": "ac41ee9f99a47084ba5fdfc77ae83a28687e12390240fffeb37df7914ffe142d",
+        "bytes": 1154660,
+        "retrieved_at": "2026-11-21T16:19:06.622516+00:00"
+      },
+      "enforcement_owner": "services/core/src/care_link_core/assistance_broker/broker.py",
+      "policy_digest": "cd2b66cb19bb3e3ade6bf82b0fadb62c74f62eafd52b7dc81feb8299e4454885",
+      "negative_tests": [
+        "services/runtime/tests",
+        "services/core/tests"
+      ],
+      "evidence_status": "bound_automated_results_in_slice_session",
+      "responsible_human_role": "security",
+      "review_date": "2026-11-21",
+      "applicability_and_residual": "Direct and indirect prompt injection techniques verified from official immutable revision; risk coverage only, not a certification denominator.",
+      "evidence_ref": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/results.json"
+    },
+    {
+      "local_control": "LC-AUDIT",
+      "source": "asvs",
+      "edition": "5.0.0",
+      "verified_identifiers": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3",
+        "v5.0.0-8.3.2"
+      ],
+      "official_artifact": {
+        "url": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x17-V8-Authorization.md",
+        "sha256": "60c188b1703cab2086841d8f1b4adc0ededf66ed38c676a11bb92347646b5330",
+        "bytes": 5920,
+        "retrieved_at": "2026-11-21T16:19:03.725394+00:00"
+      },
+      "enforcement_owner": "services/data/src/care_link_data/governance/evidence.py",
+      "policy_digest": "cd2b66cb19bb3e3ade6bf82b0fadb62c74f62eafd52b7dc81feb8299e4454885",
+      "negative_tests": [
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_evidence_unit.py"
+      ],
+      "evidence_status": "bound_automated_results_in_slice_session",
+      "responsible_human_role": "governance",
+      "review_date": "2026-11-21",
+      "applicability_and_residual": "Current scoped metadata grants, expiry, purpose/time windows and whole-family aggregate suppression; no formal differential privacy claim.",
+      "evidence_ref": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/results.json"
+    }
+  ],
+  "human_review": "deferred_until_after_IMP10"
+}

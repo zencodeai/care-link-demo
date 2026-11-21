@@ -1,0 +1,21 @@
+[
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "pytest",
+      "services/data/tests/test_imp08_controls.py",
+      "services/data/tests/test_imp08_evidence_postgres.py",
+      "services/data/tests/test_imp08_evidence_unit.py",
+      "services/data/tests/test_imp08_inline.py",
+      "services/core/tests/test_imp08_transport.py",
+      "packages/policy-input/tests/test_imp08_policy.py",
+      "-q",
+      "--tb=short"
+    ],
+    "started_at": "2026-11-21T16:28:20.182184+00:00",
+    "completed_at": "2026-11-21T16:28:36.398816+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/db004/01.log"
+  }
+]

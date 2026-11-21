@@ -114,6 +114,10 @@ def create_app(
 
         attach_assistance_gateway(app, assistance, envelope)
 
+    from .governance_app import attach_governance_gateway
+
+    attach_governance_gateway(app, service, envelope)
+
     from .lifecycle.app import attach_lifecycle_gateway
 
     attach_lifecycle_gateway(app, service, envelope)

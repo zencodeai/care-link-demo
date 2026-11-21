@@ -1,0 +1,261 @@
+{
+  "stage_id": "IMP-08",
+  "gate_id": "G-08",
+  "state": "automated_qualified",
+  "scope": "CI test fixture/offline evidence verifier only; exact runtime/build source continuity preserves prior bounded evidence",
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/candidate-manifest.json",
+    "sha256": "6daf4bd55508f747c8efeab54352d28974ced81c469ca6d0f4a565322250f48e"
+  },
+  "checks": [
+    {
+      "name": "local-01",
+      "command": "pnpm exec vitest run apps/web/src/manual/ManualService.test.tsx -t keeps both-party channel liveness during ACK and reauthorizes each stream update",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/01.log",
+      "evidence_digest": "21695098f8384fd31e702eb8081cc3d5d930ecc6e2110746df9d0cbfee924cb5",
+      "mock_used": true
+    },
+    {
+      "name": "local-02",
+      "command": "pnpm exec vitest run apps/web/src/manual/ManualService.test.tsx -t keeps both-party channel liveness during ACK and reauthorizes each stream update",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/02.log",
+      "evidence_digest": "4a65e73e00c67f6590a2981579e2adc5e58d5ee1ae3a9a2560ccf457790a0843",
+      "mock_used": true
+    },
+    {
+      "name": "local-03",
+      "command": "pnpm exec vitest run apps/web/src/manual/ManualService.test.tsx -t keeps both-party channel liveness during ACK and reauthorizes each stream update",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/03.log",
+      "evidence_digest": "8b40d99c5af5653a05b61819b56999d77c9142515a44e8a6825aa5836a23cc0f",
+      "mock_used": true
+    },
+    {
+      "name": "local-04",
+      "command": "pnpm exec vitest run apps/web/src/manual/ManualService.test.tsx -t keeps both-party channel liveness during ACK and reauthorizes each stream update",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/04.log",
+      "evidence_digest": "496d18d674358967e722d3dc46ab332a6208cebf88700f2c3360f306f1e3680d",
+      "mock_used": true
+    },
+    {
+      "name": "local-05",
+      "command": "pnpm exec vitest run apps/web/src/manual/ManualService.test.tsx -t keeps both-party channel liveness during ACK and reauthorizes each stream update",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/05.log",
+      "evidence_digest": "6ef666ab981ecb44a07a4ee81ebfa6cc56cccf1e2588f71ec4c00a950088a6cb",
+      "mock_used": true
+    },
+    {
+      "name": "local-06",
+      "command": "pnpm test",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/06.log",
+      "evidence_digest": "8d4687f3c5d4a4732485c0485df98784a8e089a8a1ccf642330940daaf8baa7c",
+      "mock_used": true
+    },
+    {
+      "name": "local-07",
+      "command": "pnpm typecheck",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/07.log",
+      "evidence_digest": "e2619b18e6eda193c3629cf5a0d6112df29e1f4e400b0c8b0ad8a99861ed2ac5",
+      "mock_used": false
+    },
+    {
+      "name": "local-08",
+      "command": "pnpm lint",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/08.log",
+      "evidence_digest": "d957502195d6b7bf553082127cc2b44f0602f6924caec17c117d0a1e09273f12",
+      "mock_used": false
+    },
+    {
+      "name": "local-09",
+      "command": "pnpm format:check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/09.log",
+      "evidence_digest": "1264ec68aa3a02a4163de506eca818cf94c93265a31cc61682a0898bc86fb889",
+      "mock_used": false
+    },
+    {
+      "name": "local-10",
+      "command": "uv run --locked --all-packages ruff check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/10.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "local-11",
+      "command": "uv run --locked --all-packages ruff format --check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/11.log",
+      "evidence_digest": "7cf5f66c26f6519b5c852cba8cea7cbbaffab5aa119720a0ef62a6dcf3c78dab",
+      "mock_used": false
+    },
+    {
+      "name": "local-12",
+      "command": "pnpm exec pyright --project pyrightconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/12.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "local-13",
+      "command": "uv run --locked --all-packages python tools/generate_contracts.py --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/13.log",
+      "evidence_digest": "90533ae9e8a6e09e26ead2d68464954ee14fc64f040cc24366e942cbcd9d9b7a",
+      "mock_used": false
+    },
+    {
+      "name": "local-14",
+      "command": "uv run --locked --all-packages python tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged liveness/revocation assertions and scoped static checks pass",
+      "actual": "Exit0; focused case passed independently five times; full frontend suite223 passed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/14.log",
+      "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "mock_used": false
+    },
+    {
+      "name": "final-01",
+      "command": "uv run --locked --all-packages ruff check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final source/session selection and current evidence bindings remain valid",
+      "actual": "Exit0; no runtime changes",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/01.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "final-02",
+      "command": "uv run --locked --all-packages ruff format --check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final source/session selection and current evidence bindings remain valid",
+      "actual": "Exit0; no runtime changes",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/02.log",
+      "evidence_digest": "7cf5f66c26f6519b5c852cba8cea7cbbaffab5aa119720a0ef62a6dcf3c78dab",
+      "mock_used": false
+    },
+    {
+      "name": "final-03",
+      "command": "pnpm exec pyright --project pyrightconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final source/session selection and current evidence bindings remain valid",
+      "actual": "Exit0; no runtime changes",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/03.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "final-04",
+      "command": "uv run --locked --all-packages python -m tools.imp08_verification.verify_evidence",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final source/session selection and current evidence bindings remain valid",
+      "actual": "Exit0; no runtime changes",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/04.log",
+      "evidence_digest": "5f41fdbc61e779f40e84eb56c0243886bc055f88e101eac804d0f24956d8afcd",
+      "mock_used": false
+    },
+    {
+      "name": "final-05",
+      "command": "uv run --locked --all-packages python -m tools.imp05_verification.validate_plan",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final source/session selection and current evidence bindings remain valid",
+      "actual": "Exit0; no runtime changes",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/05.log",
+      "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+      "mock_used": false
+    },
+    {
+      "name": "final-06",
+      "command": "git diff --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Final source/session selection and current evidence bindings remain valid",
+      "actual": "Exit0; no runtime changes",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/final/06.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "adverse-session-binding",
+      "command": "Scoped synthetic metadata substitution check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Historical results/manifest cannot qualify a newly selected candidate",
+      "actual": "Both substitutions rejected; temporary fixture removed",
+      "evidence_path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/binding-adverse.log",
+      "evidence_digest": "9d494b196410c31c88c1cdfaef8a2b008470fdad73987c00c0f6d71143a31c22",
+      "mock_used": true
+    }
+  ],
+  "counts": {
+    "frontend_passed": 223,
+    "manual_component_passed": 17,
+    "focused_verification_runs": 5
+  },
+  "source_continuity": {
+    "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/source-continuity.json",
+    "sha256": "74d1f82fc293e4c7127cbbe23951ffbb4d8882568a649855e7cb23497b5b50a6"
+  },
+  "historical_failed_run": "https://github.com/zencodeai/care-link-demo/actions/runs/44927973473",
+  "same_commit_passing_run": "https://github.com/zencodeai/care-link-demo/actions/runs/44927980573",
+  "residuals": [
+    "Runtime, database and browser behavior is unchanged; original G-08 qualification remains historical and source-bound.",
+    "Human usability/screen-reader/visual/language review remains deferred_until_after_IMP10.",
+    "New remote CI is not yet observed; its result must be read from the corrected PR head."
+  ],
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": []
+}

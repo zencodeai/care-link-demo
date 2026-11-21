@@ -1,0 +1,130 @@
+{
+  "packet_id": "IMP08-001-web",
+  "task_id": "IMP-08-C",
+  "baseline": "83406f94014ca3cc71f870b3b8c771841c6e83f9",
+  "status": "implemented",
+  "checks": {
+    "component": "16 passed",
+    "browser": "13 passed on final private projection epoch source",
+    "typecheck": "passed",
+    "eslint": "passed",
+    "prettier": "passed",
+    "e2e_typescript": "passed",
+    "build": "passed",
+    "full_frontend": "223 passed across20 files"
+  },
+  "initial_findings": [
+    "Shared generated browser validators absent on initial unit run; coordinator generation reconciled.",
+    "Axe found aria-label unsupported on generic report div in2 initial browser cases; removed attribute and12/12 browser cases passed."
+  ],
+  "limitations": [
+    "Browser route fixtures do not prove backend authorization; separate backend/integration evidence required.",
+    "Human usability/screen-reader/visual/language review deferred_until_after_IMP10."
+  ],
+  "files": [
+    {
+      "path": "apps/web/src/governance/Fields.tsx",
+      "sha256": "0cd26946fdff5fcbddac8e3ccb396a88589ca96f83ab75e8b845ea2fbc7a480c"
+    },
+    {
+      "path": "apps/web/src/governance/usePrivateValue.ts",
+      "sha256": "62704db98b4084491eb0528446156afe07b3654db6ec64e5a460c4949751b66e"
+    },
+    {
+      "path": "apps/web/src/governance/styles.css",
+      "sha256": "cb3d24dc44ada4ee5e32195d2966dbde20ba8015c30b2665bbf836ea8a49c8b6"
+    },
+    {
+      "path": "apps/web/src/governance/IncidentPanel.tsx",
+      "sha256": "ea97af22dfc3e9b5ac1f576c675f759bc99f50911a595de4aa91a8dd6b5f388b"
+    },
+    {
+      "path": "apps/web/src/governance/GovernanceApp.tsx",
+      "sha256": "73a242c8ace64f8eb15bc555878158035bd543fb96fe1762bb81247e43a92a30"
+    },
+    {
+      "path": "apps/web/src/governance/messages.ts",
+      "sha256": "c3dccebdc8dc9d66c1188b09e72a659d41911fc04a9a2d8129628736a2b12378"
+    },
+    {
+      "path": "apps/web/src/governance/ActivationPanel.tsx",
+      "sha256": "434e8161aba538dcf8c3f320d05d7df84a88bcc651e5fda903f3eea432eef3f9"
+    },
+    {
+      "path": "apps/web/src/governance/api.ts",
+      "sha256": "d0213e0e094b316bc4facf0cc5925274a6006e0a8f99a811e37b23ebb60f4de3"
+    },
+    {
+      "path": "apps/web/src/governance/types.ts",
+      "sha256": "888284192a1a85db3b73c22b004b9b57bba2c3c60d2d2fb65dcdee69976220c3"
+    },
+    {
+      "path": "apps/web/src/governance/GrantPanel.tsx",
+      "sha256": "e2efeef669269197ae399fa23790f3486d21e35ebe7649fed29b634764ecbe4b"
+    },
+    {
+      "path": "apps/web/src/governance/GovernanceApp.test.tsx",
+      "sha256": "3b4f0832583161ae5a54cf709033ada1af78f15b0663403658a2d0ebbfd1e282"
+    },
+    {
+      "path": "apps/web/src/governance/Artifacts.tsx",
+      "sha256": "09db2200b6877d267fde5df83b07c7b8e06b8f29dcc1b3953fce4aeaa96fa832"
+    },
+    {
+      "path": "apps/web/src/governance/EvidencePanel.tsx",
+      "sha256": "67351b5a0218e0813e52b655bfee3e8730cad1c21e5b1328125f40369e572eb9"
+    },
+    {
+      "path": "apps/web/src/governance/MetricsPanel.tsx",
+      "sha256": "ef56f99ffd46ceb02afdc3617455544d6089a3cdd7521b9dfbceec284182c3de"
+    },
+    {
+      "path": "apps/web/src/governance/Labels.tsx",
+      "sha256": "dfe326ad594ae60f2cf487b561952a6719ed9132bc27c5f5a213f3eff5c99b34"
+    },
+    {
+      "path": "apps/web/src/governance/useGovernance.ts",
+      "sha256": "1942c136f447e769b4158fba91459226002c4e2827325f643c87877091ea52ab"
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "sha256": "887b387aacb43d07b2b1716c0a823366a55d720b7e671f13f6e8f6b1895c4a23"
+    },
+    {
+      "path": "tests/e2e/governance/fixtures.ts",
+      "sha256": "3cae4e5d28a697b10189cdba749026d701b821a491a50d10fd74f13b0d851e5e"
+    },
+    {
+      "path": "tests/e2e/governance/README.md",
+      "sha256": "eb1b7362cf09fe512fdd4dbbd73bfa859317a3431679fca63759d104a6edc258"
+    },
+    {
+      "path": "tests/e2e/governance/tsconfig.json",
+      "sha256": "beb6f17a3f5e5656eed984206d4c1d1dd91d860e4563aadc66e0f2d8b38e82d2"
+    },
+    {
+      "path": "tests/e2e/governance/playwright.config.ts",
+      "sha256": "87bbbe8f28b3de938ee49e88301eb8934a6002e0e3cf85450006a82eab1b33bc"
+    },
+    {
+      "path": "tests/e2e/governance/governance.spec.ts",
+      "sha256": "07fd78b42b91bba2af4b2b099f73fb19e3064ba69b7476768a82a1848352417d"
+    }
+  ],
+  "logs": [
+    "/private/tmp/imp08-web-unit.log",
+    "/private/tmp/imp08-web-browser.log",
+    "/private/tmp/imp08-web-build.log",
+    "/private/tmp/care-link-imp08-browser/playwright-results.json",
+    "/private/tmp/imp08-web-browser-initial.log",
+    "/private/tmp/imp08-web-browser-initial-results.json",
+    "/private/tmp/imp08-web-unit-race.log",
+    "/private/tmp/imp08-web-full-tests-race.log",
+    "/private/tmp/imp08-web-typecheck-race.log",
+    "/private/tmp/imp08-web-eslint-race.log",
+    "/private/tmp/imp08-web-prettier-race.log",
+    "/private/tmp/imp08-web-build-race.log",
+    "/private/tmp/imp08-web-browser-race.log"
+  ],
+  "final_delta": "Fixed full-suite private display race: all server projections render only for current authority epoch/account, then passive cleanup drops old memory. Reads check abort; expiry verdict survives delayed aborted requests. Delayed export-after-expiry regression added. Original assertion retained."
+}

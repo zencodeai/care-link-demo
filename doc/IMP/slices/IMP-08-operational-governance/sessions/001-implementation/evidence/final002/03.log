@@ -1,0 +1,4 @@
+/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp08_verification/verify_evidence.py
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp08_verification/verify_evidence.py:51:9 - error: Type of "validate" is partially unknown
+    Type of "validate" is "(...) -> None" (reportUnknownMemberType)
+1 error, 0 warnings, 0 informations

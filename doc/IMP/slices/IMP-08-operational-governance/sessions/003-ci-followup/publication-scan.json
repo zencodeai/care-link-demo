@@ -1,0 +1,14 @@
+{
+  "scanned_files": 46,
+  "high_confidence_findings": [],
+  "excluded_preexisting": [
+    "doc/research/2026-11-20-agentic-care/resources/"
+  ],
+  "original_raw_log_bytes_preserved": true,
+  "source_scope": [
+    "apps/web/src/manual/ManualService.test.tsx",
+    "doc/IMP/executions/2026-11-21-IMP-08/ledger.json",
+    "doc/IMP/slices/IMP-08-operational-governance/README.md",
+    "tools/imp08_verification/verify_evidence.py"
+  ]
+}

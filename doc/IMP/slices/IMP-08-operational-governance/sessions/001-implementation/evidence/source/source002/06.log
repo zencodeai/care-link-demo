@@ -1,0 +1,12 @@
+E501 Line too long (104 > 100)
+  --> services/data/tests/test_imp08_latency.py:53:101
+   |
+51 |     record_property(
+52 |         "workload",
+53 |         "30 sequential synthetic governance health authorizations; local TLS PostgreSQL and pinned OPA",
+   |                                                                                                     ^^^^
+54 |     )
+55 |     record_property("pdp_p95_ms", round(pdp_p95, 3))
+   |
+
+Found 1 error.

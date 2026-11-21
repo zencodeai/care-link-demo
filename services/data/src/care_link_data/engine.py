@@ -29,6 +29,7 @@ from .directory_admission import VerifiedDirectoryAdmission
 from .referral_ports import ReceiverPort
 from .store import PostgresStore, Record, Transaction, instant, number, text
 from .values import (
+    GOVERNANCE_ACTIONS,
     LIFECYCLE_ACTIONS,
     PARTICIPANTS,
     ROLES,
@@ -252,6 +253,8 @@ class Engine:
             object_value(snapshot["review_run"]) if snapshot.get("review_run") else None,
         ):
             return False
+        if action in GOVERNANCE_ACTIONS:
+            return True  # Exact custody/target/grant checks are rebuilt by governance policy.
         if action in LIFECYCLE_ACTIONS:
             if action in {
                 "rights_create",
@@ -477,6 +480,16 @@ class Engine:
             from .lifecycle.policy import enrich_lifecycle_policy
 
             enrich_lifecycle_policy(self, tx, actor, action, arguments or {}, snapshot, request)
+        if action in GOVERNANCE_ACTIONS:
+            from .governance.evidence import enrich_evidence_policy
+            from .governance.policy import governance_policy
+
+            governance_policy(self, tx, actor, action, arguments or {}, snapshot, request)
+            enrich_evidence_policy(self, tx, actor, action, arguments or {}, snapshot, request)
+        from .activation_fence import bind_activation_fence, requires_activation
+
+        if requires_activation(action):
+            bind_activation_fence(tx, request, snapshot)
         return request
 
     def _fresh_actor(self, actor: Actor) -> Actor:
@@ -778,7 +791,7 @@ class Engine:
                 if key or action == "channel_challenge_read":
                     review_scope.assert_channel_current(final_actor, self.channel)
                 self._check_output_authority(
-                    tx, final_actor, action, result, latest, object_value(request["scope"])
+                    tx, final_actor, action, result, latest, object_value(request["scope"]), data
                 )
                 if (
                     time.monotonic() - started >= 1
@@ -813,6 +826,7 @@ class Engine:
         result: Record,
         snapshot: Record,
         policy_scope: Record,
+        arguments: Record | None = None,
     ) -> None:
         """Recheck the exact selected disclosure after content work and audit.
 
@@ -820,6 +834,17 @@ class Engine:
         expired grant. This is the final guarded disclosure authorization; no
         bytes are released if the check rolls back the transaction.
         """
+        if action in GOVERNANCE_ACTIONS:
+            from .governance.evidence import check_evidence_output
+            from .governance.policy import check_controls_output
+
+            check_controls_output(self, tx, actor, action, result, arguments or {})
+            check_evidence_output(self, tx, actor, action, result, arguments or {})
+        from .activation_fence import activation_current, requires_activation
+
+        if requires_activation(action):
+            if not activation_current(tx, object_value(snapshot["control"])):
+                raise ManualError("governance.current_boot_ack_required", 503)
         if action in LIFECYCLE_ACTIONS:
             from .lifecycle.disclosure import check_lifecycle_output
 

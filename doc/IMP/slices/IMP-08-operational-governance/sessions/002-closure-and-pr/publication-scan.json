@@ -1,0 +1,10 @@
+{
+  "scanned_files": 250,
+  "excluded_preexisting": [
+    "doc/research/2026-11-20-agentic-care/resources/"
+  ],
+  "high_confidence_findings": [],
+  "files_over5MB": [],
+  "qualified_source_hashes_verified": 900,
+  "method": "Explicit changed paths checked against qualified source and slice documentation; literal credentials/private-key scan with no values retained."
+}

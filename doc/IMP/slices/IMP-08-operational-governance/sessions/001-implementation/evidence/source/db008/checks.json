@@ -1,0 +1,25 @@
+[
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "pytest",
+      "services/data/tests/test_imp08_boundary.py",
+      "services/data/tests/test_imp08_controls.py",
+      "services/data/tests/test_imp08_evidence_postgres.py",
+      "services/data/tests/test_imp08_evidence_unit.py",
+      "services/data/tests/test_imp08_inline.py",
+      "services/data/tests/test_imp08_latency.py",
+      "services/core/tests/test_imp08_transport.py",
+      "packages/policy-input/tests/test_imp08_policy.py",
+      "-q",
+      "--tb=short",
+      "--junitxml",
+      "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/db008/pytest.xml"
+    ],
+    "started_at": "2026-11-21T16:40:03.206187+00:00",
+    "completed_at": "2026-11-21T16:40:28.774727+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/db008/01.log"
+  }
+]

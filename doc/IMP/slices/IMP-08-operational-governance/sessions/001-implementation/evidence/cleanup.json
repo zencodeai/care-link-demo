@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-11-21T16:47:35.776627+00:00",
+  "database": "owned care-link-imp08-001-postgres removed; private temporary credential directory removed",
+  "database_port": 35438,
+  "remaining_matching_container_ids": [],
+  "browser_receipt": "evidence/browser/imp08-web-cleanup.json",
+  "other_resources": "untouched",
+  "source_or_host_trust_changes": false
+}

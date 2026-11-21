@@ -1,0 +1,4 @@
+PASS: a selected current manifest rejects results bound to the historical manifest.
+PASS: a current results reference rejects the historical results path even when its digest is valid.
+Temporary synthetic metadata fixture removed.
+Initial negative-fixture setup omitted environment.json; fixture corrected before the above checks.

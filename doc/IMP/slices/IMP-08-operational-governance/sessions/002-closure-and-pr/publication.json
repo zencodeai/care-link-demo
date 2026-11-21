@@ -1,0 +1,27 @@
+{
+  "state": "published",
+  "recorded_at": "2026-11-21T17:03:05.175425+00:00",
+  "authorization": "User: Close IMP-08, create PR",
+  "repository": "zencodeai/care-link-demo",
+  "repository_private": true,
+  "branch": "feat/imp-08-operational-governance",
+  "implementation_commit": "673306eb2963b2f9178251d2e565cf39230d2f58",
+  "base_branch": "main",
+  "base_commit": "0f8b190d5f110ec221f61c54fe8d1aa0170d7e4a",
+  "pr_number": 15,
+  "pr_url": "https://github.com/zencodeai/care-link-demo/pull/15",
+  "pr_state": "OPEN",
+  "draft": false,
+  "commit_performed": true,
+  "push_performed": true,
+  "merge_performed": false,
+  "deployment_applied": false,
+  "next_slice_activated": false,
+  "human_review": "deferred_until_after_IMP10",
+  "ci_at_initial_read": "Foundation fast/container checks in progress; one container check succeeded. No full remote pass inferred.",
+  "credential_path": "Authenticated existing local GitHub CLI; connector lacked private repository visibility.",
+  "excluded_preexisting": [
+    "doc/research/2026-11-20-agentic-care/resources/"
+  ],
+  "note": "A subsequent documentation-only commit records this receipt and continuity. It does not change qualified product source."
+}

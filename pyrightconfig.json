@@ -33,7 +33,8 @@
     "tools/imp06_verification",
     "tools/imp06_runtime",
     "packages/knowledge/src",
-    "tools/imp07_verification"
+    "tools/imp07_verification",
+    "tools/imp08_verification"
   ],
   "pythonVersion": "3.14",
   "venvPath": ".",

@@ -1,0 +1,17 @@
+[
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "pytest",
+      "services/data/tests/test_imp08_evidence_postgres.py",
+      "services/data/tests/test_imp08_evidence_unit.py",
+      "-q",
+      "--tb=short"
+    ],
+    "started_at": "2026-11-21T16:21:25.853247+00:00",
+    "completed_at": "2026-11-21T16:21:30.617994+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/db001/01.log"
+  }
+]

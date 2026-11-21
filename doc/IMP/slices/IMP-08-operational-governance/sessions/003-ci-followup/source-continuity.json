@@ -1,0 +1,38 @@
+{
+  "baseline_commit": "9fa9b25a1dd263c123735a9fd95c3c22e4be5913",
+  "qualified_manifest": {
+    "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/candidate-manifest.json",
+    "sha256": "cb2f075252901673015ca2490e8e6d59787afdd758d3ee282cbc5c6a402fd88f"
+  },
+  "changed_source_paths": [
+    {
+      "path": "apps/web/src/manual/ManualService.test.tsx",
+      "before": "acdc91f8102aaaf64fd21521e43497e456cd5f1f453261daac2f7e86239f981a",
+      "after": "af420e3ad62962a32b3e2481bf5bedc036335c67699de3193a41df51feef8ec2"
+    },
+    {
+      "path": "tools/imp08_verification/verify_evidence.py",
+      "before": "5bf5850cecabe9abf2c0c688ab664a8571f00832cb69d0f99236177117be22ab",
+      "after": "15ad55120046af49deafad3783241af3aa7d8ec03af2a362c1dcfe21c94bc3e8"
+    }
+  ],
+  "unchanged_source_count": 898,
+  "runtime_source_changed": false,
+  "reference_hashes_matched": 58,
+  "build_hashes_matched": 3,
+  "test_assertions_removed": false,
+  "runtime_controls_relaxed": false,
+  "global_retries_or_timeouts_changed": false,
+  "original_qualification_files_rewritten": false,
+  "inherited_behavioral_evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/results.json",
+      "sha256": "d71887e34ec8cf7c41da2069de4ed5a84d02755c3a13e5cd21292c2af4f28423"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/demo-packet.json",
+      "sha256": "30d47b74f380ca89a1f3c588ece066b9417e01646ae292245fbf879aae3e85c5"
+    }
+  ],
+  "not_rerun": "PostgreSQL/browser/model/deployed checks: corresponding product/runtime/build bytes unchanged; original bounded evidence retained."
+}

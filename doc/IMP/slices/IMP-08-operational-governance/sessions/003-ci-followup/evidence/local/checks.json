@@ -1,0 +1,190 @@
+[
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "vitest",
+      "run",
+      "apps/web/src/manual/ManualService.test.tsx",
+      "-t",
+      "keeps both-party channel liveness during ACK and reauthorizes each stream update"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:04.155956+00:00",
+    "completed_at": "2026-11-21T17:14:05.226905+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/01.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "vitest",
+      "run",
+      "apps/web/src/manual/ManualService.test.tsx",
+      "-t",
+      "keeps both-party channel liveness during ACK and reauthorizes each stream update"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:05.227024+00:00",
+    "completed_at": "2026-11-21T17:14:06.024696+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/02.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "vitest",
+      "run",
+      "apps/web/src/manual/ManualService.test.tsx",
+      "-t",
+      "keeps both-party channel liveness during ACK and reauthorizes each stream update"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:06.024829+00:00",
+    "completed_at": "2026-11-21T17:14:06.799913+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/03.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "vitest",
+      "run",
+      "apps/web/src/manual/ManualService.test.tsx",
+      "-t",
+      "keeps both-party channel liveness during ACK and reauthorizes each stream update"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:06.800079+00:00",
+    "completed_at": "2026-11-21T17:14:07.545343+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/04.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "vitest",
+      "run",
+      "apps/web/src/manual/ManualService.test.tsx",
+      "-t",
+      "keeps both-party channel liveness during ACK and reauthorizes each stream update"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:07.545486+00:00",
+    "completed_at": "2026-11-21T17:14:08.309614+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/05.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "test"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:08.309772+00:00",
+    "completed_at": "2026-11-21T17:14:17.472271+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/06.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:17.472474+00:00",
+    "completed_at": "2026-11-21T17:14:19.742253+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/07.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "lint"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:19.742442+00:00",
+    "completed_at": "2026-11-21T17:14:23.331317+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/08.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "format:check"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:23.331465+00:00",
+    "completed_at": "2026-11-21T17:14:24.309404+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/09.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "check",
+      "."
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:24.309548+00:00",
+    "completed_at": "2026-11-21T17:14:24.403335+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/10.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:24.403468+00:00",
+    "completed_at": "2026-11-21T17:14:24.438755+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/11.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:24.438913+00:00",
+    "completed_at": "2026-11-21T17:14:28.420464+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/12.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/generate_contracts.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:28.420633+00:00",
+    "completed_at": "2026-11-21T17:14:28.700931+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/13.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_boundaries.py"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-11-21T17:14:28.701084+00:00",
+    "completed_at": "2026-11-21T17:14:29.094772+00:00",
+    "log": "doc/IMP/slices/IMP-08-operational-governance/sessions/003-ci-followup/evidence/local/14.log"
+  }
+]

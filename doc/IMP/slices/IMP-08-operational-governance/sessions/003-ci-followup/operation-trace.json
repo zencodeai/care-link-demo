@@ -1,0 +1,354 @@
+{
+  "stage_id": "IMP-08",
+  "task_ids": [
+    "IMP-08-A",
+    "IMP-08-B",
+    "IMP-08-C",
+    "IMP-08-D"
+  ],
+  "operation_count": 30,
+  "operations": [
+    {
+      "operation_id": "artifact_register",
+      "source": "services/data/src/care_link_data/governance/artifacts.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "artifact_review",
+      "source": "services/data/src/care_link_data/governance/artifacts.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "activation_create",
+      "source": "services/data/src/care_link_data/governance/activations.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "exception_create",
+      "source": "services/data/src/care_link_data/governance/incidents.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "incident_create",
+      "source": "services/data/src/care_link_data/governance/incidents.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "activation_read",
+      "source": "services/data/src/care_link_data/governance/activations.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "activation_commit",
+      "source": "services/data/src/care_link_data/governance/activations.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "incident_read",
+      "source": "services/data/src/care_link_data/governance/incidents.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "audit_query",
+      "source": "services/data/src/care_link_data/governance/evidence.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "metrics_query",
+      "source": "services/data/src/care_link_data/governance/evidence.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "activation_ack",
+      "source": "services/data/src/care_link_data/governance/ack.py",
+      "boundary": "verified workload duty",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "health_read",
+      "source": "services/data/src/care_link_data/governance/__init__.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_artifact_register",
+      "source": "services/data/src/care_link_data/governance/artifacts.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_artifact_review",
+      "source": "services/data/src/care_link_data/governance/artifacts.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_activation_create",
+      "source": "services/data/src/care_link_data/governance/activations.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_exception_create",
+      "source": "services/data/src/care_link_data/governance/incidents.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_incident_create",
+      "source": "services/data/src/care_link_data/governance/incidents.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_activation_read",
+      "source": "services/data/src/care_link_data/governance/activations.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_activation_commit",
+      "source": "services/data/src/care_link_data/governance/activations.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_incident_read",
+      "source": "services/data/src/care_link_data/governance/incidents.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_audit_query",
+      "source": "services/data/src/care_link_data/governance/evidence.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_metrics_query",
+      "source": "services/data/src/care_link_data/governance/evidence.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "scoped_access_grant",
+      "source": "services/data/src/care_link_data/governance/evidence.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "incident_transition",
+      "source": "services/data/src/care_link_data/governance/incidents.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "evidence_export",
+      "source": "services/data/src/care_link_data/governance/evidence.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "audit_export_read",
+      "source": "services/data/src/care_link_data/governance/evidence.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_scoped_access_grant",
+      "source": "services/data/src/care_link_data/governance/evidence.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_incident_transition",
+      "source": "services/data/src/care_link_data/governance/incidents.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_evidence_export",
+      "source": "services/data/src/care_link_data/governance/evidence.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    },
+    {
+      "operation_id": "data_audit_export_read",
+      "source": "services/data/src/care_link_data/governance/evidence.py",
+      "boundary": "closed signed named gateway and final guarded policy/audit",
+      "tests": [
+        "services/data/tests/test_imp08_controls.py",
+        "services/data/tests/test_imp08_evidence_postgres.py",
+        "services/data/tests/test_imp08_boundary.py",
+        "services/core/tests/test_imp08_transport.py"
+      ]
+    }
+  ],
+  "verification": [
+    "VT-02",
+    "VT-10",
+    "VT-12",
+    "VT-18"
+  ],
+  "acceptance_groups": [
+    "AT-12",
+    "AT-14",
+    "AT-15",
+    "AT-16"
+  ]
+}

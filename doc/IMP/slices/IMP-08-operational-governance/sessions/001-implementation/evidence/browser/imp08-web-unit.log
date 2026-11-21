@@ -1,0 +1,9 @@
+
+ RUN  v5.1.0 /Users/main/Workspace/projects/care-link/care-link-demo
+
+
+ Test Files  1 passed (1)
+      Tests  15 passed (15)
+   Start at  11:27:01
+   Duration  1.37s (tests 57%, environment 22%, import 15%, transform 7%)
+

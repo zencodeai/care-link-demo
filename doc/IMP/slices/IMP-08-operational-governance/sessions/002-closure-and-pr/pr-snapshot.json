@@ -1,0 +1,53 @@
+{
+  "baseRefName": "main",
+  "headRefName": "feat/imp-08-operational-governance",
+  "headRefOid": "673306eb2963b2f9178251d2e565cf39230d2f58",
+  "isDraft": false,
+  "mergeStateStatus": "UNSTABLE",
+  "number": 15,
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/zencodeai/care-link-demo/actions/runs/44927764662/job/136917513360",
+      "name": "fast",
+      "startedAt": "2026-11-21T17:01:43Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "Foundation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/zencodeai/care-link-demo/actions/runs/44927735018/job/136917421647",
+      "name": "fast",
+      "startedAt": "2026-11-21T17:01:26Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "Foundation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-21T17:02:11Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/zencodeai/care-link-demo/actions/runs/44927764662/job/136917513548",
+      "name": "container",
+      "startedAt": "2026-11-21T17:01:44Z",
+      "status": "COMPLETED",
+      "workflowName": "Foundation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-21T17:01:49Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/zencodeai/care-link-demo/actions/runs/44927735018/job/136917421427",
+      "name": "container",
+      "startedAt": "2026-11-21T17:01:25Z",
+      "status": "COMPLETED",
+      "workflowName": "Foundation"
+    }
+  ],
+  "title": "feat: complete IMP-08 operational governance",
+  "url": "https://github.com/zencodeai/care-link-demo/pull/15"
+}

@@ -1,0 +1,9 @@
+
+> care-link-development@0.1.0 typecheck /Users/main/Workspace/projects/care-link/care-link-demo
+> pnpm -r typecheck
+
+Scope: 2 of 3 workspace projects
+packages/contracts/typescript typecheck$ tsc --noEmit
+packages/contracts/typescript typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: Done

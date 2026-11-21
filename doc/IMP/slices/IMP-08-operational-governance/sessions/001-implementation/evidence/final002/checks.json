@@ -1,0 +1,46 @@
+[
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "check",
+      "."
+    ],
+    "started_at": "2026-11-21T16:52:34.122260+00:00",
+    "completed_at": "2026-11-21T16:52:34.168199+00:00",
+    "exit_code": 0,
+    "log": "evidence/final002/01.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "started_at": "2026-11-21T16:52:34.168367+00:00",
+    "completed_at": "2026-11-21T16:52:34.204343+00:00",
+    "exit_code": 0,
+    "log": "evidence/final002/02.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "started_at": "2026-11-21T16:52:34.204516+00:00",
+    "completed_at": "2026-11-21T16:52:38.073018+00:00",
+    "exit_code": 1,
+    "log": "evidence/final002/03.log"
+  }
+]

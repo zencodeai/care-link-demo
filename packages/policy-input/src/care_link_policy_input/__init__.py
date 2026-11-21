@@ -2,6 +2,7 @@
 
 from .delegation import DelegationVerifier
 from .duties import DutyDefinition, SignedDutyDefinition, SignedDutyRegistry
+from .governed import GovernedPolicies
 from .opa import OpaPolicy
 
 __all__ = [
@@ -10,4 +11,5 @@ __all__ = [
     "SignedDutyDefinition",
     "SignedDutyRegistry",
     "OpaPolicy",
+    "GovernedPolicies",
 ]

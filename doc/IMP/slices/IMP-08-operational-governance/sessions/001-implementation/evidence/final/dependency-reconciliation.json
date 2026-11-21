@@ -1,0 +1,6 @@
+{
+  "G-03": "Historical accepted result; preserved, valid predecessor under current IMP workflow. Initial shorthand automated-qualified was corrected in packets/handoff.",
+  "G-05": "automated_qualified",
+  "policy": ".codex/IMP_WORKFLOW.md: confirm current automated qualification or historical accepted dependency evidence",
+  "human_decisions_changed": false
+}
