@@ -1,0 +1,21 @@
+........................................................................ [ 76%]
+......................                                                   [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+services/data/tests/test_imp09_integration.py::test_real_capture_restore_current_restriction_promotion_and_manual
+  services/data/tests/test_imp09_integration.py:61: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    def test_real_capture_restore_current_restriction_promotion_and_manual(
+
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[maintenance]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[fenced_old]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[routed_target]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[enabled_target]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[before_smoke]
+  /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/popen_fork.py:76: DeprecationWarning: This process (pid=43993) is multi-threaded, use of fork() may lead to deadlocks in the child.
+    self.pid = os.fork()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+94 passed, 23 warnings in 7.94s

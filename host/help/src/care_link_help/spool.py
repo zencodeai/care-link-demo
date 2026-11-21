@@ -223,3 +223,32 @@ class Spool:
                 raise
             finally:
                 self._restrict_files()
+
+    def reconciliation_snapshot(self, help_id: str) -> Wire:
+        """Maintenance-only minimal snapshot; caller supplies fresh workload authority.
+
+        This is absent from browser routes. It never exports owner/worker IDs or
+        private history, and a retired request is not reconstructed from audit.
+        """
+        from .audit import verify_history
+
+        if str(UUID(help_id)) != help_id:
+            raise HelpError("help.invalid_request", 400)
+        with closing(self._connect()) as connection:
+            connection.execute("BEGIN")
+            verify_history(connection)
+            deny_retired(connection, "help", help_id)
+            row = connection.execute("SELECT * FROM request WHERE id=?", (help_id,)).fetchone()
+            event = connection.execute(
+                "SELECT hash FROM local_event WHERE reference=? ORDER BY sequence DESC LIMIT 1",
+                (help_id,),
+            ).fetchone()
+            if row is None or event is None:
+                raise HelpError("help.reconciliation_unavailable", 503)
+            return {
+                "help_id": help_id,
+                "revision": str(row["revision"]),
+                "status": "requested" if row["status"] == "recorded" else row["status"],
+                "local_created_at": row["created_at"],
+                "local_event_digest": event["hash"],
+            }

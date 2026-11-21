@@ -1,0 +1,55 @@
+{
+  "stage_id": "IMP-09",
+  "operations": [
+    {
+      "operation_id": "help_reconcile",
+      "implementation": "services/core/src/care_link_core/help_reconcile.py + host/help + services/data/recovery/help.py",
+      "evidence": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/slice/slice005/pytest.xml"
+    },
+    {
+      "operation_id": "backup_capture",
+      "implementation": "services/core/recovery_routes.py + host/recovery-control/coordinator.py + tools/imp09_runtime",
+      "evidence": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/slice/slice005/pytest.xml"
+    },
+    {
+      "operation_id": "backup_read",
+      "implementation": "services/core/recovery_routes.py + host/recovery-control/coordinator.py + tools/imp09_runtime",
+      "evidence": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/slice/slice005/pytest.xml"
+    },
+    {
+      "operation_id": "restore_create",
+      "implementation": "services/core/recovery_routes.py + host/recovery-control/coordinator.py + tools/imp09_runtime",
+      "evidence": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/slice/slice005/pytest.xml"
+    },
+    {
+      "operation_id": "restore_read",
+      "implementation": "services/core/recovery_routes.py + host/recovery-control/coordinator.py + tools/imp09_runtime",
+      "evidence": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/slice/slice005/pytest.xml"
+    },
+    {
+      "operation_id": "restore_validate",
+      "implementation": "services/core/recovery_routes.py + host/recovery-control/coordinator.py + tools/imp09_runtime",
+      "evidence": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/slice/slice005/pytest.xml"
+    },
+    {
+      "operation_id": "promotion_propose",
+      "implementation": "services/core/recovery_routes.py + host/recovery-control/coordinator.py + tools/imp09_runtime",
+      "evidence": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/slice/slice005/pytest.xml"
+    },
+    {
+      "operation_id": "promotion_approve",
+      "implementation": "services/core/recovery_routes.py + host/recovery-control/coordinator.py + tools/imp09_runtime",
+      "evidence": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/slice/slice005/pytest.xml"
+    },
+    {
+      "operation_id": "promotion_execute",
+      "implementation": "services/core/recovery_routes.py + host/recovery-control/coordinator.py + tools/imp09_runtime",
+      "evidence": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/slice/slice005/pytest.xml"
+    },
+    {
+      "operation_id": "promotion_read",
+      "implementation": "services/core/recovery_routes.py + host/recovery-control/coordinator.py + tools/imp09_runtime",
+      "evidence": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/slice/slice005/pytest.xml"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "run_id": "2026-11-21-IMP-09",
+  "stage_id": "IMP-09",
+  "gate_id": "G-09",
+  "state": "automated_qualified",
+  "gate_state": "automated_qualified",
+  "closed": true,
+  "recorded_at": "2026-11-21T18:08:04.444484+00:00",
+  "baseline_commit": "8d3e93500f297852e682b1bfd0f5b0e9b6813d44",
+  "branch": "feat/imp-08-operational-governance",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Implement service slice 09",
+    "scope": "Source implementation and owned isolated synthetic verification only"
+  },
+  "predecessors": [
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-07/ledger.json",
+      "sha256": "9941321dfbe5cfa48ad322a0d9fd7c5301c02ebbc0932dae1ec6e6ee3ab21098"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-08/ledger.json",
+      "sha256": "e09e1e707f5c9c43f154bdfeefc3db4e547d92bd106d2c3328406746e7631be7"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-09-A",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-09-B",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-09-C",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-09-D",
+      "state": "completed"
+    }
+  ],
+  "session": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation",
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/candidate-manifest.json",
+    "sha256": "bbfa97f6d0f915854d032551bba09e66411c30626403df0ecfc02659f89fd06c"
+  },
+  "results": {
+    "path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/results.json",
+    "sha256": "572c36367397be54f0ad0b35089c5a9f6b54502bbfbd6ba45596b288d30a2a31"
+  },
+  "qualification_packet": {
+    "path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/demo-packet.json",
+    "sha256": "cfb11a6b3e5a59cad77f525e4316fecf2d7384880db1cbc4e1780b73ec47ed9c"
+  },
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": [],
+  "deployment_applied": false,
+  "participant_admission": false,
+  "commit_performed": true,
+  "push_performed": true,
+  "merge_performed": false,
+  "next_slice_activated": false,
+  "remaining": [
+    "Private isolated synthetic source/build qualification only; existing deployed services remain untouched and serving disabled.",
+    "Identity/provider/PDP/target authorities are explicit fixtures where declared; browser route fixtures do not prove backend authorization or deployed isolation.",
+    "Readonly pre-admission current-identity/audit/rights probes are separate from the actual audited manual effect proven after sealed admission with a unique non-superuser target identity.",
+    "Full recovery timing includes automated synthetic approval only. No real staffing-delay, PITR/WAL-replay, continuous backup cadence or sustained deployment RPO/RTO pass is claimed.",
+    "Known encrypted/database/staging copy expiry is accounted with original expiry. Active serving storage, identity backups and help-spool copies retain separate lifecycle custody. No universal physical erasure or automatic rights backup_pending completion.",
+    "Three unchanged historical checks skipped: original IMP03 Docker capture on its separate port, Linux setuid network fixture, and isolated provisioning TLS fixture. New IMP09 encrypted capture/import and credential denial tests ran on owned35439 fixture.",
+    "Human usability, language, screen-reader and visual review deferred_until_after_IMP10; no human acceptance or actual serving approval fabricated."
+  ],
+  "deferred_review_inventory": {
+    "path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/deferred-review-inventory.json",
+    "sha256": "8638602653c5bcfe542b0fc15493c0f6a87018e0a5d4bac25c1ce891aa3846c9"
+  },
+  "current_session": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr",
+  "publication": {
+    "state": "published",
+    "authorization": "User: Close IMP-09, create PR",
+    "repository": "zencodeai/care-link-demo",
+    "repository_private": true,
+    "branch": "feat/imp-09-backup-and-recovery",
+    "base_branch": "main",
+    "base_commit": "2c859c12f57c424bbefa1730be9c20bed72c989b",
+    "implementation_commit": "fa06df69ee5321e881dc3df4340ce8988d3c7532",
+    "pull_request_number": 16,
+    "pull_request_url": "https://github.com/zencodeai/care-link-demo/pull/16",
+    "pull_request_state": "OPEN",
+    "draft": false,
+    "recorded_at": "2026-11-21T18:18:24.202490+00:00",
+    "merge_authorized": false,
+    "deployment_authorized": false,
+    "next_slice_activated": false,
+    "ci_state_at_publication": "in_progress; no remote pass claimed",
+    "transport": "GitHub connector lacked private repository access; authenticated gh CLI used",
+    "excluded": [
+      "doc/research/2026-11-20-agentic-care/resources/"
+    ],
+    "session": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr",
+    "receipt": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr/publication.json"
+  },
+  "delivery_closed": true
+}

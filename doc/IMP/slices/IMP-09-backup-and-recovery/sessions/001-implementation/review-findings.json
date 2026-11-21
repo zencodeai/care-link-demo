@@ -1,0 +1,50 @@
+{
+  "reviewer": "imp_review",
+  "status": "resolved_in_source_pending_final_checks",
+  "findings": [
+    {
+      "id": "raw-serving-fence",
+      "resolution": "Atomic journal head+record snapshot; post-approved-baseline serving fence dominates generation gate; prior fence requires new exact approval."
+    },
+    {
+      "id": "operational-kill",
+      "resolution": "Restricted/quarantine kill remains unresolved even for matching bundle and copied applied marker."
+    },
+    {
+      "id": "stale-AI-authority",
+      "resolution": "Encrypted tasks cancelled with new fence/revision and no lease/proposal; old drafts stale with no review; missing key denies."
+    },
+    {
+      "id": "copied-marker",
+      "resolution": "Every current restrictive payload is reapplied; snapshot-applied flag supplies no authority."
+    },
+    {
+      "id": "target-credential",
+      "resolution": "Unique target NOLOGIN credential until source fence+exact enable; non-superuser actual manual flow; pre-enable/source/cross-target denial."
+    },
+    {
+      "id": "old-generation",
+      "resolution": "Source DB mode/generation and CONNECT fenced before route, even for old raw-journal process."
+    },
+    {
+      "id": "absent-service",
+      "resolution": "No matching guard for current suspend stays unresolved."
+    },
+    {
+      "id": "existing-actor",
+      "resolution": "Fresh independent identity may rebind basic principal without ACL/consent; lower revisions and current journal fences deny."
+    },
+    {
+      "id": "serving-UI",
+      "resolution": "Serving state loads without unsupported fresh promotion binding."
+    },
+    {
+      "id": "copy-inventory",
+      "resolution": "Original expiry retained for database/staging inventory, holds/active target deny cleanup, successful import removes staging, unknown DB denies accounting."
+    },
+    {
+      "id": "expired-copy-fencing",
+      "resolution": "Known expired/unlinked database rows are skipped during future fencing; regression repeats fencing after expiry."
+    }
+  ]
+}

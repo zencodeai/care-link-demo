@@ -1,0 +1,105 @@
+{
+  "packet_id": "IMP09-001-review",
+  "task_id": "IMP-09-D",
+  "stage_id": "IMP-09",
+  "mode": "review",
+  "role": "imp_review",
+  "goal": "Read-only independent integrated review of IMP09 authorization, current rights and recovery cutover safety; report concrete defects",
+  "baseline_commit": "8d3e93500f297852e682b1bfd0f5b0e9b6813d44",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "fc3a4f2acd7fec8b527a2115320cb5e011ab154e32e57fb8e4f4e292e5ba218a"
+    },
+    {
+      "path": "doc/LLD/12-continuity-and-operations.md",
+      "sha256": "f1fcdac025b2913e7e49a0436f713146272e14da77d7a1ed78aa0de0568cf669"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "dcc8df20c339d67dfdf0ea89892d80b731cdb6a795be567f56773837689b7b61"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc",
+    "services",
+    "host",
+    "packages",
+    "apps",
+    "tools",
+    "tests",
+    ".codex/agents"
+  ],
+  "write_paths": [],
+  "dependencies": [
+    "IMP-07:G-07:automated_qualified",
+    "IMP-08:G-08:automated_qualified"
+  ],
+  "operation_ids": [
+    "help_reconcile",
+    "backup_capture",
+    "backup_read",
+    "restore_create",
+    "restore_read",
+    "restore_validate",
+    "promotion_propose",
+    "promotion_approve",
+    "promotion_execute",
+    "promotion_read"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "live deployment",
+    "host trust changes",
+    "real contact",
+    "police integration",
+    "commit",
+    "push",
+    "merge",
+    "model change"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Implement service slice 09",
+    "scope": "Source implementation and disposable synthetic automated checks; no live serving promotion, deployment, commit/push"
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Scoped modules/tests",
+    "Actual checks and findings",
+    "Handoff"
+  ],
+  "positive_acceptance": [
+    "Old backup restores only under current negative rights and suspended positive authority",
+    "Exact independently approved target/head with <=300 second expiry",
+    "Durably fence old generation before routing and admit one generation only"
+  ],
+  "adverse_acceptance": [
+    "Stale/missing/corrupt/suspect head denies",
+    "Crashes at every cutover boundary remain restricted",
+    "No old sessions/reviews/grants/sends revive; backup expiry never renewed"
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "authority change",
+    "shared ownership conflict",
+    "destructive or live action needed"
+  ],
+  "is_example": false
+}

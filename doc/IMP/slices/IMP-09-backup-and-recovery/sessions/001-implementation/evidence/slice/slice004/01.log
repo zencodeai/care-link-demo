@@ -1,0 +1,137 @@
+EEEEEEE.EEEEEEE......................................................... [ 76%]
+......................                                                   [100%]
+==================================== ERRORS ====================================
+_ ERROR at setup of test_help_import_audits_deduplicates_and_never_confirms_connection _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+____ ERROR at setup of test_changed_spool_or_audit_failure_does_not_import _____
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_help_import_rejects_stale_generation_or_unapplied_restriction _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_real_capture_restore_current_restriction_promotion_and_manual _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_old_snapshot_cannot_revive_grants_tokens_or_delivery __
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_corrupt_audit_and_incomplete_head_deny_without_partial_reconciliation _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_stale_head_changed_target_and_serving_target_are_detected _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_fresh_external_principals_only_and_no_old_acl_or_revision_rollback _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_current_kill_for_different_artifact_requires_reconciliation _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_matching_artifact_operational_kill_still_blocks_promotion[restricted] _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_matching_artifact_operational_kill_still_blocks_promotion[quarantine] _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_restored_encrypted_task_lease_proposal_and_review_are_fenced _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_current_existing_identity_rebinds_without_restoring_old_grants _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+_ ERROR at setup of test_missing_postcapture_service_suspend_guard_remains_unresolved _
+services/data/tests/conftest.py:121: in database
+    with psycopg.connect(admin, autocommit=True) as connection:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/psycopg/connection.py:120: in connect
+    raise last_ex.with_traceback(None)
+E   psycopg.OperationalError: connection is bad: connection to server at "127.0.0.1", port 35439 failed: Operation not permitted
+E   	Is the server running on that host and accepting TCP/IP connections?
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR services/data/tests/test_imp09_help.py::test_help_import_audits_deduplicates_and_never_confirms_connection
+ERROR services/data/tests/test_imp09_help.py::test_changed_spool_or_audit_failure_does_not_import
+ERROR services/data/tests/test_imp09_help.py::test_help_import_rejects_stale_generation_or_unapplied_restriction
+ERROR services/data/tests/test_imp09_integration.py::test_real_capture_restore_current_restriction_promotion_and_manual
+ERROR services/data/tests/test_imp09_recovery.py::test_old_snapshot_cannot_revive_grants_tokens_or_delivery
+ERROR services/data/tests/test_imp09_recovery.py::test_corrupt_audit_and_incomplete_head_deny_without_partial_reconciliation
+ERROR services/data/tests/test_imp09_recovery.py::test_stale_head_changed_target_and_serving_target_are_detected
+ERROR services/data/tests/test_imp09_recovery.py::test_fresh_external_principals_only_and_no_old_acl_or_revision_rollback
+ERROR services/data/tests/test_imp09_recovery.py::test_current_kill_for_different_artifact_requires_reconciliation
+ERROR services/data/tests/test_imp09_recovery.py::test_matching_artifact_operational_kill_still_blocks_promotion[restricted]
+ERROR services/data/tests/test_imp09_recovery.py::test_matching_artifact_operational_kill_still_blocks_promotion[quarantine]
+ERROR services/data/tests/test_imp09_recovery.py::test_restored_encrypted_task_lease_proposal_and_review_are_fenced
+ERROR services/data/tests/test_imp09_recovery.py::test_current_existing_identity_rebinds_without_restoring_old_grants
+ERROR services/data/tests/test_imp09_recovery.py::test_missing_postcapture_service_suspend_guard_remains_unresolved
+80 passed, 17 warnings, 14 errors in 1.10s

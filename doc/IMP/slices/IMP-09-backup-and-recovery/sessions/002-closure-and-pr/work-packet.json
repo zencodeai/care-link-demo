@@ -1,0 +1,103 @@
+{
+  "packet_id": "IMP09-002-closure-and-pr",
+  "task_id": "IMP-09-D",
+  "stage_id": "IMP-09",
+  "mode": "verification",
+  "role": "imp_verifier",
+  "goal": "Verify IMP09 source continuity, close implementation delivery and create an authorized private PR",
+  "baseline_commit": "2c859c12f57c424bbefa1730be9c20bed72c989b",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr/baseline-ledger.json",
+      "sha256": "31a7b9b007492564c382a746ade729d3f9ea7d7f4494903672ce4c3eb2e0a7f5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/candidate-manifest.json",
+      "sha256": "bbfa97f6d0f915854d032551bba09e66411c30626403df0ecfc02659f89fd06c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/results.json",
+      "sha256": "572c36367397be54f0ad0b35089c5a9f6b54502bbfbd6ba45596b288d30a2a31"
+    }
+  ],
+  "read_paths": [
+    "doc/REQ",
+    "doc/HLD",
+    "doc/LLD",
+    "doc/IMP",
+    "host/inference-bridge",
+    "services",
+    "tools",
+    "config/demo/assistance"
+  ],
+  "write_paths": [
+    "doc/IMP/slices/IMP-09-backup-and-recovery/sessions/002-closure-and-pr/**",
+    "doc/IMP/executions/2026-11-21-IMP-09/ledger.json",
+    "doc/IMP/slices/IMP-09-backup-and-recovery/README.md"
+  ],
+  "dependencies": [
+    "IMP-07:G-07:automated_qualified",
+    "IMP-08:G-08:automated_qualified",
+    "IMP-09:G-09:automated_qualified"
+  ],
+  "operation_ids": [
+    "help_reconcile",
+    "backup_capture",
+    "backup_read",
+    "restore_create",
+    "restore_read",
+    "restore_validate",
+    "promotion_propose",
+    "promotion_approve",
+    "promotion_execute",
+    "promotion_read"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "publish_pr"
+  ],
+  "prohibited_actions": [
+    "unrelated source changes",
+    "research resource publication",
+    "merge",
+    "deployment",
+    "IMP-10 activation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Close IMP-09, create PR",
+    "scope": "IMP09 closure, local commit, dedicated branch push and private PR creation; no merge, deployment or IMP10 activation."
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Verified qualified source continuity",
+    "Open private repository pull request",
+    "Publication receipt and ledger"
+  ],
+  "positive_acceptance": [
+    "Exact candidate source and qualification pins agree",
+    "Private PR targets the merged predecessor tree"
+  ],
+  "adverse_acceptance": [
+    "Reject source drift or duplicate pull request",
+    "Preserve provider, serving and participant custody boundaries"
+  ],
+  "reviewer": "primary sequential closure verification",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Qualified source or predecessor drift",
+    "Private remote access or write authority unavailable"
+  ],
+  "is_example": false
+}

@@ -1,0 +1,172 @@
+[
+  {
+    "command": [
+      "uv",
+      "lock",
+      "--check"
+    ],
+    "started_at": "2026-11-21T17:57:23.141923+00:00",
+    "completed_at": "2026-11-21T17:57:23.160452+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source001/01.log",
+    "sha256": "50ab3963d0b91253a141abf5ba2a6a1ca6b8436ae8174d248b51b8429131c89c"
+  },
+  {
+    "command": [
+      "pnpm",
+      "install",
+      "--offline",
+      "--frozen-lockfile",
+      "--lockfile-only",
+      "--ignore-scripts"
+    ],
+    "started_at": "2026-11-21T17:57:23.160748+00:00",
+    "completed_at": "2026-11-21T17:57:23.437985+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source001/02.log",
+    "sha256": "05f69915bb4a257841ad0d86d969aa1650b78a92bebe96438d3d94e0ff9265b0"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/generate_contracts.py",
+      "--check"
+    ],
+    "started_at": "2026-11-21T17:57:23.438248+00:00",
+    "completed_at": "2026-11-21T17:57:23.743276+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source001/03.log",
+    "sha256": "9a81ab81a7b00ae308564e77f63799da8ca72dd3efb8da14207762472665d803"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_boundaries.py"
+    ],
+    "started_at": "2026-11-21T17:57:23.743486+00:00",
+    "completed_at": "2026-11-21T17:57:24.181107+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source001/04.log",
+    "sha256": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_imp02_admission.py"
+    ],
+    "started_at": "2026-11-21T17:57:24.181317+00:00",
+    "completed_at": "2026-11-21T17:57:24.217258+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source001/05.log",
+    "sha256": "a3882b2b400134aad06bb6a1f3a2d33c28096330b037dec61ece67944843d0b1"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "check",
+      "."
+    ],
+    "started_at": "2026-11-21T17:57:24.217455+00:00",
+    "completed_at": "2026-11-21T17:57:24.302154+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source001/06.log",
+    "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "started_at": "2026-11-21T17:57:24.302362+00:00",
+    "completed_at": "2026-11-21T17:57:24.340922+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source001/07.log",
+    "sha256": "ad9ea521de1f5a3dda13927c5aa65da6cb45aadb864b2db4730b6d79205611b8"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "started_at": "2026-11-21T17:57:24.341143+00:00",
+    "completed_at": "2026-11-21T17:57:28.450758+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source001/08.log",
+    "sha256": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332"
+  },
+  {
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "started_at": "2026-11-21T17:57:28.451053+00:00",
+    "completed_at": "2026-11-21T17:57:30.797102+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source001/09.log",
+    "sha256": "e2619b18e6eda193c3629cf5a0d6112df29e1f4e400b0c8b0ad8a99861ed2ac5"
+  },
+  {
+    "command": [
+      "pnpm",
+      "lint"
+    ],
+    "started_at": "2026-11-21T17:57:30.797347+00:00",
+    "completed_at": "2026-11-21T17:57:34.580506+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source001/10.log",
+    "sha256": "d957502195d6b7bf553082127cc2b44f0602f6924caec17c117d0a1e09273f12"
+  },
+  {
+    "command": [
+      "pnpm",
+      "format:check"
+    ],
+    "started_at": "2026-11-21T17:57:34.580762+00:00",
+    "completed_at": "2026-11-21T17:57:35.630199+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source001/11.log",
+    "sha256": "1264ec68aa3a02a4163de506eca818cf94c93265a31cc61682a0898bc86fb889"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "pytest",
+      "--tb=short",
+      "--junitxml",
+      "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/slices/IMP-09-backup-and-recovery/sessions/001-implementation/evidence/source/source001/pytest.xml"
+    ],
+    "started_at": "2026-11-21T17:57:35.630446+00:00",
+    "completed_at": "2026-11-21T18:01:35.859641+00:00",
+    "exit_code": 1,
+    "log": "evidence/source/source001/12.log",
+    "sha256": "6b062381987e4cc2ade513926706cafc6f5e35ba9c26465e8befe1031b200d26"
+  }
+]

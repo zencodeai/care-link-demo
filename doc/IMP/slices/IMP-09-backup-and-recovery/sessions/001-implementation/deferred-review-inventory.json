@@ -1,0 +1,11 @@
+{
+  "stage_id": "IMP-09",
+  "state": "deferred_until_after_IMP10",
+  "reviews": [
+    "Human EN/FR terminology and usability",
+    "Human screen-reader and keyboard workflow",
+    "Human visual/layout review",
+    "Actual distinct human promotion review under current target/head; drill approval is never reusable"
+  ],
+  "follow_up": "After IMP10 use authorized GitHub issue follow-up for human-reported bugs/improvements. No issue or human acceptance invented."
+}

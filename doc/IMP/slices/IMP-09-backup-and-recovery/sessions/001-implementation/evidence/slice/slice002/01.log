@@ -1,0 +1,34 @@
+..............F......................................................... [ 79%]
+...................                                                      [100%]
+=================================== FAILURES ===================================
+______ test_missing_postcapture_service_suspend_guard_remains_unresolved _______
+services/data/tests/test_imp09_recovery.py:403: in test_missing_postcapture_service_suspend_guard_remains_unresolved
+    append(journal, {"kind": "service_suspend", "service_id": key(), "directory_revision": "4"})
+services/data/tests/test_imp09_recovery.py:35: in append
+    return journal.append(
+host/recovery-control/src/care_link_recovery_control/journal.py:237: in append
+    validate_contract("JournalAppend", request)
+packages/contracts/python/src/care_link_contracts/validation.py:612: in validate_contract
+    raise ContractError("invalid")
+E   care_link_contracts.validation.ContractError: invalid
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+services/data/tests/test_imp09_integration.py::test_real_capture_restore_current_restriction_promotion_and_manual
+  services/data/tests/test_imp09_integration.py:61: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    def test_real_capture_restore_current_restriction_promotion_and_manual(
+
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[maintenance]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[fenced_old]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[routed_target]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[enabled_target]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[before_smoke]
+  /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/popen_fork.py:76: DeprecationWarning: This process (pid=43470) is multi-threaded, use of fork() may lead to deadlocks in the child.
+    self.pid = os.fork()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/data/tests/test_imp09_recovery.py::test_missing_postcapture_service_suspend_guard_remains_unresolved
+1 failed, 90 passed, 23 warnings in 8.10s

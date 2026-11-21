@@ -11,6 +11,16 @@ const addFormats = require("ajv-formats").default;
 const standaloneCode = require("ajv/dist/standalone/index.js").default;
 const { _ } = require("ajv/dist/compile/codegen/index.js");
 const names = [
+  "BackupView",
+  "RestoreCreate",
+  "RestoreView",
+  "PromotionPropose",
+  "PromotionApprove",
+  "PromotionExecute",
+  "PromotionView",
+  "PromotionBinding",
+  "HelpReconcile",
+
   "ArtifactRegister",
   "ArtifactView",
   "ArtifactReview",

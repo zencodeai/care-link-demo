@@ -1,0 +1,12 @@
+{
+  "scope": "owned disposable browser-only synthetic verification",
+  "container_name": "care-link-imp09-001-browser",
+  "observed_container_id": "c389a5381994c001fac0aafb0e9ea0ca2165a15f45208f8537aa01b4425aabff",
+  "observed_image_id": "sha256:847d0429ebe65559c9cc8cfb415f072fc9bf347050dc0fd7248d5cbcf0669a48",
+  "loopback_web_port": 4199,
+  "loopback_browser_port": 31909,
+  "command": "pnpm exec playwright test --config tests/e2e/recovery/playwright.config.ts",
+  "exit_code": 0,
+  "removed_after_checks": true,
+  "test_doubles": "synthetic API route fixtures; no server authorization or live quarantine claim"
+}
