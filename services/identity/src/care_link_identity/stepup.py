@@ -79,13 +79,15 @@ def confirm(
             or ceremony["expected_revision"] != session["revision"]
             or instant(ceremony["expires_at"]) <= now
             or ceremony.get("state") in {"verified", "expired"}
-            or (now - instant(proof["proof_auth_time"])).total_seconds() > 300
+            or not 0 <= (now - instant(proof["proof_auth_time"])).total_seconds() <= 300
         ):
             raise IdentityError("identity.invalid_ceremony")
         if ceremony["high"] is True and ceremony["first_proof"] is None:
             ceremony.update(
                 {
                     "first_proof": request["proof_intent_id"],
+                    "first_proof_auth_time": proof["proof_auth_time"],
+                    "first_verified_at": stamp(now),
                     "state": "cooling_off",
                     "not_before": stamp(now + timedelta(minutes=5)),
                 }
@@ -97,7 +99,16 @@ def confirm(
         ):
             raise IdentityError("identity.cooling_or_fresh_proof_required")
         else:
-            ceremony["state"] = "verified"
+            ceremony.update(
+                {
+                    "state": "verified",
+                    "verified_proof": request["proof_intent_id"],
+                    "verified_auth_time": proof["proof_auth_time"],
+                    "verified_at": stamp(now),
+                    "verified_mfa": proof["proof_mfa"],
+                    "verified_factors": proof.get("proof_factors", []),
+                }
+            )
             # The action-bound ceremony is the proof; a general browser session
             # never receives ambient AL3 authority for unrelated operations.
         proof["proof_consumed"] = True

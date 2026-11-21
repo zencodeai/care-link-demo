@@ -136,6 +136,8 @@ def create_manual_identity_app(
             "resolve": {"evidence"},
             "current": {"credential_ref"},
             "recovery": {"credential_ref", "ceremony_id", "session_id", "family_id"},
+            "rights-proof": {"credential_ref", "ceremony_id", "subject_id", "kind"},
+            "rights-download-proof": {"credential_ref", "ceremony_id", "subject_id"},
             "consent-proof": {
                 "credential_ref",
                 "proof_id",
@@ -225,6 +227,25 @@ def create_manual_identity_app(
                 raise ManualError("manual.identity_evidence_changed")
             return _actor_record(actor)
         actor, proof = lookup(text(data, "credential_ref"))
+        if name in {"rights-proof", "rights-download-proof"}:
+            raw = service.custody.decrypt(text(proof, "credential"))
+            active_authority = ManualIdentityAuthority(selected(raw))
+            if name == "rights-proof":
+                active_authority.rights_proof(
+                    replace(actor, credential_ref=raw),
+                    text(data, "ceremony_id"),
+                    text(data, "subject_id"),
+                    text(data, "kind"),
+                )
+            else:
+                active_authority.rights_download_proof(
+                    replace(actor, credential_ref=raw),
+                    text(data, "ceremony_id"),
+                    text(data, "subject_id"),
+                )
+            if actor.request_deadline is None or actor.request_deadline <= service.clock():
+                raise ManualError("manual.identity_evidence_expired")
+            return {"verified": True}
         if name == "consent-proof":
             raw = service.custody.decrypt(text(proof, "credential"))
             ManualIdentityAuthority(selected(raw)).consent_proof(
@@ -283,6 +304,13 @@ def create_manual_identity_app(
 
     for name in ("authenticate", "csrf", "evidence"):
         route(name, "core")
-    for name in ("resolve", "current", "recovery", "consent-proof"):
+    for name in (
+        "resolve",
+        "current",
+        "recovery",
+        "consent-proof",
+        "rights-proof",
+        "rights-download-proof",
+    ):
         route(name, "data")
     return app

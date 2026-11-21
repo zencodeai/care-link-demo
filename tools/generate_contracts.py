@@ -12,6 +12,36 @@ TARGETS = (
     ROOT / "packages/contracts/typescript/src/schema.json",
 )
 NAMES = (
+    "FollowUpCreate",
+    "FollowUpView",
+    "FollowUpBindAnchor",
+    "PostCrisisRecord",
+    "PostCrisisView",
+    "InboxQuery",
+    "InboxMessageView",
+    "InboxPage",
+    "OutcomeCreate",
+    "OutcomeView",
+    "OutcomePage",
+    "HoldCommand",
+    "RightsCreate",
+    "RightsView",
+    "ExportView",
+    "LifecycleDueRequest",
+    "Gateway_followup_create",
+    "Gateway_followup_read",
+    "Gateway_followup_cancel",
+    "Gateway_followup_bind_anchor",
+    "Gateway_post_crisis_record",
+    "Gateway_participant_inbox",
+    "Gateway_inbox_message_read",
+    "Gateway_outcome_append",
+    "Gateway_outcomes_read",
+    "Gateway_hold_create",
+    "Gateway_hold_release",
+    "Gateway_rights_create",
+    "Gateway_rights_read",
+    "Gateway_export_download",
     "SessionCreate",
     "RevisionCommand",
     "Error",
@@ -300,6 +330,27 @@ def render() -> str:
         "assistance_task_context",
         "assistance_draft_context",
     )
+    # Authenticated subject revision lets actor UI submit optimistic rights commands.
+    selected["SessionView"]["properties"]["subject_revision"] = source["$defs"]["SessionView"][
+        "properties"
+    ]["revision"]
+    # IMP-07 exact metadata targets reuse canonical gateway request schemas.
+    planning_actions += (
+        "followup_create",
+        "followup_read",
+        "followup_cancel",
+        "followup_bind_anchor",
+        "post_crisis_record",
+        "participant_inbox",
+        "inbox_message_read",
+        "outcome_append",
+        "outcomes_read",
+        "hold_create",
+        "hold_release",
+        "rights_create",
+        "rights_read",
+        "export_download",
+    )
     targets = []
     for action in planning_actions:
         gateway = selected["Gateway_" + action]["properties"]
@@ -332,7 +383,7 @@ def render() -> str:
         {
             "subject_id": {"$ref": "#/$defs/Id"},
             "session_id": {"$ref": "#/$defs/Id"},
-            "purpose": {"enum": ["plan", "referral"]},
+            "purpose": {"enum": ["plan", "referral", "follow_up"]},
         }
     )
     bindings["directory_bindings"] = {

@@ -151,6 +151,8 @@ class Referrals(Directory):
         return view
 
     def referral_payload(self, tx: Transaction, actor: Actor, row: Record) -> Record:
+        if row["state"] == "purged":
+            raise ManualError("manual.source_content_expired", 410)
         payload = object_value(json.loads(self.cipher.decrypt(text(row, "payload_ciphertext"))))
         session = tx.get("session", text(row, "session_id"))
         if session is None:

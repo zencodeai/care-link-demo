@@ -10,6 +10,9 @@ from .values import object_value, stamp
 
 def session_view(tx: Transaction, session: Record, guard: Record) -> Record:
     control = tx.get("control", "demo")
+    subject = tx.peek("subject", text(session, "persona_id"))
+    if subject is None:
+        raise ManualError("manual.subject_unavailable", 404)
     degraded = ["ai_unavailable"] if control and control["mode"] == "ai_disabled" else []
     if session["transport"] != "connected":
         degraded.append("channel_disconnected")
@@ -29,6 +32,7 @@ def session_view(tx: Transaction, session: Record, guard: Record) -> Record:
         "unresolved": session["unresolved"],
         "persona_id": session["persona_id"],
         "subject_id": session["persona_id"],
+        "subject_revision": str(number(subject, "authority_revision")),
     }
 
 

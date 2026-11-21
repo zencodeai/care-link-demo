@@ -1,0 +1,17 @@
+{
+  "state": "passed",
+  "qualified_baseline": "a1be01f91d461c59669517307fd2ea5259182235",
+  "publication_base": "f9c2f0f7217b80729171ba8526a535a45f14c2ba",
+  "base_tree": "5a40242a33fba1465d66cb6d8fbca114819c6831",
+  "equal_base_trees": true,
+  "source_bindings_checked": 839,
+  "reference_bindings_checked": 58,
+  "qualification_checks_bound": 46,
+  "qualification_status": "automated_qualified",
+  "predecessor_pr": "https://github.com/zencodeai/care-link-demo/pull/13",
+  "predecessor_pr_state": "MERGED",
+  "scope": "Isolated synthetic IMP-07 source; human review deferred_until_after_IMP10; backup erasure pending IMP-09",
+  "excluded_preexisting": [
+    "doc/research/2026-11-20-agentic-care/resources/"
+  ]
+}

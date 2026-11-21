@@ -1,0 +1,24 @@
+[
+  {
+    "name": "plan-links",
+    "command": ".venv/bin/python -m tools.imp05_verification.validate_plan",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Final document bindings, links and scoped diff remain valid",
+    "actual": "Exit 0",
+    "evidence_path": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/001-implementation/evidence/plan-links.log",
+    "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+    "mock_used": false
+  },
+  {
+    "name": "diff-whitespace",
+    "command": "git diff --check",
+    "tool_version": null,
+    "status": "passed",
+    "expected": "Final document bindings, links and scoped diff remain valid",
+    "actual": "Exit 0",
+    "evidence_path": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/001-implementation/evidence/diff-whitespace.log",
+    "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mock_used": false
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "state": "prepared",
+  "repository": "zencodeai/care-link-demo",
+  "private": true,
+  "branch": "feat/imp-07-followup-and-rights",
+  "base_branch": "main",
+  "base_commit": "f9c2f0f7217b80729171ba8526a535a45f14c2ba",
+  "authorization": "User: Close IMP-07 and create PR",
+  "merge_authorized": false,
+  "deployment_authorized": false,
+  "pull_request_url": null
+}

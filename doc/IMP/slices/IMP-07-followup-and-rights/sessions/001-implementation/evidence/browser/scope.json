@@ -1,0 +1,10 @@
+{
+  "browser": "Chromium container pinned image sha256:847d0429ebe65559c9cc8cfb415f072fc9bf347050dc0fd7248d5cbcf0669a48",
+  "cases": 6,
+  "scope": "Route-fixture UI tests: EN/FR, keyboard, axe, responsive layout, cancellation uncertainty and inbox clearing",
+  "real_backend_in_this_browser_run": false,
+  "human_review": "deferred_until_after_IMP10",
+  "owned_container_removed": true,
+  "server_subject_revision_ui": true,
+  "component_regressions": 14
+}

@@ -282,6 +282,7 @@ class IdentityService:
                             "proof_subject": principal.subject,
                             "proof_auth_time": stamp(principal.auth_time),
                             "proof_mfa": principal.mfa,
+                            "proof_factors": list(principal.factors),
                             "proof_consumed": False,
                         }
                     )

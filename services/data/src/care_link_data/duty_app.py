@@ -15,6 +15,7 @@ from starlette.concurrency import run_in_threadpool
 from starlette.responses import JSONResponse
 
 from .duties import DutyCommands
+from .lifecycle.jobs import LifecycleJobs
 from .values import canonical
 
 Record = dict[str, object]
@@ -85,7 +86,9 @@ class SignedDutySecurity:
         return replace(actor, request_deadline=deadline)
 
 
-def create_duty_app(commands: DutyCommands, security: DutySecurity) -> FastAPI:
+def create_duty_app(
+    commands: DutyCommands, security: DutySecurity, *, lifecycle: LifecycleJobs | None = None
+) -> FastAPI:
     app = FastAPI(
         title="CARE-Link registered workload duties",
         docs_url=None,
@@ -163,4 +166,10 @@ def create_duty_app(commands: DutyCommands, security: DutySecurity) -> FastAPI:
         route("job_execute", "DueJob", commands.job_execute),
         methods=["POST"],
     )
+    if lifecycle is not None:
+        app.add_api_route(
+            "/internal/v1/lifecycle/due",
+            route("lifecycle_due", "LifecycleDueRequest", lifecycle.lifecycle_due),
+            methods=["POST"],
+        )
     return app

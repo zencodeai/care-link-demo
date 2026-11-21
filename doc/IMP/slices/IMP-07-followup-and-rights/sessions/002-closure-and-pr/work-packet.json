@@ -1,0 +1,122 @@
+{
+  "packet_id": "IMP07-002-closure-and-pr",
+  "task_id": "IMP-07-D",
+  "stage_id": "IMP-07",
+  "mode": "verification",
+  "role": "imp_verifier",
+  "goal": "Verify qualified IMP-07 source continuity, close the slice for its automated synthetic scope and publish its private repository pull request.",
+  "baseline_commit": "a1be01f91d461c59669517307fd2ea5259182235",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/001-implementation/candidate-manifest.json",
+      "sha256": "cae5fe5d6a58f959ad25d0d08f270c6614d30020d57a6e8e5570867679cc9a23"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/001-implementation/results.json",
+      "sha256": "1639e99ae9f9c2bab5d03ed5a2f451c2beaeae210109609987ad9ba93baed8d9"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-07/ledger.json",
+      "sha256": "d60eac67bb52a9321629c1f0954444378ba7028f232ae44abcbb6b1b72ffdd5c"
+    }
+  ],
+  "read_paths": [
+    "doc/REQ",
+    "doc/HLD",
+    "doc/LLD",
+    "doc/IMP",
+    "host/inference-bridge",
+    "services",
+    "tools",
+    "config/demo/assistance"
+  ],
+  "write_paths": [
+    "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr/**",
+    "doc/IMP/executions/2026-11-21-IMP-07/ledger.json",
+    "doc/IMP/slices/IMP-07-followup-and-rights/README.md"
+  ],
+  "dependencies": [
+    "IMP-05:G-05:automated_qualified",
+    "IMP-07-B",
+    "IMP-07-C"
+  ],
+  "operation_ids": [
+    "followup_create",
+    "followup_read",
+    "followup_cancel",
+    "outcome_append",
+    "hold_create",
+    "rights_create",
+    "hold_release",
+    "rights_read",
+    "export_download",
+    "data_followup_create",
+    "data_followup_read",
+    "data_followup_cancel",
+    "data_outcome_append",
+    "data_hold_create",
+    "data_rights_create",
+    "data_hold_release",
+    "data_rights_read",
+    "data_export_download",
+    "post_crisis_record",
+    "participant_inbox",
+    "outcomes_read",
+    "lifecycle_due",
+    "followup_bind_anchor",
+    "inbox_message_read",
+    "data_post_crisis_record",
+    "data_participant_inbox",
+    "data_outcomes_read",
+    "data_followup_bind_anchor",
+    "data_inbox_message_read"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "publish_pr"
+  ],
+  "prohibited_actions": [
+    "unrelated source changes",
+    "research resource publication",
+    "merge",
+    "deployment",
+    "IMP-08 activation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Close IMP-07 and create PR",
+    "scope": "Private synthetic IMP-07 closure and pull request publication, including local commit and dedicated branch push."
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Verified qualified source continuity",
+    "Open private repository pull request",
+    "Publication receipt and ledger"
+  ],
+  "positive_acceptance": [
+    "Exact candidate source and qualification pins agree",
+    "Private PR targets the merged predecessor tree"
+  ],
+  "adverse_acceptance": [
+    "Reject source drift or duplicate pull request",
+    "Preserve provider, serving and participant custody boundaries"
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Qualified source or predecessor drift",
+    "Private remote access or write authority unavailable"
+  ],
+  "is_example": false
+}

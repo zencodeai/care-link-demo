@@ -118,6 +118,12 @@ class PreparationAuthority:
     ) -> None:
         self.authority(actor).consent_proof(actor, proof_id, subject_id, session_id, purpose, basis)
 
+    def rights_proof(self, actor: Actor, ceremony_id: str, subject_id: str, kind: str) -> None:
+        raise ManualError("manual.rights_proof_required")
+
+    def rights_download_proof(self, actor: Actor, ceremony_id: str, subject_id: str) -> None:
+        raise ManualError("manual.rights_proof_required")
+
 
 def target_admin_dsn(admin_dsn: str, runtime_dsn: str, role: str) -> str:
     admin, runtime = conninfo_to_dict(admin_dsn), conninfo_to_dict(runtime_dsn)

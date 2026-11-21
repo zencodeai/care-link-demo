@@ -165,3 +165,11 @@ class ManualIdentityAuthority:
                 raise ManualError("manual.fresh_recovery_required")
             ceremony["recovery_consumed"] = True
             tx.put("ceremony", ceremony_id, ceremony)
+
+    def rights_proof(self, actor: Actor, ceremony_id: str, subject_id: str, kind: str) -> None:
+        from .rights_proof import verify_rights_proof
+
+        verify_rights_proof(self.service, actor, ceremony_id, subject_id, kind)
+
+    def rights_download_proof(self, actor: Actor, ceremony_id: str, subject_id: str) -> None:
+        self.rights_proof(actor, ceremony_id, subject_id, "export")

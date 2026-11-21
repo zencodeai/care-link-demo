@@ -138,6 +138,54 @@ ROLES.update(
 )
 
 
+ROLES.update(
+    {
+        **{
+            name: PARTICIPANTS | WORKFORCE
+            for name in (
+                "post_crisis_record",
+                "followup_create",
+                "followup_read",
+                "followup_bind_anchor",
+                "followup_cancel",
+                "outcome_append",
+                "outcomes_read",
+            )
+        },
+        **{
+            name: PARTICIPANTS
+            for name in (
+                "participant_inbox",
+                "inbox_message_read",
+                "rights_create",
+                "rights_read",
+                "export_download",
+            )
+        },
+        "hold_create": frozenset({"governance"}),
+        "hold_release": frozenset({"governance"}),
+    }
+)
+LIFECYCLE_ACTIONS = frozenset(
+    {
+        "post_crisis_record",
+        "followup_create",
+        "followup_read",
+        "followup_bind_anchor",
+        "followup_cancel",
+        "outcome_append",
+        "outcomes_read",
+        "participant_inbox",
+        "inbox_message_read",
+        "rights_create",
+        "rights_read",
+        "export_download",
+        "hold_create",
+        "hold_release",
+    }
+)
+
+
 def stamp(value: datetime) -> str:
     return value.astimezone(UTC).isoformat(timespec="microseconds").replace("+00:00", "Z")
 

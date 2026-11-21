@@ -1,0 +1,20 @@
+[
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "pytest",
+      "services/data/tests/test_imp07_lifecycle.py",
+      "services/data/tests/test_lifecycle_boundary.py",
+      "services/identity/tests/test_imp07_rights_proof.py",
+      "services/core/tests/test_imp07_transport.py",
+      "packages/policy-input/tests/test_imp07_policy.py",
+      "-q",
+      "--tb=short"
+    ],
+    "started_at": "2026-11-21T15:18:28.270620+00:00",
+    "completed_at": "2026-11-21T15:18:33.381900+00:00",
+    "exit_code": 1,
+    "log": "evidence/source/db002/01.log"
+  }
+]

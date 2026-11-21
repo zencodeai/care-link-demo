@@ -11,6 +11,23 @@ const addFormats = require("ajv-formats").default;
 const standaloneCode = require("ajv/dist/standalone/index.js").default;
 const { _ } = require("ajv/dist/compile/codegen/index.js");
 const names = [
+  "FollowUpCreate",
+  "FollowUpView",
+  "FollowUpBindAnchor",
+  "PostCrisisRecord",
+  "PostCrisisView",
+  "InboxQuery",
+  "InboxMessageView",
+  "InboxPage",
+  "OutcomeCreate",
+  "OutcomeView",
+  "OutcomePage",
+  "HoldCommand",
+  "RightsCreate",
+  "RightsView",
+  "ExportView",
+  "LifecycleDueRequest",
+
   "KnowledgeQuery",
   "KnowledgeResults",
   "AssistanceStatus",

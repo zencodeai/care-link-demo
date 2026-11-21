@@ -67,6 +67,12 @@ class SignedEnvelopeFactory:
             "subject_id": None,
             "purpose": "service_operations"
             if action.startswith("workforce_") or action in {"queue_list", "control_change"}
+            else "follow_up"
+            if action.startswith(
+                ("followup_", "post_crisis_", "participant_inbox", "inbox_message_")
+            )
+            else "rights"
+            if action.startswith(("rights_", "export_download", "hold_"))
             else "plan"
             if action.startswith("plan_")
             else "governance"
@@ -170,6 +176,14 @@ class SignedEnvelopeFactory:
                 "task_",
                 "draft_",
                 "assistance_",
+                "followup_",
+                "post_crisis_",
+                "outcome",
+                "participant_inbox",
+                "inbox_message_",
+                "rights_",
+                "export_download",
+                "hold_",
             )
         ):
             metadata_args["planning"] = {
