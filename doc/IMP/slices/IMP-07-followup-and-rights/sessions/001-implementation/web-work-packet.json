@@ -1,0 +1,138 @@
+{
+  "packet_id": "IMP07-001-web",
+  "task_id": "IMP-07-C",
+  "stage_id": "IMP-07",
+  "mode": "implementation",
+  "role": "imp_web",
+  "goal": "Implement IMP-07 web within canonical follow-up and rights scope",
+  "baseline_commit": "a1be01f91d461c59669517307fd2ea5259182235",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "fc3a4f2acd7fec8b527a2115320cb5e011ab154e32e57fb8e4f4e292e5ba218a"
+    },
+    {
+      "path": "doc/LLD/09-audit-rights-and-analytics.md",
+      "sha256": "6647ae77882b75be01fcea5269959517f0fe5dde3ffed9c6c08cd5b9beed4d71"
+    },
+    {
+      "path": "doc/LLD/05-actor-workflows-and-ui.md",
+      "sha256": "b39f419893fb19de1b5f20c1f9a87f78fe669a57865b681de040338937a2115c"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "dcc8df20c339d67dfdf0ea89892d80b731cdb6a795be567f56773837689b7b61"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-20-IMP-05/ledger.json",
+      "sha256": "332d95bf8784a3b2a7080f96aa93098ce3b33b2342179528f8d22561a12e679d"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/REQ",
+    "doc/HLD",
+    "doc/LLD",
+    "doc/IMP",
+    "services",
+    "packages",
+    "apps",
+    "tools",
+    "tests"
+  ],
+  "write_paths": [
+    "apps/web/src/lifecycle/**",
+    "apps/web/src/App.tsx",
+    "tests/e2e/rights-followup/**"
+  ],
+  "dependencies": [
+    "IMP-05:G-05:automated_qualified"
+  ],
+  "operation_ids": [
+    "followup_create",
+    "followup_read",
+    "followup_cancel",
+    "outcome_append",
+    "hold_create",
+    "rights_create",
+    "hold_release",
+    "rights_read",
+    "export_download",
+    "data_followup_create",
+    "data_followup_read",
+    "data_followup_cancel",
+    "data_outcome_append",
+    "data_hold_create",
+    "data_rights_create",
+    "data_hold_release",
+    "data_rights_read",
+    "data_export_download",
+    "post_crisis_record",
+    "participant_inbox",
+    "outcomes_read",
+    "lifecycle_due",
+    "followup_bind_anchor",
+    "inbox_message_read",
+    "data_post_crisis_record",
+    "data_participant_inbox",
+    "data_outcomes_read",
+    "data_followup_bind_anchor",
+    "data_inbox_message_read"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "live deployment",
+    "host trust changes",
+    "real contact",
+    "police integration",
+    "commit",
+    "push",
+    "merge",
+    "model change"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Implement service slice 07",
+    "scope": "Source implementation and disposable synthetic automated verification; no live deployment/publication"
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Scoped modules/tests",
+    "Actual checks and findings",
+    "Handoff"
+  ],
+  "positive_acceptance": [
+    "Explicit 24\u201372h follow-up anchor and separate contact consent",
+    "Own-subject AL3 rights and post-cooling fresh proof",
+    "Guarded copy graph/hold purge and truthful backup pending"
+  ],
+  "adverse_acceptance": [
+    "Opt out before authorization prevents delivery",
+    "Unknown send remains unresolved without durable absence and fencing",
+    "Missing anchor/cycle/hold prevents unsafe purge",
+    "Carer own rights exclude PID and other-author content"
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "authority change",
+    "shared ownership conflict",
+    "destructive or live action needed"
+  ],
+  "is_example": false
+}

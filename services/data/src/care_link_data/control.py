@@ -10,13 +10,14 @@ from care_link_domain import Actor, ManualError
 from .consent import Consent
 from .directory import Directory
 from .dispatches import Dispatches
+from .lifecycle import Holds, Inbox, Rights
 from .plans import Plans
 from .review import ReviewService
 from .store import Record, Transaction, instant, number, text
 from .values import Outcome, digest, integer, object_value
 
 
-class ManualService(Dispatches, Plans, Consent, Directory, ReviewService):
+class ManualService(Holds, Inbox, Rights, Dispatches, Plans, Consent, Directory, ReviewService):
     def own_reports_read(self, actor: Actor, session_id: str) -> Record:
         import json
 
@@ -52,6 +53,41 @@ class ManualService(Dispatches, Plans, Consent, Directory, ReviewService):
         if old["state"] != "committed":
             return super()._replay(tx, actor, old, snapshot)
         resource = old["resource_id"]
+        if isinstance(resource, str) and old["result_type"] in {"FollowUpView", "PostCrisisView"}:
+            from .lifecycle.views import followup_view
+
+            row = tx.get(
+                "followup" if old["result_type"] == "FollowUpView" else "post_crisis", resource
+            )
+            if row is None:
+                raise ManualError("manual.not_found", 404)
+            if old["result_type"] == "FollowUpView":
+                return followup_view(row)
+            from .values import stamp
+
+            return {
+                "id": row["id"],
+                "session_id": row["session_id"],
+                "revision": str(number(row, "revision")),
+                "occurred_at": stamp(instant(row, "occurred_at")),
+            }
+        if isinstance(resource, str) and old["operation_name"] in {
+            "hold_create",
+            "hold_release",
+            "outcome_append",
+        }:
+            row = tx.get(
+                "outcome" if old["operation_name"] == "outcome_append" else "hold", resource
+            )
+            if row is None:
+                raise ManualError("manual.not_found", 404)
+            return {
+                "operation_id": old["operation_id"],
+                "state": "committed",
+                "resource_id": resource,
+                "revision": str(number(row, "revision")),
+                "audit_ref": old["canonical_audit_id"],
+            }
         if not isinstance(resource, str):
             return super()._replay(tx, actor, old, snapshot)
         if old["result_type"] in {"ReferralView", "DispatchView", "ReviewView"}:
@@ -141,6 +177,14 @@ class ManualService(Dispatches, Plans, Consent, Directory, ReviewService):
                 "task_",
                 "draft_",
                 "assistance_",
+                "followup_",
+                "post_crisis_",
+                "outcome",
+                "participant_inbox",
+                "inbox_message_",
+                "rights_",
+                "export_",
+                "hold_",
             )
         ):
             if planning is None or planning["action"] != action:
@@ -153,6 +197,25 @@ class ManualService(Dispatches, Plans, Consent, Directory, ReviewService):
                 from .assistance.metadata import metadata_scope
 
                 session_id = metadata_scope(self, current, action, arguments)
+            elif action in {
+                "followup_create",
+                "post_crisis_record",
+                "outcome_append",
+                "outcomes_read",
+            }:
+                session_id = text(arguments, "session_id")
+            elif action.startswith("followup_"):
+                session_id = self._life_session(current, "followup", text(arguments, "followup_id"))
+            elif action in {
+                "rights_create",
+                "rights_read",
+                "export_download",
+                "hold_create",
+                "hold_release",
+                "participant_inbox",
+                "inbox_message_read",
+            }:
+                session_id = None
             elif action in {"referral_draft", "referral_sources"}:
                 session_id = text(arguments, "session_id")
             elif action.startswith("referral_"):
@@ -190,8 +253,18 @@ class ManualService(Dispatches, Plans, Consent, Directory, ReviewService):
             facts = object_value(policy_input["authority_facts"])
             session = snapshot["session"]
             complete = facts["resource_owned_or_assigned"] is True
-            if scope["subject_id"] is not None and (
-                session is None or object_value(session)["persona_id"] != scope["subject_id"]
+            if (
+                action
+                not in {
+                    "rights_create",
+                    "rights_read",
+                    "export_download",
+                    "hold_create",
+                    "hold_release",
+                    "inbox_message_read",
+                }
+                and scope["subject_id"] is not None
+                and (session is None or object_value(session)["persona_id"] != scope["subject_id"])
             ):
                 complete = False
             versions = object_value(policy_input["versions"])

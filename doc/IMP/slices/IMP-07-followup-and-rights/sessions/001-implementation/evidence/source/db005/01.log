@@ -1,0 +1,21 @@
+.............................F.......................................... [ 87%]
+..........                                                               [100%]
+=================================== FAILURES ===================================
+____ test_real_journal_rolled_back_hold_release_never_relaxes_original_hold ____
+services/data/tests/test_lifecycle_adverse.py:270: in test_real_journal_rolled_back_hold_release_never_relaxes_original_hold
+    assert entries[1]["command"]["restriction"] == first
+E   AssertionError: assert {'authority_r...: 'hold', ...} == {'authority_r...: 'hold', ...}
+E     
+E     Omitting 5 identical items, use -vv to show
+E     Differing items:
+E     {'starts_at': '2026-11-21T15:27:31.787494Z'} != {'starts_at': '2026-11-21T15:27:31.787496Z'}
+E     Use -v to get more diff
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/data/tests/test_lifecycle_adverse.py::test_real_journal_rolled_back_hold_release_never_relaxes_original_hold
+1 failed, 81 passed, 17 warnings in 13.39s

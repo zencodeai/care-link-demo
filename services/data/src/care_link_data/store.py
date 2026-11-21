@@ -29,6 +29,12 @@ class StorageActor(Protocol):
 # Fixed repository mapping. DTO JSON columns are content/state values, never a
 # caller-supplied operation name or SQL expression.
 TABLES: dict[str, tuple[str, tuple[str, ...]]] = {
+    "post_crisis": ("care.post_crisis_event", ("id",)),
+    "followup": ("care.follow_up", ("id",)),
+    "inbox": ("care.inbox_message", ("id",)),
+    "outcome": ("care.outcome", ("id",)),
+    "hold": ("lifecycle.hold", ("id",)),
+    "rights": ("rights.request", ("id",)),
     "control": ("control.guard", ("key",)),
     "principal": ("control.principal_guard", ("principal_id",)),
     "persona": ("core.persona", ("id",)),
@@ -87,6 +93,8 @@ JSON_COLUMNS = {
 }
 APPEND_ONLY = frozenset(
     {
+        "post_crisis",
+        "outcome",
         "referral_review",
         "dispatch_observation",
         "dispatch_attempt",
@@ -312,7 +320,7 @@ class Transaction:
         self.connection.execute(
             "UPDATE lifecycle.copy SET anchor_at=%s,"
             "expires_at=%s+interval '7 days',state='retained' "
-            "WHERE session_id=%s AND state='anchor_pending' AND purpose='support'",
+            "WHERE session_id=%s AND state='anchor_pending' AND purpose IN ('support','follow_up')",
             (anchor, anchor, session_id),
         )
 

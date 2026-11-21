@@ -6,7 +6,7 @@
 
 Version 0.1 · 2026-11-06 · Proposed plan for human review. No application implementation, tool installation, host change or deployment is performed by this package.
 
-**Execution status.** [G-06 is automated-qualified for the isolated synthetic worker-summary profile](executions/2026-11-20-IMP-06/ledger.json). See the [IMP-06 closure evidence](slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/README.md), [G-05 closure](executions/2026-11-20-IMP-05/ledger.json), [IMP-04 qualification](executions/2026-11-16-IMP-04/ledger.json), and [IMP-03 historical acceptance](executions/2026-11-16-IMP-03/ledger.json). Human review is deferred until after IMP-10. IMP-05 source publication is tracked in its closure session. The planning baseline below is preserved separately from these execution records.
+**Execution status.** [G-07 is automated-qualified for isolated synthetic follow-up and rights source](executions/2026-11-21-IMP-07/ledger.json). See the [IMP-07 handoff](slices/IMP-07-followup-and-rights/sessions/001-implementation/handoff.md). G-06 remains [automated-qualified for the worker-summary profile](executions/2026-11-20-IMP-06/ledger.json); prior evidence remains historical. Human review is deferred until after IMP-10. Backup erasure remains pending IMP-09; no deployment or publication follows from this implementation.
 
 Implement the accepted LLD as small, demonstrable service slices. Use Codex specialists for bounded analysis and scoped work and preserve one accountable integration owner. Security/governance controls are built into the earliest relevant behavior, not deferred to a final audit.
 

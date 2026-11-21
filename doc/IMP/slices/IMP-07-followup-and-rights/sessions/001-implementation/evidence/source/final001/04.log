@@ -1,0 +1,19 @@
+.....................................s.................................. [ 26%]
+........................................................................ [ 53%]
+........................................................................ [ 80%]
+......................................................                   [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+services/data/tests/test_planning_composition.py::test_signed_bff_plan_consent_proof_shared_view_and_revocation
+services/data/tests/test_referral_composition.py::test_signed_referral_read_review_send_reconcile_and_tamper_denials
+services/data/tests/test_runtime_composition.py::test_real_signed_metadata_and_final_gateway_with_current_identity
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx2/_client.py:1198: StarletteDeprecationWarning: You should not use the 'timeout' argument with the TestClient. See https://github.com/Kludex/starlette/issues/1108 for more information.
+    return self.request(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [1] services/data/tests/test_composition.py:198: explicit owned Docker capture fixture required
+269 passed, 1 skipped, 20 warnings in 161.40s (0:02:41)

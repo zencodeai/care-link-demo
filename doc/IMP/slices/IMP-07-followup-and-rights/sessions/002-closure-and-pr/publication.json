@@ -1,0 +1,27 @@
+{
+  "state": "published",
+  "recorded_at": "2026-11-21T16:03:31.079018+00:00",
+  "repository": "zencodeai/care-link-demo",
+  "private": true,
+  "authorization": "User: Close IMP-07 and create PR",
+  "branch": "feat/imp-07-followup-and-rights",
+  "base_branch": "main",
+  "base_commit": "f9c2f0f7217b80729171ba8526a535a45f14c2ba",
+  "implementation_commit": "a3004493de9f95efa145afb6f5baae0b72329f2f",
+  "pull_request_number": 14,
+  "pull_request_url": "https://github.com/zencodeai/care-link-demo/pull/14",
+  "pull_request_state": "OPEN",
+  "draft": false,
+  "source_continuity": {
+    "path": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr/source-continuity.json",
+    "sha256": "46e2015fe32566f47a5bd655d7043a558e679817d2ec96bd7bca39cbd499c721"
+  },
+  "pr_snapshot": {
+    "path": "doc/IMP/slices/IMP-07-followup-and-rights/sessions/002-closure-and-pr/pr-snapshot.json",
+    "sha256": "e0869c5d5f114211635db3f092db95e48b9f957084e3dee865bb3ad05ea717c4"
+  },
+  "ci_status": "in_progress_at_publication",
+  "merge_authorized": false,
+  "merge_performed": false,
+  "deployment_applied": false
+}

@@ -16,6 +16,9 @@ Kind = Literal["task", "draft", "invocation", "operation"]
 def read(
     tx: Transaction, kind: Kind, identifier: str, cipher: CipherPort, *, lock: bool = True
 ) -> Record:
+    copies = tx.rows("copy", aggregate_id=identifier, limit=2)
+    if any(copy["state"] == "purged" for copy in copies):
+        raise ManualError("assistance.source_content_expired", 410)
     row = tx.connection.execute(
         sql.SQL("SELECT body FROM assistance.{} WHERE id=%s{}").format(
             sql.Identifier(kind), sql.SQL(" FOR UPDATE") if lock else sql.SQL("")

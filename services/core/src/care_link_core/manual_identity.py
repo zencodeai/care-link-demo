@@ -344,3 +344,26 @@ class HttpManualIdentity:
             },
         ) != {"verified": True}:
             raise ManualError("manual.consent_proof_required")
+
+    def rights_proof(self, actor: Actor, ceremony_id: str, subject_id: str, kind: str) -> None:
+        if self._call(
+            "rights-proof",
+            {
+                "credential_ref": actor.credential_ref,
+                "ceremony_id": ceremony_id,
+                "subject_id": subject_id,
+                "kind": kind,
+            },
+        ) != {"verified": True}:
+            raise ManualError("manual.rights_proof_required")
+
+    def rights_download_proof(self, actor: Actor, ceremony_id: str, subject_id: str) -> None:
+        if self._call(
+            "rights-download-proof",
+            {
+                "credential_ref": actor.credential_ref,
+                "ceremony_id": ceremony_id,
+                "subject_id": subject_id,
+            },
+        ) != {"verified": True}:
+            raise ManualError("manual.rights_proof_required")

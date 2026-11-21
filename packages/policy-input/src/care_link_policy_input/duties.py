@@ -109,6 +109,15 @@ class SignedDutyRegistry:
             raise ValueError("Noncanonical signature")
         key.verify(raw, canonical(content))
 
+    def authorize_batch(
+        self, actor: DutyActor, action: str, request_digest: str, scope: DutyScope, count: int
+    ) -> DutyActor:
+        current = self.current(actor, action, request_digest, scope)
+        definition = next(item for item in self.definitions if item.duty_id == current.duty_id)
+        if type(count) is not int or not 1 <= count <= definition.definition.per_run_limit:
+            raise ManualError("manual.duty_batch_limit", 403)
+        return current
+
     def current(
         self, actor: DutyActor, action: str, request_digest: str, scope: DutyScope
     ) -> DutyActor:
@@ -129,7 +138,7 @@ class SignedDutyRegistry:
         validate_contract("DutyDefinition", definition.definition.wire())
         duty = definition.definition
         if (
-            action not in {"identity_revoke", "job_execute"}
+            action not in {"identity_revoke", "job_execute", "lifecycle_due"}
             or action not in duty.operations
             or actor.action != action
             or definition.actor_id != actor.actor_id
@@ -154,6 +163,17 @@ class SignedDutyRegistry:
                 and (
                     "identity_signal" not in duty.resource_classes
                     or scope.purpose != "security"
+                    or scope.session_id is not None
+                    or scope.subject_id is not None
+                    or actor.job_id is not None
+                )
+            )
+            or (
+                action == "lifecycle_due"
+                and (
+                    not {"expired_copy", "due_followup"}.issubset(duty.resource_classes)
+                    or actor.workload_id != "spiffe://care-link.demo/demo/jobs"
+                    or scope.purpose != "rights"
                     or scope.session_id is not None
                     or scope.subject_id is not None
                     or actor.job_id is not None

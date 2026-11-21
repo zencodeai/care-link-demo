@@ -1,0 +1,82 @@
+FFFFFF.................................................                  [100%]
+=================================== FAILURES ===================================
+__________ test_pending_anchor_cannot_deliver_and_cancel_has_no_inbox __________
+services/data/tests/test_imp07_lifecycle.py:129: in test_pending_anchor_cannot_deliver_and_cancel_has_no_inbox
+    execute(h)
+services/data/tests/test_imp07_lifecycle.py:106: in execute
+    return LifecycleJobs(h.service, commands.authority).lifecycle_due(actor, operation, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/lifecycle/jobs.py:42: in lifecycle_due
+    self.authority.current(actor, action, binding, actor.scope)
+packages/policy-input/src/care_link_policy_input/duties.py:173: in current
+    raise ManualError("manual.duty_binding_denied")
+E   care_link_domain.ports.ManualError: manual.duty_binding_denied
+_______________ test_opt_out_before_authorization_never_delivers _______________
+services/data/tests/test_imp07_lifecycle.py:142: in test_opt_out_before_authorization_never_delivers
+    execute(h)
+services/data/tests/test_imp07_lifecycle.py:106: in execute
+    return LifecycleJobs(h.service, commands.authority).lifecycle_due(actor, operation, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/lifecycle/jobs.py:42: in lifecycle_due
+    self.authority.current(actor, action, binding, actor.scope)
+packages/policy-input/src/care_link_policy_input/duties.py:173: in current
+    raise ManualError("manual.duty_binding_denied")
+E   care_link_domain.ports.ManualError: manual.duty_binding_denied
+_______ test_delivery_one_stable_effect_after_unknown_and_ended_session ________
+services/data/tests/test_imp07_lifecycle.py:153: in test_delivery_one_stable_effect_after_unknown_and_ended_session
+    execute(h)
+services/data/tests/test_imp07_lifecycle.py:106: in execute
+    return LifecycleJobs(h.service, commands.authority).lifecycle_due(actor, operation, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/lifecycle/jobs.py:42: in lifecycle_due
+    self.authority.current(actor, action, binding, actor.scope)
+packages/policy-input/src/care_link_policy_input/duties.py:173: in current
+    raise ManualError("manual.duty_binding_denied")
+E   care_link_domain.ports.ManualError: manual.duty_binding_denied
+______________ test_one_use_export_reauthorizes_and_never_deletes ______________
+services/data/tests/test_imp07_lifecycle.py:194: in test_one_use_export_reauthorizes_and_never_deletes
+    result = h.service.export_download(h.participant, r["id"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/lifecycle/rights.py:310: in export_download
+    return self._run(actor, "export_download", None, {"rights_id": rights_id}, None, read)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/engine.py:690: in _run
+    raise ManualError("manual.stale_authority", 409)
+E   care_link_domain.ports.ManualError: manual.stale_authority
+_______ test_delete_restricts_content_replays_and_retains_backup_pending _______
+services/data/tests/test_imp07_lifecycle.py:208: in test_delete_restricts_content_replays_and_retains_backup_pending
+    assert h.service.rights_create(h.participant, operation, body)["id"] == r["id"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/lifecycle/rights.py:233: in rights_create
+    raise ManualError("manual.not_found", 404)
+services/data/src/care_link_data/engine.py:706: in _run
+    replay(
+services/data/src/care_link_data/lifecycle/rights.py:230: in replay
+    "rights", ceremony_id=data["ceremony_id"], requester_id=current.account_id, limit=2
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   care_link_domain.ports.ManualError: manual.not_found
+________ test_hold_blocks_purge_release_reasserts_external_restriction _________
+services/data/tests/test_imp07_lifecycle.py:242: in test_hold_blocks_purge_release_reasserts_external_restriction
+    execute(h, "person")
+services/data/tests/test_imp07_lifecycle.py:106: in execute
+    return LifecycleJobs(h.service, commands.authority).lifecycle_due(actor, operation, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/lifecycle/jobs.py:42: in lifecycle_due
+    self.authority.current(actor, action, binding, actor.scope)
+packages/policy-input/src/care_link_policy_input/duties.py:173: in current
+    raise ManualError("manual.duty_binding_denied")
+E   care_link_domain.ports.ManualError: manual.duty_binding_denied
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/data/tests/test_imp07_lifecycle.py::test_pending_anchor_cannot_deliver_and_cancel_has_no_inbox
+FAILED services/data/tests/test_imp07_lifecycle.py::test_opt_out_before_authorization_never_delivers
+FAILED services/data/tests/test_imp07_lifecycle.py::test_delivery_one_stable_effect_after_unknown_and_ended_session
+FAILED services/data/tests/test_imp07_lifecycle.py::test_one_use_export_reauthorizes_and_never_deletes
+FAILED services/data/tests/test_imp07_lifecycle.py::test_delete_restricts_content_replays_and_retains_backup_pending
+FAILED services/data/tests/test_imp07_lifecycle.py::test_hold_blocks_purge_release_reasserts_external_restriction
+6 failed, 49 passed, 17 warnings in 4.51s

@@ -29,6 +29,7 @@ from .directory_admission import VerifiedDirectoryAdmission
 from .referral_ports import ReceiverPort
 from .store import PostgresStore, Record, Transaction, instant, number, text
 from .values import (
+    LIFECYCLE_ACTIONS,
     PARTICIPANTS,
     ROLES,
     WORKFORCE,
@@ -251,6 +252,27 @@ class Engine:
             object_value(snapshot["review_run"]) if snapshot.get("review_run") else None,
         ):
             return False
+        if action in LIFECYCLE_ACTIONS:
+            if action in {
+                "rights_create",
+                "rights_read",
+                "export_download",
+                "participant_inbox",
+                "inbox_message_read",
+                "hold_create",
+                "hold_release",
+            }:
+                return True  # Exact own-target checks are in final guarded handlers.
+            if (
+                session is not None
+                and object_value(session)["participant_account_id"] == actor.account_id
+            ):
+                return actor.role in PARTICIPANTS
+            return bool(
+                snapshot["assignment"]
+                and object_value(snapshot["assignment"])["worker_id"] == actor.account_id
+                and object_value(snapshot["assignment"])["status"] in {"accepted", "connected"}
+            )
         if action.startswith(("plan_", "consent_")):
             if session is None:
                 # Preflight contains no target content. Resource discovery and
@@ -451,6 +473,10 @@ class Engine:
             from .referral_policy import enrich_referral_policy
 
             enrich_referral_policy(self, tx, actor, action, arguments, snapshot, request)
+        if action in LIFECYCLE_ACTIONS:
+            from .lifecycle.policy import enrich_lifecycle_policy
+
+            enrich_lifecycle_policy(self, tx, actor, action, arguments or {}, snapshot, request)
         return request
 
     def _fresh_actor(self, actor: Actor) -> Actor:
@@ -794,7 +820,11 @@ class Engine:
         expired grant. This is the final guarded disclosure authorization; no
         bytes are released if the check rolls back the transaction.
         """
-        if action.startswith(("referral_", "dispatch_")):
+        if action in LIFECYCLE_ACTIONS:
+            from .lifecycle.disclosure import check_lifecycle_output
+
+            check_lifecycle_output(self, tx, actor, action, result)
+        elif action.startswith(("referral_", "dispatch_")):
             from .dispatches import Dispatches
 
             service = cast(Dispatches, self)
@@ -1091,7 +1121,16 @@ class Engine:
             "expires_at": stamp(instant(challenge, "expires_at")),
         }
 
-    def register_copy(self, tx: Transaction, session: Record, kind: str, aggregate_id: str) -> None:
+    def register_copy(
+        self,
+        tx: Transaction,
+        session: Record,
+        kind: str,
+        aggregate_id: str,
+        *,
+        captured_at: datetime | None = None,
+        expires_at: datetime | None = None,
+    ) -> None:
         if not isinstance(self.content_key_ref, str) or not self.content_key_ref:
             raise ManualError("manual.content_custody_unregistered", 503)
         copy_id = str(uuid4())
@@ -1107,16 +1146,18 @@ class Engine:
                 "content_ref": "postgres:" + kind + ":" + aggregate_id,
                 "classification": "synthetic_content",
                 "encryption_key_ref": self.content_key_ref,
-                "anchor_kind": "referral_terminal_parent"
+                "anchor_kind": "capture"
+                if captured_at
+                else "referral_terminal_parent"
                 if kind == "referral"
                 else "last_parent_closed",
-                "anchor_at": None,
-                "expires_at": None,
-                "state": "anchor_pending",
+                "anchor_at": captured_at,
+                "expires_at": expires_at,
+                "state": "retained" if captured_at else "anchor_pending",
                 "created_at": self.clock(),
             },
         )
-        if kind != "session":
+        if kind != "session" and captured_at is None:
             parents = tx.rows("copy", session_id=session["id"], aggregate_type="session", limit=1)
             if not parents:
                 raise ManualError("manual.copy_parent_missing", 503)

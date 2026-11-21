@@ -132,6 +132,9 @@ def database() -> Iterator[Database]:
             connection.execute(
                 (ROOT / "services/data/migrations/007_imp06_inference.sql").read_text()
             )
+            connection.execute(
+                (ROOT / "services/data/migrations/008_imp07_lifecycle.sql").read_text()
+            )
         migrated = True
         with psycopg.connect(admin) as connection:
             connection.execute(
@@ -199,7 +202,8 @@ class Harness:
 def harness(database: Database) -> Harness:
     with psycopg.connect(database.admin) as connection:
         connection.execute(
-            "TRUNCATE durable.duty_nonce,durable.duty_operation,durable.due_job,"
+            "TRUNCATE lifecycle.scan_cursor,durable.duty_nonce,durable.duty_operation,"
+            "durable.due_job,"
             "control.signal_receipt,control.signal_head,control.signal_source,"
             "recovery.command,control.guard,control.principal_guard,audit.head CASCADE"
         )

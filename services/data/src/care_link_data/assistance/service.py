@@ -77,7 +77,7 @@ class AssistanceService:
         self, tx: Transaction, key: str, action: str, data: Record, target: str
     ) -> Record | None:
         old = tx.connection.execute(
-            "SELECT action,request_digest,response_ciphertext "
+            "SELECT action,request_digest,response_ciphertext,resource_id "
             "FROM assistance.operation WHERE id=%s",
             (key,),
         ).fetchone()
@@ -87,9 +87,15 @@ class AssistanceService:
             {"target": target, "data": data}
         ):
             raise ManualError("assistance.idempotency_conflict", 409)
-        return object_value(
+        copies = tx.rows("copy", aggregate_id=old["resource_id"], limit=2)
+        if any(copy["state"] == "purged" for copy in copies):
+            raise ManualError("assistance.source_content_expired", 410)
+        result = object_value(
             json.loads(self.engine.cipher.decrypt(text(old, "response_ciphertext")))
         )
+        if not result:
+            raise ManualError("assistance.source_content_expired", 410)
+        return result
 
     def receipt(
         self,
@@ -110,7 +116,7 @@ class AssistanceService:
                 sid,
                 action,
                 digest({"target": target, "data": data}),
-                target,
+                result["id"] if isinstance(result.get("id"), str) else target,
                 "task" if action.startswith("task_") else "draft",
                 self.engine.cipher.encrypt(json.dumps(result, sort_keys=True)),
             ),

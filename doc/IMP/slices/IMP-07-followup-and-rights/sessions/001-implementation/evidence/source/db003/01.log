@@ -1,0 +1,21 @@
+............F...................................................         [100%]
+=================================== FAILURES ===================================
+____ test_populated_export_through_real_mfa_signed_identity_opa_and_gateway ____
+services/data/tests/test_lifecycle_boundary.py:59: in test_populated_export_through_real_mfa_signed_identity_opa_and_gateway
+    own = h.service.session_assertions(
+services/data/src/care_link_data/sessions.py:346: in session_assertions
+    return self._run(
+services/data/src/care_link_data/engine.py:641: in _run
+    validate_contract(contract, data)
+packages/contracts/python/src/care_link_contracts/validation.py:528: in validate_contract
+    raise ContractError("invalid")
+E   care_link_contracts.validation.ContractError: invalid
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/data/tests/test_lifecycle_boundary.py::test_populated_export_through_real_mfa_signed_identity_opa_and_gateway
+1 failed, 63 passed, 17 warnings in 6.24s

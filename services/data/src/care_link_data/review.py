@@ -276,6 +276,21 @@ class ReviewService(ContinuationService):
                 "updated_at": now,
             }
             tx.put("review_draft", result)
+            copies = tx.rows("copy", aggregate_id=result["id"], limit=2)
+            if copies:
+                copy = copies[0]
+                copy["anchor_at"] = now
+                copy["expires_at"] = result["expires_at"]
+                tx.put("copy", copy)
+            else:
+                self.register_copy(
+                    tx,
+                    row,
+                    "review_draft",
+                    text(result, "id"),
+                    captured_at=now,
+                    expires_at=instant(result, "expires_at"),
+                )
             return Outcome(
                 "ReviewDraftView",
                 review_projection.draft_view(result, self.cipher),
@@ -393,6 +408,14 @@ class ReviewService(ContinuationService):
                         "created_at",
                     )
                 ),
+            )
+            self.register_copy(
+                tx,
+                row,
+                "review_intent",
+                text(intent, "operation_id"),
+                captured_at=instant(intent, "created_at"),
+                expires_at=instant(intent, "created_at") + timedelta(days=1),
             )
             return Outcome(
                 "ReviewIntentView",

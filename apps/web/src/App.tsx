@@ -8,6 +8,7 @@ import { PlansReviewApp } from "./plans-review/PlansReviewApp";
 import { ReferralApp } from "./referrals/ReferralApp";
 import { AssistanceApp } from "./assistance/AssistanceApp";
 import { PlansWorkspace } from "./plans/PlansWorkspace";
+import { LifecycleApp } from "./lifecycle/LifecycleApp";
 
 type Locale = keyof typeof messages;
 type Connection = "loading" | "unavailable" | "invalid" | "connected";
@@ -219,6 +220,7 @@ function DeveloperApp() {
 }
 
 export function App() {
+  if (window.location.pathname === "/follow-up") return <LifecycleApp />;
   if (window.location.pathname === "/assistance") return <AssistanceApp />;
   if (
     window.location.pathname === "/referrals" ||

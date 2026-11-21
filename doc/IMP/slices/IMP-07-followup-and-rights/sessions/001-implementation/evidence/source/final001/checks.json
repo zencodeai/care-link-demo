@@ -1,0 +1,60 @@
+[
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "check",
+      "."
+    ],
+    "started_at": "2026-11-21T15:49:15.380966+00:00",
+    "completed_at": "2026-11-21T15:49:15.559449+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/final001/01.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "started_at": "2026-11-21T15:49:15.559621+00:00",
+    "completed_at": "2026-11-21T15:49:15.595078+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/final001/02.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "started_at": "2026-11-21T15:49:15.595227+00:00",
+    "completed_at": "2026-11-21T15:49:19.689970+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/final001/03.log"
+  },
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "pytest",
+      "services/data/tests",
+      "-q",
+      "--tb=short"
+    ],
+    "started_at": "2026-11-21T15:49:19.690178+00:00",
+    "completed_at": "2026-11-21T15:52:02.083797+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/final001/04.log"
+  }
+]

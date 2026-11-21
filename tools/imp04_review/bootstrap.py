@@ -130,6 +130,12 @@ class BootstrapAuthority:
             actor, proof_id, subject_id, session_id, purpose, basis
         )
 
+    def rights_proof(self, actor: Actor, ceremony_id: str, subject_id: str, kind: str) -> None:
+        raise ManualError("manual.rights_proof_required")
+
+    def rights_download_proof(self, actor: Actor, ceremony_id: str, subject_id: str) -> None:
+        raise ManualError("manual.rights_proof_required")
+
 
 def compose_fixture_service(
     base: ManualService, authority: BootstrapAuthority, channels: ManualChannels
