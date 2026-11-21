@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "tools.imp05_verification.validate_plan"
+      ],
+      "exit_code": 0,
+      "log": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/post-docs-01.log",
+      "sha256": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/post-docs-02.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "work_packet_agent_result_demo_packet_schema": "validated in preceding direct check; all valid",
+  "source_binding_unchanged": true,
+  "owned_test_resources_removed": true,
+  "new_slice_activated": false,
+  "model_admission": "disabled",
+  "gate": "G-06 not automated_qualified"
+}

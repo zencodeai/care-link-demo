@@ -1,0 +1,23 @@
+# IMP-06 deployment and release qualification handoff
+
+The authenticated Qwen bridge, durable release custody, provider stop recovery and disposable five-role mesh have new implementation and verification evidence. The existing demo uses the disabled model descriptor.
+
+## Implemented controls
+
+- A signed immutable release binds the exact model artifact, publisher origin, license, loaded format and engine, render mode, tokenizer, template, prompt, schemas, code, image, catalog and function evaluation. The registry requires signed acknowledgments from the exact role, boot, digest and epoch. A boot change, rejected or expired acknowledgment, or restrictive epoch stops admission. Serving additionally requires a separate, current exact-bundle approval from an independent human authority. Qualification keys and targets are separate from serving trust.
+- Data verifies an Ed25519 provider stop receipt and the independently authenticated restrictive inference fence. At most two durable slots are reconciled. Generation and job timestamps must match the retired work covered by the receipt. Late completion under a retired generation can free capacity without disclosing a draft. Data retrieves current release records on request so a transition from staged to active does not require a Data restart.
+- The host binds the loaded model to the complete artifact file inventory. Exact bytes matched the LM Studio publisher revision and the declared Apache-2.0 license. The mapped MLX engine binaries passed local macOS code-signature verification. [Publisher byte and engine evidence](evidence/model-provenance.json).
+- The gateway applies the signed per-function input ceiling of 2,048 exact prompt tokens before allocating compute. The original two-request stress probe exceeded the 30-second deadline at about 3,300 tokens. The bounded test reached 2,035 tokens, passed all ten English and French cases with exact grounding, and recorded a sample p95 of 23.261 seconds. [Stress probe](evidence/qwen-workload.json), [bounded workload](evidence/qwen-final-workload.json), [token checks](evidence/authenticated-qwen.json).
+
+## Verification boundaries
+
+- The disposable Docker mesh ran the five role identities with real SPIRE Unix attestation, Envoy mTLS and protected Unix socket backends. All six permitted edges reached their handlers. Runtime could reach Core only. Its SVID rotated and restricting its live workload fence denied an in-flight broker response and later claims. The separate manual channel remained reachable. The mesh test uses fixture Data authorization and provider dependencies. [Mesh receipt](evidence/role-topology.json).
+- The real authenticated laptop LM Studio provider produced an exact synthetic excerpt through the bridge and gateway under a temporary signed qualification release. Advancing its SQLite registry to the restrictive epoch after the response arrived suppressed the pending proposal and denied new work. The bridge test used an in-process transport, test-signed evaluator identities and a receipt-only ledger. [Signed bridge receipt](evidence/signed-bridge.json).
+- The operator revoked the original LM Studio token after the replacement passed. The original subsequently received REST 401 and SDK denial. The replacement received REST 200 and passed bridge preflight and SDK tokenization. The final signed bridge used the replacement credential. [Rotation receipt](evidence/credential-rotation.json).
+- A disposable Linux provider remained alive after client timeout and disconnect. The verifier denied recovery after fencing alone and accepted an independently signed receipt after observed process exit. Separate verified-TLS PostgreSQL tests check both slots, late completion, restart and manual actor workflows. [Hard-stop receipt](evidence/provider-hard-stop.json), [database checks](evidence/data-recovery.json).
+
+The first pinned OPA run hit the configured timeout on one test and denied the request. The warmed run passed all 78 PostgreSQL and policy cases. The scoped source suite passed 150 tests. [First OPA run](evidence/data-recovery-first-opa-start.json), [final run](evidence/data-recovery.json).
+
+## Serving boundary
+
+G-06 stays blocked until the combined deployment runs the real Data and host LM Studio journey under the provisioned role identities, including provider lifecycle recovery and manual continuity under sustained load. The disposable process receipt and the separate live Mac provider receipt establish different boundaries. No provider hard stop was performed on the laptop. Live demo serving also needs provisioned serving trust and an independent exact-bundle approval. The checked-in descriptor remains disabled. Human implementation review remains deferred until after IMP-10.

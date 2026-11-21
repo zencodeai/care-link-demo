@@ -1,0 +1,116 @@
+{
+  "date": "2026-11-20",
+  "recorded_at": "2026-11-20T20:45:04.786614+00:00",
+  "status": "passed",
+  "scope": "Documentation only; no application/model/deployment qualification",
+  "checks": [
+    {
+      "name": "non_documentation_continuity",
+      "status": "passed",
+      "detail": "768 preexisting non-documentation files preserved; drift=[]"
+    },
+    {
+      "name": "input_hashes:doc/HLD/design-inventory.json",
+      "status": "passed",
+      "detail": "All current input bindings match; previous hashes retained in update history"
+    },
+    {
+      "name": "selection_record_hash:doc/HLD/design-inventory.json",
+      "status": "passed",
+      "detail": "Current decision content bound by SHA-256"
+    },
+    {
+      "name": "input_hashes:doc/LLD/design-inventory.json",
+      "status": "passed",
+      "detail": "All current input bindings match; previous hashes retained in update history"
+    },
+    {
+      "name": "artifact_hashes:doc/LLD/design-inventory.json",
+      "status": "passed",
+      "detail": "All artifact bindings match"
+    },
+    {
+      "name": "selection_record_hash:doc/LLD/design-inventory.json",
+      "status": "passed",
+      "detail": "Current decision content bound by SHA-256"
+    },
+    {
+      "name": "input_hashes:doc/IMP/planning-inventory.json",
+      "status": "passed",
+      "detail": "All current input bindings match; previous hashes retained in update history"
+    },
+    {
+      "name": "artifact_hashes:doc/IMP/planning-inventory.json",
+      "status": "passed",
+      "detail": "All artifact bindings match"
+    },
+    {
+      "name": "selection_record_hash:doc/IMP/planning-inventory.json",
+      "status": "passed",
+      "detail": "Current decision content bound by SHA-256"
+    },
+    {
+      "name": "changed_document_local_links",
+      "status": "passed",
+      "detail": "All changed/new document local targets exist"
+    },
+    {
+      "name": "machine_baseline_retained",
+      "status": "passed",
+      "detail": "Gemma machine/source baseline intentionally retained and documented as pending migration; no runtime or framework adoption"
+    },
+    {
+      "name": "canonical_plan_validation",
+      "status": "passed",
+      "detail": "PASS: 11 staged gates, 44 tasks, 206 operation allocations, 7 TOML roles, handoff fixtures, DAGs, links and frozen inputs. Planning checks only."
+    },
+    {
+      "name": "whitespace_check",
+      "status": "passed",
+      "detail": "No whitespace errors"
+    },
+    {
+      "name": "session_inventory_update_receipts",
+      "status": "passed",
+      "detail": "All 18 update receipts match final document hashes"
+    }
+  ],
+  "not_run": [
+    {
+      "check": "Full unchanged LLD/OpenAPI validator",
+      "reason": "openapi_spec_validator unavailable in application environment; no dependency installed. Scoped input/artifact/JSON/link checks passed."
+    },
+    {
+      "check": "Application/model/performance/deployed security tests",
+      "reason": "No executable/schema/configuration changes; this request authorized documentation only."
+    }
+  ],
+  "independent_review": {
+    "role": "hld_review",
+    "mode": "read_only",
+    "result": "No blocking consistency issues found; selection/proposal/evidence/authority distinctions coherent",
+    "runtime_checks_performed": false
+  },
+  "changed_document_hashes": {
+    "README.md": "e60e5056be8ed9f79359deadd4289d671c274bc93d199b8580b112c3bd417877",
+    "doc/REQ/README.md": "9803f020d015b089ce86d9b2752f9d64b024b41a848eb5f244adefabb4f1ed18",
+    "doc/REQ/03-architecture-and-interfaces.md": "ad8e271a6d5048d948437487f5d25a9d18368ec364195b816c62cc57e1b5fc98",
+    "doc/HLD/README.md": "49f1d9c626e4fa92c8f9e08436d3b852132d4f376ae0b53f32bf96a25f1b2238",
+    "doc/HLD/03-agentic-assistance-and-inference.md": "590c5181fe3aae776c422c37360b42bd05be582ce9bd4208f23a57e9038a0545",
+    "doc/LLD/README.md": "b01f7acce366c6811acb3d813aae54575882cf2fea2afd124fc4ea5c7f082def",
+    "doc/LLD/07-agent-runtime-and-inference.md": "a92bcaa85a75fdd8f0bec5fc522f441db53733166b116eb838c2a5f5f9093c57",
+    "doc/IMP/README.md": "dedd999e2e48d7de1cef6562762a582e4581b3a73381d3b79fc4714a436edb61",
+    "doc/HLD/design-inventory.json": "7f49641e8ddd5300d6c0d7696806df4bdc94d50bb4b33127821e03eb109cd18e",
+    "doc/LLD/design-inventory.json": "546e7d10f77a7cc23a3cbd00e6430b47681d8dddb78f6dfd01f9d1cbf7cce7d6",
+    "doc/IMP/planning-inventory.json": "4a0b0a954d85a479e24ca92421de9aa1c76242fbc1bec601870920f2250a0b29",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/README.md": "f3ec377f224ef0ca81d2900c9bbe093a91d81a8e3c33056f6bd9a09ebdec4259",
+    "doc/IMP/executions/2026-11-20-IMP-06/ledger.json": "ac6f692593116376a6a263b877c4abd4864dc0398d1736fc0056ac55dbf59fe5",
+    "doc/decisions/2026-11-20-qwen-lm-studio-integration.md": "a8ba1409bf0306ceb05bc29bda45013e75f6477788912fca23c177e8ef44d320",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/002-qwen-integration-documentation/README.md": "b17e96caea341cabed0bd8f9312d5c83fa48a8dc6c29dd92e557a184bb112bd8",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/002-qwen-integration-documentation/handoff.md": "44eb95c411b0fc5b74633739fbdf0ce2dcb0960df0b5b11ec8ea559225431c91"
+  },
+  "model_admitted": false,
+  "langgraph_adopted": false,
+  "host_or_service_changes": false,
+  "commit_or_publication": false
+}

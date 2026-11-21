@@ -1,0 +1,671 @@
+{
+  "packet_id": "IMP06-001-qualification",
+  "stage_id": "IMP-06",
+  "gate_id": "G-06",
+  "candidate": {
+    "commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+    "diff_digest": "f2b100815fdb7ae1e0056a06510a715cca7fbc0376dcc87f31c2fa8e95dd9c79",
+    "artifact_digest": "139f3578870145610360da02e57e537884e3d3444efbdb56db0e401485b36545",
+    "configuration_digest": "adecc0da573d7c735901da2403985c626fe16178173c97f60d9821819ca56736",
+    "contract_digest": "3fa6f7548bcc1504a7bdfe1b9671cee011ed64c649b21ffecc06abcad8ad9c81",
+    "environment_digest": "a39f8f100ce0577f63fde1e51fe37fd262ae2946dea9b97161109520f2981640",
+    "fixture_digest": "dd60a5888744b839449f83d746e82ee2d71652b74081d814dd8e3e4297066ffe"
+  },
+  "state": "draft",
+  "preconditions": [
+    "User assigned Implement service slice06 in this chat",
+    "G-05 automated_qualified source predecessor retained",
+    "Private synthetic scope, exact selected model and runtime human authority preserved"
+  ],
+  "normal_steps": [
+    {
+      "action": "Source-linked optional worker summary; exact edit/reject/accept; manual workflow after all suggestions rejected",
+      "expected": "Source attribution and unsent review; manual service independent",
+      "actual": "Passed deterministic/real-TLS-DB/synthetic-browser checks; actual Gemma usefulness not_run",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/07.log",
+          "sha256": "bb687198d05ddbeb350eabac1b50517a2796f80e986fe504e8637fdaf6081e77"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/browser/final/playwright-results.json",
+          "sha256": "bd20593635e87710371818d88bbbc192374595be9ca4f65c7aeb77962b9c89dc"
+        }
+      ]
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Changed task/source/runtime authority, timeout/restart/unknown compute, injection and auth expiry",
+      "expected": "Fenced output, durable counters/occupancy and hidden stale private facts",
+      "actual": "Final affected139 tests and9 Chromium cases passed; actual deployed mesh/model still unqualified",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/07.log",
+          "sha256": "bb687198d05ddbeb350eabac1b50517a2796f80e986fe504e8637fdaf6081e77"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/browser/final/playwright-results.json",
+          "sha256": "bd20593635e87710371818d88bbbc192374595be9ca4f65c7aeb77962b9c89dc"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "broad-01",
+      "command": "uv lock --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/01.log",
+      "evidence_digest": "a1f68fb1467ba8110a96088cc9ba4807edb0e3cd396ab67318bbfa474f3d7610",
+      "mock_used": false
+    },
+    {
+      "name": "broad-02",
+      "command": "pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/02.log",
+      "evidence_digest": "32873ed1bf646e5dad4eeef6f64e43505833d9aa72b0651d93ee59a1fac7a52c",
+      "mock_used": false
+    },
+    {
+      "name": "broad-03",
+      "command": "uv run --locked --all-packages python tools/generate_contracts.py --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/03.log",
+      "evidence_digest": "12b59e7b842e805670902df3484de1b77966031061c11c498bc90f477b3ff3ba",
+      "mock_used": false
+    },
+    {
+      "name": "broad-04",
+      "command": "uv run --locked --all-packages python tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/04.log",
+      "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "mock_used": false
+    },
+    {
+      "name": "broad-05",
+      "command": "uv run --locked --all-packages python tools/check_imp02_admission.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/05.log",
+      "evidence_digest": "a3882b2b400134aad06bb6a1f3a2d33c28096330b037dec61ece67944843d0b1",
+      "mock_used": false
+    },
+    {
+      "name": "broad-06",
+      "command": "uv run --locked --all-packages ruff check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/06.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "broad-07",
+      "command": "uv run --locked --all-packages ruff format --check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/07.log",
+      "evidence_digest": "a751789ff830b449b28f710e8fd4a44c227d33c18358c9c4cf7dd898af3b83e3",
+      "mock_used": false
+    },
+    {
+      "name": "broad-08",
+      "command": "pnpm exec pyright --project pyrightconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/08.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "broad-09",
+      "command": "pnpm typecheck",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/09.log",
+      "evidence_digest": "e2619b18e6eda193c3629cf5a0d6112df29e1f4e400b0c8b0ad8a99861ed2ac5",
+      "mock_used": false
+    },
+    {
+      "name": "broad-10",
+      "command": "pnpm lint",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/10.log",
+      "evidence_digest": "d957502195d6b7bf553082127cc2b44f0602f6924caec17c117d0a1e09273f12",
+      "mock_used": false
+    },
+    {
+      "name": "broad-11",
+      "command": "pnpm format:check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/11.log",
+      "evidence_digest": "1264ec68aa3a02a4163de506eca818cf94c93265a31cc61682a0898bc86fb889",
+      "mock_used": false
+    },
+    {
+      "name": "broad-12",
+      "command": "uv run --locked --all-packages pytest --tb=short",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "1332 passed; 3 explicitly gated legacy skips; predates final targeted corrections",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/12.log",
+      "evidence_digest": "b191fdb09d6863141dae955de2ea7fb306171f2eceba1f7dfd6584fccbc08c11",
+      "mock_used": true
+    },
+    {
+      "name": "broad-13",
+      "command": "pnpm exec tsc -p tests/e2e/imp02/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/13.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-14",
+      "command": "pnpm exec eslint tests/e2e/imp02 --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/14.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-15",
+      "command": "pnpm exec prettier --check tests/e2e/imp02",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/15.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "broad-16",
+      "command": "pnpm exec tsc -p tests/e2e/imp03/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/16.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-17",
+      "command": "pnpm exec eslint tests/e2e/imp03 --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/17.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-18",
+      "command": "pnpm exec prettier --check tests/e2e/imp03",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/18.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "broad-19",
+      "command": "pnpm exec tsc -p tests/e2e/imp03-extended/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/19.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-20",
+      "command": "pnpm exec eslint tests/e2e/imp03-extended --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/20.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-21",
+      "command": "pnpm exec prettier --check tests/e2e/imp03-extended",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/21.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "broad-22",
+      "command": "pnpm exec tsc -p tests/e2e/imp03-review/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/22.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-23",
+      "command": "pnpm exec eslint tests/e2e/imp03-review --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/23.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-24",
+      "command": "pnpm exec prettier --check tests/e2e/imp03-review",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/24.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "broad-25",
+      "command": "pnpm exec tsc -p tests/e2e/imp04-live/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/25.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-26",
+      "command": "pnpm exec eslint tests/e2e/imp04-live --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/26.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-27",
+      "command": "pnpm exec prettier --check tests/e2e/imp04-live",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/27.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "broad-28",
+      "command": "pnpm exec tsc -p tests/contract/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/28.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-29",
+      "command": "pnpm exec eslint tests/contract --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/29.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-30",
+      "command": "pnpm exec prettier --check tests/contract",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/30.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "broad-31",
+      "command": "node --check tools/imp04_verification/review_accessibility.cjs",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/31.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-32",
+      "command": "pnpm exec prettier --check tools/imp04_verification/review_accessibility.cjs",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/32.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "broad-33",
+      "command": "pnpm test",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/33.log",
+      "evidence_digest": "52b167d3b65db6cc6714c247976a5b7dde127b5a5474d29dc62a145189f0967e",
+      "mock_used": true
+    },
+    {
+      "name": "broad-34",
+      "command": "pnpm build",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/34.log",
+      "evidence_digest": "c63d7f6a479bdf862ea4104b08f6e57c5529b2c1ba9726b44ca9397ab688fb41",
+      "mock_used": false
+    },
+    {
+      "name": "broad-35",
+      "command": "pnpm exec tsc -p tests/e2e/assistance/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/35.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-36",
+      "command": "pnpm exec eslint tests/e2e/assistance --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/36.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "broad-37",
+      "command": "pnpm exec prettier --check tests/e2e/assistance",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/37.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "broad-38",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m tools.imp05_verification.validate_plan",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/source/attempt002/38.log",
+      "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+      "mock_used": false
+    },
+    {
+      "name": "final-01",
+      "command": "uv lock --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/01.log",
+      "evidence_digest": "247ded03e3722d70f5fd9144d0841e9662f97a2b179c2260b2985fa3d0238e9b",
+      "mock_used": false
+    },
+    {
+      "name": "final-02",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python tools/generate_contracts.py --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/02.log",
+      "evidence_digest": "12b59e7b842e805670902df3484de1b77966031061c11c498bc90f477b3ff3ba",
+      "mock_used": false
+    },
+    {
+      "name": "final-03",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/03.log",
+      "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "mock_used": false
+    },
+    {
+      "name": "final-04",
+      "command": ".venv/bin/ruff check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/04.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "final-05",
+      "command": ".venv/bin/ruff format --check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/05.log",
+      "evidence_digest": "30f9ce60b05856d055e2ae36819c965642d2cd576833379bfc8d9b6463373daf",
+      "mock_used": false
+    },
+    {
+      "name": "final-06",
+      "command": "pnpm exec pyright --project pyrightconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/06.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "final-07",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m pytest services/runtime/tests services/inference/tests host/inference-bridge/tests packages/workload-trust/tests services/data/tests/test_assistance.py services/data/tests/test_assistance_jobs.py services/data/tests/test_core_assistance_chain.py tests/unit/test_imp06_composition.py packages/policy-input/tests/test_assistance_policy.py tests/evaluation -q --tb=short",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "139 passed against unchanged final source binding",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/07.log",
+      "evidence_digest": "bb687198d05ddbeb350eabac1b50517a2796f80e986fe504e8637fdaf6081e77",
+      "mock_used": true
+    },
+    {
+      "name": "final-08",
+      "command": "pnpm test",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "180 web/contract tests passed",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/08.log",
+      "evidence_digest": "73dea4e4c45470223f9bb502e3fb9c17f299478a5e7172ece50a4b73e9838f14",
+      "mock_used": true
+    },
+    {
+      "name": "final-09",
+      "command": "pnpm typecheck",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/09.log",
+      "evidence_digest": "e2619b18e6eda193c3629cf5a0d6112df29e1f4e400b0c8b0ad8a99861ed2ac5",
+      "mock_used": false
+    },
+    {
+      "name": "final-10",
+      "command": "pnpm build",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/10.log",
+      "evidence_digest": "a5e4a168bca158372214bb95a0873227f51477cdfb8199f5bcb5bc14e6271a1c",
+      "mock_used": false
+    },
+    {
+      "name": "final-11",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m tools.imp05_verification.validate_plan",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Source verification succeeds without weakening authority controls",
+      "actual": "Exit 0",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/final/attempt001/11.log",
+      "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+      "mock_used": false
+    },
+    {
+      "name": "browser-final",
+      "command": "IMP06_BROWSER_OUTPUT=<session>/evidence/browser/final pnpm exec playwright test -c tests/e2e/assistance/playwright.config.ts",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared bounded synthetic check passes",
+      "actual": "9 passed; 0 failed/skipped/flaky; EN/FR keyboard, source review, manual fallback, auth privacy and axe",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/browser/final/playwright-results.json",
+      "evidence_digest": "bd20593635e87710371818d88bbbc192374595be9ca4f65c7aeb77962b9c89dc",
+      "mock_used": true
+    },
+    {
+      "name": "core-image",
+      "command": "python tools/smoke_core_image.py --image care-link-core:imp06-source",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared bounded synthetic check passes",
+      "actual": "Restricted nonroot, read-only, network-none Core smoke passed",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/packaging/core-smoke.log",
+      "evidence_digest": "441b44f457760868b2df27a232647acb2e59222095900eb502c23fa10a20e7e3",
+      "mock_used": false
+    },
+    {
+      "name": "qualification-image",
+      "command": "docker run --rm --network none --read-only <qualification image> python <captured probe>",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Declared bounded synthetic check passes",
+      "actual": "197 packaged source/web hashes matched; imports passed; model disabled; no listeners started",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/packaging/qualification-smoke.log",
+      "evidence_digest": "11ea668b6bbc9cc6c737ef339806b34c82ff9ba7c0c0a77a5944e4a1a6aafa70",
+      "mock_used": false
+    },
+    {
+      "name": "real-selected-model",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Actual runtime evidence required before G-06 qualification/function admission",
+      "actual": "Loaded artifact/server/engine/tokenizer/template/window not verified; existing local endpoint unavailable",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/model-availability.json",
+      "evidence_digest": "77974bc13aa4edf62398d5aab8db10083a1270c633a64f630e7d30d3e7896baa",
+      "mock_used": false
+    },
+    {
+      "name": "real-function-evaluation",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Actual runtime evidence required before G-06 qualification/function admission",
+      "actual": "Per-function live Gemma grounding, EN/FR, seeded-error, adversarial and latency evaluation not run",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/model-availability.json",
+      "evidence_digest": "77974bc13aa4edf62398d5aab8db10083a1270c633a64f630e7d30d3e7896baa",
+      "mock_used": false
+    },
+    {
+      "name": "deployed-ai-network",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Actual runtime evidence required before G-06 qualification/function admission",
+      "actual": "New role factories, authenticated adapters and generated routes tested; no deployed mesh/network denial or workload/capacity qualification run",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/model-availability.json",
+      "evidence_digest": "77974bc13aa4edf62398d5aab8db10083a1270c633a64f630e7d30d3e7896baa",
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "G-06 remains unqualified: actual local model/tokenizer/template/server/engine and per-function evaluation missing",
+    "No deployed AI mesh/compute/latency qualification",
+    "Other function/binding profiles are explicitly disabled",
+    "Human usability/screen-reader/visual/language review deferred_until_after_IMP10"
+  ],
+  "acceptance_scope": "Source-only evidence; not a demonstrated G-06 or human acceptance",
+  "rollback": "Disable function/prompt/model bundle under current control epoch; preserve manual service and unknown compute slots until observed completion or verified stop",
+  "human_decision_id": null,
+  "is_example": false
+}

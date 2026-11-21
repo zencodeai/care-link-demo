@@ -1,0 +1,25 @@
+{
+  "recorded_at": "2026-11-21T14:57:48.781010+00:00",
+  "authorization": "User: Close IMP-06, create PR",
+  "state": "published",
+  "repository": "zencodeai/care-link-demo",
+  "repository_visibility": "private",
+  "branch": "feat/imp-06-bounded-ai-assistance",
+  "base_branch": "main",
+  "base_commit": "b8c08cbc5f0ea8cf9238ee2070ca606a50edc85a",
+  "implementation_commit": "9a541f5c9fd07c5ebbb6ecdbe7f817f0ed920d93",
+  "pull_request": {
+    "number": 13,
+    "url": "https://github.com/zencodeai/care-link-demo/pull/13",
+    "state": "OPEN",
+    "draft": false
+  },
+  "implementation_changed_files": 477,
+  "qualification": "G-06 automated_qualified for isolated synthetic worker_summary",
+  "human_review": "deferred_until_after_IMP10",
+  "merge_performed": false,
+  "deployment_performed": false,
+  "next_slice_activated": false,
+  "publisher_snapshots_retained_locally": 4,
+  "evidence_handling": "Published publisher URLs and original snapshot checksums. Immutable captured logs retain their recorded bytes."
+}

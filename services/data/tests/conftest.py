@@ -126,6 +126,12 @@ def database() -> Iterator[Database]:
                 (ROOT / "services/data/migrations/003_plans_consent_directory.sql").read_text()
             )
             connection.execute((ROOT / "services/data/migrations/005_referrals.sql").read_text())
+            connection.execute(
+                (ROOT / "services/data/migrations/006_imp06_assistance.sql").read_text()
+            )
+            connection.execute(
+                (ROOT / "services/data/migrations/007_imp06_inference.sql").read_text()
+            )
         migrated = True
         with psycopg.connect(admin) as connection:
             connection.execute(

@@ -48,5 +48,5 @@
   },
   "acceptance_record": "decisions/2026-11-06-implementation-choices-and-model.md",
   "deployment_target": "this_workstation",
-  "selected_model_identifier": "google/gemma-4-12b-qat"
+  "selected_model_identifier": "qwen/qwen3.8-27b"
 }

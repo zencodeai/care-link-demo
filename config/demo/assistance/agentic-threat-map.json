@@ -1,0 +1,68 @@
+{
+  "edition": "OWASP Agentic Applications 2026",
+  "source": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+  "architecture_guidance": "https://genai.owasp.org/resource/securing-agentic-applications-v2/",
+  "status": "implementation crosswalk; actual tests in session003; not certification or clinical assurance",
+  "entries": [
+    {
+      "id": "ASI01",
+      "risk": "Agent Goal Hijack",
+      "control": "Closed task goals and broker-owned context; retrieved text stays data",
+      "implementation": "services/core/src/care_link_core/assistance_broker/broker.py"
+    },
+    {
+      "id": "ASI02",
+      "risk": "Tool Misuse and Exploitation",
+      "control": "Closed typed read tools; graph cannot execute native tools or send effects",
+      "implementation": "services/data/src/care_link_data/assistance/execution.py"
+    },
+    {
+      "id": "ASI03",
+      "risk": "Identity and Privilege Abuse",
+      "control": "Distinct actor/runtime/task identities, current fences and least-privilege scope",
+      "implementation": "services/core/src/care_link_core/assistance_broker/routes.py"
+    },
+    {
+      "id": "ASI04",
+      "risk": "Agentic Supply Chain Vulnerabilities",
+      "control": "Locked framework/SDK; model metadata, weights and catalog digests",
+      "implementation": "host/inference-bridge/src/care_link_inference_bridge/loaded.py"
+    },
+    {
+      "id": "ASI05",
+      "risk": "Unexpected Code Execution",
+      "control": "No code/shell/browser executor in product runtime",
+      "implementation": "services/runtime/src/care_link_runtime/workflow.py"
+    },
+    {
+      "id": "ASI06",
+      "risk": "Memory and Context Poisoning",
+      "control": "Exact pinned sources, no cross-client graph store, catalog expiry checks",
+      "implementation": "packages/knowledge/src/care_link_knowledge/catalog.py"
+    },
+    {
+      "id": "ASI07",
+      "risk": "Insecure Inter-Agent Communication",
+      "control": "Fixed authenticated workload routes and bound envelopes",
+      "implementation": "tools/imp06_runtime/routes.py"
+    },
+    {
+      "id": "ASI08",
+      "risk": "Cascading Failures",
+      "control": "Durable budgets, bounded queue and unknown compute occupancy; independent manual service",
+      "implementation": "services/inference/src/care_link_inference/gateway.py"
+    },
+    {
+      "id": "ASI09",
+      "risk": "Human-Agent Trust Exploitation",
+      "control": "Separate reports/reference evidence and exact editable unsent review",
+      "implementation": "apps/web/src/assistance/DraftReview.tsx"
+    },
+    {
+      "id": "ASI10",
+      "risk": "Rogue Agents",
+      "control": "No self-task creation, arbitrary tools or expanded authority; fenced runtime",
+      "implementation": "services/runtime/src/care_link_runtime/worker.py"
+    }
+  ]
+}

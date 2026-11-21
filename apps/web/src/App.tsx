@@ -6,6 +6,7 @@ import { ManualService } from "./manual/ManualService";
 import { ReviewApp } from "./review/ReviewApp";
 import { PlansReviewApp } from "./plans-review/PlansReviewApp";
 import { ReferralApp } from "./referrals/ReferralApp";
+import { AssistanceApp } from "./assistance/AssistanceApp";
 import { PlansWorkspace } from "./plans/PlansWorkspace";
 
 type Locale = keyof typeof messages;
@@ -218,6 +219,7 @@ function DeveloperApp() {
 }
 
 export function App() {
+  if (window.location.pathname === "/assistance") return <AssistanceApp />;
   if (
     window.location.pathname === "/referrals" ||
     window.location.pathname.startsWith("/referrals/")

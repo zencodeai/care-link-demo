@@ -1,0 +1,36 @@
+{
+  "recorded_on": "2026-11-20",
+  "state": "passed_owned_sdk_request_cancellation",
+  "sample": {
+    "execution": "One-off Python probe run before the rerunnable harness was written",
+    "authenticated_loopback": true,
+    "model_key": "qwen/qwen3.8-27b",
+    "request_selected_by_existing_provider_instance_reference": true,
+    "catalog_instance_stable_before_and_after": true,
+    "cancel_after_first_fragment": true,
+    "provider_terminal_stop_reason": "userStopped",
+    "provider_terminal_model_key_matches": true,
+    "provider_terminal_instance_reference_present": false,
+    "provider_terminal_identifier_present": false,
+    "provider_terminal_context_present": false,
+    "terminal_prediction_tokens": 21,
+    "seconds_cancel_to_terminal": 0.045,
+    "seconds_request_to_terminal": 4.405
+  },
+  "observations": [
+    "The expected loaded handle was selected before sending one bounded synthetic completion using its explicit instance-reference selector.",
+    "The SDK continued reading after cancellation until it received the terminal event for the same request stream.",
+    "The terminal event identifies the model key and omits the catalog instance reference, identifier, and context length. The catalog metadata remained unchanged."
+  ],
+  "rerunnable_harness": "tools/imp06_verification/lmstudio_recovery.py",
+  "harness_static_and_adapter_checks": {
+    "ruff": "passed",
+    "strict_pyright": "passed",
+    "terminal_reason_instance_and_fragment_checks_passed": 5,
+    "adapter_cases": "owned cancellation with omitted reference, mismatched reference, natural completion, no fragment/no cancellation, and matching reference"
+  },
+  "production_rest_job_cancellation_verified": false,
+  "provider_process_exit_observed": false,
+  "provider_stop_receipt_issued": false,
+  "database_mutated": false
+}

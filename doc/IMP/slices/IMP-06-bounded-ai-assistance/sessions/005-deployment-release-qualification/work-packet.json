@@ -1,0 +1,143 @@
+{
+  "packet_id": "IMP06-005-deployment-release-qualification",
+  "task_id": "IMP-06-D",
+  "stage_id": "IMP-06",
+  "mode": "verification",
+  "role": "imp_verifier",
+  "goal": "Implement durable release and provider stop controls and verify remaining model, mesh, credential and recovery obligations for synthetic IMP-06.",
+  "baseline_commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "fc3a4f2acd7fec8b527a2115320cb5e011ab154e32e57fb8e4f4e292e5ba218a"
+    },
+    {
+      "path": "doc/LLD/07-agent-runtime-and-inference.md",
+      "sha256": "f97ad3867d447d7207a358a1390fcff935c76b24a21a46d977805b340ae5732f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/handoff.md",
+      "sha256": "aff4b30b2d12e30a94fde5f48b3f8932a14c4176dcfd6cfab9b9ff510fc56ce2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/004-authenticated-qualification/candidate-manifest.json",
+      "sha256": "730275582e1ebaa5798d78542e5d7e2565f870dd59671e1cc60a92e883b4d27b"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-20-IMP-05/ledger.json",
+      "sha256": "332d95bf8784a3b2a7080f96aa93098ce3b33b2342179528f8d22561a12e679d"
+    }
+  ],
+  "read_paths": [
+    "doc/REQ",
+    "doc/HLD",
+    "doc/LLD",
+    "doc/IMP",
+    "host/inference-bridge",
+    "services",
+    "tools",
+    "config/demo/assistance"
+  ],
+  "write_paths": [
+    "host/inference-bridge/src/care_link_inference_bridge/artifacts.py",
+    "host/inference-bridge/tests/test_artifacts.py",
+    "services/data/src/care_link_data/assistance_jobs.py",
+    "services/data/src/care_link_data/assistance_transport.py",
+    "services/data/tests/test_assistance_jobs.py",
+    "services/inference/src/care_link_inference/admission.py",
+    "services/inference/src/care_link_inference/gateway.py",
+    "services/inference/tests/test_inference.py",
+    "tests/evaluation/qwen_local.py",
+    "tests/evaluation/qwen_signed_bridge.py",
+    "tests/evaluation/qwen_workload.py",
+    "tests/unit/test_imp06_provider_stop.py",
+    "tests/unit/test_imp06_release_custody.py",
+    "tools/imp06_runtime/README.md",
+    "tools/imp06_runtime/data.py",
+    "tools/imp06_runtime/provider_stop.py",
+    "tools/imp06_runtime/release_custody.py",
+    "tools/imp06_runtime/release_custody_records.py",
+    "tools/imp06_verification/provider_stop.py",
+    "tools/imp06_verification/role_topology.py",
+    "tools/imp06_verification/role_topology_processes.py",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/**",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/README.md",
+    "doc/IMP/executions/2026-11-20-IMP-06/ledger.json"
+  ],
+  "dependencies": [
+    "IMP-05:G-05:automated_qualified",
+    "IMP-06-B",
+    "IMP-06-C"
+  ],
+  "operation_ids": [
+    "runtime_work_claim",
+    "step_lease",
+    "inference_request",
+    "inference_execute"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "read_only_host_probe",
+    "install_named_tools",
+    "mutate_named_lab",
+    "destroy_named_demo_resources"
+  ],
+  "prohibited_actions": [
+    "modify existing application deployments",
+    "publish",
+    "commit",
+    "push",
+    "merge",
+    "real data or external contact",
+    "police integration",
+    "substitute test identity for serving approval"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Complete remaining tasks",
+    "scope": "Remaining IMP-06 controls and disposable synthetic verification, plus operator-assisted loopback token rotation. Existing demo serving requires independent serving custody."
+  },
+  "resource_leases": [
+    {
+      "id": "IMP06-005-qualification",
+      "kind": "file_set",
+      "scope": "Release and provider-stop controls, isolated test harnesses and scoped evidence",
+      "owner_task_id": "IMP-06-D",
+      "expires_at": "2026-11-22T00:00:00Z"
+    }
+  ],
+  "expected_outputs": [
+    "Provider stop and release controls",
+    "Exact authenticated model and latency evidence",
+    "Disposable five-role mesh results",
+    "Execution handoff"
+  ],
+  "positive_acceptance": [
+    "Signed exact staged candidate, approved current evaluator acknowledgments",
+    "Six exact protected routes and role-only SVIDs",
+    "Observed retained compute and signed hard-stop recovery"
+  ],
+  "adverse_acceptance": [
+    "Disablement blocks in-flight output and new admission",
+    "Timeout or disconnect cannot free capacity",
+    "Wrong peer, expired receipt, wrong role and stale boot denied"
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "In-use shared model lifecycle requires an authorized isolated target",
+    "Serving requires independent exact-bundle approval"
+  ],
+  "is_example": false
+}

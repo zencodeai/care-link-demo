@@ -1,0 +1,103 @@
+{
+  "recorded_at": "2026-11-20T23:22:16.902180+00:00",
+  "scope": "Direct workstation Qwen preadmission with synthetic data",
+  "render_mode": "sdk1.6.0b1-typed-applyPromptTemplate-instance-reference-nonthinking-v1",
+  "maximum_concurrent_jobs": 2,
+  "provider_deadline_seconds": 30,
+  "raw_reasoning_retained": false,
+  "state": "failed",
+  "cases": [
+    {
+      "language": "en-CA",
+      "injection": false,
+      "history_turns": 0,
+      "preparation_seconds": 0.18435366684570909,
+      "elapsed_seconds": 5.719003499951214,
+      "state": "passed",
+      "wave": 1,
+      "prompt_tokens": 724,
+      "prompt_count_matches": true,
+      "exact_grounding": true,
+      "safe_reason": null
+    },
+    {
+      "language": "fr-CA",
+      "injection": false,
+      "history_turns": 0,
+      "preparation_seconds": 0.15132879186421633,
+      "elapsed_seconds": 5.643983332905918,
+      "state": "passed",
+      "wave": 1,
+      "prompt_tokens": 756,
+      "prompt_count_matches": true,
+      "exact_grounding": true,
+      "safe_reason": null
+    },
+    {
+      "language": "en-CA",
+      "injection": true,
+      "history_turns": 2,
+      "preparation_seconds": 0.07536029163748026,
+      "elapsed_seconds": 23.946302582975477,
+      "state": "passed",
+      "wave": 2,
+      "prompt_tokens": 2200,
+      "prompt_count_matches": true,
+      "exact_grounding": true,
+      "safe_reason": null
+    },
+    {
+      "language": "fr-CA",
+      "injection": true,
+      "history_turns": 2,
+      "preparation_seconds": 0.0930732088163495,
+      "elapsed_seconds": 24.016646875068545,
+      "state": "passed",
+      "wave": 2,
+      "prompt_tokens": 2232,
+      "prompt_count_matches": true,
+      "exact_grounding": true,
+      "safe_reason": null
+    },
+    {
+      "language": "en-CA",
+      "injection": false,
+      "history_turns": 4,
+      "preparation_seconds": 0.05564075009897351,
+      "elapsed_seconds": 30.00182312494144,
+      "state": "failed",
+      "wave": 3,
+      "prompt_tokens": 3307,
+      "prompt_count_matches": false,
+      "exact_grounding": false,
+      "safe_reason": "OSError"
+    },
+    {
+      "language": "fr-CA",
+      "injection": false,
+      "history_turns": 4,
+      "preparation_seconds": 0.04614266660064459,
+      "elapsed_seconds": 30.00286200037226,
+      "state": "failed",
+      "wave": 3,
+      "prompt_tokens": 3339,
+      "prompt_count_matches": false,
+      "exact_grounding": false,
+      "safe_reason": "OSError"
+    }
+  ],
+  "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+  "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836",
+  "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c",
+  "generation_latency_seconds": {
+    "p50": 23.946,
+    "p95": 30.003,
+    "p100": 30.003
+  },
+  "end_to_end_latency_seconds": {
+    "p50": 24.022,
+    "p95": 30.057,
+    "p100": 30.057
+  },
+  "harness_sha256": "591e1e06c43d7351a483b3aeaeaf11a9cacb36a46e18054fd36d9e806ee85507"
+}

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { KnowledgePanel } from "../assistance/KnowledgePanel";
+import { AssistancePanel } from "../assistance/AssistancePanel";
 import { Connection } from "./Connection";
 import { manualMessages, type Locale } from "./messages";
 import { Participant } from "./Participant";
@@ -103,6 +105,20 @@ export function ManualService({ locale }: { locale: Locale }) {
         <Workforce channel={channel} text={text} />
       </div>
       {identity && !participant && !workforce && <p>{text.unsupported}</p>}
+      {identity &&
+        [
+          "pid",
+          "carer",
+          "professional_participant",
+          "worker",
+          "supervisor",
+          "receiver",
+        ].includes(identity.role) && (
+          <KnowledgePanel
+            key={`knowledge-${identity.account_id}:${identity.role}`}
+            locale={locale}
+          />
+        )}
       {identity && (participant || workforce) && (
         <>
           <form
@@ -178,6 +194,18 @@ export function ManualService({ locale }: { locale: Locale }) {
                 {text.refresh}
               </button>
               <Connection channel={channel} text={text} />
+              {workforce && view.owner_id === identity.account_id && (
+                <AssistancePanel
+                  key={`${identity.account_id}:${view.id}`}
+                  locale={locale}
+                  allowAutomatic
+                  session={{
+                    id: view.id,
+                    revision: view.revision,
+                    subject_id: null,
+                  }}
+                />
+              )}
               <div aria-live="polite" aria-relevant="additions text">
                 {channel.messages.length === 0 ? (
                   <p>{text.noMessages}</p>

@@ -1,0 +1,85 @@
+[
+  {
+    "command": [
+      "uv",
+      "lock",
+      "--check"
+    ],
+    "started_at": "2026-11-20T22:08:50.766700+00:00",
+    "completed_at": "2026-11-20T22:08:50.794311+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/01.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "install",
+      "--offline",
+      "--frozen-lockfile",
+      "--lockfile-only",
+      "--ignore-scripts"
+    ],
+    "started_at": "2026-11-20T22:08:50.794533+00:00",
+    "completed_at": "2026-11-20T22:08:51.164139+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/02.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/generate_contracts.py",
+      "--check"
+    ],
+    "started_at": "2026-11-20T22:08:51.164471+00:00",
+    "completed_at": "2026-11-20T22:08:51.505478+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/03.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_boundaries.py"
+    ],
+    "started_at": "2026-11-20T22:08:51.505708+00:00",
+    "completed_at": "2026-11-20T22:08:51.926169+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/04.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_imp02_admission.py"
+    ],
+    "started_at": "2026-11-20T22:08:51.926577+00:00",
+    "completed_at": "2026-11-20T22:08:51.979224+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/05.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "check",
+      "."
+    ],
+    "started_at": "2026-11-20T22:08:51.979491+00:00",
+    "completed_at": "2026-11-20T22:08:52.039906+00:00",
+    "exit_code": 1,
+    "log": "evidence/source/attempt001/06.log"
+  }
+]

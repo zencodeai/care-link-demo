@@ -1,5 +1,9 @@
 # CARE-Link technical high-level design
 
+> Current authorized implementation · 2026-11-20: [Agentic workflows and role-scoped clinical knowledge](../decisions/2026-11-20-agentic-workflows-and-clinical-rag.md) records the bounded LangGraph architecture, Qwen migration, resource provenance and implementation limits. See session003 evidence for actual qualification; no clinical or deployed-readiness pass is implied.
+
+> Current model direction · 2026-11-20: Qwen3.8-27B replaces the earlier Gemma selection. The current workflow/RAG decision selects LangGraph beneath existing coordinator/broker authority. Historical design evidence remains historical; source implementation and live qualification are recorded separately.
+
 Version 0.4 · Revised 2026-11-06 · DEC-01…05 accepted for local design; implementation/release evidence remains pending.
 
 CARE-Link is an actor-led crisis-support service concept. Its architecture helps clients and carers express needs, supports workers with grounded AI assistance, and coordinates informed service choices and confirmed handoffs. The present implementation target is a closed synthetic demonstrator. Mission-critical service intent drives clear authority, inline enforcement and honest continuity; it is not a claim that a single-host prototype is clinically ready or continuously staffed.

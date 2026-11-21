@@ -1,5 +1,7 @@
 # CARE-Link demo technical requirements
 
+> Current model direction · 2026-11-20: Qwen3.8-27B in local LM Studio is the current model. [Authorized workflow/RAG implementation](../decisions/2026-11-20-agentic-workflows-and-clinical-rag.md) adopts bounded LangGraph and migrates current machine/source pins. Historical Gemma decisions retain their scope. Actual per-function admission and deployed qualification remain separate.
+
 Status: proposed implementation baseline for human review. Analysis date: 2026-11-04. No software implementation, deployment, clinical approval, or operational verification is established by these documents.
 
 ## Reading order

@@ -4,7 +4,7 @@
   "status": "proposed_implementation_plan_not_execution_authorization",
   "baseline_commit": "2701f50ac83e14531cb70e5a76200892e99b793a",
   "deployment_target": "this_workstation",
-  "selected_model_identifier": "google/gemma-4-12b-qat",
+  "selected_model_identifier": "qwen/qwen3.8-27b",
   "model_download_evidence": "user_reported_only",
   "existing_limits_source": "../LLD/implementation-defaults.json",
   "max_parallel_specialists": 3,
@@ -23,7 +23,7 @@
       "demo_steps": [
         "Show the redacted doctor report and explicit unknowns.",
         "Show a reproducible decision/pin matrix for uv/Ruff/Python and Node/pnpm/frontend tooling.",
-        "Locate the user-selected google/gemma-4-12b-qat metadata if accessible; distinguish downloaded, loaded and function-admitted."
+        "Locate the user-selected qwen/qwen3.8-27b metadata if accessible; distinguish downloaded, loaded and function-admitted."
       ],
       "adverse_tests": [
         "Unavailable listener/model metadata remains unknown; no automatic alternate model or server start.",
@@ -365,7 +365,7 @@
       "goal": "Add optional source-linked assistance to an already usable manual workflow.",
       "scope": [
         "Implement task profiles/bindings, shared counters, step leases/fences, typed tools, server-built context and human draft review.",
-        "Integrate broker\u2192gateway\u2192host bridge\u2192LM Studio google/gemma-4-12b-qat with verified identity/token accounting and function-specific admission.",
+        "Integrate broker\u2192gateway\u2192host bridge\u2192LM Studio qwen/qwen3.8-27b with verified identity/token accounting and function-specific admission.",
         "Keep timeout/cancel compute slots occupied until completion/stop is actually established; preserve manual capacity.",
         "Verify pinned applicable OWASP/ATLAS identifiers and per-function threat/test mapping before affected AI function admission; do not defer this to the final console stage."
       ],

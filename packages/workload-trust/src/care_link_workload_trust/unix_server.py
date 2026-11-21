@@ -87,6 +87,7 @@ class _Handler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("x-care-link-verified-spiffe", result.spiffe_id)
             self.send_header("x-care-link-fence-generation", str(result.fence_generation))
+            self.send_header("x-care-link-certificate-digest", result.certificate_digest)
             self.send_header(
                 "x-care-link-certificate-expires-at",
                 result.certificate_expires_at.isoformat().replace("+00:00", "Z"),

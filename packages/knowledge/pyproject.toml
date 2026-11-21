@@ -1,0 +1,13 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "care-link-knowledge"
+version = "0.1.0"
+description = "Patient-independent, integrity-pinned synthetic knowledge retrieval"
+requires-python = ">=3.12,<3.15"
+dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/care_link_knowledge"]

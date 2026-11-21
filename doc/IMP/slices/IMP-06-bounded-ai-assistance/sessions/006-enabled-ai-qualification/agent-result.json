@@ -1,0 +1,184 @@
+{
+  "packet_id": "IMP06-006-enabled-ai-qualification",
+  "task_id": "IMP-06-D",
+  "baseline_commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "role": "imp_verifier",
+  "status": "partial",
+  "changed_paths": [
+    "tests/evaluation/qwen_combined_journey.py",
+    "tests/unit/test_imp06_serving_release.py",
+    "tools/imp03_runtime/compose.py",
+    "tools/imp06_runtime/core.py",
+    "tools/imp06_runtime/manual_roles.py",
+    "tools/imp06_runtime/role_process.py",
+    "tools/imp06_runtime/serve.py",
+    "tools/imp06_runtime/serving_release.py",
+    "tools/imp06_runtime/serving_release_candidate.py",
+    "tools/imp06_verification/enabled_demo.py",
+    "tools/imp06_verification/lmstudio_recovery.py",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/README.md",
+    "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/README.md",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/handoff.md",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/work-packet.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/candidate-manifest.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/combined-journey-enabled-demo.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/combined-journey-fixture.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/combined-journey-live.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/image-smoke.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/lmstudio-recovery-cancel.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/lmstudio-recovery-readiness.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/role-topology.json"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/candidate-manifest.json",
+      "sha256": "c9173669f34fb4fe48aedda7bc2886d4cf0a610813b43a1feda31e35961aab74"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/handoff.md",
+      "sha256": "742fd0476d0f41df1a43a26e83f422cbcbeac1fe97d92431a4135e74d35fd73c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/combined-journey-enabled-demo.json",
+      "sha256": "bf76af0a3655693a072267cf6cfaf1d8cd5d86e23cedd0836b5c9983b4e183a6"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/combined-journey-fixture.json",
+      "sha256": "b1e99e86d1c5b9fb44519fd600ed1989dc403e12d9bffbd894bd49eb0fee1065"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/combined-journey-live.json",
+      "sha256": "c1a5be18c71602304a4067ebb32c23e2c8f4fd3bc3f4543e7c4576655ed4bf2c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/image-smoke.json",
+      "sha256": "3bed460923c35f9110bc43a18284ac5e2290e0522e01947c87d14a5f5b06bff5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/lmstudio-recovery-cancel.json",
+      "sha256": "3a32b102f4021dc646c3a4fadb4563831bb5f75adebd8af697acc2eeeba10088"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/lmstudio-recovery-readiness.json",
+      "sha256": "fd6f7227dd41c4e976b1e6501c979386ceb401062cd9046011909a7efde28905"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/role-topology.json",
+      "sha256": "6bd6cbba88786ab9f566e051b82e23ca4cad368c9215a5509165bc729a1ecba8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json",
+      "sha256": "a8561413dfeb22e6296a2ea508432b9ac84d7ecbc9cc64ee7b653288bb31c178"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-final-workload.json",
+      "sha256": "5244505c0e679279befd5af95873080ec618826f18883c844702a1dde42db23b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/model-provenance.json",
+      "sha256": "4309f5e7ebc13658d062a61f287ebf63e6ad407929e5dd03b23a0a6553d08233"
+    }
+  ],
+  "checks": [
+    {
+      "name": "enabled-isolated-demo",
+      "command": ".venv/bin/python -m tools.imp06_verification.enabled_demo --run [private inputs and final candidate receipt]",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Real Qwen completes the signed synthetic worker task and creates an unsent durable draft.",
+      "actual": "Passed in 10.445 seconds with 1239 input and 11 output tokens. Worker rejected the draft, no dispatch occurred, and manual access survived disablement.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/combined-journey-enabled-demo.json",
+      "evidence_digest": "bf76af0a3655693a072267cf6cfaf1d8cd5d86e23cedd0836b5c9983b4e183a6",
+      "mock_used": true
+    },
+    {
+      "name": "protected-mesh",
+      "command": ".venv/bin/python -m tools.imp06_verification.role_topology --image care-link-imp06:enabled-ai-qualification-006 --output [receipt] --run",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Six expected protected routes, automatic SVID rotation, revocation and manual continuity.",
+      "actual": "Second run passed. First run reached unready Data edge and returned 503.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/role-topology.json",
+      "evidence_digest": "6bd6cbba88786ab9f566e051b82e23ca4cad368c9215a5509165bc729a1ecba8",
+      "mock_used": true
+    },
+    {
+      "name": "serving-package",
+      "command": "docker build and read-only network-none imports, commands and source hash comparison",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Packaged serving launcher and exact source/catalog.",
+      "actual": "26 source and configuration hashes matched, catalog loaded, serving default disabled.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/image-smoke.json",
+      "evidence_digest": "3bed460923c35f9110bc43a18284ac5e2290e0522e01947c87d14a5f5b06bff5",
+      "mock_used": false
+    },
+    {
+      "name": "signed-serving-controls",
+      "command": "Scoped Python regression suite, strict Pyright, Ruff and dependency boundaries",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Guard protected startup and signed exact-bundle serving activation.",
+      "actual": "146 scoped checks passed, including 18 release control and serving CLI checks. Static checks passed.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": true
+    },
+    {
+      "name": "owned-sdk-cancel",
+      "command": "One owned synthetic SDK prediction selected by existing instance reference followed by cancellation",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Terminal cancellation receipt on the exact owned SDK stream.",
+      "actual": "LM Studio returned userStopped after approximately 45 ms. Catalog stayed stable.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/lmstudio-recovery-cancel.json",
+      "evidence_digest": "3a32b102f4021dc646c3a4fadb4563831bb5f75adebd8af697acc2eeeba10088",
+      "mock_used": false
+    },
+    {
+      "name": "real-provider-hard-stop",
+      "command": null,
+      "tool_version": null,
+      "status": "blocked",
+      "expected": "Independent hard-stop evidence and real REST-provider restart.",
+      "actual": "Existing loopback listener is shared desktop LM Studio. A separately supervised fenced provider and enrolled stop signer were unavailable.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/lmstudio-recovery-readiness.json",
+      "evidence_digest": "fd6f7227dd41c4e976b1e6501c979386ceb401062cd9046011909a7efde28905",
+      "mock_used": false
+    },
+    {
+      "name": "protected-live-serving",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Real Data and provider in the deployed protected role mesh and serving authority.",
+      "actual": "Separate mesh and application checks passed. User selected isolated qualification, so serving remains disabled.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "findings": [
+    {
+      "id": "IMP06-006-provider-lifecycle",
+      "severity": "major",
+      "source_refs": [
+        "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/evidence/lmstudio-recovery-readiness.json",
+        "tools/imp06_runtime/provider_stop.py"
+      ],
+      "affected_path_or_operation": "Release of unknown production REST compute",
+      "problem": "The current shared desktop instance cannot demonstrate isolated host-supervised process stop and authenticated stop attestation.",
+      "recommendation": "Use a separately provisioned synthetic provider and an enrolled independent stop authority.",
+      "verification": "Demonstrate old-generation exit, durable slot reconciliation and manual continuity through the combined mesh."
+    }
+  ],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Combined protected mesh with provisioned identity and policy plus the real authenticated macOS LM Studio bridge and durable Data.",
+    "Independent fenced real provider process stop and restart against the deployed REST adapter with manual continuity under sustained load.",
+    "Existing demo serving requires its externally provisioned trust, current evaluator boot receipts and an independent exact-bundle approval."
+  ],
+  "handoff": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/006-enabled-ai-qualification/handoff.md",
+  "is_example": false
+}

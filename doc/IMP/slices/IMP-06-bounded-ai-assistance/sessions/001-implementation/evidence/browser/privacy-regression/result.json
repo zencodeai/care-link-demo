@@ -1,0 +1,56 @@
+{
+  "packet_id": "IMP06-001-web",
+  "review_finding": "P2 private sources remain visible after status401/403",
+  "state": "resolved",
+  "recorded_at": "2026-11-20T18:24:34.496902+00:00",
+  "behavior": "Availability read errors use common failure handling, clear admission, latch private source/scope/review projections hidden, preserve unsent editor; healthy status requires fresh authorized task/draft context before projections revive. Sources also hidden while current authority is being rechecked.",
+  "commands": [
+    {
+      "command": "pnpm exec vitest run apps/web/src/assistance/AssistancePanel.test.tsx",
+      "exit_code": 0,
+      "passed": 13
+    },
+    {
+      "command": "pnpm --filter @care-link/web typecheck",
+      "exit_code": 0
+    },
+    {
+      "command": "pnpm exec tsc -p tests/e2e/assistance/tsconfig.json",
+      "exit_code": 0
+    },
+    {
+      "command": "pnpm exec eslint apps/web/src/assistance tests/e2e/assistance --max-warnings 0",
+      "exit_code": 0
+    },
+    {
+      "command": "pnpm exec prettier --check apps/web/src/assistance tests/e2e/assistance",
+      "exit_code": 0
+    },
+    {
+      "command": "IMP06_BROWSER_OUTPUT=doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/001-implementation/evidence/browser/privacy-regression pnpm exec playwright test --config tests/e2e/assistance/playwright.config.ts --grep 'status (401|403)'",
+      "exit_code": 0,
+      "passed": 2
+    }
+  ],
+  "browser_stats": {
+    "startTime": "2026-11-20T18:24:12.502Z",
+    "duration": 1762.222,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "earlier_attempt": "Auth failure fixture initially counted duplicate StrictMode mount status reads and disabled before draft loaded. Corrected fixture trigger to require actual draft-context read before subsequent401/403. No application bypass.",
+  "limitations": [
+    "Browser API responses are synthetic",
+    "Original seven browser cases bind pre-privacy-patch source hashes in ../web-agent-result.json; new targeted regression binds current changes",
+    "Human review deferred_until_after_IMP10"
+  ],
+  "source_sha256": {
+    "apps/web/src/assistance/useAssistance.ts": "e8c12e6cc6651981c13a7f0d8da41926c8fb9f6b04345f002cafa713f3f6a50a",
+    "apps/web/src/assistance/AssistancePanel.tsx": "4a454096afca9ec4b0c4a28412ea400fb493512730004fdb8514cce85cff40de",
+    "apps/web/src/assistance/AssistancePanel.test.tsx": "f9fe97b88889ab8486e66bc5d2c8c700600e3f3c21304572c72e328f2139187f",
+    "tests/e2e/assistance/fixtures.ts": "188a988e0ccab1ac3c6fde584325e9131253ab9769103c4e520a6d6b81bf223e",
+    "tests/e2e/assistance/assistance.spec.ts": "88a82bb2d1172d668f8bf21f652ac93a759fb4efbd86614d02fb2769bd7e0134"
+  }
+}

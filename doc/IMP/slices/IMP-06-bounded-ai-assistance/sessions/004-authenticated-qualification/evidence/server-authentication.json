@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-11-20T22:59:49.589854+00:00",
+  "scope": "Authenticated synthetic loopback only",
+  "origin": "http://127.0.0.1:1234",
+  "server_version": "0.4.28+2",
+  "sdk_version": "1.6.0b1",
+  "rest": {
+    "/api/v1/models": {
+      "missing": 401,
+      "invalid": 401,
+      "valid": 200
+    },
+    "/v1/models": {
+      "missing": 401,
+      "invalid": 401,
+      "valid": 200
+    },
+    "/v1/chat/completions": {
+      "missing": 401,
+      "invalid": 401
+    }
+  },
+  "sdk_loaded_model_discovery": {
+    "missing": "denied",
+    "invalid": "denied",
+    "valid": "one_expected_loaded_model"
+  },
+  "valid_completions_and_typed_sdk_rendering": "authenticated-qwen.json",
+  "credential_values_retained": false,
+  "state": "passed"
+}

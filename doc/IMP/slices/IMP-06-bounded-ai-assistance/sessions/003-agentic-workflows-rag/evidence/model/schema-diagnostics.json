@@ -1,0 +1,19 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "scope": "Synthetic provider schema compilation probes; no model/server configuration changes",
+  "probes": [
+    {
+      "schema": "canonical Proposal",
+      "http_status": 400,
+      "safe_provider_error": "ValueError: Unimplemented keys: [uniqueItems]",
+      "diagnostic": "Provider rejected before completed output; application retains conservative unknown-compute behavior"
+    },
+    {
+      "schema": "uniqueItems-only lowered Proposal",
+      "http_status": 400,
+      "safe_provider_error": "ValueError: oneOf constraints are not supported while processing #/$defs/ToolArguments",
+      "diagnostic": "No oneOf approximation adopted; proposed current-profile next=null specialization"
+    }
+  ],
+  "function_admitted": false
+}

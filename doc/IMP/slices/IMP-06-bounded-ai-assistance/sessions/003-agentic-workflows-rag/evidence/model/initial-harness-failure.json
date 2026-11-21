@@ -1,0 +1,9 @@
+{
+  "scope": "Initial synthetic qualification attempt before resumable receipt handling",
+  "state": "failed",
+  "safe_reason": "LMStudioModelNotFoundError while exact loaded counter checked current identity; server reported no loaded models",
+  "case_results": "not_retained; original harness failed before writing receipt; no cases claimed passed",
+  "model_load_or_unload_performed": false,
+  "function_admitted": false,
+  "corrective_action": "Harness now persists metadata and each completed result incrementally, stops on unavailable/unknown compute, never loads a model"
+}

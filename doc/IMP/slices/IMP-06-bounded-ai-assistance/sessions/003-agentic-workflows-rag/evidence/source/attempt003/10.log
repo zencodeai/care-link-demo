@@ -1,0 +1,4 @@
+
+> care-link-development@0.1.0 lint /Users/main/Workspace/projects/care-link/care-link-demo
+> eslint apps/web packages/contracts/typescript --max-warnings 0
+

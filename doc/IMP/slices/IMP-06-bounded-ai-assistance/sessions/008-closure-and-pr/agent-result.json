@@ -1,0 +1,65 @@
+{
+  "packet_id": "IMP06-008-closure-and-pr",
+  "task_id": "IMP-06-D",
+  "baseline_commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "role": "imp_verifier",
+  "status": "completed",
+  "changed_paths": [
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/README.md",
+    "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/README.md",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/handoff.md",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/publication.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/source-continuity.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/work-packet.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/agent-result.json"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/publication.json",
+      "sha256": "90916c5f303a76453af12bbaaf1b4a8d59ea2950b1de9bc7e036f4f01a5870f6"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/source-continuity.json",
+      "sha256": "5129eb17b6e6358e5856897b0b7f8ac876ef7f453de13a510952105c2bfd84a8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/handoff.md",
+      "sha256": "a0d5503c73ae61c9d5072aeefac67759dd6f5534c52987f184623ff1e7070502"
+    }
+  ],
+  "checks": [
+    {
+      "name": "source-continuity",
+      "command": "Compare local source, approved baseline and merged Git trees",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exact qualified source and identical IMP-05 predecessor tree",
+      "actual": "805 source hashes and 71 associated bindings matched. Base and baseline trees identical.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/source-continuity.json",
+      "evidence_digest": "5129eb17b6e6358e5856897b0b7f8ac876ef7f453de13a510952105c2bfd84a8",
+      "mock_used": false
+    },
+    {
+      "name": "publication",
+      "command": "gh pr view 13 --repo zencodeai/care-link-demo",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Open private PR against correct base and implementation commit",
+      "actual": "PR #13 is open and ready for review against main.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/publication.json",
+      "evidence_digest": "90916c5f303a76453af12bbaaf1b4a8d59ea2950b1de9bc7e036f4f01a5870f6",
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Scope is isolated synthetic worker_summary only. Other model functions remain disabled.",
+    "Independent signed exact serving approval and current evaluator boots govern existing demo activation.",
+    "Separate operator-controlled provider restart has its own lifecycle qualification scope. This gate exercised live timeout containment and preserves uncertain occupancy.",
+    "Human usability, native assistive-technology, visual, language and clinical review remain deferred_until_after_IMP10."
+  ],
+  "handoff": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/handoff.md",
+  "is_example": false
+}

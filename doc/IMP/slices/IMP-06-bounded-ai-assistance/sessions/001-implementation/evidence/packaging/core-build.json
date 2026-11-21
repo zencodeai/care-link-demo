@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+    "tools/build_core_image.py",
+    "--tag",
+    "care-link-core:imp06-source",
+    "--iid-file",
+    "/private/tmp/care-link-imp06-core-image.id"
+  ],
+  "exit_code": 0,
+  "recorded_at": "2026-11-20T18:44:11.195548+00:00"
+}

@@ -1,0 +1,129 @@
+{
+  "model_identifier": "qwen/qwen3.8-27b",
+  "state": "disabled",
+  "control_epoch": "1",
+  "loaded_model_id": null,
+  "artifact_origin": null,
+  "artifact_digest": null,
+  "quantization": null,
+  "license": null,
+  "server_version": null,
+  "engine_version": null,
+  "tokenizer_digest": null,
+  "template_digest": null,
+  "verified_model_window": null,
+  "context_tokens": 8192,
+  "output_tokens": 1024,
+  "timeout_seconds": 30,
+  "compute_slots": 2,
+  "max_queued": 8,
+  "actual_queued": 0,
+  "queue_behavior": "immediate_denial_preserves_manual_capacity",
+  "reason": "Selected local model artifact/loaded/tokenizer/template and per-function evaluation not verified",
+  "functions": {
+    "client_navigation": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "carer_context": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "worker_summary": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "worker_wording": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "referral_preparation": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "handoff_tracking": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "receiver_completeness": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "plan_draft": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "follow_up_draft": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "supervisor_queue": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "incident_draft": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "evidence_draft": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    },
+    "training_debrief": {
+      "state": "disabled",
+      "grounding": "not_run",
+      "english": "not_run",
+      "french": "not_run",
+      "adversarial": "not_run",
+      "latency": "not_run"
+    }
+  }
+}

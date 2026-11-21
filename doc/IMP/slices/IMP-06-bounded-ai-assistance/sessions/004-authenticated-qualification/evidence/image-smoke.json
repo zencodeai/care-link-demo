@@ -1,0 +1,27 @@
+{
+  "recorded_at": "2026-11-20T23:00:22.531825+00:00",
+  "state": "passed",
+  "scope": "Local immutable image, network-none import and packaging smoke",
+  "image_tag": "care-link-imp06:auth-qualification-004",
+  "image_id": "sha256:24c05a0e0d93c8f12f92495d2fe0c733a0efe875d795ae8be52e54f3b41ba291",
+  "default_notice": "IMP-06 source artifact; explicit role composition and verified release required",
+  "uid": 65532,
+  "lmstudio_sdk": "1.6.0b1",
+  "knowledge_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27",
+  "ai_state": "disabled",
+  "source_sha256": {
+    "uv.lock": "ca93b38cd301c24c503b5fabad7e5cf849fffd23a819c529b425c4016b863b4e",
+    "host/inference-bridge/pyproject.toml": "653f9f59098a81394838da858b24bd4e5205275c712343dd34d9b8f33dc1cda6",
+    "host/inference-bridge/src/care_link_inference_bridge/bridge.py": "3b36e397bf4b67b112f6bbd3cdd235449b28186aefaf682e05b0edc2a8640881",
+    "host/inference-bridge/src/care_link_inference_bridge/credentials.py": "7b27e1585b9d2cb2c2142f4f3e78fd5b4e5fd1bbaae93b1b1f3642a4b34ff371",
+    "host/inference-bridge/src/care_link_inference_bridge/loaded.py": "7f34b632962f36feed2efafbef3fad0adaaae285b7e3c9d342e139378529d70d",
+    "services/inference/src/care_link_inference/gateway.py": "faef46d088561882f2eea53b20b53cd9828c2f681ba15f042c5dc8c6946d52e7",
+    "services/runtime/src/care_link_runtime/client.py": "72a2494e7a54d8c2109fd4fdd6a2143c181b531cdd836e23cce6679ca929a684",
+    "tools/imp06_runtime/bridge.py": "ba444f5a2894dcd59fd2ada36a6afc2661c2759c6afb71c2d3bd7565db868f51",
+    "tools/imp06_runtime/core.py": "623f05e39b36531a9ba4ef193b0177e7ef651f134d9721723547c3a0981566a4",
+    "tools/imp06_runtime/inference.py": "7c3ffedfb73c6889ff44ad98d35648af891531e707a732413620e298e6b8b18c",
+    "tools/imp06_runtime/runtime.py": "6753753700da6a17ae9c052a79194cb1ba442bfb02e376570bcc29d5f3a205e0",
+    "config/demo/knowledge/catalog.json": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27",
+    "config/demo/assistance/model-manifest.json": "46012a23bca1c75320299e1439f90fc746d770781a4760db277f043fa73ee8d6"
+  }
+}

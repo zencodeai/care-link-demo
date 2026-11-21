@@ -1,5 +1,7 @@
 # CARE-Link Demo
 
+> Current authorized implementation · 2026-11-20: [Agentic workflows and role-scoped clinical knowledge](doc/decisions/2026-11-20-agentic-workflows-and-clinical-rag.md) records the bounded LangGraph architecture, Qwen migration, resource provenance and implementation limits. See session003 evidence for actual qualification; no clinical or deployed-readiness pass is implied.
+
 CARE-Link Demo is an independent, Ottawa-based project for demonstrating mental-health crisis-support workflows with synthetic data, simulated services, human oversight and deterministic controls around an LLM.
 
 The repository contains technical requirements, HLD and LLD, with accepted local design choices and unmeasured engineering parameters. The IMP-01 developer foundation is implemented; deployment and operational validation remain pending. It is not approved for real crisis use or production deployment.
@@ -21,7 +23,7 @@ See the [agentic service model and comparable-system research](doc/REQ/10-agenti
 
 ## Planned technical direction
 
-The selected deployment target is this workstation, using Docker images and Kubernetes with local LM Studio and `google/gemma-4-12b-qat`. The user reports that the model is already downloaded; artifact metadata, loaded identity and task capability remain to be verified. The model proposes content and actions; deterministic services control authorization, consent, committed state and execution. Human help must remain accessible when inference is unavailable.
+The selected model is **Qwen3.8-27B**, hosted on this laptop through authenticated LM Studio. The isolated synthetic worker-summary profile passed with the exact MLX4-bit artifact, tokenizer and prompt template. Bounded LangGraph orchestration and the host SDK support the workflow. Deterministic services retain authorization, consent and committed state. Manual service remains available when AI is disabled. [Model decision](doc/decisions/2026-11-20-qwen-lm-studio-integration.md), [qualification evidence](doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/README.md).
 
 The accepted local stack direction includes React/TypeScript, Python/FastAPI, PostgreSQL, Keycloak/OIDC and OPA/Rego. These are design selections awaiting implementation checks. Exact versions, model artifacts, host capacity and network enforcement must be verified. Changes follow human-reviewed GitHub PRs, with independent approval for the accepted baseline.
 
@@ -44,6 +46,8 @@ Start with the [technical requirements index](doc/REQ/README.md).
 The decision answers record the current Ottawa context and police exclusions. Historical police-specific source requirements remain traceable as excluded scope; they are not implemented or claimed as satisfied. Clinical, legal, regulatory and community approvals remain distinct from engineering defaults.
 
 ## Implementation status
+
+G-06 is automated-qualified for isolated synthetic worker summaries. Existing demo AI serving remains disabled pending independent release approval. The foundation and slice02 subsections below preserve their historical development context. [Execution index](doc/IMP/README.md), [G-06 ledger](doc/IMP/executions/2026-11-20-IMP-06/ledger.json).
 
 IMP-01 provides an isolated developer API, EN/FR role preview shell, closed contract adapters and a locked local check loop. Business operations remain unavailable and participant admission is disabled. The user validated G-00 and G-01 on 2026-11-07 for the current developer foundation. See the [slice handoff](doc/IMP/slices/IMP-01-repository-foundation/README.md) for acceptance records, evidence and remaining verification work.
 

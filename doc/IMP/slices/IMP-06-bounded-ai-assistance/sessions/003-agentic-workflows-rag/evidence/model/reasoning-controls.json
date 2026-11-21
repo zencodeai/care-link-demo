@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-20",
+  "scope": "Direct synthetic API capability probes; no application release admission or model/server settings changes",
+  "model": "qwen/qwen3.8-27b",
+  "reasoning_text_retained": false,
+  "probes": [
+    {
+      "path": "/v1/chat/completions",
+      "request_setting": {
+        "reasoning": "off"
+      },
+      "final_answer": "READY",
+      "prompt_tokens": 61,
+      "completion_tokens": 31,
+      "reasoning_tokens": 27,
+      "setting_effective": false
+    },
+    {
+      "path": "/v1/chat/completions",
+      "request_setting": {
+        "reasoning_effort": "none"
+      },
+      "final_answer": "READY",
+      "prompt_tokens": 21,
+      "completion_tokens": 2,
+      "reasoning_tokens": 0,
+      "setting_effective": true
+    },
+    {
+      "path": "/api/v1/chat",
+      "request_setting": {
+        "reasoning": "off",
+        "store": false
+      },
+      "final_answer": "READY",
+      "prompt_tokens": 21,
+      "completion_tokens": 2,
+      "reasoning_tokens": 0,
+      "setting_effective": true
+    }
+  ],
+  "sdk_default_template_observation": {
+    "SDK": "lmstudio==1.5.0",
+    "loaded_context_length": 8192,
+    "exact_rendered_input_tokens": 61,
+    "matches_default_completion_prompt_tokens": true,
+    "nonthinking_template_configuration_supported": false
+  },
+  "production_decision": "Keep default template/payload consistent; explicit nonthinking mode requires a matched tokenizer/template adapter before admission",
+  "later_observation": "Native model discovery subsequently reported loaded_instances=[]; no reload attempted"
+}

@@ -9,11 +9,13 @@ from typing import cast
 from uuid import UUID, uuid4
 
 from care_link_contracts import ContractError, parse_contract, validate_contract
-from care_link_domain import Actor, ManualError
+from care_link_domain import Actor, ManualError, WorkloadPeer
 from fastapi import FastAPI, Request
 from starlette.concurrency import run_in_threadpool
 from starlette.responses import JSONResponse, StreamingResponse
 
+from .assistance import AssistanceGateway
+from .assistance_broker import InferenceBroker
 from .manual_channels import ManualChannels
 from .manual_ports import BrowserSecurity, ManualGateway
 from .planning_ports import PlanningGateway
@@ -72,6 +74,10 @@ def create_manual_app(
     planning: PlanningGateway | None = None,
     referrals: ReferralGateway | None = None,
     receiver: ReceiverGateway | None = None,
+    assistance: AssistanceGateway | None = None,
+    assistance_availability: Callable[[Actor], Record] | None = None,
+    assistance_broker: InferenceBroker | None = None,
+    runtime_verify: Callable[[Request], WorkloadPeer] | None = None,
 ) -> FastAPI:
     """No permissive defaults; existing developer application stays separate."""
     app = FastAPI(title="CARE-Link manual BFF", docs_url=None, redoc_url=None, openapi_url=None)
@@ -162,6 +168,18 @@ def create_manual_app(
             if current.review_run_id and require_view:
                 views.require(current, request.headers.get("x-review-view", ""))
         return current
+
+    if (assistance_broker is None) != (runtime_verify is None):
+        raise ValueError("Broker routes require exact runtime workload verification")
+    if assistance_broker is not None and runtime_verify is not None:
+        from .assistance_broker import attach_broker_routes
+
+        attach_broker_routes(app, assistance_broker, runtime_verify)
+
+    if assistance is not None:
+        from .assistance import attach_assistance_routes
+
+        attach_assistance_routes(app, assistance, actor, availability=assistance_availability)
 
     if planning is not None:
         from .planning_routes import attach_planning_routes

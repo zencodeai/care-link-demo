@@ -1,0 +1,12 @@
+/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_runtime/bridge.py
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_runtime/bridge.py:8:6 - error: Import "care_link_inference_bridge" could not be resolved (reportMissingImports)
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_runtime/bridge.py:8:40 - error: Type of "LocalModelBridge" is unknown (reportUnknownVariableType)
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_runtime/bridge.py:8:58 - error: Type of "create_app" is unknown (reportUnknownVariableType)
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_runtime/bridge.py:18:5 - error: Type of "local" is unknown (reportUnknownVariableType)
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_runtime/bridge.py:26:20 - error: Type of "complete" is unknown (reportUnknownMemberType)
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_runtime/bridge.py:26:20 - error: Return type is unknown (reportUnknownVariableType)
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_runtime/bridge.py:28:5 - error: Type of "app" is unknown (reportUnknownVariableType)
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_runtime/bridge.py:35:13 - error: Type of "close" is unknown (reportUnknownMemberType)
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_runtime/bridge.py:37:5 - error: Type of "router" is unknown (reportUnknownMemberType)
+  /Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_runtime/bridge.py:38:12 - error: Return type is unknown (reportUnknownVariableType)
+10 errors, 0 warnings, 0 informations

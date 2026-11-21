@@ -1,0 +1,114 @@
+[
+  {
+    "command": [
+      "uv",
+      "lock",
+      "--check"
+    ],
+    "started_at": "2026-11-20T18:30:04.570209+00:00",
+    "completed_at": "2026-11-20T18:30:04.651255+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/01.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "install",
+      "--offline",
+      "--frozen-lockfile",
+      "--lockfile-only",
+      "--ignore-scripts"
+    ],
+    "started_at": "2026-11-20T18:30:04.651421+00:00",
+    "completed_at": "2026-11-20T18:30:04.802456+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/02.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/generate_contracts.py",
+      "--check"
+    ],
+    "started_at": "2026-11-20T18:30:04.802626+00:00",
+    "completed_at": "2026-11-20T18:30:05.041171+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/03.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_boundaries.py"
+    ],
+    "started_at": "2026-11-20T18:30:05.041354+00:00",
+    "completed_at": "2026-11-20T18:30:05.358411+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/04.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_imp02_admission.py"
+    ],
+    "started_at": "2026-11-20T18:30:05.358575+00:00",
+    "completed_at": "2026-11-20T18:30:05.392762+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/05.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "check",
+      "."
+    ],
+    "started_at": "2026-11-20T18:30:05.392921+00:00",
+    "completed_at": "2026-11-20T18:30:05.437475+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/06.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "started_at": "2026-11-20T18:30:05.437634+00:00",
+    "completed_at": "2026-11-20T18:30:05.472021+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/attempt001/07.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "started_at": "2026-11-20T18:30:05.472188+00:00",
+    "completed_at": "2026-11-20T18:30:08.526532+00:00",
+    "exit_code": 1,
+    "log": "evidence/source/attempt001/08.log"
+  }
+]

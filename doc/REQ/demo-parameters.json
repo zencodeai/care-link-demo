@@ -79,7 +79,7 @@
     "max_agent_steps_per_turn": 4,
     "max_tools_per_turn": 3,
     "capability_probe_required": true,
-    "model_identifier": "google/gemma-4-12b-qat",
+    "model_identifier": "qwen/qwen3.8-27b",
     "model_metadata_status": "not_verified; exact user-selected identifier is authoritative",
     "download_status": "reported_already_downloaded_by_user",
     "loaded_model_id": null
@@ -416,7 +416,7 @@
       "LD-13"
     ],
     "deployment_target": "this_workstation",
-    "model_identifier": "google/gemma-4-12b-qat",
+    "model_identifier": "qwen/qwen3.8-27b",
     "runtime_activated": false,
     "independent_release_review_satisfied": false
   }

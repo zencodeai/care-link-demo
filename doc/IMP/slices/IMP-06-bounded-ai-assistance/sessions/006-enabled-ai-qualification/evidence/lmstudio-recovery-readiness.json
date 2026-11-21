@@ -1,0 +1,29 @@
+{
+  "recorded_on": "2026-11-20",
+  "scope": "Read-only workstation assessment for an isolated LM Studio stop and restart",
+  "checks": {
+    "lms_daemon_status": {
+      "command": "lms daemon status --json",
+      "status": "running",
+      "isDaemon": false
+    },
+    "local_rest_listener": {
+      "command": "lsof -nP -iTCP:1234 -sTCP:LISTEN",
+      "listener": "127.0.0.1:1234",
+      "matches_gui_process_reported_by_cli": true
+    },
+    "workstation_physical_memory_bytes": 38654705664,
+    "dedicated_provider_instance_with_capacity_verified": false,
+    "hard_stop_observed": false,
+    "provider_lifecycle_changed": false
+  },
+  "result": "blocked",
+  "reason": "The pinned bridge endpoint belongs to the workstation's running LM Studio desktop process. A dedicated provider process, resource reservation, and separate stop signer have not been provisioned. The shared process was left running.",
+  "interface_boundary": "The native unload API removes a loaded model instance from memory. Its documented response only echoes the instance identifier. That response and inventory absence do not prove the signed, independently fenced provider process exit that the current Data recovery adapter requires.",
+  "references": [
+    "https://lmstudio.ai/docs/cli/daemon/daemon-status",
+    "https://lmstudio.ai/docs/cli/daemon/daemon-down",
+    "https://lmstudio.ai/docs/developer/rest/unload",
+    "https://lmstudio.ai/docs/python/llm-prediction/cancelling-predictions"
+  ]
+}

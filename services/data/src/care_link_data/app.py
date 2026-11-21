@@ -10,6 +10,7 @@ from fastapi import FastAPI, Request
 from starlette.concurrency import run_in_threadpool
 from starlette.responses import JSONResponse, Response
 
+from .assistance import AssistanceCoordinator
 from .control import ManualService
 
 Record = dict[str, object]
@@ -37,7 +38,12 @@ class SignedGatewaySecurity:
         return self.delegations.verify(envelope, action, key, request.url.path)
 
 
-def create_app(service: ManualService, security: GatewaySecurity) -> FastAPI:
+def create_app(
+    service: ManualService,
+    security: GatewaySecurity,
+    *,
+    assistance: AssistanceCoordinator | None = None,
+) -> FastAPI:
     app = FastAPI(title="CARE-Link data gateway", docs_url=None, redoc_url=None, openapi_url=None)
 
     async def error_response(_request: Request, error: Exception) -> JSONResponse:
@@ -102,6 +108,11 @@ def create_app(service: ManualService, security: GatewaySecurity) -> FastAPI:
             cast(Record, parsed["arguments"]),
             cast(Record, parsed["path_arguments"]),
         )
+
+    if assistance is not None:
+        from .assistance.app import attach_assistance_gateway
+
+        attach_assistance_gateway(app, assistance, envelope)
 
     from .planning_app import attach_planning_gateway
 

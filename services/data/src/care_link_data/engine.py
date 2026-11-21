@@ -6,7 +6,8 @@ all current guard values are compared under the final ordered lock set.
 
 import json
 import time
-from collections.abc import Callable
+from collections.abc import Callable, Iterator
+from contextlib import contextmanager
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from typing import cast
@@ -80,6 +81,90 @@ class Engine:
         self.content_key_ref = content_key_ref or getattr(cipher, "key_ref", None)
         # Admission manifests are deployment inputs, never directory feed fields.
         self.directory_artifacts = directory_admission.manifests if directory_admission else {}
+
+    def current_actor(self, actor: Actor) -> Actor:
+        """Fresh server identity for optional capability adapters."""
+        return self._fresh_actor(actor)
+
+    @contextmanager
+    def assistance_transaction(
+        self, actor: Actor, sid: str, action: str, data: Record
+    ) -> Iterator[tuple[Transaction, Actor, Record]]:
+        engine = self
+        current = engine._fresh_actor(actor)
+        op = str(uuid4())
+        payload = digest({"action": action, "data": data})
+        with engine.store.transaction(current, sid, locked=False) as tx:
+            snapshot = engine._snapshot(tx, current, sid)
+            request = engine._policy_input(tx, current, "session_read", op, payload, snapshot)
+        decision = engine.policy.evaluate(request)
+        engine.check_policy_decision(decision, request)
+        with engine.store.transaction(current, sid) as tx:
+            snapshot = engine._snapshot(tx, current, sid)
+            final = engine._fresh_actor(current)
+            final_request = engine._policy_input(tx, final, "session_read", op, payload, snapshot)
+            if request != final_request or not engine._accessible(
+                tx, final, "session_read", snapshot
+            ):
+                raise ManualError("assistance.stale_authority", 409)
+            engine.check_policy_decision(decision, request)
+            engine.assert_journal_current(snapshot)
+            if not engine.channel.current(
+                final.account_id, final.browser_session_digest, final.transport_generation
+            ):
+                raise ManualError("assistance.channel_changed", 409)
+            requiring_ai = action in {
+                "task_create",
+                "task_revise",
+                "step_lease",
+                "step_renew",
+                "inference_request",
+                "proposal_submit",
+                "tool_invoke",
+            } or (action == "draft_review" and data.get("decision") != "reject")
+            if requiring_ai and object_value(snapshot["control"])["mode"] != "normal":
+                raise ManualError("assistance.function_disabled", 409)
+            yield tx, final, object_value(request["versions"])
+            engine._audit(
+                tx,
+                final,
+                action,
+                op,
+                payload,
+                {"effect": "optional_assistance"},
+                object_value(request["versions"]),
+            )
+            engine.check_policy_decision(decision, request)
+            engine._fresh_actor(final)
+            engine.assert_journal_current(snapshot)
+            if not engine.channel.current(
+                final.account_id, final.browser_session_digest, final.transport_generation
+            ):
+                raise ManualError("assistance.channel_changed", 409)
+
+    def assistance_guard(self, tx: Transaction, actor: Actor, sid: str) -> Record:
+        """Reauthorize an inference ledger transaction before it locks compute slots."""
+        current = self._fresh_actor(actor)
+        operation = str(uuid4())
+        payload = digest({"task_scope": sid})
+        tx.locked = False
+        snapshot = self._snapshot(tx, current, sid)
+        request = self._policy_input(tx, current, "session_read", operation, payload, snapshot)
+        decision = self.policy.evaluate(request)
+        self.check_policy_decision(decision, request)
+        tx.locked = True
+        snapshot = self._snapshot(tx, current, sid)
+        final = self._fresh_actor(current)
+        repeated = self._policy_input(tx, final, "session_read", operation, payload, snapshot)
+        if repeated != request or not self._accessible(tx, final, "session_read", snapshot):
+            raise ManualError("assistance.stale_authority", 409)
+        self.check_policy_decision(decision, request)
+        self.assert_journal_current(snapshot)
+        if object_value(snapshot["control"])["mode"] != "normal" or not self.channel.current(
+            final.account_id, final.browser_session_digest, final.transport_generation
+        ):
+            raise ManualError("assistance.function_disabled", 409)
+        return object_value(request["versions"])
 
     @staticmethod
     def active_assignment(tx: Transaction, session_id: str) -> Record | None:

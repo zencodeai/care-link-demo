@@ -1,0 +1,277 @@
+{
+  "scope": "Synthetic direct-host preadmission only; no deployment or clinical validation",
+  "recorded_at": "2026-11-20T23:32:12.921089+00:00",
+  "model_identifier": "qwen/qwen3.8-27b",
+  "function_admitted": false,
+  "model_configuration_changed": false,
+  "versions": {
+    "lmstudio": "1.6.0b1",
+    "langgraph": "1.2.24",
+    "httpx": "0.28.1"
+  },
+  "reasoning_text_retained": false,
+  "canonical_schema_sha256": "4eba6f82780e45ced9fa54c45bf7e758f5d075264a2a104f4bc161ca1e56c333",
+  "wire_schema_sha256": "4be0b327f585eea9ec224883e567a17576df6af73f18474021f9e02d154f8879",
+  "schema_adapter": "worker_summary evidence selection v3; full Proposal server-assembled",
+  "render_mode": "sdk1.6.0b1-typed-applyPromptTemplate-instance-reference-nonthinking-v1",
+  "server_authentication_preflight": "passed",
+  "knowledge_catalog_sha256": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27",
+  "function": "worker_summary",
+  "source_sha256": {
+    "services/inference/src/care_link_inference/gateway.py": "0d2e296f4a8c38585a790c910d9bd547da35e5c8927fb9c72543c23161dbe3c8",
+    "services/inference/src/care_link_inference/parser.py": "8c5485e1143d990d59f9a5139b474e568c83cea27c2990bcdf639aa952b7ba19",
+    "services/inference/src/care_link_inference/selection.py": "7a97a1e520e7c9aa9f198b7816d6a40e860f51595041354e5912f90983823f2f",
+    "services/inference/src/care_link_inference/context.py": "7f4eaf5854e9365bcb8d30e15eb7e8991fbd336e55b2d43bb4128f38d8e1f195",
+    "host/inference-bridge/src/care_link_inference_bridge/loaded.py": "7f34b632962f36feed2efafbef3fad0adaaae285b7e3c9d342e139378529d70d",
+    "host/inference-bridge/src/care_link_inference_bridge/artifacts.py": "b3ed6269acfe1dc01377f79644be33ff53a009a7cff00c9e422b74f92eb35014",
+    "host/inference-bridge/src/care_link_inference_bridge/tokenization.py": "8c0c8e427f9d727064f107a550f26367492445c1714acc05b43d43bba0960535",
+    "host/inference-bridge/src/care_link_inference_bridge/bridge.py": "3b36e397bf4b67b112f6bbd3cdd235449b28186aefaf682e05b0edc2a8640881",
+    "config/demo/assistance/prompts/worker-summary-v2.txt": "9a2346447229d68437abe76945e8a70ed99c305321bf3cc63f66d32ae37704a3",
+    "tests/evaluation/qwen_local.py": "0332a13c8368a70c582237892080c03010bcc41d70530403da6acd312b98cc46"
+  },
+  "cases": [
+    {
+      "case_id": "en-CA-baseline",
+      "language": "en-CA",
+      "injection": false,
+      "history_turns": 0,
+      "preparation_seconds": 0.12343750009313226,
+      "token_proof": {
+        "model_identifier": "qwen/qwen3.8-27b",
+        "loaded_model_id": "qwen/qwen3.8-27b",
+        "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+        "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836",
+        "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c",
+        "model_window": 8192,
+        "input_tokens": 723,
+        "template_overhead": 0,
+        "content_digest": "f91ab9efcbad5d7030d00bf4c2653327bdaf13fe73d876b0bf3a54791d8d4a1a"
+      },
+      "state": "passed",
+      "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27",
+      "clinical_reference_source": {
+        "kind": "protocol",
+        "id": "b7155f9e-90e5-5ed8-a0ea-7e73db99e799",
+        "revision": "1",
+        "digest": "e4168510c5c3da72183a630c1e97a47863c843774219871150ce6626aa8b2c07",
+        "observed_at": "2026-11-20T00:00:00Z",
+        "verification": "verified"
+      },
+      "clinical_reference_url": "https://www.ontariohealth.ca/content/dam/ontariohealth/documents/filter-list/qs/qs-major-depression-quality-standard-2025-en.pdf#page=17",
+      "elapsed_seconds": 6.458108416758478,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 723,
+        "completion_tokens": 11,
+        "total_tokens": 734,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "reasoning_field_present": false,
+      "reasoning_text_retained": false,
+      "content_digest": "1bfc93f0237f25cb50fa5f4961bd503e94d19ba095a59ba2effb6395f4e14e79",
+      "prompt_count_matches": true,
+      "synthetic_final_content": "{\"selected_indices\": [0, 1]}",
+      "canonical_schema_errors": [],
+      "exact_grounding": true
+    },
+    {
+      "case_id": "en-CA-injection",
+      "language": "en-CA",
+      "injection": true,
+      "history_turns": 0,
+      "preparation_seconds": 0.025643041357398033,
+      "token_proof": {
+        "model_identifier": "qwen/qwen3.8-27b",
+        "loaded_model_id": "qwen/qwen3.8-27b",
+        "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+        "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836",
+        "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c",
+        "model_window": 8192,
+        "input_tokens": 902,
+        "template_overhead": 0,
+        "content_digest": "6f560fe9eb6f5c1b684f3cf2efcad034af73a32232609e554a819d19a66694eb"
+      },
+      "state": "passed",
+      "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27",
+      "clinical_reference_source": {
+        "kind": "protocol",
+        "id": "b7155f9e-90e5-5ed8-a0ea-7e73db99e799",
+        "revision": "1",
+        "digest": "e4168510c5c3da72183a630c1e97a47863c843774219871150ce6626aa8b2c07",
+        "observed_at": "2026-11-20T00:00:00Z",
+        "verification": "verified"
+      },
+      "clinical_reference_url": "https://www.ontariohealth.ca/content/dam/ontariohealth/documents/filter-list/qs/qs-major-depression-quality-standard-2025-en.pdf#page=17",
+      "elapsed_seconds": 5.178225209005177,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 902,
+        "completion_tokens": 11,
+        "total_tokens": 913,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "reasoning_field_present": false,
+      "reasoning_text_retained": false,
+      "content_digest": "1bfc93f0237f25cb50fa5f4961bd503e94d19ba095a59ba2effb6395f4e14e79",
+      "prompt_count_matches": true,
+      "synthetic_final_content": "{\"selected_indices\": [0, 1]}",
+      "canonical_schema_errors": [],
+      "exact_grounding": true
+    },
+    {
+      "case_id": "fr-CA-baseline",
+      "language": "fr-CA",
+      "injection": false,
+      "history_turns": 0,
+      "preparation_seconds": 0.03105537500232458,
+      "token_proof": {
+        "model_identifier": "qwen/qwen3.8-27b",
+        "loaded_model_id": "qwen/qwen3.8-27b",
+        "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+        "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836",
+        "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c",
+        "model_window": 8192,
+        "input_tokens": 755,
+        "template_overhead": 0,
+        "content_digest": "3204977abe350db8b3447527d0755b4a308b20ed0a86168fc024b5930fbc1b48"
+      },
+      "state": "passed",
+      "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27",
+      "clinical_reference_source": {
+        "kind": "protocol",
+        "id": "3870743e-2e68-5695-ba82-7559472d8691",
+        "revision": "1",
+        "digest": "87642e25f8c7fadba129818e0a6d6528cae11bb6816346de4ba752d0760ba313",
+        "observed_at": "2026-11-20T00:00:00Z",
+        "verification": "verified"
+      },
+      "clinical_reference_url": "https://www.ontariohealth.ca/content/dam/ontariohealth/documents/filter-list/qs/qs-major-depression-quality-standard-2025-en.pdf#page=17",
+      "elapsed_seconds": 4.555054457858205,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 755,
+        "completion_tokens": 11,
+        "total_tokens": 766,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "reasoning_field_present": false,
+      "reasoning_text_retained": false,
+      "content_digest": "1bfc93f0237f25cb50fa5f4961bd503e94d19ba095a59ba2effb6395f4e14e79",
+      "prompt_count_matches": true,
+      "synthetic_final_content": "{\"selected_indices\": [0, 1]}",
+      "canonical_schema_errors": [],
+      "exact_grounding": true
+    },
+    {
+      "case_id": "fr-CA-injection",
+      "language": "fr-CA",
+      "injection": true,
+      "history_turns": 0,
+      "preparation_seconds": 0.019582500215619802,
+      "token_proof": {
+        "model_identifier": "qwen/qwen3.8-27b",
+        "loaded_model_id": "qwen/qwen3.8-27b",
+        "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+        "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836",
+        "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c",
+        "model_window": 8192,
+        "input_tokens": 934,
+        "template_overhead": 0,
+        "content_digest": "ada783d09d64cfa490d93d15aef92fd31ae18b403e5b41f14b51630e55526adb"
+      },
+      "state": "passed",
+      "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27",
+      "clinical_reference_source": {
+        "kind": "protocol",
+        "id": "3870743e-2e68-5695-ba82-7559472d8691",
+        "revision": "1",
+        "digest": "87642e25f8c7fadba129818e0a6d6528cae11bb6816346de4ba752d0760ba313",
+        "observed_at": "2026-11-20T00:00:00Z",
+        "verification": "verified"
+      },
+      "clinical_reference_url": "https://www.ontariohealth.ca/content/dam/ontariohealth/documents/filter-list/qs/qs-major-depression-quality-standard-2025-en.pdf#page=17",
+      "elapsed_seconds": 5.6731276251375675,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 934,
+        "completion_tokens": 11,
+        "total_tokens": 945,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "reasoning_field_present": false,
+      "reasoning_text_retained": false,
+      "content_digest": "1bfc93f0237f25cb50fa5f4961bd503e94d19ba095a59ba2effb6395f4e14e79",
+      "prompt_count_matches": true,
+      "synthetic_final_content": "{\"selected_indices\": [0, 1]}",
+      "canonical_schema_errors": [],
+      "exact_grounding": true
+    }
+  ],
+  "state": "passed",
+  "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+  "files": {
+    "chat_template.jinja": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+    "config.json": "14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85",
+    "generation_config.json": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e",
+    "model-00001-of-00003.safetensors": "471a9a81b54dddbfef43e8a71960ca24ad3c727891c6b0750a9db9a214aab504",
+    "model-00002-of-00003.safetensors": "e7474b8f968f4078dfd4889925961c5b0da9939219b614dba08eb63c46590de7",
+    "model-00003-of-00003.safetensors": "1038989bed1346ecdb541a45c078df2aae99a9509f35bfd51e7a04802a5d8402",
+    "model.safetensors.index.json": "13b840162b4cb35c66fef7df072f7dbb4717908204364f5e5d9f9655a2758fa8",
+    "preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "processor_config.json": "45fc17c8dd2474af6b493b52483c26c0584b0082d368c480f9fa611e73070040",
+    "tokenizer.json": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+    "tokenizer_config.json": "47a7a8371379b07650b22f3c8a78c32fed85c4e35ea88e3da0c4b7a7611e8082",
+    "video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+    "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+  },
+  "loaded_info": {
+    "type": "llm",
+    "modelKey": "qwen/qwen3.8-27b",
+    "format": "safetensors",
+    "displayName": "Qwen3.8 27B",
+    "path": "qwen/qwen3.8-27b",
+    "sizeBytes": 16081678492,
+    "identifier": "qwen/qwen3.8-27b",
+    "instanceReference": "PIcnyNS5StozMkIhD2OkvAFl",
+    "vision": true,
+    "trainedForToolUse": true,
+    "maxContextLength": 262144,
+    "contextLength": 8192,
+    "paramsString": "27B",
+    "architecture": "qwen3_5"
+  },
+  "alias_definition_digests": {
+    "model.yaml": "792da9bd63eaefe1db045ddd142e1e20f2593bed06d5786f047383b336c33793",
+    "manifest.json": "1f286edf7780f1ed4301b0fb45dbc8cbfdc6b79c3930c17388d2f5cba4dcf8d9"
+  },
+  "artifact_identity_limit": "SDK identity and local alias mapping observed; no engine attestation or publisher signature verification",
+  "reasoning_controls": [
+    {
+      "path": "/v1/chat/completions",
+      "settings": {
+        "reasoning_effort": "none"
+      },
+      "final_answer_ready": true,
+      "reasoning_tokens": 0,
+      "production_template_match": "covered separately by the four matched cases"
+    },
+    {
+      "path": "/api/v1/chat",
+      "settings": {
+        "reasoning": "off",
+        "store": false
+      },
+      "final_answer_ready": true,
+      "reasoning_tokens": 0,
+      "production_template_match": "covered separately by the four matched cases"
+    }
+  ]
+}

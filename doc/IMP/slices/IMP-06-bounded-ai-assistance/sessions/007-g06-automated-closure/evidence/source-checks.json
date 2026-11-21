@@ -1,0 +1,106 @@
+{
+  "state": "passed",
+  "checks": [
+    {
+      "command": [
+        ".venv/bin/pytest",
+        "-q",
+        "tests/unit/test_imp06_composition.py",
+        "tests/unit/test_imp06_release_custody.py",
+        "tests/unit/test_imp06_serving_release.py",
+        "tests/unit/test_imp06_provider_stop.py",
+        "tests/contract/test_agentic_workflow.py",
+        "host/inference-bridge/tests",
+        "services/inference/tests",
+        "services/runtime/tests",
+        "packages/workload-trust/tests/test_imp06_routes.py",
+        "services/core/tests/test_assistance_work.py"
+      ],
+      "status": 0,
+      "output": "........................................................................ [ 48%]\n........................................................................ [ 97%]\n....                                                                     [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings\n  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead\n    if asyncio.iscoroutinefunction(func):\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n148 passed, 17 warnings in 1.78s\n"
+    },
+    {
+      "command": [
+        "pnpm",
+        "exec",
+        "pyright",
+        "--project",
+        "pyrightconfig.json"
+      ],
+      "status": 0,
+      "output": "0 errors, 0 warnings, 0 informations\n"
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "tests/evaluation/qwen_combined_journey.py",
+        "tests/evaluation/qwen_g06_timeout.py",
+        "tools/imp06_runtime",
+        "tools/imp06_verification",
+        "tools/imp03_runtime/compose.py"
+      ],
+      "status": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "tests/evaluation/qwen_combined_journey.py",
+        "tests/evaluation/qwen_g06_timeout.py",
+        "tools/imp06_runtime",
+        "tools/imp06_verification",
+        "tools/imp03_runtime/compose.py"
+      ],
+      "status": 0,
+      "output": "36 files already formatted\n"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "tools/check_boundaries.py"
+      ],
+      "status": 0,
+      "output": "Source dependency boundaries passed (source check, not runtime isolation).\n"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "tools/generate_contracts.py",
+        "--check"
+      ],
+      "status": 0,
+      "output": "Browser validators match the pinned schema (97 public contracts).\nAdditive agentic OpenAPI matches shared contracts\nContract snapshots match reviewed definitions.\n"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "tools/generate_agentic_api.py",
+        "--check"
+      ],
+      "status": 0,
+      "output": "Additive agentic OpenAPI matches shared contracts\n"
+    },
+    {
+      "command": [
+        "uv",
+        "lock",
+        "--check",
+        "--offline"
+      ],
+      "status": 0,
+      "output": "Resolved 93 packages in 6ms\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "status": 0,
+      "output": ""
+    }
+  ]
+}

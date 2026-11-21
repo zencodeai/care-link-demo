@@ -1,0 +1,45 @@
+{
+  "candidate_image": "sha256:30134ead2a7e175c7815622ab362bff9a61eceda0b27809b2d7b2c9f8bfc3e5e",
+  "cleanup": {
+    "containers": 27,
+    "networks": 2,
+    "volumes": 7
+  },
+  "harness_sha256": {
+    "g06_protected.py": "a12e4cfde4026ad53c67886d5a2a6ac0557104643a9b1cd71e5a6c6c49f53205",
+    "g06_protected_processes.py": "95db5f106d0e2fd78e6eb995c52d65de176994d058b5b4fec9c4a5c173e1a207",
+    "g06_protected_wire.py": "baca73410aac5055e8d45791472da9752176deb54eca3e24a3758121c5e4f114",
+    "role_topology.py": "ed917e0a5a1f25a75ac726fcf9175e3cb81a1d66824c5e6ca45b43accb6f21ed",
+    "role_topology_processes.py": "fbcadddf209344b999a08b27ecb9191e2aa6a587d16487de378ebe30ef4d0d4e"
+  },
+  "limits": [
+    "Real inference SVID crossed disposable Envoy mTLS and protected Unix bridge ingress.",
+    "Private Unix socket and Docker exec stdio transported the fixed synthetic case.",
+    "Relay frames held fixed synthetic content and no credentials or destinations.",
+    "Business workflow, participant serving and provider restart are separate evidence."
+  ],
+  "observations": {
+    "actual_input_tokens": 27,
+    "actual_output_tokens": 7,
+    "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+    "authorizing_peer": "spiffe://care-link.demo/demo/inference",
+    "execute_svid_digest": "d5552c722e3de642ca2674c86e3fb2bd8580f3b25a293d433473dedce6dedb6a",
+    "malformed_digest_status": 400,
+    "malformed_execute_status": 400,
+    "model": "qwen/qwen3.8-27b",
+    "model_window": 8192,
+    "provider_token_count_matches": true,
+    "synthetic_json_expected": true,
+    "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c",
+    "tokenize_svid_digest": "d5552c722e3de642ca2674c86e3fb2bd8580f3b25a293d433473dedce6dedb6a",
+    "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836"
+  },
+  "pins": {
+    "envoy": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+    "spire_agent": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+    "spire_server": "ghcr.io/spiffe/spire-server@sha256:ff546f4c62dafc479a0cd79eae9a7b6df2975754d75efd31706098e0d7548837"
+  },
+  "qualification_bundle_digest": "dfad553fa142b510b8f5194616cb769613e4bfb10c5057dd10f94a6c2cee8179",
+  "recorded_at": "2026-11-21T14:43:18.794929+00:00",
+  "state": "passed"
+}

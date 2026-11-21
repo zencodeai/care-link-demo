@@ -35,3 +35,12 @@ def test_relative_python_escape_is_found(tmp_path: Path):
     source.mkdir(parents=True)
     (source / "bad.py").write_text("from ....data import gateway\n")
     assert check(tmp_path)
+
+
+def test_knowledge_has_no_patient_store_or_network_and_runtime_has_no_catalog_access():
+    assert violations("knowledge", ["care_link_data"])
+    assert violations("knowledge", ["psycopg"])
+    assert violations("knowledge", ["httpx"])
+    assert violations("runtime", ["care_link_knowledge"])
+    assert violations("core", ["care_link_knowledge"]) == []
+    assert violations("data", ["care_link_knowledge"]) == []

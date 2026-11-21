@@ -1,0 +1,13 @@
+{
+  "model_identifier": "google/gemma-4-12b-qat",
+  "function_admission": "disabled",
+  "model_evaluation": "not_run",
+  "human_review": "deferred_until_after_IMP10",
+  "loaded_identity": null,
+  "artifact_digest": null,
+  "tokenizer_digest": null,
+  "template_digest": null,
+  "grounding_en_fr_adversarial_latency": "not_run",
+  "availability": "unavailable",
+  "reason": "Existing loopback model server unavailable; no startup/load attempted"
+}

@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-11-20T23:37:47.054265+00:00",
+  "finished_at": "2026-11-20T23:38:21.255190+00:00",
+  "state": "passed",
+  "scope": "Dedicated loopback verified TLS PostgreSQL fixture, real warmed OPA, synthetic jobs and actor workflows",
+  "tests": [
+    "services/data/tests/test_assistance_jobs.py",
+    "services/data/tests/test_core_assistance_chain.py",
+    "services/data/tests/test_assistance.py",
+    "services/data/tests/test_assistance_knowledge.py",
+    "tests/unit/test_imp06_provider_stop.py",
+    "tests/unit/test_imp06_release_custody.py",
+    "packages/policy-input/tests/test_assistance_policy.py"
+  ],
+  "exit_code": 0,
+  "output": "........................................................................ [ 92%]\n......                                                                   [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings\n  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead\n    if asyncio.iscoroutinefunction(func):\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n78 passed, 17 warnings in 33.42s\n"
+}

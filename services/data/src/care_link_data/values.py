@@ -119,6 +119,25 @@ ROLES.update(
 )
 
 
+# Optional assistance never grants new actor roles or business effects.
+ROLES.update(
+    {
+        name: PARTICIPANTS | WORKFORCE
+        for name in (
+            "task_create",
+            "task_read",
+            "task_cancel",
+            "task_revise",
+            "draft_read",
+            "draft_review",
+            "assistance_status",
+            "assistance_task_context",
+            "assistance_draft_context",
+        )
+    }
+)
+
+
 def stamp(value: datetime) -> str:
     return value.astimezone(UTC).isoformat(timespec="microseconds").replace("+00:00", "Z")
 

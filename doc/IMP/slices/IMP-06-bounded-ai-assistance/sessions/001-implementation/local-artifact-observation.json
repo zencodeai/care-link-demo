@@ -1,0 +1,10 @@
+{
+  "selected_model_identifier": "google/gemma-4-12b-qat",
+  "physical_file_observed": "/Users/main/.lmstudio/models/lmstudio-community/gemma-4-12B-it-QAT-GGUF/gemma-4-12B-it-QAT-Q4_0.gguf",
+  "file_size_bytes": 6975879008,
+  "artifact_identity_claim": "local_bytes_only_not_loaded_or_publisher_proof",
+  "loaded_model_id": null,
+  "tokenizer_template_verification": "not_run",
+  "function_admission": "disabled",
+  "sha256": "f568ac5de71c8fcac5d5794494388ad94db9e18b4368ca897e21b30d2448eeec"
+}

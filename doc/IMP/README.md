@@ -1,8 +1,12 @@
 # CARE-Link implementation planning
 
+> Current authorized implementation · 2026-11-20: [Agentic workflows and role-scoped clinical knowledge](../decisions/2026-11-20-agentic-workflows-and-clinical-rag.md) records the bounded LangGraph architecture, Qwen migration, resource provenance and implementation limits. See session003 evidence for actual qualification; no clinical or deployed-readiness pass is implied.
+
+> Current model direction · 2026-11-21: [Authorized Qwen workflow/RAG implementation](../decisions/2026-11-20-agentic-workflows-and-clinical-rag.md) defines the bounded LangGraph and host SDK integration. The worker-summary profile passed automated qualification in the isolated synthetic demo. Existing demo serving remains disabled pending independent release approval.
+
 Version 0.1 · 2026-11-06 · Proposed plan for human review. No application implementation, tool installation, host change or deployment is performed by this package.
 
-Execution status: [IMP-05 source closed; G-05 automated-qualified](executions/2026-11-20-IMP-05/ledger.json). [IMP-04 qualification](executions/2026-11-16-IMP-04/ledger.json) and [IMP-03 historical acceptance](executions/2026-11-16-IMP-03/ledger.json) are preserved. Human review is deferred until after IMP-10; IMP-06 is not activated. IMP-05 source publication is tracked in its closure session; no live deployment occurred. The planning baseline below remains separate from actual execution records.
+**Execution status.** [G-06 is automated-qualified for the isolated synthetic worker-summary profile](executions/2026-11-20-IMP-06/ledger.json). See the [IMP-06 closure evidence](slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/README.md), [G-05 closure](executions/2026-11-20-IMP-05/ledger.json), [IMP-04 qualification](executions/2026-11-16-IMP-04/ledger.json), and [IMP-03 historical acceptance](executions/2026-11-16-IMP-03/ledger.json). Human review is deferred until after IMP-10. IMP-05 source publication is tracked in its closure session. The planning baseline below is preserved separately from these execution records.
 
 Implement the accepted LLD as small, demonstrable service slices. Use Codex specialists for bounded analysis and scoped work and preserve one accountable integration owner. Security/governance controls are built into the earliest relevant behavior, not deferred to a final audit.
 
@@ -23,7 +27,7 @@ Implement the accepted LLD as small, demonstrable service slices. Use Codex spec
 
 The [implementation plan](implementation-plan.json) is the canonical stage/task/dependency/operation allocation. [Agent roles](agent-contracts.json) and [planning contracts](contracts/planning.schema.json) define development-agent work, not CARE-Link's product agents. [Tool catalog](tooling.json) records recommendation and pin status. [Examples](examples/) are unexecuted planning packets, not approvals. [Codex templates](codex/README.md) are ready to adapt but are not installed into `.codex/` by this task.
 
-Start at IMP-00. Existing choices—this workstation, `google/gemma-4-12b-qat` in LM Studio and the accepted LLD directions—are retained. Download is user-reported; unknown metadata/capacity remains unknown. Read the [scoped acceptance](../LLD/decisions/2026-11-06-implementation-choices-and-model.md). Local engineering acceptance does not establish independent release, clinical, real-partner or production authority.
+Start at IMP-00. This workstation and the accepted LLD authority boundaries are retained; the current user-selected model is `qwen/qwen3.8-27b` in LM Studio. Download is user-reported; unknown metadata/capacity remains unknown. Read the [scoped acceptance](../LLD/decisions/2026-11-06-implementation-choices-and-model.md). Local engineering acceptance does not establish independent release, clinical, real-partner or production authority.
 
 Validation: install [validation dependencies](validation-requirements.txt) into an isolated environment, then run `python doc/IMP/validate_plan.py` from the repository root. This checks the planning artifacts; it does not run proposed tools, application tests or demos. All implementation stages begin `planned`, evidence empty and human decisions absent. No PR, commit or activation follows automatically from this planning request.
 

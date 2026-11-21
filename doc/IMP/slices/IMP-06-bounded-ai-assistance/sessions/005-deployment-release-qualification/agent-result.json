@@ -1,0 +1,281 @@
+{
+  "packet_id": "IMP06-005-deployment-release-qualification",
+  "task_id": "IMP-06-D",
+  "baseline_commit": "d0a2e188363e7fa136c920f02033cac52edf91ba",
+  "role": "imp_verifier",
+  "status": "partial",
+  "changed_paths": [
+    "host/inference-bridge/src/care_link_inference_bridge/artifacts.py",
+    "host/inference-bridge/tests/test_artifacts.py",
+    "services/data/src/care_link_data/assistance_jobs.py",
+    "services/data/src/care_link_data/assistance_transport.py",
+    "services/data/tests/test_assistance_jobs.py",
+    "services/inference/src/care_link_inference/admission.py",
+    "services/inference/src/care_link_inference/gateway.py",
+    "services/inference/tests/test_inference.py",
+    "tests/evaluation/qwen_local.py",
+    "tests/evaluation/qwen_signed_bridge.py",
+    "tests/evaluation/qwen_workload.py",
+    "tests/unit/test_imp06_provider_stop.py",
+    "tests/unit/test_imp06_release_custody.py",
+    "tools/imp06_runtime/README.md",
+    "tools/imp06_runtime/data.py",
+    "tools/imp06_runtime/provider_stop.py",
+    "tools/imp06_runtime/release_custody.py",
+    "tools/imp06_runtime/release_custody_records.py",
+    "tools/imp06_verification/provider_stop.py",
+    "tools/imp06_verification/role_topology.py",
+    "tools/imp06_verification/role_topology_processes.py",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/README.md",
+    "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/README.md",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/handoff.md",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/work-packet.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/candidate-manifest.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/credential-rotation.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/data-recovery-first-opa-start.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/data-recovery.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/image-smoke.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/model-provenance.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/provider-hard-stop.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-bounded-workload.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-final-workload.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-workload.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/role-topology-initial-image.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/role-topology.json",
+    "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/signed-bridge.json"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/candidate-manifest.json",
+      "sha256": "b88f2b794b69f27a47903d1c44ca84a572bf8596f3465dc0508a42088d43c4ea"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/handoff.md",
+      "sha256": "71e8e5040c3ba5b7e0ed9c79ad9e77db7aa6daf28a928d966f05e3ff12cd23c8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json",
+      "sha256": "a8561413dfeb22e6296a2ea508432b9ac84d7ecbc9cc64ee7b653288bb31c178"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/credential-rotation.json",
+      "sha256": "d59c68e97bdf3202be77f31b40d59fd5f6b6f7736b3b1886ace2b689d0db3711"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/data-recovery-first-opa-start.json",
+      "sha256": "713b402982209d24b4f1b879acc2c2ff68950215c48d3d69d0639a5ba54ebb8b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/data-recovery.json",
+      "sha256": "6526286ea9550d0390c17c38ddabe47d620721e2faca423a5372294e9a79db5a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/image-smoke.json",
+      "sha256": "a6c1ee17fddcfefb264e625822fd9c7b0c50e044a4f17e80c2a5bbfd5f109bed"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/model-provenance.json",
+      "sha256": "4309f5e7ebc13658d062a61f287ebf63e6ad407929e5dd03b23a0a6553d08233"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/provider-hard-stop.json",
+      "sha256": "438dc27d49ca21a862d2fe87a4acd153fab6203f353a7aba083d049861534655"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-bounded-workload.json",
+      "sha256": "1b5773098c57ebd79f34390a5684fd587a3a4531dd65794fab99e3b78f5053ab"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-final-workload.json",
+      "sha256": "5244505c0e679279befd5af95873080ec618826f18883c844702a1dde42db23b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-workload.json",
+      "sha256": "e27805abd248617d737ec1e34f81f4df04a4b2f31cd9ae157a8a8ee846074dcc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/role-topology-initial-image.json",
+      "sha256": "b419e27b7a2ace59c95dc35a2de507f459cf7246c402f38542651077fa5e825c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/role-topology.json",
+      "sha256": "20dc0460280ae38758147518f05181880eff5dd90a0c7f89f37869587c60eb38"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/signed-bridge.json",
+      "sha256": "71976480eb443ad7aed4aeee606e91cfcca737345f77db70753191808930b14a"
+    }
+  ],
+  "checks": [
+    {
+      "name": "workload-mesh",
+      "command": ".venv/bin/python -m tools.imp06_verification.role_topology --image [exact-final-tag] --output [receipt] --run",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Six fixed permitted mesh edges, no direct networking, automatic SVID rotation and live restriction",
+      "actual": "Passed zero-capability namespace checks, four deny probes, rotation, in-flight plus later 403 and manual 200.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/role-topology.json",
+      "evidence_digest": "20dc0460280ae38758147518f05181880eff5dd90a0c7f89f37869587c60eb38",
+      "mock_used": true
+    },
+    {
+      "name": "artifact-origin",
+      "command": "Publisher revision metadata compared to local artifact inventory and code signature verification on mapped MLX binaries.",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Bind model bytes, artifact revision, license and local engine identity.",
+      "actual": "13 files matched publisher checksums or Git blob IDs. Both mapped MLX binaries passed local signature verification.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/model-provenance.json",
+      "evidence_digest": "4309f5e7ebc13658d062a61f287ebf63e6ad407929e5dd03b23a0a6553d08233",
+      "mock_used": false
+    },
+    {
+      "name": "authenticated-qwen",
+      "command": ".venv/bin/python -m tests.evaluation.qwen_local [private token path and installed artifact] --run",
+      "tool_version": "LM Studio SDK 1.6.0b1",
+      "status": "passed",
+      "expected": "Exact prompt tokens, English and French grounding and authority containment.",
+      "actual": "Four cases and both nonthinking probes passed using trained model and catalog.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/authenticated-qwen.json",
+      "evidence_digest": "a8561413dfeb22e6296a2ea508432b9ac84d7ecbc9cc64ee7b653288bb31c178",
+      "mock_used": false
+    },
+    {
+      "name": "bounded-qwen-workload",
+      "command": ".venv/bin/python -m tests.evaluation.qwen_workload [private token path and installed artifact]",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "English and French exact evidence in five two-request waves within the function input cap.",
+      "actual": "10 passed, up to 2035 exact input tokens, sample p95 23.261 seconds.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-final-workload.json",
+      "evidence_digest": "5244505c0e679279befd5af95873080ec618826f18883c844702a1dde42db23b",
+      "mock_used": false
+    },
+    {
+      "name": "wide-context-stress",
+      "command": "Opt-in diagnostic stress run, same live provider and two requests in flight",
+      "tool_version": null,
+      "status": "failed",
+      "expected": "Diagnose the provider's wall-clock bound without allocating product capacity.",
+      "actual": "Approx. 3300 input tokens per request timed out at 30 seconds. A signed 2048 input cap was then implemented.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-workload.json",
+      "evidence_digest": "e27805abd248617d737ec1e34f81f4df04a4b2f31cd9ae157a8a8ee846074dcc",
+      "mock_used": false
+    },
+    {
+      "name": "signed-bridge-disable",
+      "command": ".venv/bin/python -m tests.evaluation.qwen_signed_bridge [replacement credential and final candidate digest]",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exact signed qualification admits real Qwen and current revocation fences proposal.",
+      "actual": "Live bridge produced exact synthetic excerpt, recorded unrestricted completion, then suppressed in-flight result and rejected fresh work after epoch advance.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/signed-bridge.json",
+      "evidence_digest": "71976480eb443ad7aed4aeee606e91cfcca737345f77db70753191808930b14a",
+      "mock_used": true
+    },
+    {
+      "name": "verified-provider-stop",
+      "command": "docker run --rm --pull never --name care-link-imp06-005-provider-stop-final --label care-link.session=imp06-005-provider-stop-final --network none --read-only --security-opt no-new-privileges --cap-drop ALL --cap-add CHOWN --cap-add DAC_OVERRIDE --cap-add SETUID --cap-add SETGID --cap-add KILL --tmpfs /tmp:rw,nodev,nosuid,noexec,size=16777216 --user 0:0 --pids-limit 32 --memory 256m --mount type=bind,source=\"$PWD/tools/imp06_verification/provider_stop.py\",target=/probe.py,readonly --env PYTHONPATH=/app sha256:120e9e8480919fc5016a9b13ee5640ce794758f46d38d77d001eaf55ebf98246 python /probe.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Timeout and disconnect do not establish stop. Fenced, signed observed hard stop is verifiable.",
+      "actual": "Passed on final image with disposable Linux process and kernel-authenticated fence.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/provider-hard-stop.json",
+      "evidence_digest": "438dc27d49ca21a862d2fe87a4acd153fab6203f353a7aba083d049861534655",
+      "mock_used": true
+    },
+    {
+      "name": "durable-tls-recovery",
+      "command": "pytest with dedicated disposable verified-TLS PostgreSQL and digest-pinned OPA 1.22.2",
+      "tool_version": "OPA 1.22.2",
+      "status": "passed",
+      "expected": "All scoped Data, recovery and policy regressions pass.",
+      "actual": "78 passed on warmed rerun, no skips. The first OPA startup hit the configured timeout and denied the request.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/data-recovery.json",
+      "evidence_digest": "6526286ea9550d0390c17c38ddabe47d620721e2faca423a5372294e9a79db5a",
+      "mock_used": true
+    },
+    {
+      "name": "package-integrity",
+      "command": "Local Docker build and read-only network-none packaged hash and import probe",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Matching source code, resources and disabled model default.",
+      "actual": "20 hashes matched, UID 65532 and LM Studio SDK 1.6.0b1.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/image-smoke.json",
+      "evidence_digest": "a6c1ee17fddcfefb264e625822fd9c7b0c50e044a4f17e80c2a5bbfd5f109bed",
+      "mock_used": false
+    },
+    {
+      "name": "credential-rotation",
+      "command": "Direct loopback REST and fresh SDK clients, no credential disclosure",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Original denied, replacement REST and exact tokenizer accepted.",
+      "actual": "Original HTTP 401 and SDK denied. Replacement HTTP 200, bridge preflight and tokenizer passed.",
+      "evidence_path": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/credential-rotation.json",
+      "evidence_digest": "d59c68e97bdf3202be77f31b40d59fd5f6b6f7736b3b1886ace2b689d0db3711",
+      "mock_used": false
+    },
+    {
+      "name": "source-verification",
+      "command": "Scoped pytest, Ruff, Pyright, locked dependencies and dependency boundary checks",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Affected behavior, types, formatting and dependency boundaries pass.",
+      "actual": "150 scoped tests, zero Pyright diagnostics, Ruff and dependency boundaries passed.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": true
+    },
+    {
+      "name": "combined-role-journey",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Real deployed Data and Mac provider cooperate through provisioned mesh and existing manual services.",
+      "actual": "Independent mesh, Data and live provider checks passed. Combined target and operational provider recovery remain open.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    },
+    {
+      "name": "serving-activation",
+      "command": null,
+      "tool_version": null,
+      "status": "blocked",
+      "expected": "Serving trust, signed artifact and independent exact-bundle approval.",
+      "actual": "Disposable qualified artifact used test keys. Serving manifest remains disabled and independent serving approval has not occurred.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "findings": [
+    {
+      "id": "IMP06-005-prefill-latency",
+      "severity": "major",
+      "source_refs": [
+        "services/inference/src/care_link_inference/admission.py",
+        "tools/imp06_runtime/release_custody_records.py",
+        "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/evidence/qwen-workload.json"
+      ],
+      "affected_path_or_operation": "Worker summary prefill under concurrent load",
+      "problem": "Two roughly 3300-token inputs exceeded the absolute 30-second deadline on the selected laptop model.",
+      "recommendation": "Use the signed 2048-token function input ceiling and defer larger cases to the manual workflow.",
+      "verification": "Exact budget before reserve regression and ten successful real-model cases at up to 2035 tokens."
+    }
+  ],
+  "contract_changes": [
+    "Added closed signed release, evaluator and approval record types at the trusted composition boundary. Existing runtime and model routes are unchanged."
+  ],
+  "remaining_risks": [
+    "Run the entire Core, Data, Runtime, Inference and Mac bridge path in one provisioned synthetic target using the real authenticated LM Studio provider and durable Data.",
+    "Exercise authenticated real provider stop and restart and measure sustained manual continuity in that combined deployment.",
+    "Provision serving trust and obtain independent human approval of an exact serving artifact before activation. This authority is separate from automated implementation qualification."
+  ],
+  "handoff": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/005-deployment-release-qualification/handoff.md",
+  "is_example": false
+}

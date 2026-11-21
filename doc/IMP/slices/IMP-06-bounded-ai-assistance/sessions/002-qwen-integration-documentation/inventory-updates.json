@@ -1,0 +1,141 @@
+{
+  "decision": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+  "scope": "Only intentionally edited documentation and dependent inventories rebound; historical evidence receipts unchanged",
+  "updates": [
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/03-architecture-and-interfaces.md",
+      "previous_sha256": "a92bb34695af0693dd93aa3410fe3cdfb8084fc3e2281700e7792eb4350aa8e6",
+      "new_sha256": "ad8e271a6d5048d948437487f5d25a9d18368ec364195b816c62cc57e1b5fc98",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/README.md",
+      "previous_sha256": "539cf7c91833834e2bf4e59318bac7e14bb5c5d9660821f5e20da806b72a2673",
+      "new_sha256": "9803f020d015b089ce86d9b2752f9d64b024b41a848eb5f244adefabb4f1ed18",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/03-architecture-and-interfaces.md",
+      "previous_sha256": "a92bb34695af0693dd93aa3410fe3cdfb8084fc3e2281700e7792eb4350aa8e6",
+      "new_sha256": "ad8e271a6d5048d948437487f5d25a9d18368ec364195b816c62cc57e1b5fc98",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/README.md",
+      "previous_sha256": "539cf7c91833834e2bf4e59318bac7e14bb5c5d9660821f5e20da806b72a2673",
+      "new_sha256": "9803f020d015b089ce86d9b2752f9d64b024b41a848eb5f244adefabb4f1ed18",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/03-agentic-assistance-and-inference.md",
+      "previous_sha256": "e94dbec5a2668fc230d4cb7bcb6627d08c9ddf3ebf37bef2c33e5fa6e025dc33",
+      "new_sha256": "590c5181fe3aae776c422c37360b42bd05be582ce9bd4208f23a57e9038a0545",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/README.md",
+      "previous_sha256": "10c239f147efdd07b7dc877b3ca3a39b8729e855a78e5c083ec10e30973e7c53",
+      "new_sha256": "49f1d9c626e4fa92c8f9e08436d3b852132d4f376ae0b53f32bf96a25f1b2238",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/design-inventory.json",
+      "previous_sha256": "92e26a2a62f2bb93aedab01e063084917a7a16d8cd0bb6c92a337a8c5aca637e",
+      "new_sha256": "7f49641e8ddd5300d6c0d7696806df4bdc94d50bb4b33127821e03eb109cd18e",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "path": "doc/LLD/07-agent-runtime-and-inference.md",
+      "previous_sha256": "26cc28f46f7c4adda9f84f5ca2b03c2ffaaf0744c5a3f98c2bff92081c523e34",
+      "new_sha256": "a92bcaa85a75fdd8f0bec5fc522f441db53733166b116eb838c2a5f5f9093c57"
+    },
+    {
+      "path": "doc/LLD/README.md",
+      "previous_sha256": "5cd2fb83d38bbec5eae954855ccd69ff1af71214a6f1a4578cc0f1a2f7d753c5",
+      "new_sha256": "b01f7acce366c6811acb3d813aae54575882cf2fea2afd124fc4ea5c7f082def"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/03-architecture-and-interfaces.md",
+      "previous_sha256": "a92bb34695af0693dd93aa3410fe3cdfb8084fc3e2281700e7792eb4350aa8e6",
+      "new_sha256": "ad8e271a6d5048d948437487f5d25a9d18368ec364195b816c62cc57e1b5fc98",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/REQ/README.md",
+      "previous_sha256": "539cf7c91833834e2bf4e59318bac7e14bb5c5d9660821f5e20da806b72a2673",
+      "new_sha256": "9803f020d015b089ce86d9b2752f9d64b024b41a848eb5f244adefabb4f1ed18",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/03-agentic-assistance-and-inference.md",
+      "previous_sha256": "e94dbec5a2668fc230d4cb7bcb6627d08c9ddf3ebf37bef2c33e5fa6e025dc33",
+      "new_sha256": "590c5181fe3aae776c422c37360b42bd05be582ce9bd4208f23a57e9038a0545",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/README.md",
+      "previous_sha256": "10c239f147efdd07b7dc877b3ca3a39b8729e855a78e5c083ec10e30973e7c53",
+      "new_sha256": "49f1d9c626e4fa92c8f9e08436d3b852132d4f376ae0b53f32bf96a25f1b2238",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/HLD/design-inventory.json",
+      "previous_sha256": "92e26a2a62f2bb93aedab01e063084917a7a16d8cd0bb6c92a337a8c5aca637e",
+      "new_sha256": "7f49641e8ddd5300d6c0d7696806df4bdc94d50bb4b33127821e03eb109cd18e",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/LLD/07-agent-runtime-and-inference.md",
+      "previous_sha256": "26cc28f46f7c4adda9f84f5ca2b03c2ffaaf0744c5a3f98c2bff92081c523e34",
+      "new_sha256": "a92bcaa85a75fdd8f0bec5fc522f441db53733166b116eb838c2a5f5f9093c57",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/LLD/README.md",
+      "previous_sha256": "5cd2fb83d38bbec5eae954855ccd69ff1af71214a6f1a4578cc0f1a2f7d753c5",
+      "new_sha256": "b01f7acce366c6811acb3d813aae54575882cf2fea2afd124fc4ea5c7f082def",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "date": "2026-11-20",
+      "path": "doc/LLD/design-inventory.json",
+      "previous_sha256": "d8296c666132572bc8e4a511fbd1db933da146a485f3758445e8293cd1619240",
+      "new_sha256": "546e7d10f77a7cc23a3cbd00e6430b47681d8dddb78f6dfd01f9d1cbf7cce7d6",
+      "decision_record": "doc/decisions/2026-11-20-qwen-lm-studio-integration.md",
+      "reason": "Intentional current-model documentation overlay; historical decisions and machine/source pins preserved"
+    },
+    {
+      "path": "doc/IMP/README.md",
+      "previous_sha256": "bd3f4985212207962428b39b848655e1f0afa4f26a07277c6a71a95573b8face",
+      "new_sha256": "dedd999e2e48d7de1cef6562762a582e4581b3a73381d3b79fc4714a436edb61"
+    }
+  ]
+}

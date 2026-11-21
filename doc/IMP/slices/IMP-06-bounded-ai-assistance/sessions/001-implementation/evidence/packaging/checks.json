@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-11-20T18:45:47.517602+00:00",
+  "checks": [
+    {
+      "name": "restricted-core-smoke",
+      "exit_code": 0
+    },
+    {
+      "name": "qualification-source-smoke-and-hash-parity",
+      "exit_code": 0,
+      "packaged_file_count": 197
+    }
+  ],
+  "images": {
+    "core": "sha256:6e69e7da6a8d56a633fc790d1489a49b0849c649a1c6aa5fb49ab08644339654",
+    "qualification": "sha256:34a5bd6a5740c36d1630f144e8c3fb90257bcba0a4199837a86f64c1414c4be0"
+  }
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "command": [
+      "uv",
+      "lock",
+      "--check"
+    ],
+    "started_at": "2026-11-20T18:42:32.135179+00:00",
+    "completed_at": "2026-11-20T18:42:32.211460+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/attempt001/01.log"
+  },
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "tools/generate_contracts.py",
+      "--check"
+    ],
+    "started_at": "2026-11-20T18:42:32.211604+00:00",
+    "completed_at": "2026-11-20T18:42:32.539478+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/attempt001/02.log"
+  },
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "tools/check_boundaries.py"
+    ],
+    "started_at": "2026-11-20T18:42:32.539668+00:00",
+    "completed_at": "2026-11-20T18:42:32.839750+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/attempt001/03.log"
+  },
+  {
+    "command": [
+      ".venv/bin/ruff",
+      "check",
+      "."
+    ],
+    "started_at": "2026-11-20T18:42:32.839928+00:00",
+    "completed_at": "2026-11-20T18:42:32.866754+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/attempt001/04.log"
+  },
+  {
+    "command": [
+      ".venv/bin/ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "started_at": "2026-11-20T18:42:32.866909+00:00",
+    "completed_at": "2026-11-20T18:42:32.888077+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/attempt001/05.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "started_at": "2026-11-20T18:42:32.888255+00:00",
+    "completed_at": "2026-11-20T18:42:36.134709+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/attempt001/06.log"
+  },
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "pytest",
+      "services/runtime/tests",
+      "services/inference/tests",
+      "host/inference-bridge/tests",
+      "packages/workload-trust/tests",
+      "services/data/tests/test_assistance.py",
+      "services/data/tests/test_assistance_jobs.py",
+      "services/data/tests/test_core_assistance_chain.py",
+      "tests/unit/test_imp06_composition.py",
+      "packages/policy-input/tests/test_assistance_policy.py",
+      "tests/evaluation",
+      "-q",
+      "--tb=short"
+    ],
+    "started_at": "2026-11-20T18:42:36.135095+00:00",
+    "completed_at": "2026-11-20T18:43:05.279935+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/attempt001/07.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "test"
+    ],
+    "started_at": "2026-11-20T18:43:05.280149+00:00",
+    "completed_at": "2026-11-20T18:43:14.180149+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/attempt001/08.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "started_at": "2026-11-20T18:43:14.180653+00:00",
+    "completed_at": "2026-11-20T18:43:16.164311+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/attempt001/09.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "build"
+    ],
+    "started_at": "2026-11-20T18:43:16.164530+00:00",
+    "completed_at": "2026-11-20T18:43:18.712889+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/attempt001/10.log"
+  },
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "tools.imp05_verification.validate_plan"
+    ],
+    "started_at": "2026-11-20T18:43:18.713107+00:00",
+    "completed_at": "2026-11-20T18:43:18.952496+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/attempt001/11.log"
+  }
+]

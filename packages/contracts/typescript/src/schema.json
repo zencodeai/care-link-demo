@@ -6011,6 +6011,243 @@
                 "path_arguments"
               ],
               "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "task_create"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/TaskCreate"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_task_create"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "task_read"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/Empty"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_task_read"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "task_cancel"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/RevisionCommand"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_task_cancel"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "task_revise"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/TaskCreate"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_task_revise"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "draft_read"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/Empty"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_draft_read"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "draft_review"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/ReviewCommand"
+                },
+                "path_arguments": {
+                  "$ref": "#/$defs/Path_draft_review"
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "assistance_status"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/Empty"
+                },
+                "path_arguments": {
+                  "type": "object",
+                  "properties": {},
+                  "required": [],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "assistance_task_context"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/Empty"
+                },
+                "path_arguments": {
+                  "type": "object",
+                  "properties": {
+                    "task_id": {
+                      "$ref": "#/$defs/Id"
+                    }
+                  },
+                  "required": [
+                    "task_id"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "const": "assistance_draft_context"
+                },
+                "operation_id": {
+                  "$ref": "#/$defs/Id"
+                },
+                "arguments": {
+                  "$ref": "#/$defs/Empty"
+                },
+                "path_arguments": {
+                  "type": "object",
+                  "properties": {
+                    "draft_id": {
+                      "$ref": "#/$defs/Id"
+                    }
+                  },
+                  "required": [
+                    "draft_id"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "action",
+                "operation_id",
+                "arguments",
+                "path_arguments"
+              ],
+              "additionalProperties": false
             }
           ]
         }
@@ -8186,6 +8423,1884 @@
       ],
       "additionalProperties": false
     },
+    "TaskCreate": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "function": {
+          "type": "string",
+          "enum": [
+            "client_navigation",
+            "carer_context",
+            "worker_summary",
+            "worker_wording",
+            "referral_preparation",
+            "handoff_tracking",
+            "receiver_completeness",
+            "plan_draft",
+            "follow_up_draft",
+            "supervisor_queue",
+            "incident_draft",
+            "evidence_draft",
+            "training_debrief"
+          ]
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "goal": {
+          "type": "string",
+          "enum": [
+            "prepare_options",
+            "prepare_summary",
+            "prepare_draft",
+            "check_progress",
+            "assemble_evidence"
+          ]
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "completion": {
+          "type": "string",
+          "enum": [
+            "draft_ready",
+            "options_observed",
+            "receipt_observed",
+            "evidence_ready"
+          ]
+        },
+        "binding": {
+          "$ref": "#/$defs/TaskBinding"
+        }
+      },
+      "required": [
+        "expected_revision",
+        "function",
+        "scope",
+        "goal",
+        "inputs",
+        "completion",
+        "binding"
+      ],
+      "additionalProperties": false
+    },
+    "TaskBinding": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/SessionTaskBinding"
+        },
+        {
+          "$ref": "#/$defs/PackageTaskBinding"
+        },
+        {
+          "$ref": "#/$defs/OperationsTaskBinding"
+        },
+        {
+          "$ref": "#/$defs/ArtifactTaskBinding"
+        },
+        {
+          "$ref": "#/$defs/AuditTaskBinding"
+        },
+        {
+          "$ref": "#/$defs/TrainingTaskBinding"
+        }
+      ]
+    },
+    "SessionTaskBinding": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "session"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "kind",
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "PackageTaskBinding": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "receiving_package"
+        },
+        "dispatch_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "recipient_service_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "kind",
+        "dispatch_id",
+        "recipient_service_id"
+      ],
+      "additionalProperties": false
+    },
+    "OperationsTaskBinding": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "operations"
+        },
+        "capability": {
+          "type": "string",
+          "enum": [
+            "manual",
+            "ai",
+            "security",
+            "recovery"
+          ]
+        },
+        "incident_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "capability",
+        "incident_id"
+      ],
+      "additionalProperties": false
+    },
+    "ArtifactTaskBinding": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "artifact_review"
+        },
+        "artifact_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "kind",
+        "artifact_digest"
+      ],
+      "additionalProperties": false
+    },
+    "AuditTaskBinding": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "audit_grant"
+        },
+        "grant_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "from": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "to": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "kind",
+        "grant_id",
+        "from",
+        "to"
+      ],
+      "additionalProperties": false
+    },
+    "TrainingTaskBinding": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "training_scenario"
+        },
+        "scenario_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "kind",
+        "scenario_id"
+      ],
+      "additionalProperties": false
+    },
+    "TaskView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "function": {
+          "type": "string",
+          "enum": [
+            "client_navigation",
+            "carer_context",
+            "worker_summary",
+            "worker_wording",
+            "referral_preparation",
+            "handoff_tracking",
+            "receiver_completeness",
+            "plan_draft",
+            "follow_up_draft",
+            "supervisor_queue",
+            "incident_draft",
+            "evidence_draft",
+            "training_debrief"
+          ]
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "requested",
+            "scoped",
+            "planning",
+            "awaiting_authorization",
+            "running",
+            "awaiting_observation",
+            "awaiting_human",
+            "completed",
+            "cancelled",
+            "failed"
+          ]
+        },
+        "human_owner_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "budgets": {
+          "$ref": "#/$defs/Budgets"
+        },
+        "steps_used": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "tools_used": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "control_epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "completion": {
+          "type": "string",
+          "enum": [
+            "draft_ready",
+            "options_observed",
+            "receipt_observed",
+            "evidence_ready"
+          ]
+        },
+        "safe_reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 96
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "binding": {
+          "$ref": "#/$defs/TaskBinding"
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "function",
+        "scope",
+        "state",
+        "human_owner_id",
+        "deadline",
+        "budgets",
+        "steps_used",
+        "tools_used",
+        "control_epoch",
+        "completion",
+        "safe_reason",
+        "binding"
+      ],
+      "additionalProperties": false
+    },
+    "Budgets": {
+      "type": "object",
+      "properties": {
+        "max_steps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "max_tools": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "max_proposal_attempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2
+        },
+        "context_tokens": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8192
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1024
+        }
+      },
+      "required": [
+        "max_steps",
+        "max_tools",
+        "max_proposal_attempts",
+        "context_tokens",
+        "output_tokens"
+      ],
+      "additionalProperties": false
+    },
+    "DraftView": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "task_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "summary",
+            "message",
+            "referral",
+            "plan",
+            "incident",
+            "evidence",
+            "clarification"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 12000
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "payload_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_vector": {
+          "$ref": "#/$defs/RevisionVector"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "proposed",
+            "review_pending",
+            "accepted",
+            "rejected",
+            "stale"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "task_id",
+        "kind",
+        "text",
+        "sources",
+        "payload_digest",
+        "source_vector",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "LeaseCommand": {
+      "type": "object",
+      "properties": {
+        "expected_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "step_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "fence": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "expected_revision",
+        "step_id",
+        "fence"
+      ],
+      "additionalProperties": false
+    },
+    "LeaseView": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "step_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "fence": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "task_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "task_id",
+        "step_id",
+        "fence",
+        "expires_at",
+        "task_revision"
+      ],
+      "additionalProperties": false
+    },
+    "Proposal": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "step_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "fence": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "expected_task_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "candidate_text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 12000
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "next": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ToolArguments"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "completion_claim": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "task_id",
+        "step_id",
+        "fence",
+        "expected_task_revision",
+        "candidate_text",
+        "sources",
+        "next",
+        "completion_claim"
+      ],
+      "additionalProperties": false
+    },
+    "ToolArguments": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/Tool_session_read"
+        },
+        {
+          "$ref": "#/$defs/Tool_plan_read"
+        },
+        {
+          "$ref": "#/$defs/Tool_protocol_read"
+        },
+        {
+          "$ref": "#/$defs/Tool_directory_search"
+        },
+        {
+          "$ref": "#/$defs/Tool_queue_status"
+        },
+        {
+          "$ref": "#/$defs/Tool_receipt_read"
+        },
+        {
+          "$ref": "#/$defs/Tool_draft_prepare"
+        },
+        {
+          "$ref": "#/$defs/Tool_review_request"
+        },
+        {
+          "$ref": "#/$defs/Tool_package_read"
+        },
+        {
+          "$ref": "#/$defs/Tool_health_read"
+        },
+        {
+          "$ref": "#/$defs/Tool_evidence_read"
+        }
+      ]
+    },
+    "Tool_session_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "session_read"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "needs",
+              "preferences",
+              "observations",
+              "rationale",
+              "plan.warning_signs",
+              "plan.strategies",
+              "plan.responders",
+              "plan.medication_report",
+              "plan.advance_wishes",
+              "plan.contacts",
+              "plan.substitute_decision_maker",
+              "summary",
+              "outcome"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "tool",
+        "session_id",
+        "fields"
+      ],
+      "additionalProperties": false
+    },
+    "Tool_plan_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "plan_read"
+        },
+        "plan_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "needs",
+              "preferences",
+              "observations",
+              "rationale",
+              "plan.warning_signs",
+              "plan.strategies",
+              "plan.responders",
+              "plan.medication_report",
+              "plan.advance_wishes",
+              "plan.contacts",
+              "plan.substitute_decision_maker",
+              "summary",
+              "outcome"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "tool",
+        "plan_id",
+        "fields"
+      ],
+      "additionalProperties": false
+    },
+    "Tool_protocol_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "protocol_read"
+        },
+        "artifact_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "section_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 96
+        },
+        "locale": {
+          "$ref": "#/$defs/Locale"
+        }
+      },
+      "required": [
+        "tool",
+        "artifact_digest",
+        "section_id",
+        "locale"
+      ],
+      "additionalProperties": false
+    },
+    "Tool_directory_search": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "directory_search"
+        },
+        "query": {
+          "$ref": "#/$defs/DirectoryQuery"
+        }
+      },
+      "required": [
+        "tool",
+        "query"
+      ],
+      "additionalProperties": false
+    },
+    "Tool_queue_status": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "queue_status"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "tool",
+        "session_id"
+      ],
+      "additionalProperties": false
+    },
+    "Tool_receipt_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "receipt_read"
+        },
+        "dispatch_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "tool",
+        "dispatch_id"
+      ],
+      "additionalProperties": false
+    },
+    "Tool_draft_prepare": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "draft_prepare"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "summary",
+            "message",
+            "referral",
+            "plan",
+            "incident",
+            "evidence",
+            "clarification"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 1,
+          "maxItems": 32
+        }
+      },
+      "required": [
+        "tool",
+        "kind",
+        "text",
+        "sources"
+      ],
+      "additionalProperties": false
+    },
+    "Tool_review_request": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "review_request"
+        },
+        "draft_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "tool",
+        "draft_id"
+      ],
+      "additionalProperties": false
+    },
+    "Tool_package_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "package_read"
+        },
+        "dispatch_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "recipient_service_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "tool",
+        "dispatch_id",
+        "recipient_service_id"
+      ],
+      "additionalProperties": false
+    },
+    "Tool_health_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "health_read"
+        },
+        "capability": {
+          "type": "string",
+          "enum": [
+            "manual",
+            "ai",
+            "security",
+            "recovery"
+          ]
+        },
+        "incident_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tool",
+        "capability",
+        "incident_id"
+      ],
+      "additionalProperties": false
+    },
+    "Tool_evidence_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "evidence_read"
+        },
+        "binding": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ArtifactTaskBinding"
+            },
+            {
+              "$ref": "#/$defs/AuditTaskBinding"
+            },
+            {
+              "$ref": "#/$defs/TrainingTaskBinding"
+            }
+          ]
+        }
+      },
+      "required": [
+        "tool",
+        "binding"
+      ],
+      "additionalProperties": false
+    },
+    "ToolInvoke": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "step_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "invocation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "fence": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "expected_task_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "arguments": {
+          "$ref": "#/$defs/ToolArguments"
+        }
+      },
+      "required": [
+        "task_id",
+        "step_id",
+        "invocation_id",
+        "fence",
+        "expected_task_revision",
+        "arguments"
+      ],
+      "additionalProperties": false
+    },
+    "Observation": {
+      "type": "object",
+      "properties": {
+        "observation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "invocation_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "task_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "task_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "taint": {
+          "const": "untrusted"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "result": {
+          "$ref": "#/$defs/ObservationOutcome"
+        }
+      },
+      "required": [
+        "observation_id",
+        "invocation_id",
+        "task_id",
+        "task_revision",
+        "taint",
+        "sources",
+        "result"
+      ],
+      "additionalProperties": false
+    },
+    "ObservationOutcome": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/ToolSuccess"
+        },
+        {
+          "$ref": "#/$defs/ToolFailure"
+        }
+      ]
+    },
+    "ToolSuccess": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "success"
+        },
+        "value": {
+          "$ref": "#/$defs/ToolResult"
+        }
+      },
+      "required": [
+        "kind",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "ToolResult": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/Observation_session_read"
+        },
+        {
+          "$ref": "#/$defs/Observation_plan_read"
+        },
+        {
+          "$ref": "#/$defs/Observation_protocol_read"
+        },
+        {
+          "$ref": "#/$defs/Observation_directory_search"
+        },
+        {
+          "$ref": "#/$defs/Observation_queue_status"
+        },
+        {
+          "$ref": "#/$defs/Observation_receipt_read"
+        },
+        {
+          "$ref": "#/$defs/Observation_draft_prepare"
+        },
+        {
+          "$ref": "#/$defs/Observation_review_request"
+        },
+        {
+          "$ref": "#/$defs/Observation_package_read"
+        },
+        {
+          "$ref": "#/$defs/Observation_health_read"
+        },
+        {
+          "$ref": "#/$defs/Observation_evidence_read"
+        }
+      ]
+    },
+    "Observation_session_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "session_read"
+        },
+        "session": {
+          "$ref": "#/$defs/SessionView"
+        },
+        "assertions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AssertionView"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        }
+      },
+      "required": [
+        "tool",
+        "session",
+        "assertions"
+      ],
+      "additionalProperties": false
+    },
+    "Observation_plan_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "plan_read"
+        },
+        "plan": {
+          "$ref": "#/$defs/PlanView"
+        }
+      },
+      "required": [
+        "tool",
+        "plan"
+      ],
+      "additionalProperties": false
+    },
+    "Observation_protocol_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "protocol_read"
+        },
+        "template_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        }
+      },
+      "required": [
+        "tool",
+        "template_id",
+        "text",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "Observation_directory_search": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "directory_search"
+        },
+        "page": {
+          "$ref": "#/$defs/DirectoryPage"
+        }
+      },
+      "required": [
+        "tool",
+        "page"
+      ],
+      "additionalProperties": false
+    },
+    "Observation_queue_status": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "queue_status"
+        },
+        "queue": {
+          "$ref": "#/$defs/QueueView"
+        }
+      },
+      "required": [
+        "tool",
+        "queue"
+      ],
+      "additionalProperties": false
+    },
+    "Observation_receipt_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "receipt_read"
+        },
+        "receipt": {
+          "$ref": "#/$defs/ReceiptView"
+        }
+      },
+      "required": [
+        "tool",
+        "receipt"
+      ],
+      "additionalProperties": false
+    },
+    "Observation_draft_prepare": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "draft_prepare"
+        },
+        "draft": {
+          "$ref": "#/$defs/DraftView"
+        }
+      },
+      "required": [
+        "tool",
+        "draft"
+      ],
+      "additionalProperties": false
+    },
+    "Observation_review_request": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "review_request"
+        },
+        "review_item_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "state": {
+          "const": "pending"
+        }
+      },
+      "required": [
+        "tool",
+        "review_item_id",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "Observation_package_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "package_read"
+        },
+        "package": {
+          "$ref": "#/$defs/ReferralPayload"
+        }
+      },
+      "required": [
+        "tool",
+        "package"
+      ],
+      "additionalProperties": false
+    },
+    "Observation_health_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "health_read"
+        },
+        "health": {
+          "$ref": "#/$defs/HealthView"
+        }
+      },
+      "required": [
+        "tool",
+        "health"
+      ],
+      "additionalProperties": false
+    },
+    "HealthView": {
+      "type": "object",
+      "properties": {
+        "capability": {
+          "type": "string",
+          "enum": [
+            "static",
+            "private_help",
+            "manual",
+            "ai",
+            "dispatch",
+            "recovery"
+          ]
+        },
+        "ready": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 96
+          },
+          "minItems": 0,
+          "maxItems": 16
+        },
+        "epoch": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "serving_generation": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "capability",
+        "ready",
+        "reasons",
+        "epoch",
+        "serving_generation"
+      ],
+      "additionalProperties": false
+    },
+    "Observation_evidence_read": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "const": "evidence_read"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "approved_summary": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 2000
+        }
+      },
+      "required": [
+        "tool",
+        "evidence",
+        "approved_summary"
+      ],
+      "additionalProperties": false
+    },
+    "ToolFailure": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "failure"
+        },
+        "code": {
+          "type": "string",
+          "enum": [
+            "INVALID_REQUEST",
+            "UNAUTHENTICATED",
+            "NOT_AUTHORIZED",
+            "NOT_FOUND",
+            "ASSURANCE_REQUIRED",
+            "REVISION_CONFLICT",
+            "IDEMPOTENCY_CONFLICT",
+            "REVIEW_REQUIRED",
+            "AUTHORITY_UNAVAILABLE",
+            "POLICY_UNAVAILABLE",
+            "AUDIT_UNAVAILABLE",
+            "DEPENDENCY_UNAVAILABLE",
+            "RATE_LIMITED",
+            "RESOURCE_BUSY",
+            "CONTEXT_STALE",
+            "DELIVERY_UNKNOWN",
+            "COMMIT_UNKNOWN",
+            "CURSOR_EXPIRED",
+            "CAPABILITY_DISABLED",
+            "TOKEN_EXPIRED",
+            "TOKEN_USED",
+            "REPLACEMENT_UNAVAILABLE",
+            "DEADLINE_EXCEEDED"
+          ]
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "safe_reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 96
+        }
+      },
+      "required": [
+        "kind",
+        "code",
+        "retryable",
+        "safe_reason"
+      ],
+      "additionalProperties": false
+    },
+    "RuntimeInferenceRequest": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "step_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "fence": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "expected_task_revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        }
+      },
+      "required": [
+        "task_id",
+        "step_id",
+        "fence",
+        "expected_task_revision"
+      ],
+      "additionalProperties": false
+    },
+    "InferenceRequest": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "task_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "step_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "fence": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$",
+          "maxLength": 19,
+          "x-decimalMaximum": "9223372036854775807",
+          "description": "Canonical decimal; semantic maximum 9223372036854775807, checked by local validator."
+        },
+        "function": {
+          "type": "string",
+          "enum": [
+            "client_navigation",
+            "carer_context",
+            "worker_summary",
+            "worker_wording",
+            "referral_preparation",
+            "handoff_tracking",
+            "receiver_completeness",
+            "plan_draft",
+            "follow_up_draft",
+            "supervisor_queue",
+            "incident_draft",
+            "evidence_draft",
+            "training_debrief"
+          ]
+        },
+        "model_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "prompt_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ContextItem"
+          },
+          "minItems": 1,
+          "maxItems": 64
+        },
+        "budgets": {
+          "$ref": "#/$defs/Budgets"
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        }
+      },
+      "required": [
+        "job_id",
+        "task_id",
+        "step_id",
+        "fence",
+        "function",
+        "model_digest",
+        "prompt_digest",
+        "items",
+        "budgets",
+        "deadline"
+      ],
+      "additionalProperties": false
+    },
+    "ContextItem": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "label": {
+          "type": "string",
+          "enum": [
+            "approved_instruction",
+            "approved_fact",
+            "structured_state",
+            "untrusted_report",
+            "untrusted_observation"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 12000
+        },
+        "critical": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "source",
+        "label",
+        "text",
+        "critical"
+      ],
+      "additionalProperties": false
+    },
+    "InferenceResult": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "completed",
+            "timed_out",
+            "cancelled",
+            "compute_unknown",
+            "rejected"
+          ]
+        },
+        "proposal": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Proposal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "input_tokens": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "model_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "safe_reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 96
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "job_id",
+        "state",
+        "proposal",
+        "input_tokens",
+        "output_tokens",
+        "model_digest",
+        "safe_reason"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_task_create": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_task_create"
+        },
+        "arguments": {
+          "$ref": "#/$defs/TaskCreate"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_task_create": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "Gateway_task_read": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_task_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_task_read": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_task_cancel": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_task_cancel"
+        },
+        "arguments": {
+          "$ref": "#/$defs/RevisionCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_task_cancel": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_task_revise": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_task_revise"
+        },
+        "arguments": {
+          "$ref": "#/$defs/TaskCreate"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_task_revise": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_draft_read": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_draft_read"
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_draft_read": {
+      "type": "object",
+      "properties": {
+        "draft_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "draft_id"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_draft_review": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "$ref": "#/$defs/Path_draft_review"
+        },
+        "arguments": {
+          "$ref": "#/$defs/ReviewCommand"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Path_draft_review": {
+      "type": "object",
+      "properties": {
+        "draft_id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        }
+      },
+      "required": [
+        "draft_id"
+      ],
+      "additionalProperties": false
+    },
     "BrowserCsrf": {
       "type": "object",
       "properties": {
@@ -8879,6 +10994,419 @@
           "additionalProperties": false
         }
       ]
+    },
+    "AssistanceStatus": {
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 96
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "functions": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "worker_summary"
+            ]
+          },
+          "maxItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "available",
+        "reason",
+        "functions"
+      ],
+      "additionalProperties": false
+    },
+    "AssistanceTaskContext": {
+      "type": "object",
+      "properties": {
+        "task": {
+          "$ref": "#/$defs/TaskView"
+        },
+        "draft_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 96
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "execution_fence": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,18})$"
+        }
+      },
+      "required": [
+        "task",
+        "draft_id",
+        "available",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "AssistanceDraftContext": {
+      "type": "object",
+      "properties": {
+        "draft": {
+          "$ref": "#/$defs/DraftView"
+        },
+        "original_text": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 12000
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "$ref": "#/$defs/SourceRef"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 0,
+                "maxLength": 12000
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "source_url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://",
+                "maxLength": 2048
+              },
+              "source_title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300
+              }
+            },
+            "required": [
+              "ref",
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 32
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expected_effect": {
+          "const": "unsent_draft"
+        },
+        "ai_provenance": {
+          "const": true
+        }
+      },
+      "required": [
+        "draft",
+        "original_text",
+        "sources",
+        "scope",
+        "expires_at",
+        "expected_effect",
+        "ai_provenance"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_assistance_status": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_assistance_task_context": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "type": "object",
+          "properties": {
+            "task_id": {
+              "$ref": "#/$defs/Id"
+            }
+          },
+          "required": [
+            "task_id"
+          ],
+          "additionalProperties": false
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_assistance_draft_context": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "type": "object",
+          "properties": {
+            "draft_id": {
+              "$ref": "#/$defs/Id"
+            }
+          },
+          "required": [
+            "draft_id"
+          ],
+          "additionalProperties": false
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": [
+        "path_arguments",
+        "arguments",
+        "delegation",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "KnowledgeQuery": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "locale": {
+          "enum": [
+            "en-CA",
+            "fr-CA"
+          ]
+        }
+      },
+      "required": [
+        "query",
+        "locale"
+      ],
+      "additionalProperties": false
+    },
+    "KnowledgeEntry": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 2048,
+          "pattern": "^https://"
+        },
+        "source_title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "locale": {
+          "enum": [
+            "en-CA",
+            "fr-CA"
+          ]
+        }
+      },
+      "required": [
+        "source",
+        "title",
+        "text",
+        "source_url",
+        "source_title",
+        "locale"
+      ],
+      "additionalProperties": false
+    },
+    "KnowledgeResults": {
+      "type": "object",
+      "properties": {
+        "catalog_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/KnowledgeEntry"
+          },
+          "maxItems": 4
+        },
+        "notice": {
+          "const": "synthetic_demo_information"
+        }
+      },
+      "required": [
+        "catalog_digest",
+        "entries",
+        "notice"
+      ],
+      "additionalProperties": false
+    },
+    "RuntimeWork": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "task_id": {
+              "$ref": "#/$defs/Id"
+            },
+            "task_revision": {
+              "type": "string",
+              "pattern": "^[1-9][0-9]{0,18}$"
+            },
+            "fence": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]{0,18})$"
+            }
+          },
+          "required": [
+            "task_id",
+            "task_revision",
+            "fence"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "task_id": {
+              "type": "null"
+            },
+            "task_revision": {
+              "type": "null"
+            },
+            "fence": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "task_id",
+            "task_revision",
+            "fence"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "RuntimeWorkItem": {
+      "$ref": "#/$defs/RuntimeWork"
+    },
+    "RuntimeWorkRequest": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "ModelEvidenceSelection": {
+      "type": "object",
+      "properties": {
+        "selected_indices": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 63
+          },
+          "minItems": 1,
+          "maxItems": 12,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "selected_indices"
+      ],
+      "additionalProperties": false
     },
     "OwnReportPage": {
       "type": "object",
