@@ -18,7 +18,21 @@ from care_link_contracts import CONTRACT_NAMES, parse_contract, validate_contrac
 from care_link_domain import Actor, ManualError, PolicyPort
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 
+from .governance_bindings import ROUTES as GOVERNANCE_ROUTES
 from .manual_identity import canonical, fixed_origin
+
+GOVERNANCE_PURPOSES = {
+    route.action: (
+        "security"
+        if route.action.startswith("incident_")
+        else "audit"
+        if route.action in {"audit_query", "metrics_query", "evidence_export", "audit_export_read"}
+        else "service_operations"
+        if route.action == "health_read"
+        else "governance"
+    )
+    for route in GOVERNANCE_ROUTES
+}
 
 Record = dict[str, object]
 
@@ -65,7 +79,9 @@ class SignedEnvelopeFactory:
         return {
             "session_id": resource,
             "subject_id": None,
-            "purpose": "service_operations"
+            "purpose": GOVERNANCE_PURPOSES[action]
+            if action in GOVERNANCE_PURPOSES
+            else "service_operations"
             if action.startswith("workforce_") or action in {"queue_list", "control_change"}
             else "follow_up"
             if action.startswith(
@@ -164,7 +180,7 @@ class SignedEnvelopeFactory:
             )
         ).hexdigest()
         metadata_args: Record = {"action": action, "scope": scope, "payload_digest": payload_digest}
-        if action.startswith(
+        if action in GOVERNANCE_PURPOSES or action.startswith(
             (
                 "plan_",
                 "consent_",

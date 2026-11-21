@@ -1,0 +1,32 @@
+{
+  "asvs": {
+    "url": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/en/0x17-V8-Authorization.md",
+    "sha256": "60c188b1703cab2086841d8f1b4adc0ededf66ed38c676a11bb92347646b5330",
+    "bytes": 5920,
+    "retrieved_at": "2026-11-21T16:19:03.725394+00:00"
+  },
+  "llm01": {
+    "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+    "sha256": "c140019072a7e8f20234a3d8a4fa4d7779bb509377c852688948d37e8c3ae620",
+    "bytes": 365706,
+    "retrieved_at": "2026-11-21T16:19:03.899117+00:00"
+  },
+  "llm06": {
+    "url": "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/",
+    "sha256": "1effcd7575c6454680b932c9970665a205d9165776fc83581e8bb5825c73c7bf",
+    "bytes": 370891,
+    "retrieved_at": "2026-11-21T16:19:04.177669+00:00"
+  },
+  "agentic": {
+    "url": "https://genai.owasp.org/download/52117/",
+    "sha256": "a2db94cd00b08e0b3a5e5b619afe024bdbcd74503111085705e4f3dd886fcb5c",
+    "bytes": 1274186,
+    "retrieved_at": "2026-11-21T16:19:06.304305+00:00"
+  },
+  "atlas": {
+    "url": "https://raw.githubusercontent.com/mitre-atlas/atlas-data/f56c1468731d6428e5bf875263b4643b46d67437/dist/v6/ATLAS-2026.10.yaml",
+    "sha256": "ac41ee9f99a47084ba5fdfc77ae83a28687e12390240fffeb37df7914ffe142d",
+    "bytes": 1154660,
+    "retrieved_at": "2026-11-21T16:19:06.622516+00:00"
+  }
+}

@@ -1,0 +1,35 @@
+
+> care-link-development@0.1.0 test /Users/main/Workspace/projects/care-link/care-link-demo
+> vitest run
+
+
+ RUN  v5.1.0 /Users/main/Workspace/projects/care-link/care-link-demo
+
+ ❯ apps/web/src/governance/GovernanceApp.test.tsx (15 tests | 1 failed) 1213ms
+   × clears audit evidence on expired authority and retains unsent form values in memory 55ms
+
+ Test Files  1 failed | 19 passed (20)
+      Tests  1 failed | 221 passed (222)
+   Start at  11:33:23
+   Duration  8.99s (tests 59%, environment 20%, import 16%, transform 6%)
+
+ ELIFECYCLE  Test failed. See above for more details.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/src/governance/GovernanceApp.test.tsx > clears audit evidence on expired authority and retains unsent form values in memory
+Error: expect(element).not.toBeInTheDocument()
+
+expected document not to contain element, found <dd>
+  artifact_register
+</dd> instead
+ ❯ apps/web/src/governance/GovernanceApp.test.tsx:383:55
+    381|   fireEvent.click(screen.getByRole("button", { name: text.check }));
+    382|   await screen.findByText(text.signed_out);
+    383|   expect(screen.queryByText("artifact_register")).not.toBeInTheDocumen…
+       |                                                       ^
+    384|   network.allow();
+    385|   fireEvent.click(screen.getByRole("button", { name: text.check }));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

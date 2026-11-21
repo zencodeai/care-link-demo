@@ -238,3 +238,26 @@ class Outcome:
 
 ROLES["referral_read"] = PARTICIPANTS | WORKFORCE
 ROLES["referral_context"] = PARTICIPANTS | WORKFORCE
+
+
+# Current IMP-08 human governance operation roles. Enforcer ACK is a separate workload path.
+GOVERNANCE_ROLES: dict[str, frozenset[str]] = {
+    "artifact_context": frozenset({"operator", "governance", "security"}),
+    "artifact_register": frozenset(["operator"]),
+    "artifact_review": frozenset(["governance", "security"]),
+    "activation_create": frozenset(["operator"]),
+    "exception_create": frozenset(["governance"]),
+    "incident_create": frozenset(["security", "operator"]),
+    "activation_read": frozenset(["operator", "governance", "security"]),
+    "activation_commit": frozenset(["operator"]),
+    "incident_read": frozenset(["operator", "security", "governance"]),
+    "audit_query": frozenset(["auditor"]),
+    "metrics_query": frozenset(["auditor", "supervisor", "governance"]),
+    "health_read": frozenset(["operator", "security"]),
+    "scoped_access_grant": frozenset(["governance", "security"]),
+    "incident_transition": frozenset(["security", "operator"]),
+    "evidence_export": frozenset(["auditor"]),
+    "audit_export_read": frozenset(["auditor"]),
+}
+GOVERNANCE_ACTIONS = frozenset(GOVERNANCE_ROLES)
+ROLES.update(GOVERNANCE_ROLES)

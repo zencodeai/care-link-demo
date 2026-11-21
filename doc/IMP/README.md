@@ -6,7 +6,7 @@
 
 Version 0.1 · 2026-11-06 · Proposed plan for human review. No application implementation, tool installation, host change or deployment is performed by this package.
 
-**Execution status.** [G-07 is automated-qualified for isolated synthetic follow-up and rights source](executions/2026-11-21-IMP-07/ledger.json). See the [IMP-07 handoff](slices/IMP-07-followup-and-rights/sessions/001-implementation/handoff.md). G-06 remains [automated-qualified for the worker-summary profile](executions/2026-11-20-IMP-06/ledger.json); prior evidence remains historical. Human review is deferred until after IMP-10. Backup erasure remains pending IMP-09; no deployment or publication follows from this implementation.
+**Execution status.** [G-08 is automated-qualified for isolated synthetic governance source/build](executions/2026-11-21-IMP-08/ledger.json). See the [IMP-08 handoff](slices/IMP-08-operational-governance/sessions/001-implementation/handoff.md). G-07 follow-up/rights and G-06 worker-summary qualification remain separately bound to their prior candidates. Human review is deferred until after IMP-10. IMP-08 live activation admits Rego policy artifacts; audit access is metadata-only. Backup recovery/erasure remains pending IMP-09; no deployment or publication follows from this implementation.
 
 Implement the accepted LLD as small, demonstrable service slices. Use Codex specialists for bounded analysis and scoped work and preserve one accountable integration owner. Security/governance controls are built into the earliest relevant behavior, not deferred to a final audit.
 

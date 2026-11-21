@@ -1,0 +1,493 @@
+[
+  {
+    "command": [
+      "uv",
+      "lock",
+      "--check"
+    ],
+    "started_at": "2026-11-21T16:41:21.622843+00:00",
+    "completed_at": "2026-11-21T16:41:21.634584+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/01.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "install",
+      "--offline",
+      "--frozen-lockfile",
+      "--lockfile-only",
+      "--ignore-scripts"
+    ],
+    "started_at": "2026-11-21T16:41:21.634771+00:00",
+    "completed_at": "2026-11-21T16:41:21.782668+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/02.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/generate_contracts.py",
+      "--check"
+    ],
+    "started_at": "2026-11-21T16:41:21.782854+00:00",
+    "completed_at": "2026-11-21T16:41:22.059164+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/03.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_boundaries.py"
+    ],
+    "started_at": "2026-11-21T16:41:22.059347+00:00",
+    "completed_at": "2026-11-21T16:41:22.447167+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/04.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_imp02_admission.py"
+    ],
+    "started_at": "2026-11-21T16:41:22.447326+00:00",
+    "completed_at": "2026-11-21T16:41:22.483499+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/05.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "check",
+      "."
+    ],
+    "started_at": "2026-11-21T16:41:22.483652+00:00",
+    "completed_at": "2026-11-21T16:41:22.527305+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/06.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "started_at": "2026-11-21T16:41:22.527474+00:00",
+    "completed_at": "2026-11-21T16:41:22.565148+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/07.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "started_at": "2026-11-21T16:41:22.565305+00:00",
+    "completed_at": "2026-11-21T16:41:26.274869+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/08.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "started_at": "2026-11-21T16:41:26.275082+00:00",
+    "completed_at": "2026-11-21T16:41:28.396651+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/09.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "lint"
+    ],
+    "started_at": "2026-11-21T16:41:28.396843+00:00",
+    "completed_at": "2026-11-21T16:41:31.831875+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/10.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "format:check"
+    ],
+    "started_at": "2026-11-21T16:41:31.832099+00:00",
+    "completed_at": "2026-11-21T16:41:32.859674+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/11.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "pytest",
+      "--tb=short"
+    ],
+    "started_at": "2026-11-21T16:41:32.859859+00:00",
+    "completed_at": "2026-11-21T16:45:26.673574+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/12.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/imp02/tsconfig.json"
+    ],
+    "started_at": "2026-11-21T16:45:26.673759+00:00",
+    "completed_at": "2026-11-21T16:45:27.254111+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/13.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/imp02",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-21T16:45:27.254398+00:00",
+    "completed_at": "2026-11-21T16:45:28.431932+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/14.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/imp02"
+    ],
+    "started_at": "2026-11-21T16:45:28.432183+00:00",
+    "completed_at": "2026-11-21T16:45:28.796501+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/15.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/imp03/tsconfig.json"
+    ],
+    "started_at": "2026-11-21T16:45:28.796710+00:00",
+    "completed_at": "2026-11-21T16:45:29.329892+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/16.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/imp03",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-21T16:45:29.330140+00:00",
+    "completed_at": "2026-11-21T16:45:30.295643+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/17.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/imp03"
+    ],
+    "started_at": "2026-11-21T16:45:30.295891+00:00",
+    "completed_at": "2026-11-21T16:45:30.592131+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/18.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/imp03-extended/tsconfig.json"
+    ],
+    "started_at": "2026-11-21T16:45:30.592369+00:00",
+    "completed_at": "2026-11-21T16:45:31.207770+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/19.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/imp03-extended",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-21T16:45:31.208049+00:00",
+    "completed_at": "2026-11-21T16:45:32.254335+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/20.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/imp03-extended"
+    ],
+    "started_at": "2026-11-21T16:45:32.254573+00:00",
+    "completed_at": "2026-11-21T16:45:32.604761+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/21.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/imp03-review/tsconfig.json"
+    ],
+    "started_at": "2026-11-21T16:45:32.605004+00:00",
+    "completed_at": "2026-11-21T16:45:33.189660+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/22.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/imp03-review",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-21T16:45:33.189924+00:00",
+    "completed_at": "2026-11-21T16:45:34.186769+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/23.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/imp03-review"
+    ],
+    "started_at": "2026-11-21T16:45:34.187035+00:00",
+    "completed_at": "2026-11-21T16:45:34.477551+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/24.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/imp04-live/tsconfig.json"
+    ],
+    "started_at": "2026-11-21T16:45:34.477781+00:00",
+    "completed_at": "2026-11-21T16:45:35.140272+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/25.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/imp04-live",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-21T16:45:35.140522+00:00",
+    "completed_at": "2026-11-21T16:45:36.475579+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/26.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/imp04-live"
+    ],
+    "started_at": "2026-11-21T16:45:36.475841+00:00",
+    "completed_at": "2026-11-21T16:45:36.936948+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/27.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/contract/tsconfig.json"
+    ],
+    "started_at": "2026-11-21T16:45:36.937181+00:00",
+    "completed_at": "2026-11-21T16:45:37.401170+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/28.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/contract",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-21T16:45:37.401470+00:00",
+    "completed_at": "2026-11-21T16:45:38.250781+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/29.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/contract"
+    ],
+    "started_at": "2026-11-21T16:45:38.251140+00:00",
+    "completed_at": "2026-11-21T16:45:38.498153+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/30.log"
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "tools/imp04_verification/review_accessibility.cjs"
+    ],
+    "started_at": "2026-11-21T16:45:38.498456+00:00",
+    "completed_at": "2026-11-21T16:45:38.517262+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/31.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tools/imp04_verification/review_accessibility.cjs"
+    ],
+    "started_at": "2026-11-21T16:45:38.517509+00:00",
+    "completed_at": "2026-11-21T16:45:38.748097+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/32.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "test"
+    ],
+    "started_at": "2026-11-21T16:45:38.748517+00:00",
+    "completed_at": "2026-11-21T16:45:47.994317+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/33.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "build"
+    ],
+    "started_at": "2026-11-21T16:45:47.994643+00:00",
+    "completed_at": "2026-11-21T16:45:51.014180+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/34.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/governance/tsconfig.json"
+    ],
+    "started_at": "2026-11-21T16:45:51.014460+00:00",
+    "completed_at": "2026-11-21T16:45:51.503000+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/35.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/governance",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-21T16:45:51.503324+00:00",
+    "completed_at": "2026-11-21T16:45:52.392788+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/36.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/governance"
+    ],
+    "started_at": "2026-11-21T16:45:52.393110+00:00",
+    "completed_at": "2026-11-21T16:45:52.643407+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/37.log"
+  },
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "tools.imp05_verification.validate_plan"
+    ],
+    "started_at": "2026-11-21T16:45:52.643681+00:00",
+    "completed_at": "2026-11-21T16:45:52.882374+00:00",
+    "exit_code": 0,
+    "log": "evidence/source/source003/38.log"
+  }
+]

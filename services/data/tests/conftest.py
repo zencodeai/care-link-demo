@@ -92,7 +92,12 @@ class Journal:
         self.records.append(request)
         tip = self.state.tip + 1
         self.state = replace(
-            self.state, tip=tip, restriction_barrier=tip, tip_digest=digest(request)
+            self.state,
+            tip=tip,
+            restriction_barrier=tip
+            if request.get("kind") == "restrict_intent"
+            else self.state.restriction_barrier,
+            tip_digest=digest(request),
         )
         return self.head()
 
@@ -134,6 +139,15 @@ def database() -> Iterator[Database]:
             )
             connection.execute(
                 (ROOT / "services/data/migrations/008_imp07_lifecycle.sql").read_text()
+            )
+            connection.execute(
+                (ROOT / "services/data/migrations/009_imp08_governance.sql").read_text()
+            )
+            connection.execute(
+                (ROOT / "services/data/migrations/010_imp08_evidence.sql").read_text()
+            )
+            connection.execute(
+                (ROOT / "services/data/migrations/011_imp08_custody_ordering.sql").read_text()
             )
         migrated = True
         with psycopg.connect(admin) as connection:
@@ -202,7 +216,8 @@ class Harness:
 def harness(database: Database) -> Harness:
     with psycopg.connect(database.admin) as connection:
         connection.execute(
-            "TRUNCATE lifecycle.scan_cursor,durable.duty_nonce,durable.duty_operation,"
+            "TRUNCATE governance.instance,governance.signer,governance.exception_rule,"
+            "lifecycle.scan_cursor,durable.duty_nonce,durable.duty_operation,"
             "durable.due_job,"
             "control.signal_receipt,control.signal_head,control.signal_source,"
             "recovery.command,control.guard,control.principal_guard,audit.head CASCADE"

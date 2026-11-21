@@ -29,6 +29,21 @@ class StorageActor(Protocol):
 # Fixed repository mapping. DTO JSON columns are content/state values, never a
 # caller-supplied operation name or SQL expression.
 TABLES: dict[str, tuple[str, tuple[str, ...]]] = {
+    "gov_human": ("governance.human_registry", ("account_id",)),
+    "gov_approval": ("governance.approval", ("id",)),
+    "gov_candidate": ("governance.candidate", ("digest",)),
+    "gov_signer": ("governance.signer", ("id",)),
+    "gov_instance": ("governance.instance", ("instance_id",)),
+    "gov_exception_rule": ("governance.exception_rule", ("policy_rule_id",)),
+    "gov_artifact": ("governance.artifact", ("digest",)),
+    "gov_review": ("governance.review", ("id",)),
+    "gov_activation": ("governance.activation", ("id",)),
+    "gov_ack": ("governance.ack", ("id",)),
+    "gov_exception": ("governance.exception", ("id",)),
+    "gov_incident": ("governance.incident", ("id",)),
+    "gov_scope_grant": ("access.audit_grant", ("id",)),
+    "gov_audit_export": ("audit.export_request", ("id",)),
+    "gov_metric_release": ("quality.metric_release", ("id",)),
     "post_crisis": ("care.post_crisis_event", ("id",)),
     "followup": ("care.follow_up", ("id",)),
     "inbox": ("care.inbox_message", ("id",)),
@@ -80,6 +95,11 @@ TABLES: dict[str, tuple[str, tuple[str, ...]]] = {
     "directory_quarantine": ("knowledge.quarantine", ("id",)),
 }
 JSON_COLUMNS = {
+    "metadata",
+    "manifest",
+    "request",
+    "query",
+    "cells",
     "selected",
     "source_vector",
     "receipt",
@@ -93,6 +113,8 @@ JSON_COLUMNS = {
 }
 APPEND_ONLY = frozenset(
     {
+        "gov_review",
+        "gov_exception",
         "post_crisis",
         "outcome",
         "referral_review",
@@ -104,7 +126,18 @@ APPEND_ONLY = frozenset(
         "directory_quarantine",
     }
 )
-READ_ONLY = APPEND_ONLY | {"delegation"}
+GOV_CUSTODY = frozenset(
+    {
+        "gov_human",
+        "gov_approval",
+        "gov_candidate",
+        "gov_signer",
+        "gov_instance",
+        "gov_exception_rule",
+        "gov_metric_release",
+    }
+)
+READ_ONLY = APPEND_ONLY | {"delegation"} | GOV_CUSTODY
 
 
 def _record(value: Record) -> Record:
@@ -158,7 +191,7 @@ class Transaction:
         columns = tuple(record)
         nonkeys = [column for column in columns if column not in keys]
         if repository in READ_ONLY:
-            if repository == "delegation":
+            if repository == "delegation" or repository in GOV_CUSTODY:
                 raise ValueError("Delegations require separate provisioning custody")
             self.connection.execute(
                 sql.SQL("INSERT INTO {} ({}) VALUES ({})").format(

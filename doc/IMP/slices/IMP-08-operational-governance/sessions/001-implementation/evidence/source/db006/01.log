@@ -1,0 +1,24 @@
+.....................................F.................................. [ 72%]
+...........................                                              [100%]
+=================================== FAILURES ===================================
+_ test_current_authority_rechecked_on_query_and_export_download[reviewer_disabled] _
+services/data/tests/test_imp08_evidence_postgres.py:157: in test_current_authority_rechecked_on_query_and_export_download
+    _, reviewer, auditor, data, _, query = audit_grant(harness)
+                                           ^^^^^^^^^^^^^^^^^^^^
+services/data/tests/test_imp08_evidence_postgres.py:86: in audit_grant
+    result = harness.service.scoped_access_grant(creator, str(uuid4()), data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/governance/evidence.py:148: in scoped_access_grant
+    return self._run(
+services/data/src/care_link_data/engine.py:804: in _run
+    raise ManualError("manual.deadline", 503)
+E   care_link_domain.ports.ManualError: manual.deadline
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/data/tests/test_imp08_evidence_postgres.py::test_current_authority_rechecked_on_query_and_export_download[reviewer_disabled]
+1 failed, 98 passed, 17 warnings in 22.91s

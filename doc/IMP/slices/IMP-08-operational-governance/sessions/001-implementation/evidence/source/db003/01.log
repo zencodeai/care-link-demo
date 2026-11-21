@@ -1,0 +1,60 @@
+..............F..F..FF................................................   [100%]
+=================================== FAILURES ===================================
+_____________________ test_restrictive_fence_precedes_ack ______________________
+services/data/tests/test_imp08_controls.py:293: in test_restrictive_fence_precedes_ack
+    assert h.read("SELECT epoch,mode FROM control.guard")[0] == (before + 1, "ai_disabled")
+E   AssertionError: assert (1, 'ai_disabled') == (2, 'ai_disabled')
+E     
+E     At index 0 diff: 1 != 2
+E     Use -v to get more diff
+_____________ test_principal_containment_is_bounded_and_journalled _____________
+services/data/tests/test_imp08_controls.py:365: in test_principal_containment_is_bounded_and_journalled
+    assert h.read("SELECT mode FROM control.guard")[0][0] == "normal"
+E   AssertionError: assert 'ai_disabled' == 'normal'
+E     
+E     - normal
+E     + ai_disabled
+_________ test_signed_enforcer_ack_has_workload_audit_and_current_boot _________
+services/data/src/care_link_data/store.py:416: in transaction
+    yield tx
+services/data/src/care_link_data/governance/ack.py:151: in _activation_ack
+    tx.connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.CheckViolation: new row for relation "duty_operation" violates check constraint "duty_operation_action_check"
+E   DETAIL:  Failing row contains (df4b3c2b-2ee9-4eab-a7ad-8dd7a92159d4, a67e2ada-e1b3-497e-92dd-00527a63152c, spiffe://care-link.demo/demo/enforcer, activation_ack, 41ebef75033407c90b183467b7468b4db80880009e7666d49289d37018d964cb, 5b54af0b-072c-4e37-981a-dcfd1578a947, 2, 4c4c720a-ec5b-4299-84a0-9c6d0592d8cd, 2026-11-21 16:26:30.486706+00, committed, null).
+
+The above exception was the direct cause of the following exception:
+services/data/tests/test_imp08_controls.py:495: in test_signed_enforcer_ack_has_workload_audit_and_current_boot
+    acknowledged = commands.activation_ack(actor, operation, payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/governance/ack.py:45: in activation_ack
+    return self._activation_ack(actor, key, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/governance/ack.py:73: in _activation_ack
+    with self.service.store.transaction(current, None) as tx:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py:162: in __exit__
+    self.gen.throw(value)
+services/data/src/care_link_data/store.py:420: in transaction
+    raise ManualError("manual.commit_unknown", 503) from error
+E   care_link_domain.ports.ManualError: manual.commit_unknown
+____________ test_signed_old_boot_and_wrong_registered_actor_denied ____________
+services/data/tests/test_imp08_controls.py:515: in test_signed_old_boot_and_wrong_registered_actor_denied
+    with pytest.raises(ManualError, match="exact_current_boot"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'exact_current_boot'
+E     Actual message: 'manual.commit_unknown'
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/data/tests/test_imp08_controls.py::test_restrictive_fence_precedes_ack
+FAILED services/data/tests/test_imp08_controls.py::test_principal_containment_is_bounded_and_journalled
+FAILED services/data/tests/test_imp08_controls.py::test_signed_enforcer_ack_has_workload_audit_and_current_boot
+FAILED services/data/tests/test_imp08_controls.py::test_signed_old_boot_and_wrong_registered_actor_denied
+4 failed, 66 passed, 17 warnings in 8.85s

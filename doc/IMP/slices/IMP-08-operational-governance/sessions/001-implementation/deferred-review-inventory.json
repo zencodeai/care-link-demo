@@ -1,0 +1,49 @@
+{
+  "stage_id": "IMP-08",
+  "state": "deferred_until_after_IMP10",
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/candidate-manifest.json",
+    "sha256": "cb2f075252901673015ca2490e8e6d59787afdd758d3ee282cbc5c6a402fd88f"
+  },
+  "human_results": [],
+  "issue_created": false,
+  "issue_url": null,
+  "review_agendas": [
+    {
+      "role": "operator",
+      "observations": [
+        "Policy-only activation exact change/digest/current-versus-desired and unknown outcome recovery",
+        "AI disable preserves manual service; missing boot cannot restore rights"
+      ]
+    },
+    {
+      "role": "security",
+      "observations": [
+        "Principal versus global incident scope and recovery authority clarity",
+        "Bounded containment rejects unsupported scope without widening"
+      ]
+    },
+    {
+      "role": "governance",
+      "observations": [
+        "Actual-human independent authority and missing review presentation",
+        "Exception expiry/compensating control and metadata-only audit grants"
+      ]
+    },
+    {
+      "role": "auditor",
+      "observations": [
+        "Exact purpose/time-window grant and export pagination",
+        "Coupled suppressed metrics, unknown counts and denominator comprehension"
+      ]
+    },
+    {
+      "role": "all",
+      "observations": [
+        "Human EN/FR language quality, keyboard usability, screen-reader and visual review",
+        "File actual reported bugs/improvements in new GitHub issue follow-up sessions after IMP-10"
+      ]
+    }
+  ],
+  "acceptance_inferred": false
+}

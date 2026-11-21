@@ -64,6 +64,7 @@ class QualificationService(ManualService):
         result: Record,
         snapshot: Record,
         policy_scope: Record,
+        arguments: Record | None = None,
     ) -> None:
         self.qualification_barrier.enter(
             "before_final_output",
@@ -71,7 +72,9 @@ class QualificationService(ManualService):
             actor.account_id,
             str(getattr(self.qualification_local, "operation_id", "")),
         )
-        super()._check_output_authority(tx, actor, action, result, snapshot, policy_scope)
+        super()._check_output_authority(
+            tx, actor, action, result, snapshot, policy_scope, arguments
+        )
 
 
 class QualificationComposition(Composition):

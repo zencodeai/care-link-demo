@@ -1,0 +1,15 @@
+# IMP-08 implementation handoff
+
+G-08 is automated_qualified for the bound isolated synthetic source/build candidate. Tasks IMP-08-A/B/C/D and 30 allocated operations implemented. Baseline 83406f94014ca3cc71f870b3b8c771841c6e83f9 remains on feat/imp-07-followup-and-rights; changes are uncommitted. Dependency G-03 retains its historical accepted result; G-05 is automated-qualified. No earlier human decision was relabeled.
+
+Implemented signed artifact/current independent review registry; exact policy activation/ACK/higher-epoch rollback; inline current boot/signer/required-set fences; bounded incidents/exceptions; scoped audit grants/reference exports; fixed coupled suppressed metrics; and EN/FR /governance consoles. Live activation is Rego-policy-only; other artifact kinds retain signed registration/review and separate subsystem admission. Audit access is metadata-only. Unsupported containment scopes deny, and closing never restores identity rights.
+
+Final checks: 1,684 Python tests passed with 3 explicit existing legacy skips; 223 frontend tests passed; 102 focused slice tests passed; 13 Chromium route-fixture tests passed; all 38 source commands passed. Final static checks cover evidence-binding tooling metadata changes after the full source run. Thirty sequential synthetic health authorizations measured PDP p95=40.877ms, full authorization p95=68.341ms/max69.826ms; this does not establish a deployed workload SLO.
+
+[Results](results.json), [candidate/source/build bindings](candidate-manifest.json), [automated demonstration packet](demo-packet.json), [operation trace](operation-trace.json), [implementation/limits](implementation-notes.md), [review reconciliation](review-findings.md), [G-08 ledger](../../../../executions/2026-11-21-IMP-08/ledger.json). Original failed attempts remain historical; source003, db008, final metadata checks and final browser13 are the reconciled evidence. The final integrated reviewer reported no blocking findings.
+
+Human usability, screen-reader, visual and language review is deferred_until_after_IMP10; see the [deferred review inventory](deferred-review-inventory.json). Three legacy skipped checks are not new passes. Source tests use synthetic OIDC/in-memory identity and in-process mesh transports alongside real signatures/OPA/PostgreSQL/filesystem journal; browser uses route fixtures. No deployed network, real-provider, clinical, legal, production or certification pass is implied. Backup/recovery and physical-erasure evidence remains IMP-09.
+
+Owned PostgreSQL loopback 35438, Chromium 30908 and Vite 4188 fixtures were removed; [cleanup](evidence/cleanup.json). Existing serving, host trust, application model and pre-existing research resources are unchanged. No commit, push, publication or deployment was performed.
+
+Next chat: read this handoff and slice README, verify all candidate/source/build/evidence hashes and the working tree, then follow only the newly assigned slice/follow-up/publication scope. Do not activate IMP-09 automatically. Human issues remain in the deferred post-IMP-10 follow-up queue. Live release/host actions still need their actual authorization.

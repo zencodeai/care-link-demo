@@ -1,0 +1,19 @@
+.........................F.............................................. [ 74%]
+.........................                                                [100%]
+=================================== FAILURES ===================================
+____________ test_review_expiry_during_audit_rolls_back_activation _____________
+services/data/tests/test_imp08_controls.py:574: in test_review_expiry_during_audit_rolls_back_activation
+    with pytest.raises(ManualError, match="missing_current_reviews"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'missing_current_reviews'
+E     Actual message: 'manual.commit_unknown'
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/data/tests/test_imp08_controls.py::test_review_expiry_during_audit_rolls_back_activation
+1 failed, 96 passed, 17 warnings in 84.86s (0:01:24)

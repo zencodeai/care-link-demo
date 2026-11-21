@@ -1,0 +1,4 @@
+
+> @care-link/web@0.1.0 typecheck /Users/main/Workspace/projects/care-link/care-link-demo/apps/web
+> tsc --noEmit
+

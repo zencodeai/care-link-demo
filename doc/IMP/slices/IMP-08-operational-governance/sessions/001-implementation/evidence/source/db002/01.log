@@ -1,0 +1,193 @@
+.....FFFFFFFFFF.FFF...............................................       [100%]
+=================================== FAILURES ===================================
+__________________ test_signed_exact_registration_and_context __________________
+services/data/tests/test_imp08_controls.py:183: in test_signed_exact_registration_and_context
+    data = register(h)
+           ^^^^^^^^^^^
+services/data/tests/test_imp08_controls.py:86: in register
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(4fe9b7e4-e73a-43e1-a751-6dbcdba2284c) already exists.
+_________________ test_same_human_second_account_cannot_review _________________
+services/data/tests/test_imp08_controls.py:194: in test_same_human_second_account_cannot_review
+    data = register(h)
+           ^^^^^^^^^^^
+services/data/tests/test_imp08_controls.py:86: in register
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(1e24206f-40a5-4203-95c9-ceb735777d17) already exists.
+__________________ test_unknown_signer_denies_even_valid_hash __________________
+services/data/tests/test_imp08_controls.py:217: in test_unknown_signer_denies_even_valid_hash
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(5654fe2f-495b-4103-b9e5-000a93ef2997) already exists.
+___________________ test_immutable_payload_hash_is_verified ____________________
+services/data/tests/test_imp08_controls.py:227: in test_immutable_payload_hash_is_verified
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(30d72005-bcc0-4866-8d8b-46003d4982ad) already exists.
+______________ test_activation_denies_missing_review_and_old_boot ______________
+services/data/tests/test_imp08_controls.py:240: in test_activation_denies_missing_review_and_old_boot
+    data = register(h)
+           ^^^^^^^^^^^
+services/data/tests/test_imp08_controls.py:86: in register
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(4f23c8d9-1ca0-4a0a-8f1d-063eba056ea0) already exists.
+_____________________ test_restrictive_fence_precedes_ack ______________________
+services/data/tests/test_imp08_controls.py:268: in test_restrictive_fence_precedes_ack
+    data = register(h, "ai_disabled")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/tests/test_imp08_controls.py:86: in register
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(ed4a23b6-75a7-498f-b5a1-0034502f0f1f) already exists.
+____________________ test_required_instance_omission_denied ____________________
+services/data/tests/test_imp08_controls.py:280: in test_required_instance_omission_denied
+    data = register(h)
+           ^^^^^^^^^^^
+services/data/tests/test_imp08_controls.py:86: in register
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(ee2895dd-c006-4496-9e4a-a99cd28db315) already exists.
+_____________________ test_expired_review_cannot_activate ______________________
+services/data/tests/test_imp08_controls.py:298: in test_expired_review_cannot_activate
+    data = register(h)
+           ^^^^^^^^^^^
+services/data/tests/test_imp08_controls.py:86: in register
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(87535d23-2981-4cf2-ac82-8a9a19b1a82e) already exists.
+_____________ test_principal_containment_is_bounded_and_journalled _____________
+services/data/tests/test_imp08_controls.py:313: in test_principal_containment_is_bounded_and_journalled
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(004e756d-0e80-4231-98bf-ead1bc569783) already exists.
+_____________________ test_no_exception_to_fixed_exclusion _____________________
+services/data/tests/test_imp08_controls.py:351: in test_no_exception_to_fixed_exclusion
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(a7741021-ca64-4dfe-a260-8290290aa2aa) already exists.
+_________ test_signed_enforcer_ack_has_workload_audit_and_current_boot _________
+services/data/tests/test_imp08_controls.py:470: in test_signed_enforcer_ack_has_workload_audit_and_current_boot
+    data = register(h)
+           ^^^^^^^^^^^
+services/data/tests/test_imp08_controls.py:86: in register
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(e7624a65-4385-4bdf-95ce-7a3e3a42bda3) already exists.
+____________ test_signed_old_boot_and_wrong_registered_actor_denied ____________
+services/data/tests/test_imp08_controls.py:490: in test_signed_old_boot_and_wrong_registered_actor_denied
+    data = register(h)
+           ^^^^^^^^^^^
+services/data/tests/test_imp08_controls.py:86: in register
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(476aed64-26e2-4fe8-b76c-7f44a406de04) already exists.
+____________ test_rollback_is_new_epoch_and_requires_fresh_receipts ____________
+services/data/tests/test_imp08_controls.py:502: in test_rollback_is_new_epoch_and_requires_fresh_receipts
+    first = register(h)
+            ^^^^^^^^^^^
+services/data/tests/test_imp08_controls.py:86: in register
+    provision_human(h, h.operator)
+services/data/tests/test_imp08_controls.py:24: in provision_human
+    PostgresStore(h.database.admin).provision_principal(actor)
+services/data/src/care_link_data/store.py:445: in provision_principal
+    connection.execute(
+.venv/lib/python3.14/site-packages/psycopg/connection.py:269: in execute
+    raise ex.with_traceback(None)
+E   psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "principal_guard_pkey"
+E   DETAIL:  Key (principal_id)=(21266a9b-f3b8-4ec4-b438-21f1c028317c) already exists.
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/data/tests/test_imp08_controls.py::test_signed_exact_registration_and_context
+FAILED services/data/tests/test_imp08_controls.py::test_same_human_second_account_cannot_review
+FAILED services/data/tests/test_imp08_controls.py::test_unknown_signer_denies_even_valid_hash
+FAILED services/data/tests/test_imp08_controls.py::test_immutable_payload_hash_is_verified
+FAILED services/data/tests/test_imp08_controls.py::test_activation_denies_missing_review_and_old_boot
+FAILED services/data/tests/test_imp08_controls.py::test_restrictive_fence_precedes_ack
+FAILED services/data/tests/test_imp08_controls.py::test_required_instance_omission_denied
+FAILED services/data/tests/test_imp08_controls.py::test_expired_review_cannot_activate
+FAILED services/data/tests/test_imp08_controls.py::test_principal_containment_is_bounded_and_journalled
+FAILED services/data/tests/test_imp08_controls.py::test_no_exception_to_fixed_exclusion
+FAILED services/data/tests/test_imp08_controls.py::test_signed_enforcer_ack_has_workload_audit_and_current_boot
+FAILED services/data/tests/test_imp08_controls.py::test_signed_old_boot_and_wrong_registered_actor_denied
+FAILED services/data/tests/test_imp08_controls.py::test_rollback_is_new_epoch_and_requires_fresh_receipts
+13 failed, 53 passed, 17 warnings in 5.41s

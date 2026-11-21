@@ -1,0 +1,90 @@
+{
+  "run_id": "2026-11-21-IMP-08",
+  "stage_id": "IMP-08",
+  "gate_id": "G-08",
+  "state": "automated_qualified",
+  "gate_state": "automated_qualified",
+  "closed": true,
+  "recorded_at": "2026-11-21T16:49:27.257420+00:00",
+  "baseline_commit": "83406f94014ca3cc71f870b3b8c771841c6e83f9",
+  "branch": "feat/imp-07-followup-and-rights",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Implement service slice 08",
+    "scope": "Source implementation and owned isolated synthetic automated verification only"
+  },
+  "predecessors": [
+    {
+      "path": "doc/IMP/executions/2026-11-16-IMP-03/ledger.json",
+      "sha256": "8a2f845de4bb457557700e0636f00cb1cab9b255d021247127bc7485c3f77e3e"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-20-IMP-05/ledger.json",
+      "sha256": "332d95bf8784a3b2a7080f96aa93098ce3b33b2342179528f8d22561a12e679d"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-08-A",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-08-B",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-08-C",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-08-D",
+      "state": "completed"
+    }
+  ],
+  "session": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation",
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/candidate-manifest.json",
+    "sha256": "cb2f075252901673015ca2490e8e6d59787afdd758d3ee282cbc5c6a402fd88f"
+  },
+  "results": {
+    "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/results.json",
+    "sha256": "d71887e34ec8cf7c41da2069de4ed5a84d02755c3a13e5cd21292c2af4f28423"
+  },
+  "qualification_packet": {
+    "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/demo-packet.json",
+    "sha256": "30d47b74f380ca89a1f3c588ece066b9417e01646ae292245fbf879aae3e85c5"
+  },
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": [],
+  "deployment_applied": false,
+  "participant_admission": false,
+  "commit_performed": false,
+  "push_performed": false,
+  "merge_performed": false,
+  "next_slice_activated": false,
+  "remaining": [
+    "Human usability, screen-reader, visual and language review is deferred_until_after_IMP10; no human acceptance inferred.",
+    "Isolated synthetic source only: OIDC provider and identity persistence are fixtures, signed HTTP/mesh is in-process; no deployed network/provider, clinical, legal, production or certification claim.",
+    "Live activation through this path admits Rego policy artifacts only; other artifact kinds are registered/classified/reviewed and require their separate subsystem release admission.",
+    "Audit evidence is metadata-only; content grants deny. Incidents contain exact principal recipient or explicit global capability; unsupported subject/session/field scope denies without widening.",
+    "Only admitted demo.review_frequency exceptions can register; they grant no business authority and cannot waive fixed exclusions.",
+    "Three existing legacy checks explicitly skipped: owned Docker capture, Linux UID/setuid harness and isolated provisioning fixture; no new pass is inferred for them.",
+    "Local sequential30-request performance sample is not a deployed sustained-load/drift/alert SLO. Current instance evidence expires after30seconds and needs separately provisioned trusted observation.",
+    "Existing web build chunk-size warning remains: approximately1.65MB minified/250KB gzip aggregate entry. Build succeeds; no deployed performance claim.",
+    "Backup/restore and physical-erasure proof remain IMP-09; existing deletion/hold/recovery restrictions and serving release ownership are preserved."
+  ],
+  "deferred_review_inventory": {
+    "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/deferred-review-inventory.json",
+    "sha256": "e6d76ea60136b8ffc5568e1b18108b383b9b4294d487dda6b5d2f94070d520dc"
+  },
+  "current_session": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr",
+  "publication": {
+    "state": "prepared",
+    "authorization": "User: Close IMP-08, create PR",
+    "branch": "feat/imp-08-operational-governance",
+    "base_branch": "main",
+    "base_commit": "0f8b190d5f110ec221f61c54fe8d1aa0170d7e4a",
+    "session": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr",
+    "merge_authorized": false
+  }
+}

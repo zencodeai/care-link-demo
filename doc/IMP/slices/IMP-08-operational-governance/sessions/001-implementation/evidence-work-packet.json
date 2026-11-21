@@ -1,0 +1,138 @@
+{
+  "packet_id": "IMP08-001-evidence",
+  "task_id": "IMP-08-B",
+  "stage_id": "IMP-08",
+  "mode": "implementation",
+  "role": "imp_python",
+  "goal": "Implement slice 08 evidence: canonical operational governance and accountable evidence",
+  "baseline_commit": "83406f94014ca3cc71f870b3b8c771841c6e83f9",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "fc3a4f2acd7fec8b527a2115320cb5e011ab154e32e57fb8e4f4e292e5ba218a"
+    },
+    {
+      "path": "doc/LLD/08-runtime-security-and-governance.md",
+      "sha256": "29177fd6fda384a301bb970e7b36a7b2185a5cbbb44f195a9162a4a29487af0c"
+    },
+    {
+      "path": "doc/LLD/09-audit-rights-and-analytics.md",
+      "sha256": "6647ae77882b75be01fcea5269959517f0fe5dde3ffed9c6c08cd5b9beed4d71"
+    },
+    {
+      "path": "doc/LLD/contracts/definitions.schema.json",
+      "sha256": "dcc8df20c339d67dfdf0ea89892d80b731cdb6a795be567f56773837689b7b61"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc/REQ",
+    "doc/HLD",
+    "doc/LLD",
+    "doc/IMP",
+    "services",
+    "packages",
+    "apps",
+    "tools",
+    "tests"
+  ],
+  "write_paths": [
+    "services/data/src/care_link_data/governance/evidence.py",
+    "services/data/src/care_link_data/governance/metrics.py",
+    "services/data/src/care_link_data/governance/grants.py",
+    "services/data/migrations/010_imp08_evidence.sql",
+    "services/data/tests/test_imp08_evidence*.py"
+  ],
+  "dependencies": [
+    "IMP-03:G-03:accepted",
+    "IMP-05:G-05:automated_qualified"
+  ],
+  "operation_ids": [
+    "artifact_register",
+    "artifact_review",
+    "activation_create",
+    "exception_create",
+    "incident_create",
+    "activation_read",
+    "activation_commit",
+    "incident_read",
+    "audit_query",
+    "metrics_query",
+    "activation_ack",
+    "health_read",
+    "data_artifact_register",
+    "data_artifact_review",
+    "data_activation_create",
+    "data_exception_create",
+    "data_incident_create",
+    "data_activation_read",
+    "data_activation_commit",
+    "data_incident_read",
+    "data_audit_query",
+    "data_metrics_query",
+    "scoped_access_grant",
+    "incident_transition",
+    "evidence_export",
+    "audit_export_read",
+    "data_scoped_access_grant",
+    "data_incident_transition",
+    "data_evidence_export",
+    "data_audit_export_read"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "live deployment",
+    "host trust changes",
+    "real contact",
+    "police integration",
+    "commit",
+    "push",
+    "merge",
+    "model change"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Implement service slice 08",
+    "scope": "Source implementation and disposable synthetic automated verification; no live deployment/publication"
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Scoped modules/tests",
+    "Actual checks and findings",
+    "Handoff"
+  ],
+  "positive_acceptance": [
+    "Exact signed immutable bytes and independent class-specific current human receipts",
+    "Current per-instance boot ACK and higher-epoch activation/rollback",
+    "Scoped audited evidence and coupled suppressed aggregate reports"
+  ],
+  "adverse_acceptance": [
+    "Same human second account cannot self-approve",
+    "Expired receipts/exceptions/old boot ACK cannot restore authority",
+    "Audit/current-state failure denies; stale permit cannot execute",
+    "Small cohort/differencing and individual exposure exports denied"
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "authority change",
+    "shared ownership conflict",
+    "destructive or live action needed"
+  ],
+  "is_example": false
+}

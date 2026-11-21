@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:care-link:governance:1",
+  "$defs": {
+    "GovernanceArtifactContext": {
+      "type": "object",
+      "properties": {
+        "artifact": {
+          "$ref": "#/$defs/ArtifactView"
+        },
+        "source_revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "change_class": {
+          "enum": ["C0", "C1", "C2", "C3"]
+        },
+        "governed_domains": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "maxItems": 16
+        },
+        "changed_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "maxItems": 128
+        },
+        "required_authorities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "maxItems": 16
+        },
+        "missing_authorities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "maxItems": 16
+        },
+        "evidence_digests": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "maxItems": 32
+        },
+        "previous_digest": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "payload_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "artifact",
+        "source_revision",
+        "change_class",
+        "governed_domains",
+        "changed_paths",
+        "required_authorities",
+        "missing_authorities",
+        "evidence_digests",
+        "previous_digest",
+        "payload_digest"
+      ],
+      "additionalProperties": false
+    },
+    "Gateway_artifact_context": {
+      "type": "object",
+      "properties": {
+        "path_arguments": {
+          "type": "object",
+          "properties": {
+            "artifact_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": ["artifact_digest"],
+          "additionalProperties": false
+        },
+        "arguments": {
+          "$ref": "#/$defs/Empty"
+        },
+        "delegation": {
+          "$ref": "#/$defs/SignedDelegation"
+        },
+        "decision": {
+          "$ref": "#/$defs/PolicyDecision"
+        }
+      },
+      "required": ["path_arguments", "arguments", "delegation", "decision"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "check",
+      "."
+    ],
+    "started_at": "2026-11-21T16:47:02.630633+00:00",
+    "completed_at": "2026-11-21T16:47:02.725960+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/01.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "started_at": "2026-11-21T16:47:02.726146+00:00",
+    "completed_at": "2026-11-21T16:47:02.762270+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/02.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "started_at": "2026-11-21T16:47:02.762426+00:00",
+    "completed_at": "2026-11-21T16:47:06.940851+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/03.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/generate_contracts.py",
+      "--check"
+    ],
+    "started_at": "2026-11-21T16:47:06.941043+00:00",
+    "completed_at": "2026-11-21T16:47:07.236100+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/04.log"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_boundaries.py"
+    ],
+    "started_at": "2026-11-21T16:47:07.236254+00:00",
+    "completed_at": "2026-11-21T16:47:07.636590+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/05.log"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "started_at": "2026-11-21T16:47:07.636743+00:00",
+    "completed_at": "2026-11-21T16:47:07.673898+00:00",
+    "exit_code": 0,
+    "log": "evidence/final/06.log"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "raw_diff_check_exit": 2,
+  "raw_log_whitespace_paths": [
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/imp08-web-browser-initial.log",
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/imp08-web-full-tests-race.log",
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/imp08-web-typecheck-race.log",
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/imp08-web-unit-race.log",
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/browser/imp08-web-unit.log",
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/db003/01.log",
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source001/10.log",
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source001/33.log",
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/10.log",
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/evidence/source/source003/33.log"
+  ],
+  "raw_log_policy": "Preserve original bytes because automated evidence digests bind the logs. No log was reformatted.",
+  "non_log_staged_diff_check_exit": 0,
+  "research_paths_staged": false
+}

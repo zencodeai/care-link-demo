@@ -1,0 +1,29 @@
+[WebServer] (node:18570) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:18571) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 13 tests using 1 worker
+
+(node:18579) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+(node:18579) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/13] tests/e2e/governance/governance.spec.ts:30:5 › en-CA operator current role workspace, keyboard and axe at 1280/640px
+[2/13] tests/e2e/governance/governance.spec.ts:30:5 › en-CA security current role workspace, keyboard and axe at 1280/640px
+[3/13] tests/e2e/governance/governance.spec.ts:30:5 › en-CA governance current role workspace, keyboard and axe at 1280/640px
+[4/13] tests/e2e/governance/governance.spec.ts:30:5 › en-CA auditor current role workspace, keyboard and axe at 1280/640px
+[5/13] tests/e2e/governance/governance.spec.ts:101:3 › en-CA unknown commit retains exact retry identity
+[6/13] tests/e2e/governance/governance.spec.ts:30:5 › fr-CA operator current role workspace, keyboard and axe at 1280/640px
+[7/13] tests/e2e/governance/governance.spec.ts:30:5 › fr-CA security current role workspace, keyboard and axe at 1280/640px
+[8/13] tests/e2e/governance/governance.spec.ts:30:5 › fr-CA governance current role workspace, keyboard and axe at 1280/640px
+[9/13] tests/e2e/governance/governance.spec.ts:30:5 › fr-CA auditor current role workspace, keyboard and axe at 1280/640px
+[10/13] tests/e2e/governance/governance.spec.ts:101:3 › fr-CA unknown commit retains exact retry identity
+[11/13] tests/e2e/governance/governance.spec.ts:120:1 › expired authority removes disclosed audit metadata and stale role cannot issue a query
+[12/13] tests/e2e/governance/governance.spec.ts:139:1 › an isolated police-avoidance response is rejected before disclosure
+[13/13] tests/e2e/governance/governance.spec.ts:154:1 › export pagination stays on the original scoped export
+  13 passed (14.9s)

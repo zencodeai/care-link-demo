@@ -16,6 +16,7 @@ from starlette.responses import JSONResponse, StreamingResponse
 
 from .assistance import AssistanceGateway
 from .assistance_broker import InferenceBroker
+from .governance_ports import GovernanceGateway
 from .lifecycle_ports import LifecycleGateway
 from .manual_channels import ManualChannels
 from .manual_ports import BrowserSecurity, ManualGateway
@@ -74,6 +75,7 @@ def create_manual_app(
     review_views: ReviewViews | None = None,
     planning: PlanningGateway | None = None,
     lifecycle: LifecycleGateway | None = None,
+    governance: GovernanceGateway | None = None,
     referrals: ReferralGateway | None = None,
     receiver: ReceiverGateway | None = None,
     assistance: AssistanceGateway | None = None,
@@ -182,6 +184,11 @@ def create_manual_app(
         from .assistance import attach_assistance_routes
 
         attach_assistance_routes(app, assistance, actor, availability=assistance_availability)
+
+    if governance is not None:
+        from .governance_routes import attach_governance_routes
+
+        attach_governance_routes(app, governance, actor)
 
     if lifecycle is not None:
         from .lifecycle_routes import attach_lifecycle_routes

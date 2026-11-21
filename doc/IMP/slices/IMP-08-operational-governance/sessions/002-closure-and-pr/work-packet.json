@@ -1,0 +1,123 @@
+{
+  "packet_id": "IMP08-002-closure-and-pr",
+  "task_id": "IMP-08-D",
+  "stage_id": "IMP-08",
+  "mode": "verification",
+  "role": "imp_verifier",
+  "goal": "Verify qualified IMP-08 source/build/evidence continuity and close the slice with a private repository pull request.",
+  "baseline_commit": "0f8b190d5f110ec221f61c54fe8d1aa0170d7e4a",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/candidate-manifest.json",
+      "sha256": "cb2f075252901673015ca2490e8e6d59787afdd758d3ee282cbc5c6a402fd88f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/001-implementation/results.json",
+      "sha256": "d71887e34ec8cf7c41da2069de4ed5a84d02755c3a13e5cd21292c2af4f28423"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/baseline-ledger.json",
+      "sha256": "1a8c6f9342993eb322c0b84bb44a589ec5608f247a450cf35cd3bb7d24ce0522"
+    }
+  ],
+  "read_paths": [
+    "doc/REQ",
+    "doc/HLD",
+    "doc/LLD",
+    "doc/IMP",
+    "host/inference-bridge",
+    "services",
+    "tools",
+    "config/demo/assistance"
+  ],
+  "write_paths": [
+    "doc/IMP/slices/IMP-08-operational-governance/sessions/002-closure-and-pr/**",
+    "doc/IMP/executions/2026-11-21-IMP-08/ledger.json",
+    "doc/IMP/slices/IMP-08-operational-governance/README.md"
+  ],
+  "dependencies": [
+    "IMP-03:G-03:accepted",
+    "IMP-05:G-05:automated_qualified",
+    "IMP-08:G-08:automated_qualified"
+  ],
+  "operation_ids": [
+    "artifact_register",
+    "artifact_review",
+    "activation_create",
+    "exception_create",
+    "incident_create",
+    "activation_read",
+    "activation_commit",
+    "incident_read",
+    "audit_query",
+    "metrics_query",
+    "activation_ack",
+    "health_read",
+    "data_artifact_register",
+    "data_artifact_review",
+    "data_activation_create",
+    "data_exception_create",
+    "data_incident_create",
+    "data_activation_read",
+    "data_activation_commit",
+    "data_incident_read",
+    "data_audit_query",
+    "data_metrics_query",
+    "scoped_access_grant",
+    "incident_transition",
+    "evidence_export",
+    "audit_export_read",
+    "data_scoped_access_grant",
+    "data_incident_transition",
+    "data_evidence_export",
+    "data_audit_export_read"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "publish_pr"
+  ],
+  "prohibited_actions": [
+    "unrelated source changes",
+    "research resource publication",
+    "merge",
+    "deployment",
+    "IMP-09 activation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Close IMP-08, create PR",
+    "scope": "Private synthetic IMP-08 closure, local commit, dedicated branch push and pull request creation. No merge/deployment/next-slice activation."
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Verified qualified source continuity",
+    "Open private repository pull request",
+    "Publication receipt and ledger"
+  ],
+  "positive_acceptance": [
+    "Exact candidate source and qualification pins agree",
+    "Private PR targets the merged predecessor tree"
+  ],
+  "adverse_acceptance": [
+    "Reject source drift or duplicate pull request",
+    "Preserve provider, serving and participant custody boundaries"
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Qualified source or predecessor drift",
+    "Private remote access or write authority unavailable"
+  ],
+  "is_example": false
+}
