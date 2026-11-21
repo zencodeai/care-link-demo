@@ -37,3 +37,5 @@ Session006 ran the selected isolated worker-summary demo with signed qualificati
 ## Automated closure
 
 Session007 passed the matched actor-only and live assisted worker cases, durable timeout containment during active provider work, and protected live tokenizer and generation traffic. G-06 covers the first worker profile and the isolated synthetic candidate. Product serving needs its own exact release and current authority. [Automated qualification packet](sessions/007-g06-automated-closure/demo-packet.json).
+
+IMP-06 is closed for the isolated synthetic worker-summary scope and published for review against `main`. [PR #13](https://github.com/zencodeai/care-link-demo/pull/13), [publication handoff](sessions/008-closure-and-pr/README.md).

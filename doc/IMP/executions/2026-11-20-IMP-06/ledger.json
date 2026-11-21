@@ -195,5 +195,20 @@
     "commit_or_push": false
   },
   "closed_at": "2026-11-21T14:45:47.151592+00:00",
-  "current_session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure"
+  "current_session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr",
+  "publication": {
+    "state": "published",
+    "recorded_at": "2026-11-21T14:57:48.781010+00:00",
+    "session": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr",
+    "authorization": "User requested IMP-06 closure and PR creation",
+    "implementation_commit": "9a541f5c9fd07c5ebbb6ecdbe7f817f0ed920d93",
+    "pull_request": {
+      "number": 13,
+      "url": "https://github.com/zencodeai/care-link-demo/pull/13",
+      "state": "OPEN",
+      "draft": false
+    },
+    "receipt": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/008-closure-and-pr/publication.json",
+    "receipt_sha256": "90916c5f303a76453af12bbaaf1b4a8d59ea2950b1de9bc7e036f4f01a5870f6"
+  }
 }
