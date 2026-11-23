@@ -7,7 +7,7 @@
   "closed": true,
   "recorded_at": "2026-11-23T20:10:30.178341+00:00",
   "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
-  "branch": "feat/imp-09-backup-and-recovery",
+  "branch": "feat/imp-10-integrated-demonstrator",
   "authorization": {
     "source_kind": "user_message",
     "instruction_reference": "Complete G-10 work. Do not stop until G-10 closed",
@@ -69,11 +69,11 @@
   },
   "deployment_applied": false,
   "participant_admission": false,
-  "commit_performed": false,
-  "push_performed": false,
+  "commit_performed": true,
+  "push_performed": true,
   "merge_performed": false,
   "remaining": [],
-  "current_session": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure",
+  "current_session": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/010-closure-and-pr",
   "earlier_ledger": {
     "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/previous-ledger.json",
     "sha256": "14c14aeeec8d9c478d538abc511eff38bc763b046d4f200f331a43a711567763"
@@ -131,5 +131,57 @@
   "limitations": [
     "True cold-start measurements were waived by the user for this private synthetic G-10 qualification. Zero samples were collected.",
     "Human usability, language, visual and screen-reader review is deferred."
-  ]
+  ],
+  "qualification_branch": "feat/imp-09-backup-and-recovery",
+  "publication": {
+    "state": "published",
+    "authorization": "User: Close IMP-10, create PR",
+    "repository": "zencodeai/care-link-demo",
+    "repository_private": true,
+    "branch": "feat/imp-10-integrated-demonstrator",
+    "base_branch": "main",
+    "base_commit": "0452cf18356c82e31ec5a184e5323511705eb235",
+    "implementation_commit": "186e8125de9153d1b94eae99efa49a2d434805fd",
+    "pull_request_number": 17,
+    "pull_request_url": "https://github.com/zencodeai/care-link-demo/pull/17",
+    "pull_request_state": "OPEN",
+    "draft": false,
+    "recorded_at": "2026-11-23T20:20:21.762989+00:00",
+    "ci_at_publication": [
+      {
+        "name": "fast",
+        "status": "IN_PROGRESS",
+        "conclusion": null
+      },
+      {
+        "name": "fast",
+        "status": "IN_PROGRESS",
+        "conclusion": null
+      },
+      {
+        "name": "container",
+        "status": "IN_PROGRESS",
+        "conclusion": null
+      },
+      {
+        "name": "container",
+        "status": "COMPLETED",
+        "conclusion": "SUCCESS"
+      }
+    ],
+    "transport": "Authenticated GitHub CLI for the private repository",
+    "merge_authorized": false,
+    "deployment_authorized": false,
+    "excluded": [
+      "doc/research/2026-11-20-agentic-care/resources/"
+    ]
+  },
+  "publication_receipt": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/010-closure-and-pr/publication.json",
+    "sha256": "fe7be9c126c24f68e141476022d6fe024c0521bc2e8f63bfd8c63d9828269759"
+  },
+  "publication_verification": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/010-closure-and-pr/verification.json",
+    "sha256": "18b7ffecb9ea6039225551fb1024717dba2141f75461ac82b7f92c08b7cf9a1d"
+  }
 }
