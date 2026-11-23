@@ -1,0 +1,55 @@
+{
+  "error": "Timed out waiting for round-01-waiting.json",
+  "diagnostic_events": [
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: assistance.function_disabled"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: assistance.function_disabled"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: assistance.function_disabled"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: assistance.function_disabled"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: manual.deadline_exceeded"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: manual.deadline_exceeded"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: manual.deadline_exceeded"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: manual.deadline_exceeded"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: manual.deadline_exceeded"
+    }
+  ],
+  "actor_receipts": {
+    "pair": [
+      {
+        "session_id": "cc3bba83-8681-4603-b98b-b5a78a6b398d",
+        "task_id": "378da964-55d1-4518-89dd-eeb3bb2812c6",
+        "arrival_ns": 2677299063457166
+      },
+      {
+        "session_id": "8417c8bc-ed48-40ee-ae93-acd8831f5652",
+        "task_id": "9a7c309d-f8b5-4e1a-9d29-c3d46b545dfc",
+        "arrival_ns": 2677299897268500
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "at_utc": "2026-11-23T20:06:15.264289+00:00",
+  "scope": "Independent disposable Data instance from g10_spare_b. Original slot states retained in g10_early_error_one.",
+  "original_slots": [
+    {
+      "id": "local-1",
+      "state": "compute_unknown",
+      "job": "839d4f1b-b1f5-44fe-ac4c-4af3d5a940c1"
+    },
+    {
+      "id": "local-2",
+      "state": "compute_unknown",
+      "job": "8ef96718-07c5-4aca-b572-8fff1113d8e2"
+    }
+  ],
+  "fresh_slots": [
+    {
+      "id": "local-1",
+      "state": "free",
+      "job": null
+    },
+    {
+      "id": "local-2",
+      "state": "free",
+      "job": null
+    }
+  ],
+  "data_boot": {
+    "role": "data",
+    "boot_id": "d8ef0a32-2589-4646-838e-4c6899619b90",
+    "uid": 23112,
+    "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+  },
+  "core_boot": {
+    "role": "core",
+    "boot_id": "5123cc08-260a-4699-acc3-e8d247e0e025",
+    "uid": 23110,
+    "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+  },
+  "data_pod_uid": "23df4afd-964e-45b6-818c-5aa0aa7accc0",
+  "candidate_cri_reference": "docker.io/library/import-2026-11-23@sha256:e90c69a2735b77ccd6b10f1d6230efe9861f2d84ce8e6239806c8fa8bb466b8b",
+  "selected_bridge_generation": "ca672f62-72c3-4338-876d-fec680bf5102"
+}

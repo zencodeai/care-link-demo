@@ -8,13 +8,15 @@ import os
 import ssl
 from collections.abc import Callable, Mapping, Sequence
 from contextlib import ExitStack
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
-from time import monotonic
+from time import monotonic, sleep
 from typing import cast
 from uuid import uuid4
 
 import httpx
+import pytest
 from care_link_core.assistance import HttpAssistanceGateway, attach_assistance_routes
 from care_link_core.assistance_broker import (
     HttpCoordinator,
@@ -23,11 +25,16 @@ from care_link_core.assistance_broker import (
     attach_broker_routes,
 )
 from care_link_core.assistance_broker.actors import ActorTasks, BoundTaskGateway
+from care_link_core.assistance_broker.inference_authority import (
+    InferenceActorAuthority,
+    attach_inference_authority,
+)
 from care_link_core.assistance_broker.work import WorkQueue
 from care_link_core.manual_envelopes import SignedEnvelopeFactory
 from care_link_data.app import SignedGatewaySecurity
-from care_link_data.values import stamp
-from care_link_domain import Actor, ManualError, WorkloadPeer
+from care_link_data.inference_actor import HttpInferenceActor
+from care_link_data.values import dt, stamp
+from care_link_domain import INFERENCE_ACTOR_PATH, Actor, ManualError, WorkloadPeer
 from care_link_inference import (
     THREATS,
     DataTransport,
@@ -164,6 +171,7 @@ class IdentityFixture:
 
     def __init__(self, actor: Actor) -> None:
         self.actor, self.key = actor, Ed25519PrivateKey.generate()
+        self.proofs: dict[str, tuple[Record, Actor]] = {}
 
     def evidence(
         self, actor: Actor, action: str, request_digest: str, nonce: str, resource: object
@@ -171,7 +179,7 @@ class IdentityFixture:
         assert actor.account_id == self.actor.account_id
         now = datetime.now(UTC)
         value = {
-            "id": actor.identity_evidence_id,
+            "id": str(uuid4()),
             "principal_id": actor.account_id,
             "role": actor.role,
             "identity_revision": str(actor.identity_revision),
@@ -187,7 +195,30 @@ class IdentityFixture:
         from care_link_policy_input.opa import canonical
 
         signature = base64.urlsafe_b64encode(self.key.sign(canonical(value))).rstrip(b"=").decode()
-        return {**value, "signature": signature}
+        proof = {**value, "signature": signature}
+        reference = cast(str, proof["id"])
+        self.proofs[reference] = (
+            proof,
+            replace(
+                actor,
+                credential_ref=reference,
+                identity_evidence_id=reference,
+                request_deadline=dt(proof["expires_at"]),
+            ),
+        )
+        return proof
+
+    def resolve(self, evidence: Record) -> Actor:
+        binding = self.proofs.get(str(evidence["id"]))
+        if binding is None or binding[0] != evidence:
+            raise ManualError("manual.identity_denied", 403)
+        return self.current(binding[1])
+
+    def current(self, actor: Actor) -> Actor:
+        proof = self.proofs.get(actor.credential_ref)
+        if proof is not None and dt(proof[0]["expires_at"]) <= datetime.now(UTC):
+            raise ManualError("manual.identity_denied", 403)
+        return actor
 
 
 class ProviderFixture:
@@ -214,6 +245,7 @@ class ProviderFixture:
 
     def complete(self, payload: Record, deadline: datetime) -> bytes:
         assert deadline > datetime.now(UTC)
+        sleep(1.0)  # Force completion to use a different, still-current proof.
         return json.dumps(
             {
                 "model": payload["model"],
@@ -298,7 +330,9 @@ def complete_manual_followthrough(harness: Harness, session_id: str) -> Record:
     }
 
 
-def test_worker_summary_combined_qualification(harness: Harness, tmp_path: Path) -> None:
+def test_worker_summary_combined_qualification(
+    harness: Harness, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     provider = os.environ.get("CARE_LINK_JOURNEY_PROVIDER", "fixture")
     assert provider in {"fixture", "live"}
     artifact = release_artifact()
@@ -320,7 +354,7 @@ def test_worker_summary_combined_qualification(harness: Harness, tmp_path: Path)
     _coordinator, task_command, peer = knowledge_case(harness)
     assisted_sid = record_matched_need(harness, task_command)
     assert assisted_sid != baseline_sid
-    ids = {role: str(uuid4()) for role in ("core", "runtime", "inference", "browser")}
+    ids = {role: str(uuid4()) for role in ("core", "data", "runtime", "inference", "browser")}
 
     def verify(request: Request, role: str) -> bool:
         return hmac.compare_digest(request.headers.get(ROLE_HEADER, ""), ids[role])
@@ -342,21 +376,14 @@ def test_worker_summary_combined_qualification(harness: Harness, tmp_path: Path)
 
     core_key = Ed25519PrivateKey.generate()
     identity = IdentityFixture(harness.worker)
+    original_current = harness.authority.current
+    monkeypatch.setattr(
+        harness.authority, "current", lambda actor: identity.current(original_current(actor))
+    )
     delegations = DelegationVerifier(
         core_key.public_key(),
         identity.key.public_key(),
-        lambda _evidence: harness.authority.current(harness.worker),
-    )
-    data_app = data_application(
-        harness.service,
-        SignedGatewaySecurity(delegations, verify),
-        releases=binding("data"),
-        delegations=delegations,
-        verify=verify,
-        runtime_current=current_peer,
-        bridge_generation=digest({"boot": boots["host-inference-bridge"]}),
-        knowledge=resources.catalog,
-        knowledge_regions=resources.regions,
+        identity.resolve,
     )
     bridge_binding = binding("host-inference-bridge")
     if provider == "live":
@@ -376,6 +403,29 @@ def test_worker_summary_combined_qualification(harness: Harness, tmp_path: Path)
     tls = ssl.create_default_context()
     began = monotonic()
     with ExitStack() as stack:
+        core = FastAPI()
+
+        async def handle_error(_request: Request, error: Exception) -> JSONResponse:
+            assert isinstance(error, ManualError)
+            return JSONResponse({"key": error.code}, status_code=error.status)
+
+        core.add_exception_handler(ManualError, handle_error)
+        service = stack.enter_context(TestClient(core))
+        data_to_core = stack.enter_context(
+            httpx.Client(transport=relay(service, "core", ids["data"], timeline), trust_env=False)
+        )
+        data_app = data_application(
+            harness.service,
+            SignedGatewaySecurity(delegations, verify),
+            releases=binding("data"),
+            delegations=delegations,
+            verify=verify,
+            runtime_current=current_peer,
+            bridge_generation=digest({"boot": boots["host-inference-bridge"]}),
+            knowledge=resources.catalog,
+            knowledge_regions=resources.regions,
+            inference_actor=HttpInferenceActor(data_to_core, "https://core:8443", identity),
+        )
         data = stack.enter_context(TestClient(data_app))
         host = stack.enter_context(TestClient(bridge_app))
         data_io = DataTransport(tls, transport=relay(data, "data", ids["inference"], timeline))
@@ -422,20 +472,15 @@ def test_worker_summary_combined_qualification(harness: Harness, tmp_path: Path)
             tasks, actors, enqueue=work.enqueue, remove=work.remove, knowledge=resources.catalog
         )
         core_release = binding("core")
+        actor_authority = InferenceActorAuthority(actors, identity, harness.channels)
         broker = InferenceBroker(
             HttpCoordinator(core_data, TaskDelegationSigner(identity, core_key), tasks),
             inference_port,
             actor_for_task=actors.resolve,
             release=core_release.release,
             work=work.claim,
+            inference_authority=actor_authority,
         )
-        core = FastAPI()
-
-        async def handle_error(_request: Request, error: Exception) -> JSONResponse:
-            assert isinstance(error, ManualError)
-            return JSONResponse({"key": error.code}, status_code=error.status)
-
-        core.add_exception_handler(ManualError, handle_error)
 
         def availability(actor: Actor) -> Record:
             enabled = actor.role == "worker" and core_release.current()
@@ -447,7 +492,7 @@ def test_worker_summary_combined_qualification(harness: Harness, tmp_path: Path)
 
         attach_assistance_routes(core, commands, actor_auth, availability)
         attach_broker_routes(core, broker, runtime_auth)
-        service = stack.enter_context(TestClient(core))
+        attach_inference_authority(core, actor_authority, lambda request: verify(request, "data"))
         workforce = {ROLE_HEADER: ids["browser"]}
 
         def get(path: str) -> Record:
@@ -464,6 +509,7 @@ def test_worker_summary_combined_qualification(harness: Harness, tmp_path: Path)
 
         assert get("/v1/assistance")["available"] is True
         assert service.post("/internal/v1/broker/work", json={}).status_code == 403
+        assert service.post(INFERENCE_ACTOR_PATH, json={}, headers=workforce).status_code == 403
         assert inference_client.post("/internal/v1/inference/jobs", json={}).status_code == 403
         assert (
             data.post("/internal/v1/data/assistance/inference/current", json={}).status_code == 403
@@ -471,6 +517,11 @@ def test_worker_summary_combined_qualification(harness: Harness, tmp_path: Path)
         assert host.post("/internal/v1/inference/tokenize", json={}).status_code == 403
         task = post("/v1/tasks", task_command)
         assert task["state"] == "scoped"
+        creation_proofs = [proof for proof, _ in identity.proofs.values()]
+        sleep(1.0)
+        assert creation_proofs and all(
+            dt(proof["expires_at"]) <= datetime.now(UTC) for proof in creation_proofs
+        )
         transport = relay(service, "core", ids["runtime"], timeline)
         observations: list[Record] = []
 
@@ -565,6 +616,18 @@ def test_worker_summary_combined_qualification(harness: Harness, tmp_path: Path)
         ]
         assert len(inference_outcomes) == 1
         assert inference_outcomes[0]["state"] == "completed"
+        fresh_proofs = [
+            proof
+            for proof, _ in identity.proofs.values()
+            if str(proof["action"]).startswith("assistance_inference_")
+        ]
+        assert len({proof["id"] for proof in fresh_proofs}) == len(fresh_proofs)
+        assert {proof["action"] for proof in fresh_proofs} == {
+            "assistance_inference_context",
+            "assistance_inference_current",
+            "assistance_inference_reserve",
+            "assistance_inference_complete",
+        }
         statuses.update(
             task="completed", durable_inference_job="completed", draft="rejected", free_slots=2
         )
@@ -596,6 +659,7 @@ def test_worker_summary_combined_qualification(harness: Harness, tmp_path: Path)
             "elapsed_seconds": round(monotonic() - began, 3),
             "asserted_states": statuses,
             "inference_outcomes": inference_outcomes,
+            "fresh_inference_identity_proofs": len(fresh_proofs),
             "successful_role_hops": sorted(
                 {
                     str(step["target"])

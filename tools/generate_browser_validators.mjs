@@ -12,6 +12,10 @@ const standaloneCode = require("ajv/dist/standalone/index.js").default;
 const { _ } = require("ajv/dist/compile/codegen/index.js");
 const names = [
   "BackupView",
+  "ScenarioCreate",
+  "ScenarioView",
+  "ReplayCreate",
+  "EvaluationView",
   "RestoreCreate",
   "RestoreView",
   "PromotionPropose",

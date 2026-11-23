@@ -1,0 +1,241 @@
+{
+  "counts": {
+    "capacity_rejected": 1,
+    "completed": 9,
+    "compute_unknown_fenced_on_late_return": 1,
+    "manual_deliveries": 1,
+    "manual_reads": 11,
+    "missing_fixture_inference_results": 0,
+    "observed_inference_results": 11,
+    "scheduled_inference_requests": 11
+  },
+  "ended_at_utc": "2026-11-23T14:30:26.311834+00:00",
+  "environment": {
+    "architecture": "arm64",
+    "cpu_count": 14,
+    "postgres_server_version": "18.3 (Debian 18.3-1.pgdg12+1)",
+    "python": "3.14.7",
+    "release": "25.6.0",
+    "system": "Darwin"
+  },
+  "fixture": {
+    "arrival": "two admitted requests, then eight queued at fixed bridge barriers",
+    "channels": {
+      "web": 10
+    },
+    "configured_context_token_cap": 8192,
+    "configured_output_token_cap": 1024,
+    "identity_policy_journal": "fixture adapters",
+    "locales": {
+      "en-CA": 10
+    },
+    "source_items_per_task": 1,
+    "source_text_bytes_per_task": 15,
+    "synthetic_participant_accounts": 10,
+    "synthetic_worker_accounts": 1,
+    "transport": "in-process public application objects and verified-TLS PostgreSQL"
+  },
+  "independent_help_with_two_slots_occupied_and_eight_waiting": {
+    "cases": [
+      {
+        "connection_confirmed": false,
+        "create_and_read_elapsed_ms": 23.155,
+        "help_state": "recorded",
+        "injected_unavailable_route": "core",
+        "normal_service_result": "connection_unavailable"
+      },
+      {
+        "connection_confirmed": false,
+        "create_and_read_elapsed_ms": 11.012,
+        "help_state": "recorded",
+        "injected_unavailable_route": "data",
+        "normal_service_result": "typed_503"
+      }
+    ],
+    "durable_local_audit_actions": [
+      "create",
+      "status",
+      "create",
+      "status"
+    ],
+    "durable_local_request_count": 2,
+    "fixture_authority": "signed Identity ASGI with in-memory store and synthetic provider",
+    "fixture_routes": "separate ASGI transports with deterministic transport unavailability",
+    "identity_loss_private_create_and_read": "typed_503_with_static_reference"
+  },
+  "inference_samples": [
+    {
+      "claim_ms_after_enqueue": 54.069,
+      "elapsed_ms": 1041.363,
+      "end_to_end_ms": 1308.526,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_first_call",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 182.87,
+      "elapsed_ms": 1020.614,
+      "end_to_end_ms": 1287.834,
+      "input_tokens_reported_by_fixture": null,
+      "output_tokens_reported_by_fixture": null,
+      "phase": "fixture_timeout",
+      "reason": "provider_stop_unverified",
+      "state": "compute_unknown"
+    },
+    {
+      "claim_ms_after_enqueue": 842.917,
+      "elapsed_ms": 30.119,
+      "end_to_end_ms": 951.856,
+      "input_tokens_reported_by_fixture": null,
+      "output_tokens_reported_by_fixture": null,
+      "phase": "fixture_capacity_rejection",
+      "reason": "compute_capacity_unavailable",
+      "state": "rejected"
+    },
+    {
+      "claim_ms_after_enqueue": 842.917,
+      "elapsed_ms": 62.007,
+      "end_to_end_ms": 1089.896,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 1128.743,
+      "elapsed_ms": 61.436,
+      "end_to_end_ms": 1273.668,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 1310.318,
+      "elapsed_ms": 77.405,
+      "end_to_end_ms": 1469.698,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 1522.566,
+      "elapsed_ms": 75.006,
+      "end_to_end_ms": 1692.349,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 1730.282,
+      "elapsed_ms": 73.96,
+      "end_to_end_ms": 1884.423,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 1922.844,
+      "elapsed_ms": 64.385,
+      "end_to_end_ms": 2065.43,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 2105.346,
+      "elapsed_ms": 63.834,
+      "end_to_end_ms": 2250.634,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 2287.714,
+      "elapsed_ms": 60.393,
+      "end_to_end_ms": 2427.337,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    }
+  ],
+  "manual_delivery_with_two_slots_occupied": {
+    "elapsed_ms": 104.252,
+    "state": "visible_human_authored"
+  },
+  "manual_read_with_unknown_slot": {
+    "elapsed_ms": 34.848,
+    "state": "human_controlled"
+  },
+  "manual_reads_with_two_slots_occupied": [
+    {
+      "elapsed_ms": 142.404,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 90.932,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 195.209,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 122.863,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 158.393,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 96.559,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 144.279,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 177.512,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 104.784,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 164.526,
+      "state": "human_controlled"
+    }
+  ],
+  "missing": [
+    "Actual loaded model cold and warm results and token timing",
+    "Native browser, deployed mesh, process-level shutdown and static serving",
+    "Workload containing French and non-web simulated channels",
+    "Measured arrival rate and long-run demand distribution"
+  ],
+  "peak": {
+    "connected_sessions": 10,
+    "occupied_inference_slots": 2,
+    "unique_pending_task_ids": 8
+  },
+  "started_at_utc": "2026-11-23T14:30:16.076105+00:00",
+  "timing": "Raw milliseconds from a local monotonic clock, including fixture barriers. No percentiles inferred from these samples."
+}

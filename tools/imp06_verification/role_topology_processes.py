@@ -226,7 +226,7 @@ def data(verify: BackendVerifier) -> FastAPI:
     from care_link_data.app import GatewaySecurity, create_app
     from care_link_data.assistance_jobs import PostgresJobLedger
 
-    service = create_autospec(ManualService, instance=True)
+    service = create_autospec(ManualService, instance=True, replay_evaluator=None)
     app = create_app(service, cast(GatewaySecurity, None))
     attach_inference_ledger_gateway(
         app,

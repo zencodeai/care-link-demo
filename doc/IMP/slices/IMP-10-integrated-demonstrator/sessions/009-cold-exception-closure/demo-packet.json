@@ -1,0 +1,144 @@
+{
+  "packet_id": "IMP10-009-qualification",
+  "stage_id": "IMP-10",
+  "gate_id": "G-10",
+  "candidate": {
+    "commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+    "diff_digest": "40c5d0c49d11ee092740362b86ed64b4c2a10eff72d8e0296d567af1e5c73b1e",
+    "artifact_digest": "180f32ce4e63e1a593a07b761d96d87d0f7678c13966e9d5a5046ca0c41660ae",
+    "configuration_digest": "a09aa71ebaeee1d650175f26c02dca26940b5b1190ff71810177b6d31af83910",
+    "contract_digest": "87d3f81c51ccd56fa42b1d5add5b7dcf0a755b5b3f3650c9576378de785608e4",
+    "environment_digest": "c2229b7b9b90d5e1537c36b2468c727852cb6b920b5af433602763440618613d",
+    "fixture_digest": "de7df57e8c16a7465cf9f1735e2abee41eef6496a1b9294b04333eabd58658b8"
+  },
+  "state": "demonstrated",
+  "preconditions": [
+    "Use the private synthetic Kind deployment with signed readiness, protected workload identities, the exact loaded Qwen model, and a separate Data store for each controlled error."
+  ],
+  "normal_steps": [
+    {
+      "action": "Verify the final post-lock source and deployed Data files.",
+      "expected": "All locked checks pass and the Data image contains the hardened source.",
+      "actual": "39 locked commands passed and four running Data files matched.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/locked-source-results.json",
+          "sha256": "fa6a421977c612873e958f2e45d196fdf69092cd62f6fb37a7d08d2b5df25fce"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/deployed-lock-source-sha.json",
+          "sha256": "eaf05ad4aa711dbaf7cdbb27fb8e27bd59d76d9b2618ff1cf494ebe7993e8062"
+        }
+      ]
+    },
+    {
+      "action": "Run the protected workload twice with the model loaded.",
+      "expected": "Each cohort reaches ten active sessions, two occupied slots and eight pending tasks, then creates two human-review drafts.",
+      "actual": "Both independent cohorts reached the declared peak. Each produced two drafts and freed both slots.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/fresh-warm.json",
+          "sha256": "7dcb2f931235fe81d41f7fc6732d0f770a7760e884de51521929911b2420dec2"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/separate-warm.json",
+          "sha256": "3bbac8c69aacef84093ff42525102e1691dcac699d6c527289b2660d5ccdea2a"
+        }
+      ]
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Interrupt only the isolated connector after observing each declared peak.",
+      "expected": "Preserve both compute reservations as uncertain, create no draft and keep scoped manual delivery available.",
+      "actual": "Both rounds returned provider_stop_unverified from Runtime, preserved both reservations and delivered one human-authored message on retry.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/peak-error-one.json",
+          "sha256": "15c8e97d5f006c90a21a51d2d49d8cba1b0cdc413653926d3ccfe4022e80bbc3"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/peak-error-two.json",
+          "sha256": "f10c16a59b913e216d19e3f85a6a077e39ea1c606109a25978ca5c46f827a82d"
+        }
+      ]
+    },
+    {
+      "action": "Withdraw the temporary release and remove the isolated environment.",
+      "expected": "Preserve the original model and saved Docker environments.",
+      "actual": "Restrictive epoch and scoped teardown verified.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/release-withdrawal.json",
+          "sha256": "0a773bac27a943a5bb2473d7476beaa01ef173172a101758b7ca19ebd1230428"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/host-bridge-cleanup.json",
+          "sha256": "ce62b140f3e6cbbace95216364895635f021ab39c4c5d5291162208e34b077a4"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/platform-cleanup.json",
+          "sha256": "3f5d2852acc5aee33ff0e5493e6fe242ad2fe7e9e8d9136f831059566203c3c0"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/temporary-state-cleanup.json",
+          "sha256": "40c7a6a038b68a7f91de2f469a90c72c6a3ded7cbe9ce8ee497052073fdefda6"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "final-post-lock-source",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "All locked commands pass.",
+      "actual": "39 of 39 commands passed, including 1,835 backend tests and 234 frontend tests.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/locked-source-results.json",
+      "evidence_digest": "fa6a421977c612873e958f2e45d196fdf69092cd62f6fb37a7d08d2b5df25fce",
+      "mock_used": false
+    },
+    {
+      "name": "repeated-deployed-warm-and-errors",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Two deployed warm and two deployed error rounds at the declared load.",
+      "actual": "Four rounds passed. Earlier failed and incomplete attempts remain recorded.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/results.json",
+      "evidence_digest": "00910f125905ed7b387a2efa2f7551d8a67ce4cf76fba45a44dae7b82189b7d5",
+      "mock_used": false
+    },
+    {
+      "name": "true-cold-start",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Measure repeated exact model cold starts when this check applies.",
+      "actual": "The user waived this check for this private synthetic qualification. Zero samples were collected.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/cold-start-scope-exception.json",
+      "evidence_digest": "1c51a79030de379731172cd2348dc0e9ac8b2b25a4b4d48a0f0927db0bb0827c",
+      "mock_used": false
+    },
+    {
+      "name": "qualification-platform-cleanup",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Withdraw the temporary deployment and verify saved assets.",
+      "actual": "Exact leased platform removed and preservation verified.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/platform-cleanup.json",
+      "evidence_digest": "3f5d2852acc5aee33ff0e5493e6fe242ad2fe7e9e8d9136f831059566203c3c0",
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "Human usability, language, visual and screen-reader review remains deferred to issue follow-up.",
+    "The cold-start exception applies to this private synthetic qualification."
+  ],
+  "acceptance_scope": "Automated qualification of the private synthetic IMP-10 protected deployment, including the recorded scope exception. Earlier protected actor, replay, outage, Help and Static evidence remains linked as historical qualification evidence.",
+  "rollback": "Advance the temporary qualification registry to an inactive epoch and remove its isolated resources. Preserve saved Docker review environments and the native model.",
+  "human_decision_id": null,
+  "is_example": false
+}

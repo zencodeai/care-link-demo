@@ -1,0 +1,143 @@
+{
+  "scope": "Private synthetic automated qualification follow-up",
+  "stage": "IMP-10",
+  "gate": "G-10",
+  "state": "blocked",
+  "automated_qualified": false,
+  "candidate": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/candidate-manifest.json",
+    "sha256": "db2d7da87e3fc191e3c095c7b1548c923422c02f537448bb33f3f8f8e28221e5"
+  },
+  "observed": {
+    "first_full_backend": {
+      "tests": 1780,
+      "errors": 0,
+      "failures": 4,
+      "skipped": 3,
+      "passed": 1773
+    },
+    "final_serial_source_commands": {
+      "passed": 39,
+      "total": 39
+    },
+    "final_serial_backend": {
+      "tests": 1781,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 3,
+      "passed": 1778
+    },
+    "final_serial_frontend_passed": 234,
+    "final_serial_fixture_provider": {
+      "tests": 1,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "passed": 1
+    },
+    "prior_browser_same_build": {
+      "passed": 55,
+      "failed": 0,
+      "skipped": 0
+    },
+    "focused_runtime_and_cleanup_tests": 17,
+    "focused_timing_and_help": {
+      "tests": 5,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "passed": 5
+    },
+    "live_provider_workload_cases_passed": 10,
+    "loaded_model_end_to_end_p95_seconds": 5.472,
+    "live_application_comparison": "passed",
+    "live_provider_timeout": "passed",
+    "workload_trust": {
+      "allowed_edges": 6,
+      "denied_edges": 4,
+      "svid_rotation": "observed",
+      "revoked_inflight_status": 403,
+      "unaffected_manual_status": 200
+    },
+    "protected_provider_recovered": "passed",
+    "lld_design_validator": "passed"
+  },
+  "evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/source-serial/checks.json",
+      "sha256": "269f2e54f8134882f9bcdafe594ce192a5a855d262027f53516fadcd00be33be"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/source-serial/pytest.xml",
+      "sha256": "909fa41868e9c81c73abe5d108d0ce21fc9f6e2bcea79f933c22a54b52d85d7a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/source-serial/matched-assistance.xml",
+      "sha256": "4e3713eac2510e2aa0837906b75235d40f7d53806f0c499bb613d12e96a7397d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/source-serial/load.json",
+      "sha256": "23b2abefe4baa148816680c3a085dfa8ff6647ae85d8b00b7488ca3e79a44702"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/source-first-attempt/12.log",
+      "sha256": "a4eecb48ae979a9062c4b27100da9631110a7cb8b4132a31dba19ae64fdfecbb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/timing-recheck.log",
+      "sha256": "59f6ca87452039e90618917f902923420c69ef4146d645d2bb52337df9dc36fc"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/runtime-mesh-regressions.log",
+      "sha256": "f82884877791560eda3191bbe0fc4821e123135b4a183b8251517ac3b9dca56c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/loaded-provider-workload.json",
+      "sha256": "42963ad674729591e99eab8dcbe8c74ab1ead4d266765769fab579cd536eb211"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/matched-live-final.json",
+      "sha256": "2b7f26bcc07c5f1f97c1bb3ff2f58c1fb5ba9127fbfba7ce28d9a4b4331f9343"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/live-timeout-final.json",
+      "sha256": "e52012f6ce57c4aa9836f1e143f0c8a4d8bc27965dfe3c16c6ea13345cedac1a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/workload-trust-final.json",
+      "sha256": "85d681777a7d8defd216dbdd844a70d32db09f8d95822ac1c129ca44020a6569"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/protected-provider-recovered.json",
+      "sha256": "9973c83e83d37a55a5635c88e272376f42f89a254cdadf871f949106bbb8ec5e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/final-image-smoke.json",
+      "sha256": "127f3bc777e40bea32730d5da3128182e8a2962d04cb089812e3e32c5e72d73f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/lld-validator.log",
+      "sha256": "6907f5f782a3ebda2ad7da658737f16d77fabc243959936fdb23ceb0c8514b61"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/postgres-clock.json",
+      "sha256": "8670ac98ecda6c4ab0a87ac135ed86c0c78cb1005ca818081e893ebef257af61"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/verification-scope.md",
+      "sha256": "93e44fe7fa8284d94158d07d271e669940989c963e1a4c34e1199b761797de86"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/cleanup.json",
+      "sha256": "770ac0201830e11af3a06a3c8b35a79403c764427f1c7f51a7019fc1a01037f7"
+    }
+  ],
+  "remaining": [
+    "True provider cold-start performance was not run. The already-running model was used for the loaded-model tests. Authorization to unload and reload that instance was requested.",
+    "The separate real provider, mesh, actor and Help checks do not establish a single deployed topology with all current roles under a combined dependency outage.",
+    "Loaded-model latency comes from five two-request waves. The two-occupied/eight-queued application saturation uses a fixture inference provider.",
+    "The frozen IMP plan validator still reports the earlier README digest drift."
+  ],
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": []
+}

@@ -1,0 +1,107 @@
+{
+  "packet_id": "IMP10-002-help",
+  "task_id": "IMP-10-D",
+  "stage_id": "IMP-10",
+  "mode": "verification",
+  "role": "imp_verifier",
+  "goal": "Verify independent help continuity while Core and Data service boundaries are unavailable and both inference slots are occupied in the synthetic workstation test.",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "fc3a4f2acd7fec8b527a2115320cb5e011ab154e32e57fb8e4f4e292e5ba218a"
+    },
+    {
+      "path": "doc/LLD/10-simulators-and-replay.md",
+      "sha256": "ec3d1fb1b4f3bd3fa0202099ee06d83d367aa9e1a923e6d442c4bc0c0e2e96c5"
+    },
+    {
+      "path": "doc/LLD/contracts/operations.json",
+      "sha256": "50fe91f73308ce5efd98cd0b1112e3726906d110d6b356ac03d2a975732568eb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/candidate-manifest.json",
+      "sha256": "795fbf691838fc9e42f7c4d61da2ffed00643a6f1a7c5e0800b8de88e12eb20a"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc",
+    "services",
+    "host",
+    "packages",
+    "apps",
+    "tools",
+    "tests",
+    ".codex/agents"
+  ],
+  "write_paths": [
+    "services/data/tests/test_imp10_workstation_load.py"
+  ],
+  "dependencies": [
+    "IMP-06:G-06:automated_qualified",
+    "IMP-07:G-07:automated_qualified",
+    "IMP-08:G-08:automated_qualified",
+    "IMP-09:G-09:automated_qualified"
+  ],
+  "operation_ids": [
+    "scenario_create",
+    "scenario_read",
+    "scenario_stop",
+    "replay_create",
+    "evaluation_read",
+    "data_replay_create",
+    "data_evaluation_read",
+    "identity_link_request",
+    "data_identity_link_request"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "active serving or deployment change",
+    "host or SSL trust changes",
+    "provider model load/unload or restart",
+    "external communications",
+    "Git mutation",
+    "real participant data or contact"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "proceed",
+    "scope": "Continue the isolated G-10 automated qualification and owned test fixtures. Existing provider lifecycle, host trust, demo serving and publication are separate actions."
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Scoped modules/tests",
+    "Actual checks and findings",
+    "Handoff"
+  ],
+  "positive_acceptance": [
+    "Record observed machine results bound to exact candidate and fixtures."
+  ],
+  "adverse_acceptance": [
+    "Real provider and workload evidence retains its observed boundaries. Report missing evidence as not run."
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "authority change",
+    "shared ownership conflict",
+    "destructive or live action needed"
+  ],
+  "is_example": false
+}

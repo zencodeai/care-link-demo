@@ -1,0 +1,35 @@
+{
+  "error": "Timed out waiting for round-01-waiting.json",
+  "diagnostic_events": [
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: assistance.function_disabled"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: assistance.function_disabled"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: assistance.function_disabled"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=task_create: assistance.function_disabled"
+    }
+  ],
+  "actor_receipts": {
+    "pair": [
+      {
+        "session_id": "6f2db06b-18d2-4b7e-ad0a-d58d0e4f2384",
+        "task_id": "2661c91d-fb1d-4072-afb0-802f91cd1d8a",
+        "arrival_ns": 2677133269936541
+      },
+      {
+        "session_id": "5d7da74a-c7c9-4dc3-b21d-ff7dae380d8e",
+        "task_id": "119f6173-5d7c-4582-8f0b-86ebe702edea",
+        "arrival_ns": 2677134068044250
+      }
+    ]
+  }
+}

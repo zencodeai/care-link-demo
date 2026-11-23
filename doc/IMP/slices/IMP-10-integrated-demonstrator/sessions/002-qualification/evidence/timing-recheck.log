@@ -1,0 +1,16 @@
+.....                                                                    [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+services/data/tests/test_imp08_latency.py::test_governance_authorization_latency_sample
+  services/data/tests/test_imp08_latency.py:16: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    def test_governance_authorization_latency_sample(harness, record_property):
+
+services/data/tests/test_imp09_integration.py::test_real_capture_restore_current_restriction_promotion_and_manual
+  services/data/tests/test_imp09_integration.py:61: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    def test_real_capture_restore_current_restriction_promotion_and_manual(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 19 warnings in 14.70s

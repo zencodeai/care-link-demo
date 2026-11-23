@@ -1,0 +1,141 @@
+{
+  "packet_id": "IMP10-007-integration",
+  "task_id": "IMP-10-D",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "role": "imp_platform",
+  "status": "partial",
+  "changed_paths": [
+    "deploy/images/imp06/Dockerfile",
+    "deploy/images/imp06/Dockerfile.dockerignore",
+    "tools/imp03_runtime/compose.py",
+    "tools/imp03_runtime/config.py",
+    "tools/imp03_runtime/review_identity.py",
+    "tools/imp06_runtime/core.py",
+    "tools/imp06_runtime/role_process.py",
+    "tools/imp06_runtime/routes.py",
+    "tools/imp06_runtime/serve.py",
+    "tools/imp10_runtime/protected_help.py",
+    "tools/imp10_runtime/protected_training.py",
+    "tools/imp10_runtime/routes.py",
+    "tools/imp10_runtime/serve.py",
+    "tools/imp10_runtime/mesh.py",
+    "tools/imp10_runtime/README.md",
+    "services/identity/tests/test_imp10_protected_help.py",
+    "services/data/tests/test_imp10_protected_training.py",
+    "tests/network/test_imp10_protected_routes.py",
+    "tests/network/test_imp10_protected_mesh.py"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/results.json",
+      "sha256": "c4dc7ee2dcecd581978de344120f408b2d6076ad91c44a878b3d0b84c9980338"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/evidence/protected-image-smoke.json",
+      "sha256": "1d3fa083aba23d141e286435d0e9f0c066d3fe8cf7132796f38d968f4a617dfa"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/evidence/mesh-config-validation.json",
+      "sha256": "2cfcaf57bac477fc27796596082c36558e6d70f07f6df6c928f03aec83fe3a90"
+    }
+  ],
+  "checks": [
+    {
+      "name": "source-regression",
+      "command": ".venv/bin/python -m tools.imp10_verification.checks",
+      "tool_version": null,
+      "status": "failed",
+      "expected": "Locked source, security and regression checks pass on owned TLS database.",
+      "actual": "38 of 39 commands passed. 1792 backend passed, 4 skipped, and 234 frontend passed. The only failing case exceeded the IMP-08 policy p95 limit by 3.407 ms.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/evidence/source/checks.json",
+      "evidence_digest": "bd918f5c1bf23c3e2094f5c7dc28f66affb03b58f56c71e80ac283a1108ec39e",
+      "mock_used": true
+    },
+    {
+      "name": "latency-isolated-rerun",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Repeat the sole failing case with the unchanged 50 ms threshold.",
+      "actual": "Isolated p95 was 40.169 ms. Earlier full run measured 43.753 ms.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/evidence/source-latency.json",
+      "evidence_digest": "90298afc0a87265f693580266525d5213178050e1bfec5c461037e2480d729b7",
+      "mock_used": true
+    },
+    {
+      "name": "protected-packaged-launcher",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual restricted Linux role starts from the image and checks Unix UID.",
+      "actual": "The proxy UID got the Training shell and a 401 for missing replay authentication. A non-proxy UID got 403.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/evidence/protected-image-smoke.json",
+      "evidence_digest": "1d3fa083aba23d141e286435d0e9f0c066d3fe8cf7132796f38d968f4a617dfa",
+      "mock_used": true
+    },
+    {
+      "name": "pinned-envoy-validation",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "All generated role listeners are accepted by exact Envoy.",
+      "actual": "All eleven role files passed network-disabled parser validation.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/evidence/mesh-config-validation.json",
+      "evidence_digest": "2cfcaf57bac477fc27796596082c36558e6d70f07f6df6c928f03aec83fe3a90",
+      "mock_used": true
+    },
+    {
+      "name": "first-live-loopback",
+      "command": null,
+      "tool_version": null,
+      "status": "failed",
+      "expected": "Live combined loopback workload completes within the configured deadlines.",
+      "actual": "Both reserved warm requests timed out. Fixture teardown limited durable-outcome observation.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/evidence/live-combined-first-attempt.log",
+      "evidence_digest": "115649f826faf5e7cb8d9f04aaea86cabd84aa51ed92cdfa53c27ad4402f2f59",
+      "mock_used": true
+    },
+    {
+      "name": "serial-live-loopback",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Ten active sessions and combined role faults on loopback with exact loaded model.",
+      "actual": "Serial retry passed with live Qwen, ten active sessions, two occupied slots and eight queued tasks.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/evidence/live-combined.json",
+      "evidence_digest": "f9f2dfea4fcd75308351803f73de2b32e5b0c6bde04c73c42c55346e3e6ed5c3",
+      "mock_used": true
+    },
+    {
+      "name": "protected-kubernetes-profile",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Independently deployed current protected workload topology with exact role trust and private Help.",
+      "actual": "Role application and mesh source now exist. A provisioned isolated topology with the signed identities, stores, OIDC settings, replay policy and model bindings is pending.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    },
+    {
+      "name": "deployed-declared-load-distributions",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Repeated cold, warm and failure timing at ten sessions against the protected topology.",
+      "actual": "Earlier controlled observations and the local loopback result retain their measured scopes.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Provision the isolated protected profile using the current application and mesh bindings, distinct workload identities, TLS stores, OIDC, replay policy and exact model qualification.",
+    "Run deployed protected workload and live dependency probes, and prove private Help behavior during the protected outage.",
+    "Measure repeated cold, warm and error timing at the declared ten-session load in that topology."
+  ],
+  "handoff": "Provision and qualify the full protected profile from the new image and exact role bindings.",
+  "is_example": false
+}

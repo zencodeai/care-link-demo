@@ -1,0 +1,173 @@
+{
+  "scope": "Owned separate host Help, protected native-role image, and signed Static",
+  "candidate_image_id": "sha256:7d92f8010e4c6b9a6801bfd820d3753355f54ba861e66a416cbc343be4147aef",
+  "envoy_configuration_sha256": "525bc419caa86dc502372a52dae53019b447c148bd88714019db0363b6e7ea55",
+  "help_workload_id": "spiffe://care-link.demo/demo/help",
+  "sources_sha256": "a41d7f8acbb0547a57cbac82eb38ad839ae6b79da77fd6039034e4521afe15b3",
+  "static_process_id": 88176,
+  "static_preflight": {
+    "artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+    "locales": [
+      "en-CA",
+      "fr-CA"
+    ],
+    "cookie_free": true
+  },
+  "help_container_id": "8bd7180b0dd2105944fe28c57b029d6ea04826e0372eef5c519a34c937f62274",
+  "backend_socket": {
+    "expected_proxy_health": 200,
+    "application_uid_http": 403,
+    "unrelated_uid": "kernel_denied"
+  },
+  "proxy_container_id": "6b44f9b6ac9a75394f0c2e4f2a07a85d1db591d636b62d3559f694edb9c6f510",
+  "spire_agent_container_id": "cb602406e667add54e2d4d5ec89792f953ad34aea657027531a2449d0fbc2a9a",
+  "browser_internal_authority_denied": 403,
+  "accept_actor_role": "worker",
+  "before": {
+    "private_help": {
+      "locale": "en-CA",
+      "state": "recorded",
+      "connection_confirmed": false,
+      "elapsed_ms": 211.21
+    },
+    "static": {
+      "artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+      "locales": [
+        "en-CA",
+        "fr-CA"
+      ],
+      "cookie_free": true
+    }
+  },
+  "core_down": {
+    "private_help": {
+      "locale": "fr-CA",
+      "state": "recorded",
+      "connection_confirmed": false,
+      "elapsed_ms": 275.411
+    },
+    "static": {
+      "artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+      "locales": [
+        "en-CA",
+        "fr-CA"
+      ],
+      "cookie_free": true
+    }
+  },
+  "node_down": {
+    "private_operations": {
+      "status": {
+        "status": 503,
+        "elapsed_ms": 1031.222
+      },
+      "new_create": {
+        "status": 503,
+        "elapsed_ms": 1009.542
+      },
+      "retry_create": {
+        "status": 503,
+        "elapsed_ms": 1010.98
+      },
+      "accept": {
+        "status": 503,
+        "elapsed_ms": 1025.213
+      }
+    },
+    "durable_spool_unchanged": true,
+    "spool": {
+      "counts": {
+        "request": 2,
+        "operation": 4,
+        "decision_nonce": 4,
+        "local_event": 4
+      },
+      "sha256": "ed370005f0b8f16a3e360052eb16b7e9e0875b14af77862e2f639615e82800a3"
+    },
+    "node_container_running": false,
+    "help_container_id": "8bd7180b0dd2105944fe28c57b029d6ea04826e0372eef5c519a34c937f62274",
+    "static": {
+      "artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+      "locales": [
+        "en-CA",
+        "fr-CA"
+      ],
+      "cookie_free": true
+    }
+  },
+  "after": {
+    "original_request_recovered": true,
+    "private_help": {
+      "locale": "en-CA",
+      "state": "recorded",
+      "connection_confirmed": false,
+      "elapsed_ms": 156.838
+    },
+    "static": {
+      "artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+      "locales": [
+        "en-CA",
+        "fr-CA"
+      ],
+      "cookie_free": true
+    },
+    "durable": {
+      "counts": {
+        "request": 3,
+        "operation": 7,
+        "decision_nonce": 7,
+        "local_event": 7
+      },
+      "sha256": "ae4aaa1818cfafc0eab6c105ec02f04a71f324336d18246f33ebb8a92a928a84"
+    }
+  },
+  "owned_processes_cleaned": true,
+  "workload_and_spool_baseline": {
+    "baseline_durable": {
+      "counts": {
+        "request": 1,
+        "operation": 2,
+        "decision_nonce": 2,
+        "local_event": 2
+      },
+      "sha256": "0d32cbda842b69302b9954231161c56618695be0894b5ede6af7f3aa4307dd43"
+    },
+    "public_workload_metadata": [
+      "spiffe://care-link.demo/demo/help",
+      "2026-11-23 17:04:10 +0000 UTC",
+      "2026-11-23 17:09:20 +0000 UTC"
+    ],
+    "pins": {
+      "identity.pub": "b36e6f8f9b74384d5959cc25fa0c352d25e0873050aead1de8ef8d5892264d87",
+      "bundle.crt": "9528d7d6dbbc1ecb4e067f94a0e510f00c44cf232bee90811905ca9c3342d409",
+      "tls.crt": "05402c657f046b38bfd032d4bb3537ccbf853ad78559977cfe122d40094f3e7b"
+    }
+  },
+  "browser_sign_in": {
+    "profiles": [
+      "pid",
+      "worker"
+    ],
+    "separate_help_cookie_verified": true,
+    "keycloak_issuer": "https://id.imp10-008.localhost:39443/realms/imp10-008-qualified",
+    "exact_help_client": "care-link-imp10-008-help",
+    "pkce": "S256",
+    "completed_factors": [
+      "password",
+      "otp"
+    ],
+    "ca_verification": "default strict SSLContext and exact hostnames"
+  },
+  "prior_setup_observations": [
+    "Initial Docker copy to read-only seed tmpfs failed. Owned seeding succeeded using Docker exec stdin and explicit ownership.",
+    "Initial Python TLS verification rejected the provider leaf's missing Authority Key Identifier. The corrected leased PKI passed unchanged strict verification.",
+    "Existing exact SPIRE host entry from a prior bind was revalidated and retained for local retry.",
+    "Initial probe omitted required locale in LoginStart and received 422. Corrected probe sent the contract field.",
+    "Initial callback rejected the access token with identity.invalid_token. Exact Keycloak JWT type binding restored actual password and OTP sign-in."
+  ],
+  "cleanup": {
+    "remaining_help_containers": 0,
+    "remaining_help_volumes": 0,
+    "owned_private_workspaces_removed": 8
+  }
+}

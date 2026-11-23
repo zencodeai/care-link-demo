@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-11-23T19:07:50.245097+00:00",
+  "private_diagnostic_workfiles_removed": true,
+  "temporary_kind_removal": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/platform-cleanup.json",
+    "sha256": "b7debf91fbd725f487e0d4b6b64bc79c471c4e2e90730b59d579bbf0946d709d"
+  },
+  "temporary_bridge_removal_and_native_model_preservation": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/bridge-cleanup.json",
+    "sha256": "9dc3533bb84552bf6562713991916c2cd2a91540c06b2f5304b6bc915c9b5e3d"
+  },
+  "qualification_release_disabled": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/qualification-disable.json",
+    "sha256": "8de434a445c1184ef67b09492a3d36c749540c3352c96acb7e2b6c10ddc61ed1"
+  },
+  "retained_resources_verified": true
+}

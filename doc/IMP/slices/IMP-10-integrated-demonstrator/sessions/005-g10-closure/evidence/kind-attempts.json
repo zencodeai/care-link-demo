@@ -1,0 +1,60 @@
+{
+  "owned_cluster": "care-link-imp10-005",
+  "kubernetes": "v1.36.4",
+  "calico": "3.33.0",
+  "docker_vm_memory_bytes": 8318976000,
+  "pins": {
+    "kind": "0c8c7dbe5e23594a198b786c4bc13dacc101fa6196b0cb0b23a1ca44e61f4b4f",
+    "calico_manifest": "2de8f47595fb9c41b3f47d7b767a1f8e72ecf84057af834738ff12689a234da5",
+    "calico_rendered": "918e7b33ff89d4c08de9462345b1a9fbc68dd9f097704d620ace22f6506b24a3",
+    "node_image": "kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+    "current_image_id": "sha256:dd93ef8772404749d1c015264c5a2a2a8205aad0ce2ced0b88a917c22f917d41"
+  },
+  "steps": [
+    {
+      "check": "Find the historical lab and exact image",
+      "state": "observed",
+      "actual": "Docker showed a running historical IMP-02 node and the matching tagless Kind node image."
+    },
+    {
+      "check": "Start the leased node on an internal bridge",
+      "state": "failed",
+      "actual": "Kind boot did not reach multi-user state. The retained node exited 2 and iptables-restore reported an empty host or network."
+    },
+    {
+      "check": "Start a separate owned bridge with a gateway",
+      "state": "passed",
+      "actual": "The new Kind control plane booted with an API published only on loopback."
+    },
+    {
+      "check": "Import Calico images from the earlier cache",
+      "state": "failed",
+      "actual": "The cached archive lacked a referenced content layer. The three exact pinned arm64 image digests were fetched into the new node."
+    },
+    {
+      "check": "Apply pinned Calico and load the current package image",
+      "state": "passed",
+      "actual": "Node reached Ready. The local IMP-10 image ID matched its retained smoke receipt and Kind loaded it."
+    },
+    {
+      "check": "Run deployed boundary preflight",
+      "state": "failed",
+      "actual": "Docker image inspection timed out. The leased node showed OOMKilled=true. The CRI handshake and Kubernetes API timed out."
+    },
+    {
+      "check": "Restart the leased node and retry readiness",
+      "state": "failed",
+      "actual": "The same node eventually returned Ready. The four probe pods did not become ready in the next run, and the temporary network-control container was observed Dead."
+    },
+    {
+      "check": "Run same-target CNI controls and stop a healthy loaded node",
+      "state": "not_run",
+      "actual": "Probe pod readiness timed out before either check began."
+    },
+    {
+      "check": "Clean up owned lab",
+      "state": "passed",
+      "actual": "Kind removed the leased node and Docker removed the empty leased bridge. The probe was gone and the empty owned kubeconfig was removed."
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "state": "passed_for_focused_source_and_tls_scope",
+  "deployed_parent_candidate": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/candidate-manifest.json",
+    "sha256": "b721ef733925fc73e54f76ac4b03e2fb84f1fd11fc55b6fd9f88cccc2508c8e3"
+  },
+  "source_changes": [
+    {
+      "deployed_source": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/engine.py.txt",
+        "sha256": "af9c0a74953fd66884a15e827d58362af5a4b4cd91b809ee5cca5c812d41be16"
+      },
+      "hardened_source": {
+        "path": "services/data/src/care_link_data/engine.py",
+        "sha256": "a20c51f6acd0174cd9a909317fbfc7f30ca5ab65623ede4cb56d7a1104562899"
+      }
+    },
+    {
+      "deployed_source": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/assistance_transport.py.txt",
+        "sha256": "7f905c0a3ecf5d7bd8c6c9b51423f4af4742859e19743a3d3f6fbe91f38e3c92"
+      },
+      "hardened_source": {
+        "path": "services/data/src/care_link_data/assistance_transport.py",
+        "sha256": "ca10353f69316852208834f9e8f9bbef0328924b703231a3a599197e3e6c17cd"
+      }
+    },
+    {
+      "deployed_source": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/assistance_jobs.py.txt",
+        "sha256": "fc94f17d37f277fface69189a262caf8be54a61317f4de89c9706f07823a4ba8"
+      },
+      "hardened_source": {
+        "path": "services/data/src/care_link_data/assistance_jobs.py",
+        "sha256": "9362e9544dfa8cd6ce176ae33dbb1781ef78d8fba657e5ae8c83e175256c9df7"
+      }
+    },
+    {
+      "deployed_source": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/execution.py.txt",
+        "sha256": "3d3c79fd42af9e90f3fb2c593b650748c0b11310024e3b7cd2cd822f1ae600f5"
+      },
+      "hardened_source": {
+        "path": "services/data/src/care_link_data/assistance/execution.py",
+        "sha256": "b333ee7cbb4d87266c6b6773dc3268dcf862d006d9f4a59ba04dbe4a4182344b"
+      }
+    },
+    {
+      "deployed_source": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/test_assistance_jobs.py.txt",
+        "sha256": "ee1e9a707f239b1c8f7507f279a86324e41256d520ec423d8751820e4cada0b0"
+      },
+      "hardened_source": {
+        "path": "services/data/tests/test_assistance_jobs.py",
+        "sha256": "c8f8fbe4b499bda4f5780e96fda9e6147d0e65e7f9cd0e6ae54dcf3988d572d0"
+      }
+    },
+    {
+      "deployed_source": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/test_imp10_workstation_load.py.txt",
+        "sha256": "c0fef56c3e84da0146079192a56a95c804b60c295e322901837368aefdfb341b"
+      },
+      "hardened_source": {
+        "path": "services/data/tests/test_imp10_workstation_load.py",
+        "sha256": "f2957e2b5e04019e174eeba5d4df72fadd864cf1657b92fc6c97a71e6d98a29d"
+      }
+    }
+  ],
+  "observed_proof_expiry_during_reserve_and_completion_locks": true,
+  "late_reservation_created_job": false,
+  "late_observed_completion_state": "fenced",
+  "late_observed_completion_freed_its_slot": true,
+  "malformed_ledger_array_status": 400,
+  "corrected_workstation_fixture_passed": true,
+  "focused_tls_and_source_tests_passed": 25,
+  "locked_full_source_pass_pending": false,
+  "hardened_source_deployed": false,
+  "evidence_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/focused-tests.log",
+      "sha256": "7df10d27fab0b3624ef0ecf92421976a126878c479217736308978d3fde9696f"
+    }
+  ],
+  "locked_full_source_pass": true,
+  "locked_source_results": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/locked-source-results.json",
+    "sha256": "fa6a421977c612873e958f2e45d196fdf69092cd62f6fb37a7d08d2b5df25fce"
+  }
+}

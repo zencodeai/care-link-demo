@@ -1,0 +1,34 @@
+{
+  "started_at": "2026-11-23T18:25:37.204541+00:00",
+  "ended_at": "2026-11-23T18:26:41.213195+00:00",
+  "namespace": "care-link-imp10-008",
+  "trust_namespace": "care-link-imp10-008-trust",
+  "node": "care-link-imp10-008-control-plane",
+  "node_uid": "6451cc5b-46b8-44ab-b7fb-ae11c3f94487",
+  "docker_id": "caf557dd1bf7de005d44f5b62bf7146749cf84021d663edd1c73426efb616ac2",
+  "docker_bridge_address": "172.23.0.2",
+  "calico_manifest_sha256": "918e7b33ff89d4c08de9462345b1a9fbc68dd9f097704d620ace22f6506b24a3",
+  "candidate_image": "care-link-imp10:protected-007",
+  "candidate_image_id": "sha256:9da1df60b9ba68a8ee0e6488504ae1d205e39fa68ba9bc3de34a8fe6bd14c9fc",
+  "candidate_cri_image": "docker.io/library/import-2026-11-23@sha256:e045eb6b5109d6f28545ad8483e51325857c48e6a050ad301ccdb2377a0439f2",
+  "envoy_cri_image": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+  "approved_serving_certificates": [
+    "csr-qxc7k",
+    "csr-rph59"
+  ],
+  "spire_psat_node_alias": "spiffe://care-link.demo/node/imp10-008",
+  "spire_bundle_sha256": "67caf7c9e2b19deb5b190ed4173556508e4b362e8c5d9be8c4b0167f7956abed",
+  "spire_registered_roles": [
+    "core",
+    "data",
+    "identity",
+    "inference",
+    "journal",
+    "pdp",
+    "receiver",
+    "runtime",
+    "training"
+  ],
+  "spire_csi_node_ready": true,
+  "default_deny_applied": true
+}

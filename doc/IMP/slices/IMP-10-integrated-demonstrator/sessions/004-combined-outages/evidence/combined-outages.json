@@ -1,0 +1,226 @@
+{
+  "durable_counts": {
+    "dispatches": 1,
+    "drafts": 3,
+    "evaluations": 1,
+    "messages": 1
+  },
+  "durable_inference_jobs": [
+    {
+      "jobs": 3,
+      "result_digests": 3,
+      "state": "completed"
+    },
+    {
+      "jobs": 1,
+      "result_digests": 0,
+      "state": "compute_unknown"
+    }
+  ],
+  "ended_at_utc": "2026-11-23T15:16:56.133928+00:00",
+  "faults": {
+    "audit": {
+      "check_and_recovery_ms": 316.048,
+      "durable_protected_operation_count": 0,
+      "help": {
+        "connection_confirmed": false,
+        "create_and_read_elapsed_ms": 15.878542,
+        "help_state": "recorded",
+        "locale": "fr-CA",
+        "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+        "public_static_locales": [
+          "en-CA",
+          "fr-CA"
+        ]
+      },
+      "observed": {
+        "key": "manual.authority_unavailable",
+        "status": 503
+      }
+    },
+    "identity": {
+      "check_and_recovery_ms": 454.822,
+      "durable_protected_operation_count": 0,
+      "help": {
+        "durable_spool_unchanged": true,
+        "private_operations": {
+          "accept": "typed_503",
+          "new_create": "typed_503",
+          "retry_create": "typed_503",
+          "status": "typed_503"
+        },
+        "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+        "public_static_locales": [
+          "en-CA",
+          "fr-CA"
+        ]
+      },
+      "observed": {
+        "key": "manual.identity_unavailable",
+        "status": 503
+      }
+    },
+    "main_roles_and_dependencies": {
+      "check_and_recovery_ms": 8673.982,
+      "durable_protected_operation_count": 0,
+      "help": {
+        "connection_confirmed": false,
+        "create_and_read_elapsed_ms": 24.045083,
+        "help_state": "recorded",
+        "locale": "fr-CA",
+        "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+        "public_static_locales": [
+          "en-CA",
+          "fr-CA"
+        ]
+      },
+      "observed": {
+        "canonical_audit_available": false,
+        "stopped_listeners": [
+          "host-inference-bridge",
+          "receiver",
+          "training",
+          "policy",
+          "inference",
+          "data",
+          "core"
+        ],
+        "transport": "connection_failed"
+      }
+    },
+    "model": {
+      "check_and_recovery_ms": 19898.584,
+      "durable_protected_operation_count": 1,
+      "help": {
+        "connection_confirmed": false,
+        "create_and_read_elapsed_ms": 17.430917,
+        "help_state": "recorded",
+        "locale": "fr-CA",
+        "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+        "public_static_locales": [
+          "en-CA",
+          "fr-CA"
+        ]
+      },
+      "observed": {
+        "assistance": {
+          "elapsed_ms": 948.832,
+          "safe_reason": "provider_stop_unverified",
+          "state": "compute_unknown"
+        },
+        "manual": "visible_human_authored",
+        "verified_live_recovery": {
+          "elapsed_ms": 10274.58,
+          "safe_reason": null,
+          "state": "awaiting_human"
+        }
+      }
+    },
+    "policy": {
+      "check_and_recovery_ms": 514.077,
+      "durable_protected_operation_count": 0,
+      "help": {
+        "connection_confirmed": false,
+        "create_and_read_elapsed_ms": 18.065584,
+        "help_state": "recorded",
+        "locale": "en-CA",
+        "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+        "public_static_locales": [
+          "en-CA",
+          "fr-CA"
+        ]
+      },
+      "observed": {
+        "key": "manual.policy_unavailable",
+        "status": 503
+      }
+    }
+  },
+  "help_at_peak": {
+    "connection_confirmed": false,
+    "create_and_read_elapsed_ms": 81.077292,
+    "help_state": "recorded",
+    "locale": "fr-CA"
+  },
+  "help_baseline": {
+    "connection_confirmed": false,
+    "create_and_read_elapsed_ms": 28.846,
+    "help_state": "recorded",
+    "locale": "en-CA"
+  },
+  "help_durable": {
+    "durable_local_audit_actions": [
+      "create",
+      "status",
+      "create",
+      "status",
+      "create",
+      "status",
+      "create",
+      "status",
+      "create",
+      "status",
+      "create",
+      "status",
+      "create",
+      "status"
+    ],
+    "durable_local_authority_receipts": 14,
+    "durable_local_request_count": 7,
+    "help_workload_binding": "dedicated synthetic credential over pinned loopback TLS",
+    "identity_provider": "synthetic OIDC with in-memory Identity custody",
+    "local_audit_chain_verified": true,
+    "static_review_profile": "owner_review_local_demo"
+  },
+  "model_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+  "offline_evaluation_state": "completed",
+  "peak": {
+    "connected_sessions": 10,
+    "occupied_inference_slots": 2,
+    "unique_pending_tasks": 8
+  },
+  "peak_protected_read_ms": [
+    477.756,
+    526.589,
+    414.966,
+    581.382,
+    568.309,
+    541.53,
+    554.439,
+    503.121,
+    441.434,
+    513.334
+  ],
+  "receiver_state": "received",
+  "scope": "Synthetic actors and fixture channels with owned TLS listener faults and read-only live Qwen",
+  "started_at_utc": "2026-11-23T15:15:49.919550+00:00",
+  "warm_bridge_responses": [
+    {
+      "bridge_elapsed_ms": 14736.293,
+      "completion_tokens": 11,
+      "prompt_tokens": 1235
+    },
+    {
+      "bridge_elapsed_ms": 14825.924,
+      "completion_tokens": 11,
+      "prompt_tokens": 1240
+    },
+    {
+      "bridge_elapsed_ms": 8841.511,
+      "completion_tokens": 11,
+      "prompt_tokens": 1244
+    }
+  ],
+  "warm_runtime": [
+    {
+      "elapsed_ms": 18081.987,
+      "safe_reason": null,
+      "state": "awaiting_human"
+    },
+    {
+      "elapsed_ms": 17742.734,
+      "safe_reason": null,
+      "state": "awaiting_human"
+    }
+  ]
+}

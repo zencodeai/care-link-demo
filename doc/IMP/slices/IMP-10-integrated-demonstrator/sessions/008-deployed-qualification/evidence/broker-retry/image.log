@@ -1,0 +1,222 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 5.09kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#2 DONE 0.5s
+
+#3 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#3 DONE 0.9s
+
+#4 [build  1/18] FROM docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56
+#4 resolve docker.io/library/python@sha256:82bc3c539b8813ada9d68c63b40158fa002f7f33de9bf3312a3dfdc0620dff56 0.0s done
+#4 DONE 0.0s
+
+#5 [uv 1/1] FROM ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc
+#5 resolve ghcr.io/astral-sh/uv@sha256:10787c682e4184e4f290de1171fd4703dc63de99221f10fe1c99002ce7fa9acc 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 2.00MB 0.0s done
+#6 DONE 0.1s
+
+#7 [build  2/18] COPY --from=uv /uv /usr/local/bin/uv
+#7 CACHED
+
+#8 [build  3/18] WORKDIR /app
+#8 CACHED
+
+#9 [build  4/18] COPY pyproject.toml uv.lock .python-version ./
+#9 CACHED
+
+#10 [build  5/18] COPY packages/ packages/
+#10 CACHED
+
+#11 [build  6/18] COPY services/ services/
+#11 DONE 0.1s
+
+#12 [build  7/18] COPY host/ host/
+#12 DONE 0.0s
+
+#13 [build  8/18] RUN uv sync --locked --no-dev --all-packages
+#13 0.220 Using CPython 3.14.7 interpreter at: /usr/local/bin/python3.14
+#13 0.220 Creating virtual environment at: .venv
+#13 0.226 Resolved 93 packages in 1ms
+#13 0.291    Building care-link-data @ file:///app/services/data
+#13 0.291    Building care-link-domain @ file:///app/packages/domain
+#13 0.292    Building care-link-help @ file:///app/host/help
+#13 0.292    Building care-link-identity @ file:///app/services/identity
+#13 0.292    Building care-link-inference @ file:///app/services/inference
+#13 0.293    Building care-link-inference-bridge @ file:///app/host/inference-bridge
+#13 0.301    Building care-link-knowledge @ file:///app/packages/knowledge
+#13 0.301    Building care-link-recovery-control @ file:///app/host/recovery-control
+#13 0.302    Building care-link-policy-input @ file:///app/packages/policy-input
+#13 0.302    Building care-link-runtime @ file:///app/services/runtime
+#13 0.302    Building care-link-simulators @ file:///app/services/simulators
+#13 0.303    Building care-link-static @ file:///app/host/static
+#13 0.303    Building care-link-workload-trust @ file:///app/packages/workload-trust
+#13 0.305    Building care-link-contracts @ file:///app/packages/contracts/python
+#13 0.306    Building care-link-core @ file:///app/services/core
+#13 0.565 Downloading cryptography (4.5MiB)
+#13 0.569 Downloading pydantic-core (2.0MiB)
+#13 0.570 Downloading zstandard (4.8MiB)
+#13 0.572 Downloading psycopg-binary (4.4MiB)
+#13 1.067  Downloaded pydantic-core
+#13 1.235  Downloaded zstandard
+#13 1.237  Downloaded psycopg-binary
+#13 1.249  Downloaded cryptography
+#13 2.012       Built care-link-policy-input @ file:///app/packages/policy-input
+#13 2.012       Built care-link-static @ file:///app/host/static
+#13 2.013       Built care-link-recovery-control @ file:///app/host/recovery-control
+#13 2.013       Built care-link-inference-bridge @ file:///app/host/inference-bridge
+#13 2.014       Built care-link-help @ file:///app/host/help
+#13 2.014       Built care-link-domain @ file:///app/packages/domain
+#13 2.020       Built care-link-inference @ file:///app/services/inference
+#13 2.021       Built care-link-knowledge @ file:///app/packages/knowledge
+#13 2.021       Built care-link-identity @ file:///app/services/identity
+#13 2.022       Built care-link-core @ file:///app/services/core
+#13 2.022       Built care-link-data @ file:///app/services/data
+#13 2.022       Built care-link-simulators @ file:///app/services/simulators
+#13 2.023       Built care-link-workload-trust @ file:///app/packages/workload-trust
+#13 2.025       Built care-link-contracts @ file:///app/packages/contracts/python
+#13 2.092       Built care-link-runtime @ file:///app/services/runtime
+#13 2.093 Prepared 84 packages in 1.86s
+#13 2.223 Installed 84 packages in 129ms
+#13 2.462 Bytecode compiled 1925 files in 238ms
+#13 2.462  + annotated-doc==0.0.5
+#13 2.462  + annotated-types==0.8.0
+#13 2.462  + anyio==4.16.0
+#13 2.462  + arrow==1.4.0
+#13 2.462  + attrs==26.1.0
+#13 2.462  + care-link-contracts==0.1.0 (from file:///app/packages/contracts/python)
+#13 2.462  + care-link-core==0.1.0 (from file:///app/services/core)
+#13 2.462  + care-link-data==0.1.0 (from file:///app/services/data)
+#13 2.462  + care-link-domain==0.1.0 (from file:///app/packages/domain)
+#13 2.462  + care-link-help==0.1.0 (from file:///app/host/help)
+#13 2.462  + care-link-identity==0.1.0 (from file:///app/services/identity)
+#13 2.462  + care-link-inference==0.1.0 (from file:///app/services/inference)
+#13 2.462  + care-link-inference-bridge==0.1.0 (from file:///app/host/inference-bridge)
+#13 2.462  + care-link-knowledge==0.1.0 (from file:///app/packages/knowledge)
+#13 2.462  + care-link-policy-input==0.1.0 (from file:///app/packages/policy-input)
+#13 2.462  + care-link-recovery-control==0.1.0 (from file:///app/host/recovery-control)
+#13 2.462  + care-link-runtime==0.1.0 (from file:///app/services/runtime)
+#13 2.462  + care-link-simulators==0.1.0 (from file:///app/services/simulators)
+#13 2.462  + care-link-static==0.1.0 (from file:///app/host/static)
+#13 2.462  + care-link-workload-trust==0.1.0 (from file:///app/packages/workload-trust)
+#13 2.462  + certifi==2026.10.23
+#13 2.462  + cffi==2.1.1
+#13 2.462  + charset-normalizer==3.5.2
+#13 2.462  + click==8.5.1
+#13 2.462  + cryptography==50.0.2
+#13 2.462  + distro==1.9.0
+#13 2.462  + fastapi==0.162.2
+#13 2.462  + fqdn==1.6.0
+#13 2.462  + h11==0.16.0
+#13 2.462  + httpcore==1.0.9
+#13 2.462  + httpcore2==2.16.2
+#13 2.462  + httpx==0.28.1
+#13 2.463  + httpx-ws==0.10.0
+#13 2.463  + httpx2==2.16.2
+#13 2.463  + idna==3.20
+#13 2.463  + isoduration==20.11.0
+#13 2.463  + jsonpatch==1.48
+#13 2.463  + jsonpointer==3.10
+#13 2.463  + jsonschema==4.25.1
+#13 2.463  + jsonschema-specifications==2025.9.1
+#13 2.463  + langchain-core==1.8.4
+#13 2.463  + langchain-protocol==0.0.22
+#13 2.463  + langgraph==1.2.24
+#13 2.463  + langgraph-checkpoint==4.3.2
+#13 2.463  + langgraph-prebuilt==1.1.3
+#13 2.463  + langgraph-sdk==0.4.14
+#13 2.463  + langsmith==0.15.1
+#13 2.463  + lmstudio==1.6.0b1
+#13 2.463  + msgspec==0.22.0
+#13 2.463  + opentelemetry-api==1.45.2
+#13 2.463  + orjson==3.13.0
+#13 2.463  + ormsgpack==1.13.1
+#13 2.463  + packaging==26.3
+#13 2.463  + psycopg==3.2.12
+#13 2.463  + psycopg-binary==3.2.12
+#13 2.463  + pycparser==3.12
+#13 2.463  + pydantic==2.14.3
+#13 2.463  + pydantic-core==2.50.4
+#13 2.463  + pyjwt==2.15.1
+#13 2.463  + python-dateutil==4.0.0
+#13 2.463  + pyyaml==6.0.3
+#13 2.463  + referencing==0.37.0
+#13 2.463  + requests==2.34.2
+#13 2.463  + requests-toolbelt==1.0.0
+#13 2.463  + rfc3339-validator==0.1.4
+#13 2.463  + rfc3987==1.3.8
+#13 2.463  + rpds-py==2026.9.1
+#13 2.463  + six==1.17.0
+#13 2.463  + sniffio==1.3.1
+#13 2.463  + starlette==1.10.0
+#13 2.463  + tenacity==9.2.1
+#13 2.463  + truststore==0.10.5
+#13 2.463  + typing-extensions==4.16.0
+#13 2.463  + typing-inspection==0.4.5
+#13 2.463  + tzdata==2026.6
+#13 2.463  + uri-template==1.3.0
+#13 2.463  + urllib3==2.8.0
+#13 2.463  + uuid-utils==0.19.0
+#13 2.463  + uvicorn==0.38.0
+#13 2.463  + webcolors==25.10.0
+#13 2.463  + websockets==17.4
+#13 2.463  + wsproto==1.3.2
+#13 2.463  + xxhash==4.1.0
+#13 2.463  + zstandard==0.25.0
+#13 DONE 2.7s
+
+#14 [build  9/18] COPY tools/ tools/
+#14 DONE 0.1s
+
+#15 [build 10/18] COPY config/demo/imp03/ config/demo/imp03/
+#15 DONE 0.0s
+
+#16 [build 11/18] COPY config/demo/imp04/ config/demo/imp04/
+#16 DONE 0.0s
+
+#17 [build 12/18] COPY config/demo/imp05/ config/demo/imp05/
+#17 DONE 0.0s
+
+#18 [build 13/18] COPY config/demo/imp06/ config/demo/imp06/
+#18 DONE 0.0s
+
+#19 [build 14/18] COPY config/demo/imp10/ config/demo/imp10/
+#19 DONE 0.0s
+
+#20 [build 15/18] COPY config/demo/assistance/ config/demo/assistance/
+#20 DONE 0.0s
+
+#21 [build 16/18] COPY config/demo/knowledge/ config/demo/knowledge/
+#21 DONE 0.0s
+
+#22 [build 17/18] COPY apps/web/dist/ apps/web/dist/
+#22 DONE 0.0s
+
+#23 [build 18/18] RUN test -f apps/web/dist/index.html && chmod -R a+rX apps/web/dist
+#23 DONE 0.1s
+
+#24 [runtime 2/3] WORKDIR /app
+#24 CACHED
+
+#25 [runtime 3/3] COPY --from=build /app /app
+#25 DONE 0.5s
+
+#26 exporting to image
+#26 exporting layers
+#26 exporting layers 2.0s done
+#26 exporting manifest sha256:b3e1a7430cadb9ec3726c8577e42d178b1866a2b2ae6f5a96df805ea8ba45221 done
+#26 exporting config sha256:584976b9bec344ac64324e0bb4bb59658f90d2b39a612e1379bd8304941a4539 done
+#26 exporting attestation manifest sha256:9e9b6c2996732b8db3bd8ee61c3308f4385d751f384fef701ac56f75c31a3865 done
+#26 exporting manifest list sha256:803e2caaed6083870e1c80f29954b337ea6ad5a080e6a46825977cd073ca4c88 done
+#26 naming to docker.io/library/care-link-imp10:protected-008-broker-diagnostics done
+#26 unpacking to docker.io/library/care-link-imp10:protected-008-broker-diagnostics
+#26 unpacking to docker.io/library/care-link-imp10:protected-008-broker-diagnostics 0.6s done
+#26 DONE 2.7s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/gnddsc0nerjsutuext4x56vfi

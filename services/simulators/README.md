@@ -7,3 +7,7 @@ The HTTP app requires explicit workload verification and current signed receiver
 Receipt storage, service acceptance and human connection remain separate. The receiver claims no human connection. Copies retain a pending later-parent-and-terminal-delivery anchor with seven-day duration; IMP-08 supplies later rights/cleanup coordination. Unknown delivery never becomes automatically eligible for deletion.
 
 See [process configuration](../../tools/imp05_runtime/README.md) and [IMP-05 evidence](../../doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/handoff.md).
+
+## Synthetic trainer scenarios
+
+The optional training app has a separate workload audience, trainer roster, policy interface, verified-TLS database and encryption key. It creates, reads and stops fictional runs. Immediate fixtures emit a deterministic encrypted recording. The delay fixture uses revision fencing when stopped or completed. A recording remains scoped to its trainer and active retention window. Setup and replay handoff are in the [IMP-10 runbook](../../doc/runbooks/imp10-integrated-demo.md).

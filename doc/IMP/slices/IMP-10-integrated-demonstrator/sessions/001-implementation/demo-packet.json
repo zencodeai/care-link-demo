@@ -1,0 +1,563 @@
+{
+  "packet_id": "IMP10-001-qualification",
+  "stage_id": "IMP-10",
+  "gate_id": "G-10",
+  "candidate": {
+    "commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+    "diff_digest": "c26d5ec410f93b022ccce1292d9adfba54cfb361a613e5055174b0ba07503a8e",
+    "artifact_digest": "1b81bfbc2f06049346195dfeb1e9a948326dee328948f63eed091c13740eb557",
+    "configuration_digest": "c4f06139033841a3ef76d2d3ddde1ab23e8dbb9f64627718cebe5b932aa23bd9",
+    "contract_digest": "87d3f81c51ccd56fa42b1d5add5b7dcf0a755b5b3f3650c9576378de785608e4",
+    "environment_digest": "93af1ae83baa1beed28618bec04083f2be0143a260e00931a320a38c8fc63c2e",
+    "fixture_digest": "fcca428ee294f7b7a5086e8621483485e97cc16eb14bffdd66c51f5bd1b11c06"
+  },
+  "state": "draft",
+  "preconditions": [
+    "Owned synthetic TLS PostgreSQL and locked build tools",
+    "Pinned disposable Chromium and separately bound predecessor evidence"
+  ],
+  "normal_steps": [
+    {
+      "action": "Run the integrated actor and rights workflow",
+      "expected": "Exact confirmations and one scoped delivery",
+      "actual": "One durable fixture journey passed. Partial receipt retains explicit obligations.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/pytest.xml",
+          "sha256": "db863e23a4fb87a68db7e5151a59dfc2f22df6e4069b7832174e3bc8088a9ca4"
+        }
+      ]
+    },
+    {
+      "action": "Run training and offline replay",
+      "expected": "Scoped role, exact pins and auditable projections",
+      "actual": "Current synthetic trainer, offline quality and browser fixture checks passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/pytest.xml",
+          "sha256": "db863e23a4fb87a68db7e5151a59dfc2f22df6e4069b7832174e3bc8088a9ca4"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/browser/summary.json",
+          "sha256": "5925cf95079db621b5c72ba1df56c173ef8ae5fcc9e80f4632055c6237b11f97"
+        }
+      ]
+    },
+    {
+      "action": "Run integrated deployed exact model workload and outages",
+      "expected": "Measured real first-use and warm provider paths and independent manual/help continuity",
+      "actual": null,
+      "evidence_refs": []
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Cross-audience, foreign trainer, lost receipt and stale final permit",
+      "expected": "Fixed denies, exact deduplication, fail-closed audit and no late effect",
+      "actual": "Current isolated adverse tests passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/pytest.xml",
+          "sha256": "db863e23a4fb87a68db7e5151a59dfc2f22df6e4069b7832174e3bc8088a9ca4"
+        }
+      ]
+    },
+    {
+      "action": "Saturate the provider and preserve manual capacity",
+      "expected": "Ten sessions, two running, eight queued and honest uncertainty",
+      "actual": "Observed with fixed bridge delays. Unknown compute stayed fenced.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/load.json",
+          "sha256": "1fc2ae5e9091ac25f768345c2c36baf2baa612f326fedf8fe91819b9b8284f56"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "source-01",
+      "command": "uv lock --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/01.log",
+      "evidence_digest": "9bdc1bef4f03c3ef8da4f784d3b088515ef6612165a337ee411b783a98073cb2",
+      "mock_used": false
+    },
+    {
+      "name": "source-02",
+      "command": "pnpm install --offline --frozen-lockfile --lockfile-only --ignore-scripts",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/02.log",
+      "evidence_digest": "1482dd0d98d0458043aefe3ed35e516d46cc2dbc9ef06e396bf52129a5ca8c9c",
+      "mock_used": false
+    },
+    {
+      "name": "source-03",
+      "command": "uv run --locked --all-packages python tools/generate_contracts.py --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/03.log",
+      "evidence_digest": "b62e763e82afd978f4bd2ffd356d434ead0747aa8772e6752395e01c29f626ed",
+      "mock_used": false
+    },
+    {
+      "name": "source-04",
+      "command": "uv run --locked --all-packages python tools/check_boundaries.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/04.log",
+      "evidence_digest": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8",
+      "mock_used": false
+    },
+    {
+      "name": "source-05",
+      "command": "uv run --locked --all-packages python tools/check_imp02_admission.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/05.log",
+      "evidence_digest": "a3882b2b400134aad06bb6a1f3a2d33c28096330b037dec61ece67944843d0b1",
+      "mock_used": false
+    },
+    {
+      "name": "source-06",
+      "command": "uv run --locked --all-packages ruff check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/06.log",
+      "evidence_digest": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mock_used": false
+    },
+    {
+      "name": "source-07",
+      "command": "uv run --locked --all-packages ruff format --check .",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/07.log",
+      "evidence_digest": "6dc1ccf3295698a1e7b526d6c88f5f28cf2837b3b73c128e256a998bdf30991d",
+      "mock_used": false
+    },
+    {
+      "name": "source-08",
+      "command": "pnpm exec pyright --project pyrightconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/08.log",
+      "evidence_digest": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332",
+      "mock_used": false
+    },
+    {
+      "name": "source-09",
+      "command": "pnpm typecheck",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/09.log",
+      "evidence_digest": "e2619b18e6eda193c3629cf5a0d6112df29e1f4e400b0c8b0ad8a99861ed2ac5",
+      "mock_used": false
+    },
+    {
+      "name": "source-10",
+      "command": "pnpm lint",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/10.log",
+      "evidence_digest": "d957502195d6b7bf553082127cc2b44f0602f6924caec17c117d0a1e09273f12",
+      "mock_used": false
+    },
+    {
+      "name": "source-11",
+      "command": "pnpm format:check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/11.log",
+      "evidence_digest": "1264ec68aa3a02a4163de506eca818cf94c93265a31cc61682a0898bc86fb889",
+      "mock_used": false
+    },
+    {
+      "name": "source-12",
+      "command": "uv run --locked --all-packages pytest --tb=short --junitxml /private/tmp/care-link-imp10-source-001/pytest.xml",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/12.log",
+      "evidence_digest": "5080c64e629fa5451211dded7fc31c6171dbd8166894d3a57d521803d9930ed9",
+      "mock_used": true
+    },
+    {
+      "name": "source-13",
+      "command": "pnpm exec tsc -p tests/e2e/imp02/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/13.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-14",
+      "command": "pnpm exec eslint tests/e2e/imp02 --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/14.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-15",
+      "command": "pnpm exec prettier --check tests/e2e/imp02",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/15.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-16",
+      "command": "pnpm exec tsc -p tests/e2e/imp03/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/16.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-17",
+      "command": "pnpm exec eslint tests/e2e/imp03 --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/17.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-18",
+      "command": "pnpm exec prettier --check tests/e2e/imp03",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/18.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-19",
+      "command": "pnpm exec tsc -p tests/e2e/imp03-extended/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/19.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-20",
+      "command": "pnpm exec eslint tests/e2e/imp03-extended --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/20.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-21",
+      "command": "pnpm exec prettier --check tests/e2e/imp03-extended",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/21.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-22",
+      "command": "pnpm exec tsc -p tests/e2e/imp03-review/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/22.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-23",
+      "command": "pnpm exec eslint tests/e2e/imp03-review --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/23.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-24",
+      "command": "pnpm exec prettier --check tests/e2e/imp03-review",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/24.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-25",
+      "command": "pnpm exec tsc -p tests/e2e/imp04-live/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/25.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-26",
+      "command": "pnpm exec eslint tests/e2e/imp04-live --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/26.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-27",
+      "command": "pnpm exec prettier --check tests/e2e/imp04-live",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/27.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-28",
+      "command": "pnpm exec tsc -p tests/contract/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/28.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-29",
+      "command": "pnpm exec eslint tests/contract --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/29.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-30",
+      "command": "pnpm exec prettier --check tests/contract",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/30.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-31",
+      "command": "node --check tools/imp04_verification/review_accessibility.cjs",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/31.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-32",
+      "command": "pnpm exec prettier --check tools/imp04_verification/review_accessibility.cjs",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/32.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-33",
+      "command": "pnpm test",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/33.log",
+      "evidence_digest": "71a95e3bea666ffffa482541427e5dda8a83309c0cbeb98c5aaa05a60ee0ab2e",
+      "mock_used": true
+    },
+    {
+      "name": "source-34",
+      "command": "pnpm build",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/34.log",
+      "evidence_digest": "f470f1af9ceeeb18600cce5c21ef3849237707735dd97e2dfb8129446363c4b8",
+      "mock_used": false
+    },
+    {
+      "name": "source-35",
+      "command": "pnpm exec tsc -p tests/e2e/training/tsconfig.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/35.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-36",
+      "command": "pnpm exec eslint tests/e2e/training --max-warnings 0",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/36.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "source-37",
+      "command": "pnpm exec prettier --check tests/e2e/training config/demo/imp10/training-artifact.json packages/contracts/training.schema.json",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/37.log",
+      "evidence_digest": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "mock_used": false
+    },
+    {
+      "name": "source-38",
+      "command": "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python -m pytest --tb=short --junitxml /private/tmp/care-link-imp10-source-001/matched-assistance.xml tests/evaluation/qwen_combined_journey.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/38.log",
+      "evidence_digest": "885ccea71cd1f31eaec94a583182feda606fccded1df2d055775ed644f24788a",
+      "mock_used": true
+    },
+    {
+      "name": "source-39",
+      "command": "git diff --check",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exit 0 and applicable asserted behaviors",
+      "actual": "Exit 0. See preserved check log.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/39.log",
+      "evidence_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mock_used": false
+    },
+    {
+      "name": "browser-fixtures",
+      "command": "pnpm exec playwright test --config per active suite",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual chromium route fixtures pass",
+      "actual": "55 passed across six suites. No failures or skips.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/browser/summary.json",
+      "evidence_digest": "5925cf95079db621b5c72ba1df56c173ef8ae5fcc9e80f4632055c6237b11f97",
+      "mock_used": true
+    },
+    {
+      "name": "developer-core-image",
+      "command": ".venv/bin/python tools/smoke_core_image.py --image care-link-core:imp10-001-local",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Non-root read-only developer image and denied business operation",
+      "actual": "Pinned image built and developer smoke passed.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/artifacts/core-smoke.json",
+      "evidence_digest": "8e5c2ed5c9ea07b14ee2de2083a0c33fc0f66d1e839077b0966538c2c697b124",
+      "mock_used": false
+    },
+    {
+      "name": "frozen-plan-validator",
+      "command": ".venv/bin/python doc/IMP/validate_plan.py",
+      "tool_version": null,
+      "status": "failed",
+      "expected": "Frozen plan and artifact digests match",
+      "actual": "Pre-existing README.md digest drift at baseline and final.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/plan-validation.log",
+      "evidence_digest": "25736bef0ac67939149948149497fa3b3aec45cc492e444eabd11ceac6c1c0e8",
+      "mock_used": false
+    },
+    {
+      "name": "candidate-live-model-and-outages",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Current exact model and combined topology timings and continuity",
+      "actual": "Local provider was a test fixture. Current live approval and isolated combined topology remain necessary.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "A current candidate run through the combined deployment with exact model cold, warm and outage traces is missing. No active provider, cluster, routing or host trust change was authorized for this session.",
+    "The local load run used fixture identity, PDP, journal and provider. Independent help under that load and the full combined dependency outage drill were not run.",
+    "The trainer capture compares deterministic fictional projections. Real channel continuity, independently sourced live directory behavior and replay of real recorded model or business decisions remain outside the verified scope.",
+    "A restarted catalog requires approved time-bounded capture custody. Active simulator ciphertext cleanup does not prove erasure from other copies or backups.",
+    "The frozen plan validator reported the same pre-existing README digest drift at baseline and final. The standalone LLD validator could not run because its declared dependencies were unavailable locally."
+  ],
+  "acceptance_scope": "Observed local private synthetic scope. G-10 awaits required automated evidence. Human review is deferred.",
+  "rollback": "Keep current negative authority and expiry. Use only a compatible previously verified candidate or restrict private serving and retain independent authorized fallback.",
+  "human_decision_id": null,
+  "is_example": false
+}

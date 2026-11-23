@@ -1,0 +1,148 @@
+{
+  "packet_id": "IMP10-008-integration",
+  "task_id": "IMP-10-D",
+  "stage_id": "IMP-10",
+  "mode": "implementation",
+  "role": "imp_python",
+  "goal": "Integrate and verify protected synthetic product roles and authenticated actor journeys",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "inputs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/previous-ledger.json",
+      "sha256": "14c14aeeec8d9c478d538abc511eff38bc763b046d4f200f331a43a711567763"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/results.json",
+      "sha256": "c4dc7ee2dcecd581978de344120f408b2d6076ad91c44a878b3d0b84c9980338"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/candidate-manifest.json",
+      "sha256": "c2e75544b46ec613318ee7e35c309993d848554ed585aa3c7a1116e1292d06a6"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex",
+    "doc",
+    "tools",
+    "deploy",
+    "config",
+    "services",
+    "packages",
+    "host",
+    "tests",
+    "apps"
+  ],
+  "write_paths": [
+    "tools/imp10_verification/deployed_roles.py",
+    "tools/imp10_verification/deployed_fixtures.py",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/integration.json",
+    "tools/imp10_runtime/serve.py",
+    "tests/network/test_imp10_protected_routes.py",
+    "deploy/images/imp06/Dockerfile",
+    "deploy/images/imp06/Dockerfile.dockerignore",
+    "tools/imp10_verification/deployed_journey.py",
+    "tools/imp10_verification/deployed_assistance.py",
+    "tools/imp10_verification/deployed_assisted_topology.py",
+    "services/core/src/care_link_core/manual_app.py",
+    "services/core/src/care_link_core/manual_channels.py",
+    "services/core/src/care_link_core/training_routes.py",
+    "services/core/tests/test_manual_transport.py",
+    "tools/imp10_verification/deployed_measurement_data.py",
+    "tools/imp10_verification/deployed_measurements.py",
+    "services/core/tests/test_assistance_work.py",
+    "services/inference/src/care_link_inference/composition.py",
+    "services/inference/src/care_link_inference/http.py",
+    "tools/imp06_runtime/core.py",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/source-verification.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/single-deployed-identity-observed-turn.json",
+    "packages/domain/src/care_link_domain/inference_authority.py",
+    "packages/domain/src/care_link_domain/__init__.py",
+    "services/core/src/care_link_core/assistance_broker/actors.py",
+    "services/core/src/care_link_core/assistance_broker/broker.py",
+    "services/core/src/care_link_core/assistance_broker/inference_authority.py",
+    "services/core/tests/test_inference_authority.py",
+    "services/data/src/care_link_data/assistance_transport.py",
+    "services/data/src/care_link_data/assistance_jobs.py",
+    "services/data/src/care_link_data/assistance/actors.py",
+    "services/data/src/care_link_data/assistance/service.py",
+    "services/data/src/care_link_data/assistance/execution.py",
+    "services/data/src/care_link_data/inference_actor.py",
+    "tools/imp06_runtime/routes.py",
+    "tools/imp06_runtime/data.py",
+    "tools/imp03_runtime/compose.py",
+    "tests/evaluation/qwen_combined_journey.py",
+    "tests/network/test_imp10_protected_mesh.py",
+    "services/data/tests/test_inference_actor.py",
+    "services/data/tests/test_assistance_jobs.py",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/source-verification.json",
+    "services/data/src/care_link_data/engine.py",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/engine.py.txt",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/assistance_transport.py.txt",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/assistance_jobs.py.txt",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/execution.py.txt",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/test_assistance_jobs.py.txt",
+    "services/data/tests/test_imp10_workstation_load.py"
+  ],
+  "dependencies": [
+    "IMP-06:G-06:automated_qualified",
+    "IMP-07:G-07:automated_qualified",
+    "IMP-08:G-08:automated_qualified",
+    "IMP-09:G-09:automated_qualified"
+  ],
+  "operation_ids": [
+    "scenario_create",
+    "scenario_read",
+    "scenario_stop",
+    "replay_create",
+    "evaluation_read",
+    "data_replay_create",
+    "data_evaluation_read",
+    "identity_link_request",
+    "data_identity_link_request"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "alter existing saved review deployments or global trust",
+    "admit participants, use real data, or publish externally",
+    "bypass any workload, policy, data custody, or serving approval control"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Complete G-10 work. Do not stop until G-10 closed",
+    "scope": "Provision, deploy, fault and qualify only dedicated private synthetic G-10 resources and record gate closure when mandatory checks pass."
+  },
+  "resource_leases": [
+    {
+      "id": "imp10-008-integration",
+      "kind": "test_database",
+      "scope": "current isolated role image, DB and credential fixtures plus namespaced role resources in care-link-imp10-008",
+      "owner_task_id": "IMP-10-D",
+      "expires_at": "2026-11-23T22:43:08.321712Z"
+    }
+  ],
+  "expected_outputs": [
+    "Scoped deployable source as needed",
+    "Actual checks and evidence",
+    "Integration handoff"
+  ],
+  "positive_acceptance": [
+    "Prove behavior from the exact deployed synthetic candidate and named authorized caller."
+  ],
+  "adverse_acceptance": [
+    "Retain control, rejection and recovered outcome from actual boundaries with raw timing."
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "genuine external authority or technical dependency",
+    "lease ownership conflict"
+  ],
+  "is_example": false
+}

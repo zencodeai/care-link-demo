@@ -1,0 +1,10 @@
+[
+  {
+    "condition": "error",
+    "round": 1,
+    "phase": "prequeue",
+    "at_utc": "2026-11-23T19:50:37.580677+00:00",
+    "error": "POST /v1/tasks: 503 (assistance.capacity_unavailable)",
+    "durable_after_failure": []
+  }
+]

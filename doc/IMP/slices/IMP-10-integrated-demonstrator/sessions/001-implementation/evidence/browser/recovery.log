@@ -1,0 +1,27 @@
+
+
+
+Running 11 tests using 1 worker
+
+
+
+[1/11] tests/e2e/recovery/recovery.spec.ts:25:5 › en-CA operator exact evidence, keyboard and accessibility at 1280/640px
+[2/11] tests/e2e/recovery/recovery.spec.ts:25:5 › en-CA security exact evidence, keyboard and accessibility at 1280/640px
+[3/11] tests/e2e/recovery/recovery.spec.ts:25:5 › en-CA governance exact evidence, keyboard and accessibility at 1280/640px
+[4/11] tests/e2e/recovery/recovery.spec.ts:68:3 › en-CA unknown execution reuses exact operation identity
+[5/11] tests/e2e/recovery/recovery.spec.ts:25:5 › fr-CA operator exact evidence, keyboard and accessibility at 1280/640px
+[6/11] tests/e2e/recovery/recovery.spec.ts:25:5 › fr-CA security exact evidence, keyboard and accessibility at 1280/640px
+[7/11] tests/e2e/recovery/recovery.spec.ts:25:5 › fr-CA governance exact evidence, keyboard and accessibility at 1280/640px
+[8/11] tests/e2e/recovery/recovery.spec.ts:68:3 › fr-CA unknown execution reuses exact operation identity
+[9/11] tests/e2e/recovery/recovery.spec.ts:89:1 › expired approval cannot execute
+[10/11] tests/e2e/recovery/recovery.spec.ts:101:1 › signed-out authority removes all exact evidence
+[11/11] tests/e2e/recovery/recovery.spec.ts:119:1 › invalid sealed evidence is rejected before display
+  11 passed (10.8s)
+[WebServer] (node:24334) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:24335) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:24343) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24343) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

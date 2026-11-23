@@ -1,0 +1,121 @@
+{
+  "packet_id": "IMP10-003-cold",
+  "stage_id": "IMP-10",
+  "gate_id": "G-10",
+  "candidate": {
+    "commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+    "diff_digest": "0634d78d66138b86e9a9d9e0ec656f2a1a6afbc3fc757ff8b14be02444d069bd",
+    "artifact_digest": "53226896360f9e84362eea9a7bbcb8da72c7a789801032d78bcdc6f3824b5331",
+    "configuration_digest": "c4f06139033841a3ef76d2d3ddde1ab23e8dbb9f64627718cebe5b932aa23bd9",
+    "contract_digest": "87d3f81c51ccd56fa42b1d5add5b7dcf0a755b5b3f3650c9576378de785608e4",
+    "environment_digest": "d34d26d7fe0697f33ef6f08bad89effe23e41d1ced2f0e6a9b892fbdb5eb0f03",
+    "fixture_digest": "67c3942b7b69ccbbe677ad97ca2ba4547734d2a79c645ee4d7a965be35774aa9"
+  },
+  "state": "draft",
+  "preconditions": [
+    "Explicit authorization for exact local model lifecycle.",
+    "Pinned exact artifact, alias, tokenizer and template under authenticated loopback."
+  ],
+  "normal_steps": [
+    {
+      "action": "Observe authentic unloaded and reloaded state",
+      "expected": "One replacement instance with stable effective MLX settings",
+      "actual": "Observed absent on the still-authenticated listener, then verified new instance and restored settings.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/evidence/cold-start.json",
+          "sha256": "6c477e8b8d80ab3bbbfca10b387ad2f5f8aed9b59298b110fbb6998fa89000d8"
+        }
+      ]
+    },
+    {
+      "action": "Measure bounded first and repeated synthetic requests",
+      "expected": "Grounded outputs and exact token accounting",
+      "actual": "Three state and token checks passed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/evidence/cold-start.json",
+          "sha256": "6c477e8b8d80ab3bbbfca10b387ad2f5f8aed9b59298b110fbb6998fa89000d8"
+        }
+      ]
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Recover from the initial CLI option error",
+      "expected": "Restore original effective model without modifying listener configuration",
+      "actual": "Removed incompatible flag, confirmed exact restore, recorded raw configuration differences.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/evidence/initial-unload-and-reload-attempt.json",
+          "sha256": "905b40b202b0b6812ac1cfbf1c914b0dc7d7b02c65c39eea9b8c39f8be1e5fec"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/evidence/cold-start.json",
+          "sha256": "6c477e8b8d80ab3bbbfca10b387ad2f5f8aed9b59298b110fbb6998fa89000d8"
+        }
+      ]
+    },
+    {
+      "action": "Exercise all current role boundaries in the same outage topology",
+      "expected": "Verify current provider, trust, actor and Help behavior together",
+      "actual": null,
+      "evidence_refs": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "initial-reload",
+      "command": "lms load with an explicit engine configuration disable switch",
+      "tool_version": null,
+      "status": "failed",
+      "expected": "Exact model lifecycle and bounded synthetic behavior under the current candidate",
+      "actual": "Installed CLI rejected the switch for this MLX model.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/evidence/initial-unload-and-reload-attempt.json",
+      "evidence_digest": "905b40b202b0b6812ac1cfbf1c914b0dc7d7b02c65c39eea9b8c39f8be1e5fec",
+      "mock_used": false
+    },
+    {
+      "name": "effective-restore",
+      "command": "lms load qwen/qwen3.8-27b --context-length 8192 --parallel 4 --identifier qwen/qwen3.8-27b --yes",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exact model lifecycle and bounded synthetic behavior under the current candidate",
+      "actual": "Original model and effective settings under unchanged listener. Three additive raw CLI fields were recorded.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/evidence/cold-start.json",
+      "evidence_digest": "6c477e8b8d80ab3bbbfca10b387ad2f5f8aed9b59298b110fbb6998fa89000d8",
+      "mock_used": false
+    },
+    {
+      "name": "exact-cold-and-warm-prediction",
+      "command": "Pinned tests.evaluation.qwen_local.evaluate_case after artifact and loaded identity checks",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exact model lifecycle and bounded synthetic behavior under the current candidate",
+      "actual": "One first-after-reload English sample and two warm samples passed required grounding and prompt-token matching.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/evidence/cold-start.json",
+      "evidence_digest": "6c477e8b8d80ab3bbbfca10b387ad2f5f8aed9b59298b110fbb6998fa89000d8",
+      "mock_used": false
+    },
+    {
+      "name": "all-role-combined-outages",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Exact model lifecycle and bounded synthetic behavior under the current candidate",
+      "actual": "The separate real provider, mesh, actor and Help checks still need a single current all-role topology outage run.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "The separate real provider, mesh, actor and Help checks still need a single current all-role topology outage run.",
+    "The real provider timings cover one cold sample and separate loaded-model workloads. The application saturation at two occupied slots and eight waiting uses fixture inference.",
+    "The frozen IMP plan validator still reports the earlier README digest drift."
+  ],
+  "acceptance_scope": "Local synthetic cold and warm samples. Combined G-10 requirements remain open.",
+  "rollback": "Retain the exact restored local model and current authority settings. No service deployment or release was performed.",
+  "human_decision_id": null,
+  "is_example": false
+}

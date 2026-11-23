@@ -1,0 +1,373 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/main/Workspace/projects/care-link/care-link-demo/node_modules/.pnpm/@playwright+test@1.65.0/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "tests/e2e/referral/playwright.config.ts"
+    ],
+    "configFile": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral/playwright.config.ts",
+    "rootDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/private/tmp/care-link-imp10-training-browser/regression002/referral/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral",
+        "testIgnore": [],
+        "testMatch": [
+          "referral.spec.ts"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/private/tmp/care-link-imp10-training-browser/regression002/referral/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral",
+        "snapshotDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/referral",
+        "testIgnore": [],
+        "testMatch": "referral.spec.ts",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5175",
+          "browserName": "chromium",
+          "ignoreHTTPSErrors": false,
+          "connectOptions": {
+            "wsEndpoint": "[private browser endpoint]",
+            "exposeNetwork": "<loopback>",
+            "headers": {
+              "x-playwright-launch-options": "{\"executablePath\":\"/opt/chrome-for-testing/chrome\",\"headless\":true}"
+            }
+          },
+          "actionTimeout": 15000,
+          "navigationTimeout": 30000,
+          "trace": "off",
+          "screenshot": "off",
+          "video": "off"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/private/tmp/care-link-imp10-training-browser/regression002/referral/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": {
+      "command": "pnpm --filter @care-link/web exec vite --host 127.0.0.1 --port 5175 --strictPort --force",
+      "url": "http://127.0.0.1:5175",
+      "reuseExistingServer": false,
+      "timeout": 30000,
+      "env": {
+        "VITE_OIDC_ORIGIN": "https://identity.qualification.localhost"
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "referral.spec.ts",
+      "file": "referral.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "worker exact review, uncertain delivery and partial reconciliation en-CA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1679,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:31.597Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "worker-en-CA-automated-accessibility.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbnZpcm9ubWVudCI6ICJpc29sYXRlZCBDaHJvbWl1bSB3aXRoIG1vY2tlZCBzeW50aGV0aWMgQVBJIGFuZCBwcm92aWRlcjsgSFRUUCBsb29wYmFjayBvbmx5IiwKICAiYnJvd3NlciI6ICJDaHJvbWl1bSIsCiAgIm5hdGl2ZV8yMDBfcGVyY2VudF96b29tIjogIm5vdF90ZXN0ZWQiLAogICJodW1hbl9yZXZpZXciOiAiZGVmZXJyZWRfdW50aWxfYWZ0ZXJfSU1QMTAiLAogICJyb3dzIjogWwogICAgewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAic2Nyb2xsV2lkdGgiOiAxMjgwLAogICAgICAidmlvbGF0aW9ucyI6IFtdLAogICAgICAiaW5jb21wbGV0ZSI6IFtdCiAgICB9LAogICAgewogICAgICAid2lkdGgiOiA2NDAsCiAgICAgICJzY3JvbGxXaWR0aCI6IDY0MCwKICAgICAgInZpb2xhdGlvbnMiOiBbXSwKICAgICAgImluY29tcGxldGUiOiBbXQogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-941a086c0233090d59fa",
+          "file": "referral.spec.ts",
+          "line": 96,
+          "column": 3
+        },
+        {
+          "title": "receiver field-specific decision en-CA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1095,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:33.534Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "receiver-en-CA-automated-accessibility.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbnZpcm9ubWVudCI6ICJpc29sYXRlZCBDaHJvbWl1bSB3aXRoIG1vY2tlZCBzeW50aGV0aWMgQVBJIGFuZCBwcm92aWRlcjsgSFRUUCBsb29wYmFjayBvbmx5IiwKICAiYnJvd3NlciI6ICJDaHJvbWl1bSIsCiAgIm5hdGl2ZV8yMDBfcGVyY2VudF96b29tIjogIm5vdF90ZXN0ZWQiLAogICJodW1hbl9yZXZpZXciOiAiZGVmZXJyZWRfdW50aWxfYWZ0ZXJfSU1QMTAiLAogICJyb3dzIjogWwogICAgewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAic2Nyb2xsV2lkdGgiOiAxMjgwLAogICAgICAidmlvbGF0aW9ucyI6IFtdLAogICAgICAiaW5jb21wbGV0ZSI6IFtdCiAgICB9LAogICAgewogICAgICAid2lkdGgiOiA2NDAsCiAgICAgICJzY3JvbGxXaWR0aCI6IDY0MCwKICAgICAgInZpb2xhdGlvbnMiOiBbXSwKICAgICAgImluY29tcGxldGUiOiBbXQogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-711562ee686cf7b1035a",
+          "file": "referral.spec.ts",
+          "line": 165,
+          "column": 3
+        },
+        {
+          "title": "client exact consent preview and provider-proof binding en-CA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1238,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:34.632Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "client-preview-en-CA-automated-accessibility.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbnZpcm9ubWVudCI6ICJpc29sYXRlZCBDaHJvbWl1bSB3aXRoIG1vY2tlZCBzeW50aGV0aWMgQVBJIGFuZCBwcm92aWRlcjsgSFRUUCBsb29wYmFjayBvbmx5IiwKICAiYnJvd3NlciI6ICJDaHJvbWl1bSIsCiAgIm5hdGl2ZV8yMDBfcGVyY2VudF96b29tIjogIm5vdF90ZXN0ZWQiLAogICJodW1hbl9yZXZpZXciOiAiZGVmZXJyZWRfdW50aWxfYWZ0ZXJfSU1QMTAiLAogICJyb3dzIjogWwogICAgewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAic2Nyb2xsV2lkdGgiOiAxMjgwLAogICAgICAidmlvbGF0aW9ucyI6IFtdLAogICAgICAiaW5jb21wbGV0ZSI6IFtdCiAgICB9LAogICAgewogICAgICAid2lkdGgiOiA2NDAsCiAgICAgICJzY3JvbGxXaWR0aCI6IDY0MCwKICAgICAgInZpb2xhdGlvbnMiOiBbXSwKICAgICAgImluY29tcGxldGUiOiBbXQogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-9c53ec41a3d761986a8d",
+          "file": "referral.spec.ts",
+          "line": 196,
+          "column": 3
+        },
+        {
+          "title": "worker exact review, uncertain delivery and partial reconciliation fr-CA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1622,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:35.875Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "worker-fr-CA-automated-accessibility.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbnZpcm9ubWVudCI6ICJpc29sYXRlZCBDaHJvbWl1bSB3aXRoIG1vY2tlZCBzeW50aGV0aWMgQVBJIGFuZCBwcm92aWRlcjsgSFRUUCBsb29wYmFjayBvbmx5IiwKICAiYnJvd3NlciI6ICJDaHJvbWl1bSIsCiAgIm5hdGl2ZV8yMDBfcGVyY2VudF96b29tIjogIm5vdF90ZXN0ZWQiLAogICJodW1hbl9yZXZpZXciOiAiZGVmZXJyZWRfdW50aWxfYWZ0ZXJfSU1QMTAiLAogICJyb3dzIjogWwogICAgewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAic2Nyb2xsV2lkdGgiOiAxMjgwLAogICAgICAidmlvbGF0aW9ucyI6IFtdLAogICAgICAiaW5jb21wbGV0ZSI6IFtdCiAgICB9LAogICAgewogICAgICAid2lkdGgiOiA2NDAsCiAgICAgICJzY3JvbGxXaWR0aCI6IDY0MCwKICAgICAgInZpb2xhdGlvbnMiOiBbXSwKICAgICAgImluY29tcGxldGUiOiBbXQogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-ed04525b1462ed08c25c",
+          "file": "referral.spec.ts",
+          "line": 96,
+          "column": 3
+        },
+        {
+          "title": "receiver field-specific decision fr-CA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1307,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:37.501Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "receiver-fr-CA-automated-accessibility.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbnZpcm9ubWVudCI6ICJpc29sYXRlZCBDaHJvbWl1bSB3aXRoIG1vY2tlZCBzeW50aGV0aWMgQVBJIGFuZCBwcm92aWRlcjsgSFRUUCBsb29wYmFjayBvbmx5IiwKICAiYnJvd3NlciI6ICJDaHJvbWl1bSIsCiAgIm5hdGl2ZV8yMDBfcGVyY2VudF96b29tIjogIm5vdF90ZXN0ZWQiLAogICJodW1hbl9yZXZpZXciOiAiZGVmZXJyZWRfdW50aWxfYWZ0ZXJfSU1QMTAiLAogICJyb3dzIjogWwogICAgewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAic2Nyb2xsV2lkdGgiOiAxMjgwLAogICAgICAidmlvbGF0aW9ucyI6IFtdLAogICAgICAiaW5jb21wbGV0ZSI6IFtdCiAgICB9LAogICAgewogICAgICAid2lkdGgiOiA2NDAsCiAgICAgICJzY3JvbGxXaWR0aCI6IDY0MCwKICAgICAgInZpb2xhdGlvbnMiOiBbXSwKICAgICAgImluY29tcGxldGUiOiBbXQogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-a0d025a999fe7fc7133c",
+          "file": "referral.spec.ts",
+          "line": 165,
+          "column": 3
+        },
+        {
+          "title": "client exact consent preview and provider-proof binding fr-CA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1332,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:38.815Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "client-preview-fr-CA-automated-accessibility.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbnZpcm9ubWVudCI6ICJpc29sYXRlZCBDaHJvbWl1bSB3aXRoIG1vY2tlZCBzeW50aGV0aWMgQVBJIGFuZCBwcm92aWRlcjsgSFRUUCBsb29wYmFjayBvbmx5IiwKICAiYnJvd3NlciI6ICJDaHJvbWl1bSIsCiAgIm5hdGl2ZV8yMDBfcGVyY2VudF96b29tIjogIm5vdF90ZXN0ZWQiLAogICJodW1hbl9yZXZpZXciOiAiZGVmZXJyZWRfdW50aWxfYWZ0ZXJfSU1QMTAiLAogICJyb3dzIjogWwogICAgewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAic2Nyb2xsV2lkdGgiOiAxMjgwLAogICAgICAidmlvbGF0aW9ucyI6IFtdLAogICAgICAiaW5jb21wbGV0ZSI6IFtdCiAgICB9LAogICAgewogICAgICAid2lkdGgiOiA2NDAsCiAgICAgICJzY3JvbGxXaWR0aCI6IDY0MCwKICAgICAgInZpb2xhdGlvbnMiOiBbXSwKICAgICAgImluY29tcGxldGUiOiBbXQogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b6faa50bca2e57d72e46-fc82db48ab0a4073799c",
+          "file": "referral.spec.ts",
+          "line": 196,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-23T14:13:30.987Z",
+    "duration": 9181.998,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

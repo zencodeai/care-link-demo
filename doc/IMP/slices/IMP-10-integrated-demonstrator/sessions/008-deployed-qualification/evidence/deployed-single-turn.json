@@ -1,0 +1,16 @@
+{
+  "admitted_task_id": "5b876af6-fc4e-4aa8-886d-86cdf8fa8944",
+  "worker_transport_current": true,
+  "runtime_outcome": {
+    "exception": "HTTPStatusError",
+    "code": null
+  },
+  "elapsed_ms": 2034.781,
+  "durable_jobs": [],
+  "browser_outcome": {
+    "state": "scoped",
+    "safe_reason": null,
+    "steps_used": 0,
+    "tools_used": 0
+  }
+}

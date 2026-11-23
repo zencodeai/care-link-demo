@@ -1,0 +1,296 @@
+"""Concrete signed Core delegation and authenticated inference ledger transport."""
+
+import json
+from collections.abc import Callable
+from datetime import UTC, datetime
+from typing import Protocol, cast
+from uuid import UUID
+
+from care_link_contracts import parse_contract
+from care_link_domain import Actor, ManualError, WorkloadPeer
+from care_link_policy_input import DelegationVerifier
+from fastapi import FastAPI, Request
+from starlette.concurrency import run_in_threadpool
+from starlette.responses import JSONResponse
+
+from .assistance_jobs import PostgresJobLedger
+from .store import Record
+
+
+def unique_object(pairs: list[tuple[str, object]]) -> Record:
+    result: Record = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("duplicate JSON key")
+        result[key] = value
+    return result
+
+
+class RuntimeAuthenticator:
+    def __init__(
+        self,
+        delegations: DelegationVerifier,
+        verify: Callable[[Request, str], bool],
+        runtime_current: Callable[[WorkloadPeer], bool],
+        *,
+        clock: Callable[[], datetime] = lambda: datetime.now(UTC),
+    ) -> None:
+        self.delegations, self.verify, self.runtime_current, self.clock = (
+            delegations,
+            verify,
+            runtime_current,
+            clock,
+        )
+
+    async def __call__(
+        self, request: Request, operation: str, task_id: str
+    ) -> tuple[Actor, WorkloadPeer]:
+        if not self.verify(request, "core"):
+            raise ManualError("assistance.core_required", 403)
+        try:
+            encoded = request.headers.get("X-Assistance-Delegation", "")
+            runtime = request.headers.get("X-Assistance-Runtime", "")
+            if len(encoded) > 16384 or len(runtime) > 2048:
+                raise ValueError("bounded signed metadata required")
+            delegation = cast(Record, parse_contract("SignedDelegation", encoded))
+            claimed = cast(Record, delegation["actor"])
+            if claimed["task_id"] != task_id or str(UUID(task_id)) != task_id:
+                raise ValueError("exact delegated task required")
+            raw_peer = cast(Record, json.loads(runtime, object_pairs_hook=unique_object))
+            if set(raw_peer) != {
+                "workload_id",
+                "fence_generation",
+                "certificate_digest",
+                "certificate_expires_at",
+            }:
+                raise ValueError("closed signed runtime peer required")
+            raw = await request.body()
+            contract = {
+                "step_lease": "LeaseCommand",
+                "step_renew": "LeaseCommand",
+                "tool_invoke": "ToolInvoke",
+                "reserve_proposal": "RuntimeInferenceRequest",
+                "proposal_submit": "Proposal",
+            }[operation]
+            arguments = cast(Record, parse_contract(contract, raw.decode()))
+            reservation = request.headers.get("X-Assistance-Reservation", "")
+            envelope: Record = {
+                "delegation": delegation,
+                "arguments": arguments,
+                "path_arguments": {
+                    "task_id": task_id,
+                    "runtime": raw_peer,
+                    "reservation": reservation,
+                },
+            }
+            key = request.headers.get("Idempotency-Key", "")
+            actor = await run_in_threadpool(
+                self.delegations.verify, envelope, "assistance_" + operation, key, request.url.path
+            )
+            if (
+                raw_peer["workload_id"] != "spiffe://care-link.demo/demo/runtime"
+                or type(raw_peer["fence_generation"]) is not int
+                or not isinstance(raw_peer["certificate_digest"], str)
+                or len(raw_peer["certificate_digest"]) != 64
+            ):
+                raise ValueError("attested runtime metadata required")
+            peer = WorkloadPeer(
+                str(raw_peer["workload_id"]),
+                raw_peer["fence_generation"],
+                str(raw_peer["certificate_digest"]),
+                datetime.fromisoformat(str(raw_peer["certificate_expires_at"])),
+            )
+            if peer.certificate_expires_at <= self.clock() or not self.runtime_current(peer):
+                raise ValueError("runtime no longer current")
+            return actor, peer
+        except (ValueError, KeyError, TypeError) as error:
+            raise ManualError("assistance.delegation_denied", 403) from error
+
+
+class InferenceAuthority(Protocol):
+    def resolve(self, request: Record) -> Record: ...
+    def current(self, request: Record) -> bool: ...
+
+
+def attach_inference_ledger_gateway(
+    app: FastAPI,
+    ledger: PostgresJobLedger,
+    verify: Callable[[Request, str], bool],
+    authority: InferenceAuthority,
+) -> None:
+    """No stop/reset operation is exposed to inference or model tools."""
+
+    def add(operation: str) -> None:
+        async def handle(request: Request) -> JSONResponse:
+            if not verify(request, "inference") or request.query_params:
+                raise ManualError("assistance.inference_required", 403)
+            raw = bytearray()
+            async for chunk in request.stream():
+                if len(raw) + len(chunk) > 262144:
+                    raise ManualError("assistance.body_limit", 413)
+                raw.extend(chunk)
+            try:
+                value = cast(Record, json.loads(raw, object_pairs_hook=unique_object))
+                if operation == "context":
+                    result = await run_in_threadpool(authority.resolve, value)
+                elif operation == "current":
+                    result = {"current": await run_in_threadpool(authority.current, value)}
+                elif operation == "reserve":
+                    value["deadline"] = datetime.fromisoformat(str(value["deadline"]))
+                    result = {"slot_id": await run_in_threadpool(ledger.reserve, value)}
+                elif operation == "unknown":
+                    if set(value) != {"job_id"}:
+                        raise ValueError("closed unknown command required")
+                    await run_in_threadpool(ledger.mark_unknown, str(value["job_id"]))
+                    result = {"state": "recorded"}
+                else:
+                    if (
+                        set(value) != {"job_id", "result_digest", "deliverable"}
+                        or type(value["deliverable"]) is not bool
+                    ):
+                        raise ValueError("closed completion command required")
+                    allowed = await run_in_threadpool(
+                        ledger.complete,
+                        str(value["job_id"]),
+                        str(value["result_digest"]),
+                        deliverable=value["deliverable"],
+                    )
+                    result = {"deliverable": allowed}
+                return JSONResponse(result, headers={"Cache-Control": "no-store"})
+            except (ValueError, TypeError, KeyError) as error:
+                raise ManualError("assistance.invalid_inference_command", 400) from error
+
+        app.add_api_route(
+            "/internal/v1/data/assistance/inference/" + operation, handle, methods=["POST"]
+        )
+
+    for operation in ("context", "current", "reserve", "unknown", "complete"):
+        add(operation)
+
+
+class SnapshotCoordinator(Protocol):
+    def context_snapshot(self, actor: Actor, task_id: str) -> Record: ...
+
+
+class StoredInferenceAuthority:
+    """Rebuild context solely from current data projections and release inputs."""
+
+    def __init__(
+        self,
+        coordinator: SnapshotCoordinator,
+        actor_for_task: Callable[[str], Actor],
+        releases: dict[str, Record] | Callable[[], dict[str, Record]],
+        bridge_generation: str,
+        *,
+        fresh_actor: Callable[[Record, str], Actor] | None = None,
+        clock: Callable[[], datetime] = lambda: datetime.now(UTC),
+    ) -> None:
+        self.coordinator, self.actor_for_task = coordinator, actor_for_task
+        self.fresh_actor = fresh_actor
+        self.releases = (
+            releases
+            if callable(releases)
+            else cast(dict[str, Record], json.loads(json.dumps(releases)))
+        )
+        self.bridge_generation, self.clock = bridge_generation, clock
+
+    def _actor(self, request: Record, operation: str) -> Actor:
+        if self.fresh_actor is not None:
+            return self.fresh_actor(request, operation)
+        return self.actor_for_task(str(request["task_id"]))
+
+    def resolve(self, request: Record) -> Record:
+        from care_link_contracts import validate_contract
+
+        validate_contract("InferenceRequest", request)
+        task_id = str(request["task_id"])
+        snapshot = self.coordinator.context_snapshot(self._actor(request, "context"), task_id)
+        task = cast(Record, snapshot["task"])
+        function = str(task["function"])
+        releases = self.releases() if callable(self.releases) else self.releases
+        release = releases.get(function)
+        if release is None:
+            raise ManualError("assistance.function_disabled", 503)
+        sources = cast(list[Record], snapshot["sources"])
+        step: Record = {
+            "task_id": task_id,
+            "step_id": request["step_id"],
+            "fence": request["fence"],
+            "expected_task_revision": task["revision"],
+        }
+        instruction: Record = {
+            "source": release["instruction_source"],
+            "label": "approved_instruction",
+            "text": release["instruction"],
+            "critical": True,
+        }
+        items = [
+            instruction,
+            {
+                "source": release["instruction_source"],
+                "label": "structured_state",
+                "text": json.dumps(
+                    {"task": task, "goal": snapshot["goal"], "step": step},
+                    sort_keys=True,
+                    separators=(",", ":"),
+                    ensure_ascii=False,
+                ),
+                "critical": True,
+            },
+            *[
+                {
+                    "source": source["ref"],
+                    "label": "untrusted_report",
+                    "text": source["text"],
+                    "critical": True,
+                }
+                for source in sources
+            ],
+        ]
+        deadline = datetime.fromisoformat(str(request["deadline"]))
+        lease = cast(Record, snapshot["lease"])
+        if (
+            request["function"] != function
+            or request["model_digest"] != release["model_digest"]
+            or request["prompt_digest"] != release["prompt_digest"]
+            or request["items"] != items
+            or request["budgets"] != task["budgets"]
+            or str(request["fence"]) != str(snapshot["fence"])
+            or request["step_id"] != lease["step_id"]
+            or not 0 < (deadline - self.clock()).total_seconds() <= 30
+            or deadline > datetime.fromisoformat(str(task["deadline"]))
+        ):
+            raise ManualError("assistance.server_context_mismatch", 409)
+        budgets = cast(Record, task["budgets"])
+        return {
+            "task_id": task_id,
+            "step_id": request["step_id"],
+            "fence": request["fence"],
+            "revision": task["revision"],
+            "function": function,
+            "items": items,
+            "allowed_tools": snapshot["allowed_tools"],
+            "deadline": request["deadline"],
+            "bridge_generation": self.bridge_generation,
+            "job_id": request["job_id"],
+            "output_tokens": budgets["output_tokens"],
+            "context_tokens": budgets["context_tokens"],
+        }
+
+    def current(self, request: Record) -> bool:
+        fields = {"task_id", "step_id", "fence", "revision"}
+        if self.fresh_actor is not None or "job_id" in request:
+            fields.add("job_id")
+        if set(request) != fields or any(not isinstance(v, str) for v in request.values()):
+            return False
+        try:
+            task_id = str(request["task_id"])
+            snapshot = self.coordinator.context_snapshot(self._actor(request, "current"), task_id)
+            task, lease = cast(Record, snapshot["task"]), cast(Record, snapshot["lease"])
+            return (
+                str(task["revision"]) == str(request["revision"])
+                and str(snapshot["fence"]) == str(request["fence"])
+                and lease["step_id"] == request["step_id"]
+            )
+        except (ManualError, KeyError, ValueError, TypeError):
+            return False

@@ -1,0 +1,9 @@
+{
+  "image": "sha256:304278ddbeb8b818af11c89de850d7d0b4a69306866922a6d21cf076d4355b3e",
+  "tag": "care-link-core:imp10-001-local",
+  "build_command": ".venv/bin/python tools/build_core_image.py --tag care-link-core:imp10-001-local --iid-file /private/tmp/care-link-imp10-core-001.id",
+  "smoke_command": ".venv/bin/python tools/smoke_core_image.py --image care-link-core:imp10-001-local",
+  "fixture_scope": "Development API container, read-only, non-root, network disabled",
+  "build_exit_code": 0,
+  "smoke_exit_code": 0
+}

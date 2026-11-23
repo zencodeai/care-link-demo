@@ -34,6 +34,7 @@ GOVERNANCE_PURPOSES = {
     for route in GOVERNANCE_ROUTES
 }
 
+EVALUATION_ACTIONS = frozenset({"replay_create", "evaluation_read"})
 Record = dict[str, object]
 
 
@@ -81,6 +82,8 @@ class SignedEnvelopeFactory:
             "subject_id": None,
             "purpose": GOVERNANCE_PURPOSES[action]
             if action in GOVERNANCE_PURPOSES
+            else "training"
+            if action in EVALUATION_ACTIONS
             else "service_operations"
             if action.startswith("workforce_") or action in {"queue_list", "control_change"}
             else "follow_up"
@@ -168,7 +171,7 @@ class SignedEnvelopeFactory:
             raise ManualError("manual.unsupported_operation", 400)
         # Argument/path schemas are checked through the gateway contract after
         # composition below; unknown names cannot select arbitrary HTTP paths.
-        payload = args if action != "operation_status" else {"operation_id": paths["operation_id"]}
+        payload = paths if action in {"operation_status", "evaluation_read"} else args
         payload_digest = hashlib.sha256(
             canonical(
                 {
@@ -180,26 +183,30 @@ class SignedEnvelopeFactory:
             )
         ).hexdigest()
         metadata_args: Record = {"action": action, "scope": scope, "payload_digest": payload_digest}
-        if action in GOVERNANCE_PURPOSES or action.startswith(
-            (
-                "plan_",
-                "consent_",
-                "directory_",
-                "referral_",
-                "dispatch_",
-                "receipt_",
-                "dispatcher_",
-                "task_",
-                "draft_",
-                "assistance_",
-                "followup_",
-                "post_crisis_",
-                "outcome",
-                "participant_inbox",
-                "inbox_message_",
-                "rights_",
-                "export_download",
-                "hold_",
+        if (
+            action in GOVERNANCE_PURPOSES
+            or action in EVALUATION_ACTIONS
+            or action.startswith(
+                (
+                    "plan_",
+                    "consent_",
+                    "directory_",
+                    "referral_",
+                    "dispatch_",
+                    "receipt_",
+                    "dispatcher_",
+                    "task_",
+                    "draft_",
+                    "assistance_",
+                    "followup_",
+                    "post_crisis_",
+                    "outcome",
+                    "participant_inbox",
+                    "inbox_message_",
+                    "rights_",
+                    "export_download",
+                    "hold_",
+                )
             )
         ):
             metadata_args["planning"] = {

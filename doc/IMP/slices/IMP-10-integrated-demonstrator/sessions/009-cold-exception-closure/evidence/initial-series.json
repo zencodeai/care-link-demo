@@ -1,0 +1,54 @@
+[
+  {
+    "condition": "warm",
+    "round": 1,
+    "phase": "dispatch",
+    "at_utc": "2026-11-23T19:35:21.033961+00:00",
+    "first": [
+      {
+        "session_id": "bac1d47b-e3de-486e-9d95-a8d921aeb166",
+        "task_id": "9a21e731-9d07-4cd0-b26a-bfeb7e7ca860",
+        "arrival_ns": 2679595161550500
+      },
+      {
+        "session_id": "2fb881b1-7844-4d5c-ae72-1b2655cf8d65",
+        "task_id": "2064e696-f583-4f3b-a02f-b507d114ed64",
+        "arrival_ns": 2679596030284625
+      }
+    ],
+    "pending": [
+      {
+        "session_id": "812c0e5a-815b-4b86-b96a-32c62a32cd0a",
+        "task_id": "09695d42-c5d5-4594-8510-303ec587644c",
+        "arrival_ns": 2679596812109166
+      },
+      {
+        "session_id": "de58963a-5663-4963-acb6-d1542251eecb",
+        "task_id": "c4532eaa-7c09-487e-ba7d-06ffde8eac7e",
+        "arrival_ns": 2679597576844000
+      },
+      {
+        "session_id": "7e3d2c4e-f8d7-4c01-957a-56e4d476b9bd",
+        "task_id": "4b364e98-3619-4bf3-afe2-27d5d0414344",
+        "arrival_ns": 2679598372057916
+      },
+      {
+        "session_id": "0ab1624f-d3f3-4198-b5e3-ec1fdb21e8fe",
+        "task_id": "c2eb1d41-01f4-443f-b173-48e6f2690b7b",
+        "arrival_ns": 2679599164290333
+      },
+      {
+        "session_id": "b35c34b5-8d72-476c-a47f-c0c9eb3e7504",
+        "task_id": "541c9b93-384a-4789-a096-720e541bcad0",
+        "arrival_ns": 2679599928230750
+      },
+      {
+        "session_id": "fd06fe0c-c1f1-4b22-bf7b-7a58cd0ba967",
+        "task_id": "14cad97d-00a2-4a67-8a79-8845e935a61c",
+        "arrival_ns": 2679600791852250
+      }
+    ],
+    "error": "Exact two Runtime claims not observed",
+    "durable_after_failure": []
+  }
+]

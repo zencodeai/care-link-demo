@@ -1,0 +1,11 @@
+{
+  "owned_tls_database_container": "care-link-imp09-001-postgres",
+  "owned_label": "imp09-001-verification",
+  "owned_volume_mounts": [],
+  "owned_container_removed": true,
+  "temporary_credentials_removed": true,
+  "candidate_smoke_containers_remaining": [],
+  "local_candidate_image": "care-link-imp10:protected-007",
+  "local_candidate_image_id": "sha256:9da1df60b9ba68a8ee0e6488504ae1d205e39fa68ba9bc3de34a8fe6bd14c9fc",
+  "historical_imp02_running_count": 7
+}

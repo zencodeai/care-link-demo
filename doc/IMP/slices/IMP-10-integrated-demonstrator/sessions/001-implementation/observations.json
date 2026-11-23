@@ -1,0 +1,365 @@
+{
+  "evidence": {
+    "source": "evidence/source/checks.json",
+    "browser": "evidence/browser/summary.json",
+    "training": "services/data/tests/test_imp10_training_boundary.py and services/identity/tests/test_manual_runtime.py",
+    "quality": "services/data/tests/test_imp10_evaluation.py",
+    "journey": "services/data/tests/test_imp10_integrated_journey.py",
+    "load": "evidence/source/load.json",
+    "matched": "evidence/source/matched-assistance.json",
+    "g06": "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+    "g08": "doc/IMP/executions/2026-11-21-IMP-08/ledger.json",
+    "g09": "doc/IMP/executions/2026-11-21-IMP-09/ledger.json"
+  },
+  "verification": {
+    "VT-01": {
+      "state": "bounded_automated_evidence",
+      "note": "Role-bound BFF and gateway checks, trainer isolation, EN/FR Chromium route fixtures.",
+      "evidence": [
+        "training",
+        "browser",
+        "source"
+      ]
+    },
+    "VT-02": {
+      "state": "bounded_automated_evidence",
+      "note": "Identity proof custody and provider test double. Integrated production identity is pending.",
+      "evidence": [
+        "training",
+        "source"
+      ]
+    },
+    "VT-03": {
+      "state": "bounded_automated_evidence",
+      "note": "Legacy continuation recovery and replay controls in current source regression. Cross-channel continuation is disabled.",
+      "evidence": [
+        "source"
+      ]
+    },
+    "VT-04": {
+      "state": "bounded_automated_evidence",
+      "note": "Current assessment/adverse source tests. Training fixture observations carry no clinical meaning.",
+      "evidence": [
+        "source"
+      ]
+    },
+    "VT-05": {
+      "state": "bounded_automated_evidence",
+      "note": "Worker confirmation and separate receiver profile within one durable fixture journey.",
+      "evidence": [
+        "journey",
+        "source"
+      ]
+    },
+    "VT-06": {
+      "state": "bounded_automated_evidence",
+      "note": "Scoped consent, no receiver access to the source session, and transactional deny tests.",
+      "evidence": [
+        "journey",
+        "source"
+      ]
+    },
+    "VT-07": {
+      "state": "bounded_automated_evidence",
+      "note": "Lost reply after storage, reconciling one dispatch before the separate partial decision.",
+      "evidence": [
+        "journey",
+        "source"
+      ]
+    },
+    "VT-08": {
+      "state": "bounded_automated_evidence",
+      "note": "Ten sessions, eight queued, two occupied slots, lease and late-result fencing.",
+      "evidence": [
+        "load",
+        "source"
+      ]
+    },
+    "VT-09": {
+      "state": "partial",
+      "note": "Current combined route exercised with a fixture provider. Exact live worker-summary results remain predecessor evidence.",
+      "evidence": [
+        "matched",
+        "g06"
+      ]
+    },
+    "VT-10": {
+      "state": "bounded_automated_evidence",
+      "note": "Current negative policy and governance checks. No deployed policy transition was exercised.",
+      "evidence": [
+        "quality",
+        "source",
+        "g08"
+      ]
+    },
+    "VT-11": {
+      "state": "bounded_automated_evidence",
+      "note": "Audit faults roll back protected replay. Simulator audit is written atomically in its own store.",
+      "evidence": [
+        "quality",
+        "training",
+        "source"
+      ]
+    },
+    "VT-12": {
+      "state": "partial",
+      "note": "Current signed transport and cross-audience tests. Deployed mesh, egress and process exclusion need candidate-specific proof.",
+      "evidence": [
+        "training",
+        "quality",
+        "g06"
+      ]
+    },
+    "VT-13": {
+      "state": "bounded_automated_evidence",
+      "note": "One-use export and unresolved delivery copy. Synthetic recording ciphertext expires in the active store. Independent copy handling retains residual obligations.",
+      "evidence": [
+        "journey",
+        "training",
+        "source"
+      ]
+    },
+    "VT-14": {
+      "state": "bounded_automated_evidence",
+      "note": "Current journal fault and recovery regressions. Prior deployed-environment evidence retains its scope.",
+      "evidence": [
+        "quality",
+        "source",
+        "g09"
+      ]
+    },
+    "VT-15": {
+      "state": "bounded_automated_evidence",
+      "note": "Encrypted recovery and current-authority promotion regression in owned TLS PostgreSQL.",
+      "evidence": [
+        "source",
+        "g09"
+      ]
+    },
+    "VT-16": {
+      "state": "partial",
+      "note": "Help, static fallback and outage regressions. No current combined topology dependency outage run.",
+      "evidence": [
+        "source"
+      ]
+    },
+    "VT-17": {
+      "state": "partial",
+      "note": "Local workload captured fixture first-use, reused and error timings. Need exact-model cold/warm and independent help at declared load.",
+      "evidence": [
+        "load",
+        "matched"
+      ]
+    },
+    "VT-18": {
+      "state": "partial",
+      "note": "Current backend actor journey and routed browser accessibility in EN/FR. Matched fixture counts do not represent real actor benefit or independently reviewed outcomes.",
+      "evidence": [
+        "journey",
+        "browser",
+        "matched"
+      ]
+    }
+  },
+  "requirements": {
+    "TR-API-04": {
+      "state": "partial",
+      "note": "Actual receiver loss/partial in TLS fixture plus deterministic simulations. No real channel transport.",
+      "evidence": [
+        "journey",
+        "training"
+      ]
+    },
+    "TR-DAT-04": {
+      "state": "partial",
+      "note": "Encrypted synthetic captures and exact replay comparison. Replay is limited to the deterministic training fixture with no real model outputs.",
+      "evidence": [
+        "training",
+        "quality"
+      ]
+    },
+    "TR-WF-07": {
+      "state": "bounded_automated_evidence",
+      "note": "Scoped delivery and explicit unknown, received and partial outcomes through separate receiver identity.",
+      "evidence": [
+        "journey"
+      ]
+    },
+    "TR-AI-12": {
+      "state": "partial",
+      "note": "Manual actor and referral journey and isolated matched assisted comparison. Full assisted workflow beyond worker summary remains pending.",
+      "evidence": [
+        "journey",
+        "matched",
+        "g06"
+      ]
+    },
+    "TR-AI-13": {
+      "state": "partial",
+      "note": "Raw fixture counts and matched manual/assisted case. Counterbalanced real actors, independently reviewed rubric and outcomes remain unassessed.",
+      "evidence": [
+        "matched",
+        "load"
+      ]
+    },
+    "TR-AI-14": {
+      "state": "partial",
+      "note": "Predecessor evidence binds one worker-summary model profile. Other task profiles and current-candidate real provider performance remain pending.",
+      "evidence": [
+        "matched",
+        "g06"
+      ]
+    },
+    "TR-SEC-06": {
+      "state": "bounded_automated_evidence",
+      "note": "Training projection suppresses external contact. The fixed release exclusions and prior tests retain their scope.",
+      "evidence": [
+        "training",
+        "source"
+      ]
+    }
+  },
+  "source_requirements": {
+    "FR-A1": {
+      "state": "partial",
+      "note": "Five internal channel projections are simulated. Live channel continuity and target-channel token ceremony remain deferred.",
+      "evidence": [
+        "training"
+      ]
+    },
+    "FR-C2b": {
+      "state": "partial",
+      "note": "Seven explicit directory states recorded in fictional projections. Full real directory qualification and authorized fallback across the current actor topology remain pending.",
+      "evidence": [
+        "training",
+        "source"
+      ]
+    }
+  },
+  "acceptance_groups": {
+    "AT-13": {
+      "state": "partial",
+      "note": "Internal training projections and exact offline captures exercised. Real cross-channel, staffing and approved fallback remain open.",
+      "evidence": [
+        "training",
+        "browser"
+      ]
+    },
+    "AT-17": {
+      "state": "partial",
+      "note": "Current engine fixture load and encrypted recovery source tests. Current deployed lifecycle and real provider performance remain open.",
+      "evidence": [
+        "load",
+        "source",
+        "g09"
+      ]
+    },
+    "AT-18": {
+      "state": "partial",
+      "note": "Matched actor-only and fixture-assisted comparison plus regression checks. Real actor effectiveness and clinical benefit are unassessed.",
+      "evidence": [
+        "matched",
+        "load",
+        "journey"
+      ]
+    }
+  },
+  "controls": {
+    "LC-IDENTITY": {
+      "state": "bounded_automated_evidence",
+      "note": "Current authentication custody rejects a training proof on Data and receiver and refuses expired/provider-inactive proofs.",
+      "evidence": [
+        "training",
+        "source"
+      ]
+    },
+    "LC-SCOPE": {
+      "state": "bounded_automated_evidence",
+      "note": "Owner-specific trainer scenario and Data replay scope plus separate governance intake.",
+      "evidence": [
+        "training",
+        "quality"
+      ]
+    },
+    "LC-CONSENT": {
+      "state": "bounded_automated_evidence",
+      "note": "Verified exact consent and scoped plan access and revocation in one actor journey.",
+      "evidence": [
+        "journey",
+        "source"
+      ]
+    }
+  },
+  "operations": {
+    "scenario_create": {
+      "state": "bounded_automated_evidence",
+      "note": "Signed trainer boundary with separate TLS storage, exact fixture pin and current role and policy.",
+      "evidence": [
+        "training",
+        "browser"
+      ]
+    },
+    "scenario_read": {
+      "state": "bounded_automated_evidence",
+      "note": "Signed trainer boundary with separate TLS storage, exact fixture pin and current role and policy.",
+      "evidence": [
+        "training",
+        "browser"
+      ]
+    },
+    "scenario_stop": {
+      "state": "bounded_automated_evidence",
+      "note": "Signed trainer boundary with separate TLS storage, exact fixture pin and current role and policy.",
+      "evidence": [
+        "training",
+        "browser"
+      ]
+    },
+    "replay_create": {
+      "state": "bounded_automated_evidence",
+      "note": "Current scoped offline replay through signed Core/Data with audited digest metadata.",
+      "evidence": [
+        "quality",
+        "training"
+      ]
+    },
+    "evaluation_read": {
+      "state": "bounded_automated_evidence",
+      "note": "Current scoped offline replay through signed Core/Data with audited digest metadata.",
+      "evidence": [
+        "quality",
+        "training"
+      ]
+    },
+    "data_replay_create": {
+      "state": "bounded_automated_evidence",
+      "note": "Current scoped offline replay through signed Core/Data with audited digest metadata.",
+      "evidence": [
+        "quality",
+        "training"
+      ]
+    },
+    "data_evaluation_read": {
+      "state": "bounded_automated_evidence",
+      "note": "Current scoped offline replay through signed Core/Data with audited digest metadata.",
+      "evidence": [
+        "quality",
+        "training"
+      ]
+    },
+    "identity_link_request": {
+      "state": "disabled_scope_guard_verified",
+      "note": "Fixed deny on the operation surface under LD-13.",
+      "evidence": [
+        "training"
+      ]
+    },
+    "data_identity_link_request": {
+      "state": "disabled_scope_guard_verified",
+      "note": "Fixed deny on the operation surface under LD-13.",
+      "evidence": [
+        "training"
+      ]
+    }
+  }
+}

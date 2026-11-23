@@ -2,12 +2,14 @@
 
 import hashlib
 import json
+import ssl
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
-from unittest.mock import create_autospec
+from unittest.mock import Mock, create_autospec
 from uuid import uuid4
 
+import httpx
 import pytest
 from care_link_core.assistance import AssistanceGateway
 from care_link_core.assistance_broker import InferenceBroker, ReleasedFunction, attach_broker_routes
@@ -18,6 +20,7 @@ from care_link_core.manual_channels import ManualChannels
 from care_link_core.manual_ports import ManualGateway
 from care_link_domain import ManualError, WorkloadPeer
 from care_link_knowledge import KnowledgeCatalog
+from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from starlette.responses import JSONResponse
@@ -176,6 +179,92 @@ def test_runtime_poll_rejects_forged_body_and_revocation_during_claim():
         "fence": None,
     }
     assert client.post("/internal/v1/broker/work", json={}, headers=headers).status_code == 403
+
+
+@pytest.mark.parametrize(
+    ("failure", "cause", "status"),
+    [
+        ("denied", "HTTPStatusError", 503),
+        ("timeout", "ReadTimeout", None),
+        ("invalid_result", "ContractError", None),
+    ],
+)
+def test_composed_core_inference_failure_returns_typed_error(
+    monkeypatch, caplog, failure, cause, status
+):
+    from tools.imp06_runtime import core
+
+    owner = actor()
+    value = {**task(owner), "function": "worker_summary"}
+    peer = WorkloadPeer(
+        "spiffe://care-link.demo/demo/runtime",
+        1,
+        "a" * 64,
+        datetime.now(UTC) + timedelta(minutes=1),
+    )
+    reserve = Mock(
+        return_value={
+            "task": value,
+            "goal": "prepare_summary",
+            "reservation_id": str(uuid4()),
+            "sources": [],
+        }
+    )
+    monkeypatch.setattr(core.HttpCoordinator, "reserve_proposal", reserve)
+    monkeypatch.setattr(core.ActorTasks, "resolve", lambda _actors, _task_id: owner)
+    requests = []
+
+    def respond(request):
+        requests.append(request)
+        if failure == "timeout":
+            raise httpx.ReadTimeout("synthetic upstream timeout", request=request)
+        if failure == "denied":
+            return httpx.Response(503, text="upstream details")
+        return httpx.Response(200, json={"proposal": "invalid upstream result"})
+
+    monkeypatch.setattr(
+        core, "MeshTransport", lambda _socket, _origin: httpx.MockTransport(respond)
+    )
+    key = str(uuid4())
+    with httpx.Client() as data:
+        app = core.core_application(
+            create_autospec(ManualGateway, instance=True),
+            Security(),
+            ManualChannels(),
+            data_client=data,
+            data_origin="https://data:8443",
+            envelopes=Mock(),
+            identity=Mock(),
+            signing_key=Ed25519PrivateKey.generate(),
+            inference_tls=ssl.create_default_context(),
+            releases=synthetic_release(None),
+            runtime_verify=lambda _request: peer,
+            inference_socket=Path("/isolated/inference.sock"),
+        )
+        with TestClient(app, raise_server_exceptions=False) as client:
+            response = client.post(
+                "/internal/v1/broker/inference",
+                headers={"Idempotency-Key": key},
+                json={
+                    "task_id": value["id"],
+                    "step_id": str(uuid4()),
+                    "fence": "1",
+                    "expected_task_revision": value["revision"],
+                },
+            )
+    assert response.status_code == 503
+    assert response.headers["cache-control"] == "no-store"
+    body = response.json()
+    assert body["code"] == "AUTHORITY_UNAVAILABLE"
+    assert body["message_key"] == "assistance.inference_unavailable"
+    assert body["operation_id"] == key
+    assert "upstream" not in response.text
+    assert len(requests) == 1
+    assert requests[0].url.path == "/internal/v1/inference/jobs"
+    reserve.assert_called_once()
+    assert f"Inference call denied cause={cause} upstream_status={status}" in caplog.text
+    assert "synthetic upstream timeout" not in caplog.text
+    assert "upstream details" not in caplog.text
 
 
 def test_public_knowledge_derives_role_and_checks_csrf_and_closed_query():

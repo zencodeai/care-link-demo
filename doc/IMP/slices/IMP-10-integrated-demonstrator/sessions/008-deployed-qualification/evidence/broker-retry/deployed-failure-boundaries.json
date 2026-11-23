@@ -1,0 +1,26 @@
+{
+  "scope": "Fresh real deployed warmed retry after one admitted worker task",
+  "empty_authenticated_context": {
+    "status": 400,
+    "json_key": "assistance.invalid_inference_command",
+    "response_bytes": 191
+  },
+  "sanitized_trace": [
+    {
+      "role": "core",
+      "event": "Inference call denied cause=HTTPStatusError upstream_status=503"
+    },
+    {
+      "role": "inference",
+      "event": "Inference Data call failed operation=context cause=HTTPStatusError status=403 elapsed_ms=19.5"
+    },
+    {
+      "role": "inference",
+      "event": "Inference job denied stage=data_context cause=InferenceDenied status=503"
+    }
+  ],
+  "durable_counts": {
+    "tasks": 1,
+    "inference_jobs": 0
+  }
+}

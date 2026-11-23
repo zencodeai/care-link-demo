@@ -1,0 +1,9 @@
+[
+  {
+    "condition": "warm",
+    "round": 1,
+    "phase": "prequeue",
+    "at_utc": "2026-11-23T19:41:05.770963+00:00",
+    "error": "Deployed worker_summary serving admission is unavailable"
+  }
+]

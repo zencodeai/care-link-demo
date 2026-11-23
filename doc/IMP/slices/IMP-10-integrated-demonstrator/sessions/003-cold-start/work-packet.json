@@ -1,0 +1,128 @@
+{
+  "packet_id": "IMP10-003-cold",
+  "task_id": "IMP-10-D",
+  "stage_id": "IMP-10",
+  "mode": "verification",
+  "role": "imp_scope",
+  "goal": "Measure the first bounded Qwen prediction after an observed unload and an exact reload, then verify service settings and matched warm prediction.",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "d182f684416f0c81e90a68f8d17625c9f2ee66693f1f70999dd5af9aa730eb2e"
+    },
+    {
+      "path": ".codex/IMP_WORKFLOW.md",
+      "sha256": "4e54339c137cbd3af65cb7e45298c4bf2a83b264c436b3f0305e7b3677adbd32"
+    },
+    {
+      "path": "doc/IMP/implementation-plan.json",
+      "sha256": "fc3a4f2acd7fec8b527a2115320cb5e011ab154e32e57fb8e4f4e292e5ba218a"
+    },
+    {
+      "path": "doc/LLD/10-simulators-and-replay.md",
+      "sha256": "ec3d1fb1b4f3bd3fa0202099ee06d83d367aa9e1a923e6d442c4bc0c0e2e96c5"
+    },
+    {
+      "path": "doc/LLD/contracts/operations.json",
+      "sha256": "50fe91f73308ce5efd98cd0b1112e3726906d110d6b356ac03d2a975732568eb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/candidate-manifest.json",
+      "sha256": "795fbf691838fc9e42f7c4d61da2ffed00643a6f1a7c5e0800b8de88e12eb20a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/candidate-manifest.json",
+      "sha256": "795fbf691838fc9e42f7c4d61da2ffed00643a6f1a7c5e0800b8de88e12eb20a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/candidate-manifest.json",
+      "sha256": "795fbf691838fc9e42f7c4d61da2ffed00643a6f1a7c5e0800b8de88e12eb20a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/candidate-manifest.json",
+      "sha256": "db2d7da87e3fc191e3c095c7b1548c923422c02f537448bb33f3f8f8e28221e5"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc",
+    "services",
+    "host",
+    "packages",
+    "apps",
+    "tools",
+    "tests",
+    ".codex/agents"
+  ],
+  "write_paths": [
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/**",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/README.md",
+    "doc/IMP/executions/2026-11-23-IMP-10/ledger.json"
+  ],
+  "dependencies": [
+    "IMP-06:G-06:automated_qualified",
+    "IMP-07:G-07:automated_qualified",
+    "IMP-08:G-08:automated_qualified",
+    "IMP-09:G-09:automated_qualified"
+  ],
+  "operation_ids": [
+    "scenario_create",
+    "scenario_read",
+    "scenario_stop",
+    "replay_create",
+    "evaluation_read",
+    "data_replay_create",
+    "data_evaluation_read",
+    "identity_link_request",
+    "data_identity_link_request"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "unload unrelated models",
+    "change listener authentication or settings",
+    "change host trust or deploy serving",
+    "send real participant content",
+    "commit, push, merge or publish"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Authrized. Proceed",
+    "scope": "Temporarily unload and reload the already-running exact Qwen model for cold-start measurement, restoring its observed load settings."
+  },
+  "resource_leases": [
+    {
+      "id": "imp10-003-exact-qwen-lifecycle",
+      "kind": "model_slot",
+      "scope": "Local LM Studio listener 127.0.0.1:1234, exact qwen/qwen3.8-27b, one unload/reload and synthetic matched requests",
+      "owner_task_id": "IMP-10-D",
+      "expires_at": "2026-11-25T00:00:00Z"
+    }
+  ],
+  "expected_outputs": [
+    "Scoped modules/tests",
+    "Actual checks and findings",
+    "Handoff"
+  ],
+  "positive_acceptance": [
+    "Observe absence, a new exact loaded instance, preservation of runtime settings and candidate artifact pins, and bounded cold and matched warm responses."
+  ],
+  "adverse_acceptance": [
+    "Immediately restore the exact model after an unload even if absence verification fails. Report unstable configuration or unverifiable results as failed."
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "authority change",
+    "shared ownership conflict",
+    "destructive or live action needed"
+  ],
+  "is_example": false
+}

@@ -27,6 +27,9 @@ from .service import IdentityService
 
 Record = dict[str, object]
 PREFIX = "/internal/v1/manual-identity/"
+TRAINING_ACTIONS = frozenset({"scenario_create", "scenario_read", "scenario_stop"})
+MANUAL_AUDIENCE = "care-link-data-manual"
+TRAINING_AUDIENCE = "care-link-training"
 
 
 def _actor_record(actor: Actor) -> Record:
@@ -70,6 +73,7 @@ def create_manual_identity_app(
     workload_verifier: Callable[[Request, str], bool],
     *,
     receiver_enabled: bool = False,
+    training_enabled: bool = False,
     service_for_session: Callable[[str], IdentityService] | None = None,
 ) -> FastAPI:
     """Expose exact core/data mesh routes; never mount on a browser origin."""
@@ -89,12 +93,12 @@ def create_manual_identity_app(
     for kind in (ManualError, IdentityError, psycopg.Error):
         app.add_exception_handler(kind, failed)
 
-    def lookup(reference: str) -> tuple[Actor, Record]:
+    def lookup(reference: str, audience: str) -> tuple[Actor, Record]:
         with service.store.transaction() as tx:
             proof = tx.get("proof", reference)
         if (
             proof is None
-            or proof.get("audience") != "care-link-data-manual"
+            or proof.get("audience") != audience
             or instant(proof["expires_at"]) <= service.clock()
         ):
             raise ManualError("manual.identity_evidence_expired")
@@ -121,7 +125,7 @@ def create_manual_identity_app(
             request_deadline=instant(proof["expires_at"]),
         ), proof
 
-    def execute(name: str, data: Record) -> Record:
+    def execute(name: str, data: Record, audience: str) -> Record:
         fields = {
             "authenticate": {"raw_session"},
             "csrf": {"raw_session", "origin", "supplied"},
@@ -170,6 +174,11 @@ def create_manual_identity_app(
             ):
                 raise ManualError("manual.invalid_identity_request", 422)
             actor = authority.authenticate(text(data, "raw_session"))
+            action = text(data, "action")
+            if action in TRAINING_ACTIONS:
+                if not training_enabled or actor.role != "trainer" or not actor.mfa:
+                    raise ManualError("manual.workload_denied")
+                audience = TRAINING_AUDIENCE
             now = service.clock()
             reference = str(uuid4())
             expires = min(now + timedelta(seconds=0.95), actor.expires_at)
@@ -204,7 +213,7 @@ def create_manual_identity_app(
                     "proof",
                     reference,
                     {
-                        "audience": "care-link-data-manual",
+                        "audience": audience,
                         "expires_at": stamp(expires),
                         "session_hash": actor.browser_session_digest,
                         "account_id": actor.account_id,
@@ -220,13 +229,13 @@ def create_manual_identity_app(
                 raise ManualError("manual.invalid_identity_request", 422)
             value = cast(Record, supplied_evidence)
             validate_contract("IdentityEvidence", value)
-            actor, proof = lookup(text(value, "id"))
+            actor, proof = lookup(text(value, "id"), audience)
             if not secrets.compare_digest(
                 canonical(value), canonical(cast(Record, proof["evidence"]))
             ):
                 raise ManualError("manual.identity_evidence_changed")
             return _actor_record(actor)
-        actor, proof = lookup(text(data, "credential_ref"))
+        actor, proof = lookup(text(data, "credential_ref"), audience)
         if name in {"rights-proof", "rights-download-proof"}:
             raw = service.custody.decrypt(text(proof, "credential"))
             active_authority = ManualIdentityAuthority(selected(raw))
@@ -277,6 +286,11 @@ def create_manual_identity_app(
             permitted = workload_verifier(request, peer)
             if not permitted and receiver_enabled and name in {"resolve", "current"}:
                 permitted = workload_verifier(request, "receiver")
+            audience = MANUAL_AUDIENCE
+            if not permitted and training_enabled and name in {"resolve", "current"}:
+                permitted = workload_verifier(request, "training")
+                if permitted:
+                    audience = TRAINING_AUDIENCE
             if not permitted:
                 raise ManualError("manual.workload_denied")
             if (
@@ -295,7 +309,7 @@ def create_manual_identity_app(
                 value: object = json.loads(raw, object_pairs_hook=_no_duplicates)
                 if not isinstance(value, dict):
                     raise ValueError("object required")
-                result = await run_in_threadpool(execute, name, cast(Record, value))
+                result = await run_in_threadpool(execute, name, cast(Record, value), audience)
             except (ValueError, TypeError, KeyError, ContractError) as error:
                 raise ManualError("manual.invalid_identity_request", 422) from error
             return JSONResponse(result, headers={"Cache-Control": "no-store"})

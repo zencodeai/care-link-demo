@@ -1,0 +1,43 @@
+{
+  "state": "published",
+  "authorization": "User: Close IMP-10, create PR",
+  "repository": "zencodeai/care-link-demo",
+  "repository_private": true,
+  "branch": "feat/imp-10-integrated-demonstrator",
+  "base_branch": "main",
+  "base_commit": "0452cf18356c82e31ec5a184e5323511705eb235",
+  "implementation_commit": "186e8125de9153d1b94eae99efa49a2d434805fd",
+  "pull_request_number": 17,
+  "pull_request_url": "https://github.com/zencodeai/care-link-demo/pull/17",
+  "pull_request_state": "OPEN",
+  "draft": false,
+  "recorded_at": "2026-11-23T20:20:21.762989+00:00",
+  "ci_at_publication": [
+    {
+      "name": "fast",
+      "status": "IN_PROGRESS",
+      "conclusion": null
+    },
+    {
+      "name": "fast",
+      "status": "IN_PROGRESS",
+      "conclusion": null
+    },
+    {
+      "name": "container",
+      "status": "IN_PROGRESS",
+      "conclusion": null
+    },
+    {
+      "name": "container",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    }
+  ],
+  "transport": "Authenticated GitHub CLI for the private repository",
+  "merge_authorized": false,
+  "deployment_authorized": false,
+  "excluded": [
+    "doc/research/2026-11-20-agentic-care/resources/"
+  ]
+}

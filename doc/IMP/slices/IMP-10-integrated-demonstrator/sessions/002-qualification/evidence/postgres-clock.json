@@ -1,0 +1,56 @@
+{
+  "observed_at": "2026-11-23T14:41:35.937812+00:00",
+  "scope": "Read-only current clock probe of owned fixture after earlier full regression failures",
+  "samples": [
+    {
+      "db_minus_host_before_ms": 106.804,
+      "db_minus_host_after_ms": -102.224,
+      "round_trip_ms": 209.028
+    },
+    {
+      "db_minus_host_before_ms": -62.018,
+      "db_minus_host_after_ms": -72.494,
+      "round_trip_ms": 10.476
+    },
+    {
+      "db_minus_host_before_ms": 4.894,
+      "db_minus_host_after_ms": -73.602,
+      "round_trip_ms": 78.496
+    },
+    {
+      "db_minus_host_before_ms": 36.451,
+      "db_minus_host_after_ms": -75.328,
+      "round_trip_ms": 111.779
+    },
+    {
+      "db_minus_host_before_ms": 15.169,
+      "db_minus_host_after_ms": -72.47,
+      "round_trip_ms": 87.639
+    },
+    {
+      "db_minus_host_before_ms": -60.931,
+      "db_minus_host_after_ms": -72.331,
+      "round_trip_ms": 11.4
+    },
+    {
+      "db_minus_host_before_ms": -20.258,
+      "db_minus_host_after_ms": -75.308,
+      "round_trip_ms": 55.05
+    },
+    {
+      "db_minus_host_before_ms": -70.382,
+      "db_minus_host_after_ms": -72.412,
+      "round_trip_ms": 2.03
+    },
+    {
+      "db_minus_host_before_ms": -68.254,
+      "db_minus_host_after_ms": -72.37,
+      "round_trip_ms": 4.116
+    },
+    {
+      "db_minus_host_before_ms": -65.533,
+      "db_minus_host_after_ms": -72.434,
+      "round_trip_ms": 6.901
+    }
+  ]
+}

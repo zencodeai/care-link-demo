@@ -1,0 +1,336 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/main/Workspace/projects/care-link/care-link-demo/node_modules/.pnpm/@playwright+test@1.65.0/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "tests/e2e/rights-followup/playwright.config.ts"
+    ],
+    "configFile": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/rights-followup/playwright.config.ts",
+    "rootDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/rights-followup",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/private/tmp/care-link-imp10-training-browser/regression002/rights-followup/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/rights-followup",
+        "testIgnore": [],
+        "testMatch": [
+          "rights.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/private/tmp/care-link-imp10-training-browser/regression002/rights-followup/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/rights-followup",
+        "snapshotDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/rights-followup",
+        "testIgnore": [],
+        "testMatch": "rights.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4187",
+          "browserName": "chromium",
+          "connectOptions": {
+            "wsEndpoint": "[private browser endpoint]",
+            "exposeNetwork": "<loopback>",
+            "headers": {
+              "x-playwright-launch-options": "{\"executablePath\":\"/opt/chrome-for-testing/chrome\",\"headless\":true}"
+            }
+          },
+          "actionTimeout": 15000,
+          "navigationTimeout": 30000,
+          "trace": "off",
+          "screenshot": "off",
+          "video": "off"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/private/tmp/care-link-imp10-training-browser/regression002/rights-followup/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": {
+      "command": "pnpm --filter @care-link/web exec vite --host 127.0.0.1 --port 4187 --strictPort --force",
+      "url": "http://127.0.0.1:4187",
+      "reuseExistingServer": false,
+      "timeout": 30000,
+      "env": {
+        "VITE_OIDC_ORIGIN": "https://identity.qualification.localhost"
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "rights.spec.ts",
+      "file": "rights.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "en-CA pending anchor, keyboard and backup exceptions at 1280/640px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1705,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:56.413Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357c12dab747d324c32-c5b74793dc8d59de7ed6",
+          "file": "rights.spec.ts",
+          "line": 31,
+          "column": 3
+        },
+        {
+          "title": "en-CA lost cancellation is retried with its exact original key",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 713,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:58.424Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357c12dab747d324c32-a00d684a22086415d3cd",
+          "file": "rights.spec.ts",
+          "line": 82,
+          "column": 3
+        },
+        {
+          "title": "fr-CA pending anchor, keyboard and backup exceptions at 1280/640px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1481,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:59.141Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357c12dab747d324c32-47185491b7bf5bade4c9",
+          "file": "rights.spec.ts",
+          "line": 31,
+          "column": 3
+        },
+        {
+          "title": "fr-CA lost cancellation is retried with its exact original key",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 706,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:14:00.627Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357c12dab747d324c32-160412ab26f0cb6d9d14",
+          "file": "rights.spec.ts",
+          "line": 82,
+          "column": 3
+        },
+        {
+          "title": "authorized delivery displays cancellation may be too late",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 748,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:14:01.337Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357c12dab747d324c32-13d1307d7ce4807f0aa0",
+          "file": "rights.spec.ts",
+          "line": 110,
+          "column": 1
+        },
+        {
+          "title": "private inbox clears on expired authority",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 821,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:14:02.090Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357c12dab747d324c32-77d9c4744a38c751b4a7",
+          "file": "rights.spec.ts",
+          "line": 129,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-23T14:13:55.795Z",
+    "duration": 7144.002,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

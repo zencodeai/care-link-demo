@@ -11,6 +11,7 @@ from care_link_domain import ManualError
 Record = dict[str, object]
 PARTICIPANTS = frozenset({"pid", "carer", "professional_participant"})
 WORKFORCE = frozenset({"worker", "supervisor"})
+EVALUATION_ACTIONS = frozenset({"replay_create", "evaluation_read"})
 ROLES: dict[str, frozenset[str]] = {
     **{
         name: PARTICIPANTS
@@ -236,6 +237,7 @@ class Outcome:
     sensitive_once: bool = False
 
 
+ROLES.update({action: frozenset({"trainer", "governance"}) for action in EVALUATION_ACTIONS})
 ROLES["referral_read"] = PARTICIPANTS | WORKFORCE
 ROLES["referral_context"] = PARTICIPANTS | WORKFORCE
 

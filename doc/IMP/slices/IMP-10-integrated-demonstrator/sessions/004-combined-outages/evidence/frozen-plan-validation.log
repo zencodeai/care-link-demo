@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/validate_plan.py", line 239, in <module>
+    main()
+    ~~~~^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/validate_plan.py", line 223, in main
+    check(hashlib.sha256((ROOT / item["path"]).read_bytes()).hexdigest() == item["sha256"],
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          "planning artifact drift: " + item["path"])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/doc/IMP/validate_plan.py", line 19, in check
+    raise ValueError(message)
+ValueError: planning artifact drift: README.md

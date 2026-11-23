@@ -1,0 +1,339 @@
+[
+  {
+    "number": 1,
+    "condition": "warm",
+    "phase": "recorded",
+    "started_at_utc": "2026-11-23T18:59:12.241745+00:00",
+    "first_arrivals": [
+      {
+        "session_id": "4906f088-53d6-4a07-9337-ad88299f467e",
+        "task_id": "f6bf6d6b-6e76-41b5-9733-44d83f0e3124",
+        "arrival_ns": 2677426024881333
+      },
+      {
+        "session_id": "ebe536f4-42fe-4965-b6f6-a883db0f4011",
+        "task_id": "ca6d8c2b-a8b1-4d4d-b1db-5c6e2129a7ad",
+        "arrival_ns": 2677426772155375
+      }
+    ],
+    "prequeued_arrivals": [
+      {
+        "session_id": "3ca9e03e-82fc-45d2-beca-8a9006e1f99c",
+        "task_id": "b01e1523-7726-463f-b652-f5a63457c0c6",
+        "arrival_ns": 2677427548945916
+      },
+      {
+        "session_id": "c1fa676c-3a49-464c-9d1e-a3150e79ac24",
+        "task_id": "d7cdd876-6d29-43bc-a776-5bd775068ca9",
+        "arrival_ns": 2677428312773916
+      },
+      {
+        "session_id": "cd7cf0cc-7ed0-4e57-9ab9-7037923fd0a2",
+        "task_id": "5079f0b8-8ca4-4158-ae06-fe18bdec0a56",
+        "arrival_ns": 2677429071098791
+      },
+      {
+        "session_id": "42727198-62f7-4183-b842-ba633cb9fcc2",
+        "task_id": "f7550914-dc79-4f67-918d-51c9a5a8326a",
+        "arrival_ns": 2677429822226833
+      },
+      {
+        "session_id": "44504dc6-ec9a-4595-8f37-97422e370e88",
+        "task_id": "c4007c93-cb20-42dc-a0f8-1c936d5d2b61",
+        "arrival_ns": 2677430570912333
+      },
+      {
+        "session_id": "ed356312-924a-4769-8a96-07da14a0d7d3",
+        "task_id": "1288de1c-d92f-42cb-9518-42934603e60b",
+        "arrival_ns": 2677431317367583
+      }
+    ],
+    "observed_both_occupied": [
+      {
+        "task_id": "ca6d8c2b-a8b1-4d4d-b1db-5c6e2129a7ad",
+        "created_at": "2026-11-23T18:59:21.291691+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      },
+      {
+        "task_id": "f6bf6d6b-6e76-41b5-9733-44d83f0e3124",
+        "created_at": "2026-11-23T18:59:21.333458+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      }
+    ],
+    "all_pending_arrivals": [
+      {
+        "session_id": "3ca9e03e-82fc-45d2-beca-8a9006e1f99c",
+        "task_id": "b01e1523-7726-463f-b652-f5a63457c0c6",
+        "arrival_ns": 2677427548945916
+      },
+      {
+        "session_id": "c1fa676c-3a49-464c-9d1e-a3150e79ac24",
+        "task_id": "d7cdd876-6d29-43bc-a776-5bd775068ca9",
+        "arrival_ns": 2677428312773916
+      },
+      {
+        "session_id": "cd7cf0cc-7ed0-4e57-9ab9-7037923fd0a2",
+        "task_id": "5079f0b8-8ca4-4158-ae06-fe18bdec0a56",
+        "arrival_ns": 2677429071098791
+      },
+      {
+        "session_id": "42727198-62f7-4183-b842-ba633cb9fcc2",
+        "task_id": "f7550914-dc79-4f67-918d-51c9a5a8326a",
+        "arrival_ns": 2677429822226833
+      },
+      {
+        "session_id": "44504dc6-ec9a-4595-8f37-97422e370e88",
+        "task_id": "c4007c93-cb20-42dc-a0f8-1c936d5d2b61",
+        "arrival_ns": 2677430570912333
+      },
+      {
+        "session_id": "ed356312-924a-4769-8a96-07da14a0d7d3",
+        "task_id": "1288de1c-d92f-42cb-9518-42934603e60b",
+        "arrival_ns": 2677431317367583
+      },
+      {
+        "session_id": "25e55345-574a-44c9-98f9-12b1878663fa",
+        "task_id": "4c4091a1-6641-41b9-a01f-572e78bd54c1",
+        "arrival_ns": 2677435519335208
+      },
+      {
+        "session_id": "9a2c95b3-f772-4c46-9ca1-61bc9df5c6b9",
+        "task_id": "0803df25-2bb0-41a4-a420-0465374b654d",
+        "arrival_ns": 2677436437173875
+      }
+    ],
+    "peak_before_scoped_reads": {
+      "connected_session_ids": [
+        "25e55345-574a-44c9-98f9-12b1878663fa",
+        "3ca9e03e-82fc-45d2-beca-8a9006e1f99c",
+        "42727198-62f7-4183-b842-ba633cb9fcc2",
+        "44504dc6-ec9a-4595-8f37-97422e370e88",
+        "4906f088-53d6-4a07-9337-ad88299f467e",
+        "9a2c95b3-f772-4c46-9ca1-61bc9df5c6b9",
+        "c1fa676c-3a49-464c-9d1e-a3150e79ac24",
+        "cd7cf0cc-7ed0-4e57-9ab9-7037923fd0a2",
+        "ebe536f4-42fe-4965-b6f6-a883db0f4011",
+        "ed356312-924a-4769-8a96-07da14a0d7d3"
+      ],
+      "occupied_task_ids": [
+        "ca6d8c2b-a8b1-4d4d-b1db-5c6e2129a7ad",
+        "f6bf6d6b-6e76-41b5-9733-44d83f0e3124"
+      ],
+      "pending_task_ids": [
+        "0803df25-2bb0-41a4-a420-0465374b654d",
+        "1288de1c-d92f-42cb-9518-42934603e60b",
+        "4c4091a1-6641-41b9-a01f-572e78bd54c1",
+        "5079f0b8-8ca4-4158-ae06-fe18bdec0a56",
+        "b01e1523-7726-463f-b652-f5a63457c0c6",
+        "c4007c93-cb20-42dc-a0f8-1c936d5d2b61",
+        "d7cdd876-6d29-43bc-a776-5bd775068ca9",
+        "f7550914-dc79-4f67-918d-51c9a5a8326a"
+      ]
+    },
+    "scoped_reads_ms": [
+      482.074,
+      546.635,
+      463.106,
+      450.345,
+      857.257,
+      843.53,
+      416.992,
+      419.688,
+      451.21,
+      445.534
+    ],
+    "peak_after_scoped_reads": {
+      "connected_session_ids": [
+        "25e55345-574a-44c9-98f9-12b1878663fa",
+        "3ca9e03e-82fc-45d2-beca-8a9006e1f99c",
+        "42727198-62f7-4183-b842-ba633cb9fcc2",
+        "44504dc6-ec9a-4595-8f37-97422e370e88",
+        "4906f088-53d6-4a07-9337-ad88299f467e",
+        "9a2c95b3-f772-4c46-9ca1-61bc9df5c6b9",
+        "c1fa676c-3a49-464c-9d1e-a3150e79ac24",
+        "cd7cf0cc-7ed0-4e57-9ab9-7037923fd0a2",
+        "ebe536f4-42fe-4965-b6f6-a883db0f4011",
+        "ed356312-924a-4769-8a96-07da14a0d7d3"
+      ],
+      "occupied_task_ids": [
+        "ca6d8c2b-a8b1-4d4d-b1db-5c6e2129a7ad",
+        "f6bf6d6b-6e76-41b5-9733-44d83f0e3124"
+      ],
+      "pending_task_ids": [
+        "0803df25-2bb0-41a4-a420-0465374b654d",
+        "1288de1c-d92f-42cb-9518-42934603e60b",
+        "4c4091a1-6641-41b9-a01f-572e78bd54c1",
+        "5079f0b8-8ca4-4158-ae06-fe18bdec0a56",
+        "b01e1523-7726-463f-b652-f5a63457c0c6",
+        "c4007c93-cb20-42dc-a0f8-1c936d5d2b61",
+        "d7cdd876-6d29-43bc-a776-5bd775068ca9",
+        "f7550914-dc79-4f67-918d-51c9a5a8326a"
+      ]
+    },
+    "jobs": [
+      {
+        "task_id": "ca6d8c2b-a8b1-4d4d-b1db-5c6e2129a7ad",
+        "created_at": "2026-11-23T18:59:21.291691+00:00",
+        "state": "completed",
+        "result": true,
+        "slot_state": "free",
+        "draft_count": 0
+      },
+      {
+        "task_id": "f6bf6d6b-6e76-41b5-9733-44d83f0e3124",
+        "created_at": "2026-11-23T18:59:21.333458+00:00",
+        "state": "completed",
+        "result": true,
+        "slot_state": "free",
+        "draft_count": 0
+      }
+    ],
+    "dispatch_to_terminal_ms": 27426.511,
+    "bridge": [
+      {
+        "bridge_ms": 23683.983,
+        "completion_tokens": 20,
+        "prompt_tokens": 1916,
+        "sequence": 6,
+        "started_at_utc": "2026-11-23T18:59:21.298740+00:00",
+        "status": 200
+      },
+      {
+        "bridge_ms": 23718.825,
+        "completion_tokens": 20,
+        "prompt_tokens": 1887,
+        "sequence": 7,
+        "started_at_utc": "2026-11-23T18:59:21.339538+00:00",
+        "status": 200
+      }
+    ],
+    "browser_tasks": [
+      {
+        "task_id": "f6bf6d6b-6e76-41b5-9733-44d83f0e3124",
+        "state": "awaiting_human",
+        "safe_reason": null,
+        "steps_used": 1,
+        "tools_used": 0
+      },
+      {
+        "task_id": "ca6d8c2b-a8b1-4d4d-b1db-5c6e2129a7ad",
+        "state": "awaiting_human",
+        "safe_reason": null,
+        "steps_used": 1,
+        "tools_used": 0
+      }
+    ],
+    "jobs_after_actor_read": [
+      {
+        "task_id": "ca6d8c2b-a8b1-4d4d-b1db-5c6e2129a7ad",
+        "created_at": "2026-11-23T18:59:21.291691+00:00",
+        "state": "completed",
+        "result": true,
+        "slot_state": "free",
+        "draft_count": 1
+      },
+      {
+        "task_id": "f6bf6d6b-6e76-41b5-9733-44d83f0e3124",
+        "created_at": "2026-11-23T18:59:21.333458+00:00",
+        "state": "completed",
+        "result": true,
+        "slot_state": "free",
+        "draft_count": 1
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "condition": "warm",
+    "phase": "last_two_admissions",
+    "started_at_utc": "2026-11-23T18:59:54.078055+00:00",
+    "first_arrivals": [
+      {
+        "session_id": "4906f088-53d6-4a07-9337-ad88299f467e",
+        "task_id": "8ad1b244-e1e9-4b49-a954-8784235825db",
+        "arrival_ns": 2677467871404541
+      },
+      {
+        "session_id": "ebe536f4-42fe-4965-b6f6-a883db0f4011",
+        "task_id": "7bc0fe7a-0d7e-4717-a627-9a5e6125dad3",
+        "arrival_ns": 2677468633834500
+      }
+    ],
+    "prequeued_arrivals": [
+      {
+        "session_id": "3ca9e03e-82fc-45d2-beca-8a9006e1f99c",
+        "task_id": "9be5c485-5385-438e-a805-344a937e1124",
+        "arrival_ns": 2677469392640458
+      },
+      {
+        "session_id": "c1fa676c-3a49-464c-9d1e-a3150e79ac24",
+        "task_id": "2e7c5030-f6ce-45da-b55f-bf1de26a3137",
+        "arrival_ns": 2677470168569458
+      },
+      {
+        "session_id": "cd7cf0cc-7ed0-4e57-9ab9-7037923fd0a2",
+        "task_id": "13e98966-eee3-4a91-bd62-9beb1c16440e",
+        "arrival_ns": 2677470936176250
+      },
+      {
+        "session_id": "42727198-62f7-4183-b842-ba633cb9fcc2",
+        "task_id": "ad67a4a0-1ba3-40b6-9251-6c2d1539476e",
+        "arrival_ns": 2677471688397916
+      },
+      {
+        "session_id": "44504dc6-ec9a-4595-8f37-97422e370e88",
+        "task_id": "a579710e-190d-45c2-a0fe-8a8307001684",
+        "arrival_ns": 2677472497440666
+      },
+      {
+        "session_id": "ed356312-924a-4769-8a96-07da14a0d7d3",
+        "task_id": "0102550e-42c2-47b5-82dd-4d9caa65c445",
+        "arrival_ns": 2677473293714250
+      }
+    ],
+    "observed_both_occupied": [
+      {
+        "task_id": "7bc0fe7a-0d7e-4717-a627-9a5e6125dad3",
+        "created_at": "2026-11-23T19:00:03.434713+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      },
+      {
+        "task_id": "8ad1b244-e1e9-4b49-a954-8784235825db",
+        "created_at": "2026-11-23T19:00:03.488844+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      }
+    ],
+    "error": "POST /v1/tasks: 409 (manual.gateway_denied)",
+    "bridge": [],
+    "jobs_at_failure": [
+      {
+        "task_id": "7bc0fe7a-0d7e-4717-a627-9a5e6125dad3",
+        "created_at": "2026-11-23T19:00:03.434713+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      },
+      {
+        "task_id": "8ad1b244-e1e9-4b49-a954-8784235825db",
+        "created_at": "2026-11-23T19:00:03.488844+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      }
+    ]
+  }
+]

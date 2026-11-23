@@ -1,0 +1,72 @@
+{
+  "state": "failed",
+  "started_at": "2026-11-23T14:58:06.204501Z",
+  "phase": "restoring_exact_model",
+  "candidate": {
+    "commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+    "diff_digest": "0634d78d66138b86e9a9d9e0ec656f2a1a6afbc3fc757ff8b14be02444d069bd",
+    "artifact_digest": "53226896360f9e84362eea9a7bbcb8da72c7a789801032d78bcdc6f3824b5331",
+    "configuration_digest": "c4f06139033841a3ef76d2d3ddde1ab23e8dbb9f64627718cebe5b932aa23bd9",
+    "contract_digest": "87d3f81c51ccd56fa42b1d5add5b7dcf0a755b5b3f3650c9576378de785608e4",
+    "environment_digest": "d34d26d7fe0697f33ef6f08bad89effe23e41d1ced2f0e6a9b892fbdb5eb0f03",
+    "fixture_digest": "67c3942b7b69ccbbe677ad97ca2ba4547734d2a79c645ee4d7a965be35774aa9"
+  },
+  "sdk_version": "1.6.0b1",
+  "selected_model": "qwen/qwen3.8-27b",
+  "measurement": "Exact authorized model unloaded and reloaded on the existing listener. The filesystem cache was left as observed.",
+  "expected_pins": {
+    "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+    "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836",
+    "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c"
+  },
+  "cases": [],
+  "before_settings": {
+    "identifier": "qwen/qwen3.8-27b",
+    "modelKey": "qwen/qwen3.8-27b",
+    "path": "qwen/qwen3.8-27b",
+    "format": "safetensors",
+    "contextLength": 8192,
+    "parallel": 4,
+    "ttlMs": null,
+    "deviceIdentifier": null,
+    "selectedVariant": "qwen/qwen3.8-27b@4bit",
+    "engineConfigFileEnabled": false
+  },
+  "before_instance_digest": "c825700c1b49b8c2fef00440f2b85895d2d5ac968a1221346f8e8382a4cfb735",
+  "before_raw_settings_digest": "a3f431b35cae4179a81ece9859cebdc17a5d8ccde1e08a535e3b77a57f5d14f3",
+  "unloaded_absence_observed": true,
+  "unloaded_observed_at": "2026-11-23T14:57:13.385993Z",
+  "unload_cli_elapsed_seconds": 3.6575,
+  "preflight_binding_seconds": 6.472807,
+  "recovery": "Initial CLI rejected an engine-config switch which the installed CLI limits to vLLM. Retrial omitted that switch.",
+  "rechecked_unloaded_before_recovery": true,
+  "last_reload_started_at": "2026-11-23T14:58:06.483909Z",
+  "reload_cli_acknowledged": true,
+  "reload_elapsed_seconds": 9.186134,
+  "restored_catalog_entry_count": 1,
+  "after_settings": {
+    "identifier": "qwen/qwen3.8-27b",
+    "modelKey": "qwen/qwen3.8-27b",
+    "path": "qwen/qwen3.8-27b",
+    "format": "safetensors",
+    "contextLength": 8192,
+    "parallel": 4,
+    "ttlMs": null,
+    "deviceIdentifier": null,
+    "selectedVariant": "qwen/qwen3.8-27b@4bit",
+    "engineConfigFileEnabled": false
+  },
+  "recovery_start_to_authenticated_catalog_seconds": 9.469637,
+  "after_instance_digest": "e5f09dca532fc70ef85a5e06da668d3c6ff7863fa23f87da7ffbb24f6f9b0a2f",
+  "new_instance_observed": true,
+  "after_raw_settings_digest": "0f0f2175b79bf49e82010a982f401fc45d5000407a12922f27bf8f913ce65a7d",
+  "restoration_checks": {
+    "cli_stable_settings_match": true,
+    "sdk_settings_match": true,
+    "rest_settings_match": true,
+    "raw_load_settings_match": false,
+    "model_metadata_matches_apart_from_instance": true
+  },
+  "failure_type": "AssertionError",
+  "completed_at": "2026-11-23T14:58:15.834106Z"
+}

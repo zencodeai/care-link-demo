@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-11-23T17:17:27.235935+00:00",
+  "node_container_id": "aa656c8592c78d6a907127e107c43ab82f999e2b58a6dbe7880ec816a1cbbee0",
+  "local_image_id": "sha256:8560440ce85a43ca75f5a3048cf72f3bcbb5e0531d2e91414d075d413b474a6e",
+  "image_tag": "care-link-imp10:protected-008-final",
+  "node_image_id": "sha256:2b941e4228cb417613d38c6073e9130b5d5667f289ff83041fbe635f8caab3e8",
+  "node_ref": "docker.io/library/import-2026-11-23@sha256:56a03413189018a6cc211644840a2b18b416ee25e88fa1a626a0f1e631010acc",
+  "registered_selectors_mutated": false
+}

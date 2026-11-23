@@ -1,5 +1,6 @@
 """Fixed authenticated inference transport adapters."""
 
+import logging
 import ssl
 from collections.abc import Callable
 from datetime import datetime
@@ -14,6 +15,7 @@ from .admission import InferenceDenied
 from .gateway import BrokerRequest, InferenceGateway
 
 BRIDGE_ENDPOINT = "https://host-inference-bridge:8443/internal/v1/inference/execute"
+LOG = logging.getLogger(__name__)
 
 
 class HttpBridge:
@@ -79,9 +81,12 @@ def create_app(
         raw = await request.body()
         if len(raw) > 262144:
             return Response(status_code=413)
+        stage = "request"
         try:
             body = cast(dict[str, object], parse_contract("InferenceRequest", raw.decode()))
+            stage = "data_context"
             scoped = await run_in_threadpool(resolve, body)
+            stage = "scope"
             if (
                 body["task_id"] != scoped.task_id
                 or body["step_id"] != scoped.step_id
@@ -100,7 +105,9 @@ def create_app(
                 ).prompt_digest
             ):
                 raise InferenceDenied("server_context_mismatch")
+            stage = "gateway"
             result = await run_in_threadpool(gateway.execute, "broker", scoped)
+            stage = "result"
             from dataclasses import asdict
 
             from .context import canonical
@@ -111,10 +118,15 @@ def create_app(
 
             validate_contract("InferenceResult", response)
             return Response(canonical(response), media_type="application/json")
-        except (ContractError, UnicodeDecodeError, ValueError):
-            return Response(status_code=400)
-        except InferenceDenied:
-            return Response(status_code=503)
+        except (ContractError, UnicodeDecodeError, ValueError, InferenceDenied) as error:
+            status = 503 if isinstance(error, InferenceDenied) else 400
+            LOG.warning(
+                "Inference job denied stage=%s cause=%s status=%d",
+                stage,
+                type(error).__name__,
+                status,
+            )
+            return Response(status_code=status)
 
     app.add_api_route("/internal/v1/inference/jobs", execute, methods=["POST"])
     return app

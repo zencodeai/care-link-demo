@@ -1,0 +1,243 @@
+{
+  "candidate": {
+    "image_id": "sha256:1e8e97dad6af5ef86997a8431f36729afce41f5134ea6f4f2a621b7ba56e310a",
+    "knowledge_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27",
+    "source_sha256": {
+      "config/demo/knowledge/catalog.json": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27",
+      "host/inference-bridge/src/care_link_inference_bridge/loaded.py": "7f34b632962f36feed2efafbef3fad0adaaae285b7e3c9d342e139378529d70d",
+      "services/core/src/care_link_core/evaluation_http.py": "297c0772ef894593650f4a309413080555bef3c7a70c68c5d22713ba01e78562",
+      "services/core/src/care_link_core/manual_app.py": "54bc2b913a8487088b1aa1816de430013cd097fbb0845e106b1ad4ecbdf72513",
+      "services/core/src/care_link_core/manual_channels.py": "eadde89d074d9bf833fe353e1fdfb9458dc2e19b7d6f2422e72b7853083e3725",
+      "services/core/src/care_link_core/training_http.py": "a074088c337f3f218ade435a9725e7755f8517a9ad9fc402888802ad912a68d7",
+      "services/core/src/care_link_core/training_routes.py": "90d823f6d1d82f4e68315877e3d28e2fef6141938f7429f61b5c5870f2912752",
+      "tools/imp03_runtime/compose.py": "e832116b79eabae0435bbfde378d4e6407e2fbce522c6c6f2d3a4cd81390c740",
+      "tools/imp06_runtime/bridge.py": "ba444f5a2894dcd59fd2ada36a6afc2661c2759c6afb71c2d3bd7565db868f51",
+      "tools/imp06_runtime/release_custody.py": "445a3bda13d2c0582e4297a8aa787ad96576d68ff969508fbee8f6091dfbdf8b",
+      "tools/imp06_runtime/role_process.py": "5a68a1ef6a15a9b53993c559973cfdd1e029571aec2217e206cecacb0aaa781e",
+      "tools/imp06_runtime/serve.py": "51d98fa33620bc90c19f861c132afb9a3f871499da38efdb6aebdc70b1133969",
+      "tools/imp10_runtime/serve.py": "13dd107f1b450b0daccf73f28d4a3ee41f4ec7ec13835118c9db4c0ab65059db"
+    },
+    "state": "passed"
+  },
+  "corrected_image_preflight_with_native_bind": {
+    "anonymous_catalog": "denied",
+    "app_network_mode": "none",
+    "authenticated_catalog": 200,
+    "foreign_kernel_uid": "denied",
+    "image_id": "sha256:1e8e97dad6af5ef86997a8431f36729afce41f5134ea6f4f2a621b7ba56e310a",
+    "model_inference_invoked": false,
+    "model_readiness": {
+      "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+      "boot_id": "b72b7a53-328a-4c31-96c8-eea7fc03fd95",
+      "exact_binding_elapsed_ms": 18835.294,
+      "instance_sha256": "e5f09dca532fc70ef85a5e06da668d3c6ff7863fa23f87da7ffbb24f6f9b0a2f",
+      "model_identifier": "qwen/qwen3.8-27b",
+      "model_window": 8192,
+      "role_observation_sha256": "b904640f56320ca4baca0a7a82746077242c1cfdda95ae857b2f557328a64586",
+      "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c",
+      "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836"
+    },
+    "readiness_attempts": [
+      {
+        "attempt": 1,
+        "elapsed_seconds": 25.58,
+        "exit_status": "passed"
+      }
+    ],
+    "state": "passed"
+  },
+  "disposable_private_evaluator_signer_files_removed": 15,
+  "docker_cleanup_and_kind_detachment": {
+    "leased_kind_bridge_model_endpoints": 0,
+    "owned_bridge_containers": 0,
+    "owned_bridge_networks": 0,
+    "owned_bridge_volumes": 0,
+    "verified_artifact_copy_removed": true
+  },
+  "fixed_transport_preflight": {
+    "anonymous_catalog": "denied",
+    "app_network_mode": "none",
+    "authenticated_catalog": 200,
+    "foreign_kernel_uid": "denied",
+    "image_id": "sha256:7d92f8010e4c6b9a6801bfd820d3753355f54ba861e66a416cbc343be4147aef",
+    "model_inference_invoked": false,
+    "state": "passed"
+  },
+  "focused_verification": {
+    "git_diff_check": "passed",
+    "pytest": {
+      "passed": 7,
+      "seconds": 0.89
+    },
+    "ruff_check": "passed",
+    "ruff_format_files": 5,
+    "strict_pyright_errors": 0
+  },
+  "holder_extension": {
+    "boot_id": "4ff9d9bf-baec-4e7b-845b-79dd2cb6182f",
+    "expected_original_expiry_utc": "2026-11-23T18:07:29.399542+00:00",
+    "extended_cleanup_utc": "2026-11-23T18:12:29.399542+00:00",
+    "provider_mutations": 0,
+    "scope": "owned bridge launcher supervisor only"
+  },
+  "limits": [
+    "Four standalone responses do not establish a complete actor workload, connected-cohort peak or durable job outcome.",
+    "User directed keeping the original model loaded. A spare suitable workstation was unavailable. Repeated true cold samples remain missing.",
+    "Existing inference and authorization deadlines remained enabled."
+  ],
+  "linux_copy": {
+    "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+    "bytes": 16081498220,
+    "files": 13,
+    "free_before_bytes": 874216972288,
+    "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836"
+  },
+  "linux_copy_preflight": {
+    "anonymous_catalog": "denied",
+    "app_network_mode": "none",
+    "authenticated_catalog": 200,
+    "foreign_kernel_uid": "denied",
+    "image_id": "sha256:1e8e97dad6af5ef86997a8431f36729afce41f5134ea6f4f2a621b7ba56e310a",
+    "model_inference_invoked": false,
+    "model_readiness": {
+      "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+      "boot_id": "4ff9d9bf-baec-4e7b-845b-79dd2cb6182f",
+      "exact_binding_elapsed_ms": 9519.739,
+      "instance_sha256": "e5f09dca532fc70ef85a5e06da668d3c6ff7863fa23f87da7ffbb24f6f9b0a2f",
+      "model_identifier": "qwen/qwen3.8-27b",
+      "model_window": 8192,
+      "role_observation_sha256": "b904640f56320ca4baca0a7a82746077242c1cfdda95ae857b2f557328a64586",
+      "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c",
+      "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836"
+    },
+    "state": "passed"
+  },
+  "native_model_after_cleanup": {
+    "anonymous_catalog_http": 401,
+    "at_utc": "2026-11-23T18:12:56.879145+00:00",
+    "authenticated_catalog_http": 200,
+    "loaded_instance_sha256": "e5f09dca532fc70ef85a5e06da668d3c6ff7863fa23f87da7ffbb24f6f9b0a2f",
+    "native_model_checks": {
+      "same_artifact_digest": true,
+      "same_instance": true,
+      "same_model_window": true,
+      "same_raw_settings": true,
+      "same_rest_settings": true,
+      "same_sdk_settings": true,
+      "same_template_digest": true,
+      "same_tokenizer_digest": true
+    },
+    "native_model_queue": 0,
+    "native_model_status": "idle",
+    "owned_bridge_containers_remaining": 0,
+    "owned_bridge_networks_remaining": 0,
+    "owned_bridge_volumes_remaining": 0,
+    "verified_linux_artifact_copy_removed": true
+  },
+  "past_deployed_attempts": [
+    {
+      "boot_id": "b72b7a53-328a-4c31-96c8-eea7fc03fd95",
+      "outcome": "The valid provider operation failed closed.",
+      "valid_tokenization_http": 503
+    },
+    {
+      "boot_id": "385b65bd-bcae-4287-84d1-f76cb9d92fd5",
+      "diagnostic_limit": "Fresh diagnostic bindings with the original mount passed repeated SDK, alias and fingerprint checks. The failing long-lived process did not identify the specific guard component.",
+      "safe_failure": "loaded_artifact_or_instance_changed",
+      "valid_tokenization_http": 503,
+      "wrong_digest_http": 400
+    }
+  ],
+  "protected_tokenization": {
+    "actual_platform_receipt": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-assisted-probes-retry.json",
+      "sha256": "e61d73cf8836e02848b1acda92512cce044844b090d4ef660590ff58997f45d1"
+    },
+    "expected_model_pins_match": true,
+    "http": 200,
+    "prompt_tokens": 18
+  },
+  "release_and_live_boot": {
+    "agent": "346409c5122e2adba9955807c6292d2baa032acebaf943554a918c8c5b2964c9",
+    "app": "ce862bf40aa228b9257caeba6f3549271e9ea0867a87f17152cb77130e7bf34b",
+    "artifact_transport": "owned_linux_read_only_copy",
+    "authorized_provider_transport": "loopback_to_fixed_uds",
+    "backend_socket": "/sockets/backend/service.sock",
+    "boot_id": "4ff9d9bf-baec-4e7b-845b-79dd2cb6182f",
+    "envoy_config_sha256": "f10e01d13f99b7448baabf525f9b8030a6885224d033366f0750ffb8a8a11382",
+    "image_id": "sha256:1e8e97dad6af5ef86997a8431f36729afce41f5134ea6f4f2a621b7ba56e310a",
+    "observed_protected_calls": [],
+    "proxy": "37bf093c935c3fad6e25dddae59044825ae3e477e1c35ed5fcc63ac186f8eeba",
+    "proxy_address": "172.23.255.238",
+    "proxy_port": 8443,
+    "qualification_harness_sha256": {
+      "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bridge_observer.py": "cfd63287d55b2bbcd051e87496fada8306c534371032d90e09b010887aa67077",
+      "deployed_assistance.py": "06ec5f62f6fd58a2f4b66388ac538debd09afc2d2e4949bc12d7bac93cb11a8b",
+      "deployed_release.py": "73cbcacb5aa0dc994af6084d8d8c4039d48fd959a5fe61b84593c3f2fde6eb91"
+    },
+    "release_snapshot_sha256": "8eb74884712f3ee67873d4bab380d26eb80b090108cfe175998c7cd564587a1e",
+    "scope": "care-link-imp10-008-model",
+    "state": "started",
+    "workload": "spiffe://care-link.demo/demo/host-inference-bridge"
+  },
+  "restrictive_teardown_and_observations": {
+    "actual_bridge_reader_epoch_state": "(2, 'disabled')",
+    "boot_id": "4ff9d9bf-baec-4e7b-845b-79dd2cb6182f",
+    "failure_labels": [
+      {
+        "class": "OSError",
+        "operation": "catalog",
+        "reason": "local provider authentication unavailable"
+      },
+      {
+        "class": "OSError",
+        "operation": "catalog",
+        "reason": "local provider authentication unavailable"
+      }
+    ],
+    "image_id": "sha256:1e8e97dad6af5ef86997a8431f36729afce41f5134ea6f4f2a621b7ba56e310a",
+    "restrictive_snapshot_sha256": "f4605c55326dfe608d6e0294a92e033e7c3e4a16c1b1458bd4a6a453b5c3fb11",
+    "samples": [
+      {
+        "bridge_ms": 23832.938,
+        "completion_tokens": 7,
+        "prompt_tokens": 27,
+        "sequence": 1,
+        "started_at_utc": "2026-11-23T17:49:02.834228+00:00",
+        "status": 200
+      },
+      {
+        "bridge_ms": 2018.195,
+        "completion_tokens": null,
+        "prompt_tokens": null,
+        "sequence": 2,
+        "started_at_utc": "2026-11-23T18:06:18.432044+00:00",
+        "status": 503
+      },
+      {
+        "bridge_ms": 2030.156,
+        "completion_tokens": null,
+        "prompt_tokens": null,
+        "sequence": 3,
+        "started_at_utc": "2026-11-23T18:06:20.796586+00:00",
+        "status": 503
+      },
+      {
+        "bridge_ms": 2497.5,
+        "completion_tokens": 7,
+        "prompt_tokens": 27,
+        "sequence": 4,
+        "started_at_utc": "2026-11-23T18:06:23.693287+00:00",
+        "status": 200
+      }
+    ],
+    "scope": "Owned protected host bridge teardown"
+  },
+  "scope": "Private synthetic IMP-10 host bridge and standalone protected response observations.",
+  "standalone_generation_control": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-generation-control.json",
+    "sha256": "04705aae2f1b5ea9c82e114edb055962fcd43ca129580844181b191f6cfe0247"
+  },
+  "state": "passed_for_host_bridge_scope"
+}

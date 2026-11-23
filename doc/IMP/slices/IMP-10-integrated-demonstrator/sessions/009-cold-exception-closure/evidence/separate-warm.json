@@ -1,0 +1,370 @@
+[
+  {
+    "condition": "warm",
+    "round": 1,
+    "phase": "recorded",
+    "at_utc": "2026-11-23T19:48:17.957375+00:00",
+    "first": [
+      {
+        "session_id": "666a43a2-84c8-4922-8533-258b375f67d1",
+        "task_id": "6cb21db9-3e3f-40a8-adc4-81b9a4484b34",
+        "arrival_ns": 2680372277287875
+      },
+      {
+        "session_id": "e5ea53ab-e227-4e25-9962-9ef992c7d55d",
+        "task_id": "f82b2df7-3d0f-4838-b4a8-2f416f960921",
+        "arrival_ns": 2680373211779166
+      }
+    ],
+    "pending": [
+      {
+        "session_id": "084215ac-4198-4e09-ad32-a84290bfcd41",
+        "task_id": "8c4be224-1b80-46f5-adec-bad3fa9855cf",
+        "arrival_ns": 2680374102044041
+      },
+      {
+        "session_id": "d979c302-eabd-455e-bb0b-1a7a11a236a0",
+        "task_id": "d2996b9c-1a3a-4ae8-9e31-d0343856e326",
+        "arrival_ns": 2680374883408958
+      },
+      {
+        "session_id": "744f63e9-e700-40b5-ac04-6338e666728d",
+        "task_id": "7178f7b7-c275-45ca-b00d-520e2009bff8",
+        "arrival_ns": 2680375666392416
+      },
+      {
+        "session_id": "142bafb7-930c-41da-9ca8-03fd9be6d2eb",
+        "task_id": "410fca90-9b8f-4be1-9467-aeb84c3a0acf",
+        "arrival_ns": 2680376471241708
+      },
+      {
+        "session_id": "1dc0b12e-eb7c-4405-8172-5efb30068ca9",
+        "task_id": "c99284ac-a41d-432e-8f69-77c33b6f4dcb",
+        "arrival_ns": 2680377238433416
+      },
+      {
+        "session_id": "0124319e-3241-4662-a0fb-4a9558fb394d",
+        "task_id": "524f2495-8904-4127-ba95-689ecd08a653",
+        "arrival_ns": 2680378036247875
+      },
+      {
+        "session_id": "a7c526ca-6247-4f10-b8cf-3a0004159de2",
+        "task_id": "9e37b25f-33d5-40e2-bb64-25e95749aefc",
+        "arrival_ns": 2680382961261958
+      },
+      {
+        "session_id": "c24ca282-41e3-4b1e-9231-69bc9afafa87",
+        "task_id": "bf65c01a-4b1f-4706-b00c-3d65874ec7f0",
+        "arrival_ns": 2680384198445041
+      }
+    ],
+    "streams_before_dispatch": [
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      },
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      }
+    ],
+    "contexts": [
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      },
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      }
+    ],
+    "occupied": [
+      {
+        "task_id": "f82b2df7-3d0f-4838-b4a8-2f416f960921",
+        "created_at": "2026-11-23T19:48:29.324455+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      },
+      {
+        "task_id": "6cb21db9-3e3f-40a8-adc4-81b9a4484b34",
+        "created_at": "2026-11-23T19:48:29.367629+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      }
+    ],
+    "locales_by_session": {
+      "666a43a2-84c8-4922-8533-258b375f67d1": "en-CA",
+      "e5ea53ab-e227-4e25-9962-9ef992c7d55d": "fr-CA",
+      "084215ac-4198-4e09-ad32-a84290bfcd41": "en-CA",
+      "d979c302-eabd-455e-bb0b-1a7a11a236a0": "fr-CA",
+      "744f63e9-e700-40b5-ac04-6338e666728d": "en-CA",
+      "142bafb7-930c-41da-9ca8-03fd9be6d2eb": "fr-CA",
+      "1dc0b12e-eb7c-4405-8172-5efb30068ca9": "en-CA",
+      "0124319e-3241-4662-a0fb-4a9558fb394d": "fr-CA",
+      "a7c526ca-6247-4f10-b8cf-3a0004159de2": "en-CA",
+      "c24ca282-41e3-4b1e-9231-69bc9afafa87": "fr-CA"
+    },
+    "channel": "web",
+    "peak_before": {
+      "connected_session_ids": [
+        "0124319e-3241-4662-a0fb-4a9558fb394d",
+        "084215ac-4198-4e09-ad32-a84290bfcd41",
+        "142bafb7-930c-41da-9ca8-03fd9be6d2eb",
+        "1dc0b12e-eb7c-4405-8172-5efb30068ca9",
+        "666a43a2-84c8-4922-8533-258b375f67d1",
+        "744f63e9-e700-40b5-ac04-6338e666728d",
+        "a7c526ca-6247-4f10-b8cf-3a0004159de2",
+        "c24ca282-41e3-4b1e-9231-69bc9afafa87",
+        "d979c302-eabd-455e-bb0b-1a7a11a236a0",
+        "e5ea53ab-e227-4e25-9962-9ef992c7d55d"
+      ],
+      "occupied_task_ids": [
+        "6cb21db9-3e3f-40a8-adc4-81b9a4484b34",
+        "f82b2df7-3d0f-4838-b4a8-2f416f960921"
+      ],
+      "pending_task_ids": [
+        "410fca90-9b8f-4be1-9467-aeb84c3a0acf",
+        "524f2495-8904-4127-ba95-689ecd08a653",
+        "7178f7b7-c275-45ca-b00d-520e2009bff8",
+        "8c4be224-1b80-46f5-adec-bad3fa9855cf",
+        "9e37b25f-33d5-40e2-bb64-25e95749aefc",
+        "bf65c01a-4b1f-4706-b00c-3d65874ec7f0",
+        "c99284ac-a41d-432e-8f69-77c33b6f4dcb",
+        "d2996b9c-1a3a-4ae8-9e31-d0343856e326"
+      ]
+    },
+    "reads_ms": [
+      492.737,
+      444.481,
+      512.636,
+      550.029,
+      702.544,
+      676.635,
+      489.234,
+      473.593,
+      429.262,
+      461.459
+    ],
+    "manual": {
+      "visible_once": true,
+      "exact_retry": true,
+      "elapsed_ms": 1739.303
+    },
+    "peak_after": {
+      "connected_session_ids": [
+        "0124319e-3241-4662-a0fb-4a9558fb394d",
+        "084215ac-4198-4e09-ad32-a84290bfcd41",
+        "142bafb7-930c-41da-9ca8-03fd9be6d2eb",
+        "1dc0b12e-eb7c-4405-8172-5efb30068ca9",
+        "666a43a2-84c8-4922-8533-258b375f67d1",
+        "744f63e9-e700-40b5-ac04-6338e666728d",
+        "a7c526ca-6247-4f10-b8cf-3a0004159de2",
+        "c24ca282-41e3-4b1e-9231-69bc9afafa87",
+        "d979c302-eabd-455e-bb0b-1a7a11a236a0",
+        "e5ea53ab-e227-4e25-9962-9ef992c7d55d"
+      ],
+      "occupied_task_ids": [
+        "6cb21db9-3e3f-40a8-adc4-81b9a4484b34",
+        "f82b2df7-3d0f-4838-b4a8-2f416f960921"
+      ],
+      "pending_task_ids": [
+        "410fca90-9b8f-4be1-9467-aeb84c3a0acf",
+        "524f2495-8904-4127-ba95-689ecd08a653",
+        "7178f7b7-c275-45ca-b00d-520e2009bff8",
+        "8c4be224-1b80-46f5-adec-bad3fa9855cf",
+        "9e37b25f-33d5-40e2-bb64-25e95749aefc",
+        "bf65c01a-4b1f-4706-b00c-3d65874ec7f0",
+        "c99284ac-a41d-432e-8f69-77c33b6f4dcb",
+        "d2996b9c-1a3a-4ae8-9e31-d0343856e326"
+      ]
+    },
+    "runtime": [
+      {
+        "state": "awaiting_human",
+        "safe_reason": null,
+        "elapsed_ms": 29403.63
+      },
+      {
+        "state": "awaiting_human",
+        "safe_reason": null,
+        "elapsed_ms": 29154.564
+      }
+    ],
+    "jobs": [
+      {
+        "task_id": "f82b2df7-3d0f-4838-b4a8-2f416f960921",
+        "created_at": "2026-11-23T19:48:29.324455+00:00",
+        "state": "completed",
+        "result": true,
+        "slot_state": "free",
+        "draft_count": 1
+      },
+      {
+        "task_id": "6cb21db9-3e3f-40a8-adc4-81b9a4484b34",
+        "created_at": "2026-11-23T19:48:29.367629+00:00",
+        "state": "completed",
+        "result": true,
+        "slot_state": "free",
+        "draft_count": 1
+      }
+    ],
+    "bridge": [
+      {
+        "bridge_ms": 24467.684,
+        "completion_tokens": 20,
+        "prompt_tokens": 1930,
+        "sequence": 5,
+        "started_at_utc": "2026-11-23T19:48:29.330702+00:00",
+        "status": 200
+      },
+      {
+        "bridge_ms": 24501.301,
+        "completion_tokens": 20,
+        "prompt_tokens": 1887,
+        "sequence": 6,
+        "started_at_utc": "2026-11-23T19:48:29.372634+00:00",
+        "status": 200
+      }
+    ],
+    "browser": [
+      {
+        "task_id": "6cb21db9-3e3f-40a8-adc4-81b9a4484b34",
+        "state": "awaiting_human",
+        "safe_reason": null,
+        "steps_used": 1,
+        "tools_used": 0
+      },
+      {
+        "task_id": "f82b2df7-3d0f-4838-b4a8-2f416f960921",
+        "state": "awaiting_human",
+        "safe_reason": null,
+        "steps_used": 1,
+        "tools_used": 0
+      }
+    ],
+    "slots_after": [
+      {
+        "id": "local-1",
+        "state": "free",
+        "job_id": null
+      },
+      {
+        "id": "local-2",
+        "state": "free",
+        "job_id": null
+      }
+    ],
+    "passed": true
+  },
+  {
+    "condition": "error",
+    "round": 2,
+    "phase": "dispatch",
+    "at_utc": "2026-11-23T19:49:16.291007+00:00",
+    "first": [
+      {
+        "session_id": "666a43a2-84c8-4922-8533-258b375f67d1",
+        "task_id": "12d67433-73f7-46af-be67-c0d327ecae74",
+        "arrival_ns": 2680430235671416
+      },
+      {
+        "session_id": "e5ea53ab-e227-4e25-9962-9ef992c7d55d",
+        "task_id": "6eaca2a2-d39e-4076-8296-756a3bedfe0e",
+        "arrival_ns": 2680431049601083
+      }
+    ],
+    "pending": [
+      {
+        "session_id": "084215ac-4198-4e09-ad32-a84290bfcd41",
+        "task_id": "d1c91efb-225c-40b4-9114-7afbcc6cbd59",
+        "arrival_ns": 2680431819914250
+      },
+      {
+        "session_id": "d979c302-eabd-455e-bb0b-1a7a11a236a0",
+        "task_id": "bd435196-d3eb-469b-9b47-a694fd1b2279",
+        "arrival_ns": 2680432610694916
+      },
+      {
+        "session_id": "744f63e9-e700-40b5-ac04-6338e666728d",
+        "task_id": "bb251e49-7404-45bf-bd86-bd92aca71ef8",
+        "arrival_ns": 2680433400994625
+      },
+      {
+        "session_id": "142bafb7-930c-41da-9ca8-03fd9be6d2eb",
+        "task_id": "0489c52b-4a56-4cd4-bea9-f7eea7f62f66",
+        "arrival_ns": 2680434179142125
+      },
+      {
+        "session_id": "1dc0b12e-eb7c-4405-8172-5efb30068ca9",
+        "task_id": "2c80f452-2060-4ac3-b251-9f1b89935bc1",
+        "arrival_ns": 2680434970423916
+      },
+      {
+        "session_id": "0124319e-3241-4662-a0fb-4a9558fb394d",
+        "task_id": "44326664-8072-437d-8021-05928ad1d241",
+        "arrival_ns": 2680435711049625
+      }
+    ],
+    "streams_before_dispatch": [
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      },
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      }
+    ],
+    "contexts": [
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      },
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      }
+    ],
+    "error": "GET /v1/sessions/a7c526ca-6247-4f10-b8cf-3a0004159de2: 503 (manual.commit_unknown)",
+    "durable_after_failure": [
+      {
+        "task_id": "12d67433-73f7-46af-be67-c0d327ecae74",
+        "created_at": "2026-11-23T19:49:26.302066+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      },
+      {
+        "task_id": "6eaca2a2-d39e-4076-8296-756a3bedfe0e",
+        "created_at": "2026-11-23T19:49:26.340418+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      }
+    ],
+    "pending_cleanup_not_confirmed": [
+      "d1c91efb-225c-40b4-9114-7afbcc6cbd59",
+      "bd435196-d3eb-469b-9b47-a694fd1b2279",
+      "bb251e49-7404-45bf-bd86-bd92aca71ef8",
+      "0489c52b-4a56-4cd4-bea9-f7eea7f62f66",
+      "2c80f452-2060-4ac3-b251-9f1b89935bc1",
+      "44326664-8072-437d-8021-05928ad1d241",
+      "12d67433-73f7-46af-be67-c0d327ecae74",
+      "6eaca2a2-d39e-4076-8296-756a3bedfe0e"
+    ]
+  }
+]

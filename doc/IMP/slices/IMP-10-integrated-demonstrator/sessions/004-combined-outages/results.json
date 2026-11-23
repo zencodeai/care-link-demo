@@ -1,0 +1,121 @@
+{
+  "stage": "IMP-10",
+  "gate": "G-10",
+  "gate_state": "blocked",
+  "automated_qualified": false,
+  "scope": "Live Qwen and independently bound application listeners on the private synthetic workstation.",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Proceed",
+    "scope": "Run combined outage qualification in an isolated synthetic topology. Bound candidate roles and live read-only loopback inference."
+  },
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/candidate-manifest.json",
+    "sha256": "db2d7da87e3fc191e3c095c7b1548c923422c02f537448bb33f3f8f8e28221e5"
+  },
+  "candidate_bytes_verified": {
+    "source_hashes": 993,
+    "reference_hashes": 62,
+    "build_hashes": 5
+  },
+  "qualification_fixture_sources": [
+    {
+      "path": "services/data/tests/test_imp10_combined_outage.py",
+      "sha256": "ddaafbd4cf44c3d7abc16afaacfe03e0df74351928e329465e072a158f9ef30a"
+    },
+    {
+      "path": "services/data/tests/imp10_outage_help.py",
+      "sha256": "f2327513e601e7b2242f40f82aa866ca30f85da8e47f98e41475057c34f61219"
+    },
+    {
+      "path": "services/data/tests/imp10_outage_listeners.py",
+      "sha256": "887d2184b205db469b0dae8427e6cb800472be78121e29005610df6510b2c671"
+    },
+    {
+      "path": "services/data/tests/imp10_outage_model.py",
+      "sha256": "e880b2367801810e7be59cb224cd915df2a607d5992a9f395292e2bc63d9448d"
+    },
+    {
+      "path": "services/data/tests/imp10_outage_roles.py",
+      "sha256": "995be4fb055caba1a290f8ff93877c4a9a085f0645e434524d7b2c690a8e0b18"
+    }
+  ],
+  "observed": {
+    "peak": {
+      "connected_sessions": 10,
+      "occupied_inference_slots": 2,
+      "unique_pending_tasks": 8
+    },
+    "warm_provider_responses": 3,
+    "controlled_faults": [
+      "audit",
+      "identity",
+      "main_roles_and_dependencies",
+      "model",
+      "policy"
+    ],
+    "durable_inference_jobs": [
+      {
+        "jobs": 3,
+        "result_digests": 3,
+        "state": "completed"
+      },
+      {
+        "jobs": 1,
+        "result_digests": 0,
+        "state": "compute_unknown"
+      }
+    ],
+    "durable_help_requests": 7,
+    "durable_help_audit_entries": 14,
+    "offline_evaluation_state": "completed"
+  },
+  "verification_scope": {
+    "VT-11": "Actual audit relation failure and durable denied-operation checks through Core and Data.",
+    "VT-12": "Previously recorded SPIRE and Envoy probe scope retained. Actual isolated Kubernetes CNI and cluster outage remain pending.",
+    "VT-16": "Separate loopback listeners proved current Help and signed Static behavior during the application outage.",
+    "VT-17": "Actual loaded model, durable occupancy and raw timing samples. Repeated cold, warm and error distributions in the deployed topology remain pending.",
+    "VT-18": "Separate receiver and trainer scopes and exact offline replay through actual application endpoints. Earlier actor and browser evidence retained."
+  },
+  "regression": {
+    "source_commands_passed": 39,
+    "backend_passed": 1778,
+    "backend_skipped": 4,
+    "frontend_passed": 234,
+    "browser_evidence_carried_forward": "55 Chromium cases on unchanged web bytes"
+  },
+  "prior_evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/results.json",
+      "sha256": "7ce695faf85d81d2a17189a98ef232b616fec797d55eff9f09e4d64eedf36342"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/results.json",
+      "sha256": "6a03308f0827025a4932e7420894277b57febe2674bd48a2a4e38886f53b86ef"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/evidence/combined-outages.json",
+      "sha256": "6f84f98f63b1b2d787c274fd02d0ae1b79d6aa0b893df0fd3091654e3f13d0d9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/evidence/source/checks.json",
+      "sha256": "d741ec03f55544d35d6573c0a82b1b4cbc94e8fcfc8258ba41f14ce20c71408b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/evidence/frozen-plan-validation.log",
+      "sha256": "25736bef0ac67939149948149497fa3b3aec45cc492e444eabd11ceac6c1c0e8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/evidence/cleanup.json",
+      "sha256": "45d082ef0ba052441eb71c0e0f96dde72065c24f427ca3957aad5a459b6fb059"
+    }
+  ],
+  "remaining": [
+    "Run an actual outage in the isolated Kubernetes topology, with current mTLS and CNI denial probes and separate host Help and Static process evidence.",
+    "Measure cold, warm, and error timing distributions at the declared ten-session load in the deployed topology.",
+    "Resolve the earlier frozen IMP planning README digest drift through the planning baseline workflow."
+  ],
+  "human_review": "deferred_until_after_IMP10"
+}

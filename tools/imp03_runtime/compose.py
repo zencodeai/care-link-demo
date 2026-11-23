@@ -85,6 +85,15 @@ class Composition:
         referrals_enabled = cfg.get("referral_enabled", False)
         if type(referrals_enabled) is not bool:
             raise ValueError("Explicit boolean referral feature selection required")
+        training_enabled = cfg.get("training_enabled", False)
+        if type(training_enabled) is not bool:
+            raise ValueError("Explicit boolean training feature selection required")
+        if self.role == "training":
+            if not training_enabled:
+                raise ValueError("Training role requires explicit training configuration")
+            from tools.imp10_runtime.protected_training import configured_training
+
+            return configured_training(cfg, self.identity(), self.verify)
         mapping = None
         if referrals_enabled and self.role in {"core", "data", "receiver"}:
             from care_link_data.referral_mapping import read_mapping
@@ -126,12 +135,13 @@ class Composition:
             identity = self.identity()
             data_client, data_origin = self.remote("data")
             policy = HttpPolicy(*self.remote("pdp"))
+            core_key = private_key(text(cfg, "core_signing_key"))
             envelopes = SignedEnvelopeFactory(
                 data_client,
                 data_origin,
                 identity,
                 policy,
-                private_key(text(cfg, "core_signing_key")),
+                core_key,
             )
             channels = ManualChannels()
             from care_link_core.review_channels import ReviewViews
@@ -172,10 +182,24 @@ class Composition:
                     receiver_client,
                     receiver_origin,
                     identity,
-                    private_key(text(cfg, "core_signing_key")),
+                    core_key,
                 )
             from care_link_core.assistance import HttpAssistanceGateway
 
+            training_gateway = evaluation_gateway = None
+            if training_enabled:
+                from tools.imp10_runtime.training import training_gateways
+
+                training_client, training_origin = self.remote("training")
+                training_gateway, evaluation_gateway = training_gateways(
+                    training_client=training_client,
+                    training_origin=training_origin,
+                    data_client=data_client,
+                    data_origin=data_origin,
+                    identity=identity,
+                    core_key=core_key,
+                    envelopes=envelopes,
+                )
             plans_contexts = contexts if isinstance(contexts, PlansReviewContexts) else None
             referrals = gateway if isinstance(gateway, HttpReferralGateway) else None
             if self.ai is None:
@@ -189,6 +213,8 @@ class Composition:
                     planning=gateway,
                     referrals=referrals,
                     receiver=receiver_gateway,
+                    training=training_gateway,
+                    evaluation=evaluation_gateway,
                     assistance=HttpAssistanceGateway(data_client, data_origin, envelopes)
                     if assistance_enabled
                     else None,
@@ -207,13 +233,16 @@ class Composition:
                     data_origin=data_origin,
                     envelopes=envelopes,
                     identity=identity,
-                    signing_key=private_key(text(cfg, "core_signing_key")),
+                    signing_key=core_key,
                     inference_tls=ssl.create_default_context(),
                     releases=self.ai.releases,
                     runtime_verify=runtime_verifier(self.verify),
+                    data_verify=lambda request: self.verify(request, "data"),
                     planning=gateway,
                     referrals=referrals,
                     receiver=receiver_gateway,
+                    training=training_gateway,
+                    evaluation=evaluation_gateway,
                     knowledge=self.ai.knowledge.catalog,
                     inference_socket=self.ai.inference_socket,
                     review_contexts=contexts,
@@ -274,6 +303,8 @@ class Composition:
                 )
             if self.ai is not None:
                 review_entries |= frozenset({"/assistance"})
+            if training_enabled:
+                review_entries |= frozenset({"/training", "/training/"})
             if review_entries:
 
                 async def client_entry() -> FileResponse:
@@ -313,18 +344,25 @@ class Composition:
                 receiver_port = HttpReceiverPort(
                     receiver_client, receiver_origin, mapping.service_ids
                 )
+            replay_evaluator = None
+            if training_enabled:
+                from tools.imp10_runtime.protected_training import configured_replay
+
+                replay_evaluator = configured_replay(cfg)
+            core_client, core_origin = self.remote("core")
             service = ManualService(
                 PostgresStore(text(cfg, "store_dsn"), connection_factory=store_factory),
                 identity,
                 HttpPolicy(*self.remote("pdp")),
                 HttpJournal(*self.remote("journal"), public_key(text(cfg, "journal_public_key"))),
                 AESGCMContentCipher(Path(text(cfg, "content_key")).read_bytes()),
-                channel=HttpChannels(*self.remote("core")),
+                channel=HttpChannels(core_client, core_origin),
                 disclosure_templates=cast(dict[str, Record], cfg["disclosures"]),
                 cursor_key=Path(text(cfg, "cursor_key")).read_bytes(),
                 directory_admission=directory_admission,
                 receiver=receiver_port,
                 simulator_services=mapping.service_ids if mapping else frozenset(),
+                replay_evaluator=replay_evaluator,
             )
             delegation = DelegationVerifier(
                 public_key(text(cfg, "core_public_key")),
@@ -335,6 +373,8 @@ class Composition:
 
             security = SignedGatewaySecurity(delegation, self.verify)
             if self.ai is not None:
+                from care_link_data.inference_actor import HttpInferenceActor
+
                 from tools.imp06_runtime.data import data_application
                 from tools.imp06_runtime.trust import current_runtime
 
@@ -352,6 +392,7 @@ class Composition:
                     knowledge=self.ai.knowledge.catalog,
                     knowledge_regions=self.ai.knowledge.regions,
                     provider_stop=stop,
+                    inference_actor=HttpInferenceActor(core_client, core_origin, identity),
                 )
             return data_app(
                 service,
@@ -375,7 +416,7 @@ class Composition:
             if cfg.get("review_contexts_file"):
                 from .review_identity import create_review_identity_surface
 
-                return create_review_identity_surface(
+                primary = create_review_identity_surface(
                     service,
                     Path(text(cfg, "review_contexts_file")),
                     self.verify,
@@ -384,29 +425,45 @@ class Composition:
                     else None,
                     interactive_review_enabled=interactive_review,
                     receiver_enabled=referrals_enabled,
+                    training_enabled=training_enabled,
                 )
-            browser = identity_app(service, ui_return_url=service.origin + "/")
-            internal = create_manual_identity_app(
-                service, self.verify, receiver_enabled=referrals_enabled
-            )
+            else:
+                browser = identity_app(service, ui_return_url=service.origin + "/")
+                internal = create_manual_identity_app(
+                    service,
+                    self.verify,
+                    receiver_enabled=referrals_enabled,
+                    training_enabled=training_enabled,
+                )
 
-            async def identity_surface(scope: Scope, receive: Receive, send: Send) -> None:
-                path = scope.get("path", "")
-                if path.startswith("/bff/main/"):
-                    request = Request(scope, receive)
-                    if not self.verify(request, "core"):
-                        await JSONResponse({"state": "workload_denied"}, status_code=403)(
-                            scope, receive, send
-                        )
-                        return
-                    local = dict(scope)
-                    local["path"] = path.removeprefix("/bff/main")
-                    local["raw_path"] = local["path"].encode()
-                    await browser(cast(Scope, local), receive, send)
-                else:
-                    await internal(scope, receive, send)
+                async def identity_surface(scope: Scope, receive: Receive, send: Send) -> None:
+                    path = scope.get("path", "")
+                    if path.startswith("/bff/main/"):
+                        request = Request(scope, receive)
+                        if not self.verify(request, "core"):
+                            await JSONResponse({"state": "workload_denied"}, status_code=403)(
+                                scope, receive, send
+                            )
+                            return
+                        local = dict(scope)
+                        local["path"] = path.removeprefix("/bff/main")
+                        local["raw_path"] = local["path"].encode()
+                        await browser(cast(Scope, local), receive, send)
+                    else:
+                        await internal(scope, receive, send)
 
-            return identity_surface
+                primary = identity_surface
+            if "help_identity" in cfg:
+                from tools.imp10_runtime.protected_help import with_private_help
+
+                return with_private_help(
+                    primary,
+                    config=cfg,
+                    main_service=service,
+                    clients=self.clients,
+                    verify=self.verify,
+                )
+            return primary
         if self.role == "pdp":
             manifest = record(cfg["policy"])
             policy = OpaPolicy(

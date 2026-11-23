@@ -57,11 +57,15 @@ class ManualChannels:
         try:
             yield connected
         finally:
-            with self._lock:
-                current = self._connections[key]
-                if current.generation == connected.transport_generation:
-                    current.active = False
-                    self._advance(current)
+            self.disconnect(connected)
+
+    def disconnect(self, actor: Actor) -> None:
+        """Close only the observed transport, preserving a newer connection."""
+        with self._lock:
+            current = self._connections.get(self._key(actor))
+            if current and current.generation == actor.transport_generation:
+                current.active = False
+                self._advance(current)
 
     def invalidate(self, actor: Actor) -> None:
         """Explicit page takeover fences the prior transport without changing owner."""

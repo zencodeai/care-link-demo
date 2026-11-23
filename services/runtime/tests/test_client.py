@@ -1,4 +1,10 @@
-from care_link_runtime import RuntimeClient
+from concurrent.futures import Future
+from types import SimpleNamespace
+from unittest.mock import Mock
+from uuid import uuid4
+
+import pytest
+from care_link_runtime import RuntimeClient, workflow
 
 
 def test_runtime_sends_only_fenced_references_never_context_or_destinations():
@@ -21,7 +27,6 @@ def test_runtime_fixed_tls_broker_routes_no_direct_inference():
     import ssl
 
     import httpx
-    import pytest
     from care_link_runtime import HttpBrokerTransport
 
     calls = []
@@ -53,7 +58,6 @@ def test_runtime_fixed_tls_broker_routes_no_direct_inference():
 def test_one_turn_renews_lease_during_inference_and_submits_only_unsent_proposal():
     import threading
     from datetime import UTC, datetime, timedelta
-    from uuid import uuid4
 
     task_id = str(uuid4())
     calls = []
@@ -101,3 +105,63 @@ def test_one_turn_renews_lease_during_inference_and_submits_only_unsent_proposal
     assert calls.count("inference_request") == 1
     assert "step_renew" in calls
     assert "tool_invoke" not in calls
+
+
+@pytest.mark.parametrize("outcome", ["pending", "result", "provider_timeout"])
+def test_terminal_wait_handles_inference_completion_without_renewing(monkeypatch, outcome):
+    task_id = str(uuid4())
+    deadline_clock = iter((0.0, 27.0))
+    waits = []
+    observation = {
+        "job_id": str(uuid4()),
+        "state": "compute_unknown",
+        "proposal": None,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "model_digest": "a" * 64,
+        "safe_reason": "provider_stop_unverified",
+    }
+    provider_timeout = TimeoutError("original provider timeout")
+
+    class DeadlineFuture(Future):
+        def result(self, timeout=None):
+            waits.append(timeout)
+            if timeout is None:
+                return super().result()
+            if outcome == "result":
+                self.set_result(observation)
+            elif outcome == "provider_timeout":
+                self.set_exception(provider_timeout)
+                return super().result()
+            raise TimeoutError("fixture wait timeout")
+
+    executor = Mock()
+    executor.submit.return_value = DeadlineFuture()
+    monkeypatch.setattr(workflow, "ThreadPoolExecutor", lambda **_kwargs: executor)
+    monkeypatch.setattr(
+        workflow, "time", SimpleNamespace(monotonic=lambda: next(deadline_clock, 30.0))
+    )
+    client = Mock(spec=RuntimeClient)
+    client.lease.side_effect = lambda task, body: {
+        "task_id": task,
+        "step_id": body["step_id"],
+        "fence": "1",
+        "task_revision": "1",
+        "expires_at": "2026-11-23T12:00:00Z",
+    }
+
+    if outcome == "result":
+        assert workflow.run_workflow(client, task_id, "1") == observation
+    elif outcome == "provider_timeout":
+        with pytest.raises(TimeoutError) as error:
+            workflow.run_workflow(client, task_id, "1")
+        assert error.value is provider_timeout
+    else:
+        with pytest.raises(TimeoutError, match="runtime inference result deadline expired"):
+            workflow.run_workflow(client, task_id, "1")
+
+    assert waits[0] == 3.0
+    client.renew.assert_not_called()
+    client.propose.assert_not_called()
+    executor.submit.assert_called_once()
+    executor.shutdown.assert_called_once_with(wait=False, cancel_futures=True)

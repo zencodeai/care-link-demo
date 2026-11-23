@@ -297,7 +297,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "f992338455ac448f51f9f65dd3891e2f119075a392c66081bb9fa48713395fa1"
+      "sha256": "f02b64557cf31d56c10406ecbdd7fd720e7892b9f9e2fa4e855b58b2a31aaa4c"
     },
     {
       "path": "agent-contracts.json",
@@ -555,6 +555,36 @@
       "evidence": "doc/IMP/slices/IMP-06-bounded-ai-assistance/sessions/007-g06-automated-closure/demo-packet.json",
       "readme_previous_sha256": "32d5ffbf85e9fe75464fcafe447e582b919acc42062a94fe9fcee4e832d8ef0d",
       "readme_new_sha256": "6c291f54127a5004fde515ef042c144af8b82d2e098ac09bbbd1787e78b3af42"
+    },
+    {
+      "date": "2026-11-23",
+      "stage_id": "IMP-10",
+      "authorization": "User: Proceed and close G-10",
+      "scope": "Reconcile the execution index digest to the previously committed G-09 status paragraph.",
+      "source_commit": "fa06df69ee5321e881dc3df4340ce8988d3c7532",
+      "evidence": "executions/2026-11-21-IMP-09/ledger.json",
+      "artifacts": [
+        {
+          "path": "README.md",
+          "previous_sha256": "f992338455ac448f51f9f65dd3891e2f119075a392c66081bb9fa48713395fa1",
+          "sha256": "a666458c6d5f6bed18f2241d22eb8138af04e7c73930f4e66d144fa6ff23f946"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "stage_id": "IMP-10",
+      "authorization": "User: Close IMP-10, create PR",
+      "scope": "Update the current execution index for closed G-10 and preserve the frozen requirement, architecture and design inputs.",
+      "source_commit": "0452cf18356c82e31ec5a184e5323511705eb235",
+      "evidence": "executions/2026-11-23-IMP-10/ledger.json",
+      "artifacts": [
+        {
+          "path": "README.md",
+          "previous_sha256": "a666458c6d5f6bed18f2241d22eb8138af04e7c73930f4e66d144fa6ff23f946",
+          "sha256": "f02b64557cf31d56c10406ecbdd7fd720e7892b9f9e2fa4e855b58b2a31aaa4c"
+        }
+      ]
     }
   ],
   "documentation_input_updates": [

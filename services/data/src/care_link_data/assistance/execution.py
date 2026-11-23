@@ -11,6 +11,7 @@ from care_link_domain import Actor, ManualError, WorkloadPeer
 from care_link_knowledge import CatalogDenied
 
 from .. import projections
+from ..assistance_jobs import InferenceAuthority
 from ..store import Record, Transaction, text
 from ..values import digest, dt, object_value, stamp
 from .profiles import TOOLS
@@ -340,8 +341,14 @@ class AssistanceExecution(AssistanceService):
             }
 
     def inference_current(
-        self, tx: Transaction, record: Record, actor_for_task: Callable[[str], Actor]
-    ) -> bool:
+        self,
+        tx: Transaction,
+        record: Record,
+        actor_for_task: Callable[[str], Actor],
+        *,
+        fresh_actor: Callable[[Record, str], Actor] | None = None,
+        operation: str = "reserve",
+    ) -> InferenceAuthority | bool:
         """Current callback for data-owned durable job slots, before their locks.
 
         Resolving an actor uses server-held identity references, never job fields.
@@ -350,7 +357,9 @@ class AssistanceExecution(AssistanceService):
         """
         try:
             tid = str(record["task_id"])
-            actor = self.engine.current_actor(actor_for_task(tid))
+            actor = self.engine.current_actor(
+                fresh_actor(record, operation) if fresh_actor is not None else actor_for_task(tid)
+            )
             sid = self._session(actor, "task", tid)
             tx.connection.execute(
                 "SELECT set_config('care_link.principal',%s,true), "
@@ -358,18 +367,25 @@ class AssistanceExecution(AssistanceService):
                 (actor.account_id, actor.review_run_id or ""),
             )
             tx.scope(sid)
-            versions = self.engine.assistance_guard(tx, actor, sid)
+            guard = self.engine.assistance_guard(tx, actor, sid)
             task = self.read(tx, "task", tid)
-            self._check(task, versions)
+            self._check(task, guard.versions)
             lease = object_value(task["lease"]) if task["lease"] else {}
-            self._stored_peer(task)
-            return (
-                task["state"] in {"planning", "running"}
-                and task["revision"] == str(record["revision"])
-                and str(task["fence"]) == str(record["fence"])
-                and lease.get("step_id") == str(record["step_id"])
-                and bool(lease)
-                and dt(lease["expires_at"]) > self.engine.clock()
+            peer = self._stored_peer(task)
+            if (
+                task["state"] not in {"planning", "running"}
+                or task["revision"] != str(record["revision"])
+                or str(task["fence"]) != str(record["fence"])
+                or lease.get("step_id") != str(record["step_id"])
+            ):
+                return False
+            expiry = min(
+                guard.valid_until,
+                dt(task["deadline"]),
+                dt(lease["expires_at"]),
+                peer.certificate_expires_at,
+                dt(record["deadline"]),
             )
+            return InferenceAuthority(expiry) if expiry > self.engine.clock() else False
         except (ManualError, KeyError, ValueError):
             return False

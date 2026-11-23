@@ -1,0 +1,85 @@
+{
+  "run_id": "2026-11-23-IMP-10",
+  "stage_id": "IMP-10",
+  "gate_id": "G-10",
+  "state": "blocked",
+  "gate_state": "blocked",
+  "closed": false,
+  "recorded_at": "2026-11-23T16:38:07.991305+00:00",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "branch": "feat/imp-09-backup-and-recovery",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Proceed",
+    "scope": "Implement and verify the missing protected IMP-10 role bindings in the private synthetic candidate."
+  },
+  "predecessors": [
+    {
+      "path": "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+      "sha256": "7e9d57447d5e606a1e73f9e18ed6cdef90b4f5d1662a6122466c8e97feced8a6"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-07/ledger.json",
+      "sha256": "9941321dfbe5cfa48ad322a0d9fd7c5301c02ebbc0932dae1ec6e6ee3ab21098"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-08/ledger.json",
+      "sha256": "e09e1e707f5c9c43f154bdfeefc3db4e547d92bd106d2c3328406746e7631be7"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-09/ledger.json",
+      "sha256": "6a054df591853d7210979bc917f1603256f0ea7b3523168b4022db3a0630ea4c"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-10-A",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-B",
+      "state": "partial"
+    },
+    {
+      "id": "IMP-10-C",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-D",
+      "state": "partial"
+    }
+  ],
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/candidate-manifest.json",
+    "sha256": "c2e75544b46ec613318ee7e35c309993d848554ed585aa3c7a1116e1292d06a6"
+  },
+  "results": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/results.json",
+    "sha256": "c4dc7ee2dcecd581978de344120f408b2d6076ad91c44a878b3d0b84c9980338"
+  },
+  "qualification_packet": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/demo-packet.json",
+    "sha256": "cc4658ef5708e70e19fff9594f33709f8a028257a163766b1eb2ef6664cfa168"
+  },
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": [],
+  "deferred_review_inventory": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/deferred-review-inventory.json",
+    "sha256": "739eee707891cbedeeae22085a28a5c744eb31ad6e1c0b3e5ede3a3a566b51dc"
+  },
+  "deployment_applied": false,
+  "participant_admission": false,
+  "commit_performed": false,
+  "push_performed": false,
+  "merge_performed": false,
+  "remaining": [
+    "Provision the isolated protected profile using the current application and mesh bindings, distinct workload identities, TLS stores, OIDC, replay policy and exact model qualification.",
+    "Run deployed protected workload and live dependency probes, and prove private Help behavior during the protected outage.",
+    "Measure repeated cold, warm and error timing at the declared ten-session load in that topology."
+  ],
+  "current_session": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment",
+  "earlier_ledger": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/previous-ledger.json",
+    "sha256": "f32b3f1187063e6c1e5cf562cdaefc78eae0e9d8349aab866fc3e9f0058bca26"
+  }
+}

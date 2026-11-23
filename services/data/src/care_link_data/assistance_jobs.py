@@ -19,18 +19,36 @@ class _Broker:
     account_id: str = "inference-ledger"
 
 
+@dataclass(frozen=True)
+class InferenceAuthority:
+    """Transaction-checked authority valid only up to the earliest retained deadline."""
+
+    valid_until: datetime
+
+
+def _current(authority: InferenceAuthority | bool, now: datetime) -> bool:
+    return authority is True or (
+        isinstance(authority, InferenceAuthority) and now < authority.valid_until
+    )
+
+
 class PostgresJobLedger:
     def __init__(
         self,
         store: PostgresStore,
         *,
-        current: Callable[[Transaction, Record], bool],
+        current: Callable[[Transaction, Record], InferenceAuthority | bool],
+        completion_current: Callable[[Transaction, Record], InferenceAuthority | bool]
+        | None = None,
         verified_stop_time: Callable[[str], datetime | None] = lambda _generation: None,
         bridge_generation: str | None = None,
+        clock: Callable[[], datetime] = lambda: datetime.now(UTC),
     ) -> None:
         self.store, self.current = store, current
+        self.completion_current = completion_current or current
         self.verified_stop_time = verified_stop_time
         self.bridge_generation = bridge_generation
+        self.clock = clock
 
     def reserve(self, record: Record) -> str | None:
         required = {
@@ -48,7 +66,7 @@ class PostgresJobLedger:
         if set(record) != required or not isinstance(record["deadline"], datetime):
             raise ValueError("closed inference job record required")
         deadline = record["deadline"]
-        if deadline.tzinfo is None or not 0 < (deadline - datetime.now(UTC)).total_seconds() <= 30:
+        if deadline.tzinfo is None or not 0 < (deadline - self.clock()).total_seconds() <= 30:
             raise ValueError("bounded absolute inference deadline required")
         for key in ("id", "task_id", "step_id"):
             UUID(str(record[key]))
@@ -59,9 +77,13 @@ class PostgresJobLedger:
             return None
         with self.store.transaction(_Broker(), None) as tx:
             # Current authority is locked first; slots are locked after task guards.
-            if not self.current(tx, record):
+            authority = self.current(tx, record)
+            if not _current(authority, self.clock()):
                 return None
             tx.connection.execute("SELECT pg_advisory_xact_lock(71306)")
+            now = self.clock()
+            if deadline <= now or not _current(authority, now):
+                return None
             retired = tx.connection.execute(
                 "SELECT 1 FROM assistance.inference_job WHERE bridge_generation=%s "
                 "AND state='stopped' LIMIT 1",
@@ -84,6 +106,9 @@ class PostgresJobLedger:
             if slot is None:
                 # Zero waiting jobs is within the eight-queued upper bound. Manual
                 # requests never block on an inference queue or provider lock.
+                return None
+            now = self.clock()
+            if deadline <= now or not _current(authority, now):
                 return None
             slot_id = cast(str, slot["id"])
             tx.connection.execute(
@@ -138,7 +163,12 @@ class PostgresJobLedger:
             if metadata is None:
                 return False
             # This callback locks task/epoch guards before the global slots lock.
-            fresh = self.current(tx, dict(metadata))
+            fresh = (
+                deliverable
+                and metadata["state"] == "running"
+                and cast(datetime, metadata["deadline"]) > self.clock()
+                and self.completion_current(tx, dict(metadata))
+            )
             tx.connection.execute("SELECT pg_advisory_xact_lock(71306)")
             job = tx.connection.execute(
                 "SELECT * FROM assistance.inference_job WHERE id=%s FOR UPDATE",
@@ -146,17 +176,23 @@ class PostgresJobLedger:
             ).fetchone()
             if job is None or job["state"] not in {"running", "compute_unknown"}:
                 return False
+            # An occupied slot row may still wait behind another transaction.
+            tx.connection.execute(
+                "SELECT id FROM assistance.compute_slot WHERE id=%s FOR UPDATE",
+                (job["slot_id"],),
+            )
+            now = self.clock()
             # A timed-out/cancelled request never regains delivery authority from
             # a late reply, even if its original task still happens to be current.
             output_allowed = (
                 deliverable
-                and fresh
+                and _current(fresh, now)
                 and job["state"] == "running"
                 and (
                     self.bridge_generation is None
                     or job["bridge_generation"] == self.bridge_generation
                 )
-                and cast(datetime, job["deadline"]) > datetime.now(UTC)
+                and cast(datetime, job["deadline"]) > now
             )
             tx.connection.execute(
                 "UPDATE assistance.inference_job SET state=%s,result_digest=%s WHERE id=%s",

@@ -1,0 +1,93 @@
+{
+  "packet_id": "IMP10-004-roles",
+  "task_id": "IMP-10-D",
+  "stage_id": "IMP-10",
+  "mode": "implementation",
+  "role": "imp_verifier",
+  "goal": "Bind receiver, training and replay workspaces to the actual Core and Data topology and check separate actor scopes and successful workflow during selected outages.",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "inputs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/candidate-manifest.json",
+      "sha256": "db2d7da87e3fc191e3c095c7b1548c923422c02f537448bb33f3f8f8e28221e5"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc",
+    "services",
+    "host",
+    "packages",
+    "apps",
+    "tools",
+    "tests",
+    ".codex/agents"
+  ],
+  "write_paths": [
+    "services/data/tests/imp10_outage_roles.py"
+  ],
+  "dependencies": [
+    "IMP-06:G-06:automated_qualified",
+    "IMP-07:G-07:automated_qualified",
+    "IMP-08:G-08:automated_qualified",
+    "IMP-09:G-09:automated_qualified"
+  ],
+  "operation_ids": [
+    "scenario_create",
+    "scenario_read",
+    "scenario_stop",
+    "replay_create",
+    "evaluation_read",
+    "data_replay_create",
+    "data_evaluation_read",
+    "identity_link_request",
+    "data_identity_link_request"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "live service or deployment mutation",
+    "LM Studio unload/reload/configuration change",
+    "global trust or cluster changes",
+    "offhost contact, real data or Git mutation"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Proceed",
+    "scope": "Run combined outage qualification in an isolated synthetic topology. Bound candidate roles and live read-only loopback inference."
+  },
+  "resource_leases": [
+    {
+      "id": "imp10-004-roles",
+      "kind": "port",
+      "scope": "Only process-owned dynamic TLS loopback listeners, isolated fixtures and approved existing read-only model route",
+      "owner_task_id": "IMP-10-D",
+      "expires_at": "2026-11-24T15:02:50.056381Z"
+    }
+  ],
+  "expected_outputs": [
+    "Scoped modules/tests",
+    "Actual checks and findings",
+    "Handoff"
+  ],
+  "positive_acceptance": [
+    "One topology resolves independently bound roles and observes intended survival and recovery per fault."
+  ],
+  "adverse_acceptance": [
+    "No buffered protected success or false connection. Only owned fault domains may be cut off."
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "authority change",
+    "shared ownership conflict",
+    "destructive or live action needed"
+  ],
+  "is_example": false
+}

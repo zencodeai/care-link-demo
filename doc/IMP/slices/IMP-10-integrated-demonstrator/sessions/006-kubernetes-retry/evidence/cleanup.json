@@ -1,0 +1,7 @@
+{
+  "leased_node_removed": true,
+  "leased_bridge_removed": true,
+  "leased_anonymous_node_volume_removed": true,
+  "private_kubeconfig_removed": true,
+  "retained_imp02_running_containers": 7
+}

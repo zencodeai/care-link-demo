@@ -1,0 +1,184 @@
+{
+  "packet_id": "IMP10-002-qualification",
+  "stage_id": "IMP-10",
+  "gate_id": "G-10",
+  "candidate": {
+    "commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+    "diff_digest": "0634d78d66138b86e9a9d9e0ec656f2a1a6afbc3fc757ff8b14be02444d069bd",
+    "artifact_digest": "53226896360f9e84362eea9a7bbcb8da72c7a789801032d78bcdc6f3824b5331",
+    "configuration_digest": "c4f06139033841a3ef76d2d3ddde1ab23e8dbb9f64627718cebe5b932aa23bd9",
+    "contract_digest": "87d3f81c51ccd56fa42b1d5add5b7dcf0a755b5b3f3650c9576378de785608e4",
+    "environment_digest": "d34d26d7fe0697f33ef6f08bad89effe23e41d1ced2f0e6a9b892fbdb5eb0f03",
+    "fixture_digest": "67c3942b7b69ccbbe677ad97ca2ba4547734d2a79c645ee4d7a965be35774aa9"
+  },
+  "state": "draft",
+  "preconditions": [
+    "Private disposable PostgreSQL and mesh",
+    "Exact already-loaded Qwen through its authenticated loopback endpoint"
+  ],
+  "normal_steps": [
+    {
+      "action": "Matched real model and manual paths",
+      "expected": "One scoped completion with current authority and manual access",
+      "actual": "Passed on synthetic actor routes with verified-TLS PostgreSQL and live provider.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/matched-live-final.json",
+          "sha256": "2b7f26bcc07c5f1f97c1bb3ff2f58c1fb5ba9127fbfba7ce28d9a4b4331f9343"
+        }
+      ]
+    },
+    {
+      "action": "True cold start and full combined outage drill",
+      "expected": "Current exact candidate with all role boundaries under the measured conditions",
+      "actual": null,
+      "evidence_refs": []
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Inject response timeout while real provider is active",
+      "expected": "Keep capacity fenced and allow manual response",
+      "actual": "A human-authored message arrived before the model response. It produced no draft.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/live-timeout-final.json",
+          "sha256": "e52012f6ce57c4aa9836f1e143f0c8a4d8bc27965dfe3c16c6ea13345cedac1a"
+        }
+      ]
+    },
+    {
+      "action": "Isolate Core and Data in turn while inference capacity is occupied",
+      "expected": "Independent Help stores minimal requests under current Identity authority",
+      "actual": "Two separate Help requests recorded without confirmed connection.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/load-help-recheck.json",
+          "sha256": "36d3e56495320895b3aca499a4b6dec8bcdc8a8933c733043f4e51825a42d77a"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "serial-full-backend",
+      "command": "python -m tools.imp10_verification.checks",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "{'tests': 1781, 'errors': 0, 'failures': 0, 'skipped': 3, 'passed': 1778}",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/source-serial/12.log",
+      "evidence_digest": "abc2d8c00514849bc273c33accc36f6522961cbd3652207acb8bab70274d7272",
+      "mock_used": true
+    },
+    {
+      "name": "isolated-timing-recheck",
+      "command": "pytest with four original failure IDs and saturation",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Five current PostgreSQL checks passed while no mesh or real-provider work was running.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/timing-recheck.log",
+      "evidence_digest": "59f6ca87452039e90618917f902923420c69ef4146d645d2bb52337df9dc36fc",
+      "mock_used": true
+    },
+    {
+      "name": "loaded-provider-workload",
+      "command": "python -m tests.evaluation.qwen_workload",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Ten synthetic exact-model cases passed in five two-request waves.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/loaded-provider-workload.json",
+      "evidence_digest": "42963ad674729591e99eab8dcbe8c74ab1ead4d266765769fab579cd536eb211",
+      "mock_used": false
+    },
+    {
+      "name": "live-application-journey",
+      "command": "pytest tests/evaluation/qwen_combined_journey.py with live provider",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Real model and verified-TLS PostgreSQL. Fixture transports and authorities.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/matched-live-final.json",
+      "evidence_digest": "2b7f26bcc07c5f1f97c1bb3ff2f58c1fb5ba9127fbfba7ce28d9a4b4331f9343",
+      "mock_used": true
+    },
+    {
+      "name": "live-timeout",
+      "command": "pytest tests/evaluation/qwen_g06_timeout.py with live provider",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Late result suppressed, compute stayed uncertain and manual delivery continued.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/live-timeout-final.json",
+      "evidence_digest": "e52012f6ce57c4aa9836f1e143f0c8a4d8bc27965dfe3c16c6ea13345cedac1a",
+      "mock_used": true
+    },
+    {
+      "name": "workload-trust",
+      "command": "python -m tools.imp06_verification.role_topology",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Observed current-image SVID rotation, revocation and permitted manual fixture route.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/workload-trust-final.json",
+      "evidence_digest": "85d681777a7d8defd216dbdd844a70d32db09f8d95822ac1c129ca44020a6569",
+      "mock_used": true
+    },
+    {
+      "name": "protected-provider-recovered",
+      "command": "Resume current owned g06_protected fixture after its delayed Docker startup",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Exact real Qwen response over the authenticated inference proxy and private relay.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/protected-provider-recovered.json",
+      "evidence_digest": "9973c83e83d37a55a5635c88e272376f42f89a254cdadf871f949106bbb8ec5e",
+      "mock_used": true
+    },
+    {
+      "name": "LLD-design-validator",
+      "command": "uv run --isolated --no-project --offline with pinned LLD requirements",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Original design references and contract inventory validated.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/lld-validator.log",
+      "evidence_digest": "6907f5f782a3ebda2ad7da658737f16d77fabc243959936fdb23ceb0c8514b61",
+      "mock_used": false
+    },
+    {
+      "name": "true-cold-model",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "True provider cold-start performance was not run. The already-running model was used for the loaded-model tests. Authorization to unload and reload that instance was requested.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    },
+    {
+      "name": "combined-topology-outages",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "The separate real provider, mesh, actor and Help checks do not establish a single deployed topology with all current roles under a combined dependency outage.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "residuals": [
+    "True provider cold-start performance was not run. The already-running model was used for the loaded-model tests. Authorization to unload and reload that instance was requested.",
+    "The separate real provider, mesh, actor and Help checks do not establish a single deployed topology with all current roles under a combined dependency outage.",
+    "Loaded-model latency comes from five two-request waves. The two-occupied/eight-queued application saturation uses a fixture inference provider.",
+    "The frozen IMP plan validator still reports the earlier README digest drift."
+  ],
+  "acceptance_scope": "Recorded local synthetic scope. G-10 remains open.",
+  "rollback": "Retain the compatible candidate under current restrictions or restrict the affected route. Preserve current rights and independent fallback.",
+  "human_decision_id": null,
+  "is_example": false
+}

@@ -1,0 +1,42 @@
+{
+  "scope": "First actual ten-browser candidate run, protected two-job dispatch with stock concurrent waiting admissions",
+  "phase_reached": "waiting_after_two_durable_occupied_observed",
+  "first_pair": [
+    {
+      "session_id": "6f2db06b-18d2-4b7e-ad0a-d58d0e4f2384",
+      "task_id": "2661c91d-fb1d-4072-afb0-802f91cd1d8a",
+      "arrival_ns": 2677133269936541
+    },
+    {
+      "session_id": "5d7da74a-c7c9-4dc3-b21d-ff7dae380d8e",
+      "task_id": "119f6173-5d7c-4582-8f0b-86ebe702edea",
+      "arrival_ns": 2677134068044250
+    }
+  ],
+  "durable_result_after_browser_ended": [
+    {
+      "task_id": "2661c91d-fb1d-4072-afb0-802f91cd1d8a",
+      "created_at": "2026-11-23T18:54:24.149592+00:00",
+      "state": "fenced",
+      "result": true,
+      "slot_state": "free",
+      "draft_count": 0
+    },
+    {
+      "task_id": "119f6173-5d7c-4582-8f0b-86ebe702edea",
+      "created_at": "2026-11-23T18:54:24.196577+00:00",
+      "state": "fenced",
+      "result": true,
+      "slot_state": "free",
+      "draft_count": 0
+    }
+  ],
+  "task_admission_status": 409,
+  "task_admission_key": "manual.gateway_denied",
+  "data_denial_events": [
+    "IMP10 Data denial operation=task_create: assistance.function_disabled",
+    "IMP10 Data denial operation=task_create: assistance.function_disabled",
+    "IMP10 Data denial operation=task_create: assistance.function_disabled",
+    "IMP10 Data denial operation=task_create: assistance.function_disabled"
+  ]
+}

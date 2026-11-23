@@ -1,0 +1,36 @@
+{
+  "at_utc": "2026-11-23T19:44:55.742421+00:00",
+  "scope": "Independent disposable Data instance from g10_error_repeat. Original uncertain slots retained in g10_warm_timeout.",
+  "original_slots": [
+    {
+      "id": "local-1",
+      "state": "compute_unknown",
+      "job": "00557d5d-328a-4db9-9599-681b44f88065"
+    },
+    {
+      "id": "local-2",
+      "state": "compute_unknown",
+      "job": "0e428098-53a6-46ad-bcbc-41866073653b"
+    }
+  ],
+  "fresh_slots": [
+    {
+      "id": "local-1",
+      "state": "free",
+      "job": null
+    },
+    {
+      "id": "local-2",
+      "state": "free",
+      "job": null
+    }
+  ],
+  "data_boot": {
+    "role": "data",
+    "boot_id": "e8a0eee8-6935-4fba-8b38-61d69de5de0a",
+    "uid": 23112,
+    "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+  },
+  "data_pod_uid": "e928204c-bfff-48b6-bd36-9eba32466769",
+  "candidate_cri_reference": "docker.io/library/import-2026-11-23@sha256:e90c69a2735b77ccd6b10f1d6230efe9861f2d84ce8e6239806c8fa8bb466b8b"
+}

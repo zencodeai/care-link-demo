@@ -3,12 +3,17 @@
 from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from unittest.mock import Mock
 from uuid import uuid4
 
 import psycopg
 import pytest
 from care_link_data import PostgresStore
-from care_link_data.assistance_jobs import PostgresJobLedger
+from care_link_data.app import create_app
+from care_link_data.assistance_jobs import InferenceAuthority, PostgresJobLedger
+from care_link_data.assistance_transport import attach_inference_ledger_gateway
+from fastapi.testclient import TestClient
+from psycopg.rows import dict_row
 
 
 @pytest.fixture
@@ -80,6 +85,96 @@ def test_stale_current_guard_rejects_admission_and_completion(jobs_store):
     assert ledger(jobs_store).reserve(item)
     assert not service.complete(item["id"], "d" * 64, deliverable=True)
     assert ledger(jobs_store).reserve(job())
+
+
+def test_observed_provider_completion_frees_slots_without_delivery_authority(jobs_store, database):
+    calls = []
+
+    def denied(_tx, row):
+        calls.append(str(row["id"]))
+        return False
+
+    service = ledger(jobs_store, completion_current=denied)
+    bound, suppressed = job(), job()
+    assert service.reserve(bound) == "local-1"
+    assert service.reserve(suppressed) == "local-2"
+    assert service.complete(bound["id"], "d" * 64, deliverable=True) is False
+    assert service.complete(suppressed["id"], "e" * 64, deliverable=False) is False
+    assert calls == [bound["id"]]
+    with psycopg.connect(database.admin) as connection:
+        states = connection.execute(
+            "SELECT state,result_digest FROM assistance.inference_job ORDER BY result_digest"
+        ).fetchall()
+    assert states == [
+        ("fenced", "d" * 64),
+        ("fenced", "e" * 64),
+    ]
+    assert service.reserve(job()) == "local-1"
+    assert service.reserve(job()) == "local-2"
+
+
+@pytest.mark.parametrize("operation", ["reserve", "complete"])
+def test_authority_expiry_under_slot_lock_fences_mutation(jobs_store, database, operation):
+    item = job()
+    if operation == "complete":
+        assert ledger(jobs_store).reserve(item) == "local-1"
+    initial = datetime.now(UTC)
+    authority = InferenceAuthority(initial + timedelta(milliseconds=200))
+    now = [initial]
+    checked = []
+
+    class AdvancingClockConnection(psycopg.Connection):
+        def execute(self, query, *args, **kwargs):
+            result = super().execute(query, *args, **kwargs)
+            if (
+                isinstance(query, str)
+                and query.startswith("SELECT id FROM assistance.compute_slot ")
+                and query.endswith("FOR UPDATE")
+            ):
+                assert checked == [item["id"]]
+                now[0] = authority.valid_until
+            return result
+
+    def grant(_tx, row):
+        assert now[0] < authority.valid_until
+        checked.append(str(row["id"]))
+        return authority
+
+    store = PostgresStore(
+        database.runtime,
+        connection_factory=lambda dsn: AdvancingClockConnection.connect(dsn, row_factory=dict_row),
+    )
+    service = PostgresJobLedger(store, current=grant, clock=lambda: now[0])
+    if operation == "reserve":
+        assert service.reserve(item) is None
+    else:
+        assert not service.complete(item["id"], "d" * 64, deliverable=True)
+
+    assert now[0] == authority.valid_until
+    with psycopg.connect(database.admin) as connection:
+        observed = connection.execute(
+            "SELECT state,result_digest FROM assistance.inference_job WHERE id=%s",
+            (item["id"],),
+        ).fetchone()
+        assert observed == (None if operation == "reserve" else ("fenced", "d" * 64))
+    assert ledger(jobs_store).reserve(job()) == "local-1"
+
+
+def test_inference_ledger_rejects_non_object_before_authority_dispatch():
+    app = create_app(Mock(), Mock())
+    authority = Mock()
+    attach_inference_ledger_gateway(
+        app, Mock(), lambda _request, role: role == "inference", authority
+    )
+    with TestClient(app) as client:
+        response = client.post(
+            "/internal/v1/data/assistance/inference/current",
+            json=["task_id", "job_id", "step_id", "fence", "revision"],
+        )
+
+    assert response.status_code == 400
+    assert response.json()["message_key"] == "assistance.invalid_inference_command"
+    authority.current.assert_not_called()
 
 
 def test_generation_alone_cannot_clear_unknown_compute(jobs_store):

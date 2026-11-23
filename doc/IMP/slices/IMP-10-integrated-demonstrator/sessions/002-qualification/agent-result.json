@@ -1,0 +1,151 @@
+{
+  "packet_id": "IMP10-002-qualification",
+  "task_id": "IMP-10-D",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "role": "imp_scope",
+  "status": "partial",
+  "changed_paths": [
+    "services/data/tests/test_imp10_workstation_load.py",
+    "services/runtime/src/care_link_runtime/workflow.py",
+    "services/runtime/tests/test_client.py",
+    "tests/network/test_probe_evidence.py",
+    "tools/imp06_verification/role_topology.py",
+    "tools/imp06_verification/role_topology_processes.py"
+  ],
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/candidate-manifest.json",
+      "sha256": "db2d7da87e3fc191e3c095c7b1548c923422c02f537448bb33f3f8f8e28221e5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/results.json",
+      "sha256": "6a03308f0827025a4932e7420894277b57febe2674bd48a2a4e38886f53b86ef"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/verification-scope.md",
+      "sha256": "93e44fe7fa8284d94158d07d271e669940989c963e1a4c34e1199b761797de86"
+    }
+  ],
+  "checks": [
+    {
+      "name": "serial-full-backend",
+      "command": "python -m tools.imp10_verification.checks",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "{'tests': 1781, 'errors': 0, 'failures': 0, 'skipped': 3, 'passed': 1778}",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/source-serial/12.log",
+      "evidence_digest": "abc2d8c00514849bc273c33accc36f6522961cbd3652207acb8bab70274d7272",
+      "mock_used": true
+    },
+    {
+      "name": "isolated-timing-recheck",
+      "command": "pytest with four original failure IDs and saturation",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Five current PostgreSQL checks passed while no mesh or real-provider work was running.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/timing-recheck.log",
+      "evidence_digest": "59f6ca87452039e90618917f902923420c69ef4146d645d2bb52337df9dc36fc",
+      "mock_used": true
+    },
+    {
+      "name": "loaded-provider-workload",
+      "command": "python -m tests.evaluation.qwen_workload",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Ten synthetic exact-model cases passed in five two-request waves.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/loaded-provider-workload.json",
+      "evidence_digest": "42963ad674729591e99eab8dcbe8c74ab1ead4d266765769fab579cd536eb211",
+      "mock_used": false
+    },
+    {
+      "name": "live-application-journey",
+      "command": "pytest tests/evaluation/qwen_combined_journey.py with live provider",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Real model and verified-TLS PostgreSQL. Fixture transports and authorities.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/matched-live-final.json",
+      "evidence_digest": "2b7f26bcc07c5f1f97c1bb3ff2f58c1fb5ba9127fbfba7ce28d9a4b4331f9343",
+      "mock_used": true
+    },
+    {
+      "name": "live-timeout",
+      "command": "pytest tests/evaluation/qwen_g06_timeout.py with live provider",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Late result suppressed, compute stayed uncertain and manual delivery continued.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/live-timeout-final.json",
+      "evidence_digest": "e52012f6ce57c4aa9836f1e143f0c8a4d8bc27965dfe3c16c6ea13345cedac1a",
+      "mock_used": true
+    },
+    {
+      "name": "workload-trust",
+      "command": "python -m tools.imp06_verification.role_topology",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Observed current-image SVID rotation, revocation and permitted manual fixture route.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/workload-trust-final.json",
+      "evidence_digest": "85d681777a7d8defd216dbdd844a70d32db09f8d95822ac1c129ca44020a6569",
+      "mock_used": true
+    },
+    {
+      "name": "protected-provider-recovered",
+      "command": "Resume current owned g06_protected fixture after its delayed Docker startup",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Exact real Qwen response over the authenticated inference proxy and private relay.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/protected-provider-recovered.json",
+      "evidence_digest": "9973c83e83d37a55a5635c88e272376f42f89a254cdadf871f949106bbb8ec5e",
+      "mock_used": true
+    },
+    {
+      "name": "LLD-design-validator",
+      "command": "uv run --isolated --no-project --offline with pinned LLD requirements",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "Original design references and contract inventory validated.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/evidence/lld-validator.log",
+      "evidence_digest": "6907f5f782a3ebda2ad7da658737f16d77fabc243959936fdb23ceb0c8514b61",
+      "mock_used": false
+    },
+    {
+      "name": "true-cold-model",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "True provider cold-start performance was not run. The already-running model was used for the loaded-model tests. Authorization to unload and reload that instance was requested.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    },
+    {
+      "name": "combined-topology-outages",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Observe the named qualification behavior under current dependencies",
+      "actual": "The separate real provider, mesh, actor and Help checks do not establish a single deployed topology with all current roles under a combined dependency outage.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [],
+  "remaining_risks": [
+    "True provider cold-start performance was not run. The already-running model was used for the loaded-model tests. Authorization to unload and reload that instance was requested.",
+    "The separate real provider, mesh, actor and Help checks do not establish a single deployed topology with all current roles under a combined dependency outage.",
+    "Loaded-model latency comes from five two-request waves. The two-occupied/eight-queued application saturation uses a fixture inference provider.",
+    "The frozen IMP plan validator still reports the earlier README digest drift."
+  ],
+  "handoff": "Use the current candidate and the verified layered evidence. Scope the full cold and combined-topology qualification separately.",
+  "is_example": false
+}

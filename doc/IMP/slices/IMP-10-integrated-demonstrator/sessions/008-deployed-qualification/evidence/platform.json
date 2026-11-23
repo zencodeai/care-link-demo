@@ -1,0 +1,32 @@
+{
+  "started_at": "2026-11-23T16:47:29.373672+00:00",
+  "ended_at": "2026-11-23T16:48:18.951790+00:00",
+  "namespace": "care-link-imp10-008",
+  "trust_namespace": "care-link-imp10-008-trust",
+  "node": "care-link-imp10-008-control-plane",
+  "node_uid": "c7522af6-1769-4a53-a12b-e429f4f0d86b",
+  "docker_id": "aa656c8592c78d6a907127e107c43ab82f999e2b58a6dbe7880ec816a1cbbee0",
+  "docker_bridge_address": "172.23.0.2",
+  "calico_manifest_sha256": "918e7b33ff89d4c08de9462345b1a9fbc68dd9f097704d620ace22f6506b24a3",
+  "candidate_image": "care-link-imp10:protected-007",
+  "candidate_image_id": "sha256:9da1df60b9ba68a8ee0e6488504ae1d205e39fa68ba9bc3de34a8fe6bd14c9fc",
+  "approved_serving_certificates": [
+    "csr-f52cl",
+    "csr-jwvt4"
+  ],
+  "spire_psat_node_alias": "spiffe://care-link.demo/node/imp10-008",
+  "spire_bundle_sha256": "9528d7d6dbbc1ecb4e067f94a0e510f00c44cf232bee90811905ca9c3342d409",
+  "spire_registered_roles": [
+    "core",
+    "data",
+    "identity",
+    "inference",
+    "journal",
+    "pdp",
+    "receiver",
+    "runtime",
+    "training"
+  ],
+  "spire_csi_node_ready": true,
+  "default_deny_applied": true
+}

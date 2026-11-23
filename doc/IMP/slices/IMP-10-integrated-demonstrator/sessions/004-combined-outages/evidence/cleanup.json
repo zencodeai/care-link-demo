@@ -1,0 +1,8 @@
+{
+  "recorded_at": "2026-11-23T15:22:43.993313+00:00",
+  "disposable_tls_postgres_container_removed": true,
+  "disposable_database_connection_directory_removed": true,
+  "current_test_temporary_directories_removed": 1,
+  "model_catalog_still_authenticated": true,
+  "model_present_after_test": "qwen/qwen3.8-27b"
+}

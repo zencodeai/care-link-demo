@@ -14,6 +14,8 @@ export const trustMessages = {
     carer: "Carer",
     professionalParticipant: "Professional participant",
     worker: "Worker",
+    trainer: "Trainer",
+    governance: "Governance reviewer",
     supervisor: "Supervisor",
     roleHint:
       "The identity service checks separately provisioned roles. Choosing a role does not grant it.",
@@ -86,6 +88,8 @@ export const trustMessages = {
     carer: "Proche aidant",
     professionalParticipant: "Participant professionnel",
     worker: "Intervenant",
+    trainer: "Formateur ou formatrice",
+    governance: "Responsable de la gouvernance",
     supervisor: "Superviseur",
     roleHint:
       "Le service d’identité vérifie les rôles attribués séparément. Choisir un rôle ne l’accorde pas.",

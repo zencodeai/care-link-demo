@@ -1,0 +1,38 @@
+{
+  "backend_socket": {
+    "gid": 65531,
+    "mode": "0o660",
+    "uid": 65532
+  },
+  "image_id": "sha256:9da1df60b9ba68a8ee0e6488504ae1d205e39fa68ba9bc3de34a8fe6bd14c9fc",
+  "image_tag": "care-link-imp10:protected-007",
+  "other_uid_request": {
+    "replay_without_session": 403,
+    "training_shell": 403,
+    "uid": 65532
+  },
+  "owned_container_removed": true,
+  "proxy_uid_request": {
+    "replay_without_session": 401,
+    "training_shell": 200,
+    "uid": 65531
+  },
+  "scope": "Network-disabled Linux process, real Unix peer credentials and packaged Core role startup",
+  "source_sha256": {
+    "apps/web/dist/index.html": "0a2527779c72815eca87506606f4d7d3f09ff5839154bc6bb719026e0ac8d455",
+    "config/demo/imp10/policy/evaluation.rego": "a35544fc255984e5dd87375adfd3dd43d9794f9865e2c186958abad89ff333cd",
+    "config/demo/imp10/training-artifact.json": "20e7ad9817a2b64f7390f00704de5623cc8026f6caab8531138ffbc5dce154cb",
+    "tools/imp03_runtime/compose.py": "e832116b79eabae0435bbfde378d4e6407e2fbce522c6c6f2d3a4cd81390c740",
+    "tools/imp03_runtime/config.py": "b5a7035f7e375a33af6ed2f622098835468b49fd0855db3f86380eabdc161da8",
+    "tools/imp03_runtime/review_identity.py": "afafb96bb26d1e194b7a8958d4fe44d32056e9d4ee9b5a334fb97dd5475ee493",
+    "tools/imp06_runtime/core.py": "cb517f133d7ae3988cf340e06b8abd2dc0414d561f595dd34c927e992b847e09",
+    "tools/imp06_runtime/role_process.py": "5a68a1ef6a15a9b53993c559973cfdd1e029571aec2217e206cecacb0aaa781e",
+    "tools/imp06_runtime/routes.py": "c6c85147f7f84ef4c42970d886a8af67d215f56ca9758316e880977e11071c2d",
+    "tools/imp06_runtime/serve.py": "51d98fa33620bc90c19f861c132afb9a3f871499da38efdb6aebdc70b1133969",
+    "tools/imp10_runtime/mesh.py": "cca649e24a3f7058fecf51a79ddfe31cc5a7ac505354288144e8d1c758bcd28c",
+    "tools/imp10_runtime/protected_help.py": "091d7986852533a06cb2e8e10e8675c094dca6c82cbeac3b3fe71bfe7ab14f54",
+    "tools/imp10_runtime/protected_training.py": "a208608ac73ab2812225b8e9e234b5f99e550535c93711e80ee53a5e4ce875eb",
+    "tools/imp10_runtime/routes.py": "43b1bdcd91b3e5b1f484267aa435f13fb238228dc82855c9cff49c138c5ee044",
+    "tools/imp10_runtime/serve.py": "ef317e05867429c62a84dd3a32ad71b11df889551cfd00d6b29df7621f013faf"
+  }
+}

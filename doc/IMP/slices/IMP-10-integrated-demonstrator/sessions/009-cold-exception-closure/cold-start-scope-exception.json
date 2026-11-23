@@ -1,0 +1,14 @@
+{
+  "gate_id": "G-10",
+  "source_kind": "user_message",
+  "verbatim": "(3.) Can be bypassed in this context.",
+  "item_3": "Repeated true cold-start measurements with exact Qwen model at declared load",
+  "scope": "This private synthetic G-10 qualification only",
+  "disposition": "waived_by_user",
+  "observed_cold_starts": 0,
+  "remaining_required_measurements": [
+    "repeated deployed warm",
+    "repeated deployed error"
+  ],
+  "recorded_at_utc": "2026-11-23T19:28:10.941957+00:00"
+}

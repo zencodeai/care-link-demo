@@ -1,0 +1,8 @@
+{
+  "recorded_at_utc": "2026-11-23T18:11:02.788308+00:00",
+  "target": "qual-imp10-008",
+  "purpose": "qualification",
+  "previous_epoch": 1,
+  "restrictive_epoch": 2,
+  "cluster_snapshot_sha256": "63ddd5101fe51ccc286004d290571f3ba7439cabc9363cbb961bcf4a95363ee1"
+}

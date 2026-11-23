@@ -1,0 +1,60 @@
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_verification/g06_protected.py", line 243, in main
+    lab.start_roles(addresses)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_verification/role_topology.py", line 439, in start_roles
+    self.run(
+    ~~~~~~~~^
+        role + "-proxy",
+        ^^^^^^^^^^^^^^^^
+    ...<17 lines>...
+        uid=owners.proxy,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_verification/g06_protected.py", line 73, in run
+    return super().run(
+           ~~~~~~~~~~~^
+        suffix,
+        ^^^^^^^
+    ...<10 lines>...
+        stdin=stdin,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_verification/role_topology.py", line 281, in run
+    output = docker(*command, image or self.image, *args, stdin=stdin)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_verification/role_topology.py", line 96, in docker
+    result = subprocess.run(  # noqa: S603
+        ["docker", *arguments],  # noqa: S607
+    ...<4 lines>...
+        check=False,
+    )
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 557, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 1221, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 2154, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 1268, in _check_timeout
+    raise TimeoutExpired(
+    ...<2 lines>...
+            stderr=b''.join(stderr_seq) if stderr_seq else None)
+subprocess.TimeoutExpired: Command '['docker', 'run', '--pull', 'never', '--name', 'care-link-imp06-007-protected-host-inference-bridge-proxy', '--label', 'care-link.session=care-link-imp06-007-protected', '--network', 'care-link-imp06-007-protected-routing', '--read-only', '--security-opt', 'no-new-privileges', '--cap-drop', 'ALL', '--user', '26113:26113', '--pids-limit', '64', '--memory', '224m', '--ip', '172.31.250.14', '--pid', 'container:care-link-imp06-007-protected-host-inference-bridge-agent', '-d', '--mount', 'type=volume,source=care-link-imp06-007-protected-host-inference-bridge,target=/run/qualification/proxy,volume-subpath=proxy,readonly', '--mount', 'type=volume,source=care-link-imp06-007-protected-host-inference-bridge,target=/run/qualification/backend,volume-subpath=backend,readonly', '--mount', 'type=volume,source=care-link-imp06-007-protected-host-inference-bridge,target=/run/qualification/outbound,volume-subpath=outbound', '--mount', 'type=volume,source=care-link-imp06-007-protected-host-inference-bridge,target=/run/qualification/authorization,volume-subpath=authorization,readonly', '--mount', 'type=volume,source=care-link-imp06-007-protected-host-inference-bridge,target=/run/qualification/spire,volume-subpath=spire,readonly', 'envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb', '-c', '/run/qualification/proxy/envoy.json', '--log-level', 'critical', '--disable-hot-restart', '--concurrency', '1']' timed out after 30 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_verification/g06_protected.py", line 296, in <module>
+    main()
+    ~~~~^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_verification/g06_protected.py", line 267, in main
+    cleanup = lab.cleanup()
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_verification/role_topology.py", line 473, in cleanup
+    raise RuntimeError("qualification cleanup ownership mismatch")
+RuntimeError: qualification cleanup ownership mismatch

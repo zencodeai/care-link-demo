@@ -1,0 +1,24 @@
+
+
+
+Running 8 tests using 1 worker
+
+
+
+[1/8] tests/e2e/training/training.spec.ts:49:3 › en-CA trainer creates, reads and stops a scenario and inspects a replay
+[2/8] tests/e2e/training/training.spec.ts:49:3 › fr-CA trainer creates, reads and stops a scenario and inspects a replay
+[3/8] tests/e2e/training/training.spec.ts:142:1 › unknown outcome locks new commands and a retry uses the same request
+[4/8] tests/e2e/training/training.spec.ts:160:1 › a changed account clears pending authority and does not redispatch
+[5/8] tests/e2e/training/training.spec.ts:175:1 › a governance reviewer can request replay and sees no scenario controls
+[6/8] tests/e2e/training/training.spec.ts:188:1 › wrong target and sign-out clear previously loaded scenario evidence
+[7/8] tests/e2e/training/training.spec.ts:211:1 › fresh verification for the same trainer preserves unsent input
+[8/8] tests/e2e/training/training.spec.ts:229:1 › training sign-in requests the selected role and exact return route
+  8 passed (6.6s)
+[WebServer] (node:23853) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:23854) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:23861) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23861) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

@@ -1,0 +1,213 @@
+{
+  "counts": {
+    "capacity_rejected": 1,
+    "completed": 9,
+    "compute_unknown_fenced_on_late_return": 1,
+    "manual_deliveries": 1,
+    "manual_reads": 11,
+    "missing_fixture_inference_results": 0,
+    "observed_inference_results": 11,
+    "scheduled_inference_requests": 11
+  },
+  "ended_at_utc": "2026-11-23T14:16:30.653341+00:00",
+  "environment": {
+    "architecture": "arm64",
+    "cpu_count": 14,
+    "postgres_server_version": "18.3 (Debian 18.3-1.pgdg12+1)",
+    "python": "3.14.7",
+    "release": "25.6.0",
+    "system": "Darwin"
+  },
+  "fixture": {
+    "arrival": "two admitted requests, then eight queued at fixed bridge barriers",
+    "channels": {
+      "web": 10
+    },
+    "configured_context_token_cap": 8192,
+    "configured_output_token_cap": 1024,
+    "identity_policy_journal": "fixture adapters",
+    "locales": {
+      "en-CA": 10
+    },
+    "source_items_per_task": 1,
+    "source_text_bytes_per_task": 15,
+    "synthetic_participant_accounts": 10,
+    "synthetic_worker_accounts": 1,
+    "transport": "in-process public application objects and verified-TLS PostgreSQL"
+  },
+  "inference_samples": [
+    {
+      "claim_ms_after_enqueue": 51.939,
+      "elapsed_ms": 947.235,
+      "end_to_end_ms": 1261.761,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_first_call",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 211.652,
+      "elapsed_ms": 927.486,
+      "end_to_end_ms": 1241.738,
+      "input_tokens_reported_by_fixture": null,
+      "output_tokens_reported_by_fixture": null,
+      "phase": "fixture_timeout",
+      "reason": "provider_stop_unverified",
+      "state": "compute_unknown"
+    },
+    {
+      "claim_ms_after_enqueue": 743.737,
+      "elapsed_ms": 37.564,
+      "end_to_end_ms": 863.119,
+      "input_tokens_reported_by_fixture": null,
+      "output_tokens_reported_by_fixture": null,
+      "phase": "fixture_capacity_rejection",
+      "reason": "compute_capacity_unavailable",
+      "state": "rejected"
+    },
+    {
+      "claim_ms_after_enqueue": 743.737,
+      "elapsed_ms": 63.588,
+      "end_to_end_ms": 997.137,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 1038.534,
+      "elapsed_ms": 78.139,
+      "end_to_end_ms": 1198.72,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 1239.215,
+      "elapsed_ms": 69.723,
+      "end_to_end_ms": 1392.517,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 1431.087,
+      "elapsed_ms": 72.633,
+      "end_to_end_ms": 1591.181,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 1635.129,
+      "elapsed_ms": 67.374,
+      "end_to_end_ms": 1800.583,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 1854.79,
+      "elapsed_ms": 68.073,
+      "end_to_end_ms": 2016.667,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 2054.723,
+      "elapsed_ms": 64.71,
+      "end_to_end_ms": 2198.516,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    },
+    {
+      "claim_ms_after_enqueue": 2236.773,
+      "elapsed_ms": 71.922,
+      "end_to_end_ms": 2389.234,
+      "input_tokens_reported_by_fixture": 50,
+      "output_tokens_reported_by_fixture": 60,
+      "phase": "fixture_reused_gateway",
+      "reason": null,
+      "state": "completed"
+    }
+  ],
+  "manual_delivery_with_two_slots_occupied": {
+    "elapsed_ms": 102.969,
+    "state": "visible_human_authored"
+  },
+  "manual_read_with_unknown_slot": {
+    "elapsed_ms": 31.908,
+    "state": "human_controlled"
+  },
+  "manual_reads_with_two_slots_occupied": [
+    {
+      "elapsed_ms": 104.576,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 155.098,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 191.898,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 114.536,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 201.793,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 162.798,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 212.87,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 135.919,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 173.056,
+      "state": "human_controlled"
+    },
+    {
+      "elapsed_ms": 121.897,
+      "state": "human_controlled"
+    }
+  ],
+  "missing": [
+    "Actual loaded model cold and warm results and token timing",
+    "Native browser, deployed mesh, independent help under this same load",
+    "Workload containing French and non-web simulated channels",
+    "Measured arrival rate and long-run demand distribution"
+  ],
+  "peak": {
+    "connected_sessions": 10,
+    "occupied_inference_slots": 2,
+    "unique_pending_task_ids": 8
+  },
+  "started_at_utc": "2026-11-23T14:16:20.364204+00:00",
+  "timing": "Raw milliseconds from a local monotonic clock, including fixture barriers. No percentiles inferred from these samples."
+}

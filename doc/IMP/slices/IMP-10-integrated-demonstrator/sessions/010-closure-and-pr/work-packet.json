@@ -1,0 +1,103 @@
+{
+  "packet_id": "IMP10-010-closure-and-pr",
+  "task_id": "IMP-10-D",
+  "stage_id": "IMP-10",
+  "mode": "verification",
+  "role": "imp_verifier",
+  "goal": "Verify the qualified IMP-10 source and evidence, publish on a dedicated branch and open its private pull request.",
+  "baseline_commit": "0452cf18356c82e31ec5a184e5323511705eb235",
+  "inputs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/010-closure-and-pr/baseline-ledger.json",
+      "sha256": "38962675ef00215069a054a76f5bcdc0f536f7207b6021e3fb6576b16b7f8d65"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/candidate-manifest.json",
+      "sha256": "40c5d0c49d11ee092740362b86ed64b4c2a10eff72d8e0296d567af1e5c73b1e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/results.json",
+      "sha256": "00910f125905ed7b387a2efa2f7551d8a67ce4cf76fba45a44dae7b82189b7d5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/cold-start-scope-exception.json",
+      "sha256": "1c51a79030de379731172cd2348dc0e9ac8b2b25a4b4d48a0f0927db0bb0827c"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex",
+    "doc",
+    "tools",
+    "deploy",
+    "config",
+    "services",
+    "packages",
+    "host",
+    "tests",
+    "apps"
+  ],
+  "write_paths": [
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/010-closure-and-pr/**",
+    "doc/IMP/executions/2026-11-23-IMP-10/ledger.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/README.md",
+    "doc/IMP/README.md",
+    "doc/IMP/planning-inventory.json"
+  ],
+  "dependencies": [
+    "IMP-06:G-06:automated_qualified",
+    "IMP-07:G-07:automated_qualified",
+    "IMP-08:G-08:automated_qualified",
+    "IMP-09:G-09:automated_qualified"
+  ],
+  "operation_ids": [
+    "scenario_create",
+    "scenario_read",
+    "scenario_stop",
+    "replay_create",
+    "evaluation_read",
+    "data_replay_create",
+    "data_evaluation_read",
+    "identity_link_request",
+    "data_identity_link_request"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "edit_assigned_files",
+    "run_declared_checks",
+    "publish_pr"
+  ],
+  "prohibited_actions": [
+    "merge",
+    "deployment",
+    "participant admission",
+    "publish unrelated research resources"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Close IMP-10, create PR",
+    "scope": "IMP-10 closure record, dedicated branch commit and push, and PR in the private repository."
+  },
+  "resource_leases": [],
+  "expected_outputs": [
+    "Qualified source continuity record",
+    "Open private pull request",
+    "Publication receipt and ledger"
+  ],
+  "positive_acceptance": [
+    "The committed source and runbook match the qualified candidate and supporting evidence.",
+    "The pull request targets the merged IMP-09 baseline on main."
+  ],
+  "adverse_acceptance": [
+    "Preserve the cold-start exception, failed samples, and deferred human review.",
+    "Exclude unrelated research files and credential material."
+  ],
+  "reviewer": "primary sequential closure verification",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "Qualified source drift or conflicting remote base",
+    "Private repository publication unavailable"
+  ],
+  "is_example": false
+}

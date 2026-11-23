@@ -1,0 +1,16 @@
+{
+  "at_utc": "2026-11-23T18:40:54.604183+00:00",
+  "private_diagnostic_workfiles_removed": true,
+  "temporary_kind_removal": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/platform-cleanup.json",
+    "sha256": "e53d7555a92b956c29e145efd44117e2be717bd6d9dcbeebd3fb6f0b04ca8f68"
+  },
+  "temporary_bridge_removal_and_native_model_preservation": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/bridge-cleanup.json",
+    "sha256": "629c7b212a18f6923d4d923f2688210dab1821ab45dfa91fe45b8fceef4cd281"
+  },
+  "qualification_release_disabled": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/qualification-disable.json",
+    "sha256": "ca67142c12ead4beeb03df68e4b0f1640955531e1b1323e49a1d73e138ec9b84"
+  }
+}

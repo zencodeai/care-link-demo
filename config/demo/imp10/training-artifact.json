@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "environment": "demo",
+  "population": "synthetic",
+  "fixture_modes": [
+    "accept",
+    "reject",
+    "partial",
+    "delay",
+    "drop_after_store",
+    "receipt_unavailable",
+    "poisoned_feed",
+    "channel_drop",
+    "regional_outage"
+  ],
+  "channels": ["sms", "voice", "mobile", "relay", "interpretation"],
+  "directory_states": [
+    "normal",
+    "temporary_closure",
+    "regional_outage",
+    "holiday_hours",
+    "severe_weather",
+    "api_failure",
+    "conflicting_source"
+  ]
+}

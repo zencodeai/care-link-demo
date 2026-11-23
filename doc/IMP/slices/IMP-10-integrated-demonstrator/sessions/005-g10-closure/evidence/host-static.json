@@ -1,0 +1,13 @@
+{
+  "scope": "Standalone native Static CLI on private loopback. No healthy Kubernetes-to-outage transition verified.",
+  "artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+  "process_id": 57975,
+  "locales": [
+    "en-CA",
+    "fr-CA"
+  ],
+  "manifest_verified": true,
+  "cookie_free": true,
+  "results": "passed",
+  "process_stopped": true
+}

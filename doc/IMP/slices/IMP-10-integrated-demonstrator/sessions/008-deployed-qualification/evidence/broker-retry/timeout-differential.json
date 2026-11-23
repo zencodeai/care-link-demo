@@ -1,0 +1,14 @@
+{
+  "scope": "Local synthetic timeout differential using the shipped DataTransport. No Kubernetes or live model assertion.",
+  "operation": "current",
+  "configured_read_deadline_ms": 1000,
+  "controlled_server_delay_ms": 1100,
+  "real_unix_http_transport": {
+    "outcome": "ReadTimeout",
+    "elapsed_ms": 1002.5
+  },
+  "mock_transport": {
+    "outcome": "accepted",
+    "elapsed_ms": 1104.196
+  }
+}

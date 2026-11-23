@@ -1,0 +1,124 @@
+{
+  "scope": "Integrated local automated evidence on a private synthetic candidate",
+  "state": "blocked",
+  "gate": "G-10",
+  "automated_qualified": false,
+  "candidate": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/candidate-manifest.json",
+    "sha256": "795fbf691838fc9e42f7c4d61da2ffed00643a6f1a7c5e0800b8de88e12eb20a"
+  },
+  "predecessors": {
+    "G-06": {
+      "path": "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+      "sha256": "7e9d57447d5e606a1e73f9e18ed6cdef90b4f5d1662a6122466c8e97feced8a6"
+    },
+    "G-07": {
+      "path": "doc/IMP/executions/2026-11-21-IMP-07/ledger.json",
+      "sha256": "9941321dfbe5cfa48ad322a0d9fd7c5301c02ebbc0932dae1ec6e6ee3ab21098"
+    },
+    "G-08": {
+      "path": "doc/IMP/executions/2026-11-21-IMP-08/ledger.json",
+      "sha256": "e09e1e707f5c9c43f154bdfeefc3db4e547d92bd106d2c3328406746e7631be7"
+    },
+    "G-09": {
+      "path": "doc/IMP/executions/2026-11-21-IMP-09/ledger.json",
+      "sha256": "6a054df591853d7210979bc917f1603256f0ea7b3523168b4022db3a0630ea4c"
+    }
+  },
+  "checks": {
+    "source_commands_passed": 39,
+    "backend": {
+      "tests": 1777,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 3,
+      "passed": 1774
+    },
+    "frontend_tests_passed": 234,
+    "matched_fixture_assistance_passed": 1,
+    "browser": {
+      "passed": 55,
+      "failed": 0,
+      "skipped": 0
+    },
+    "developer_core_image_smoke": "passed"
+  },
+  "evidence": {
+    "checks": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/checks.json",
+      "sha256": "462d0c9e8681912621684839254dc7095e873b1bb1a155300fce63e7b697365d"
+    },
+    "pytest": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/pytest.xml",
+      "sha256": "db863e23a4fb87a68db7e5151a59dfc2f22df6e4069b7832174e3bc8088a9ca4"
+    },
+    "load": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/load.json",
+      "sha256": "1fc2ae5e9091ac25f768345c2c36baf2baa612f326fedf8fe91819b9b8284f56"
+    },
+    "matched-assistance": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/source/matched-assistance.json",
+      "sha256": "02120f8335d95a9867da607dfb35b55a096806d4ee690db1960a9baa73e6704a"
+    },
+    "summary": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/browser/summary.json",
+      "sha256": "5925cf95079db621b5c72ba1df56c173ef8ae5fcc9e80f4632055c6237b11f97"
+    },
+    "core-image": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/artifacts/core-image.json",
+      "sha256": "7d1b9fa111262020531ad86fb8a9d949b73bf5100828247737aae44f493de223"
+    },
+    "core-smoke": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/artifacts/core-smoke.json",
+      "sha256": "8e5c2ed5c9ea07b14ee2de2083a0c33fc0f66d1e839077b0966538c2c697b124"
+    },
+    "trace-disposition": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/trace-disposition.json",
+      "sha256": "bbc25887a2089f45809d98c46ee943e9c0df08b794f446ab2537a92f0a340f79"
+    },
+    "cleanup": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/cleanup.json",
+      "sha256": "3378cdee15ff91db0ab1481b3027e917f5d5da857e8cf077583b9d166663c145"
+    },
+    "review-findings": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/review-findings.md",
+      "sha256": "5ee58a7c60389a436dd9b4604bd0972573c6aa5de1ba7a50ea0e082fff9d2f87"
+    },
+    "plan-validation": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/evidence/plan-validation.log",
+      "sha256": "25736bef0ac67939149948149497fa3b3aec45cc492e444eabd11ceac6c1c0e8"
+    }
+  },
+  "legacy_skips": [
+    "IMP-03 dedicated Docker capture fixture. Current encrypted capture and restore regression ran through the owned PostgreSQL environment.",
+    "IMP-02 dedicated Linux UID0 setuid process test environment.",
+    "IMP-03 independent provisioning TLS fixture."
+  ],
+  "earlier_attempts": [
+    "The frozen G-09 evidence verifier passed against the pre-edit branch.",
+    "Training browser native launch could not find ICU. The final suite used the pinned disposable Chromium image.",
+    "Runtime contract allowlists initially missed the new DTOs. Both allowlists were corrected and regeneration verified. Browser rerun forced Vite to rebuild optimized dependencies.",
+    "A focused signed transport test initially returned the wrong TestClient response class. The adapter fixture was corrected and the focused test plus full regression passed.",
+    "The matched assistance test and Data pytest fixtures contend for the same disposable database when collected together. The runner now invokes them sequentially in separate processes."
+  ],
+  "remaining": [
+    "A current candidate run through the combined deployment with exact model cold, warm and outage traces is missing. No active provider, cluster, routing or host trust change was authorized for this session.",
+    "The local load run used fixture identity, PDP, journal and provider. Independent help under that load and the full combined dependency outage drill were not run.",
+    "The trainer capture compares deterministic fictional projections. Real channel continuity, independently sourced live directory behavior and replay of real recorded model or business decisions remain outside the verified scope.",
+    "A restarted catalog requires approved time-bounded capture custody. Active simulator ciphertext cleanup does not prove erasure from other copies or backups.",
+    "The frozen plan validator reported the same pre-existing README digest drift at baseline and final. The standalone LLD validator could not run because its declared dependencies were unavailable locally."
+  ],
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": [],
+  "operations": [
+    "scenario_create",
+    "scenario_read",
+    "scenario_stop",
+    "replay_create",
+    "evaluation_read",
+    "data_replay_create",
+    "data_evaluation_read",
+    "identity_link_request",
+    "data_identity_link_request"
+  ]
+}

@@ -12,6 +12,13 @@ TARGETS = (
     ROOT / "packages/contracts/typescript/src/schema.json",
 )
 NAMES = (
+    "ScenarioCreate",
+    "ScenarioView",
+    "ReplayCreate",
+    "EvaluationView",
+    "Gateway_replay_create",
+    "Gateway_evaluation_read",
+    "Gateway_identity_link_request",
     "RestoreCreate",
     "RestoreView",
     "PromotionPropose",
@@ -424,7 +431,9 @@ def render() -> str:
         "audit_export_read",
         "health_read",
     )
-    planning_actions += ("artifact_context",)
+    planning_actions += ("artifact_context", "replay_create", "evaluation_read")
+    training = json.loads((ROOT / "packages/contracts/training.schema.json").read_text())
+    selected.update(training["$defs"])
     targets = []
     for action in planning_actions:
         gateway = selected["Gateway_" + action]["properties"]

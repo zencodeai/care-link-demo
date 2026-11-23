@@ -26,13 +26,18 @@ BackendRole = Literal["core", "data", "inference", "host-inference-bridge"]
 
 
 def backend_verifier(
-    role: BackendRole, *, proxy_uid: int, fence_socket: Path, fence_uid: int
+    role: BackendRole,
+    *,
+    proxy_uid: int,
+    fence_socket: Path,
+    fence_uid: int,
+    training_enabled: bool = False,
 ) -> BackendVerifier:
     if not fence_socket.is_absolute():
         raise ValueError("absolute protected fence socket required")
     return BackendVerifier(
         proxy_uid,
-        inbound(role),
+        inbound(role, training_enabled=training_enabled),
         UnixFenceClient(fence_socket, fence_uid),
         backend_uid=os.geteuid(),
         local_spiffe_id=f"spiffe://care-link.demo/demo/{role}",

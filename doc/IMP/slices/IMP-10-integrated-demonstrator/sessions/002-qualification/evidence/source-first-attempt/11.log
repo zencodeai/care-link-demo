@@ -1,0 +1,6 @@
+
+> care-link-development@0.1.0 format:check /Users/main/Workspace/projects/care-link/care-link-demo
+> prettier --check apps/web packages/contracts/typescript package.json pnpm-workspace.yaml pyrightconfig.json eslint.config.mjs vitest.config.ts
+
+Checking formatting...
+All matched files use Prettier code style!

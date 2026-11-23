@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-11-23T17:22:47.387475+00:00",
+  "ended_at": "2026-11-23T17:22:51.320477+00:00",
+  "docker_node_id": "aa656c8592c78d6a907127e107c43ab82f999e2b58a6dbe7880ec816a1cbbee0",
+  "initializer_sha256": "fce3c9c064524a28afaea41cd6bb2606448d48e095f8080578aed50cbe291d0d",
+  "observed_init_exit_codes": {
+    "seed-opa": 0,
+    "existing-readonly-opa": 0
+  },
+  "observed_executable": {
+    "sha256": "8fc1c524f93b4369eb207961aba213d990604205fc49fe3ba923dfc125c8a422",
+    "mode": "0o500"
+  },
+  "supplement_image": "care-link-imp10:protected-008-opa",
+  "shared_empty_directory": true,
+  "initial_observer_attempt": "Initial output was buffered. This repeat used unbuffered receipt output.",
+  "passed": true,
+  "owned_pod_removed": true
+}

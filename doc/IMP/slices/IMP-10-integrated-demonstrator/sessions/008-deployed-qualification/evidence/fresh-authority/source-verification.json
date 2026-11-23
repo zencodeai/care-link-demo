@@ -1,0 +1,136 @@
+{
+  "state": "passed_for_source_and_fixture_scope",
+  "local_image_id": "sha256:11e0648ee7457ae2a6d216b757cb64bd6811d3ca524c85fe2a72eea12ef4a12e",
+  "current_source_dependencies": [
+    {
+      "path": "packages/domain/src/care_link_domain/__init__.py",
+      "sha256": "64787fa135ad06edd4de419f213334770df096265fa02fa1a8b5f7b5b0038a5d"
+    },
+    {
+      "path": "packages/domain/src/care_link_domain/inference_authority.py",
+      "sha256": "c898c4daa985db3603a29f38967e7dcd82b5b1d365d79f47afdcf58b1f17853f"
+    },
+    {
+      "path": "services/core/src/care_link_core/assistance_broker/actors.py",
+      "sha256": "2374b6c44f3d0b34dde8c89f1475e5ff54722e8ba5a13af7c5e2e9dd2ab00910"
+    },
+    {
+      "path": "services/core/src/care_link_core/assistance_broker/broker.py",
+      "sha256": "8355dbb388064dbd65205c0ceac66888ed369575548f63c47f7d7bad32da784b"
+    },
+    {
+      "path": "services/core/src/care_link_core/assistance_broker/inference_authority.py",
+      "sha256": "cdf71fd8d16536cfe0ee71f3b9acd583bd476aace8fa9f27ef7e2f2cbba606a4"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/assistance_jobs.py.txt",
+      "sha256": "fc94f17d37f277fface69189a262caf8be54a61317f4de89c9706f07823a4ba8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/assistance_transport.py.txt",
+      "sha256": "7f905c0a3ecf5d7bd8c6c9b51423f4af4742859e19743a3d3f6fbe91f38e3c92"
+    },
+    {
+      "path": "services/data/src/care_link_data/inference_actor.py",
+      "sha256": "0b269fcdce68ec2e8bd95d4dae4ced2c895689676bff796fd8f9cc86fe4bd9af"
+    },
+    {
+      "path": "services/data/src/care_link_data/assistance/actors.py",
+      "sha256": "86e6805bca5535898164b2efd2a87871e83ccd15c066b02c8ab87196e0e7e539"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/execution.py.txt",
+      "sha256": "3d3c79fd42af9e90f3fb2c593b650748c0b11310024e3b7cd2cd822f1ae600f5"
+    },
+    {
+      "path": "services/data/src/care_link_data/assistance/service.py",
+      "sha256": "01e8bbe33ed0eac6ec1a52e1b668d5e84c2c16f3d13fcb91c33b8fb8080ad541"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/test_assistance_jobs.py.txt",
+      "sha256": "ee1e9a707f239b1c8f7507f279a86324e41256d520ec423d8751820e4cada0b0"
+    },
+    {
+      "path": "services/data/tests/test_inference_actor.py",
+      "sha256": "27df390411d8935d637c0a749af3d1b3853a5feb1d5616ee3028e06731ef59a8"
+    },
+    {
+      "path": "services/core/tests/test_inference_authority.py",
+      "sha256": "fce46ebdbc92a63d13fec112328f42a787e3ba58aa2de62735aee1398cb03ab5"
+    },
+    {
+      "path": "services/inference/src/care_link_inference/composition.py",
+      "sha256": "59726b5bf035703679f1013ce183a3d69e332198493f3db4410ecd745dd45789"
+    },
+    {
+      "path": "tests/network/test_imp10_protected_mesh.py",
+      "sha256": "d6ea58e1901b2ed6b66ea079f63a3cc57e6a0c31a8e38cfb18a9421be193dae7"
+    },
+    {
+      "path": "tests/evaluation/qwen_combined_journey.py",
+      "sha256": "f4caa6a8a12ef20fc95bfdef2bc1348180bcf22c77d861e4ade547596e21d04a"
+    },
+    {
+      "path": "tools/imp03_runtime/compose.py",
+      "sha256": "cc8c6293466945230c8a4e78bdd4235b25b115786995826f39677db45ca7edee"
+    },
+    {
+      "path": "tools/imp06_runtime/core.py",
+      "sha256": "deb9b4b6214e74772b9440369ec3f8cbd15cac9ee4d7eeaf2a16ce1178e78000"
+    },
+    {
+      "path": "tools/imp06_runtime/data.py",
+      "sha256": "f60d14bba9a318984be66c4d03321b8d721cdb6e90103138220c510efb7b55a4"
+    },
+    {
+      "path": "tools/imp06_runtime/routes.py",
+      "sha256": "e6a4c96014dd50fddb64e7d3b060db9979cf56cfa7e4b66e608983c7612dddb8"
+    },
+    {
+      "path": "tools/imp10_verification/deployed_assistance.py",
+      "sha256": "8eeaa7cc4f26550d455d8cfde57588b5a7add1fe399d2c529380352d517accd8"
+    }
+  ],
+  "focused_group_passed": 134,
+  "expiry_aware_https_and_tls_database_journey_passed": 1,
+  "strict_type_errors": 0,
+  "ruff_and_boundaries_passed": true,
+  "original_identity_proof_expired_before_runtime": true,
+  "fresh_inference_identity_proofs": 5,
+  "backend_completion_observed": {
+    "task": "completed",
+    "durable_inference_job": "completed",
+    "draft": "rejected",
+    "free_slots": 2,
+    "manual_session": "human_authored_followthrough_committed_after_disable",
+    "referral_dispatch_rows": 0
+  },
+  "locked_full_source_pass_pending": false,
+  "evidence_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/app-fixture.json",
+      "sha256": "fc00086d30386ce4f7f63fa27376dd12a02372f593e18e684bdf5985ca6673d5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/focused-tests.log",
+      "sha256": "555fa8d4a4aadb3b299922e836ea863302d86d44f0d9a7659181e5bf1170f720"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/image.log",
+      "sha256": "4a7cba716c3a08c05858cba3ec4edcdc74481ba3e1238dd794c9dcba6013a538"
+    }
+  ],
+  "locked_full_source_pass": false,
+  "locked_source_results": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/locked-source-results.json",
+    "sha256": "2e1e90da56cd3aeb524e3ed2f411bda460581587dfcbc9819224bd9071ea1a06"
+  },
+  "recorded_checkout_source_paths": {
+    "services/data/src/care_link_data/engine.py": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/engine.py.txt",
+    "services/data/src/care_link_data/assistance_transport.py": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/assistance_transport.py.txt",
+    "services/data/src/care_link_data/assistance_jobs.py": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/assistance_jobs.py.txt",
+    "services/data/src/care_link_data/assistance/execution.py": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/execution.py.txt",
+    "services/data/tests/test_assistance_jobs.py": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/test_assistance_jobs.py.txt",
+    "services/data/tests/test_imp10_workstation_load.py": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/deployed-source-snapshot/test_imp10_workstation_load.py.txt"
+  }
+}

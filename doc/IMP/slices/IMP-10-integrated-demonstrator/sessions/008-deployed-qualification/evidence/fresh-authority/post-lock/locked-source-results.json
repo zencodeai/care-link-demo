@@ -1,0 +1,38 @@
+{
+  "recorded_at_utc": "2026-11-23T19:20:04.352466+00:00",
+  "commands_total": 39,
+  "commands_passed": 39,
+  "backend_passed": 1835,
+  "backend_skipped": 4,
+  "frontend_passed": 234,
+  "governance_policy_p95_ms": 44.402,
+  "governance_policy_threshold_ms": 50,
+  "expiry_aware_tls_app_journey": {
+    "state": "passed",
+    "fresh_proofs": 5
+  },
+  "failed_commands": [],
+  "missing_follow_on_artifacts": [],
+  "evidence_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/source-locked/checks.json",
+      "sha256": "1016c5edddfa28072d4606d55bd8a6f8bc9e5a7866c4618132cf192412e842e3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/source-locked/pytest.xml",
+      "sha256": "ce8ab37faa0e530414640596255a0239abb1e19ad8289fbcea50c10cb3aca659"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/source-locked/load.json",
+      "sha256": "ea033781ef1a6a5e5446a50761e5929e26a06b4405d6f919e5c83244061e19e9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/source-locked/matched-assistance.json",
+      "sha256": "6bf697b517e1e95cec8f8812931703d38f2057afc92ba4722f5604afcc775633"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/source-locked/matched-assistance.xml",
+      "sha256": "73e80436ac69f3612a73bfa23b3e5fefa0fda33ae736d9e522aa8268ac919f6c"
+    }
+  ]
+}

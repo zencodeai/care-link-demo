@@ -1,0 +1,10 @@
+{
+  "scope": "Fresh dedicated synthetic diagnostic environment",
+  "namespace_uid": "0cb05292-8c8e-4827-8858-9ccdcdd9fb02",
+  "store_bootstrap": "verified TLS bootstrap of four scoped stores",
+  "initial_mode": "normal",
+  "initial_epoch": 1,
+  "initial_inference_jobs": 0,
+  "actor_count": 18,
+  "candidate_tag": "care-link-imp10:protected-008-fresh-authority"
+}

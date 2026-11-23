@@ -1,0 +1,50 @@
+{
+  "recorded_at_utc": "2026-11-23T20:17:48.484743+00:00",
+  "qualified_parent": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "main_commit": "0452cf18356c82e31ec5a184e5323511705eb235",
+  "identical_parent_and_main_tree": "e05ee5d52a8c1d62f27069a7867dbf4be89721ae",
+  "candidate": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/candidate-manifest.json",
+    "sha256": "40c5d0c49d11ee092740362b86ed64b4c2a10eff72d8e0296d567af1e5c73b1e"
+  },
+  "locked_source_results": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/locked-source-results.json",
+    "sha256": "fa6a421977c612873e958f2e45d196fdf69092cd62f6fb37a7d08d2b5df25fce"
+  },
+  "hashes_verified": {
+    "source_hashes": 1023,
+    "reference_hashes": 62,
+    "build_hashes": 5
+  },
+  "supporting_harness_files": [
+    {
+      "path": "services/data/tests/imp10_outage_help.py",
+      "sha256": "f2327513e601e7b2242f40f82aa866ca30f85da8e47f98e41475057c34f61219"
+    },
+    {
+      "path": "services/data/tests/imp10_outage_listeners.py",
+      "sha256": "887d2184b205db469b0dae8427e6cb800472be78121e29005610df6510b2c671"
+    },
+    {
+      "path": "services/data/tests/imp10_outage_model.py",
+      "sha256": "e880b2367801810e7be59cb224cd915df2a607d5992a9f395292e2bc63d9448d"
+    },
+    {
+      "path": "services/data/tests/imp10_outage_roles.py",
+      "sha256": "995be4fb055caba1a290f8ff93877c4a9a085f0645e434524d7b2c690a8e0b18"
+    },
+    {
+      "path": "services/data/tests/test_imp10_combined_outage.py",
+      "sha256": "ddaafbd4cf44c3d7abc16afaacfe03e0df74351928e329465e072a158f9ef30a"
+    },
+    {
+      "path": "tools/imp10_verification/kind_boundary.py",
+      "sha256": "167e2a7708013cd8e197ed667a08b5f65c3d19f2ecc9b5d20fc6de63ca8bd097"
+    }
+  ],
+  "private_repository": "zencodeai/care-link-demo",
+  "branch": "feat/imp-10-integrated-demonstrator",
+  "excluded_local_resources": [
+    "doc/research/2026-11-20-agentic-care/resources/"
+  ]
+}

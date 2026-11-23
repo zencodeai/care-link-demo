@@ -1,0 +1,153 @@
+{
+  "started_at": "2026-11-23T17:02:01.584658+00:00",
+  "ended_at": "2026-11-23T17:02:51.110257+00:00",
+  "namespace": "care-link-imp10-008",
+  "docker_node_id": "aa656c8592c78d6a907127e107c43ab82f999e2b58a6dbe7880ec816a1cbbee0",
+  "restricted_caller": "pod/g10-unadmitted-control",
+  "actual_runtime": false,
+  "pod_image_ids": {
+    "core": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "authorization": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "fence": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "data": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "authorization": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "fence": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "identity": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "authorization": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "fence": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "journal": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "authorization": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "fence": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "keycloak": {
+      "keycloak": "docker.io/library/import-2026-11-23@sha256:255f22dcf0e1ea2edde5529c9ac7cba274a9cb82350d024447317d52d84a7d68"
+    },
+    "pdp": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "authorization": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "fence": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "postgres": {
+      "postgres": "docker.io/library/postgres@sha256:80630f83606d8db77d30b3851b16a9f78be2d0d4dda6f7b82a1fdca5ebe3acba"
+    },
+    "receiver": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "authorization": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "fence": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "training": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "authorization": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "fence": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    }
+  },
+  "runtime_to_core_mtls": null,
+  "tcp_controls": [
+    {
+      "target": "data",
+      "port": 8443,
+      "allowed_caller": "core",
+      "address": "192.168.67.150",
+      "allowed_before": "connected",
+      "restricted": "timeout",
+      "allowed_after": "connected",
+      "passed": true
+    },
+    {
+      "target": "identity",
+      "port": 8443,
+      "allowed_caller": "core",
+      "address": "192.168.67.149",
+      "allowed_before": "connected",
+      "restricted": "timeout",
+      "allowed_after": "connected",
+      "passed": true
+    },
+    {
+      "target": "pdp",
+      "port": 8443,
+      "allowed_caller": "core",
+      "address": "192.168.67.151",
+      "allowed_before": "connected",
+      "restricted": "timeout",
+      "allowed_after": "connected",
+      "passed": true
+    },
+    {
+      "target": "journal",
+      "port": 8443,
+      "allowed_caller": "data",
+      "address": "192.168.67.152",
+      "allowed_before": "connected",
+      "restricted": "timeout",
+      "allowed_after": "connected",
+      "passed": true
+    },
+    {
+      "target": "training",
+      "port": 8443,
+      "allowed_caller": "core",
+      "address": "192.168.67.154",
+      "allowed_before": "connected",
+      "restricted": "timeout",
+      "allowed_after": "connected",
+      "passed": true
+    },
+    {
+      "target": "receiver",
+      "port": 8443,
+      "allowed_caller": "core",
+      "address": "192.168.67.153",
+      "allowed_before": "connected",
+      "restricted": "timeout",
+      "allowed_after": "connected",
+      "passed": true
+    },
+    {
+      "target": "postgres",
+      "port": 5432,
+      "allowed_caller": "data",
+      "address": "192.168.67.142",
+      "allowed_before": "connected",
+      "restricted": "timeout",
+      "allowed_after": "connected",
+      "passed": true
+    },
+    {
+      "target": "keycloak",
+      "port": 8443,
+      "allowed_caller": "identity",
+      "address": "192.168.67.143",
+      "allowed_before": "connected",
+      "restricted": "timeout",
+      "allowed_after": "connected",
+      "passed": true
+    }
+  ],
+  "workload_controls": {
+    "positive": {
+      "caller": "data",
+      "target": "journal",
+      "status": 200,
+      "signed_nonce_bound_head_verified": true
+    },
+    "unlisted_path_status": 404,
+    "no_client_certificate": "TLSV13_ALERT_CERTIFICATE_REQUIRED",
+    "passed": true
+  },
+  "passed": true
+}

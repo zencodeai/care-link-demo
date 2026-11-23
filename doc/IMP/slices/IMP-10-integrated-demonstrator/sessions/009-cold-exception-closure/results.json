@@ -1,0 +1,375 @@
+{
+  "recorded_at_utc": "2026-11-23T20:08:42.509028+00:00",
+  "gate_id": "G-10",
+  "candidate": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/candidate-manifest.json",
+    "sha256": "40c5d0c49d11ee092740362b86ed64b4c2a10eff72d8e0296d567af1e5c73b1e"
+  },
+  "declared_workload": {
+    "active_sessions": 10,
+    "occupied_slots": 2,
+    "pending_tasks": 8
+  },
+  "scheduled_minimum_per_condition": 2,
+  "cold_start": {
+    "disposition": "waived_by_user",
+    "samples": 0,
+    "authority": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/cold-start-scope-exception.json",
+      "sha256": "1c51a79030de379731172cd2348dc0e9ac8b2b25a4b4d48a0f0927db0bb0827c"
+    }
+  },
+  "rounds_by_condition": {
+    "warm": {
+      "pass": 2,
+      "observed_failure": 1,
+      "without_qualified_peak": 4
+    },
+    "error": {
+      "pass": 2,
+      "observed_failure": 1,
+      "without_qualified_peak": 4
+    }
+  },
+  "attempts": [
+    {
+      "condition": "warm",
+      "round": 1,
+      "disposition": "without_qualified_peak",
+      "observed_peak": false,
+      "phase": "dispatch",
+      "error": "Exact two Runtime claims not observed",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/initial-series.json",
+        "sha256": "fd4e0855069a651785a5d35652a49b6a53f81c2688ef5a2f41ed3a3268f5c6aa"
+      }
+    },
+    {
+      "condition": "warm",
+      "round": 1,
+      "disposition": "without_qualified_peak",
+      "observed_peak": false,
+      "phase": "dispatch",
+      "error": "Scoped kubectl exec failed (137) ['command terminated with exit code 137']",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/retry-series.json",
+        "sha256": "81ddea8f844f388f4f2280db5df74ca949b6c614fe72b1c764aaa3b4d12395ad"
+      }
+    },
+    {
+      "condition": "warm",
+      "round": 1,
+      "disposition": "without_qualified_peak",
+      "observed_peak": false,
+      "phase": "prequeue",
+      "error": "Deployed worker_summary serving admission is unavailable",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/measured-series.json",
+        "sha256": "6dbed8a2065bf6c2cb0fe0c8d815d88cb1de17fb7753d4fddd8b2915c60e56db"
+      }
+    },
+    {
+      "condition": "warm",
+      "round": 1,
+      "disposition": "observed_failure",
+      "observed_peak": true,
+      "phase": "recorded",
+      "error": "Required terminal outcome was not observed",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/final-active.json",
+        "sha256": "56506f0af477a1bfb8232da073ae6daf1c4e7df0bfb7cf113f9bc2d4bd88dcfc"
+      }
+    },
+    {
+      "condition": "warm",
+      "round": 1,
+      "disposition": "pass",
+      "observed_peak": true,
+      "phase": "recorded",
+      "error": null,
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/fresh-warm.json",
+        "sha256": "7dcb2f931235fe81d41f7fc6732d0f770a7760e884de51521929911b2420dec2"
+      }
+    },
+    {
+      "condition": "warm",
+      "round": 2,
+      "disposition": "without_qualified_peak",
+      "observed_peak": false,
+      "phase": "dispatch",
+      "error": "Both deployed reservations were not observed within their startup window",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/fresh-warm.json",
+        "sha256": "7dcb2f931235fe81d41f7fc6732d0f770a7760e884de51521929911b2420dec2"
+      }
+    },
+    {
+      "condition": "warm",
+      "round": 1,
+      "disposition": "pass",
+      "observed_peak": true,
+      "phase": "recorded",
+      "error": null,
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/separate-warm.json",
+        "sha256": "3bbac8c69aacef84093ff42525102e1691dcac699d6c527289b2660d5ccdea2a"
+      }
+    },
+    {
+      "condition": "error",
+      "round": 2,
+      "disposition": "without_qualified_peak",
+      "observed_peak": false,
+      "phase": "dispatch",
+      "error": "GET /v1/sessions/a7c526ca-6247-4f10-b8cf-3a0004159de2: 503 (manual.commit_unknown)",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/separate-warm.json",
+        "sha256": "3bbac8c69aacef84093ff42525102e1691dcac699d6c527289b2660d5ccdea2a"
+      }
+    },
+    {
+      "condition": "error",
+      "round": 1,
+      "disposition": "without_qualified_peak",
+      "observed_peak": false,
+      "phase": "prequeue",
+      "error": "POST /v1/tasks: 503 (assistance.capacity_unavailable)",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/first-controlled-error.json",
+        "sha256": "af797c3ecf2fc360c06999833f64ace2c349214c52cab38a0a27489318682ea6"
+      }
+    },
+    {
+      "condition": "error",
+      "round": 1,
+      "disposition": "observed_failure",
+      "observed_peak": true,
+      "phase": "recorded",
+      "error": "Required terminal outcome was not observed",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/rollover-error-one.json",
+        "sha256": "dbf01125fe3d8a82e49b1f0ab50b5cf4dad99f5679fa631e11b30764856f1ce2"
+      }
+    },
+    {
+      "condition": "error",
+      "round": 1,
+      "disposition": "without_qualified_peak",
+      "observed_peak": false,
+      "phase": "bridge_preflight",
+      "error": "Protected bridge tokenization returned HTTP 503 before actor startup.",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/rollover-error-two.json",
+        "sha256": "1cdf7b9ef59621c395cdaa2cc348ac0ff96610ada311aa79179a555e9194390c"
+      }
+    },
+    {
+      "condition": "error",
+      "round": 1,
+      "disposition": "without_qualified_peak",
+      "observed_peak": false,
+      "phase": "actor_observations",
+      "error": "GET /v1/sessions/ba6aba9c-cc1d-4119-83f5-adda28db908c: 503 (manual.deadline)",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/early-error-one.json",
+        "sha256": "b7a0d861e0452048334ba48dc8ee9ad5b0c47ee5ea3aba1ca94b214f64755ac0"
+      }
+    },
+    {
+      "condition": "error",
+      "round": 1,
+      "disposition": "pass",
+      "observed_peak": true,
+      "phase": "recorded",
+      "error": null,
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/peak-error-one.json",
+        "sha256": "15c8e97d5f006c90a21a51d2d49d8cba1b0cdc413653926d3ccfe4022e80bbc3"
+      }
+    },
+    {
+      "condition": "error",
+      "round": 1,
+      "disposition": "pass",
+      "observed_peak": true,
+      "phase": "recorded",
+      "error": null,
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/peak-error-two.json",
+        "sha256": "f10c16a59b913e216d19e3f85a6a077e39ea1c606109a25978ca5c46f827a82d"
+      }
+    }
+  ],
+  "accepted_sample_timing_ms": {
+    "warm": {
+      "runtime": {
+        "expected": 4,
+        "observed": 4,
+        "missing": 0,
+        "samples_ms": [
+          29616.741,
+          29233.179,
+          29403.63,
+          29154.564
+        ],
+        "p50_ms": 29233.179,
+        "p95_ms": 29616.741,
+        "max_ms": 29616.741
+      },
+      "bridge": {
+        "expected": 4,
+        "observed": 4,
+        "missing": 0,
+        "samples_ms": [
+          24173.286,
+          24090.906,
+          24467.684,
+          24501.301
+        ],
+        "p50_ms": 24173.286,
+        "p95_ms": 24501.301,
+        "max_ms": 24501.301
+      },
+      "reads": {
+        "expected": 20,
+        "observed": 20,
+        "missing": 0,
+        "samples_ms": [
+          685.083,
+          843.334,
+          673.321,
+          631.78,
+          490.238,
+          516.978,
+          563.715,
+          532.986,
+          427.829,
+          424.537,
+          492.737,
+          444.481,
+          512.636,
+          550.029,
+          702.544,
+          676.635,
+          489.234,
+          473.593,
+          429.262,
+          461.459
+        ],
+        "p50_ms": 512.636,
+        "p95_ms": 702.544,
+        "max_ms": 843.334
+      },
+      "manual": {
+        "expected": 2,
+        "observed": 2,
+        "missing": 0,
+        "samples_ms": [
+          1776.51,
+          1739.303
+        ],
+        "p50_ms": 1739.303,
+        "p95_ms": 1776.51,
+        "max_ms": 1776.51
+      }
+    },
+    "error": {
+      "runtime": {
+        "expected": 4,
+        "observed": 4,
+        "missing": 0,
+        "samples_ms": [
+          4501.515,
+          4496.601,
+          4586.4,
+          4604.078
+        ],
+        "p50_ms": 4501.515,
+        "p95_ms": 4604.078,
+        "max_ms": 4604.078
+      },
+      "bridge": {
+        "expected": 4,
+        "observed": 4,
+        "missing": 0,
+        "samples_ms": [
+          1568.599,
+          1781.006,
+          1391.728,
+          1239.741
+        ],
+        "p50_ms": 1391.728,
+        "p95_ms": 1781.006,
+        "max_ms": 1781.006
+      },
+      "reads": {
+        "expected": 20,
+        "observed": 20,
+        "missing": 0,
+        "samples_ms": [
+          665.584,
+          573.217,
+          475.243,
+          476.91,
+          474.55,
+          506.576,
+          472.163,
+          490.104,
+          479.092,
+          549.266,
+          568.21,
+          620.5,
+          660.131,
+          661.559,
+          598.896,
+          590.719,
+          517.251,
+          614.373,
+          505.906,
+          494.274
+        ],
+        "p50_ms": 517.251,
+        "p95_ms": 661.559,
+        "max_ms": 665.584
+      },
+      "manual": {
+        "expected": 2,
+        "observed": 2,
+        "missing": 0,
+        "samples_ms": [
+          1883.957,
+          1826.317
+        ],
+        "p50_ms": 1826.317,
+        "p95_ms": 1883.957,
+        "max_ms": 1883.957
+      }
+    }
+  },
+  "timing_method": "Monotonic milliseconds; nearest-rank sample percentiles. Failed and incomplete attempts remain in the attempt list and counts.",
+  "protected_evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/image-binding.json",
+      "sha256": "c2229b7b9b90d5e1537c36b2468c727852cb6b920b5af433602763440618613d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/deployed-lock-source-sha.json",
+      "sha256": "eaf05ad4aa711dbaf7cdbb27fb8e27bd59d76d9b2618ff1cf494ebe7993e8062"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/runtime-boot-recovery.json",
+      "sha256": "937b23ba618b35899840e06a6405c783da70cf728bcca5572d2b05bbe64a455c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/first-full-load-native-deadline.json",
+      "sha256": "4539abf5e0cc32030733f36256a434e6997b32b73ca29eefc9120cec10d78b27"
+    }
+  ],
+  "timing_envelope": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/timing-envelope.json",
+    "sha256": "93eb567ff4b52b01ed6ba44a1e70085ccef6961d857b086a93fb5bad36616e37"
+  },
+  "qualification_outcome": "passed_with_contextual_cold_start_exception",
+  "known_failed_attempts": "A full-load warm attempt reached the native provider deadline while prompt processing continued. One full-load controlled fault preserved both uncertain reservations and manual delivery after Runtime had returned a generic HTTP error. Neither attempt counts toward the qualifying repetitions."
+}

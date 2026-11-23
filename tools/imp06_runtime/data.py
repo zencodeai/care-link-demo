@@ -14,14 +14,14 @@ from care_link_data import (
 from care_link_data.app import GatewaySecurity, create_app
 from care_link_data.assistance.runtime_app import attach_assistance_runtime_gateway
 from care_link_data.assistance_jobs import PostgresJobLedger
-from care_link_domain import ManualError, WorkloadPeer
+from care_link_domain import Actor, InferenceActorRequest, ManualError, WorkloadPeer
 from care_link_knowledge import KnowledgeCatalog
 from care_link_policy_input import DelegationVerifier
 from fastapi import FastAPI, Request
 from starlette.concurrency import run_in_threadpool
 
 from .provider_stop import ProviderStopAuthority
-from .releases import ReleaseBindings
+from .releases import Record, ReleaseBindings
 
 
 async def _reconcile(ledger: PostgresJobLedger, stop: asyncio.Event) -> None:
@@ -49,6 +49,7 @@ def data_application(
     knowledge: KnowledgeCatalog | None = None,
     knowledge_regions: Mapping[str, str] | None = None,
     provider_stop: ProviderStopAuthority | None = None,
+    inference_actor: Callable[[InferenceActorRequest], Actor] | None = None,
 ) -> FastAPI:
     if provider_stop is not None and provider_stop.current_generation != bridge_generation:
         raise ValueError("provider stop authority must bind the current Data generation")
@@ -65,6 +66,14 @@ def data_application(
     attach_assistance_runtime_gateway(
         app, coordinator, RuntimeAuthenticator(delegations, verify, runtime_current)
     )
+
+    minted: Callable[[Record, str], Actor] | None = None
+    if inference_actor is not None:
+
+        def fresh_actor(request: Record, operation: str) -> Actor:
+            return coordinator.inference_actor(request, operation, inference_actor)
+
+        minted = fresh_actor
     authority = StoredInferenceAuthority(
         coordinator,
         coordinator.actor_for_task,
@@ -72,10 +81,16 @@ def data_application(
         if releases.knowledge_matches(knowledge.digest if knowledge else None)
         else {},
         bridge_generation,
+        fresh_actor=minted,
     )
     ledger = PostgresJobLedger(
         service.store,
-        current=lambda tx, job: coordinator.inference_current(tx, job, coordinator.actor_for_task),
+        current=lambda tx, job: coordinator.inference_current(
+            tx, job, coordinator.actor_for_task, fresh_actor=minted, operation="reserve"
+        ),
+        completion_current=lambda tx, job: coordinator.inference_current(
+            tx, job, coordinator.actor_for_task, fresh_actor=minted, operation="complete"
+        ),
         verified_stop_time=provider_stop.verified_stop_time
         if provider_stop is not None
         else lambda _generation: None,

@@ -1,0 +1,226 @@
+{
+  "state": "protected_worker_verified_deployed_workload_distributions_partial",
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/candidate-manifest.json",
+    "sha256": "b721ef733925fc73e54f76ac4b03e2fb84f1fd11fc55b6fd9f88cccc2508c8e3"
+  },
+  "image_id": "sha256:11e0648ee7457ae2a6d216b757cb64bd6811d3ca524c85fe2a72eea12ef4a12e",
+  "worker_turn_elapsed_ms": 21395.793,
+  "warm_full_load_rounds_successful": 1,
+  "warm_full_load_completed_jobs": 2,
+  "warm_full_load_dispatch_to_durable_completion_ms": 27426.511,
+  "warm_full_load_bridge_ms": [
+    23683.983,
+    23718.825
+  ],
+  "warm_full_load_reads_p95_ms": 857.257,
+  "full_load_error_rounds_observed": 1,
+  "full_load_unknown_jobs": 2,
+  "full_load_503_bridge_ms": [
+    28601.138,
+    28516.651
+  ],
+  "explicit_connector_fault_on_final_round": false,
+  "full_load_failed_round_retained_slots": true,
+  "full_load_failed_round_drafts": 0,
+  "manual_exact_retry_under_unavailable_inference_ms": 1678.544,
+  "observed_cold_cycles": 0,
+  "cold_preflight": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/cold-isolation-preflight.json",
+    "sha256": "09e041a3c3520fbf7d8ad65a65e0c2d28f16c29339e3aff4f2f3a1364a4db925"
+  },
+  "qualification_cleanup": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/qualification-cleanup.json",
+    "sha256": "3a3abed1235913e38410905e6100d8b0316f44f76571cb2d3dc19aa0251e9f61"
+  },
+  "remaining": [
+    "Repeat true cold starts with the exact Qwen model at declared ten-session load. The current model must stay loaded, the workstation guardrails reject a second exact instance, and the user confirmed that no separate test machine is available.",
+    "Complete repeated deployed warm and error distributions for the final post-lock source at the exact ten-session load. The earlier deployed authority image completed both jobs in one declared-load warm round and preserved two uncertain slots after two HTTP 503 responses in another."
+  ],
+  "evidence_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/activation.json",
+      "sha256": "a2646a678bea0453971b662cab5f339cfd91600527955c6fb8bb5c3dd2ac9522"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/admitted-worker-task.json",
+      "sha256": "faa1873e8e7ff5bd65eba4ae9e0468199e5f94b7803ac767bb4fc5af83e15599"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/app-fixture.json",
+      "sha256": "fc00086d30386ce4f7f63fa27376dd12a02372f593e18e684bdf5985ca6673d5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/artifact-copy.json",
+      "sha256": "fd20a9ff1ef562673b51214e3a9d3f59d33eed6e00a1fbad8597fb88445fcd33"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/bridge-cleanup.json",
+      "sha256": "9dc3533bb84552bf6562713991916c2cd2a91540c06b2f5304b6bc915c9b5e3d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/bridge-final-observations.json",
+      "sha256": "1af0a8c06d6971635527ffb2da3e6f896124bfbd32d9b1135c3ba67b58fcb253"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/bridge-preflight.json",
+      "sha256": "60e88875a64674a6e3d9f7590e9a6bad420281841e1cb71c62fd08e8faf239be"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/bridge-route-control.json",
+      "sha256": "2f183d92265b19b0f02dc40b496ff7e55af6aba429e1c18070011e578405621a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/bridge-started.json",
+      "sha256": "8adc4e9616b7ca2100ebd74a306ba026d91c4f8bb18b7a69aac36a45d3eb0092"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/candidate-manifest.json",
+      "sha256": "b721ef733925fc73e54f76ac4b03e2fb84f1fd11fc55b6fd9f88cccc2508c8e3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/cohort-final-bridge-prewithdrawal.json",
+      "sha256": "2d1977e395d0a1720d13c5fa6c05d7eef07f59e35f5299ce22177bff0be84474"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/cohort-release-sync.json",
+      "sha256": "727c6911ac110b1bd4bfd588fb0865aadc29447cda7f5460e87e3788dfe4fbaa"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/declared-warm-driver.py.txt",
+      "sha256": "2dead7388d10577a2198d474446033f57de90289bc83a2c63a16cc38f0c99f4c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/declared-warm-round-1-bridge.json",
+      "sha256": "c1046a1cf9e839ed8bde0f14ab066b6edd58ac4f5d9bf034dd24ea148b7007a9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/first-cohort-capacity-boundary.json",
+      "sha256": "aac30bb336773a2621730321c65bc71e4d0f14702593f61f3a4478fa2eaae153"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/first-ten-session-warm-failure.json",
+      "sha256": "12fb190d526214e211f354db9398e14e8530977613089311511c4866c4737796"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/first-ten-session-warm.json",
+      "sha256": "d80be951241bd7dec2c85e48fb247a673fc34f01156cf5e3039942d9ce07f6d9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/first-warm-bridge.json",
+      "sha256": "92df838e098fcbe8889941dc7fd1611458be31330e17f53b8c6c3e7641d08707"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/fixture-provisioning.json",
+      "sha256": "bbf7688822db9420e5190c7ab9a681bfce6ba416ec95719d21671a9238de30c6"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/focused-tests.log",
+      "sha256": "555fa8d4a4aadb3b299922e836ea863302d86d44f0d9a7659181e5bf1170f720"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/image-binding.json",
+      "sha256": "02b3b4dc2aca1a0ec33217df44e5e900d448cf6842829ebefd51e579727913c7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/image-receipt.json",
+      "sha256": "de6998314218334cea808262dac53a5241a646c81d57f3bc3fb02ce2cd6fe022"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/image.log",
+      "sha256": "4a7cba716c3a08c05858cba3ec4edcdc74481ba3e1238dd794c9dcba6013a538"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/locked-source-results.json",
+      "sha256": "2e1e90da56cd3aeb524e3ed2f411bda460581587dfcbc9819224bd9071ea1a06"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/manual-with-unavailable-inference.json",
+      "sha256": "bf930b213cb42d2d4dad093991288969c50895efee9df6b4a036f0f5b0186f81"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/native-post-refill-readiness.json",
+      "sha256": "27b0a90c3cff4badc33c9b9e548517c8181302f5028d0da5e2fcddecb92db579"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/platform-bootstrap.json",
+      "sha256": "78cd18a97c37fdbd490d57d24c6f108abb842bd7b2fdaf1c6768624af28d6e45"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/platform-cleanup.json",
+      "sha256": "b7debf91fbd725f487e0d4b6b64bc79c471c4e2e90730b59d579bbf0946d709d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/prequeued-browser-cohort.json",
+      "sha256": "683375567edba50ebfc3bd1e064b98790320a4147a367995eb3cae664429104f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/prequeued-ten-session-rounds.json",
+      "sha256": "c7692401a865233269f4768af05f8a14aa7ab43471923a6be81648a5b39be0df"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/qualification-cleanup.json",
+      "sha256": "3a3abed1235913e38410905e6100d8b0316f44f76571cb2d3dc19aa0251e9f61"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/qualification-disable.json",
+      "sha256": "8de434a445c1184ef67b09492a3d36c749540c3352c96acb7e2b6c10ddc61ed1"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/refill-before-compute-driver.py.txt",
+      "sha256": "baa7050bd435ad2ed4c6bc370d3b9fa2a8c96f3cdb12cd45c9ad69a828f0c7b2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/refill-before-compute-rounds.json",
+      "sha256": "4c73a58015c9900f20b1d56f21e559e57b2bb1c4d4c851c9833160323669fd6c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/refill-browser-cohort.json",
+      "sha256": "cc4d4a3647900e10eeb25d1f18259ce30494e9c6141f14771ce1ef8775a5969d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/role-boots.json",
+      "sha256": "7c1ba00119d02dc2b74921ce9685e3af04d179308ed063c7323916e318dc0933"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/second-warm-observed-failure.json",
+      "sha256": "1d1ebe1381dc5c8f4c4eed8025059ef56cb77ce64bcd7618472ab5ced1caf792"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/signer-cleanup.json",
+      "sha256": "22508c76bcd571ebb289ac38646f272e8d93f64b24c05fbfad162639b82a0c81"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/single-deployed-turn.json",
+      "sha256": "492373fddb64aa61ce9122ed0bca39bfbafdc1bc9e3b7cab5dcedafe22349213"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/source-verification.json",
+      "sha256": "f80596a44b473930035ce455b453a551b11c6e212865a514c11fc031c1c00a4d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/synchronized-cohort-failure.json",
+      "sha256": "e71146a701ce69a90cdbeb76eef326376a99e55ec84bf33b1cc0565a30d2e08a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/synchronized-ten-session-rounds.json",
+      "sha256": "d80be951241bd7dec2c85e48fb247a673fc34f01156cf5e3039942d9ce07f6d9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/ten-browser-cohort-synchronized.json",
+      "sha256": "123ad006254b4371619fb072d4c3593296569be84635809b6f6c2be52f294947"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/ten-browser-cohort.json",
+      "sha256": "2111c01e9a9067cbabbd830215e94e1e01778a716988fdbb8f78e48f3879861d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/warm-pair-bridge.json",
+      "sha256": "02675f9df077226e7061a118a5642b05bfb784311b27b95718bfae76164b5910"
+    }
+  ],
+  "post_lock_source_verification": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/source-verification.json",
+    "sha256": "64b20cd0c8e84ec75deac6fa4ba3632b0e18586459446a0611df1bf7febf8f41"
+  }
+}

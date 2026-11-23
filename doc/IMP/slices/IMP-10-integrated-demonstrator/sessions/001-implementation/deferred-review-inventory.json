@@ -1,0 +1,13 @@
+{
+  "state": "deferred_until_after_IMP10",
+  "review_trigger": "G-10 automated_qualified followed by actual bug or improvement reports",
+  "follow_up": "Bind each actual issue and scoped candidate to an owning-slice session, reproduce with synthetic evidence and add regression checks.",
+  "areas": [
+    "EN/FR terminology, cognitive workload and usefulness across participant, worker, receiver, trainer and governance roles",
+    "Keyboard, screen-reader and native visual behavior across deployed role origins",
+    "How trainers understand stop, uncertainty, capture expiry and failed replay",
+    "How actors understand receipt, partial acceptance, human connection, deletion and remaining obligations"
+  ],
+  "human_decisions": [],
+  "issues_opened": []
+}

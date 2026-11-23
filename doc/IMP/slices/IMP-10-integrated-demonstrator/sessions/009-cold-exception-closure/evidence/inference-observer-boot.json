@@ -1,0 +1,11 @@
+{
+  "boot": {
+    "role": "inference",
+    "boot_id": "b2b3b08a-dd07-43a2-9728-4c6fb70d73e1",
+    "uid": 23120,
+    "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+  },
+  "pod_uid": "c0daedf3-1264-4c38-80a9-71c1c1549727",
+  "candidate_cri": "docker.io/library/import-2026-11-23@sha256:e90c69a2735b77ccd6b10f1d6230efe9861f2d84ce8e6239806c8fa8bb466b8b",
+  "observer_sha256": "c1b297b87e694d8ec26c926ef000b0f005671d7b892a6bd936e26c92db6b8961"
+}

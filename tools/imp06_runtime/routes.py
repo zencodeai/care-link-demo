@@ -1,9 +1,11 @@
 """Fixed workload graph for separately provisioned IMP-06 role processes."""
 
+from care_link_domain import INFERENCE_ACTOR_PATH
 from care_link_workload_trust import PeerRule
 
 from tools.imp03_runtime.config import DATA_ACTIONS
 from tools.imp03_runtime.config import routes as manual_routes
+from tools.imp10_runtime.routes import EVALUATION_ROUTES, TRAINING_ROUTES
 
 RUNTIME_ROUTES = frozenset(
     {
@@ -62,15 +64,21 @@ DATA_CORE_ROUTES = (
 )
 
 
-def inbound(role: str) -> tuple[PeerRule, ...]:
+def inbound(role: str, *, training_enabled: bool = False) -> tuple[PeerRule, ...]:
     if role == "core":
         return (
             PeerRule("spiffe://care-link.demo/demo/runtime", RUNTIME_ROUTES),
-            PeerRule("spiffe://care-link.demo/demo/data", manual_routes("core")["data"]),
+            PeerRule(
+                "spiffe://care-link.demo/demo/data",
+                manual_routes("core")["data"] | {("POST", INFERENCE_ACTOR_PATH)},
+            ),
         )
     if role == "data":
         return (
-            PeerRule("spiffe://care-link.demo/demo/core", DATA_CORE_ROUTES),
+            PeerRule(
+                "spiffe://care-link.demo/demo/core",
+                DATA_CORE_ROUTES | EVALUATION_ROUTES if training_enabled else DATA_CORE_ROUTES,
+            ),
             PeerRule("spiffe://care-link.demo/demo/inference", LEDGER_ROUTES),
         )
     if role == "inference":
@@ -80,11 +88,17 @@ def inbound(role: str) -> tuple[PeerRule, ...]:
     raise ValueError("No IMP-06 inbound listener for this role")
 
 
-def outbound(role: str) -> dict[str, frozenset[tuple[str, str]]]:
+def outbound(role: str, *, training_enabled: bool = False) -> dict[str, frozenset[tuple[str, str]]]:
     if role == "runtime":
         return {"core": RUNTIME_ROUTES}
     if role == "inference":
         return {"data": LEDGER_ROUTES, "host-inference-bridge": BRIDGE_ROUTES}
     if role == "core":
-        return {"data": DATA_CORE_ROUTES, "inference": INFERENCE_ROUTES}
+        result = {
+            "data": DATA_CORE_ROUTES | EVALUATION_ROUTES if training_enabled else DATA_CORE_ROUTES,
+            "inference": INFERENCE_ROUTES,
+        }
+        if training_enabled:
+            result["training"] = TRAINING_ROUTES
+        return result
     raise ValueError("Use existing manual ports or fixed host loopback adapter for this role")

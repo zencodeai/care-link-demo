@@ -1,0 +1,11 @@
+{
+  "backend_passed": 1801,
+  "skipped": 4,
+  "frontend_passed": 234,
+  "commands_passed": 38,
+  "commands_total": 39,
+  "sole_failure": "test_governance_authorization_latency_sample",
+  "threshold_ms": 50,
+  "full_run_p95_ms": 53.173,
+  "isolated_rerun_p95_ms": 43.567
+}

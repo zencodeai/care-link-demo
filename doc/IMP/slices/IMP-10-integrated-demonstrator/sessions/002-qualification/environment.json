@@ -1,0 +1,26 @@
+{
+  "recorded_at": "2026-11-23T14:50:41.051861+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "node": "v22.14.0",
+  "pnpm": "10.20.0",
+  "postgres": "Owned disposable PostgreSQL on loopback TLS1.3 verify-full",
+  "reference_predecessor_environment": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/environment.json",
+    "sha256": "93af1ae83baa1beed28618bec04083f2be0143a260e00931a320a38c8fc63c2e"
+  },
+  "model": "qwen/qwen3.8-27b",
+  "model_pins": {
+    "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+    "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c",
+    "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836"
+  },
+  "model_lifecycle": "Already loaded at the beginning of all provider checks. True cold measurement requires separate authorization.",
+  "qualification_image": "sha256:dd93ef8772404749d1c015264c5a2a2a8205aad0ce2ced0b88a917c22f917d41",
+  "mesh_pins": {
+    "envoy": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+    "spire_agent": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+    "spire_server": "ghcr.io/spiffe/spire-server@sha256:ff546f4c62dafc479a0cd79eae9a7b6df2975754d75efd31706098e0d7548837"
+  },
+  "credentials_recorded": false
+}

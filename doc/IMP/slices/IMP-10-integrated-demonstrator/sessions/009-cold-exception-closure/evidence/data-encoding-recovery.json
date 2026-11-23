@@ -1,0 +1,24 @@
+{
+  "at_utc": "2026-11-23T19:33:59.690735+00:00",
+  "scope": "Data configuration recovery with the same verified public key in PEM encoding.",
+  "fresh_slots": [
+    {
+      "id": "local-1",
+      "state": "free",
+      "job": null
+    },
+    {
+      "id": "local-2",
+      "state": "free",
+      "job": null
+    }
+  ],
+  "data_boot": {
+    "role": "data",
+    "boot_id": "cdc6ea71-a1db-4d0b-be82-1bd3c78e0b05",
+    "uid": 23112,
+    "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+  },
+  "data_pod_uid": "0438192b-6990-4db2-a4be-9cd2cc2592ae",
+  "candidate_cri_reference": "docker.io/library/import-2026-11-23@sha256:e90c69a2735b77ccd6b10f1d6230efe9861f2d84ce8e6239806c8fa8bb466b8b"
+}

@@ -1,0 +1,43 @@
+{
+  "recorded_at_utc": "2026-11-23T18:16:47.880874+00:00",
+  "scope": "Owned synthetic G-10 deployment, host model bridge and associated workfiles",
+  "all_temporary_resources_removed": true,
+  "restrictive_epoch_observed_in_cluster_and_bridge": 2,
+  "preserved_review_inventory": {
+    "historical_running": 7,
+    "review_counts": {
+      "care-link-imp03-003-cont1": 28,
+      "care-link-imp03-003": 25,
+      "care-link-imp04-002": 29
+    },
+    "container_count": 89,
+    "volume_count": 150,
+    "network_count": 10,
+    "containers_sha256": "8447c6a8b1cd03aa05b6f7c3e47d1ede5847c11ad16ed1fde8615d890a5a13e6",
+    "volumes_sha256": "e9c1467cc9b2deb03e2be1036b1ae10a5014d45500881b33ab73a7d3cdf813e1",
+    "networks_sha256": "3000f162506120168405eeff6838dacc97ea2577fe192a39dc8ccb4e51c58b3a"
+  },
+  "retained_candidate_image": {
+    "tag": "care-link-imp10:protected-008-replay-final",
+    "id": "sha256:1e8e97dad6af5ef86997a8431f36729afce41f5134ea6f4f2a621b7ba56e310a"
+  },
+  "native_model_instance_preserved": "e5f09dca532fc70ef85a5e06da668d3c6ff7863fa23f87da7ffbb24f6f9b0a2f",
+  "evidence_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-cleanup.json",
+      "sha256": "862d75b4bc56218738bd426be69b3422e35554328176eeb172cd1fba20a50a36"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "sha256": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-workfiles-cleanup.json",
+      "sha256": "2ba830b7062320865a12bcea0aba61d05d254389979484f9d0306c2e3bab77ba"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-disable.json",
+      "sha256": "0638270d234aa11e85663f9c8673cf7c1211c4619cbe8403598856830170d638"
+    }
+  ]
+}

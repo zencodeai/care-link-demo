@@ -1,0 +1,837 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________________________ test_combined_role_outages __________________________
+services/data/tests/test_imp10_combined_outage.py:408: in test_combined_role_outages
+    warm = [call.result(timeout=45) for call in running]
+            ^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py:454: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py:396: in __get_result
+    raise self._exception
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py:86: in run
+    result = ctx.run(self.task)
+             ^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py:73: in run
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+services/data/tests/imp10_outage_model.py:261: in measured_turn
+    outcome = assistance.worker.run_once()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/runtime/src/care_link_runtime/worker.py:32: in run_once
+    return self.client.run_one_turn(
+services/runtime/src/care_link_runtime/client.py:155: in run_one_turn
+    return run_workflow(
+services/runtime/src/care_link_runtime/workflow.py:171: in run_workflow
+    graph.compile().invoke(
+.venv/lib/python3.14/site-packages/langgraph/pregel/main.py:4025: in invoke
+    for chunk in self.stream(
+.venv/lib/python3.14/site-packages/langgraph/pregel/main.py:3084: in stream
+    for _ in runner.tick(
+.venv/lib/python3.14/site-packages/langgraph/pregel/_runner.py:210: in tick
+    run_with_retry(
+.venv/lib/python3.14/site-packages/langgraph/pregel/_retry.py:637: in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/langgraph/_internal/_runnable.py:794: in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/langgraph/_internal/_runnable.py:479: in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/runtime/src/care_link_runtime/workflow.py:116: in infer
+    raise TimeoutError("runtime inference result deadline expired") from None
+E   TimeoutError: runtime inference result deadline expired
+E   During task with name 'infer' and id 'a7a776a0-eb9b-9641-54c5-874c3010b1c5'
+------------------------------ Captured log call -------------------------------
+ERROR    uvicorn.error:h11_impl.py:408 Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/http.py", line 42, in complete
+    with self.client.stream(
+         ~~~~~~~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<2 lines>...
+        timeout=remaining,
+        ^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 868, in stream
+    response = self.send(
+        request=request,
+    ...<2 lines>...
+        stream=True,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/data/tests/imp10_outage_model.py", line 87, in handle_request
+    return self.client.send(forwarded, stream=True)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/gateway.py", line 141, in execute
+    raw = self.bridge.complete(payload, request.deadline)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/data/tests/imp10_outage_model.py", line 110, in complete
+    raw = self.bridge.complete(payload, deadline)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/http.py", line 58, in complete
+    raise OSError("bridge completion unverified") from error
+OSError: bridge completion unverified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/http.py", line 103, in execute
+    result = await run_in_threadpool(gateway.execute, "broker", scoped)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2779, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1124, in run
+    result = context.run(func, *args)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/gateway.py", line 143, in execute
+    self.ledger.mark_unknown(job_id)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/composition.py", line 76, in mark_unknown
+    if self.data.call("unknown", {"job_id": job_id}) != {"state": "recorded"}:
+       ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/composition.py", line 28, in call
+    with self.client.stream(
+         ~~~~~~~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<3 lines>...
+        follow_redirects=False,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 868, in stream
+    response = self.send(
+        request=request,
+    ...<2 lines>...
+        stream=True,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 901, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR    uvicorn.error:h11_impl.py:408 Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/http.py", line 155, in infer
+    with self.client.stream(
+         ~~~~~~~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<2 lines>...
+        timeout=remaining,
+        ^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 868, in stream
+    response = self.send(
+        request=request,
+    ...<2 lines>...
+        stream=True,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/data/tests/imp10_outage_model.py", line 87, in handle_request
+    return self.client.send(forwarded, stream=True)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/core/src/care_link_core/assistance_broker/routes.py", line 71, in handle
+    result = await run_in_threadpool(method, data, peer)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2779, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1124, in run
+    result = context.run(func, *args)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/core/src/care_link_core/assistance_broker/broker.py", line 165, in infer
+    result = self.inference.infer(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/http.py", line 173, in infer
+    raise InferenceDenied("inference_unavailable") from error
+care_link_inference.admission.InferenceDenied: inference_unavailable
+ERROR    uvicorn.error:h11_impl.py:408 Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/http.py", line 42, in complete
+    with self.client.stream(
+         ~~~~~~~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<2 lines>...
+        timeout=remaining,
+        ^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 868, in stream
+    response = self.send(
+        request=request,
+    ...<2 lines>...
+        stream=True,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/data/tests/imp10_outage_model.py", line 87, in handle_request
+    return self.client.send(forwarded, stream=True)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/gateway.py", line 141, in execute
+    raw = self.bridge.complete(payload, request.deadline)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/data/tests/imp10_outage_model.py", line 110, in complete
+    raw = self.bridge.complete(payload, deadline)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/http.py", line 58, in complete
+    raise OSError("bridge completion unverified") from error
+OSError: bridge completion unverified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/http.py", line 103, in execute
+    result = await run_in_threadpool(gateway.execute, "broker", scoped)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2779, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1124, in run
+    result = context.run(func, *args)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/gateway.py", line 143, in execute
+    self.ledger.mark_unknown(job_id)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/composition.py", line 76, in mark_unknown
+    if self.data.call("unknown", {"job_id": job_id}) != {"state": "recorded"}:
+       ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/composition.py", line 28, in call
+    with self.client.stream(
+         ~~~~~~~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<3 lines>...
+        follow_redirects=False,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 868, in stream
+    response = self.send(
+        request=request,
+    ...<2 lines>...
+        stream=True,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 901, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR    uvicorn.error:h11_impl.py:408 Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/http.py", line 155, in infer
+    with self.client.stream(
+         ~~~~~~~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<2 lines>...
+        timeout=remaining,
+        ^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 868, in stream
+    response = self.send(
+        request=request,
+    ...<2 lines>...
+        stream=True,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/data/tests/imp10_outage_model.py", line 87, in handle_request
+    return self.client.send(forwarded, stream=True)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/core/src/care_link_core/assistance_broker/routes.py", line 71, in handle
+    result = await run_in_threadpool(method, data, peer)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2779, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1124, in run
+    result = context.run(func, *args)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/core/src/care_link_core/assistance_broker/broker.py", line 165, in infer
+    result = self.inference.infer(request)
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/services/inference/src/care_link_inference/http.py", line 173, in infer
+    raise InferenceDenied("inference_unavailable") from error
+care_link_inference.admission.InferenceDenied: inference_unavailable
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/data/tests/test_imp10_combined_outage.py::test_combined_role_outages
+1 failed, 17 warnings in 49.33s

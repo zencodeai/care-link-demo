@@ -108,6 +108,7 @@ def main() -> None:
             proxy_uid=args.proxy_uid,
             fence_socket=args.fence_socket,
             fence_uid=args.fence_uid,
+            training_enabled=cfg is not None and cfg.get("training_enabled") is True,
         )
         if cfg is not None:
             fences = UnixFenceClient(args.fence_socket, args.fence_uid)

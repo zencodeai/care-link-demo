@@ -1,0 +1,247 @@
+"""Qualification-only protected entrypoints for running the released Qwen function."""
+
+from __future__ import annotations
+
+import json
+import os
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+from time import sleep
+from traceback import extract_tb
+from typing import cast
+
+from care_link_workload_trust import UnixFenceClient
+from starlette.types import ASGIApp, Message, Receive, Scope, Send
+
+from tools.imp02_application.config import public_key
+from tools.imp03_runtime.compose import Composition
+from tools.imp03_runtime.config import integer, load, text
+from tools.imp06_runtime.manual_roles import ManualRoleAssistance
+from tools.imp06_runtime.provider_stop import ProviderStopAuthority
+from tools.imp06_runtime.release_custody_records import ReleaseObservation
+from tools.imp06_runtime.resources import load_knowledge_resources
+from tools.imp06_runtime.role_process import (
+    BackendRole,
+    backend_verifier,
+    serve_backend,
+    start_host_bridge,
+    start_inference,
+    start_runtime,
+)
+
+from deployed_release import TARGET, load_qualification_bindings
+
+ROLES = {"core", "data", "inference", "runtime", "host-inference-bridge"}
+TASK_DENIALS = {
+    "assistance.actor_resumption_required",
+    "assistance.channel_changed",
+    "assistance.function_disabled",
+    "assistance.inference_actor_changed",
+    "assistance.inference_actor_denied",
+    "assistance.inference_actor_expired",
+    "assistance.inference_actor_unavailable",
+    "assistance.inference_required",
+    "assistance.invalid_inference_command",
+    "assistance.knowledge_scope_unavailable",
+    "assistance.knowledge_unavailable",
+    "assistance.not_found",
+    "assistance.runtime_fenced",
+    "assistance.runtime_required",
+    "assistance.scope_unavailable",
+    "assistance.server_context_mismatch",
+    "assistance.stale_authority",
+    "assistance.stale_lease",
+    "assistance.stale_scope",
+    "manual.authority_unavailable",
+    "manual.deadline_exceeded",
+    "manual.identity_changed",
+    "manual.identity_denied",
+    "manual.identity_evidence_denied",
+    "manual.identity_unavailable",
+    "manual.journal_unavailable",
+    "manual.policy_denied",
+    "manual.policy_unavailable",
+    "manual.workload_denied",
+}
+DATA_DIAGNOSTIC_OPERATIONS = {
+    "/internal/v1/data/task_create": "task_create",
+    "/internal/v1/data/assistance/inference/context": "inference_context",
+    "/internal/v1/data/assistance/inference/current": "inference_current",
+    "/internal/v1/data/assistance/inference/reserve": "inference_reserve",
+}
+
+
+def observe_task_denials(app: ASGIApp) -> ASGIApp:
+    """Keep only fixed task and inference error categories from this synthetic role."""
+
+    async def observed(scope: Scope, receive: Receive, send: Send) -> None:
+        if scope["type"] != "http":
+            await app(scope, receive, send)
+            return
+        operation = DATA_DIAGNOSTIC_OPERATIONS.get(scope["path"])
+        if operation is None:
+            await app(scope, receive, send)
+            return
+        failed = False
+
+        async def report(message: Message) -> None:
+            nonlocal failed
+            if message["type"] == "http.response.start":
+                failed = message["status"] >= 400
+            if failed and message["type"] == "http.response.body":
+                body = message.get("body", b"")
+                if 0 < len(body) <= 4096 and not message.get("more_body"):
+                    try:
+                        key = json.loads(body).get("message_key")
+                    except (UnicodeDecodeError, ValueError, AttributeError):
+                        key = None
+                    print(
+                        f"IMP10 Data denial operation={operation}: "
+                        + (key if isinstance(key, str) and key in TASK_DENIALS else "other"),
+                        flush=True,
+                    )
+            await send(message)
+
+        await app(scope, receive, report)
+
+    return observed
+
+
+def observe_broker_failure(app: ASGIApp) -> ASGIApp:
+    """Observe exception class and product frame for one isolated broker operation."""
+
+    async def observed(scope: Scope, receive: Receive, send: Send) -> None:
+        try:
+            await app(scope, receive, send)
+        except Exception as error:
+            if scope["type"] == "http" and scope["path"] == "/internal/v1/broker/inference":
+                frames = [
+                    {
+                        "module": Path(frame.filename).name,
+                        "line": frame.lineno,
+                        "function": frame.name,
+                    }
+                    for frame in extract_tb(error.__traceback__)
+                    if "/care_link_" in frame.filename
+                ]
+                print(
+                    "IMP10 broker failure: "
+                    + json.dumps({"type": type(error).__name__, "frames": frames[-5:]}),
+                    flush=True,
+                )
+            raise
+
+    return observed
+
+
+def run(configuration: Path) -> None:
+    """Bind a role only to the disposable qualification ledger, never serving trust."""
+    cfg = load(configuration)
+    role = text(cfg, "role")
+    uid = integer(cfg, "uid")
+    owner = integer(cfg, "release_owner")
+    if role not in ROLES or cfg.get("session") != "imp10-protected" or uid != os.geteuid():
+        raise ValueError("Exact isolated qualification role required")
+    if uid == 0 or owner in {uid, 0}:
+        raise ValueError("Distinct release and application custody required")
+    shared = Path(text(cfg, "shared_release"))
+    observed = ReleaseObservation.model_validate_json(
+        Path(text(cfg, "role_observation")).read_bytes()
+    )
+    release = load_qualification_bindings(
+        shared,
+        owner_uid=owner,
+        role=role,
+        boot_id=text(cfg, "boot_id"),
+        expected_observation=observed,
+    )
+    release.release("worker_summary")
+    if role == "runtime":
+        socket = Path(text(cfg, "core_socket"))
+        marker = Path("/state/dispatch-pair")
+        while True:
+            if not release.current() or not marker.exists():
+                sleep(0.1)
+                continue
+            round_key = marker.read_text()
+            marker.unlink()
+            def observe_worker():
+                import ssl
+                from time import monotonic_ns
+                from tools.imp06_runtime.runtime import runtime_worker
+                release.release("worker_summary")
+                worker, transport = runtime_worker(ssl.create_default_context(), core_socket=socket)
+                started = monotonic_ns()
+                try:
+                    result = worker.run_once() if release.current() else None
+                    safe = {"state": result.get("state") if result else None,
+                            "safe_reason": result.get("safe_reason") if result else None}
+                except Exception as error:
+                    safe = {"error_type": type(error).__name__}
+                finally:
+                    transport.close()
+                safe["elapsed_ms"] = round((monotonic_ns() - started) / 1e6, 3)
+                return safe
+            with ThreadPoolExecutor(max_workers=2) as workers:
+                running = [
+                    workers.submit(observe_worker)
+                    for _ in range(2)
+                ]
+                print("IMP10 runtime observation: " + json.dumps({"round":round_key,"workers":[worker.result() for worker in running]}),flush=True)
+        return
+
+    proxy, fence_uid = integer(cfg, "proxy_uid"), integer(cfg, "fence_uid")
+    if len({uid, proxy, fence_uid, owner}) != 4 or 0 in {proxy, fence_uid}:
+        raise ValueError("Distinct protected inference custody required")
+    fence_socket, backend = Path(text(cfg, "fence_socket")), Path(text(cfg, "backend_socket"))
+    verifier = backend_verifier(
+        cast(BackendRole, role),
+        proxy_uid=proxy,
+        fence_socket=fence_socket,
+        fence_uid=fence_uid,
+        training_enabled=cfg.get("training_enabled") is True,
+    )
+    if role == "inference":
+        start_inference(
+            release,
+            verifier,
+            backend_socket=backend,
+            data_socket=Path(text(cfg, "data_socket")),
+            bridge_socket=Path(text(cfg, "bridge_socket")),
+        )
+    elif role == "host-inference-bridge":
+        start_host_bridge(
+            release,
+            verifier,
+            backend_socket=backend,
+            artifact_directory=Path(text(cfg, "artifact_directory")),
+            model_index=Path(text(cfg, "model_index")),
+            lmstudio_token_file=Path(text(cfg, "lmstudio_token_file")),
+        )
+    else:
+        fences = UnixFenceClient(fence_socket, fence_uid)
+        knowledge = load_knowledge_resources()
+        options = (
+            {"inference_socket": Path(text(cfg, "inference_socket"))}
+            if role == "core"
+            else {
+                "provider_stop": ProviderStopAuthority(
+                    Path(text(cfg, "stop_receipts")),
+                    public_key(text(cfg, "stop_public_key")),
+                    fences,
+                    issuer=text(cfg, "stop_issuer"),
+                    target=TARGET,
+                    owner_uid=integer(cfg, "stop_owner_uid"),
+                    current_generation=text(cfg, "bridge_generation"),
+                )
+            }
+        )
+        application = Composition(
+            cfg, ai=ManualRoleAssistance(release, verifier, fences, knowledge, **options)
+        )
+        selected = (
+            observe_task_denials(application)
+            if role == "data"
+            else observe_broker_failure(application)
+        )
+        serve_backend(selected, backend_socket=backend, proxy_uid=proxy)

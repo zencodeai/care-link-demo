@@ -1,0 +1,73 @@
+{
+  "scope": "Protected Main workload with ten synthetic participants and one worker",
+  "driver_sha256": "3517a511d4e8e133b45684a04264fa97c530274f24078f4a8f4d557801d64674",
+  "started_at": "2026-11-23T18:56:25.059587+00:00",
+  "ended_at": "2026-11-23T18:57:05.187901+00:00",
+  "declared_sessions": 10,
+  "active_scoped_sessions": 10,
+  "connected_sessions": 0,
+  "distinct_participant_bindings": [
+    "0fcf838c3fcc5f5df2cfb25a063918be3ea19aa98657455e4d9b7cf061805fc9",
+    "13a1ac90dcb853b6bcdbe150e3b72fe747253011e9295d5aed730cd76e802657",
+    "177ad75f48a45d0a437ef8ebac15c0914eaac03fb8689570480c250d7a834b69",
+    "31fa47ba9ee3d55847ddc3b53b80c9619a779eb2904b8e7ad1f5941306541fae",
+    "5a18b8551b98019f4bc9d7d9448b5037042953801a6ad5901e35275bd87de4a5",
+    "696772a6f4f279c3825d76e8aad64f8a1631292790132a7b3d46adcfe8750478",
+    "81ccf4c1ca0da82ea271ddebc872671abe17887e9655b1023d1716d5b26981e4",
+    "d50ee879b6adbac8f167466219d39b5333f0d503cfaf99727d67e59394a8d907",
+    "e599c4210a8d08f67f3d96d0b235d1033c068a9a8ec99eb695a5b9544fadc4d6",
+    "ef19a3562774d35d2243a05863616a5784a8b7615fb7d468f0d30f5e7e442362"
+  ],
+  "session_ids": [
+    "103bc932-8c42-4cb0-92a0-4f0d4b9c9806",
+    "8417c8bc-ed48-40ee-ae93-acd8831f5652",
+    "843d146d-bb98-4dd4-817e-5643bf13a84d",
+    "a05cd921-2816-40ac-b62e-0ab61af60885",
+    "cc3bba83-8681-4603-b98b-b5a78a6b398d",
+    "dbcf6c82-e30a-4ebd-9eec-4a4a7212af0f",
+    "dee5ae4f-5dfe-4c49-8e83-cf9864e4e537",
+    "f47aafaa-d132-4829-ba9c-2f60701bfcd0",
+    "f761f281-e9dd-4b5b-9e55-199a7c6e0443",
+    "fe10a457-92f1-4d6a-ae02-9d7a6dc09616"
+  ],
+  "locale_counts": {
+    "en-CA": 5,
+    "fr-CA": 5
+  },
+  "live_browser_streams": 1,
+  "resumed_existing_handoffs": false,
+  "admission": "Ten independent active browsers and one live worker stream; no two-party claim",
+  "stream_reconnect_counts": [
+    0
+  ],
+  "protected_session_reads_ms": [
+    371.441,
+    410.336,
+    404.779,
+    398.925,
+    369.125,
+    370.857,
+    387.74,
+    385.192,
+    350.655,
+    355.431
+  ],
+  "setup_ms_per_session": [
+    2636.378,
+    2232.041,
+    2409.727,
+    2311.996,
+    2259.411,
+    2215.589,
+    2214.625,
+    2231.717,
+    2415.349,
+    2262.666
+  ],
+  "manual_delivery": {
+    "observed": false,
+    "reason": "Fresh two-party transport is unconfirmed"
+  },
+  "occupied_inference_slots": null,
+  "unique_pending_tasks": null
+}

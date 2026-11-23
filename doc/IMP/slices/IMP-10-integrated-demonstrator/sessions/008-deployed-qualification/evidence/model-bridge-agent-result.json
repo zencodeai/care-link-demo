@@ -1,0 +1,159 @@
+{
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "changed_paths": [
+    "tools/imp10_verification/deployed_timing.py",
+    "services/data/tests/test_imp10_deployed_timing.py",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/timing.json",
+    "tools/imp10_verification/deployed_release.py",
+    "services/data/tests/test_imp10_deployed_release.py",
+    "tools/imp10_verification/deployed_bridge.py",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-agent-result.json"
+  ],
+  "checks": [
+    {
+      "actual": "Three new rounds observed 10 active, 2 occupied and 8 queued. This is scoped loopback evidence.",
+      "command": null,
+      "evidence_digest": "b9686d00021e4915d952bdd53747c1d82759605a71b284b4219b72774238d25e",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/timing.json",
+      "expected": "Repeated ten-session warm and error measurements in loopback.",
+      "mock_used": false,
+      "name": "verified-loopback-warm-and-error",
+      "status": "passed",
+      "tool_version": null
+    },
+    {
+      "actual": "Actual anonymous catalog denied and authenticated catalog passed. Foreign UID was denied by the scoped Unix relay.",
+      "command": null,
+      "evidence_digest": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "expected": "Kernel-restricted Linux role reaches only the native fixed provider transport.",
+      "mock_used": false,
+      "name": "fixed-authenticated-bridge-transport",
+      "status": "passed",
+      "tool_version": null
+    },
+    {
+      "actual": "Valid tokens were denied with HTTP 503 in two boots. Product guard reported loaded_artifact_or_instance_changed. Wrong digest was correctly denied with 400.",
+      "command": null,
+      "evidence_digest": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "expected": "Protected tokenizer passes with the native bind-mounted exact artifact.",
+      "mock_used": false,
+      "name": "native-bind-mounted-protected-tokenizer",
+      "status": "failed",
+      "tool_version": null
+    },
+    {
+      "actual": "13 files and 16,081,498,220 bytes verified. Actual Inference SPIRE peer got HTTP 200 and 18 prompt tokens with matching model pins.",
+      "command": null,
+      "evidence_digest": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "expected": "Verified exact Linux read-only copy yields a protected tokenizer positive.",
+      "mock_used": false,
+      "name": "linux-copy-protected-tokenization",
+      "status": "passed",
+      "tool_version": null
+    },
+    {
+      "actual": "HTTP 200 at 23.833 seconds, two HTTP 503 at 2.018 and 2.030 seconds, then HTTP 200 at 2.498 seconds. Both successful samples had 27 prompt and 7 completion tokens.",
+      "command": null,
+      "evidence_digest": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "expected": "Retain actual bounded bridge positive, error and recovery observations.",
+      "mock_used": false,
+      "name": "standalone-protected-response-controls",
+      "status": "passed",
+      "tool_version": null
+    },
+    {
+      "actual": "Actual reader epoch 2 disabled. Owned Docker endpoints, containers, volumes and networks all absent. Removed 15 disposable private evaluator files.",
+      "command": null,
+      "evidence_digest": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "expected": "Only owned bridge resources and copied artifact removed after reader observed restriction.",
+      "mock_used": false,
+      "name": "restrictive-mirror-and-owned-cleanup",
+      "status": "passed",
+      "tool_version": null
+    },
+    {
+      "actual": "Exact original instance, artifact, tokenizer, template, context window and SDK/raw/REST settings matched. Native model remains idle and loaded with empty queue.",
+      "command": null,
+      "evidence_digest": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "expected": "Verify original artifact and current loaded native settings after temporary cleanup.",
+      "mock_used": false,
+      "name": "unchanged-native-model-after-cleanup",
+      "status": "passed",
+      "tool_version": null
+    },
+    {
+      "actual": "User selected keeping the original model loaded, with no spare suitable workstation. Standalone and loopback samples do not discharge the missing deployed distribution.",
+      "command": null,
+      "evidence_digest": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "expected": "Repeated cold, warm and bounded error timings at the deployed declared load.",
+      "mock_used": false,
+      "name": "deployed-repeated-cold-and-peak-distributions",
+      "status": "blocked",
+      "tool_version": null
+    },
+    {
+      "actual": "Seven focused tests passed.",
+      "command": ".venv/bin/python -m pytest -q services/data/tests/test_imp10_deployed_release.py services/data/tests/test_imp10_deployed_timing.py",
+      "evidence_digest": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "expected": "Check evidence missingness, distinct current qualification scope and reader-only bootstrap.",
+      "mock_used": true,
+      "name": "collector-and-release-regressions",
+      "status": "passed",
+      "tool_version": null
+    },
+    {
+      "actual": "Ruff check/format on five assigned files, strict Pyright and git diff --check passed.",
+      "command": ".venv/bin/ruff check tools/imp10_verification/{deployed_bridge,deployed_release,deployed_timing}.py services/data/tests/test_imp10_deployed_{release,timing}.py",
+      "evidence_digest": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "expected": "Focused lint, formatting and strict typing checks pass.",
+      "mock_used": false,
+      "name": "verification-source-quality",
+      "status": "passed",
+      "tool_version": null
+    }
+  ],
+  "contract_changes": [],
+  "findings": [
+    {
+      "affected_path_or_operation": "Protected host inference bridge tokenizer",
+      "id": "IMP10-008-BRIDGE-BINDING",
+      "problem": "Native bind-mounted boots accepted valid protected requests but failed the composite artifact or instance guard.",
+      "recommendation": "Use the verified scoped Linux read-only artifact copy with independent role custody.",
+      "severity": "major",
+      "source_refs": [
+        "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json"
+      ],
+      "verification": "Corrected live bridge returned exact protected tokenization and standalone generation and recovery."
+    }
+  ],
+  "handoff": "Bind the verified host controls and native model cleanup with the separate platform and actor evidence. Preserve VT-17 missingness.",
+  "is_example": false,
+  "output_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "sha256": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/timing.json",
+      "sha256": "b9686d00021e4915d952bdd53747c1d82759605a71b284b4219b72774238d25e"
+    }
+  ],
+  "packet_id": "IMP10-008-timing",
+  "remaining_risks": [
+    "Repeated true cold timing is blocked while the user-selected original model stays loaded and a suitable spare is unavailable.",
+    "Host bridge samples do not discharge the complete deployed declared-load timing distribution."
+  ],
+  "role": "imp_verifier",
+  "status": "partial",
+  "task_id": "IMP-10-D"
+}

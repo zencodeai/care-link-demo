@@ -1,0 +1,7 @@
+{
+  "mode": "normal",
+  "epoch": 1,
+  "method": "Initial controlled fixture setting in the dedicated synthetic store before any inference job",
+  "release_purpose": "qualification",
+  "product_mode_transition_tested": false
+}
