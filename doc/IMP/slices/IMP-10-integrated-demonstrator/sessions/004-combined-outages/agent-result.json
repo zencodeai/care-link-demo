@@ -1,0 +1,110 @@
+{
+  "packet_id": "IMP10-004-combined",
+  "task_id": "IMP-10-D",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "role": "imp_verifier",
+  "status": "partial",
+  "changed_paths": [
+    "services/data/tests/test_imp10_combined_outage.py",
+    "services/data/tests/imp10_outage_help.py",
+    "services/data/tests/imp10_outage_listeners.py",
+    "services/data/tests/imp10_outage_model.py",
+    "services/data/tests/imp10_outage_roles.py"
+  ],
+  "output_refs": [
+    {
+      "path": "services/data/tests/test_imp10_combined_outage.py",
+      "sha256": "ddaafbd4cf44c3d7abc16afaacfe03e0df74351928e329465e072a158f9ef30a"
+    },
+    {
+      "path": "services/data/tests/imp10_outage_help.py",
+      "sha256": "f2327513e601e7b2242f40f82aa866ca30f85da8e47f98e41475057c34f61219"
+    },
+    {
+      "path": "services/data/tests/imp10_outage_listeners.py",
+      "sha256": "887d2184b205db469b0dae8427e6cb800472be78121e29005610df6510b2c671"
+    },
+    {
+      "path": "services/data/tests/imp10_outage_model.py",
+      "sha256": "e880b2367801810e7be59cb224cd915df2a607d5992a9f395292e2bc63d9448d"
+    },
+    {
+      "path": "services/data/tests/imp10_outage_roles.py",
+      "sha256": "995be4fb055caba1a290f8ff93877c4a9a085f0645e434524d7b2c690a8e0b18"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/results.json",
+      "sha256": "6dfe12f22b9eb097a56aa46d75ed86b6e5e76dabc33177921d5f752a7756b4ce"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/evidence/combined-outages.json",
+      "sha256": "6f84f98f63b1b2d787c274fd02d0ae1b79d6aa0b893df0fd3091654e3f13d0d9"
+    }
+  ],
+  "checks": [
+    {
+      "name": "combined-loopback-outages",
+      "command": ".venv/bin/python -m pytest -q --tb=short services/data/tests/test_imp10_combined_outage.py",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Observe current scoped behavior at declared load and across independent role faults.",
+      "actual": "The loopback topology reached 10 sessions, two occupied slots, and eight queued tasks. Five fault checks passed with real OPA, PostgreSQL and Qwen under synthetic test credentials.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/evidence/combined-outages.json",
+      "evidence_digest": "6f84f98f63b1b2d787c274fd02d0ae1b79d6aa0b893df0fd3091654e3f13d0d9",
+      "mock_used": true
+    },
+    {
+      "name": "serialized-source-regression",
+      "command": ".venv/bin/python -m tools.imp10_verification.checks --out <fresh-path> --opa <pinned-opa-path>",
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Locked candidate source checks pass on the disposable TLS database.",
+      "actual": "39 commands passed. Backend had 1778 passes and 4 skips.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/evidence/source/checks.json",
+      "evidence_digest": "d741ec03f55544d35d6573c0a82b1b4cbc94e8fcfc8258ba41f14ce20c71408b",
+      "mock_used": true
+    },
+    {
+      "name": "frozen-imp-planning-validator",
+      "command": ".venv/bin/python doc/IMP/validate_plan.py",
+      "tool_version": null,
+      "status": "failed",
+      "expected": "Frozen planning digest pins match.",
+      "actual": "Planning artifact drift in README.md matches the earlier baseline failure.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/evidence/frozen-plan-validation.log",
+      "evidence_digest": "25736bef0ac67939149948149497fa3b3aec45cc492e444eabd11ceac6c1c0e8",
+      "mock_used": false
+    },
+    {
+      "name": "deployed-kubernetes-and-host-continuity",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Observe actual cluster outage, current deployed mTLS and CNI behavior, and separate host fallback.",
+      "actual": "This workstation has no configured Kubernetes context or cached disposable node image. The combined application run used owned TLS listeners.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    },
+    {
+      "name": "declared-load-deployed-cold-warm-error-distributions",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Measure repeated deployed cold, warm and error timing at ten sessions.",
+      "actual": "This run measured a loaded model under loopback saturation and controlled failures. The cold follow-up measured one unloaded-model lifecycle separately.",
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Run an actual outage in the isolated Kubernetes topology, with current mTLS and CNI denial probes and separate host Help and Static process evidence.",
+    "Measure cold, warm, and error timing distributions at the declared ten-session load in the deployed topology.",
+    "Resolve the earlier frozen IMP planning README digest drift through the planning baseline workflow."
+  ],
+  "handoff": "Carry forward the current combined application receipt, exact source pins and separate cold and mesh results.",
+  "is_example": false
+}

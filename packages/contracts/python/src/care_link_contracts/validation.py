@@ -24,6 +24,16 @@ class _ValidatorFactories(Protocol):
 
 
 ContractName = Literal[
+    "ScenarioCreate",
+    "ScenarioView",
+    "ReplayCreate",
+    "EvaluationView",
+    "TrainingEnvelope",
+    "Path_evaluation_read",
+    "Gateway_replay_create",
+    "Gateway_evaluation_read",
+    "Gateway_identity_link_request",
+    "Id",
     "RestoreCreate",
     "RestoreView",
     "PromotionPropose",
@@ -286,6 +296,16 @@ ContractName = Literal[
     "Gateway_review_intent_prepare",
 ]
 CONTRACT_NAMES: tuple[ContractName, ...] = (
+    "ScenarioCreate",
+    "ScenarioView",
+    "ReplayCreate",
+    "EvaluationView",
+    "TrainingEnvelope",
+    "Path_evaluation_read",
+    "Gateway_replay_create",
+    "Gateway_evaluation_read",
+    "Gateway_identity_link_request",
+    "Id",
     "RestoreCreate",
     "RestoreView",
     "PromotionPropose",

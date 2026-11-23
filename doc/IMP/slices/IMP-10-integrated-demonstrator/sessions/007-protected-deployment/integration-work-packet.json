@@ -1,0 +1,108 @@
+{
+  "packet_id": "IMP10-007-integration",
+  "task_id": "IMP-10-D",
+  "stage_id": "IMP-10",
+  "mode": "implementation",
+  "role": "imp_platform",
+  "goal": "Integrate exact backend/mesh route policies and deployable protected role entrypoint",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "inputs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/previous-ledger.json",
+      "sha256": "f32b3f1187063e6c1e5cf562cdaefc78eae0e9d8349aab866fc3e9f0058bca26"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/results.json",
+      "sha256": "756ef5e92f5f3a426c7ab79e51fbed8f74dfacdd87b12bad5245b57f258bd754"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex/IMP_WORKFLOW.md",
+    "doc",
+    "services",
+    "host",
+    "packages",
+    "apps",
+    "tools",
+    "tests",
+    ".codex/agents"
+  ],
+  "write_paths": [
+    "tools/imp03_runtime/config.py",
+    "tools/imp06_runtime/routes.py",
+    "tools/imp06_runtime/role_process.py",
+    "tools/imp06_runtime/serve.py",
+    "tools/imp10_runtime/serve.py",
+    "tools/imp10_runtime/routes.py",
+    "tools/imp10_runtime/README.md",
+    "deploy/images/imp06/Dockerfile",
+    "deploy/images/imp06/Dockerfile.dockerignore",
+    "tests/network/test_imp10_protected_routes.py",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/README.md",
+    "doc/IMP/executions/2026-11-23-IMP-10/ledger.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/**"
+  ],
+  "dependencies": [
+    "IMP-06:G-06:automated_qualified",
+    "IMP-07:G-07:automated_qualified",
+    "IMP-08:G-08:automated_qualified",
+    "IMP-09:G-09:automated_qualified"
+  ],
+  "operation_ids": [
+    "scenario_create",
+    "scenario_read",
+    "scenario_stop",
+    "replay_create",
+    "evaluation_read",
+    "data_replay_create",
+    "data_evaluation_read",
+    "identity_link_request",
+    "data_identity_link_request"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "altering retained review deployments or credentials",
+    "real data, participant admission, external release, Git mutations",
+    "bypassing workload identity, policy, receipt, or storage controls"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Proceed",
+    "scope": "Implement and verify the missing protected IMP-10 role bindings in the private synthetic candidate."
+  },
+  "resource_leases": [
+    {
+      "id": "imp10-007-tls-regression",
+      "kind": "port",
+      "scope": "Owned local TLS PostgreSQL on loopback 35439 and disposable no-network image smoke. Exact new build tag care-link-imp10:protected-007.",
+      "owner_task_id": "IMP-10-D",
+      "expires_at": "2026-11-23T22:20:04.275188Z"
+    }
+  ],
+  "expected_outputs": [
+    "Scoped modules/tests",
+    "Actual checks and findings",
+    "Handoff"
+  ],
+  "positive_acceptance": [
+    "One topology resolves independently bound roles and observes intended survival and recovery per fault."
+  ],
+  "adverse_acceptance": [
+    "No buffered protected success or false connection. Only owned fault domains may be cut off."
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "authority change",
+    "shared ownership conflict",
+    "destructive or live action needed"
+  ],
+  "is_example": false
+}

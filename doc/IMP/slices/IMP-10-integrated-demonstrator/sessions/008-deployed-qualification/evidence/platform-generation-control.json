@@ -1,0 +1,14 @@
+{
+  "started_at": "2026-11-23T17:49:02.680989+00:00",
+  "ended_at": "2026-11-23T17:49:26.720718+00:00",
+  "client_duration_s": 24.039,
+  "route": "deployed Inference proxy to independent host bridge using actual workload identity",
+  "status": 200,
+  "fixed_control_exact_READY": true,
+  "sdk_input_tokens": 27,
+  "provider_prompt_tokens": 27,
+  "provider_completion_tokens": 7,
+  "finish_reason": "stop",
+  "passed": true,
+  "scope": "Standalone synthetic bounded preflight before timed browser workload."
+}

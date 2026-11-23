@@ -108,7 +108,12 @@ def run_workflow(
                     break
                 except TimeoutError:
                     if future.done():
-                        raise
+                        # Completion can race the wait timeout. Read the finished
+                        # future so a provider exception also keeps its original cause.
+                        result = future.result()
+                        break
+                    if deadline <= time.monotonic():
+                        raise TimeoutError("runtime inference result deadline expired") from None
                     renewed = client.renew(task_id, renew)
                     validate_contract("LeaseView", dict(renewed))
                     if any(

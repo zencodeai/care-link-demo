@@ -10,6 +10,7 @@ from care_link_domain import Actor, ManualError
 from .consent import Consent
 from .directory import Directory
 from .dispatches import Dispatches
+from .evaluation import Evaluation
 from .governance import Governance
 from .governance.evidence import Evidence
 from .lifecycle import Holds, Inbox, Rights
@@ -20,7 +21,17 @@ from .values import Outcome, digest, integer, object_value
 
 
 class ManualService(
-    Governance, Evidence, Holds, Inbox, Rights, Dispatches, Plans, Consent, Directory, ReviewService
+    Governance,
+    Evidence,
+    Evaluation,
+    Holds,
+    Inbox,
+    Rights,
+    Dispatches,
+    Plans,
+    Consent,
+    Directory,
+    ReviewService,
 ):
     def own_reports_read(self, actor: Actor, session_id: str) -> Record:
         import json
@@ -169,9 +180,9 @@ class ManualService(
         current = self._fresh_actor(actor)
         planning = object_value(request["planning"]) if request.get("planning") else None
         arguments: Record | None = None
-        from .values import GOVERNANCE_ACTIONS
+        from .values import EVALUATION_ACTIONS, GOVERNANCE_ACTIONS
 
-        if action in GOVERNANCE_ACTIONS or action.startswith(
+        if action in (GOVERNANCE_ACTIONS | EVALUATION_ACTIONS) or action.startswith(
             (
                 "plan_",
                 "consent_",
@@ -199,7 +210,7 @@ class ManualService(
                 **object_value(planning["arguments"]),
                 **object_value(planning["path_arguments"]),
             }
-            if action in GOVERNANCE_ACTIONS:
+            if action in (GOVERNANCE_ACTIONS | EVALUATION_ACTIONS):
                 session_id = None
             elif action.startswith(("task_", "draft_", "assistance_")):
                 from .assistance.metadata import metadata_scope

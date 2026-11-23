@@ -1,0 +1,52 @@
+{
+  "purpose": "qualification",
+  "activated_at_utc": "2026-11-23T18:29:13.978890+00:00",
+  "image_id": "sha256:803e2caaed6083870e1c80f29954b337ea6ad5a080e6a46825977cd073ca4c88",
+  "image_cri_reference": "docker.io/library/import-2026-11-23@sha256:a003ffc4007876074e773e7300cc04c15b930fc9b5e477cf32fc504fe5fd8588",
+  "bridge_boot_id": "b3d89eae-26d7-4164-b0a9-20ac8fcf56b0",
+  "bridge_preflight_sha256": "8c751228ebca8ff976cee15f79be9d54f07bf9b074cff7ee2f97def7eda3819e",
+  "bundle_digest": "0486d005922725eabe43af90d2661381dfdf24b585ca5d02269cf903d8f0a743",
+  "epoch": 1,
+  "observed": {
+    "runtime": {
+      "boot_observation": {
+        "role": "runtime",
+        "boot_id": "771595d4-1953-44c3-95af-e3f3172f1273",
+        "uid": 23121,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "image_id": "docker.io/library/import-2026-11-23@sha256:a003ffc4007876074e773e7300cc04c15b930fc9b5e477cf32fc504fe5fd8588",
+      "pod_uid": "0ed29b92-7c19-48e4-bdb4-a557eebad1a5"
+    },
+    "inference": {
+      "boot_observation": {
+        "role": "inference",
+        "boot_id": "5d67f452-3fc3-46c0-9545-16f904bcf0dd",
+        "uid": 23120,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "image_id": "docker.io/library/import-2026-11-23@sha256:a003ffc4007876074e773e7300cc04c15b930fc9b5e477cf32fc504fe5fd8588",
+      "pod_uid": "23e01eae-9c1b-4cf8-b08a-37477bd079b5"
+    },
+    "core": {
+      "boot_observation": {
+        "role": "core",
+        "boot_id": "e6781694-eb1c-44cf-b452-12b36fbb2b19",
+        "uid": 23110,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "image_id": "docker.io/library/import-2026-11-23@sha256:a003ffc4007876074e773e7300cc04c15b930fc9b5e477cf32fc504fe5fd8588",
+      "pod_uid": "61cccfd7-3462-44dc-b53c-4038f406d406"
+    },
+    "data": {
+      "boot_observation": {
+        "role": "data",
+        "boot_id": "6bf052ff-c14b-45d4-b1f6-aa82159408c4",
+        "uid": 23112,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "image_id": "docker.io/library/import-2026-11-23@sha256:a003ffc4007876074e773e7300cc04c15b930fc9b5e477cf32fc504fe5fd8588",
+      "pod_uid": "b3b3e1df-7d7d-49a0-bb95-a7b46b214240"
+    }
+  }
+}

@@ -1,0 +1,548 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/main/Workspace/projects/care-link/care-link-demo/node_modules/.pnpm/@playwright+test@1.65.0/node_modules/@playwright/test/cli.js",
+      "test",
+      "-c",
+      "tests/e2e/training/playwright.config.ts"
+    ],
+    "configFile": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/playwright.config.ts",
+    "rootDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/private/tmp/care-link-imp10-training-browser/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training",
+        "testIgnore": [],
+        "testMatch": [
+          "training.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/private/tmp/care-link-imp10-training-browser/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training",
+        "snapshotDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training",
+        "testIgnore": [],
+        "testMatch": "training.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4200",
+          "browserName": "chromium",
+          "connectOptions": {
+            "wsEndpoint": "ws://127.0.0.1:31910/<private-loopback-path>",
+            "exposeNetwork": "<loopback>",
+            "headers": {
+              "x-playwright-launch-options": "{\"executablePath\":\"/opt/chrome-for-testing/chrome\",\"headless\":true}"
+            }
+          },
+          "trace": "off",
+          "screenshot": "off",
+          "video": "off",
+          "viewport": {
+            "width": 1280,
+            "height": 960
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/private/tmp/care-link-imp10-training-browser/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": {
+      "command": "pnpm --filter @care-link/web exec vite --host 127.0.0.1 --port 4200 --strictPort",
+      "url": "http://127.0.0.1:4200",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "training.spec.ts",
+      "file": "training.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "en-CA trainer creates, reads and stops a scenario and inspects a replay",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5461,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Scenario command committed.')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Scenario command committed.') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Scenario command committed.')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Scenario command committed.')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Scenario command committed.') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Scenario command committed.')\u001b[22m\n\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:56:50",
+                    "location": {
+                      "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                      "column": 50,
+                      "line": 56
+                    },
+                    "snippet": " \u001b[90m 54 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"html\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m\"lang\"\u001b[39m\u001b[33m,\u001b[39m locale)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m createScenario(page\u001b[33m,\u001b[39m text)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 56 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(text\u001b[33m.\u001b[39mcommitted))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 57 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByLabel(text\u001b[33m.\u001b[39mscenarioReference))\u001b[33m.\u001b[39mtoHaveValue(\n \u001b[90m 58 |\u001b[39m       fixture\u001b[33m.\u001b[39mscenario\u001b[33m,\u001b[39m\n \u001b[90m 59 |\u001b[39m     )\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                        "column": 50,
+                        "line": 56
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Scenario command committed.')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Scenario command committed.') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Scenario command committed.')\u001b[22m\n\n\n  54 |     await expect(page.locator(\"html\")).toHaveAttribute(\"lang\", locale);\n  55 |     await createScenario(page, text);\n> 56 |     await expect(page.getByText(text.committed)).toBeVisible();\n     |                                                  ^\n  57 |     await expect(page.getByLabel(text.scenarioReference)).toHaveValue(\n  58 |       fixture.scenario,\n  59 |     );\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:56:50"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:03:23.501Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/care-link-imp10-training-browser/artifacts/training-en-CA-trainer-cre-5084a-nario-and-inspects-a-replay/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                    "column": 50,
+                    "line": 56
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2410163d751908292b1d-3738b71c68118b84b939",
+          "file": "training.spec.ts",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "title": "fr-CA trainer creates, reads and stops a scenario and inspects a replay",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5407,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('La commande de scénario a été validée.')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('La commande de scénario a été validée.') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('La commande de scénario a été validée.')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('La commande de scénario a été validée.')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('La commande de scénario a été validée.') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('La commande de scénario a été validée.')\u001b[22m\n\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:56:50",
+                    "location": {
+                      "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                      "column": 50,
+                      "line": 56
+                    },
+                    "snippet": " \u001b[90m 54 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"html\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m\"lang\"\u001b[39m\u001b[33m,\u001b[39m locale)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m createScenario(page\u001b[33m,\u001b[39m text)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 56 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(text\u001b[33m.\u001b[39mcommitted))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 57 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByLabel(text\u001b[33m.\u001b[39mscenarioReference))\u001b[33m.\u001b[39mtoHaveValue(\n \u001b[90m 58 |\u001b[39m       fixture\u001b[33m.\u001b[39mscenario\u001b[33m,\u001b[39m\n \u001b[90m 59 |\u001b[39m     )\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                        "column": 50,
+                        "line": 56
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('La commande de scénario a été validée.')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('La commande de scénario a été validée.') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('La commande de scénario a été validée.')\u001b[22m\n\n\n  54 |     await expect(page.locator(\"html\")).toHaveAttribute(\"lang\", locale);\n  55 |     await createScenario(page, text);\n> 56 |     await expect(page.getByText(text.committed)).toBeVisible();\n     |                                                  ^\n  57 |     await expect(page.getByLabel(text.scenarioReference)).toHaveValue(\n  58 |       fixture.scenario,\n  59 |     );\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:56:50"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:03:29.664Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/care-link-imp10-training-browser/artifacts/training-fr-CA-trainer-cre-43619-nario-and-inspects-a-replay/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                    "column": 50,
+                    "line": 56
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2410163d751908292b1d-e6e6143cc0618cc632d6",
+          "file": "training.spec.ts",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "title": "unknown outcome locks new commands and a retry uses the same request",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5406,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('alert')\nExpected: \u001b[32m\"The \u001b[7moperation’s outcome is unknown\u001b[27m.\"\u001b[39m\nReceived: \u001b[31m\"The \u001b[7mrequest or response did not match the expected format\u001b[27m.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('alert') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\u001b[2m    13 × locator resolved to <p role=\"alert\">The request or response did not match the expecte…</p>\u001b[22m\n\u001b[2m       - unexpected value \"The request or response did not match the expected format.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('alert')\nExpected: \u001b[32m\"The \u001b[7moperation’s outcome is unknown\u001b[27m.\"\u001b[39m\nReceived: \u001b[31m\"The \u001b[7mrequest or response did not match the expected format\u001b[27m.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('alert') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\u001b[2m    13 × locator resolved to <p role=\"alert\">The request or response did not match the expecte…</p>\u001b[22m\n\u001b[2m       - unexpected value \"The request or response did not match the expected format.\"\u001b[22m\n\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:145:41",
+                    "location": {
+                      "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                      "column": 41,
+                      "line": 145
+                    },
+                    "snippet": " \u001b[90m 143 |\u001b[39m   state\u001b[33m.\u001b[39mlostMutation \u001b[33m=\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 144 |\u001b[39m   \u001b[36mawait\u001b[39m createScenario(page\u001b[33m,\u001b[39m text)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 145 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"alert\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(text\u001b[33m.\u001b[39munknown)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 146 |\u001b[39m   \u001b[36mawait\u001b[39m expect(\n \u001b[90m 147 |\u001b[39m     page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"button\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m text\u001b[33m.\u001b[39mcreateScenario\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m,\u001b[39m\n \u001b[90m 148 |\u001b[39m   )\u001b[33m.\u001b[39mtoBeDisabled()\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                        "column": 41,
+                        "line": 145
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('alert')\nExpected: \u001b[32m\"The \u001b[7moperation’s outcome is unknown\u001b[27m.\"\u001b[39m\nReceived: \u001b[31m\"The \u001b[7mrequest or response did not match the expected format\u001b[27m.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('alert') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\u001b[2m    13 × locator resolved to <p role=\"alert\">The request or response did not match the expecte…</p>\u001b[22m\n\u001b[2m       - unexpected value \"The request or response did not match the expected format.\"\u001b[22m\n\n\n  143 |   state.lostMutation = true;\n  144 |   await createScenario(page, text);\n> 145 |   await expect(page.getByRole(\"alert\")).toHaveText(text.unknown);\n      |                                         ^\n  146 |   await expect(\n  147 |     page.getByRole(\"button\", { name: text.createScenario, exact: true }),\n  148 |   ).toBeDisabled();\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:145:41"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:03:35.481Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/care-link-imp10-training-browser/artifacts/training-unknown-outcome-l-39597-retry-uses-the-same-request/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                    "column": 41,
+                    "line": 145
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2410163d751908292b1d-e7cc920484b124a97da8",
+          "file": "training.spec.ts",
+          "line": 138,
+          "column": 1
+        },
+        {
+          "title": "a changed account clears pending authority and does not redispatch",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5578,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('alert')\nExpected: \u001b[32m\"The \u001b[7moperation’s outcome is unknown\u001b[27m.\"\u001b[39m\nReceived: \u001b[31m\"The \u001b[7mrequest or response did not match the expected format\u001b[27m.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('alert') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\u001b[2m    12 × locator resolved to <p role=\"alert\">The request or response did not match the expecte…</p>\u001b[22m\n\u001b[2m       - unexpected value \"The request or response did not match the expected format.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('alert')\nExpected: \u001b[32m\"The \u001b[7moperation’s outcome is unknown\u001b[27m.\"\u001b[39m\nReceived: \u001b[31m\"The \u001b[7mrequest or response did not match the expected format\u001b[27m.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('alert') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\u001b[2m    12 × locator resolved to <p role=\"alert\">The request or response did not match the expecte…</p>\u001b[22m\n\u001b[2m       - unexpected value \"The request or response did not match the expected format.\"\u001b[22m\n\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:163:41",
+                    "location": {
+                      "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                      "column": 41,
+                      "line": 163
+                    },
+                    "snippet": " \u001b[90m 161 |\u001b[39m   state\u001b[33m.\u001b[39mlostMutation \u001b[33m=\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 162 |\u001b[39m   \u001b[36mawait\u001b[39m createScenario(page\u001b[33m,\u001b[39m text)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 163 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"alert\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(text\u001b[33m.\u001b[39munknown)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 164 |\u001b[39m   state\u001b[33m.\u001b[39maccount \u001b[33m=\u001b[39m fixture\u001b[33m.\u001b[39mtrainerReplacement\u001b[33m;\u001b[39m\n \u001b[90m 165 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"button\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m text\u001b[33m.\u001b[39mretry })\u001b[33m.\u001b[39mpress(\u001b[32m\"Enter\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 166 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"alert\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(text\u001b[33m.\u001b[39mrejected)\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                        "column": 41,
+                        "line": 163
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('alert')\nExpected: \u001b[32m\"The \u001b[7moperation’s outcome is unknown\u001b[27m.\"\u001b[39m\nReceived: \u001b[31m\"The \u001b[7mrequest or response did not match the expected format\u001b[27m.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('alert') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\u001b[2m    12 × locator resolved to <p role=\"alert\">The request or response did not match the expecte…</p>\u001b[22m\n\u001b[2m       - unexpected value \"The request or response did not match the expected format.\"\u001b[22m\n\n\n  161 |   state.lostMutation = true;\n  162 |   await createScenario(page, text);\n> 163 |   await expect(page.getByRole(\"alert\")).toHaveText(text.unknown);\n      |                                         ^\n  164 |   state.account = fixture.trainerReplacement;\n  165 |   await page.getByRole(\"button\", { name: text.retry }).press(\"Enter\");\n  166 |   await expect(page.getByRole(\"alert\")).toHaveText(text.rejected);\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:163:41"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:03:41.301Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/care-link-imp10-training-browser/artifacts/training-a-changed-account-40dbd-ity-and-does-not-redispatch/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                    "column": 41,
+                    "line": 163
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2410163d751908292b1d-b8da5b7aa0265ee4155a",
+          "file": "training.spec.ts",
+          "line": 156,
+          "column": 1
+        },
+        {
+          "title": "a governance reviewer can request replay and sees no scenario controls",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5453,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', { exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', { exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', { exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', { exact: true })\u001b[22m\n\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:180:67",
+                    "location": {
+                      "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                      "column": 67,
+                      "line": 180
+                    },
+                    "snippet": " \u001b[90m 178 |\u001b[39m   )\u001b[33m;\u001b[39m\n \u001b[90m 179 |\u001b[39m   \u001b[36mawait\u001b[39m requestReplay(page\u001b[33m,\u001b[39m text)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 180 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(fixture\u001b[33m.\u001b[39mevidence\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 181 |\u001b[39m   \u001b[36mawait\u001b[39m scan(page)\u001b[33m;\u001b[39m\n \u001b[90m 182 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 183 |\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                        "column": 67,
+                        "line": 180
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', { exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', { exact: true })\u001b[22m\n\n\n  178 |   );\n  179 |   await requestReplay(page, text);\n> 180 |   await expect(page.getByText(fixture.evidence, { exact: true })).toBeVisible();\n      |                                                                   ^\n  181 |   await scan(page);\n  182 | });\n  183 |\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:180:67"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:03:47.385Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/care-link-imp10-training-browser/artifacts/training-a-governance-revi-f8897-d-sees-no-scenario-controls/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                    "column": 67,
+                    "line": 180
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2410163d751908292b1d-d2da339454f9d644b9bb",
+          "file": "training.spec.ts",
+          "line": 171,
+          "column": 1
+        },
+        {
+          "title": "wrong target and sign-out clear previously loaded scenario evidence",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 355,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: getByLabel('Scenario reference') resolved to 2 elements:\n    1) <input value=\"\" required=\"\" spellcheck=\"false\" id=\"training-scenario-id\" pattern=\"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\"/> aka getByRole('textbox', { name: 'Scenario reference', exact: true })\n    2) <input value=\"\" required=\"\" spellcheck=\"false\" id=\"training-replay-scenario\" pattern=\"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\"/> aka getByRole('textbox', { name: 'Recorded scenario reference' })\n\nCall log:\n\u001b[2m  - waiting for getByLabel('Scenario reference')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: getByLabel('Scenario reference') resolved to 2 elements:\n    1) <input value=\"\" required=\"\" spellcheck=\"false\" id=\"training-scenario-id\" pattern=\"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\"/> aka getByRole('textbox', { name: 'Scenario reference', exact: true })\n    2) <input value=\"\" required=\"\" spellcheck=\"false\" id=\"training-replay-scenario\" pattern=\"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\"/> aka getByRole('textbox', { name: 'Recorded scenario reference' })\n\nCall log:\n\u001b[2m  - waiting for getByLabel('Scenario reference')\u001b[22m\n\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:189:49",
+                    "location": {
+                      "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                      "column": 49,
+                      "line": 189
+                    },
+                    "snippet": " \u001b[90m 187 |\u001b[39m   \u001b[36mconst\u001b[39m state \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m installFixture(page)\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m   \u001b[36mconst\u001b[39m text \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m open(page\u001b[33m,\u001b[39m \u001b[32m\"en-CA\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 189 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(text\u001b[33m.\u001b[39mscenarioReference)\u001b[33m.\u001b[39mfill(fixture\u001b[33m.\u001b[39mscenario)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 190 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(text\u001b[33m.\u001b[39mscenarioReference)\u001b[33m.\u001b[39mpress(\u001b[32m\"Enter\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 191 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(fixture\u001b[33m.\u001b[39martifact))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 192 |\u001b[39m   state\u001b[33m.\u001b[39mmalformedRead \u001b[33m=\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                        "column": 49,
+                        "line": 189
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: getByLabel('Scenario reference') resolved to 2 elements:\n    1) <input value=\"\" required=\"\" spellcheck=\"false\" id=\"training-scenario-id\" pattern=\"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\"/> aka getByRole('textbox', { name: 'Scenario reference', exact: true })\n    2) <input value=\"\" required=\"\" spellcheck=\"false\" id=\"training-replay-scenario\" pattern=\"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\"/> aka getByRole('textbox', { name: 'Recorded scenario reference' })\n\nCall log:\n\u001b[2m  - waiting for getByLabel('Scenario reference')\u001b[22m\n\n\n  187 |   const state = await installFixture(page);\n  188 |   const text = await open(page, \"en-CA\");\n> 189 |   await page.getByLabel(text.scenarioReference).fill(fixture.scenario);\n      |                                                 ^\n  190 |   await page.getByLabel(text.scenarioReference).press(\"Enter\");\n  191 |   await expect(page.getByText(fixture.artifact)).toBeVisible();\n  192 |   state.malformedRead = true;\n    at /Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts:189:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:03:53.293Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/care-link-imp10-training-browser/artifacts/training-wrong-target-and--80063-ly-loaded-scenario-evidence/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/training/training.spec.ts",
+                    "column": 49,
+                    "line": 189
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2410163d751908292b1d-5e83f33cdbad3af57bff",
+          "file": "training.spec.ts",
+          "line": 184,
+          "column": 1
+        },
+        {
+          "title": "fresh verification for the same trainer preserves unsent input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 384,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:03:54.085Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2410163d751908292b1d-f6964f8b89a2a3ea32f6",
+          "file": "training.spec.ts",
+          "line": 205,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-23T14:03:22.881Z",
+    "duration": 31762.13,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

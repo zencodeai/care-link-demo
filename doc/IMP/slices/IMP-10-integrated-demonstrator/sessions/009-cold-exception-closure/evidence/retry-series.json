@@ -1,0 +1,78 @@
+[
+  {
+    "condition": "warm",
+    "round": 1,
+    "phase": "dispatch",
+    "at_utc": "2026-11-23T19:38:06.761999+00:00",
+    "first": [
+      {
+        "session_id": "d08451d1-569c-450e-8a2a-0f9990c581c9",
+        "task_id": "31502ebf-17e5-4738-bf4e-3a35e5c9d973",
+        "arrival_ns": 2679760910340250
+      },
+      {
+        "session_id": "f2561112-b510-4b27-9047-f6a77d2024e6",
+        "task_id": "2c2de30f-abdd-4823-bb14-a326d45f89b2",
+        "arrival_ns": 2679761753743333
+      }
+    ],
+    "pending": [
+      {
+        "session_id": "13a0a206-2ffd-4be7-85a9-8adb9f03707e",
+        "task_id": "a51f0207-5926-4d3a-9896-e075a309b4db",
+        "arrival_ns": 2679762536758416
+      },
+      {
+        "session_id": "04778e90-7fba-4688-9cb7-6455b6c75e42",
+        "task_id": "f7d1a99d-a5c7-441a-9fec-5a84a3c72a5f",
+        "arrival_ns": 2679763347334375
+      },
+      {
+        "session_id": "3e66c6f5-cd62-4480-87d7-377cf36c393b",
+        "task_id": "e2d34d63-cfa2-4df9-8cbd-83b2379ed271",
+        "arrival_ns": 2679764134505875
+      },
+      {
+        "session_id": "82e4a3dd-df0d-4165-91bf-01612f686a17",
+        "task_id": "1a056f6e-70d8-4b90-bfcd-a54ee223700b",
+        "arrival_ns": 2679764917590000
+      },
+      {
+        "session_id": "4137c4f4-2881-4b58-9d98-5791fc3e5134",
+        "task_id": "e7d42da3-33b0-47f2-9397-650bdff95511",
+        "arrival_ns": 2679765682698333
+      },
+      {
+        "session_id": "913f1f6b-5db9-4dd4-937c-913b752f19d6",
+        "task_id": "d7acb2e1-b981-4231-85a1-82b68121e382",
+        "arrival_ns": 2679766474848833
+      }
+    ],
+    "streams_before_dispatch": [
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      },
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      }
+    ],
+    "contexts": [
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      },
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      }
+    ],
+    "error": "Scoped kubectl exec failed (137) ['command terminated with exit code 137']",
+    "durable_after_failure": []
+  }
+]

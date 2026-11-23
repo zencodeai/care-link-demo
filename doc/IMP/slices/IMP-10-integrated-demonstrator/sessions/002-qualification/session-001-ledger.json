@@ -1,0 +1,82 @@
+{
+  "run_id": "2026-11-23-IMP-10",
+  "stage_id": "IMP-10",
+  "gate_id": "G-10",
+  "state": "blocked",
+  "gate_state": "blocked",
+  "closed": false,
+  "recorded_at": "2026-11-23T14:20:51.680881+00:00",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "branch": "feat/imp-09-backup-and-recovery",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Implement service slice 10",
+    "scope": "Source implementation and disposable synthetic automated checks; no live serving promotion, deployment, commit/push"
+  },
+  "predecessors": [
+    {
+      "path": "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+      "sha256": "7e9d57447d5e606a1e73f9e18ed6cdef90b4f5d1662a6122466c8e97feced8a6"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-07/ledger.json",
+      "sha256": "9941321dfbe5cfa48ad322a0d9fd7c5301c02ebbc0932dae1ec6e6ee3ab21098"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-08/ledger.json",
+      "sha256": "e09e1e707f5c9c43f154bdfeefc3db4e547d92bd106d2c3328406746e7631be7"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-09/ledger.json",
+      "sha256": "6a054df591853d7210979bc917f1603256f0ea7b3523168b4022db3a0630ea4c"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-10-A",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-B",
+      "state": "partial"
+    },
+    {
+      "id": "IMP-10-C",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-D",
+      "state": "partial"
+    }
+  ],
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/candidate-manifest.json",
+    "sha256": "795fbf691838fc9e42f7c4d61da2ffed00643a6f1a7c5e0800b8de88e12eb20a"
+  },
+  "results": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/results.json",
+    "sha256": "785920a04c5fe9434680807eba485cbec9cd991faff3ee015affcebaf5e1de72"
+  },
+  "qualification_packet": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/demo-packet.json",
+    "sha256": "f9a2d5ef92d760e86ac563c7dbae93c88d01b818c30b9acf65bbad602c4ec58b"
+  },
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": [],
+  "deferred_review_inventory": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/deferred-review-inventory.json",
+    "sha256": "739eee707891cbedeeae22085a28a5c744eb31ad6e1c0b3e5ede3a3a566b51dc"
+  },
+  "deployment_applied": false,
+  "participant_admission": false,
+  "commit_performed": false,
+  "push_performed": false,
+  "merge_performed": false,
+  "remaining": [
+    "A current candidate run through the combined deployment with exact model cold, warm and outage traces is missing. No active provider, cluster, routing or host trust change was authorized for this session.",
+    "The local load run used fixture identity, PDP, journal and provider. Independent help under that load and the full combined dependency outage drill were not run.",
+    "The trainer capture compares deterministic fictional projections. Real channel continuity, independently sourced live directory behavior and replay of real recorded model or business decisions remain outside the verified scope.",
+    "A restarted catalog requires approved time-bounded capture custody. Active simulator ciphertext cleanup does not prove erasure from other copies or backups.",
+    "The frozen plan validator reported the same pre-existing README digest drift at baseline and final. The standalone LLD validator could not run because its declared dependencies were unavailable locally."
+  ]
+}

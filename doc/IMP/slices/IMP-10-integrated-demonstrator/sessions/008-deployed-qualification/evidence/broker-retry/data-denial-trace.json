@@ -1,0 +1,40 @@
+{
+  "scope": "Fresh protected worker task after deployment of exact Data category observer",
+  "recorded_at_utc": "2026-11-23T18:35:43.055910+00:00",
+  "task": {
+    "task_id": "c59d23ab-1cc9-4b93-9a30-7361b28c46c5",
+    "context_available": true,
+    "worker_stream_current": true
+  },
+  "durable_jobs": [],
+  "trace": [
+    {
+      "role": "core",
+      "event": "Inference call denied cause=HTTPStatusError upstream_status=503"
+    },
+    {
+      "role": "core",
+      "event": "Inference call denied cause=HTTPStatusError upstream_status=503"
+    },
+    {
+      "role": "inference",
+      "event": "Inference Data call failed operation=context cause=HTTPStatusError status=403 elapsed_ms=19.5"
+    },
+    {
+      "role": "inference",
+      "event": "Inference job denied stage=data_context cause=InferenceDenied status=503"
+    },
+    {
+      "role": "inference",
+      "event": "Inference Data call failed operation=context cause=HTTPStatusError status=403 elapsed_ms=23.7"
+    },
+    {
+      "role": "inference",
+      "event": "Inference job denied stage=data_context cause=InferenceDenied status=503"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=inference_context: other"
+    }
+  ]
+}

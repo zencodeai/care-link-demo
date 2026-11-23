@@ -1,0 +1,58 @@
+{
+  "scope": "Chromium routed API fixtures",
+  "totals": {
+    "passed": 55,
+    "failed": 0,
+    "skipped": 0
+  },
+  "suites": {
+    "training": {
+      "startTime": "2026-11-23T14:13:23.962Z",
+      "duration": 6648.278,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "referral": {
+      "startTime": "2026-11-23T14:13:30.987Z",
+      "duration": 9181.998,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "assistance": {
+      "startTime": "2026-11-23T14:13:40.552Z",
+      "duration": 14864.885,
+      "expected": 11,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "rights-followup": {
+      "startTime": "2026-11-23T14:13:55.795Z",
+      "duration": 7144.002,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "governance": {
+      "startTime": "2026-11-23T14:14:03.345Z",
+      "duration": 21164.510000000002,
+      "expected": 13,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "recovery": {
+      "startTime": "2026-11-23T14:14:24.915Z",
+      "duration": 10753.382,
+      "expected": 11,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  }
+}

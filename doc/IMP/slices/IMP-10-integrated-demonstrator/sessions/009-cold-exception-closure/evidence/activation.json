@@ -1,0 +1,51 @@
+{
+  "image_id": "sha256:180f32ce4e63e1a593a07b761d96d87d0f7678c13966e9d5a5046ca0c41660ae",
+  "image_cri_reference": "docker.io/library/import-2026-11-23@sha256:e90c69a2735b77ccd6b10f1d6230efe9861f2d84ce8e6239806c8fa8bb466b8b",
+  "observed": {
+    "core": {
+      "boot_observation": {
+        "role": "core",
+        "boot_id": "d97acfcc-82e8-44f4-8736-ef697cd31b02",
+        "uid": 23110,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "pod_uid": "b3ee5a9f-aa8d-4bfb-b96b-f5eadb01da22",
+      "image_id": "docker.io/library/import-2026-11-23@sha256:e90c69a2735b77ccd6b10f1d6230efe9861f2d84ce8e6239806c8fa8bb466b8b"
+    },
+    "data": {
+      "boot_observation": {
+        "role": "data",
+        "boot_id": "f36a9060-5ab5-47ba-8b29-4bba91bef03e",
+        "uid": 23112,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "pod_uid": "ecc48ac3-1acc-4274-bbad-8c472ddd7d98",
+      "image_id": "docker.io/library/import-2026-11-23@sha256:e90c69a2735b77ccd6b10f1d6230efe9861f2d84ce8e6239806c8fa8bb466b8b"
+    },
+    "inference": {
+      "boot_observation": {
+        "role": "inference",
+        "boot_id": "916afc43-1fcb-46f8-a4ac-c0c077a32bac",
+        "uid": 23120,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "pod_uid": "51487e15-dc0e-4500-9c5f-edc001e7c246",
+      "image_id": "docker.io/library/import-2026-11-23@sha256:e90c69a2735b77ccd6b10f1d6230efe9861f2d84ce8e6239806c8fa8bb466b8b"
+    },
+    "runtime": {
+      "boot_observation": {
+        "role": "runtime",
+        "boot_id": "b6747c52-2734-4a6b-831e-c189bdafacc5",
+        "uid": 23121,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "pod_uid": "e9d3944b-c294-49d0-9302-4f2c111c2347",
+      "image_id": "docker.io/library/import-2026-11-23@sha256:e90c69a2735b77ccd6b10f1d6230efe9861f2d84ce8e6239806c8fa8bb466b8b"
+    }
+  },
+  "bridge_boot_id": "72508984-fb6d-4775-9a7c-4e425a9b31aa",
+  "epoch": 1,
+  "bundle_digest": "367a06c1068acab605ffdf7d9df88b45aa051c49aa0ada7391d0b2bdaf7cd198",
+  "at_utc": "2026-11-23T19:30:31.225751+00:00",
+  "purpose": "qualification"
+}

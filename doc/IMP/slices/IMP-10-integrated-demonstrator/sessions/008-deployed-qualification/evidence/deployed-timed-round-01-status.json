@@ -1,0 +1,16 @@
+[
+  {
+    "task_id": "a29d1927-976d-490e-b1a7-55ca2bc7014c",
+    "state": "scoped",
+    "safe_reason": null,
+    "steps_used": 0,
+    "tools_used": 0
+  },
+  {
+    "task_id": "6c5bfa26-9785-4fdd-aeb2-f3a1d8915045",
+    "state": "scoped",
+    "safe_reason": null,
+    "steps_used": 0,
+    "tools_used": 0
+  }
+]

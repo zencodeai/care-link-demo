@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-11-23T18:28:09.265000+00:00",
+  "scope": "care-link-imp10-008",
+  "node_container_id": "caf557dd1bf7de005d44f5b62bf7146749cf84021d663edd1c73426efb616ac2",
+  "kubernetes_node_uid": "6451cc5b-46b8-44ab-b7fb-ae11c3f94487",
+  "node_private_address": "172.23.0.2",
+  "candidate_tag": "care-link-imp10:protected-008-broker-diagnostics",
+  "candidate_docker_id": "sha256:803e2caaed6083870e1c80f29954b337ea6ad5a080e6a46825977cd073ca4c88",
+  "candidate_cri_reference": "docker.io/library/import-2026-11-23@sha256:a003ffc4007876074e773e7300cc04c15b930fc9b5e477cf32fc504fe5fd8588",
+  "candidate_cri_id": "sha256:584976b9bec344ac64324e0bb4bb59658f90d2b39a612e1379bd8304941a4539",
+  "opa_reference": "docker.io/library/care-link-imp10:protected-008-opa",
+  "opa_cri_id": "sha256:0db86e62fe69381aea0332dc6e37b83374ee82233691a83abd8a9a2a58525cc9",
+  "opa_verified_oci_index_digest": "sha256:19ad3fb3bb5bba8524d3452bde105a53f696af9eba594dd45ed5008211d44129",
+  "envoy_cri_reference": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+  "role_registration_ids_preserved": true,
+  "roles": [
+    "core",
+    "data",
+    "identity",
+    "inference",
+    "journal",
+    "pdp",
+    "receiver",
+    "runtime",
+    "training"
+  ]
+}

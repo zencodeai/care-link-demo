@@ -1,0 +1,409 @@
+{
+  "packet_id": "IMP10-008-integration",
+  "stage_id": "IMP-10",
+  "gate_id": "G-10",
+  "candidate": {
+    "commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+    "diff_digest": "b721ef733925fc73e54f76ac4b03e2fb84f1fd11fc55b6fd9f88cccc2508c8e3",
+    "artifact_digest": "11e0648ee7457ae2a6d216b757cb64bd6811d3ca524c85fe2a72eea12ef4a12e",
+    "configuration_digest": "a2646a678bea0453971b662cab5f339cfd91600527955c6fb8bb5c3dd2ac9522",
+    "contract_digest": "87d3f81c51ccd56fa42b1d5add5b7dcf0a755b5b3f3650c9576378de785608e4",
+    "environment_digest": "d34d26d7fe0697f33ef6f08bad89effe23e41d1ced2f0e6a9b892fbdb5eb0f03",
+    "fixture_digest": "bbf7688822db9420e5190c7ab9a681bfce6ba416ec95719d21671a9238de30c6"
+  },
+  "state": "draft",
+  "preconditions": [
+    "Use an isolated protected Kind lease, exact immutable images, signed model qualification authority and a private synthetic actor roster.",
+    "For the remaining cold measurements, use an available instance capable of loading the exact model from an unloaded state under the declared ten-session workload."
+  ],
+  "normal_steps": [
+    {
+      "action": "Use the current protected Main, Training and replay route over real workload mTLS.",
+      "expected": "Owner-scoped successful operation and retry with foreign denial.",
+      "actual": "Scope verified through actual synthetic actor MFA and role peers.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/integration.json",
+          "sha256": "4fb365edd59ad8918284e992418dceebc400adba4c7357b820d9a7259d4b6a67"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-probes-retry.json",
+          "sha256": "a82a0aa58bc379fb49a3698730d1d88583caa719c72d53e957452eaab2964a7c"
+        }
+      ]
+    },
+    {
+      "action": "Run ten scoped protected browser reads and an exact Qwen component generation.",
+      "expected": "Ten authorized assignments and exact fixed-control response with matching token accounting.",
+      "actual": "Ten reads passed. Protected exact Qwen control returned HTTP 200 and fixed READY.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/ten-active-browser-reads.json",
+          "sha256": "e17f0a68d0e44f74373d50df4913a7e51cdfa6b540ae60842199d4083f741095"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-generation-control.json",
+          "sha256": "04705aae2f1b5ea9c82e114edb055962fcd43ca129580844181b191f6cfe0247"
+        }
+      ]
+    },
+    {
+      "action": "Run the fresh-authority workload at declared peak.",
+      "expected": "Measure ten active protected sessions, two occupied slots and eight queued tasks with two completed drafts.",
+      "actual": "Observed the exact peak before and after the actor reads. Both real Qwen jobs completed and produced their drafts.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/prequeued-ten-session-rounds.json",
+          "sha256": "c7692401a865233269f4768af05f8a14aa7ab43471923a6be81648a5b39be0df"
+        }
+      ]
+    }
+  ],
+  "adverse_steps": [
+    {
+      "action": "Stop the owned protected Core, then the same leased node.",
+      "expected": "Observe current dependency losses and retained signed public fallback.",
+      "actual": "Both fault cutoffs, typed private denies, scoped recovery and signed Static observed.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-outage.json",
+          "sha256": "cc3f12a55f8511efc9c1b72ba16f05f9cb8718e989e65a82844f153dd3c2f153"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/help.json",
+          "sha256": "6f622856d63f060de34c3524dcec493dce81002f6a54b55591a07fef6c36ae04"
+        }
+      ]
+    },
+    {
+      "action": "Pause only the owned model connector then restore it.",
+      "expected": "Bounded typed HTTP 503s followed by the same exact warmed control.",
+      "actual": "Two empty HTTP 503s and exact warm HTTP 200 observed at the component boundary.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-bridge-error-controls.json",
+          "sha256": "25c7ff9a34d6553da818920ef99c8bf78760b98de53d0748d3a3f3fd99998e43"
+        }
+      ]
+    },
+    {
+      "action": "Observe actual reservations and queued tasks on the declared combined topology.",
+      "expected": "Ten active sessions, two durable slots and eight unique queued tasks.",
+      "actual": "The fresh-authority candidate reached the exact workload and completed both jobs in one round. Repeated timing acceptance remains open.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-single-turn-observed-error.json",
+          "sha256": "7516614b843347621a163504e752d1b1eff13af5b3e3c55e7c4b8bb038b6e9a5"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-exception.json",
+          "sha256": "2dacab56334db14cd6f2b35f78972bf4d4481ec5ebb56ebf87207a15dec493d1"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/single-deployed-identity-observed-turn.json",
+          "sha256": "c92fc97b7c89fa974e7e74f08866c33db9dcb26d646bfe9c955c3cbafd2a4add"
+        }
+      ]
+    },
+    {
+      "action": "Observe bounded error at declared load and exercise manual delivery.",
+      "expected": "Retain both uncertain slots, suppress drafts and deliver the exact manual message once.",
+      "actual": "Both unknown slots remained unchanged and the participant saw exactly one human-authored message after an exact retry.",
+      "evidence_refs": [
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/refill-before-compute-rounds.json",
+          "sha256": "4c73a58015c9900f20b1d56f21e559e57b2bb1c4d4c851c9833160323669fd6c"
+        },
+        {
+          "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/manual-with-unavailable-inference.json",
+          "sha256": "bf930b213cb42d2d4dad093991288969c50895efee9df6b4a036f0f5b0186f81"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "protected-deployed-journey",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Proof-bound Training capture and replay, exact retry, scoped Main operations.",
+      "actual": "Actual password and TOTP, participant write/read, trainer ownership and exact replay passed.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/integration.json",
+      "evidence_digest": "4fb365edd59ad8918284e992418dceebc400adba4c7357b820d9a7259d4b6a67",
+      "mock_used": false
+    },
+    {
+      "name": "protected-workload-and-cni",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual signed workload mTLS and same-target live CNI controls.",
+      "actual": "Journal signature and nonce matched. Unadmitted access to eight live dependencies was denied.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-probes-retry.json",
+      "evidence_digest": "a82a0aa58bc379fb49a3698730d1d88583caa719c72d53e957452eaab2964a7c",
+      "mock_used": false
+    },
+    {
+      "name": "protected-core-and-node-outage",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Execute and restore the same isolated node and protected Core.",
+      "actual": "Both faults blocked protected Core. Same node and signed Journal recovered.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-outage.json",
+      "evidence_digest": "cc3f12a55f8511efc9c1b72ba16f05f9cb8718e989e65a82844f153dd3c2f153",
+      "mock_used": false
+    },
+    {
+      "name": "independent-private-help-and-static",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Bind actual Help authority and preserve signed Static during node loss.",
+      "actual": "Core-only loss preserved scoped Help. During the node outage, four operations returned typed 503 and the spool and audit were unchanged.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/help.json",
+      "evidence_digest": "6f622856d63f060de34c3524dcec493dce81002f6a54b55591a07fef6c36ae04",
+      "mock_used": false
+    },
+    {
+      "name": "pdp-init-idempotence",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exact owner-restricted OPA restarts on its existing sandbox file.",
+      "actual": "Verified and reused executable bytes in two consecutive invocations.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-pdp-seed-twice.json",
+      "evidence_digest": "c6eb2f8c90e0f8f79cfbfd8f384dac7fc2447d423c020d5f4d79c6a56504ebe2",
+      "mock_used": false
+    },
+    {
+      "name": "initial-locked-source-regression",
+      "command": null,
+      "tool_version": null,
+      "status": "failed",
+      "expected": "All locked commands in the current checkout.",
+      "actual": "38 of 39 commands passed. 1,801 backend and 234 frontend tests passed. One local policy sample measured p95 53.173 ms.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source/checks.json",
+      "evidence_digest": "ccd5cdbd24f850a288c2b8f00fb1481bfe2b112fc8314c6a4151d077bd3008b6",
+      "mock_used": false
+    },
+    {
+      "name": "locked-source-latency-isolated-rerun",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged 50 ms p95 threshold.",
+      "actual": "The isolated case passed at p95 43.567 ms.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source-results.json",
+      "evidence_digest": "b8fc059a6dee13dc53688661528e953f42eaf66f9818e356e5c73453ce385adf",
+      "mock_used": false
+    },
+    {
+      "name": "repeated-live-loopback",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual local Qwen and 10/2/8 pressure with safe errors.",
+      "actual": "Three sequential repeated warm and compute-unknown error loops passed in the static loopback fixture.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/timing.json",
+      "evidence_digest": "b9686d00021e4915d952bdd53747c1d82759605a71b284b4219b72774238d25e",
+      "mock_used": false
+    },
+    {
+      "name": "protected-assisted-route-controls",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Real workload peers reach only the declared protected input boundaries.",
+      "actual": "Runtime reached the Core broker. Core to Inference and Inference to Data returned the expected HTTP 400 for empty requests. Ten live CNI dependencies rejected the unadmitted caller.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-exception.json",
+      "evidence_digest": "2dacab56334db14cd6f2b35f78972bf4d4481ec5ebb56ebf87207a15dec493d1",
+      "mock_used": false
+    },
+    {
+      "name": "current-release-custody",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Five exact current evaluator boots acknowledge qualification-only authority.",
+      "actual": "Signed qualification acknowledgments were recorded for all five observed boots. A restrictive epoch was published when qualification ended.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-activation-broker-observer.json",
+      "evidence_digest": "cacb41a6de0a172e3ebc5656a1236c98b11c4fec96c5abb67df8d27510dd97de",
+      "mock_used": false
+    },
+    {
+      "name": "protected-browser-session-reads",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Ten current protected browser sessions independently read their scoped synthetic assignment.",
+      "actual": "Ten scoped reads succeeded across five English and five French sessions at p95 429.764 ms. Active reads alone establish no concurrent manual delivery or model reservation.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/ten-active-browser-reads.json",
+      "evidence_digest": "e17f0a68d0e44f74373d50df4913a7e51cdfa6b540ae60842199d4083f741095",
+      "mock_used": false
+    },
+    {
+      "name": "deployed-qwen-generation-control",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "The exact loaded Qwen model generates the fixed control over the protected Inference-to-host path.",
+      "actual": "HTTP 200 and exact READY in 24.039 s, with 27 SDK and provider prompt tokens and seven completion tokens.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-generation-control.json",
+      "evidence_digest": "04705aae2f1b5ea9c82e114edb055962fcd43ca129580844181b191f6cfe0247",
+      "mock_used": false
+    },
+    {
+      "name": "deployed-qwen-bounded-component-errors",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "The owned connector fails within bounds and the same loaded model recovers on that protected component path.",
+      "actual": "Two injected pauses returned empty HTTP 503 in 2.025 s and 2.043 s. The fixed warm control recovered in 2.504 s.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-bridge-error-controls.json",
+      "evidence_digest": "25c7ff9a34d6553da818920ef99c8bf78760b98de53d0748d3a3f3fd99998e43",
+      "mock_used": false
+    },
+    {
+      "name": "deployed-warm-and-error-workload-distributions",
+      "command": null,
+      "tool_version": null,
+      "status": "failed",
+      "expected": "Repeated warm and bounded-error timings with ten active sessions, two occupied slots and eight queued tasks on the exact deployed topology.",
+      "actual": "The repair produced one full-load warm success with two durable completed jobs and one distinct full-load round with two safe compute-unknown outcomes. Repeated distributions remain incomplete.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/summary.json",
+      "evidence_digest": "51dd356e4c2dfd89e952a1ae2fe10881a9850810d99dd88ca0b8bf53dfb11cb9",
+      "mock_used": false
+    },
+    {
+      "name": "deployed-cold-workload-distribution",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Repeat true cold starts with the exact Qwen model and declared deployed ten-session load.",
+      "actual": "Zero cold cycles. The current model must stay loaded. The 36 GiB host rejected a second instance under its resource guardrails, and there is no separate machine.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/cold-isolation-preflight.json",
+      "evidence_digest": "09e041a3c3520fbf7d8ad65a65e0c2d28f16c29339e3aff4f2f3a1364a4db925",
+      "mock_used": false
+    },
+    {
+      "name": "quiet-locked-source-regression",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Repeat all locked checks after isolated cluster teardown.",
+      "actual": "39 of 39 commands passed.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/quiet-source-results.json",
+      "evidence_digest": "2954a46d171a3dafe9601a190e1ae44f6017a39d64f31bbf8ede265462e74a4c",
+      "mock_used": false
+    },
+    {
+      "name": "qualification-teardown",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Remove the dedicated test resources and preserve existing review environments and native model.",
+      "actual": "Owned resource and preservation checks are recorded in the cleanup receipt.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-cleanup.json",
+      "evidence_digest": "c2aea4a1fbaaf310e95c108078d3c535472432b7cbc513c4963554df1bdd362a",
+      "mock_used": false
+    },
+    {
+      "name": "broker-failure-typed-response",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Core returns its typed denial and performs no retry on an unavailable Inference response.",
+      "actual": "Upstream 503, read timeout and invalid result each returned typed HTTP 503 in the composed route regression. The exact live worker retry received HTTP 503.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/source-verification.json",
+      "evidence_digest": "0c61465809c19bb32327de1bdeca5f28cf7307a69222ced44a53d63a853561d8",
+      "mock_used": true
+    },
+    {
+      "name": "fresh-job-scoped-actor-authority",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "A task proceeds under new operation-specific Identity proofs after its original proof expires.",
+      "actual": "The expiry-aware worker journey completed on TLS PostgreSQL and 134 focused tests passed.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/source-verification.json",
+      "evidence_digest": "f80596a44b473930035ce455b453a551b11c6e212865a514c11fc031c1c00a4d",
+      "mock_used": true
+    },
+    {
+      "name": "fresh-authority-deployed-worker",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "The exact deployed worker creates one durable result and unsent draft using the unchanged loaded model.",
+      "actual": "The real turn reached awaiting_human in 21.396 s, with one completed job, one draft and its compute slot free.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/single-deployed-turn.json",
+      "evidence_digest": "492373fddb64aa61ce9122ed0bca39bfbafdc1bc9e3b7cab5dcedafe22349213",
+      "mock_used": false
+    },
+    {
+      "name": "fresh-authority-declared-warm-peak",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "The declared live workload reaches ten active sessions, two occupied slots and eight unique pending tasks before and after the protected reads.",
+      "actual": "Both jobs completed and produced one draft each in the first full-load round. The dispatch-to-terminal interval was 27.427 s.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/prequeued-ten-session-rounds.json",
+      "evidence_digest": "c7692401a865233269f4768af05f8a14aa7ab43471923a6be81648a5b39be0df",
+      "mock_used": false
+    },
+    {
+      "name": "fresh-authority-declared-bounded-timeouts",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "A real full-load response failure produces no draft, retains uncertain compute and preserves durable records.",
+      "actual": "The separate full-load round returned HTTP 503 for both jobs after 28.601 s and 28.517 s at the host bridge. Both durable slots remained compute-unknown, with zero drafts.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/refill-before-compute-rounds.json",
+      "evidence_digest": "4c73a58015c9900f20b1d56f21e559e57b2bb1c4d4c851c9833160323669fd6c",
+      "mock_used": false
+    },
+    {
+      "name": "fresh-authority-manual-after-saturation",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Manual actor delivery remains separate from inference with two unknown compute slots.",
+      "actual": "A protected human message was visible exactly once and the exact retry returned the same message, while both compute slots stayed unknown.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/manual-with-unavailable-inference.json",
+      "evidence_digest": "bf930b213cb42d2d4dad093991288969c50895efee9df6b4a036f0f5b0186f81",
+      "mock_used": false
+    },
+    {
+      "name": "fresh-authority-locked-source-regression",
+      "command": null,
+      "tool_version": null,
+      "status": "failed",
+      "expected": "Verify all locked commands against the exact source after isolated cleanup.",
+      "actual": "38 of 39 commands passed on the deployed candidate source. The workstation fixture used an earlier Identity reference; the separate post-lock checks record the corrected fixture.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/locked-source-results.json",
+      "evidence_digest": "2e1e90da56cd3aeb524e3ed2f411bda460581587dfcbc9819224bd9071ea1a06",
+      "mock_used": false
+    },
+    {
+      "name": "fresh-authority-post-lock-source-regression",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Locked checks on the final source, including the corrected workstation fixture and authority-at-lock tests.",
+      "actual": "39 of 39 locked checks passed. The dedicated TLS fixture passed both guarded lock cases in the focused suite.",
+      "mock_used": false,
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/locked-source-results.json",
+      "evidence_digest": "fa6a421977c612873e958f2e45d196fdf69092cd62f6fb37a7d08d2b5df25fce"
+    }
+  ],
+  "residuals": [
+    "Repeat true cold starts with the exact Qwen model at declared ten-session load. The current model must stay loaded, the workstation guardrails reject a second exact instance, and the user confirmed that no separate test machine is available.",
+    "Complete repeated deployed warm and error distributions for the final post-lock source at the exact ten-session load. The earlier deployed authority image completed both jobs in one declared-load warm round and preserved two uncertain slots after two HTTP 503 responses in another."
+  ],
+  "acceptance_scope": "Private synthetic Kubernetes qualification with actor, workload trust, outage and standalone model controls. G-10 remains open.",
+  "rollback": "Advance the temporary qualification registry to a restrictive epoch and remove the leased environment. Preserve the native model and saved review environments.",
+  "human_decision_id": null,
+  "is_example": false
+}

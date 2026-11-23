@@ -1,0 +1,34 @@
+{
+  "recorded_at_utc": "2026-11-23T20:18:58.662119+00:00",
+  "checks": [
+    {
+      "command": ".venv/bin/python tools/check.py",
+      "state": "passed",
+      "commands": 34,
+      "backend": {
+        "passed": 1426,
+        "skipped": 413,
+        "warnings": 18
+      },
+      "frontend_passed": 234,
+      "scope": "Local fast lane. The candidate handoff retains the fuller deployed and locked qualification evidence."
+    },
+    {
+      "command": ".venv/bin/python -m tools.imp05_verification.validate_plan",
+      "state": "passed"
+    },
+    {
+      "command": ".venv/bin/python -m tools.imp10_verification.trace --check",
+      "state": "passed"
+    },
+    {
+      "command": "git diff --cached --check",
+      "state": "archived_evidence_findings",
+      "detail": "29 preserved raw evidence logs and executed driver captures have final blank lines. The source and closure-document scoped check passed."
+    }
+  ],
+  "credential_pattern_scan": {
+    "scope": "Staged IMP-10 evidence and execution record",
+    "matches": 0
+  }
+}

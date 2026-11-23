@@ -27,6 +27,7 @@ from .recovery_routes import RecoveryGateway
 from .referral_ports import ReceiverGateway, ReferralGateway
 from .review_channels import ReviewViews
 from .review_context import ReviewContexts
+from .training_routes import EvaluationGateway, TrainingGateway, attach_training_routes
 
 Record = dict[str, object]
 Mutation = Callable[[Actor, str, Record, str], Record]
@@ -88,6 +89,8 @@ def create_manual_app(
     generation_admission: Callable[[], None] | None = None,
     help_reconciler: HelpReconciler | None = None,
     help_verify: Callable[[Request], bool] | None = None,
+    training: TrainingGateway | None = None,
+    evaluation: EvaluationGateway | None = None,
 ) -> FastAPI:
     """No permissive defaults; existing developer application stays separate."""
     app = FastAPI(title="CARE-Link manual BFF", docs_url=None, redoc_url=None, openapi_url=None)
@@ -100,6 +103,7 @@ def create_manual_app(
         suffix = key.removeprefix("manual.")
         codes = {
             "commit_unknown": "COMMIT_UNKNOWN",
+            "capability_disabled": "CAPABILITY_DISABLED",
             "idempotency_conflict": "IDEMPOTENCY_CONFLICT",
             "replacement_unavailable": "REPLACEMENT_UNAVAILABLE",
             "revision_conflict": "REVISION_CONFLICT",
@@ -180,6 +184,8 @@ def create_manual_app(
             if current.review_run_id and require_view:
                 views.require(current, request.headers.get("x-review-view", ""))
         return current
+
+    attach_training_routes(app, actor, channels, training, evaluation)
 
     if (help_reconciler is None) != (help_verify is None):
         raise ValueError("Help import requires exact current workload verification")

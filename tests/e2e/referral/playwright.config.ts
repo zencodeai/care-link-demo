@@ -1,7 +1,8 @@
 import { defineConfig } from "@playwright/test";
 import { resolve } from "node:path";
 const output = resolve(
-  "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/evidence/browser",
+  process.env.IMP05_BROWSER_OUTPUT ??
+    "doc/IMP/slices/IMP-05-reviewed-simulated-referral/sessions/001-implementation/evidence/browser",
 );
 export default defineConfig({
   testDir: ".",
@@ -18,7 +19,7 @@ export default defineConfig({
   ],
   webServer: {
     command:
-      "pnpm --filter @care-link/web exec vite --host 127.0.0.1 --port 5175 --strictPort",
+      "pnpm --filter @care-link/web exec vite --host 127.0.0.1 --port 5175 --strictPort --force",
     url: "http://127.0.0.1:5175",
     reuseExistingServer: false,
     timeout: 30000,
@@ -29,7 +30,7 @@ export default defineConfig({
     browserName: "chromium",
     ignoreHTTPSErrors: false,
     connectOptions: {
-      wsEndpoint: "ws://127.0.0.1:30905/",
+      wsEndpoint: process.env.PLAYWRIGHT_WS_ENDPOINT ?? "ws://127.0.0.1:30905/",
       exposeNetwork: "<loopback>",
       headers: {
         "x-playwright-launch-options": JSON.stringify({

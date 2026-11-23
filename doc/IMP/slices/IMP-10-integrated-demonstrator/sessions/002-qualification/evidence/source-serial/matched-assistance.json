@@ -1,0 +1,78 @@
+{
+  "state": "passed",
+  "recorded_at": "2026-11-23T14:50:13.581546Z",
+  "provider": "fixture",
+  "fixture_release_only": true,
+  "bundle_digest": "7281e5e61e68f929aa4b96162c5f0f6ffd512e9c27260e7d7862e417ca75f7dc",
+  "activated_epoch": 1,
+  "restricted_epoch": 2,
+  "matched_comparison": {
+    "actor_only": {
+      "source_read": "exact_participant_report",
+      "manual_receipt": "visible_to_participant",
+      "elapsed_seconds": 0.159,
+      "inference_jobs": 0,
+      "drafts": 0
+    },
+    "assisted": {
+      "source_read": "exact_participant_report",
+      "manual_receipt": "visible_to_participant",
+      "elapsed_seconds": 0.138,
+      "inference_jobs": 1,
+      "drafts": 1,
+      "exact_stale_review_denied": true
+    }
+  },
+  "bounded_observations": [
+    {
+      "tool": "protocol_read",
+      "taint": "untrusted",
+      "sources": 1
+    }
+  ],
+  "elapsed_seconds": 1.988,
+  "asserted_states": {
+    "task": "completed",
+    "durable_inference_job": "completed",
+    "draft": "rejected",
+    "free_slots": 2,
+    "manual_session": "human_authored_followthrough_committed_after_disable",
+    "referral_dispatch_rows": 0
+  },
+  "inference_outcomes": [
+    {
+      "state": "completed",
+      "input_tokens": 128,
+      "output_tokens": 8
+    }
+  ],
+  "successful_role_hops": [
+    "core /internal/v1/broker/inference",
+    "core /internal/v1/broker/proposals",
+    "core /internal/v1/broker/tools",
+    "core /internal/v1/broker/work",
+    "core /internal/v1/tasks/{id}/lease",
+    "data /internal/v1/data/assistance/inference/complete",
+    "data /internal/v1/data/assistance/inference/context",
+    "data /internal/v1/data/assistance/inference/current",
+    "data /internal/v1/data/assistance/inference/reserve",
+    "data /internal/v1/data/assistance/proposal_submit",
+    "data /internal/v1/data/assistance/reserve_proposal",
+    "data /internal/v1/data/assistance/step_lease/{id}",
+    "data /internal/v1/data/assistance/tool_invoke",
+    "data /internal/v1/data/assistance_task_context",
+    "data /internal/v1/data/authority",
+    "data /internal/v1/data/draft_read",
+    "data /internal/v1/data/draft_review",
+    "data /internal/v1/data/task_create",
+    "data /internal/v1/data/task_read",
+    "host-inference-bridge /internal/v1/inference/execute",
+    "host-inference-bridge /internal/v1/inference/tokenize",
+    "inference /internal/v1/inference/jobs"
+  ],
+  "boundaries": [
+    "Signed fixture identity and qualification release keys.",
+    "Fixture ASGI role authentication and fixed-origin relay.",
+    "Fixture identity, channel, PDP and journal. Real TLS PostgreSQL and app state."
+  ]
+}

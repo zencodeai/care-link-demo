@@ -1,0 +1,248 @@
+{
+  "recorded_at_utc": "2026-11-23T20:09:42.705600+00:00",
+  "method": "Ten authenticated synthetic web sessions per cohort, including a scoped two-party manual-delivery channel. Arrival rate is nine observed interarrival intervals divided by the first-to-last admission span. Monotonic timing uses nearest-rank descriptive percentiles.",
+  "declared_peak": {
+    "active_sessions": 10,
+    "occupied_before_fault": 2,
+    "pending_tasks": 8
+  },
+  "candidate_context_token_cap": 8192,
+  "candidate_output_token_cap": 1024,
+  "hardware": {
+    "architecture": "arm64",
+    "macos_version": "26.6.2",
+    "hardware_memory_bytes": 38654705664,
+    "logical_cpu_count": 14
+  },
+  "warm_rounds": 2,
+  "controlled_error_rounds": 2,
+  "cold_rounds": 0,
+  "cold_scope": "waived_by_user",
+  "fixture_definition": {
+    "path": "tools/imp10_verification/deployed_load.py",
+    "sha256": "3517a511d4e8e133b45684a04264fa97c530274f24078f4a8f4d557801d64674"
+  },
+  "size_scope": "Each fixture sets one deterministic needs assertion. The complete serialized conversation and compiled prompt byte counts were not captured. Actual returned provider token counts are recorded for warm requests. Error replies did not contain token usage.",
+  "windows": [
+    {
+      "condition": "warm",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/fresh-warm.json",
+        "sha256": "7dcb2f931235fe81d41f7fc6732d0f770a7760e884de51521929911b2420dec2"
+      },
+      "arrival_offsets_ms": [
+        0.0,
+        824.377,
+        1690.446,
+        2580.197,
+        3330.914,
+        4132.752,
+        4900.258,
+        5700.034,
+        10626.551,
+        11831.772
+      ],
+      "arrival_rate_per_second": 0.761,
+      "channel": "web",
+      "locale_by_arrival": [
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA"
+      ],
+      "seeded_assertion_bytes_by_arrival": [
+        66,
+        75,
+        66,
+        75,
+        66,
+        75,
+        66,
+        75,
+        66,
+        75
+      ],
+      "provider_usage": [
+        {
+          "input_tokens": 1879,
+          "output_tokens": 20
+        },
+        {
+          "input_tokens": 1926,
+          "output_tokens": 20
+        }
+      ]
+    },
+    {
+      "condition": "warm",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/separate-warm.json",
+        "sha256": "3bbac8c69aacef84093ff42525102e1691dcac699d6c527289b2660d5ccdea2a"
+      },
+      "arrival_offsets_ms": [
+        0.0,
+        934.491,
+        1824.756,
+        2606.121,
+        3389.105,
+        4193.954,
+        4961.146,
+        5758.96,
+        10683.974,
+        11921.157
+      ],
+      "arrival_rate_per_second": 0.755,
+      "channel": "web",
+      "locale_by_arrival": [
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA"
+      ],
+      "seeded_assertion_bytes_by_arrival": [
+        66,
+        75,
+        66,
+        75,
+        66,
+        75,
+        66,
+        75,
+        66,
+        75
+      ],
+      "provider_usage": [
+        {
+          "input_tokens": 1930,
+          "output_tokens": 20
+        },
+        {
+          "input_tokens": 1887,
+          "output_tokens": 20
+        }
+      ]
+    },
+    {
+      "condition": "error",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/peak-error-one.json",
+        "sha256": "15c8e97d5f006c90a21a51d2d49d8cba1b0cdc413653926d3ccfe4022e80bbc3"
+      },
+      "arrival_offsets_ms": [
+        0.0,
+        1127.577,
+        2021.899,
+        2936.738,
+        3795.155,
+        4614.196,
+        5469.5,
+        6286.902,
+        10962.074,
+        11070.137
+      ],
+      "arrival_rate_per_second": 0.813,
+      "channel": "web",
+      "locale_by_arrival": [
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA"
+      ],
+      "seeded_assertion_bytes_by_arrival": [
+        66,
+        75,
+        66,
+        75,
+        66,
+        75,
+        66,
+        75,
+        66,
+        75
+      ],
+      "provider_usage": [
+        {
+          "input_tokens": null,
+          "output_tokens": null
+        },
+        {
+          "input_tokens": null,
+          "output_tokens": null
+        }
+      ]
+    },
+    {
+      "condition": "error",
+      "receipt": {
+        "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/peak-error-two.json",
+        "sha256": "f10c16a59b913e216d19e3f85a6a077e39ea1c606109a25978ca5c46f827a82d"
+      },
+      "arrival_offsets_ms": [
+        0.0,
+        896.511,
+        1875.635,
+        2720.325,
+        3472.069,
+        4270.94,
+        5096.389,
+        5875.828,
+        10910.762,
+        10980.29
+      ],
+      "arrival_rate_per_second": 0.82,
+      "channel": "web",
+      "locale_by_arrival": [
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA",
+        "en-CA",
+        "fr-CA"
+      ],
+      "seeded_assertion_bytes_by_arrival": [
+        66,
+        75,
+        66,
+        75,
+        66,
+        75,
+        66,
+        75,
+        66,
+        75
+      ],
+      "provider_usage": [
+        {
+          "input_tokens": null,
+          "output_tokens": null
+        },
+        {
+          "input_tokens": null,
+          "output_tokens": null
+        }
+      ]
+    }
+  ]
+}

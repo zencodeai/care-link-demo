@@ -1,0 +1,34 @@
+{
+  "$defs": {
+    "TrainingEnvelope": {
+      "type": "object",
+      "properties": {
+        "operation_id": { "$ref": "#/$defs/Id" },
+        "action": {
+          "enum": ["scenario_create", "scenario_read", "scenario_stop"]
+        },
+        "audience": { "const": "care-link-training" },
+        "arguments": { "type": "object" },
+        "path_arguments": { "type": "object" },
+        "evidence": { "$ref": "#/$defs/IdentityEvidence" },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "signature": { "type": "string", "pattern": "^[A-Za-z0-9_-]{86}$" }
+      },
+      "required": [
+        "operation_id",
+        "action",
+        "audience",
+        "arguments",
+        "path_arguments",
+        "evidence",
+        "expires_at",
+        "signature"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

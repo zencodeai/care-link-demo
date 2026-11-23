@@ -277,26 +277,10 @@ class Lab:
                 "--mount",
                 f"type=bind,source={PROBE_SOURCE},target=/qualification.py,readonly",
             ]
-        try:
-            output = docker(*command, image or self.image, *args, stdin=stdin)
-        except RuntimeError:
-            # A container that fails startup may have been created. Adopt only
-            # one carrying the exact lease label, so cleanup never uses its name alone.
-            try:
-                label = docker(
-                    "container",
-                    "inspect",
-                    "--format",
-                    '{{index .Config.Labels "care-link.session"}}',
-                    name,
-                )
-                if "care-link.session=" + label == LABEL:
-                    self.containers.append(name)
-            except RuntimeError:
-                pass
-            raise
+        # Docker can publish the container after the CLI times out. Record the
+        # expected name before creation; cleanup still checks its exact lease label.
         self.containers.append(name)
-        return output
+        return docker(*command, image or self.image, *args, stdin=stdin)
 
     def process(self, suffix: str, *args: str, stdin: str | None = None) -> str:
         flags = ("-i",) if stdin is not None else ()

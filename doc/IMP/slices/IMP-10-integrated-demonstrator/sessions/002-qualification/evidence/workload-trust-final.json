@@ -1,0 +1,223 @@
+{
+  "allowed_routes": {
+    "Core to Data manual session schema": {
+      "authenticated_peer": "spiffe://care-link.demo/demo/core",
+      "body": {
+        "code": "manual.invalid_request"
+      },
+      "peer_certificate_digest": "4f67602228a7d56fdaf4dec13cf49d306553b376095eaad2313ed703d121ca86",
+      "status": 400
+    },
+    "Core to Inference disabled context": {
+      "authenticated_peer": "spiffe://care-link.demo/demo/core",
+      "body": null,
+      "peer_certificate_digest": "4f67602228a7d56fdaf4dec13cf49d306553b376095eaad2313ed703d121ca86",
+      "status": 503
+    },
+    "Data to Core manual channel": {
+      "authenticated_peer": "spiffe://care-link.demo/demo/data",
+      "body": {
+        "current": false
+      },
+      "peer_certificate_digest": "029c70fa6ed709650ed4e589cc765ebe195f1ac16a72eeb4c084ec0d55c761b7",
+      "status": 200
+    },
+    "Inference to Data current context": {
+      "authenticated_peer": "spiffe://care-link.demo/demo/inference",
+      "body": {
+        "current": false
+      },
+      "peer_certificate_digest": "a18899cdf46243aee8f835bd09905e3104fb8d983542a210164273bc5a3989af",
+      "status": 200
+    },
+    "Inference to bridge execution adapter": {
+      "authenticated_peer": "spiffe://care-link.demo/demo/inference",
+      "body": {
+        "fixture": "provider_response",
+        "model_called": false
+      },
+      "peer_certificate_digest": "a18899cdf46243aee8f835bd09905e3104fb8d983542a210164273bc5a3989af",
+      "status": 200
+    },
+    "Runtime to Core real work claim": {
+      "fence": null,
+      "task_id": null,
+      "task_revision": null
+    }
+  },
+  "app_network_and_kernel_custody": {
+    "core": {
+      "active_interfaces": [
+        "lo"
+      ],
+      "direct_tcp": [
+        "network_unreachable",
+        "network_unreachable",
+        "network_unreachable"
+      ],
+      "effective_capabilities": 0,
+      "mounted_socket_directories": [
+        "backend",
+        "fence",
+        "outbound"
+      ],
+      "no_ipv4_routes": true,
+      "uid": 26103
+    },
+    "data": {
+      "active_interfaces": [
+        "lo"
+      ],
+      "direct_tcp": [
+        "network_unreachable",
+        "network_unreachable",
+        "network_unreachable"
+      ],
+      "effective_capabilities": 0,
+      "mounted_socket_directories": [
+        "backend",
+        "fence",
+        "outbound"
+      ],
+      "no_ipv4_routes": true,
+      "uid": 26106
+    },
+    "host-inference-bridge": {
+      "active_interfaces": [
+        "lo"
+      ],
+      "direct_tcp": [
+        "network_unreachable",
+        "network_unreachable",
+        "network_unreachable"
+      ],
+      "effective_capabilities": 0,
+      "mounted_socket_directories": [
+        "backend",
+        "fence"
+      ],
+      "no_ipv4_routes": true,
+      "uid": 26112
+    },
+    "inference": {
+      "active_interfaces": [
+        "lo"
+      ],
+      "direct_tcp": [
+        "network_unreachable",
+        "network_unreachable",
+        "network_unreachable"
+      ],
+      "effective_capabilities": 0,
+      "mounted_socket_directories": [
+        "backend",
+        "fence",
+        "outbound"
+      ],
+      "no_ipv4_routes": true,
+      "uid": 26109
+    },
+    "runtime": {
+      "active_interfaces": [
+        "lo"
+      ],
+      "direct_tcp": [
+        "network_unreachable",
+        "network_unreachable",
+        "network_unreachable"
+      ],
+      "effective_capabilities": 0,
+      "mounted_socket_directories": [
+        "outbound"
+      ],
+      "no_ipv4_routes": true,
+      "uid": 26100
+    }
+  },
+  "candidate_image": "sha256:dd93ef8772404749d1c015264c5a2a2a8205aad0ce2ced0b88a917c22f917d41",
+  "cleanup": {
+    "containers": 28,
+    "networks": 2,
+    "volumes": 7
+  },
+  "denied_routes": {
+    "Core cannot access Inference-scoped Data ledger": {
+      "authenticated_peer": null,
+      "body": null,
+      "peer_certificate_digest": null,
+      "status": 404
+    },
+    "Inference cannot access Core-scoped Data commands": {
+      "authenticated_peer": null,
+      "body": null,
+      "peer_certificate_digest": null,
+      "status": 404
+    },
+    "Runtime cannot use Core manual channel": {
+      "authenticated_peer": null,
+      "body": null,
+      "peer_certificate_digest": null,
+      "status": 404
+    },
+    "forged attestation on direct backend socket": {
+      "authenticated_peer": null,
+      "body": {
+        "code": "assistance.runtime_required"
+      },
+      "peer_certificate_digest": null,
+      "status": 403
+    }
+  },
+  "harness_sha256": {
+    "role_topology.py": "ed917e0a5a1f25a75ac726fcf9175e3cb81a1d66824c5e6ca45b43accb6f21ed",
+    "role_topology_processes.py": "ba541f78b631f29085fd01009509d607a08ef541400f6699dfdc05ca3851d90d"
+  },
+  "limits": [
+    "Unix UID workload attestation in Docker, not Kubernetes service-account attestation.",
+    "The separately isolated role apps, proxies and authorizers use real SPIRE SVIDs.",
+    "Evidence covers transport, Core claim, selected handlers and manual channels.",
+    "Business authority, durable work and model dependencies are synthetic or disabled. Live LM Studio and participant release are outside this fixture."
+  ],
+  "live_restriction": {
+    "durable_receipt": {
+      "durable": true,
+      "generation": 1,
+      "peer": "spiffe://care-link.demo/demo/runtime"
+    },
+    "in_flight_result": {
+      "authenticated_peer": null,
+      "body": {
+        "code": "assistance.runtime_required"
+      },
+      "peer_certificate_digest": null,
+      "status": 403
+    },
+    "subsequent_result": {
+      "authenticated_peer": null,
+      "body": null,
+      "peer_certificate_digest": null,
+      "status": 403
+    },
+    "unaffected_manual_channel": {
+      "authenticated_peer": "spiffe://care-link.demo/demo/data",
+      "body": {
+        "current": false
+      },
+      "peer_certificate_digest": "6990342e672aa9c54b1bdf64e65e0c368f262881de7ca3d42a10e5ee267744fb",
+      "status": 200
+    }
+  },
+  "pins": {
+    "envoy": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+    "spire_agent": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6",
+    "spire_server": "ghcr.io/spiffe/spire-server@sha256:ff546f4c62dafc479a0cd79eae9a7b6df2975754d75efd31706098e0d7548837"
+  },
+  "recorded_at": "2026-11-23T14:33:21.704148+00:00",
+  "runtime_svid_rotation": {
+    "new_peer_certificate_digest": "8b658824637d6e5e85bb7ec646e86aeceb31fb8ae632e925bec98896e24040f5",
+    "old_peer_certificate_digest": "b5f558d6b8a7b455edd82b72fb816c709c25bc19db13e7a409963f5481c27494",
+    "requested_ttl_seconds": 90
+  },
+  "scope": "Disposable Docker dependency fixture with real SPIRE and Envoy",
+  "state": "passed"
+}

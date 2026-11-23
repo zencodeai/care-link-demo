@@ -66,8 +66,10 @@
 !tools/imp03_shared/*.py
 !tools/imp02_application/
 !tools/imp02_application/__init__.py
+!tools/imp02_application/__main__.py
 !tools/imp02_application/browser.py
 !tools/imp02_application/config.py
+!tools/imp02_application/identity.py
 !tools/imp02_application/mesh.py
 !tools/imp02_application/tls.py
 !tools/imp02_application/provider_bootstrap.py
@@ -117,8 +119,14 @@
 !host/inference-bridge/src/**
 !tools/imp06_runtime/
 !tools/imp06_runtime/*.py
+!tools/imp10_runtime/
+!tools/imp10_runtime/*.py
 !config/demo/imp06/
 !config/demo/imp06/**
+!config/demo/imp10/
+!config/demo/imp10/training-artifact.json
+!config/demo/imp10/policy/
+!config/demo/imp10/policy/evaluation.rego
 !config/demo/assistance/
 !config/demo/assistance/**
 !config/demo/knowledge/

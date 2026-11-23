@@ -1,0 +1,110 @@
+from dataclasses import asdict
+from datetime import UTC,datetime
+from pathlib import Path
+from time import monotonic,monotonic_ns,sleep
+import json
+
+from tools.imp10_verification.deployed_bridge import bridge_observations,pause_connector
+from tools.imp10_verification.deployed_load import TenSessions,startup_post
+from tools.imp10_verification.deployed_measurement_data import _select,jobs,occupied,peak,request_pair
+from tools.imp10_verification.deployed_roles import k
+
+folder=Path('doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority')
+report=folder/'prequeued-ten-session-rounds.json'
+rounds=[]
+def save():
+    report.write_text(json.dumps(rounds,indent=2)+'\n')
+
+def own_currents(lane):
+    rows=_select("SELECT json_build_object('task_id',id::text) FROM assistance.task")
+    for row in rows:
+        route='/v1/tasks/'+row['task_id']
+        view=lane.worker.get(route)
+        if view['state']=='scoped':
+            startup_post(lane.worker,route+'/cancel',{'expected_revision':view['revision']})
+
+with TenSessions(active_only=True) as lane:
+    own_currents(lane)
+    lane.refresh_streams()
+    (folder/'prequeued-browser-cohort.json').write_text(json.dumps(lane.manual_receipt(),indent=2)+'\n')
+    print('Ten real protected sessions active with prior scoped work cancelled.',flush=True)
+    for number in (1,2,3,4):
+        condition='warm' if number<=3 else 'error'
+        sample={'number':number,'condition':condition,'phase':'prequeue','started_at_utc':datetime.now(UTC).isoformat()}
+        rounds.append(sample)
+        save()
+        baseline=len(bridge_observations())
+        pending=[]
+        try:
+            lane.refresh_streams()
+            first=lane.issue_initial_pair()
+            sample['first_arrivals']=[asdict(task) for task in first]
+            for case in lane.cases[2:8]:
+                pending.append(lane._schedule(case))
+            sample['prequeued_arrivals']=[asdict(task) for task in pending]
+            sample['phase']='dispatch'
+            save()
+            began=monotonic_ns()
+            request_pair()
+            sample['observed_both_occupied']=occupied(first)
+            sample['phase']='last_two_admissions'
+            save()
+            for case in lane.cases[8:]:
+                pending.append(lane._schedule(case))
+            sample['all_pending_arrivals']=[asdict(task) for task in pending]
+            all_tasks=(*first,*pending)
+            session_ids=tuple(case.session_id for case in lane.cases)
+            sample['phase']='at_declared_load'
+            before=peak(session_ids,all_tasks)
+            sample['peak_before_scoped_reads']=asdict(before)
+            save()
+            sample['scoped_reads_ms']=list(lane.sample())
+            after=peak(session_ids,all_tasks)
+            sample['peak_after_scoped_reads']=asdict(after)
+            expected=(10,2,8)
+            for observed in (before,after):
+                assert tuple(len(group) for group in (observed.connected_session_ids,observed.occupied_task_ids,observed.pending_task_ids))==expected
+                assert set(observed.pending_task_ids)=={task.task_id for task in pending}
+                assert set(observed.occupied_task_ids)=={task.task_id for task in first}
+            sample['phase']='await_terminal'
+            save()
+            def wait_jobs():
+                deadline=monotonic()+36
+                while monotonic()<deadline:
+                    final=jobs(tuple(task.task_id for task in first))
+                    if len(final)==2 and all(row['state'] in ('completed','fenced','compute_unknown') for row in final):
+                        return final
+                    sleep(.2)
+                raise RuntimeError('No bounded terminal observations for both jobs')
+            if condition=='error':
+                with pause_connector():
+                    sample['jobs']=wait_jobs()
+            else:
+                sample['jobs']=wait_jobs()
+            sample['dispatch_to_terminal_ms']=round((monotonic_ns()-began)/1e6,3)
+            sample['bridge']=bridge_observations()[baseline:]
+            for _ in range(5):
+                sample['browser_tasks']=lane.task_states(first)
+                if condition!='warm' or all(view['state']=='awaiting_human' for view in sample['browser_tasks']):
+                    break
+                sleep(.35)
+            sample['jobs_after_actor_read']=jobs(tuple(task.task_id for task in first))
+            sample['phase']='recorded'
+            save()
+            print(json.dumps({'round':number,'condition':condition,'phase':sample['phase'],'jobs':sample['jobs_after_actor_read'],'bridge':sample['bridge'],'both_peaks':expected}),flush=True)
+            if condition=='warm' and any(row['state']!='completed' or row['draft_count']!=1 for row in sample['jobs_after_actor_read']):
+                break
+        except (RuntimeError,ValueError,AssertionError) as error:
+            sample['error']=str(error)
+            sample['bridge']=bridge_observations()[baseline:]
+            if 'first' in locals():
+                sample['jobs_at_failure']=jobs(tuple(task.task_id for task in first))
+            save()
+            raise
+        finally:
+            for task in pending:
+                route='/v1/tasks/'+task.task_id
+                view=lane.worker.get(route)
+                if view['state']=='scoped':
+                    startup_post(lane.worker,route+'/cancel',{'expected_revision':view['revision']})
+

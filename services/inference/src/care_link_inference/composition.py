@@ -1,14 +1,18 @@
 """Concrete isolated inference bindings. No business-store credentials enter here."""
 
 import json
+import logging
 import ssl
 from datetime import datetime
+from time import monotonic
 from typing import cast
 
 import httpx
 
 from .admission import InferenceDenied
 from .gateway import BrokerRequest
+
+LOG = logging.getLogger(__name__)
 
 
 class DataTransport:
@@ -24,6 +28,7 @@ class DataTransport:
     def call(self, operation: str, body: dict[str, object]) -> dict[str, object]:
         if operation not in {"context", "current", "reserve", "unknown", "complete"}:
             raise ValueError("fixed inference ledger operation required")
+        started = monotonic()
         try:
             with self.client.stream(
                 "POST",
@@ -52,6 +57,16 @@ class DataTransport:
                 raise ValueError("closed data response required")
             return cast(dict[str, object], value)
         except (httpx.HTTPError, ValueError) as error:
+            status = (
+                error.response.status_code if isinstance(error, httpx.HTTPStatusError) else None
+            )
+            LOG.warning(
+                "Inference Data call failed operation=%s cause=%s status=%s elapsed_ms=%.1f",
+                operation,
+                type(error).__name__,
+                status,
+                (monotonic() - started) * 1000,
+            )
             raise InferenceDenied("current_data_unavailable") from error
 
     def close(self) -> None:
@@ -127,6 +142,7 @@ class HttpContextAuthority:
             result = self.data.call(
                 "current",
                 {
+                    "job_id": request.job_id,
                     "task_id": request.task_id,
                     "step_id": request.step_id,
                     "fence": request.fence,

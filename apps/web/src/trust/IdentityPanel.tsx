@@ -10,6 +10,24 @@ import {
 } from "./api";
 import { type Channel } from "./channel";
 import { type Locale, type Text } from "./messages";
+const serviceRoles = [
+  "pid",
+  "carer",
+  "professional_participant",
+  "worker",
+  "supervisor",
+] as const;
+const trainingRoles = ["trainer", "governance"] as const;
+const returnRoutes = {
+  pid: "participant",
+  carer: "participant",
+  professional_participant: "participant",
+  worker: "workforce",
+  supervisor: "workforce",
+  trainer: "training",
+  governance: "governance",
+} as const;
+type LoginRole = keyof typeof returnRoutes;
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 export function AccountPanel({
   channel,
@@ -20,6 +38,7 @@ export function AccountPanel({
   oidcOrigin,
   navigate,
   children,
+  training = false,
 }: {
   channel: Channel;
   text: Text;
@@ -29,10 +48,19 @@ export function AccountPanel({
   oidcOrigin: string | null;
   navigate: (url: string) => void;
   children?: ReactNode;
+  training?: boolean;
 }) {
-  const [role, setRole] = useState<
-    "pid" | "carer" | "professional_participant" | "worker" | "supervisor"
-  >("pid");
+  const [role, setRole] = useState<LoginRole>(training ? "trainer" : "pid");
+  const roles: readonly LoginRole[] = training ? trainingRoles : serviceRoles;
+  const labels: Record<LoginRole, string> = {
+    pid: text.pid,
+    carer: text.carer,
+    professional_participant: text.professionalParticipant,
+    worker: text.worker,
+    supervisor: text.supervisor,
+    trainer: text.trainer,
+    governance: text.governance,
+  };
   const { session, busy, notice, run, mutate, setSession } = channel;
   return (
     <section aria-labelledby={`${id}-title`}>
@@ -83,24 +111,15 @@ export function AccountPanel({
         value={role}
         disabled={busy}
         onChange={(event) => {
-          const value = event.target.value;
-          if (
-            value === "pid" ||
-            value === "carer" ||
-            value === "professional_participant" ||
-            value === "worker" ||
-            value === "supervisor"
-          )
-            setRole(value);
+          const next = roles.find((item) => item === event.target.value);
+          if (next) setRole(next);
         }}
       >
-        <option value="pid">{text.pid}</option>
-        <option value="carer">{text.carer}</option>
-        <option value="professional_participant">
-          {text.professionalParticipant}
-        </option>
-        <option value="worker">{text.worker}</option>
-        <option value="supervisor">{text.supervisor}</option>
+        {roles.map((item) => (
+          <option key={item} value={item}>
+            {labels[item]}
+          </option>
+        ))}
       </select>
       <p className="hint">{text.roleHint}</p>
       {!oidcOrigin && <p>{text.oidcUnconfigured}</p>}
@@ -113,13 +132,7 @@ export function AccountPanel({
               "/v1/auth/login",
               {
                 role,
-                return_route: [
-                  "pid",
-                  "carer",
-                  "professional_participant",
-                ].includes(role)
-                  ? "participant"
-                  : "workforce",
+                return_route: returnRoutes[role],
                 locale,
               },
               signal,

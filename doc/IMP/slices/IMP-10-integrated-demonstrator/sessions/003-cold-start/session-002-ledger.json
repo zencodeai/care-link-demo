@@ -1,0 +1,86 @@
+{
+  "run_id": "2026-11-23-IMP-10",
+  "stage_id": "IMP-10",
+  "gate_id": "G-10",
+  "state": "blocked",
+  "gate_state": "blocked",
+  "closed": false,
+  "recorded_at": "2026-11-23T14:50:41.219222+00:00",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "branch": "feat/imp-09-backup-and-recovery",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "proceed",
+    "scope": "Continue the isolated G-10 automated qualification and owned test fixtures. Existing provider lifecycle, host trust, demo serving and publication are separate actions."
+  },
+  "predecessors": [
+    {
+      "path": "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+      "sha256": "7e9d57447d5e606a1e73f9e18ed6cdef90b4f5d1662a6122466c8e97feced8a6"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-07/ledger.json",
+      "sha256": "9941321dfbe5cfa48ad322a0d9fd7c5301c02ebbc0932dae1ec6e6ee3ab21098"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-08/ledger.json",
+      "sha256": "e09e1e707f5c9c43f154bdfeefc3db4e547d92bd106d2c3328406746e7631be7"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-09/ledger.json",
+      "sha256": "6a054df591853d7210979bc917f1603256f0ea7b3523168b4022db3a0630ea4c"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-10-A",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-B",
+      "state": "partial"
+    },
+    {
+      "id": "IMP-10-C",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-D",
+      "state": "partial"
+    }
+  ],
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/candidate-manifest.json",
+    "sha256": "db2d7da87e3fc191e3c095c7b1548c923422c02f537448bb33f3f8f8e28221e5"
+  },
+  "results": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/results.json",
+    "sha256": "6a03308f0827025a4932e7420894277b57febe2674bd48a2a4e38886f53b86ef"
+  },
+  "qualification_packet": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/demo-packet.json",
+    "sha256": "7040b3db2046ad71632f4b0d56c170e9c9ca96a9feaff6749e7145589a4ab41e"
+  },
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": [],
+  "deferred_review_inventory": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/deferred-review-inventory.json",
+    "sha256": "739eee707891cbedeeae22085a28a5c744eb31ad6e1c0b3e5ede3a3a566b51dc"
+  },
+  "deployment_applied": false,
+  "participant_admission": false,
+  "commit_performed": false,
+  "push_performed": false,
+  "merge_performed": false,
+  "remaining": [
+    "True provider cold-start performance was not run. The already-running model was used for the loaded-model tests. Authorization to unload and reload that instance was requested.",
+    "The separate real provider, mesh, actor and Help checks do not establish a single deployed topology with all current roles under a combined dependency outage.",
+    "Loaded-model latency comes from five two-request waves. The two-occupied/eight-queued application saturation uses a fixture inference provider.",
+    "The frozen IMP plan validator still reports the earlier README digest drift."
+  ],
+  "current_session": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification",
+  "earlier_ledger": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/session-001-ledger.json",
+    "sha256": "4bd03cd404cef8a98abf140bfafe5c8e5ef0b552ce3efc560435a680ed5c46f3"
+  }
+}

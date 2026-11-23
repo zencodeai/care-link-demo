@@ -1,0 +1,8 @@
+{
+  "image_id": "sha256:1e8e97dad6af5ef86997a8431f36729afce41f5134ea6f4f2a621b7ba56e310a",
+  "core_envoy_sha256": "f395ff4f7786b25888ae7851447651cec898ec79a2e71ef195ef93ea021e9700",
+  "route": "GET /v1/sessions/{session_id}/events",
+  "idle_timeout_seconds": 15,
+  "ordinary_requests_timeout_seconds": 45,
+  "observed_previous_absolute_limit_seconds": 45
+}

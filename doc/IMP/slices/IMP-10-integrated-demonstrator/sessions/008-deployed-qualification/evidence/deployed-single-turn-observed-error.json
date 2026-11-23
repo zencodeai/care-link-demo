@@ -1,0 +1,22 @@
+{
+  "admitted_task_id": "20c7bf07-cde2-4084-a46c-6938446c516a",
+  "worker_transport_current": true,
+  "context": {
+    "available": true,
+    "reason": null,
+    "execution_fence": "0"
+  },
+  "runtime_outcome": {
+    "type": "HTTPStatusError",
+    "status": 500,
+    "path": "/internal/v1/broker/inference"
+  },
+  "elapsed_ms": 2452.496,
+  "durable_jobs": [],
+  "browser_outcome": {
+    "state": "planning",
+    "safe_reason": null,
+    "steps_used": 1,
+    "tools_used": 0
+  }
+}

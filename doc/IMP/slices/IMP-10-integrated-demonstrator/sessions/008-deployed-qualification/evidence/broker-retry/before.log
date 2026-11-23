@@ -1,0 +1,28 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_______ test_composed_core_inference_failure_returns_typed_error[denied] _______
+services/core/tests/test_assistance_work.py:244: in test_composed_core_inference_failure_returns_typed_error
+    assert response.status_code == 503
+E   assert 500 == 503
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+______ test_composed_core_inference_failure_returns_typed_error[timeout] _______
+services/core/tests/test_assistance_work.py:244: in test_composed_core_inference_failure_returns_typed_error
+    assert response.status_code == 503
+E   assert 500 == 503
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+___ test_composed_core_inference_failure_returns_typed_error[invalid_result] ___
+services/core/tests/test_assistance_work.py:244: in test_composed_core_inference_failure_returns_typed_error
+    assert response.status_code == 503
+E   assert 500 == 503
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED services/core/tests/test_assistance_work.py::test_composed_core_inference_failure_returns_typed_error[denied]
+FAILED services/core/tests/test_assistance_work.py::test_composed_core_inference_failure_returns_typed_error[timeout]
+FAILED services/core/tests/test_assistance_work.py::test_composed_core_inference_failure_returns_typed_error[invalid_result]
+3 failed, 13 deselected, 17 warnings in 0.24s

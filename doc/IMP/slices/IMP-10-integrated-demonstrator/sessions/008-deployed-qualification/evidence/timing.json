@@ -1,0 +1,1003 @@
+{
+  "attempts": [
+    {
+      "attached_receipt": true,
+      "command_log_sha256": "5aa73aff553cad2690b048b809b748e68e66eaaff045f40307e3921fdef78317",
+      "elapsed_seconds": 73.837,
+      "exit_status": 0,
+      "measurement": {
+        "durable_counts": {
+          "dispatches": 1,
+          "drafts": 3,
+          "evaluations": 1,
+          "messages": 1
+        },
+        "durable_inference_jobs": [
+          {
+            "jobs": 3,
+            "result_digests": 3,
+            "state": "completed"
+          },
+          {
+            "jobs": 1,
+            "result_digests": 0,
+            "state": "compute_unknown"
+          }
+        ],
+        "ended_at_utc": "2026-11-23T16:47:52.188016+00:00",
+        "faults": {
+          "audit": {
+            "check_and_recovery_ms": 363.66,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 16.954583,
+              "help_state": "recorded",
+              "locale": "fr-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "key": "manual.authority_unavailable",
+              "status": 503
+            }
+          },
+          "identity": {
+            "check_and_recovery_ms": 482.506,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "durable_spool_unchanged": true,
+              "private_operations": {
+                "accept": "typed_503",
+                "new_create": "typed_503",
+                "retry_create": "typed_503",
+                "status": "typed_503"
+              },
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "key": "manual.identity_unavailable",
+              "status": 503
+            }
+          },
+          "main_roles_and_dependencies": {
+            "check_and_recovery_ms": 9456.187,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 21.009709,
+              "help_state": "recorded",
+              "locale": "fr-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "canonical_audit_available": false,
+              "stopped_listeners": [
+                "host-inference-bridge",
+                "receiver",
+                "training",
+                "policy",
+                "inference",
+                "data",
+                "core"
+              ],
+              "transport": "connection_failed"
+            }
+          },
+          "model": {
+            "check_and_recovery_ms": 20443.715,
+            "durable_protected_operation_count": 1,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 18.315541,
+              "help_state": "recorded",
+              "locale": "fr-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "assistance": {
+                "elapsed_ms": 971.949,
+                "safe_reason": "provider_stop_unverified",
+                "state": "compute_unknown"
+              },
+              "manual": "visible_human_authored",
+              "verified_live_recovery": {
+                "elapsed_ms": 10726.431,
+                "safe_reason": null,
+                "state": "awaiting_human"
+              }
+            }
+          },
+          "policy": {
+            "check_and_recovery_ms": 524.316,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 21.267917,
+              "help_state": "recorded",
+              "locale": "en-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "key": "manual.policy_unavailable",
+              "status": 503
+            }
+          }
+        },
+        "help_at_peak": {
+          "connection_confirmed": false,
+          "create_and_read_elapsed_ms": 95.265375,
+          "help_state": "recorded",
+          "locale": "fr-CA"
+        },
+        "help_baseline": {
+          "connection_confirmed": false,
+          "create_and_read_elapsed_ms": 100.817583,
+          "help_state": "recorded",
+          "locale": "en-CA"
+        },
+        "help_durable": {
+          "durable_local_audit_actions": [
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status"
+          ],
+          "durable_local_authority_receipts": 14,
+          "durable_local_request_count": 7,
+          "help_workload_binding": "dedicated synthetic credential over pinned loopback TLS",
+          "identity_provider": "synthetic OIDC with in-memory Identity custody",
+          "local_audit_chain_verified": true,
+          "static_review_profile": "owner_review_local_demo"
+        },
+        "model_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+        "offline_evaluation_state": "completed",
+        "peak": {
+          "connected_sessions": 10,
+          "occupied_inference_slots": 2,
+          "unique_pending_tasks": 8
+        },
+        "peak_protected_read_ms": [
+          453.98,
+          484.087,
+          544.744,
+          632.901,
+          570.878,
+          514.433,
+          617.123,
+          603.647,
+          587.021,
+          552.086
+        ],
+        "receiver_state": "received",
+        "scope": "Synthetic actors and fixture channels with owned TLS listener faults and read-only live Qwen",
+        "started_at_utc": "2026-11-23T16:46:41.806598+00:00",
+        "warm_bridge_responses": [
+          {
+            "bridge_elapsed_ms": 18318.419,
+            "completion_tokens": 11,
+            "prompt_tokens": 1233
+          },
+          {
+            "bridge_elapsed_ms": 18405.493,
+            "completion_tokens": 11,
+            "prompt_tokens": 1247
+          },
+          {
+            "bridge_elapsed_ms": 9113.985,
+            "completion_tokens": 11,
+            "prompt_tokens": 1239
+          }
+        ],
+        "warm_runtime": [
+          {
+            "elapsed_ms": 21809.37,
+            "safe_reason": null,
+            "state": "awaiting_human"
+          },
+          {
+            "elapsed_ms": 21727.02,
+            "safe_reason": null,
+            "state": "awaiting_human"
+          }
+        ]
+      },
+      "measurement_receipt_sha256": "d84297dbd2c4304a5181242ae8d084baae299e6e204f53887e08da93fd3db61f",
+      "round": 1,
+      "state": "passed"
+    },
+    {
+      "attached_receipt": false,
+      "command_log_sha256": "cfd634be0d113175ef1ff772dd1a635e30be5460df95994ab11124e07d0e95e1",
+      "elapsed_seconds": 10.431,
+      "exit_status": 1,
+      "reason": "Preflight rejected concurrently changed protected launcher against exact 007 image pin.",
+      "round": 2,
+      "state": "failed_preflight"
+    },
+    {
+      "attached_receipt": false,
+      "command_log_sha256": "396afb2e71eab8f0b2c127441f19246c3eeab7eb6613abc7c9ff7cdf22a57d73",
+      "elapsed_seconds": 10.203,
+      "exit_status": 1,
+      "reason": "Preflight rejected concurrently changed protected launcher against exact 007 image pin.",
+      "round": 3,
+      "state": "failed_preflight"
+    },
+    {
+      "attached_receipt": false,
+      "candidate_snapshot": "007-frozen",
+      "command_log_sha256": "0342902c64302e848105f8fce8871faf3ac66fb4994f7cb1561f5f6c04995c09",
+      "elapsed_seconds": 0.511,
+      "exit_status": 4,
+      "reason": "Frozen source projection lacked the phase004 opt-in verification harness.",
+      "round": 4,
+      "state": "failed_preflight"
+    },
+    {
+      "attached_receipt": false,
+      "candidate_snapshot": "007-frozen",
+      "command_log_sha256": "0342902c64302e848105f8fce8871faf3ac66fb4994f7cb1561f5f6c04995c09",
+      "elapsed_seconds": 0.39,
+      "exit_status": 4,
+      "reason": "Frozen source projection lacked the phase004 opt-in verification harness.",
+      "round": 5,
+      "state": "failed_preflight"
+    },
+    {
+      "attached_receipt": false,
+      "candidate_snapshot": "007-frozen",
+      "command_log_sha256": "0342902c64302e848105f8fce8871faf3ac66fb4994f7cb1561f5f6c04995c09",
+      "elapsed_seconds": 0.404,
+      "exit_status": 4,
+      "reason": "Frozen source projection lacked the phase004 opt-in verification harness.",
+      "round": 6,
+      "state": "failed_preflight"
+    },
+    {
+      "attached_receipt": true,
+      "candidate_snapshot": "007-frozen",
+      "command_log_sha256": "e4fc887368bf432902a9405eab0033745b6fd3e9616571e13f75a8e78e16e230",
+      "elapsed_seconds": 71.409,
+      "exit_status": 0,
+      "measurement": {
+        "durable_counts": {
+          "dispatches": 1,
+          "drafts": 3,
+          "evaluations": 1,
+          "messages": 1
+        },
+        "durable_inference_jobs": [
+          {
+            "jobs": 3,
+            "result_digests": 3,
+            "state": "completed"
+          },
+          {
+            "jobs": 1,
+            "result_digests": 0,
+            "state": "compute_unknown"
+          }
+        ],
+        "ended_at_utc": "2026-11-23T16:50:47.118812+00:00",
+        "faults": {
+          "audit": {
+            "check_and_recovery_ms": 346.848,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 23.400458,
+              "help_state": "recorded",
+              "locale": "fr-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "key": "manual.authority_unavailable",
+              "status": 503
+            }
+          },
+          "identity": {
+            "check_and_recovery_ms": 429.084,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "durable_spool_unchanged": true,
+              "private_operations": {
+                "accept": "typed_503",
+                "new_create": "typed_503",
+                "retry_create": "typed_503",
+                "status": "typed_503"
+              },
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "key": "manual.identity_unavailable",
+              "status": 503
+            }
+          },
+          "main_roles_and_dependencies": {
+            "check_and_recovery_ms": 9361.485,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 21.713375,
+              "help_state": "recorded",
+              "locale": "fr-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "canonical_audit_available": false,
+              "stopped_listeners": [
+                "host-inference-bridge",
+                "receiver",
+                "training",
+                "policy",
+                "inference",
+                "data",
+                "core"
+              ],
+              "transport": "connection_failed"
+            }
+          },
+          "model": {
+            "check_and_recovery_ms": 20501.93,
+            "durable_protected_operation_count": 1,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 18.664041,
+              "help_state": "recorded",
+              "locale": "fr-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "assistance": {
+                "elapsed_ms": 967.826,
+                "safe_reason": "provider_stop_unverified",
+                "state": "compute_unknown"
+              },
+              "manual": "visible_human_authored",
+              "verified_live_recovery": {
+                "elapsed_ms": 10654.621,
+                "safe_reason": null,
+                "state": "awaiting_human"
+              }
+            }
+          },
+          "policy": {
+            "check_and_recovery_ms": 486.987,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 19.582709,
+              "help_state": "recorded",
+              "locale": "en-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "key": "manual.policy_unavailable",
+              "status": 503
+            }
+          }
+        },
+        "help_at_peak": {
+          "connection_confirmed": false,
+          "create_and_read_elapsed_ms": 84.870375,
+          "help_state": "recorded",
+          "locale": "fr-CA"
+        },
+        "help_baseline": {
+          "connection_confirmed": false,
+          "create_and_read_elapsed_ms": 28.822042,
+          "help_state": "recorded",
+          "locale": "en-CA"
+        },
+        "help_durable": {
+          "durable_local_audit_actions": [
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status"
+          ],
+          "durable_local_authority_receipts": 14,
+          "durable_local_request_count": 7,
+          "help_workload_binding": "dedicated synthetic credential over pinned loopback TLS",
+          "identity_provider": "synthetic OIDC with in-memory Identity custody",
+          "local_audit_chain_verified": true,
+          "static_review_profile": "owner_review_local_demo"
+        },
+        "model_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+        "offline_evaluation_state": "completed",
+        "peak": {
+          "connected_sessions": 10,
+          "occupied_inference_slots": 2,
+          "unique_pending_tasks": 8
+        },
+        "peak_protected_read_ms": [
+          530.785,
+          442.553,
+          601.264,
+          585.424,
+          557.096,
+          492.619,
+          627.237,
+          570.068,
+          613.15,
+          556.961
+        ],
+        "receiver_state": "received",
+        "scope": "Synthetic actors and fixture channels with owned TLS listener faults and read-only live Qwen",
+        "started_at_utc": "2026-11-23T16:49:39.423024+00:00",
+        "warm_bridge_responses": [
+          {
+            "bridge_elapsed_ms": 15506.759,
+            "completion_tokens": 11,
+            "prompt_tokens": 1234
+          },
+          {
+            "bridge_elapsed_ms": 15597.736,
+            "completion_tokens": 11,
+            "prompt_tokens": 1240
+          },
+          {
+            "bridge_elapsed_ms": 9249.685,
+            "completion_tokens": 11,
+            "prompt_tokens": 1245
+          }
+        ],
+        "warm_runtime": [
+          {
+            "elapsed_ms": 19100.719,
+            "safe_reason": null,
+            "state": "awaiting_human"
+          },
+          {
+            "elapsed_ms": 18756.898,
+            "safe_reason": null,
+            "state": "awaiting_human"
+          }
+        ]
+      },
+      "measurement_receipt_sha256": "d977bf2a52c9a0e05f13f876bfda0e78c845498efdaa960fe044d9dda714836b",
+      "round": 7,
+      "state": "passed"
+    },
+    {
+      "attached_receipt": true,
+      "candidate_snapshot": "007-frozen",
+      "command_log_sha256": "8eda3f3195fcd69794357ad016ec95da8918da4938996b528b831cc707bebc09",
+      "elapsed_seconds": 74.933,
+      "exit_status": 0,
+      "measurement": {
+        "durable_counts": {
+          "dispatches": 1,
+          "drafts": 3,
+          "evaluations": 1,
+          "messages": 1
+        },
+        "durable_inference_jobs": [
+          {
+            "jobs": 3,
+            "result_digests": 3,
+            "state": "completed"
+          },
+          {
+            "jobs": 1,
+            "result_digests": 0,
+            "state": "compute_unknown"
+          }
+        ],
+        "ended_at_utc": "2026-11-23T16:52:01.847016+00:00",
+        "faults": {
+          "audit": {
+            "check_and_recovery_ms": 349.376,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 18.920875,
+              "help_state": "recorded",
+              "locale": "fr-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "key": "manual.authority_unavailable",
+              "status": 503
+            }
+          },
+          "identity": {
+            "check_and_recovery_ms": 502.243,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "durable_spool_unchanged": true,
+              "private_operations": {
+                "accept": "typed_503",
+                "new_create": "typed_503",
+                "retry_create": "typed_503",
+                "status": "typed_503"
+              },
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "key": "manual.identity_unavailable",
+              "status": 503
+            }
+          },
+          "main_roles_and_dependencies": {
+            "check_and_recovery_ms": 9924.794,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 21.287542,
+              "help_state": "recorded",
+              "locale": "fr-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "canonical_audit_available": false,
+              "stopped_listeners": [
+                "host-inference-bridge",
+                "receiver",
+                "training",
+                "policy",
+                "inference",
+                "data",
+                "core"
+              ],
+              "transport": "connection_failed"
+            }
+          },
+          "model": {
+            "check_and_recovery_ms": 21307.352,
+            "durable_protected_operation_count": 1,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 17.479584,
+              "help_state": "recorded",
+              "locale": "fr-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "assistance": {
+                "elapsed_ms": 983.017,
+                "safe_reason": "provider_stop_unverified",
+                "state": "compute_unknown"
+              },
+              "manual": "visible_human_authored",
+              "verified_live_recovery": {
+                "elapsed_ms": 11128.099,
+                "safe_reason": null,
+                "state": "awaiting_human"
+              }
+            }
+          },
+          "policy": {
+            "check_and_recovery_ms": 505.091,
+            "durable_protected_operation_count": 0,
+            "help": {
+              "connection_confirmed": false,
+              "create_and_read_elapsed_ms": 21.061333,
+              "help_state": "recorded",
+              "locale": "en-CA",
+              "public_static_artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+              "public_static_locales": [
+                "en-CA",
+                "fr-CA"
+              ]
+            },
+            "observed": {
+              "key": "manual.policy_unavailable",
+              "status": 503
+            }
+          }
+        },
+        "help_at_peak": {
+          "connection_confirmed": false,
+          "create_and_read_elapsed_ms": 72.305042,
+          "help_state": "recorded",
+          "locale": "fr-CA"
+        },
+        "help_baseline": {
+          "connection_confirmed": false,
+          "create_and_read_elapsed_ms": 30.147416,
+          "help_state": "recorded",
+          "locale": "en-CA"
+        },
+        "help_durable": {
+          "durable_local_audit_actions": [
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status",
+            "create",
+            "status"
+          ],
+          "durable_local_authority_receipts": 14,
+          "durable_local_request_count": 7,
+          "help_workload_binding": "dedicated synthetic credential over pinned loopback TLS",
+          "identity_provider": "synthetic OIDC with in-memory Identity custody",
+          "local_audit_chain_verified": true,
+          "static_review_profile": "owner_review_local_demo"
+        },
+        "model_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+        "offline_evaluation_state": "completed",
+        "peak": {
+          "connected_sessions": 10,
+          "occupied_inference_slots": 2,
+          "unique_pending_tasks": 8
+        },
+        "peak_protected_read_ms": [
+          429.258,
+          457.89,
+          576.785,
+          517.154,
+          488.18,
+          547.908,
+          534.137,
+          588.836,
+          560.66,
+          533.272
+        ],
+        "receiver_state": "received",
+        "scope": "Synthetic actors and fixture channels with owned TLS listener faults and read-only live Qwen",
+        "started_at_utc": "2026-11-23T16:50:50.971698+00:00",
+        "warm_bridge_responses": [
+          {
+            "bridge_elapsed_ms": 15387.687,
+            "completion_tokens": 11,
+            "prompt_tokens": 1241
+          },
+          {
+            "bridge_elapsed_ms": 15474.835,
+            "completion_tokens": 11,
+            "prompt_tokens": 1231
+          },
+          {
+            "bridge_elapsed_ms": 9518.016,
+            "completion_tokens": 11,
+            "prompt_tokens": 1245
+          }
+        ],
+        "warm_runtime": [
+          {
+            "elapsed_ms": 18682.208,
+            "safe_reason": null,
+            "state": "awaiting_human"
+          },
+          {
+            "elapsed_ms": 18592.993,
+            "safe_reason": null,
+            "state": "awaiting_human"
+          }
+        ]
+      },
+      "measurement_receipt_sha256": "646631a0c931c8db4b9fe0edabaab9062f5863437318a09a20cebff638c8bb0e",
+      "round": 8,
+      "state": "passed"
+    }
+  ],
+  "cleanup": {
+    "owned_containers_remaining": [],
+    "owned_tls_database_removed": true,
+    "owned_volume_count": 0,
+    "temporary_db_credentials_removed": true
+  },
+  "collector_tests": {
+    "command": ".venv/bin/python -m pytest -q services/data/tests/test_imp10_deployed_timing.py",
+    "inputs": [
+      {
+        "path": "tools/imp10_verification/deployed_timing.py",
+        "sha256": "bfa16c6acf4ef38ea9e1b4415855f4d373a5981f244bdc245123cb6c99c6bfc5"
+      },
+      {
+        "path": "services/data/tests/test_imp10_deployed_timing.py",
+        "sha256": "1881c4a68eb028305607a41803bd431c2b659a841788597a25abd79577c49cb2"
+      }
+    ],
+    "mock_used": true,
+    "passed": 4,
+    "purpose": "Verify evidence accounting, cold-instance mismatch, and forbidden effects. These tests supply no live latency evidence.",
+    "ruff": "passed",
+    "strict_pyright": "passed"
+  },
+  "covered_effects": [
+    "Every interrupted model-bridge request left durable compute_unknown with zero result digest.",
+    "The loopback fault stops the bridge after reservation and before the provider POST. Runtime timing includes the fixture barrier and excludes a real provider hard-stop.",
+    "The authorized worker delivery remained visible while compute was unknown. No model draft was created for the interrupted request.",
+    "Every loaded round retained the active ten sessions, and measured ten protected scoped reads at its verified two-slot, eight-pending peak."
+  ],
+  "declared_workload": {
+    "admitted_summary_input_limit": 2048,
+    "arrivals": "Two admitted tasks held at the durable slot barrier followed by eight queued synthetic tasks.",
+    "channel": "Current web API and separate simulator/Help observations.",
+    "model_context_cap": 8192,
+    "model_output_cap": 1024,
+    "peak": {
+      "connected_sessions": 10,
+      "occupied_inference_slots": 2,
+      "unique_pending_tasks": 8
+    },
+    "provider_timeout_seconds": 30,
+    "source": {
+      "path": "doc/REQ/demo-parameters.json",
+      "sha256": "225aeb73d52f7b0c1c01c899231407b38a603c1f1f2bbe4471ad3dbdcaf2bbf1"
+    }
+  },
+  "distribution": {
+    "cold_first_calls_from_this_session_ms": {
+      "expected": 3,
+      "max_ms": null,
+      "missing": 3,
+      "observed": 0,
+      "p50_ms": null,
+      "p95_ms": null,
+      "samples_ms": []
+    },
+    "deployed_protected_runtime_error_ms": {
+      "expected": 3,
+      "max_ms": null,
+      "missing": 3,
+      "observed": 0,
+      "p50_ms": null,
+      "p95_ms": null,
+      "samples_ms": []
+    },
+    "deployed_protected_runtime_warm_ms": {
+      "expected": 6,
+      "max_ms": null,
+      "missing": 6,
+      "observed": 0,
+      "p50_ms": null,
+      "p95_ms": null,
+      "samples_ms": []
+    },
+    "french_private_help_record_then_read_ms_at_observed_peak": {
+      "expected": 3,
+      "max_ms": 95.265375,
+      "missing": 0,
+      "observed": 3,
+      "p50_ms": 84.870375,
+      "p95_ms": 95.265375,
+      "samples_ms": [
+        95.265375,
+        84.870375,
+        72.305042
+      ]
+    },
+    "protected_manual_read_ms_at_observed_peak": {
+      "expected": 30,
+      "max_ms": 632.901,
+      "missing": 0,
+      "observed": 30,
+      "p50_ms": 552.086,
+      "p95_ms": 627.237,
+      "samples_ms": [
+        453.98,
+        484.087,
+        544.744,
+        632.901,
+        570.878,
+        514.433,
+        617.123,
+        603.647,
+        587.021,
+        552.086,
+        530.785,
+        442.553,
+        601.264,
+        585.424,
+        557.096,
+        492.619,
+        627.237,
+        570.068,
+        613.15,
+        556.961,
+        429.258,
+        457.89,
+        576.785,
+        517.154,
+        488.18,
+        547.908,
+        534.137,
+        588.836,
+        560.66,
+        533.272
+      ]
+    },
+    "runtime_bridge_listener_error_ms": {
+      "expected": 3,
+      "max_ms": 983.017,
+      "missing": 0,
+      "observed": 3,
+      "p50_ms": 971.949,
+      "p95_ms": 983.017,
+      "samples_ms": [
+        971.949,
+        967.826,
+        983.017
+      ]
+    },
+    "warm_bridge_ms_excluding_compute_barrier": {
+      "expected": 6,
+      "max_ms": 18405.493,
+      "missing": 0,
+      "observed": 6,
+      "p50_ms": 15506.759,
+      "p95_ms": 18405.493,
+      "samples_ms": [
+        18318.419,
+        18405.493,
+        15506.759,
+        15597.736,
+        15387.687,
+        15474.835
+      ]
+    },
+    "warm_runtime_ms_including_compute_barrier": {
+      "expected": 6,
+      "max_ms": 21809.37,
+      "missing": 0,
+      "observed": 6,
+      "p50_ms": 18756.898,
+      "p95_ms": 21809.37,
+      "samples_ms": [
+        21809.37,
+        21727.02,
+        19100.719,
+        18756.898,
+        18682.208,
+        18592.993
+      ]
+    },
+    "warm_runtime_recovery_ms": {
+      "expected": 3,
+      "max_ms": 11128.099,
+      "missing": 0,
+      "observed": 3,
+      "p50_ms": 10726.431,
+      "p95_ms": 11128.099,
+      "samples_ms": [
+        10726.431,
+        10654.621,
+        11128.099
+      ]
+    }
+  },
+  "environment": {
+    "architecture": "arm64",
+    "cpu_count": 14,
+    "memory_bytes": 38654705664,
+    "physical_model_placement": "Same native locally loaded provider instance throughout these measurements.",
+    "postgres_server_version": "18.3 (Debian 18.3-1.pgdg12+1)",
+    "python": "3.14.7",
+    "release": "25.6.0",
+    "system": "Darwin"
+  },
+  "gate": "G-10",
+  "missing": [
+    "No repeated model-reload cycles at the declared load in this session. The earlier separately authorized one-cycle timing is retained at its original scope.",
+    "No sample from the associated protected Kubernetes path in this receipt.",
+    "Per-session arrival offsets, transcript byte sizes, bilingual case proportions and sustainable arrival rate were not instrumented in the loopback test."
+  ],
+  "percentile_method": "Nearest-rank empirical p50 and p95 calculated over the raw values. These are small fixture samples.",
+  "planned_successful_loopback_cycles": 3,
+  "provider_read_only_preflight": {
+    "anonymous_catalog_http": 401,
+    "authenticated_catalog_http": 200,
+    "established_tcp_connections_after_observer_disconnected": 0,
+    "loaded_models": 1,
+    "observation_limit": "Point-in-time observation. Concurrent use outside the sample windows is unknown.",
+    "observed_at_utc": "2026-11-23T16:45:45.930766+00:00",
+    "queued_requests": 0,
+    "raw_load_settings_match_restoration": true,
+    "rest_effective_settings_match": true,
+    "sdk_effective_settings_match": true,
+    "sdk_version": "1.6.0b1",
+    "selected_instance_matches_phase003": true,
+    "selected_instance_sha256": "e5f09dca532fc70ef85a5e06da668d3c6ff7863fa23f87da7ffbb24f6f9b0a2f"
+  },
+  "qualification_scope": "Repeated private synthetic loopback workstation measurements with separate TLS listeners and authenticated live model. Deployed Kubernetes timing and repeated cold cycles remain unobserved.",
+  "recorded_at_utc": "2026-11-23T16:53:19.032304+00:00",
+  "separate_single_cold_cycle": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/evidence/cold-start.json",
+    "sha256": "6c477e8b8d80ab3bbbfca10b387ad2f5f8aed9b59298b110fbb6998fa89000d8"
+  },
+  "state": "partial",
+  "tested_candidate": {
+    "bound_image_receipt": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/evidence/protected-image-smoke.json",
+      "sha256": "1d3fa083aba23d141e286435d0e9f0c066d3fe8cf7132796f38d968f4a617dfa"
+    },
+    "image_id": "sha256:9da1df60b9ba68a8ee0e6488504ae1d205e39fa68ba9bc3de34a8fe6bd14c9fc",
+    "loopback_test": {
+      "path": "services/data/tests/test_imp10_combined_outage.py",
+      "sha256": "ddaafbd4cf44c3d7abc16afaacfe03e0df74351928e329465e072a158f9ef30a"
+    },
+    "manifest": {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/candidate-manifest.json",
+      "sha256": "c2e75544b46ec613318ee7e35c309993d848554ed585aa3c7a1116e1292d06a6"
+    },
+    "snapshot_recovery": "One concurrent launcher edit was recovered from the exact 007 image for immutable loopback reruns. All 1069 candidate path hashes matched before the reruns.",
+    "source_snapshot_path_hash_count": 1069
+  }
+}

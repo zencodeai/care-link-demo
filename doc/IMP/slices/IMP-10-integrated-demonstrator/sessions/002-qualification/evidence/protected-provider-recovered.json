@@ -1,0 +1,45 @@
+{
+  "state": "passed",
+  "recorded_at": "2026-11-23T14:42:57.417407+00:00",
+  "scope": "Own current probe resumed after startup client timeout. All existing resources carried this attempt lease label.",
+  "candidate_image": "sha256:dd93ef8772404749d1c015264c5a2a2a8205aad0ce2ced0b88a917c22f917d41",
+  "qualification_bundle_digest": "7281e5e61e68f929aa4b96162c5f0f6ffd512e9c27260e7d7862e417ca75f7dc",
+  "pins": {
+    "envoy": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+    "spire_server": "ghcr.io/spiffe/spire-server@sha256:ff546f4c62dafc479a0cd79eae9a7b6df2975754d75efd31706098e0d7548837",
+    "spire_agent": "ghcr.io/spiffe/spire-agent@sha256:ab3a8ce70435374cc5d84c81eabf0278dc046ddbc0a736d59694ba9e5975b1b6"
+  },
+  "harness_sha256": {
+    "g06_protected.py": "a12e4cfde4026ad53c67886d5a2a6ac0557104643a9b1cd71e5a6c6c49f53205",
+    "role_topology.py": "3bb392278efa76eab1dfebbae152076f4a5441ca174cd05a647a9ea641e96cbb",
+    "g06_protected_processes.py": "95db5f106d0e2fd78e6eb995c52d65de176994d058b5b4fec9c4a5c173e1a207",
+    "role_topology_processes.py": "ba541f78b631f29085fd01009509d607a08ef541400f6699dfdc05ca3851d90d",
+    "g06_protected_wire.py": "baca73410aac5055e8d45791472da9752176deb54eca3e24a3758121c5e4f114"
+  },
+  "cleanup": {
+    "containers": 27,
+    "volumes": 7,
+    "networks": 2
+  },
+  "observations": {
+    "model": "qwen/qwen3.8-27b",
+    "model_window": 8192,
+    "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+    "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c",
+    "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836",
+    "actual_input_tokens": 27,
+    "actual_output_tokens": 7,
+    "provider_token_count_matches": true,
+    "malformed_digest_status": 400,
+    "malformed_execute_status": 400,
+    "synthetic_json_expected": true,
+    "tokenize_svid_digest": "8d5b87bd997234c04dc10896a5dc2f3ad4234815b5856b2d13840f2776a38034",
+    "execute_svid_digest": "8d5b87bd997234c04dc10896a5dc2f3ad4234815b5856b2d13840f2776a38034",
+    "authorizing_peer": "spiffe://care-link.demo/demo/inference"
+  },
+  "limits": [
+    "Isolated SPIRE and Envoy with private synthetic bridge relay",
+    "Real loaded Qwen used for exact bounded provider request",
+    "Full business workflow and provider cold restart remain separate"
+  ]
+}

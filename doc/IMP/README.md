@@ -6,7 +6,7 @@
 
 Version 0.1 · 2026-11-06 · Proposed plan for human review. No application implementation, tool installation, host change or deployment is performed by this package.
 
-**Execution status.** [G-09 is automated-qualified for isolated synthetic backup/recovery source/build](executions/2026-11-21-IMP-09/ledger.json). See the [IMP-09 handoff](slices/IMP-09-backup-and-recovery/sessions/001-implementation/handoff.md). G-07/G-08 and G-06 retain their separately bound evidence; current full regression checks passed. Human review is deferred until after IMP-10. Known encrypted/database/staging copy expiry is accounted; separate identity/help custody and rights backup_pending limits remain explicit. No actual serving promotion, deployment, publication or next-slice activation follows.
+**Execution status.** [G-10 is automated-qualified for the private synthetic integrated demo](executions/2026-11-23-IMP-10/ledger.json). The final candidate passed repeated deployed warm and error rounds. The user waived repeated true cold starts for this qualification. Earlier gates retain their separately bound evidence. Human usability, language, visual and screen-reader review moves to GitHub issue follow-up. [IMP-10 closure and publication](slices/IMP-10-integrated-demonstrator/sessions/010-closure-and-pr/handoff.md)
 
 Implement the accepted LLD as small, demonstrable service slices. Use Codex specialists for bounded analysis and scoped work and preserve one accountable integration owner. Security/governance controls are built into the earliest relevant behavior, not deferred to a final audit.
 

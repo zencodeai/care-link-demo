@@ -1,0 +1,85 @@
+{
+  "run_id": "2026-11-23-IMP-10",
+  "stage_id": "IMP-10",
+  "gate_id": "G-10",
+  "state": "blocked",
+  "gate_state": "blocked",
+  "closed": false,
+  "recorded_at": "2026-11-23T16:06:05.781533+00:00",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "branch": "feat/imp-09-backup-and-recovery",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Close G-10",
+    "scope": "Retry isolated private G-10 deployment and verification. Historical labs, volumes, and live provider remain outside the lease."
+  },
+  "predecessors": [
+    {
+      "path": "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+      "sha256": "7e9d57447d5e606a1e73f9e18ed6cdef90b4f5d1662a6122466c8e97feced8a6"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-07/ledger.json",
+      "sha256": "9941321dfbe5cfa48ad322a0d9fd7c5301c02ebbc0932dae1ec6e6ee3ab21098"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-08/ledger.json",
+      "sha256": "e09e1e707f5c9c43f154bdfeefc3db4e547d92bd106d2c3328406746e7631be7"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-09/ledger.json",
+      "sha256": "6a054df591853d7210979bc917f1603256f0ea7b3523168b4022db3a0630ea4c"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-10-A",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-B",
+      "state": "partial"
+    },
+    {
+      "id": "IMP-10-C",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-D",
+      "state": "partial"
+    }
+  ],
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/candidate-manifest.json",
+    "sha256": "db2d7da87e3fc191e3c095c7b1548c923422c02f537448bb33f3f8f8e28221e5"
+  },
+  "results": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/results.json",
+    "sha256": "756ef5e92f5f3a426c7ab79e51fbed8f74dfacdd87b12bad5245b57f258bd754"
+  },
+  "qualification_packet": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/demo-packet.json",
+    "sha256": "e36c3f0bf67f902e950789c859c2d3a6fac5971117b158abd6c4ff11419295f7"
+  },
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": [],
+  "deferred_review_inventory": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/deferred-review-inventory.json",
+    "sha256": "739eee707891cbedeeae22085a28a5c744eb31ad6e1c0b3e5ede3a3a566b51dc"
+  },
+  "deployment_applied": false,
+  "participant_admission": false,
+  "commit_performed": false,
+  "push_performed": false,
+  "merge_performed": false,
+  "remaining": [
+    "Bind the current protected Kubernetes roles, including Training and Evaluation in Core, Data replay custody, the Training proof audience and private Help Identity authority.",
+    "Run deployed protected mTLS and actual product dependency denial controls, plus the protected cluster outage with private Help and Static.",
+    "Repeat exact cold, warm and error timing observations at the declared ten-session workload."
+  ],
+  "current_session": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry",
+  "earlier_ledger": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/previous-ledger.json",
+    "sha256": "dbe2b2f0f510830f9cd26654f6ce9a0e822ac6e8cf4879cec3fb31281f20803f"
+  }
+}

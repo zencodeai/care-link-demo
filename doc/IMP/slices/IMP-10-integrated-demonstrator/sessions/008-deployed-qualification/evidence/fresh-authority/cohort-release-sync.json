@@ -1,0 +1,17 @@
+{
+  "scope": "Exact cluster release reader before and after reflecting the already-signed bridge renewal",
+  "prior_reader_ack_expiries": {
+    "core": "2026-11-23T18:57:22.055364Z",
+    "data": "2026-11-23T18:57:22.157438Z",
+    "host-inference-bridge": "2026-11-23T18:54:26.428526Z",
+    "inference": "2026-11-23T18:57:22.260411Z",
+    "runtime": "2026-11-23T18:57:22.367252Z"
+  },
+  "synchronized_reader_ack_expiries": {
+    "core": "2026-11-23T18:57:22.055364Z",
+    "data": "2026-11-23T18:57:22.157438Z",
+    "host-inference-bridge": "2026-11-23T18:57:33.058488Z",
+    "inference": "2026-11-23T18:57:22.260411Z",
+    "runtime": "2026-11-23T18:57:22.367252Z"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "recorded_at_utc": "2026-11-23T20:10:19.117197+00:00",
+  "scope": "Exact session 009 private synthetic fixtures, bridge scratch and driver/build duplicates.",
+  "removed_directories": [
+    "care-link-g10-final-lock-host",
+    "care-link-imp10-008-inputs"
+  ],
+  "removed_files": [
+    "care-link-g10-final-lock-build.log",
+    "care-link-g10-final-lock-driver.py",
+    "care-link-g10-release-withdrawal.py",
+    "care-link-g10-final-lock-driver-2.py",
+    "care-link-g10-final-lock-driver-3.py",
+    "care-link-g10-final-lock-driver-4.py",
+    "care-link-g10-final-lock-driver-5.py",
+    "care-link-g10-final-lock-driver-6.py",
+    "care-link-g10-final-lock-driver-7.py",
+    "care-link-g10-final-lock-driver-8.py",
+    "care-link-g10-final-lock-driver-9.py"
+  ],
+  "all_verified_absent": true,
+  "native_model_and_saved_reviews_separately_verified": true
+}

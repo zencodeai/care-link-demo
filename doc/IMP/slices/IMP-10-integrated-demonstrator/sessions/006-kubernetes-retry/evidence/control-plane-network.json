@@ -1,0 +1,14 @@
+{
+  "kubernetes_api": {
+    "allowed_before": "verified_https_status_200",
+    "restricted": "connect_timeout",
+    "allowed_after": "verified_https_status_200",
+    "denied": true
+  },
+  "cluster_dns": {
+    "allowed_before": "exact_service_dns_answer",
+    "restricted": "resolver_error_-3",
+    "allowed_after": "exact_service_dns_answer",
+    "denied": true
+  }
+}

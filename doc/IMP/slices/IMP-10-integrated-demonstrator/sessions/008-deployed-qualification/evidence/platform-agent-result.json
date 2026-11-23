@@ -1,0 +1,194 @@
+{
+  "packet_id": "IMP10-008-platform",
+  "task_id": "IMP-10-D",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "role": "imp_platform",
+  "status": "completed",
+  "changed_paths": [
+    "tools/imp10_verification/deployed_cluster.py",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-assisted-probes-retry.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-assisted-probes.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-attestation-repair.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-final-binding.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-final-import.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-generation-control.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-image-binding.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-outage.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-pdp-recovery.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-pdp-seed-twice.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-probes-retry.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-probes.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-replay-final-binding.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform.json"
+  ],
+  "output_refs": [
+    {
+      "path": "tools/imp10_verification/deployed_cluster.py",
+      "sha256": "a2131824c5b216e2004a8bc12e9161d1a8fa0091d43d3253c4810396f1f865e0"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-assisted-probes-retry.json",
+      "sha256": "e61d73cf8836e02848b1acda92512cce044844b090d4ef660590ff58997f45d1"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-assisted-probes.json",
+      "sha256": "1e134cac48d8cf5ceb37d8a0c5c6e147c45954c98d65da0b018df901ef5febe2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-attestation-repair.json",
+      "sha256": "95446f0888548580edeacbde5d36d873fe6c8b3042a8a30971d6a68b3869bc32"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-final-binding.json",
+      "sha256": "554b25bc7e027b43991109b88b220a36df77dd669162e52ed1dc75a0079bc7ca"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-final-import.json",
+      "sha256": "d2e27a47da49ea0970e07fd87440402b342f7384d514f09b093b0375c09bbb76"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-generation-control.json",
+      "sha256": "04705aae2f1b5ea9c82e114edb055962fcd43ca129580844181b191f6cfe0247"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-image-binding.json",
+      "sha256": "f57e9410e83d318d4835aafda0a7928b09173e04cee531e1920c2ffee696af00"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-outage.json",
+      "sha256": "cc3f12a55f8511efc9c1b72ba16f05f9cb8718e989e65a82844f153dd3c2f153"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-pdp-recovery.json",
+      "sha256": "78ac918444da90d7d3b7776784738a8483a5b61a7183ffe25a91eb68e94d0a21"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-pdp-seed-twice.json",
+      "sha256": "c6eb2f8c90e0f8f79cfbfd8f384dac7fc2447d423c020d5f4d79c6a56504ebe2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-probes-retry.json",
+      "sha256": "a82a0aa58bc379fb49a3698730d1d88583caa719c72d53e957452eaab2964a7c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-probes.json",
+      "sha256": "8cd1d6d3d3db59a563003fba255666c624fb4b0dea07acf043836314e9f8f372"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-replay-final-binding.json",
+      "sha256": "1b5ca48df4d9949b0b1ac9f30a265c6b97c2836f08f87109a75e083684e527e2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform.json",
+      "sha256": "4f35c1e8a5e8ae7a7f66534aff7450b956f9d263ab4fc9ff33b7624b806046e3"
+    }
+  ],
+  "checks": [
+    {
+      "name": "platform-bootstrap",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "platform-bootstrap",
+      "actual": "Owned pinned Kind, restricted Calico, actual verified kubelet CSRs, SPIRE PSAT and CSI.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform.json",
+      "evidence_digest": "4f35c1e8a5e8ae7a7f66534aff7450b956f9d263ab4fc9ff33b7624b806046e3",
+      "mock_used": false
+    },
+    {
+      "name": "first-manual-protected-probes",
+      "command": null,
+      "tool_version": null,
+      "status": "failed",
+      "expected": "first-manual-protected-probes",
+      "actual": "The app tag and unqualified proxy image selectors did not match CRI identities.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-probes.json",
+      "evidence_digest": "8cd1d6d3d3db59a563003fba255666c624fb4b0dea07acf043836314e9f8f372",
+      "mock_used": false
+    },
+    {
+      "name": "manual-protected-probes-retry",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "manual-protected-probes-retry",
+      "actual": "Eight exact CNI tests, separately signed nonce-bound Journal head, denied unlisted path and missing-cert TLS alert.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-probes-retry.json",
+      "evidence_digest": "a82a0aa58bc379fb49a3698730d1d88583caa719c72d53e957452eaab2964a7c",
+      "mock_used": false
+    },
+    {
+      "name": "core-node-and-host-outages",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "core-node-and-host-outages",
+      "actual": "Core-only and actual node unreachable, three paired Help markers, same Docker/Kubernetes IDs recover and protected Journal verified again.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-outage.json",
+      "evidence_digest": "cc3f12a55f8511efc9c1b72ba16f05f9cb8718e989e65a82844f153dd3c2f153",
+      "mock_used": false
+    },
+    {
+      "name": "pdp-initializer-repeat",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "pdp-initializer-repeat",
+      "actual": "Two exact seeder executions succeeded with one persistent 0500 digest-pinned binary.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-pdp-seed-twice.json",
+      "evidence_digest": "c6eb2f8c90e0f8f79cfbfd8f384dac7fc2447d423c020d5f4d79c6a56504ebe2",
+      "mock_used": false
+    },
+    {
+      "name": "pdp-recovered-exact-policy",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "pdp-recovered-exact-policy",
+      "actual": "Admitted Data and Core both received actual OPA DENY bound to exact canonical policy input.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-pdp-recovery.json",
+      "evidence_digest": "78ac918444da90d7d3b7776784738a8483a5b61a7183ffe25a91eb68e94d0a21",
+      "mock_used": false
+    },
+    {
+      "name": "first-final-assisted-probes",
+      "command": null,
+      "tool_version": null,
+      "status": "failed",
+      "expected": "first-final-assisted-probes",
+      "actual": "Ten CNI, Runtime broker and signed Journal checks passed. Bridge token request failed before sealed artifact fixture repair.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-assisted-probes.json",
+      "evidence_digest": "1e134cac48d8cf5ceb37d8a0c5c6e147c45954c98d65da0b018df901ef5febe2",
+      "mock_used": false
+    },
+    {
+      "name": "final-assisted-probes-retry",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "final-assisted-probes-retry",
+      "actual": "Ten actual CNI controls, verified Runtime broker, real bridge tokenization 200 with exact pins and wrong digest 400.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-assisted-probes-retry.json",
+      "evidence_digest": "e61d73cf8836e02848b1acda92512cce044844b090d4ef660590ff58997f45d1",
+      "mock_used": false
+    },
+    {
+      "name": "standard-protected-generation",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "standard-protected-generation",
+      "actual": "HTTP200 exact READY, 24.039s, 27 token units each in SDK and provider prompt accounting, 7 completion and stop.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-generation-control.json",
+      "evidence_digest": "04705aae2f1b5ea9c82e114edb055962fcd43ca129580844181b191f6cfe0247",
+      "mock_used": false
+    }
+  ],
+  "findings": [],
+  "contract_changes": [],
+  "remaining_risks": [
+    "Continue separately coordinated ten-session measurements on the active lease before its cleanup."
+  ],
+  "handoff": "Current protected candidate and lease remain active for timed qualification and coordinator integration.",
+  "is_example": false
+}

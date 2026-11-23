@@ -1,5 +1,6 @@
 """Install Core broker with role-exclusive signing/inference transport custody."""
 
+import logging
 import ssl
 from collections.abc import Callable
 from pathlib import Path
@@ -13,6 +14,10 @@ from care_link_core.assistance_broker import (
     TaskDelegationSigner,
 )
 from care_link_core.assistance_broker.actors import ActorTasks, BoundTaskGateway
+from care_link_core.assistance_broker.inference_authority import (
+    InferenceActorAuthority,
+    attach_inference_authority,
+)
 from care_link_core.assistance_broker.work import WorkQueue
 from care_link_core.manual_app import create_manual_app
 from care_link_core.manual_channels import ManualChannels
@@ -24,8 +29,9 @@ from care_link_core.plans_review_context import PlansReviewContexts
 from care_link_core.referral_ports import ReceiverGateway, ReferralGateway
 from care_link_core.review_channels import ReviewViews
 from care_link_core.review_context import ReviewContexts
-from care_link_domain import Actor, WorkloadPeer
-from care_link_inference import HttpInferencePort
+from care_link_core.training_routes import EvaluationGateway, TrainingGateway
+from care_link_domain import Actor, ManualError, WorkloadPeer
+from care_link_inference import HttpInferencePort, InferenceDenied
 from care_link_knowledge import KnowledgeCatalog
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 from fastapi import FastAPI, Request
@@ -33,6 +39,25 @@ from fastapi import FastAPI, Request
 from tools.imp02_application.mesh import MeshTransport
 
 from .releases import Record, ReleaseBindings
+
+LOG = logging.getLogger(__name__)
+
+
+class CoreInferencePort(HttpInferencePort):
+    """Translate inference transport failures to the existing Core error contract."""
+
+    def infer(self, request: Record) -> Record:
+        try:
+            return super().infer(request)
+        except InferenceDenied as error:
+            cause = error.__cause__
+            status = (
+                cause.response.status_code if isinstance(cause, httpx.HTTPStatusError) else None
+            )
+            LOG.warning(
+                "Inference call denied cause=%s upstream_status=%s", type(cause).__name__, status
+            )
+            raise ManualError("assistance.inference_unavailable", 503) from error
 
 
 def core_application(
@@ -48,6 +73,7 @@ def core_application(
     inference_tls: ssl.SSLContext,
     releases: ReleaseBindings,
     runtime_verify: Callable[[Request], WorkloadPeer],
+    data_verify: Callable[[Request], bool] | None = None,
     planning: PlanningGateway | None = None,
     referrals: ReferralGateway | None = None,
     receiver: ReceiverGateway | None = None,
@@ -56,6 +82,8 @@ def core_application(
     review_contexts: ReviewContexts | None = None,
     plans_review_contexts: PlansReviewContexts | None = None,
     review_views: ReviewViews | None = None,
+    training: TrainingGateway | None = None,
+    evaluation: EvaluationGateway | None = None,
 ) -> FastAPI:
     actors = ActorTasks()
     task_gateway = HttpAssistanceGateway(data_client, data_origin, envelopes)
@@ -66,7 +94,7 @@ def core_application(
     coordinator = HttpCoordinator(
         data_client, TaskDelegationSigner(identity, signing_key), task_gateway
     )
-    inference = HttpInferencePort(
+    inference = CoreInferencePort(
         inference_tls,
         transport=(
             MeshTransport(inference_socket, "https://inference:8443")
@@ -78,12 +106,14 @@ def core_application(
     def release(function: str) -> ReleasedFunction:
         return releases.release_for_knowledge(function, knowledge.digest if knowledge else None)
 
+    authority = InferenceActorAuthority(actors, identity, channels) if data_verify else None
     broker = InferenceBroker(
         coordinator,
         inference,
         actor_for_task=actors.resolve,
         release=release,
         work=work.claim,
+        inference_authority=authority,
     )
 
     def availability(actor: Actor) -> Record:
@@ -110,7 +140,11 @@ def core_application(
         review_contexts=review_contexts,
         plans_review_contexts=plans_review_contexts,
         review_views=review_views,
+        training=training,
+        evaluation=evaluation,
     )
+    if authority is not None and data_verify is not None:
+        attach_inference_authority(app, authority, data_verify)
     from collections.abc import AsyncIterator
     from contextlib import asynccontextmanager
 

@@ -1,0 +1,273 @@
+[
+  {
+    "condition": "error",
+    "round": 1,
+    "phase": "recorded",
+    "at_utc": "2026-11-23T20:04:37.417198+00:00",
+    "first": [
+      {
+        "session_id": "2f3d2b0f-2cf2-4dd6-b9c8-067c35c7b064",
+        "task_id": "f173f0ea-b4b3-4276-9a53-4d713a851f22",
+        "arrival_ns": 2681351620273083
+      },
+      {
+        "session_id": "e8d908d5-6ac2-4497-9e01-27abf38d3860",
+        "task_id": "4bcf7ba9-b44f-4fdd-8254-aee7ff826cc3",
+        "arrival_ns": 2681352747849750
+      }
+    ],
+    "pending": [
+      {
+        "session_id": "e330d814-0212-4945-9a8a-4b931cfea163",
+        "task_id": "f817de69-150f-4dbe-9722-57fea82133e6",
+        "arrival_ns": 2681353642172375
+      },
+      {
+        "session_id": "17ef7c66-99f0-48e9-a68e-f33c17d893b7",
+        "task_id": "539c3bf2-7c85-4acf-b0eb-7f947dfe822a",
+        "arrival_ns": 2681354557010750
+      },
+      {
+        "session_id": "3f1b1def-c01a-4120-8d6b-21ce87f61718",
+        "task_id": "70019102-759b-4171-8e10-19dceccd1753",
+        "arrival_ns": 2681355415428208
+      },
+      {
+        "session_id": "551488d4-8f83-42a3-afec-019f5f7a6f28",
+        "task_id": "56029f4a-7b61-49df-b928-d17991db579d",
+        "arrival_ns": 2681356234469416
+      },
+      {
+        "session_id": "18edcf7c-4b20-4e28-aa11-cb3d7bc0a28b",
+        "task_id": "8ceedbc2-45ad-40a6-82d5-21171f8d5d26",
+        "arrival_ns": 2681357089773333
+      },
+      {
+        "session_id": "9f02a9ec-8c3e-45a8-8a47-c1d8ab34c856",
+        "task_id": "97050693-2ede-437c-a893-82f4d8d965d0",
+        "arrival_ns": 2681357907174958
+      },
+      {
+        "session_id": "d79addb7-63f3-43b3-9dd0-914b2e387fbe",
+        "task_id": "064f799f-00c3-40fa-989d-7e0a291fc0fd",
+        "arrival_ns": 2681362582347000
+      },
+      {
+        "session_id": "0a6f9115-e2c4-44bd-9a39-fdda31a77539",
+        "task_id": "6c043af1-c1b4-42fd-be9b-80229c733b31",
+        "arrival_ns": 2681362690409875
+      }
+    ],
+    "streams_before_dispatch": [
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      },
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      }
+    ],
+    "contexts": [
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      },
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      }
+    ],
+    "runtime_round_key": "a610f6ad-f20e-47cd-a1af-f809774dacb3",
+    "dispatch_at_utc": "2026-11-23T20:04:45.877037+00:00",
+    "occupied": [
+      {
+        "task_id": "f173f0ea-b4b3-4276-9a53-4d713a851f22",
+        "created_at": "2026-11-23T20:04:48.769152+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      },
+      {
+        "task_id": "4bcf7ba9-b44f-4fdd-8254-aee7ff826cc3",
+        "created_at": "2026-11-23T20:04:48.971034+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      }
+    ],
+    "locales_by_session": {
+      "2f3d2b0f-2cf2-4dd6-b9c8-067c35c7b064": "en-CA",
+      "e8d908d5-6ac2-4497-9e01-27abf38d3860": "fr-CA",
+      "e330d814-0212-4945-9a8a-4b931cfea163": "en-CA",
+      "17ef7c66-99f0-48e9-a68e-f33c17d893b7": "fr-CA",
+      "3f1b1def-c01a-4120-8d6b-21ce87f61718": "en-CA",
+      "551488d4-8f83-42a3-afec-019f5f7a6f28": "fr-CA",
+      "18edcf7c-4b20-4e28-aa11-cb3d7bc0a28b": "en-CA",
+      "9f02a9ec-8c3e-45a8-8a47-c1d8ab34c856": "fr-CA",
+      "d79addb7-63f3-43b3-9dd0-914b2e387fbe": "en-CA",
+      "0a6f9115-e2c4-44bd-9a39-fdda31a77539": "fr-CA"
+    },
+    "channel": "web",
+    "peak_before": {
+      "connected_session_ids": [
+        "0a6f9115-e2c4-44bd-9a39-fdda31a77539",
+        "17ef7c66-99f0-48e9-a68e-f33c17d893b7",
+        "18edcf7c-4b20-4e28-aa11-cb3d7bc0a28b",
+        "2f3d2b0f-2cf2-4dd6-b9c8-067c35c7b064",
+        "3f1b1def-c01a-4120-8d6b-21ce87f61718",
+        "551488d4-8f83-42a3-afec-019f5f7a6f28",
+        "9f02a9ec-8c3e-45a8-8a47-c1d8ab34c856",
+        "d79addb7-63f3-43b3-9dd0-914b2e387fbe",
+        "e330d814-0212-4945-9a8a-4b931cfea163",
+        "e8d908d5-6ac2-4497-9e01-27abf38d3860"
+      ],
+      "occupied_task_ids": [
+        "4bcf7ba9-b44f-4fdd-8254-aee7ff826cc3",
+        "f173f0ea-b4b3-4276-9a53-4d713a851f22"
+      ],
+      "pending_task_ids": [
+        "064f799f-00c3-40fa-989d-7e0a291fc0fd",
+        "539c3bf2-7c85-4acf-b0eb-7f947dfe822a",
+        "56029f4a-7b61-49df-b928-d17991db579d",
+        "6c043af1-c1b4-42fd-be9b-80229c733b31",
+        "70019102-759b-4171-8e10-19dceccd1753",
+        "8ceedbc2-45ad-40a6-82d5-21171f8d5d26",
+        "97050693-2ede-437c-a893-82f4d8d965d0",
+        "f817de69-150f-4dbe-9722-57fea82133e6"
+      ]
+    },
+    "fault_command_at_utc": "2026-11-23T20:04:50.331779+00:00",
+    "fault_active_at_utc": "2026-11-23T20:04:50.654670+00:00",
+    "runtime": [
+      {
+        "state": "compute_unknown",
+        "safe_reason": "provider_stop_unverified",
+        "elapsed_ms": 4501.515
+      },
+      {
+        "state": "compute_unknown",
+        "safe_reason": "provider_stop_unverified",
+        "elapsed_ms": 4496.601
+      }
+    ],
+    "reads_ms": [
+      665.584,
+      573.217,
+      475.243,
+      476.91,
+      474.55,
+      506.576,
+      472.163,
+      490.104,
+      479.092,
+      549.266
+    ],
+    "manual_during_connector_interruption": {
+      "visible_once": true,
+      "exact_retry": true,
+      "elapsed_ms": 1883.957
+    },
+    "manual": {
+      "visible_once": true,
+      "exact_retry": true,
+      "elapsed_ms": 1883.957
+    },
+    "peak_after": {
+      "connected_session_ids": [
+        "0a6f9115-e2c4-44bd-9a39-fdda31a77539",
+        "17ef7c66-99f0-48e9-a68e-f33c17d893b7",
+        "18edcf7c-4b20-4e28-aa11-cb3d7bc0a28b",
+        "2f3d2b0f-2cf2-4dd6-b9c8-067c35c7b064",
+        "3f1b1def-c01a-4120-8d6b-21ce87f61718",
+        "551488d4-8f83-42a3-afec-019f5f7a6f28",
+        "9f02a9ec-8c3e-45a8-8a47-c1d8ab34c856",
+        "d79addb7-63f3-43b3-9dd0-914b2e387fbe",
+        "e330d814-0212-4945-9a8a-4b931cfea163",
+        "e8d908d5-6ac2-4497-9e01-27abf38d3860"
+      ],
+      "occupied_task_ids": [],
+      "pending_task_ids": [
+        "064f799f-00c3-40fa-989d-7e0a291fc0fd",
+        "539c3bf2-7c85-4acf-b0eb-7f947dfe822a",
+        "56029f4a-7b61-49df-b928-d17991db579d",
+        "6c043af1-c1b4-42fd-be9b-80229c733b31",
+        "70019102-759b-4171-8e10-19dceccd1753",
+        "8ceedbc2-45ad-40a6-82d5-21171f8d5d26",
+        "97050693-2ede-437c-a893-82f4d8d965d0",
+        "f817de69-150f-4dbe-9722-57fea82133e6"
+      ]
+    },
+    "jobs": [
+      {
+        "task_id": "f173f0ea-b4b3-4276-9a53-4d713a851f22",
+        "created_at": "2026-11-23T20:04:48.769152+00:00",
+        "state": "compute_unknown",
+        "result": false,
+        "slot_state": "compute_unknown",
+        "draft_count": 0
+      },
+      {
+        "task_id": "4bcf7ba9-b44f-4fdd-8254-aee7ff826cc3",
+        "created_at": "2026-11-23T20:04:48.971034+00:00",
+        "state": "compute_unknown",
+        "result": false,
+        "slot_state": "compute_unknown",
+        "draft_count": 0
+      }
+    ],
+    "bridge": [
+      {
+        "bridge_ms": 1568.599,
+        "completion_tokens": null,
+        "prompt_tokens": null,
+        "sequence": 4,
+        "started_at_utc": "2026-11-23T20:04:48.978384+00:00",
+        "status": 503
+      },
+      {
+        "bridge_ms": 1781.006,
+        "completion_tokens": null,
+        "prompt_tokens": null,
+        "sequence": 3,
+        "started_at_utc": "2026-11-23T20:04:48.777404+00:00",
+        "status": 503
+      }
+    ],
+    "browser": [
+      {
+        "task_id": "f173f0ea-b4b3-4276-9a53-4d713a851f22",
+        "state": "planning",
+        "safe_reason": null,
+        "steps_used": 1,
+        "tools_used": 0
+      },
+      {
+        "task_id": "4bcf7ba9-b44f-4fdd-8254-aee7ff826cc3",
+        "state": "planning",
+        "safe_reason": null,
+        "steps_used": 1,
+        "tools_used": 0
+      }
+    ],
+    "slots_after": [
+      {
+        "id": "local-1",
+        "state": "compute_unknown",
+        "job_id": "839d4f1b-b1f5-44fe-ac4c-4af3d5a940c1"
+      },
+      {
+        "id": "local-2",
+        "state": "compute_unknown",
+        "job_id": "8ef96718-07c5-4aca-b572-8fff1113d8e2"
+      }
+    ],
+    "passed": true
+  }
+]

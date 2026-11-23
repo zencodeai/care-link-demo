@@ -1,0 +1,36 @@
+{
+  "scope": "Exact deployed Inference and host model bridge component controls",
+  "tokenize_before": {
+    "status": 200,
+    "elapsed_ms": 511.025,
+    "sdk_input_tokens": 27,
+    "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999"
+  },
+  "owned_connector_errors": [
+    {
+      "status": 503,
+      "elapsed_ms": 2025.235,
+      "content_bytes": 0
+    },
+    {
+      "status": 503,
+      "elapsed_ms": 2042.519,
+      "content_bytes": 0
+    }
+  ],
+  "tokenize_after": {
+    "status": 200,
+    "elapsed_ms": 118.057,
+    "sdk_input_tokens": 27,
+    "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999"
+  },
+  "warm_recovery": {
+    "status": 200,
+    "elapsed_ms": 2504.488,
+    "matches_exact_control": true,
+    "finish_reason": "stop",
+    "prompt_tokens": 27,
+    "completion_tokens": 7
+  },
+  "passed": true
+}

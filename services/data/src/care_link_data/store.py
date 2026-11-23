@@ -44,6 +44,7 @@ TABLES: dict[str, tuple[str, tuple[str, ...]]] = {
     "gov_scope_grant": ("access.audit_grant", ("id",)),
     "gov_audit_export": ("audit.export_request", ("id",)),
     "gov_metric_release": ("quality.metric_release", ("id",)),
+    "evaluation": ("quality.evaluation", ("id",)),
     "post_crisis": ("care.post_crisis_event", ("id",)),
     "followup": ("care.follow_up", ("id",)),
     "inbox": ("care.inbox_message", ("id",)),
@@ -113,6 +114,7 @@ JSON_COLUMNS = {
 }
 APPEND_ONLY = frozenset(
     {
+        "evaluation",
         "gov_review",
         "gov_exception",
         "post_crisis",

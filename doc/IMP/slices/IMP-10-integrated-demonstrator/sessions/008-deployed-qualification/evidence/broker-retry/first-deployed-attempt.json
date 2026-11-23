@@ -1,0 +1,9 @@
+{
+  "scope": "First single deployed worker test on exact diagnostic candidate",
+  "actual_mfa_and_two_party_handoff": true,
+  "terminal_step": "POST /v1/tasks",
+  "status": 409,
+  "browser_error_key": "manual.gateway_denied",
+  "data_observed_error_key": "assistance.channel_changed",
+  "runtime_started": false
+}

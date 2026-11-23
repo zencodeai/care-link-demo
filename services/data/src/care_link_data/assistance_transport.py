@@ -130,7 +130,10 @@ def attach_inference_ledger_gateway(
                     raise ManualError("assistance.body_limit", 413)
                 raw.extend(chunk)
             try:
-                value = cast(Record, json.loads(raw, object_pairs_hook=unique_object))
+                parsed: object = json.loads(raw, object_pairs_hook=unique_object)
+                if not isinstance(parsed, dict):
+                    raise ValueError("closed inference command object required")
+                value = cast(Record, parsed)
                 if operation == "context":
                     result = await run_in_threadpool(authority.resolve, value)
                 elif operation == "current":
@@ -182,9 +185,11 @@ class StoredInferenceAuthority:
         releases: dict[str, Record] | Callable[[], dict[str, Record]],
         bridge_generation: str,
         *,
+        fresh_actor: Callable[[Record, str], Actor] | None = None,
         clock: Callable[[], datetime] = lambda: datetime.now(UTC),
     ) -> None:
         self.coordinator, self.actor_for_task = coordinator, actor_for_task
+        self.fresh_actor = fresh_actor
         self.releases = (
             releases
             if callable(releases)
@@ -192,12 +197,17 @@ class StoredInferenceAuthority:
         )
         self.bridge_generation, self.clock = bridge_generation, clock
 
+    def _actor(self, request: Record, operation: str) -> Actor:
+        if self.fresh_actor is not None:
+            return self.fresh_actor(request, operation)
+        return self.actor_for_task(str(request["task_id"]))
+
     def resolve(self, request: Record) -> Record:
         from care_link_contracts import validate_contract
 
         validate_contract("InferenceRequest", request)
         task_id = str(request["task_id"])
-        snapshot = self.coordinator.context_snapshot(self.actor_for_task(task_id), task_id)
+        snapshot = self.coordinator.context_snapshot(self._actor(request, "context"), task_id)
         task = cast(Record, snapshot["task"])
         function = str(task["function"])
         releases = self.releases() if callable(self.releases) else self.releases
@@ -271,11 +281,14 @@ class StoredInferenceAuthority:
         }
 
     def current(self, request: Record) -> bool:
-        if set(request) != {"task_id", "step_id", "fence", "revision"}:
+        fields = {"task_id", "step_id", "fence", "revision"}
+        if self.fresh_actor is not None or "job_id" in request:
+            fields.add("job_id")
+        if set(request) != fields or any(not isinstance(v, str) for v in request.values()):
             return False
         try:
             task_id = str(request["task_id"])
-            snapshot = self.coordinator.context_snapshot(self.actor_for_task(task_id), task_id)
+            snapshot = self.coordinator.context_snapshot(self._actor(request, "current"), task_id)
             task, lease = cast(Record, snapshot["task"]), cast(Record, snapshot["lease"])
             return (
                 str(task["revision"]) == str(request["revision"])

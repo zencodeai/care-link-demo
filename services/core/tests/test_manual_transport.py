@@ -1,3 +1,4 @@
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from unittest.mock import create_autospec
 from uuid import uuid4
@@ -6,6 +7,7 @@ import pytest
 from care_link_core.manual_app import create_manual_app
 from care_link_core.manual_channels import ManualChannels
 from care_link_core.manual_ports import ManualGateway
+from care_link_core.training_routes import EvaluationGateway
 from care_link_domain import Actor, ManualError
 from fastapi.testclient import TestClient
 
@@ -34,6 +36,12 @@ def test_channel_disconnect_reconnect_and_process_replacement_fence_old_generati
             first.account_id, first.browser_session_digest, first.transport_generation
         )
         with registry.open(subject) as replacement:
+            registry.disconnect(first)
+            assert registry.current(
+                replacement.account_id,
+                replacement.browser_session_digest,
+                replacement.transport_generation,
+            )
             assert replacement.transport_generation > first.transport_generation
             assert not registry.current(
                 first.account_id, first.browser_session_digest, first.transport_generation
@@ -150,3 +158,59 @@ def test_missing_csrf_denies_even_with_body_role_spoofing():
     )
     assert response.status_code == 403
     gateway.session_human_request.assert_not_called()
+
+
+def test_replay_binds_only_a_current_authenticated_request_channel():
+    registry, security = ManualChannels(), Security()
+    security.actor = replace(security.actor, role="trainer", mfa=True)
+    observed = []
+    replay = create_autospec(
+        EvaluationGateway,
+        instance=True,
+    )
+
+    def execute(current, _key, _data):
+        observed.append(current)
+        assert registry.current(
+            current.account_id, current.browser_session_digest, current.transport_generation
+        )
+        return {
+            "id": str(uuid4()),
+            "state": "completed",
+            "evidence_digest": "d" * 64,
+            "clinical_claim": False,
+        }
+
+    replay.replay_create.side_effect = execute
+    replay.evaluation_read.side_effect = lambda current, _: execute(current, None, None)
+    client = TestClient(
+        create_manual_app(
+            create_autospec(ManualGateway, instance=True), security, registry, evaluation=replay
+        ),
+        base_url="https://app.test",
+    )
+    arguments = {
+        "scenario_id": str(uuid4()),
+        "input_manifest_digest": "a" * 64,
+        "recorded_outputs_digest": "b" * 64,
+        "bundle_digest": "c" * 64,
+    }
+    headers = {
+        "Origin": "https://app.test",
+        "X-CSRF-Token": "csrf",
+        "Idempotency-Key": str(uuid4()),
+    }
+    route = "/v1/evaluation/replays"
+
+    assert (
+        client.post(route, json=arguments, headers={**headers, "X-CSRF-Token": "bad"}).status_code
+        == 403
+    )
+    assert not observed
+    assert client.post(route, json=arguments, headers=headers).status_code == 200
+    assert client.get(f"{route}/{uuid4()}").status_code == 200
+    assert len(observed) == 2
+    for current in observed:
+        assert not registry.current(
+            current.account_id, current.browser_session_digest, current.transport_generation
+        )

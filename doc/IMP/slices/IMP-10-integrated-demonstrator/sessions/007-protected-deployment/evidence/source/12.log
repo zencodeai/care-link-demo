@@ -1,0 +1,224 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/main/Workspace/projects/care-link/care-link-demo
+configfile: pyproject.toml
+testpaths: packages/knowledge/tests, services/runtime/tests, services/inference/tests, host/inference-bridge/tests, services/simulators/tests, packages/policy-input/tests, services/data/tests, host/recovery-control/tests, packages/workload-trust/tests, packages/contracts/python/tests, services/core/tests, services/identity/tests, host/help/tests, host/static/tests, tests
+plugins: anyio-4.16.0, langsmith-0.15.1
+collected 1797 items
+
+packages/knowledge/tests/test_catalog.py ...............                 [  0%]
+services/runtime/tests/test_client.py ......                             [  1%]
+services/runtime/tests/test_workflow.py .....                            [  1%]
+services/inference/tests/test_inference.py ............................. [  3%]
+....                                                                     [  3%]
+services/inference/tests/test_selection.py ...........                   [  3%]
+services/inference/tests/test_tokenization.py ............               [  4%]
+host/inference-bridge/tests/test_artifacts.py ....                       [  4%]
+host/inference-bridge/tests/test_bridge.py ..............                [  5%]
+host/inference-bridge/tests/test_credentials.py .                        [  5%]
+host/inference-bridge/tests/test_loaded.py .......                       [  6%]
+packages/policy-input/tests/test_assistance_policy.py .............      [  6%]
+packages/policy-input/tests/test_delegation.py ........                  [  7%]
+packages/policy-input/tests/test_duty_registry.py .....                  [  7%]
+packages/policy-input/tests/test_imp07_policy.py .....................   [  8%]
+packages/policy-input/tests/test_imp08_policy.py ...........             [  9%]
+packages/policy-input/tests/test_opa.py ..........                       [  9%]
+packages/policy-input/tests/test_referral_policy.py .................... [ 10%]
+............................................                             [ 13%]
+services/data/tests/test_assistance.py ....................              [ 14%]
+services/data/tests/test_assistance_jobs.py ...........                  [ 15%]
+services/data/tests/test_assistance_knowledge.py .....                   [ 15%]
+services/data/tests/test_composition.py .s.....                          [ 15%]
+services/data/tests/test_core_assistance_chain.py ....                   [ 15%]
+services/data/tests/test_directory.py .........................          [ 17%]
+services/data/tests/test_directory_admission.py ..................       [ 18%]
+services/data/tests/test_duties.py ............                          [ 19%]
+services/data/tests/test_identity_deadline.py .......                    [ 19%]
+services/data/tests/test_imp04_adverse.py ..........                     [ 19%]
+services/data/tests/test_imp07_lifecycle.py ............................ [ 21%]
+..........                                                               [ 22%]
+services/data/tests/test_imp08_boundary.py .                             [ 22%]
+services/data/tests/test_imp08_controls.py ............................. [ 23%]
+..                                                                       [ 23%]
+services/data/tests/test_imp08_evidence_postgres.py ..............       [ 24%]
+services/data/tests/test_imp08_evidence_unit.py ...............          [ 25%]
+services/data/tests/test_imp08_inline.py ...........                     [ 26%]
+services/data/tests/test_imp08_latency.py F                              [ 26%]
+services/data/tests/test_imp09_help.py ...                               [ 26%]
+services/data/tests/test_imp09_integration.py .                          [ 26%]
+services/data/tests/test_imp09_recovery.py ...........                   [ 26%]
+services/data/tests/test_imp10_combined_outage.py s                      [ 27%]
+services/data/tests/test_imp10_evaluation.py ..........                  [ 27%]
+services/data/tests/test_imp10_integrated_journey.py .                   [ 27%]
+services/data/tests/test_imp10_protected_training.py ....                [ 27%]
+services/data/tests/test_imp10_training_boundary.py ..............       [ 28%]
+services/data/tests/test_imp10_workstation_load.py .                     [ 28%]
+services/data/tests/test_lifecycle_adverse.py ......                     [ 29%]
+services/data/tests/test_lifecycle_boundary.py ....                      [ 29%]
+services/data/tests/test_manual.py .............................         [ 30%]
+services/data/tests/test_planning_composition.py ...                     [ 31%]
+services/data/tests/test_plans_consent.py ...............                [ 31%]
+services/data/tests/test_plans_review_recovery.py ....                   [ 32%]
+services/data/tests/test_referral_composition.py ..                      [ 32%]
+services/data/tests/test_referrals.py .................................. [ 34%]
+.                                                                        [ 34%]
+services/data/tests/test_review_recovery.py ..............               [ 34%]
+services/data/tests/test_runtime_composition.py .                        [ 35%]
+host/recovery-control/tests/test_capture.py ..........                   [ 35%]
+host/recovery-control/tests/test_journal.py .....................        [ 36%]
+host/recovery-control/tests/test_recovery.py ........................... [ 38%]
+...                                                                      [ 38%]
+packages/workload-trust/tests/test_fence_channel.py ...                  [ 38%]
+packages/workload-trust/tests/test_imp06_routes.py ...........           [ 39%]
+packages/workload-trust/tests/test_socket_custody.py ..                  [ 39%]
+packages/workload-trust/tests/test_workload_trust.py ................... [ 40%]
+..                                                                       [ 40%]
+packages/contracts/python/tests/test_validation.py ...............       [ 41%]
+services/core/tests/test_assistance_work.py .............                [ 42%]
+services/core/tests/test_developer_api.py .............................. [ 43%]
+.                                                                        [ 43%]
+services/core/tests/test_imp07_transport.py ................             [ 44%]
+services/core/tests/test_imp08_transport.py ..................           [ 45%]
+services/core/tests/test_imp09_transport.py ..............               [ 46%]
+services/core/tests/test_manual_envelopes.py .................           [ 47%]
+services/core/tests/test_manual_gateway_errors.py .........              [ 47%]
+services/core/tests/test_manual_transport.py ........                    [ 48%]
+services/core/tests/test_plans_review_context.py ...............         [ 49%]
+services/core/tests/test_plans_review_routes.py .......                  [ 49%]
+services/core/tests/test_referral_transport.py ........                  [ 49%]
+services/core/tests/test_review_binding.py ....                          [ 50%]
+services/core/tests/test_review_cookie_security.py ......                [ 50%]
+services/core/tests/test_review_views.py ...                             [ 50%]
+services/identity/tests/test_backups.py ..........                       [ 51%]
+services/identity/tests/test_credential_sweep.py ..............          [ 52%]
+services/identity/tests/test_identity.py ............................... [ 53%]
+..                                                                       [ 53%]
+services/identity/tests/test_imp07_rights_proof.py ..............        [ 54%]
+services/identity/tests/test_imp09_promotion.py ...                      [ 54%]
+services/identity/tests/test_imp10_protected_help.py ..                  [ 54%]
+services/identity/tests/test_interactive_review.py ..................... [ 56%]
+...............                                                          [ 56%]
+services/identity/tests/test_manual_recovery.py ..                       [ 57%]
+services/identity/tests/test_manual_runtime.py ...........               [ 57%]
+services/identity/tests/test_owner_review.py ................            [ 58%]
+services/identity/tests/test_planning_proof.py .....                     [ 58%]
+services/identity/tests/test_provider.py ............................... [ 60%]
+...............................                                          [ 62%]
+services/identity/tests/test_receiver_workload.py .                      [ 62%]
+services/identity/tests/test_retention.py .........................      [ 63%]
+services/identity/tests/test_review_identity.py ...............          [ 64%]
+services/identity/tests/test_review_providers.py ..........              [ 65%]
+services/identity/tests/test_review_proxy.py .....                       [ 65%]
+services/identity/tests/test_signals.py ..........                       [ 65%]
+services/identity/tests/test_workload_signals.py ...........             [ 66%]
+host/help/tests/test_authority_http.py ..................                [ 67%]
+host/help/tests/test_help.py ..........                                  [ 68%]
+host/help/tests/test_identity_integration.py .                           [ 68%]
+host/help/tests/test_imp09_spool.py .                                    [ 68%]
+host/help/tests/test_lifecycle.py ................                       [ 69%]
+host/static/tests/test_card_compiler.py ..                               [ 69%]
+host/static/tests/test_owner_demo.py ...........                         [ 69%]
+host/static/tests/test_publication.py .............                      [ 70%]
+host/static/tests/test_static_retention.py .........                     [ 71%]
+tests/contract/test_agentic_workflow.py ..                               [ 71%]
+tests/contract/test_snapshot.py .                                        [ 71%]
+tests/evaluation/test_assistance_evaluation.py ...                       [ 71%]
+tests/evaluation/test_assistance_transport.py ..                         [ 71%]
+tests/integration/imp02_lab/test_cni_ipv6.py ..                          [ 71%]
+tests/integration/imp02_lab/test_fence_users.py s                        [ 71%]
+tests/integration/imp02_lab/test_manifests.py .......                    [ 72%]
+tests/integration/imp02_lab/test_signals_probe.py ........               [ 72%]
+tests/integration/imp03_runtime/test_provisioning.py s                   [ 72%]
+tests/integration/referral/test_history_links.py .                       [ 72%]
+tests/integration/referral/test_runtime.py ..                            [ 72%]
+tests/integration/referral/test_transport.py ........                    [ 73%]
+tests/network/test_imp10_protected_mesh.py ....                          [ 73%]
+tests/network/test_imp10_protected_routes.py .....                       [ 73%]
+tests/network/test_probe_evidence.py ......                              [ 74%]
+tests/unit/imp04_deployment/test_authority_case.py ....................  [ 75%]
+tests/unit/imp04_deployment/test_browser_stream.py ..                    [ 75%]
+tests/unit/imp04_deployment/test_configuration.py ...............        [ 76%]
+tests/unit/imp04_deployment/test_diagnostics.py .....                    [ 76%]
+tests/unit/imp04_deployment/test_live_database.py ...................... [ 77%]
+.....                                                                    [ 77%]
+tests/unit/imp04_deployment/test_live_zoom.py .......................... [ 79%]
+..................................                                       [ 81%]
+tests/unit/imp04_deployment/test_operator.py ...................         [ 82%]
+tests/unit/imp04_deployment/test_qualification.py ....                   [ 82%]
+tests/unit/imp04_review/test_adapters.py .............                   [ 83%]
+tests/unit/imp04_review/test_build_context.py .............              [ 83%]
+tests/unit/imp04_review/test_fixture_sources.py ...                      [ 84%]
+tests/unit/imp04_review/test_initial_migration_receipt.py .              [ 84%]
+tests/unit/imp04_review/test_operator_login.py ..................        [ 85%]
+tests/unit/imp04_review/test_preparation.py ......                       [ 85%]
+tests/unit/imp04_review/test_review_lifecycle.py ............            [ 86%]
+tests/unit/imp04_review/test_review_operator.py ......                   [ 86%]
+tests/unit/imp04_review/test_serving_entry.py .........                  [ 86%]
+tests/unit/test_boundaries.py ......                                     [ 87%]
+tests/unit/test_demo_review_environment.py .......                       [ 87%]
+tests/unit/test_demo_review_provider.py ..............                   [ 88%]
+tests/unit/test_demo_review_realms.py ..                                 [ 88%]
+tests/unit/test_demo_review_start.py .                                   [ 88%]
+tests/unit/test_demo_toolkit.py ................                         [ 89%]
+tests/unit/test_imp02_admission.py .                                     [ 89%]
+tests/unit/test_imp02_application.py .....                               [ 89%]
+tests/unit/test_imp03_extended_commit_fault.py ................          [ 90%]
+tests/unit/test_imp03_extended_evidence.py ............                  [ 91%]
+tests/unit/test_imp03_extended_negative.py ..........                    [ 91%]
+tests/unit/test_imp03_extended_result_gates.py ......                    [ 92%]
+tests/unit/test_imp03_runtime.py ....................                    [ 93%]
+tests/unit/test_imp03_shared_docker.py ................................. [ 95%]
+...                                                                      [ 95%]
+tests/unit/test_imp03_shared_provider.py ...............                 [ 96%]
+tests/unit/test_imp03_shared_qualification.py ..                         [ 96%]
+tests/unit/test_imp03_shared_relay.py ..............                     [ 97%]
+tests/unit/test_imp03_shared_tls.py .......                              [ 97%]
+tests/unit/test_imp03_shared_tls_apply.py ............                   [ 98%]
+tests/unit/test_imp06_composition.py ....                                [ 98%]
+tests/unit/test_imp06_provider_stop.py ..........                        [ 98%]
+tests/unit/test_imp06_release_custody.py ...............                 [ 99%]
+tests/unit/test_imp06_serving_release.py ...                             [100%]
+
+=================================== FAILURES ===================================
+_________________ test_governance_authorization_latency_sample _________________
+services/data/tests/test_imp08_latency.py:59: in test_governance_authorization_latency_sample
+    assert pdp_p95 <= 50
+E   assert 53.40691702440381 <= 50
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+services/data/tests/test_imp08_latency.py::test_governance_authorization_latency_sample
+  services/data/tests/test_imp08_latency.py:16: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    def test_governance_authorization_latency_sample(harness, record_property):
+
+services/data/tests/test_imp09_integration.py::test_real_capture_restore_current_restriction_promotion_and_manual
+  services/data/tests/test_imp09_integration.py:61: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    def test_real_capture_restore_current_restriction_promotion_and_manual(
+
+services/data/tests/test_imp10_evaluation.py::test_signed_policy_and_http_paths_bind_exact_evaluation_and_current_identity
+services/data/tests/test_planning_composition.py::test_signed_bff_plan_consent_proof_shared_view_and_revocation
+services/data/tests/test_referral_composition.py::test_signed_referral_read_review_send_reconcile_and_tamper_denials
+services/data/tests/test_runtime_composition.py::test_real_signed_metadata_and_final_gateway_with_current_identity
+tests/unit/test_imp03_runtime.py::test_journal_response_is_fresh_signed_nonce_bound_and_reports_serving_fence
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/httpx2/_client.py:1198: StarletteDeprecationWarning: You should not use the 'timeout' argument with the TestClient. See https://github.com/Kludex/starlette/issues/1108 for more information.
+    return self.request(
+
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[maintenance]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[fenced_old]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[routed_target]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[enabled_target]
+host/recovery-control/tests/test_recovery.py::test_process_death_at_each_gap_reopens_signed_ledger_restricted[before_smoke]
+  /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/popen_fork.py:76: DeprecationWarning: This process (pid=73397) is multi-threaded, use of fork() may lead to deadlocks in the child.
+    self.pid = os.fork()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /private/tmp/care-link-imp10-007-final-source/pytest.xml -
+=========================== short test summary info ============================
+SKIPPED [1] services/data/tests/test_composition.py:198: explicit owned Docker capture fixture required
+SKIPPED [1] services/data/tests/test_imp10_combined_outage.py:172: Requires explicit live pinned provider and disposable topology qualification
+SKIPPED [1] tests/integration/imp02_lab/test_fence_users.py:50: requires explicitly authorized disposable Linux container UID0/setuid test harness
+SKIPPED [1] tests/integration/imp03_runtime/test_provisioning.py:27: explicit isolated provisioning TLS fixture required; run separately
+FAILED services/data/tests/test_imp08_latency.py::test_governance_authorization_latency_sample
+====== 1 failed, 1792 passed, 4 skipped, 29 warnings in 251.05s (0:04:11) ======

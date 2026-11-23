@@ -1,0 +1,503 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/main/Workspace/projects/care-link/care-link-demo/node_modules/.pnpm/@playwright+test@1.65.0/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "tests/e2e/assistance/playwright.config.ts"
+    ],
+    "configFile": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/assistance/playwright.config.ts",
+    "rootDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/assistance",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/private/tmp/care-link-imp10-training-browser/regression002/assistance/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/assistance",
+        "testIgnore": [],
+        "testMatch": [
+          "assistance.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/private/tmp/care-link-imp10-training-browser/regression002/assistance/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/assistance",
+        "snapshotDir": "/Users/main/Workspace/projects/care-link/care-link-demo/tests/e2e/assistance",
+        "testIgnore": [],
+        "testMatch": "assistance.spec.ts",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5176",
+          "browserName": "chromium",
+          "connectOptions": {
+            "wsEndpoint": "[private browser endpoint]",
+            "exposeNetwork": "<loopback>",
+            "headers": {
+              "x-playwright-launch-options": "{\"executablePath\":\"/opt/chrome-for-testing/chrome\",\"headless\":true}"
+            }
+          },
+          "actionTimeout": 15000,
+          "navigationTimeout": 30000,
+          "trace": "off",
+          "screenshot": "off",
+          "video": "off"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/private/tmp/care-link-imp10-training-browser/regression002/assistance/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": {
+      "command": "pnpm --filter @care-link/web exec vite --host 127.0.0.1 --port 5176 --strictPort --force",
+      "url": "http://127.0.0.1:5176",
+      "reuseExistingServer": false,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "assistance.spec.ts",
+      "file": "assistance.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "en-CA exact review, edit, reject and keyboard with clean axe at1280/640",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2241,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:41.167Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a65085a94e20f53d4f50-71ea2ce55f896f37160f",
+          "file": "assistance.spec.ts",
+          "line": 43,
+          "column": 3
+        },
+        {
+          "title": "en-CA outage and unknown compute leave manual service available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1183,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:43.702Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a65085a94e20f53d4f50-f98c5c705c5e1f911d5f",
+          "file": "assistance.spec.ts",
+          "line": 97,
+          "column": 3
+        },
+        {
+          "title": "fr-CA exact review, edit, reject and keyboard with clean axe at1280/640",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1904,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:44.894Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a65085a94e20f53d4f50-3f6ab2eee70dd0c7181c",
+          "file": "assistance.spec.ts",
+          "line": 43,
+          "column": 3
+        },
+        {
+          "title": "fr-CA outage and unknown compute leave manual service available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1258,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:46.808Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a65085a94e20f53d4f50-df39d22c7a92acf36923",
+          "file": "assistance.spec.ts",
+          "line": 97,
+          "column": 3
+        },
+        {
+          "title": "stale source review is fenced",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 494,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:48.078Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a65085a94e20f53d4f50-19b825273e9ea03d83da",
+          "file": "assistance.spec.ts",
+          "line": 109,
+          "column": 1
+        },
+        {
+          "title": "uncertain review retries the same exact operation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 627,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:48.582Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a65085a94e20f53d4f50-904c419f552c48fe59cc",
+          "file": "assistance.spec.ts",
+          "line": 119,
+          "column": 1
+        },
+        {
+          "title": "cancelled output never claims model compute stopped",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 512,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:49.215Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a65085a94e20f53d4f50-c6a15ee86d300bdfd0b5",
+          "file": "assistance.spec.ts",
+          "line": 131,
+          "column": 1
+        },
+        {
+          "title": "status 401 hides previously visible private facts and preserves unsent correction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 571,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:49.735Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a65085a94e20f53d4f50-41dd674fa1c597fb88fe",
+          "file": "assistance.spec.ts",
+          "line": 144,
+          "column": 3
+        },
+        {
+          "title": "status 403 hides previously visible private facts and preserves unsent correction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 536,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:50.314Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a65085a94e20f53d4f50-2035318fcea572940b0e",
+          "file": "assistance.spec.ts",
+          "line": 144,
+          "column": 3
+        },
+        {
+          "title": "en-CA scoped preparation opt-in and attributed knowledge preserve manual service",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2347,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:50.857Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a65085a94e20f53d4f50-21e7cec80c3a5c957f30",
+          "file": "assistance.spec.ts",
+          "line": 181,
+          "column": 3
+        },
+        {
+          "title": "fr-CA scoped preparation opt-in and attributed knowledge preserve manual service",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2184,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-23T14:13:53.209Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a65085a94e20f53d4f50-4f792da48608a7070462",
+          "file": "assistance.spec.ts",
+          "line": 181,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-23T14:13:40.552Z",
+    "duration": 14864.885,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

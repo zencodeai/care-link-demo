@@ -4,13 +4,15 @@ Policy is evaluated over metadata before locks, then its complete binding and
 all current guard values are compared under the final ordered lock set.
 """
 
+from __future__ import annotations
+
 import json
 import time
 from collections.abc import Callable, Iterator
 from contextlib import contextmanager
-from dataclasses import replace
+from dataclasses import dataclass, replace
 from datetime import UTC, datetime, timedelta
-from typing import cast
+from typing import TYPE_CHECKING, cast
 from uuid import UUID, uuid4
 
 from care_link_contracts import validate_contract
@@ -29,6 +31,7 @@ from .directory_admission import VerifiedDirectoryAdmission
 from .referral_ports import ReceiverPort
 from .store import PostgresStore, Record, Transaction, instant, number, text
 from .values import (
+    EVALUATION_ACTIONS,
     GOVERNANCE_ACTIONS,
     LIFECYCLE_ACTIONS,
     PARTICIPANTS,
@@ -43,7 +46,16 @@ from .values import (
     stamp,
 )
 
+if TYPE_CHECKING:
+    from .evaluation import ReplayEvaluator
+
 Handler = Callable[[Transaction, Actor, Record, Record | None, Record | None], Outcome]
+
+
+@dataclass(frozen=True)
+class AssistanceGuard:
+    versions: Record
+    valid_until: datetime
 
 
 class Engine:
@@ -65,6 +77,7 @@ class Engine:
         directory_admission: VerifiedDirectoryAdmission | None = None,
         receiver: ReceiverPort | None = None,
         simulator_services: frozenset[str] = frozenset(),
+        replay_evaluator: ReplayEvaluator | None = None,
     ) -> None:
         self.store, self.authority, self.policy, self.journal, self.cipher = (
             store,
@@ -75,6 +88,7 @@ class Engine:
         )
         self.receiver = receiver
         self.simulator_services = simulator_services
+        self.replay_evaluator = replay_evaluator
         self.channel, self.clock = channel, clock
         self.disclosure_templates = disclosure_templates or {}
         self.fixtures = fixtures or {}
@@ -144,7 +158,7 @@ class Engine:
             ):
                 raise ManualError("assistance.channel_changed", 409)
 
-    def assistance_guard(self, tx: Transaction, actor: Actor, sid: str) -> Record:
+    def assistance_guard(self, tx: Transaction, actor: Actor, sid: str) -> AssistanceGuard:
         """Reauthorize an inference ledger transaction before it locks compute slots."""
         current = self._fresh_actor(actor)
         operation = str(uuid4())
@@ -166,7 +180,12 @@ class Engine:
             final.account_id, final.browser_session_digest, final.transport_generation
         ):
             raise ManualError("assistance.function_disabled", 409)
-        return object_value(request["versions"])
+        limits = [actor.expires_at, final.expires_at, dt(decision["expires_at"])]
+        if final.request_deadline is not None:
+            limits.append(final.request_deadline)
+        if final.role not in PARTICIPANTS:
+            limits.append(min(actor.auth_time, final.auth_time) + timedelta(minutes=5))
+        return AssistanceGuard(object_value(request["versions"]), min(limits))
 
     @staticmethod
     def active_assignment(tx: Transaction, session_id: str) -> Record | None:
@@ -255,6 +274,13 @@ class Engine:
             return False
         if action in GOVERNANCE_ACTIONS:
             return True  # Exact custody/target/grant checks are rebuilt by governance policy.
+        if action in EVALUATION_ACTIONS:
+            return (
+                self.replay_evaluator is not None
+                and session is None
+                and actor.review_run_id is None
+                and object_value(snapshot["control"])["mode"] in ("normal", "ai_disabled")
+            )
         if action in LIFECYCLE_ACTIONS:
             if action in {
                 "rights_create",
@@ -386,6 +412,8 @@ class Engine:
             if action.startswith("workforce_")
             or action
             in {"queue_list", "control_change", "manual_identity_restrict", "manual_queue_review"}
+            else "training"
+            if action in EVALUATION_ACTIONS
             else "plan"
             if action.startswith("plan_")
             else "governance"
@@ -486,6 +514,10 @@ class Engine:
 
             governance_policy(self, tx, actor, action, arguments or {}, snapshot, request)
             enrich_evidence_policy(self, tx, actor, action, arguments or {}, snapshot, request)
+        if action in EVALUATION_ACTIONS:
+            from .evaluation import evaluation_policy
+
+            evaluation_policy(self, tx, actor, action, arguments or {}, request)
         from .activation_fence import bind_activation_fence, requires_activation
 
         if requires_activation(action):
@@ -644,6 +676,7 @@ class Engine:
         contract: str | None = None,
         queue: bool = False,
         replay: Handler | None = None,
+        prepare_effect: Callable[[], None] | None = None,
     ) -> Record:
         started = time.monotonic()
         data = cast(Record, json.loads(canonical(data)))
@@ -675,9 +708,15 @@ class Engine:
                 prepare, current, action, operation_id, payload_digest, snapshot, arguments=data
             )
             validate_contract("PolicyInput", request)
+            new_effect = prepare_effect is not None and (
+                key is None or prepare.get("operation", operation_id) is None
+            )
         try:
             decision = self.policy.evaluate(request)
             self.check_policy_decision(decision, request)
+            # A pure offline candidate may be computed before the final lock set.
+            if new_effect and prepare_effect is not None:
+                prepare_effect()
         except ManualError as error:
             self._record_denial(
                 current,
@@ -840,6 +879,10 @@ class Engine:
 
             check_controls_output(self, tx, actor, action, result, arguments or {})
             check_evidence_output(self, tx, actor, action, result, arguments or {})
+        if action in EVALUATION_ACTIONS:
+            from .evaluation import check_evaluation_output
+
+            check_evaluation_output(self, tx, actor, result, snapshot)
         from .activation_fence import activation_current, requires_activation
 
         if requires_activation(action):

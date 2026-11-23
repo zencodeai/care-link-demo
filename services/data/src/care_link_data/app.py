@@ -109,6 +109,15 @@ def create_app(
             cast(Record, parsed["path_arguments"]),
         )
 
+    from .identity_link_disabled import attach_disabled_identity_link
+
+    attach_disabled_identity_link(app)
+
+    if service.replay_evaluator is not None:
+        from .evaluation_app import attach_evaluation_gateway
+
+        attach_evaluation_gateway(app, service, envelope)
+
     if assistance is not None:
         from .assistance.app import attach_assistance_gateway
 

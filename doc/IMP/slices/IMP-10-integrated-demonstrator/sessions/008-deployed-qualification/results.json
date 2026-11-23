@@ -1,0 +1,561 @@
+{
+  "stage": "IMP-10",
+  "gate": "G-10",
+  "gate_state": "blocked",
+  "automated_qualified": false,
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Complete G-10 work. Do not stop until G-10 closed",
+    "scope": "Provision, deploy, fault and qualify only dedicated private synthetic G-10 resources and record gate closure when mandatory checks pass."
+  },
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/candidate-manifest.json",
+    "sha256": "b721ef733925fc73e54f76ac4b03e2fb84f1fd11fc55b6fd9f88cccc2508c8e3"
+  },
+  "checks": [
+    {
+      "name": "protected-deployed-journey",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Proof-bound Training capture and replay, exact retry, scoped Main operations.",
+      "actual": "Actual password and TOTP, participant write/read, trainer ownership and exact replay passed.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/integration.json",
+      "evidence_digest": "4fb365edd59ad8918284e992418dceebc400adba4c7357b820d9a7259d4b6a67",
+      "mock_used": false
+    },
+    {
+      "name": "protected-workload-and-cni",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual signed workload mTLS and same-target live CNI controls.",
+      "actual": "Journal signature and nonce matched. Unadmitted access to eight live dependencies was denied.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-probes-retry.json",
+      "evidence_digest": "a82a0aa58bc379fb49a3698730d1d88583caa719c72d53e957452eaab2964a7c",
+      "mock_used": false
+    },
+    {
+      "name": "protected-core-and-node-outage",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Execute and restore the same isolated node and protected Core.",
+      "actual": "Both faults blocked protected Core. Same node and signed Journal recovered.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-outage.json",
+      "evidence_digest": "cc3f12a55f8511efc9c1b72ba16f05f9cb8718e989e65a82844f153dd3c2f153",
+      "mock_used": false
+    },
+    {
+      "name": "independent-private-help-and-static",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Bind actual Help authority and preserve signed Static during node loss.",
+      "actual": "Core-only loss preserved scoped Help. During the node outage, four operations returned typed 503 and the spool and audit were unchanged.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/help.json",
+      "evidence_digest": "6f622856d63f060de34c3524dcec493dce81002f6a54b55591a07fef6c36ae04",
+      "mock_used": false
+    },
+    {
+      "name": "pdp-init-idempotence",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Exact owner-restricted OPA restarts on its existing sandbox file.",
+      "actual": "Verified and reused executable bytes in two consecutive invocations.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-pdp-seed-twice.json",
+      "evidence_digest": "c6eb2f8c90e0f8f79cfbfd8f384dac7fc2447d423c020d5f4d79c6a56504ebe2",
+      "mock_used": false
+    },
+    {
+      "name": "initial-locked-source-regression",
+      "command": null,
+      "tool_version": null,
+      "status": "failed",
+      "expected": "All locked commands in the current checkout.",
+      "actual": "38 of 39 commands passed. 1,801 backend and 234 frontend tests passed. One local policy sample measured p95 53.173 ms.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source/checks.json",
+      "evidence_digest": "ccd5cdbd24f850a288c2b8f00fb1481bfe2b112fc8314c6a4151d077bd3008b6",
+      "mock_used": false
+    },
+    {
+      "name": "locked-source-latency-isolated-rerun",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Unchanged 50 ms p95 threshold.",
+      "actual": "The isolated case passed at p95 43.567 ms.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source-results.json",
+      "evidence_digest": "b8fc059a6dee13dc53688661528e953f42eaf66f9818e356e5c73453ce385adf",
+      "mock_used": false
+    },
+    {
+      "name": "repeated-live-loopback",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Actual local Qwen and 10/2/8 pressure with safe errors.",
+      "actual": "Three sequential repeated warm and compute-unknown error loops passed in the static loopback fixture.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/timing.json",
+      "evidence_digest": "b9686d00021e4915d952bdd53747c1d82759605a71b284b4219b72774238d25e",
+      "mock_used": false
+    },
+    {
+      "name": "protected-assisted-route-controls",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Real workload peers reach only the declared protected input boundaries.",
+      "actual": "Runtime reached the Core broker. Core to Inference and Inference to Data returned the expected HTTP 400 for empty requests. Ten live CNI dependencies rejected the unadmitted caller.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-exception.json",
+      "evidence_digest": "2dacab56334db14cd6f2b35f78972bf4d4481ec5ebb56ebf87207a15dec493d1",
+      "mock_used": false
+    },
+    {
+      "name": "current-release-custody",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Five exact current evaluator boots acknowledge qualification-only authority.",
+      "actual": "Signed qualification acknowledgments were recorded for all five observed boots. A restrictive epoch was published when qualification ended.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-activation-broker-observer.json",
+      "evidence_digest": "cacb41a6de0a172e3ebc5656a1236c98b11c4fec96c5abb67df8d27510dd97de",
+      "mock_used": false
+    },
+    {
+      "name": "protected-browser-session-reads",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Ten current protected browser sessions independently read their scoped synthetic assignment.",
+      "actual": "Ten scoped reads succeeded across five English and five French sessions at p95 429.764 ms. Active reads alone establish no concurrent manual delivery or model reservation.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/ten-active-browser-reads.json",
+      "evidence_digest": "e17f0a68d0e44f74373d50df4913a7e51cdfa6b540ae60842199d4083f741095",
+      "mock_used": false
+    },
+    {
+      "name": "deployed-qwen-generation-control",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "The exact loaded Qwen model generates the fixed control over the protected Inference-to-host path.",
+      "actual": "HTTP 200 and exact READY in 24.039 s, with 27 SDK and provider prompt tokens and seven completion tokens.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-generation-control.json",
+      "evidence_digest": "04705aae2f1b5ea9c82e114edb055962fcd43ca129580844181b191f6cfe0247",
+      "mock_used": false
+    },
+    {
+      "name": "deployed-qwen-bounded-component-errors",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "The owned connector fails within bounds and the same loaded model recovers on that protected component path.",
+      "actual": "Two injected pauses returned empty HTTP 503 in 2.025 s and 2.043 s. The fixed warm control recovered in 2.504 s.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-bridge-error-controls.json",
+      "evidence_digest": "25c7ff9a34d6553da818920ef99c8bf78760b98de53d0748d3a3f3fd99998e43",
+      "mock_used": false
+    },
+    {
+      "name": "deployed-warm-and-error-workload-distributions",
+      "command": null,
+      "tool_version": null,
+      "status": "failed",
+      "expected": "Repeated warm and bounded-error timings with ten active sessions, two occupied slots and eight queued tasks on the exact deployed topology.",
+      "actual": "The repair produced one full-load warm success with two durable completed jobs and one distinct full-load round with two safe compute-unknown outcomes. Repeated distributions remain incomplete.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/summary.json",
+      "evidence_digest": "51dd356e4c2dfd89e952a1ae2fe10881a9850810d99dd88ca0b8bf53dfb11cb9",
+      "mock_used": false
+    },
+    {
+      "name": "deployed-cold-workload-distribution",
+      "command": null,
+      "tool_version": null,
+      "status": "not_run",
+      "expected": "Repeat true cold starts with the exact Qwen model and declared deployed ten-session load.",
+      "actual": "Zero cold cycles. The current model must stay loaded. The 36 GiB host rejected a second instance under its resource guardrails, and there is no separate machine.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/cold-isolation-preflight.json",
+      "evidence_digest": "09e041a3c3520fbf7d8ad65a65e0c2d28f16c29339e3aff4f2f3a1364a4db925",
+      "mock_used": false
+    },
+    {
+      "name": "quiet-locked-source-regression",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Repeat all locked checks after isolated cluster teardown.",
+      "actual": "39 of 39 commands passed.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/quiet-source-results.json",
+      "evidence_digest": "2954a46d171a3dafe9601a190e1ae44f6017a39d64f31bbf8ede265462e74a4c",
+      "mock_used": false
+    },
+    {
+      "name": "qualification-teardown",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Remove the dedicated test resources and preserve existing review environments and native model.",
+      "actual": "Owned resource and preservation checks are recorded in the cleanup receipt.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-cleanup.json",
+      "evidence_digest": "c2aea4a1fbaaf310e95c108078d3c535472432b7cbc513c4963554df1bdd362a",
+      "mock_used": false
+    },
+    {
+      "name": "broker-failure-typed-response",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Core returns its typed denial and performs no retry on an unavailable Inference response.",
+      "actual": "Upstream 503, read timeout and invalid result each returned typed HTTP 503 in the composed route regression. The exact live worker retry received HTTP 503.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/source-verification.json",
+      "evidence_digest": "0c61465809c19bb32327de1bdeca5f28cf7307a69222ced44a53d63a853561d8",
+      "mock_used": true
+    },
+    {
+      "name": "fresh-job-scoped-actor-authority",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "A task proceeds under new operation-specific Identity proofs after its original proof expires.",
+      "actual": "The expiry-aware worker journey completed on TLS PostgreSQL and 134 focused tests passed.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/source-verification.json",
+      "evidence_digest": "f80596a44b473930035ce455b453a551b11c6e212865a514c11fc031c1c00a4d",
+      "mock_used": true
+    },
+    {
+      "name": "fresh-authority-deployed-worker",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "The exact deployed worker creates one durable result and unsent draft using the unchanged loaded model.",
+      "actual": "The real turn reached awaiting_human in 21.396 s, with one completed job, one draft and its compute slot free.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/single-deployed-turn.json",
+      "evidence_digest": "492373fddb64aa61ce9122ed0bca39bfbafdc1bc9e3b7cab5dcedafe22349213",
+      "mock_used": false
+    },
+    {
+      "name": "fresh-authority-declared-warm-peak",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "The declared live workload reaches ten active sessions, two occupied slots and eight unique pending tasks before and after the protected reads.",
+      "actual": "Both jobs completed and produced one draft each in the first full-load round. The dispatch-to-terminal interval was 27.427 s.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/prequeued-ten-session-rounds.json",
+      "evidence_digest": "c7692401a865233269f4768af05f8a14aa7ab43471923a6be81648a5b39be0df",
+      "mock_used": false
+    },
+    {
+      "name": "fresh-authority-declared-bounded-timeouts",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "A real full-load response failure produces no draft, retains uncertain compute and preserves durable records.",
+      "actual": "The separate full-load round returned HTTP 503 for both jobs after 28.601 s and 28.517 s at the host bridge. Both durable slots remained compute-unknown, with zero drafts.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/refill-before-compute-rounds.json",
+      "evidence_digest": "4c73a58015c9900f20b1d56f21e559e57b2bb1c4d4c851c9833160323669fd6c",
+      "mock_used": false
+    },
+    {
+      "name": "fresh-authority-manual-after-saturation",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Manual actor delivery remains separate from inference with two unknown compute slots.",
+      "actual": "A protected human message was visible exactly once and the exact retry returned the same message, while both compute slots stayed unknown.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/manual-with-unavailable-inference.json",
+      "evidence_digest": "bf930b213cb42d2d4dad093991288969c50895efee9df6b4a036f0f5b0186f81",
+      "mock_used": false
+    },
+    {
+      "name": "fresh-authority-locked-source-regression",
+      "command": null,
+      "tool_version": null,
+      "status": "failed",
+      "expected": "Verify all locked commands against the exact source after isolated cleanup.",
+      "actual": "38 of 39 commands passed on the deployed candidate source. The workstation fixture used an earlier Identity reference; the separate post-lock checks record the corrected fixture.",
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/locked-source-results.json",
+      "evidence_digest": "2e1e90da56cd3aeb524e3ed2f411bda460581587dfcbc9819224bd9071ea1a06",
+      "mock_used": false
+    },
+    {
+      "name": "fresh-authority-post-lock-source-regression",
+      "command": null,
+      "tool_version": null,
+      "status": "passed",
+      "expected": "Locked checks on the final source, including the corrected workstation fixture and authority-at-lock tests.",
+      "actual": "39 of 39 locked checks passed. The dedicated TLS fixture passed both guarded lock cases in the focused suite.",
+      "mock_used": false,
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/locked-source-results.json",
+      "evidence_digest": "fa6a421977c612873e958f2e45d196fdf69092cd62f6fb37a7d08d2b5df25fce"
+    }
+  ],
+  "prior_evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/results.json",
+      "sha256": "c4dc7ee2dcecd581978de344120f408b2d6076ad91c44a878b3d0b84c9980338"
+    }
+  ],
+  "remaining": [
+    "Repeat true cold starts with the exact Qwen model at declared ten-session load. The current model must stay loaded, the workstation guardrails reject a second exact instance, and the user confirmed that no separate test machine is available.",
+    "Complete repeated deployed warm and error distributions for the final post-lock source at the exact ten-session load. The earlier deployed authority image completed both jobs in one declared-load warm round and preserved two uncertain slots after two HTTP 503 responses in another."
+  ],
+  "evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-exception.json",
+      "sha256": "2dacab56334db14cd6f2b35f78972bf4d4481ec5ebb56ebf87207a15dec493d1"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/browser-load-attempts.json",
+      "sha256": "131b58ac94bb2efba3d569c922df0f0a60fac05051462c9fc4bcb8535221a78f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/cold-isolation-preflight.json",
+      "sha256": "09e041a3c3520fbf7d8ad65a65e0c2d28f16c29339e3aff4f2f3a1364a4db925"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-active-retry-status.json",
+      "sha256": "749d5b7ec0905a75db0095b9134a578458dfe76ad6aaeb983121684a032f9a7d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-bridge-error-controls.json",
+      "sha256": "25c7ff9a34d6553da818920ef99c8bf78760b98de53d0748d3a3f3fd99998e43"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-single-turn-after-origin-fix.json",
+      "sha256": "9621b4b0ff43215713fbb16505665f484b684d497e7dfaf823fcbe4d54676d66"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-single-turn-diagnostic-category.json",
+      "sha256": "2593e598c4f87895e9c74241d2ad1563451af3ce21e143e5f510feb0f7298c37"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-single-turn-diagnostic.json",
+      "sha256": "dccb2210cc67c7fe8556bc104bb19bb82df5fe3ca7f675b3187ba65274dba2bf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-single-turn-observed-error.json",
+      "sha256": "7516614b843347621a163504e752d1b1eff13af5b3e3c55e7c4b8bb038b6e9a5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-single-turn-verified-diagnostic.json",
+      "sha256": "13bf5328065aa31a2fe892e0e884836cd71a4ae37a40fc81c60af4d3baa86caa"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-single-turn.json",
+      "sha256": "c8aad6e648d0cd2ed7ca2f15d0f14a54a8403df450c3acc624d49fd9cee64b00"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-timed-round-01-status.json",
+      "sha256": "7db88ee914af92a5d28c14873674a85dd6ae66a03f5ebcfa5278bceab4f1aed8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-timed-rounds.json",
+      "sha256": "d80be951241bd7dec2c85e48fb247a673fc34f01156cf5e3039942d9ce07f6d9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/deployed-warm-retry.json",
+      "sha256": "d80be951241bd7dec2c85e48fb247a673fc34f01156cf5e3039942d9ce07f6d9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/first-deployed-warm.json",
+      "sha256": "d80be951241bd7dec2c85e48fb247a673fc34f01156cf5e3039942d9ce07f6d9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/help-and-identity-package-equivalence.json",
+      "sha256": "1a9853461dabf4b6d12023956bbde9946a7c3557cc290c1e58e653bd3369b0f5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/help.json",
+      "sha256": "6f622856d63f060de34c3524dcec493dce81002f6a54b55591a07fef6c36ae04"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/integration.json",
+      "sha256": "4fb365edd59ad8918284e992418dceebc400adba4c7357b820d9a7259d4b6a67"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/integration.log",
+      "sha256": "8d3de2fe29b904ffce0669fed27076a5d68187b590532e824c7eb2bd9d9a3ff3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-artifact-linux-copy.json",
+      "sha256": "bca8de0f56281041fb21e350cfac48a9786ef015b9618c918d94947a28aa1847"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-agent-result.json",
+      "sha256": "b110a99c0ec70380e3eac2870d8a51b008538f22c77cbe9bd4958105b7b414ec"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-host-receipt.json",
+      "sha256": "7c7d7c710e7ab3fe810666a83dfc350d01b0388468b7526328ff41388f55dfea"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-linux-copy-started.json",
+      "sha256": "3d441eaba06a94a89f22b8b4d62ff0c68aa70eb2b389b731112060bffcf4999e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-bridge-smoke-observations.json",
+      "sha256": "88ac13ab06deac2a1cbef22156be90a86b09a185f06d887c060eae32bc218453"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-image-replay-final-receipt.json",
+      "sha256": "f4c0d581713083d9480add7fb6f7d8044837a72ca1715a28aa0b667a5d06fd9b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-readiness-linux-copy-preflight.json",
+      "sha256": "2a021e50b982f42f9b639ce77e2026b88ab3687ca6a5d3721a326705926f50ce"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/model-readiness-replay-final-replacement-preflight.json",
+      "sha256": "85e98f14094d54881a822ef170a73a85b2db9b4b06b16d738fd744125b82a223"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-agent-result.json",
+      "sha256": "1703a8dfa1f45fb74d442790585a786f40fd8af9097c460c3b97f094098a89c2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-assisted-probes-retry.json",
+      "sha256": "e61d73cf8836e02848b1acda92512cce044844b090d4ef660590ff58997f45d1"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-assisted-probes.json",
+      "sha256": "1e134cac48d8cf5ceb37d8a0c5c6e147c45954c98d65da0b018df901ef5febe2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-attestation-repair.json",
+      "sha256": "95446f0888548580edeacbde5d36d873fe6c8b3042a8a30971d6a68b3869bc32"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-cleanup.json",
+      "sha256": "862d75b4bc56218738bd426be69b3422e35554328176eeb172cd1fba20a50a36"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-final-binding.json",
+      "sha256": "554b25bc7e027b43991109b88b220a36df77dd669162e52ed1dc75a0079bc7ca"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-final-import.json",
+      "sha256": "d2e27a47da49ea0970e07fd87440402b342f7384d514f09b093b0375c09bbb76"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-generation-control.json",
+      "sha256": "04705aae2f1b5ea9c82e114edb055962fcd43ca129580844181b191f6cfe0247"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-image-binding.json",
+      "sha256": "f57e9410e83d318d4835aafda0a7928b09173e04cee531e1920c2ffee696af00"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-outage.json",
+      "sha256": "cc3f12a55f8511efc9c1b72ba16f05f9cb8718e989e65a82844f153dd3c2f153"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-pdp-recovery.json",
+      "sha256": "78ac918444da90d7d3b7776784738a8483a5b61a7183ffe25a91eb68e94d0a21"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-pdp-seed-twice.json",
+      "sha256": "c6eb2f8c90e0f8f79cfbfd8f384dac7fc2447d423c020d5f4d79c6a56504ebe2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-probes-retry.json",
+      "sha256": "a82a0aa58bc379fb49a3698730d1d88583caa719c72d53e957452eaab2964a7c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-probes.json",
+      "sha256": "8cd1d6d3d3db59a563003fba255666c624fb4b0dea07acf043836314e9f8f372"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform-replay-final-binding.json",
+      "sha256": "1b5ca48df4d9949b0b1ac9f30a265c6b97c2836f08f87109a75e083684e527e2"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/platform.json",
+      "sha256": "4f35c1e8a5e8ae7a7f66534aff7450b956f9d263ab4fc9ff33b7624b806046e3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/policy-latency-rerun.log",
+      "sha256": "a0ab643d217ddee7645e76bbdaa1f93973f256d31fd3158ba7b42d344ba6b05f"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-activation-broker-observer.json",
+      "sha256": "cacb41a6de0a172e3ebc5656a1236c98b11c4fec96c5abb67df8d27510dd97de"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-activation-broker-origin.json",
+      "sha256": "2e011f3aaf2faee92d0228c7310a7979a147ec6e10f8e0cd99fbb15390be8651"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-activation-linux-model.json",
+      "sha256": "e3dcf8d1f3efd97315b0b797510a1b7d13b6c82f98231d63474776b5faae989e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-activation-streams.json",
+      "sha256": "1c37e6d57bd4c56b609baaee78f96c8381139a4c30b95ef8406cae7aace82fc6"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-activation-task-observer.json",
+      "sha256": "5b04d8f677e9701e617cc266fdf4ab6e3e4e5fcd823cb495ba2d6331bb314409"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-activation.json",
+      "sha256": "5e75a586ed2fd7ff86ec3f8ed289aff69335e86720e47ac58856b4f5341fd71d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-cleanup.json",
+      "sha256": "c2aea4a1fbaaf310e95c108078d3c535472432b7cbc513c4963554df1bdd362a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-disable.json",
+      "sha256": "0638270d234aa11e85663f9c8673cf7c1211c4619cbe8403598856830170d638"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/qualification-workfiles-cleanup.json",
+      "sha256": "2ba830b7062320865a12bcea0aba61d05d254389979484f9d0306c2e3bab77ba"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/quiet-source-results.json",
+      "sha256": "2954a46d171a3dafe9601a190e1ae44f6017a39d64f31bbf8ede265462e74a4c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source/checks.json",
+      "sha256": "ccd5cdbd24f850a288c2b8f00fb1481bfe2b112fc8314c6a4151d077bd3008b6"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source-quiet/checks.json",
+      "sha256": "4bd4498804e20a0b2635055178d6bcf45f9348aa4f0d4cddd4cf590a43a83ca1"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source-results.json",
+      "sha256": "b8fc059a6dee13dc53688661528e953f42eaf66f9818e356e5c73453ce385adf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/streaming-mesh-binding.json",
+      "sha256": "d6ca21f7036624b365ff49875b2d570ff0fc2ed5f1a618094876b2d4b1200def"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/synthetic-assistance-fixture.json",
+      "sha256": "58fb1d1349dedb2a440b53357c71976f6eb3bb9eea4a8d52110b7a1497f504c8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/ten-active-browser-reads.json",
+      "sha256": "e17f0a68d0e44f74373d50df4913a7e51cdfa6b540ae60842199d4083f741095"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/timing.json",
+      "sha256": "b9686d00021e4915d952bdd53747c1d82759605a71b284b4219b72774238d25e"
+    }
+  ],
+  "human_review": "deferred_until_after_IMP10",
+  "broker_diagnostic_follow_up": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/summary.json",
+    "sha256": "9985b356d9e73a271879f94e957548cfff3f3047a5b73052d5256f5e376874ed"
+  },
+  "fresh_authority_qualification": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/summary.json",
+    "sha256": "51dd356e4c2dfd89e952a1ae2fe10881a9850810d99dd88ca0b8bf53dfb11cb9"
+  },
+  "post_lock_source_verification": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/source-verification.json",
+    "sha256": "64b20cd0c8e84ec75deac6fa4ba3632b0e18586459446a0611df1bf7febf8f41"
+  }
+}

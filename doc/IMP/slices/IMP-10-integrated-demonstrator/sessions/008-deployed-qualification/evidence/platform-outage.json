@@ -1,0 +1,52 @@
+{
+  "started_at": "2026-11-23T17:06:00.995572+00:00",
+  "namespace": "care-link-imp10-008",
+  "node_container_id": "aa656c8592c78d6a907127e107c43ab82f999e2b58a6dbe7880ec816a1cbbee0",
+  "kubernetes_node_uid": "c7522af6-1769-4a53-a12b-e429f4f0d86b",
+  "before": {
+    "/training": 200,
+    "/v1/auth/csrf": 200
+  },
+  "core_only": {
+    "observed_at": "2026-11-23T17:06:31.792735+00:00",
+    "main_unreachable": {
+      "transport_error": "ConnectError"
+    },
+    "kind_remained_running": true,
+    "help_observation_sha256": "b5459304a77a3adea483becf4573a2ed75e7327e9376cf6e0dd1e334bc645777",
+    "recovered": {
+      "/training": 200,
+      "/v1/auth/csrf": 200
+    },
+    "elapsed_ms": 40290.983
+  },
+  "whole_node": {
+    "stopped_at": "2026-11-23T17:06:51.832454+00:00",
+    "main_unreachable": {
+      "transport_error": "ConnectError"
+    },
+    "help_observation_sha256": "78b40c4ec815384761aeca9785df1b735b2d284fca087529d442d144f0470644",
+    "node_container_id_preserved": true,
+    "recovered_main": {
+      "/training": 200,
+      "/v1/auth/csrf": 200
+    },
+    "kubernetes_node_uid_preserved": true,
+    "elapsed_ms": 92824.298,
+    "help_recovered_sha256": "4395bcab32a7c6578162fd04a88a93871eda7e8ee5f4fb80f6ac80883c12ee1f",
+    "post_recovery_workload": {
+      "positive": {
+        "caller": "data",
+        "target": "journal",
+        "status": 200,
+        "signed_nonce_bound_head_verified": true
+      },
+      "unlisted_path_status": 404,
+      "no_client_certificate": "TLSV13_ALERT_CERTIFICATE_REQUIRED",
+      "passed": true
+    }
+  },
+  "passed": true,
+  "ended_at": "2026-11-23T17:08:16.356349+00:00",
+  "total_elapsed_ms": 135375.367
+}

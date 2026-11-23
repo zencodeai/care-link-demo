@@ -1,0 +1,7 @@
+WARN jsonpointer==3.12 needs to be downloaded from a registry
+WARN pydantic==2.14.4 needs to be downloaded from a registry
+WARN jsonpointer needs to be downloaded from a registry
+WARN jsonpointer==3.11 needs to be downloaded from a registry
+WARN jsonpointer needs to be downloaded from a registry
+WARN pydantic needs to be downloaded from a registry
+PASS: 391 type definitions, 206 operations, 799 fixtures, 78 storage records, OpenAPI, state closure, trace, links and frozen inputs. Design checks only; no runtime tests.

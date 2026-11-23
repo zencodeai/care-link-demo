@@ -1,0 +1,11 @@
+{
+  "threshold_ms": 50,
+  "first_full_p95_ms": 43.753,
+  "final_full_p95_ms": 53.407,
+  "isolated_rerun_p95_ms": 40.169,
+  "method": "30 sequential synthetic policy evaluations in existing IMP-08 latency test",
+  "isolated_log": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/evidence/latency-rerun.log",
+    "sha256": "1a13a9616f0ad1821c9e732c0ca31fd9246e83c56694f534a3bc61b101ccbd6e"
+  }
+}

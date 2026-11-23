@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-11-23T16:02:09.334752+00:00",
+  "ended_at": "2026-11-23T16:03:20.135497+00:00",
+  "image_id": "sha256:dd93ef8772404749d1c015264c5a2a2a8205aad0ce2ced0b88a917c22f917d41",
+  "calico_manifest_sha256": "918e7b33ff89d4c08de9462345b1a9fbc68dd9f097704d620ace22f6506b24a3",
+  "cni": {
+    "runtime_to_core_developer_health": {
+      "contract_version": "dev-1",
+      "status": "developer_only",
+      "tags": {
+        "environment": "demo",
+        "population": "synthetic"
+      },
+      "participant_admission": false,
+      "business_operations": "unavailable",
+      "contract_validation": true
+    },
+    "active_controls": [
+      {
+        "target": "pod_control",
+        "ipv4": "192.168.162.86",
+        "port": 8443,
+        "allowed_before": "IMP02_ACTIVE_CONTROL",
+        "restricted": "timeout",
+        "allowed_after": "IMP02_ACTIVE_CONTROL"
+      },
+      {
+        "target": "pod_control",
+        "ipv4": "192.168.162.86",
+        "port": 5432,
+        "allowed_before": "IMP02_ACTIVE_CONTROL",
+        "restricted": "timeout",
+        "allowed_after": "IMP02_ACTIVE_CONTROL"
+      },
+      {
+        "target": "pod_control",
+        "ipv4": "192.168.162.86",
+        "port": 8011,
+        "allowed_before": "IMP02_ACTIVE_CONTROL",
+        "restricted": "timeout",
+        "allowed_after": "IMP02_ACTIVE_CONTROL"
+      },
+      {
+        "target": "pod_control",
+        "ipv4": "192.168.162.86",
+        "port": 1234,
+        "allowed_before": "IMP02_ACTIVE_CONTROL",
+        "restricted": "timeout",
+        "allowed_after": "IMP02_ACTIVE_CONTROL"
+      },
+      {
+        "target": "pod_control",
+        "ipv4": "192.168.162.86",
+        "port": 18443,
+        "allowed_before": "IMP02_ACTIVE_CONTROL",
+        "restricted": "timeout",
+        "allowed_after": "IMP02_ACTIVE_CONTROL"
+      },
+      {
+        "target": "outside_node",
+        "ipv4": "172.23.0.3",
+        "port": 18443,
+        "allowed_before": "IMP02_ACTIVE_CONTROL",
+        "restricted": "timeout",
+        "allowed_after": "IMP02_ACTIVE_CONTROL"
+      }
+    ],
+    "runtime_pod_ipv6_disabled": true,
+    "pod_image_ids": {
+      "allowed-probe": "docker.io/library/import-2026-11-23@sha256:2bb0c2841da66ce175a9cff5f06f869d63d2b24fd460f6b7a515cff846eac1c5",
+      "broker-fixture": "docker.io/library/import-2026-11-23@sha256:2bb0c2841da66ce175a9cff5f06f869d63d2b24fd460f6b7a515cff846eac1c5",
+      "denied-fixture": "docker.io/library/import-2026-11-23@sha256:2bb0c2841da66ce175a9cff5f06f869d63d2b24fd460f6b7a515cff846eac1c5",
+      "runtime-probe": "docker.io/library/import-2026-11-23@sha256:2bb0c2841da66ce175a9cff5f06f869d63d2b24fd460f6b7a515cff846eac1c5"
+    }
+  },
+  "outage": {
+    "node": "care-link-imp10-006-control-plane",
+    "node_id": "cd9ff11486ecd20e6de0e8ddea78ac2f047cd691ba3a638b6320d57b7368f151",
+    "node_uid": "09be7b3c-d9e7-462f-bd3a-5e4c9f3bc498",
+    "container_actually_stopped": true,
+    "core_developer_health_unreachable": true,
+    "core_developer_health_restored": true,
+    "tests_and_recovery_ms": 48662.712,
+    "static": {
+      "artifact_digest": "ba368ad5aa5a4cff409c6e1e63126486905f4defb490789a38e0bb3de193a8fe",
+      "process_id": "63855",
+      "locales": [
+        "en-CA",
+        "fr-CA"
+      ],
+      "loopback_http": true
+    }
+  },
+  "scope": "Current developer image health, active CNI controls, and separate host Static."
+}

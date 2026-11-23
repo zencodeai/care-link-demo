@@ -1,0 +1,10 @@
+{
+  "postgres_fixture_removed": true,
+  "temporary_database_credentials_removed": true,
+  "mesh_leases_clear": [
+    "care-link-imp06-005-mesh",
+    "care-link-imp06-007-protected"
+  ],
+  "retained_local_image_tag": "care-link-imp10:qualification-002-final",
+  "provider_lifecycle": "Already-running instance remained loaded"
+}

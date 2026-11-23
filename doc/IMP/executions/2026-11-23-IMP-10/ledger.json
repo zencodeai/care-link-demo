@@ -1,0 +1,135 @@
+{
+  "run_id": "2026-11-23-IMP-10",
+  "stage_id": "IMP-10",
+  "gate_id": "G-10",
+  "state": "automated_qualified",
+  "gate_state": "automated_qualified",
+  "closed": true,
+  "recorded_at": "2026-11-23T20:10:30.178341+00:00",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "branch": "feat/imp-09-backup-and-recovery",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Complete G-10 work. Do not stop until G-10 closed",
+    "scope": "Provision, deploy, fault and qualify only dedicated private synthetic G-10 resources and record gate closure when mandatory checks pass."
+  },
+  "predecessors": [
+    {
+      "path": "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+      "sha256": "7e9d57447d5e606a1e73f9e18ed6cdef90b4f5d1662a6122466c8e97feced8a6"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-07/ledger.json",
+      "sha256": "9941321dfbe5cfa48ad322a0d9fd7c5301c02ebbc0932dae1ec6e6ee3ab21098"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-08/ledger.json",
+      "sha256": "e09e1e707f5c9c43f154bdfeefc3db4e547d92bd106d2c3328406746e7631be7"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-09/ledger.json",
+      "sha256": "6a054df591853d7210979bc917f1603256f0ea7b3523168b4022db3a0630ea4c"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-10-A",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-B",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-C",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-D",
+      "state": "completed"
+    }
+  ],
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/candidate-manifest.json",
+    "sha256": "40c5d0c49d11ee092740362b86ed64b4c2a10eff72d8e0296d567af1e5c73b1e"
+  },
+  "results": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/results.json",
+    "sha256": "00910f125905ed7b387a2efa2f7551d8a67ce4cf76fba45a44dae7b82189b7d5"
+  },
+  "qualification_packet": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/demo-packet.json",
+    "sha256": "ed9553aacb49c0ad8a7d2b425978b7f427172504312841be7a0f9b0e537bdb9b"
+  },
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": [],
+  "deferred_review_inventory": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/deferred-review-inventory.json",
+    "sha256": "739eee707891cbedeeae22085a28a5c744eb31ad6e1c0b3e5ede3a3a566b51dc"
+  },
+  "deployment_applied": false,
+  "participant_admission": false,
+  "commit_performed": false,
+  "push_performed": false,
+  "merge_performed": false,
+  "remaining": [],
+  "current_session": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure",
+  "earlier_ledger": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/previous-ledger.json",
+    "sha256": "14c14aeeec8d9c478d538abc511eff38bc763b046d4f200f331a43a711567763"
+  },
+  "isolated_qualification_applied": true,
+  "qualification_cleanup": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/platform-cleanup.json",
+    "sha256": "3f5d2852acc5aee33ff0e5493e6fe242ad2fe7e9e8d9136f831059566203c3c0"
+  },
+  "broker_diagnostic_follow_up": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/summary.json",
+    "sha256": "9985b356d9e73a271879f94e957548cfff3f3047a5b73052d5256f5e376874ed"
+  },
+  "fresh_authority_qualification": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/summary.json",
+    "sha256": "51dd356e4c2dfd89e952a1ae2fe10881a9850810d99dd88ca0b8bf53dfb11cb9"
+  },
+  "post_lock_source_verification": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/source-verification.json",
+    "sha256": "64b20cd0c8e84ec75deac6fa4ba3632b0e18586459446a0611df1bf7febf8f41"
+  },
+  "cold_start_exception": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/cold-start-scope-exception.json",
+    "sha256": "1c51a79030de379731172cd2348dc0e9ac8b2b25a4b4d48a0f0927db0bb0827c"
+  },
+  "closure_follow_up": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure",
+  "previous_qualification_packet": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/demo-packet.json",
+    "sha256": "81f3b8be67b9c85ccf276d47e27460846fd58b84620891c53b879d95833fcbff"
+  },
+  "previous_qualification_results": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/results.json",
+    "sha256": "53f3c71086f63c4d1f91a5b89648bbc90da84d9303b05a436b0c75242ac337a0"
+  },
+  "previous_qualification_cleanup": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/qualification-cleanup.json",
+    "sha256": "3a3abed1235913e38410905e6100d8b0316f44f76571cb2d3dc19aa0251e9f61"
+  },
+  "host_bridge_cleanup": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/host-bridge-cleanup.json",
+    "sha256": "ce62b140f3e6cbbace95216364895635f021ab39c4c5d5291162208e34b077a4"
+  },
+  "temporary_state_cleanup": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/temporary-state-cleanup.json",
+    "sha256": "40c7a6a038b68a7f91de2f469a90c72c6a3ded7cbe9ce8ee497052073fdefda6"
+  },
+  "release_withdrawal": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence/release-withdrawal.json",
+    "sha256": "0a773bac27a943a5bb2473d7476beaa01ef173172a101758b7ca19ebd1230428"
+  },
+  "qualification_handoff": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/handoff.md",
+    "sha256": "41e9aab8641a40624e64bd362040c76f65c1a069f8a1529cefd483409f81bd61"
+  },
+  "limitations": [
+    "True cold-start measurements were waived by the user for this private synthetic G-10 qualification. Zero samples were collected.",
+    "Human usability, language, visual and screen-reader review is deferred."
+  ]
+}

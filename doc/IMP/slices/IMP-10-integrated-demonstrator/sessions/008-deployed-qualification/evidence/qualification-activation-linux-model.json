@@ -1,0 +1,53 @@
+{
+  "purpose": "qualification",
+  "target": "qual-imp10-008",
+  "image_id": "sha256:1e8e97dad6af5ef86997a8431f36729afce41f5134ea6f4f2a621b7ba56e310a",
+  "activation": {
+    "id": "2b6faf27-84a9-44ef-a12a-a172f163f9d8",
+    "bundle_digest": "85436253ca9a1a89dfdb78148ae53ab5e829dfd43fdabc7a8039ecb51c88bf22",
+    "epoch": 1
+  },
+  "roles": {
+    "core": {
+      "boot_observation": {
+        "role": "core",
+        "boot_id": "3d6df20b-12da-4d64-a1e8-d865b9c4b0ad",
+        "uid": 23110,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "pod_uid": "ef67a142-91fc-4c69-af90-6cef9cdf9029",
+      "image_id": "docker.io/library/import-2026-11-23@sha256:693cc4aaa0028b7ad3b1717c24d24781033bcd3864dc312512905d510ad4ef63"
+    },
+    "data": {
+      "boot_observation": {
+        "role": "data",
+        "boot_id": "f692a744-1342-424f-ab88-758a73f1f514",
+        "uid": 23112,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "pod_uid": "f272ee99-3dd6-49cf-9a4c-4aaa0910465f",
+      "image_id": "docker.io/library/import-2026-11-23@sha256:693cc4aaa0028b7ad3b1717c24d24781033bcd3864dc312512905d510ad4ef63"
+    },
+    "inference": {
+      "boot_observation": {
+        "role": "inference",
+        "boot_id": "fe637e22-5301-4e27-9ee0-8278d79bbffd",
+        "uid": 23120,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "pod_uid": "98ddc9d5-625c-48b3-bac3-0f9fed4055d5",
+      "image_id": "docker.io/library/import-2026-11-23@sha256:693cc4aaa0028b7ad3b1717c24d24781033bcd3864dc312512905d510ad4ef63"
+    },
+    "runtime": {
+      "boot_observation": {
+        "role": "runtime",
+        "boot_id": "479208b3-03da-4a09-9d1b-300998a1abff",
+        "uid": 23121,
+        "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+      },
+      "pod_uid": "47e67558-2d0c-4fe0-8144-9cee805bc855",
+      "image_id": "docker.io/library/import-2026-11-23@sha256:693cc4aaa0028b7ad3b1717c24d24781033bcd3864dc312512905d510ad4ef63"
+    }
+  },
+  "bridge_preflight_sha256": "2a021e50b982f42f9b639ce77e2026b88ab3687ca6a5d3721a326705926f50ce"
+}

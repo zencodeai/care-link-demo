@@ -1,0 +1,113 @@
+{
+  "packet_id": "IMP10-009-qualification",
+  "task_id": "IMP-10-D",
+  "stage_id": "IMP-10",
+  "mode": "implementation",
+  "role": "imp_verifier",
+  "goal": "Verify the final protected candidate at the declared warm and error workload and close G-10 under the user cold-start exception",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "inputs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/previous-ledger.json",
+      "sha256": "64fc22776e21714947a3750e3f95b0e62d9d624fe2f513f20b7aa37e40ecd39c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/cold-start-scope-exception.json",
+      "sha256": "1c51a79030de379731172cd2348dc0e9ac8b2b25a4b4d48a0f0927db0bb0827c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/fresh-authority/post-lock/source-verification.json",
+      "sha256": "64b20cd0c8e84ec75deac6fa4ba3632b0e18586459446a0611df1bf7febf8f41"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex",
+    "doc",
+    "tools",
+    "deploy",
+    "config",
+    "services",
+    "packages",
+    "host",
+    "tests",
+    "apps"
+  ],
+  "write_paths": [
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/handoff.md",
+    "doc/IMP/executions/2026-11-23-IMP-10/ledger.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/README.md",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/candidate-manifest.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/results.json",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/demo-packet.json"
+  ],
+  "dependencies": [
+    "IMP-06:G-06:automated_qualified",
+    "IMP-07:G-07:automated_qualified",
+    "IMP-08:G-08:automated_qualified",
+    "IMP-09:G-09:automated_qualified"
+  ],
+  "operation_ids": [
+    "scenario_create",
+    "scenario_read",
+    "scenario_stop",
+    "replay_create",
+    "evaluation_read",
+    "data_replay_create",
+    "data_evaluation_read",
+    "identity_link_request",
+    "data_identity_link_request"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "alter existing saved review deployments or global trust",
+    "admit participants, use real data, or publish externally",
+    "bypass any workload, policy, data custody, or serving approval control"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "(3.) Can be bypassed in this context. Close G-10",
+    "scope": "Private synthetic G-10 qualification and contextual cold-start exception"
+  },
+  "resource_leases": [
+    {
+      "id": "imp10-008-timing",
+      "kind": "model_slot",
+      "scope": "owned secondary TLS fixture or existing declared qualification seams; model mutations only for explicitly owned and restorable test instance",
+      "owner_task_id": "IMP-10-D",
+      "expires_at": "2026-11-23T22:43:08.321239Z"
+    },
+    {
+      "id": "imp10-008-host-model-bridge",
+      "kind": "namespace",
+      "scope": "Dedicated care-link-imp10-008-model-* Docker resources and narrowly bound model transport with read-only credential custody. Inference only on already loaded model until confirmed reload authority.",
+      "owner_task_id": "IMP-10-D",
+      "expires_at": "2026-11-23T22:43:08.321239Z"
+    }
+  ],
+  "expected_outputs": [
+    "Scoped deployable source as needed",
+    "Actual checks and evidence",
+    "Integration handoff"
+  ],
+  "positive_acceptance": [
+    "Prove behavior from the exact deployed synthetic candidate and named authorized caller."
+  ],
+  "adverse_acceptance": [
+    "Retain control, rejection and recovered outcome from actual boundaries with raw timing."
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "genuine external authority or technical dependency",
+    "lease ownership conflict"
+  ],
+  "is_example": false
+}

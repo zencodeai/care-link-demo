@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-11-23T19:47:23.044965+00:00",
+  "role": "data",
+  "file_hashes": {
+    "/app/services/data/src/care_link_data/assistance/execution.py": "b333ee7cbb4d87266c6b6773dc3268dcf862d006d9f4a59ba04dbe4a4182344b",
+    "/app/services/data/src/care_link_data/assistance_jobs.py": "9362e9544dfa8cd6ce176ae33dbb1781ef78d8fba657e5ae8c83e175256c9df7",
+    "/app/services/data/src/care_link_data/assistance_transport.py": "ca10353f69316852208834f9e8f9bbef0328924b703231a3a599197e3e6c17cd",
+    "/app/services/data/src/care_link_data/engine.py": "a20c51f6acd0174cd9a909317fbfc7f30ca5ab65623ede4cb56d7a1104562899"
+  },
+  "candidate_image": "sha256:180f32ce4e63e1a593a07b761d96d87d0f7678c13966e9d5a5046ca0c41660ae"
+}

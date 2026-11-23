@@ -1,0 +1,22 @@
+
+
+
+Running 6 tests using 1 worker
+
+
+
+[1/6] tests/e2e/rights-followup/rights.spec.ts:31:3 › en-CA pending anchor, keyboard and backup exceptions at 1280/640px
+[2/6] tests/e2e/rights-followup/rights.spec.ts:82:3 › en-CA lost cancellation is retried with its exact original key
+[3/6] tests/e2e/rights-followup/rights.spec.ts:31:3 › fr-CA pending anchor, keyboard and backup exceptions at 1280/640px
+[4/6] tests/e2e/rights-followup/rights.spec.ts:82:3 › fr-CA lost cancellation is retried with its exact original key
+[5/6] tests/e2e/rights-followup/rights.spec.ts:110:1 › authorized delivery displays cancellation may be too late
+[6/6] tests/e2e/rights-followup/rights.spec.ts:129:1 › private inbox clears on expired authority
+  6 passed (7.1s)
+[WebServer] (node:24033) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:24034) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:24046) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24046) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

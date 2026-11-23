@@ -1,0 +1,35 @@
+{
+  "recorded_at_utc": "2026-11-23T18:18:47.921861+00:00",
+  "started_after_isolated_node_teardown": true,
+  "commands_passed": 39,
+  "commands_total": 39,
+  "backend_passed": 1802,
+  "backend_skipped": 4,
+  "frontend_passed": 234,
+  "matched_assistance_fixture_passed": 1,
+  "governance_policy_p95_ms": 42.864,
+  "governance_policy_threshold_ms": 50,
+  "quiet_source_staging_and_tls_credentials_removed": true,
+  "evidence_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source-quiet/checks.json",
+      "sha256": "4bd4498804e20a0b2635055178d6bcf45f9348aa4f0d4cddd4cf590a43a83ca1"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source-quiet/pytest.xml",
+      "sha256": "beedc869df64f7729fab97b30ffa2f973e86d22fe2552af7c86432e29699f75e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source-quiet/matched-assistance.xml",
+      "sha256": "9383c5a52f53c7915335e90bbc24a0ea8d3232998ca51aa965ec16b119fbd5de"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source-quiet/load.json",
+      "sha256": "5c26b21cec77442ff0ee635f2a7a2f27c51825fd3b177bcc00678f1c3d44a96d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/source-quiet/matched-assistance.json",
+      "sha256": "bb9733782d5565dcb5ba9312763879852ff0e81466139f40bdf7c19fbf2d0dbc"
+    }
+  ]
+}

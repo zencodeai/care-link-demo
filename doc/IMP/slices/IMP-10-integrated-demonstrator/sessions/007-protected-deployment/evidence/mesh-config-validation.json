@@ -1,0 +1,28 @@
+{
+  "envoy_image": "envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+  "validated_envoy": [
+    "core-envoy.json",
+    "data-envoy.json",
+    "help-envoy.json",
+    "host-inference-bridge-envoy.json",
+    "identity-envoy.json",
+    "inference-envoy.json",
+    "journal-envoy.json",
+    "pdp-envoy.json",
+    "receiver-envoy.json",
+    "runtime-envoy.json",
+    "training-envoy.json"
+  ],
+  "rendered_authorizers": [
+    "core-authorization.json",
+    "data-authorization.json",
+    "host-inference-bridge-authorization.json",
+    "identity-authorization.json",
+    "inference-authorization.json",
+    "journal-authorization.json",
+    "pdp-authorization.json",
+    "receiver-authorization.json",
+    "training-authorization.json"
+  ],
+  "scope": "All features enabled in exact isolated configuration; pinned Envoy parser with network disabled"
+}

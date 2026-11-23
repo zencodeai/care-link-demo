@@ -1,0 +1,36 @@
+{
+  "type": "InferenceDenied",
+  "frames": [
+    {
+      "module": "routes.py",
+      "line": 71,
+      "function": "handle"
+    },
+    {
+      "module": "broker.py",
+      "line": 165,
+      "function": "infer"
+    },
+    {
+      "module": "http.py",
+      "line": 173,
+      "function": "infer"
+    }
+  ],
+  "empty_request_route_controls": [
+    {
+      "from": "core",
+      "to": "inference",
+      "path": "/internal/v1/inference/jobs",
+      "status": 400,
+      "command_exit": 0
+    },
+    {
+      "from": "inference",
+      "to": "data",
+      "path": "/internal/v1/data/assistance/inference/context",
+      "status": 400,
+      "command_exit": 0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_timeout_holds_real_slot_and_fences_late_provider_response ________
+tests/evaluation/qwen_g06_timeout.py:284: in test_timeout_holds_real_slot_and_fences_late_provider_response
+    lease = broker.lease(
+services/core/src/care_link_core/assistance_broker/broker.py:96: in lease
+    result = method(actor, task_id, data, peer)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/assistance/execution.py:67: in step_lease
+    with self.transaction(actor, sid, "step_lease", data) as (tx, current, versions):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py:141: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+services/data/src/care_link_data/engine.py:114: in assistance_transaction
+    final = engine._fresh_actor(current)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/data/src/care_link_data/engine.py:518: in _fresh_actor
+    raise ManualError("manual.deadline_exceeded", 503)
+E   care_link_domain.ports.ManualError: manual.deadline_exceeded
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/evaluation/qwen_g06_timeout.py::test_timeout_holds_real_slot_and_fences_late_provider_response
+1 failed, 17 warnings in 13.12s

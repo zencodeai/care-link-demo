@@ -1,0 +1,62 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________________ test_worker_summary_combined_qualification __________________
+services/runtime/src/care_link_runtime/workflow.py:107: in infer
+    result = future.result(timeout=min(renew_interval, remaining))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py:456: in result
+    raise TimeoutError()
+E   TimeoutError
+
+During handling of the above exception, another exception occurred:
+tests/evaluation/qwen_combined_journey.py:508: in test_worker_summary_combined_qualification
+    result = worker.run_once()
+             ^^^^^^^^^^^^^^^^^
+services/runtime/src/care_link_runtime/worker.py:32: in run_once
+    return self.client.run_one_turn(
+services/runtime/src/care_link_runtime/client.py:155: in run_one_turn
+    return run_workflow(
+services/runtime/src/care_link_runtime/workflow.py:166: in run_workflow
+    graph.compile().invoke(
+.venv/lib/python3.14/site-packages/langgraph/pregel/main.py:4025: in invoke
+    for chunk in self.stream(
+.venv/lib/python3.14/site-packages/langgraph/pregel/main.py:3084: in stream
+    for _ in runner.tick(
+.venv/lib/python3.14/site-packages/langgraph/pregel/_runner.py:210: in tick
+    run_with_retry(
+.venv/lib/python3.14/site-packages/langgraph/pregel/_retry.py:637: in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/langgraph/_internal/_runnable.py:794: in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.14/site-packages/langgraph/_internal/_runnable.py:479: in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/runtime/src/care_link_runtime/workflow.py:112: in infer
+    renewed = client.renew(task_id, renew)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/runtime/src/care_link_runtime/client.py:134: in renew
+    return self.broker.invoke("step_renew", body, task_id=task_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+services/runtime/src/care_link_runtime/client.py:75: in invoke
+    response.raise_for_status()
+.venv/lib/python3.14/site-packages/httpx/_models.py:829: in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+E   httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://core:8443/internal/v1/tasks/12b40772-a10c-4f09-a7aa-963350909698/renew'
+E   For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503
+E   During task with name 'infer' and id 'c65f6056-c493-1806-85a4-c32a5781675e'
+
+The above exception was the direct cause of the following exception:
+tests/evaluation/qwen_combined_journey.py:510: in test_worker_summary_combined_qualification
+    raise AssertionError(
+E   AssertionError: (503, {'key': 'assistance.gateway_unavailable'}, [{'target': 'data', 'path': '/internal/v1/data/authority', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/task_create', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/authority', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance_task_context', 'status': 200}, {'target': 'core', 'path': '/internal/v1/broker/work', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/step_lease/12b40772-a10c-4f09-a7aa-963350909698', 'status': 200}, {'target': 'core', 'path': '/internal/v1/tasks/12b40772-a10c-4f09-a7aa-963350909698/lease', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/tool_invoke', 'status': 200}, {'target': 'core', 'path': '/internal/v1/broker/tools', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/reserve_proposal', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/inference/context', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/inference/current', 'status': 200}, {'target': 'host-inference-bridge', 'path': '/internal/v1/inference/tokenize', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/inference/reserve', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/step_renew/12b40772-a10c-4f09-a7aa-963350909698', 'status': 200}, {'target': 'core', 'path': '/internal/v1/tasks/12b40772-a10c-4f09-a7aa-963350909698/renew', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/step_renew/12b40772-a10c-4f09-a7aa-963350909698', 'status': 200}, {'target': 'core', 'path': '/internal/v1/tasks/12b40772-a10c-4f09-a7aa-963350909698/renew', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/step_renew/12b40772-a10c-4f09-a7aa-963350909698', 'status': 200}, {'target': 'core', 'path': '/internal/v1/tasks/12b40772-a10c-4f09-a7aa-963350909698/renew', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/step_renew/12b40772-a10c-4f09-a7aa-963350909698', 'status': 200}, {'target': 'core', 'path': '/internal/v1/tasks/12b40772-a10c-4f09-a7aa-963350909698/renew', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/step_renew/12b40772-a10c-4f09-a7aa-963350909698', 'status': 200}, {'target': 'core', 'path': '/internal/v1/tasks/12b40772-a10c-4f09-a7aa-963350909698/renew', 'status': 200}, {'target': 'host-inference-bridge', 'path': '/internal/v1/inference/execute', 'status': 503}, {'target': 'data', 'path': '/internal/v1/data/assistance/inference/unknown', 'status': 200}, {'target': 'inference', 'path': '/internal/v1/inference/jobs', 'status': 200, 'state': 'compute_unknown', 'input_tokens': 0, 'output_tokens': 0}, {'target': 'core', 'path': '/internal/v1/broker/inference', 'status': 200}, {'target': 'data', 'path': '/internal/v1/data/assistance/step_renew/12b40772-a10c-4f09-a7aa-963350909698', 'status': 409, 'error': 'assistance.renew_too_early'}, {'target': 'core', 'path': '/internal/v1/tasks/12b40772-a10c-4f09-a7aa-963350909698/renew', 'status': 503, 'error': 'assistance.gateway_unavailable'}])
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/evaluation/qwen_combined_journey.py::test_worker_summary_combined_qualification
+1 failed, 17 warnings in 40.09s

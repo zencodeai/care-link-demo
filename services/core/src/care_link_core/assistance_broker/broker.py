@@ -5,19 +5,25 @@ Restart discards this custody, requiring a newly reserved attempt; the durable
 coordinator counters and fences never reset with this process.
 """
 
+from __future__ import annotations
+
 import hashlib
 import json
 import threading
 from collections.abc import Callable
+from contextlib import nullcontext
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
-from typing import cast
+from typing import TYPE_CHECKING, cast
 from uuid import uuid4
 
 from care_link_contracts import validate_contract
 from care_link_domain import Actor, ManualError, WorkloadPeer
 
 from .ports import Coordinator, InferencePort, Record
+
+if TYPE_CHECKING:
+    from .inference_authority import InferenceActorAuthority
 
 
 def canonical(value: object) -> str:
@@ -58,12 +64,14 @@ class InferenceBroker:
         release: Callable[[str], ReleasedFunction],
         clock: Callable[[], datetime] = lambda: datetime.now(UTC),
         work: Callable[[], Record] | None = None,
+        inference_authority: InferenceActorAuthority | None = None,
     ) -> None:
         self.coordinator, self.inference = coordinator, inference
         self.actor_for_task, self.release, self.clock = actor_for_task, release, clock
         self.pending: dict[tuple[str, str, str], Pending] = {}
         self.lock = threading.Lock()
         self.work = work
+        self.inference_authority = inference_authority
 
     def claim_work(self, peer: WorkloadPeer) -> Record:
         if (
@@ -162,7 +170,12 @@ class InferenceBroker:
             "deadline": deadline.isoformat().replace("+00:00", "Z"),
         }
         validate_contract("InferenceRequest", request)
-        result = self.inference.infer(request)
+        with (
+            self.inference_authority.track(request, cast(str, task["revision"]), actor)
+            if self.inference_authority is not None
+            else nullcontext()
+        ):
+            result = self.inference.infer(request)
         validate_contract("InferenceResult", result)
         if result["job_id"] != request["job_id"] or result["model_digest"] != bundle.model_digest:
             raise ManualError("assistance.inference_binding", 503)

@@ -1,0 +1,43 @@
+{
+  "started_at": "2026-11-23T20:10:00.921759+00:00",
+  "ended_at": "2026-11-23T20:10:08.901480+00:00",
+  "scope": "care-link-imp10-008",
+  "owned_node": {
+    "name": "care-link-imp10-008-control-plane",
+    "id": "6d43e6613629e080ab4eb44ce819cba01c7fd8a1f08784c265dc6bcef58f9ca5",
+    "removed": true
+  },
+  "owned_bridge": {
+    "name": "care-link-imp10-008-net",
+    "id": "a70189adaff01bd42757396c44448d861dfd29ffc10a2b48559984ea0d0bb11d",
+    "removed": true
+  },
+  "anonymous_state_volume": {
+    "name": "d390ba2bb3aece4c6fb455b49292dbadfc44385e5d02b9dfa66f83e730649c2b",
+    "removed": true
+  },
+  "working_assets_removed": true,
+  "private_kubeconfig_removed": true,
+  "cluster_command_used_private_kubeconfig": true,
+  "unrelated_review_inventory_identical": true,
+  "retained_review_resources": {
+    "historical_running": 7,
+    "review_counts": {
+      "care-link-imp03-003-cont1": 28,
+      "care-link-imp03-003": 25,
+      "care-link-imp04-002": 29
+    },
+    "container_count": 89,
+    "volume_count": 150,
+    "network_count": 10,
+    "containers_sha256": "8447c6a8b1cd03aa05b6f7c3e47d1ede5847c11ad16ed1fde8615d890a5a13e6",
+    "volumes_sha256": "e9c1467cc9b2deb03e2be1036b1ae10a5014d45500881b33ab73a7d3cdf813e1",
+    "networks_sha256": "3000f162506120168405eeff6838dacc97ea2577fe192a39dc8ccb4e51c58b3a"
+  },
+  "retained_candidate_images": {
+    "care-link-imp10:protected-008-replay-final": "sha256:1e8e97dad6af5ef86997a8431f36729afce41f5134ea6f4f2a621b7ba56e310a",
+    "care-link-imp10:protected-008-broker-diagnostics": "sha256:803e2caaed6083870e1c80f29954b337ea6ad5a080e6a46825977cd073ca4c88",
+    "care-link-imp10:protected-008-fresh-authority": "sha256:11e0648ee7457ae2a6d216b757cb64bd6811d3ca524c85fe2a72eea12ef4a12e",
+    "care-link-imp10:protected-008-final-lock": "sha256:180f32ce4e63e1a593a07b761d96d87d0f7678c13966e9d5a5046ca0c41660ae"
+  }
+}

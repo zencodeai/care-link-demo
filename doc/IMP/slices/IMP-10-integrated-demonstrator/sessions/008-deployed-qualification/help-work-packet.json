@@ -1,0 +1,109 @@
+{
+  "packet_id": "IMP10-008-help",
+  "task_id": "IMP-10-D",
+  "stage_id": "IMP-10",
+  "mode": "implementation",
+  "role": "imp_controls",
+  "goal": "Deploy and verify independent private Help and signed bilingual Static during protected cluster outage and exercise actual declared browser workload on the protected profile",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "inputs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/previous-ledger.json",
+      "sha256": "14c14aeeec8d9c478d538abc511eff38bc763b046d4f200f331a43a711567763"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/results.json",
+      "sha256": "c4dc7ee2dcecd581978de344120f408b2d6076ad91c44a878b3d0b84c9980338"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/007-protected-deployment/candidate-manifest.json",
+      "sha256": "c2e75544b46ec613318ee7e35c309993d848554ed585aa3c7a1116e1292d06a6"
+    }
+  ],
+  "read_paths": [
+    "AGENTS.md",
+    ".codex",
+    "doc",
+    "tools",
+    "deploy",
+    "config",
+    "services",
+    "packages",
+    "host",
+    "tests",
+    "apps"
+  ],
+  "write_paths": [
+    "tools/imp10_verification/deployed_help.py",
+    "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/help.json",
+    "tools/imp10_verification/deployed_load.py"
+  ],
+  "dependencies": [
+    "IMP-06:G-06:automated_qualified",
+    "IMP-07:G-07:automated_qualified",
+    "IMP-08:G-08:automated_qualified",
+    "IMP-09:G-09:automated_qualified"
+  ],
+  "operation_ids": [
+    "scenario_create",
+    "scenario_read",
+    "scenario_stop",
+    "replay_create",
+    "evaluation_read",
+    "data_replay_create",
+    "data_evaluation_read",
+    "identity_link_request",
+    "data_identity_link_request"
+  ],
+  "allowed_actions": [
+    "read_source",
+    "propose",
+    "edit_assigned_files",
+    "run_declared_checks"
+  ],
+  "prohibited_actions": [
+    "alter existing saved review deployments or global trust",
+    "admit participants, use real data, or publish externally",
+    "bypass any workload, policy, data custody, or serving approval control"
+  ],
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Complete G-10 work. Do not stop until G-10 closed",
+    "scope": "Provision, deploy, fault and qualify only dedicated private synthetic G-10 resources and record gate closure when mandatory checks pass."
+  },
+  "resource_leases": [
+    {
+      "id": "imp10-008-help",
+      "kind": "port",
+      "scope": "separate dedicated Help/Static processes or containers and test custody; coordinate cluster and identity actions with primary",
+      "owner_task_id": "IMP-10-D",
+      "expires_at": "2026-11-23T22:43:08.320747Z"
+    },
+    {
+      "id": "imp10-008-deployed-load",
+      "kind": "port",
+      "scope": "Owned Current Main loopback synthetic accounts pid-1 to pid-10 and worker; coordinate activity with primary; no model or deployment mutation",
+      "owner_task_id": "IMP-10-D",
+      "expires_at": "2026-11-23T22:43:08.320747Z"
+    }
+  ],
+  "expected_outputs": [
+    "Scoped deployable source as needed",
+    "Actual checks and evidence",
+    "Integration handoff"
+  ],
+  "positive_acceptance": [
+    "Prove behavior from the exact deployed synthetic candidate and named authorized caller."
+  ],
+  "adverse_acceptance": [
+    "Retain control, rejection and recovered outcome from actual boundaries with raw timing."
+  ],
+  "reviewer": "imp_review",
+  "max_parallel_specialists": 3,
+  "timebox_minutes": 240,
+  "stop_conditions": [
+    "genuine external authority or technical dependency",
+    "lease ownership conflict"
+  ],
+  "is_example": false
+}

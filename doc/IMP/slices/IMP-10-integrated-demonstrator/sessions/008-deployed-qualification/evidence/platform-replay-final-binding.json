@@ -1,0 +1,26 @@
+{
+  "started_at": "2026-11-23T17:22:57.108349+00:00",
+  "ended_at": "2026-11-23T17:23:07.289076+00:00",
+  "namespace": "care-link-imp10-008",
+  "docker_node_id": "aa656c8592c78d6a907127e107c43ab82f999e2b58a6dbe7880ec816a1cbbee0",
+  "previous_image_tag": "care-link-imp10:protected-008-final",
+  "image_tag": "care-link-imp10:protected-008-replay-final",
+  "image_id": "sha256:1e8e97dad6af5ef86997a8431f36729afce41f5134ea6f4f2a621b7ba56e310a",
+  "node_image_id": "sha256:95f6acce8b9fc30f74535db773e19052e8f908f1f1b917cd61219acbe40b8478",
+  "node_repo_digests": [
+    "docker.io/library/import-2026-11-23@sha256:693cc4aaa0028b7ad3b1717c24d24781033bcd3864dc312512905d510ad4ef63"
+  ],
+  "envoy_node_repo_digest": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+  "roles": [
+    "core",
+    "data",
+    "identity",
+    "inference",
+    "journal",
+    "pdp",
+    "receiver",
+    "runtime",
+    "training"
+  ],
+  "registration_ids_preserved": true
+}

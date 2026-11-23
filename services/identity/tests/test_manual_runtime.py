@@ -175,3 +175,52 @@ def test_remote_recovery_consumes_exact_fresh_ceremony_once(identity):
     assert post(client, "recovery", {**data, "family_id": str(uuid4())}, "data").status_code == 403
     assert post(client, "recovery", data, "data").status_code == 200
     assert post(client, "recovery", data, "data").status_code == 403
+
+
+def test_training_identity_has_separate_short_lived_proof_custody(identity):
+    service, store, provider, clock, _key = identity
+    with store.transaction() as tx:
+        for key, account in tx.items("account"):
+            account["roles"] = [*account["roles"], "trainer"]
+            tx.put("account", key, account)
+    trainer = signed_in(service, "trainer")
+    denied = TestClient(
+        create_manual_identity_app(
+            service, lambda request, peer: request.headers.get("x-test-peer") == peer
+        )
+    )
+    enabled = TestClient(
+        create_manual_identity_app(
+            service,
+            lambda request, peer: request.headers.get("x-test-peer") == peer,
+            training_enabled=True,
+            receiver_enabled=True,
+        )
+    )
+    body = {
+        "raw_session": trainer,
+        "transport_generation": "1",
+        "action": "scenario_read",
+        "request_digest": "f" * 64,
+        "nonce": str(uuid4()),
+        "resource_id": str(uuid4()),
+    }
+    assert post(denied, "evidence", body).status_code == 403
+    issued = post(enabled, "evidence", body)
+    assert issued.status_code == 200, issued.text
+    proof = issued.json()
+    assert store.get("proof", proof["id"])["audience"] == "care-link-training"
+    assert post(enabled, "resolve", {"evidence": proof}, "data").status_code == 403
+    assert post(enabled, "resolve", {"evidence": proof}, "receiver").status_code == 403
+    assert (
+        post(enabled, "resolve", {"evidence": evidence(enabled, trainer)}, "training").status_code
+        == 403
+    )
+    assert post(enabled, "resolve", {"evidence": proof}, "training").status_code == 200
+    assert post(enabled, "current", {"credential_ref": proof["id"]}, "training").status_code == 200
+    assert post(enabled, "rights-proof", {}, "training").status_code == 403
+    provider.is_active = False
+    assert post(enabled, "current", {"credential_ref": proof["id"]}, "training").status_code == 503
+    provider.is_active = True
+    clock.advance(1)
+    assert post(enabled, "current", {"credential_ref": proof["id"]}, "training").status_code == 403

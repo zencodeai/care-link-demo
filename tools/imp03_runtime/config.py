@@ -75,7 +75,7 @@ DATA_ACTIONS = (
 
 
 def spiffe(role: str) -> str:
-    if role not in (*ROLES, "receiver"):
+    if role not in (*ROLES, "receiver", "training", "help"):
         raise ValueError("Unknown IMP-03 role")
     return "spiffe://care-link.demo/demo/" + role
 
@@ -149,10 +149,9 @@ def unique(pairs: list[tuple[str, object]]) -> Record:
     return result
 
 
-def workload(config: Record, role: str) -> BackendVerifier:
-    if text(config, "role") != role or integer(config, "uid") != os.geteuid():
-        raise ValueError("Exact process role/custodian required")
-    peers = routes(role) if role != "receiver" else {}
+def protected_routes(config: Record, role: str) -> dict[str, frozenset[tuple[str, str]]]:
+    """Select the same exact peer paths for backend and proxy authorization."""
+    peers = routes(role) if role not in {"receiver", "training"} else {}
     if config.get("assistance_enabled") is True and role == "data":
         actions = (
             "task_create",
@@ -205,6 +204,36 @@ def workload(config: Record, role: str) -> BackendVerifier:
             }
     elif role == "receiver":
         raise ValueError("Receiver process requires explicit referral configuration")
+
+    from tools.imp10_runtime.routes import (
+        EVALUATION_ROUTES,
+        HELP_AUTH_ROUTES,
+        HELP_IDENTITY_ROUTES,
+        TRAINING_IDENTITY_ROUTES,
+        TRAINING_ROUTES,
+    )
+
+    enabled = config.get("training_enabled", False)
+    if type(enabled) is not bool:
+        raise ValueError("Explicit boolean training feature selection required")
+    if enabled and role == "identity":
+        peers["training"] = TRAINING_IDENTITY_ROUTES
+    if enabled and role == "data":
+        peers["core"] |= EVALUATION_ROUTES
+    if role == "training":
+        if not enabled:
+            raise ValueError("Training process requires explicit training configuration")
+        peers["core"] = TRAINING_ROUTES
+    if role == "identity" and "help_identity" in config:
+        record(config["help_identity"])
+        peers["help"] = HELP_AUTH_ROUTES | HELP_IDENTITY_ROUTES
+    return peers
+
+
+def workload(config: Record, role: str) -> BackendVerifier:
+    if text(config, "role") != role or integer(config, "uid") != os.geteuid():
+        raise ValueError("Exact process role/custodian required")
+    peers = protected_routes(config, role)
     return BackendVerifier(
         integer(config, "proxy_uid"),
         tuple(PeerRule(spiffe(peer), pairs) for peer, pairs in peers.items()),

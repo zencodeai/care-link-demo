@@ -1,0 +1,551 @@
+[
+  {
+    "command": [
+      "uv",
+      "lock",
+      "--check"
+    ],
+    "started_at": "2026-11-23T17:22:02.279006Z",
+    "completed_at": "2026-11-23T17:22:02.387003Z",
+    "exit_code": 0,
+    "log": "01.log",
+    "sha256": "5cd839f46c1726b5d2e214f60ef38cc8acdcb442351a5dab7d19616a257ff1b5"
+  },
+  {
+    "command": [
+      "pnpm",
+      "install",
+      "--offline",
+      "--frozen-lockfile",
+      "--lockfile-only",
+      "--ignore-scripts"
+    ],
+    "started_at": "2026-11-23T17:22:02.387233Z",
+    "completed_at": "2026-11-23T17:22:02.766137Z",
+    "exit_code": 0,
+    "log": "02.log",
+    "sha256": "36c849ea8becb579cce6edb36d3dd41d677c544d2f691631710492502443807f"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/generate_contracts.py",
+      "--check"
+    ],
+    "started_at": "2026-11-23T17:22:02.766343Z",
+    "completed_at": "2026-11-23T17:22:03.148877Z",
+    "exit_code": 0,
+    "log": "03.log",
+    "sha256": "b62e763e82afd978f4bd2ffd356d434ead0747aa8772e6752395e01c29f626ed"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_boundaries.py"
+    ],
+    "started_at": "2026-11-23T17:22:03.149060Z",
+    "completed_at": "2026-11-23T17:22:03.656248Z",
+    "exit_code": 0,
+    "log": "04.log",
+    "sha256": "f338268dde87a2aef89d8c91922afc0185dac556bdf1d93dc9df4ee86fcbdab8"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "python",
+      "tools/check_imp02_admission.py"
+    ],
+    "started_at": "2026-11-23T17:22:03.656422Z",
+    "completed_at": "2026-11-23T17:22:03.696077Z",
+    "exit_code": 0,
+    "log": "05.log",
+    "sha256": "a3882b2b400134aad06bb6a1f3a2d33c28096330b037dec61ece67944843d0b1"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "check",
+      "."
+    ],
+    "started_at": "2026-11-23T17:22:03.696232Z",
+    "completed_at": "2026-11-23T17:22:03.783574Z",
+    "exit_code": 0,
+    "log": "06.log",
+    "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "started_at": "2026-11-23T17:22:03.783746Z",
+    "completed_at": "2026-11-23T17:22:03.825967Z",
+    "exit_code": 0,
+    "log": "07.log",
+    "sha256": "72b998afaf6ea566e9f8910d20c4487c5ed1dfbb8b27a7a2baac02cf30772f6d"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "pyright",
+      "--project",
+      "pyrightconfig.json"
+    ],
+    "started_at": "2026-11-23T17:22:03.826177Z",
+    "completed_at": "2026-11-23T17:22:08.431383Z",
+    "exit_code": 0,
+    "log": "08.log",
+    "sha256": "6d88a1b220adb7a3d62092b6e38431f0b3fe8babe9864fab90e5849766260332"
+  },
+  {
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "started_at": "2026-11-23T17:22:08.431626Z",
+    "completed_at": "2026-11-23T17:22:10.977685Z",
+    "exit_code": 0,
+    "log": "09.log",
+    "sha256": "e2619b18e6eda193c3629cf5a0d6112df29e1f4e400b0c8b0ad8a99861ed2ac5"
+  },
+  {
+    "command": [
+      "pnpm",
+      "lint"
+    ],
+    "started_at": "2026-11-23T17:22:10.977919Z",
+    "completed_at": "2026-11-23T17:22:15.076466Z",
+    "exit_code": 0,
+    "log": "10.log",
+    "sha256": "d957502195d6b7bf553082127cc2b44f0602f6924caec17c117d0a1e09273f12"
+  },
+  {
+    "command": [
+      "pnpm",
+      "format:check"
+    ],
+    "started_at": "2026-11-23T17:22:15.076671Z",
+    "completed_at": "2026-11-23T17:22:16.161760Z",
+    "exit_code": 0,
+    "log": "11.log",
+    "sha256": "1264ec68aa3a02a4163de506eca818cf94c93265a31cc61682a0898bc86fb889"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "--all-packages",
+      "pytest",
+      "--tb=short",
+      "--junitxml",
+      "/private/tmp/care-link-imp10-008-locked-source/pytest.xml"
+    ],
+    "started_at": "2026-11-23T17:22:16.161978Z",
+    "completed_at": "2026-11-23T17:27:04.380281Z",
+    "exit_code": 1,
+    "log": "12.log",
+    "sha256": "99630ce1ed7aedfac460fbffb8cffca10fe71c019bbebccb9dbf4ee6b0add6a5"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/imp02/tsconfig.json"
+    ],
+    "started_at": "2026-11-23T17:27:04.380873Z",
+    "completed_at": "2026-11-23T17:27:05.148303Z",
+    "exit_code": 0,
+    "log": "13.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/imp02",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-23T17:27:05.148570Z",
+    "completed_at": "2026-11-23T17:27:06.509878Z",
+    "exit_code": 0,
+    "log": "14.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/imp02"
+    ],
+    "started_at": "2026-11-23T17:27:06.510162Z",
+    "completed_at": "2026-11-23T17:27:06.909725Z",
+    "exit_code": 0,
+    "log": "15.log",
+    "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/imp03/tsconfig.json"
+    ],
+    "started_at": "2026-11-23T17:27:06.909977Z",
+    "completed_at": "2026-11-23T17:27:07.465338Z",
+    "exit_code": 0,
+    "log": "16.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/imp03",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-23T17:27:07.465615Z",
+    "completed_at": "2026-11-23T17:27:08.427967Z",
+    "exit_code": 0,
+    "log": "17.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/imp03"
+    ],
+    "started_at": "2026-11-23T17:27:08.428251Z",
+    "completed_at": "2026-11-23T17:27:08.730510Z",
+    "exit_code": 0,
+    "log": "18.log",
+    "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/imp03-extended/tsconfig.json"
+    ],
+    "started_at": "2026-11-23T17:27:08.730778Z",
+    "completed_at": "2026-11-23T17:27:09.365599Z",
+    "exit_code": 0,
+    "log": "19.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/imp03-extended",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-23T17:27:09.365872Z",
+    "completed_at": "2026-11-23T17:27:10.482435Z",
+    "exit_code": 0,
+    "log": "20.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/imp03-extended"
+    ],
+    "started_at": "2026-11-23T17:27:10.482727Z",
+    "completed_at": "2026-11-23T17:27:10.836242Z",
+    "exit_code": 0,
+    "log": "21.log",
+    "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/imp03-review/tsconfig.json"
+    ],
+    "started_at": "2026-11-23T17:27:10.836495Z",
+    "completed_at": "2026-11-23T17:27:11.430603Z",
+    "exit_code": 0,
+    "log": "22.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/imp03-review",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-23T17:27:11.430883Z",
+    "completed_at": "2026-11-23T17:27:12.506909Z",
+    "exit_code": 0,
+    "log": "23.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/imp03-review"
+    ],
+    "started_at": "2026-11-23T17:27:12.507190Z",
+    "completed_at": "2026-11-23T17:27:12.827002Z",
+    "exit_code": 0,
+    "log": "24.log",
+    "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/imp04-live/tsconfig.json"
+    ],
+    "started_at": "2026-11-23T17:27:12.827276Z",
+    "completed_at": "2026-11-23T17:27:13.544585Z",
+    "exit_code": 0,
+    "log": "25.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/imp04-live",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-23T17:27:13.544891Z",
+    "completed_at": "2026-11-23T17:27:14.953834Z",
+    "exit_code": 0,
+    "log": "26.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/imp04-live"
+    ],
+    "started_at": "2026-11-23T17:27:14.954163Z",
+    "completed_at": "2026-11-23T17:27:15.454158Z",
+    "exit_code": 0,
+    "log": "27.log",
+    "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/contract/tsconfig.json"
+    ],
+    "started_at": "2026-11-23T17:27:15.454487Z",
+    "completed_at": "2026-11-23T17:27:15.965421Z",
+    "exit_code": 0,
+    "log": "28.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/contract",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-23T17:27:15.965757Z",
+    "completed_at": "2026-11-23T17:27:16.838926Z",
+    "exit_code": 0,
+    "log": "29.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/contract"
+    ],
+    "started_at": "2026-11-23T17:27:16.839243Z",
+    "completed_at": "2026-11-23T17:27:17.084271Z",
+    "exit_code": 0,
+    "log": "30.log",
+    "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "tools/imp04_verification/review_accessibility.cjs"
+    ],
+    "started_at": "2026-11-23T17:27:17.084570Z",
+    "completed_at": "2026-11-23T17:27:17.105041Z",
+    "exit_code": 0,
+    "log": "31.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tools/imp04_verification/review_accessibility.cjs"
+    ],
+    "started_at": "2026-11-23T17:27:17.105355Z",
+    "completed_at": "2026-11-23T17:27:17.350021Z",
+    "exit_code": 0,
+    "log": "32.log",
+    "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+  },
+  {
+    "command": [
+      "pnpm",
+      "test"
+    ],
+    "started_at": "2026-11-23T17:27:17.350334Z",
+    "completed_at": "2026-11-23T17:27:27.075767Z",
+    "exit_code": 0,
+    "log": "33.log",
+    "sha256": "3ccc62fb1348dc1b3418cc22c5ceb3d74ce9fae633f25907ae6876f43affd7cf"
+  },
+  {
+    "command": [
+      "pnpm",
+      "build"
+    ],
+    "started_at": "2026-11-23T17:27:27.076104Z",
+    "completed_at": "2026-11-23T17:27:30.586348Z",
+    "exit_code": 0,
+    "log": "34.log",
+    "sha256": "ff34e2a787f627e1f8d47f94235f7dfaebed1ce16c8221907b9527951adaba45"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "tsc",
+      "-p",
+      "tests/e2e/training/tsconfig.json"
+    ],
+    "started_at": "2026-11-23T17:27:30.586681Z",
+    "completed_at": "2026-11-23T17:27:31.196828Z",
+    "exit_code": 0,
+    "log": "35.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "tests/e2e/training",
+      "--max-warnings",
+      "0"
+    ],
+    "started_at": "2026-11-23T17:27:31.197125Z",
+    "completed_at": "2026-11-23T17:27:32.146115Z",
+    "exit_code": 0,
+    "log": "36.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "prettier",
+      "--check",
+      "tests/e2e/training",
+      "config/demo/imp10/training-artifact.json",
+      "packages/contracts/training.schema.json"
+    ],
+    "started_at": "2026-11-23T17:27:32.146559Z",
+    "completed_at": "2026-11-23T17:27:32.416995Z",
+    "exit_code": 0,
+    "log": "37.log",
+    "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+  },
+  {
+    "command": [
+      "/Users/main/Workspace/projects/care-link/care-link-demo/.venv/bin/python",
+      "-m",
+      "pytest",
+      "--tb=short",
+      "--junitxml",
+      "/private/tmp/care-link-imp10-008-locked-source/matched-assistance.xml",
+      "tests/evaluation/qwen_combined_journey.py"
+    ],
+    "started_at": "2026-11-23T17:27:32.417261Z",
+    "completed_at": "2026-11-23T17:27:39.008077Z",
+    "exit_code": 0,
+    "log": "38.log",
+    "sha256": "2ad4904e3af6f69c9a5d16e428fca6fb8435edb4f282265bb8a55ab260f1c255"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "started_at": "2026-11-23T17:27:39.008418Z",
+    "completed_at": "2026-11-23T17:27:39.068577Z",
+    "exit_code": 0,
+    "log": "39.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "started_at": "2026-11-23T16:54:32.683500+00:00",
+  "ended_at": "2026-11-23T16:54:36.584025+00:00",
+  "namespace": "care-link-imp10-008",
+  "docker_node_id": "aa656c8592c78d6a907127e107c43ab82f999e2b58a6dbe7880ec816a1cbbee0",
+  "previous_image_tag": "care-link-imp10:protected-007",
+  "image_tag": "care-link-imp10:protected-008",
+  "image_id": "sha256:7d92f8010e4c6b9a6801bfd820d3753355f54ba861e66a416cbc343be4147aef",
+  "node_image_id": "sha256:3c75cec2bfffa12fff909dc3026cca318d7d452567efcf5f35e471f0544aa495",
+  "node_repo_digests": [
+    "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d"
+  ],
+  "roles": [
+    "core",
+    "data",
+    "identity",
+    "inference",
+    "journal",
+    "pdp",
+    "receiver",
+    "runtime",
+    "training"
+  ],
+  "registration_ids_preserved": true
+}

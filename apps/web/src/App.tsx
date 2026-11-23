@@ -9,6 +9,7 @@ import { ReferralApp } from "./referrals/ReferralApp";
 import { AssistanceApp } from "./assistance/AssistanceApp";
 import { PlansWorkspace } from "./plans/PlansWorkspace";
 import { RecoveryApp } from "./features/recovery/RecoveryApp";
+import { TrainingApp } from "./features/training/TrainingApp";
 import { LifecycleApp } from "./lifecycle/LifecycleApp";
 
 type Locale = keyof typeof messages;
@@ -221,6 +222,7 @@ function DeveloperApp() {
 }
 
 export function App() {
+  if (window.location.pathname === "/training") return <TrainingApp />;
   if (window.location.pathname === "/recovery") return <RecoveryApp />;
   if (window.location.pathname === "/follow-up") return <LifecycleApp />;
   if (window.location.pathname === "/assistance") return <AssistanceApp />;

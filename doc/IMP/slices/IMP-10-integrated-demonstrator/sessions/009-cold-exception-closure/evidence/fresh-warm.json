@@ -1,0 +1,353 @@
+[
+  {
+    "condition": "warm",
+    "round": 1,
+    "phase": "recorded",
+    "at_utc": "2026-11-23T19:45:46.484224+00:00",
+    "first": [
+      {
+        "session_id": "c00605c1-039b-486c-9718-c78d0dc94030",
+        "task_id": "015259c1-fd14-4001-a5a9-d2f9af357c57",
+        "arrival_ns": 2680220467590708
+      },
+      {
+        "session_id": "944ac9f7-5d4c-44a8-9a8f-7199e31f42c0",
+        "task_id": "daed8b77-ec66-4466-800f-31c9cf82db7f",
+        "arrival_ns": 2680221291967541
+      }
+    ],
+    "pending": [
+      {
+        "session_id": "c0c3ce77-845d-4ee4-85b6-d58f37f78271",
+        "task_id": "4639920a-f7f1-4e8c-b6ab-f97e61eb80d5",
+        "arrival_ns": 2680222158036666
+      },
+      {
+        "session_id": "8683a0a5-75cc-404a-bf17-607e3e0b2e30",
+        "task_id": "036b8256-1a5a-4d6c-8a6e-7cf85937cc6d",
+        "arrival_ns": 2680223047788125
+      },
+      {
+        "session_id": "0108b690-9237-4fd5-9947-fd274530679b",
+        "task_id": "59189446-0bb0-457b-9eb4-54a919614519",
+        "arrival_ns": 2680223798504666
+      },
+      {
+        "session_id": "84c05d30-bdf4-42ce-aea0-c3932ec3dfa3",
+        "task_id": "a205e382-512b-4d7b-8cfa-d694ee6994d1",
+        "arrival_ns": 2680224600342750
+      },
+      {
+        "session_id": "f29dfb43-5cef-46d8-93d1-55fa516808f1",
+        "task_id": "f7063030-2c84-4112-860d-84100429ee88",
+        "arrival_ns": 2680225367848750
+      },
+      {
+        "session_id": "0ca7f9e5-6355-4d38-897a-df6c247b0351",
+        "task_id": "497d94e3-bd8a-48bc-ae6c-c35fdc8805a4",
+        "arrival_ns": 2680226167624708
+      },
+      {
+        "session_id": "af71d184-8c19-4d11-91ac-f64df6fb732c",
+        "task_id": "0df6600c-954e-412d-bbc8-877a23ba35c6",
+        "arrival_ns": 2680231094141875
+      },
+      {
+        "session_id": "54b8d70d-3b91-4063-b286-d88f7700438d",
+        "task_id": "d4fcf30e-93a4-4c25-a5c5-6686b39c5939",
+        "arrival_ns": 2680232299362875
+      }
+    ],
+    "streams_before_dispatch": [
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      },
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      }
+    ],
+    "contexts": [
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      },
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      }
+    ],
+    "occupied": [
+      {
+        "task_id": "015259c1-fd14-4001-a5a9-d2f9af357c57",
+        "created_at": "2026-11-23T19:45:57.651267+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      },
+      {
+        "task_id": "daed8b77-ec66-4466-800f-31c9cf82db7f",
+        "created_at": "2026-11-23T19:45:57.751088+00:00",
+        "state": "running",
+        "result": false,
+        "slot_state": "occupied",
+        "draft_count": 0
+      }
+    ],
+    "locales_by_session": {
+      "c00605c1-039b-486c-9718-c78d0dc94030": "en-CA",
+      "944ac9f7-5d4c-44a8-9a8f-7199e31f42c0": "fr-CA",
+      "c0c3ce77-845d-4ee4-85b6-d58f37f78271": "en-CA",
+      "8683a0a5-75cc-404a-bf17-607e3e0b2e30": "fr-CA",
+      "0108b690-9237-4fd5-9947-fd274530679b": "en-CA",
+      "84c05d30-bdf4-42ce-aea0-c3932ec3dfa3": "fr-CA",
+      "f29dfb43-5cef-46d8-93d1-55fa516808f1": "en-CA",
+      "0ca7f9e5-6355-4d38-897a-df6c247b0351": "fr-CA",
+      "af71d184-8c19-4d11-91ac-f64df6fb732c": "en-CA",
+      "54b8d70d-3b91-4063-b286-d88f7700438d": "fr-CA"
+    },
+    "channel": "web",
+    "peak_before": {
+      "connected_session_ids": [
+        "0108b690-9237-4fd5-9947-fd274530679b",
+        "0ca7f9e5-6355-4d38-897a-df6c247b0351",
+        "54b8d70d-3b91-4063-b286-d88f7700438d",
+        "84c05d30-bdf4-42ce-aea0-c3932ec3dfa3",
+        "8683a0a5-75cc-404a-bf17-607e3e0b2e30",
+        "944ac9f7-5d4c-44a8-9a8f-7199e31f42c0",
+        "af71d184-8c19-4d11-91ac-f64df6fb732c",
+        "c00605c1-039b-486c-9718-c78d0dc94030",
+        "c0c3ce77-845d-4ee4-85b6-d58f37f78271",
+        "f29dfb43-5cef-46d8-93d1-55fa516808f1"
+      ],
+      "occupied_task_ids": [
+        "015259c1-fd14-4001-a5a9-d2f9af357c57",
+        "daed8b77-ec66-4466-800f-31c9cf82db7f"
+      ],
+      "pending_task_ids": [
+        "036b8256-1a5a-4d6c-8a6e-7cf85937cc6d",
+        "0df6600c-954e-412d-bbc8-877a23ba35c6",
+        "4639920a-f7f1-4e8c-b6ab-f97e61eb80d5",
+        "497d94e3-bd8a-48bc-ae6c-c35fdc8805a4",
+        "59189446-0bb0-457b-9eb4-54a919614519",
+        "a205e382-512b-4d7b-8cfa-d694ee6994d1",
+        "d4fcf30e-93a4-4c25-a5c5-6686b39c5939",
+        "f7063030-2c84-4112-860d-84100429ee88"
+      ]
+    },
+    "reads_ms": [
+      685.083,
+      843.334,
+      673.321,
+      631.78,
+      490.238,
+      516.978,
+      563.715,
+      532.986,
+      427.829,
+      424.537
+    ],
+    "manual": {
+      "visible_once": true,
+      "exact_retry": true,
+      "elapsed_ms": 1776.51
+    },
+    "peak_after": {
+      "connected_session_ids": [
+        "0108b690-9237-4fd5-9947-fd274530679b",
+        "0ca7f9e5-6355-4d38-897a-df6c247b0351",
+        "54b8d70d-3b91-4063-b286-d88f7700438d",
+        "84c05d30-bdf4-42ce-aea0-c3932ec3dfa3",
+        "8683a0a5-75cc-404a-bf17-607e3e0b2e30",
+        "944ac9f7-5d4c-44a8-9a8f-7199e31f42c0",
+        "af71d184-8c19-4d11-91ac-f64df6fb732c",
+        "c00605c1-039b-486c-9718-c78d0dc94030",
+        "c0c3ce77-845d-4ee4-85b6-d58f37f78271",
+        "f29dfb43-5cef-46d8-93d1-55fa516808f1"
+      ],
+      "occupied_task_ids": [
+        "015259c1-fd14-4001-a5a9-d2f9af357c57",
+        "daed8b77-ec66-4466-800f-31c9cf82db7f"
+      ],
+      "pending_task_ids": [
+        "036b8256-1a5a-4d6c-8a6e-7cf85937cc6d",
+        "0df6600c-954e-412d-bbc8-877a23ba35c6",
+        "4639920a-f7f1-4e8c-b6ab-f97e61eb80d5",
+        "497d94e3-bd8a-48bc-ae6c-c35fdc8805a4",
+        "59189446-0bb0-457b-9eb4-54a919614519",
+        "a205e382-512b-4d7b-8cfa-d694ee6994d1",
+        "d4fcf30e-93a4-4c25-a5c5-6686b39c5939",
+        "f7063030-2c84-4112-860d-84100429ee88"
+      ]
+    },
+    "runtime": [
+      {
+        "state": "awaiting_human",
+        "safe_reason": null,
+        "elapsed_ms": 29616.741
+      },
+      {
+        "state": "awaiting_human",
+        "safe_reason": null,
+        "elapsed_ms": 29233.179
+      }
+    ],
+    "jobs": [
+      {
+        "task_id": "015259c1-fd14-4001-a5a9-d2f9af357c57",
+        "created_at": "2026-11-23T19:45:57.651267+00:00",
+        "state": "completed",
+        "result": true,
+        "slot_state": "free",
+        "draft_count": 1
+      },
+      {
+        "task_id": "daed8b77-ec66-4466-800f-31c9cf82db7f",
+        "created_at": "2026-11-23T19:45:57.751088+00:00",
+        "state": "completed",
+        "result": true,
+        "slot_state": "free",
+        "draft_count": 1
+      }
+    ],
+    "bridge": [
+      {
+        "bridge_ms": 24173.286,
+        "completion_tokens": 20,
+        "prompt_tokens": 1879,
+        "sequence": 3,
+        "started_at_utc": "2026-11-23T19:45:57.666603+00:00",
+        "status": 200
+      },
+      {
+        "bridge_ms": 24090.906,
+        "completion_tokens": 20,
+        "prompt_tokens": 1926,
+        "sequence": 4,
+        "started_at_utc": "2026-11-23T19:45:57.757191+00:00",
+        "status": 200
+      }
+    ],
+    "browser": [
+      {
+        "task_id": "015259c1-fd14-4001-a5a9-d2f9af357c57",
+        "state": "awaiting_human",
+        "safe_reason": null,
+        "steps_used": 1,
+        "tools_used": 0
+      },
+      {
+        "task_id": "daed8b77-ec66-4466-800f-31c9cf82db7f",
+        "state": "awaiting_human",
+        "safe_reason": null,
+        "steps_used": 1,
+        "tools_used": 0
+      }
+    ],
+    "slots_after": [
+      {
+        "id": "local-1",
+        "state": "free",
+        "job_id": null
+      },
+      {
+        "id": "local-2",
+        "state": "free",
+        "job_id": null
+      }
+    ],
+    "passed": true
+  },
+  {
+    "condition": "warm",
+    "round": 2,
+    "phase": "dispatch",
+    "at_utc": "2026-11-23T19:46:44.813605+00:00",
+    "first": [
+      {
+        "session_id": "c00605c1-039b-486c-9718-c78d0dc94030",
+        "task_id": "729b0510-fc96-4a52-bb2c-ead684dc7042",
+        "arrival_ns": 2680278932770541
+      },
+      {
+        "session_id": "944ac9f7-5d4c-44a8-9a8f-7199e31f42c0",
+        "task_id": "9433f586-9ac8-4fae-b1fe-75dd8988e567",
+        "arrival_ns": 2680279731682708
+      }
+    ],
+    "pending": [
+      {
+        "session_id": "c0c3ce77-845d-4ee4-85b6-d58f37f78271",
+        "task_id": "43b0999d-e5de-4aba-a8da-b5532974df0b",
+        "arrival_ns": 2680280492319375
+      },
+      {
+        "session_id": "8683a0a5-75cc-404a-bf17-607e3e0b2e30",
+        "task_id": "9a7b668a-e449-4b85-bdce-147a79f8287b",
+        "arrival_ns": 2680281319936666
+      },
+      {
+        "session_id": "0108b690-9237-4fd5-9947-fd274530679b",
+        "task_id": "5b427193-a5bb-4fee-ab22-c605f3503cea",
+        "arrival_ns": 2680282202360250
+      },
+      {
+        "session_id": "84c05d30-bdf4-42ce-aea0-c3932ec3dfa3",
+        "task_id": "c33d186c-e040-41d6-ae71-4b09724988a7",
+        "arrival_ns": 2680283023564000
+      },
+      {
+        "session_id": "f29dfb43-5cef-46d8-93d1-55fa516808f1",
+        "task_id": "bbde3a0f-97ff-4794-a723-c47245fb6b8f",
+        "arrival_ns": 2680283921058208
+      },
+      {
+        "session_id": "0ca7f9e5-6355-4d38-897a-df6c247b0351",
+        "task_id": "db8cc29d-7173-4385-9dd9-8e542a712d4f",
+        "arrival_ns": 2680284691372125
+      },
+      {
+        "session_id": "af71d184-8c19-4d11-91ac-f64df6fb732c",
+        "task_id": "7820f09e-937a-4daa-9b83-f527ab1e09be",
+        "arrival_ns": 2680289802933041
+      },
+      {
+        "session_id": "54b8d70d-3b91-4063-b286-d88f7700438d",
+        "task_id": "f5b7e59d-e9bf-435f-8336-3b44cb1aef53",
+        "arrival_ns": 2680290613419125
+      }
+    ],
+    "streams_before_dispatch": [
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      },
+      {
+        "active": true,
+        "disconnects": 0,
+        "issue": "none"
+      }
+    ],
+    "contexts": [
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      },
+      {
+        "available": true,
+        "reason": null,
+        "execution_fence": "0"
+      }
+    ],
+    "error": "Both deployed reservations were not observed within their startup window",
+    "durable_after_failure": []
+  }
+]

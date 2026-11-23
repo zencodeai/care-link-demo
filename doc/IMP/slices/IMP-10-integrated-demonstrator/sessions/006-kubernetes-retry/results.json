@@ -1,0 +1,133 @@
+{
+  "stage": "IMP-10",
+  "gate": "G-10",
+  "gate_state": "blocked",
+  "automated_qualified": false,
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Close G-10",
+    "scope": "Retry isolated private G-10 deployment and verification. Historical labs, volumes, and live provider remain outside the lease."
+  },
+  "scope": "Current developer image and real isolated Kubernetes/CNI boundaries. Independent native signed Static.",
+  "observed": {
+    "node_outage_recovery_ms": 48662.712,
+    "fixture_cni_denials": 6,
+    "kubernetes_api_and_dns_denials": 2,
+    "public_static_survived_actual_node_stop": true,
+    "plan_digest_reconciled": true
+  },
+  "remaining": [
+    "Bind the current protected Kubernetes roles, including Training and Evaluation in Core, Data replay custody, the Training proof audience and private Help Identity authority.",
+    "Run deployed protected mTLS and actual product dependency denial controls, plus the protected cluster outage with private Help and Static.",
+    "Repeat exact cold, warm and error timing observations at the declared ten-session workload."
+  ],
+  "qualification_source": {
+    "path": "tools/imp10_verification/kind_boundary.py",
+    "sha256": "167e2a7708013cd8e197ed667a08b5f65c3d19f2ecc9b5d20fc6de63ca8bd097"
+  },
+  "prior_evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/results.json",
+      "sha256": "6dfe12f22b9eb097a56aa46d75ed86b6e5e76dabc33177921d5f752a7756b4ce"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/005-g10-closure/handoff.md",
+      "sha256": "b0250c9679f83e4a16477d3973ab75c078a46dd9f9dc719453d09ac0c688016e"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/evidence/cleanup.json",
+      "sha256": "59db07037ebfde82ab979c871fbc071c8c9aca0782d7df8196894859cb075ac7"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/evidence/control-plane-network.json",
+      "sha256": "92156f8ff9d2978f2dd2dccc111f7b4860b363aaa0a140b18efc31b4fc1fe7bf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/evidence/kind-boundary.json",
+      "sha256": "4de94f13a1391579b7d8e32b33c1a0d66605049ac6910b31d32f915878e1c1cb"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/evidence/plan-validation.log",
+      "sha256": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/evidence/protected-profile-inventory.json",
+      "sha256": "e304e3535bd3c501d900447b3004413bf68086048fce8da06b87a2433d4c775b"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/evidence/serving-csr-receipt.json",
+      "sha256": "a1e8f0d195267ce96ecdb5394bc03a9a5d625cd789b84be5aca141d7e6c46f85"
+    }
+  ],
+  "checks": [
+    {
+      "name": "calico-fixture-and-node-outage",
+      "status": "passed",
+      "expected": "Same-target fixture denials and independent signed Static survive an actual node stop.",
+      "actual": "Six same-target negatives passed; Core developer health dropped and recovered on the same node. Native signed EN/FR Static stayed reachable.",
+      "command": "CARE_LINK_IMP10_KIND_LEASE=imp10-006 .venv/bin/python -m tools.imp10_verification.kind_boundary --output <new-receipt>",
+      "tool_version": null,
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/evidence/kind-boundary.json",
+      "evidence_digest": "4de94f13a1391579b7d8e32b33c1a0d66605049ac6910b31d32f915878e1c1cb",
+      "mock_used": true
+    },
+    {
+      "name": "deployed-api-and-dns-controls",
+      "status": "passed",
+      "expected": "Permitted control reaches each exact real cluster target before and after restricted request.",
+      "actual": "Allowed pod reached verified Kubernetes HTTPS and exact cluster DNS. Restricted pod timed out or received the resolver timeout error.",
+      "command": null,
+      "tool_version": null,
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/evidence/control-plane-network.json",
+      "evidence_digest": "92156f8ff9d2978f2dd2dccc111f7b4860b363aaa0a140b18efc31b4fc1fe7bf",
+      "mock_used": true
+    },
+    {
+      "name": "archive-aware-planning",
+      "status": "passed",
+      "expected": "Verify current frozen digests with established archive-aware resolution.",
+      "actual": "All canonical planning hashes, stages, role and artifact references passed.",
+      "command": ".venv/bin/python -m tools.imp05_verification.validate_plan",
+      "tool_version": null,
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/evidence/plan-validation.log",
+      "evidence_digest": "b3066383a7a2853384706a7caa0ced16269b07ee15ce26f28425ef37e7c6a769",
+      "mock_used": false
+    },
+    {
+      "name": "protected-deployment-inventory",
+      "status": "passed",
+      "expected": "Inspect the exact retained image and distinguish module presence from an integrated deployment.",
+      "actual": "Training factory imports. The protected launcher lacks Training and Evaluation ports, and the replay policy must be supplied to the protected topology.",
+      "command": null,
+      "tool_version": null,
+      "evidence_path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/006-kubernetes-retry/evidence/protected-profile-inventory.json",
+      "evidence_digest": "e304e3535bd3c501d900447b3004413bf68086048fce8da06b87a2433d4c775b",
+      "mock_used": false
+    },
+    {
+      "name": "protected-workload-mtls-and-live-service-probes",
+      "status": "not_run",
+      "expected": "Observe the actual current protected role boundaries.",
+      "actual": "No complete isolated protected deployment composition is available for this candidate.",
+      "command": null,
+      "tool_version": null,
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    },
+    {
+      "name": "protected-host-help-and-ten-session-timings",
+      "status": "not_run",
+      "expected": "Verify protected independent Help with current Identity and measure repeated cold, warm and error cases under ten active sessions.",
+      "actual": "Protected topology and current role bindings are missing. Earlier loopback and single cold results retain their own evidence.",
+      "command": null,
+      "tool_version": null,
+      "evidence_path": null,
+      "evidence_digest": null,
+      "mock_used": false
+    }
+  ],
+  "human_review": "deferred_until_after_IMP10"
+}

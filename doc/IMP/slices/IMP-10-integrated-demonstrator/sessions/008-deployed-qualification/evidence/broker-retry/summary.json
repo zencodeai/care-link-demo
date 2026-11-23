@@ -1,0 +1,164 @@
+{
+  "state": "deployed_identity_denial_confirmed",
+  "qualification_only": true,
+  "prior_deployed_candidate": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/candidate-manifest.json",
+    "sha256": "e6f48fff6fd52b20d7f58e2b43d098211738c936cb5a5b652792c47610869f2d"
+  },
+  "new_source_and_image": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/source-verification.json",
+    "sha256": "0c61465809c19bb32327de1bdeca5f28cf7307a69222ced44a53d63a853561d8"
+  },
+  "immutable_runtime_binding": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/image-binding.json",
+    "sha256": "04a542b0b02d9ae979ae223aed46604078b35829c9cb6079e2adde8109388f88"
+  },
+  "deployed_current_worker_receipt": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/single-deployed-identity-observed-turn.json",
+    "sha256": "c92fc97b7c89fa974e7e74f08866c33db9dcb26d646bfe9c955c3cbafd2a4add"
+  },
+  "core_typed_http_status": 503,
+  "data_context_http_status": 403,
+  "data_denial_key": "manual.identity_denied",
+  "inference_jobs_for_exact_task": 0,
+  "observed_cold_cycles": 0,
+  "remaining": [
+    "Replace Data\u2019s expired task-creation Identity proof with fresh job-scoped authority from the current Core-held actor binding. Preserve workload authentication, the short Identity proof lifetime, Data\u2019s current authorization, task fences and durable compute accounting.",
+    "Verify two durable reservations and eight uniquely queued tasks during ten active protected sessions, then repeat the exact deployed warm and bounded-error measurements.",
+    "Repeat cold-start timing on the declared deployed workload. The existing Qwen instance must stay loaded, the host guardrails reject a second instance, and no separate test machine is available."
+  ],
+  "evidence_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/activation.json",
+      "sha256": "54730e756d950e9f5f64a3ee1f290f555350a0574cd16e594845573fbb998e82"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/admitted-identity-observer-task.json",
+      "sha256": "f9162b8f0d484b978549a7249c7a234191291054580129d5dbf01fe40cdc9806"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/admitted-observer-task.json",
+      "sha256": "34153a4810366d8501917d1bfcb2016a7021cd9183d042ce04832a53cf8919f3"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/after.log",
+      "sha256": "42dd4e15b1515030195f2cca04fd5788b9530e67c2623b1b60d3bf6e196eb9ac"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/before.log",
+      "sha256": "284d42d7c817d02a5e48d3d4b338ac3182819da1cc7daf992ed91130696dc82a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/bridge-cleanup.json",
+      "sha256": "629c7b212a18f6923d4d923f2688210dab1821ab45dfa91fe45b8fceef4cd281"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/bridge-final-observations.json",
+      "sha256": "309aae74ea0b97b517863bceec84d66d57ed5521731804d3ad87c7a4d5296298"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/bridge-preflight.json",
+      "sha256": "8c751228ebca8ff976cee15f79be9d54f07bf9b074cff7ee2f97def7eda3819e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/bridge-route-control.json",
+      "sha256": "2f183d92265b19b0f02dc40b496ff7e55af6aba429e1c18070011e578405621a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/bridge-started.json",
+      "sha256": "4879d1970fa3ea77426fd63eea65386ad108d6753b9a2ff117d2376c0bb26a45"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/data-denial-trace.json",
+      "sha256": "67ee7b0edaa0d8c9ff61442e6486061f57f24528d816ebd1162901ffe6f1be9c"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/data-identity-observer-activation.json",
+      "sha256": "4ee5815924a77be86c90e3e33ac3c200e02dbca53679b827d8a09b85fed9589e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/data-observer-activation.json",
+      "sha256": "a2a0b2c151c6293f151b269e09bce0a0f085cdb53ad53e55857cbf2f98d9fec8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/deployed-failure-boundaries.json",
+      "sha256": "c4017abac48a452984deb5f9095fe6ef0b5227b92c7258ffc058b53512a3775d"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/deployed-source-snapshot/composition.py.txt",
+      "sha256": "f267d929231f00e128da851a794982da651976cbc2c9fe7ccedab7f7b201259e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/deployed-source-snapshot/core.py.txt",
+      "sha256": "dd2f52580847838faf1f713328efc456a13af361c63e353dde4a26fdd2e42f53"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/deployed-source-snapshot/deployed_assistance.py.txt",
+      "sha256": "fd43182b9caf08daa2b92a0a2bc1622128ef1fe01375e1369174a72bed65d2cf"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/first-data-observer-source.py.txt",
+      "sha256": "bc40324c55c15cd671d31ce3f6add4518390c9c59042c7ae4ed82bfeb2bfa5b8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/first-deployed-attempt.json",
+      "sha256": "0e9d0a0c7275b2824a9734b84859da264e02f3e310fc96cae389d4ed5c48e158"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/fixture-provisioning.json",
+      "sha256": "8b23cc757335ba1298525b5f8a335678cc77e49be1aa76d4418655f1f61f33be"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/identity-lifetime-tests.log",
+      "sha256": "606208b2562ff9685fe0d58130c90444832e80519bf453ac1f62a1cd59bfe519"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/image-binding.json",
+      "sha256": "04a542b0b02d9ae979ae223aed46604078b35829c9cb6079e2adde8109388f88"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/image.log",
+      "sha256": "040786b0e513eb0e7b41689a09013de0155d81a34a1cf2b3c29d6e207b43187e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/platform-bootstrap.json",
+      "sha256": "c39b60792b43a2cf5020314d3c2a2afb26fb04b3898b0ca16046ca42af440687"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/platform-cleanup.json",
+      "sha256": "e53d7555a92b956c29e145efd44117e2be717bd6d9dcbeebd3fb6f0b04ca8f68"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/qualification-cleanup.json",
+      "sha256": "2136388e44c272f6b196b4cf6a710f58d9493f46ab1d3de770844073697bf3d0"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/qualification-disable.json",
+      "sha256": "ca67142c12ead4beeb03df68e4b0f1640955531e1b1323e49a1d73e138ec9b84"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/role-boots.json",
+      "sha256": "b68467521f2392ecf3ee971c1ccc50111c2e3615ea7c19da3ddf22949c70f7a5"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/signer-cleanup.json",
+      "sha256": "dd7c980f6e0f12eec9c647c3de4e3a6f4fe860951a6dbd7b3773d8ea2ab68cbe"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/single-deployed-identity-observed-turn.json",
+      "sha256": "c92fc97b7c89fa974e7e74f08866c33db9dcb26d646bfe9c955c3cbafd2a4add"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/source-verification.json",
+      "sha256": "0c61465809c19bb32327de1bdeca5f28cf7307a69222ced44a53d63a853561d8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/timeout-differential.json",
+      "sha256": "bf17575a8142c3211391fecca2af4b146453591b61383ccaa58846ed8c75b203"
+    }
+  ],
+  "qualification_cleanup": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/qualification-cleanup.json",
+    "sha256": "2136388e44c272f6b196b4cf6a710f58d9493f46ab1d3de770844073697bf3d0"
+  }
+}

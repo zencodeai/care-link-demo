@@ -1,0 +1,43 @@
+{
+  "at_utc": "2026-11-23T19:52:19.418276+00:00",
+  "scope": "Independent disposable Data instance from g10_retry_one. Original slot states retained in g10_warm_completed.",
+  "original_slots": [
+    {
+      "id": "local-1",
+      "state": "free",
+      "job": null
+    },
+    {
+      "id": "local-2",
+      "state": "free",
+      "job": null
+    }
+  ],
+  "fresh_slots": [
+    {
+      "id": "local-1",
+      "state": "free",
+      "job": null
+    },
+    {
+      "id": "local-2",
+      "state": "free",
+      "job": null
+    }
+  ],
+  "data_boot": {
+    "role": "data",
+    "boot_id": "a0e70a16-0eb9-4c3f-874c-4eab44d967cf",
+    "uid": 23112,
+    "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+  },
+  "core_boot": {
+    "role": "core",
+    "boot_id": "64d0f69e-1905-4fe3-a7e8-609d97a3fafb",
+    "uid": 23110,
+    "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+  },
+  "data_pod_uid": "df24e446-6f9d-45b6-bb3b-7bbb49c30a2b",
+  "candidate_cri_reference": "docker.io/library/import-2026-11-23@sha256:e90c69a2735b77ccd6b10f1d6230efe9861f2d84ce8e6239806c8fa8bb466b8b",
+  "selected_bridge_generation": "54ac0208-25e5-42a6-b36d-85b73aa27859"
+}

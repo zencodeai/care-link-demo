@@ -1,0 +1,72 @@
+{
+  "scope": "Source and local image verification for the G-10 broker follow-up",
+  "exact_candidate_prior_deployed": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/candidate-manifest.json",
+    "sha256": "e6f48fff6fd52b20d7f58e2b43d098211738c936cb5a5b652792c47610869f2d"
+  },
+  "new_candidate_local_tag": "care-link-imp10:protected-008-broker-diagnostics",
+  "new_candidate_local_image_id": "sha256:803e2caaed6083870e1c80f29954b337ea6ad5a080e6a46825977cd073ca4c88",
+  "source_refs": [
+    {
+      "path": "services/core/tests/test_assistance_work.py",
+      "sha256": "2c629616b73bc68fd92a7d6f92e1d0789d59633e7831e90776c7b7ea62f38bfd"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/deployed-source-snapshot/composition.py.txt",
+      "sha256": "f267d929231f00e128da851a794982da651976cbc2c9fe7ccedab7f7b201259e"
+    },
+    {
+      "path": "services/inference/src/care_link_inference/http.py",
+      "sha256": "a6f758f2cba63369abeda0851b470d2a69229e8f2866607da4ecfb9dbd6fdfe9"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/deployed-source-snapshot/core.py.txt",
+      "sha256": "dd2f52580847838faf1f713328efc456a13af361c63e353dde4a26fdd2e42f53"
+    }
+  ],
+  "regression": [
+    "upstream_503",
+    "upstream_read_timeout",
+    "invalid_response_contract"
+  ],
+  "before_http_status": 500,
+  "after_http_status": 503,
+  "prints_request_content": false,
+  "focused_tests_passed": 244,
+  "strict_type_errors": 0,
+  "lint_and_format_passed": true,
+  "change_to_authority_deadlines": false,
+  "evidence_refs": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/before.log",
+      "sha256": "284d42d7c817d02a5e48d3d4b338ac3182819da1cc7daf992ed91130696dc82a"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/after.log",
+      "sha256": "42dd4e15b1515030195f2cca04fd5788b9530e67c2623b1b60d3bf6e196eb9ac"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/image.log",
+      "sha256": "040786b0e513eb0e7b41689a09013de0155d81a34a1cf2b3c29d6e207b43187e"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/timeout-differential.json",
+      "sha256": "bf17575a8142c3211391fecca2af4b146453591b61383ccaa58846ed8c75b203"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/identity-lifetime-tests.log",
+      "sha256": "606208b2562ff9685fe0d58130c90444832e80519bf453ac1f62a1cd59bfe519"
+    }
+  ],
+  "new_candidate_buildkit_config_digest": "sha256:584976b9bec344ac64324e0bb4bb59658f90d2b39a612e1379bd8304941a4539",
+  "identity_lifetime_tests_passed": 3,
+  "qualification_overlay": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/deployed-source-snapshot/deployed_assistance.py.txt",
+    "sha256": "fd43182b9caf08daa2b92a0a2bc1622128ef1fe01375e1369174a72bed65d2cf"
+  },
+  "source_archive_paths": {
+    "services/inference/src/care_link_inference/composition.py": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/deployed-source-snapshot/composition.py.txt",
+    "tools/imp06_runtime/core.py": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/deployed-source-snapshot/core.py.txt",
+    "tools/imp10_verification/deployed_assistance.py": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/deployed-source-snapshot/deployed_assistance.py.txt"
+  }
+}

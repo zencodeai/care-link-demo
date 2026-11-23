@@ -1,0 +1,26 @@
+{
+  "started_at": "2026-11-23T17:12:55.776272+00:00",
+  "ended_at": "2026-11-23T17:12:56.374450+00:00",
+  "node_container_id": "aa656c8592c78d6a907127e107c43ab82f999e2b58a6dbe7880ec816a1cbbee0",
+  "defect": "Immutable pre-existing executable could not be overwritten during sandbox recovery; seed now idempotently verifies existing exact bytes",
+  "authentication": "Deployed source and destination proxies with live workload certificates",
+  "controls": [
+    {
+      "caller": "core",
+      "target": "pdp",
+      "status": 200,
+      "decision": "DENY",
+      "policy_bundle_digest": "4ce5eba761a39820646394b975e4d5c1857ac0b74d7375c2f87f373779555efe",
+      "exact_input_binding_digest": "ab177d228646a0c698f3b18d5617152f046a160dcf292548900e052d4cc74567"
+    },
+    {
+      "caller": "data",
+      "target": "pdp",
+      "status": 200,
+      "decision": "DENY",
+      "policy_bundle_digest": "4ce5eba761a39820646394b975e4d5c1857ac0b74d7375c2f87f373779555efe",
+      "exact_input_binding_digest": "ab177d228646a0c698f3b18d5617152f046a160dcf292548900e052d4cc74567"
+    }
+  ],
+  "passed": true
+}

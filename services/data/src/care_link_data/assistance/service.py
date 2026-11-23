@@ -8,7 +8,7 @@ from typing import cast
 from uuid import uuid4
 
 from care_link_contracts import validate_contract
-from care_link_domain import Actor, ManualError, WorkloadPeer
+from care_link_domain import Actor, InferenceActorRequest, ManualError, WorkloadPeer
 from care_link_knowledge import CatalogDenied, KnowledgeCatalog
 
 from ..engine import Engine
@@ -127,7 +127,29 @@ class AssistanceService:
         return self.actors.resolve(task_id)
 
     def bind_actor(self, task: Record, actor: Actor) -> None:
-        self.actors.bind(text(task, "id"), actor, dt(task["deadline"]))
+        self.actors.bind(text(task, "id"), actor, dt(task["deadline"]), text(task, "revision"))
+
+    def inference_actor(
+        self,
+        record: Record,
+        operation: str,
+        mint: Callable[[InferenceActorRequest], Actor],
+    ) -> Actor:
+        task_id = str(record["task_id"])
+        # Only the checked task binding supplies the revision for context hydration.
+        # Subsequent calls carry the checked revision or read the durable job row.
+        command = InferenceActorRequest.create(
+            job_id=record["job_id" if operation in {"context", "current"} else "id"],
+            task_id=record["task_id"],
+            step_id=record["step_id"],
+            fence=record["fence"],
+            revision=self.actors.revision(task_id)
+            if operation == "context"
+            else record["revision"],
+            operation=operation,
+        )
+        job_deadline = dt(record["deadline"]) if "deadline" in record else None
+        return self.actors.refresh(command, mint, job_deadline=job_deadline)
 
     def availability(self, actor: Actor) -> Record:
         actor = self.engine.current_actor(actor)

@@ -7,7 +7,7 @@ serialized to runtime, the browser, context items or model output.
 
 import threading
 from collections.abc import Callable
-from dataclasses import replace
+from dataclasses import dataclass, replace
 from datetime import UTC, datetime, timedelta
 from typing import cast
 
@@ -18,10 +18,17 @@ from ..assistance import AssistanceGateway
 from .ports import Record
 
 
+@dataclass(frozen=True)
+class TaskActorBinding:
+    actor: Actor
+    revision: str
+    expires_at: datetime
+
+
 class ActorTasks:
     def __init__(self, *, clock: Callable[[], datetime] = lambda: datetime.now(UTC)) -> None:
         self.clock = clock
-        self.bindings: dict[str, tuple[Actor, datetime]] = {}
+        self.bindings: dict[str, TaskActorBinding] = {}
         self.lock = threading.Lock()
 
     def bind(self, actor: Actor, task: Record) -> None:
@@ -34,21 +41,33 @@ class ActorTasks:
         )
         with self.lock:
             self.bindings = {
-                key: entry for key, entry in self.bindings.items() if entry[1] > self.clock()
+                key: entry
+                for key, entry in self.bindings.items()
+                if entry.expires_at > self.clock()
             }
             if len(self.bindings) >= 1000:
                 raise ManualError("assistance.capacity_unavailable", 503)
-            self.bindings[cast(str, task["id"])] = (actor, expiry)
+            self.bindings[cast(str, task["id"])] = TaskActorBinding(
+                replace(actor, request_deadline=None), cast(str, task["revision"]), expiry
+            )
 
-    def resolve(self, task_id: str) -> Actor:
+    def binding(self, task_id: str) -> TaskActorBinding | None:
         with self.lock:
             bound = self.bindings.get(task_id)
-            if bound is None or bound[1] <= self.clock():
+            if bound is not None and bound.expires_at <= self.clock():
                 self.bindings.pop(task_id, None)
-                raise ManualError("assistance.actor_resumption_required", 409)
-            # A new operation gets its own bounded authorization deadline; this
-            # never renews actor/MFA expiry or the broker capability ceiling.
-            return replace(bound[0], request_deadline=self.clock() + timedelta(seconds=1))
+                return None
+            return bound
+
+    def resolve(self, task_id: str) -> Actor:
+        bound = self.binding(task_id)
+        now = self.clock()
+        if bound is None or bound.expires_at <= now:
+            raise ManualError("assistance.actor_resumption_required", 409)
+        # A new operation receives at most one second of the original task capability.
+        return replace(
+            bound.actor, request_deadline=min(now + timedelta(seconds=1), bound.expires_at)
+        )
 
     def revoke(self, task_id: str) -> None:
         with self.lock:

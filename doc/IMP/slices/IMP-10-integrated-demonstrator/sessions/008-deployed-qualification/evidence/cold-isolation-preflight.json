@@ -1,0 +1,22 @@
+{
+  "recorded_at_utc": "2026-11-23T17:39:50.470147+00:00",
+  "current_model_action": "keep_loaded",
+  "approval": "User answered Keep the current model loaded.",
+  "host_memory_gib": 36,
+  "observed_model_artifact_apparent_size_gib": 15,
+  "second_instance_estimate": {
+    "identifier": "qwen/qwen3.8-27b",
+    "context_length": 8192,
+    "parallel_slots": 4,
+    "estimated_total_memory_gib": 20.97,
+    "confidence": "LOW",
+    "guardrail_result": "This model will fail to load based on your resource guardrails settings."
+  },
+  "measurement_command": "lms load qwen/qwen3.8-27b --estimate-only --context-length 8192 --parallel 4",
+  "new_provider_instance_state": "unstarted",
+  "observed_deployed_cold_cycles": 0,
+  "public_reference": "https://lmstudio.ai/docs/cli/local-models/load",
+  "separate_machine_available": false,
+  "separate_machine_reply": "No separate test machine is available",
+  "decision_recorded_at_utc": "2026-11-23T18:11:02.788308+00:00"
+}

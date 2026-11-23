@@ -1,0 +1,14 @@
+{
+  "observed_at_utc": "2026-11-23T20:02:14.792150+00:00",
+  "roles": {
+    "inference": [],
+    "runtime": [
+      "2026-11-23T19:43:43.174825416Z IMP10 runtime observation: {\"round\": \"7fbb5a72-6fc9-4edf-977d-1afa50822285\", \"workers\": [{\"error_type\": \"TimeoutError\", \"elapsed_ms\": 31255.056}, {\"error_type\": \"TimeoutError\", \"elapsed_ms\": 31231.316}]}",
+      "2026-11-23T19:46:23.884947713Z IMP10 runtime observation: {\"round\": \"346739e0-6fd4-44b0-bc5b-a66ab8c59d68\", \"workers\": [{\"state\": \"awaiting_human\", \"safe_reason\": null, \"elapsed_ms\": 29616.741}, {\"state\": \"awaiting_human\", \"safe_reason\": null, \"elapsed_ms\": 29233.179}]}",
+      "2026-11-23T19:46:55.927273923Z IMP10 runtime observation: {\"round\": \"4b324bdb-a8b4-4fd5-9f06-2503cab8de70\", \"workers\": [{\"error_type\": \"HTTPStatusError\", \"elapsed_ms\": 2496.418}, {\"error_type\": \"HTTPStatusError\", \"elapsed_ms\": 2596.355}]}",
+      "2026-11-23T19:48:55.807849631Z IMP10 runtime observation: {\"round\": \"c400f185-65b6-4bb1-a7b9-7435d5f02e86\", \"workers\": [{\"state\": \"awaiting_human\", \"safe_reason\": null, \"elapsed_ms\": 29403.63}, {\"state\": \"awaiting_human\", \"safe_reason\": null, \"elapsed_ms\": 29154.564}]}",
+      "2026-11-23T19:49:30.183330508Z IMP10 runtime observation: {\"round\": \"e0cd6bcc-fd52-4480-932c-4077180111da\", \"workers\": [{\"error_type\": \"HTTPStatusError\", \"elapsed_ms\": 6395.148}, {\"error_type\": \"HTTPStatusError\", \"elapsed_ms\": 6355.866}]}",
+      "2026-11-23T19:53:50.777712337Z IMP10 runtime observation: {\"round\": \"d7ae1cfd-00e4-4e16-ab0a-362d7b8c8ff3\", \"workers\": [{\"error_type\": \"HTTPStatusError\", \"elapsed_ms\": 6420.883}, {\"error_type\": \"HTTPStatusError\", \"elapsed_ms\": 6534.366}]}"
+    ]
+  }
+}

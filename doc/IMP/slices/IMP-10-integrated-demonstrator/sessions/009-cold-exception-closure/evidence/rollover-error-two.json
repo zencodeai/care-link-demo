@@ -1,0 +1,13 @@
+[
+  {
+    "round": 1,
+    "condition": "error",
+    "phase": "bridge_preflight",
+    "error": "Protected bridge tokenization returned HTTP 503 before actor startup.",
+    "observed_controls": {
+      "authenticated_positive_tokenization_http": 503,
+      "bad_digest_tokenization_http": 400
+    },
+    "reason_evidence": "first-rollover-retired-observations.json"
+  }
+]

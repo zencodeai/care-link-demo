@@ -1,0 +1,9 @@
+{
+  "admitted_task_id": "be652e5b-bb79-400d-a43c-1d33101fd25f",
+  "worker_transport_current": true,
+  "context": {
+    "available": true,
+    "reason": null,
+    "execution_fence": "0"
+  }
+}

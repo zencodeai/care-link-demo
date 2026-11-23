@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="6.602" timestamp="2026-11-23T09:39:33.629436-05:00" hostname="mains-MacBook-Pro.local"><testcase classname="tests.evaluation.qwen_combined_journey" name="test_worker_summary_combined_qualification" time="6.181"><failure message="care_link_domain.ports.ManualError: manual.deadline">tests/evaluation/qwen_combined_journey.py:307: in test_worker_summary_combined_qualification
+    _manual_coordinator, baseline_command, _manual_peer = knowledge_case(harness)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^
+services/data/tests/test_assistance_knowledge.py:21: in knowledge_case
+    _previous, data, peer = case(h)
+                            ^^^^^^^
+services/data/tests/test_assistance.py:19: in case
+    session = connected(h)
+              ^^^^^^^^^^^^
+services/data/tests/test_manual.py:52: in connected
+    session, assignment = accepted(h)
+                          ^^^^^^^^^^^
+services/data/tests/test_manual.py:37: in accepted
+    session, queue = requested(h)
+                     ^^^^^^^^^^^^
+services/data/tests/test_manual.py:26: in requested
+    session = h.create()
+              ^^^^^^^^^^
+services/data/tests/conftest.py:199: in create
+    return self.service.session_create(
+services/data/src/care_link_data/sessions.py:20: in session_create
+    return self._run(
+services/data/src/care_link_data/engine.py:832: in _run
+    raise ManualError("manual.deadline", 503)
+E   care_link_domain.ports.ManualError: manual.deadline</failure></testcase></testsuite></testsuites>

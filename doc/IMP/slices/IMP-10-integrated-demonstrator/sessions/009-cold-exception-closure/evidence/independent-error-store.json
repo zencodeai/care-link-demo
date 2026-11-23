@@ -1,0 +1,8 @@
+{
+  "scope": "Independently restored exact synthetic baseline before any inference, old unknown jobs must stay on the original store",
+  "restore": {
+    "slots": 2,
+    "jobs": 0,
+    "mode": "normal"
+  }
+}

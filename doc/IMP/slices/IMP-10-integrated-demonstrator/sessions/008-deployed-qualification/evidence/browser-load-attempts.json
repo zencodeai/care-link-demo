@@ -1,0 +1,105 @@
+{
+  "scope": "Recorded manual G-10 attempts on protected-008 before assisted Core rollout",
+  "responses": [
+    {
+      "attempt": 1,
+      "completed": "10 independent actor logins + participant create/disclosure/queue/reserve/accept",
+      "failed_at": "concurrent SSE startup before actual handoff"
+    },
+    {
+      "attempt": 2,
+      "completed": "10 independent actor admissions and eleven staggered real SSE openings",
+      "failed_at": "four-way prepare-transfer",
+      "status": 503,
+      "message_key": "manual.authority_unavailable"
+    },
+    {
+      "attempt": 3,
+      "completed": "10 independent actor admissions and eleven staggered real SSE openings",
+      "failed_at": "first serialized prepare-transfer with eleven live SSEs",
+      "status": 503,
+      "message_key": "manual.deadline_exceeded"
+    },
+    {
+      "attempt": 4,
+      "failed_at": "parallel session create before handoff",
+      "status": 503,
+      "message_key": "manual.deadline_exceeded"
+    },
+    {
+      "attempt": 5,
+      "candidate_scope": "final protected assisted rollout",
+      "completed": "11 real browser sign-ins and first participant's create/disclosure/queue",
+      "failed_at": "first isolated workforce reservation while the locked source suite was running",
+      "status": 403,
+      "message_key": "manual.policy_denied",
+      "interpretation": "This machine key can represent a valid signed decision or delegation that expired before use, as well as an explicit DENY. Exact reason unobserved."
+    },
+    {
+      "attempt": 6,
+      "candidate_scope": "final protected assisted rollout, locked source idle",
+      "failed_at": "one of four simultaneously progressing browser OIDC callbacks, before participant mutations",
+      "status": 503,
+      "message_key": null
+    },
+    {
+      "attempt": 7,
+      "candidate_scope": "final protected assisted rollout, locked source idle",
+      "completed": "11 serial live sign-ins, 10 exact two-party handoffs and 10 protected source assertion writes",
+      "failed_at": "steady-state sample guard, a previously retained browser SSE was no longer current",
+      "ten_durable_handoffs": true,
+      "ten_concurrent_streams_at_sampling": false
+    },
+    {
+      "attempt": 8,
+      "candidate_scope": "final protected assisted rollout with old absolute 45-second browser route",
+      "completed": "11 serial MFA sign-ins and protected participant create/disclosure/queue/reserve/accept",
+      "failed_at": "a second party ACK returned without two-party confirmation during early stream recycle",
+      "browser_controller_stopped": true,
+      "inference_task_created": false
+    },
+    {
+      "attempt": 9,
+      "candidate_scope": "corrected exact indefinite event route",
+      "completed": "11 current MFA browser actors and all ten two-party handoffs and protected source assertions",
+      "failed_at": "protected read during refresh of stale retained SSE before simultaneous sample",
+      "status": 503,
+      "message_key": "manual.deadline_exceeded",
+      "human_controlled_session_count": 10,
+      "ten_concurrent_streams_at_sampling": false,
+      "admitted_evidence": "/private/tmp/care-link-imp10-008-load-final-control/admitted.json"
+    },
+    {
+      "attempt": 10,
+      "candidate_scope": "corrected exact indefinite event route",
+      "completed": "same owner and participant scoped protected session reads on old durable cohort",
+      "failed_at": "browser projection guard rejected prior connection as stale when new browser sessions lack freshly bound two-party ACKs",
+      "inference_task_created": false
+    },
+    {
+      "attempt": 11,
+      "candidate_scope": "corrected exact event route and same existing cohort",
+      "completed": "exact current participant/worker reads, new actual streams and both ACK requests for a same-owner reconnect",
+      "failed_at": "final workforce/confirm-transfer of one scoped existing session",
+      "status": 409,
+      "message_key": "manual.gateway_denied",
+      "inference_task_created": false
+    },
+    {
+      "attempt": 12,
+      "candidate_scope": "final protected candidate with dedicated exact SSE route and new Data bridge boot",
+      "completed": "10 active scoped CA-XX signed-in cases, 10 live protected reads, one current worker SSE",
+      "p50_ms": 412.597,
+      "p95_ms": 429.764,
+      "max_ms": 429.764,
+      "connected_two_party_sessions": 0,
+      "failed_at": "first browser model-pair submission, one POST returned a masked denial",
+      "status": 409,
+      "message_key": "manual.gateway_denied",
+      "pair_acknowledged": false,
+      "ready_evidence": "/private/tmp/care-link-imp10-008-load-active-control/ready.json"
+    }
+  ],
+  "complete_connected_cohort_observed": false,
+  "deadline_threshold_changed": false
+}

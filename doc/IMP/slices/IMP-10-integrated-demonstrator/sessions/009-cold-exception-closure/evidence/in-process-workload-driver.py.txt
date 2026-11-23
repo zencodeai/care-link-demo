@@ -1,0 +1,171 @@
+from dataclasses import asdict
+from datetime import UTC,datetime
+from pathlib import Path
+from time import monotonic,monotonic_ns,sleep
+from uuid import uuid4
+import json,sys
+
+from tools.imp10_verification.deployed_bridge import bridge_observations,pause_connector
+from tools.imp10_verification.deployed_cluster import _inference_to_bridge
+from tools.imp10_verification.deployed_load import TenSessions, startup_post, ordered
+from tools.imp10_verification.deployed_measurement_data import _select, jobs, occupied, peak
+from tools.imp10_verification.deployed_roles import k
+
+out=Path('doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/009-cold-exception-closure/evidence')
+series=sys.argv[1]
+conditions=sys.argv[2:]
+if not conditions or any(x not in ('warm','error') for x in conditions):
+    raise ValueError('Exact warm and error observations required')
+evidence=out/(series+'.json')
+records=[]
+def save():
+    evidence.write_text(json.dumps(records,indent=2)+'\n')
+def slots():
+    return _select("SELECT json_build_object('id',id,'state',state,'job_id',job_id::text) FROM assistance.compute_slot ORDER BY id")
+def open_runtime(key):
+    k('exec','deployment/runtime','-c','app','--','python','-c',"from pathlib import Path; import sys; p=Path('/state/dispatch-pair'); f=p.open('x'); f.write(sys.argv[1]); f.close()",key)
+
+def runtime_receipt(key,seconds=42):
+    end=monotonic()+seconds
+    while monotonic()<end:
+        logs=k('logs','deployment/runtime','-c','app','--tail=20')
+        for line in reversed(logs.splitlines()):
+            if line.startswith('IMP10 runtime observation: '):
+                value=json.loads(line.split(': ',1)[1])
+                if value['round']==key:
+                    return value['workers']
+        sleep(.2)
+    raise RuntimeError('Exact runtime receipt missing after its bounded call')
+
+def sample_case(lane,manual,case):
+    begin=monotonic_ns()
+    view=case.actor.get(case.path)
+    assert view['id']==case.session_id
+    if case is manual:
+        assert view['service_phase']=='human_controlled' and view['owner_id']==lane.worker_id
+    else:
+        assert view['service_phase']=='worker_assigned' and view['owner_id'] is None
+    return round((monotonic_ns()-begin)/1e6,3)
+
+def manual_delivery(lane,case):
+    begin=monotonic_ns()
+    view=lane.worker.get(case.path)
+    command={'expected_revision':view['revision'],'expected_control_epoch':view['control_epoch'],'text':'Fictional worker check during G-10 peak load.','accepted_draft_id':None}
+    route=case.path+'/messages'
+    key=str(uuid4())
+    sent=lane.worker.post(route,command,key=key)
+    retry=lane.worker.post(route,command,key=key)
+    observed=[x for x in case.actor.get(route)['items'] if x['id']==sent['id']]
+    assert sent['id']==retry['id'] and sent['kind']=='human_authored' and len(observed)==1
+    return {'visible_once':True,'exact_retry':True,'elapsed_ms':round((monotonic_ns()-begin)/1e6,3)}
+
+deadline=monotonic()+85
+while monotonic()<deadline:
+    if (out/'runtime-boot-recovery.json').exists():
+        try:
+            proof=_inference_to_bridge()
+            if proof['passed']:
+                (out/(series+'-bridge-route.json')).write_text(json.dumps(proof,indent=2)+'\n')
+                break
+        except (RuntimeError,ValueError): pass
+    sleep(.6)
+else: raise RuntimeError('Protected bridge tokenization not current')
+
+with TenSessions(active_only=True) as lane:
+    manual=lane.cases[-1]
+    manual.stream=lane._stream(manual.actor,manual.path)
+    manual.stream.wait()
+    lane._connect_case(manual,seed_source=False)
+    current_sessions=tuple(case.session_id for case in lane.cases)
+    assert len(set(current_sessions))==10 and all(x.active() for x in lane.streams)
+    print(f'Ten active actors and private exact manual control ready for {series}.',flush=True)
+    for index,condition in enumerate(conditions,1):
+        record={'condition':condition,'round':index,'phase':'prequeue','at_utc':datetime.now(UTC).isoformat()}
+        records.append(record)
+        save()
+        before_bridge=len(bridge_observations())
+        pending=[]
+        first=()
+        try:
+            assert len(slots())==2 and all(slot['state']=='free' for slot in slots())
+            assert all(stream.active() for stream in lane.streams)
+            first=lane.issue_initial_pair()
+            for case in lane.cases[2:8]:
+                pending.append(lane._schedule(case))
+            record['first']=[asdict(t) for t in first]
+            record['pending']=[asdict(t) for t in pending]
+            record['phase']='dispatch'
+            record['streams_before_dispatch']=[{'active':x.active(),'disconnects':x.disconnects,'issue':x.last_issue} for x in lane.streams]
+            record['contexts']=[{key:ctx[key] for key in ('available','reason','execution_fence')} for ctx in [lane.worker.get('/v1/tasks/'+task.task_id+'/context') for task in first]]
+            save()
+            if not all(x['active'] for x in record['streams_before_dispatch']): raise RuntimeError('Actor event stream ended before Runtime dispatch')
+            if not all(ctx['available'] for ctx in record['contexts']): raise RuntimeError('Exact scoped worker task context unavailable before dispatch')
+            round_key=str(uuid4())
+            open_runtime(round_key)
+            stop=monotonic()+10
+            while monotonic()<stop:
+                if all(view['steps_used']==1 for view in lane.task_states(first)): break
+                sleep(.1)
+            else:
+                record['runtime_at_claim_failure']=runtime_receipt(round_key)
+                record['task_states_at_claim_failure']=lane.task_states(first)
+                raise RuntimeError('Exact two Runtime claims not observed')
+            for case in lane.cases[8:]:
+                pending.append(lane._schedule(case))
+            record['pending']=[asdict(t) for t in pending]
+            record['occupied']=occupied(first)
+            all_tasks=(*first,*pending)
+            before=peak(current_sessions,all_tasks)
+            record['peak_before']=asdict(before)
+            record['phase']='actor_observations'
+            save()
+            assert all(stream.active() for stream in lane.streams)
+            record['reads_ms']=ordered(lane.cases,lambda c:sample_case(lane,manual,c),parallel=2)
+            record['manual']=manual_delivery(lane,manual)
+            after=peak(current_sessions,all_tasks)
+            record['peak_after']=asdict(after)
+            save()
+            for observed in (before,after):
+                assert set(observed.connected_session_ids)==set(current_sessions)
+                assert set(observed.occupied_task_ids)=={task.task_id for task in first}
+                assert set(observed.pending_task_ids)=={task.task_id for task in pending}
+                assert len(observed.pending_task_ids)==8
+            record['phase']='terminal'
+            save()
+            if condition=='error':
+                with pause_connector():
+                    record['runtime']=runtime_receipt(round_key)
+            else:
+                record['runtime']=runtime_receipt(round_key)
+            record['jobs']=jobs(tuple(task.task_id for task in first))
+            record['bridge']=bridge_observations()[before_bridge:]
+            record['browser']=lane.task_states(first)
+            record['slots_after']=slots()
+            assert len(record['jobs'])==2
+            if condition=='warm':
+                passed=(len(record['bridge'])==2 and all(x['status']==200 and 0<x['prompt_tokens']<=8192 and 0<x['completion_tokens']<=1024 for x in record['bridge']) and all(x['state']=='completed' and x['draft_count']==1 and x['slot_state']=='free' for x in record['jobs']) and all(x.get('state')=='awaiting_human' for x in record['runtime']))
+            else:
+                passed=(all(x['state']=='compute_unknown' and x['draft_count']==0 and not x['result'] and x['slot_state']=='compute_unknown' for x in record['jobs']) and all(x.get('state')=='compute_unknown' and x.get('safe_reason')=='provider_stop_unverified' for x in record['runtime']))
+            record['passed']=passed
+            record['phase']='recorded'
+            save()
+            print(json.dumps({'condition':condition,'round':index,'passed':passed,'runtime':record['runtime'],'slots':[x['state'] for x in record['slots_after']]}),flush=True)
+            if not passed: raise RuntimeError('Required terminal outcome was not observed')
+        except (AssertionError,RuntimeError,ValueError) as error:
+            record['error']=str(error)
+            if first: record['durable_after_failure']=jobs(tuple(task.task_id for task in first))
+            save()
+            raise
+        finally:
+            for task in (*pending,*(first if record.get('passed') is not True else ())):
+                route='/v1/tasks/'+task.task_id
+                try:
+                    view=lane.worker.get(route)
+                    if view['state']=='scoped':
+                        startup_post(lane.worker,route+'/cancel',{'expected_revision':view['revision']})
+                except (RuntimeError,ValueError):
+                    record.setdefault('pending_cleanup_not_confirmed',[]).append(task.task_id)
+            save()
+        if condition=='warm':
+            sleep(12)
+

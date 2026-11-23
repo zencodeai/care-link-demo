@@ -1,0 +1,38 @@
+{
+  "state": "passed",
+  "recorded_at": "2026-11-23T14:43:48.860534+00:00",
+  "provider": "live",
+  "qualification_bundle": "7281e5e61e68f929aa4b96162c5f0f6ffd512e9c27260e7d7862e417ca75f7dc",
+  "candidate_image": "sha256:dd93ef8772404749d1c015264c5a2a2a8205aad0ce2ced0b88a917c22f917d41",
+  "source_sha256": "543284dca1ec47a71e88b86ccb0e4ff326af9cc5751ebd11eb3419668afe0c91",
+  "provider_model": "qwen/qwen3.8-27b",
+  "request_digest_matches_held_job": true,
+  "downstream_read_window_seconds": 0.025,
+  "seconds_after_provider_request_body_sent": {
+    "downstream_timeout": 0.0292,
+    "durable_unknown": 0.0577,
+    "manual_message_confirmed": 0.2385,
+    "original_provider_response_completed": 7.4731
+  },
+  "provider_completion": {
+    "http_status": 200,
+    "finish_reason": "stop",
+    "prompt_tokens": 1223,
+    "completion_tokens": 11,
+    "same_retained_request": true,
+    "response_content_recorded": false
+  },
+  "job": "compute_unknown",
+  "compute_slot": "compute_unknown",
+  "manual_message": "durable_human_authored",
+  "proposal_returned": false,
+  "draft_rows": 0,
+  "referral_dispatch_rows": 0,
+  "release_disabled_at_epoch": 2,
+  "boundaries": [
+    "Test-only relay deadline. The original upstream connection remained open.",
+    "No physical compute instrumentation or provider hard-stop attestation.",
+    "In-process role relays, fixture authorities and real TLS PostgreSQL.",
+    "The late reply reached only the observer. The application kept the slot held."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "training_factory_present": true,
+  "serving_core_parameters": [
+    "gateway",
+    "security",
+    "channels",
+    "data_client",
+    "data_origin",
+    "envelopes",
+    "identity",
+    "signing_key",
+    "inference_tls",
+    "releases",
+    "runtime_verify",
+    "planning",
+    "referrals",
+    "receiver",
+    "knowledge",
+    "inference_socket",
+    "review_contexts",
+    "plans_review_contexts",
+    "review_views"
+  ],
+  "protected_composition_parameters": [
+    "config",
+    "ai"
+  ],
+  "packaged_replay_rego": false
+}

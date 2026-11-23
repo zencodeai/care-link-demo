@@ -1,0 +1,13 @@
+{
+  "positive_status": 200,
+  "bad_content_digest_status": 400,
+  "model_pins": {
+    "artifact_digest": "b21709ca163e5eab6ce0b28aad9f84b3f0af26f0b0eb3a08f0bcdb2e35b22999",
+    "tokenizer_digest": "5fa46bcb0df38761bf1ba9a572b31dd220f7e862968765633712776bd188b836",
+    "template_digest": "a7e8481ad631dd0433ec895bba04d69c8bfab5a314343263a786afab4d76d95c",
+    "model_window": 8192
+  },
+  "content_digest": "6a00bbb3dc0d488d308c25f8d1e16b47866c9981655780562b33bab3fd1bd753",
+  "input_tokens": 18,
+  "passed": true
+}

@@ -16,6 +16,7 @@ COPY config/demo/imp03/ config/demo/imp03/
 COPY config/demo/imp04/ config/demo/imp04/
 COPY config/demo/imp05/ config/demo/imp05/
 COPY config/demo/imp06/ config/demo/imp06/
+COPY config/demo/imp10/ config/demo/imp10/
 COPY config/demo/assistance/ config/demo/assistance/
 COPY config/demo/knowledge/ config/demo/knowledge/
 COPY apps/web/dist/ apps/web/dist/

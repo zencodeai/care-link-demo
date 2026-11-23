@@ -1,0 +1,38 @@
+{
+  "scope": "Exact new deployed broker candidate, one admitted warmed worker turn with actual current actors",
+  "started_at_utc": "2026-11-23T18:38:15Z",
+  "task_id": "e6190e81-3139-4460-a5e6-71878322f025",
+  "worker_transport_current": true,
+  "runtime_outcome": {
+    "type": "status",
+    "status": 503,
+    "path": "/internal/v1/broker/inference",
+    "safe_reason": null
+  },
+  "runtime_elapsed_ms": 2321.908,
+  "durable_jobs": [],
+  "browser_outcome": {
+    "state": "planning",
+    "safe_reason": null,
+    "steps_used": 1,
+    "tools_used": 0
+  },
+  "diagnostic_trace": [
+    {
+      "role": "core",
+      "event": "Inference call denied cause=HTTPStatusError upstream_status=503"
+    },
+    {
+      "role": "inference",
+      "event": "Inference Data call failed operation=context cause=HTTPStatusError status=403 elapsed_ms=16.6"
+    },
+    {
+      "role": "inference",
+      "event": "Inference job denied stage=data_context cause=InferenceDenied status=503"
+    },
+    {
+      "role": "data",
+      "event": "IMP10 Data denial operation=inference_context: manual.identity_denied"
+    }
+  ]
+}

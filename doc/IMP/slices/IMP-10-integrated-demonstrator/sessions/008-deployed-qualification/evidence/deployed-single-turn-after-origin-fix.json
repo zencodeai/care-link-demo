@@ -1,0 +1,21 @@
+{
+  "admitted_task_id": "c7537fd0-8360-422d-870d-3d7f0197f6be",
+  "worker_transport_current": true,
+  "context": {
+    "available": true,
+    "reason": null,
+    "execution_fence": "0"
+  },
+  "runtime_outcome": {
+    "exec_exit": 1,
+    "safe_cause_class": null
+  },
+  "elapsed_ms": 2489.19,
+  "durable_jobs": [],
+  "browser_outcome": {
+    "state": "planning",
+    "safe_reason": null,
+    "steps_used": 1,
+    "tools_used": 0
+  }
+}

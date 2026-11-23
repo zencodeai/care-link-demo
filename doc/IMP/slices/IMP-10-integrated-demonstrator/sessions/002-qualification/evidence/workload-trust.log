@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_verification/role_topology.py", line 731, in <module>
+    main()
+    ~~~~^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_verification/role_topology.py", line 720, in main
+    evidence.update(qualify(lab, addresses))
+                    ~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/main/Workspace/projects/care-link/care-link-demo/tools/imp06_verification/role_topology.py", line 577, in qualify
+    raise RuntimeError(f"expected authenticated app response for {name}: {response}")
+RuntimeError: expected authenticated app response for Core to Data manual session schema: {'status': 503, 'body': None, 'authenticated_peer': None, 'peer_certificate_digest': None}

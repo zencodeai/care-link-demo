@@ -1,0 +1,85 @@
+{
+  "run_id": "2026-11-23-IMP-10",
+  "stage_id": "IMP-10",
+  "gate_id": "G-10",
+  "state": "blocked",
+  "gate_state": "blocked",
+  "closed": false,
+  "recorded_at": "2026-11-23T15:22:50.045484+00:00",
+  "baseline_commit": "7c1609d5d6dd8fc40ee3cf49f6d3a26db8aa3ebd",
+  "branch": "feat/imp-09-backup-and-recovery",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Proceed",
+    "scope": "Run combined outage qualification in an isolated synthetic topology. Bound candidate roles and live read-only loopback inference."
+  },
+  "predecessors": [
+    {
+      "path": "doc/IMP/executions/2026-11-20-IMP-06/ledger.json",
+      "sha256": "7e9d57447d5e606a1e73f9e18ed6cdef90b4f5d1662a6122466c8e97feced8a6"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-07/ledger.json",
+      "sha256": "9941321dfbe5cfa48ad322a0d9fd7c5301c02ebbc0932dae1ec6e6ee3ab21098"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-08/ledger.json",
+      "sha256": "e09e1e707f5c9c43f154bdfeefc3db4e547d92bd106d2c3328406746e7631be7"
+    },
+    {
+      "path": "doc/IMP/executions/2026-11-21-IMP-09/ledger.json",
+      "sha256": "6a054df591853d7210979bc917f1603256f0ea7b3523168b4022db3a0630ea4c"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IMP-10-A",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-B",
+      "state": "partial"
+    },
+    {
+      "id": "IMP-10-C",
+      "state": "completed"
+    },
+    {
+      "id": "IMP-10-D",
+      "state": "partial"
+    }
+  ],
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/candidate-manifest.json",
+    "sha256": "db2d7da87e3fc191e3c095c7b1548c923422c02f537448bb33f3f8f8e28221e5"
+  },
+  "results": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/results.json",
+    "sha256": "6dfe12f22b9eb097a56aa46d75ed86b6e5e76dabc33177921d5f752a7756b4ce"
+  },
+  "qualification_packet": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/demo-packet.json",
+    "sha256": "07f4ff8670df089c69aaadb77cd268013437df7decbfd5a4586e63bdea20900e"
+  },
+  "human_review": "deferred_until_after_IMP10",
+  "human_decisions": [],
+  "deferred_review_inventory": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/001-implementation/deferred-review-inventory.json",
+    "sha256": "739eee707891cbedeeae22085a28a5c744eb31ad6e1c0b3e5ede3a3a566b51dc"
+  },
+  "deployment_applied": false,
+  "participant_admission": false,
+  "commit_performed": false,
+  "push_performed": false,
+  "merge_performed": false,
+  "remaining": [
+    "Run an actual outage in the isolated Kubernetes topology, with current mTLS and CNI denial probes and separate host Help and Static process evidence.",
+    "Measure cold, warm, and error timing distributions at the declared ten-session load in the deployed topology.",
+    "Resolve the earlier frozen IMP planning README digest drift through the planning baseline workflow."
+  ],
+  "current_session": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages",
+  "earlier_ledger": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/004-combined-outages/session-003-ledger.json",
+    "sha256": "ba9573ea1d428b84a0fb442ea2b9d4dc28f2c92c1c1ef51dc0a6d0f0fd6123d6"
+  }
+}

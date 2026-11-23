@@ -1,0 +1,16 @@
+{
+  "training": {
+    "scenario": "1fd665fb-2191-44ac-bbd6-1c6b26fbd3e6",
+    "same_owner": 200,
+    "other_owner": 404,
+    "worker_create": 403,
+    "disabled_identity_link": 403,
+    "state": "completed",
+    "evidence_digest": "fe933f0fc6a4e4ea58afda0bff025a763cc18564e787bd0ff768d1351fb4f96f"
+  },
+  "participant": {
+    "create_read_ms": 1042.0,
+    "state": "active",
+    "exact_id_round_trip": true
+  }
+}

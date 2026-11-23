@@ -1,0 +1,67 @@
+{
+  "stage": "IMP-10",
+  "gate": "G-10",
+  "gate_state": "blocked",
+  "automated_qualified": false,
+  "scope": "Authorized host-side cold lifecycle and bounded prediction checks for the current private synthetic candidate",
+  "cold_start": "passed",
+  "authorization": {
+    "source_kind": "user_message",
+    "instruction_reference": "Authrized. Proceed",
+    "scope": "Temporarily unload and reload the already-running exact Qwen model for cold-start measurement, restoring its observed load settings."
+  },
+  "observed": {
+    "unload_observed_in": [
+      "CLI",
+      "SDK",
+      "authenticated REST"
+    ],
+    "successful_reload_elapsed_seconds": 9.186134,
+    "successful_reload_to_authenticated_catalog_seconds": 9.469637,
+    "post_reload_binding_checks_seconds": 7.355104,
+    "first_en_provider_seconds": 6.92785441596061,
+    "matched_warm_en_provider_seconds": 1.6827037087641656,
+    "warm_fr_provider_seconds": 4.3469739579595625,
+    "original_effective_mlx_settings_restored": true,
+    "new_instance_verified": true,
+    "existing_listener_pid_before_and_after": 20811,
+    "scope_limits": [
+      "Single cold sample and matched warm repeat.",
+      "OS file cache retained.",
+      "First observed synthetic prediction on the replacement instance after configuration checks."
+    ]
+  },
+  "recoveries": [
+    "An initial operational script invocation failed before the unload because the repository namespace was absent from its Python path.",
+    "The first reload command supplied a CLI option restricted to vLLM. Restore succeeded after omitting that option.",
+    "The strict raw map equality check detected the same parallelism expressed explicitly and two added inactive-engine defaults. Effective MLX settings and complete existing raw fields were verified before prediction."
+  ],
+  "candidate_manifest": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/candidate-manifest.json",
+    "sha256": "db2d7da87e3fc191e3c095c7b1548c923422c02f537448bb33f3f8f8e28221e5"
+  },
+  "prior_qualification": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/002-qualification/results.json",
+    "sha256": "6a03308f0827025a4932e7420894277b57febe2674bd48a2a4e38886f53b86ef"
+  },
+  "evidence": [
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/evidence/cold-start.json",
+      "sha256": "6c477e8b8d80ab3bbbfca10b387ad2f5f8aed9b59298b110fbb6998fa89000d8"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/evidence/initial-unload-and-reload-attempt.json",
+      "sha256": "905b40b202b0b6812ac1cfbf1c914b0dc7d7b02c65c39eea9b8c39f8be1e5fec"
+    },
+    {
+      "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/003-cold-start/evidence/restored-settings-check.json",
+      "sha256": "be06c2e96a95c88645dd7bff2caa6fcb550d7b29c17c95c07291e1822e4d521d"
+    }
+  ],
+  "remaining": [
+    "The separate real provider, mesh, actor and Help checks still need a single current all-role topology outage run.",
+    "The real provider timings cover one cold sample and separate loaded-model workloads. The application saturation at two occupied slots and eight waiting uses fixture inference.",
+    "The frozen IMP plan validator still reports the earlier README digest drift."
+  ],
+  "human_review": "deferred_until_after_IMP10"
+}

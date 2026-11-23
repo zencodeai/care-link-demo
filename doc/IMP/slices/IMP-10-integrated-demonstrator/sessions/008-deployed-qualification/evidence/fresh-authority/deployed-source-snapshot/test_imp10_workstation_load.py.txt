@@ -1,0 +1,522 @@
+"""Synthetic ten-session saturation with real Core queue and TLS PostgreSQL slots."""
+
+import json
+import os
+import platform
+import sqlite3
+from concurrent.futures import ThreadPoolExecutor
+from contextlib import ExitStack, closing
+from dataclasses import dataclass, replace
+from datetime import UTC, datetime
+from itertools import chain
+from pathlib import Path
+from threading import Event
+from time import perf_counter_ns
+from uuid import uuid4
+
+import httpx
+import pytest
+from care_link_core.assistance_broker.actors import ActorTasks
+from care_link_core.assistance_broker.work import WorkQueue
+from care_link_core.manual_app import create_manual_app
+from care_link_core.manual_channels import ManualChannels
+from care_link_core.manual_envelopes import SignedEnvelopeFactory
+from care_link_core.manual_http import HttpManualGateway
+from care_link_data import PostgresStore
+from care_link_data.app import SignedGatewaySecurity
+from care_link_data.app import create_app as create_data_app
+from care_link_data.assistance_jobs import PostgresJobLedger
+from care_link_domain import ManualError
+from care_link_help import (
+    HelpConfig,
+    HelpService,
+    HttpAuthority,
+    HttpBrowserSessions,
+    SignedReceipts,
+    Spool,
+)
+from care_link_help import create_app as create_help_app
+from care_link_identity import Custody, IdentityService, ReceiptSigner
+from care_link_identity import create_app as create_identity_app
+from care_link_inference import BrokerRequest, GatewayResult
+from care_link_policy_input import DelegationVerifier
+from cryptography.fernet import Fernet
+from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+from fastapi.testclient import TestClient
+
+from services.data.tests.test_assistance import case, lease, request
+from services.data.tests.test_assistance_jobs import jobs_store as load_jobs_store  # noqa: F401
+from services.identity.tests.conftest import Clock, FakeProvider, MemoryStore, signed_in
+from services.inference.tests.test_inference import Bridge, gateway
+from tests.evaluation.qwen_combined_journey import IdentityFixture
+
+ROOT = Path(__file__).resolve().parents[3]
+
+
+def elapsed_ms(start: int) -> float:
+    return round((perf_counter_ns() - start) / 1_000_000, 3)
+
+
+@dataclass
+class Sample:
+    arrival: int
+    request: BrokerRequest
+    queue_ms: float
+
+    def invoke(self, inference, phase: str) -> tuple[GatewayResult, dict[str, object]]:
+        started = perf_counter_ns()
+        result = inference.execute("broker", self.request)
+        return result, {
+            "phase": phase,
+            "elapsed_ms": elapsed_ms(started),
+            "claim_ms_after_enqueue": self.queue_ms,
+            "end_to_end_ms": elapsed_ms(self.arrival),
+            "state": result.state,
+            "reason": result.safe_reason,
+            "input_tokens_reported_by_fixture": result.input_tokens or None,
+            "output_tokens_reported_by_fixture": result.output_tokens or None,
+        }
+
+
+class PausedBridge(Bridge):
+    """Signals only after the gateway has reserved its durable compute slot."""
+
+    def __init__(self, **settings):
+        super().__init__(**settings)
+        self.started = Event()
+        self.resume = Event()
+
+    def complete(self, payload, deadline):
+        self.started.set()
+        if not self.resume.wait(6):
+            raise AssertionError("Fixture coordinator did not release the compute barrier")
+        return super().complete(payload, deadline)
+
+
+def prepare_sample(queue, coordinator, harness, peer, arrivals, expected_task):
+    item = queue.claim()
+    task_id = expected_task["id"]
+    assert item["task_id"] == task_id
+    assert item["task_revision"] == expected_task["revision"]
+    arrival = arrivals[task_id]
+    queue_ms = elapsed_ms(arrival)
+    current = lease(coordinator, harness, expected_task, peer, item["fence"])
+    reservation = coordinator.reserve_proposal(
+        harness.worker, request(expected_task, current), peer
+    )
+    return Sample(
+        arrival=arrival,
+        queue_ms=queue_ms,
+        request=BrokerRequest(
+            task_id=task_id,
+            step_id=current["step_id"],
+            fence=current["fence"],
+            revision=expected_task["revision"],
+            function="worker_summary",
+            items=tuple(
+                {
+                    "source": source["ref"],
+                    "text": source["text"],
+                    "label": "untrusted_report",
+                    "critical": True,
+                }
+                for source in reservation["sources"]
+            ),
+            allowed_tools=frozenset(),
+            deadline=datetime.fromisoformat(current["expires_at"]),
+            bridge_generation="imp10-fixture",
+            job_id=str(uuid4()),
+        ),
+    )
+
+
+def manual_read(pair, session_id):
+    started = perf_counter_ns()
+    view = pair.service.session_read(pair.participant, session_id)
+    assert view["id"] == session_id and view["service_phase"] == "human_controlled"
+    return {"elapsed_ms": elapsed_ms(started), "state": view["service_phase"]}
+
+
+def manual_send(pair, session_id):
+    started = perf_counter_ns()
+    current = pair.service.session_read(pair.worker, session_id)
+    message = pair.service.message_send(
+        pair.worker,
+        str(uuid4()),
+        {
+            "expected_revision": current["revision"],
+            "expected_control_epoch": current["control_epoch"],
+            "text": "Fictional response while assistance is saturated.",
+            "accepted_draft_id": None,
+        },
+        session_id,
+    )
+    visible = pair.service.messages_read(pair.participant, session_id)
+    assert message["kind"] == "human_authored"
+    assert [item["id"] for item in visible["items"]] == [message["id"]]
+    return {"elapsed_ms": elapsed_ms(started), "state": "visible_human_authored"}
+
+
+def relay(target: TestClient, request: httpx.Request) -> httpx.Response:
+    response = target.request(
+        request.method, request.url.path, headers=request.headers, content=request.content
+    )
+    return httpx.Response(
+        response.status_code, headers=list(response.headers.multi_items()), content=response.content
+    )
+
+
+def verify_help_during_outages(pair, session_id: str, tmp_path: Path) -> dict[str, object]:
+    """Interrupt each normal ASGI hop while independent Help retains current Identity."""
+    help_origin = "https://help.test"
+    clock = Clock()
+    provider = FakeProvider(clock)
+    identity_key, core_key = Ed25519PrivateKey.generate(), Ed25519PrivateKey.generate()
+    identity = IdentityService(
+        MemoryStore(),
+        provider,
+        Custody(Fernet.generate_key()),
+        ReceiptSigner(identity_key, "imp10-help"),
+        "https://provider.test",
+        help_origin,
+        clock=clock,
+    )
+    identity.provision(provider.subject, pair.participant.account_id, ["pid"])
+    cookie = signed_in(identity)
+    tmp_path.mkdir(mode=0o700)
+    spool = Spool(tmp_path / "help.sqlite", clock=clock)
+    available = {"core": True, "data": True}
+    normal_hops: list[str] = []
+
+    class Browser:
+        def authenticate(self, _request):
+            return pair.participant
+
+        def csrf(self, _request, _actor):
+            raise AssertionError("outage exercise issues no private Core writes")
+
+    def transport(role: str, target: TestClient) -> httpx.MockTransport:
+        def send(request: httpx.Request) -> httpx.Response:
+            assert request.url.host == f"{role}.test"
+            normal_hops.append(role)
+            if not available[role]:
+                raise httpx.ConnectError("isolated unavailable test route", request=request)
+            return relay(target, request)
+
+        return httpx.MockTransport(send)
+
+    signed_identity = IdentityFixture(pair.participant)
+    delegations = DelegationVerifier(
+        core_key.public_key(),
+        signed_identity.key.public_key(),
+        lambda _evidence: pair.authority.current(pair.participant),
+    )
+    security = SignedGatewaySecurity(delegations, lambda _request, peer: peer == "core")
+    identity_app = create_identity_app(
+        identity,
+        workload_verifier=lambda _request, peer: peer == "help",
+        session_cookie="__Host-care_link_help",
+    )
+    cases: list[dict[str, object]] = []
+    with ExitStack() as stack:
+        data = stack.enter_context(TestClient(create_data_app(pair.service, security)))
+        data_http = stack.enter_context(httpx.Client(transport=transport("data", data)))
+        envelopes = SignedEnvelopeFactory(
+            data_http, "https://data.test", signed_identity, pair.policy, core_key
+        )
+        gateway = HttpManualGateway(data_http, "https://data.test", envelopes)
+        core = stack.enter_context(
+            TestClient(create_manual_app(gateway, Browser(), ManualChannels()))
+        )
+        main = stack.enter_context(
+            httpx.Client(base_url="https://core.test", transport=transport("core", core))
+        )
+        normal_path = f"/v1/sessions/{session_id}"
+        healthy = main.get(normal_path)
+        assert healthy.status_code == 200 and healthy.json()["id"] == session_id
+        internal = stack.enter_context(TestClient(identity_app))
+        help_identity = stack.enter_context(
+            httpx.Client(transport=httpx.MockTransport(lambda request: relay(internal, request)))
+        )
+        sessions = HttpBrowserSessions(help_identity, "https://identity.test", help_origin)
+        authority = HttpAuthority(help_identity, "https://identity.test")
+        verifier = SignedReceipts({"imp10-help": identity_key.public_key()}, clock=clock)
+        help_service = HelpService(spool, authority, verifier, clock=clock)
+        help_app = create_help_app(HelpConfig(help_origin), help_service, sessions)
+        browser = stack.enter_context(TestClient(help_app, base_url=help_origin))
+        browser.cookies.set("__Host-care_link_help", cookie)
+        headers = {"Origin": help_origin, "X-CSRF-Token": sessions.context(cookie).csrf_token}
+        view_path = "/help/v1/requests"
+        for outage, locale in (("core", "en-CA"), ("data", "fr-CA")):
+            available[outage] = False
+            normal_hops.clear()
+            if outage == "core":
+                with pytest.raises(httpx.ConnectError):
+                    main.get(normal_path)
+                assert normal_hops == ["core"]
+                normal_result = "connection_unavailable"
+            else:
+                response = main.get(normal_path)
+                assert (
+                    response.status_code == 503
+                    and response.json()["code"] == "AUTHORITY_UNAVAILABLE"
+                )
+                assert normal_hops == ["core", "data"]
+                normal_result = "typed_503"
+            normal_hops.clear()
+            started = perf_counter_ns()
+            create = browser.post(
+                view_path,
+                json={"locale": locale, "jurisdiction": None},
+                headers={**headers, "Idempotency-Key": str(uuid4())},
+            )
+            assert create.status_code == 200
+            view = create.json()
+            assert view["state"] == "recorded" and view["connection_confirmed"] is False
+            assert browser.get(f"{view_path}/{view['id']}").json() == view
+            assert normal_hops == []
+            cases.append(
+                {
+                    "injected_unavailable_route": outage,
+                    "normal_service_result": normal_result,
+                    "create_and_read_elapsed_ms": elapsed_ms(started),
+                    "help_state": view["state"],
+                    "connection_confirmed": view["connection_confirmed"],
+                }
+            )
+            available[outage] = True
+
+        provider.is_active = False
+        denied = browser.get(f"{view_path}/{view['id']}")
+        assert denied.status_code == 503
+        assert denied.json() == {
+            "message_key": "help.identity_unavailable",
+            "static_url": "/static/",
+        }
+        denied_create = browser.post(
+            view_path,
+            json={"locale": "en-CA", "jurisdiction": None},
+            headers={**headers, "Idempotency-Key": str(uuid4())},
+        )
+        assert denied_create.status_code == 503 and denied_create.json() == denied.json()
+
+    with closing(sqlite3.connect(spool.path)) as connection:
+        assert (
+            connection.execute(
+                "SELECT owner_account,status,accepted_by,revision FROM request"
+            ).fetchall()
+            == [(pair.participant.account_id, "recorded", None, 1)] * 2
+        )
+        actions = [
+            row[0] for row in connection.execute("SELECT action FROM local_event ORDER BY sequence")
+        ]
+        assert actions == ["create", "status", "create", "status"]
+        assert connection.execute("SELECT count(*) FROM operation").fetchone() == (4,)
+    assert spool.path.stat().st_mode & 0o077 == 0
+    return {
+        "cases": cases,
+        "identity_loss_private_create_and_read": "typed_503_with_static_reference",
+        "durable_local_request_count": 2,
+        "durable_local_audit_actions": actions,
+        "fixture_authority": "signed Identity ASGI with in-memory store and synthetic provider",
+        "fixture_routes": "separate ASGI transports with deterministic transport unavailability",
+    }
+
+
+def save_receipt(record):
+    destination = os.environ.get("CARE_LINK_IMP10_LOAD_EVIDENCE")
+    if destination:
+        with Path(destination).open("x") as stream:
+            json.dump(record, stream, indent=2, sort_keys=True)
+            stream.write("\n")
+
+
+def test_ten_sessions_keep_manual_service_while_two_slots_and_eight_waiting_saturate(
+    harness, request, tmp_path
+):
+    profile = json.loads((ROOT / "doc/REQ/demo-parameters.json").read_text())["capacity"]
+    assert profile["active_sessions"] == 10
+    assert profile["concurrent_inference_jobs"] == 2
+    assert profile["inference_queue_limit"] == 8
+
+    h, started_at = harness, datetime.now(UTC)
+    admin = PostgresStore(h.database.admin)
+    pairs = [
+        replace(
+            h,
+            participant=replace(
+                h.participant,
+                account_id=str(uuid4()),
+                browser_session_digest=uuid4().hex + uuid4().hex,
+                credential_ref=uuid4().hex + uuid4().hex,
+                identity_evidence_id=str(uuid4()),
+            ),
+        )
+        for _ in range(profile["active_sessions"])
+    ]
+    for pair in pairs:
+        admin.provision_principal(pair.participant)
+
+    workload = [case(pair) for pair in pairs]
+    coordinator, _, peer = workload[0]
+    tasks = [coordinator.task_create(h.worker, str(uuid4()), body) for _, body, _ in workload]
+    session_ids = [body["binding"]["session_id"] for _, body, _ in workload]
+    assert len(set(session_ids)) == 10
+    assert h.read("SELECT count(*) FROM core.session WHERE service_phase='human_controlled'") == [
+        (10,)
+    ]
+    actors = ActorTasks()
+    queue = WorkQueue(actors, coordinator)
+    arrivals = {}
+    ledger = PostgresJobLedger(
+        request.getfixturevalue("load_jobs_store"),
+        current=lambda tx, record: coordinator.inference_current(tx, record, actors.resolve),
+        bridge_generation="imp10-fixture",
+    )
+
+    def enqueue(task):
+        actors.bind(h.worker, task)
+        queue.enqueue(task)
+        arrivals[task["id"]] = perf_counter_ns()
+
+    def claim(task):
+        return prepare_sample(queue, coordinator, h, peer, arrivals, task)
+
+    first_bridge, timeout_bridge = PausedBridge(), PausedBridge(timeout=True)
+    reused_gateway = gateway(bridge=first_bridge, ledger=ledger)
+    fail_gateway = gateway(bridge=timeout_bridge, ledger=ledger)
+    enqueue(tasks[0])
+    enqueue(tasks[1])
+    first, timeout = claim(tasks[0]), claim(tasks[1])
+    with ThreadPoolExecutor(max_workers=12) as workers:
+        cold_future = workers.submit(first.invoke, reused_gateway, "fixture_first_call")
+        error_future = workers.submit(timeout.invoke, fail_gateway, "fixture_timeout")
+        try:
+            assert first_bridge.started.wait(3) and timeout_bridge.started.wait(3)
+            for task in tasks[2:]:
+                enqueue(task)
+            # At peak the duplicate still fits, but the stale DTO of a popped
+            # item cannot take a ninth pending slot.
+            queue.enqueue(tasks[-1])
+            with pytest.raises(ManualError, match="capacity_unavailable"):
+                queue.enqueue(tasks[0])
+            peak = {
+                "connected_sessions": h.read(
+                    "SELECT count(*) FROM core.session WHERE service_phase='human_controlled'"
+                )[0][0],
+                "occupied_inference_slots": h.read(
+                    "SELECT count(*) FROM assistance.compute_slot WHERE state='occupied'"
+                )[0][0],
+                "unique_pending_task_ids": len({task["id"] for task in tasks[2:]}),
+            }
+            assert peak == {
+                "connected_sessions": 10,
+                "occupied_inference_slots": 2,
+                "unique_pending_task_ids": 8,
+            }
+            assert all(
+                coordinator.task_read(h.worker, task["id"])["state"] == "scoped"
+                for task in tasks[2:]
+            )
+            concurrent = list(workers.map(manual_read, pairs, session_ids))
+            manual_delivery = manual_send(pairs[1], session_ids[1])
+            help_continuity = verify_help_during_outages(
+                pairs[0], session_ids[0], tmp_path / "help"
+            )
+            assert not cold_future.done() and not error_future.done()
+            assert h.read(
+                "SELECT count(*) FROM assistance.compute_slot WHERE state='occupied'"
+            ) == [(2,)]
+            third = claim(tasks[2])
+            over_capacity, capacity_observation = third.invoke(
+                reused_gateway, "fixture_capacity_rejection"
+            )
+            assert (
+                over_capacity.safe_reason == "compute_capacity_unavailable"
+                and over_capacity.proposal is None
+            )
+            assert len(first_bridge.calls) == 0
+        finally:
+            first_bridge.resume.set()
+            timeout_bridge.resume.set()
+        cold, cold_observation = cold_future.result(timeout=6)
+        error, error_observation = error_future.result(timeout=6)
+
+    assert cold.state == "completed" and cold.proposal is not None
+    assert error.state == "compute_unknown" and error.proposal is None
+    assert h.read("SELECT count(*) FROM assistance.compute_slot WHERE state='compute_unknown'") == [
+        (1,)
+    ]
+    unknown_read = manual_read(pairs[1], session_ids[1])
+    observations = [cold_observation, error_observation, capacity_observation]
+    for sample in chain((third,), (claim(task) for task in tasks[3:])):
+        result, observation = sample.invoke(reused_gateway, "fixture_reused_gateway")
+        assert result.state == "completed" and result.proposal is not None
+        observations.append(observation)
+
+    assert queue.claim() == {"task_id": None, "task_revision": None, "fence": None}
+    # A late observed completion frees the unknown slot and cannot release output.
+    assert ledger.complete(error.job_id, "d" * 64, deliverable=True) is False
+    assert h.read(
+        "SELECT state,count(*) FROM assistance.inference_job GROUP BY state ORDER BY state"
+    ) == [
+        ("completed", 9),
+        ("fenced", 1),
+    ]
+    assert h.read("SELECT count(*) FROM assistance.compute_slot WHERE state='free'") == [(2,)]
+    assert h.read("SELECT count(*) FROM assistance.draft") == [(0,)]
+    assert h.read("SELECT count(*) FROM core.message") == [(1,)]
+
+    save_receipt(
+        {
+            "started_at_utc": started_at.isoformat(),
+            "ended_at_utc": datetime.now(UTC).isoformat(),
+            "environment": {
+                "system": platform.system(),
+                "release": platform.release(),
+                "architecture": platform.machine(),
+                "cpu_count": os.cpu_count(),
+                "python": platform.python_version(),
+                "postgres_server_version": h.read("SHOW server_version")[0][0],
+            },
+            "fixture": {
+                "arrival": ("two admitted requests, then eight queued at fixed bridge barriers"),
+                "channels": {"web": 10},
+                "locales": {"en-CA": 10},
+                "synthetic_participant_accounts": 10,
+                "synthetic_worker_accounts": 1,
+                "source_items_per_task": 1,
+                "source_text_bytes_per_task": len(b"Fictional needs"),
+                "configured_context_token_cap": 8192,
+                "configured_output_token_cap": 1024,
+                "identity_policy_journal": "fixture adapters",
+                "transport": "in-process public application objects and verified-TLS PostgreSQL",
+            },
+            "timing": (
+                "Raw milliseconds from a local monotonic clock, including fixture barriers. "
+                "No percentiles inferred from these samples."
+            ),
+            "peak": peak,
+            "counts": {
+                "scheduled_inference_requests": 11,
+                "observed_inference_results": len(observations),
+                "completed": 9,
+                "capacity_rejected": 1,
+                "compute_unknown_fenced_on_late_return": 1,
+                "manual_reads": len(concurrent) + 1,
+                "manual_deliveries": 1,
+                "missing_fixture_inference_results": 0,
+            },
+            "inference_samples": observations,
+            "manual_reads_with_two_slots_occupied": concurrent,
+            "manual_delivery_with_two_slots_occupied": manual_delivery,
+            "manual_read_with_unknown_slot": unknown_read,
+            "independent_help_with_two_slots_occupied_and_eight_waiting": help_continuity,
+            "missing": [
+                "Actual loaded model cold and warm results and token timing",
+                "Native browser, deployed mesh, process-level shutdown and static serving",
+                "Workload containing French and non-web simulated channels",
+                "Measured arrival rate and long-run demand distribution",
+            ],
+        }
+    )

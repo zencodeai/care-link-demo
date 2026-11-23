@@ -1,0 +1,17 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/main/Workspace/projects/care-link/care-link-demo
+configfile: pyproject.toml
+plugins: anyio-4.16.0, langsmith-0.15.1
+collected 1 item
+
+tests/evaluation/qwen_combined_journey.py .                              [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: 17 warnings
+  /Users/main/Workspace/projects/care-link/care-link-demo/.venv/lib/python3.14/site-packages/langsmith/_internal/_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /private/tmp/care-link-g10-authority-lock-final/matched-assistance.xml -
+======================== 1 passed, 17 warnings in 6.39s ========================

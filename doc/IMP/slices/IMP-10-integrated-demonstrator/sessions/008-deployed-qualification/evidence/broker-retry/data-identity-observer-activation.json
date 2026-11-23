@@ -1,0 +1,18 @@
+{
+  "purpose": "qualification",
+  "activated_at": "2026-11-23T18:37:45.025973+00:00",
+  "epoch": 1,
+  "image_id": "docker.io/library/import-2026-11-23@sha256:a003ffc4007876074e773e7300cc04c15b930fc9b5e477cf32fc504fe5fd8588",
+  "boot_observation": {
+    "role": "data",
+    "boot_id": "2413ee02-9c94-4f62-9d9e-06ac80743e82",
+    "uid": 23112,
+    "catalog_digest": "e1762ee67e9fcf4b867b8864e37eba049524c8ba9dd4275e1418e694f7423b27"
+  },
+  "pod_uid": "163cb578-e19a-4a40-a30e-1aca28fd2046",
+  "observer_ref": {
+    "path": "doc/IMP/slices/IMP-10-integrated-demonstrator/sessions/008-deployed-qualification/evidence/broker-retry/deployed-source-snapshot/deployed_assistance.py.txt",
+    "sha256": "fd43182b9caf08daa2b92a0a2bc1622128ef1fe01375e1369174a72bed65d2cf"
+  },
+  "observer_source_path": "tools/imp10_verification/deployed_assistance.py"
+}

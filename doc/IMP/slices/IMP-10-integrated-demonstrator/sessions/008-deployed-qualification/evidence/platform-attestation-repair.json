@@ -1,0 +1,54 @@
+{
+  "observed_at": "2026-11-23T17:01:39.267357+00:00",
+  "namespace": "care-link-imp10-008",
+  "docker_node_id": "aa656c8592c78d6a907127e107c43ab82f999e2b58a6dbe7880ec816a1cbbee0",
+  "previous_entry_failure": "SPIRE denied requested role identity with unqualified Docker image selectors",
+  "running_pod_image_ids": {
+    "core": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "data": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "identity": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "journal": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "pdp": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "receiver": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    },
+    "training": {
+      "app": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+      "proxy": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb"
+    }
+  },
+  "expected_candidate_cri_image": "docker.io/library/import-2026-11-23@sha256:5cc45778286500872fa664d9171cf990e6c1e831841b31c2ffed4d0c7e2b698d",
+  "expected_envoy_cri_image": "docker.io/envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb",
+  "changed_selectors": [
+    "k8s:pod-image",
+    "k8s:container-image"
+  ],
+  "registration_ids_preserved": true,
+  "roles": [
+    "core",
+    "data",
+    "identity",
+    "inference",
+    "journal",
+    "pdp",
+    "receiver",
+    "runtime",
+    "training"
+  ]
+}
